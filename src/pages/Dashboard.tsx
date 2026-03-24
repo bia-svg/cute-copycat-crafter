@@ -155,7 +155,7 @@ export default function Dashboard() {
                 {(["daily", "weekly", "monthly", "total"] as Period[]).map(p => (
                   <button key={p} onClick={() => setPeriod(p)}
                     className={`px-3 py-1 text-xs rounded transition-colors ${period === p ? "bg-primary text-white" : "text-[hsl(220,10%,55%)] hover:text-white"}`}>
-                    {p === "daily" ? "Täglich" : p === "weekly" ? "Wöchentlich" : p === "monthly" ? "Monatlich" : "Gesamt"}
+                    {p === "daily" ? "Daily" : p === "weekly" ? "Weekly" : p === "monthly" ? "Monthly" : "All Time"}
                   </button>
                 ))}
               </div>
