@@ -146,7 +146,7 @@ export default function Home() {
         {/* Desktop */}
         <div className="hidden md:grid md:grid-cols-2 container-main py-12 gap-8 items-center">
           {/* Image */}
-          <div className="relative aspect-[4/5] max-h-[480px] rounded-2xl overflow-hidden mx-auto">
+          <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-2xl overflow-hidden mx-auto">
             {heroSlides.map((src, i) => (
               <img key={i} src={src} alt={`David J. Woods ${i + 1}`}
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}
