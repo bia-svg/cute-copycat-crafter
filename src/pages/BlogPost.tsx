@@ -123,7 +123,7 @@ export default function BlogPost() {
               .filter((p) => p.slug !== post.slug)
               .slice(0, 3)
               .map((related) => (
-                <Link key={related.slug} href={`/${language}/${country}/blog/${related.slug}`}>
+                <Link key={related.slug} to={`/${language}/${country}/blog/${related.slug}`}>
                   <div className="bg-white border border-border p-4 hover:shadow-md transition-shadow">
                     <h3 className="font-bold text-[#1B3A5C] text-sm mb-2 line-clamp-2">{related.title}</h3>
                     <p className="text-xs text-muted-foreground line-clamp-2">{related.metaDescription}</p>
