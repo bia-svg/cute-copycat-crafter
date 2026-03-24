@@ -127,7 +127,7 @@ export default function Dashboard() {
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           <div>
             <h1 className="text-lg font-semibold">David Woods — Dashboard</h1>
-            <p className="text-xs text-[hsl(220,10%,45%)]">Internes Analytics & Kampagnen-Tracking</p>
+            <p className="text-xs text-[hsl(220,10%,45%)]">Internal Analytics & Campaign Tracking</p>
           </div>
           <div className="flex items-center gap-3">
             <span className="text-xs text-[hsl(220,10%,50%)]">{currentUser}</span>
