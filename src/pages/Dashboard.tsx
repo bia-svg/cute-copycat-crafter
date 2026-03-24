@@ -133,7 +133,7 @@ export default function Dashboard() {
             <span className="text-xs text-[hsl(220,10%,50%)]">{currentUser}</span>
             <Button size="sm" variant="ghost" onClick={() => { logout(); navigate("/dashboard/login"); }}
               className="text-[hsl(220,10%,55%)] hover:text-white hover:bg-[hsl(220,15%,15%)]">
-              <LogOut className="w-4 h-4 mr-1" /> Abmelden
+              <LogOut className="w-4 h-4 mr-1" /> Sign Out
             </Button>
           </div>
         </div>
