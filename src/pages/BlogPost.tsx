@@ -84,7 +84,7 @@ export default function BlogPost() {
 
           {/* Author Box */}
           <div className="mt-12 p-6 bg-[#f4f3ef] border border-border flex gap-5 items-start">
-            <img src={CDN.aboutAktivHypnose} alt="David J. Woods" className="w-20 h-20 object-cover rounded-full flex-shrink-0" />
+            <img src={davidPortrait} alt="David J. Woods" className="w-20 h-20 object-cover rounded-full flex-shrink-0" />
             <div>
               <p className="font-bold text-[#1B3A5C]">David J. Woods</p>
               <p className="text-sm text-muted-foreground">Lic.Psych. · NGH International Trainer · {isDE ? "Über 40 Jahre Erfahrung" : "Over 40 years experience"}</p>
