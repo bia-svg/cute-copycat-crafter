@@ -98,6 +98,10 @@ function AppRoutes() {
           <Route path="/:lang/:country/datenschutz" element={<Datenschutz />} />
           <Route path="/:lang/:country/agb" element={<AGB />} />
 
+          {/* Dashboard (internal, not linked anywhere) */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/login" element={<DashboardLogin />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
