@@ -324,15 +324,15 @@ export default function Header() {
           </div>
           <SidebarCard>
             <p className="font-semibold text-sm text-foreground">Lic.Psych. David J. Woods</p>
-            <p className="text-xs text-muted-foreground mb-2">
+            <p className="text-xs text-muted-foreground">
               {isDE ? "Hypnotherapeut · Dozent & Fachautor" : "Hypnotherapist · Lecturer & Author"}
             </p>
-            <div className="flex items-center gap-1 text-yellow-500 mb-3">
+            <div className="flex items-center gap-1 text-yellow-500">
               {"★★★★★".split("").map((s, i) => <span key={i}>{s}</span>)}
               <span className="text-xs text-muted-foreground ml-1">5.0 (255)</span>
             </div>
             <Link to={getPath("about", language, country)} onClick={() => setActiveMenu(null)}>
-              <Button size="sm" variant="outline" className="w-full text-xs">
+              <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs">
                 {isDE ? "Mehr erfahren" : "Learn More"}
               </Button>
             </Link>
