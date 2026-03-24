@@ -109,7 +109,8 @@ export default function Dashboard() {
   const conversionRate = totalLeads > 0 ? ((totals.conversions / totalLeads) * 100).toFixed(1) : "0";
 
   const loginLogs = getLoginLogs();
-  const currentUser = getCurrentUser();
+  const currentUserEmail = getCurrentUser();
+  const displayName = currentUserEmail?.includes("david") ? "David" : currentUserEmail?.includes("bia") ? "Bia" : currentUserEmail?.split("@")[0] ?? "";
 
   if (!isAuthenticated()) return null;
 
@@ -130,7 +131,7 @@ export default function Dashboard() {
             <p className="text-xs text-[hsl(220,10%,45%)]">Internal Analytics & Campaign Tracking</p>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-xs text-[hsl(220,10%,50%)]">{currentUser}</span>
+            <span className="text-xs text-[hsl(220,10%,50%)]">{displayName}</span>
             <Button size="sm" variant="ghost" onClick={() => { logout(); navigate("/dashboard/login"); }}
               className="text-[hsl(220,10%,55%)] hover:text-white hover:bg-[hsl(220,15%,15%)]">
               <LogOut className="w-4 h-4 mr-1" /> Sign Out
