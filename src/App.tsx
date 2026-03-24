@@ -90,6 +90,7 @@ function AppRoutes() {
 
           {/* Blog */}
           <Route path="/:lang/:country/blog" element={<Blog />} />
+          <Route path="/:lang/:country/blog/:slug" element={<BlogPost />} />
 
           {/* Book */}
           <Route path="/:lang/:country/buch-go-inside" element={<Buch />} />
