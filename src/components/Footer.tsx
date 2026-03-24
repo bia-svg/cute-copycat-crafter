@@ -34,10 +34,6 @@ export default function Footer() {
             <p className="text-sm opacity-80">
               {isEN ? "Aktiv-Hypnose\u00a9 \u2014 Psychology and Hypnotherapy for lasting change." : "Aktiv-Hypnose\u00a9 \u2014 Psychologie und Hypnotherapie f\u00fcr nachhaltige Ver\u00e4nderung."}
             </p>
-            <div className="flex gap-3 mt-4">
-              {showCH && <img src={CDN.emrBadge} alt="EMR" className="h-10 brightness-0 invert opacity-90" />}
-              <img src={CDN.nghBadge} alt="NGH" className="h-10 brightness-0 invert opacity-90" />
-            </div>
           </div>
 
           {/* Contact */}
