@@ -109,7 +109,8 @@ export default function Dashboard() {
   const conversionRate = totalLeads > 0 ? ((totals.conversions / totalLeads) * 100).toFixed(1) : "0";
 
   const loginLogs = getLoginLogs();
-  const currentUser = getCurrentUser();
+  const currentUserEmail = getCurrentUser();
+  const displayName = currentUserEmail?.includes("david") ? "David" : currentUserEmail?.includes("bia") ? "Bia" : currentUserEmail?.split("@")[0] ?? "";
 
   if (!isAuthenticated()) return null;
 
