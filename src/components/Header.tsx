@@ -101,7 +101,6 @@ export default function Header() {
     <div className="bg-secondary/50 border border-border rounded-lg p-5 space-y-3 self-start">
       {children}
     </div>
-    </div>
   );
 
   const MegaMenuPanel = ({ id, children }: { id: string; children: React.ReactNode }) => {
