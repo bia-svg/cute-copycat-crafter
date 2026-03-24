@@ -167,9 +167,9 @@ export default function Kundenmeinungen() {
                 {isEN ? "5.0 / 5 on Google · 255 Reviews" : "5.0 / 5 bei Google · 255 Bewertungen"}
               </p>
             </div>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="flex gap-0.5 hover:opacity-80 transition-opacity">
+            <div className="flex gap-0.5">
               {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
-            </a>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
