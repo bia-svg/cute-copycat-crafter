@@ -280,7 +280,7 @@ export default function Dashboard() {
                     {topPages.map(page => (
                       <TableRow key={page.path} className="border-[hsl(220,15%,18%)] hover:bg-[hsl(220,15%,15%)]">
                         <TableCell className="text-white font-medium">{page.label}<span className="text-[hsl(220,10%,40%)] text-xs ml-2">{page.path}</span></TableCell>
-                        <TableCell className="text-right text-white">{page.views.toLocaleString("de-CH")}</TableCell>
+                        <TableCell className="text-right text-white">{page.views.toLocaleString("en-US")}</TableCell>
                         <TableCell className="text-right text-white flex items-center justify-end gap-1"><Clock className="w-3 h-3 text-[hsl(220,10%,45%)]" />{formatTime(page.avgTimeSeconds)}</TableCell>
                       </TableRow>
                     ))}
