@@ -36,6 +36,8 @@ export default function Standorte() {
   ];
 
   return (
+    <>
+      <SEO {...pageSEO.locations} />
     <div className="min-h-screen bg-background">
       {/* Hero */}
       <section className="bg-primary text-primary-foreground py-16 md:py-24">
