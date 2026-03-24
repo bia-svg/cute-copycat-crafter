@@ -16,6 +16,7 @@ import CityAugsburg from "@/pages/CityAugsburg";
 import Standorte from "@/pages/Standorte";
 import TvMedien from "@/pages/TvMedien";
 import Erfolgsberichte from "@/pages/Erfolgsberichte";
+import Terminbestaetigung from "@/pages/Terminbestaetigung";
 import FirmenCoaching from "@/pages/FirmenCoaching";
 import { Impressum, Datenschutz, AGB } from "@/pages/Legal";
 import Blog from "@/pages/Blog";
@@ -58,6 +59,7 @@ function AppRoutes() {
 
           {/* Contact */}
           <Route path="/:lang/:country/erstgespraech" element={<Erstgespraech />} />
+          <Route path="/:lang/:country/terminbestaetigung" element={<Terminbestaetigung />} />
 
           {/* Locations */}
           <Route path="/:lang/:country/standorte" element={<Standorte />} />
