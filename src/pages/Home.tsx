@@ -212,7 +212,7 @@ export default function Home() {
               ? "With his self-developed Aktiv-Hypnose© method, David J. Woods combines clinical psychology with targeted hypnotherapy. With over 40 years of experience he conducted more than 30,000 sessions for smoking cessation, weight loss, anxiety relief, and peak performance."
               : "Mit seiner selbst entwickelten Aktiv-Hypnose© Methode verbindet David J. Woods klinische Psychologie mit gezielter Hypnotherapie. Mit über 40 Jahren Erfahrung hat er mehr als 30.000 Sitzungen durchgeführt — für Raucherentwöhnung, Gewichtsreduktion, Angstbewältigung und Leistungssteigerung."}
           </p>
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+          <div className="relative aspect-[4/3] max-h-[280px] rounded-2xl overflow-hidden mx-auto">
             {heroSlides.map((src, i) => (
               <img key={i} src={src} alt={`David J. Woods ${i + 1}`}
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}
