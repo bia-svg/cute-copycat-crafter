@@ -5,7 +5,7 @@ type PageKey =
   | "depression" | "children" | "training" | "seminarSchedule" | "corporate"
   | "about" | "testimonials" | "successStories" | "media"
   | "contact" | "appointmentConfirmation" | "cityZurich" | "cityAugsburg" | "locations"
-  | "impressum" | "privacy" | "terms" | "blog";
+  | "impressum" | "privacy" | "terms" | "blog" | "book";
 
 const slugMap: Record<PageKey, string> = {
   home: "",
