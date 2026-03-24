@@ -11,6 +11,8 @@ import hero3 from "@/assets/hero-3.jpeg";
 import hero4 from "@/assets/hero-4.jpeg";
 import hero5 from "@/assets/hero-5.jpeg";
 import davidSessionImg from "@/assets/david-session.jpg";
+import diplomAktivHypnose from "@/assets/diplom-aktiv-hypnose.jpeg";
+import diplomNGH from "@/assets/diplom-ngh-instructor.jpeg";
 
 const heroSlides = [hero1, hero2, hero3, hero4, hero5];
 import {
@@ -300,6 +302,18 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-10">
             {isEN ? "Qualifications & Certifications" : "Qualifikationen & Zertifizierungen"}
           </h2>
+
+          {/* Diploma images */}
+          <div className="grid sm:grid-cols-2 gap-6 mb-10 max-w-3xl mx-auto">
+            <div className="border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <img src={diplomAktivHypnose} alt="Diplom — Therapeut in Aktiv-Hypnose von David J. Woods" className="w-full h-auto" loading="lazy" />
+            </div>
+            <div className="border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <img src={diplomNGH} alt="NGH Certified Instructor — David Woods" className="w-full h-auto" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Badges & stats */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center p-6 bg-card border border-border rounded-lg">
               <img src={CDN.nghBadge} alt="NGH" className="h-16 mx-auto mb-3" />
