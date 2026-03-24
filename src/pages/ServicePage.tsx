@@ -166,7 +166,6 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                   })),
                 }),
               }}
-            />
           </div>
         </section>
       )}

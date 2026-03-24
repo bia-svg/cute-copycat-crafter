@@ -173,8 +173,6 @@ export default function Shop() {
 
   return (
     <>
-        canonical={`https://david-j-woods.com/${language}/${country}/shop`}
-      />
 
       {/* Hero */}
       <section className="bg-[#55504f] text-white py-14">
