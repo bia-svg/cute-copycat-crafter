@@ -157,6 +157,7 @@ export default function Ausbildung() {
 
   return (
     <>
+      <SEO {...pageSEO.training} />
 
       {/* ═══════════════════════════════════════════════════════════
           SECTION 1 — HERO: Why this training exists

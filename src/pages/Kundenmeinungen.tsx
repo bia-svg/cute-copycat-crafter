@@ -12,6 +12,7 @@ export default function Kundenmeinungen() {
 
   return (
     <>
+      <SEO {...pageSEO.testimonials} />
       <section className="bg-background border-b border-border">
         <div className="container-main py-8 lg:py-12">
           <div className="flex items-center gap-4 mb-6">

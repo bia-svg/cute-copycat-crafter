@@ -160,6 +160,7 @@ export default function SeminarAblauf() {
 
   return (
     <>
+      <SEO {...pageSEO.seminarSchedule} />
 
       {/* Hero */}
       <section className="bg-[#f4f3ef] py-12 md:py-16">

@@ -76,6 +76,7 @@ export default function Erfolgsberichte() {
 
   return (
     <>
+      <SEO {...pageSEO.successStories} />
       {/* Hero */}
       <section className="bg-secondary py-12 md:py-16">
         <div className="container-main">

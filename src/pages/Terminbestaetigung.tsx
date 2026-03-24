@@ -18,7 +18,9 @@ export default function Terminbestaetigung() {
   const [location, setLocation] = useState("");
 
   return (
-    <section className="bg-background py-12 md:py-16">
+    <>
+      <SEO {...pageSEO.appointmentConfirmation} />
+      <section className="bg-background py-12 md:py-16">
       <div className="container-main max-w-3xl">
         <div className="text-center mb-10">
           <CalendarCheck className="w-10 h-10 text-primary mx-auto mb-3" />

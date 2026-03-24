@@ -16,6 +16,7 @@ export default function UeberUns() {
 
   return (
     <>
+      <SEO {...pageSEO.about} />
 
       {/* Main Bio Section */}
       <section className="bg-white border-b border-border">
