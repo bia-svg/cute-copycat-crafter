@@ -1,3 +1,11 @@
+import blogHypnoseLernen from "@/assets/blog-hypnose-lernen.jpg";
+import blogDavidPortrait from "@/assets/blog-david-portrait.jpg";
+import blogAktivUnterschied from "@/assets/blog-aktiv-hypnose-unterschied.jpg";
+import blogHeilendeHypnose from "@/assets/blog-heilende-hypnose.jpg";
+import blogShowTherapie from "@/assets/blog-hypnose-show-therapie.jpg";
+import blogMeditationGehirn from "@/assets/blog-meditation-gehirn.jpg";
+import blogAbnehmenSinnvoll from "@/assets/blog-abnehmen-sinnvoll.jpg";
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -74,7 +82,7 @@ export const blogPosts: BlogPost[] = [
     slug: "kann-man-hypnotisieren-lernen",
     title: "Kann man Hypnotisieren lernen und wenn ja, wie?",
     metaDescription: "",
-    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/training_seminar_90407094.jpg",
+    featuredImage: blogHypnoseLernen,
     contentText: "Kann man Hypnotisieren lernen und wenn ja, wie?\nHypnose ist eine bereits seit vielen Jahren relativ weit verbreitete Therapieform, die Menschen mit unterschiedlichsten Problemen helfen kann. Daher nu...",
     content: [
       { tag: "h1", text: "Kann man Hypnotisieren lernen und wenn ja, wie?" },
@@ -142,7 +150,7 @@ export const blogPosts: BlogPost[] = [
     slug: "wer-ist-david-j-woods",
     title: "Wer ist David J. Woods?",
     metaDescription: "",
-    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/about_aktiv_hypnose_4d6823bf.jpg",
+    featuredImage: blogDavidPortrait,
     contentText: "Wer ist David J. Woods?\nDavid J. Woods ist ein in London geborener Hypnotiseur, der vor allem in Deutschland und der Schweiz tätig ist. Dabei ist er bestens ausgebildet und hat viele Jahre Erfahrung ...",
     content: [
       { tag: "h1", text: "Wer ist David J. Woods?" },
@@ -189,7 +197,7 @@ export const blogPosts: BlogPost[] = [
     slug: "aktive-hypnose-der-unterschied-zur-normalen-hypnose",
     title: "Aktive Hypnose: Der Unterschied zur normalen Hypnose",
     metaDescription: "",
-    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/hero_hypnose_session_8cb1474b.jpg",
+    featuredImage: blogAktivUnterschied,
     contentText: "Aktive Hypnose: Der Unterschied zur normalen Hypnose\nAktive Hypnose ist eine Form der Hypnotherapie, bei der der Klient während der Hypnose aktiv an seiner eigenen Therapie teilnimmt. Im Gegensatz zu...",
     content: [
       { tag: "h1", text: "Aktive Hypnose: Der Unterschied zur normalen Hypnose" },
@@ -208,7 +216,7 @@ export const blogPosts: BlogPost[] = [
     slug: "aktive-hypnose-kann-eine-heilende-wirkung-haben",
     title: "Aktive Hypnose kann eine heilende Wirkung haben",
     metaDescription: "",
-    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/about_aktiv_hypnose_4d6823bf.jpg",
+    featuredImage: blogHeilendeHypnose,
     contentText: "Aktive Hypnose kann eine heilende Wirkung haben\nAktive Hypnose wird von Experten wie David J. Woods erfolgreich praktiziert und kann eine wertvolle Ergänzung zu traditionellen Behandlungsmethoden sei...",
     content: [
       { tag: "h1", text: "Aktive Hypnose kann eine heilende Wirkung haben" },
@@ -256,7 +264,7 @@ export const blogPosts: BlogPost[] = [
     slug: "hypnose-nur-show-oder-wirksame-therapie",
     title: "Hypnose: nur Show oder wirksame Therapie?",
     metaDescription: "",
-    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/about_aktiv_hypnose_4d6823bf.jpg",
+    featuredImage: blogShowTherapie,
     contentText: "Hypnose: nur Show oder wirksame Therapie?\nWeitere interessante Beiträge...",
     content: [
       { tag: "h1", text: "Hypnose: nur Show oder wirksame Therapie?" },
@@ -267,7 +275,7 @@ export const blogPosts: BlogPost[] = [
     slug: "planet-wissen-wie-meditation-das-gehirn-umbaut",
     title: "Planet Wissen – Wie Meditation das Gehirn umbaut",
     metaDescription: "",
-    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/about_aktiv_hypnose_4d6823bf.jpg",
+    featuredImage: blogMeditationGehirn,
     contentText: "Planet Wissen – Wie Meditation das Gehirn umbaut\nWeitere interessante Beiträge...",
     content: [
       { tag: "h1", text: "Planet Wissen – Wie Meditation das Gehirn umbaut" },
@@ -303,7 +311,7 @@ export const blogPosts: BlogPost[] = [
     slug: "wie-sinnvoll-ist-das-abnehmen-mit-hypnose",
     title: "Wie sinnvoll ist das Abnehmen mit Hypnose wirklich?",
     metaDescription: "In diesem Artikel erfahren Sie, wie sinnvoll das Abnehmen mit Hypnose wirklich ist & welche Möglichkeiten David J. Woods Ihnen dazu bietet!",
-    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/weight_loss_hypnose_26317eb7.jpg",
+    featuredImage: blogAbnehmenSinnvoll,
     contentText: "Wie sinnvoll ist das Abnehmen mit Hypnose wirklich?\nDas Abnehmen mit Hypnose wird immer bekannter und doch haben viele Menschen ihre Zweifel an diesem Vorgehen. Trotz der vielen positiven Beispiele s...",
     content: [
       { tag: "h1", text: "Wie sinnvoll ist das Abnehmen mit Hypnose wirklich?" },
