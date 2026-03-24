@@ -307,10 +307,10 @@ export default function Dashboard() {
                 <Table>
                   <TableHeader>
                     <TableRow className="border-[hsl(220,15%,18%)] hover:bg-transparent">
-                      <TableHead className="text-[hsl(220,10%,50%)]">Kampagne</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)]">Quelle</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Ausgaben</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Klicks</TableHead>
+                      <TableHead className="text-[hsl(220,10%,50%)]">Campaign</TableHead>
+                      <TableHead className="text-[hsl(220,10%,50%)]">Source</TableHead>
+                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Spend</TableHead>
+                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Clicks</TableHead>
                       <TableHead className="text-[hsl(220,10%,50%)] text-right">Leads</TableHead>
                       <TableHead className="text-[hsl(220,10%,50%)] text-right">Conversions</TableHead>
                       <TableHead className="text-[hsl(220,10%,50%)] text-right">CPA</TableHead>
