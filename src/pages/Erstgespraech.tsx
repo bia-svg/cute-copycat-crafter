@@ -214,7 +214,7 @@ export default function Erstgespraech() {
                       {/* Topic / Service Selection */}
                       <div>
                         <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "What is your concern?" : "Was ist Ihr Anliegen?"} *</label>
-                        <select required className={inputClasses}>
+                        <select required className={inputClasses} value={selectedConcern} onChange={(e) => setSelectedConcern(e.target.value)}>
                           <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
                           <option value="smoking">{isEN ? "Stop Smoking" : "Raucherentwöhnung"}</option>
                           <option value="anxiety">{isEN ? "Anxiety & Phobias" : "Ängste & Phobien"}</option>
