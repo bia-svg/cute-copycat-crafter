@@ -303,11 +303,13 @@ export default function Header() {
               {"★★★★★".split("").map((s, i) => <span key={i}>{s}</span>)}
               <span className="text-xs text-muted-foreground ml-1">5.0 (255)</span>
             </div>
-            <Link to={getPath("about", language, country)} onClick={() => setActiveMenu(null)}>
-              <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs">
-                {isDE ? "Mehr erfahren" : "Learn More"}
-              </Button>
-            </Link>
+            <div className="pt-2">
+              <Link to={getPath("about", language, country)} onClick={() => setActiveMenu(null)}>
+                <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs">
+                  {isDE ? "Mehr erfahren" : "Learn More"}
+                </Button>
+              </Link>
+            </div>
           </SidebarCard>
         </div>
       </MegaMenuPanel>
