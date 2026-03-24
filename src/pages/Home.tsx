@@ -170,8 +170,8 @@ export default function Home() {
             </p>
             <p className="text-foreground/80 leading-relaxed">
               {isEN
-                ? "With his self-developed Aktiv-Hypnose© method, David J. Woods combines clinical psychology with targeted hypnotherapy. Clients from over 30 countries trust his work — for smoking cessation, weight loss, anxiety relief, and peak performance."
-                : "Mit der selbst entwickelten Aktiv-Hypnose© Methode verbindet David J. Woods klinische Psychologie mit gezielter Hypnotherapie. Klienten aus über 30 Ländern vertrauen auf seine Arbeit — für Rauchentwöhnung, Gewichtsreduktion, Angstbewältigung und Leistungssteigerung."}
+                ? "With his self-developed Aktiv-Hypnose© method, David J. Woods combines clinical psychology with targeted hypnotherapy. With over 40 years of experience he conducted more than 30,000 sessions for smoking cessation, weight loss, anxiety relief, and peak performance."
+                : "Mit seiner selbst entwickelten Aktiv-Hypnose© Methode verbindet David J. Woods klinische Psychologie mit gezielter Hypnotherapie. Mit über 40 Jahren Erfahrung hat er mehr als 30.000 Sitzungen durchgeführt — für Raucherentwöhnung, Gewichtsreduktion, Angstbewältigung und Leistungssteigerung."}
             </p>
             <div className="flex flex-wrap gap-3">
               <Link to={getPath("contact", language, country)}>
@@ -204,8 +204,8 @@ export default function Home() {
           <p className="italic text-muted-foreground">{isEN ? '"Freedom Begins in the Mind"' : '"Freiheit beginnt im Kopf"'}</p>
           <p className="text-sm text-foreground/80 leading-relaxed">
             {isEN
-              ? "With his self-developed Aktiv-Hypnose© method, David J. Woods combines clinical psychology with targeted hypnotherapy."
-              : "Mit der selbst entwickelten Aktiv-Hypnose© Methode verbindet David J. Woods klinische Psychologie mit gezielter Hypnotherapie."}
+              ? "With his self-developed Aktiv-Hypnose© method, David J. Woods combines clinical psychology with targeted hypnotherapy. With over 40 years of experience he conducted more than 30,000 sessions for smoking cessation, weight loss, anxiety relief, and peak performance."
+              : "Mit seiner selbst entwickelten Aktiv-Hypnose© Methode verbindet David J. Woods klinische Psychologie mit gezielter Hypnotherapie. Mit über 40 Jahren Erfahrung hat er mehr als 30.000 Sitzungen durchgeführt — für Raucherentwöhnung, Gewichtsreduktion, Angstbewältigung und Leistungssteigerung."}
           </p>
           <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
             {heroSlides.map((src, i) => (
