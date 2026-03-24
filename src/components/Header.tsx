@@ -145,8 +145,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-card border-b border-border">
       {/* Top bar */}
-      <div className="bg-primary text-primary-foreground text-xs">
-        <div className="container-main flex items-center justify-between py-1.5">
+      <div className="bg-primary text-primary-foreground text-xs sm:text-xs">
+        <div className="container-main flex items-center justify-center sm:justify-between py-2 sm:py-1.5 gap-4">
           <div className="hidden sm:flex items-center gap-4">
             {isSwiss ? (
               <a href="tel:+41448880901" className="flex items-center gap-1 hover:underline">
@@ -158,10 +158,10 @@ export default function Header() {
               </a>
             )}
           </div>
-          <div className="flex items-center gap-3 ml-auto">
+          <div className="flex items-center gap-4 text-sm sm:text-xs">
             <div className="relative" ref={countryDropdownRef}>
-              <button onClick={() => setCountryDropdownOpen(!countryDropdownOpen)} className="flex items-center gap-1 hover:underline">
-                {currentCountry.flag} <ChevronDown className="w-3 h-3" />
+              <button onClick={() => setCountryDropdownOpen(!countryDropdownOpen)} className="flex items-center gap-1.5 hover:underline font-medium">
+                {currentCountry.flag} <span className="hidden sm:inline">{currentCountry.label}</span> <ChevronDown className="w-3 h-3" />
               </button>
               {countryDropdownOpen && (
                 <div className="absolute right-0 mt-1 bg-card text-foreground border border-border rounded shadow-md min-w-[140px] z-50">
@@ -175,7 +175,7 @@ export default function Header() {
               )}
             </div>
             <div className="relative" ref={langDropdownRef}>
-              <button onClick={() => setLangDropdownOpen(!langDropdownOpen)} className="flex items-center gap-1 hover:underline">
+              <button onClick={() => setLangDropdownOpen(!langDropdownOpen)} className="flex items-center gap-1.5 hover:underline font-medium">
                 {currentLanguage.label} <ChevronDown className="w-3 h-3" />
               </button>
               {langDropdownOpen && (
