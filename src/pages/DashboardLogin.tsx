@@ -23,7 +23,7 @@ export default function DashboardLogin() {
       if (success) {
         navigate("/dashboard");
       } else {
-        setError("E-Mail oder Passwort ungültig.");
+        setError("Invalid email or password.");
       }
       setLoading(false);
     }, 500);
