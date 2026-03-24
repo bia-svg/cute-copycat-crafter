@@ -367,7 +367,7 @@ export default function Dashboard() {
                         <TableRow key={s.id} className="border-[hsl(220,15%,18%)] hover:bg-[hsl(220,15%,15%)]">
                           <TableCell className="font-mono text-primary text-sm font-semibold">{s.code}</TableCell>
                           <TableCell className="text-white">{format(parseISO(s.date), "dd.MM.yyyy")}</TableCell>
-                          <TableCell className="text-white">{s.name}</TableCell>
+                          <TableCell className="text-white">{s.name.split(" ")[0]}</TableCell>
                           <TableCell className="text-white text-sm">{s.concern}</TableCell>
                           <TableCell>
                             <Badge variant="outline" className={`text-xs border-[hsl(220,15%,25%)] ${s.source === "google_ads" ? "text-blue-400" : s.source === "organic" ? "text-green-400" : "text-[hsl(220,10%,55%)]"}`}>
