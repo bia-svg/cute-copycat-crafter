@@ -150,7 +150,7 @@ export const blogPosts: BlogPost[] = [
     slug: "wer-ist-david-j-woods",
     title: "Wer ist David J. Woods?",
     metaDescription: "",
-    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/about_aktiv_hypnose_4d6823bf.jpg",
+    featuredImage: blogDavidPortrait,
     contentText: "Wer ist David J. Woods?\nDavid J. Woods ist ein in London geborener Hypnotiseur, der vor allem in Deutschland und der Schweiz tätig ist. Dabei ist er bestens ausgebildet und hat viele Jahre Erfahrung ...",
     content: [
       { tag: "h1", text: "Wer ist David J. Woods?" },
