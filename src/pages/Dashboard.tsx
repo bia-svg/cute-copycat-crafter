@@ -376,9 +376,9 @@ export default function Dashboard() {
                           <TableCell className="text-[hsl(220,10%,50%)] text-xs">{s.utm_campaign || "—"}</TableCell>
                           <TableCell className="text-center">
                             {s.converted ? (
-                              <Badge className="bg-green-500/20 text-green-400 border-0 text-xs">✓ Sim</Badge>
+                              <Badge className="bg-green-500/20 text-green-400 border-0 text-xs">✓ Yes</Badge>
                             ) : (
-                              <Badge className="bg-[hsl(220,15%,18%)] text-[hsl(220,10%,45%)] border-0 text-xs">Pendente</Badge>
+                              <Badge className="bg-[hsl(220,15%,18%)] text-[hsl(220,10%,45%)] border-0 text-xs">Pending</Badge>
                             )}
                           </TableCell>
                         </TableRow>
