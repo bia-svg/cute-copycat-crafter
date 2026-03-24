@@ -166,9 +166,9 @@ export default function Dashboard() {
           <TabsContent value="overview" className="space-y-6 mt-4">
             {/* KPI Cards */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <MetricCard title="Besucher" value={totals.visitors} icon={Users} change={8.3} />
-              <MetricCard title="Formular-Leads" value={totals.formSubmissions} icon={FileText} change={12.5} />
-              <MetricCard title="WhatsApp Klicks" value={totals.whatsappClicks} icon={MessageCircle} change={-2.1} />
+              <MetricCard title="Visitors" value={totals.visitors} icon={Users} change={8.3} />
+              <MetricCard title="Form Leads" value={totals.formSubmissions} icon={FileText} change={12.5} />
+              <MetricCard title="WhatsApp Clicks" value={totals.whatsappClicks} icon={MessageCircle} change={-2.1} />
               <MetricCard title="Conversion Rate" value={`${conversionRate}%`} icon={TrendingUp} change={3.7} />
             </div>
 
