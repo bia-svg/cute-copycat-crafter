@@ -15,7 +15,7 @@ import {
   CheckCircle, BookOpen, Clock, ArrowRight, Award
 } from "lucide-react";
 
-const GOOGLE_REVIEWS_URL = "https://share.google/9hUU4WXKePPhY8VWE";
+const GOOGLE_REVIEWS_URL = "#";
 
 export default function SeminarAblauf() {
   const { language, country, t, showCH } = useLanguage();
