@@ -325,8 +325,8 @@ export default function Dashboard() {
                             {c.source === "google_ads" ? "Google Ads" : c.source === "organic" ? "Organic" : c.source === "direct" ? "Direct" : "Referral"}
                           </Badge>
                         </TableCell>
-                        <TableCell className="text-right text-white">{c.spend > 0 ? `CHF ${c.spend.toLocaleString("de-CH")}` : "—"}</TableCell>
-                        <TableCell className="text-right text-white">{c.clicks.toLocaleString("de-CH")}</TableCell>
+                        <TableCell className="text-right text-white">{c.spend > 0 ? `CHF ${c.spend.toLocaleString("en-US")}` : "—"}</TableCell>
+                        <TableCell className="text-right text-white">{c.clicks.toLocaleString("en-US")}</TableCell>
                         <TableCell className="text-right text-white">{c.leads}</TableCell>
                         <TableCell className="text-right text-white">{c.conversions}</TableCell>
                         <TableCell className="text-right text-white">{c.conversions > 0 && c.spend > 0 ? `CHF ${(c.spend / c.conversions).toFixed(0)}` : "—"}</TableCell>
