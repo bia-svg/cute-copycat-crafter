@@ -271,9 +271,9 @@ export default function Dashboard() {
                 <Table>
                   <TableHeader>
                     <TableRow className="border-[hsl(220,15%,18%)] hover:bg-transparent">
-                      <TableHead className="text-[hsl(220,10%,50%)]">Seite</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Aufrufe</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Ø Verweildauer</TableHead>
+                      <TableHead className="text-[hsl(220,10%,50%)]">Page</TableHead>
+                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Views</TableHead>
+                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Avg. Time</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
