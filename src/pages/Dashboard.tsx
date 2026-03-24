@@ -398,7 +398,7 @@ export default function Dashboard() {
               </CardHeader>
               <CardContent>
                 {loginLogs.length === 0 ? (
-                  <p className="text-[hsl(220,10%,45%)] text-sm py-8 text-center">Noch keine Login-Einträge vorhanden.</p>
+                  <p className="text-[hsl(220,10%,45%)] text-sm py-8 text-center">No login entries yet.</p>
                 ) : (
                   <Table>
                     <TableHeader>
