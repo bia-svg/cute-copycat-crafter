@@ -134,9 +134,6 @@ export default function Header() {
             <a href="tel:+41448880901" className="flex items-center gap-1 hover:underline">
               <Phone className="w-3 h-3" /> +41 44 888 09 01
             </a>
-            <a href="mailto:praxis@david-woods.ch" className="flex items-center gap-1 hover:underline">
-              <Mail className="w-3 h-3" /> praxis@david-woods.ch
-            </a>
           </div>
           <div className="flex items-center gap-3 ml-auto">
             {/* Country selector */}

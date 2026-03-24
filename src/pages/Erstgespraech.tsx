@@ -62,28 +62,29 @@ export default function Erstgespraech() {
                     <Phone className="w-4 h-4 text-[#1B3A5C]" /> +49 171 9539922
                   </a>
                 )}
-                <a href="mailto:info@david-j-woods.com" className="flex items-center gap-2 text-sm hover:text-[#1B3A5C] transition-colors">
-                  <Mail className="w-4 h-4 text-[#1B3A5C]" /> info@david-j-woods.com
-                </a>
                 {showCH && (
                   <>
                     {isInternational && <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-1">🇨🇭 {isDE ? "Schweiz" : "Switzerland"}</p>}
-                    <a href="https://maps.google.com/?q=5+Elements+TCM,+Usteristrasse+23,+8001+Zürich" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm hover:text-[#2E7D32] transition-colors">
+                    <a href="https://maps.google.com/?q=5+Elements+TCM+GmbH,+Usteristrasse+23,+8001+Zürich" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm hover:text-[#2E7D32] transition-colors">
                       <MapPin className="w-4 h-4 text-[#1B3A5C] mt-0.5 shrink-0" />
-                      5 Elements TCM, Usteristrasse 23, 8001 Zürich
+                      5 Elements TCM GmbH, Beim Löwenplatz, Usteristrasse 23, 8001 Zürich
                     </a>
                     <a href="https://maps.google.com/?q=Fit+und+Gesund+Center,+Churzhaslen+3,+8733+Eschenbach" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm hover:text-[#2E7D32] transition-colors">
                       <MapPin className="w-4 h-4 text-[#1B3A5C] mt-0.5 shrink-0" />
-                      Fit und Gesund Center, Churzhaslen 3, 8733 Eschenbach
+                      Fit+Gsund, Churzhaslen 3, 8733 Eschenbach (am Zürichsee)
                     </a>
                   </>
                 )}
                 {showDE && (
                   <>
                     {isInternational && <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-2">🇩🇪 {isDE ? "Deutschland" : "Germany"}</p>}
-                    <a href="https://maps.google.com/?q=Regus+HELIO+Center,+Viktoriastraße+3b,+86150+Augsburg" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm hover:text-[#2E7D32] transition-colors">
+                    <a href="https://maps.google.com/?q=Regus,+Viktoria+Str.+3b,+86150+Augsburg" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm hover:text-[#2E7D32] transition-colors">
                       <MapPin className="w-4 h-4 text-[#1B3A5C] mt-0.5 shrink-0" />
-                      Regus Business Center, HELIO Center, Viktoriastraße 3b, 86150 Augsburg
+                      {isDE ? "Sitzungen" : "Sessions"}: Regus, Viktoria Str. 3b, 2. OG, 86150 Augsburg
+                    </a>
+                    <a href="https://maps.google.com/?q=Hotel+am+Alten+Park,+Fröhlich+Str.+17,+86150+Augsburg" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm hover:text-[#2E7D32] transition-colors">
+                      <MapPin className="w-4 h-4 text-[#1B3A5C] mt-0.5 shrink-0" />
+                      {isDE ? "Seminare" : "Seminars"}: Hotel am Alten Park, Fröhlich Str. 17, 86150 Augsburg
                     </a>
                   </>
                 )}

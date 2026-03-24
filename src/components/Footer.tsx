@@ -29,32 +29,41 @@ export default function Footer() {
             <h4 className="font-semibold mb-3">{isEN ? "Contact" : "Kontakt"}</h4>
             <div className="space-y-2 text-sm opacity-80">
               {showCH && (
-                <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                  <div>
-                    <div className="font-medium opacity-100">Zürich</div>
-                    <div>Badenerstrasse 549, 8048 Zürich</div>
-                    <a href="tel:+41448880901" className="flex items-center gap-1 mt-1 hover:underline">
-                      <Phone className="w-3 h-3" /> +41 44 888 09 01
-                    </a>
+                <>
+                  <div className="flex items-start gap-2">
+                    <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-medium opacity-100">Zürich</div>
+                      <div>5 Elements TCM GmbH, Beim Löwenplatz</div>
+                      <div>Usteristrasse 23, 8001 Zürich</div>
+                    </div>
                   </div>
-                </div>
+                  <div className="flex items-start gap-2">
+                    <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-medium opacity-100">Eschenbach</div>
+                      <div>Fit+Gsund, Churzhaslen 3</div>
+                      <div>8733 Eschenbach (am Zürichsee)</div>
+                    </div>
+                  </div>
+                  <a href="tel:+41448880901" className="flex items-center gap-1 mt-1 hover:underline">
+                    <Phone className="w-3 h-3" /> +41 44 888 09 01
+                  </a>
+                </>
               )}
               {showDE && (
                 <div className="flex items-start gap-2 mt-3">
                   <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
                   <div>
                     <div className="font-medium opacity-100">Augsburg</div>
-                    <div>Bgm.-Aurnhammer-Str. 14, 86199 Augsburg</div>
+                    <div>Regus, Viktoria Str. 3b, 2. OG</div>
+                    <div>86150 Augsburg</div>
                     <a href="tel:+4982147084747" className="flex items-center gap-1 mt-1 hover:underline">
                       <Phone className="w-3 h-3" /> +49 821 470 847 47
                     </a>
                   </div>
                 </div>
               )}
-              <a href="mailto:praxis@david-woods.ch" className="flex items-center gap-2 mt-3 hover:underline">
-                <Mail className="w-4 h-4" /> praxis@david-woods.ch
-              </a>
             </div>
           </div>
 
