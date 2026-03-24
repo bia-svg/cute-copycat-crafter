@@ -24,6 +24,21 @@ const SEMINAR_DATES_DE = [
 
 type FormType = "session" | "seminar";
 
+/* ── Country phone codes with max digits ── */
+const PHONE_COUNTRIES = [
+  { code: "+41", flag: "🇨🇭", name: "Schweiz", maxDigits: 9, placeholder: "79 123 45 67" },
+  { code: "+49", flag: "🇩🇪", name: "Deutschland", maxDigits: 11, placeholder: "171 1234567" },
+  { code: "+43", flag: "🇦🇹", name: "Österreich", maxDigits: 10, placeholder: "664 1234567" },
+  { code: "+39", flag: "🇮🇹", name: "Italien", maxDigits: 10, placeholder: "312 345 6789" },
+  { code: "+33", flag: "🇫🇷", name: "Frankreich", maxDigits: 9, placeholder: "6 12 34 56 78" },
+  { code: "+44", flag: "🇬🇧", name: "Großbritannien", maxDigits: 10, placeholder: "7911 123456" },
+  { code: "+31", flag: "🇳🇱", name: "Niederlande", maxDigits: 9, placeholder: "6 12345678" },
+  { code: "+34", flag: "🇪🇸", name: "Spanien", maxDigits: 9, placeholder: "612 345 678" },
+  { code: "+351", flag: "🇵🇹", name: "Portugal", maxDigits: 9, placeholder: "912 345 678" },
+  { code: "+55", flag: "🇧🇷", name: "Brasilien", maxDigits: 11, placeholder: "11 91234-5678" },
+  { code: "+1", flag: "🇺🇸", name: "USA / Kanada", maxDigits: 10, placeholder: "202 555 0123" },
+];
+
 export default function Erstgespraech() {
   const { language, country, t, isSwiss, isInternational, showCH, showDE } = useLanguage();
   const isEN = language === "en";
