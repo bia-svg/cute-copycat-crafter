@@ -1,6 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
+import davidPortrait from "@/assets/david-woods-portrait.jpg";
 
 
 import { Button } from "@/components/ui/button";
