@@ -47,11 +47,11 @@ export default function CityZurich() {
               <div className="space-y-2 mb-6">
                 <div className="flex items-start gap-2 text-sm text-muted-foreground border border-border p-3 bg-[#f4f3ef]">
                   <MapPin className="w-4 h-4 mt-0.5 text-[#1B3A5C] shrink-0" />
-                  <span>5 Elements TCM, Usteristrasse 23, 8001 Zürich</span>
+                  <span>5 Elements TCM GmbH, Beim Löwenplatz, Usteristrasse 23, 8001 Zürich</span>
                 </div>
                 <div className="flex items-start gap-2 text-sm text-muted-foreground border border-border p-3 bg-[#f4f3ef]">
                   <MapPin className="w-4 h-4 mt-0.5 text-[#1B3A5C] shrink-0" />
-                  <span>Fit und Gesund Center, Churzhaslen 3, 8733 Eschenbach</span>
+                  <span>Fit+Gsund, Churzhaslen 3, 8733 Eschenbach ({isEN ? "on Lake Zurich" : "am Zürichsee"})</span>
                 </div>
               </div>
               <Link to={`/${language}/${country}/erstgespraech`}>
