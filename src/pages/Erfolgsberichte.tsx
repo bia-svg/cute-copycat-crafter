@@ -1,134 +1,138 @@
 /*
  * Erfolgsberichte (Success Stories) — Video Testimonials
- * Replicates and improves on original david-j-woods.com/erfolgsberichte/
+ * Replicates content from david-j-woods.com/erfolgsberichte/
  */
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getPath } from "@/lib/routes";
-import { CDN } from "@/lib/cdn";
-
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import {
-  Star, Play, Quote, ArrowRight, CheckCircle, MessageSquare
-} from "lucide-react";
+import { Star, MessageSquare } from "lucide-react";
 
-const GOOGLE_REVIEWS_URL = "#";
+const videoTestimonials = [
+  {
+    name: "Sibylle Wenger",
+    vimeoId: "414796794",
+    topicDE: "Balance Coach & Familientherapeutin",
+    topicEN: "Balance Coach & Family Therapist",
+    quoteDE: "Mein Name ist Sibylle Wenger; ich bin Balance Coach und systemischer Familientherapeut. David J. Woods habe ich vor ungefähr acht Jahren über Freunde kennengelernt. Damals habe ich ihm erzählt, dass ich in die Coaching-Schiene gehen will. Er erklärte mir daraufhin, dass die Hypnose etwas ganz Tolles für mich wäre und lud mich ein, seine erste Probandin zu sein.",
+    quoteEN: "My name is Sibylle Wenger; I'm a balance coach and systemic family therapist. I met David J. Woods about eight years ago through friends. Back then I told him I wanted to go into coaching. He explained that hypnosis would be something great for me and invited me to be his first test subject.",
+  },
+  {
+    name: "Helmut Sokopp",
+    vimeoId: "420049552",
+    topicDE: "Hypnose-Praxis München & Los Angeles",
+    topicEN: "Hypnosis Practice Munich & Los Angeles",
+    quoteDE: "Mein Name ist Helmut Sokopp; ich bin 45 Jahre alt und habe meine Hypnose-Praxis in München. Schon vor über 15 Jahren habe ich meine Hypnose Ausbildung bei David J. Woods gemacht. Ich pendle immer hin und her zwischen Los Angeles und München und arbeite in beiden Ländern im Bereich Coaching.",
+    quoteEN: "My name is Helmut Sokopp; I'm 45 years old and have my hypnosis practice in Munich. I did my hypnosis training with David J. Woods over 15 years ago. I commute between Los Angeles and Munich and work in coaching in both countries.",
+  },
+  {
+    name: "Marcus Schönberger",
+    vimeoId: "420051234",
+    topicDE: "Spezialist für Vermögenssicherung",
+    topicEN: "Asset Protection Specialist",
+    quoteDE: "Mein Name ist Marcus Schönberger; ich bin Spezialist für Vermögenssicherung. Ich habe David J. Woods auf einem Vertriebsseminar kennenlernen dürfen. Damals war ich schon in Trennung beziehungsweise schon in der Scheidung und dann war es für mich sehr akut, sodass David mit mir eine Blitzhypnose gemacht hat.",
+    quoteEN: "My name is Marcus Schönberger; I'm a specialist in asset protection. I met David J. Woods at a sales seminar. At the time I was already separating — going through a divorce — and it was very acute for me, so David did a flash hypnosis session with me.",
+  },
+  {
+    name: "Michael Cappello",
+    vimeoId: "420057448",
+    topicDE: "Geschäftsführer & Business Coach",
+    topicEN: "CEO & Business Coach",
+    quoteDE: "Mein Name ist Michael Cappello; ich bin seit über 20 Jahren Geschäftsführer in unterschiedlichen Unternehmen und richte diese strategisch neu aus. Dazu habe ich mich bereits im Bereich Business Coaching und Werte-und-Sinn Coaching engagiert, wobei ich Menschen auf ihrem Weg zum persönlichen Erfolg begleite.",
+    quoteEN: "My name is Michael Cappello; I've been a managing director in various companies for over 20 years, strategically realigning them. I've also been involved in business coaching and values-and-purpose coaching, guiding people on their path to personal success.",
+  },
+  {
+    name: "Sina Wegener",
+    vimeoId: "420053678",
+    topicDE: "Opernsängerin & Gesangslehrerin",
+    topicEN: "Opera Singer & Voice Teacher",
+    quoteDE: "Mein Name ist Sina Wegener; ich bin studierte Opernsängerin und Gesangslehrerin aus Karlsruhe. Auf die Hypnose bin ich schon vor ungefähr einem Jahr gestoßen. Damals habe ich auf YouTube Videos über Hypnose gefunden, aufgrund meiner persönlichen Geschichte, da ich einfach schon seit vier bis fünf Jahren dabei bin, mich persönlich weiterzuentwickeln.",
+    quoteEN: "My name is Sina Wegener; I'm a trained opera singer and voice teacher from Karlsruhe. I discovered hypnosis about a year ago when I found videos about it on YouTube, driven by my personal journey of self-development over the past four to five years.",
+  },
+  {
+    name: "Nora Lobjanidze",
+    vimeoId: "423800554",
+    topicDE: "Fitness-Model, Moderatorin & Coach",
+    topicEN: "Fitness Model, Presenter & Coach",
+    quoteDE: "Mein Name ist Nora Lobjanidze; ich bin Fitness-Model, Moderatorin und Coach. Ich habe vor ungefähr drei bis vier Jahren die Hypnose Ausbildung bei David J. Woods gemacht und ich war einfach begeistert. Unabhängig davon, dass ich es für meine Kunden im Coaching einsetzen konnte, habe ich das gelernte Wissen auch für mich selbst genutzt.",
+    quoteEN: "My name is Nora Lobjanidze; I'm a fitness model, presenter and coach. I did my hypnosis training with David J. Woods about three to four years ago and I was simply amazed. Beyond using it for my coaching clients, I also applied the knowledge I learned to myself.",
+  },
+  {
+    name: "Benedikt Hessler",
+    vimeoId: "420047365",
+    topicDE: "Unternehmer & Energie-Branche",
+    topicEN: "Entrepreneur & Energy Sector",
+    quoteDE: "Mein Name ist Benedikt Hessler; ich bin beruflich selbstständig und erfülle den Menschen ihre Wohnwünsche. Zudem bin ich auch noch in der Energie-Branche tätig. Ich bin Kunde bei David J. Woods seit mittlerweile eineinhalb Jahren. Hier habe ich immer wieder Hypnose Sitzungen, die mich dabei unterstützen, voller Selbstvertrauen und Motivation zu sein.",
+    quoteEN: "My name is Benedikt Hessler; I'm self-employed, helping people fulfill their housing dreams, and I also work in the energy sector. I've been a client of David J. Woods for about a year and a half now, having regular hypnosis sessions that support me in being full of confidence and motivation.",
+  },
+];
 
 export default function Erfolgsberichte() {
-  const { language, country, t, showCH } = useLanguage();
+  const { language, country, showCH } = useLanguage();
   const isEN = language === "en";
-
-  const videoTestimonials = [
-    {
-      name: "Sibylle Wenger",
-      topicDE: "Raucherentwöhnung",
-      topicEN: "Smoking Cessation",
-      quoteDE: "Nach nur einer Sitzung war ich rauchfrei. David hat mir geholfen, eine 20-jährige Gewohnheit endlich loszulassen.",
-      quoteEN: "After just one session I was smoke-free. David helped me finally let go of a 20-year habit.",
-    },
-    {
-      name: "Helmut Sokopp",
-      topicDE: "Stressbewältigung",
-      topicEN: "Stress Management",
-      quoteDE: "Die Aktiv-Hypnose© hat mir geholfen, meinen Burnout zu überwinden und neue Kraft zu finden.",
-      quoteEN: "Aktiv-Hypnose© helped me overcome my burnout and find new strength.",
-    },
-    {
-      name: "Marcus Schönberger",
-      topicDE: "Gewichtsreduktion",
-      topicEN: "Weight Loss",
-      quoteDE: "Durch die Hypnose hat sich mein Essverhalten grundlegend verändert. 15 kg weniger und ich fühle mich großartig.",
-      quoteEN: "Through hypnosis my eating behavior fundamentally changed. 15 kg less and I feel great.",
-    },
-    {
-      name: "Michael Cappello",
-      topicDE: "Angstbewältigung",
-      topicEN: "Anxiety Relief",
-      quoteDE: "Meine Flugangst ist komplett verschwunden. Ich kann jetzt wieder ohne Probleme fliegen.",
-      quoteEN: "My fear of flying has completely disappeared. I can now fly again without any problems.",
-    },
-    {
-      name: "Sina Wegener",
-      topicDE: "Persönliche Entwicklung",
-      topicEN: "Personal Development",
-      quoteDE: "Die Sitzungen haben mir geholfen, mein Selbstbewusstsein aufzubauen und beruflich durchzustarten.",
-      quoteEN: "The sessions helped me build my self-confidence and take off professionally.",
-    },
-    {
-      name: "Nora Lobjanidze",
-      topicDE: "Trauma-Therapie",
-      topicEN: "Trauma Therapy",
-      quoteDE: "David hat mir geholfen, alte Traumata zu verarbeiten. Ich fühle mich endlich frei und leicht.",
-      quoteEN: "David helped me process old traumas. I finally feel free and light.",
-    },
-    {
-      name: "Benedikt Hessler",
-      topicDE: "Leistungssteigerung",
-      topicEN: "Performance Enhancement",
-      quoteDE: "Als Sportler hat mir die Hypnose geholfen, mentale Blockaden zu lösen und Bestleistungen abzurufen.",
-      quoteEN: "As an athlete, hypnosis helped me overcome mental blocks and achieve peak performance.",
-    },
-  ];
 
   return (
     <>
-
       {/* Hero */}
-      <section className="bg-[#f4f3ef] py-12 md:py-16">
+      <section className="bg-secondary py-12 md:py-16">
         <div className="container-main">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-3">
-              {isEN ? "Real Results, Real People" : "Echte Ergebnisse, echte Menschen"}
-            </p>
-            <h1 className="text-3xl md:text-4xl font-bold text-[#1B3A5C] mb-4" style={{ fontFamily: "Georgia, serif" }}>
-              {isEN ? "Success Stories" : "Erfolgsberichte"}
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "Success Stories from Our Satisfied Clients" : "Erfolgsberichte unserer zufriedenen Kunden"}
             </h1>
-            <p className="text-lg text-[#55504f] leading-relaxed mb-6">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               {isEN
-                ? "Discover how our hypnotherapy sessions and success coaching have sustainably changed the lives of our clients and helped them achieve new successes."
+                ? "Discover how our hypnosis sessions and success coaching have sustainably changed the lives of our clients and helped them achieve new successes."
                 : "Erfahren Sie, wie unsere Hypnosesitzungen und Erfolgscoachings das Leben unserer Klienten nachhaltig verändert und ihnen zu neuen Erfolgen verholfen haben."}
             </p>
-            <div className="inline-flex items-center gap-2 text-sm text-[#55504f]">
+            <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-0.5">
-                {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                ))}
               </div>
-              <span className="font-semibold">5.0 / 5</span>
+              <span className="font-semibold text-foreground">5.0 / 5</span>
               <span>— 255 Google {isEN ? "Reviews" : "Bewertungen"}</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Video Testimonials Grid */}
-      <section className="bg-white py-12 md:py-16">
+      {/* Video Testimonials */}
+      <section className="bg-background py-12 md:py-16">
         <div className="container-main">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {videoTestimonials.map((testimonial, i) => (
-              <div key={i} className="border border-border rounded-lg overflow-hidden bg-white hover:shadow-md transition-shadow">
-                {/* Video placeholder */}
-                <div className="relative bg-gradient-to-br from-[#1B3A5C] to-[#2a5a8c] aspect-video flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-2 backdrop-blur-sm">
-                      <Play className="w-6 h-6 text-white fill-white ml-0.5" />
-                    </div>
-                    <p className="text-sm font-medium opacity-80">{isEN ? "Video Testimonial" : "Video-Erfahrungsbericht"}</p>
-                  </div>
+          <div className="space-y-12 max-w-4xl mx-auto">
+            {videoTestimonials.map((t, i) => (
+              <div key={i} className="border border-border rounded-lg overflow-hidden bg-card">
+                {/* Vimeo Embed */}
+                <div className="aspect-video">
+                  <iframe
+                    src={`https://player.vimeo.com/video/${t.vimeoId}?h=0&badge=0&autopause=0&player_id=0&app_id=58479`}
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title={t.name}
+                    loading="lazy"
+                  />
                 </div>
                 {/* Content */}
-                <div className="p-5">
-                  <div className="flex items-center gap-0.5 mb-2">
-                    {[1,2,3,4,5].map(j => <Star key={j} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />)}
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <h3 className="text-lg font-bold text-foreground">{t.name}</h3>
+                    <span className="text-xs text-muted-foreground bg-secondary px-2 py-0.5 rounded">
+                      {isEN ? t.topicEN : t.topicDE}
+                    </span>
                   </div>
-                  <Quote className="w-5 h-5 text-[#2E7D32]/30 mb-1" />
-                  <p className="text-sm text-[#55504f] italic leading-relaxed mb-3">
-                    {isEN ? testimonial.quoteEN : testimonial.quoteDE}
+                  <div className="flex items-center gap-0.5 mb-3">
+                    {[1, 2, 3, 4, 5].map((j) => (
+                      <Star key={j} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed italic">
+                    &bdquo;{isEN ? t.quoteEN : t.quoteDE}&ldquo;
                   </p>
-                  <div className="border-t border-border pt-3">
-                    <p className="text-sm font-semibold text-[#1B3A5C]">{testimonial.name}</p>
-                    <p className="text-xs text-muted-foreground">{isEN ? testimonial.topicEN : testimonial.topicDE}</p>
-                  </div>
                 </div>
               </div>
             ))}
@@ -137,7 +141,7 @@ export default function Erfolgsberichte() {
       </section>
 
       {/* Stats Bar */}
-      <section className="bg-[#f4f3ef] py-10">
+      <section className="bg-secondary py-10">
         <div className="container-main">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto text-center">
             {[
@@ -147,7 +151,7 @@ export default function Erfolgsberichte() {
               { num: "5.0/5", labelDE: "Google Bewertung", labelEN: "Google Rating" },
             ].map((stat, i) => (
               <div key={i}>
-                <p className="text-2xl font-bold text-[#2E7D32]">{stat.num}</p>
+                <p className="text-2xl font-bold text-primary">{stat.num}</p>
                 <p className="text-xs text-muted-foreground mt-1">{isEN ? stat.labelEN : stat.labelDE}</p>
               </div>
             ))}
@@ -155,37 +159,19 @@ export default function Erfolgsberichte() {
         </div>
       </section>
 
-      {/* Google Reviews Info */}
-      <section className="bg-white py-12 md:py-16">
-        <div className="container-main text-center">
-          <h2 className="text-2xl font-bold text-[#1B3A5C] mb-4" style={{ fontFamily: "Georgia, serif" }}>
-            {isEN ? "Google Reviews" : "Google-Bewertungen"}
-          </h2>
-          <p className="text-[#55504f] max-w-xl mx-auto mb-6">
-            {isEN
-              ? "See what our clients say about their experience with David J. Woods on Google."
-              : "Lesen Sie, was unsere Klienten über ihre Erfahrung mit David J. Woods bei Google sagen."}
-          </p>
-          <div className="inline-flex items-center gap-2 text-sm">
-            {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
-            <span className="font-semibold text-[#1B3A5C] ml-1">5.0 / 5 — 255 {isEN ? "Reviews" : "Bewertungen"}</span>
-          </div>
-        </div>
-      </section>
-
       {/* Final CTA */}
-      <section className="bg-[#1B3A5C] text-white py-12 md:py-16">
+      <section className="bg-primary text-primary-foreground py-12 md:py-16">
         <div className="container-main text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Write Your Own Success Story" : "Schreiben Sie Ihre eigene Erfolgsgeschichte"}
           </h2>
-          <p className="text-white/80 max-w-xl mx-auto mb-6">
+          <p className="opacity-80 max-w-xl mx-auto mb-6">
             {isEN
               ? "Book your free discovery call and take the first step towards positive change."
               : "Vereinbaren Sie Ihr kostenloses Erstgespräch und machen Sie den ersten Schritt zu positiver Veränderung."}
           </p>
           <Link to={getPath("contact", language, country)}>
-            <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3">
+            <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold px-8 py-3">
               <MessageSquare className="w-4 h-4 mr-2" />
               {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
             </Button>
