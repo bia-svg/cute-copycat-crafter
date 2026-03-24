@@ -4,7 +4,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
 import {
-  Menu, X, ChevronDown, Phone, Mail,
+  Menu, X, ChevronDown, Phone,
   Cigarette, Brain, Scale, Flame, HeartPulse, Users,
   GraduationCap, Building2, Tv, Star, MessageSquare, User,
   BookOpen
