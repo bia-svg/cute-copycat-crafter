@@ -1,6 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
+import davidPortrait from "@/assets/david-woods-portrait.jpg";
 
 
 import { Button } from "@/components/ui/button";
@@ -82,7 +83,7 @@ export default function UeberUns() {
             {/* Sidebar — Photo + Info */}
             <div>
               <div className="border border-border sticky top-32">
-                <img src={CDN.aboutAktivHypnose} alt="David J. Woods" className="w-full h-auto" />
+                <img src={davidPortrait} alt="David J. Woods" className="w-full h-auto object-cover" />
                 <div className="p-4 bg-[#f4f3ef]">
                   <h3 className="font-bold text-[#1B3A5C] mb-1">David J. Woods</h3>
                   <p className="text-xs text-muted-foreground">Lic.Psych. · Hypnotherapeut</p>
