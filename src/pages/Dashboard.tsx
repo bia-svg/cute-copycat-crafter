@@ -24,7 +24,6 @@ import {
   Eye, DollarSign, Target, ArrowUpRight, ArrowDownRight
 } from "lucide-react";
 import { format, subDays, startOfWeek, startOfMonth, parseISO } from "date-fns";
-import { de } from "date-fns/locale";
 
 type Period = "daily" | "weekly" | "monthly" | "total";
 
