@@ -52,6 +52,22 @@ export default function Erstgespraech() {
   const [selectedDate, setSelectedDate] = useState(searchParams.get("date") || "");
   const [selectedConcern, setSelectedConcern] = useState(searchParams.get("concern") || "");
 
+  // Phone country code — CH pre-selected for Swiss site, DE for German site
+  const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
+  const [phoneCountry, setPhoneCountry] = useState(defaultPhoneCountry);
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const selectedPhoneCountry = PHONE_COUNTRIES.find(c => c.code === phoneCountry) || PHONE_COUNTRIES[0];
+
+  const handlePhoneChange = useCallback((value: string) => {
+    // Only allow digits and spaces
+    const cleaned = value.replace(/[^\d\s]/g, "");
+    const digitsOnly = cleaned.replace(/\s/g, "");
+    if (digitsOnly.length <= selectedPhoneCountry.maxDigits) {
+      setPhoneNumber(cleaned);
+    }
+  }, [selectedPhoneCountry.maxDigits]);
+
   useEffect(() => {
     if (searchParams.get("type") === "seminar") {
       setFormType("seminar");
