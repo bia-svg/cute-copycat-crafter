@@ -415,9 +415,9 @@ export default function Dashboard() {
                           <TableCell className="text-white">{log.email}</TableCell>
                           <TableCell className="text-center">
                             {log.success ? (
-                              <Badge className="bg-green-500/20 text-green-400 border-0 text-xs">Erfolgreich</Badge>
+                              <Badge className="bg-green-500/20 text-green-400 border-0 text-xs">Success</Badge>
                             ) : (
-                              <Badge className="bg-red-500/20 text-red-400 border-0 text-xs">Fehlgeschlagen</Badge>
+                              <Badge className="bg-red-500/20 text-red-400 border-0 text-xs">Failed</Badge>
                             )}
                           </TableCell>
                         </TableRow>
