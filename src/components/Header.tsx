@@ -246,7 +246,41 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-card border-t border-border max-h-[80vh] overflow-y-auto">
-          <MobileSection id="sessions" title={t("nav.sessions")} items={[...therapyGoals, ...audiences]} />
+          {/* Sessions with subgroups */}
+          <div className="border-b border-border">
+            <button onClick={() => setMobileAccordion(mobileAccordion === "sessions" ? null : "sessions")} className="flex items-center justify-between w-full px-4 py-3 text-left font-medium text-foreground">
+              {t("nav.sessions")}
+              <ChevronDown className={`w-4 h-4 transition-transform ${mobileAccordion === "sessions" ? "rotate-180" : ""}`} />
+            </button>
+            {mobileAccordion === "sessions" && (
+              <div className="px-4 pb-3 space-y-1">
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-1 pb-1">
+                  {isDE ? "Therapieziele" : "Therapy Goals"}
+                </p>
+                {therapyGoals.map((item) => (
+                  <Link key={item.label} to={item.href} onClick={() => setMobileOpen(false)} className="flex items-start gap-3 p-2 rounded-md hover:bg-secondary">
+                    <span className="text-primary mt-0.5">{item.icon}</span>
+                    <div>
+                      <div className="text-sm font-medium text-foreground">{item.label}</div>
+                      <div className="text-xs text-muted-foreground">{item.desc}</div>
+                    </div>
+                  </Link>
+                ))}
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-3 pb-1">
+                  {isDE ? "Zielgruppen" : "Audiences"}
+                </p>
+                {audiences.map((item) => (
+                  <Link key={item.label} to={item.href} onClick={() => setMobileOpen(false)} className="flex items-start gap-3 p-2 rounded-md hover:bg-secondary">
+                    <span className="text-primary mt-0.5">{item.icon}</span>
+                    <div>
+                      <div className="text-sm font-medium text-foreground">{item.label}</div>
+                      <div className="text-xs text-muted-foreground">{item.desc}</div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
           <Link to={getPath("training", language, country)} onClick={() => setMobileOpen(false)}
             className="block px-4 py-3 font-medium text-foreground border-b border-border">
             {t("nav.training")}
