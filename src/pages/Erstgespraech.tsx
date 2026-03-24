@@ -200,7 +200,29 @@ export default function Erstgespraech() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Phone" : "Telefonnummer"} *</label>
-                      <input type="tel" required autoComplete="tel" className={inputClasses} />
+                      <div className="flex">
+                        <select
+                          value={phoneCountry}
+                          onChange={(e) => { setPhoneCountry(e.target.value); setPhoneNumber(""); }}
+                          className="border border-r-0 border-border px-2 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors rounded-none w-[100px] shrink-0"
+                        >
+                          {PHONE_COUNTRIES.map(c => (
+                            <option key={c.code} value={c.code}>{c.flag} {c.code}</option>
+                          ))}
+                        </select>
+                        <input
+                          type="tel"
+                          required
+                          value={phoneNumber}
+                          onChange={(e) => handlePhoneChange(e.target.value)}
+                          placeholder={selectedPhoneCountry.placeholder}
+                          maxLength={selectedPhoneCountry.maxDigits + 4}
+                          className={`${inputClasses} border-l-0`}
+                        />
+                      </div>
+                      <p className="text-[10px] text-muted-foreground mt-0.5">
+                        {isEN ? `Max ${selectedPhoneCountry.maxDigits} digits` : `Max. ${selectedPhoneCountry.maxDigits} Ziffern`}
+                      </p>
                     </div>
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Postal Code / City" : "PLZ / Ortschaft"}</label>
