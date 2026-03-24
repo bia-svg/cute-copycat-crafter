@@ -7,7 +7,7 @@ import {
   Menu, X, ChevronDown, Phone,
   Cigarette, Brain, Scale, Flame, HeartPulse, Users,
   GraduationCap, Building2, Tv, Star, MessageSquare, User,
-  BookOpen
+  BookOpen, MapPin, Trophy, Newspaper, Award, Calendar
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -56,6 +56,8 @@ export default function Header() {
     menuTimeout.current = setTimeout(() => setActiveMenu(null), 150);
   };
 
+  /* ── Menu Data ── */
+
   const therapyGoals = [
     { icon: <Cigarette className="w-5 h-5" />, label: isDE ? "Raucherentwöhnung" : "Stop Smoking", desc: isDE ? "Endlich rauchfrei werden" : "Quit smoking permanently", href: getPath("smoking", language, country) },
     { icon: <Brain className="w-5 h-5" />, label: isDE ? "Ängste & Phobien" : "Anxiety & Phobias", desc: isDE ? "Ängste dauerhaft überwinden" : "Overcome fears permanently", href: getPath("anxiety", language, country) },
@@ -65,18 +67,27 @@ export default function Header() {
   ];
 
   const audiences = [
-    { icon: <User className="w-5 h-5" />, label: isDE ? "Erwachsene Einzelsitzungen" : "Adult Individual Sessions", desc: isDE ? "Persönliche 1:1 Sitzungen mit David" : "Personal 1:1 sessions with David", href: getPath("smoking", language, country) },
+    { icon: <User className="w-5 h-5" />, label: isDE ? "Erwachsene" : "Adult Individual", desc: isDE ? "Persönliche 1:1 Sitzungen mit David" : "Personal 1:1 sessions with David", href: getPath("smoking", language, country) },
     { icon: <Users className="w-5 h-5" />, label: isDE ? "Kinder & Jugendliche" : "Children & Teens", desc: isDE ? "Sanfte Therapie mit Kathryn" : "Gentle therapy with Kathryn", href: getPath("children", language, country) },
     { icon: <Building2 className="w-5 h-5" />, label: isDE ? "Firmen & Unternehmen" : "Corporate & Business", desc: isDE ? "Coaching für Teams & Führungskräfte" : "Coaching for teams & leaders", href: getPath("corporate", language, country) },
+  ];
+
+  const trainingItems = [
+    { icon: <GraduationCap className="w-5 h-5" />, label: isDE ? "Hypnose-Ausbildung" : "Hypnosis Training", desc: isDE ? "NGH-zertifiziertes Therapeuten-Diplom" : "NGH-certified therapist diploma", href: getPath("training", language, country) },
+    { icon: <Calendar className="w-5 h-5" />, label: isDE ? "Seminar-Ablauf" : "Seminar Schedule", desc: isDE ? "6-Tage Intensiv-Curriculum" : "6-day intensive curriculum", href: getPath("seminarSchedule", language, country) },
+    { icon: <Building2 className="w-5 h-5" />, label: isDE ? "Firmen-Coaching" : "Corporate Coaching", desc: isDE ? "Coaching für Teams & Führungskräfte" : "Coaching for teams & leaders", href: getPath("corporate", language, country) },
   ];
 
   const aboutItems = [
     { icon: <User className="w-5 h-5" />, label: isDE ? "David J. Woods & Team" : "David J. Woods & Team", desc: isDE ? "Lic.Psych. · Über 40 Jahre Erfahrung" : "Lic.Psych. · 40+ years experience", href: getPath("about", language, country) },
     { icon: <Tv className="w-5 h-5" />, label: isDE ? "TV & Medien" : "TV & Media", desc: isDE ? "Medienauftritte & Presse" : "Media appearances & press", href: getPath("media", language, country) },
     { icon: <Star className="w-5 h-5" />, label: isDE ? "Kundenmeinungen" : "Testimonials", desc: isDE ? "5.0/5 bei Google · 255 Bewertungen" : "5.0/5 on Google · 255 reviews", href: getPath("testimonials", language, country) },
-    { icon: <MessageSquare className="w-5 h-5" />, label: isDE ? "Erfolgsberichte" : "Success Stories", desc: isDE ? "Video-Erfahrungsberichte" : "Video testimonials", href: getPath("successStories", language, country) },
-    { icon: <BookOpen className="w-5 h-5" />, label: "Blog", desc: isDE ? "Artikel & Wissen rund um Hypnose" : "Articles about hypnosis", href: getPath("blog", language, country) },
+    { icon: <Trophy className="w-5 h-5" />, label: isDE ? "Erfolgsberichte" : "Success Stories", desc: isDE ? "Video-Erfahrungsberichte unserer Klienten" : "Video testimonials from our clients", href: getPath("successStories", language, country) },
+    { icon: <Newspaper className="w-5 h-5" />, label: "Blog", desc: isDE ? "Artikel & Wissen rund um Hypnose" : "Articles & knowledge about hypnosis", href: getPath("blog", language, country) },
+    { icon: <MapPin className="w-5 h-5" />, label: isDE ? "Standorte" : "Locations", desc: isDE ? "Unsere Praxen in der Schweiz & Deutschland" : "Our practices in Switzerland & Germany", href: getPath("locations", language, country) },
   ];
+
+  /* ── Shared Components ── */
 
   const MenuItemLink = ({ icon, label, desc, href }: { icon: React.ReactNode; label: string; desc: string; href: string }) => (
     <Link to={href} onClick={() => setActiveMenu(null)} className="flex items-start gap-3 p-3 rounded-md hover:bg-secondary transition-colors">
@@ -86,6 +97,12 @@ export default function Header() {
         <div className="text-xs text-muted-foreground">{desc}</div>
       </div>
     </Link>
+  );
+
+  const SidebarCard = ({ children }: { children: React.ReactNode }) => (
+    <div className="bg-secondary/50 border border-border rounded-lg p-5 space-y-3">
+      {children}
+    </div>
   );
 
   const MegaMenuPanel = ({ id, children }: { id: string; children: React.ReactNode }) => {
@@ -142,7 +159,6 @@ export default function Header() {
             )}
           </div>
           <div className="flex items-center gap-3 ml-auto">
-            {/* Country selector */}
             <div className="relative" ref={countryDropdownRef}>
               <button onClick={() => setCountryDropdownOpen(!countryDropdownOpen)} className="flex items-center gap-1 hover:underline">
                 {currentCountry.flag} <ChevronDown className="w-3 h-3" />
@@ -158,7 +174,6 @@ export default function Header() {
                 </div>
               )}
             </div>
-            {/* Language selector */}
             <div className="relative" ref={langDropdownRef}>
               <button onClick={() => setLangDropdownOpen(!langDropdownOpen)} className="flex items-center gap-1 hover:underline">
                 {currentLanguage.label} <ChevronDown className="w-3 h-3" />
@@ -210,14 +225,11 @@ export default function Header() {
               {t("nav.sessions")} <ChevronDown className="w-3.5 h-3.5" />
             </button>
           </div>
-          <Link to={getPath("training", language, country)} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary"
-            onMouseEnter={() => setActiveMenu(null)}>
-            {t("nav.training")}
-          </Link>
-          <Link to={getPath("corporate", language, country)} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary"
-            onMouseEnter={() => setActiveMenu(null)}>
-            {t("service.corporate")}
-          </Link>
+          <div className="relative" onMouseEnter={() => handleMouseEnter("training")} onMouseLeave={handleMouseLeave}>
+            <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary flex items-center gap-1">
+              {t("nav.training")} <ChevronDown className="w-3.5 h-3.5" />
+            </button>
+          </div>
           <div className="relative" onMouseEnter={() => handleMouseEnter("about")} onMouseLeave={handleMouseLeave}>
             <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary flex items-center gap-1">
               {t("nav.about")} <ChevronDown className="w-3.5 h-3.5" />
@@ -236,9 +248,9 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mega menu panels */}
+      {/* ── Mega Menu: Hypnosetherapie ── */}
       <MegaMenuPanel id="sessions">
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
               {isDE ? "Therapieziele" : "Therapy Goals"}
@@ -255,19 +267,94 @@ export default function Header() {
               {audiences.map(item => <MenuItemLink key={item.label} {...item} />)}
             </div>
           </div>
+          <SidebarCard>
+            <div className="flex items-center gap-2 mb-2">
+              <Award className="w-5 h-5 text-primary" />
+              <span className="font-semibold text-sm text-foreground">NGH International Trainer</span>
+            </div>
+            {showCH && (
+              <div className="flex items-center gap-2">
+                <Award className="w-5 h-5 text-primary" />
+                <span className="font-semibold text-sm text-foreground">EMR-Krankenkasse Konform</span>
+              </div>
+            )}
+          </SidebarCard>
         </div>
       </MegaMenuPanel>
 
+      {/* ── Mega Menu: Ausbildung ── */}
+      <MegaMenuPanel id="training">
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="md:col-span-2">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+              {isDE ? "Ausbildung & Seminare" : "Training & Seminars"}
+            </h4>
+            <div className="space-y-1">
+              {trainingItems.map(item => <MenuItemLink key={item.label} {...item} />)}
+            </div>
+          </div>
+          <SidebarCard>
+            <p className="font-semibold text-sm text-foreground mb-1">
+              {isDE ? "Nächste Termine" : "Upcoming Dates"}
+            </p>
+            <p className="text-xs text-muted-foreground mb-3">
+              {isDE ? "Kleine Gruppen · Maximale Lernintensität" : "Small groups · Maximum learning intensity"}
+            </p>
+            <div className="flex items-center gap-2 mb-1">
+              <Award className="w-4 h-4 text-primary" />
+              <span className="text-xs text-foreground">NGH Badge</span>
+            </div>
+            {showCH && (
+              <div className="flex items-center gap-2 mb-3">
+                <Award className="w-4 h-4 text-primary" />
+                <span className="text-xs text-foreground">EMR Badge</span>
+              </div>
+            )}
+            <Link to={getPath("training", language, country)} onClick={() => setActiveMenu(null)}>
+              <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs">
+                {isDE ? "Seminartermine ansehen" : "View Seminar Dates"}
+              </Button>
+            </Link>
+          </SidebarCard>
+        </div>
+      </MegaMenuPanel>
+
+      {/* ── Mega Menu: Über uns ── */}
       <MegaMenuPanel id="about">
-        <div className="max-w-lg space-y-1">
-          {aboutItems.map(item => <MenuItemLink key={item.label} {...item} />)}
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="md:col-span-2">
+            <div className="space-y-1">
+              {aboutItems.map(item => <MenuItemLink key={item.label} {...item} />)}
+            </div>
+          </div>
+          <SidebarCard>
+            <p className="font-semibold text-sm text-foreground">Lic.Psych. David J. Woods</p>
+            <p className="text-xs text-muted-foreground mb-2">
+              {isDE ? "Hypnotherapeut · Dozent & Fachautor" : "Hypnotherapist · Lecturer & Author"}
+            </p>
+            <div className="flex items-center gap-1 text-yellow-500 mb-3">
+              {"★★★★★".split("").map((s, i) => <span key={i}>{s}</span>)}
+              <span className="text-xs text-muted-foreground ml-1">5.0 (255)</span>
+            </div>
+            <Link to={getPath("about", language, country)} onClick={() => setActiveMenu(null)}>
+              <Button size="sm" variant="outline" className="w-full text-xs">
+                {isDE ? "Mehr erfahren" : "Learn More"}
+              </Button>
+            </Link>
+          </SidebarCard>
         </div>
       </MegaMenuPanel>
 
-      {/* Mobile menu */}
+      {/* ── Mobile Menu ── */}
       {mobileOpen && (
         <div className="lg:hidden bg-card border-t border-border max-h-[80vh] overflow-y-auto">
-          {/* Sessions with subgroups */}
+          {/* Home */}
+          <Link to={getPath("home", language, country)} onClick={() => setMobileOpen(false)}
+            className="block px-4 py-3 font-medium text-foreground border-b border-border">
+            Home
+          </Link>
+
+          {/* Hypnosetherapie */}
           <div className="border-b border-border">
             <button onClick={() => setMobileAccordion(mobileAccordion === "sessions" ? null : "sessions")} className="flex items-center justify-between w-full px-4 py-3 text-left font-medium text-foreground">
               {t("nav.sessions")}
@@ -302,15 +389,14 @@ export default function Header() {
               </div>
             )}
           </div>
-          <Link to={getPath("training", language, country)} onClick={() => setMobileOpen(false)}
-            className="block px-4 py-3 font-medium text-foreground border-b border-border">
-            {t("nav.training")}
-          </Link>
-          <Link to={getPath("corporate", language, country)} onClick={() => setMobileOpen(false)}
-            className="block px-4 py-3 font-medium text-foreground border-b border-border">
-            {t("service.corporate")}
-          </Link>
+
+          {/* Ausbildung */}
+          <MobileSection id="training" title={t("nav.training")} items={trainingItems} />
+
+          {/* Über uns */}
           <MobileSection id="about" title={t("nav.about")} items={aboutItems} />
+
+          {/* CTA */}
           <div className="p-4">
             <Link to={getPath("contact", language, country)} onClick={() => setMobileOpen(false)}>
               <Button className="w-full bg-cta text-cta-foreground hover:bg-cta/90">
