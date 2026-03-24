@@ -322,8 +322,8 @@ export default function Header() {
       {/* ── Mega Menu: Über uns ── */}
       <MegaMenuPanel id="about">
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="md:col-span-2">
-            <div className="space-y-1">
+           <div className="md:col-span-2">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1">
               {aboutItems.map(item => <MenuItemLink key={item.label} {...item} />)}
             </div>
           </div>
