@@ -263,7 +263,7 @@ export default function UeberUns() {
                   ? "With her psychological expertise, pedagogical experience and knowledge of homeopathy, Kathryn decisively enriches the team and strengthens the holistic focus of our work, where the whole person is at the center. She also serves as a lecturer in our hypnosis training programs, supporting participants as a knowledgeable contact person."
                   : "Mit ihrer psychologischen Expertise, pädagogischen Erfahrung und ihrem Wissen in Homöopathie bereichert Kathryn das Team entscheidend und stärkt den ganzheitlichen Schwerpunkt unserer Arbeit, bei dem der Mensch in seiner Gesamtheit im Mittelpunkt steht. Darüber hinaus steht sie als Dozentin in unseren Hypnoseausbildungen den Teilnehmerinnen und Teilnehmern als Begleitung und Unterstützung zur Seite."}
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 mb-6">
                 {[
                   isEN ? "Children & Adolescents" : "Kinder & Jugendliche",
                   "Hypno-Birthing",
@@ -277,6 +277,11 @@ export default function UeberUns() {
                   </span>
                 ))}
               </div>
+              <Link to={`${getPath("contact", language, country)}?concern=children`}>
+                <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-3">
+                  {isEN ? "Book Session for Children & Teens" : "Sitzung für Kinder & Jugendliche buchen"}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
