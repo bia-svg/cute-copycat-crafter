@@ -59,7 +59,7 @@ export default function DashboardLogin() {
               />
             </div>
             <div className="space-y-2">
-              <label className="text-sm text-[hsl(220,10%,65%)]">Passwort</label>
+              <label className="text-sm text-[hsl(220,10%,65%)]">Password</label>
               <Input
                 type="password"
                 value={password}
