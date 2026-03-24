@@ -90,13 +90,13 @@ export default function Erfolgsberichte() {
                 ? "Discover how our hypnotherapy sessions and success coaching have sustainably changed the lives of our clients and helped them achieve new successes."
                 : "Erfahren Sie, wie unsere Hypnosesitzungen und Erfolgscoachings das Leben unserer Klienten nachhaltig verändert und ihnen zu neuen Erfolgen verholfen haben."}
             </p>
-            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-[#55504f] hover:text-[#2E7D32] transition-colors">
+            <div className="inline-flex items-center gap-2 text-sm text-[#55504f]">
               <div className="flex items-center gap-0.5">
                 {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
               </div>
               <span className="font-semibold">5.0 / 5</span>
               <span>— 255 Google {isEN ? "Reviews" : "Bewertungen"}</span>
-            </a>
+            </div>
           </div>
         </div>
       </section>
