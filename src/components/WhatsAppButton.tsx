@@ -47,7 +47,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}
-      className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#1DA851] text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all hover:scale-110"
+      className="fixed bottom-20 right-4 z-50 bg-[#25D366] hover:bg-[#1DA851] text-white rounded-full p-3.5 shadow-lg hover:shadow-xl transition-all hover:scale-110 md:bottom-6 md:right-6 md:p-4"
       aria-label="WhatsApp"
     >
       <MessageCircle className="w-6 h-6" />
