@@ -87,6 +87,11 @@ export default function Footer() {
             <Link to={getPath("terms", language, country)} className="hover:underline">{t("footer.agb")}</Link>
           </div>
         </div>
+
+        {/* Medical Disclaimer */}
+        <div className="border-t border-primary-foreground/20 mt-6 pt-4 text-xs text-center opacity-60 max-w-3xl mx-auto">
+          Wir weisen ausdrücklich darauf hin, dass unsere Tätigkeit NICHT die Tätigkeit eines Arztes, Psychiaters oder Heilpraktikers ersetzt. Wir behandeln weder Krankheiten noch stellen wir medizinische Diagnosen.
+        </div>
       </div>
     </footer>
   );
