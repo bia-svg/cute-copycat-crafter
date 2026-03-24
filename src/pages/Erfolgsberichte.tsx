@@ -4,6 +4,8 @@
  */
 
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
+import { pageSEO } from "@/data/seo";
 import { getPath } from "@/lib/routes";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -74,6 +76,7 @@ export default function Erfolgsberichte() {
 
   return (
     <>
+      <SEO {...pageSEO.successStories} />
       {/* Hero */}
       <section className="bg-secondary py-12 md:py-16">
         <div className="container-main">

@@ -1,4 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
+import { pageSEO } from "@/data/seo";
 import { getPath } from "@/lib/routes";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -34,6 +36,8 @@ export default function Standorte() {
   ];
 
   return (
+    <>
+      <SEO {...pageSEO.locations} />
     <div className="min-h-screen bg-background">
       {/* Hero */}
       <section className="bg-primary text-primary-foreground py-16 md:py-24">
@@ -95,5 +99,6 @@ export default function Standorte() {
         </div>
       </section>
     </div>
+    </>
   );
 }

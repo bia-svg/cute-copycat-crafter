@@ -6,6 +6,7 @@
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getPath } from "@/lib/routes";
+import { Helmet } from "react-helmet-async";
 
 
 import { Button } from "@/components/ui/button";
@@ -59,8 +60,15 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
   const sections = isEN ? data.sectionsEN : (isSwiss ? data.sectionsCH : data.sectionsDE);
   const faq = isEN ? data.faqEN : data.faqCH;
 
+  const slug = isEN ? data.slugEN : (isSwiss ? data.slugCH : data.slugDE);
+
   return (
     <>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={metaDesc} />
+        <link rel="canonical" href={`https://david-j-woods.com/${language}/${country}/${slug}`} />
+      </Helmet>
 
       {/* Hero */}
       <section className="bg-white border-b border-border">

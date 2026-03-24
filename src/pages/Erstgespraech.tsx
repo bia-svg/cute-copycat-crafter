@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
+import { pageSEO } from "@/data/seo";
 import { getPath } from "@/lib/routes";
 
 
@@ -27,6 +29,7 @@ export default function Erstgespraech() {
 
   return (
     <>
+      <SEO {...pageSEO.contact} />
 
       <section className="bg-white border-b border-border">
         <div className="container-main py-8 lg:py-12">

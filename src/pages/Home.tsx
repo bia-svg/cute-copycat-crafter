@@ -1,4 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
+import { pageSEO } from "@/data/seo";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
 import ServiceCard from "@/components/ServiceCard";
@@ -139,7 +141,7 @@ export default function Home() {
 
   return (
     <>
-      {/* ═══════════════════ HERO ═══════════════════ */}
+      <SEO {...pageSEO.home} />
       <section className="bg-secondary">
         {/* Desktop */}
         <div className="hidden md:grid md:grid-cols-2 container-main py-12 gap-8 items-center">

@@ -5,6 +5,8 @@
  */
 
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
+import { pageSEO } from "@/data/seo";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
 
@@ -155,6 +157,7 @@ export default function Ausbildung() {
 
   return (
     <>
+      <SEO {...pageSEO.training} />
 
       {/* ═══════════════════════════════════════════════════════════
           SECTION 1 — HERO: Why this training exists

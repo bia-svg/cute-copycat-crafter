@@ -1,4 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
+import { pageSEO } from "@/data/seo";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Star } from "lucide-react";
@@ -10,6 +12,7 @@ export default function Kundenmeinungen() {
 
   return (
     <>
+      <SEO {...pageSEO.testimonials} />
       <section className="bg-background border-b border-border">
         <div className="container-main py-8 lg:py-12">
           <div className="flex items-center gap-4 mb-6">

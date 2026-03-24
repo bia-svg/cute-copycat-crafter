@@ -1,4 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
+import { pageSEO } from "@/data/seo";
 
 
 export function Impressum() {
@@ -6,6 +8,7 @@ export function Impressum() {
   const isEN = language === "en";
   return (
     <>
+      <SEO {...pageSEO.impressum} />
       <section className="bg-white">
         <div className="container-main py-8 lg:py-12 max-w-3xl">
           <h1 className="text-2xl font-bold text-[#1B3A5C] mb-6">{isEN ? "Legal Notice" : "Impressum"}</h1>
@@ -73,6 +76,7 @@ export function Datenschutz() {
   const isEN = language === "en";
   return (
     <>
+      <SEO {...pageSEO.privacy} />
       <section className="bg-white">
         <div className="container-main py-8 lg:py-12 max-w-3xl">
           <h1 className="text-2xl font-bold text-[#1B3A5C] mb-6">{isEN ? "Privacy Policy" : "Datenschutzerklärung"}</h1>
@@ -94,6 +98,7 @@ export function Datenschutz() {
 export function AGB() {
   return (
     <>
+      <SEO {...pageSEO.terms} />
       <section className="bg-white">
         <div className="container-main py-8 lg:py-12 max-w-3xl">
           <h1 className="text-2xl font-bold text-primary mb-2">AGB</h1>
