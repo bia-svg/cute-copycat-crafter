@@ -301,7 +301,7 @@ export default function Dashboard() {
 
             <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
               <CardHeader>
-                <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Kampagnen-Übersicht</CardTitle>
+                <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Campaign Overview</CardTitle>
               </CardHeader>
               <CardContent>
                 <Table>
