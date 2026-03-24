@@ -35,6 +35,7 @@ export default function Erstgespraech() {
     searchParams.get("type") === "seminar" ? "seminar" : "session"
   );
   const [selectedDate, setSelectedDate] = useState(searchParams.get("date") || "");
+  const [selectedConcern, setSelectedConcern] = useState(searchParams.get("concern") || "");
 
   useEffect(() => {
     if (searchParams.get("type") === "seminar") {
