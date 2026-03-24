@@ -423,10 +423,10 @@ export default function Ausbildung() {
               <MessageSquare className="w-4 h-4 ml-2" />
             </Button>
           </Link>
-          <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1 mt-6 text-white/60 hover:text-white/90 transition-colors text-sm">
+          <div className="flex items-center justify-center gap-1 mt-6 text-white/60 text-sm">
             <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
             5.0/5 — 255 Google {isEN ? "Reviews" : "Bewertungen"}
-          </a>
+          </div>
         </div>
       </section>
     </>

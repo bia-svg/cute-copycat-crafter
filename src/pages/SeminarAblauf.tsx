@@ -263,9 +263,9 @@ export default function SeminarAblauf() {
               </Button>
             </Link>
           </div>
-          <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-6 text-white/60 hover:text-white/90 transition-colors text-sm">
+          <div className="inline-flex items-center gap-1 mt-6 text-white/60 text-sm">
             ★ 5.0/5 — 255 Google {isEN ? "Reviews" : "Bewertungen"}
-          </a>
+          </div>
         </div>
       </section>
     </>

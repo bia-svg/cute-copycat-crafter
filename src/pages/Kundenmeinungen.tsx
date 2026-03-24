@@ -195,11 +195,9 @@ export default function Kundenmeinungen() {
           </div>
 
           <div className="mt-8 text-center">
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="border-primary text-primary">
-                {isEN ? "Read All Google Reviews" : "Alle Google-Bewertungen lesen"}
-              </Button>
-            </a>
+            <p className="text-sm text-muted-foreground">
+              {isEN ? "Read All Google Reviews" : "Alle Google-Bewertungen lesen"}
+            </p>
           </div>
         </div>
       </section>

@@ -447,13 +447,12 @@ export default function Home() {
               ? "Book your free and non-binding discovery call. We take time for you and advise you individually."
               : "Vereinbaren Sie jetzt Ihr kostenloses und unverbindliches Erstgespräch. Wir nehmen uns Zeit für Sie und beraten Sie individuell."}
           </p>
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 mb-6">
+          <div className="inline-flex items-center gap-1 mb-6">
             <div className="flex gap-0.5">
               {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-300 text-yellow-300" />)}
             </div>
             <span className="text-sm ml-1">5.0/5 — 255 Google {isEN ? "Reviews" : "Bewertungen"}</span>
-          </a>
+          </div>
           <div>
             <Link to={getPath("contact", language, country)}>
               <Button size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold">
