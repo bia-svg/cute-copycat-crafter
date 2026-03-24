@@ -99,5 +99,6 @@ export default function Standorte() {
         </div>
       </section>
     </div>
+    </>
   );
 }
