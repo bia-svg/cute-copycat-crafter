@@ -9,7 +9,7 @@ const BOOK_IMAGE = "https://shop.david-j-woods.com/wp-content/uploads/2020/11/da
 
 function buildWhatsAppBookUrl(): string {
   const phone = "491719539922";
-  const message = "Hallo, ich habe Interesse am Buch „Go InSide" von David Woods. Können Sie mir weitere Informationen geben?";
+  const message = 'Hallo, ich habe Interesse am Buch "Go InSide" von David Woods. K\u00f6nnen Sie mir weitere Informationen geben?';
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
