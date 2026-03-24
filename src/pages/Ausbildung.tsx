@@ -17,7 +17,7 @@ import {
   BookOpen, Clock, Award, Star, MessageSquare, Shield
 } from "lucide-react";
 
-const GOOGLE_REVIEWS_URL = "https://share.google/9hUU4WXKePPhY8VWE";
+const GOOGLE_REVIEWS_URL = "#";
 const CDN_BASE = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb";
 
 export default function Ausbildung() {

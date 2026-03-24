@@ -163,11 +163,11 @@ export default function Kundenmeinungen() {
               <h1 className="text-2xl sm:text-3xl font-bold text-primary">
                 {isEN ? "Client Testimonials" : "Kundenmeinungen"}
               </h1>
-              <a href="https://share.google/9hUU4WXKePPhY8VWE" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground mt-1 hover:text-cta transition-colors inline-block">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground mt-1 hover:text-cta transition-colors inline-block">
                 {isEN ? "5.0 / 5 on Google · 255 Reviews" : "5.0 / 5 bei Google · 255 Bewertungen"}
               </a>
             </div>
-            <a href="https://share.google/9hUU4WXKePPhY8VWE" target="_blank" rel="noopener noreferrer" className="flex gap-0.5 hover:opacity-80 transition-opacity">
+            <a href="#" target="_blank" rel="noopener noreferrer" className="flex gap-0.5 hover:opacity-80 transition-opacity">
               {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
             </a>
           </div>
@@ -195,7 +195,7 @@ export default function Kundenmeinungen() {
           </div>
 
           <div className="mt-8 text-center">
-            <a href="https://share.google/9hUU4WXKePPhY8VWE" target="_blank" rel="noopener noreferrer">
+            <a href="#" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="border-primary text-primary">
                 {isEN ? "Read All Google Reviews" : "Alle Google-Bewertungen lesen"}
               </Button>

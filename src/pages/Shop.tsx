@@ -306,7 +306,7 @@ export default function Shop() {
               ? "Wir beraten Sie gerne persönlich. Kontaktieren Sie uns für individuelle Empfehlungen."
               : "We are happy to advise you personally. Contact us for individual recommendations."}
           </p>
-          <a href="https://share.google/9hUU4WXKePPhY8VWE" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 mb-5 hover:opacity-80 transition-opacity">
+          <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 mb-5 hover:opacity-80 transition-opacity">
             {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
             <span className="text-white/90 text-sm ml-2">5.0/5 \u2014 255 Google {isDE ? "Bewertungen" : "Reviews"}</span>
           </a>

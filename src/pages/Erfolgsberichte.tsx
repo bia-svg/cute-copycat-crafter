@@ -14,7 +14,7 @@ import {
   Star, Play, Quote, ArrowRight, CheckCircle, MessageSquare
 } from "lucide-react";
 
-const GOOGLE_REVIEWS_URL = "https://share.google/9hUU4WXKePPhY8VWE";
+const GOOGLE_REVIEWS_URL = "#";
 
 export default function Erfolgsberichte() {
   const { language, country, t, showCH } = useLanguage();
