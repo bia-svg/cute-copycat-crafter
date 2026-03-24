@@ -69,7 +69,7 @@ function MetricCard({ title, value, icon: Icon, change, prefix }: {
         {change !== undefined && (
           <div className={`flex items-center gap-1 mt-1 text-xs ${change >= 0 ? "text-green-400" : "text-red-400"}`}>
             {change >= 0 ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
-            {Math.abs(change).toFixed(1)}% vs. Vorperiode
+            {Math.abs(change).toFixed(1)}% vs. previous period
           </div>
         )}
       </CardContent>
