@@ -22,8 +22,6 @@ export default function Kundenmeinungen() {
 
   return (
     <>
-        title={isEN ? "Testimonials | David J. Woods Hypnotherapy" : "Kundenmeinungen | Hypnose David J. Woods"}
-        description={isEN ? "Read what our clients say about their experience with David J. Woods. 5.0/5 on Google with 255 reviews." : "Lesen Sie, was unsere Kunden über ihre Erfahrung mit David J. Woods sagen. 5.0/5 bei Google mit 255 Bewertungen."}
       />
 
       <section className="bg-white border-b border-border">

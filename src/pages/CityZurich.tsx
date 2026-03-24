@@ -23,8 +23,6 @@ export default function CityZurich() {
 
   return (
     <>
-        title={isEN ? "Hypnotherapy Zurich | EMR Compliant | David J. Woods" : "Hypnose Zürich | EMR Krankenkasse Konform | David J. Woods"}
-        description={isEN ? "Professional hypnotherapy near Zurich. EMR health insurance compliant. Over 40 years experience. Book your free discovery call." : "Professionelle Hypnosetherapie in Zürich und Umgebung. EMR Krankenkasse konform. Über 40 Jahre Erfahrung. Jetzt Erstgespräch vereinbaren."}
       />
 
       <section className="bg-white border-b border-border">

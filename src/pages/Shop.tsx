@@ -173,10 +173,6 @@ export default function Shop() {
 
   return (
     <>
-        title={isDE ? "Online Shop für Selbsthypnose | Audios & Bücher | David J. Woods" : "Online Shop for Self-Hypnosis | Audios & Books | David J. Woods"}
-        description={isDE
-          ? "Professionelle Hypnose-Audios und Bücher von David J. Woods. Raucherentwöhnung, Abnehmen, Stressabbau und mehr. Sofort als Download verfügbar."
-          : "Professional hypnosis audios and books by David J. Woods. Smoking cessation, weight loss, stress relief and more. Instantly available as download."}
         canonical={`https://david-j-woods.com/${language}/${country}/shop`}
       />
 

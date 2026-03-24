@@ -155,12 +155,6 @@ export default function Ausbildung() {
 
   return (
     <>
-        title={isEN
-          ? "Hypnotherapy Training | Aktiv-Hypnose© Therapist Diploma | David J. Woods"
-          : "Hypnose-Ausbildung | Aktiv-Hypnose© Therapeuten-Diplom | David J. Woods"}
-        description={isEN
-          ? "Intensive 6-day hypnotherapy training with Aktiv-Hypnose© Therapist Diploma. From psychology to clinical application. Small groups, 40+ years experience. Book now."
-          : "Intensive 6-Tage Hypnose-Ausbildung mit Aktiv-Hypnose© Therapeuten-Diplom. Von Psychologie bis klinische Anwendung. Kleine Gruppen, 40+ Jahre Erfahrung. Jetzt buchen."}
       />
 
       {/* ═══════════════════════════════════════════════════════════

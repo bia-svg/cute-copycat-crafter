@@ -18,8 +18,6 @@ export default function TvMedien() {
 
   return (
     <>
-        title={isEN ? "TV & Media | David J. Woods Hypnotherapy" : "TV & Medien | Hypnose David J. Woods"}
-        description={isEN ? "David J. Woods in TV and media. Expert interviews, live demonstrations and press coverage." : "David J. Woods in TV und Medien. Experteninterviews, Live-Demonstrationen und Presseberichte."}
       />
 
       <section className="bg-white border-b border-border">

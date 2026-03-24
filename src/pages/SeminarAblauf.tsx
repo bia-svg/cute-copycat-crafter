@@ -158,12 +158,6 @@ export default function SeminarAblauf() {
 
   return (
     <>
-        title={isEN
-          ? "Seminar Schedule | 6-Day Aktiv-Hypnose© Intensive Training | David J. Woods"
-          : "Seminarablauf | 6-Tage Aktiv-Hypnose© Intensiv-Ausbildung | David J. Woods"}
-        description={isEN
-          ? "Detailed day-by-day curriculum of the 6-day Aktiv-Hypnose© therapist training. From psychology fundamentals to advanced techniques, clinical applications and supervised practice."
-          : "Detaillierter Tagesablauf der 6-tägigen Aktiv-Hypnose© Therapeuten-Ausbildung. Von Psychologie-Grundlagen über fortgeschrittene Techniken bis zur supervidierten Praxis."}
       />
 
       {/* Hero */}

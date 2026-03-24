@@ -13,8 +13,6 @@ export default function UeberUns() {
 
   return (
     <>
-        title={isEN ? "About David J. Woods | Lic.Psych. Hypnotherapist | 40+ Years" : "Über David J. Woods | Lic.Psych. Hypnotherapeut | 40+ Jahre Erfahrung"}
-        description={isEN ? "Learn about Lic.Psych. David J. Woods, developer of Aktiv-Hypnose©. Over 40 years experience, 30,000+ sessions, NGH International Trainer." : "Erfahren Sie mehr über Lic.Psych. David J. Woods, Entwickler der Aktiv-Hypnose©. Über 40 Jahre Erfahrung, 30.000+ Sitzungen, NGH International Trainer."}
       />
 
       {/* Main Bio Section */}

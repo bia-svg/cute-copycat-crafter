@@ -20,8 +20,6 @@ export default function FirmenCoaching() {
 
   return (
     <>
-        title={isEN ? "Corporate Coaching & Hypnosis | David J. Woods" : "Firmencoaching & Hypnose für Unternehmen | David J. Woods"}
-        description={isEN ? "Corporate coaching, stress prevention, resilience building and non-smoker seminars for businesses." : "Firmencoaching, Stress-Prävention, Resilienz und Nichtraucher-Seminare für Unternehmen."}
       />
 
       <section className="bg-white border-b border-border">

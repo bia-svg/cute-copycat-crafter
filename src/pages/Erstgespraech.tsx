@@ -27,8 +27,6 @@ export default function Erstgespraech() {
 
   return (
     <>
-        title={isEN ? "Free Discovery Call | David J. Woods Hypnotherapy" : "Kostenloses Erstgespräch | Hypnose David J. Woods"}
-        description={isEN ? "Book your free and non-binding discovery call with Lic.Psych. David J. Woods. Over 40 years of experience in hypnotherapy." : "Vereinbaren Sie jetzt Ihr kostenloses und unverbindliches Erstgespräch mit Lic.Psych. David J. Woods. Über 40 Jahre Erfahrung in der Hypnosetherapie."}
       />
 
       <section className="bg-white border-b border-border">

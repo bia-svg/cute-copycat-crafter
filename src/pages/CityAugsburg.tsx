@@ -23,8 +23,6 @@ export default function CityAugsburg() {
 
   return (
     <>
-        title={isEN ? "Hypnotherapy Augsburg | Lic.Psych. David J. Woods" : "Hypnose Augsburg | Lic.Psych. David J. Woods | Über 40 Jahre Erfahrung"}
-        description={isEN ? "Professional hypnotherapy in Augsburg. Over 40 years experience, 30,000+ sessions. Book your free discovery call." : "Professionelle Hypnose in Augsburg. Über 40 Jahre Erfahrung, 30.000+ Sitzungen. Jetzt Erstgespräch vereinbaren."}
       />
 
       <section className="bg-white border-b border-border">

@@ -74,12 +74,6 @@ export default function Erfolgsberichte() {
 
   return (
     <>
-        title={isEN
-          ? "Success Stories | Client Testimonials | David J. Woods Hypnotherapy"
-          : "Erfolgsberichte | Kundenstimmen | Hypnose David J. Woods"}
-        description={isEN
-          ? "Real success stories from clients of David J. Woods. Discover how Aktiv-Hypnose© has helped people overcome smoking, anxiety, weight issues, stress and more."
-          : "Echte Erfolgsberichte von Klienten von David J. Woods. Erfahren Sie, wie Aktiv-Hypnose© Menschen geholfen hat, Rauchen, Ängste, Gewichtsprobleme, Stress und mehr zu überwinden."}
       />
 
       {/* Hero */}
