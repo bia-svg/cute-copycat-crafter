@@ -5,6 +5,13 @@ import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+import hero1 from "@/assets/hero-1.jpeg";
+import hero2 from "@/assets/hero-2.jpeg";
+import hero3 from "@/assets/hero-3.jpeg";
+import hero4 from "@/assets/hero-4.jpeg";
+import hero5 from "@/assets/hero-5.jpeg";
+
+const heroSlides = [hero1, hero2, hero3, hero4, hero5];
 import {
   Cigarette, Brain, Scale, Flame, HeartPulse, Users,
   Trophy, Shield, Clock, BookOpen, ArrowRight, Star, Award,
@@ -50,7 +57,7 @@ export default function Home() {
 
   /* ── Hero Slider ── */
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = CDN.davidSlider.length;
+  const totalSlides = heroSlides.length;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -135,13 +142,13 @@ export default function Home() {
         <div className="hidden md:grid md:grid-cols-2 container-main py-12 gap-8 items-center">
           {/* Image */}
           <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
-            {CDN.davidSlider.map((src, i) => (
+            {heroSlides.map((src, i) => (
               <img key={i} src={src} alt={`David J. Woods ${i + 1}`}
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}
                 loading={i === 0 ? "eager" : "lazy"} />
             ))}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {CDN.davidSlider.map((_, i) => (
+              {heroSlides.map((_, i) => (
                 <button key={i} onClick={() => setCurrentSlide(i)}
                   className={`h-2 rounded-full transition-all ${i === currentSlide ? "bg-primary w-6" : "bg-primary/30 w-2"}`}
                   aria-label={`Slide ${i + 1}`} />
@@ -201,13 +208,13 @@ export default function Home() {
               : "Mit der selbst entwickelten Aktiv-Hypnose© Methode verbindet David J. Woods klinische Psychologie mit gezielter Hypnotherapie."}
           </p>
           <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-            {CDN.davidSlider.map((src, i) => (
+            {heroSlides.map((src, i) => (
               <img key={i} src={src} alt={`David J. Woods ${i + 1}`}
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}
                 loading={i === 0 ? "eager" : "lazy"} />
             ))}
             <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-              {CDN.davidSlider.map((_, i) => (
+              {heroSlides.map((_, i) => (
                 <button key={i} onClick={() => setCurrentSlide(i)}
                   className={`h-2 rounded-full transition-all ${i === currentSlide ? "bg-primary w-6" : "bg-primary/30 w-2"}`} />
               ))}
