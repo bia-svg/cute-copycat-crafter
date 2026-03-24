@@ -511,6 +511,138 @@ export const depressionData: ServicePageData = {
    KINDER & JUGENDLICHE — Full legacy content preserved
    Original: 3395 chars, Kathryn bio, focus areas, how sessions work
    ═══════════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════════
+   ERWACHSENE — Adults audience page (1:1 sessions with David)
+   ═══════════════════════════════════════════════════════════════ */
+export const adultsData: ServicePageData = {
+  slugCH: "erwachsene", slugDE: "erwachsene", slugEN: "erwachsene",
+  titleCH: "Hypnosetherapie für Erwachsene Zürich | 1:1 mit David J. Woods",
+  titleDE: "Hypnosetherapie für Erwachsene Augsburg | 1:1 mit David J. Woods",
+  titleEN: "Hypnotherapy for Adults | 1:1 Sessions with David J. Woods",
+  metaDescCH: "Persönliche 1:1 Hypnosetherapie-Sitzungen für Erwachsene in Zürich mit Lic.Psych. David J. Woods. Aktiv-Hypnose© Methode. Jetzt kostenloses Erstgespräch buchen.",
+  metaDescDE: "Persönliche 1:1 Hypnosetherapie-Sitzungen für Erwachsene in Augsburg mit Lic.Psych. David J. Woods. Jetzt kostenloses Erstgespräch buchen.",
+  metaDescEN: "Personal 1:1 hypnotherapy sessions for adults with Lic.Psych. David J. Woods. Aktiv-Hypnose© method. Book your free discovery call.",
+  h1CH: "Hypnosetherapie für Erwachsene — Persönliche 1:1 Sitzungen",
+  h1DE: "Hypnosetherapie für Erwachsene — Persönliche 1:1 Sitzungen",
+  h1EN: "Hypnotherapy for Adults — Personal 1:1 Sessions",
+  benefitsCH: ["Individuelle Intensiv-Sitzungen mit David persönlich", "Über 40 Jahre Erfahrung & 30.000+ Sitzungen", "Aktiv-Hypnose© — klinisch fundiert & nachhaltig", "Themen können flexibel kombiniert werden"],
+  benefitsEN: ["Individual intensive sessions with David personally", "Over 40 years experience & 30,000+ sessions", "Aktiv-Hypnose© — clinically grounded & lasting", "Topics can be flexibly combined"],
+  introCH: [
+    "Die Einzelsitzungen für Erwachsene werden ausschliesslich von Lic.Psych. David J. Woods persönlich durchgeführt. Mit seiner selbst entwickelten Aktiv-Hypnose© Methode verbindet er klinische Psychologie, physiologische Tiefe und moderne Coaching-Techniken zu einem Ansatz, der wirkt.",
+    "Ob Raucherentwöhnung, Gewichtsreduktion, Ängste, Stress, Depressionen oder Leistungssteigerung — David arbeitet gezielt an Ihren individuellen Themen. Die Sitzungen sind intensiv, lösungsorientiert und auf nachhaltige Veränderung ausgerichtet.",
+    "Zusätzlich erhalten Sie über 30 professionelle Hypnose-Audioaufnahmen für die Vertiefung zuhause — damit die Wirkung langfristig anhält."
+  ],
+  introDE: [
+    "Die Einzelsitzungen für Erwachsene werden ausschliesslich von Lic.Psych. David J. Woods persönlich durchgeführt. Mit seiner Aktiv-Hypnose© Methode verbindet er klinische Psychologie mit gezielter Hypnotherapie.",
+    "Ob Raucherentwöhnung, Gewichtsreduktion, Ängste, Stress oder Leistungssteigerung — David arbeitet gezielt an Ihren individuellen Themen in unserer Praxis in Augsburg."
+  ],
+  introEN: [
+    "Individual sessions for adults are conducted exclusively by Lic.Psych. David J. Woods personally. With his self-developed Aktiv-Hypnose© method, he combines clinical psychology, physiological depth, and modern coaching techniques into an approach that works.",
+    "Whether smoking cessation, weight loss, anxiety, stress, depression, or peak performance — David works specifically on your individual topics. Sessions are intensive, solution-oriented, and designed for lasting change.",
+    "Additionally, you receive over 30 professional hypnosis audio recordings for deepening at home — so that the effect lasts long-term."
+  ],
+  sectionsCH: [
+    {
+      h2: "David J. Woods — Lic.Psych., NGH International Trainer",
+      paragraphs: [
+        "David J. Woods ist lizenzierter Psychologe, NGH International Trainer und Entwickler der Aktiv-Hypnose© Methode. Mit über 40 Jahren Berufserfahrung und mehr als 30.000 durchgeführten Sitzungen gehört er zu den erfahrensten Hypnotherapeuten Europas.",
+        "Seine Arbeit zeichnet sich durch eine klare, strukturierte und gleichzeitig einfühlsame Vorgehensweise aus. Er verbindet wissenschaftlich fundierte Psychologie mit gezielter Hypnotherapie — immer individuell auf den Klienten abgestimmt."
+      ]
+    },
+    {
+      h2: "Themen der Erwachsenen-Sitzungen",
+      paragraphs: [
+        "Die Intensiv-Sitzungen können verschiedene Themenbereiche abdecken und bei Bedarf kombiniert werden:"
+      ],
+      bullets: [
+        "Raucherentwöhnung — Endlich rauchfrei werden",
+        "Abnehmen — Essverhalten nachhaltig verändern",
+        "Ängste & Phobien — Dauerhaft überwinden",
+        "Stress & Burnout — Prävention und Reduktion",
+        "Depressionen & Traumata — Neue Perspektiven entdecken",
+        "Leistungssteigerung — Fokus und Klarheit im Alltag",
+        "Schlafstörungen — Wieder erholsam schlafen",
+        "Selbstvertrauen — Innere Stärke aufbauen"
+      ]
+    },
+    {
+      h2: "So läuft eine Sitzung ab",
+      paragraphs: [
+        "Jede Sitzung beginnt mit einem ausführlichen Gespräch, in dem David Ihre aktuelle Situation, Ihre Ziele und Ihre persönliche Geschichte erfasst. Darauf aufbauend wird die Hypnose individuell auf Sie zugeschnitten.",
+        "Während der Hypnose befinden Sie sich in einem Zustand fokussierter Entspannung — Sie sind jederzeit bei Bewusstsein und behalten die volle Kontrolle. David arbeitet mit gezielten Suggestionen und Techniken, die direkt im Unterbewusstsein wirken.",
+        "Nach der Sitzung erhalten Sie Ihre personalisierten Audio-Aufnahmen sowie konkrete Empfehlungen für den Alltag."
+      ]
+    }
+  ],
+  sectionsDE: [
+    {
+      h2: "David J. Woods — Lic.Psych., NGH International Trainer",
+      paragraphs: [
+        "David J. Woods ist lizenzierter Psychologe und Entwickler der Aktiv-Hypnose© Methode. Mit über 40 Jahren Erfahrung und mehr als 30.000 Sitzungen gehört er zu den erfahrensten Hypnotherapeuten Europas."
+      ]
+    },
+    {
+      h2: "Themen der Erwachsenen-Sitzungen",
+      paragraphs: [
+        "Die Intensiv-Sitzungen decken verschiedene Themenbereiche ab:"
+      ],
+      bullets: [
+        "Raucherentwöhnung — Endlich rauchfrei werden",
+        "Abnehmen — Essverhalten nachhaltig verändern",
+        "Ängste & Phobien — Dauerhaft überwinden",
+        "Stress & Burnout — Prävention und Reduktion",
+        "Depressionen & Traumata — Neue Perspektiven entdecken"
+      ]
+    }
+  ],
+  sectionsEN: [
+    {
+      h2: "David J. Woods — Lic.Psych., NGH International Trainer",
+      paragraphs: [
+        "David J. Woods is a licensed psychologist, NGH International Trainer, and developer of the Aktiv-Hypnose© method. With over 40 years of professional experience and more than 30,000 sessions conducted, he is one of the most experienced hypnotherapists in Europe.",
+        "His work is characterized by a clear, structured, and at the same time empathetic approach. He combines scientifically grounded psychology with targeted hypnotherapy — always individually tailored to the client."
+      ]
+    },
+    {
+      h2: "Topics for Adult Sessions",
+      paragraphs: [
+        "The intensive sessions can cover various topic areas and can be combined as needed:"
+      ],
+      bullets: [
+        "Stop Smoking — Finally become smoke-free",
+        "Weight Loss — Change eating habits sustainably",
+        "Anxiety & Phobias — Overcome them permanently",
+        "Stress & Burnout — Prevention and reduction",
+        "Depression & Trauma — Discover new perspectives",
+        "Peak Performance — Focus and clarity in everyday life",
+        "Sleep Disorders — Restful sleep again",
+        "Self-Confidence — Build inner strength"
+      ]
+    },
+    {
+      h2: "How a Session Works",
+      paragraphs: [
+        "Each session begins with a detailed conversation where David captures your current situation, your goals, and your personal history. Based on this, the hypnosis is individually tailored to you.",
+        "During hypnosis, you are in a state of focused relaxation — you are conscious at all times and retain full control. David works with targeted suggestions and techniques that work directly in the subconscious.",
+        "After the session, you receive your personalized audio recordings as well as concrete recommendations for everyday life."
+      ]
+    }
+  ],
+  image: CDN + "/hero_hypnose_session_8cb1474b.jpg",
+  faqCH: [
+    { q: "Wie lange dauert eine Sitzung?", a: "Eine Intensiv-Sitzung dauert in der Regel 2–3 Stunden. Die genaue Dauer hängt vom Thema und Ihren individuellen Bedürfnissen ab." },
+    { q: "Muss ich hypnotisierbar sein?", a: "Grundsätzlich ist jeder Mensch hypnotisierbar. David passt die Methode individuell an, sodass auch bei anfänglicher Skepsis gute Ergebnisse erzielt werden." },
+    { q: "Können mehrere Themen in einer Sitzung behandelt werden?", a: "Ja, Themen können im Zuge der Sitzung kombiniert werden. David bespricht dies im Erstgespräch mit Ihnen." },
+    { q: "Was erhalte ich nach der Sitzung?", a: "Sie erhalten über 30 professionelle Hypnose-Audioaufnahmen für die Vertiefung zuhause sowie individuelle Empfehlungen." },
+  ],
+  faqEN: [
+    { q: "How long does a session last?", a: "An intensive session typically lasts 2–3 hours. The exact duration depends on the topic and your individual needs." },
+    { q: "Do I need to be hypnotizable?", a: "In principle, every person is hypnotizable. David adapts the method individually, so that good results can be achieved even with initial skepticism." },
+    { q: "Can multiple topics be addressed in one session?", a: "Yes, topics can be combined during the session. David will discuss this with you during the discovery call." },
+    { q: "What do I receive after the session?", a: "You receive over 30 professional hypnosis audio recordings for deepening at home, as well as individual recommendations." },
+  ],
+};
+
 export const childrenData: ServicePageData = {
   slugCH: "kinder-jugendliche", slugDE: "kinder-jugendliche", slugEN: "kinder-jugendliche",
   titleCH: "Hypnose für Kinder & Jugendliche Zürich | Kathryn | David J. Woods",
