@@ -317,14 +317,13 @@ export default function Home() {
               <h3 className="font-semibold text-foreground">{isEN ? "Years of Experience" : "Jahre Erfahrung"}</h3>
               <p className="text-sm text-muted-foreground">30.000+ {isEN ? "Sessions" : "Sitzungen"}</p>
             </div>
-            <a href="#" target="_blank" rel="noopener noreferrer"
-              className="text-center p-6 bg-card border border-border rounded-lg hover:shadow-md transition-shadow">
+            <div className="text-center p-6 bg-card border border-border rounded-lg">
               <div className="flex justify-center gap-0.5 mb-2">
                 {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
               </div>
               <h3 className="font-semibold text-foreground">5.0 / 5 Google</h3>
               <p className="text-sm text-muted-foreground">255 {isEN ? "Reviews" : "Bewertungen"}</p>
-            </a>
+            </div>
           </div>
         </div>
       </section>
