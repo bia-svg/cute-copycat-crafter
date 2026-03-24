@@ -25,7 +25,7 @@ export function Impressum() {
             </div>
             <div>
               <h2 className="font-semibold text-[#1B3A5C] mb-1">{isEN ? "Contact" : "Kontakt"}</h2>
-              <p>E-Mail: <a href="mailto:info@david-j-woods.com" className="text-[#1B3A5C] underline hover:text-[#2E7D32]">info@david-j-woods.com</a></p>
+              <p>{isEN ? "Please contact us via WhatsApp or phone." : "Bitte kontaktieren Sie uns per WhatsApp oder Telefon."}</p>
             </div>
             <div>
               <h2 className="font-semibold text-[#1B3A5C] mb-1">{isEN ? "In Cooperation with" : "In Kooperation mit"}</h2>
@@ -43,21 +43,20 @@ export function Impressum() {
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
                 <div className="p-3 bg-[#f4f3ef] rounded">
                   <p className="font-semibold text-[#1B3A5C]">Zürich 🇨🇭</p>
-                  <p>5 Elements TCM</p>
-                  <p>Usteristrasse 23</p>
+                  <p>5 Elements TCM GmbH</p>
+                  <p>Beim Löwenplatz, Usteristrasse 23</p>
                   <p>8001 Zürich</p>
                 </div>
                 <div className="p-3 bg-[#f4f3ef] rounded">
                   <p className="font-semibold text-[#1B3A5C]">Eschenbach 🇨🇭</p>
-                  <p>Fit und Gesund Center</p>
+                  <p>Fit+Gsund</p>
                   <p>Churzhaslen 3</p>
-                  <p>8733 Eschenbach</p>
+                  <p>8733 Eschenbach (am Zürichsee)</p>
                 </div>
                 <div className="p-3 bg-[#f4f3ef] rounded">
                   <p className="font-semibold text-[#1B3A5C]">Augsburg 🇩🇪</p>
-                  <p>Regus Business Center</p>
-                  <p>HELIO Center</p>
-                  <p>Viktoriastraße 3b</p>
+                  <p>Regus</p>
+                  <p>Viktoria Str. 3b, 2. OG</p>
                   <p>86150 Augsburg</p>
                 </div>
               </div>
