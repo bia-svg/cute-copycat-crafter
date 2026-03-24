@@ -394,7 +394,7 @@ export default function Dashboard() {
           <TabsContent value="logs" className="mt-4">
             <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
               <CardHeader>
-                <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Login-Protokoll</CardTitle>
+                <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Login History</CardTitle>
               </CardHeader>
               <CardContent>
                 {loginLogs.length === 0 ? (
