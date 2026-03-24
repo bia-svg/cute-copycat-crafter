@@ -159,7 +159,7 @@ export const testimonials: Testimonial[] = [
     location: "Nürnberg",
     rating: 5,
     topic: "Abnehmen & Selbstbewusstsein",
-    textDE: "Ich wollte Dir ein kurzes Feedback über mein „neues Leben" geben und Dir für Deine Hilfe und Unterstützung von Herzen danken! Ja, meine Hosen sitzen nunmehr schon bedeutend lockerer um die Hüfte und die Waage zeigt auch schon weniger an Gewicht an; das Beste aber ist mein selbstbewussteres und sicheres Auftreten und mein neu gestärktes Inneres Ich.",
+    textDE: "Ich wollte Dir ein kurzes Feedback über mein \u201Eneues Leben\u201C geben und Dir für Deine Hilfe und Unterstützung von Herzen danken! Ja, meine Hosen sitzen nunmehr schon bedeutend lockerer um die Hüfte und die Waage zeigt auch schon weniger an Gewicht an; das Beste aber ist mein selbstbewussteres und sicheres Auftreten und mein neu gestärktes Inneres Ich.",
   },
   {
     name: "Karin B.",
