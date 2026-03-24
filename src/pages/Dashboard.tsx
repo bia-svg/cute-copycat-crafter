@@ -178,7 +178,7 @@ export default function Dashboard() {
                 {/* Visitors Chart */}
                 <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Besucher</CardTitle>
+                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Visitors</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ChartContainer config={chartConfig} className="h-[220px] w-full">
