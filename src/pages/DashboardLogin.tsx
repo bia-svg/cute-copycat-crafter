@@ -37,7 +37,7 @@ export default function DashboardLogin() {
             <Lock className="w-6 h-6 text-primary" />
           </div>
           <CardTitle className="text-xl text-white">Dashboard Login</CardTitle>
-          <p className="text-sm text-[hsl(220,10%,55%)]">Interner Bereich — Nur autorisierte Benutzer</p>
+          <p className="text-sm text-[hsl(220,10%,55%)]">Internal area — Authorized users only</p>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
