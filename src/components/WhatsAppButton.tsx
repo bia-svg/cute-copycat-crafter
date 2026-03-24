@@ -55,16 +55,13 @@ export default function WhatsAppButton() {
  * Utility: call this from any form submission to track UTM conversion.
  * Usage: trackFormConversion("erstgespraech_form")
  */
-export function trackFormConversion(formName: string) {
+export function trackFormConversion(formType: string, selectedDate?: string) {
   const utms = getUtmParams();
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", "form_submission", {
-      event_category: "conversion",
-      form_name: formName,
-      ...utms,
-    });
-  }
-  window.dispatchEvent(new CustomEvent("conversion", {
-    detail: { type: "form_submission", form_name: formName, ...utms },
-  }));
+  (window as any).dataLayer = (window as any).dataLayer || [];
+  (window as any).dataLayer.push({
+    event: "form_submission",
+    form_type: formType,
+    selected_date: selectedDate || "",
+    ...utms,
+  });
 }

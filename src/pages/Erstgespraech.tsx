@@ -54,6 +54,7 @@ export default function Erstgespraech() {
       toast.error(isEN ? "Please accept the privacy policy to continue." : "Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.");
       return;
     }
+    trackFormConversion(formType, formType === "seminar" ? selectedDate : undefined);
     setSubmitted(true);
     toast.success(isEN ? "Thank you! We will contact you shortly." : "Vielen Dank! Wir melden uns in Kürze bei Ihnen.");
   };
