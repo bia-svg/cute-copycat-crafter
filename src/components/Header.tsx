@@ -131,7 +131,7 @@ export default function Header() {
       <div className="bg-primary text-primary-foreground text-xs">
         <div className="container-main flex items-center justify-between py-1.5">
           <div className="hidden sm:flex items-center gap-4">
-            {showCH ? (
+            {isSwiss ? (
               <a href="tel:+41448880901" className="flex items-center gap-1 hover:underline">
                 <Phone className="w-3 h-3" /> +41 44 888 09 01
               </a>
