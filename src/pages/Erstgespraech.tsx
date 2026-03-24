@@ -1,21 +1,51 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
 import { getPath } from "@/lib/routes";
-
+import { useSearchParams } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { CheckCircle, Phone, MapPin, Clock, Shield } from "lucide-react";
 import { toast } from "sonner";
 
+/* ── Seminar dates (shared with Ausbildung) ── */
+const SEMINAR_DATES_CH = [
+  { date: "Mo-Sa, 15.-20. Juni 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach" },
+  { date: "Mo-Sa, 07.-12. Sept. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach" },
+];
+const SEMINAR_DATES_DE = [
+  { date: "Mo-Sa, 11.-16. Mai 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg" },
+  { date: "Mo-Sa, 06.-11. Juli 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg" },
+  { date: "Mo-Sa, 14.-19. Sept. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg" },
+];
+
+type FormType = "session" | "seminar";
+
 export default function Erstgespraech() {
   const { language, country, t, isSwiss, isInternational, showCH, showDE } = useLanguage();
   const isEN = language === "en";
   const isDE = language === "de";
+  const [searchParams] = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
   const [gdprConsent, setGdprConsent] = useState(false);
+  const [formType, setFormType] = useState<FormType>(
+    searchParams.get("type") === "seminar" ? "seminar" : "session"
+  );
+  const [selectedDate, setSelectedDate] = useState(searchParams.get("date") || "");
+
+  useEffect(() => {
+    if (searchParams.get("type") === "seminar") {
+      setFormType("seminar");
+      if (searchParams.get("date")) setSelectedDate(searchParams.get("date") || "");
+    }
+  }, [searchParams]);
+
+  const allDates = [
+    ...(showCH ? SEMINAR_DATES_CH : []),
+    ...(showDE ? SEMINAR_DATES_DE : []),
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,6 +57,8 @@ export default function Erstgespraech() {
     toast.success(isEN ? "Thank you! We will contact you shortly." : "Vielen Dank! Wir melden uns in Kürze bei Ihnen.");
   };
 
+  const inputClasses = "w-full border border-border px-3 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
+
   return (
     <>
       <SEO {...pageSEO.contact} />
@@ -37,12 +69,18 @@ export default function Erstgespraech() {
             {/* Left — Info */}
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] mb-4">
-                {isEN ? "Book Your Free Discovery Call" : "Kostenloses Erstgespräch vereinbaren"}
+                {formType === "seminar"
+                  ? (isEN ? "Register for Seminar" : "Seminar-Anmeldung")
+                  : (isEN ? "Book Your Free Discovery Call" : "Kostenloses Erstgespräch vereinbaren")}
               </h1>
               <p className="text-base text-foreground leading-relaxed mb-6">
-                {isEN
-                  ? "Do you have questions or would you like to learn more about our method? Book a free and non-binding discovery call now. We take time for you and advise you individually."
-                  : "Haben Sie Fragen oder möchten Sie mehr über unsere Methode erfahren? Vereinbaren Sie jetzt ein kostenloses und unverbindliches Erstgespräch. Wir nehmen uns Zeit für Sie und beraten Sie individuell."}
+                {formType === "seminar"
+                  ? (isEN
+                    ? "Register for the Aktiv-Hypnose© training seminar. We will confirm your spot and send you all details."
+                    : "Melden Sie sich für das Aktiv-Hypnose© Ausbildungsseminar an. Wir bestätigen Ihren Platz und senden Ihnen alle Details.")
+                  : (isEN
+                    ? "Do you have questions or would you like to learn more about our method? Book a free and non-binding discovery call now. We take time for you and advise you individually."
+                    : "Haben Sie Fragen oder möchten Sie mehr über unsere Methode erfahren? Vereinbaren Sie jetzt ein kostenloses und unverbindliches Erstgespräch. Wir nehmen uns Zeit für Sie und beraten Sie individuell.")}
               </p>
 
               <div className="space-y-3 mb-6">
@@ -106,71 +144,136 @@ export default function Erstgespraech() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">{isEN ? "Contact Form" : "Kontaktformular"}</h2>
 
+                  {/* Name */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "First Name" : "Vorname"} *</label>
-                      <input type="text" required autoComplete="given-name" className="w-full border border-border px-3 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors" />
+                      <input type="text" required autoComplete="given-name" className={inputClasses} />
                     </div>
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Last Name" : "Nachname"} *</label>
-                      <input type="text" required autoComplete="family-name" className="w-full border border-border px-3 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors" />
+                      <input type="text" required autoComplete="family-name" className={inputClasses} />
                     </div>
                   </div>
 
+                  {/* Email */}
                   <div>
                     <label className="block text-xs font-medium text-muted-foreground mb-1">E-Mail *</label>
-                    <input type="email" required autoComplete="email" className="w-full border border-border px-3 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors" />
+                    <input type="email" required autoComplete="email" className={inputClasses} />
                   </div>
 
+                  {/* Phone + PLZ */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Phone" : "Telefonnummer"} *</label>
-                      <input type="tel" required autoComplete="tel" className="w-full border border-border px-3 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors" />
+                      <input type="tel" required autoComplete="tel" className={inputClasses} />
                     </div>
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Postal Code / City" : "PLZ / Ortschaft"}</label>
-                      <input type="text" autoComplete="postal-code" className="w-full border border-border px-3 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors" />
+                      <input type="text" autoComplete="postal-code" className={inputClasses} />
                     </div>
                   </div>
 
-                  {/* Topic / Service Selection */}
+                  {/* ── Type Toggle: Session vs Seminar ── */}
                   <div>
-                    <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "What is your concern?" : "Was ist Ihr Anliegen?"} *</label>
-                    <select required className="w-full border border-border px-3 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors">
-                      <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
-                      <option value="smoking">{isEN ? "Stop Smoking" : "Raucherentwöhnung"}</option>
-                      <option value="anxiety">{isEN ? "Anxiety & Phobias" : "Ängste & Phobien"}</option>
-                      <option value="weight">{isEN ? "Weight Loss" : "Abnehmen"}</option>
-                      <option value="stress">{isEN ? "Stress & Burnout" : "Stress & Burnout"}</option>
-                      <option value="depression">{isEN ? "Depression & Trauma" : "Depressionen & Traumata"}</option>
-                      <option value="children">{isEN ? "Children & Teens" : "Kinder & Jugendliche"}</option>
-                      <option value="corporate">{isEN ? "Corporate Coaching" : "Firmencoaching"}</option>
-                      <option value="training">{isEN ? "Training / Diploma" : "Ausbildung / Diplom"}</option>
-                      <option value="other">{isEN ? "Other" : "Sonstiges"}</option>
-                    </select>
+                    <label className="block text-xs font-medium text-muted-foreground mb-2">
+                      {isEN ? "What are you interested in?" : "Wofür interessieren Sie sich?"} *
+                    </label>
+                    <div className="grid grid-cols-2 gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setFormType("session")}
+                        className={`px-4 py-2.5 text-sm font-medium border transition-colors ${
+                          formType === "session"
+                            ? "bg-[#1B3A5C] text-white border-[#1B3A5C]"
+                            : "bg-white text-foreground border-border hover:border-[#1B3A5C]"
+                        }`}
+                      >
+                        {isEN ? "Therapy Session" : "Therapie-Sitzung"}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setFormType("seminar")}
+                        className={`px-4 py-2.5 text-sm font-medium border transition-colors ${
+                          formType === "seminar"
+                            ? "bg-[#1B3A5C] text-white border-[#1B3A5C]"
+                            : "bg-white text-foreground border-border hover:border-[#1B3A5C]"
+                        }`}
+                      >
+                        {isEN ? "Seminar / Training" : "Seminar / Ausbildung"}
+                      </button>
+                    </div>
                   </div>
 
-                  {/* Preferred Location */}
-                  <div>
-                    <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Preferred Location" : "Bevorzugter Standort"}</label>
-                    <select className="w-full border border-border px-3 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors">
-                      <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
-                      <option value="zurich">Zürich — 5 Elements TCM (CH)</option>
-                      <option value="eschenbach">Eschenbach — Fit und Gesund (CH)</option>
-                      <option value="augsburg">Augsburg — Regus HELIO (DE)</option>
-                      <option value="online">{isEN ? "Online Session" : "Online-Sitzung"}</option>
-                    </select>
-                  </div>
+                  {/* ── Conditional Fields ── */}
+                  {formType === "session" ? (
+                    <>
+                      {/* Topic / Service Selection */}
+                      <div>
+                        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "What is your concern?" : "Was ist Ihr Anliegen?"} *</label>
+                        <select required className={inputClasses}>
+                          <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
+                          <option value="smoking">{isEN ? "Stop Smoking" : "Raucherentwöhnung"}</option>
+                          <option value="anxiety">{isEN ? "Anxiety & Phobias" : "Ängste & Phobien"}</option>
+                          <option value="weight">{isEN ? "Weight Loss" : "Abnehmen"}</option>
+                          <option value="stress">{isEN ? "Stress & Burnout" : "Stress & Burnout"}</option>
+                          <option value="depression">{isEN ? "Depression & Trauma" : "Depressionen & Traumata"}</option>
+                          <option value="children">{isEN ? "Children & Teens" : "Kinder & Jugendliche"}</option>
+                          <option value="corporate">{isEN ? "Corporate Coaching" : "Firmencoaching"}</option>
+                          <option value="other">{isEN ? "Other" : "Sonstiges"}</option>
+                        </select>
+                      </div>
+
+                      {/* Preferred Location */}
+                      <div>
+                        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Preferred Location" : "Bevorzugter Standort"}</label>
+                        <select className={inputClasses}>
+                          <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
+                          <option value="zurich">Zürich — 5 Elements TCM (CH)</option>
+                          <option value="eschenbach">Eschenbach — Fit und Gesund (CH)</option>
+                          <option value="augsburg">Augsburg — Regus HELIO (DE)</option>
+                          <option value="online">{isEN ? "Online Session" : "Online-Sitzung"}</option>
+                        </select>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      {/* Seminar Date Selection */}
+                      <div>
+                        <label className="block text-xs font-medium text-muted-foreground mb-1">
+                          {isEN ? "Preferred Seminar Date" : "Gewünschter Seminartermin"} *
+                        </label>
+                        <select
+                          required
+                          value={selectedDate}
+                          onChange={(e) => setSelectedDate(e.target.value)}
+                          className={inputClasses}
+                        >
+                          <option value="">{isEN ? "Please select a date..." : "Bitte Termin wählen..."}</option>
+                          {showCH && SEMINAR_DATES_CH.map((d, i) => (
+                            <option key={`ch-${i}`} value={d.date}>
+                              🇨🇭 {d.date} — {d.location}
+                            </option>
+                          ))}
+                          {showDE && SEMINAR_DATES_DE.map((d, i) => (
+                            <option key={`de-${i}`} value={d.date}>
+                              🇩🇪 {d.date} — {d.location}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </>
+                  )}
 
                   {/* Best time to reach */}
                   <div>
                     <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Best time to reach you?" : "Wann sind Sie am besten erreichbar?"}</label>
-                    <input type="text" placeholder={isEN ? "e.g. mornings, after 14:00" : "z.B. vormittags, nach 14:00 Uhr"} className="w-full border border-border px-3 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors" />
+                    <input type="text" placeholder={isEN ? "e.g. mornings, after 14:00" : "z.B. vormittags, nach 14:00 Uhr"} className={inputClasses} />
                   </div>
 
                   <div>
                     <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Message" : "Kommentar oder Nachricht"}</label>
-                    <textarea rows={4} className="w-full border border-border px-3 py-2.5 text-sm bg-white resize-none focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors" />
+                    <textarea rows={4} className={`${inputClasses} resize-none`} />
                   </div>
 
                   {/* ── DSGVO / GDPR Opt-in Toggle ── */}
@@ -218,7 +321,9 @@ export default function Erstgespraech() {
                     disabled={!gdprConsent}
                     className={`w-full font-semibold py-3 text-white transition-colors ${gdprConsent ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
                   >
-                    {isEN ? "Send Request" : "Absenden"}
+                    {formType === "seminar"
+                      ? (isEN ? "Register for Seminar" : "Seminar-Anmeldung absenden")
+                      : (isEN ? "Send Request" : "Absenden")}
                   </Button>
 
                   <p className="text-[10px] text-muted-foreground text-center">

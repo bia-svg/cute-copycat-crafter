@@ -12,7 +12,7 @@ import Erstgespraech from "@/pages/Erstgespraech";
 import UeberUns from "@/pages/UeberUns";
 import Kundenmeinungen from "@/pages/Kundenmeinungen";
 import Ausbildung from "@/pages/Ausbildung";
-import SeminarAblauf from "@/pages/SeminarAblauf";
+
 import CityZurich from "@/pages/CityZurich";
 import CityAugsburg from "@/pages/CityAugsburg";
 import Standorte from "@/pages/Standorte";
@@ -58,7 +58,7 @@ function AppRoutes() {
 
           {/* Training & Corporate */}
           <Route path="/:lang/:country/ausbildung" element={<Ausbildung />} />
-          <Route path="/:lang/:country/seminar-ablauf" element={<SeminarAblauf />} />
+          <Route path="/:lang/:country/seminar-ablauf" element={<Navigate to={`/${window.location.pathname.split('/')[1]}/${window.location.pathname.split('/')[2]}/ausbildung#curriculum`} replace />} />
           <Route path="/:lang/:country/firmen-coaching" element={<FirmenCoaching />} />
 
           {/* About */}
