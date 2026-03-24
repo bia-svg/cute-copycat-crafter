@@ -38,6 +38,7 @@ function ScrollToTop() {
 function AppRoutes() {
   return (
     <LanguageProvider>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Navigate to="/de/ch" replace />} />
