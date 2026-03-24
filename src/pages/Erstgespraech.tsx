@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { trackFormConversion } from "@/components/WhatsAppButton";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
