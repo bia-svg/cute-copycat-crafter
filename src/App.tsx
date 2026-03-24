@@ -22,6 +22,7 @@ import Terminbestaetigung from "@/pages/Terminbestaetigung";
 import FirmenCoaching from "@/pages/FirmenCoaching";
 import { Impressum, Datenschutz, AGB } from "@/pages/Legal";
 import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
 import Buch from "@/pages/Buch";
 import Dashboard from "@/pages/Dashboard";
 import DashboardLogin from "@/pages/DashboardLogin";
@@ -89,6 +90,7 @@ function AppRoutes() {
 
           {/* Blog */}
           <Route path="/:lang/:country/blog" element={<Blog />} />
+          <Route path="/:lang/:country/blog/:slug" element={<BlogPost />} />
 
           {/* Book */}
           <Route path="/:lang/:country/buch-go-inside" element={<Buch />} />
