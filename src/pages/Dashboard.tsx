@@ -344,7 +344,7 @@ export default function Dashboard() {
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Form Submissions — Tracking Codes</CardTitle>
-                  <p className="text-xs text-[hsl(220,10%,40%)]">Código enviado no e-mail de confirmação</p>
+                  <p className="text-xs text-[hsl(220,10%,40%)]">Code sent in confirmation email</p>
                 </div>
               </CardHeader>
               <CardContent>
