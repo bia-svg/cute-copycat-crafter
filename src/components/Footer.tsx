@@ -80,9 +80,6 @@ export default function Footer() {
               <Link to={getPath("training", language, country)} className="block hover:underline hover:opacity-100">
                 {t("nav.training")}
               </Link>
-              <Link to={getPath("shop", language, country)} className="block hover:underline hover:opacity-100">
-                Shop
-              </Link>
             </div>
           </div>
         </div>
