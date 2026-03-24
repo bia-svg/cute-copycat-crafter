@@ -609,7 +609,7 @@ export const childrenData: ServicePageData = {
       ]
     }
   ],
-  image: `${CDN}/children_teens_hypnose_cfb32243.jpg`,
+  image: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/children_teens_hypnose_new-ioh53iWPiVHDd8N8zCMpqx.webp",
   faqCH: [
     { q: "Ab welchem Alter ist Hypnose für Kinder geeignet?", a: "Hypnose kann bereits ab einem Alter von ca. 6 Jahren eingesetzt werden. Die Methoden werden altersgerecht angepasst." },
     { q: "Ist Hypnose für Kinder sicher?", a: "Ja, Kinderhypnose ist eine sanfte und sichere Methode. Die Kinder sind jederzeit bei Bewusstsein und können den Prozess selbst steuern." },
