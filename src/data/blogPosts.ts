@@ -1,3 +1,11 @@
+import blogHypnoseLernen from "@/assets/blog-hypnose-lernen.jpg";
+import blogDavidPortrait from "@/assets/blog-david-portrait.jpg";
+import blogAktivUnterschied from "@/assets/blog-aktiv-hypnose-unterschied.jpg";
+import blogHeilendeHypnose from "@/assets/blog-heilende-hypnose.jpg";
+import blogShowTherapie from "@/assets/blog-hypnose-show-therapie.jpg";
+import blogMeditationGehirn from "@/assets/blog-meditation-gehirn.jpg";
+import blogAbnehmenSinnvoll from "@/assets/blog-abnehmen-sinnvoll.jpg";
+
 export interface BlogPost {
   slug: string;
   title: string;
