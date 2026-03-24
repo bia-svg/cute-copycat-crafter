@@ -28,7 +28,7 @@ import Dashboard from "@/pages/Dashboard";
 import DashboardLogin from "@/pages/DashboardLogin";
 import {
   SmokingPage, AnxietyPage, WeightPage,
-  StressPage, DepressionPage, ChildrenPage
+  StressPage, DepressionPage, ChildrenPage, AdultsPage
 } from "@/pages/services/index";
 import NotFound from "./pages/NotFound";
 
