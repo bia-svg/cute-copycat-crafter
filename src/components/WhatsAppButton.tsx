@@ -28,17 +28,13 @@ function buildWhatsAppUrl(): string {
 
 export default function WhatsAppButton() {
   const handleClick = () => {
-    // Fire conversion event for analytics
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "whatsapp_open", {
-        event_category: "conversion",
-        ...getUtmParams(),
-      });
-    }
-    // Also dispatch custom event for any listener
-    window.dispatchEvent(new CustomEvent("conversion", {
-      detail: { type: "whatsapp_open", ...getUtmParams() },
-    }));
+    const utms = getUtmParams();
+    // GTM dataLayer event
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    (window as any).dataLayer.push({
+      event: "whatsapp_click",
+      ...utms,
+    });
   };
 
   return (
