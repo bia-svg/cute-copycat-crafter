@@ -1,4 +1,5 @@
 import type { ServicePageData } from "@/pages/ServicePage";
+import davidSessionAdults from "@/assets/david-session-adults.jpeg";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb";
 
@@ -628,7 +629,7 @@ export const adultsData: ServicePageData = {
       ]
     }
   ],
-  image: CDN + "/hero_hypnose_session_8cb1474b.jpg",
+  image: davidSessionAdults,
   faqCH: [
     { q: "Wie lange dauert eine Sitzung?", a: "Eine Intensiv-Sitzung dauert in der Regel 2–3 Stunden. Die genaue Dauer hängt vom Thema und Ihren individuellen Bedürfnissen ab." },
     { q: "Muss ich hypnotisierbar sein?", a: "Grundsätzlich ist jeder Mensch hypnotisierbar. David passt die Methode individuell an, sodass auch bei anfänglicher Skepsis gute Ergebnisse erzielt werden." },
