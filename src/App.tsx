@@ -33,7 +33,16 @@ const queryClient = new QueryClient();
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    // GTM virtual pageview for SPA
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    (window as any).dataLayer.push({
+      event: "virtual_page_view",
+      page_path: pathname,
+      page_location: window.location.href,
+    });
+  }, [pathname]);
   return null;
 }
 
