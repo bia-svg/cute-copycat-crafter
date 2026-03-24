@@ -216,7 +216,7 @@ export const blogPosts: BlogPost[] = [
     slug: "aktive-hypnose-kann-eine-heilende-wirkung-haben",
     title: "Aktive Hypnose kann eine heilende Wirkung haben",
     metaDescription: "",
-    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/about_aktiv_hypnose_4d6823bf.jpg",
+    featuredImage: blogHeilendeHypnose,
     contentText: "Aktive Hypnose kann eine heilende Wirkung haben\nAktive Hypnose wird von Experten wie David J. Woods erfolgreich praktiziert und kann eine wertvolle Ergänzung zu traditionellen Behandlungsmethoden sei...",
     content: [
       { tag: "h1", text: "Aktive Hypnose kann eine heilende Wirkung haben" },
