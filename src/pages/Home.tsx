@@ -407,34 +407,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════ ONLINE SHOP ═══════════════════ */}
-      <section className="py-16 bg-secondary">
-        <div className="container-main">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-3">{t("section.shop")}</h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-10">
-            {isEN
-              ? "Support your transformation at home with our professional hypnosis audio programs."
-              : "Unterstützen Sie Ihre Transformation zuhause mit unseren professionellen Hypnose-Audioprogrammen."}
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {shopItems.map((item) => (
-              <Link to={getPath("shop", language, country)} key={item.title}
-                className="bg-card border border-border rounded-lg p-5 text-center hover:shadow-md transition-shadow group">
-                <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">{item.subtitle}</div>
-                <h3 className="font-semibold text-foreground mb-3">{item.title}</h3>
-                <div className="text-lg font-bold text-primary">{item.price}</div>
-              </Link>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link to={getPath("shop", language, country)}>
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-                {isEN ? "Visit Online Shop" : "Zum Onlineshop"}
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* ═══════════════════ FINAL CTA ═══════════════════ */}
       <section className="py-20 bg-cta text-cta-foreground">

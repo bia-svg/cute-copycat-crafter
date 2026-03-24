@@ -204,10 +204,6 @@ export default function Header() {
               {t("nav.about")} <ChevronDown className="w-3.5 h-3.5" />
             </button>
           </div>
-          <Link to={getPath("shop", language, country)} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary"
-            onMouseEnter={() => setActiveMenu(null)}>
-            Shop
-          </Link>
           <Link to={getPath("contact", language, country)}>
             <Button className="ml-2 bg-cta text-cta-foreground hover:bg-cta/90 text-sm">
               {t("nav.cta")}
@@ -296,10 +292,6 @@ export default function Header() {
             {t("service.corporate")}
           </Link>
           <MobileSection id="about" title={t("nav.about")} items={aboutItems} />
-          <Link to={getPath("shop", language, country)} onClick={() => setMobileOpen(false)}
-            className="block px-4 py-3 font-medium text-foreground border-b border-border">
-            Shop
-          </Link>
           <div className="p-4">
             <Link to={getPath("contact", language, country)} onClick={() => setMobileOpen(false)}>
               <Button className="w-full bg-cta text-cta-foreground hover:bg-cta/90">
