@@ -70,7 +70,7 @@ export default function DashboardLogin() {
               />
             </div>
             <Button type="submit" disabled={loading} className="w-full bg-primary hover:bg-primary/90">
-              {loading ? "Wird geladen..." : "Anmelden"}
+              {loading ? "Loading..." : "Sign In"}
             </Button>
           </form>
         </CardContent>
