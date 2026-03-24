@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
+import ComingSoon from "@/pages/ComingSoon";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -17,7 +18,7 @@ function AppRoutes() {
         <Routes>
           <Route path="/" element={<Navigate to="/de/ch" replace />} />
           <Route path="/:lang/:country" element={<Home />} />
-          <Route path="/:lang/:country/*" element={<Home />} />
+          <Route path="/:lang/:country/*" element={<ComingSoon />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
