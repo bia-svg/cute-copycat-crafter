@@ -264,7 +264,7 @@ export const blogPosts: BlogPost[] = [
     slug: "hypnose-nur-show-oder-wirksame-therapie",
     title: "Hypnose: nur Show oder wirksame Therapie?",
     metaDescription: "",
-    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/about_aktiv_hypnose_4d6823bf.jpg",
+    featuredImage: blogShowTherapie,
     contentText: "Hypnose: nur Show oder wirksame Therapie?\nWeitere interessante Beiträge...",
     content: [
       { tag: "h1", text: "Hypnose: nur Show oder wirksame Therapie?" },
