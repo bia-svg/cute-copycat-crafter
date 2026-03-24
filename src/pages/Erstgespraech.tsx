@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
+import { pageSEO } from "@/data/seo";
 import { getPath } from "@/lib/routes";
 
 

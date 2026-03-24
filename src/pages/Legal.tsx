@@ -1,4 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEO from "@/components/SEO";
+import { pageSEO } from "@/data/seo";
 
 
 export function Impressum() {
