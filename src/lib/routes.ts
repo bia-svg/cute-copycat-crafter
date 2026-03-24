@@ -2,7 +2,7 @@ import type { Language, Country } from "@/contexts/LanguageContext";
 
 type PageKey =
   | "home" | "smoking" | "anxiety" | "weight" | "stress"
-  | "depression" | "children" | "training" | "seminarSchedule" | "corporate"
+  | "depression" | "children" | "adults" | "training" | "seminarSchedule" | "corporate"
   | "about" | "testimonials" | "successStories" | "media"
   | "contact" | "appointmentConfirmation" | "cityZurich" | "cityAugsburg" | "locations"
   | "impressum" | "privacy" | "terms" | "blog" | "book";
@@ -15,6 +15,7 @@ const slugMap: Record<PageKey, string> = {
   stress: "stress-burnout",
   depression: "depressionen-traumata",
   children: "kinder-jugendliche",
+  adults: "erwachsene",
   training: "ausbildung",
   seminarSchedule: "seminar-ablauf",
   corporate: "firmen-coaching",

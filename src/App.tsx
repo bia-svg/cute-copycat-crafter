@@ -28,7 +28,7 @@ import Dashboard from "@/pages/Dashboard";
 import DashboardLogin from "@/pages/DashboardLogin";
 import {
   SmokingPage, AnxietyPage, WeightPage,
-  StressPage, DepressionPage, ChildrenPage
+  StressPage, DepressionPage, ChildrenPage, AdultsPage
 } from "@/pages/services/index";
 import NotFound from "./pages/NotFound";
 
@@ -67,6 +67,7 @@ function AppRoutes() {
           <Route path="/:lang/:country/stress-burnout" element={<StressPage />} />
           <Route path="/:lang/:country/depressionen-traumata" element={<DepressionPage />} />
           <Route path="/:lang/:country/kinder-jugendliche" element={<ChildrenPage />} />
+          <Route path="/:lang/:country/erwachsene" element={<AdultsPage />} />
 
           {/* Training & Corporate */}
           <Route path="/:lang/:country/ausbildung" element={<Ausbildung />} />
