@@ -28,17 +28,13 @@ function buildWhatsAppUrl(): string {
 
 export default function WhatsAppButton() {
   const handleClick = () => {
-    // Fire conversion event for analytics
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "whatsapp_open", {
-        event_category: "conversion",
-        ...getUtmParams(),
-      });
-    }
-    // Also dispatch custom event for any listener
-    window.dispatchEvent(new CustomEvent("conversion", {
-      detail: { type: "whatsapp_open", ...getUtmParams() },
-    }));
+    const utms = getUtmParams();
+    // GTM dataLayer event
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    (window as any).dataLayer.push({
+      event: "whatsapp_click",
+      ...utms,
+    });
   };
 
   return (
@@ -59,16 +55,13 @@ export default function WhatsAppButton() {
  * Utility: call this from any form submission to track UTM conversion.
  * Usage: trackFormConversion("erstgespraech_form")
  */
-export function trackFormConversion(formName: string) {
+export function trackFormConversion(formType: string, selectedDate?: string) {
   const utms = getUtmParams();
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", "form_submission", {
-      event_category: "conversion",
-      form_name: formName,
-      ...utms,
-    });
-  }
-  window.dispatchEvent(new CustomEvent("conversion", {
-    detail: { type: "form_submission", form_name: formName, ...utms },
-  }));
+  (window as any).dataLayer = (window as any).dataLayer || [];
+  (window as any).dataLayer.push({
+    event: "form_submission",
+    form_type: formType,
+    selected_date: selectedDate || "",
+    ...utms,
+  });
 }

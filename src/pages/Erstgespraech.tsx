@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { trackFormConversion } from "@/components/WhatsAppButton";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
@@ -53,6 +54,7 @@ export default function Erstgespraech() {
       toast.error(isEN ? "Please accept the privacy policy to continue." : "Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.");
       return;
     }
+    trackFormConversion(formType, formType === "seminar" ? selectedDate : undefined);
     setSubmitted(true);
     toast.success(isEN ? "Thank you! We will contact you shortly." : "Vielen Dank! Wir melden uns in Kürze bei Ihnen.");
   };
