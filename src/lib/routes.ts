@@ -4,7 +4,7 @@ type PageKey =
   | "home" | "smoking" | "anxiety" | "weight" | "stress"
   | "depression" | "children" | "training" | "seminarSchedule" | "corporate"
   | "about" | "testimonials" | "successStories" | "media"
-  | "contact" | "cityZurich" | "cityAugsburg" | "locations"
+  | "contact" | "appointmentConfirmation" | "cityZurich" | "cityAugsburg" | "locations"
   | "impressum" | "privacy" | "terms" | "blog";
 
 const slugMap: Record<PageKey, string> = {
