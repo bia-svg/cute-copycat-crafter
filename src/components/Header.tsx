@@ -98,8 +98,9 @@ export default function Header() {
   );
 
   const SidebarCard = ({ children }: { children: React.ReactNode }) => (
-    <div className="bg-secondary/50 border border-border rounded-lg p-4 space-y-2 self-start">
+    <div className="bg-secondary/50 border border-border rounded-lg p-5 space-y-3 self-start">
       {children}
+    </div>
     </div>
   );
 
