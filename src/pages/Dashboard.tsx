@@ -293,10 +293,10 @@ export default function Dashboard() {
           {/* CAMPAIGNS TAB */}
           <TabsContent value="campaigns" className="space-y-6 mt-4">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <MetricCard title="Investition (Ads)" value={totalSpend} icon={DollarSign} prefix="CHF " />
-              <MetricCard title="Total Klicks" value={campaigns.reduce((s, c) => s + c.clicks, 0)} icon={Target} />
+              <MetricCard title="Ad Spend" value={totalSpend} icon={DollarSign} prefix="CHF " />
+              <MetricCard title="Total Clicks" value={campaigns.reduce((s, c) => s + c.clicks, 0)} icon={Target} />
               <MetricCard title="Total Leads" value={campaigns.reduce((s, c) => s + c.leads, 0)} icon={FileText} />
-              <MetricCard title="Kosten/Lead" value={`CHF ${(totalSpend / campaigns.reduce((s, c) => s + c.leads, 1)).toFixed(0)}`} icon={TrendingUp} />
+              <MetricCard title="Cost / Lead" value={`CHF ${(totalSpend / campaigns.reduce((s, c) => s + c.leads, 1)).toFixed(0)}`} icon={TrendingUp} />
             </div>
 
             <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
