@@ -283,32 +283,6 @@ export default function Header() {
         </div>
       </MegaMenuPanel>
 
-      {/* ── Mega Menu: Ausbildung ── */}
-      <MegaMenuPanel id="training">
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="md:col-span-2">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-              {isDE ? "Ausbildung & Seminare" : "Training & Seminars"}
-            </h4>
-            <div className="space-y-1">
-              {trainingItems.map(item => <MenuItemLink key={item.label} {...item} />)}
-            </div>
-          </div>
-          <SidebarCard>
-            <p className="font-semibold text-sm text-foreground">
-              {isDE ? "Nächste Termine" : "Upcoming Dates"}
-            </p>
-            <p className="text-xs text-muted-foreground">
-              {isDE ? "Kleine Gruppen · Maximale Lernintensität" : "Small groups · Maximum learning intensity"}
-            </p>
-            <Link to={getPath("training", language, country)} onClick={() => setActiveMenu(null)}>
-              <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs">
-                {isDE ? "Seminartermine ansehen" : "View Seminar Dates"}
-              </Button>
-            </Link>
-          </SidebarCard>
-        </div>
-      </MegaMenuPanel>
 
       {/* ── Mega Menu: Über uns ── */}
       <MegaMenuPanel id="about">
