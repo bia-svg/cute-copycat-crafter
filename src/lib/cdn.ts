@@ -1,0 +1,51 @@
+const BASE = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb";
+
+export const CDN = {
+  logo: `${BASE}/logo_ddbbde2e.png`,
+  emrBadge: `${BASE}/emr-badge_30dbe70b.png`,
+  nghBadge: `${BASE}/ngh-badge_8744ceb2.png`,
+
+  bekanntAus: [
+    `${BASE}/bekannt-aus-01_584851bb.png`,
+    `${BASE}/bekannt-aus-02_07469884.png`,
+    `${BASE}/bekannt-aus-03_a9c7489b.png`,
+    `${BASE}/bekannt-aus-04_f337e42f.png`,
+    `${BASE}/bekannt-aus-05_4991012d.png`,
+    `${BASE}/bekannt-aus-06_65ab039e.png`,
+    `${BASE}/bekannt-aus-07_04763ec5.png`,
+    `${BASE}/bekannt-aus-08_65f98774.png`,
+    `${BASE}/bekannt-aus-09_bb685f14.png`,
+    `${BASE}/bekannt-aus-10_89714f89.png`,
+    `${BASE}/bekannt-aus-11_e4e2817f.png`,
+    `${BASE}/bekannt-aus-12_f19fa4b7.png`,
+    `${BASE}/bekannt-aus-13_3599b879.png`,
+    `${BASE}/bekannt-aus-14_b00d65c1.png`,
+    `${BASE}/bekannt-aus-15_628d1f55.png`,
+    `${BASE}/bekannt-aus-16_24acd8c8.png`,
+    `${BASE}/bekannt-aus-17_1aa1bddc.png`,
+  ],
+
+  heroSession: `${BASE}/hero_hypnose_session_8cb1474b.jpg`,
+  augsburgCity: `${BASE}/augsburg_city_hypnose_80ab769c.jpg`,
+  zurichCity: `${BASE}/zurich_city_hypnose_a88924b0.jpg`,
+  stopSmoking: `${BASE}/stop_smoking_hypnose_793eb91c.jpg`,
+  anxietyRelief: `${BASE}/anxiety_relief_hypnose_a9fcfdac.jpg`,
+  weightLoss: `${BASE}/weight_loss_hypnose_26317eb7.jpg`,
+  stressBurnout: `${BASE}/stress_burnout_hypnose_7690fff4.jpg`,
+  childrenTeens: `https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/children_teens_hypnose_new-ioh53iWPiVHDd8N8zCMpqx.webp`,
+  depressionTrauma: `${BASE}/depression_trauma_hypnose_67b59e79.jpg`,
+  corporateCoaching: `${BASE}/corporate_coaching_c3713e8d.jpg`,
+  trainingSeminar: `${BASE}/training_seminar_90407094.jpg`,
+  aboutAktivHypnose: `${BASE}/about_aktiv_hypnose_4d6823bf.jpg`,
+  kathrynPortrait: `https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/kathryn-portrait_94249f8f.webp`,
+
+  davidSlider: [
+    `${BASE}/IMG_4878_0437843b.webp`,
+    `${BASE}/IMG_4983_444dce73.webp`,
+    `${BASE}/IMG_4984_c5ee7054.webp`,
+    `${BASE}/IMG_4985_32914ebb.webp`,
+    `${BASE}/IMG_4986_65a1a4cd.webp`,
+    `${BASE}/IMG_4990_f6ab895d.webp`,
+    `${BASE}/IMG_4992_407de741.webp`,
+  ],
+};
