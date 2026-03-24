@@ -355,8 +355,12 @@ export default function Header() {
             )}
           </div>
 
-          {/* Ausbildung */}
-          <MobileSection id="training" title={t("nav.training")} items={trainingItems} />
+          {/* Ausbildung — direct link */}
+          <div className="border-b border-border">
+            <Link to={getPath("training", language, country)} onClick={() => setMobileOpen(false)} className="flex items-center px-4 py-3 font-medium text-foreground">
+              {t("nav.training")}
+            </Link>
+          </div>
 
           {/* Über uns */}
           <MobileSection id="about" title={t("nav.about")} items={aboutItems} />
