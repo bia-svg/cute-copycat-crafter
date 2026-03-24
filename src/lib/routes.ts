@@ -5,7 +5,7 @@ type PageKey =
   | "depression" | "children" | "training" | "seminarSchedule" | "corporate"
   | "about" | "testimonials" | "successStories" | "media"
   | "contact" | "appointmentConfirmation" | "cityZurich" | "cityAugsburg" | "locations"
-  | "impressum" | "privacy" | "terms" | "blog";
+  | "impressum" | "privacy" | "terms" | "blog" | "book";
 
 const slugMap: Record<PageKey, string> = {
   home: "",
@@ -31,6 +31,7 @@ const slugMap: Record<PageKey, string> = {
   privacy: "datenschutz",
   terms: "agb",
   blog: "blog",
+  book: "buch-go-inside",
 };
 
 export function getPath(page: PageKey, language: Language, country: Country): string {

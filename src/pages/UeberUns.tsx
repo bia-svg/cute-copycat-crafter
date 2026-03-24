@@ -172,34 +172,34 @@ export default function UeberUns() {
             </div>
 
             {/* Author */}
-            <div className="bg-white border border-border p-6">
+            <Link to={getPath("book", language, country)} className="bg-white border border-border p-6 hover:shadow-md transition-shadow group">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-20 h-20 bg-[#2E7D32] flex items-center justify-center shrink-0">
                   <BookOpen className="w-10 h-10 text-white" />
                 </div>
               </div>
-              <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">{isEN ? "Author & Specialist Writer" : "Autor & Fachautor"}</h3>
+              <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2 group-hover:text-[#2E7D32] transition-colors">{isEN ? "Author & Specialist Writer" : "Autor & Fachautor"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
                   ? "Author of 'Go InSide' and numerous specialist publications on hypnotherapy and personal development."
                   : "Autor von 'Go InSide' und zahlreichen Fachpublikationen zu Hypnotherapie und Persönlichkeitsentwicklung."}
               </p>
-            </div>
+            </Link>
 
             {/* TV Expert */}
-            <div className="bg-white border border-border p-6">
+            <Link to={getPath("media", language, country)} className="bg-white border border-border p-6 hover:shadow-md transition-shadow group">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-20 h-20 bg-[#1B3A5C] flex items-center justify-center shrink-0">
                   <Tv className="w-10 h-10 text-white" />
                 </div>
               </div>
-              <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">{isEN ? "TV Expert & Media Personality" : "TV-Experte & Medienpersönlichkeit"}</h3>
+              <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2 group-hover:text-[#2E7D32] transition-colors">{isEN ? "TV Expert & Media Personality" : "TV-Experte & Medienpersönlichkeit"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
                   ? "Regular appearances on German and Swiss television as a hypnotherapy expert."
                   : "Regelmäßige Auftritte im deutschen und Schweizer Fernsehen als Hypnose-Experte."}
               </p>
-            </div>
+            </Link>
           </div>
 
           {/* Bekannt Aus — Media Logos */}
