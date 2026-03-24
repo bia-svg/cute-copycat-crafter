@@ -7,6 +7,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { getPath } from "@/lib/routes";
 import { blogPosts } from "@/data/blogPosts";
 import { ArrowLeft, BookOpen, Share2 } from "lucide-react";
+import davidPortrait from "@/assets/david-woods-portrait.jpg";
 import { Button } from "@/components/ui/button";
 import { CDN } from "@/lib/cdn";
 
