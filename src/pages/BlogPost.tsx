@@ -18,7 +18,7 @@ export default function BlogPost() {
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
-    return <Redirect to={getPath("blog", language, country)} />;
+    return <Navigate to={getPath("blog", language, country)} replace />;
   }
 
   const readTime = Math.ceil((post.contentText?.length || 500) / 250);
