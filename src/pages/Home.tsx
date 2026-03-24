@@ -5,6 +5,13 @@ import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+import hero1 from "@/assets/hero-1.jpeg";
+import hero2 from "@/assets/hero-2.jpeg";
+import hero3 from "@/assets/hero-3.jpeg";
+import hero4 from "@/assets/hero-4.jpeg";
+import hero5 from "@/assets/hero-5.jpeg";
+
+const heroSlides = [hero1, hero2, hero3, hero4, hero5];
 import {
   Cigarette, Brain, Scale, Flame, HeartPulse, Users,
   Trophy, Shield, Clock, BookOpen, ArrowRight, Star, Award,
