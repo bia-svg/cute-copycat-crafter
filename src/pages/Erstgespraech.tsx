@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { trackFormConversion } from "@/components/WhatsAppButton";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
@@ -24,6 +24,21 @@ const SEMINAR_DATES_DE = [
 
 type FormType = "session" | "seminar";
 
+/* ── Country phone codes with max digits ── */
+const PHONE_COUNTRIES = [
+  { code: "+41", flag: "🇨🇭", name: "Schweiz", maxDigits: 9, placeholder: "79 123 45 67" },
+  { code: "+49", flag: "🇩🇪", name: "Deutschland", maxDigits: 11, placeholder: "171 1234567" },
+  { code: "+43", flag: "🇦🇹", name: "Österreich", maxDigits: 10, placeholder: "664 1234567" },
+  { code: "+39", flag: "🇮🇹", name: "Italien", maxDigits: 10, placeholder: "312 345 6789" },
+  { code: "+33", flag: "🇫🇷", name: "Frankreich", maxDigits: 9, placeholder: "6 12 34 56 78" },
+  { code: "+44", flag: "🇬🇧", name: "Großbritannien", maxDigits: 10, placeholder: "7911 123456" },
+  { code: "+31", flag: "🇳🇱", name: "Niederlande", maxDigits: 9, placeholder: "6 12345678" },
+  { code: "+34", flag: "🇪🇸", name: "Spanien", maxDigits: 9, placeholder: "612 345 678" },
+  { code: "+351", flag: "🇵🇹", name: "Portugal", maxDigits: 9, placeholder: "912 345 678" },
+  { code: "+55", flag: "🇧🇷", name: "Brasilien", maxDigits: 11, placeholder: "11 91234-5678" },
+  { code: "+1", flag: "🇺🇸", name: "USA / Kanada", maxDigits: 10, placeholder: "202 555 0123" },
+];
+
 export default function Erstgespraech() {
   const { language, country, t, isSwiss, isInternational, showCH, showDE } = useLanguage();
   const isEN = language === "en";
@@ -36,6 +51,22 @@ export default function Erstgespraech() {
   );
   const [selectedDate, setSelectedDate] = useState(searchParams.get("date") || "");
   const [selectedConcern, setSelectedConcern] = useState(searchParams.get("concern") || "");
+
+  // Phone country code — CH pre-selected for Swiss site, DE for German site
+  const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
+  const [phoneCountry, setPhoneCountry] = useState(defaultPhoneCountry);
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const selectedPhoneCountry = PHONE_COUNTRIES.find(c => c.code === phoneCountry) || PHONE_COUNTRIES[0];
+
+  const handlePhoneChange = useCallback((value: string) => {
+    // Only allow digits and spaces
+    const cleaned = value.replace(/[^\d\s]/g, "");
+    const digitsOnly = cleaned.replace(/\s/g, "");
+    if (digitsOnly.length <= selectedPhoneCountry.maxDigits) {
+      setPhoneNumber(cleaned);
+    }
+  }, [selectedPhoneCountry.maxDigits]);
 
   useEffect(() => {
     if (searchParams.get("type") === "seminar") {
@@ -169,7 +200,29 @@ export default function Erstgespraech() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Phone" : "Telefonnummer"} *</label>
-                      <input type="tel" required autoComplete="tel" className={inputClasses} />
+                      <div className="flex">
+                        <select
+                          value={phoneCountry}
+                          onChange={(e) => { setPhoneCountry(e.target.value); setPhoneNumber(""); }}
+                          className="border border-r-0 border-border px-2 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors rounded-none w-[100px] shrink-0"
+                        >
+                          {PHONE_COUNTRIES.map(c => (
+                            <option key={c.code} value={c.code}>{c.flag} {c.code}</option>
+                          ))}
+                        </select>
+                        <input
+                          type="tel"
+                          required
+                          value={phoneNumber}
+                          onChange={(e) => handlePhoneChange(e.target.value)}
+                          placeholder={selectedPhoneCountry.placeholder}
+                          maxLength={selectedPhoneCountry.maxDigits + 4}
+                          className={`${inputClasses} border-l-0`}
+                        />
+                      </div>
+                      <p className="text-[10px] text-muted-foreground mt-0.5">
+                        {isEN ? `Max ${selectedPhoneCountry.maxDigits} digits` : `Max. ${selectedPhoneCountry.maxDigits} Ziffern`}
+                      </p>
                     </div>
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Postal Code / City" : "PLZ / Ortschaft"}</label>
