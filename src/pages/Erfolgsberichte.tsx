@@ -74,7 +74,6 @@ export default function Erfolgsberichte() {
 
   return (
     <>
-      />
 
       {/* Hero */}
       <section className="bg-[#f4f3ef] py-12 md:py-16">

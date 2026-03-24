@@ -155,7 +155,6 @@ export default function Ausbildung() {
 
   return (
     <>
-      />
 
       {/* ═══════════════════════════════════════════════════════════
           SECTION 1 — HERO: Why this training exists

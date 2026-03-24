@@ -13,7 +13,6 @@ export default function UeberUns() {
 
   return (
     <>
-      />
 
       {/* Main Bio Section */}
       <section className="bg-white border-b border-border">

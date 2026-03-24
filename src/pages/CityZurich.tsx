@@ -23,7 +23,6 @@ export default function CityZurich() {
 
   return (
     <>
-      />
 
       <section className="bg-white border-b border-border">
         <div className="container-main py-8 lg:py-12">
