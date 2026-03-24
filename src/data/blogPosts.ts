@@ -197,7 +197,7 @@ export const blogPosts: BlogPost[] = [
     slug: "aktive-hypnose-der-unterschied-zur-normalen-hypnose",
     title: "Aktive Hypnose: Der Unterschied zur normalen Hypnose",
     metaDescription: "",
-    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/hero_hypnose_session_8cb1474b.jpg",
+    featuredImage: blogAktivUnterschied,
     contentText: "Aktive Hypnose: Der Unterschied zur normalen Hypnose\nAktive Hypnose ist eine Form der Hypnotherapie, bei der der Klient während der Hypnose aktiv an seiner eigenen Therapie teilnimmt. Im Gegensatz zu...",
     content: [
       { tag: "h1", text: "Aktive Hypnose: Der Unterschied zur normalen Hypnose" },
