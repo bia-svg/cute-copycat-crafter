@@ -6,6 +6,7 @@
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getPath } from "@/lib/routes";
+import { Helmet } from "react-helmet-async";
 
 
 import { Button } from "@/components/ui/button";
