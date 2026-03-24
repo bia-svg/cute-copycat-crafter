@@ -299,22 +299,12 @@ export default function Header() {
             </div>
           </div>
           <SidebarCard>
-            <p className="font-semibold text-sm text-foreground mb-1">
+            <p className="font-semibold text-sm text-foreground">
               {isDE ? "Nächste Termine" : "Upcoming Dates"}
             </p>
-            <p className="text-xs text-muted-foreground mb-3">
+            <p className="text-xs text-muted-foreground">
               {isDE ? "Kleine Gruppen · Maximale Lernintensität" : "Small groups · Maximum learning intensity"}
             </p>
-            <div className="flex items-center gap-2 mb-1">
-              <Award className="w-4 h-4 text-primary" />
-              <span className="text-xs text-foreground">NGH Badge</span>
-            </div>
-            {showCH && (
-              <div className="flex items-center gap-2 mb-3">
-                <Award className="w-4 h-4 text-primary" />
-                <span className="text-xs text-foreground">EMR Badge</span>
-              </div>
-            )}
             <Link to={getPath("training", language, country)} onClick={() => setActiveMenu(null)}>
               <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs">
                 {isDE ? "Seminartermine ansehen" : "View Seminar Dates"}
