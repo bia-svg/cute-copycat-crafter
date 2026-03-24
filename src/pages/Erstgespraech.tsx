@@ -5,7 +5,7 @@ import { getPath } from "@/lib/routes";
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { CheckCircle, Phone, Mail, MapPin, Clock, Shield } from "lucide-react";
+import { CheckCircle, Phone, MapPin, Clock, Shield } from "lucide-react";
 import { toast } from "sonner";
 
 export default function Erstgespraech() {
