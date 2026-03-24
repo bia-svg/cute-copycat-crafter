@@ -82,7 +82,7 @@ export const blogPosts: BlogPost[] = [
     slug: "kann-man-hypnotisieren-lernen",
     title: "Kann man Hypnotisieren lernen und wenn ja, wie?",
     metaDescription: "",
-    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/training_seminar_90407094.jpg",
+    featuredImage: blogHypnoseLernen,
     contentText: "Kann man Hypnotisieren lernen und wenn ja, wie?\nHypnose ist eine bereits seit vielen Jahren relativ weit verbreitete Therapieform, die Menschen mit unterschiedlichsten Problemen helfen kann. Daher nu...",
     content: [
       { tag: "h1", text: "Kann man Hypnotisieren lernen und wenn ja, wie?" },
