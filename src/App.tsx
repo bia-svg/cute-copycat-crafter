@@ -23,6 +23,8 @@ import FirmenCoaching from "@/pages/FirmenCoaching";
 import { Impressum, Datenschutz, AGB } from "@/pages/Legal";
 import Blog from "@/pages/Blog";
 import Buch from "@/pages/Buch";
+import Dashboard from "@/pages/Dashboard";
+import DashboardLogin from "@/pages/DashboardLogin";
 import {
   SmokingPage, AnxietyPage, WeightPage,
   StressPage, DepressionPage, ChildrenPage
@@ -95,6 +97,10 @@ function AppRoutes() {
           <Route path="/:lang/:country/impressum" element={<Impressum />} />
           <Route path="/:lang/:country/datenschutz" element={<Datenschutz />} />
           <Route path="/:lang/:country/agb" element={<AGB />} />
+
+          {/* Dashboard (internal, not linked anywhere) */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/login" element={<DashboardLogin />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
