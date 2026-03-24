@@ -57,7 +57,7 @@ export default function Home() {
 
   /* ── Hero Slider ── */
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = CDN.davidSlider.length;
+  const totalSlides = heroSlides.length;
 
   useEffect(() => {
     const interval = setInterval(() => {
