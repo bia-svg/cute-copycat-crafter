@@ -163,9 +163,9 @@ export default function Kundenmeinungen() {
               <h1 className="text-2xl sm:text-3xl font-bold text-primary">
                 {isEN ? "Client Testimonials" : "Kundenmeinungen"}
               </h1>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground mt-1 hover:text-cta transition-colors inline-block">
+              <p className="text-sm text-muted-foreground mt-1">
                 {isEN ? "5.0 / 5 on Google · 255 Reviews" : "5.0 / 5 bei Google · 255 Bewertungen"}
-              </a>
+              </p>
             </div>
             <a href="#" target="_blank" rel="noopener noreferrer" className="flex gap-0.5 hover:opacity-80 transition-opacity">
               {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
