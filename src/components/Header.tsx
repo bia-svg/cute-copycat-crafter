@@ -274,11 +274,13 @@ export default function Header() {
                 <span className="font-semibold text-sm text-foreground">EMR-Krankenkasse Konform</span>
               </div>
             )}
-            <Link to={getPath("contact", language, country)} onClick={() => setActiveMenu(null)}>
-              <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs">
-                {isDE ? "Erstgespräch buchen" : "Book Discovery Call"}
-              </Button>
-            </Link>
+            <div className="pt-2">
+              <Link to={getPath("contact", language, country)} onClick={() => setActiveMenu(null)}>
+                <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs">
+                  {isDE ? "Erstgespräch buchen" : "Book Discovery Call"}
+                </Button>
+              </Link>
+            </div>
           </SidebarCard>
         </div>
       </MegaMenuPanel>
