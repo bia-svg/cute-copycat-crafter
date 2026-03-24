@@ -292,10 +292,6 @@ export default function Header() {
             {t("service.corporate")}
           </Link>
           <MobileSection id="about" title={t("nav.about")} items={aboutItems} />
-          <Link to={getPath("shop", language, country)} onClick={() => setMobileOpen(false)}
-            className="block px-4 py-3 font-medium text-foreground border-b border-border">
-            Shop
-          </Link>
           <div className="p-4">
             <Link to={getPath("contact", language, country)} onClick={() => setMobileOpen(false)}>
               <Button className="w-full bg-cta text-cta-foreground hover:bg-cta/90">
