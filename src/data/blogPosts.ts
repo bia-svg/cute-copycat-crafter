@@ -275,7 +275,7 @@ export const blogPosts: BlogPost[] = [
     slug: "planet-wissen-wie-meditation-das-gehirn-umbaut",
     title: "Planet Wissen – Wie Meditation das Gehirn umbaut",
     metaDescription: "",
-    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/about_aktiv_hypnose_4d6823bf.jpg",
+    featuredImage: blogMeditationGehirn,
     contentText: "Planet Wissen – Wie Meditation das Gehirn umbaut\nWeitere interessante Beiträge...",
     content: [
       { tag: "h1", text: "Planet Wissen – Wie Meditation das Gehirn umbaut" },
