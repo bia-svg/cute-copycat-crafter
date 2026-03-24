@@ -403,8 +403,8 @@ export default function Dashboard() {
                   <Table>
                     <TableHeader>
                       <TableRow className="border-[hsl(220,15%,18%)] hover:bg-transparent">
-                        <TableHead className="text-[hsl(220,10%,50%)]">Zeitpunkt</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">E-Mail</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Time</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Email</TableHead>
                         <TableHead className="text-[hsl(220,10%,50%)] text-center">Status</TableHead>
                       </TableRow>
                     </TableHeader>
