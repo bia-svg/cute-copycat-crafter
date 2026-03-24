@@ -264,7 +264,7 @@ export default function Dashboard() {
             <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
               <CardHeader>
                 <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium flex items-center gap-2">
-                  <Eye className="w-4 h-4" /> Top-Seiten
+                  <Eye className="w-4 h-4" /> Top Pages
                 </CardTitle>
               </CardHeader>
               <CardContent>
