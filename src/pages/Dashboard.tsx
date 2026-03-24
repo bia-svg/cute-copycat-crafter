@@ -352,13 +352,13 @@ export default function Dashboard() {
                   <Table>
                     <TableHeader>
                       <TableRow className="border-[hsl(220,15%,18%)] hover:bg-transparent">
-                        <TableHead className="text-[hsl(220,10%,50%)]">Código</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Data</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Nome</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Tema</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Fonte</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Campanha</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)] text-center">Convertido</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Code</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Date</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Name</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Topic</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Source</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Campaign</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)] text-center">Converted</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
