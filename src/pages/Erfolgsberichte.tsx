@@ -155,23 +155,21 @@ export default function Erfolgsberichte() {
         </div>
       </section>
 
-      {/* Google Reviews CTA */}
+      {/* Google Reviews Info */}
       <section className="bg-white py-12 md:py-16">
         <div className="container-main text-center">
           <h2 className="text-2xl font-bold text-[#1B3A5C] mb-4" style={{ fontFamily: "Georgia, serif" }}>
-            {isEN ? "Read All Google Reviews" : "Alle Google-Bewertungen lesen"}
+            {isEN ? "Google Reviews" : "Google-Bewertungen"}
           </h2>
           <p className="text-[#55504f] max-w-xl mx-auto mb-6">
             {isEN
               ? "See what our clients say about their experience with David J. Woods on Google."
               : "Lesen Sie, was unsere Klienten über ihre Erfahrung mit David J. Woods bei Google sagen."}
           </p>
-          <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-3">
-              {isEN ? "View Google Reviews" : "Google-Bewertungen ansehen"}
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </a>
+          <div className="inline-flex items-center gap-2 text-sm">
+            {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
+            <span className="font-semibold text-[#1B3A5C] ml-1">5.0 / 5 — 255 {isEN ? "Reviews" : "Bewertungen"}</span>
+          </div>
         </div>
       </section>
 
