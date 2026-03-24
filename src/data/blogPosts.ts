@@ -311,7 +311,7 @@ export const blogPosts: BlogPost[] = [
     slug: "wie-sinnvoll-ist-das-abnehmen-mit-hypnose",
     title: "Wie sinnvoll ist das Abnehmen mit Hypnose wirklich?",
     metaDescription: "In diesem Artikel erfahren Sie, wie sinnvoll das Abnehmen mit Hypnose wirklich ist & welche Möglichkeiten David J. Woods Ihnen dazu bietet!",
-    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/weight_loss_hypnose_26317eb7.jpg",
+    featuredImage: blogAbnehmenSinnvoll,
     contentText: "Wie sinnvoll ist das Abnehmen mit Hypnose wirklich?\nDas Abnehmen mit Hypnose wird immer bekannter und doch haben viele Menschen ihre Zweifel an diesem Vorgehen. Trotz der vielen positiven Beispiele s...",
     content: [
       { tag: "h1", text: "Wie sinnvoll ist das Abnehmen mit Hypnose wirklich?" },
