@@ -396,6 +396,34 @@ export default function Header() {
           {/* Über uns */}
           <MobileSection id="about" title={t("nav.about")} items={aboutItems} />
 
+          {/* Country & Language selectors */}
+          <div className="border-b border-border px-4 py-3 flex items-center gap-4">
+            <div className="flex-1">
+              <p className="text-xs text-muted-foreground mb-1.5">{isDE ? "Region" : "Region"}</p>
+              <div className="flex gap-1">
+                {countryOptions.map(opt => (
+                  <button key={opt.value} onClick={() => setCountry(opt.value)}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 text-sm rounded border ${opt.value === country ? "border-primary bg-primary/10 font-semibold text-primary" : "border-border text-foreground"}`}>
+                    {opt.flag} <span className="text-xs">{opt.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="border-b border-border px-4 py-3 flex items-center gap-4">
+            <div className="flex-1">
+              <p className="text-xs text-muted-foreground mb-1.5">{isDE ? "Sprache" : "Language"}</p>
+              <div className="flex gap-1">
+                {languageOptions.map(opt => (
+                  <button key={opt.value} onClick={() => setLanguage(opt.value)}
+                    className={`px-4 py-1.5 text-sm rounded border ${opt.value === language ? "border-primary bg-primary/10 font-semibold text-primary" : "border-border text-foreground"}`}>
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* CTA */}
           <div className="p-4">
             <Link to={getPath("contact", language, country)} onClick={() => setMobileOpen(false)}>
