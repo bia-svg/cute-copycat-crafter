@@ -6,7 +6,22 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
-import ComingSoon from "@/pages/ComingSoon";
+import Erstgespraech from "@/pages/Erstgespraech";
+import UeberUns from "@/pages/UeberUns";
+import Kundenmeinungen from "@/pages/Kundenmeinungen";
+import Ausbildung from "@/pages/Ausbildung";
+import CityZurich from "@/pages/CityZurich";
+import CityAugsburg from "@/pages/CityAugsburg";
+import TvMedien from "@/pages/TvMedien";
+import Erfolgsberichte from "@/pages/Erfolgsberichte";
+import FirmenCoaching from "@/pages/FirmenCoaching";
+import { Impressum, Datenschutz, AGB } from "@/pages/Legal";
+import Blog from "@/pages/Blog";
+import Shop from "@/pages/Shop";
+import {
+  SmokingPage, AnxietyPage, WeightPage,
+  StressPage, DepressionPage, ChildrenPage
+} from "@/pages/services/index";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -17,8 +32,46 @@ function AppRoutes() {
       <Layout>
         <Routes>
           <Route path="/" element={<Navigate to="/de/ch" replace />} />
+
+          {/* Home */}
           <Route path="/:lang/:country" element={<Home />} />
-          <Route path="/:lang/:country/*" element={<ComingSoon />} />
+
+          {/* Services */}
+          <Route path="/:lang/:country/raucherentwoehnung" element={<SmokingPage />} />
+          <Route path="/:lang/:country/aengste-phobien" element={<AnxietyPage />} />
+          <Route path="/:lang/:country/abnehmen" element={<WeightPage />} />
+          <Route path="/:lang/:country/stress-burnout" element={<StressPage />} />
+          <Route path="/:lang/:country/depressionen-traumata" element={<DepressionPage />} />
+          <Route path="/:lang/:country/kinder-jugendliche" element={<ChildrenPage />} />
+
+          {/* Training & Corporate */}
+          <Route path="/:lang/:country/ausbildung" element={<Ausbildung />} />
+          <Route path="/:lang/:country/firmen-coaching" element={<FirmenCoaching />} />
+
+          {/* About */}
+          <Route path="/:lang/:country/ueber-uns" element={<UeberUns />} />
+          <Route path="/:lang/:country/kundenmeinungen" element={<Kundenmeinungen />} />
+          <Route path="/:lang/:country/erfolgsberichte" element={<Erfolgsberichte />} />
+          <Route path="/:lang/:country/tv-medien" element={<TvMedien />} />
+
+          {/* Contact */}
+          <Route path="/:lang/:country/erstgespraech" element={<Erstgespraech />} />
+
+          {/* City Pages */}
+          <Route path="/:lang/:country/hypnose-zuerich" element={<CityZurich />} />
+          <Route path="/:lang/:country/hypnose-augsburg" element={<CityAugsburg />} />
+
+          {/* Blog */}
+          <Route path="/:lang/:country/blog" element={<Blog />} />
+
+          {/* Shop */}
+          <Route path="/:lang/:country/shop" element={<Shop />} />
+
+          {/* Legal */}
+          <Route path="/:lang/:country/impressum" element={<Impressum />} />
+          <Route path="/:lang/:country/datenschutz" element={<Datenschutz />} />
+          <Route path="/:lang/:country/agb" element={<AGB />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
