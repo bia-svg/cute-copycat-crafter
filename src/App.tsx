@@ -10,14 +10,15 @@ import Erstgespraech from "@/pages/Erstgespraech";
 import UeberUns from "@/pages/UeberUns";
 import Kundenmeinungen from "@/pages/Kundenmeinungen";
 import Ausbildung from "@/pages/Ausbildung";
+import SeminarAblauf from "@/pages/SeminarAblauf";
 import CityZurich from "@/pages/CityZurich";
 import CityAugsburg from "@/pages/CityAugsburg";
+import Standorte from "@/pages/Standorte";
 import TvMedien from "@/pages/TvMedien";
 import Erfolgsberichte from "@/pages/Erfolgsberichte";
 import FirmenCoaching from "@/pages/FirmenCoaching";
 import { Impressum, Datenschutz, AGB } from "@/pages/Legal";
 import Blog from "@/pages/Blog";
-import Shop from "@/pages/Shop";
 import {
   SmokingPage, AnxietyPage, WeightPage,
   StressPage, DepressionPage, ChildrenPage
@@ -46,6 +47,7 @@ function AppRoutes() {
 
           {/* Training & Corporate */}
           <Route path="/:lang/:country/ausbildung" element={<Ausbildung />} />
+          <Route path="/:lang/:country/seminar-ablauf" element={<SeminarAblauf />} />
           <Route path="/:lang/:country/firmen-coaching" element={<FirmenCoaching />} />
 
           {/* About */}
@@ -57,15 +59,13 @@ function AppRoutes() {
           {/* Contact */}
           <Route path="/:lang/:country/erstgespraech" element={<Erstgespraech />} />
 
-          {/* City Pages */}
+          {/* Locations */}
+          <Route path="/:lang/:country/standorte" element={<Standorte />} />
           <Route path="/:lang/:country/hypnose-zuerich" element={<CityZurich />} />
           <Route path="/:lang/:country/hypnose-augsburg" element={<CityAugsburg />} />
 
           {/* Blog */}
           <Route path="/:lang/:country/blog" element={<Blog />} />
-
-          {/* Shop */}
-          <Route path="/:lang/:country/shop" element={<Shop />} />
 
           {/* Legal */}
           <Route path="/:lang/:country/impressum" element={<Impressum />} />

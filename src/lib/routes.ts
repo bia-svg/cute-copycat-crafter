@@ -2,10 +2,10 @@ import type { Language, Country } from "@/contexts/LanguageContext";
 
 type PageKey =
   | "home" | "smoking" | "anxiety" | "weight" | "stress"
-  | "depression" | "children" | "training" | "corporate"
+  | "depression" | "children" | "training" | "seminarSchedule" | "corporate"
   | "about" | "testimonials" | "successStories" | "media"
-  | "contact" | "cityZurich" | "cityAugsburg"
-  | "impressum" | "privacy" | "terms" | "blog" | "shop";
+  | "contact" | "cityZurich" | "cityAugsburg" | "locations"
+  | "impressum" | "privacy" | "terms" | "blog";
 
 const slugMap: Record<PageKey, string> = {
   home: "",
@@ -16,6 +16,7 @@ const slugMap: Record<PageKey, string> = {
   depression: "depressionen-traumata",
   children: "kinder-jugendliche",
   training: "ausbildung",
+  seminarSchedule: "seminar-ablauf",
   corporate: "firmen-coaching",
   about: "ueber-uns",
   testimonials: "kundenmeinungen",
@@ -24,11 +25,11 @@ const slugMap: Record<PageKey, string> = {
   contact: "erstgespraech",
   cityZurich: "hypnose-zuerich",
   cityAugsburg: "hypnose-augsburg",
+  locations: "standorte",
   impressum: "impressum",
   privacy: "datenschutz",
   terms: "agb",
   blog: "blog",
-  shop: "shop",
 };
 
 export function getPath(page: PageKey, language: Language, country: Country): string {
