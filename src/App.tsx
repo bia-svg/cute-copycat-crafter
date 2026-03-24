@@ -18,7 +18,7 @@ function AppRoutes() {
         <Routes>
           <Route path="/" element={<Navigate to="/de/ch" replace />} />
           <Route path="/:lang/:country" element={<Home />} />
-          <Route path="/:lang/:country/*" element={<Home />} />
+          <Route path="/:lang/:country/*" element={<ComingSoon />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
