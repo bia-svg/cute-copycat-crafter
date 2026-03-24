@@ -25,7 +25,7 @@ export function Impressum() {
             </div>
             <div>
               <h2 className="font-semibold text-[#1B3A5C] mb-1">{isEN ? "Contact" : "Kontakt"}</h2>
-              <p>E-Mail: <a href="mailto:info@david-j-woods.com" className="text-[#1B3A5C] underline hover:text-[#2E7D32]">info@david-j-woods.com</a></p>
+              <p>{isEN ? "Please contact us via WhatsApp or phone." : "Bitte kontaktieren Sie uns per WhatsApp oder Telefon."}</p>
             </div>
             <div>
               <h2 className="font-semibold text-[#1B3A5C] mb-1">{isEN ? "In Cooperation with" : "In Kooperation mit"}</h2>
