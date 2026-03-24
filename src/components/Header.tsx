@@ -204,10 +204,6 @@ export default function Header() {
               {t("nav.about")} <ChevronDown className="w-3.5 h-3.5" />
             </button>
           </div>
-          <Link to={getPath("shop", language, country)} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary"
-            onMouseEnter={() => setActiveMenu(null)}>
-            Shop
-          </Link>
           <Link to={getPath("contact", language, country)}>
             <Button className="ml-2 bg-cta text-cta-foreground hover:bg-cta/90 text-sm">
               {t("nav.cta")}
