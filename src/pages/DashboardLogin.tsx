@@ -23,7 +23,7 @@ export default function DashboardLogin() {
       if (success) {
         navigate("/dashboard");
       } else {
-        setError("E-Mail oder Passwort ungültig.");
+        setError("Invalid email or password.");
       }
       setLoading(false);
     }, 500);
@@ -37,7 +37,7 @@ export default function DashboardLogin() {
             <Lock className="w-6 h-6 text-primary" />
           </div>
           <CardTitle className="text-xl text-white">Dashboard Login</CardTitle>
-          <p className="text-sm text-[hsl(220,10%,55%)]">Interner Bereich — Nur autorisierte Benutzer</p>
+          <p className="text-sm text-[hsl(220,10%,55%)]">Internal area — Authorized users only</p>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -48,7 +48,7 @@ export default function DashboardLogin() {
               </div>
             )}
             <div className="space-y-2">
-              <label className="text-sm text-[hsl(220,10%,65%)]">E-Mail</label>
+              <label className="text-sm text-[hsl(220,10%,65%)]">Email</label>
               <Input
                 type="email"
                 value={email}
@@ -59,7 +59,7 @@ export default function DashboardLogin() {
               />
             </div>
             <div className="space-y-2">
-              <label className="text-sm text-[hsl(220,10%,65%)]">Passwort</label>
+              <label className="text-sm text-[hsl(220,10%,65%)]">Password</label>
               <Input
                 type="password"
                 value={password}
@@ -70,7 +70,7 @@ export default function DashboardLogin() {
               />
             </div>
             <Button type="submit" disabled={loading} className="w-full bg-primary hover:bg-primary/90">
-              {loading ? "Wird geladen..." : "Anmelden"}
+              {loading ? "Loading..." : "Sign In"}
             </Button>
           </form>
         </CardContent>

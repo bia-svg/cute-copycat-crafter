@@ -24,7 +24,6 @@ import {
   Eye, DollarSign, Target, ArrowUpRight, ArrowDownRight
 } from "lucide-react";
 import { format, subDays, startOfWeek, startOfMonth, parseISO } from "date-fns";
-import { de } from "date-fns/locale";
 
 type Period = "daily" | "weekly" | "monthly" | "total";
 
@@ -66,11 +65,11 @@ function MetricCard({ title, value, icon: Icon, change, prefix }: {
             <Icon className="w-4 h-4 text-primary" />
           </div>
         </div>
-        <div className="text-2xl font-bold">{prefix}{typeof value === "number" ? value.toLocaleString("de-CH") : value}</div>
+        <div className="text-2xl font-bold">{prefix}{typeof value === "number" ? value.toLocaleString("en-US") : value}</div>
         {change !== undefined && (
           <div className={`flex items-center gap-1 mt-1 text-xs ${change >= 0 ? "text-green-400" : "text-red-400"}`}>
             {change >= 0 ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
-            {Math.abs(change).toFixed(1)}% vs. Vorperiode
+            {Math.abs(change).toFixed(1)}% vs. previous period
           </div>
         )}
       </CardContent>
@@ -115,8 +114,8 @@ export default function Dashboard() {
   if (!isAuthenticated()) return null;
 
   const chartConfig = {
-    visitors: { label: "Besucher", color: "hsl(213, 53%, 45%)" },
-    formSubmissions: { label: "Formulare", color: "hsl(123, 46%, 45%)" },
+    visitors: { label: "Visitors", color: "hsl(213, 53%, 45%)" },
+    formSubmissions: { label: "Forms", color: "hsl(123, 46%, 45%)" },
     whatsappClicks: { label: "WhatsApp", color: "hsl(142, 70%, 45%)" },
     conversions: { label: "Conversions", color: "hsl(45, 90%, 55%)" },
   };
@@ -128,13 +127,13 @@ export default function Dashboard() {
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           <div>
             <h1 className="text-lg font-semibold">David Woods — Dashboard</h1>
-            <p className="text-xs text-[hsl(220,10%,45%)]">Internes Analytics & Kampagnen-Tracking</p>
+            <p className="text-xs text-[hsl(220,10%,45%)]">Internal Analytics & Campaign Tracking</p>
           </div>
           <div className="flex items-center gap-3">
             <span className="text-xs text-[hsl(220,10%,50%)]">{currentUser}</span>
             <Button size="sm" variant="ghost" onClick={() => { logout(); navigate("/dashboard/login"); }}
               className="text-[hsl(220,10%,55%)] hover:text-white hover:bg-[hsl(220,15%,15%)]">
-              <LogOut className="w-4 h-4 mr-1" /> Abmelden
+              <LogOut className="w-4 h-4 mr-1" /> Sign Out
             </Button>
           </div>
         </div>
@@ -145,8 +144,8 @@ export default function Dashboard() {
         <Tabs value={tab} onValueChange={setTab}>
           <div className="flex items-center justify-between flex-wrap gap-3">
             <TabsList className="bg-[hsl(220,15%,13%)] border border-[hsl(220,15%,20%)]">
-              <TabsTrigger value="overview" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Übersicht</TabsTrigger>
-              <TabsTrigger value="campaigns" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Kampagnen</TabsTrigger>
+              <TabsTrigger value="overview" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Overview</TabsTrigger>
+              <TabsTrigger value="campaigns" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Campaigns</TabsTrigger>
               <TabsTrigger value="submissions" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Leads</TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Logs</TabsTrigger>
             </TabsList>
@@ -156,7 +155,7 @@ export default function Dashboard() {
                 {(["daily", "weekly", "monthly", "total"] as Period[]).map(p => (
                   <button key={p} onClick={() => setPeriod(p)}
                     className={`px-3 py-1 text-xs rounded transition-colors ${period === p ? "bg-primary text-white" : "text-[hsl(220,10%,55%)] hover:text-white"}`}>
-                    {p === "daily" ? "Täglich" : p === "weekly" ? "Wöchentlich" : p === "monthly" ? "Monatlich" : "Gesamt"}
+                    {p === "daily" ? "Daily" : p === "weekly" ? "Weekly" : p === "monthly" ? "Monthly" : "All Time"}
                   </button>
                 ))}
               </div>
@@ -167,9 +166,9 @@ export default function Dashboard() {
           <TabsContent value="overview" className="space-y-6 mt-4">
             {/* KPI Cards */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <MetricCard title="Besucher" value={totals.visitors} icon={Users} change={8.3} />
-              <MetricCard title="Formular-Leads" value={totals.formSubmissions} icon={FileText} change={12.5} />
-              <MetricCard title="WhatsApp Klicks" value={totals.whatsappClicks} icon={MessageCircle} change={-2.1} />
+              <MetricCard title="Visitors" value={totals.visitors} icon={Users} change={8.3} />
+              <MetricCard title="Form Leads" value={totals.formSubmissions} icon={FileText} change={12.5} />
+              <MetricCard title="WhatsApp Clicks" value={totals.whatsappClicks} icon={MessageCircle} change={-2.1} />
               <MetricCard title="Conversion Rate" value={`${conversionRate}%`} icon={TrendingUp} change={3.7} />
             </div>
 
@@ -179,7 +178,7 @@ export default function Dashboard() {
                 {/* Visitors Chart */}
                 <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Besucher</CardTitle>
+                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Visitors</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ChartContainer config={chartConfig} className="h-[220px] w-full">
@@ -203,7 +202,7 @@ export default function Dashboard() {
                 {/* Form Submissions Chart */}
                 <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Formular-Einsendungen</CardTitle>
+                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Form Submissions</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ChartContainer config={chartConfig} className="h-[220px] w-full">
@@ -221,7 +220,7 @@ export default function Dashboard() {
                 {/* WhatsApp Clicks Chart */}
                 <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">WhatsApp Klicks</CardTitle>
+                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">WhatsApp Clicks</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ChartContainer config={chartConfig} className="h-[220px] w-full">
@@ -265,23 +264,23 @@ export default function Dashboard() {
             <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
               <CardHeader>
                 <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium flex items-center gap-2">
-                  <Eye className="w-4 h-4" /> Top-Seiten
+                  <Eye className="w-4 h-4" /> Top Pages
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <Table>
                   <TableHeader>
                     <TableRow className="border-[hsl(220,15%,18%)] hover:bg-transparent">
-                      <TableHead className="text-[hsl(220,10%,50%)]">Seite</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Aufrufe</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Ø Verweildauer</TableHead>
+                      <TableHead className="text-[hsl(220,10%,50%)]">Page</TableHead>
+                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Views</TableHead>
+                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Avg. Time</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {topPages.map(page => (
                       <TableRow key={page.path} className="border-[hsl(220,15%,18%)] hover:bg-[hsl(220,15%,15%)]">
                         <TableCell className="text-white font-medium">{page.label}<span className="text-[hsl(220,10%,40%)] text-xs ml-2">{page.path}</span></TableCell>
-                        <TableCell className="text-right text-white">{page.views.toLocaleString("de-CH")}</TableCell>
+                        <TableCell className="text-right text-white">{page.views.toLocaleString("en-US")}</TableCell>
                         <TableCell className="text-right text-white flex items-center justify-end gap-1"><Clock className="w-3 h-3 text-[hsl(220,10%,45%)]" />{formatTime(page.avgTimeSeconds)}</TableCell>
                       </TableRow>
                     ))}
@@ -294,24 +293,24 @@ export default function Dashboard() {
           {/* CAMPAIGNS TAB */}
           <TabsContent value="campaigns" className="space-y-6 mt-4">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <MetricCard title="Investition (Ads)" value={totalSpend} icon={DollarSign} prefix="CHF " />
-              <MetricCard title="Total Klicks" value={campaigns.reduce((s, c) => s + c.clicks, 0)} icon={Target} />
+              <MetricCard title="Ad Spend" value={totalSpend} icon={DollarSign} prefix="CHF " />
+              <MetricCard title="Total Clicks" value={campaigns.reduce((s, c) => s + c.clicks, 0)} icon={Target} />
               <MetricCard title="Total Leads" value={campaigns.reduce((s, c) => s + c.leads, 0)} icon={FileText} />
-              <MetricCard title="Kosten/Lead" value={`CHF ${(totalSpend / campaigns.reduce((s, c) => s + c.leads, 1)).toFixed(0)}`} icon={TrendingUp} />
+              <MetricCard title="Cost / Lead" value={`CHF ${(totalSpend / campaigns.reduce((s, c) => s + c.leads, 1)).toFixed(0)}`} icon={TrendingUp} />
             </div>
 
             <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
               <CardHeader>
-                <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Kampagnen-Übersicht</CardTitle>
+                <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Campaign Overview</CardTitle>
               </CardHeader>
               <CardContent>
                 <Table>
                   <TableHeader>
                     <TableRow className="border-[hsl(220,15%,18%)] hover:bg-transparent">
-                      <TableHead className="text-[hsl(220,10%,50%)]">Kampagne</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)]">Quelle</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Ausgaben</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Klicks</TableHead>
+                      <TableHead className="text-[hsl(220,10%,50%)]">Campaign</TableHead>
+                      <TableHead className="text-[hsl(220,10%,50%)]">Source</TableHead>
+                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Spend</TableHead>
+                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Clicks</TableHead>
                       <TableHead className="text-[hsl(220,10%,50%)] text-right">Leads</TableHead>
                       <TableHead className="text-[hsl(220,10%,50%)] text-right">Conversions</TableHead>
                       <TableHead className="text-[hsl(220,10%,50%)] text-right">CPA</TableHead>
@@ -326,8 +325,8 @@ export default function Dashboard() {
                             {c.source === "google_ads" ? "Google Ads" : c.source === "organic" ? "Organic" : c.source === "direct" ? "Direct" : "Referral"}
                           </Badge>
                         </TableCell>
-                        <TableCell className="text-right text-white">{c.spend > 0 ? `CHF ${c.spend.toLocaleString("de-CH")}` : "—"}</TableCell>
-                        <TableCell className="text-right text-white">{c.clicks.toLocaleString("de-CH")}</TableCell>
+                        <TableCell className="text-right text-white">{c.spend > 0 ? `CHF ${c.spend.toLocaleString("en-US")}` : "—"}</TableCell>
+                        <TableCell className="text-right text-white">{c.clicks.toLocaleString("en-US")}</TableCell>
                         <TableCell className="text-right text-white">{c.leads}</TableCell>
                         <TableCell className="text-right text-white">{c.conversions}</TableCell>
                         <TableCell className="text-right text-white">{c.conversions > 0 && c.spend > 0 ? `CHF ${(c.spend / c.conversions).toFixed(0)}` : "—"}</TableCell>
@@ -345,7 +344,7 @@ export default function Dashboard() {
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Form Submissions — Tracking Codes</CardTitle>
-                  <p className="text-xs text-[hsl(220,10%,40%)]">Código enviado no e-mail de confirmação</p>
+                  <p className="text-xs text-[hsl(220,10%,40%)]">Code sent in confirmation email</p>
                 </div>
               </CardHeader>
               <CardContent>
@@ -353,13 +352,13 @@ export default function Dashboard() {
                   <Table>
                     <TableHeader>
                       <TableRow className="border-[hsl(220,15%,18%)] hover:bg-transparent">
-                        <TableHead className="text-[hsl(220,10%,50%)]">Código</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Data</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Nome</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Tema</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Fonte</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Campanha</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)] text-center">Convertido</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Code</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Date</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Name</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Topic</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Source</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Campaign</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)] text-center">Converted</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -377,9 +376,9 @@ export default function Dashboard() {
                           <TableCell className="text-[hsl(220,10%,50%)] text-xs">{s.utm_campaign || "—"}</TableCell>
                           <TableCell className="text-center">
                             {s.converted ? (
-                              <Badge className="bg-green-500/20 text-green-400 border-0 text-xs">✓ Sim</Badge>
+                              <Badge className="bg-green-500/20 text-green-400 border-0 text-xs">✓ Yes</Badge>
                             ) : (
-                              <Badge className="bg-[hsl(220,15%,18%)] text-[hsl(220,10%,45%)] border-0 text-xs">Pendente</Badge>
+                              <Badge className="bg-[hsl(220,15%,18%)] text-[hsl(220,10%,45%)] border-0 text-xs">Pending</Badge>
                             )}
                           </TableCell>
                         </TableRow>
@@ -395,17 +394,17 @@ export default function Dashboard() {
           <TabsContent value="logs" className="mt-4">
             <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
               <CardHeader>
-                <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Login-Protokoll</CardTitle>
+                <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Login History</CardTitle>
               </CardHeader>
               <CardContent>
                 {loginLogs.length === 0 ? (
-                  <p className="text-[hsl(220,10%,45%)] text-sm py-8 text-center">Noch keine Login-Einträge vorhanden.</p>
+                  <p className="text-[hsl(220,10%,45%)] text-sm py-8 text-center">No login entries yet.</p>
                 ) : (
                   <Table>
                     <TableHeader>
                       <TableRow className="border-[hsl(220,15%,18%)] hover:bg-transparent">
-                        <TableHead className="text-[hsl(220,10%,50%)]">Zeitpunkt</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">E-Mail</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Time</TableHead>
+                        <TableHead className="text-[hsl(220,10%,50%)]">Email</TableHead>
                         <TableHead className="text-[hsl(220,10%,50%)] text-center">Status</TableHead>
                       </TableRow>
                     </TableHeader>
@@ -416,9 +415,9 @@ export default function Dashboard() {
                           <TableCell className="text-white">{log.email}</TableCell>
                           <TableCell className="text-center">
                             {log.success ? (
-                              <Badge className="bg-green-500/20 text-green-400 border-0 text-xs">Erfolgreich</Badge>
+                              <Badge className="bg-green-500/20 text-green-400 border-0 text-xs">Success</Badge>
                             ) : (
-                              <Badge className="bg-red-500/20 text-red-400 border-0 text-xs">Fehlgeschlagen</Badge>
+                              <Badge className="bg-red-500/20 text-red-400 border-0 text-xs">Failed</Badge>
                             )}
                           </TableCell>
                         </TableRow>
