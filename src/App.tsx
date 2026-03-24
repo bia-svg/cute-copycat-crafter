@@ -59,6 +59,7 @@ function AppRoutes() {
 
           {/* Contact */}
           <Route path="/:lang/:country/erstgespraech" element={<Erstgespraech />} />
+          <Route path="/:lang/:country/terminbestaetigung" element={<Terminbestaetigung />} />
 
           {/* Locations */}
           <Route path="/:lang/:country/standorte" element={<Standorte />} />

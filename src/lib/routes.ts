@@ -23,6 +23,7 @@ const slugMap: Record<PageKey, string> = {
   successStories: "erfolgsberichte",
   media: "tv-medien",
   contact: "erstgespraech",
+  appointmentConfirmation: "terminbestaetigung",
   cityZurich: "hypnose-zuerich",
   cityAugsburg: "hypnose-augsburg",
   locations: "standorte",
