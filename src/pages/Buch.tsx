@@ -104,7 +104,7 @@ export default function Buch() {
             <p className="text-base text-foreground leading-relaxed">
               {isEN
                 ? "Live a happy and healthy life! Delete 'bugs' and mental blocks from your subconscious! Renew your self-image! In 3 steps you will learn — in detail and easy to follow — with many exercises and tips, your mental reprogramming."
-                : "Führen Sie ein glückliches und gesundes Leben! Löschen Sie „Bugs" und Denkblockaden Ihres Unterbewusstseins! Erneuern Sie Ihr Selbstbild! In 3 Schritten erlernen Sie – ausführlich und leicht nachvollziehbar – mit vielen Übungen und Tipps Ihre geistige Umprogrammierung."}
+                : 'F\u00fchren Sie ein gl\u00fcckliches und gesundes Leben! L\u00f6schen Sie \u201eBugs\u201c und Denkblockaden Ihres Unterbewusstseins! Erneuern Sie Ihr Selbstbild! In 3 Schritten erlernen Sie \u2013 ausf\u00fchrlich und leicht nachvollziehbar \u2013 mit vielen \u00dcbungen und Tipps Ihre geistige Umprogrammierung.'}
             </p>
 
             <p className="text-base text-foreground leading-relaxed">
