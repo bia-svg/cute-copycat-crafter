@@ -2,7 +2,7 @@
  * Individual Blog Post page — renders structured content from legacy posts
  * Deutsche Sachlichkeit style with proper SEO
  */
-import { useParams, Link, Redirect } from "wouter";
+import { useParams, Link, Navigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getPath } from "@/lib/routes";
 import { blogPosts } from "@/data/blogPosts";
