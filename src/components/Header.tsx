@@ -74,7 +74,6 @@ export default function Header() {
 
   const trainingItems = [
     { icon: <GraduationCap className="w-5 h-5" />, label: isDE ? "Hypnose-Ausbildung" : "Hypnosis Training", desc: isDE ? "NGH-zertifiziertes Therapeuten-Diplom" : "NGH-certified therapist diploma", href: getPath("training", language, country) },
-    { icon: <Calendar className="w-5 h-5" />, label: isDE ? "Seminar-Ablauf" : "Seminar Schedule", desc: isDE ? "6-Tage Intensiv-Curriculum" : "6-day intensive curriculum", href: getPath("seminarSchedule", language, country) },
   ];
 
   const aboutItems = [

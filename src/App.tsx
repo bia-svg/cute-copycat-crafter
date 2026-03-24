@@ -58,7 +58,7 @@ function AppRoutes() {
 
           {/* Training & Corporate */}
           <Route path="/:lang/:country/ausbildung" element={<Ausbildung />} />
-          <Route path="/:lang/:country/seminar-ablauf" element={<SeminarAblauf />} />
+          <Route path="/:lang/:country/seminar-ablauf" element={<Navigate to={`/${window.location.pathname.split('/')[1]}/${window.location.pathname.split('/')[2]}/ausbildung#curriculum`} replace />} />
           <Route path="/:lang/:country/firmen-coaching" element={<FirmenCoaching />} />
 
           {/* About */}

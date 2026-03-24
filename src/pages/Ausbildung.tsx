@@ -389,7 +389,7 @@ export default function Ausbildung() {
                       <span className={`text-xs font-semibold px-2 py-1 rounded ${d.status === "limited" ? "bg-[#FFF3E0] text-[#E65100]" : "bg-[#E8F5E9] text-[#2E7D32]"}`}>
                         {d.status === "limited" ? (isEN ? "Limited spots" : "Letzte freie Plätze") : (isEN ? "Available" : "Verfügbar")}
                       </span>
-                      <Link to={`/${language}/${country}/erstgespraech`}>
+                      <Link to={`/${language}/${country}/erstgespraech?type=seminar&date=${encodeURIComponent(d.date)}&location=${encodeURIComponent(d.location)}`}>
                         <Button size="sm" className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white text-xs">
                           {isEN ? "Register" : "Anmelden"}
                         </Button>
