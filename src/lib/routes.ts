@@ -31,6 +31,7 @@ const slugMap: Record<PageKey, string> = {
   privacy: "datenschutz",
   terms: "agb",
   blog: "blog",
+  book: "buch-go-inside",
 };
 
 export function getPath(page: PageKey, language: Language, country: Country): string {

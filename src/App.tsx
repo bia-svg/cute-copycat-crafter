@@ -79,6 +79,9 @@ function AppRoutes() {
           {/* Blog */}
           <Route path="/:lang/:country/blog" element={<Blog />} />
 
+          {/* Book */}
+          <Route path="/:lang/:country/buch-go-inside" element={<Buch />} />
+
           {/* Legal */}
           <Route path="/:lang/:country/impressum" element={<Impressum />} />
           <Route path="/:lang/:country/datenschutz" element={<Datenschutz />} />
