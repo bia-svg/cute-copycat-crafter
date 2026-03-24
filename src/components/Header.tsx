@@ -388,6 +388,24 @@ export default function Header() {
           </div>
         </div>
       )}
+      {/* Trust Bar — below menu */}
+      <div className="bg-[#8b827c] text-white text-xs">
+        <div className="container-main flex items-center justify-center gap-1.5 py-1.5 flex-wrap">
+          {showCH && (
+            <>
+              <span>EMR-Krankenkasse Konform</span>
+              <span className="opacity-50">·</span>
+            </>
+          )}
+          <span>NGH International Trainer</span>
+          <span className="opacity-50">·</span>
+          <span>★ 5.0 / 5 Google (255)</span>
+          <span className="opacity-50">·</span>
+          <span>{isDE ? "Über 40 Jahre Erfahrung" : "40+ Years Experience"}</span>
+          <span className="opacity-50">·</span>
+          <span>{isDE ? "30.000+ Sitzungen" : "30,000+ Sessions"}</span>
+        </div>
+      </div>
     </header>
   );
 }
