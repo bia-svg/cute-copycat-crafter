@@ -48,7 +48,7 @@ export default function DashboardLogin() {
               </div>
             )}
             <div className="space-y-2">
-              <label className="text-sm text-[hsl(220,10%,65%)]">E-Mail</label>
+              <label className="text-sm text-[hsl(220,10%,65%)]">Email</label>
               <Input
                 type="email"
                 value={email}
