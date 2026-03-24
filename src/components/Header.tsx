@@ -266,12 +266,12 @@ export default function Header() {
             </div>
           </div>
           <SidebarCard>
-            <div className="flex items-center gap-2 mb-1">
+            <div className="flex items-center gap-2">
               <Award className="w-4 h-4 text-cta" />
               <span className="font-semibold text-sm text-foreground">NGH International Trainer</span>
             </div>
             {showCH && (
-              <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center gap-2">
                 <Award className="w-4 h-4 text-cta" />
                 <span className="font-semibold text-sm text-foreground">EMR-Krankenkasse Konform</span>
               </div>
