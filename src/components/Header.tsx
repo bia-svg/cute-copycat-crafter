@@ -131,9 +131,15 @@ export default function Header() {
       <div className="bg-primary text-primary-foreground text-xs">
         <div className="container-main flex items-center justify-between py-1.5">
           <div className="hidden sm:flex items-center gap-4">
-            <a href="tel:+41448880901" className="flex items-center gap-1 hover:underline">
-              <Phone className="w-3 h-3" /> +41 44 888 09 01
-            </a>
+            {showCH ? (
+              <a href="tel:+41448880901" className="flex items-center gap-1 hover:underline">
+                <Phone className="w-3 h-3" /> +41 44 888 09 01
+              </a>
+            ) : (
+              <a href="tel:+491719539922" className="flex items-center gap-1 hover:underline">
+                <Phone className="w-3 h-3" /> +49 171 9539922
+              </a>
+            )}
           </div>
           <div className="flex items-center gap-3 ml-auto">
             {/* Country selector */}
