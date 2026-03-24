@@ -27,7 +27,7 @@ export function useLanguage() {
 
 const translations: Record<string, Record<Language, string>> = {
   "nav.home": { de: "Home", en: "Home" },
-  "nav.sessions": { de: "Sitzungen", en: "Sessions" },
+  "nav.sessions": { de: "Hypnosetherapie", en: "Hypnotherapy" },
   "nav.training": { de: "Ausbildung", en: "Training" },
   "nav.locations": { de: "Standorte", en: "Locations" },
   "nav.about": { de: "Über uns", en: "About Us" },
