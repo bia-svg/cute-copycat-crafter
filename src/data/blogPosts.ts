@@ -12,7 +12,7 @@ export const blogPosts: BlogPost[] = [
     slug: "wie-funktioniert-hypnose",
     title: "Wie funktioniert Hypnose? – und warum man kein Angst vor Hypnose haben muss",
     metaDescription: "Viele Menschen fragen sich: \"Wie funktioniert Hypnose?\" - und genau diese Frage beantwortet dieser Blogartikel. ► Jetzt mehr erfahren!",
-    featuredImage: "https://david-j-woods.com/wp-content/uploads/2024/03/david-j-woods-hypnose-10.jpg",
+    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/about_aktiv_hypnose_4d6823bf.jpg",
     contentText: "Wie funktioniert Hypnose? – und warum man kein Angst vor Hypnose haben muss\nNachdem wir in vorherigen Blogartikeln bereits auf die Frage 'Was ist Hypnose?' eingegangen sind, wollen wir heute etwas ti...",
     content: [
       { tag: "h1", text: "Wie funktioniert Hypnose? – und warum man kein Angst vor Hypnose haben muss" },
@@ -44,7 +44,7 @@ export const blogPosts: BlogPost[] = [
     slug: "was-ist-selbsthypnose-und-wie-kann-man-hypnose-selber-lernen",
     title: "Was ist Selbsthypnose und wie kann man Hypnose selber lernen?",
     metaDescription: "Selbsthypnose ermöglicht es Ihnen, sich - ohne einen Hypnotiseur - selbst in einen hypnotischen Zustand zu versetzen. ► Jetzt mehr erfahren!",
-    featuredImage: "https://david-j-woods.com/wp-content/uploads/2023/04/Hypnose-Seminar-David-Woods.jpg",
+    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/training_seminar_90407094.jpg",
     contentText: "Was ist Selbsthypnose und wie kann man Hypnose selber lernen?\nNachdem wir in vorherigen Blogartikeln bereits die Frage 'Was ist Hypnose?' und die Frage 'Kann man Hypnotisieren lernen?' beantwortet ha...",
     content: [
       { tag: "h1", text: "Was ist Selbsthypnose und wie kann man Hypnose selber lernen?" },
@@ -74,7 +74,7 @@ export const blogPosts: BlogPost[] = [
     slug: "kann-man-hypnotisieren-lernen",
     title: "Kann man Hypnotisieren lernen und wenn ja, wie?",
     metaDescription: "",
-    featuredImage: "https://david-j-woods.com/wp-content/uploads/2023/03/IMG_8556-2-scaled.jpg",
+    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/training_seminar_90407094.jpg",
     contentText: "Kann man Hypnotisieren lernen und wenn ja, wie?\nHypnose ist eine bereits seit vielen Jahren relativ weit verbreitete Therapieform, die Menschen mit unterschiedlichsten Problemen helfen kann. Daher nu...",
     content: [
       { tag: "h1", text: "Kann man Hypnotisieren lernen und wenn ja, wie?" },
@@ -109,7 +109,7 @@ export const blogPosts: BlogPost[] = [
     slug: "was-ist-hypnose",
     title: "Was ist Hypnose und wie wirksam ist sie?",
     metaDescription: "In diesem Blogartikel beantworten wir die Frage: was ist Hypnose und erklären, wie wirksam sie ist und wie sie sich von der Hypnosetherapie unterscheidet!",
-    featuredImage: "https://david-j-woods.com/wp-content/uploads/2023/03/david-woods-medien4.jpg",
+    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/hero_hypnose_session_8cb1474b.jpg",
     contentText: "Was ist Hypnose und wie wirksam ist sie?\nDa Hypnose häufig als etwas Geheimnisvolles dargestellt wird, stellen sich auch heute noch viele Menschen die Frage: was ist Hypnose eigentlich? – Zudem sind ...",
     content: [
       { tag: "h1", text: "Was ist Hypnose und wie wirksam ist sie?" },
@@ -142,7 +142,7 @@ export const blogPosts: BlogPost[] = [
     slug: "wer-ist-david-j-woods",
     title: "Wer ist David J. Woods?",
     metaDescription: "",
-    featuredImage: "https://david-j-woods.com/wp-content/uploads/2024/06/david-j-woods-hypnose-26.jpg",
+    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/about_aktiv_hypnose_4d6823bf.jpg",
     contentText: "Wer ist David J. Woods?\nDavid J. Woods ist ein in London geborener Hypnotiseur, der vor allem in Deutschland und der Schweiz tätig ist. Dabei ist er bestens ausgebildet und hat viele Jahre Erfahrung ...",
     content: [
       { tag: "h1", text: "Wer ist David J. Woods?" },
@@ -173,7 +173,7 @@ export const blogPosts: BlogPost[] = [
     slug: "ausbildung-in-aktiv-hypnose-als-investition-in-ihre-persoenliche-und-berufliche-entwicklung",
     title: "Ausbildung in Aktiv Hypnose als Investition in ihre persönliche und berufliche Entwicklung",
     metaDescription: "",
-    featuredImage: "https://david-j-woods.com/wp-content/uploads/2023/01/coaching-seminar-business-erfolg-david-woods-scaled.jpeg",
+    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/corporate_coaching_c3713e8d.jpg",
     contentText: "Ausbildung in Aktiv Hypnose als Investition in ihre persönliche und berufliche Entwicklung\nEineAusbildung in Aktiv Hypnosebei David J. Woods kann für viele Menschen eine lohnende Investition in ihre ...",
     content: [
       { tag: "h1", text: "Ausbildung in Aktiv Hypnose als Investition in ihre persönliche und berufliche Entwicklung" },
@@ -189,7 +189,7 @@ export const blogPosts: BlogPost[] = [
     slug: "aktive-hypnose-der-unterschied-zur-normalen-hypnose",
     title: "Aktive Hypnose: Der Unterschied zur normalen Hypnose",
     metaDescription: "",
-    featuredImage: "https://david-j-woods.com/wp-content/uploads/2024/06/hero-6.webp",
+    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/hero_hypnose_session_8cb1474b.jpg",
     contentText: "Aktive Hypnose: Der Unterschied zur normalen Hypnose\nAktive Hypnose ist eine Form der Hypnotherapie, bei der der Klient während der Hypnose aktiv an seiner eigenen Therapie teilnimmt. Im Gegensatz zu...",
     content: [
       { tag: "h1", text: "Aktive Hypnose: Der Unterschied zur normalen Hypnose" },
@@ -208,7 +208,7 @@ export const blogPosts: BlogPost[] = [
     slug: "aktive-hypnose-kann-eine-heilende-wirkung-haben",
     title: "Aktive Hypnose kann eine heilende Wirkung haben",
     metaDescription: "",
-    featuredImage: "https://david-j-woods.com/wp-content/uploads/2024/06/david-j-woods-hypnose-19.jpg",
+    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/about_aktiv_hypnose_4d6823bf.jpg",
     contentText: "Aktive Hypnose kann eine heilende Wirkung haben\nAktive Hypnose wird von Experten wie David J. Woods erfolgreich praktiziert und kann eine wertvolle Ergänzung zu traditionellen Behandlungsmethoden sei...",
     content: [
       { tag: "h1", text: "Aktive Hypnose kann eine heilende Wirkung haben" },
@@ -222,7 +222,7 @@ export const blogPosts: BlogPost[] = [
     slug: "rauchfrei-durch-hypnose-rundum-gesund",
     title: "Rauchfrei durch Hypnose? | Rundum gesund",
     metaDescription: "",
-    featuredImage: "https://david-j-woods.com/wp-content/uploads/2023/08/nichtraucher-obby-rh-BPm5DMSop8A-unsplash-scaled-1.webp",
+    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/stop_smoking_hypnose_793eb91c.jpg",
     contentText: "Rauchfrei durch Hypnose? | Rundum gesund\nHypnose: Ein Weg zur Rauchentwöhnung?\nKann Hypnose wirklich beim Rauchen aufhören helfen?\nJeder zehnte Raucher in Deutschland (Stand ca. 2020) hat den Vorsa...",
     content: [
       { tag: "h1", text: "Rauchfrei durch Hypnose? | Rundum gesund" },
@@ -245,7 +245,7 @@ export const blogPosts: BlogPost[] = [
     slug: "uebergewicht-das-gehirn-und-abnehmen-durch-hypnose",
     title: "Übergewicht, das Gehirn und Abnehmen durch Hypnose",
     metaDescription: "",
-    featuredImage: "https://david-j-woods.com/wp-content/uploads/2023/08/abnehmen-i-yunmai-5jctAMjz21A-unsplash-scaled-1.webp",
+    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/weight_loss_hypnose_26317eb7.jpg",
     contentText: "Übergewicht, das Gehirn und Abnehmen durch Hypnose\nWeitere interessante Beiträge...",
     content: [
       { tag: "h1", text: "Übergewicht, das Gehirn und Abnehmen durch Hypnose" },
@@ -256,7 +256,7 @@ export const blogPosts: BlogPost[] = [
     slug: "hypnose-nur-show-oder-wirksame-therapie",
     title: "Hypnose: nur Show oder wirksame Therapie?",
     metaDescription: "",
-    featuredImage: "https://david-j-woods.com/wp-content/uploads/2024/06/david-j-woods-hypnose-19.jpg",
+    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/about_aktiv_hypnose_4d6823bf.jpg",
     contentText: "Hypnose: nur Show oder wirksame Therapie?\nWeitere interessante Beiträge...",
     content: [
       { tag: "h1", text: "Hypnose: nur Show oder wirksame Therapie?" },
@@ -267,7 +267,7 @@ export const blogPosts: BlogPost[] = [
     slug: "planet-wissen-wie-meditation-das-gehirn-umbaut",
     title: "Planet Wissen – Wie Meditation das Gehirn umbaut",
     metaDescription: "",
-    featuredImage: "https://david-j-woods.com/wp-content/uploads/2024/03/david-j-woods-hypnose-11.jpg",
+    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/about_aktiv_hypnose_4d6823bf.jpg",
     contentText: "Planet Wissen – Wie Meditation das Gehirn umbaut\nWeitere interessante Beiträge...",
     content: [
       { tag: "h1", text: "Planet Wissen – Wie Meditation das Gehirn umbaut" },
@@ -278,7 +278,7 @@ export const blogPosts: BlogPost[] = [
     slug: "erwartungsaengste-loswerden-mit-hypnose",
     title: "Erwartungsängste loswerden mit Hypnose; geht das überhaupt?",
     metaDescription: "In diesem Artikel erfahren Sie, ob man Erwartungsängste mit Hypnose loswerden kann & welche Möglichkeiten David J. Woods Ihnen dabei bietet!",
-    featuredImage: "https://david-j-woods.com/wp-content/uploads/2024/05/depression-sasha-freemind-Pv5WeEyxMWU-unsplash-scaled-1.webp",
+    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/depression_trauma_hypnose_67b59e79.jpg",
     contentText: "Erwartungsängste loswerden mit Hypnose; geht das überhaupt?\nDas Abnehmen mit Hypnose wird immer bekannter und doch haben viele Menschen ihre Zweifel an diesem Vorgehen. Trotz der vielen positiven Bei...",
     content: [
       { tag: "h1", text: "Erwartungsängste loswerden mit Hypnose; geht das überhaupt?" },
@@ -303,7 +303,7 @@ export const blogPosts: BlogPost[] = [
     slug: "wie-sinnvoll-ist-das-abnehmen-mit-hypnose",
     title: "Wie sinnvoll ist das Abnehmen mit Hypnose wirklich?",
     metaDescription: "In diesem Artikel erfahren Sie, wie sinnvoll das Abnehmen mit Hypnose wirklich ist & welche Möglichkeiten David J. Woods Ihnen dazu bietet!",
-    featuredImage: "https://david-j-woods.com/wp-content/uploads/2023/08/abnehmen-i-yunmai-5jctAMjz21A-unsplash-scaled-1.webp",
+    featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/weight_loss_hypnose_26317eb7.jpg",
     contentText: "Wie sinnvoll ist das Abnehmen mit Hypnose wirklich?\nDas Abnehmen mit Hypnose wird immer bekannter und doch haben viele Menschen ihre Zweifel an diesem Vorgehen. Trotz der vielen positiven Beispiele s...",
     content: [
       { tag: "h1", text: "Wie sinnvoll ist das Abnehmen mit Hypnose wirklich?" },
