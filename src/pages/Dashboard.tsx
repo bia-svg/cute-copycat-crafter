@@ -359,58 +359,6 @@ export default function Dashboard() {
             </Card>
           </TabsContent>
 
-          {/* LEADS / SUBMISSIONS TAB */}
-          <TabsContent value="submissions" className="space-y-6 mt-4">
-            <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Form Submissions — Tracking Codes</CardTitle>
-                  <p className="text-xs text-[hsl(220,10%,40%)]">Code sent in confirmation email</p>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="overflow-x-auto">
-                  <Table>
-                    <TableHeader>
-                      <TableRow className="border-[hsl(220,15%,18%)] hover:bg-transparent">
-                        <TableHead className="text-[hsl(220,10%,50%)]">Code</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Date</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Name</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Topic</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Source</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Campaign</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)] text-center">Converted</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {submissions.map(s => (
-                        <TableRow key={s.id} className="border-[hsl(220,15%,18%)] hover:bg-[hsl(220,15%,15%)]">
-                          <TableCell className="font-mono text-primary text-sm font-semibold">{s.code}</TableCell>
-                          <TableCell className="text-white">{format(parseISO(s.date), "dd.MM.yyyy")}</TableCell>
-                          <TableCell className="text-white">{s.name.split(" ")[0]}</TableCell>
-                          <TableCell className="text-white text-sm">{s.concern}</TableCell>
-                          <TableCell>
-                            <Badge variant="outline" className={`text-xs border-[hsl(220,15%,25%)] ${s.source === "google_ads" ? "text-blue-400" : s.source === "organic" ? "text-green-400" : "text-[hsl(220,10%,55%)]"}`}>
-                              {s.source === "google_ads" ? "Ads" : s.source === "organic" ? "Organic" : "Direct"}
-                            </Badge>
-                          </TableCell>
-                          <TableCell className="text-[hsl(220,10%,50%)] text-xs">{s.utm_campaign || "—"}</TableCell>
-                          <TableCell className="text-center">
-                            {s.converted ? (
-                              <Badge className="bg-green-500/20 text-green-400 border-0 text-xs">✓ Yes</Badge>
-                            ) : (
-                              <Badge className="bg-[hsl(220,15%,18%)] text-[hsl(220,10%,45%)] border-0 text-xs">Pending</Badge>
-                            )}
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
           {/* LOGS TAB */}
           <TabsContent value="logs" className="mt-4">
             <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
