@@ -114,6 +114,9 @@ export default function Footer() {
               <Link to={getPath("training", language, country)} className="block hover:underline hover:opacity-100">
                 {t("nav.training")}
               </Link>
+              <Link to={`/${language}/${country}/terminbestaetigung`} className="block hover:underline hover:opacity-100">
+                {isEN ? "Appointment Confirmation" : "Terminbestätigung"}
+              </Link>
             </div>
           </div>
         </div>
