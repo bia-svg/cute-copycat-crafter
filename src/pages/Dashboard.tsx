@@ -220,10 +220,10 @@ export default function Dashboard() {
                   </CardContent>
                 </Card>
 
-                {/* Form Submissions Chart */}
+                {/* Sessions Chart */}
                 <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Form Submissions</CardTitle>
+                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Sessions</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ChartContainer config={chartConfig} className="h-[220px] w-full">
