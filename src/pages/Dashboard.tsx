@@ -146,6 +146,22 @@ export default function Dashboard() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+        {/* Error banners */}
+        {gaError && (
+          <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-sm text-red-400">
+            <strong>GA4:</strong> {gaError}
+          </div>
+        )}
+        {adsError && (
+          <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-sm text-red-400">
+            <strong>Google Ads:</strong> {adsError}
+          </div>
+        )}
+
+        {loading && (
+          <div className="text-center py-12 text-[hsl(220,10%,50%)]">Loading data from Google Cloud...</div>
+        )}
+
         {/* Tabs */}
         <Tabs value={tab} onValueChange={setTab}>
           <div className="flex items-center justify-between flex-wrap gap-3">
