@@ -1,10 +1,8 @@
 import { useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { isAuthenticated, logout, getCurrentUser, getLoginLogs } from "@/lib/dashboardAuth";
-import {
-  generateDailyData, topPages, campaigns, generateFormSubmissions,
-  formatTime, type DailyMetric, type FormSubmission
-} from "@/data/dashboardMockData";
+import { useDashboardData } from "@/hooks/useDashboardData";
+import { formatTime, type DailyMetric } from "@/data/dashboardMockData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
