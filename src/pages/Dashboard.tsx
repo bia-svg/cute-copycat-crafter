@@ -168,7 +168,6 @@ export default function Dashboard() {
             <TabsList className="bg-[hsl(220,15%,13%)] border border-[hsl(220,15%,20%)]">
               <TabsTrigger value="overview" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Overview</TabsTrigger>
               <TabsTrigger value="campaigns" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Campaigns</TabsTrigger>
-              <TabsTrigger value="submissions" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Leads</TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Logs</TabsTrigger>
             </TabsList>
 
