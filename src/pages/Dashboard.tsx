@@ -15,10 +15,10 @@ import {
 } from "@/components/ui/chart";
 import {
   AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid,
-  ResponsiveContainer, LineChart, Line
+  LineChart, Line
 } from "recharts";
 import {
-  Users, FileText, MessageCircle, TrendingUp, LogOut, Clock,
+  Users, FileText, TrendingUp, LogOut, Clock,
   Eye, DollarSign, Target, ArrowUpRight, ArrowDownRight
 } from "lucide-react";
 import { format, subDays, startOfWeek, startOfMonth, parseISO } from "date-fns";
