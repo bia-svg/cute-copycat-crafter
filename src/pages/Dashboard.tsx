@@ -124,7 +124,14 @@ export default function Dashboard() {
       <div className="border-b border-[hsl(220,15%,15%)] bg-[hsl(220,15%,10%)]">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           <div>
-            <h1 className="text-lg font-semibold">David Woods — Dashboard</h1>
+            <div className="flex items-center gap-2">
+              <h1 className="text-lg font-semibold">David Woods — Dashboard</h1>
+              {isLive ? (
+                <Badge className="bg-green-500/20 text-green-400 border-0 text-xs">● Live</Badge>
+              ) : (
+                <Badge className="bg-yellow-500/20 text-yellow-400 border-0 text-xs">Demo Data</Badge>
+              )}
+            </div>
             <p className="text-xs text-[hsl(220,10%,45%)]">Internal Analytics & Campaign Tracking</p>
           </div>
           <div className="flex items-center gap-3">
