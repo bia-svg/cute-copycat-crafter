@@ -57,8 +57,8 @@ export function useDashboardData(): DashboardData {
         (data.dailyData || []).map((d: any) => ({
           date: d.date,
           visitors: d.visitors || 0,
-          formSubmissions: 0,
-          whatsappClicks: 0,
+          formSubmissions: d.sessions || 0,
+          whatsappClicks: d.pageViews || 0,
           conversions: 0,
         }))
       );
