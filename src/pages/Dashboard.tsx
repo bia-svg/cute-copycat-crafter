@@ -84,8 +84,7 @@ export default function Dashboard() {
     if (!isAuthenticated()) navigate("/dashboard/login", { replace: true });
   }, [navigate]);
 
-  const rawData = useMemo(() => generateDailyData(), []);
-  const submissions = useMemo(() => generateFormSubmissions(), []);
+  const { dailyData: rawData, topPages, campaigns, submissions, loading, error: dataError, isLive } = useDashboardData();
 
   const chartData = useMemo(() => {
     if (period === "weekly") return aggregateByWeek(rawData);
