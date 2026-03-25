@@ -256,24 +256,20 @@ export default function Dashboard() {
                   </CardContent>
                 </Card>
 
-                {/* Conversion Rate Chart */}
+                {/* Sessions vs Visitors Chart */}
                 <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Conversion Rate</CardTitle>
+                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Sessions vs Visitors</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ChartContainer config={chartConfig} className="h-[220px] w-full">
-                      <LineChart data={chartData.map(d => ({
-                        ...d,
-                        rate: d.formSubmissions + d.whatsappClicks > 0
-                          ? Number(((d.conversions / (d.formSubmissions + d.whatsappClicks)) * 100).toFixed(1))
-                          : 0
-                      }))}>
+                      <LineChart data={chartData}>
                         <CartesianGrid stroke="hsl(220,15%,18%)" strokeDasharray="3 3" />
                         <XAxis dataKey="date" tick={{ fill: "hsl(220,10%,45%)", fontSize: 10 }} tickFormatter={v => format(parseISO(v), "dd.MM")} />
-                        <YAxis tick={{ fill: "hsl(220,10%,45%)", fontSize: 10 }} unit="%" />
+                        <YAxis tick={{ fill: "hsl(220,10%,45%)", fontSize: 10 }} />
                         <ChartTooltip content={<ChartTooltipContent />} />
-                        <Line type="monotone" dataKey="rate" stroke="hsl(45, 90%, 55%)" strokeWidth={2} dot={false} />
+                        <Line type="monotone" dataKey="visitors" stroke="hsl(213, 53%, 45%)" strokeWidth={2} dot={false} />
+                        <Line type="monotone" dataKey="formSubmissions" stroke="hsl(123, 46%, 45%)" strokeWidth={2} dot={false} />
                       </LineChart>
                     </ChartContainer>
                   </CardContent>
