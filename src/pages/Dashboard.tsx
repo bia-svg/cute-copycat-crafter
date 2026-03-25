@@ -114,8 +114,8 @@ export default function Dashboard() {
 
   const chartConfig = {
     visitors: { label: "Visitors", color: "hsl(213, 53%, 45%)" },
-    formSubmissions: { label: "Forms", color: "hsl(123, 46%, 45%)" },
-    whatsappClicks: { label: "WhatsApp", color: "hsl(142, 70%, 45%)" },
+    formSubmissions: { label: "Sessions", color: "hsl(123, 46%, 45%)" },
+    whatsappClicks: { label: "Page Views", color: "hsl(142, 70%, 45%)" },
     conversions: { label: "Conversions", color: "hsl(45, 90%, 55%)" },
   };
 
