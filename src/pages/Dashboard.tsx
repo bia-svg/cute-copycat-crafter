@@ -188,10 +188,10 @@ export default function Dashboard() {
           <TabsContent value="overview" className="space-y-6 mt-4">
             {/* KPI Cards */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <MetricCard title="Visitors" value={totals.visitors} icon={Users} change={8.3} />
-              <MetricCard title="Form Leads" value={totals.formSubmissions} icon={FileText} change={12.5} />
-              <MetricCard title="WhatsApp Clicks" value={totals.whatsappClicks} icon={MessageCircle} change={-2.1} />
-              <MetricCard title="Conversion Rate" value={`${conversionRate}%`} icon={TrendingUp} change={3.7} />
+              <MetricCard title="Visitors" value={totals.visitors} icon={Users} />
+              <MetricCard title="Sessions" value={totals.formSubmissions} icon={FileText} />
+              <MetricCard title="Page Views" value={totals.whatsappClicks} icon={Eye} />
+              <MetricCard title="Avg. Session" value={rawData.length > 0 ? `${Math.round(rawData.reduce((a, d) => a + d.visitors, 0) / rawData.length)}` : "—"} icon={TrendingUp} />
             </div>
 
             {/* Charts */}
