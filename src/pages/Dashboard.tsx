@@ -84,7 +84,8 @@ export default function Dashboard() {
     if (!isAuthenticated()) navigate("/dashboard/login", { replace: true });
   }, [navigate]);
 
-  const { dailyData: rawData, topPages, campaigns, submissions, loading, error: dataError, isLive } = useDashboardData();
+  const { dailyData: rawData, topPages, campaigns, submissions, loading, gaError, adsError, gaLive, adsLive } = useDashboardData();
+  const isLive = gaLive || adsLive;
 
   const chartData = useMemo(() => {
     if (period === "weekly") return aggregateByWeek(rawData);
