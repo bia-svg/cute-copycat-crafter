@@ -15,10 +15,10 @@ import {
 } from "@/components/ui/chart";
 import {
   AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid,
-  ResponsiveContainer, LineChart, Line
+  LineChart, Line
 } from "recharts";
 import {
-  Users, FileText, MessageCircle, TrendingUp, LogOut, Clock,
+  Users, FileText, TrendingUp, LogOut, Clock,
   Eye, DollarSign, Target, ArrowUpRight, ArrowDownRight
 } from "lucide-react";
 import { format, subDays, startOfWeek, startOfMonth, parseISO } from "date-fns";
@@ -84,7 +84,8 @@ export default function Dashboard() {
     if (!isAuthenticated()) navigate("/dashboard/login", { replace: true });
   }, [navigate]);
 
-  const { dailyData: rawData, topPages, campaigns, submissions, loading, error: dataError, isLive } = useDashboardData();
+  const { dailyData: rawData, topPages, campaigns, submissions, loading, gaError, adsError, gaLive, adsLive } = useDashboardData();
+  const isLive = gaLive || adsLive;
 
   const chartData = useMemo(() => {
     if (period === "weekly") return aggregateByWeek(rawData);
@@ -113,8 +114,8 @@ export default function Dashboard() {
 
   const chartConfig = {
     visitors: { label: "Visitors", color: "hsl(213, 53%, 45%)" },
-    formSubmissions: { label: "Forms", color: "hsl(123, 46%, 45%)" },
-    whatsappClicks: { label: "WhatsApp", color: "hsl(142, 70%, 45%)" },
+    formSubmissions: { label: "Sessions", color: "hsl(123, 46%, 45%)" },
+    whatsappClicks: { label: "Page Views", color: "hsl(142, 70%, 45%)" },
     conversions: { label: "Conversions", color: "hsl(45, 90%, 55%)" },
   };
 
@@ -145,13 +146,28 @@ export default function Dashboard() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+        {/* Error banners */}
+        {gaError && (
+          <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-sm text-red-400">
+            <strong>GA4:</strong> {gaError}
+          </div>
+        )}
+        {adsError && (
+          <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-sm text-red-400">
+            <strong>Google Ads:</strong> {adsError}
+          </div>
+        )}
+
+        {loading && (
+          <div className="text-center py-12 text-[hsl(220,10%,50%)]">Loading data from Google Cloud...</div>
+        )}
+
         {/* Tabs */}
         <Tabs value={tab} onValueChange={setTab}>
           <div className="flex items-center justify-between flex-wrap gap-3">
             <TabsList className="bg-[hsl(220,15%,13%)] border border-[hsl(220,15%,20%)]">
               <TabsTrigger value="overview" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Overview</TabsTrigger>
               <TabsTrigger value="campaigns" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Campaigns</TabsTrigger>
-              <TabsTrigger value="submissions" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Leads</TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Logs</TabsTrigger>
             </TabsList>
 
@@ -171,10 +187,10 @@ export default function Dashboard() {
           <TabsContent value="overview" className="space-y-6 mt-4">
             {/* KPI Cards */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <MetricCard title="Visitors" value={totals.visitors} icon={Users} change={8.3} />
-              <MetricCard title="Form Leads" value={totals.formSubmissions} icon={FileText} change={12.5} />
-              <MetricCard title="WhatsApp Clicks" value={totals.whatsappClicks} icon={MessageCircle} change={-2.1} />
-              <MetricCard title="Conversion Rate" value={`${conversionRate}%`} icon={TrendingUp} change={3.7} />
+              <MetricCard title="Visitors" value={totals.visitors} icon={Users} />
+              <MetricCard title="Sessions" value={totals.formSubmissions} icon={FileText} />
+              <MetricCard title="Page Views" value={totals.whatsappClicks} icon={Eye} />
+              <MetricCard title="Avg. Session" value={rawData.length > 0 ? `${Math.round(rawData.reduce((a, d) => a + d.visitors, 0) / rawData.length)}` : "—"} icon={TrendingUp} />
             </div>
 
             {/* Charts */}
@@ -204,10 +220,10 @@ export default function Dashboard() {
                   </CardContent>
                 </Card>
 
-                {/* Form Submissions Chart */}
+                {/* Sessions Chart */}
                 <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Form Submissions</CardTitle>
+                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Sessions</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ChartContainer config={chartConfig} className="h-[220px] w-full">
@@ -222,10 +238,10 @@ export default function Dashboard() {
                   </CardContent>
                 </Card>
 
-                {/* WhatsApp Clicks Chart */}
+                {/* Page Views Chart */}
                 <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">WhatsApp Clicks</CardTitle>
+                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Page Views</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ChartContainer config={chartConfig} className="h-[220px] w-full">
@@ -240,24 +256,20 @@ export default function Dashboard() {
                   </CardContent>
                 </Card>
 
-                {/* Conversion Rate Chart */}
+                {/* Sessions vs Visitors Chart */}
                 <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Conversion Rate</CardTitle>
+                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Sessions vs Visitors</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ChartContainer config={chartConfig} className="h-[220px] w-full">
-                      <LineChart data={chartData.map(d => ({
-                        ...d,
-                        rate: d.formSubmissions + d.whatsappClicks > 0
-                          ? Number(((d.conversions / (d.formSubmissions + d.whatsappClicks)) * 100).toFixed(1))
-                          : 0
-                      }))}>
+                      <LineChart data={chartData}>
                         <CartesianGrid stroke="hsl(220,15%,18%)" strokeDasharray="3 3" />
                         <XAxis dataKey="date" tick={{ fill: "hsl(220,10%,45%)", fontSize: 10 }} tickFormatter={v => format(parseISO(v), "dd.MM")} />
-                        <YAxis tick={{ fill: "hsl(220,10%,45%)", fontSize: 10 }} unit="%" />
+                        <YAxis tick={{ fill: "hsl(220,10%,45%)", fontSize: 10 }} />
                         <ChartTooltip content={<ChartTooltipContent />} />
-                        <Line type="monotone" dataKey="rate" stroke="hsl(45, 90%, 55%)" strokeWidth={2} dot={false} />
+                        <Line type="monotone" dataKey="visitors" stroke="hsl(213, 53%, 45%)" strokeWidth={2} dot={false} />
+                        <Line type="monotone" dataKey="formSubmissions" stroke="hsl(123, 46%, 45%)" strokeWidth={2} dot={false} />
                       </LineChart>
                     </ChartContainer>
                   </CardContent>
@@ -339,58 +351,6 @@ export default function Dashboard() {
                     ))}
                   </TableBody>
                 </Table>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          {/* LEADS / SUBMISSIONS TAB */}
-          <TabsContent value="submissions" className="space-y-6 mt-4">
-            <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Form Submissions — Tracking Codes</CardTitle>
-                  <p className="text-xs text-[hsl(220,10%,40%)]">Code sent in confirmation email</p>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="overflow-x-auto">
-                  <Table>
-                    <TableHeader>
-                      <TableRow className="border-[hsl(220,15%,18%)] hover:bg-transparent">
-                        <TableHead className="text-[hsl(220,10%,50%)]">Code</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Date</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Name</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Topic</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Source</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Campaign</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)] text-center">Converted</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {submissions.map(s => (
-                        <TableRow key={s.id} className="border-[hsl(220,15%,18%)] hover:bg-[hsl(220,15%,15%)]">
-                          <TableCell className="font-mono text-primary text-sm font-semibold">{s.code}</TableCell>
-                          <TableCell className="text-white">{format(parseISO(s.date), "dd.MM.yyyy")}</TableCell>
-                          <TableCell className="text-white">{s.name.split(" ")[0]}</TableCell>
-                          <TableCell className="text-white text-sm">{s.concern}</TableCell>
-                          <TableCell>
-                            <Badge variant="outline" className={`text-xs border-[hsl(220,15%,25%)] ${s.source === "google_ads" ? "text-blue-400" : s.source === "organic" ? "text-green-400" : "text-[hsl(220,10%,55%)]"}`}>
-                              {s.source === "google_ads" ? "Ads" : s.source === "organic" ? "Organic" : "Direct"}
-                            </Badge>
-                          </TableCell>
-                          <TableCell className="text-[hsl(220,10%,50%)] text-xs">{s.utm_campaign || "—"}</TableCell>
-                          <TableCell className="text-center">
-                            {s.converted ? (
-                              <Badge className="bg-green-500/20 text-green-400 border-0 text-xs">✓ Yes</Badge>
-                            ) : (
-                              <Badge className="bg-[hsl(220,15%,18%)] text-[hsl(220,10%,45%)] border-0 text-xs">Pending</Badge>
-                            )}
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </div>
               </CardContent>
             </Card>
           </TabsContent>
