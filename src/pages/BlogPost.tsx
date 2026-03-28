@@ -35,6 +35,37 @@ export default function BlogPost() {
         { name: post.title.length > 40 ? post.title.slice(0, 40) + "…" : post.title, path: `/${language}/${country}/blog/${slug}` },
       ]} />
 
+      {/* Article Schema */}
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.metaDescription,
+            image: post.featuredImage || `${CDN}/david_woods_og.jpg`,
+            author: {
+              "@type": "Person",
+              name: "David J. Woods",
+              url: "https://david-j-woods.com/de/ch/ueber-uns",
+              jobTitle: "Lic.Psych., NGH International Trainer",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "David J. Woods Hypnosetherapie",
+              url: "https://david-j-woods.com",
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://david-j-woods.com/de/ch/blog/${slug}`,
+            },
+            inLanguage: "de",
+            datePublished: "2024-01-15",
+            dateModified: "2025-06-01",
+          })}
+        </script>
+      </Helmet>
+
       {/* Article */}
       <article className="py-12 bg-white">
         <div className="container-main max-w-3xl mx-auto">
