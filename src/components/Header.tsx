@@ -7,7 +7,7 @@ import {
   Menu, X, ChevronDown, Phone,
   Cigarette, Brain, Scale, Flame, HeartPulse, Users,
   GraduationCap, Building2, Tv, Star, MessageSquare, User,
-  BookOpen, MapPin, Trophy, Newspaper, Award, Calendar
+  BookOpen, MapPin, Trophy, Newspaper, Award, Calendar, Shield
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
