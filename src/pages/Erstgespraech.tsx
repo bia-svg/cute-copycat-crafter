@@ -377,7 +377,7 @@ export default function Erstgespraech() {
                   {/* Email */}
                   <div>
                     <label className="block text-xs font-medium text-muted-foreground mb-1">E-Mail *</label>
-                    <input type="email" required autoComplete="email" className={inputClasses} />
+                    <input type="email" name="email" required autoComplete="email" className={inputClasses} />
                   </div>
 
                   {/* Phone + PLZ */}
