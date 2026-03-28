@@ -366,7 +366,7 @@ export default function Erstgespraech() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "First Name" : "Vorname"} *</label>
-                      <input type="text" required autoComplete="given-name" className={inputClasses} />
+                      <input type="text" name="firstName" required autoComplete="given-name" className={inputClasses} />
                     </div>
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Last Name" : "Nachname"} *</label>
