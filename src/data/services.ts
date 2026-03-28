@@ -138,16 +138,18 @@ export const smokingData: ServicePageData = {
   ],
   image: `${CDN}/stop_smoking_hypnose_89c11159.jpg`,
   faqCH: [
-    { q: "Wie viele Sitzungen brauche ich, um mit dem Rauchen aufzuhören?", a: "In der Regel reichen 1-3 Intensivsitzungen aus, um dauerhaft rauchfrei zu werden. Die genaue Anzahl hängt von Ihrer individuellen Situation ab." },
-    { q: "Übernimmt die Krankenkasse die Kosten für Hypnose?", a: "In der Schweiz sind unsere Leistungen EMR Krankenkasse konform (ZSR Nr. P609264). Viele Zusatzversicherungen übernehmen einen Teil der Kosten." },
-    { q: "Gibt es Entzugserscheinungen nach der Hypnose?", a: "Die meisten Klienten berichten von deutlich reduzierten oder gar keinen Entzugserscheinungen, da die Hypnose direkt am Unterbewusstsein ansetzt." },
-    { q: "Kann ich nach der Hypnose wirklich dauerhaft rauchfrei bleiben?", a: "Ja, da die Hypnose die tieferliegenden Ursachen des Rauchens adressiert, ist die Rückfallquote deutlich geringer als bei herkömmlichen Methoden." },
+    { q: "Wie viele Sitzungen brauche ich, um mit dem Rauchen aufzuhören?", a: "In der Regel reichen 1-3 Intensivsitzungen aus, um dauerhaft rauchfrei zu werden. Eine Studie der University of Iowa (Viswesvaran & Schmidt, 1992) bestätigt, dass Hypnose die effektivste Einzelmethode zur Raucherentwöhnung ist." },
+    { q: "Übernimmt die Krankenkasse die Kosten für Hypnose?", a: "In der Schweiz sind unsere Leistungen EMR Krankenkasse konform (ZSR Nr. P609264). Viele Zusatzversicherungen übernehmen einen Teil der Kosten. Erkundigen Sie sich bei Ihrer Versicherung." },
+    { q: "Gibt es Entzugserscheinungen nach der Hypnose?", a: "Die meisten Klienten berichten von deutlich reduzierten oder gar keinen Entzugserscheinungen, da die Hypnose direkt am Unterbewusstsein ansetzt und die emotionalen Auslöser des Rauchens löst." },
+    { q: "Kann ich nach der Hypnose wirklich dauerhaft rauchfrei bleiben?", a: "Ja. Laut einer Meta-Analyse (Hasan et al., 2014) liegt die Erfolgsrate bei Raucherentwöhnung durch Hypnose bei bis zu 64% nach 6 Monaten — deutlich höher als bei Nikotinersatztherapie allein." },
+    { q: "Wie unterscheidet sich Hypnose von Nikotinpflastern oder Medikamenten?", a: "Nikotinersatzprodukte behandeln nur die körperliche Abhängigkeit. Hypnose adressiert die tieferliegenden psychologischen Ursachen des Rauchens — Stress, Gewohnheiten, emotionale Verknüpfungen. Laut Viswesvaran & Schmidt (1992) ist Hypnose dreimal wirksamer als Nikotinersatztherapie." },
   ],
   faqEN: [
-    { q: "How many sessions do I need to quit smoking?", a: "Usually 1-3 intensive sessions are sufficient to become permanently smoke-free. The exact number depends on your individual situation." },
-    { q: "Does health insurance cover hypnosis costs?", a: "In Switzerland, our services are EMR health insurance compliant (ZSR No. P609264). Many supplementary insurances cover part of the costs." },
-    { q: "Are there withdrawal symptoms after hypnosis?", a: "Most clients report significantly reduced or no withdrawal symptoms, as hypnosis directly addresses the subconscious mind." },
-    { q: "Can I really stay smoke-free permanently after hypnosis?", a: "Yes, since hypnosis addresses the deeper causes of smoking, the relapse rate is significantly lower than with conventional methods." },
+    { q: "How many sessions do I need to quit smoking?", a: "Usually 1-3 intensive sessions are sufficient to become permanently smoke-free. A study from the University of Iowa (Viswesvaran & Schmidt, 1992) confirms that hypnosis is the single most effective method for smoking cessation." },
+    { q: "Does health insurance cover hypnosis costs?", a: "In Switzerland, our services are EMR health insurance compliant (ZSR No. P609264). Many supplementary insurances cover part of the costs. Check with your insurance provider." },
+    { q: "Are there withdrawal symptoms after hypnosis?", a: "Most clients report significantly reduced or no withdrawal symptoms, as hypnosis directly addresses the subconscious mind and resolves the emotional triggers of smoking." },
+    { q: "Can I really stay smoke-free permanently after hypnosis?", a: "Yes. According to a meta-analysis (Hasan et al., 2014), the success rate for smoking cessation through hypnosis is up to 64% after 6 months — significantly higher than nicotine replacement therapy alone." },
+    { q: "How does hypnosis differ from nicotine patches or medication?", a: "Nicotine replacement products only address physical dependence. Hypnosis targets the deeper psychological causes of smoking — stress, habits, emotional associations. According to Viswesvaran & Schmidt (1992), hypnosis is three times more effective than nicotine replacement therapy." },
   ],
 };
 
