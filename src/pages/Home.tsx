@@ -318,9 +318,8 @@ export default function Home() {
 
 
 
-          {/* Lic.Psych & Aktiv-Hypnose Developer */}
-          <div className="flex flex-wrap justify-center gap-6 mb-8">
-            <div className="p-6 bg-card border border-border rounded-lg w-full sm:w-[calc(50%-12px)] lg:w-[260px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="p-6 bg-card border border-border rounded-lg">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-16 h-16 bg-primary flex items-center justify-center shrink-0 rounded">
                   <span className="text-primary-foreground text-sm font-bold text-center leading-tight">Lic.<br/>Psych.</span>
@@ -333,7 +332,7 @@ export default function Home() {
                   : "Universitär qualifizierter Psychologe mit jahrzehntelanger klinischer und therapeutischer Erfahrung."}
               </p>
             </div>
-            <div className="p-6 bg-card border border-border rounded-lg w-full sm:w-[calc(50%-12px)] lg:w-[260px]">
+            <div className="p-6 bg-card border border-border rounded-lg">
               <div className="flex items-center gap-4 mb-4">
                 <img src={CDN.logo} alt="Aktiv-Hypnose©" className="h-14 w-auto shrink-0" />
               </div>
@@ -344,28 +343,24 @@ export default function Home() {
                   : "Eigene Methode, die klinische Hypnose mit aktiver Teilnahme kombiniert für schnellere, nachhaltige Ergebnisse."}
               </p>
             </div>
-          </div>
-
-          {/* Badges & stats */}
-          <div className="flex flex-wrap justify-center gap-6">
-            <div className="text-center p-6 bg-card border border-border rounded-lg w-full sm:w-[calc(50%-12px)] lg:w-[260px]">
+            <div className="text-center p-6 bg-card border border-border rounded-lg">
               <img src={CDN.nghBadge} alt="NGH" className="h-16 mx-auto mb-3" />
               <h3 className="font-semibold text-foreground">NGH International Trainer</h3>
               <p className="text-sm text-muted-foreground">National Guild of Hypnotists</p>
             </div>
             {showCH && (
-              <div className="text-center p-6 bg-card border border-border rounded-lg w-full sm:w-[calc(50%-12px)] lg:w-[260px]">
+              <div className="text-center p-6 bg-card border border-border rounded-lg">
                 <img src={CDN.emrBadge} alt="EMR" className="h-16 mx-auto mb-3" />
                 <h3 className="font-semibold text-foreground">EMR Krankenkasse Konform</h3>
                 <p className="text-sm text-muted-foreground">ZSR P609264</p>
               </div>
             )}
-            <div className="text-center p-6 bg-card border border-border rounded-lg w-full sm:w-[calc(50%-12px)] lg:w-[260px]">
+            <div className="text-center p-6 bg-card border border-border rounded-lg">
               <div className="text-4xl font-bold text-primary mb-2">40+</div>
               <h3 className="font-semibold text-foreground">{isEN ? "Years of Experience" : "Jahre Erfahrung"}</h3>
               <p className="text-sm text-muted-foreground">30.000+ {isEN ? "Sessions" : "Sitzungen"}</p>
             </div>
-            <div className="text-center p-6 bg-card border border-border rounded-lg w-full sm:w-[calc(50%-12px)] lg:w-[260px]">
+            <div className="text-center p-6 bg-card border border-border rounded-lg">
               <div className="flex justify-center gap-0.5 mb-2">
                 {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
               </div>
