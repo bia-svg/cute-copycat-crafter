@@ -12,7 +12,7 @@ import { CDN } from "@/lib/cdn";
 import diplomAktivHypnose from "@/assets/diplom-aktiv-hypnose.jpeg";
 import diplomNGH from "@/assets/diplom-ngh-instructor.jpeg";
 
-import { Button } from "@/components/ui/button";
+import ImageLightbox from "@/components/ImageLightbox";
 import { Link } from "react-router-dom";
 import {
   CheckCircle, Calendar, MapPin, Users, ArrowRight,
