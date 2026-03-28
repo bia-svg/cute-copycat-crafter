@@ -289,7 +289,7 @@ export default function Ausbildung() {
             </div>
             <div className="flex flex-col items-center text-center">
               <div className="border border-border rounded-lg overflow-hidden shadow-sm mb-4">
-                <img src={diplomAktivHypnose} alt="Diplom — Therapeut in Aktiv-Hypnose" className="w-full h-auto" loading="lazy" />
+                <ImageLightbox src={diplomAktivHypnose} alt="Diplom — Therapeut in Aktiv-Hypnose" className="w-full h-auto" />
               </div>
               <div className="flex items-center gap-2 mb-2">
                 <GraduationCap className="w-5 h-5 text-amber-600" />
