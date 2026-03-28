@@ -17,6 +17,7 @@ export interface ContentSection {
   h2: string;
   paragraphs: string[];
   bullets?: string[];
+  image?: string;
 }
 
 export interface ServicePageData {
