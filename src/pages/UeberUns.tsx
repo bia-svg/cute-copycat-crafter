@@ -144,7 +144,7 @@ export default function UeberUns() {
             {showCH && (
               <div className="bg-white border border-border p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform" className="h-20 w-auto shrink-0" />
+                  <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge – Schweizer Zusatzversicherung anerkannt, ZSR P609264" className="h-20 w-auto shrink-0" loading="lazy" />
                 </div>
                 <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">EMR Krankenkasse Konform</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">
