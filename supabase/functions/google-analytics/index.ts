@@ -123,7 +123,7 @@ serve(async (req) => {
         dimensions: [{ name: "pagePath" }],
         metrics: [
           { name: "screenPageViews" },
-          { name: "averageSessionDuration" },
+          { name: "userEngagementDuration" },
         ],
         orderBys: [{ metric: { metricName: "screenPageViews" }, desc: true }],
         limit: 15,
@@ -135,11 +135,15 @@ serve(async (req) => {
       throw new Error(`GA4 Pages API error [${pagesRes.status}]: ${JSON.stringify(pagesData)}`);
     }
 
-    const topPages = (pagesData.rows || []).map((row: any) => ({
-      path: row.dimensionValues[0].value,
-      views: parseInt(row.metricValues[0].value, 10),
-      avgTimeSeconds: Math.round(parseFloat(row.metricValues[1].value)),
-    }));
+    const topPages = (pagesData.rows || []).map((row: any) => {
+      const views = parseInt(row.metricValues[0].value, 10);
+      const engagementSec = parseFloat(row.metricValues[1].value);
+      return {
+        path: row.dimensionValues[0].value,
+        views,
+        avgTimeSeconds: views > 0 ? Math.round(engagementSec / views) : 0,
+      };
+    });
 
     // Report 3: Traffic by channel (organic vs paid vs direct)
     const channelRes = await fetch(apiBase, {
