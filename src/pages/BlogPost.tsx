@@ -6,6 +6,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getPath } from "@/lib/routes";
 import { blogPosts } from "@/data/blogPosts";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { ArrowLeft, BookOpen, Share2 } from "lucide-react";
 import davidPortrait from "@/assets/david-woods-portrait.jpg";
 import { Button } from "@/components/ui/button";
@@ -23,21 +24,15 @@ export default function BlogPost() {
   }
 
   const readTime = Math.ceil((post.contentText?.length || 500) / 250);
+  const basePath = getPath("home", language, country);
 
   return (
     <>
-      {/* Breadcrumb */}
-      <div className="bg-[#f4f3ef] border-b border-border py-3">
-        <div className="container-main">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Link to={getPath("home", language, country)} className="hover:text-[#1B3A5C]">Home</Link>
-            <span>/</span>
-            <Link to={getPath("blog", language, country)} className="hover:text-[#1B3A5C]">Blog</Link>
-            <span>/</span>
-            <span className="text-foreground font-medium truncate max-w-[200px]">{post.title}</span>
-          </div>
-        </div>
-      </div>
+      <Breadcrumbs items={[
+        { name: "Home", path: basePath },
+        { name: "Blog", path: getPath("blog", language, country) },
+        { name: post.title.length > 40 ? post.title.slice(0, 40) + "…" : post.title, path: `/${language}/${country}/blog/${slug}` },
+      ]} />
 
       {/* Article */}
       <article className="py-12 bg-white">
