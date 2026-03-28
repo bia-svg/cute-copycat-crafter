@@ -71,27 +71,22 @@ serve(async (req) => {
       });
     }
 
-    // Get credentials from secrets
-    const usersJson = Deno.env.get("DASHBOARD_USERS");
-    if (!usersJson) {
-      throw new Error("DASHBOARD_USERS secret not configured");
+    const allowedEmail = Deno.env.get("DASHBOARD_LOGIN_EMAIL");
+    const allowedPassword = Deno.env.get("DASHBOARD_LOGIN_PASSWORD");
+
+    if (!allowedEmail || !allowedPassword) {
+      throw new Error("Login credentials not configured");
     }
 
-    // Format: [{"email":"x@y.com","hash":"sha256hash"}, ...]
-    const users: Array<{ email: string; hash: string }> = JSON.parse(usersJson);
+    const emailMatch = email.toLowerCase().trim() === allowedEmail.toLowerCase().trim();
+    const passwordMatch = password === allowedPassword;
 
-    const inputHash = await hashPassword(password);
-    const user = users.find(
-      (u) => u.email.toLowerCase() === email.toLowerCase().trim() && u.hash === inputHash
-    );
-
-    if (user) {
-      // Generate a simple session token
-      const tokenData = new TextEncoder().encode(`${user.email}:${Date.now()}:${crypto.randomUUID()}`);
+    if (emailMatch && passwordMatch) {
+      const tokenData = new TextEncoder().encode(`${email}:${Date.now()}:${crypto.randomUUID()}`);
       const tokenHash = await crypto.subtle.digest("SHA-256", tokenData);
       const token = Array.from(new Uint8Array(tokenHash)).map(b => b.toString(16).padStart(2, "0")).join("");
 
-      return new Response(JSON.stringify({ success: true, email: user.email, token }), {
+      return new Response(JSON.stringify({ success: true, email: allowedEmail, token }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
