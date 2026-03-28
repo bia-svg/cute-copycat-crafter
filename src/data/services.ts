@@ -517,7 +517,7 @@ export const depressionData: ServicePageData = {
    ERWACHSENE — Adults audience page (1:1 sessions with David)
    ═══════════════════════════════════════════════════════════════ */
 export const adultsData: ServicePageData = {
-  slugCH: "erwachsene", slugDE: "erwachsene", slugEN: "erwachsene",
+  slugCH: "erwachsene", slugDE: "erwachsene", slugEN: "adults",
   titleCH: "Hypnosetherapie für Erwachsene Zürich | 1:1 mit David J. Woods",
   titleDE: "Hypnosetherapie für Erwachsene Augsburg | 1:1 mit David J. Woods",
   titleEN: "Hypnotherapy for Adults | 1:1 Sessions with David J. Woods",
