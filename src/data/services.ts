@@ -238,7 +238,7 @@ export const anxietyData: ServicePageData = {
    Original: 3375 chars, 2 H2 sections
    ═══════════════════════════════════════════════════════════════ */
 export const weightData: ServicePageData = {
-  slugCH: "abnehmen", slugDE: "abnehmen", slugEN: "abnehmen",
+  slugCH: "abnehmen", slugDE: "abnehmen", slugEN: "weight-loss",
   titleCH: "Abnehmen mit Hypnose Zürich | Dauerhaft Gewicht verlieren | David J. Woods",
   titleDE: "Abnehmen mit Hypnose Augsburg | Dauerhaft Gewicht verlieren | David J. Woods",
   titleEN: "Weight Loss Hypnotherapy Zurich & Augsburg | David J. Woods",
