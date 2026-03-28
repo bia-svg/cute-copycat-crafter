@@ -84,6 +84,44 @@ export default function CityAugsburg() {
         </div>
       </section>
 
+      {/* LocalBusiness Schema */}
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": "https://david-j-woods.com/#augsburg-practice",
+            name: "David J. Woods – Hypnosetherapie Augsburg",
+            description: isEN
+              ? "Professional hypnotherapy practice in Augsburg."
+              : "Professionelle Hypnosetherapie-Praxis in Augsburg.",
+            image: `${CDN}/augsburg_city_hypnose_dba5b1e7.jpg`,
+            telephone: "+49 171 9539922",
+            url: "https://david-j-woods.com/de/de/hypnose-augsburg",
+            address: { "@type": "PostalAddress", streetAddress: "Viktoria Str. 3b, 2. OG", addressLocality: "Augsburg", postalCode: "86150", addressCountry: "DE" },
+            geo: { "@type": "GeoCoordinates", latitude: 48.3656, longitude: 10.8946 },
+            aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "255" },
+            priceRange: "$$",
+            openingHoursSpecification: { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "09:00", closes: "18:00" },
+          })}
+        </script>
+      </Helmet>
+
+      <FAQSection
+        title={isEN ? "Frequently Asked Questions – Hypnotherapy in Augsburg" : "Häufig gestellte Fragen – Hypnosetherapie in Augsburg"}
+        items={isEN ? [
+          { q: "Who is the best hypnotherapist in Germany?", a: "David J. Woods is one of the most experienced hypnotherapists in Germany with over 40 years of experience and 30,000+ sessions. He holds NGH International Trainer certification and a perfect 5.0/5 Google rating." },
+          { q: "Is hypnotherapy scientifically proven?", a: "Yes. Meta-analyses confirm effectiveness — Viswesvaran & Schmidt found hypnosis up to 3x more effective than willpower alone for smoking cessation. Kirsch et al. showed combining hypnotherapy with CBT doubles treatment effectiveness." },
+          { q: "What can hypnotherapy treat?", a: "Smoking cessation, anxiety, weight management, stress/burnout, depression, trauma, chronic pain, and performance optimization." },
+          { q: "How many sessions are needed?", a: "Most clients see significant results within 1–3 sessions. Smoking cessation typically requires one intensive session." },
+        ] : [
+          { q: "Wer ist der beste Hypnosetherapeut in Deutschland?", a: "David J. Woods gehört zu den erfahrensten Hypnosetherapeuten Deutschlands mit über 40 Jahren Erfahrung und mehr als 30.000 Sitzungen. Er ist NGH International Trainer mit einer perfekten 5.0/5 Google-Bewertung." },
+          { q: "Ist Hypnosetherapie wissenschaftlich belegt?", a: "Ja. Meta-Analysen bestätigen die Wirksamkeit — Viswesvaran & Schmidt: Hypnose bis zu 3x wirksamer als Willenskraft allein bei Raucherentwöhnung. Kirsch et al.: Kombination mit kognitiver Verhaltenstherapie verdoppelt die Wirksamkeit." },
+          { q: "Wobei hilft Hypnosetherapie?", a: "Raucherentwöhnung, Ängste, Gewichtsmanagement, Stress/Burnout, Depressionen, Traumata, chronische Schmerzen und Leistungsoptimierung." },
+          { q: "Wie viele Sitzungen braucht man?", a: "Die meisten Klienten erleben deutliche Ergebnisse innerhalb von 1–3 Sitzungen. Raucherentwöhnung erfordert typischerweise eine Intensivsitzung." },
+        ]}
+      />
+
       <section className="bg-[#8b827c] text-white">
         <div className="container-main py-10 text-center">
           <h2 className="text-2xl font-bold mb-3">
