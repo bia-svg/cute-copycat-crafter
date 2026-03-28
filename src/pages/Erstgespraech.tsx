@@ -506,7 +506,7 @@ export default function Erstgespraech() {
 
                   <div>
                     <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Message" : "Kommentar oder Nachricht"}</label>
-                    <textarea rows={4} className={`${inputClasses} resize-none`} />
+                    <textarea name="message" rows={4} className={`${inputClasses} resize-none`} />
                   </div>
 
                   {/* ── DSGVO / GDPR Opt-in Toggle ── */}
