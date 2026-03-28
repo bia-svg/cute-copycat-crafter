@@ -14,9 +14,18 @@ function getRequiredSecret(name: string): string {
 }
 
 function parseGoogleAdsError(status: number, text: string): Error {
-  if (text.startsWith("<!DOCTYPE") || text.startsWith("<html")) {
+  // FIX 1: Improved HTML detection — covers both <!DOCTYPE and bare <html responses.
+  // A 404 HTML response means Google's gateway rejected the request before reaching
+  // the Ads service. Most common cause: Google Ads API not enabled in the GCP project
+  // that owns the OAuth Client ID, OR the developer token is in "Test Account" mode.
+  if (text.startsWith("<!DOCTYPE") || text.startsWith("<html") || text.includes("<title>Error 404")) {
     return new Error(
-      "Google Ads returned HTML instead of JSON. Usually this means the refresh token, developer token, or MCC/user access is invalid for this ad account."
+      "Google Ads API returned an HTML 404 page instead of JSON. " +
+      "This means Google's gateway rejected the request before reaching the Ads service. " +
+      "To fix this: " +
+      "(1) Enable the 'Google Ads API' in your Google Cloud project at console.cloud.google.com → APIs & Services → Library. " +
+      "(2) Verify your developer token is at least 'Explorer' level (not 'Test Account') at ads.google.com/aw/apicenter. " +
+      "(3) Ensure the OAuth Client ID used to generate GOOGLE_ADS_REFRESH_TOKEN belongs to the same GCP project where the API is enabled."
     );
   }
 
@@ -70,6 +79,9 @@ serve(async (req) => {
       endDate: new Date().toISOString().split("T")[0],
     }));
 
+    // FIX 2: login-customer-id is REQUIRED when authenticating via an MCC account.
+    // It must be set on ALL requests (including listAccessibleCustomers), not just the search call.
+    // Without it, the API returns USER_PERMISSION_DENIED or silently routes incorrectly.
     const authHeaders: Record<string, string> = {
       Authorization: `Bearer ${accessToken}`,
       Accept: "application/json",
@@ -81,14 +93,15 @@ serve(async (req) => {
       authHeaders["login-customer-id"] = mccId;
     }
 
-    const accessibleRes = await fetch("https://googleads.googleapis.com/v19/customers:listAccessibleCustomers", {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        Accept: "application/json",
-        "developer-token": developerToken,
-      },
-    });
+    // FIX 3: listAccessibleCustomers was being called WITHOUT login-customer-id.
+    // Now it reuses authHeaders (which already includes login-customer-id when mccId is set).
+    const accessibleRes = await fetch(
+      "https://googleads.googleapis.com/v19/customers:listAccessibleCustomers",
+      {
+        method: "GET",
+        headers: authHeaders,
+      }
+    );
 
     const accessibleText = await accessibleRes.text();
     if (!accessibleRes.ok) {
@@ -110,7 +123,9 @@ serve(async (req) => {
 
     if (!hasDirectAccess && !hasMccAccess) {
       throw new Error(
-        `The OAuth user behind GOOGLE_ADS_REFRESH_TOKEN does not have access to ad account ${customerId} or MCC ${mccId || "not provided"}. Regenerate the refresh token while logged into the MCC user that manages this account.`
+        `The OAuth user behind GOOGLE_ADS_REFRESH_TOKEN does not have access to ad account ${customerId} or MCC ${mccId || "not provided"}. ` +
+        `Accessible accounts: [${accessibleCustomers.join(", ")}]. ` +
+        `Regenerate the refresh token while logged into the MCC user that manages this account.`
       );
     }
 
