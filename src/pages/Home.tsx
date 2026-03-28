@@ -157,15 +157,18 @@ export default function Home() {
   }, [currentSlide, isMobile, loadedSlides, totalSlides]);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    const browserWindow = globalThis as typeof window & {
+      requestIdleCallback?: (callback: IdleRequestCallback, options?: IdleRequestOptions) => number;
+      cancelIdleCallback?: (handle: number) => void;
+    };
 
-    if ("requestIdleCallback" in window) {
-      const idleId = window.requestIdleCallback(() => setShowMediaLogos(true), { timeout: 2500 });
-      return () => window.cancelIdleCallback(idleId);
+    if (browserWindow.requestIdleCallback) {
+      const idleId = browserWindow.requestIdleCallback(() => setShowMediaLogos(true), { timeout: 2500 });
+      return () => browserWindow.cancelIdleCallback?.(idleId);
     }
 
-    const timeout = window.setTimeout(() => setShowMediaLogos(true), 1500);
-    return () => window.clearTimeout(timeout);
+    const timeout = browserWindow.setTimeout(() => setShowMediaLogos(true), 1500);
+    return () => browserWindow.clearTimeout(timeout);
   }, []);
 
   /* ── Services ── */
