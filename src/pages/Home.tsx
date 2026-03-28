@@ -44,7 +44,7 @@ function TVLogoCarousel() {
     <div className="relative">
       <div ref={scrollRef} className="flex gap-6 overflow-x-auto scrollbar-hide py-2" style={{ scrollbarWidth: "none" }}>
         {CDN.bekanntAus.map((src, i) => (
-          <img key={i} src={src} alt={`Bekannt aus ${i + 1}`} className="h-8 md:h-10 object-contain shrink-0 opacity-60 hover:opacity-100 transition-opacity mix-blend-multiply" loading="lazy" />
+          <img key={i} src={src} alt={`David J. Woods bekannt aus Medien – Logo ${i + 1}`} className="h-8 md:h-10 object-contain shrink-0 opacity-60 hover:opacity-100 transition-opacity mix-blend-multiply" loading="lazy" />
         ))}
       </div>
     </div>
@@ -146,7 +146,7 @@ export default function Home() {
           {/* Image */}
           <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-2xl overflow-hidden mx-auto group">
             {heroSlides.map((src, i) => (
-              <img key={i} src={src} alt={`David J. Woods ${i + 1}`}
+              <img key={i} src={src} alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${i + 1}`}
                 loading={i === 0 ? "eager" : "lazy"}
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}
                 />
@@ -219,7 +219,7 @@ export default function Home() {
           </p>
           <div className="relative aspect-[4/3] max-h-[280px] rounded-2xl overflow-hidden mx-auto group">
             {heroSlides.map((src, i) => (
-              <img key={i} src={src} alt={`David J. Woods ${i + 1}`}
+              <img key={i} src={src} alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${i + 1}`}
                 loading={i === 0 ? "eager" : "lazy"}
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}
                 />
@@ -273,7 +273,7 @@ export default function Home() {
                 : "Auch wenn viele anfangs unsicher sind – der Prozess führt in einen Zustand fokussierter Klarheit, in dem Transformation möglich wird."}
             </p>
             <div className="flex items-center gap-3 bg-secondary rounded-lg p-3">
-              <img src={CDN.emrBadge} alt="EMR" className="h-12" />
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12" loading="lazy" />
               <div>
                 <div className="font-semibold text-sm text-foreground">EMR Krankenkasse Konform</div>
                 <div className="text-xs text-muted-foreground">ZSR P609264 — {isEN ? "Recognized by Swiss health insurance" : "Von Schweizer Krankenkassen anerkannt"}</div>
@@ -286,7 +286,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="rounded-lg overflow-hidden">
-            <img src={davidSessionImg} alt={isEN ? "Hypnotherapy Session" : "Hypnosetherapie Sitzung"} className="w-full h-full object-cover" loading="lazy" />
+            <img src={davidSessionImg} alt={isEN ? "David J. Woods during a hypnotherapy session in his practice" : "David J. Woods während einer Hypnosetherapie-Sitzung in seiner Praxis"} className="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
       </section>
@@ -334,7 +334,7 @@ export default function Home() {
             </div>
             <div className="p-6 bg-card border border-border rounded-lg">
               <div className="flex items-center gap-4 mb-4">
-                <img src={CDN.logo} alt="Aktiv-Hypnose©" className="h-14 w-auto shrink-0" />
+                <img src={CDN.logo} alt="Aktiv-Hypnose© Logo – Methode von David J. Woods" className="h-14 w-auto shrink-0" loading="lazy" />
               </div>
               <h3 className="font-semibold text-sm text-foreground mb-2">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
@@ -344,12 +344,12 @@ export default function Home() {
               </p>
             </div>
             <div className="text-center p-6 bg-card border border-border rounded-lg">
-              <img src={CDN.nghBadge} alt="NGH" className="h-16 mx-auto mb-3" />
+              <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat – National Guild of Hypnotists" className="h-16 mx-auto mb-3" loading="lazy" />
               <h3 className="font-semibold text-foreground">NGH International Trainer</h3>
               <p className="text-sm text-muted-foreground">National Guild of Hypnotists</p>
             </div>
             <div className="text-center p-6 bg-card border border-border rounded-lg">
-              <img src={CDN.emrBadge} alt="EMR" className="h-16 mx-auto mb-3" />
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge – ZSR P609264" className="h-16 mx-auto mb-3" loading="lazy" />
               <h3 className="font-semibold text-foreground">EMR Krankenkasse Konform</h3>
               <p className="text-sm text-muted-foreground">ZSR P609264</p>
             </div>

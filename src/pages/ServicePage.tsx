@@ -231,7 +231,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
             <div className="grid md:grid-cols-[280px_1fr] gap-8 items-start">
               <div className="mx-auto md:mx-0">
                 <div className="border border-border overflow-hidden rounded-lg">
-                  <img src={CDN.kathrynPortrait} alt="Kathryn" className="w-full h-auto" />
+                  <img src={CDN.kathrynPortrait} alt="Kathryn Woods – Kinder- und Jugendtherapeutin" className="w-full h-auto" loading="lazy" />
                   <div className="p-4 bg-card">
                     <h3 className="font-bold text-foreground text-sm">Kathryn</h3>
                     <p className="text-xs text-muted-foreground">

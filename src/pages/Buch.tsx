@@ -41,8 +41,9 @@ export default function Buch() {
               <div className="max-w-sm">
                 <img
                   src={BOOK_IMAGE}
-                  alt="Buch Go InSide von David Woods"
+                  alt="Buch Go InSide – Das David-Woods-Hypnose-Programm für Abnehmen, Raucherentwöhnung und Selbstbewusstsein"
                   className="w-full h-auto shadow-lg rounded-lg"
+                  loading="eager"
                 />
               </div>
             </div>

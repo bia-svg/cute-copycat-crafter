@@ -96,7 +96,7 @@ export default function UeberUns() {
             {/* Sidebar — Photo + Info */}
             <div>
               <div className="border border-border sticky top-32">
-                <img src={davidPortrait} alt="David J. Woods" className="w-full h-auto object-cover" />
+                <img src={davidPortrait} alt="David J. Woods – Lic.Psych., Hypnotherapeut und NGH International Trainer" className="w-full h-auto object-cover" loading="eager" />
                 <div className="p-4 bg-[#f4f3ef]">
                   <h3 className="font-bold text-[#1B3A5C] mb-1">David J. Woods</h3>
                   <p className="text-xs text-muted-foreground">Lic.Psych. · Hypnotherapeut</p>
@@ -130,7 +130,7 @@ export default function UeberUns() {
             {/* NGH */}
             <div className="bg-white border border-border p-6">
               <div className="flex items-center gap-4 mb-4">
-                <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-20 w-auto shrink-0" />
+                <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat – National Guild of Hypnotists, USA" className="h-20 w-auto shrink-0" loading="lazy" />
               </div>
               <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">NGH International Trainer</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
@@ -144,7 +144,7 @@ export default function UeberUns() {
             {showCH && (
               <div className="bg-white border border-border p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform" className="h-20 w-auto shrink-0" />
+                  <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge – Schweizer Zusatzversicherung anerkannt, ZSR P609264" className="h-20 w-auto shrink-0" loading="lazy" />
                 </div>
                 <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">EMR Krankenkasse Konform</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">
@@ -171,7 +171,7 @@ export default function UeberUns() {
             {/* Aktiv-Hypnose Developer */}
             <div className="bg-white border border-border p-6">
               <div className="flex items-center gap-4 mb-4">
-                <img src={CDN.logo} alt="Aktiv-Hypnose©" className="h-16 w-auto shrink-0" />
+                <img src={CDN.logo} alt="Aktiv-Hypnose© Logo – Methode entwickelt von David J. Woods" className="h-16 w-auto shrink-0" loading="lazy" />
               </div>
               <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
@@ -219,7 +219,7 @@ export default function UeberUns() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
               {CDN.bekanntAus.map((src, i) => (
-                <img key={i} src={src} alt={`Bekannt aus ${i + 1}`} className="h-8 sm:h-10 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all mix-blend-multiply" />
+                <img key={i} src={src} alt={`David J. Woods bekannt aus TV und Medien – Logo ${i + 1}`} className="h-8 sm:h-10 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all mix-blend-multiply" loading="lazy" />
               ))}
             </div>
           </div>
