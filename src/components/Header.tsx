@@ -165,7 +165,7 @@ export default function Header() {
           <div className="flex items-center gap-4 text-sm sm:text-xs">
             <div className="relative" ref={countryDropdownRef}>
               <button onClick={() => setCountryDropdownOpen(!countryDropdownOpen)} className="flex items-center gap-1.5 hover:underline font-medium">
-                {currentCountry.flag} <span className="hidden sm:inline">{currentCountry.label}</span> <ChevronDown className="w-3 h-3" />
+                <span className="text-lg">{currentCountry.flag}</span> <span>{currentCountry.label}</span> <ChevronDown className="w-3 h-3" />
               </button>
               {countryDropdownOpen && (
                 <div className="absolute right-0 mt-1 bg-card text-foreground border border-border rounded shadow-md min-w-[140px] z-50">
