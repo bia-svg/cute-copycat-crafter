@@ -417,7 +417,7 @@ export default function Header() {
                 {countryOptions.map(opt => (
                   <button key={opt.value} onClick={() => setCountry(opt.value)}
                     className={`flex items-center gap-1.5 px-3 py-1.5 text-sm rounded border ${opt.value === country ? "border-primary bg-primary/10 font-semibold text-primary" : "border-border text-foreground"}`}>
-                    {opt.flag} <span className="text-xs">{opt.label}</span>
+                    <span className="text-lg">{opt.flag}</span> <span className="text-xs">{opt.label}</span>
                   </button>
                 ))}
               </div>
