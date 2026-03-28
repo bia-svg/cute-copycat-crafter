@@ -80,6 +80,45 @@ export type Database = {
         }
         Relationships: []
       }
+      whatsapp_clicks: {
+        Row: {
+          clicked_at: string
+          id: string
+          page_path: string | null
+          referrer: string | null
+          user_agent: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
+        }
+        Insert: {
+          clicked_at?: string
+          id?: string
+          page_path?: string | null
+          referrer?: string | null
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Update: {
+          clicked_at?: string
+          id?: string
+          page_path?: string | null
+          referrer?: string | null
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

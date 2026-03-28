@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { format, subDays, startOfMonth, endOfMonth, subMonths } from "date-fns";
-import type { DailyTraffic, TopPage, CampaignData, DailyAds, LeadRecord } from "@/data/dashboardMockData";
+import type { DailyTraffic, TopPage, CampaignData, DailyAds, LeadRecord, WhatsAppClick } from "@/data/dashboardMockData";
 
 export interface DateRange {
   label: string;
@@ -59,6 +59,7 @@ export interface DashboardState {
   campaigns: CampaignData[];
   dailyAds: DailyAds[];
   leads: LeadRecord[];
+  whatsappClicks: WhatsAppClick[];
   loading: boolean;
   gaError: string | null;
   adsError: string | null;
@@ -75,6 +76,7 @@ export function useDashboardData(): DashboardState {
   const [campaigns, setCampaigns] = useState<CampaignData[]>([]);
   const [dailyAds, setDailyAds] = useState<DailyAds[]>([]);
   const [leads, setLeads] = useState<LeadRecord[]>([]);
+  const [whatsappClicks, setWhatsappClicks] = useState<WhatsAppClick[]>([]);
   const [loading, setLoading] = useState(true);
   const [gaError, setGaError] = useState<string | null>(null);
   const [adsError, setAdsError] = useState<string | null>(null);
@@ -193,6 +195,21 @@ export function useDashboardData(): DashboardState {
       setLeads([]);
     }
 
+    // Fetch WhatsApp clicks
+    try {
+      const { data: waData } = await supabase
+        .from("whatsapp_clicks")
+        .select("id, clicked_at, page_path, utm_source, utm_medium, utm_campaign")
+        .gte("clicked_at", dateRange.startDate)
+        .lte("clicked_at", dateRange.endDate + "T23:59:59")
+        .order("clicked_at", { ascending: false });
+
+      setWhatsappClicks((waData as WhatsAppClick[]) || []);
+    } catch (err) {
+      console.error("WhatsApp clicks fetch failed:", err);
+      setWhatsappClicks([]);
+    }
+
     setLoading(false);
   }, [dateRange]);
 
@@ -206,6 +223,7 @@ export function useDashboardData(): DashboardState {
     campaigns,
     dailyAds,
     leads,
+    whatsappClicks,
     loading,
     gaError,
     adsError,
