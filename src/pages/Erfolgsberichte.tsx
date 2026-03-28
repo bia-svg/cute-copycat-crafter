@@ -46,7 +46,7 @@ const videoTestimonials = [
   },
   {
     name: "Sina Wegener",
-    vimeoId: "420053678",
+    vimeoId: "420060536",
     topicDE: "Opernsängerin & Gesangslehrerin",
     topicEN: "Opera Singer & Voice Teacher",
     quoteDE: "Mein Name ist Sina Wegener; ich bin studierte Opernsängerin und Gesangslehrerin aus Karlsruhe. Auf die Hypnose bin ich schon vor ungefähr einem Jahr gestoßen. Damals habe ich auf YouTube Videos über Hypnose gefunden, aufgrund meiner persönlichen Geschichte, da ich einfach schon seit vier bis fünf Jahren dabei bin, mich persönlich weiterzuentwickeln.",
