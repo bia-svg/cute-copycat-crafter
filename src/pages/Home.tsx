@@ -434,12 +434,10 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            {showCH && (
-              <div className="flex items-center gap-2 bg-secondary rounded p-2 mb-6">
-                <CheckCircle className="w-4 h-4 text-cta" />
-                <span className="text-sm font-medium text-foreground">EMR Krankenkasse Konform</span>
-              </div>
-            )}
+            <div className="flex items-center gap-2 bg-secondary rounded p-2 mb-6">
+              <CheckCircle className="w-4 h-4 text-cta" />
+              <span className="text-sm font-medium text-foreground">EMR Krankenkasse Konform</span>
+            </div>
             <div className="text-center">
               <Link to={getPath("training", language, country)}>
                 <Button className="bg-cta text-cta-foreground hover:bg-cta/90">

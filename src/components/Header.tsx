@@ -275,12 +275,10 @@ export default function Header() {
               <Award className="w-4 h-4 text-cta" />
               <span className="font-semibold text-sm text-foreground">NGH International Trainer</span>
             </div>
-            {showCH && (
-              <div className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-cta" />
-                <span className="font-semibold text-sm text-foreground">EMR-Krankenkasse Konform</span>
-              </div>
-            )}
+            <div className="flex items-center gap-2">
+              <Award className="w-4 h-4 text-cta" />
+              <span className="font-semibold text-sm text-foreground">EMR-Krankenkasse Konform</span>
+            </div>
             <div className="pt-2">
               <Link to={getPath("contact", language, country)} onClick={() => setActiveMenu(null)}>
                 <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs">
