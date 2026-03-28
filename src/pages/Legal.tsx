@@ -98,7 +98,7 @@ export function Datenschutz() {
 export function AGB() {
   return (
     <>
-      <SEO {...pageSEO.terms} />
+      <SEO {...pageSEO.terms} pageKey="terms" />
       <section className="bg-white">
         <div className="container-main py-8 lg:py-12 max-w-3xl">
           <h1 className="text-2xl font-bold text-primary mb-2">AGB</h1>
