@@ -14,7 +14,72 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      leads: {
+        Row: {
+          city: string | null
+          concern: string | null
+          converted: boolean | null
+          country: string | null
+          created_at: string | null
+          email: string
+          form_type: string
+          id: string
+          name: string
+          notes: string | null
+          phone: string | null
+          postal_code: string | null
+          source: string | null
+          tracking_code: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
+        }
+        Insert: {
+          city?: string | null
+          concern?: string | null
+          converted?: boolean | null
+          country?: string | null
+          created_at?: string | null
+          email: string
+          form_type?: string
+          id?: string
+          name: string
+          notes?: string | null
+          phone?: string | null
+          postal_code?: string | null
+          source?: string | null
+          tracking_code?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Update: {
+          city?: string | null
+          concern?: string | null
+          converted?: boolean | null
+          country?: string | null
+          created_at?: string | null
+          email?: string
+          form_type?: string
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string | null
+          postal_code?: string | null
+          source?: string | null
+          tracking_code?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
