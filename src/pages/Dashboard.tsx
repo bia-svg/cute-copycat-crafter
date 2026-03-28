@@ -217,6 +217,7 @@ export default function Dashboard() {
               <TabsTrigger value="overview" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Overview</TabsTrigger>
               <TabsTrigger value="campaigns" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Campaigns</TabsTrigger>
               <TabsTrigger value="leads" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Leads</TabsTrigger>
+              <TabsTrigger value="data" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Data Export</TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
             </TabsList>
 
