@@ -13,6 +13,7 @@ import diplomAktivHypnose from "@/assets/diplom-aktiv-hypnose.jpeg";
 import diplomNGH from "@/assets/diplom-ngh-instructor.jpeg";
 
 import ImageLightbox from "@/components/ImageLightbox";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
   CheckCircle, Calendar, MapPin, Users, ArrowRight,
