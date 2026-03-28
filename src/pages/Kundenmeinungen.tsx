@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
@@ -5,6 +6,44 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Star } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
+
+const CHAR_LIMIT = 280;
+
+function TestimonialCard({ t, index }: { t: typeof testimonials[number]; index: number }) {
+  const [expanded, setExpanded] = useState(false);
+  const needsTruncation = t.textDE.length > CHAR_LIMIT;
+  const displayText = expanded || !needsTruncation ? t.textDE : t.textDE.slice(0, CHAR_LIMIT) + "…";
+
+  return (
+    <div className="border border-border p-5 bg-secondary flex flex-col h-full">
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex gap-0.5">
+          {Array.from({ length: t.rating }).map((_, j) => (
+            <Star key={j} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+          ))}
+        </div>
+        <span className="text-xs text-muted-foreground bg-background px-2 py-0.5 rounded">
+          {t.topic}
+        </span>
+      </div>
+      <p className="text-sm text-foreground leading-relaxed mb-3 flex-1">
+        &bdquo;{displayText}&ldquo;
+      </p>
+      {needsTruncation && (
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="text-xs text-primary hover:text-primary/80 font-medium self-start mb-3 transition-colors"
+        >
+          {expanded ? "WENIGER ▲" : "WEITERLESEN »"}
+        </button>
+      )}
+      <div className="mt-auto pt-2 border-t border-border/50">
+        <p className="text-xs font-semibold text-primary">{t.name}</p>
+        <p className="text-xs text-muted-foreground">{t.location}</p>
+      </div>
+    </div>
+  );
+}
 
 export default function Kundenmeinungen() {
   const { language, country } = useLanguage();
@@ -33,23 +72,7 @@ export default function Kundenmeinungen() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {testimonials.map((t, i) => (
-              <div key={i} className="border border-border p-5 bg-secondary">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex gap-0.5">
-                    {Array.from({ length: t.rating }).map((_, j) => (
-                      <Star key={j} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <span className="text-xs text-muted-foreground bg-background px-2 py-0.5 rounded">
-                    {t.topic}
-                  </span>
-                </div>
-                <p className="text-sm text-foreground leading-relaxed mb-3">
-                  &bdquo;{t.textDE}&ldquo;
-                </p>
-                <p className="text-xs font-semibold text-primary">{t.name}</p>
-                <p className="text-xs text-muted-foreground">{t.location}</p>
-              </div>
+              <TestimonialCard key={i} t={t} index={i} />
             ))}
           </div>
 
