@@ -419,28 +419,20 @@ export default function Erstgespraech() {
                     </>
                   ) : (
                     <>
-                      {/* Seminar Date Selection */}
+                      {/* Country / Location */}
                       <div>
                         <label className="block text-xs font-medium text-muted-foreground mb-1">
-                          {isEN ? "Preferred Seminar Date" : "Gewünschter Seminartermin"} *
+                          {isEN ? "Country" : "Land"} *
                         </label>
                         <select
                           required
-                          value={selectedDate}
-                          onChange={(e) => setSelectedDate(e.target.value)}
                           className={inputClasses}
                         >
-                          <option value="">{isEN ? "Please select a date..." : "Bitte Termin wählen..."}</option>
-                          {showCH && SEMINAR_DATES_CH.map((d, i) => (
-                            <option key={`ch-${i}`} value={d.date}>
-                              🇨🇭 {d.date} — {d.location}
-                            </option>
-                          ))}
-                          {showDE && SEMINAR_DATES_DE.map((d, i) => (
-                            <option key={`de-${i}`} value={d.date}>
-                              🇩🇪 {d.date} — {d.location}
-                            </option>
-                          ))}
+                          <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
+                          <option value="ch">🇨🇭 {isEN ? "Switzerland" : "Schweiz"}</option>
+                          <option value="de">🇩🇪 {isEN ? "Germany" : "Deutschland"}</option>
+                          <option value="at">🇦🇹 {isEN ? "Austria" : "Österreich"}</option>
+                          <option value="other">{isEN ? "Other" : "Anderes Land"}</option>
                         </select>
                       </div>
                     </>
