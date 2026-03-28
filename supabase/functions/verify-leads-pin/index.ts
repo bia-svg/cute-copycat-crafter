@@ -12,8 +12,8 @@ serve(async (req) => {
 
   try {
     const { pin } = await req.json();
-    if (!pin || typeof pin !== "string" || pin.length !== 6) {
-      return new Response(JSON.stringify({ error: "PIN must be 6 digits" }), {
+    if (!pin || typeof pin !== "string" || pin.length !== 8) {
+      return new Response(JSON.stringify({ error: "PIN must be 8 digits" }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });

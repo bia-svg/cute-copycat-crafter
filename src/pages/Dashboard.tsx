@@ -85,7 +85,7 @@ export default function Dashboard() {
   }, [navigate]);
 
   const handlePinSubmit = async () => {
-    if (pinInput.length !== 6) { setPinError("PIN must be 6 digits"); return; }
+    if (pinInput.length !== 8) { setPinError("PIN must be 8 digits"); return; }
     setPinLoading(true);
     setPinError("");
     try {
@@ -783,12 +783,12 @@ export default function Dashboard() {
                         inputMode="numeric"
                         maxLength={6}
                         value={pinInput}
-                        onChange={(e) => setPinInput(e.target.value.replace(/\D/g, "").slice(0, 6))}
+                        onChange={(e) => setPinInput(e.target.value.replace(/\D/g, "").slice(0, 8))}
                         onKeyDown={(e) => { if (e.key === "Enter") handlePinSubmit(); }}
                         placeholder="••••••"
                         className="w-40 text-center text-lg tracking-[0.5em] border-gray-300"
                       />
-                      <Button onClick={handlePinSubmit} disabled={pinLoading || pinInput.length !== 6}>
+                      <Button onClick={handlePinSubmit} disabled={pinLoading || pinInput.length !== 8}>
                         {pinLoading ? "..." : "Unlock"}
                       </Button>
                     </div>
