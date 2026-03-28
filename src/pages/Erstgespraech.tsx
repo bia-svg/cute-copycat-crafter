@@ -370,7 +370,7 @@ export default function Erstgespraech() {
                     </div>
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Last Name" : "Nachname"} *</label>
-                      <input type="text" required autoComplete="family-name" className={inputClasses} />
+                      <input type="text" name="lastName" required autoComplete="family-name" className={inputClasses} />
                     </div>
                   </div>
 
