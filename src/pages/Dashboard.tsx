@@ -89,14 +89,14 @@ export default function Dashboard() {
     setPinLoading(true);
     setPinError("");
     try {
-      const { data, error } = await supabase.functions.invoke("verify-leads-pin", {
+      const res = await supabase.functions.invoke("verify-leads-pin", {
         body: { pin: pinInput },
       });
-      if (error || !data?.success) {
-        setPinError("Invalid PIN");
-        setPinInput("");
-      } else {
+      if (res.data?.success) {
         setPinUnlocked(true);
+      } else {
+        setPinError(res.data?.error || res.error?.message || "Invalid PIN");
+        setPinInput("");
       }
     } catch {
       setPinError("Connection error");
