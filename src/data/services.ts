@@ -131,7 +131,7 @@ export const smokingData: ServicePageData = {
    Original: 2783 chars, 3 H2 sections
    ═══════════════════════════════════════════════════════════════ */
 export const anxietyData: ServicePageData = {
-  slugCH: "aengste-phobien", slugDE: "aengste-phobien", slugEN: "aengste-phobien",
+  slugCH: "aengste-phobien", slugDE: "aengste-phobien", slugEN: "anxiety-phobias",
   titleCH: "Hypnose gegen Ängste & Phobien Zürich | EMR Konform | David J. Woods",
   titleDE: "Hypnose gegen Ängste & Phobien Augsburg | David J. Woods",
   titleEN: "Hypnotherapy for Anxiety & Phobias Zurich & Augsburg | David J. Woods",
