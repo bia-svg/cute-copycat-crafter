@@ -9,7 +9,7 @@ import { blogPosts } from "@/data/blogPosts";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { ArrowLeft, BookOpen, Share2 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-import davidPortrait from "@/assets/david-woods-portrait.jpg";
+import davidPortrait from "@/assets/david-woods-portrait.webp";
 import { Button } from "@/components/ui/button";
 import { CDN } from "@/lib/cdn";
 
