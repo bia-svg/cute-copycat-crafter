@@ -573,7 +573,8 @@ export const adultsData: ServicePageData = {
         "Jede Sitzung beginnt mit einem ausführlichen Gespräch, in dem David Ihre aktuelle Situation, Ihre Ziele und Ihre persönliche Geschichte erfasst. Darauf aufbauend wird die Hypnose individuell auf Sie zugeschnitten.",
         "Während der Hypnose befinden Sie sich in einem Zustand fokussierter Entspannung — Sie sind jederzeit bei Bewusstsein und behalten die volle Kontrolle. David arbeitet mit gezielten Suggestionen und Techniken, die direkt im Unterbewusstsein wirken.",
         "Nach der Sitzung erhalten Sie Ihre personalisierten Audio-Aufnahmen sowie konkrete Empfehlungen für den Alltag."
-      ]
+      ],
+      image: sessionHandsImg,
     }
   ],
   sectionsDE: [
