@@ -150,7 +150,6 @@ export default function UeberUns() {
                   Von Schweizer Krankenkassen anerkannt. ZSR Nr. P609264. Viele Zusatzversicherungen übernehmen einen Teil der Kosten.
                 </p>
               </div>
-            )}
 
             {/* Lic.Psych */}
             <div className="bg-white border border-border p-6">
