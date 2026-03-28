@@ -79,7 +79,7 @@ export default function Dashboard() {
   }, [navigate]);
 
   const {
-    trafficByDay, topPages, campaigns, dailyAds, leads,
+    trafficByDay, topPages, campaigns, dailyAds, leads, whatsappClicks,
     loading, gaError, adsError, gaLive, adsLive,
     dateRange, setDateRange,
   } = useDashboardData();
