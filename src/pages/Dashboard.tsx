@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { isAuthenticated, logout, getCurrentUser, getLoginLogs } from "@/lib/dashboardAuth";
 import { useDashboardData, DATE_PRESETS } from "@/hooks/useDashboardData";
 import { formatTime, formatCurrency } from "@/data/dashboardMockData";
-import type { DailyTraffic } from "@/data/dashboardMockData";
+import type { DailyTraffic, WhatsAppClick } from "@/data/dashboardMockData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
