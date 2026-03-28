@@ -219,9 +219,15 @@ export default function Erstgespraech() {
 
   const inputClasses = "w-full border border-border px-3 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
 
+  const basePath = getPath("home", language, country);
+
   return (
     <>
       <SEO {...pageSEO.contact} pageKey="contact" />
+      <Breadcrumbs items={[
+        { name: "Home", path: basePath },
+        { name: isEN ? "Free Discovery Call" : "Erstgespräch", path: getPath("contact", language, country) },
+      ]} />
 
       <section className="bg-white border-b border-border">
         <div className="container-main py-8 lg:py-12">
