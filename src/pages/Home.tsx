@@ -219,7 +219,7 @@ export default function Home() {
           </p>
           <div className="relative aspect-[4/3] max-h-[280px] rounded-2xl overflow-hidden mx-auto group">
             {heroSlides.map((src, i) => (
-              <img key={i} src={src} alt={`David J. Woods ${i + 1}`}
+              <img key={i} src={src} alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${i + 1}`}
                 loading={i === 0 ? "eager" : "lazy"}
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}
                 />
