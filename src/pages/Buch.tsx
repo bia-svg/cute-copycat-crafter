@@ -1,8 +1,9 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { getPath } from "@/lib/routes";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { getPath } from "@/lib/routes";
 import { MessageCircle, BookOpen } from "lucide-react";
 
 const BOOK_IMAGE = "https://shop.david-j-woods.com/wp-content/uploads/2020/11/david-woods-buch-go-inside.png";
@@ -16,6 +17,7 @@ function buildWhatsAppBookUrl(): string {
 export default function Buch() {
   const { language, country } = useLanguage();
   const isEN = language === "en";
+  const basePath = getPath("home", language, country);
 
   return (
     <>
@@ -25,6 +27,10 @@ export default function Buch() {
         descriptionDE="Go InSide: Das David-WOODS-Hypnose-Programm von David Woods & Elisabeth Engler. Abnehmen, Raucherentwöhnung, Selbstbewusstsein. 136 Seiten. ISBN 3934473881."
         descriptionEN="Go InSide: The David WOODS Hypnosis Program by David Woods & Elisabeth Engler. Weight loss, quit smoking, self-confidence. 136 pages. ISBN 3934473881."
       />
+      <Breadcrumbs items={[
+        { name: "Home", path: basePath },
+        { name: isEN ? "Book: Go InSide" : "Buch: Go InSide", path: getPath("book", language, country) },
+      ]} />
 
       {/* Hero */}
       <section className="bg-white border-b border-border">
