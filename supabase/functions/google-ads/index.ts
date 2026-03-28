@@ -212,8 +212,18 @@ serve(async (req) => {
       queryHeaders["login-customer-id"] = mccId;
     }
 
-    const adsUrl = `https://googleads.googleapis.com/${apiVersion}/customers/${customerId}/googleAds:search`;
-    console.log("Google Ads search URL:", adsUrl);
+    console.log("Query headers (redacted):", JSON.stringify({ ...queryHeaders, Authorization: "Bearer [REDACTED]" }));
+
+    // The accessible accounts are listed — try the configured customer first,
+    // if 403 try each other accessible non-MCC account
+    const customerCandidates = [customerId, ...accessibleCustomers.filter(c => c !== customerId && c !== mccId)];
+    let adsRes: Response | null = null;
+    let adsText = "";
+    let usedCustomerId = customerId;
+
+    for (const candidateId of customerCandidates) {
+      const adsUrl = `https://googleads.googleapis.com/${apiVersion}/customers/${candidateId}/googleAds:search`;
+      console.log(`Trying campaign search for customer ${candidateId}...`);
 
     const adsRes = await fetch(adsUrl, {
       method: "POST",
