@@ -20,6 +20,9 @@ import TvMedien from "@/pages/TvMedien";
 import Erfolgsberichte from "@/pages/Erfolgsberichte";
 import Terminbestaetigung from "@/pages/Terminbestaetigung";
 import FirmenCoaching from "@/pages/FirmenCoaching";
+import {
+  ErfolgsTraining, ResilienzVerstaerken, StressPraevention, NichtraucherSeminare
+} from "@/pages/corporate/index";
 import { Impressum, Datenschutz, AGB } from "@/pages/Legal";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
