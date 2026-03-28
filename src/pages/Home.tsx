@@ -149,7 +149,7 @@ export default function Home() {
               <img key={i} src={src} alt={`David J. Woods ${i + 1}`}
                 loading={i === 0 ? "eager" : "lazy"}
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}
-                loading={i === 0 ? "eager" : "lazy"} />
+                />
             ))}
             <button onClick={goPrev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity" aria-label="Previous">
               <ChevronLeft className="w-5 h-5 text-foreground" />
