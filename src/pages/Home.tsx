@@ -270,15 +270,13 @@ export default function Home() {
                 ? "Even if many are initially unsure — the process leads to a state of focused clarity where transformation becomes possible."
                 : "Auch wenn viele anfangs unsicher sind – der Prozess führt in einen Zustand fokussierter Klarheit, in dem Transformation möglich wird."}
             </p>
-            {true && (
-              <div className="flex items-center gap-3 bg-secondary rounded-lg p-3">
-                <img src={CDN.emrBadge} alt="EMR" className="h-12" />
-                <div>
-                  <div className="font-semibold text-sm text-foreground">EMR Krankenkasse Konform</div>
-                  <div className="text-xs text-muted-foreground">ZSR P609264 — {isEN ? "Recognized by Swiss health insurance" : "Von Schweizer Krankenkassen anerkannt"}</div>
-                </div>
+            <div className="flex items-center gap-3 bg-secondary rounded-lg p-3">
+              <img src={CDN.emrBadge} alt="EMR" className="h-12" />
+              <div>
+                <div className="font-semibold text-sm text-foreground">EMR Krankenkasse Konform</div>
+                <div className="text-xs text-muted-foreground">ZSR P609264 — {isEN ? "Recognized by Swiss health insurance" : "Von Schweizer Krankenkassen anerkannt"}</div>
               </div>
-            )}
+            </div>
             <Link to={getPath("about", language, country)}>
               <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground mt-2">
                 {isEN ? "More About Our Method" : "Mehr über unsere Methode"}
