@@ -5,36 +5,129 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Tv } from "lucide-react";
 
-const videos = [
+type Video = {
+  type: "vimeo" | "youtube";
+  id: string;
+  titleDE: string;
+  titleEN: string;
+  descDE: string;
+  descEN: string;
+};
+
+const videos: Video[] = [
   {
-    vimeoId: "85952877",
+    type: "vimeo", id: "85952877",
     titleDE: "TV Hypnosen — Abnehmen mit Hypnose",
     titleEN: "TV Hypnosis — Weight Loss with Hypnosis",
     descDE: "Live-Demonstration: Abnehmen mit Hypnose, 09.05.2012",
     descEN: "Live demonstration: Weight loss with hypnosis",
   },
   {
-    vimeoId: "85669798",
+    type: "vimeo", id: "85669798",
     titleDE: "TV Rauchentwöhnung mit David J. Woods",
     titleEN: "TV Stop Smoking with David J. Woods",
     descDE: "Rauchfrei durch Hypnose — TV-Beitrag",
     descEN: "Smoke-free through hypnosis — TV segment",
   },
   {
-    vimeoId: "521457145",
+    type: "vimeo", id: "521457145",
     titleDE: "Blitzhypnose — Rapid Hypnose",
     titleEN: "Flash Hypnosis — Rapid Hypnosis",
     descDE: "Schnelle Hypnose-Induktion live demonstriert",
     descEN: "Rapid hypnosis induction demonstrated live",
   },
   {
-    vimeoId: "521459700",
+    type: "vimeo", id: "521459700",
     titleDE: "Blitzhypnose — Live-Demonstration",
     titleEN: "Flash Hypnosis — Live Demonstration",
     descDE: "Weitere Demonstration der Blitzhypnose-Technik",
     descEN: "Another demonstration of the flash hypnosis technique",
   },
+  {
+    type: "vimeo", id: "521464028",
+    titleDE: "Blitzhypnose — Weitere Demonstration",
+    titleEN: "Flash Hypnosis — Another Demonstration",
+    descDE: "David J. Woods zeigt Blitzhypnose live",
+    descEN: "David J. Woods demonstrates flash hypnosis live",
+  },
+  {
+    type: "youtube", id: "orLhcv7h43Y",
+    titleDE: "David J. Woods — Hypnose im Fernsehen",
+    titleEN: "David J. Woods — Hypnosis on TV",
+    descDE: "TV-Auftritt mit Hypnose-Demonstration",
+    descEN: "TV appearance with hypnosis demonstration",
+  },
+  {
+    type: "youtube", id: "pzivsl7ykGM",
+    titleDE: "Hypnose-Demonstration — Live im Studio",
+    titleEN: "Hypnosis Demonstration — Live in Studio",
+    descDE: "Live-Hypnose vor Studiopublikum",
+    descEN: "Live hypnosis in front of studio audience",
+  },
+  {
+    type: "youtube", id: "Y3HO46uyXHU",
+    titleDE: "David Woods — Hypnotherapie erklärt",
+    titleEN: "David Woods — Hypnotherapy Explained",
+    descDE: "Interview über Hypnotherapie und ihre Wirkung",
+    descEN: "Interview about hypnotherapy and its effects",
+  },
+  {
+    type: "youtube", id: "GyPp8zOy2nE",
+    titleDE: "Hypnose in der Praxis",
+    titleEN: "Hypnosis in Practice",
+    descDE: "Praktische Anwendung der Hypnose",
+    descEN: "Practical application of hypnosis",
+  },
+  {
+    type: "youtube", id: "p72nlj_kkes",
+    titleDE: "David J. Woods — Medienauftritt",
+    titleEN: "David J. Woods — Media Appearance",
+    descDE: "Weiterer Medienauftritt von David J. Woods",
+    descEN: "Another media appearance by David J. Woods",
+  },
+  {
+    type: "youtube", id: "cgBo7ZytpUQ",
+    titleDE: "Hypnose live — TV-Beitrag",
+    titleEN: "Hypnosis Live — TV Segment",
+    descDE: "Live-Hypnose im Fernsehen",
+    descEN: "Live hypnosis on television",
+  },
+  {
+    type: "youtube", id: "j8SCSNn7DR0",
+    titleDE: "David Woods — Interview & Demonstration",
+    titleEN: "David Woods — Interview & Demonstration",
+    descDE: "Interview und Hypnose-Demonstration",
+    descEN: "Interview and hypnosis demonstration",
+  },
+  {
+    type: "vimeo", id: "419881622",
+    titleDE: "Hypnose-Session — Aufzeichnung",
+    titleEN: "Hypnosis Session — Recording",
+    descDE: "Aufgezeichnete Hypnose-Session",
+    descEN: "Recorded hypnosis session",
+  },
+  {
+    type: "youtube", id: "t-8hQbH725o",
+    titleDE: "David J. Woods — Weitere TV-Aufnahme",
+    titleEN: "David J. Woods — More TV Footage",
+    descDE: "Weitere TV-Aufnahme mit David J. Woods",
+    descEN: "More TV footage featuring David J. Woods",
+  },
+  {
+    type: "vimeo", id: "85741539",
+    titleDE: "Hypnose im Schweizer Fernsehen",
+    titleEN: "Hypnosis on Swiss Television",
+    descDE: "David J. Woods im Schweizer TV",
+    descEN: "David J. Woods on Swiss TV",
+  },
 ];
+
+function getEmbedUrl(video: Video) {
+  if (video.type === "vimeo") {
+    return `https://player.vimeo.com/video/${video.id}?dnt=true&title=1&byline=1&portrait=1`;
+  }
+  return `https://www.youtube.com/embed/${video.id}?rel=0`;
+}
 
 export default function TvMedien() {
   const { language, country } = useLanguage();
@@ -59,12 +152,12 @@ export default function TvMedien() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {videos.map((video) => (
-              <div key={video.vimeoId} className="border border-border rounded-lg overflow-hidden bg-card shadow-sm">
+              <div key={`${video.type}-${video.id}`} className="border border-border rounded-lg overflow-hidden bg-card shadow-sm">
                 <div className="aspect-video">
                   <iframe
-                    src={`https://player.vimeo.com/video/${video.vimeoId}?dnt=true&title=1&byline=1&portrait=1`}
+                    src={getEmbedUrl(video)}
                     className="w-full h-full"
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                     allowFullScreen
                     title={isEN ? video.titleEN : video.titleDE}
                     loading="lazy"
