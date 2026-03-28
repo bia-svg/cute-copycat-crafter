@@ -404,7 +404,7 @@ export default function Header() {
           </div>
 
           {/* Firmen-Coaching */}
-          <MobileSection id="corporate" title={isDE ? "Firmen-Coaching" : "Corporate"} items={corporateItems} />
+          <MobileSection id="corporate" title={isDE ? "Firmen-Coaching" : "Business Coaching"} items={corporateItems} />
 
           {/* Über uns */}
           <MobileSection id="about" title={t("nav.about")} items={aboutItems} />
