@@ -140,8 +140,7 @@ export default function UeberUns() {
               </p>
             </div>
 
-            {/* EMR (CH only) */}
-            {showCH && (
+            {/* EMR */}
               <div className="bg-white border border-border p-6">
                 <div className="flex items-center gap-4 mb-4">
                   <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge – Schweizer Zusatzversicherung anerkannt, ZSR P609264" className="h-20 w-auto shrink-0" loading="lazy" />
@@ -151,7 +150,6 @@ export default function UeberUns() {
                   Von Schweizer Krankenkassen anerkannt. ZSR Nr. P609264. Viele Zusatzversicherungen übernehmen einen Teil der Kosten.
                 </p>
               </div>
-            )}
 
             {/* Lic.Psych */}
             <div className="bg-white border border-border p-6">
