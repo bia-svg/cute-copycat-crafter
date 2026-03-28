@@ -1,10 +1,6 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Route, Routes, Navigate, useLocation } from "react-router-dom";
 import { useEffect, lazy, Suspense } from "react";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
@@ -28,18 +24,15 @@ const Dashboard = lazy(() => import("@/pages/Dashboard"));
 const DashboardLogin = lazy(() => import("@/pages/DashboardLogin"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
-// Lazy-loaded corporate pages
 const ErfolgsTraining = lazy(() => import("@/pages/corporate/ErfolgsTraining"));
 const ResilienzVerstaerken = lazy(() => import("@/pages/corporate/ResilienzVerstaerken"));
 const StressPraevention = lazy(() => import("@/pages/corporate/StressPraevention"));
 const NichtraucherSeminare = lazy(() => import("@/pages/corporate/NichtraucherSeminare"));
 
-// Lazy-loaded legal pages
 const LegalModule = lazy(() => import("@/pages/Legal").then(m => ({ default: m.Impressum })));
 const DatenschutzPage = lazy(() => import("@/pages/Legal").then(m => ({ default: m.Datenschutz })));
 const AGBPage = lazy(() => import("@/pages/Legal").then(m => ({ default: m.AGB })));
 
-// Lazy-loaded service pages
 const SmokingPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.SmokingPage })));
 const AnxietyPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.AnxietyPage })));
 const WeightPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.WeightPage })));
@@ -47,8 +40,6 @@ const StressPage = lazy(() => import("@/pages/services/index").then(m => ({ defa
 const DepressionPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.DepressionPage })));
 const ChildrenPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.ChildrenPage })));
 const AdultsPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.AdultsPage })));
-
-const queryClient = new QueryClient();
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -78,7 +69,6 @@ function AppRoutes() {
             <Route path="/" element={<Navigate to="/de/ch" replace />} />
             <Route path="/:lang/:country" element={<Home />} />
 
-            {/* Services — DE slugs */}
             <Route path="/:lang/:country/raucherentwoehnung" element={<SmokingPage />} />
             <Route path="/:lang/:country/aengste-phobien" element={<AnxietyPage />} />
             <Route path="/:lang/:country/abnehmen" element={<WeightPage />} />
@@ -87,7 +77,6 @@ function AppRoutes() {
             <Route path="/:lang/:country/kinder-jugendliche" element={<ChildrenPage />} />
             <Route path="/:lang/:country/erwachsene" element={<AdultsPage />} />
 
-            {/* Services — EN slugs */}
             <Route path="/:lang/:country/stop-smoking" element={<SmokingPage />} />
             <Route path="/:lang/:country/anxiety-phobias" element={<AnxietyPage />} />
             <Route path="/:lang/:country/weight-loss" element={<WeightPage />} />
@@ -95,7 +84,6 @@ function AppRoutes() {
             <Route path="/:lang/:country/children-teens" element={<ChildrenPage />} />
             <Route path="/:lang/:country/adults" element={<AdultsPage />} />
 
-            {/* Training & Corporate — DE slugs */}
             <Route path="/:lang/:country/ausbildung" element={<Ausbildung />} />
             <Route path="/:lang/:country/seminar-ablauf" element={<Navigate to={`/${window.location.pathname.split('/')[1]}/${window.location.pathname.split('/')[2]}/ausbildung#curriculum`} replace />} />
             <Route path="/:lang/:country/firmen-coaching" element={<FirmenCoaching />} />
@@ -104,7 +92,6 @@ function AppRoutes() {
             <Route path="/:lang/:country/firmen-coaching/stress-praevention" element={<StressPraevention />} />
             <Route path="/:lang/:country/firmen-coaching/nichtraucher-seminare" element={<NichtraucherSeminare />} />
 
-            {/* Training & Corporate — EN slugs */}
             <Route path="/:lang/:country/training" element={<Ausbildung />} />
             <Route path="/:lang/:country/seminar-schedule" element={<Navigate to={`/${window.location.pathname.split('/')[1]}/${window.location.pathname.split('/')[2]}/training#curriculum`} replace />} />
             <Route path="/:lang/:country/business-coaching" element={<FirmenCoaching />} />
@@ -113,25 +100,21 @@ function AppRoutes() {
             <Route path="/:lang/:country/business-coaching/stress-prevention" element={<StressPraevention />} />
             <Route path="/:lang/:country/business-coaching/non-smoker-seminars" element={<NichtraucherSeminare />} />
 
-            {/* About — DE slugs */}
             <Route path="/:lang/:country/ueber-uns" element={<UeberUns />} />
             <Route path="/:lang/:country/kundenmeinungen" element={<Kundenmeinungen />} />
             <Route path="/:lang/:country/erfolgsberichte" element={<Erfolgsberichte />} />
             <Route path="/:lang/:country/tv-medien" element={<TvMedien />} />
 
-            {/* About — EN slugs */}
             <Route path="/:lang/:country/about-us" element={<UeberUns />} />
             <Route path="/:lang/:country/testimonials" element={<Kundenmeinungen />} />
             <Route path="/:lang/:country/success-stories" element={<Erfolgsberichte />} />
             <Route path="/:lang/:country/tv-media" element={<TvMedien />} />
 
-            {/* Contact */}
             <Route path="/:lang/:country/erstgespraech" element={<Erstgespraech />} />
             <Route path="/:lang/:country/terminbestaetigung" element={<Terminbestaetigung />} />
             <Route path="/:lang/:country/consultation" element={<Erstgespraech />} />
             <Route path="/:lang/:country/appointment-confirmation" element={<Terminbestaetigung />} />
 
-            {/* Locations */}
             <Route path="/:lang/:country/standorte" element={<Standorte />} />
             <Route path="/:lang/:country/hypnose-zuerich" element={<CityZurich />} />
             <Route path="/:lang/:country/hypnose-augsburg" element={<CityAugsburg />} />
@@ -139,15 +122,12 @@ function AppRoutes() {
             <Route path="/:lang/:country/hypnosis-zurich" element={<CityZurich />} />
             <Route path="/:lang/:country/hypnosis-augsburg" element={<CityAugsburg />} />
 
-            {/* Blog */}
             <Route path="/:lang/:country/blog" element={<Blog />} />
             <Route path="/:lang/:country/blog/:slug" element={<BlogPost />} />
 
-            {/* Book */}
             <Route path="/:lang/:country/buch-go-inside" element={<Buch />} />
             <Route path="/:lang/:country/book-go-inside" element={<Buch />} />
 
-            {/* Legal */}
             <Route path="/:lang/:country/impressum" element={<LegalModule />} />
             <Route path="/:lang/:country/datenschutz" element={<DatenschutzPage />} />
             <Route path="/:lang/:country/agb" element={<AGBPage />} />
@@ -155,7 +135,6 @@ function AppRoutes() {
             <Route path="/:lang/:country/privacy-policy" element={<DatenschutzPage />} />
             <Route path="/:lang/:country/terms" element={<AGBPage />} />
 
-            {/* Dashboard */}
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/dashboard/login" element={<DashboardLogin />} />
 
@@ -169,15 +148,9 @@ function AppRoutes() {
 
 const App = () => (
   <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <AppRoutes />
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   </HelmetProvider>
 );
 
