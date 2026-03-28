@@ -413,7 +413,7 @@ export default function UeberUns() {
           { q: "Wie viel Erfahrung hat David J. Woods?", a: "Mit über 40 Jahren klinischer Erfahrung und mehr als 30.000 dokumentierten Sitzungen gehört David J. Woods zu den erfahrensten Hypnotherapeuten im DACH-Raum (Deutschland, Österreich, Schweiz)." },
           { q: "Ist Hypnotherapie wissenschaftlich anerkannt?", a: "Ja. Die Weltgesundheitsorganisation (WHO) erkennt Hypnotherapie als validen therapeutischen Ansatz an. In Deutschland bestätigte der Wissenschaftliche Beirat Psychotherapie 2006 die wissenschaftliche Evidenz für klinische Hypnose. Meta-Analysen zeigen, dass Hypnose KVT-Ergebnisse um durchschnittlich 70% verbessert (Kirsch et al., 1995)." },
           { q: "Was ist die Aktiv-Hypnose© Methode?", a: "Aktiv-Hypnose© ist eine von David J. Woods entwickelte Methode, die klassische Hypnose mit modernen psychologischen Techniken, NLP und Coaching-Prinzipien kombiniert. Der Fokus liegt auf aktiver Klientenbeteiligung statt passiver Suggestion." },
-          { q: "Bietet David J. Woods auch Ausbildungen an?", a: "Ja. Als NGH International Trainer bietet David J. Woods 6-tägige Intensiv-Ausbildungskurse an, die zu einem international anerkannten NGH-Therapeuten-Diplom führen. Die Ausbildung ist in der Schweiz EMR-konform." },
+          { q: "Bietet David J. Woods auch Ausbildungen an?", a: "Ja. David J. Woods bietet 6-tägige Intensiv-Ausbildungsseminare an, in denen die Teilnehmer seine eigene Aktiv-Hypnose© Methode erlernen und nach Abschluss ein Aktiv-Hypnose© Therapeuten-Diplom erhalten. David ist zudem NGH International Trainer — eine der höchsten Zertifizierungen der National Guild of Hypnotists (USA)." },
         ]}
       />
 
