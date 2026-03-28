@@ -13,20 +13,23 @@ export default function DashboardLogin() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
-    setTimeout(() => {
-      const success = authenticate(email, password);
+    try {
+      const success = await authenticate(email, password);
       if (success) {
         navigate("/dashboard");
       } else {
         setError("Invalid email or password.");
       }
+    } catch {
+      setError("Connection error. Try again.");
+    } finally {
       setLoading(false);
-    }, 500);
+    }
   };
 
   return (
