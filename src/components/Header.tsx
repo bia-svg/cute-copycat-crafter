@@ -206,7 +206,7 @@ export default function Header() {
           <span className="opacity-50 hidden sm:inline">·</span>
           <span className="whitespace-nowrap">NGH International Trainer</span>
           <span className="opacity-50">·</span>
-          <span className="whitespace-nowrap">★ 5.0 / 5 Google</span>
+          <span className="whitespace-nowrap">{isDE ? "★ 5.0 bei Google" : "★ 5.0 at Google"}</span>
           <span className="opacity-50 hidden sm:inline">·</span>
           <span className="whitespace-nowrap hidden sm:inline">{isDE ? "Über 40 Jahre Erfahrung" : "40+ Years Experience"}</span>
           <span className="opacity-50 hidden sm:inline">·</span>
