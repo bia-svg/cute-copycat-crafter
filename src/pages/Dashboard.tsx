@@ -85,7 +85,7 @@ export default function Dashboard() {
   }, [navigate]);
 
   const handlePinSubmit = async () => {
-    if (pinInput.length !== 6) { setPinError("PIN must be 6 digits"); return; }
+    if (pinInput.length !== 8) { setPinError("PIN must be 8 digits"); return; }
     setPinLoading(true);
     setPinError("");
     try {
