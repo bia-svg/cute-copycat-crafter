@@ -134,6 +134,17 @@ serve(async (req) => {
     console.log("developer-token length:", developerToken.length);
     console.log("developer-token first 4 chars:", developerToken.substring(0, 4));
 
+    // Diagnostic: test WITHOUT developer-token to see if 404 changes
+    const diagHeaders: Record<string, string> = {
+      Authorization: `Bearer ${accessToken}`,
+    };
+    const diagRes = await fetch(
+      "https://googleads.googleapis.com/v18/customers:listAccessibleCustomers",
+      { method: "GET", headers: diagHeaders }
+    );
+    const diagText = await diagRes.text();
+    console.log(`DIAG (no dev-token) status: ${diagRes.status}, body preview: ${diagText.substring(0, 300)}`);
+
     // Step 1: List accessible customers — minimal headers (no Content-Type, no login-customer-id)
     const listHeaders: Record<string, string> = {
       Authorization: `Bearer ${accessToken}`,
