@@ -22,7 +22,7 @@ import {
 import {
   Users, FileText, TrendingUp, LogOut, Clock,
   Eye, DollarSign, Target, ArrowUpRight, ArrowDownRight,
-  Leaf, Zap, MousePointer, BarChart3, Globe
+  Leaf, Zap, MousePointer, BarChart3, Globe, MessageCircle
 } from "lucide-react";
 import { format, parseISO, startOfMonth } from "date-fns";
 
