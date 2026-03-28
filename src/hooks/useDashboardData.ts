@@ -100,7 +100,7 @@ export function useDashboardData(): DashboardState {
       const channelData = data.channelBreakdown || [];
       const dailyRaw = data.dailyData || [];
 
-      // Build map from channel breakdown
+      // Build map from channel breakdown (sessions by channel)
       const channelMap: Record<string, DailyTraffic> = {};
       for (const row of channelData) {
         channelMap[row.date] = {
@@ -118,14 +118,14 @@ export function useDashboardData(): DashboardState {
         };
       }
 
-      // Merge with daily overview data
+      // Merge with daily overview data — use sessions as total to stay consistent with channel breakdown
       for (const d of dailyRaw) {
         if (channelMap[d.date]) {
           channelMap[d.date].sessions = d.sessions || 0;
           channelMap[d.date].pageViews = d.pageViews || 0;
           channelMap[d.date].bounceRate = d.bounceRate || 0;
           channelMap[d.date].avgSessionDuration = d.avgSessionDuration || 0;
-          channelMap[d.date].total = d.visitors || channelMap[d.date].total;
+          // Keep total from channel sum (sessions by channel) — NOT from activeUsers
         } else {
           channelMap[d.date] = {
             date: d.date,
@@ -134,7 +134,7 @@ export function useDashboardData(): DashboardState {
             direct: 0,
             referral: 0,
             social: 0,
-            total: d.visitors || 0,
+            total: d.sessions || 0,
             sessions: d.sessions || 0,
             pageViews: d.pageViews || 0,
             bounceRate: d.bounceRate || 0,
