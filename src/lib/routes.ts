@@ -3,6 +3,7 @@ import type { Language, Country } from "@/contexts/LanguageContext";
 type PageKey =
   | "home" | "smoking" | "anxiety" | "weight" | "stress"
   | "depression" | "children" | "adults" | "training" | "seminarSchedule" | "corporate"
+  | "corporateErfolg" | "corporateResilienz" | "corporateStress" | "corporateNichtraucher"
   | "about" | "testimonials" | "successStories" | "media"
   | "contact" | "appointmentConfirmation" | "cityZurich" | "cityAugsburg" | "locations"
   | "impressum" | "privacy" | "terms" | "blog" | "book";
