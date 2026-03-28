@@ -17,6 +17,7 @@ export interface ContentSection {
   h2: string;
   paragraphs: string[];
   bullets?: string[];
+  image?: string;
 }
 
 export interface ServicePageData {
@@ -117,22 +118,31 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       {sections.map((section, idx) => (
         <section key={idx} className={`${idx % 2 === 0 ? "bg-[#f4f3ef]" : "bg-white"} border-b border-border`}>
           <div className="container-main py-10">
-            <h2 className="text-xl sm:text-2xl font-bold text-[#1B3A5C] mb-5">{section.h2}</h2>
-            <div className="space-y-4 max-w-3xl">
-              {section.paragraphs.map((p, pi) => (
-                <p key={pi} className="text-base text-foreground leading-relaxed">{p}</p>
-              ))}
+            <div className={section.image ? "grid md:grid-cols-2 gap-8 items-start" : ""}>
+              <div>
+                <h2 className="text-xl sm:text-2xl font-bold text-[#1B3A5C] mb-5">{section.h2}</h2>
+                <div className="space-y-4 max-w-3xl">
+                  {section.paragraphs.map((p, pi) => (
+                    <p key={pi} className="text-base text-foreground leading-relaxed">{p}</p>
+                  ))}
+                </div>
+                {section.bullets && section.bullets.length > 0 && (
+                  <ul className="mt-5 space-y-2 max-w-3xl">
+                    {section.bullets.map((b, bi) => (
+                      <li key={bi} className="flex items-start gap-2 text-sm text-foreground">
+                        <ChevronRight className="w-4 h-4 text-[#2E7D32] shrink-0 mt-0.5" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+              {section.image && (
+                <div className="border border-border rounded-lg overflow-hidden">
+                  <img src={section.image} alt={section.h2} className="w-full h-auto object-cover" loading="lazy" />
+                </div>
+              )}
             </div>
-            {section.bullets && section.bullets.length > 0 && (
-              <ul className="mt-5 space-y-2 max-w-3xl">
-                {section.bullets.map((b, bi) => (
-                  <li key={bi} className="flex items-start gap-2 text-sm text-foreground">
-                    <ChevronRight className="w-4 h-4 text-[#2E7D32] shrink-0 mt-0.5" />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
           </div>
         </section>
       ))}

@@ -1,5 +1,6 @@
 import type { ServicePageData } from "@/pages/ServicePage";
 import davidSessionAdults from "@/assets/david-session-adults.jpeg";
+import sessionHandsImg from "@/assets/session-hands.jpeg";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb";
 
@@ -572,7 +573,8 @@ export const adultsData: ServicePageData = {
         "Jede Sitzung beginnt mit einem ausführlichen Gespräch, in dem David Ihre aktuelle Situation, Ihre Ziele und Ihre persönliche Geschichte erfasst. Darauf aufbauend wird die Hypnose individuell auf Sie zugeschnitten.",
         "Während der Hypnose befinden Sie sich in einem Zustand fokussierter Entspannung — Sie sind jederzeit bei Bewusstsein und behalten die volle Kontrolle. David arbeitet mit gezielten Suggestionen und Techniken, die direkt im Unterbewusstsein wirken.",
         "Nach der Sitzung erhalten Sie Ihre personalisierten Audio-Aufnahmen sowie konkrete Empfehlungen für den Alltag."
-      ]
+      ],
+      image: sessionHandsImg,
     }
   ],
   sectionsDE: [
@@ -626,7 +628,8 @@ export const adultsData: ServicePageData = {
         "Each session begins with a detailed conversation where David captures your current situation, your goals, and your personal history. Based on this, the hypnosis is individually tailored to you.",
         "During hypnosis, you are in a state of focused relaxation — you are conscious at all times and retain full control. David works with targeted suggestions and techniques that work directly in the subconscious.",
         "After the session, you receive your personalized audio recordings as well as concrete recommendations for everyday life."
-      ]
+      ],
+      image: sessionHandsImg,
     }
   ],
   image: davidSessionAdults,
