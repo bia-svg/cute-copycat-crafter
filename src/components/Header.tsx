@@ -200,12 +200,8 @@ export default function Header() {
       {/* Trust Bar */}
       <div className="bg-[#8b827c] text-white text-xs">
         <div className="container-main flex items-center justify-center gap-1.5 py-1.5 flex-wrap">
-          {showCH && (
-            <>
-              <span>EMR-Krankenkasse Konform</span>
-              <span className="opacity-50">·</span>
-            </>
-          )}
+          <span>EMR-Krankenkasse Konform</span>
+          <span className="opacity-50">·</span>
           <span>NGH International Trainer</span>
           <span className="opacity-50">·</span>
           <span>★ 5.0 / 5 Google (255)</span>
