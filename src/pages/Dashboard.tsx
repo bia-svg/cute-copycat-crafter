@@ -22,8 +22,9 @@ import {
 import {
   Users, FileText, TrendingUp, LogOut, Clock,
   Eye, DollarSign, Target, ArrowUpRight, ArrowDownRight,
-  Leaf, Zap, MousePointer, BarChart3, Globe, MessageCircle
+  Leaf, Zap, MousePointer, BarChart3, Globe, MessageCircle, ShieldCheck, Lock
 } from "lucide-react";
+import { Input } from "@/components/ui/input";
 import { format, parseISO, startOfMonth } from "date-fns";
 
 /* ═══════ Metric Card ═══════ */
@@ -73,10 +74,35 @@ const COLORS = {
 export default function Dashboard() {
   const navigate = useNavigate();
   const [tab, setTab] = useState("overview");
+  const [pinInput, setPinInput] = useState("");
+  const [pinUnlocked, setPinUnlocked] = useState(false);
+  const [pinError, setPinError] = useState("");
+  const [pinLoading, setPinLoading] = useState(false);
 
   useEffect(() => {
     if (!isAuthenticated()) navigate("/dashboard/login", { replace: true });
   }, [navigate]);
+
+  const handlePinSubmit = async () => {
+    if (pinInput.length !== 6) { setPinError("PIN must be 6 digits"); return; }
+    setPinLoading(true);
+    setPinError("");
+    try {
+      const { data, error } = await supabase.functions.invoke("verify-leads-pin", {
+        body: { pin: pinInput },
+      });
+      if (error || !data?.success) {
+        setPinError("Invalid PIN");
+        setPinInput("");
+      } else {
+        setPinUnlocked(true);
+      }
+    } catch {
+      setPinError("Connection error");
+    } finally {
+      setPinLoading(false);
+    }
+  };
 
   const {
     trafficByDay, topPages, campaigns, dailyAds, leads, whatsappClicks,
@@ -217,6 +243,9 @@ export default function Dashboard() {
               <TabsTrigger value="overview" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Overview</TabsTrigger>
               <TabsTrigger value="campaigns" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Campaigns</TabsTrigger>
               <TabsTrigger value="leads" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Leads</TabsTrigger>
+              <TabsTrigger value="all-leads" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                <Lock className="w-3 h-3 mr-1" /> All Leads
+              </TabsTrigger>
               <TabsTrigger value="data" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Data Export</TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
             </TabsList>
@@ -732,6 +761,169 @@ export default function Dashboard() {
                   )}
                 </CardContent>
               </Card>
+            </TabsContent>
+
+            {/* ═══════ ALL LEADS TAB (PIN-PROTECTED) ═══════ */}
+            <TabsContent value="all-leads" className="space-y-5 mt-4">
+              {!pinUnlocked ? (
+                <Card className="bg-white border border-gray-200 shadow-sm max-w-md mx-auto">
+                  <CardContent className="p-8 text-center space-y-4">
+                    <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+                      <ShieldCheck className="w-8 h-8 text-gray-500" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">Protected Area</h3>
+                    <p className="text-sm text-gray-500">Enter the 6-digit PIN to access the complete leads list with full contact details.</p>
+                    {pinError && (
+                      <div className="text-sm text-red-600 bg-red-50 border border-red-200 rounded p-2">{pinError}</div>
+                    )}
+                    <div className="flex items-center justify-center gap-2">
+                      <Input
+                        type="password"
+                        inputMode="numeric"
+                        maxLength={6}
+                        value={pinInput}
+                        onChange={(e) => setPinInput(e.target.value.replace(/\D/g, "").slice(0, 6))}
+                        onKeyDown={(e) => { if (e.key === "Enter") handlePinSubmit(); }}
+                        placeholder="••••••"
+                        className="w-40 text-center text-lg tracking-[0.5em] border-gray-300"
+                      />
+                      <Button onClick={handlePinSubmit} disabled={pinLoading || pinInput.length !== 6}>
+                        {pinLoading ? "..." : "Unlock"}
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ) : (
+                <>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <ShieldCheck className="w-5 h-5 text-emerald-600" />
+                      <span className="text-sm font-medium text-emerald-700">Full access unlocked</span>
+                    </div>
+                    <Badge className="bg-red-50 text-red-700 border border-red-200 text-xs">
+                      Contains personal data — handle with care
+                    </Badge>
+                  </div>
+
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                    <MetricCard title="Total Leads" value={leads.length} icon={Users} />
+                    <MetricCard title="Session" value={leads.filter(l => l.form_type === "session").length} icon={FileText} color="text-emerald-600" />
+                    <MetricCard title="Seminar" value={leads.filter(l => l.form_type === "seminar").length} icon={FileText} color="text-blue-600" />
+                    <MetricCard title="Corporate" value={leads.filter(l => l.form_type === "corporate").length} icon={FileText} color="text-purple-600" />
+                  </div>
+
+                  <Card className="bg-white border border-gray-200 shadow-sm">
+                    <CardHeader className="pb-2">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-sm font-medium text-gray-700">Complete Leads List ({leads.length})</CardTitle>
+                        <Button size="sm" variant="outline" className="text-xs" onClick={() => {
+                          const headers = ["Date","Name","Email","Phone","Concern","Type","Source","City","Postal Code","Country","UTM Source","UTM Medium","UTM Campaign","Notes","Converted"];
+                          const csvRows = [headers.join(",")];
+                          leads.forEach(l => {
+                            csvRows.push([
+                              l.created_at ? format(new Date(l.created_at), "yyyy-MM-dd HH:mm") : "",
+                              `"${(l.name || "").replace(/"/g, '""')}"`,
+                              `"${(l.email || "").replace(/"/g, '""')}"`,
+                              `"${(l.phone || "").replace(/"/g, '""')}"`,
+                              `"${(l.concern || "").replace(/"/g, '""')}"`,
+                              l.form_type || "",
+                              l.source || "",
+                              `"${(l.city || "").replace(/"/g, '""')}"`,
+                              l.postal_code || "",
+                              l.country || "",
+                              l.utm_source || "",
+                              l.utm_medium || "",
+                              l.utm_campaign || "",
+                              `"${(l.notes || "").replace(/"/g, '""')}"`,
+                              l.converted ? "Yes" : "No",
+                            ].join(","));
+                          });
+                          const blob = new Blob([csvRows.join("\n")], { type: "text/csv" });
+                          const url = URL.createObjectURL(blob);
+                          const a = document.createElement("a");
+                          a.href = url;
+                          a.download = `all-leads-${format(new Date(), "yyyy-MM-dd")}.csv`;
+                          a.click();
+                          URL.revokeObjectURL(url);
+                        }}>
+                          Export Full CSV
+                        </Button>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="overflow-x-auto max-h-[600px] overflow-y-auto">
+                        <Table>
+                          <TableHeader>
+                            <TableRow className="border-gray-100">
+                              <TableHead className="text-gray-500 text-xs sticky left-0 bg-white z-10">Date</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Name</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Email</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Phone</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Concern</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Type</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Source</TableHead>
+                              <TableHead className="text-gray-500 text-xs">City</TableHead>
+                              <TableHead className="text-gray-500 text-xs">PLZ</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Country</TableHead>
+                              <TableHead className="text-gray-500 text-xs">UTM</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Notes</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-center">Conv.</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            {leads.map(l => (
+                              <TableRow key={l.id} className="border-gray-100 hover:bg-gray-50">
+                                <TableCell className="text-gray-900 text-xs font-medium whitespace-nowrap sticky left-0 bg-white">
+                                  {l.created_at ? format(new Date(l.created_at), "dd/MM/yy HH:mm") : "—"}
+                                </TableCell>
+                                <TableCell className="text-gray-900 text-xs font-medium whitespace-nowrap">{l.name || "—"}</TableCell>
+                                <TableCell className="text-blue-700 text-xs">
+                                  <a href={`mailto:${l.email}`} className="hover:underline">{l.email}</a>
+                                </TableCell>
+                                <TableCell className="text-gray-900 text-xs whitespace-nowrap">
+                                  {l.phone ? <a href={`tel:${l.phone}`} className="text-blue-700 hover:underline">{l.phone}</a> : "—"}
+                                </TableCell>
+                                <TableCell className="text-gray-700 text-xs max-w-[200px] truncate">{l.concern || "—"}</TableCell>
+                                <TableCell>
+                                  <Badge variant="outline" className={`text-xs ${
+                                    l.form_type === "session" ? "text-emerald-700 border-emerald-200" :
+                                    l.form_type === "seminar" ? "text-blue-700 border-blue-200" :
+                                    "text-purple-700 border-purple-200"
+                                  }`}>
+                                    {l.form_type}
+                                  </Badge>
+                                </TableCell>
+                                <TableCell>
+                                  <Badge variant="outline" className={`text-xs ${
+                                    l.source === "organic" ? "text-emerald-700" :
+                                    l.source === "paid" ? "text-blue-700" : "text-gray-500"
+                                  }`}>
+                                    {l.source || "direct"}
+                                  </Badge>
+                                </TableCell>
+                                <TableCell className="text-gray-700 text-xs">{l.city || "—"}</TableCell>
+                                <TableCell className="text-gray-700 text-xs font-mono">{l.postal_code || "—"}</TableCell>
+                                <TableCell className="text-gray-700 text-xs">{l.country || "—"}</TableCell>
+                                <TableCell className="text-gray-500 text-xs max-w-[120px] truncate">
+                                  {[l.utm_source, l.utm_medium, l.utm_campaign].filter(Boolean).join(" / ") || "—"}
+                                </TableCell>
+                                <TableCell className="text-gray-600 text-xs max-w-[150px] truncate">{l.notes || "—"}</TableCell>
+                                <TableCell className="text-center">
+                                  {l.converted ? (
+                                    <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">✓</Badge>
+                                  ) : (
+                                    <span className="text-gray-300">—</span>
+                                  )}
+                                </TableCell>
+                              </TableRow>
+                            ))}
+                          </TableBody>
+                        </Table>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </>
+              )}
             </TabsContent>
 
             {/* ═══════ DATA EXPORT TAB ═══════ */}
