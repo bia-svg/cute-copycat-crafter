@@ -547,6 +547,78 @@ export default function Dashboard() {
                 </CardContent>
               </Card>
 
+              {/* WhatsApp Clicks */}
+              <Card className="bg-white border border-gray-200 shadow-sm">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                      <MessageCircle className="w-4 h-4 text-green-600" /> WhatsApp Clicks ({whatsappClicks.length})
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  {whatsappClicks.length === 0 ? (
+                    <p className="text-gray-400 text-sm py-4 text-center">No WhatsApp clicks recorded yet.</p>
+                  ) : (() => {
+                    const waByDay: Record<string, { date: string; organic: number; paid: number; direct: number; total: number }> = {};
+                    whatsappClicks.forEach(w => {
+                      const d = format(new Date(w.clicked_at), "yyyy-MM-dd");
+                      if (!waByDay[d]) waByDay[d] = { date: d, organic: 0, paid: 0, direct: 0, total: 0 };
+                      waByDay[d].total++;
+                      if (w.utm_source === "google" || w.utm_medium === "cpc") waByDay[d].paid++;
+                      else if (!w.utm_source) waByDay[d].organic++;
+                      else waByDay[d].direct++;
+                    });
+                    const dailyWA = Object.values(waByDay).sort((a, b) => a.date.localeCompare(b.date));
+
+                    const waByPage: Record<string, number> = {};
+                    whatsappClicks.forEach(w => {
+                      const p = w.page_path || "unknown";
+                      waByPage[p] = (waByPage[p] || 0) + 1;
+                    });
+                    const pageData = Object.entries(waByPage)
+                      .map(([page, count]) => ({ page, count }))
+                      .sort((a, b) => b.count - a.count)
+                      .slice(0, 10);
+
+                    return (
+                      <div className="space-y-4">
+                        <ChartContainer config={{
+                          organic: { label: "Organic", color: COLORS.organic },
+                          paid: { label: "Paid", color: COLORS.paid },
+                        }} className="h-[180px] w-full">
+                          <BarChart data={dailyWA}>
+                            <CartesianGrid stroke="#f3f4f6" strokeDasharray="3 3" />
+                            <XAxis dataKey="date" tick={{ fill: "#9ca3af", fontSize: 10 }} tickFormatter={v => format(parseISO(v), "dd/MM")} />
+                            <YAxis tick={{ fill: "#9ca3af", fontSize: 10 }} allowDecimals={false} />
+                            <ChartTooltip content={<ChartTooltipContent />} />
+                            <Bar dataKey="organic" fill={COLORS.organic} stackId="a" name="Organic" />
+                            <Bar dataKey="paid" fill={COLORS.paid} stackId="a" radius={[3, 3, 0, 0]} name="Paid" />
+                          </BarChart>
+                        </ChartContainer>
+
+                        <Table>
+                          <TableHeader>
+                            <TableRow className="border-gray-100">
+                              <TableHead className="text-gray-500">Page</TableHead>
+                              <TableHead className="text-gray-500 text-right">Clicks</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            {pageData.map(row => (
+                              <TableRow key={row.page} className="border-gray-100">
+                                <TableCell className="text-gray-900 text-sm">{row.page}</TableCell>
+                                <TableCell className="text-right text-gray-900 font-medium">{row.count}</TableCell>
+                              </TableRow>
+                            ))}
+                          </TableBody>
+                        </Table>
+                      </div>
+                    );
+                  })()}
+                </CardContent>
+              </Card>
+
               {/* Leads by Postal Code */}
               <Card className="bg-white border border-gray-200 shadow-sm">
                 <CardHeader className="pb-2">
