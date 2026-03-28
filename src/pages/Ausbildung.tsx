@@ -252,6 +252,30 @@ export default function Ausbildung() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
+          DIPLOMAS — Visual proof of certification
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-white border-b border-border">
+        <div className="container-main py-10 lg:py-14">
+          <h2 className="text-2xl font-bold text-[#1B3A5C] mb-2 text-center" style={{ fontFamily: "Georgia, serif" }}>
+            {isEN ? "Your Certification" : "Ihr Abschluss"}
+          </h2>
+          <p className="text-sm text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+            {isEN
+              ? "Upon completion, you receive internationally recognized diplomas."
+              : "Nach Abschluss erhalten Sie international anerkannte Diplome."}
+          </p>
+          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <div className="border border-border rounded-lg overflow-hidden shadow-sm">
+              <img src={diplomAktivHypnose} alt="Diplom — Therapeut in Aktiv-Hypnose von David J. Woods" className="w-full h-auto" loading="lazy" />
+            </div>
+            <div className="border border-border rounded-lg overflow-hidden shadow-sm">
+              <img src={diplomNGH} alt="NGH Certified Instructor — David Woods" className="w-full h-auto" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
           SECTION 3 — Day-by-Day Curriculum
           ═══════════════════════════════════════════════════════════ */}
       <section id="curriculum" className="bg-[#f4f3ef] border-b border-border scroll-mt-20">
