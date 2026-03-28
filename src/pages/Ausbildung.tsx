@@ -493,8 +493,28 @@ export default function Ausbildung() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          SECTION 6 — Final CTA
+          SECTION 6 — FAQ + Final CTA
           ═══════════════════════════════════════════════════════════ */}
+
+      <FAQSection
+        title={isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
+        items={isEN ? [
+          { q: "What certification do I receive after the training?", a: "You receive the internationally recognized NGH (National Guild of Hypnotists) therapist diploma, the most widely accepted hypnosis certification worldwide. The training is also EMR-compliant in Switzerland (ZSR P609264), enabling health insurance billing." },
+          { q: "Do I need prior experience in hypnosis or psychology?", a: "No prior experience is required. The 6-day intensive training is designed for beginners and experienced practitioners alike. David J. Woods teaches from the fundamentals to advanced techniques in a structured curriculum." },
+          { q: "How many participants are in each training group?", a: "Groups are intentionally kept small (typically 8-12 participants) to ensure intensive, hands-on learning with personal feedback from David J. Woods." },
+          { q: "Is the NGH certification internationally recognized?", a: "Yes. The National Guild of Hypnotists (NGH) is the oldest and largest hypnosis organization in the world, founded in 1950. The NGH diploma is recognized in over 80 countries." },
+          { q: "Can I practice professionally after the 6-day training?", a: "Yes. After completing the training and receiving your NGH diploma, you are qualified to open your own hypnotherapy practice. The training includes practical guidance on building a successful practice." },
+          { q: "What is the scientific basis for hypnotherapy?", a: "Hypnotherapy is recognized by the World Health Organization (WHO) and validated by numerous meta-analyses. A landmark study by Kirsch et al. (1995) showed that adding hypnosis to cognitive-behavioral therapy improves outcomes by 70%. The German Scientific Advisory Council confirmed the evidence for clinical hypnosis in 2006." },
+        ] : [
+          { q: "Welches Zertifikat erhalte ich nach der Ausbildung?", a: "Sie erhalten das international anerkannte NGH-Therapeuten-Diplom (National Guild of Hypnotists) — die weltweit am meisten akzeptierte Hypnose-Zertifizierung. Die Ausbildung ist in der Schweiz EMR-konform (ZSR P609264), was die Abrechnung über Krankenkassen ermöglicht." },
+          { q: "Brauche ich Vorkenntnisse in Hypnose oder Psychologie?", a: "Nein. Die 6-tägige Intensiv-Ausbildung ist für Anfänger und erfahrene Praktiker gleichermaßen konzipiert. David J. Woods unterrichtet von den Grundlagen bis zu fortgeschrittenen Techniken." },
+          { q: "Wie viele Teilnehmer sind in jeder Gruppe?", a: "Gruppen werden bewusst klein gehalten (typischerweise 8-12 Teilnehmer), um intensives, praxisnahes Lernen mit persönlichem Feedback von David J. Woods zu gewährleisten." },
+          { q: "Ist die NGH-Zertifizierung international anerkannt?", a: "Ja. Die National Guild of Hypnotists (NGH) ist die älteste und größte Hypnose-Organisation der Welt, gegründet 1950. Das NGH-Diplom wird in über 80 Ländern anerkannt." },
+          { q: "Kann ich nach der 6-Tage-Ausbildung professionell arbeiten?", a: "Ja. Nach Abschluss der Ausbildung und Erhalt Ihres NGH-Diploms sind Sie qualifiziert, eine eigene Hypnotherapie-Praxis zu eröffnen. Die Ausbildung beinhaltet praktische Anleitung zum Aufbau einer erfolgreichen Praxis." },
+          { q: "Was ist die wissenschaftliche Grundlage der Hypnotherapie?", a: "Hypnotherapie ist von der Weltgesundheitsorganisation (WHO) anerkannt und durch zahlreiche Meta-Analysen validiert. Eine Landmark-Studie von Kirsch et al. (1995) zeigte, dass die Ergänzung von KVT durch Hypnose die Ergebnisse um 70% verbessert. Der Wissenschaftliche Beirat Psychotherapie bestätigte 2006 die Evidenz für klinische Hypnose." },
+        ]}
+      />
+
       <section className="bg-[#1B3A5C] text-white">
         <div className="container-main py-12 lg:py-16 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: "Georgia, serif" }}>
