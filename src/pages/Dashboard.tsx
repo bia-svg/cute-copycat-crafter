@@ -735,6 +735,152 @@ export default function Dashboard() {
               </Card>
             </TabsContent>
 
+            {/* ═══════ DATA EXPORT TAB ═══════ */}
+            <TabsContent value="data" className="mt-4">
+              {(() => {
+                // Build a unified daily map combining all data sources
+                const allDates = new Set<string>();
+                trafficByDay.forEach(d => allDates.add(d.date));
+                dailyAds.forEach(d => allDates.add(d.date));
+                leads.forEach(l => { if (l.created_at) allDates.add(format(new Date(l.created_at), "yyyy-MM-dd")); });
+                whatsappClicks.forEach(w => allDates.add(format(new Date(w.clicked_at), "yyyy-MM-dd")));
+
+                // Aggregate leads by day
+                const leadsByDay: Record<string, number> = {};
+                leads.forEach(l => {
+                  if (!l.created_at) return;
+                  const d = format(new Date(l.created_at), "yyyy-MM-dd");
+                  leadsByDay[d] = (leadsByDay[d] || 0) + 1;
+                });
+
+                // Aggregate WA clicks by day
+                const waByDay: Record<string, number> = {};
+                whatsappClicks.forEach(w => {
+                  const d = format(new Date(w.clicked_at), "yyyy-MM-dd");
+                  waByDay[d] = (waByDay[d] || 0) + 1;
+                });
+
+                // Traffic map
+                const trafficMap: Record<string, DailyTraffic> = {};
+                trafficByDay.forEach(d => { trafficMap[d.date] = d; });
+
+                // Ads map
+                const adsMap: Record<string, typeof dailyAds[0]> = {};
+                dailyAds.forEach(d => { adsMap[d.date] = d; });
+
+                const sortedDates = Array.from(allDates).sort((a, b) => b.localeCompare(a));
+
+                const rows = sortedDates.map(date => {
+                  const t = trafficMap[date];
+                  const a = adsMap[date];
+                  return {
+                    date,
+                    visitors: t?.total || 0,
+                    organic: t?.organic || 0,
+                    paid: t?.paid || 0,
+                    direct: t?.direct || 0,
+                    referral: t?.referral || 0,
+                    social: t?.social || 0,
+                    sessions: t?.sessions || 0,
+                    pageViews: t?.pageViews || 0,
+                    bounceRate: t?.bounceRate || 0,
+                    avgDuration: t?.avgSessionDuration || 0,
+                    adsImpressions: a?.impressions || 0,
+                    adsClicks: a?.clicks || 0,
+                    adsSpend: a?.spend || 0,
+                    adsConversions: a?.conversions || 0,
+                    leads: leadsByDay[date] || 0,
+                    whatsapp: waByDay[date] || 0,
+                  };
+                });
+
+                const exportCSV = () => {
+                  const headers = ["Date","Visitors","Organic","Paid","Direct","Referral","Social","Sessions","PageViews","BounceRate","AvgDuration(s)","Ads Impressions","Ads Clicks","Ads Spend","Ads Conversions","Leads","WhatsApp Clicks"];
+                  const csvRows = [headers.join(",")];
+                  rows.forEach(r => {
+                    csvRows.push([
+                      r.date, r.visitors, r.organic, r.paid, r.direct, r.referral, r.social,
+                      r.sessions, r.pageViews, r.bounceRate.toFixed(1), r.avgDuration.toFixed(0),
+                      r.adsImpressions, r.adsClicks, r.adsSpend.toFixed(2), r.adsConversions,
+                      r.leads, r.whatsapp
+                    ].join(","));
+                  });
+                  const blob = new Blob([csvRows.join("\n")], { type: "text/csv" });
+                  const url = URL.createObjectURL(blob);
+                  const link = document.createElement("a");
+                  link.href = url;
+                  link.download = `dashboard-export-${dateRange.startDate}-${dateRange.endDate}.csv`;
+                  link.click();
+                  URL.revokeObjectURL(url);
+                };
+
+                return (
+                  <Card className="bg-white border border-gray-200 shadow-sm">
+                    <CardHeader className="pb-2">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                          <FileText className="w-4 h-4" /> Complete Daily Data ({rows.length} days)
+                        </CardTitle>
+                        <Button size="sm" variant="outline" onClick={exportCSV} className="text-xs">
+                          Export CSV
+                        </Button>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="overflow-x-auto max-h-[600px] overflow-y-auto">
+                        <Table>
+                          <TableHeader>
+                            <TableRow className="border-gray-100">
+                              <TableHead className="text-gray-500 text-xs sticky left-0 bg-white z-10">Date</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">Visitors</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">Organic</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">Paid</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">Direct</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">Referral</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">Social</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">Sessions</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">Views</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">Bounce%</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">Avg Dur.</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">Ad Impr.</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">Ad Clicks</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">Ad Spend</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">Ad Conv.</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">Leads</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-right">WA Clicks</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            {rows.map(r => (
+                              <TableRow key={r.date} className="border-gray-100 hover:bg-gray-50">
+                                <TableCell className="text-gray-900 text-xs font-medium whitespace-nowrap sticky left-0 bg-white">{format(parseISO(r.date), "dd/MM/yy")}</TableCell>
+                                <TableCell className="text-right text-gray-900 text-xs font-medium">{r.visitors}</TableCell>
+                                <TableCell className="text-right text-gray-700 text-xs">{r.organic}</TableCell>
+                                <TableCell className="text-right text-gray-700 text-xs">{r.paid}</TableCell>
+                                <TableCell className="text-right text-gray-700 text-xs">{r.direct}</TableCell>
+                                <TableCell className="text-right text-gray-700 text-xs">{r.referral}</TableCell>
+                                <TableCell className="text-right text-gray-700 text-xs">{r.social}</TableCell>
+                                <TableCell className="text-right text-gray-700 text-xs">{r.sessions}</TableCell>
+                                <TableCell className="text-right text-gray-700 text-xs">{r.pageViews}</TableCell>
+                                <TableCell className="text-right text-gray-700 text-xs">{r.bounceRate.toFixed(1)}%</TableCell>
+                                <TableCell className="text-right text-gray-700 text-xs">{formatTime(Math.round(r.avgDuration))}</TableCell>
+                                <TableCell className="text-right text-gray-700 text-xs">{r.adsImpressions}</TableCell>
+                                <TableCell className="text-right text-gray-700 text-xs">{r.adsClicks}</TableCell>
+                                <TableCell className="text-right text-gray-700 text-xs">{r.adsSpend.toFixed(0)}</TableCell>
+                                <TableCell className="text-right text-gray-700 text-xs">{r.adsConversions}</TableCell>
+                                <TableCell className="text-right text-gray-900 text-xs font-medium">{r.leads || ""}</TableCell>
+                                <TableCell className="text-right text-gray-900 text-xs font-medium">{r.whatsapp || ""}</TableCell>
+                              </TableRow>
+                            ))}
+                          </TableBody>
+                        </Table>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })()}
+            </TabsContent>
+
             {/* ═══════ LOGS TAB ═══════ */}
             <TabsContent value="logs" className="mt-4">
               <Card className="bg-white border border-gray-200 shadow-sm">
