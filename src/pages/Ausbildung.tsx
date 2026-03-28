@@ -10,8 +10,8 @@ import { pageSEO } from "@/data/seo";
 import FAQSection from "@/components/FAQSection";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
-import diplomAktivHypnose from "@/assets/diplom-aktiv-hypnose.jpeg";
-import diplomNGH from "@/assets/diplom-ngh-instructor.jpeg";
+import diplomAktivHypnose from "@/assets/diplom-aktiv-hypnose.webp";
+import diplomNGH from "@/assets/diplom-ngh-instructor.webp";
 
 import ImageLightbox from "@/components/ImageLightbox";
 import { Button } from "@/components/ui/button";
