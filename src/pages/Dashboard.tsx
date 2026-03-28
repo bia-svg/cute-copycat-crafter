@@ -223,12 +223,11 @@ export default function Dashboard() {
 
             {/* ═══════ OVERVIEW TAB ═══════ */}
             <TabsContent value="overview" className="space-y-5 mt-4">
-              <div className="grid grid-cols-2 lg:grid-cols-6 gap-3">
+              <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
                 <MetricCard title="Total Visitors" value={totals.total} icon={Users} />
                 <MetricCard title="Organic" value={totals.organic} icon={Leaf} color="text-emerald-600" />
                 <MetricCard title="Paid" value={totals.paid} icon={Zap} color="text-blue-600" />
                 <MetricCard title="Sessions" value={totals.sessions} icon={BarChart3} />
-                <MetricCard title="Page Views" value={totals.pageViews} icon={Eye} />
                 <MetricCard title="WhatsApp Clicks" value={whatsappClicks.length} icon={MessageCircle} color="text-green-600" />
               </div>
 
@@ -314,8 +313,8 @@ export default function Dashboard() {
                     <TableHeader>
                       <TableRow className="border-gray-100">
                         <TableHead className="text-gray-500">Page</TableHead>
-                        <TableHead className="text-gray-500 text-right">Views</TableHead>
-                        <TableHead className="text-gray-500 text-right">Avg. Time</TableHead>
+                         <TableHead className="text-gray-500">Views</TableHead>
+                        <TableHead className="text-gray-500 text-right">Avg. Engagement</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
