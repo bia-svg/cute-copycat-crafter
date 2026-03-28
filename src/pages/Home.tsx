@@ -270,15 +270,13 @@ export default function Home() {
                 ? "Even if many are initially unsure — the process leads to a state of focused clarity where transformation becomes possible."
                 : "Auch wenn viele anfangs unsicher sind – der Prozess führt in einen Zustand fokussierter Klarheit, in dem Transformation möglich wird."}
             </p>
-            {showCH && (
-              <div className="flex items-center gap-3 bg-secondary rounded-lg p-3">
-                <img src={CDN.emrBadge} alt="EMR" className="h-12" />
-                <div>
-                  <div className="font-semibold text-sm text-foreground">EMR Krankenkasse Konform</div>
-                  <div className="text-xs text-muted-foreground">ZSR P609264 — {isEN ? "Recognized by Swiss health insurance" : "Von Schweizer Krankenkassen anerkannt"}</div>
-                </div>
+            <div className="flex items-center gap-3 bg-secondary rounded-lg p-3">
+              <img src={CDN.emrBadge} alt="EMR" className="h-12" />
+              <div>
+                <div className="font-semibold text-sm text-foreground">EMR Krankenkasse Konform</div>
+                <div className="text-xs text-muted-foreground">ZSR P609264 — {isEN ? "Recognized by Swiss health insurance" : "Von Schweizer Krankenkassen anerkannt"}</div>
               </div>
-            )}
+            </div>
             <Link to={getPath("about", language, country)}>
               <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground mt-2">
                 {isEN ? "More About Our Method" : "Mehr über unsere Methode"}
@@ -348,13 +346,11 @@ export default function Home() {
               <h3 className="font-semibold text-foreground">NGH International Trainer</h3>
               <p className="text-sm text-muted-foreground">National Guild of Hypnotists</p>
             </div>
-            {showCH && (
-              <div className="text-center p-6 bg-card border border-border rounded-lg">
-                <img src={CDN.emrBadge} alt="EMR" className="h-16 mx-auto mb-3" />
-                <h3 className="font-semibold text-foreground">EMR Krankenkasse Konform</h3>
-                <p className="text-sm text-muted-foreground">ZSR P609264</p>
-              </div>
-            )}
+            <div className="text-center p-6 bg-card border border-border rounded-lg">
+              <img src={CDN.emrBadge} alt="EMR" className="h-16 mx-auto mb-3" />
+              <h3 className="font-semibold text-foreground">EMR Krankenkasse Konform</h3>
+              <p className="text-sm text-muted-foreground">ZSR P609264</p>
+            </div>
             <div className="text-center p-6 bg-card border border-border rounded-lg">
               <div className="text-4xl font-bold text-primary mb-2">40+</div>
               <h3 className="font-semibold text-foreground">{isEN ? "Years of Experience" : "Jahre Erfahrung"}</h3>
@@ -436,12 +432,10 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            {showCH && (
-              <div className="flex items-center gap-2 bg-secondary rounded p-2 mb-6">
-                <CheckCircle className="w-4 h-4 text-cta" />
-                <span className="text-sm font-medium text-foreground">EMR Krankenkasse Konform</span>
-              </div>
-            )}
+            <div className="flex items-center gap-2 bg-secondary rounded p-2 mb-6">
+              <CheckCircle className="w-4 h-4 text-cta" />
+              <span className="text-sm font-medium text-foreground">EMR Krankenkasse Konform</span>
+            </div>
             <div className="text-center">
               <Link to={getPath("training", language, country)}>
                 <Button className="bg-cta text-cta-foreground hover:bg-cta/90">

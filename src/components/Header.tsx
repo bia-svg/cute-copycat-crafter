@@ -200,12 +200,8 @@ export default function Header() {
       {/* Trust Bar */}
       <div className="bg-[#8b827c] text-white text-xs">
         <div className="container-main flex items-center justify-center gap-1.5 py-1.5 flex-wrap">
-          {showCH && (
-            <>
-              <span>EMR-Krankenkasse Konform</span>
-              <span className="opacity-50">·</span>
-            </>
-          )}
+          <span>EMR-Krankenkasse Konform</span>
+          <span className="opacity-50">·</span>
           <span>NGH International Trainer</span>
           <span className="opacity-50">·</span>
           <span>★ 5.0 / 5 Google (255)</span>
@@ -279,12 +275,10 @@ export default function Header() {
               <Award className="w-4 h-4 text-cta" />
               <span className="font-semibold text-sm text-foreground">NGH International Trainer</span>
             </div>
-            {showCH && (
-              <div className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-cta" />
-                <span className="font-semibold text-sm text-foreground">EMR-Krankenkasse Konform</span>
-              </div>
-            )}
+            <div className="flex items-center gap-2">
+              <Award className="w-4 h-4 text-cta" />
+              <span className="font-semibold text-sm text-foreground">EMR-Krankenkasse Konform</span>
+            </div>
             <div className="pt-2">
               <Link to={getPath("contact", language, country)} onClick={() => setActiveMenu(null)}>
                 <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs">

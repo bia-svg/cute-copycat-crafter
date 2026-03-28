@@ -104,11 +104,9 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
             </div>
             <div className="border border-border">
               <img src={data.image} alt={h1} className="w-full h-auto" loading="eager" />
-              {showCH && (
-                <div className="bg-[#E8F5E9] border-t border-[#81C784] p-3">
-                  <p className="text-xs font-semibold text-[#2E7D32]">EMR Krankenkasse Konform · ZSR Nr. P609264</p>
-                </div>
-              )}
+              <div className="bg-[#E8F5E9] border-t border-[#81C784] p-3">
+                <p className="text-xs font-semibold text-[#2E7D32]">EMR Krankenkasse Konform · ZSR Nr. P609264</p>
+              </div>
             </div>
           </div>
         </div>
