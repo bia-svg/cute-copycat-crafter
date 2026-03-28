@@ -423,7 +423,7 @@ export const stressData: ServicePageData = {
    Original: 4869 chars, 2 H2 sections + detailed causes
    ═══════════════════════════════════════════════════════════════ */
 export const depressionData: ServicePageData = {
-  slugCH: "depressionen-traumata", slugDE: "depressionen-traumata", slugEN: "depressionen-traumata",
+  slugCH: "depressionen-traumata", slugDE: "depressionen-traumata", slugEN: "depression-trauma",
   titleCH: "Hypnose gegen Depressionen & Traumata Zürich | David J. Woods",
   titleDE: "Hypnose gegen Depressionen & Traumata Augsburg | David J. Woods",
   titleEN: "Hypnotherapy for Depression & Trauma Zurich & Augsburg | David J. Woods",
