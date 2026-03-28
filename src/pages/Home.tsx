@@ -144,7 +144,7 @@ export default function Home() {
         {/* Desktop */}
         <div className="hidden md:grid md:grid-cols-2 container-main py-12 gap-8 items-center">
           {/* Image */}
-          <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-2xl overflow-hidden mx-auto group">
+          <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "400px" }}>
             {heroSlides.map((src, i) => (
               <img key={i} src={src} alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${i + 1}`}
                 loading={i === 0 ? "eager" : "lazy"}
