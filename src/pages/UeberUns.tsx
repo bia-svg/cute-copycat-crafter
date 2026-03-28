@@ -171,7 +171,7 @@ export default function UeberUns() {
             {/* Aktiv-Hypnose Developer */}
             <div className="bg-white border border-border p-6">
               <div className="flex items-center gap-4 mb-4">
-                <img src={CDN.logo} alt="Aktiv-Hypnose©" className="h-16 w-auto shrink-0" />
+                <img src={CDN.logo} alt="Aktiv-Hypnose© Logo – Methode entwickelt von David J. Woods" className="h-16 w-auto shrink-0" loading="lazy" />
               </div>
               <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
