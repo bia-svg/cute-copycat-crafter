@@ -9,7 +9,7 @@ const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBK
    Original: 2328 chars, 2 H2 sections + psychological reasons list
    ═══════════════════════════════════════════════════════════════ */
 export const smokingData: ServicePageData = {
-  slugCH: "raucherentwoehnung", slugDE: "raucherentwoehnung", slugEN: "raucherentwoehnung",
+  slugCH: "raucherentwoehnung", slugDE: "raucherentwoehnung", slugEN: "stop-smoking",
   titleCH: "Raucherentwöhnung Hypnose Zürich | Endlich Rauchfrei | David J. Woods",
   titleDE: "Raucherentwöhnung Hypnose Augsburg | Endlich Rauchfrei | David J. Woods",
   titleEN: "Stop Smoking Hypnotherapy Zurich & Augsburg | David J. Woods",
