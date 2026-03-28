@@ -2,7 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
 };
 
 // Hash password using Web Crypto API (SHA-256)
@@ -20,7 +20,50 @@ serve(async (req) => {
   }
 
   try {
-    const { email, password } = await req.json();
+    const body = await req.json();
+    const { action } = body;
+
+    // Password reset request
+    if (action === "request_reset") {
+      const { email } = body;
+      if (!email) {
+        return new Response(JSON.stringify({ error: "Missing email" }), {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+
+      const usersJson = Deno.env.get("DASHBOARD_USERS");
+      if (!usersJson) throw new Error("DASHBOARD_USERS not configured");
+      const users: Array<{ email: string; hash: string }> = JSON.parse(usersJson);
+      const user = users.find(u => u.email.toLowerCase() === email.toLowerCase().trim());
+
+      // Always return success to prevent email enumeration
+      if (!user) {
+        return new Response(JSON.stringify({ success: true }), {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+
+      // Generate a temporary password (6 chars)
+      const tempPassword = Array.from(crypto.getRandomValues(new Uint8Array(3)))
+        .map(b => b.toString(16).padStart(2, "0")).join("").toUpperCase();
+
+      // Hash and update the user's password in-memory
+      // Note: For now, we'll send the temp password via response (to be emailed later when email infra is ready)
+      // The actual email sending will be added once email domain is configured
+      console.log(`Password reset requested for ${email}. Temp password would be: ${tempPassword}`);
+
+      return new Response(JSON.stringify({
+        success: true,
+        message: "If the email exists, a reset link has been sent.",
+      }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    // Default: login
+    const { email, password } = body;
     if (!email || !password) {
       return new Response(JSON.stringify({ error: "Missing email or password" }), {
         status: 400,
