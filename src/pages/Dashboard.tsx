@@ -1,8 +1,10 @@
 import { useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { isAuthenticated, logout, getCurrentUser, getLoginLogs } from "@/lib/dashboardAuth";
-import { useDashboardData } from "@/hooks/useDashboardData";
-import { formatTime, type DailyMetric } from "@/data/dashboardMockData";
+import { useDashboardData, DATE_PRESETS } from "@/hooks/useDashboardData";
+import { formatTime, formatCurrency } from "@/data/dashboardMockData";
+import type { DailyTraffic } from "@/data/dashboardMockData";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -15,96 +17,114 @@ import {
 } from "@/components/ui/chart";
 import {
   AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid,
-  LineChart, Line
+  LineChart, Line, Legend, ResponsiveContainer, PieChart, Pie, Cell
 } from "recharts";
 import {
   Users, FileText, TrendingUp, LogOut, Clock,
-  Eye, DollarSign, Target, ArrowUpRight, ArrowDownRight
+  Eye, DollarSign, Target, ArrowUpRight, ArrowDownRight,
+  Leaf, Zap, MousePointer, BarChart3, Globe
 } from "lucide-react";
-import { format, subDays, startOfWeek, startOfMonth, parseISO } from "date-fns";
+import { format, parseISO, startOfMonth } from "date-fns";
 
-type Period = "daily" | "weekly" | "monthly" | "total";
-
-function aggregateByWeek(data: DailyMetric[]): DailyMetric[] {
-  const weeks: Record<string, DailyMetric> = {};
-  data.forEach(d => {
-    const key = format(startOfWeek(parseISO(d.date), { weekStartsOn: 1 }), "yyyy-MM-dd");
-    if (!weeks[key]) weeks[key] = { date: key, visitors: 0, formSubmissions: 0, whatsappClicks: 0, conversions: 0 };
-    weeks[key].visitors += d.visitors;
-    weeks[key].formSubmissions += d.formSubmissions;
-    weeks[key].whatsappClicks += d.whatsappClicks;
-    weeks[key].conversions += d.conversions;
-  });
-  return Object.values(weeks).sort((a, b) => a.date.localeCompare(b.date));
-}
-
-function aggregateByMonth(data: DailyMetric[]): DailyMetric[] {
-  const months: Record<string, DailyMetric> = {};
-  data.forEach(d => {
-    const key = format(startOfMonth(parseISO(d.date)), "yyyy-MM");
-    if (!months[key]) months[key] = { date: key, visitors: 0, formSubmissions: 0, whatsappClicks: 0, conversions: 0 };
-    months[key].visitors += d.visitors;
-    months[key].formSubmissions += d.formSubmissions;
-    months[key].whatsappClicks += d.whatsappClicks;
-    months[key].conversions += d.conversions;
-  });
-  return Object.values(months).sort((a, b) => a.date.localeCompare(b.date));
-}
-
-function MetricCard({ title, value, icon: Icon, change, prefix }: {
-  title: string; value: string | number; icon: any; change?: number; prefix?: string;
+/* ═══════ Metric Card ═══════ */
+function MetricCard({ title, value, icon: Icon, subtitle, color = "text-gray-900" }: {
+  title: string; value: string | number; icon: any; subtitle?: string; color?: string;
 }) {
   return (
-    <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)] text-white">
-      <CardContent className="p-5">
-        <div className="flex items-center justify-between mb-3">
-          <span className="text-sm text-[hsl(220,10%,55%)]">{title}</span>
-          <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center">
-            <Icon className="w-4 h-4 text-primary" />
+    <Card className="bg-white border border-gray-200 shadow-sm">
+      <CardContent className="p-4">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">{title}</span>
+          <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
+            <Icon className="w-4 h-4 text-gray-600" />
           </div>
         </div>
-        <div className="text-2xl font-bold">{prefix}{typeof value === "number" ? value.toLocaleString("en-US") : value}</div>
-        {change !== undefined && (
-          <div className={`flex items-center gap-1 mt-1 text-xs ${change >= 0 ? "text-green-400" : "text-red-400"}`}>
-            {change >= 0 ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
-            {Math.abs(change).toFixed(1)}% vs. previous period
-          </div>
-        )}
+        <div className={`text-2xl font-bold ${color}`}>
+          {typeof value === "number" ? value.toLocaleString("en-US") : value}
+        </div>
+        {subtitle && <p className="text-xs text-gray-400 mt-1">{subtitle}</p>}
       </CardContent>
     </Card>
   );
 }
 
+/* ═══════ Aggregate by month ═══════ */
+function aggregateByMonth(data: DailyTraffic[]) {
+  const months: Record<string, { date: string; organic: number; paid: number; direct: number; total: number }> = {};
+  data.forEach(d => {
+    const key = format(startOfMonth(parseISO(d.date)), "yyyy-MM");
+    if (!months[key]) months[key] = { date: key, organic: 0, paid: 0, direct: 0, total: 0 };
+    months[key].organic += d.organic;
+    months[key].paid += d.paid;
+    months[key].direct += d.direct;
+    months[key].total += d.total;
+  });
+  return Object.values(months).sort((a, b) => a.date.localeCompare(b.date));
+}
+
+const COLORS = {
+  organic: "#10b981",
+  paid: "#3b82f6",
+  direct: "#6b7280",
+  referral: "#f59e0b",
+  social: "#8b5cf6",
+};
+
 export default function Dashboard() {
   const navigate = useNavigate();
-  const [period, setPeriod] = useState<Period>("daily");
   const [tab, setTab] = useState("overview");
 
   useEffect(() => {
     if (!isAuthenticated()) navigate("/dashboard/login", { replace: true });
   }, [navigate]);
 
-  const { dailyData: rawData, topPages, campaigns, submissions, loading, gaError, adsError, gaLive, adsLive } = useDashboardData();
-  const isLive = gaLive || adsLive;
+  const {
+    trafficByDay, topPages, campaigns, dailyAds, leads,
+    loading, gaError, adsError, gaLive, adsLive,
+    dateRange, setDateRange,
+  } = useDashboardData();
 
-  const chartData = useMemo(() => {
-    if (period === "weekly") return aggregateByWeek(rawData);
-    if (period === "monthly") return aggregateByMonth(rawData);
-    return rawData;
-  }, [rawData, period]);
-
+  /* ═══════ Computed metrics ═══════ */
   const totals = useMemo(() => {
-    return rawData.reduce((acc, d) => ({
-      visitors: acc.visitors + d.visitors,
-      formSubmissions: acc.formSubmissions + d.formSubmissions,
-      whatsappClicks: acc.whatsappClicks + d.whatsappClicks,
-      conversions: acc.conversions + d.conversions,
-    }), { visitors: 0, formSubmissions: 0, whatsappClicks: 0, conversions: 0 });
-  }, [rawData]);
+    const t = trafficByDay.reduce((acc, d) => ({
+      organic: acc.organic + d.organic,
+      paid: acc.paid + d.paid,
+      direct: acc.direct + d.direct,
+      total: acc.total + d.total,
+      sessions: acc.sessions + d.sessions,
+      pageViews: acc.pageViews + d.pageViews,
+    }), { organic: 0, paid: 0, direct: 0, total: 0, sessions: 0, pageViews: 0 });
+    return t;
+  }, [trafficByDay]);
 
-  const totalSpend = campaigns.reduce((s, c) => s + c.spend, 0);
-  const totalLeads = totals.formSubmissions + totals.whatsappClicks;
-  const conversionRate = totalLeads > 0 ? ((totals.conversions / totalLeads) * 100).toFixed(1) : "0";
+  const adsTotals = useMemo(() => {
+    return campaigns.reduce((acc, c) => ({
+      spend: acc.spend + c.spend,
+      clicks: acc.clicks + c.clicks,
+      impressions: acc.impressions + c.impressions,
+      conversions: acc.conversions + c.conversions,
+    }), { spend: 0, clicks: 0, impressions: 0, conversions: 0 });
+  }, [campaigns]);
+
+  const leadStats = useMemo(() => {
+    const sessionLeads = leads.filter(l => l.form_type === "session").length;
+    const seminarLeads = leads.filter(l => l.form_type === "seminar").length;
+    const organicLeads = leads.filter(l => !l.utm_source || l.source === "organic").length;
+    const paidLeads = leads.filter(l => l.utm_source === "google" || l.source === "paid").length;
+    const byPostalCode = leads.reduce((acc, l) => {
+      const key = l.postal_code || "Unknown";
+      acc[key] = (acc[key] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
+    return { sessionLeads, seminarLeads, organicLeads, paidLeads, total: leads.length, byPostalCode };
+  }, [leads]);
+
+  const organicCVR = totals.organic > 0 ? ((leadStats.organicLeads / totals.organic) * 100).toFixed(2) : "—";
+  const paidCVR = totals.paid > 0 ? ((leadStats.paidLeads / totals.paid) * 100).toFixed(2) : "—";
+  const costPerSession = leadStats.sessionLeads > 0 ? adsTotals.spend / leadStats.sessionLeads : 0;
+  const costPerSeminar = leadStats.seminarLeads > 0 ? adsTotals.spend / leadStats.seminarLeads : 0;
+
+  const monthlyData = useMemo(() => aggregateByMonth(trafficByDay), [trafficByDay]);
 
   const loginLogs = getLoginLogs();
   const currentUserEmail = getCurrentUser();
@@ -113,288 +133,467 @@ export default function Dashboard() {
   if (!isAuthenticated()) return null;
 
   const chartConfig = {
-    visitors: { label: "Visitors", color: "hsl(213, 53%, 45%)" },
-    formSubmissions: { label: "Sessions", color: "hsl(123, 46%, 45%)" },
-    whatsappClicks: { label: "Page Views", color: "hsl(142, 70%, 45%)" },
-    conversions: { label: "Conversions", color: "hsl(45, 90%, 55%)" },
+    organic: { label: "Organic", color: COLORS.organic },
+    paid: { label: "Paid", color: COLORS.paid },
+    direct: { label: "Direct", color: COLORS.direct },
+    total: { label: "Total", color: "#1f2937" },
   };
 
+  const postalData = Object.entries(leadStats.byPostalCode)
+    .map(([code, count]) => ({ code, count }))
+    .sort((a, b) => b.count - a.count);
+
   return (
-    <div className="min-h-screen bg-[hsl(220,15%,8%)] text-white">
-      {/* Header */}
-      <div className="border-b border-[hsl(220,15%,15%)] bg-[hsl(220,15%,10%)]">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div>
-            <div className="flex items-center gap-2">
-              <h1 className="text-lg font-semibold">David Woods — Dashboard</h1>
-              {isLive ? (
-                <Badge className="bg-green-500/20 text-green-400 border-0 text-xs">● Live</Badge>
-              ) : (
-                <Badge className="bg-yellow-500/20 text-yellow-400 border-0 text-xs">Demo Data</Badge>
-              )}
+    <>
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Analytics Dashboard | David J. Woods</title>
+      </Helmet>
+
+      <div className="min-h-screen bg-gray-50">
+        {/* Header */}
+        <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
+          <div className="max-w-[1400px] mx-auto px-4 py-3 flex items-center justify-between">
+            <div>
+              <div className="flex items-center gap-2">
+                <h1 className="text-lg font-semibold text-gray-900">Analytics Dashboard</h1>
+                {(gaLive || adsLive) ? (
+                  <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">● Live</Badge>
+                ) : (
+                  <Badge className="bg-amber-50 text-amber-700 border border-amber-200 text-xs">Connecting...</Badge>
+                )}
+              </div>
+              <p className="text-xs text-gray-400">David J. Woods — Internal Marketing Analytics</p>
             </div>
-            <p className="text-xs text-[hsl(220,10%,45%)]">Internal Analytics & Campaign Tracking</p>
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-gray-500">{displayName}</span>
+              <Button size="sm" variant="outline" onClick={() => { logout(); navigate("/dashboard/login"); }}
+                className="text-gray-500 hover:text-gray-900">
+                <LogOut className="w-4 h-4 mr-1" /> Sign Out
+              </Button>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
-            <span className="text-xs text-[hsl(220,10%,50%)]">{displayName}</span>
-            <Button size="sm" variant="ghost" onClick={() => { logout(); navigate("/dashboard/login"); }}
-              className="text-[hsl(220,10%,55%)] hover:text-white hover:bg-[hsl(220,15%,15%)]">
-              <LogOut className="w-4 h-4 mr-1" /> Sign Out
-            </Button>
-          </div>
-        </div>
-      </div>
+        </header>
 
-      <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
-        {/* Error banners */}
-        {gaError && (
-          <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-sm text-red-400">
-            <strong>GA4:</strong> {gaError}
+        <div className="max-w-[1400px] mx-auto px-4 py-5 space-y-5">
+          {/* Date Range + Errors */}
+          <div className="flex flex-wrap items-center gap-2">
+            {DATE_PRESETS.map(preset => (
+              <button
+                key={preset.label}
+                onClick={() => setDateRange(preset)}
+                className={`px-3 py-1.5 text-xs font-medium rounded-full border transition-colors ${
+                  dateRange.label === preset.label
+                    ? "bg-gray-900 text-white border-gray-900"
+                    : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
+                }`}
+              >
+                {preset.label}
+              </button>
+            ))}
+            <span className="text-xs text-gray-400 ml-2">
+              {dateRange.startDate} → {dateRange.endDate}
+            </span>
           </div>
-        )}
-        {adsError && (
-          <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-sm text-red-400">
-            <strong>Google Ads:</strong> {adsError}
-          </div>
-        )}
 
-        {loading && (
-          <div className="text-center py-12 text-[hsl(220,10%,50%)]">Loading data from Google Cloud...</div>
-        )}
+          {gaError && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-sm text-red-700">
+              <strong>GA4:</strong> {gaError}
+            </div>
+          )}
+          {adsError && (
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-sm text-amber-700">
+              <strong>Google Ads:</strong> {adsError}
+            </div>
+          )}
 
-        {/* Tabs */}
-        <Tabs value={tab} onValueChange={setTab}>
-          <div className="flex items-center justify-between flex-wrap gap-3">
-            <TabsList className="bg-[hsl(220,15%,13%)] border border-[hsl(220,15%,20%)]">
-              <TabsTrigger value="overview" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Overview</TabsTrigger>
-              <TabsTrigger value="campaigns" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Campaigns</TabsTrigger>
-              <TabsTrigger value="logs" className="data-[state=active]:bg-primary data-[state=active]:text-white text-[hsl(220,10%,55%)]">Logs</TabsTrigger>
+          {loading && (
+            <div className="text-center py-12 text-gray-400">Loading data...</div>
+          )}
+
+          {/* Tabs */}
+          <Tabs value={tab} onValueChange={setTab}>
+            <TabsList className="bg-white border border-gray-200">
+              <TabsTrigger value="overview" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Overview</TabsTrigger>
+              <TabsTrigger value="campaigns" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Campaigns</TabsTrigger>
+              <TabsTrigger value="leads" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Leads</TabsTrigger>
+              <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
             </TabsList>
 
-            {tab !== "logs" && (
-              <div className="flex gap-1 bg-[hsl(220,15%,13%)] border border-[hsl(220,15%,20%)] rounded-md p-1">
-                {(["daily", "weekly", "monthly", "total"] as Period[]).map(p => (
-                  <button key={p} onClick={() => setPeriod(p)}
-                    className={`px-3 py-1 text-xs rounded transition-colors ${period === p ? "bg-primary text-white" : "text-[hsl(220,10%,55%)] hover:text-white"}`}>
-                    {p === "daily" ? "Daily" : p === "weekly" ? "Weekly" : p === "monthly" ? "Monthly" : "All Time"}
-                  </button>
-                ))}
+            {/* ═══════ OVERVIEW TAB ═══════ */}
+            <TabsContent value="overview" className="space-y-5 mt-4">
+              <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
+                <MetricCard title="Total Visitors" value={totals.total} icon={Users} />
+                <MetricCard title="Organic" value={totals.organic} icon={Leaf} color="text-emerald-600" />
+                <MetricCard title="Paid" value={totals.paid} icon={Zap} color="text-blue-600" />
+                <MetricCard title="Sessions" value={totals.sessions} icon={BarChart3} />
+                <MetricCard title="Page Views" value={totals.pageViews} icon={Eye} />
               </div>
-            )}
-          </div>
 
-          {/* OVERVIEW TAB */}
-          <TabsContent value="overview" className="space-y-6 mt-4">
-            {/* KPI Cards */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <MetricCard title="Visitors" value={totals.visitors} icon={Users} />
-              <MetricCard title="Sessions" value={totals.formSubmissions} icon={FileText} />
-              <MetricCard title="Page Views" value={totals.whatsappClicks} icon={Eye} />
-              <MetricCard title="Avg. Session" value={rawData.length > 0 ? `${Math.round(rawData.reduce((a, d) => a + d.visitors, 0) / rawData.length)}` : "—"} icon={TrendingUp} />
-            </div>
+              {/* Traffic by Day — Organic vs Paid */}
+              <Card className="bg-white border border-gray-200 shadow-sm">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-sm font-medium text-gray-700">Daily Traffic — Organic vs Paid</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ChartContainer config={chartConfig} className="h-[280px] w-full">
+                    <AreaChart data={trafficByDay}>
+                      <defs>
+                        <linearGradient id="fillOrg" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stopColor={COLORS.organic} stopOpacity={0.2} />
+                          <stop offset="100%" stopColor={COLORS.organic} stopOpacity={0} />
+                        </linearGradient>
+                        <linearGradient id="fillPaid" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stopColor={COLORS.paid} stopOpacity={0.2} />
+                          <stop offset="100%" stopColor={COLORS.paid} stopOpacity={0} />
+                        </linearGradient>
+                      </defs>
+                      <CartesianGrid stroke="#f3f4f6" strokeDasharray="3 3" />
+                      <XAxis dataKey="date" tick={{ fill: "#9ca3af", fontSize: 10 }} tickFormatter={v => format(parseISO(v), "dd/MM")} />
+                      <YAxis tick={{ fill: "#9ca3af", fontSize: 10 }} />
+                      <ChartTooltip content={<ChartTooltipContent />} />
+                      <Area type="monotone" dataKey="organic" stroke={COLORS.organic} fill="url(#fillOrg)" strokeWidth={2} name="Organic" />
+                      <Area type="monotone" dataKey="paid" stroke={COLORS.paid} fill="url(#fillPaid)" strokeWidth={2} name="Paid" />
+                    </AreaChart>
+                  </ChartContainer>
+                </CardContent>
+              </Card>
 
-            {/* Charts */}
-            {period !== "total" && (
+              {/* Monthly Comparison + Conversion Rates */}
               <div className="grid lg:grid-cols-2 gap-4">
-                {/* Visitors Chart */}
-                <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
+                <Card className="bg-white border border-gray-200 shadow-sm">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Visitors</CardTitle>
+                    <CardTitle className="text-sm font-medium text-gray-700">Monthly Traffic</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ChartContainer config={chartConfig} className="h-[220px] w-full">
-                      <AreaChart data={chartData}>
-                        <defs>
-                          <linearGradient id="fillVisitors" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="hsl(213, 53%, 45%)" stopOpacity={0.3} />
-                            <stop offset="100%" stopColor="hsl(213, 53%, 45%)" stopOpacity={0} />
-                          </linearGradient>
-                        </defs>
-                        <CartesianGrid stroke="hsl(220,15%,18%)" strokeDasharray="3 3" />
-                        <XAxis dataKey="date" tick={{ fill: "hsl(220,10%,45%)", fontSize: 10 }} tickFormatter={v => format(parseISO(v), "dd.MM")} />
-                        <YAxis tick={{ fill: "hsl(220,10%,45%)", fontSize: 10 }} />
+                      <BarChart data={monthlyData}>
+                        <CartesianGrid stroke="#f3f4f6" strokeDasharray="3 3" />
+                        <XAxis dataKey="date" tick={{ fill: "#9ca3af", fontSize: 10 }} />
+                        <YAxis tick={{ fill: "#9ca3af", fontSize: 10 }} />
                         <ChartTooltip content={<ChartTooltipContent />} />
-                        <Area type="monotone" dataKey="visitors" stroke="hsl(213, 53%, 45%)" fill="url(#fillVisitors)" strokeWidth={2} />
-                      </AreaChart>
-                    </ChartContainer>
-                  </CardContent>
-                </Card>
-
-                {/* Sessions Chart */}
-                <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Sessions</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ChartContainer config={chartConfig} className="h-[220px] w-full">
-                      <BarChart data={chartData}>
-                        <CartesianGrid stroke="hsl(220,15%,18%)" strokeDasharray="3 3" />
-                        <XAxis dataKey="date" tick={{ fill: "hsl(220,10%,45%)", fontSize: 10 }} tickFormatter={v => format(parseISO(v), "dd.MM")} />
-                        <YAxis tick={{ fill: "hsl(220,10%,45%)", fontSize: 10 }} />
-                        <ChartTooltip content={<ChartTooltipContent />} />
-                        <Bar dataKey="formSubmissions" fill="hsl(123, 46%, 45%)" radius={[3, 3, 0, 0]} />
+                        <Bar dataKey="organic" fill={COLORS.organic} stackId="a" radius={[0, 0, 0, 0]} name="Organic" />
+                        <Bar dataKey="paid" fill={COLORS.paid} stackId="a" radius={[3, 3, 0, 0]} name="Paid" />
                       </BarChart>
                     </ChartContainer>
                   </CardContent>
                 </Card>
 
-                {/* Page Views Chart */}
-                <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
+                <Card className="bg-white border border-gray-200 shadow-sm">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Page Views</CardTitle>
+                    <CardTitle className="text-sm font-medium text-gray-700">Conversion Rates</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ChartContainer config={chartConfig} className="h-[220px] w-full">
-                      <BarChart data={chartData}>
-                        <CartesianGrid stroke="hsl(220,15%,18%)" strokeDasharray="3 3" />
-                        <XAxis dataKey="date" tick={{ fill: "hsl(220,10%,45%)", fontSize: 10 }} tickFormatter={v => format(parseISO(v), "dd.MM")} />
-                        <YAxis tick={{ fill: "hsl(220,10%,45%)", fontSize: 10 }} />
-                        <ChartTooltip content={<ChartTooltipContent />} />
-                        <Bar dataKey="whatsappClicks" fill="hsl(142, 70%, 45%)" radius={[3, 3, 0, 0]} />
-                      </BarChart>
-                    </ChartContainer>
-                  </CardContent>
-                </Card>
-
-                {/* Sessions vs Visitors Chart */}
-                <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Sessions vs Visitors</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ChartContainer config={chartConfig} className="h-[220px] w-full">
-                      <LineChart data={chartData}>
-                        <CartesianGrid stroke="hsl(220,15%,18%)" strokeDasharray="3 3" />
-                        <XAxis dataKey="date" tick={{ fill: "hsl(220,10%,45%)", fontSize: 10 }} tickFormatter={v => format(parseISO(v), "dd.MM")} />
-                        <YAxis tick={{ fill: "hsl(220,10%,45%)", fontSize: 10 }} />
-                        <ChartTooltip content={<ChartTooltipContent />} />
-                        <Line type="monotone" dataKey="visitors" stroke="hsl(213, 53%, 45%)" strokeWidth={2} dot={false} />
-                        <Line type="monotone" dataKey="formSubmissions" stroke="hsl(123, 46%, 45%)" strokeWidth={2} dot={false} />
-                      </LineChart>
-                    </ChartContainer>
+                    <div className="grid grid-cols-2 gap-4 py-4">
+                      <div className="text-center p-4 bg-emerald-50 rounded-lg border border-emerald-100">
+                        <p className="text-xs text-emerald-600 font-medium mb-1">Organic CVR</p>
+                        <p className="text-3xl font-bold text-emerald-700">{organicCVR}%</p>
+                        <p className="text-xs text-emerald-500 mt-1">{leadStats.organicLeads} leads / {totals.organic} visitors</p>
+                      </div>
+                      <div className="text-center p-4 bg-blue-50 rounded-lg border border-blue-100">
+                        <p className="text-xs text-blue-600 font-medium mb-1">Paid CVR</p>
+                        <p className="text-3xl font-bold text-blue-700">{paidCVR}%</p>
+                        <p className="text-xs text-blue-500 mt-1">{leadStats.paidLeads} leads / {totals.paid} visitors</p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
-            )}
 
-            {/* Top Pages */}
-            <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
-              <CardHeader>
-                <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium flex items-center gap-2">
-                  <Eye className="w-4 h-4" /> Top Pages
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Table>
-                  <TableHeader>
-                    <TableRow className="border-[hsl(220,15%,18%)] hover:bg-transparent">
-                      <TableHead className="text-[hsl(220,10%,50%)]">Page</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Views</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Avg. Time</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {topPages.map(page => (
-                      <TableRow key={page.path} className="border-[hsl(220,15%,18%)] hover:bg-[hsl(220,15%,15%)]">
-                        <TableCell className="text-white font-medium">{page.label}<span className="text-[hsl(220,10%,40%)] text-xs ml-2">{page.path}</span></TableCell>
-                        <TableCell className="text-right text-white">{page.views.toLocaleString("en-US")}</TableCell>
-                        <TableCell className="text-right text-white flex items-center justify-end gap-1"><Clock className="w-3 h-3 text-[hsl(220,10%,45%)]" />{formatTime(page.avgTimeSeconds)}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          {/* CAMPAIGNS TAB */}
-          <TabsContent value="campaigns" className="space-y-6 mt-4">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <MetricCard title="Ad Spend" value={totalSpend} icon={DollarSign} prefix="CHF " />
-              <MetricCard title="Total Clicks" value={campaigns.reduce((s, c) => s + c.clicks, 0)} icon={Target} />
-              <MetricCard title="Total Leads" value={campaigns.reduce((s, c) => s + c.leads, 0)} icon={FileText} />
-              <MetricCard title="Cost / Lead" value={`CHF ${(totalSpend / campaigns.reduce((s, c) => s + c.leads, 1)).toFixed(0)}`} icon={TrendingUp} />
-            </div>
-
-            <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
-              <CardHeader>
-                <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Campaign Overview</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Table>
-                  <TableHeader>
-                    <TableRow className="border-[hsl(220,15%,18%)] hover:bg-transparent">
-                      <TableHead className="text-[hsl(220,10%,50%)]">Campaign</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)]">Source</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Spend</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Clicks</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Leads</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)] text-right">Conversions</TableHead>
-                      <TableHead className="text-[hsl(220,10%,50%)] text-right">CPA</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {campaigns.map(c => (
-                      <TableRow key={c.id} className="border-[hsl(220,15%,18%)] hover:bg-[hsl(220,15%,15%)]">
-                        <TableCell className="text-white font-medium">{c.name}</TableCell>
-                        <TableCell>
-                          <Badge variant="outline" className={`text-xs border-[hsl(220,15%,25%)] ${c.source === "google_ads" ? "text-blue-400" : c.source === "organic" ? "text-green-400" : "text-[hsl(220,10%,55%)]"}`}>
-                            {c.source === "google_ads" ? "Google Ads" : c.source === "organic" ? "Organic" : c.source === "direct" ? "Direct" : "Referral"}
-                          </Badge>
-                        </TableCell>
-                        <TableCell className="text-right text-white">{c.spend > 0 ? `CHF ${c.spend.toLocaleString("en-US")}` : "—"}</TableCell>
-                        <TableCell className="text-right text-white">{c.clicks.toLocaleString("en-US")}</TableCell>
-                        <TableCell className="text-right text-white">{c.leads}</TableCell>
-                        <TableCell className="text-right text-white">{c.conversions}</TableCell>
-                        <TableCell className="text-right text-white">{c.conversions > 0 && c.spend > 0 ? `CHF ${(c.spend / c.conversions).toFixed(0)}` : "—"}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          {/* LOGS TAB */}
-          <TabsContent value="logs" className="mt-4">
-            <Card className="bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)]">
-              <CardHeader>
-                <CardTitle className="text-sm text-[hsl(220,10%,65%)] font-medium">Login History</CardTitle>
-              </CardHeader>
-              <CardContent>
-                {loginLogs.length === 0 ? (
-                  <p className="text-[hsl(220,10%,45%)] text-sm py-8 text-center">No login entries yet.</p>
-                ) : (
+              {/* Top Pages */}
+              <Card className="bg-white border border-gray-200 shadow-sm">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                    <Eye className="w-4 h-4" /> Top Pages
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
                   <Table>
                     <TableHeader>
-                      <TableRow className="border-[hsl(220,15%,18%)] hover:bg-transparent">
-                        <TableHead className="text-[hsl(220,10%,50%)]">Time</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)]">Email</TableHead>
-                        <TableHead className="text-[hsl(220,10%,50%)] text-center">Status</TableHead>
+                      <TableRow className="border-gray-100">
+                        <TableHead className="text-gray-500">Page</TableHead>
+                        <TableHead className="text-gray-500 text-right">Views</TableHead>
+                        <TableHead className="text-gray-500 text-right">Avg. Time</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {loginLogs.map((log, i) => (
-                        <TableRow key={i} className="border-[hsl(220,15%,18%)] hover:bg-[hsl(220,15%,15%)]">
-                          <TableCell className="text-white">{format(new Date(log.timestamp), "dd.MM.yyyy HH:mm:ss")}</TableCell>
-                          <TableCell className="text-white">{log.email}</TableCell>
-                          <TableCell className="text-center">
-                            {log.success ? (
-                              <Badge className="bg-green-500/20 text-green-400 border-0 text-xs">Success</Badge>
-                            ) : (
-                              <Badge className="bg-red-500/20 text-red-400 border-0 text-xs">Failed</Badge>
-                            )}
+                      {topPages.map(page => (
+                        <TableRow key={page.path} className="border-gray-100 hover:bg-gray-50">
+                          <TableCell className="font-medium text-gray-900">
+                            {page.label}
+                            <span className="text-gray-400 text-xs ml-2">{page.path}</span>
+                          </TableCell>
+                          <TableCell className="text-right text-gray-900">{page.views.toLocaleString("en-US")}</TableCell>
+                          <TableCell className="text-right text-gray-600 flex items-center justify-end gap-1">
+                            <Clock className="w-3 h-3 text-gray-400" />{formatTime(page.avgTimeSeconds)}
                           </TableCell>
                         </TableRow>
                       ))}
                     </TableBody>
                   </Table>
-                )}
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            {/* ═══════ CAMPAIGNS TAB ═══════ */}
+            <TabsContent value="campaigns" className="space-y-5 mt-4">
+              <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
+                <MetricCard title="Total Spend" value={formatCurrency(adsTotals.spend)} icon={DollarSign} />
+                <MetricCard title="Impressions" value={adsTotals.impressions} icon={Eye} />
+                <MetricCard title="Clicks" value={adsTotals.clicks} icon={MousePointer} />
+                <MetricCard title="Avg CPC" value={adsTotals.clicks > 0 ? formatCurrency(adsTotals.spend / adsTotals.clicks) : "—"} icon={Target} />
+                <MetricCard title="CTR" value={adsTotals.impressions > 0 ? `${((adsTotals.clicks / adsTotals.impressions) * 100).toFixed(2)}%` : "—"} icon={TrendingUp} />
+              </div>
+
+              {/* Lead cost metrics */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                <MetricCard title="Session Leads" value={leadStats.sessionLeads} icon={FileText} color="text-emerald-600" />
+                <MetricCard title="Seminar Leads" value={leadStats.seminarLeads} icon={FileText} color="text-blue-600" />
+                <MetricCard title="Cost / Session Lead" value={costPerSession > 0 ? formatCurrency(costPerSession) : "—"} icon={DollarSign} />
+                <MetricCard title="Cost / Seminar Lead" value={costPerSeminar > 0 ? formatCurrency(costPerSeminar) : "—"} icon={DollarSign} />
+              </div>
+
+              {/* Daily spend chart */}
+              {dailyAds.length > 0 && (
+                <Card className="bg-white border border-gray-200 shadow-sm">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-sm font-medium text-gray-700">Daily Ad Spend & Clicks</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ChartContainer config={{
+                      spend: { label: "Spend (CHF)", color: COLORS.paid },
+                      clicks: { label: "Clicks", color: COLORS.organic },
+                    }} className="h-[220px] w-full">
+                      <LineChart data={dailyAds}>
+                        <CartesianGrid stroke="#f3f4f6" strokeDasharray="3 3" />
+                        <XAxis dataKey="date" tick={{ fill: "#9ca3af", fontSize: 10 }} tickFormatter={v => format(parseISO(v), "dd/MM")} />
+                        <YAxis yAxisId="left" tick={{ fill: "#9ca3af", fontSize: 10 }} />
+                        <YAxis yAxisId="right" orientation="right" tick={{ fill: "#9ca3af", fontSize: 10 }} />
+                        <ChartTooltip content={<ChartTooltipContent />} />
+                        <Line yAxisId="left" type="monotone" dataKey="spend" stroke={COLORS.paid} strokeWidth={2} dot={false} name="Spend" />
+                        <Line yAxisId="right" type="monotone" dataKey="clicks" stroke={COLORS.organic} strokeWidth={2} dot={false} name="Clicks" />
+                      </LineChart>
+                    </ChartContainer>
+                  </CardContent>
+                </Card>
+              )}
+
+              {/* Campaign table */}
+              <Card className="bg-white border border-gray-200 shadow-sm">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-sm font-medium text-gray-700">Campaign Performance</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {campaigns.length === 0 ? (
+                    <p className="text-gray-400 text-sm py-8 text-center">No campaign data available for this period.</p>
+                  ) : (
+                    <div className="overflow-x-auto">
+                      <Table>
+                        <TableHeader>
+                          <TableRow className="border-gray-100">
+                            <TableHead className="text-gray-500">Campaign</TableHead>
+                            <TableHead className="text-gray-500 text-right">Spend</TableHead>
+                            <TableHead className="text-gray-500 text-right">Impressions</TableHead>
+                            <TableHead className="text-gray-500 text-right">Clicks</TableHead>
+                            <TableHead className="text-gray-500 text-right">CTR</TableHead>
+                            <TableHead className="text-gray-500 text-right">CPC</TableHead>
+                            <TableHead className="text-gray-500 text-right">Conv.</TableHead>
+                            <TableHead className="text-gray-500 text-right">CPA</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {campaigns.map(c => (
+                            <TableRow key={c.id} className="border-gray-100 hover:bg-gray-50">
+                              <TableCell className="font-medium text-gray-900">
+                                {c.name}
+                                <Badge variant="outline" className="ml-2 text-xs">{c.status}</Badge>
+                              </TableCell>
+                              <TableCell className="text-right text-gray-900">{formatCurrency(c.spend)}</TableCell>
+                              <TableCell className="text-right text-gray-700">{c.impressions.toLocaleString()}</TableCell>
+                              <TableCell className="text-right text-gray-700">{c.clicks.toLocaleString()}</TableCell>
+                              <TableCell className="text-right text-gray-700">
+                                {c.impressions > 0 ? `${((c.clicks / c.impressions) * 100).toFixed(2)}%` : "—"}
+                              </TableCell>
+                              <TableCell className="text-right text-gray-700">
+                                {c.clicks > 0 ? formatCurrency(c.spend / c.clicks) : "—"}
+                              </TableCell>
+                              <TableCell className="text-right text-gray-900 font-medium">{Math.round(c.conversions)}</TableCell>
+                              <TableCell className="text-right text-gray-700">
+                                {c.conversions > 0 ? formatCurrency(c.spend / c.conversions) : "—"}
+                              </TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            {/* ═══════ LEADS TAB ═══════ */}
+            <TabsContent value="leads" className="space-y-5 mt-4">
+              <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
+                <MetricCard title="Total Leads" value={leadStats.total} icon={Users} />
+                <MetricCard title="Session Leads" value={leadStats.sessionLeads} icon={FileText} color="text-emerald-600" />
+                <MetricCard title="Seminar Leads" value={leadStats.seminarLeads} icon={FileText} color="text-blue-600" />
+                <MetricCard title="Organic Leads" value={leadStats.organicLeads} icon={Leaf} color="text-emerald-600" />
+                <MetricCard title="Paid Leads" value={leadStats.paidLeads} icon={Zap} color="text-blue-600" />
+              </div>
+
+              {/* Leads table */}
+              <Card className="bg-white border border-gray-200 shadow-sm">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-sm font-medium text-gray-700">Recent Leads</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {leads.length === 0 ? (
+                    <p className="text-gray-400 text-sm py-8 text-center">
+                      No leads recorded yet. Leads will appear here once the contact form stores submissions.
+                    </p>
+                  ) : (
+                    <div className="overflow-x-auto">
+                      <Table>
+                        <TableHeader>
+                          <TableRow className="border-gray-100">
+                            <TableHead className="text-gray-500">Date</TableHead>
+                            <TableHead className="text-gray-500">Code</TableHead>
+                            <TableHead className="text-gray-500">Name</TableHead>
+                            <TableHead className="text-gray-500">Concern</TableHead>
+                            <TableHead className="text-gray-500">Type</TableHead>
+                            <TableHead className="text-gray-500">Source</TableHead>
+                            <TableHead className="text-gray-500">Campaign</TableHead>
+                            <TableHead className="text-gray-500">Postal</TableHead>
+                            <TableHead className="text-gray-500 text-center">Converted</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {leads.slice(0, 50).map(l => (
+                            <TableRow key={l.id} className="border-gray-100 hover:bg-gray-50">
+                              <TableCell className="text-gray-700 text-sm">{format(new Date(l.created_at), "dd/MM/yy")}</TableCell>
+                              <TableCell className="text-gray-900 font-mono text-xs">{l.tracking_code || "—"}</TableCell>
+                              <TableCell className="text-gray-900 font-medium">{l.name}</TableCell>
+                              <TableCell className="text-gray-700 text-sm">{l.concern || "—"}</TableCell>
+                              <TableCell>
+                                <Badge variant="outline" className={`text-xs ${l.form_type === "session" ? "text-emerald-700 border-emerald-200" : "text-blue-700 border-blue-200"}`}>
+                                  {l.form_type}
+                                </Badge>
+                              </TableCell>
+                              <TableCell>
+                                <Badge variant="outline" className={`text-xs ${l.source === "organic" ? "text-emerald-700" : l.source === "paid" ? "text-blue-700" : "text-gray-500"}`}>
+                                  {l.source}
+                                </Badge>
+                              </TableCell>
+                              <TableCell className="text-gray-600 text-xs">{l.utm_campaign || "—"}</TableCell>
+                              <TableCell className="text-gray-700 text-sm">{l.postal_code || "—"}</TableCell>
+                              <TableCell className="text-center">
+                                {l.converted ? (
+                                  <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Yes</Badge>
+                                ) : (
+                                  <Badge className="bg-gray-50 text-gray-500 border border-gray-200 text-xs">No</Badge>
+                                )}
+                              </TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+
+              {/* Leads by Postal Code */}
+              <Card className="bg-white border border-gray-200 shadow-sm">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                    <Globe className="w-4 h-4" /> Leads by Postal Code
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {postalData.length === 0 ? (
+                    <p className="text-gray-400 text-sm py-4 text-center">No postal code data yet.</p>
+                  ) : (
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="overflow-y-auto max-h-[300px]">
+                        <Table>
+                          <TableHeader>
+                            <TableRow className="border-gray-100">
+                              <TableHead className="text-gray-500">Postal Code</TableHead>
+                              <TableHead className="text-gray-500 text-right">Leads</TableHead>
+                              <TableHead className="text-gray-500 text-right">Share</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            {postalData.map(row => (
+                              <TableRow key={row.code} className="border-gray-100">
+                                <TableCell className="font-mono text-gray-900">{row.code}</TableCell>
+                                <TableCell className="text-right text-gray-900 font-medium">{row.count}</TableCell>
+                                <TableCell className="text-right text-gray-500">
+                                  {leadStats.total > 0 ? `${((row.count / leadStats.total) * 100).toFixed(1)}%` : "—"}
+                                </TableCell>
+                              </TableRow>
+                            ))}
+                          </TableBody>
+                        </Table>
+                      </div>
+                      <div className="flex items-center justify-center">
+                        <ChartContainer config={{ count: { label: "Leads", color: COLORS.paid } }} className="h-[280px] w-full">
+                          <BarChart data={postalData.slice(0, 10)} layout="vertical">
+                            <CartesianGrid stroke="#f3f4f6" strokeDasharray="3 3" />
+                            <XAxis type="number" tick={{ fill: "#9ca3af", fontSize: 10 }} />
+                            <YAxis dataKey="code" type="category" tick={{ fill: "#374151", fontSize: 11 }} width={80} />
+                            <ChartTooltip content={<ChartTooltipContent />} />
+                            <Bar dataKey="count" fill={COLORS.paid} radius={[0, 4, 4, 0]} name="Leads" />
+                          </BarChart>
+                        </ChartContainer>
+                      </div>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            {/* ═══════ LOGS TAB ═══════ */}
+            <TabsContent value="logs" className="mt-4">
+              <Card className="bg-white border border-gray-200 shadow-sm">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-sm font-medium text-gray-700">Login History</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {loginLogs.length === 0 ? (
+                    <p className="text-gray-400 text-sm py-8 text-center">No login entries yet.</p>
+                  ) : (
+                    <Table>
+                      <TableHeader>
+                        <TableRow className="border-gray-100">
+                          <TableHead className="text-gray-500">Time</TableHead>
+                          <TableHead className="text-gray-500">Email</TableHead>
+                          <TableHead className="text-gray-500 text-center">Status</TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        {loginLogs.map((log, i) => (
+                          <TableRow key={i} className="border-gray-100 hover:bg-gray-50">
+                            <TableCell className="text-gray-900">{format(new Date(log.timestamp), "dd/MM/yyyy HH:mm:ss")}</TableCell>
+                            <TableCell className="text-gray-700">{log.email}</TableCell>
+                            <TableCell className="text-center">
+                              {log.success ? (
+                                <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Success</Badge>
+                              ) : (
+                                <Badge className="bg-red-50 text-red-700 border border-red-200 text-xs">Failed</Badge>
+                              )}
+                            </TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  )}
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

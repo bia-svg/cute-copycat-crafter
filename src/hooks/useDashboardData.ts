@@ -1,39 +1,80 @@
 import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import type { DailyMetric, TopPage, Campaign, FormSubmission } from "@/data/dashboardMockData";
+import { format, subDays, startOfMonth, endOfMonth, subMonths } from "date-fns";
+import type { DailyTraffic, TopPage, CampaignData, DailyAds, LeadRecord } from "@/data/dashboardMockData";
 
-interface DashboardData {
-  dailyData: DailyMetric[];
+export interface DateRange {
+  label: string;
+  startDate: string;
+  endDate: string;
+}
+
+export const DATE_PRESETS: DateRange[] = [
+  {
+    label: "This Month",
+    startDate: format(startOfMonth(new Date()), "yyyy-MM-dd"),
+    endDate: format(new Date(), "yyyy-MM-dd"),
+  },
+  {
+    label: "Last Month",
+    startDate: format(startOfMonth(subMonths(new Date(), 1)), "yyyy-MM-dd"),
+    endDate: format(endOfMonth(subMonths(new Date(), 1)), "yyyy-MM-dd"),
+  },
+  {
+    label: "Last 7 Days",
+    startDate: format(subDays(new Date(), 7), "yyyy-MM-dd"),
+    endDate: format(new Date(), "yyyy-MM-dd"),
+  },
+  {
+    label: "Last 30 Days",
+    startDate: format(subDays(new Date(), 30), "yyyy-MM-dd"),
+    endDate: format(new Date(), "yyyy-MM-dd"),
+  },
+  {
+    label: "Last 90 Days",
+    startDate: format(subDays(new Date(), 90), "yyyy-MM-dd"),
+    endDate: format(new Date(), "yyyy-MM-dd"),
+  },
+];
+
+const pathLabels: Record<string, string> = {
+  "/": "Home",
+  "/raucherentwoehnung": "Stop Smoking",
+  "/aengste-phobien": "Anxiety & Phobias",
+  "/abnehmen": "Weight Loss",
+  "/stress-burnout": "Stress & Burnout",
+  "/depressionen-traumata": "Depression & Trauma",
+  "/kinder-jugendliche": "Children & Teens",
+  "/erstgespraech": "Contact Form",
+  "/ueber-uns": "About Us",
+  "/ausbildung": "Training",
+  "/kundenmeinungen": "Testimonials",
+  "/erwachsene": "Adults",
+  "/firmen-coaching": "Corporate Coaching",
+};
+
+export interface DashboardState {
+  trafficByDay: DailyTraffic[];
   topPages: TopPage[];
-  campaigns: Campaign[];
-  submissions: FormSubmission[];
+  campaigns: CampaignData[];
+  dailyAds: DailyAds[];
+  leads: LeadRecord[];
   loading: boolean;
   gaError: string | null;
   adsError: string | null;
   gaLive: boolean;
   adsLive: boolean;
+  dateRange: DateRange;
+  setDateRange: (range: DateRange) => void;
 }
 
-const pathLabels: Record<string, string> = {
-  "/": "Startseite",
-  "/raucherentwoehnung": "Raucherentwöhnung",
-  "/aengste-phobien": "Ängste & Phobien",
-  "/abnehmen": "Abnehmen",
-  "/stress-burnout": "Stress & Burnout",
-  "/depressionen-traumata": "Depressionen & Traumata",
-  "/kinder-jugendliche": "Kinder & Jugendliche",
-  "/erstgespraech": "Erstgespräch (Form)",
-  "/ueber-uns": "Über uns",
-  "/ausbildung": "Ausbildung",
-  "/kundenmeinungen": "Kundenmeinungen",
-  "/erwachsene": "Erwachsene",
-  "/firmen-coaching": "Firmen-Coaching",
-};
-
-export function useDashboardData(): DashboardData {
-  const [dailyData, setDailyData] = useState<DailyMetric[]>([]);
+export function useDashboardData(): DashboardState {
+  const [dateRange, setDateRange] = useState<DateRange>(DATE_PRESETS[4]); // Last 90 Days
+  const [trafficByDay, setTrafficByDay] = useState<DailyTraffic[]>([]);
   const [topPages, setTopPages] = useState<TopPage[]>([]);
-  const [campaigns, setCampaigns] = useState<Campaign[]>([]);
+  const [campaigns, setCampaigns] = useState<CampaignData[]>([]);
+  const [dailyAds, setDailyAds] = useState<DailyAds[]>([]);
+  const [leads, setLeads] = useState<LeadRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [gaError, setGaError] = useState<string | null>(null);
   const [adsError, setAdsError] = useState<string | null>(null);
@@ -48,20 +89,61 @@ export function useDashboardData(): DashboardData {
     // Fetch GA4 data
     try {
       const { data, error: fnError } = await supabase.functions.invoke("google-analytics", {
-        body: { startDate: "90daysAgo", endDate: "today" },
+        body: { startDate: dateRange.startDate, endDate: dateRange.endDate },
       });
       if (fnError) throw fnError;
       if (data?.error) throw new Error(data.error);
 
-      setDailyData(
-        (data.dailyData || []).map((d: any) => ({
-          date: d.date,
-          visitors: d.visitors || 0,
-          formSubmissions: d.sessions || 0,
-          whatsappClicks: d.pageViews || 0,
-          conversions: 0,
-        }))
-      );
+      // Process channel breakdown into daily traffic
+      const channelData = data.channelBreakdown || [];
+      const dailyRaw = data.dailyData || [];
+
+      // Build map from channel breakdown
+      const channelMap: Record<string, DailyTraffic> = {};
+      for (const row of channelData) {
+        channelMap[row.date] = {
+          date: row.date,
+          organic: row.organic || 0,
+          paid: row.paid || 0,
+          direct: row.direct || 0,
+          referral: row.referral || 0,
+          social: row.social || 0,
+          total: (row.organic || 0) + (row.paid || 0) + (row.direct || 0) + (row.referral || 0) + (row.social || 0) + (row.other || 0),
+          sessions: 0,
+          pageViews: 0,
+          bounceRate: 0,
+          avgSessionDuration: 0,
+        };
+      }
+
+      // Merge with daily overview data
+      for (const d of dailyRaw) {
+        if (channelMap[d.date]) {
+          channelMap[d.date].sessions = d.sessions || 0;
+          channelMap[d.date].pageViews = d.pageViews || 0;
+          channelMap[d.date].bounceRate = d.bounceRate || 0;
+          channelMap[d.date].avgSessionDuration = d.avgSessionDuration || 0;
+          channelMap[d.date].total = d.visitors || channelMap[d.date].total;
+        } else {
+          channelMap[d.date] = {
+            date: d.date,
+            organic: 0,
+            paid: 0,
+            direct: 0,
+            referral: 0,
+            social: 0,
+            total: d.visitors || 0,
+            sessions: d.sessions || 0,
+            pageViews: d.pageViews || 0,
+            bounceRate: d.bounceRate || 0,
+            avgSessionDuration: d.avgSessionDuration || 0,
+          };
+        }
+      }
+
+      const traffic = Object.values(channelMap).sort((a, b) => a.date.localeCompare(b.date));
+      setTrafficByDay(traffic);
+
       setTopPages(
         (data.topPages || []).map((p: any) => ({
           path: p.path,
@@ -74,43 +156,62 @@ export function useDashboardData(): DashboardData {
     } catch (err: any) {
       console.error("GA4 fetch failed:", err);
       setGaError(err?.message || "Failed to fetch GA4 data");
-      setDailyData([]);
+      setTrafficByDay([]);
       setTopPages([]);
     }
 
     // Fetch Google Ads data
     try {
       const { data, error: fnError } = await supabase.functions.invoke("google-ads", {
-        body: {},
+        body: { startDate: dateRange.startDate, endDate: dateRange.endDate },
       });
       if (fnError) throw fnError;
       if (data?.error) throw new Error(data.error);
 
-      setCampaigns(
-        (data.campaigns || []).map((c: any) => ({
-          id: c.id,
-          name: c.name,
-          source: "google_ads" as const,
-          spend: c.spend || 0,
-          clicks: c.clicks || 0,
-          leads: Math.round(c.conversions || 0),
-          conversions: Math.round(c.conversions || 0),
-          utm_campaign: c.name?.toLowerCase().replace(/\s+/g, "_"),
-        }))
-      );
+      setCampaigns(data.campaigns || []);
+      setDailyAds(data.dailyAds || []);
       setAdsLive(true);
     } catch (err: any) {
       console.error("Google Ads fetch failed:", err);
       setAdsError(err?.message || "Failed to fetch Google Ads data");
       setCampaigns([]);
+      setDailyAds([]);
+    }
+
+    // Fetch leads from Supabase
+    try {
+      const { data: leadsData } = await supabase
+        .from("leads")
+        .select("*")
+        .gte("created_at", dateRange.startDate)
+        .lte("created_at", dateRange.endDate + "T23:59:59")
+        .order("created_at", { ascending: false });
+
+      setLeads((leadsData as LeadRecord[]) || []);
+    } catch (err) {
+      console.error("Leads fetch failed:", err);
+      setLeads([]);
     }
 
     setLoading(false);
-  }, []);
+  }, [dateRange]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
-  return { dailyData, topPages, campaigns, submissions: [], loading, gaError, adsError, gaLive, adsLive };
+  return {
+    trafficByDay,
+    topPages,
+    campaigns,
+    dailyAds,
+    leads,
+    loading,
+    gaError,
+    adsError,
+    gaLive,
+    adsLive,
+    dateRange,
+    setDateRange,
+  };
 }
