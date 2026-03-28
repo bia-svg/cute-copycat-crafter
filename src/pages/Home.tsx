@@ -243,12 +243,12 @@ export default function Home() {
               : "Mit seiner selbst entwickelten Aktiv-Hypnose© Methode verbindet David J. Woods klinische Psychologie mit gezielter Hypnotherapie. Mit über 40 Jahren Erfahrung hat er mehr als 30.000 Sitzungen durchgeführt — für Raucherentwöhnung, Gewichtsreduktion, Angstbewältigung und Leistungssteigerung."}
           </p>
           <div className="relative aspect-[4/3] max-h-[280px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "210px" }}>
-            {heroSlides.map((src, i) => (
-              <img key={i} src={src} alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${i + 1}`}
-                loading={i === 0 ? "eager" : "lazy"}
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}
-                />
-            ))}
+            {loadedMobile[currentSlide] && (
+              <img key={currentSlide} src={loadedMobile[currentSlide]} alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${currentSlide + 1}`}
+                width={600} height={400} loading="eager"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            )}
             <button onClick={goPrev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 rounded-full p-1.5 transition-opacity" aria-label="Previous">
               <ChevronLeft className="w-5 h-5 text-foreground" />
             </button>
@@ -256,7 +256,7 @@ export default function Home() {
               <ChevronRight className="w-5 h-5 text-foreground" />
             </button>
             <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-              {heroSlides.map((_, i) => (
+              {Array.from({length: totalSlides}, (_, i) => (
                 <button key={i} onClick={() => setCurrentSlide(i)}
                   className={`h-2 rounded-full transition-all ${i === currentSlide ? "bg-primary w-6" : "bg-primary/30 w-2"}`} />
               ))}
