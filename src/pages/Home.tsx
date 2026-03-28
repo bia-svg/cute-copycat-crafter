@@ -311,7 +311,10 @@ export default function Home() {
             </Link>
           </div>
           <div className="rounded-lg overflow-hidden">
-            <img src={davidSessionImg} alt={isEN ? "David J. Woods during a hypnotherapy session in his practice" : "David J. Woods während einer Hypnosetherapie-Sitzung in seiner Praxis"} className="w-full h-full object-cover" loading="lazy" />
+            <picture>
+              <source media="(max-width: 767px)" srcSet={davidSessionMobile} type="image/webp" />
+              <img src={davidSessionImg} alt={isEN ? "David J. Woods during a hypnotherapy session in his practice" : "David J. Woods während einer Hypnosetherapie-Sitzung in seiner Praxis"} className="w-full h-full object-cover" loading="lazy" width={1200} height={800} />
+            </picture>
           </div>
         </div>
       </section>
