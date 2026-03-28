@@ -187,6 +187,52 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         </section>
       )}
 
+      {/* Kathryn Section — only on children/teens page */}
+      {(data.slugEN === "kinder-jugendliche" || data.slugCH === "kinder-jugendliche") && (
+        <section className="bg-secondary border-t border-border">
+          <div className="container-main py-12">
+            <div className="grid md:grid-cols-[280px_1fr] gap-8 items-start">
+              <div className="mx-auto md:mx-0">
+                <div className="border border-border overflow-hidden rounded-lg">
+                  <img src={CDN.kathrynPortrait} alt="Kathryn" className="w-full h-auto" />
+                  <div className="p-4 bg-card">
+                    <h3 className="font-bold text-foreground text-sm">Kathryn</h3>
+                    <p className="text-xs text-muted-foreground">
+                      {isEN ? "Psychological Counselor" : "Psychologische Beraterin"}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <h2 className="text-2xl font-bold text-foreground">
+                  {isEN ? "Your Therapist: Kathryn" : "Ihre Therapeutin: Kathryn"}
+                </h2>
+                <p className="text-foreground/80 leading-relaxed">
+                  {isEN
+                    ? "Over many years, Kathryn has intensively studied the fields of psychology and personality development, with a particular focus on educational work with children and adolescents. She completed numerous training programs in modern communication techniques such as NLP and mental coaching, and was personally trained as a Master Hypnotist by David J. Woods."
+                    : "Über viele Jahre hinweg setzte sich Kathryn intensiv mit den Themen Psychologie und Persönlichkeitsentwicklung auseinander, insbesondere mit einem Schwerpunkt auf die pädagogische Arbeit mit Kindern und Jugendlichen. Sie absolvierte zahlreiche Ausbildungen in modernen Kommunikationstechniken wie NLP und Mental Coaching und wurde zudem von David J. Woods persönlich zur Master-Hypnotiseurin ausgebildet."}
+                </p>
+                <p className="text-foreground/80 leading-relaxed">
+                  {isEN
+                    ? "Through her empathetic, structured and clear approach, she quickly builds trust and ensures that even young people feel safe and understood during hypnosis."
+                    : "Durch ihre einfühlsame, strukturierte und klare Art schafft sie schnell Vertrauen und sorgt dafür, dass sich auch junge Menschen bei der Hypnose sicher und verstanden fühlen."}
+                </p>
+                <p className="text-foreground/80 leading-relaxed">
+                  {isEN
+                    ? "Kathryn is multilingual, speaking fluent Russian and German as well as excellent English. In our practice, she is your competent contact for hypnosis sessions specifically for children and adolescents."
+                    : "Kathryn ist mehrsprachig aufgewachsen und spricht fließend Russisch und Deutsch sowie sehr gutes Englisch. In unserer Praxis ist sie Ihre kompetente Ansprechpartnerin für Hypnosesitzungen speziell bei Kindern und Jugendlichen."}
+                </p>
+                <Link to={getPath("contact", language, country)}>
+                  <Button className="bg-cta text-cta-foreground hover:bg-cta/90 mt-2">
+                    {isEN ? "Book a Session with Kathryn" : "Sitzung mit Kathryn buchen"}
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA */}
       <section className="bg-[#8b827c] text-white">
         <div className="container-main py-10 text-center">
