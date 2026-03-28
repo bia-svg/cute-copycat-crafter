@@ -199,16 +199,16 @@ export default function Header() {
 
       {/* Trust Bar */}
       <div className="bg-[#8b827c] text-white text-xs">
-        <div className="container-main flex items-center justify-center gap-1.5 py-1.5 flex-wrap">
-          <span>EMR-Krankenkasse Konform</span>
+        <div className="container-main flex items-center justify-center gap-x-1.5 gap-y-0 py-1.5 flex-wrap max-h-[2.8em] overflow-hidden">
+          <span className="whitespace-nowrap">EMR-Krankenkasse Konform</span>
           <span className="opacity-50">·</span>
-          <span>NGH International Trainer</span>
+          <span className="whitespace-nowrap">NGH International Trainer</span>
           <span className="opacity-50">·</span>
-          <span>★ 5.0 / 5 Google (255)</span>
-          <span className="opacity-50">·</span>
-          <span>{isDE ? "Über 40 Jahre Erfahrung" : "40+ Years Experience"}</span>
-          <span className="opacity-50">·</span>
-          <span>{isDE ? "30.000+ Sitzungen" : "30,000+ Sessions"}</span>
+          <span className="whitespace-nowrap">★ 5.0 / 5 Google (255)</span>
+          <span className="opacity-50 hidden sm:inline">·</span>
+          <span className="whitespace-nowrap hidden sm:inline">{isDE ? "Über 40 Jahre Erfahrung" : "40+ Years Experience"}</span>
+          <span className="opacity-50 hidden sm:inline">·</span>
+          <span className="whitespace-nowrap hidden sm:inline">{isDE ? "30.000+ Sitzungen" : "30,000+ Sessions"}</span>
         </div>
       </div>
 
