@@ -467,7 +467,7 @@ export default function Erstgespraech() {
                       {/* Preferred Location */}
                       <div>
                         <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Preferred Location" : "Bevorzugter Standort"}</label>
-                        <select className={inputClasses}>
+                        <select name="location" className={inputClasses}>
                           <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
                           <option value="zurich">Zürich — 5 Elements TCM (CH)</option>
                           <option value="eschenbach">Eschenbach — Fit und Gesund (CH)</option>
