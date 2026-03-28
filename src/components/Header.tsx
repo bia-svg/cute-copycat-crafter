@@ -234,7 +234,7 @@ export default function Header() {
           </Link>
           <div className="relative" onMouseEnter={() => handleMouseEnter("corporate")} onMouseLeave={handleMouseLeave}>
             <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary flex items-center gap-1">
-              {isDE ? "Firmen-Coaching" : "Corporate"} <ChevronDown className="w-3.5 h-3.5" />
+              {isDE ? "Firmen-Coaching" : "Business Coaching"} <ChevronDown className="w-3.5 h-3.5" />
             </button>
           </div>
           <div className="relative" onMouseEnter={() => handleMouseEnter("about")} onMouseLeave={handleMouseLeave}>
@@ -404,7 +404,7 @@ export default function Header() {
           </div>
 
           {/* Firmen-Coaching */}
-          <MobileSection id="corporate" title={isDE ? "Firmen-Coaching" : "Corporate"} items={corporateItems} />
+          <MobileSection id="corporate" title={isDE ? "Firmen-Coaching" : "Business Coaching"} items={corporateItems} />
 
           {/* Über uns */}
           <MobileSection id="about" title={t("nav.about")} items={aboutItems} />

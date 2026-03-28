@@ -8,7 +8,7 @@ type PageKey =
   | "contact" | "appointmentConfirmation" | "cityZurich" | "cityAugsburg" | "locations"
   | "impressum" | "privacy" | "terms" | "blog" | "book";
 
-const slugMap: Record<PageKey, string> = {
+const slugMapDE: Record<PageKey, string> = {
   home: "",
   smoking: "raucherentwoehnung",
   anxiety: "aengste-phobien",
@@ -40,7 +40,40 @@ const slugMap: Record<PageKey, string> = {
   book: "buch-go-inside",
 };
 
+const slugMapEN: Record<PageKey, string> = {
+  home: "",
+  smoking: "stop-smoking",
+  anxiety: "anxiety-phobias",
+  weight: "weight-loss",
+  stress: "stress-burnout",
+  depression: "depression-trauma",
+  children: "children-teens",
+  adults: "adults",
+  training: "training",
+  seminarSchedule: "seminar-schedule",
+  corporate: "business-coaching",
+  corporateErfolg: "business-coaching/success-training",
+  corporateResilienz: "business-coaching/resilience-building",
+  corporateStress: "business-coaching/stress-prevention",
+  corporateNichtraucher: "business-coaching/non-smoker-seminars",
+  about: "about-us",
+  testimonials: "testimonials",
+  successStories: "success-stories",
+  media: "tv-media",
+  contact: "consultation",
+  appointmentConfirmation: "appointment-confirmation",
+  cityZurich: "hypnosis-zurich",
+  cityAugsburg: "hypnosis-augsburg",
+  locations: "locations",
+  impressum: "imprint",
+  privacy: "privacy-policy",
+  terms: "terms",
+  blog: "blog",
+  book: "book-go-inside",
+};
+
 export function getPath(page: PageKey, language: Language, country: Country): string {
+  const slugMap = language === "en" ? slugMapEN : slugMapDE;
   const slug = slugMap[page];
   return `/${language}/${country}${slug ? `/${slug}` : ""}`;
 }
