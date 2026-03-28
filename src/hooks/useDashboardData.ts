@@ -76,6 +76,7 @@ export function useDashboardData(): DashboardState {
   const [campaigns, setCampaigns] = useState<CampaignData[]>([]);
   const [dailyAds, setDailyAds] = useState<DailyAds[]>([]);
   const [leads, setLeads] = useState<LeadRecord[]>([]);
+  const [whatsappClicks, setWhatsappClicks] = useState<WhatsAppClick[]>([]);
   const [loading, setLoading] = useState(true);
   const [gaError, setGaError] = useState<string | null>(null);
   const [adsError, setAdsError] = useState<string | null>(null);
