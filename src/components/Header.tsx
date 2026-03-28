@@ -172,7 +172,7 @@ export default function Header() {
                   {countryOptions.map(opt => (
                     <button key={opt.value} onClick={() => { setCountry(opt.value); setCountryDropdownOpen(false); }}
                       className={`w-full text-left px-3 py-2 text-sm hover:bg-secondary flex items-center gap-2 ${opt.value === country ? "font-bold" : ""}`}>
-                      {opt.flag} {opt.label}
+                      <span className="text-lg">{opt.flag}</span> {opt.label}
                     </button>
                   ))}
                 </div>
