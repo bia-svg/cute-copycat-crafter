@@ -779,16 +779,23 @@ export default function Dashboard() {
                     )}
                     <div className="flex items-center justify-center gap-2">
                       <Input
-                        type="text"
+                        type="tel"
                         inputMode="numeric"
+                        pattern="[0-9]*"
                         maxLength={8}
-                        autoComplete="off"
+                        autoComplete="one-time-code"
                         value={pinInput}
+                        onInput={(e) => setPinInput((e.currentTarget.value || "").replace(/\D/g, "").slice(0, 8))}
                         onChange={(e) => setPinInput(e.target.value.replace(/\D/g, "").slice(0, 8))}
+                        onPaste={(e) => {
+                          e.preventDefault();
+                          const text = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 8);
+                          setPinInput(text);
+                        }}
                         onKeyDown={(e) => { if (e.key === "Enter") handlePinSubmit(); }}
-                        placeholder="••••••••"
-                        className="w-48 text-center text-lg tracking-[0.3em] border-gray-300"
-                        style={{ WebkitTextSecurity: "disc" } as React.CSSProperties}
+                        placeholder="12345678"
+                        aria-label="8-digit PIN"
+                        className="w-48 text-center text-lg font-mono border-gray-300"
                       />
                       <Button onClick={handlePinSubmit} disabled={pinLoading || pinInput.length !== 8}>
                         {pinLoading ? "..." : "Unlock"}
