@@ -613,6 +613,70 @@ export default function Dashboard() {
                             ))}
                           </TableBody>
                         </Table>
+
+                        {/* Full daily breakdown table */}
+                        {(() => {
+                          const dayMap: Record<string, { date: string; total: number; organic: number; paid: number; direct: number; pages: Record<string, number>; sources: Record<string, number>; mediums: Record<string, number>; campaigns: Record<string, number> }> = {};
+                          whatsappClicks.forEach(w => {
+                            const d = format(new Date(w.clicked_at), "yyyy-MM-dd");
+                            if (!dayMap[d]) dayMap[d] = { date: d, total: 0, organic: 0, paid: 0, direct: 0, pages: {}, sources: {}, mediums: {}, campaigns: {} };
+                            const row = dayMap[d];
+                            row.total++;
+                            if (w.utm_source === "google" || w.utm_medium === "cpc") row.paid++;
+                            else if (!w.utm_source) row.organic++;
+                            else row.direct++;
+                            const pg = w.page_path || "(none)";
+                            row.pages[pg] = (row.pages[pg] || 0) + 1;
+                            const src = w.utm_source || "(none)";
+                            row.sources[src] = (row.sources[src] || 0) + 1;
+                            const med = w.utm_medium || "(none)";
+                            row.mediums[med] = (row.mediums[med] || 0) + 1;
+                            const cmp = w.utm_campaign || "(none)";
+                            row.campaigns[cmp] = (row.campaigns[cmp] || 0) + 1;
+                          });
+                          const rows = Object.values(dayMap).sort((a, b) => b.date.localeCompare(a.date));
+                          const topVal = (map: Record<string, number>) => {
+                            const entries = Object.entries(map).sort((a, b) => b[1] - a[1]);
+                            return entries.length > 0 ? `${entries[0][0]} (${entries[0][1]})` : "-";
+                          };
+                          return (
+                            <div className="mt-4">
+                              <p className="text-xs font-medium text-gray-500 mb-2">Daily Breakdown</p>
+                              <div className="overflow-x-auto max-h-[300px] overflow-y-auto">
+                                <Table>
+                                  <TableHeader>
+                                    <TableRow className="border-gray-100">
+                                      <TableHead className="text-gray-500 text-xs">Date</TableHead>
+                                      <TableHead className="text-gray-500 text-xs text-right">Total</TableHead>
+                                      <TableHead className="text-gray-500 text-xs text-right">Organic</TableHead>
+                                      <TableHead className="text-gray-500 text-xs text-right">Paid</TableHead>
+                                      <TableHead className="text-gray-500 text-xs text-right">Direct</TableHead>
+                                      <TableHead className="text-gray-500 text-xs">Top Page</TableHead>
+                                      <TableHead className="text-gray-500 text-xs">Top Source</TableHead>
+                                      <TableHead className="text-gray-500 text-xs">Top Medium</TableHead>
+                                      <TableHead className="text-gray-500 text-xs">Top Campaign</TableHead>
+                                    </TableRow>
+                                  </TableHeader>
+                                  <TableBody>
+                                    {rows.map(r => (
+                                      <TableRow key={r.date} className="border-gray-100">
+                                        <TableCell className="text-gray-900 text-xs whitespace-nowrap">{format(parseISO(r.date), "dd/MM/yy")}</TableCell>
+                                        <TableCell className="text-right text-gray-900 text-xs font-medium">{r.total}</TableCell>
+                                        <TableCell className="text-right text-gray-900 text-xs">{r.organic}</TableCell>
+                                        <TableCell className="text-right text-gray-900 text-xs">{r.paid}</TableCell>
+                                        <TableCell className="text-right text-gray-900 text-xs">{r.direct}</TableCell>
+                                        <TableCell className="text-gray-600 text-xs truncate max-w-[120px]">{topVal(r.pages)}</TableCell>
+                                        <TableCell className="text-gray-600 text-xs truncate max-w-[100px]">{topVal(r.sources)}</TableCell>
+                                        <TableCell className="text-gray-600 text-xs truncate max-w-[100px]">{topVal(r.mediums)}</TableCell>
+                                        <TableCell className="text-gray-600 text-xs truncate max-w-[100px]">{topVal(r.campaigns)}</TableCell>
+                                      </TableRow>
+                                    ))}
+                                  </TableBody>
+                                </Table>
+                              </div>
+                            </div>
+                          );
+                        })()}
                       </div>
                     );
                   })()}
