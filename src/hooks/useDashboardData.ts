@@ -180,16 +180,24 @@ export function useDashboardData(): DashboardState {
       setDailyAds([]);
     }
 
-    // Fetch leads from Supabase
+    // Fetch leads via secure edge function
     try {
-      const { data: leadsData } = await supabase
-        .from("leads")
-        .select("*")
-        .gte("created_at", dateRange.startDate)
-        .lte("created_at", dateRange.endDate + "T23:59:59")
-        .order("created_at", { ascending: false });
-
-      setLeads((leadsData as LeadRecord[]) || []);
+      const session = sessionStorage.getItem("dw_dashboard_session");
+      const sessionData = session ? JSON.parse(session) : null;
+      if (sessionData?.email && sessionData?.token) {
+        const { data, error: fnError } = await supabase.functions.invoke("fetch-leads", {
+          body: {
+            startDate: dateRange.startDate,
+            endDate: dateRange.endDate,
+            token: sessionData.token,
+            email: sessionData.email,
+          },
+        });
+        if (fnError) throw fnError;
+        setLeads((data?.leads as LeadRecord[]) || []);
+      } else {
+        setLeads([]);
+      }
     } catch (err) {
       console.error("Leads fetch failed:", err);
       setLeads([]);
