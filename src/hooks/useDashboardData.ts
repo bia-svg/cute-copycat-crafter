@@ -195,6 +195,21 @@ export function useDashboardData(): DashboardState {
       setLeads([]);
     }
 
+    // Fetch WhatsApp clicks
+    try {
+      const { data: waData } = await supabase
+        .from("whatsapp_clicks")
+        .select("id, clicked_at, page_path, utm_source, utm_medium, utm_campaign")
+        .gte("clicked_at", dateRange.startDate)
+        .lte("clicked_at", dateRange.endDate + "T23:59:59")
+        .order("clicked_at", { ascending: false });
+
+      setWhatsappClicks((waData as WhatsAppClick[]) || []);
+    } catch (err) {
+      console.error("WhatsApp clicks fetch failed:", err);
+      setWhatsappClicks([]);
+    }
+
     setLoading(false);
   }, [dateRange]);
 
@@ -208,6 +223,7 @@ export function useDashboardData(): DashboardState {
     campaigns,
     dailyAds,
     leads,
+    whatsappClicks,
     loading,
     gaError,
     adsError,
