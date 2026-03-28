@@ -501,7 +501,7 @@ export default function Erstgespraech() {
                   {/* Best time to reach */}
                   <div>
                     <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Best time to reach you?" : "Wann sind Sie am besten erreichbar?"}</label>
-                    <input type="text" placeholder={isEN ? "e.g. mornings, after 14:00" : "z.B. vormittags, nach 14:00 Uhr"} className={inputClasses} />
+                    <input type="text" name="bestTime" placeholder={isEN ? "e.g. mornings, after 14:00" : "z.B. vormittags, nach 14:00 Uhr"} className={inputClasses} />
                   </div>
 
                   <div>
