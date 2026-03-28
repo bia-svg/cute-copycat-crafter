@@ -69,7 +69,13 @@ export default function Header() {
   const audiences = [
     { icon: <User className="w-5 h-5" />, label: isDE ? "Erwachsene" : "Adult Individual", desc: isDE ? "Persönliche 1:1 Sitzungen mit David" : "Personal 1:1 sessions with David", href: getPath("adults", language, country) },
     { icon: <Users className="w-5 h-5" />, label: isDE ? "Kinder & Jugendliche" : "Children & Teens", desc: isDE ? "Sanfte Therapie mit Kathryn" : "Gentle therapy with Kathryn", href: getPath("children", language, country) },
-    { icon: <Building2 className="w-5 h-5" />, label: isDE ? "Firmen & Unternehmen" : "Corporate & Business", desc: isDE ? "Coaching für Teams & Führungskräfte" : "Coaching for teams & leaders", href: getPath("corporate", language, country) },
+  ];
+
+  const corporateItems = [
+    { icon: <Trophy className="w-5 h-5" />, label: isDE ? "Erfolgs-Training" : "Success Training", desc: isDE ? "Leistungspotenzial maximieren" : "Maximize performance potential", href: getPath("corporateErfolg", language, country) },
+    { icon: <Shield className="w-5 h-5" />, label: isDE ? "Resilienz-Verstärken" : "Resilience Building", desc: isDE ? "Innere Stärke aufbauen" : "Build inner strength", href: getPath("corporateResilienz", language, country) },
+    { icon: <Flame className="w-5 h-5" />, label: isDE ? "Stress-Prävention" : "Stress Prevention", desc: isDE ? "Burnout vorbeugen" : "Prevent burnout", href: getPath("corporateStress", language, country) },
+    { icon: <Cigarette className="w-5 h-5" />, label: isDE ? "Nichtraucher-Seminare" : "Non-Smoker Seminars", desc: isDE ? "Rauchfrei in 3 Stunden" : "Smoke-free in 3 hours", href: getPath("corporateNichtraucher", language, country) },
   ];
 
   const trainingItems = [
