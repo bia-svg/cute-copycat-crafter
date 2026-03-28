@@ -232,6 +232,11 @@ export default function Header() {
           <Link to={getPath("training", language, country)} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary">
             {t("nav.training")}
           </Link>
+          <div className="relative" onMouseEnter={() => handleMouseEnter("corporate")} onMouseLeave={handleMouseLeave}>
+            <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary flex items-center gap-1">
+              {isDE ? "Firmen-Coaching" : "Corporate"} <ChevronDown className="w-3.5 h-3.5" />
+            </button>
+          </div>
           <div className="relative" onMouseEnter={() => handleMouseEnter("about")} onMouseLeave={handleMouseLeave}>
             <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary flex items-center gap-1">
               {t("nav.about")} <ChevronDown className="w-3.5 h-3.5" />
