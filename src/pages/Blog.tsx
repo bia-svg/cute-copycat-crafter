@@ -8,16 +8,22 @@ import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
 import { getPath } from "@/lib/routes";
 import { blogPosts } from "@/data/blogPosts";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Calendar, ArrowRight, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Blog() {
   const { language, country, t } = useLanguage();
   const isDE = language !== "en";
+  const basePath = getPath("home", language, country);
 
   return (
     <>
       <SEO {...pageSEO.blog} pageKey="blog" />
+      <Breadcrumbs items={[
+        { name: "Home", path: basePath },
+        { name: "Blog", path: getPath("blog", language, country) },
+      ]} />
       {/* Hero */}
       <section className="bg-[#8b827c] text-white py-16">
         <div className="container-main">
