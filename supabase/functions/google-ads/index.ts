@@ -225,16 +225,24 @@ serve(async (req) => {
       const adsUrl = `https://googleads.googleapis.com/${apiVersion}/customers/${candidateId}/googleAds:search`;
       console.log(`Trying campaign search for customer ${candidateId}...`);
 
-    const adsRes = await fetch(adsUrl, {
-      method: "POST",
-      headers: queryHeaders,
-      body: JSON.stringify({ query, pageSize: 10000 }),
-    });
+      adsRes = await fetch(adsUrl, {
+        method: "POST",
+        headers: queryHeaders,
+        body: JSON.stringify({ query, pageSize: 10000 }),
+      });
 
-    const adsText = await adsRes.text();
-    if (!adsRes.ok) {
-      console.error("googleAds:search error body:", adsText.substring(0, 800));
-      throw parseGoogleAdsError(adsRes.status, adsText, "googleAds:search");
+      adsText = await adsRes.text();
+      if (adsRes.ok) {
+        usedCustomerId = candidateId;
+        console.log(`Success with customer ${candidateId}`);
+        break;
+      }
+      console.warn(`Customer ${candidateId} returned ${adsRes.status}: ${adsText.substring(0, 200)}`);
+    }
+
+    if (!adsRes || !adsRes.ok) {
+      console.error("googleAds:search final error body:", adsText.substring(0, 800));
+      throw parseGoogleAdsError(adsRes?.status || 500, adsText, "googleAds:search");
     }
 
     const adsData = JSON.parse(adsText);
