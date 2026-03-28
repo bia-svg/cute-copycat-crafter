@@ -8,7 +8,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
 import { Helmet } from "react-helmet-async";
-
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -64,13 +64,50 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
 
   const slug = isEN ? data.slugEN : (isSwiss ? data.slugCH : data.slugDE);
 
+  const BASE_URL = "https://david-j-woods.com";
+
+  const breadcrumbItems = [
+    { name: isEN ? "Home" : "Startseite", path: `/${language}/${country}` },
+    { name: h1, path: `/${language}/${country}/${slug}` },
+  ];
+
   return (
     <>
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={metaDesc} />
-        <link rel="canonical" href={`https://david-j-woods.com/${language}/${country}/${slug}`} />
+        <link rel="canonical" href={`${BASE_URL}/${language}/${country}/${slug}`} />
+
+        {/* hreflang with proper localized slugs */}
+        <link rel="alternate" hrefLang="de-CH" href={`${BASE_URL}/de/ch/${data.slugCH}`} />
+        <link rel="alternate" hrefLang="de-DE" href={`${BASE_URL}/de/de/${data.slugDE}`} />
+        <link rel="alternate" hrefLang="en" href={`${BASE_URL}/en/ch/${data.slugEN}`} />
+        <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/de/ch/${data.slugCH}`} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={metaDesc} />
+        <meta property="og:url" content={`${BASE_URL}/${language}/${country}/${slug}`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={data.image} />
+        <meta property="og:site_name" content="David J. Woods — Hypnose & Psychologie" />
+
+        {/* Breadcrumb JSON-LD */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: breadcrumbItems.map((item, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              name: item.name,
+              item: `${BASE_URL}${item.path}`,
+            })),
+          })}
+        </script>
       </Helmet>
+
+      <Breadcrumbs items={breadcrumbItems} />
 
       {/* Hero */}
       <section className="bg-white border-b border-border">

@@ -1,6 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
 import davidPortrait from "@/assets/david-woods-portrait.jpg";
@@ -18,7 +19,14 @@ export default function UeberUns() {
 
   return (
     <>
-      <SEO {...pageSEO.about} />
+      <SEO {...pageSEO.about} pageKey="about" breadcrumbs={[
+        { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+        { name: isEN ? "About Us" : "Über uns", path: getPath("about", language, country) },
+      ]} />
+      <Breadcrumbs items={[
+        { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+        { name: isEN ? "About Us" : "Über uns", path: getPath("about", language, country) },
+      ]} />
 
       {/* Main Bio Section */}
       <section className="bg-white border-b border-border">

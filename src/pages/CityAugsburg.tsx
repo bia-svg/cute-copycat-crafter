@@ -25,7 +25,7 @@ export default function CityAugsburg() {
 
   return (
     <>
-      <SEO {...pageSEO.cityAugsburg} />
+      <SEO {...pageSEO.cityAugsburg} pageKey="cityAugsburg" />
 
       <section className="bg-white border-b border-border">
         <div className="container-main py-8 lg:py-12">

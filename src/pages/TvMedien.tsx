@@ -135,7 +135,7 @@ export default function TvMedien() {
 
   return (
     <>
-      <SEO {...pageSEO.media} />
+      <SEO {...pageSEO.media} pageKey="media" />
       <section className="bg-white border-b border-border">
         <div className="container-main py-8 lg:py-12">
           <div className="flex items-center gap-3 mb-2">

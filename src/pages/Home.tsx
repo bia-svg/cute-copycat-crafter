@@ -139,7 +139,7 @@ export default function Home() {
 
   return (
     <>
-      <SEO {...pageSEO.home} />
+      <SEO {...pageSEO.home} pageKey="home" />
       <section className="bg-secondary">
         {/* Desktop */}
         <div className="hidden md:grid md:grid-cols-2 container-main py-12 gap-8 items-center">

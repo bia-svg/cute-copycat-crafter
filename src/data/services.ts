@@ -9,7 +9,7 @@ const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBK
    Original: 2328 chars, 2 H2 sections + psychological reasons list
    ═══════════════════════════════════════════════════════════════ */
 export const smokingData: ServicePageData = {
-  slugCH: "raucherentwoehnung", slugDE: "raucherentwoehnung", slugEN: "raucherentwoehnung",
+  slugCH: "raucherentwoehnung", slugDE: "raucherentwoehnung", slugEN: "stop-smoking",
   titleCH: "Raucherentwöhnung Hypnose Zürich | Endlich Rauchfrei | David J. Woods",
   titleDE: "Raucherentwöhnung Hypnose Augsburg | Endlich Rauchfrei | David J. Woods",
   titleEN: "Stop Smoking Hypnotherapy Zurich & Augsburg | David J. Woods",
@@ -131,7 +131,7 @@ export const smokingData: ServicePageData = {
    Original: 2783 chars, 3 H2 sections
    ═══════════════════════════════════════════════════════════════ */
 export const anxietyData: ServicePageData = {
-  slugCH: "aengste-phobien", slugDE: "aengste-phobien", slugEN: "aengste-phobien",
+  slugCH: "aengste-phobien", slugDE: "aengste-phobien", slugEN: "anxiety-phobias",
   titleCH: "Hypnose gegen Ängste & Phobien Zürich | EMR Konform | David J. Woods",
   titleDE: "Hypnose gegen Ängste & Phobien Augsburg | David J. Woods",
   titleEN: "Hypnotherapy for Anxiety & Phobias Zurich & Augsburg | David J. Woods",
@@ -238,7 +238,7 @@ export const anxietyData: ServicePageData = {
    Original: 3375 chars, 2 H2 sections
    ═══════════════════════════════════════════════════════════════ */
 export const weightData: ServicePageData = {
-  slugCH: "abnehmen", slugDE: "abnehmen", slugEN: "abnehmen",
+  slugCH: "abnehmen", slugDE: "abnehmen", slugEN: "weight-loss",
   titleCH: "Abnehmen mit Hypnose Zürich | Dauerhaft Gewicht verlieren | David J. Woods",
   titleDE: "Abnehmen mit Hypnose Augsburg | Dauerhaft Gewicht verlieren | David J. Woods",
   titleEN: "Weight Loss Hypnotherapy Zurich & Augsburg | David J. Woods",
@@ -423,7 +423,7 @@ export const stressData: ServicePageData = {
    Original: 4869 chars, 2 H2 sections + detailed causes
    ═══════════════════════════════════════════════════════════════ */
 export const depressionData: ServicePageData = {
-  slugCH: "depressionen-traumata", slugDE: "depressionen-traumata", slugEN: "depressionen-traumata",
+  slugCH: "depressionen-traumata", slugDE: "depressionen-traumata", slugEN: "depression-trauma",
   titleCH: "Hypnose gegen Depressionen & Traumata Zürich | David J. Woods",
   titleDE: "Hypnose gegen Depressionen & Traumata Augsburg | David J. Woods",
   titleEN: "Hypnotherapy for Depression & Trauma Zurich & Augsburg | David J. Woods",
@@ -517,7 +517,7 @@ export const depressionData: ServicePageData = {
    ERWACHSENE — Adults audience page (1:1 sessions with David)
    ═══════════════════════════════════════════════════════════════ */
 export const adultsData: ServicePageData = {
-  slugCH: "erwachsene", slugDE: "erwachsene", slugEN: "erwachsene",
+  slugCH: "erwachsene", slugDE: "erwachsene", slugEN: "adults",
   titleCH: "Hypnosetherapie für Erwachsene Zürich | 1:1 mit David J. Woods",
   titleDE: "Hypnosetherapie für Erwachsene Augsburg | 1:1 mit David J. Woods",
   titleEN: "Hypnotherapy for Adults | 1:1 Sessions with David J. Woods",
@@ -648,7 +648,7 @@ export const adultsData: ServicePageData = {
 };
 
 export const childrenData: ServicePageData = {
-  slugCH: "kinder-jugendliche", slugDE: "kinder-jugendliche", slugEN: "kinder-jugendliche",
+  slugCH: "kinder-jugendliche", slugDE: "kinder-jugendliche", slugEN: "children-teens",
   titleCH: "Hypnose für Kinder & Jugendliche Zürich | Kathryn | David J. Woods",
   titleDE: "Hypnose für Kinder & Jugendliche Augsburg | Kathryn | David J. Woods",
   titleEN: "Hypnotherapy for Children & Teens Zurich & Augsburg | David J. Woods",

@@ -6,6 +6,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { getPath } from "@/lib/routes";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -76,7 +77,14 @@ export default function Erfolgsberichte() {
 
   return (
     <>
-      <SEO {...pageSEO.successStories} />
+      <SEO {...pageSEO.successStories} pageKey="successStories" breadcrumbs={[
+        { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+        { name: isEN ? "Success Stories" : "Erfolgsberichte", path: getPath("successStories", language, country) },
+      ]} />
+      <Breadcrumbs items={[
+        { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+        { name: isEN ? "Success Stories" : "Erfolgsberichte", path: getPath("successStories", language, country) },
+      ]} />
       {/* Hero */}
       <section className="bg-secondary py-12 md:py-16">
         <div className="container-main">

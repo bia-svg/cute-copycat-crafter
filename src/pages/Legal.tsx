@@ -8,7 +8,7 @@ export function Impressum() {
   const isEN = language === "en";
   return (
     <>
-      <SEO {...pageSEO.impressum} />
+      <SEO {...pageSEO.impressum} pageKey="impressum" />
       <section className="bg-white">
         <div className="container-main py-8 lg:py-12 max-w-3xl">
           <h1 className="text-2xl font-bold text-[#1B3A5C] mb-6">{isEN ? "Legal Notice" : "Impressum"}</h1>
@@ -76,7 +76,7 @@ export function Datenschutz() {
   const isEN = language === "en";
   return (
     <>
-      <SEO {...pageSEO.privacy} />
+      <SEO {...pageSEO.privacy} pageKey="privacy" />
       <section className="bg-white">
         <div className="container-main py-8 lg:py-12 max-w-3xl">
           <h1 className="text-2xl font-bold text-[#1B3A5C] mb-6">{isEN ? "Privacy Policy" : "Datenschutzerklärung"}</h1>
@@ -98,7 +98,7 @@ export function Datenschutz() {
 export function AGB() {
   return (
     <>
-      <SEO {...pageSEO.terms} />
+      <SEO {...pageSEO.terms} pageKey="terms" />
       <section className="bg-white">
         <div className="container-main py-8 lg:py-12 max-w-3xl">
           <h1 className="text-2xl font-bold text-primary mb-2">AGB</h1>

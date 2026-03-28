@@ -19,7 +19,7 @@ export default function Terminbestaetigung() {
 
   return (
     <>
-      <SEO {...pageSEO.appointmentConfirmation} />
+      <SEO {...pageSEO.appointmentConfirmation} pageKey="appointmentConfirmation" />
       <section className="bg-background py-12 md:py-16">
       <div className="container-main max-w-3xl">
         <div className="text-center mb-10">

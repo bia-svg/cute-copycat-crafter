@@ -1,6 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { getPath } from "@/lib/routes";
@@ -56,7 +57,14 @@ export default function FirmenCoaching() {
 
   return (
     <>
-      <SEO {...pageSEO.corporate} />
+      <SEO {...pageSEO.corporate} pageKey="corporate" breadcrumbs={[
+        { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+        { name: isEN ? "Business Coaching" : "Firmen-Coaching", path: getPath("corporate", language, country) },
+      ]} />
+      <Breadcrumbs items={[
+        { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+        { name: isEN ? "Business Coaching" : "Firmen-Coaching", path: getPath("corporate", language, country) },
+      ]} />
 
       <section className="bg-white border-b border-border">
         <div className="container-main py-8 lg:py-12">
