@@ -217,7 +217,7 @@ export default function Header() {
       {/* Main nav */}
       <div className="container-main flex items-center justify-between h-16">
         <Link to={getPath("home", language, country)} className="flex items-center gap-2">
-          <img src={CDN.logo} alt="David J. Woods" className="h-10" />
+          <img src={CDN.logo} alt="David J. Woods – Hypnose und Psychologie Logo" className="h-10" />
         </Link>
 
         {/* Desktop nav */}
