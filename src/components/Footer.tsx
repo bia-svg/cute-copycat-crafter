@@ -32,7 +32,7 @@ export default function Footer() {
           <div>
             <img src={CDN.logo} alt="David J. Woods" className="h-10 brightness-0 invert mb-4" />
             <p className="text-sm opacity-80">
-              {isEN ? "Aktiv-Hypnose\u00a9 \u2014 Psychology and Hypnotherapy for lasting change." : "Aktiv-Hypnose\u00a9 \u2014 Psychologie und Hypnotherapie f\u00fcr nachhaltige Ver\u00e4nderung."}
+              {isEN ? "Aktiv-Hypnose© — Psychology and Hypnotherapy for lasting change." : "Aktiv-Hypnose© — Psychologie und Hypnotherapie für nachhaltige Veränderung."}
             </p>
           </div>
 
