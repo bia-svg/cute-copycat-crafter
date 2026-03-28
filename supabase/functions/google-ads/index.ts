@@ -75,10 +75,17 @@ serve(async (req) => {
       headers["login-customer-id"] = mccId.replace(/-/g, "");
     }
 
-    const adsRes = await fetch(
-      `https://googleads.googleapis.com/v18/customers/${cleanCustomerId}/googleAds:searchStream`,
-      { method: "POST", headers, body: JSON.stringify({ query }) }
-    );
+    const adsUrl = `https://googleads.googleapis.com/v19/customers/${cleanCustomerId}/googleAds:searchStream`;
+    console.log("Google Ads request URL:", adsUrl);
+    console.log("Customer ID (clean):", cleanCustomerId);
+    console.log("Has developer token:", !!developerToken);
+    console.log("Has MCC ID:", !!mccId);
+
+    const adsRes = await fetch(adsUrl, {
+      method: "POST",
+      headers,
+      body: JSON.stringify({ query }),
+    });
 
     const rawText = await adsRes.text();
 
