@@ -296,8 +296,34 @@ export default function Header() {
         </div>
       </MegaMenuPanel>
 
+      {/* ── Mega Menu: Firmen-Coaching ── */}
+      <MegaMenuPanel id="corporate">
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="md:col-span-2">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+              {isDE ? "Business Coaching Programme" : "Business Coaching Programs"}
+            </h4>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+              {corporateItems.map(item => <MenuItemLink key={item.label} {...item} />)}
+            </div>
+          </div>
+          <SidebarCard>
+            <p className="font-semibold text-sm text-foreground">{isDE ? "Für Ihr Unternehmen" : "For Your Company"}</p>
+            <p className="text-xs text-muted-foreground">
+              {isDE ? "Individuelles Coaching für Teams & Führungskräfte" : "Individual coaching for teams & executives"}
+            </p>
+            <div className="pt-2">
+              <Link to={getPath("corporate", language, country)} onClick={() => setActiveMenu(null)}>
+                <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs">
+                  {isDE ? "Alle Programme" : "All Programs"}
+                </Button>
+              </Link>
+            </div>
+          </SidebarCard>
+        </div>
+      </MegaMenuPanel>
 
-      {/* ── Mega Menu: Über uns ── */}
+
       <MegaMenuPanel id="about">
         <div className="grid md:grid-cols-3 gap-6">
            <div className="md:col-span-2">
