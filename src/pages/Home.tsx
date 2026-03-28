@@ -377,21 +377,24 @@ export default function Home() {
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <Trophy className="w-8 h-8" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Success is ultimately decided in the mind." : "Letztendlich entscheidet sich Erfolg im Kopf." },
-              { icon: <Shield className="w-8 h-8" />, title: isEN ? "Resilience Building" : "Resilienz-Verstärken", desc: isEN ? "Build inner strength for challenging times." : "Innere Stärke aufbauen für schwere Zeiten." },
-              { icon: <Clock className="w-8 h-8" />, title: isEN ? "Stress Prevention" : "Stress-Prävention", desc: isEN ? "Burnout prevention for leaders and teams." : "Burnout-Prävention für Führungskräfte und Teams." },
-              { icon: <Cigarette className="w-8 h-8" />, title: isEN ? "Non-Smoker Seminars" : "Nichtraucher-Seminare", desc: isEN ? "'Non-smoker in 3 hours' — corporate wellness." : "'Nichtraucher in 3 Stunden' — Firmen-Wellness." },
+              { icon: <Trophy className="w-8 h-8" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Success is ultimately decided in the mind." : "Letztendlich entscheidet sich Erfolg im Kopf.", href: getPath("corporateErfolg", language, country) },
+              { icon: <Shield className="w-8 h-8" />, title: isEN ? "Resilience Building" : "Resilienz-Verstärken", desc: isEN ? "Build inner strength for challenging times." : "Innere Stärke aufbauen für schwere Zeiten.", href: getPath("corporateResilienz", language, country) },
+              { icon: <Clock className="w-8 h-8" />, title: isEN ? "Stress Prevention" : "Stress-Prävention", desc: isEN ? "Burnout prevention for leaders and teams." : "Burnout-Prävention für Führungskräfte und Teams.", href: getPath("corporateStress", language, country) },
+              { icon: <Cigarette className="w-8 h-8" />, title: isEN ? "Non-Smoker Seminars" : "Nichtraucher-Seminare", desc: isEN ? "'Non-smoker in 3 hours' — corporate wellness." : "'Nichtraucher in 3 Stunden' — Firmen-Wellness.", href: getPath("corporateNichtraucher", language, country) },
             ].map((item) => (
-              <div key={item.title} className="bg-primary-foreground/10 rounded-lg p-6 text-center">
+              <Link key={item.title} to={item.href} className="bg-primary-foreground/10 rounded-lg p-6 text-center hover:bg-primary-foreground/20 transition-colors group">
                 <div className="flex justify-center mb-3 opacity-90">{item.icon}</div>
                 <h3 className="font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm opacity-80">{item.desc}</p>
-              </div>
+                <p className="text-sm opacity-80 mb-4">{item.desc}</p>
+                <span className="inline-flex items-center gap-1 text-xs font-medium opacity-70 group-hover:opacity-100">
+                  {isEN ? "Learn more" : "Mehr erfahren"} →
+                </span>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-8">
             <Link to={getPath("corporate", language, country)}>
-              <Button variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold">
                 {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
               </Button>
             </Link>
