@@ -55,7 +55,7 @@ export default function Footer() {
                     <div>
                       <div className="font-medium opacity-100">Eschenbach</div>
                       <div>Fit+Gsund, Churzhaslen 3</div>
-                      <div>8733 Eschenbach (am Z\u00fcrichsee)</div>
+                      <div>8733 Eschenbach (am Zürichsee)</div>
                     </div>
                   </div>
                   <a href="tel:+41448880901" className="flex items-center gap-1 mt-1 hover:underline">
