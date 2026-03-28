@@ -9,7 +9,8 @@ import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
-
+import diplomAktivHypnose from "@/assets/diplom-aktiv-hypnose.jpeg";
+import diplomNGH from "@/assets/diplom-ngh-instructor.jpeg";
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -245,6 +246,30 @@ export default function Ausbildung() {
                   ? "You won't just watch — you'll hypnotize. Every day combines theory with immediate hands-on application."
                   : "Sie schauen nicht nur zu — Sie hypnotisieren. Jeder Tag verbindet Theorie mit sofortiger praktischer Anwendung."}
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          DIPLOMAS — Visual proof of certification
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-white border-b border-border">
+        <div className="container-main py-10 lg:py-14">
+          <h2 className="text-2xl font-bold text-[#1B3A5C] mb-2 text-center" style={{ fontFamily: "Georgia, serif" }}>
+            {isEN ? "Your Certification" : "Ihr Abschluss"}
+          </h2>
+          <p className="text-sm text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+            {isEN
+              ? "Upon completion, you receive internationally recognized diplomas."
+              : "Nach Abschluss erhalten Sie international anerkannte Diplome."}
+          </p>
+          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <div className="border border-border rounded-lg overflow-hidden shadow-sm">
+              <img src={diplomAktivHypnose} alt="Diplom — Therapeut in Aktiv-Hypnose von David J. Woods" className="w-full h-auto" loading="lazy" />
+            </div>
+            <div className="border border-border rounded-lg overflow-hidden shadow-sm">
+              <img src={diplomNGH} alt="NGH Certified Instructor — David Woods" className="w-full h-auto" loading="lazy" />
             </div>
           </div>
         </div>
