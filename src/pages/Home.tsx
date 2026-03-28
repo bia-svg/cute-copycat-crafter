@@ -72,9 +72,22 @@ export default function Home() {
 
   /* ── Hero Slider ── */
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = heroSlides.length;
+  const [loadedSlides, setLoadedSlides] = useState<Record<number, string>>({ 0: hero1 });
+  const [loadedMobile, setLoadedMobile] = useState<Record<number, string>>({ 0: hero1Mobile });
+  const totalSlides = 5;
   const goNext = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
   const goPrev = () => setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+
+  // Preload next slide
+  useEffect(() => {
+    const next = (currentSlide + 1) % totalSlides;
+    if (!loadedSlides[next] && typeof heroDesktop[next] === "function") {
+      (heroDesktop[next] as () => Promise<string>)().then(src => setLoadedSlides(p => ({ ...p, [next]: src })));
+    }
+    if (!loadedMobile[next] && typeof heroMobile[next] === "function") {
+      (heroMobile[next] as () => Promise<string>)().then(src => setLoadedMobile(p => ({ ...p, [next]: src })));
+    }
+  }, [currentSlide]);
 
   useEffect(() => {
     const interval = setInterval(goNext, 3000);
