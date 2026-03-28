@@ -8,37 +8,50 @@ const corsHeaders = {
 function getRequiredSecret(name: string): string {
   const value = Deno.env.get(name)?.trim();
   if (!value) {
-    throw new Error(`${name} not configured`);
+    throw new Error(`Secret '${name}' not configured in Supabase Edge Function secrets.`);
   }
   return value;
 }
 
-function parseGoogleAdsError(status: number, text: string): Error {
-  // FIX 1: Improved HTML detection — covers both <!DOCTYPE and bare <html responses.
-  // A 404 HTML response means Google's gateway rejected the request before reaching
-  // the Ads service. Most common cause: Google Ads API not enabled in the GCP project
-  // that owns the OAuth Client ID, OR the developer token is in "Test Account" mode.
-  if (text.startsWith("<!DOCTYPE") || text.startsWith("<html") || text.includes("<title>Error 404")) {
+function parseGoogleAdsError(status: number, text: string, context: string): Error {
+  // HTML 404 = Google's gateway rejected the request before reaching the Ads service.
+  // Possible causes (in order of likelihood):
+  //   1. OAuth scope is missing 'https://www.googleapis.com/auth/adwords' — the refresh
+  //      token was generated without the Ads scope, so the access token doesn't carry it.
+  //   2. The GCP project that owns the OAuth Client ID is different from the one where
+  //      the Google Ads API is enabled (DEVELOPER_TOKEN_PROHIBITED scenario).
+  //   3. Developer token is in 'Test Account' mode and the account is a production account.
+  if (
+    text.startsWith("<!DOCTYPE") ||
+    text.startsWith("<html") ||
+    text.includes("<title>Error 404") ||
+    text.includes("That's an error")
+  ) {
     return new Error(
-      "Google Ads API returned an HTML 404 page instead of JSON. " +
-      "This means Google's gateway rejected the request before reaching the Ads service. " +
-      "To fix this: " +
-      "(1) Enable the 'Google Ads API' in your Google Cloud project at console.cloud.google.com → APIs & Services → Library. " +
-      "(2) Verify your developer token is at least 'Explorer' level (not 'Test Account') at ads.google.com/aw/apicenter. " +
-      "(3) Ensure the OAuth Client ID used to generate GOOGLE_ADS_REFRESH_TOKEN belongs to the same GCP project where the API is enabled."
+      `[${context}] Google Ads API returned HTML 404 — request was rejected at Google's gateway. ` +
+      `Checklist: ` +
+      `(A) The refresh token MUST have been generated with scope 'https://www.googleapis.com/auth/adwords'. ` +
+      `If it was generated for another scope (e.g. Analytics only), regenerate it with the Ads scope. ` +
+      `(B) The GCP project that owns GOOGLE_ADS_CLIENT_ID must be the SAME project where Google Ads API is enabled. ` +
+      `(C) Developer token must be at least 'Explorer' level (not 'Test Account') to access production accounts. ` +
+      `Check ads.google.com/aw/apicenter for the current access level.`
     );
   }
 
   try {
     const parsed = JSON.parse(text);
-    const details = parsed?.error?.message || parsed?.error?.details?.[0]?.message || text;
-    return new Error(`Google Ads API error [${status}]: ${details}`);
+    const details =
+      parsed?.error?.message ||
+      parsed?.error?.details?.[0]?.message ||
+      parsed?.error?.errors?.[0]?.message ||
+      text;
+    return new Error(`[${context}] Google Ads API error [${status}]: ${details}`);
   } catch {
-    return new Error(`Google Ads API error [${status}]: ${text.substring(0, 300)}`);
+    return new Error(`[${context}] Google Ads API error [${status}]: ${text.substring(0, 400)}`);
   }
 }
 
-async function getAccessToken(): Promise<string> {
+async function getAccessToken(): Promise<{ accessToken: string; scopes: string }> {
   const clientId = getRequiredSecret("GOOGLE_ADS_CLIENT_ID");
   const clientSecret = getRequiredSecret("GOOGLE_ADS_CLIENT_SECRET");
   const refreshToken = getRequiredSecret("GOOGLE_ADS_REFRESH_TOKEN");
@@ -56,11 +69,32 @@ async function getAccessToken(): Promise<string> {
 
   const tokenText = await tokenRes.text();
   if (!tokenRes.ok) {
-    throw new Error(`Token refresh failed: ${tokenText}`);
+    throw new Error(`Token refresh failed [${tokenRes.status}]: ${tokenText}`);
   }
 
   const tokenData = JSON.parse(tokenText);
-  return tokenData.access_token;
+
+  if (!tokenData.access_token) {
+    throw new Error(`Token refresh returned no access_token. Response: ${tokenText}`);
+  }
+
+  // Introspect the token to confirm it carries the Ads scope.
+  // A missing 'https://www.googleapis.com/auth/adwords' scope is a common cause of 404 HTML.
+  let scopes = tokenData.scope || "scope_not_returned_by_token_endpoint";
+
+  try {
+    const introspectRes = await fetch(
+      `https://oauth2.googleapis.com/tokeninfo?access_token=${tokenData.access_token}`
+    );
+    if (introspectRes.ok) {
+      const introspectData = await introspectRes.json();
+      scopes = introspectData.scope || scopes;
+    }
+  } catch {
+    // Non-fatal: introspection is diagnostic only
+  }
+
+  return { accessToken: tokenData.access_token, scopes };
 }
 
 serve(async (req) => {
@@ -72,16 +106,30 @@ serve(async (req) => {
     const customerId = getRequiredSecret("GOOGLE_ADS_CUSTOMER_ID").replace(/-/g, "");
     const developerToken = getRequiredSecret("GOOGLE_ADS_DEVELOPER_TOKEN");
     const mccId = Deno.env.get("GOOGLE_ADS_MCC_ID")?.trim().replace(/-/g, "") || "";
-    const accessToken = await getAccessToken();
+
+    const { accessToken, scopes } = await getAccessToken();
+
+    // Diagnostic: log which scopes the token actually carries.
+    // If 'adwords' is not present, the 404 HTML is caused by a missing scope.
+    const hasAdsScope = scopes.includes("adwords");
+    console.log("Token scopes:", scopes);
+    console.log("Has adwords scope:", hasAdsScope);
+
+    if (!hasAdsScope) {
+      throw new Error(
+        `The access token does NOT include the Google Ads scope ('https://www.googleapis.com/auth/adwords'). ` +
+        `Current scopes: [${scopes}]. ` +
+        `You must regenerate GOOGLE_ADS_REFRESH_TOKEN using the OAuth flow with scope=https://www.googleapis.com/auth/adwords. ` +
+        `This is the most likely cause of the HTML 404 error.`
+      );
+    }
 
     const { startDate, endDate } = await req.json().catch(() => ({
       startDate: "2026-01-01",
       endDate: new Date().toISOString().split("T")[0],
     }));
 
-    // FIX 2: login-customer-id is REQUIRED when authenticating via an MCC account.
-    // It must be set on ALL requests (including listAccessibleCustomers), not just the search call.
-    // Without it, the API returns USER_PERMISSION_DENIED or silently routes incorrectly.
+    // Build shared auth headers — login-customer-id is REQUIRED on ALL calls when using MCC.
     const authHeaders: Record<string, string> = {
       Authorization: `Bearer ${accessToken}`,
       Accept: "application/json",
@@ -93,20 +141,20 @@ serve(async (req) => {
       authHeaders["login-customer-id"] = mccId;
     }
 
-    // FIX 3: listAccessibleCustomers was being called WITHOUT login-customer-id.
-    // Now it reuses authHeaders (which already includes login-customer-id when mccId is set).
+    console.log("Using MCC:", mccId || "none");
+    console.log("Using customer:", customerId);
+    console.log("developer-token length:", developerToken.length);
+
+    // Step 1: List accessible customers (uses shared authHeaders with login-customer-id)
     const accessibleRes = await fetch(
       "https://googleads.googleapis.com/v19/customers:listAccessibleCustomers",
-      {
-        method: "GET",
-        headers: authHeaders,
-      }
+      { method: "GET", headers: authHeaders }
     );
 
     const accessibleText = await accessibleRes.text();
     if (!accessibleRes.ok) {
-      console.error("Accessible customers error:", accessibleText.substring(0, 500));
-      throw parseGoogleAdsError(accessibleRes.status, accessibleText);
+      console.error("listAccessibleCustomers error body:", accessibleText.substring(0, 800));
+      throw parseGoogleAdsError(accessibleRes.status, accessibleText, "listAccessibleCustomers");
     }
 
     const accessibleData = JSON.parse(accessibleText);
@@ -115,8 +163,6 @@ serve(async (req) => {
       : [];
 
     console.log("Accessible customers:", accessibleCustomers.join(", "));
-    console.log("Using MCC:", mccId || "none");
-    console.log("Using customer:", customerId);
 
     const hasDirectAccess = accessibleCustomers.includes(customerId);
     const hasMccAccess = !!mccId && accessibleCustomers.includes(mccId);
@@ -129,6 +175,7 @@ serve(async (req) => {
       );
     }
 
+    // Step 2: Query campaign performance
     const query = `
       SELECT
         campaign.name,
@@ -148,7 +195,7 @@ serve(async (req) => {
     `;
 
     const adsUrl = `https://googleads.googleapis.com/v19/customers/${customerId}/googleAds:search`;
-    console.log("Google Ads request URL:", adsUrl);
+    console.log("Google Ads search URL:", adsUrl);
 
     const adsRes = await fetch(adsUrl, {
       method: "POST",
@@ -158,8 +205,8 @@ serve(async (req) => {
 
     const adsText = await adsRes.text();
     if (!adsRes.ok) {
-      console.error("Google Ads API error:", adsText.substring(0, 500));
-      throw parseGoogleAdsError(adsRes.status, adsText);
+      console.error("googleAds:search error body:", adsText.substring(0, 800));
+      throw parseGoogleAdsError(adsRes.status, adsText, "googleAds:search");
     }
 
     const adsData = JSON.parse(adsText);
@@ -211,9 +258,7 @@ serve(async (req) => {
         currencyCode,
         accessibleCustomers,
       }),
-      {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      }
+      { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (error: unknown) {
     console.error("Google Ads error:", error);
