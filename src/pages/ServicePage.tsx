@@ -6,6 +6,7 @@
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getPath } from "@/lib/routes";
+import { CDN } from "@/lib/cdn";
 import { Helmet } from "react-helmet-async";
 
 
