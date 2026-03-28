@@ -403,6 +403,9 @@ export default function Header() {
             </Link>
           </div>
 
+          {/* Firmen-Coaching */}
+          <MobileSection id="corporate" title={isDE ? "Firmen-Coaching" : "Corporate"} items={corporateItems} />
+
           {/* Über uns */}
           <MobileSection id="about" title={t("nav.about")} items={aboutItems} />
 
