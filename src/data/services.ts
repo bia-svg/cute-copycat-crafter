@@ -627,7 +627,8 @@ export const adultsData: ServicePageData = {
         "Each session begins with a detailed conversation where David captures your current situation, your goals, and your personal history. Based on this, the hypnosis is individually tailored to you.",
         "During hypnosis, you are in a state of focused relaxation — you are conscious at all times and retain full control. David works with targeted suggestions and techniques that work directly in the subconscious.",
         "After the session, you receive your personalized audio recordings as well as concrete recommendations for everyday life."
-      ]
+      ],
+      image: sessionHandsImg,
     }
   ],
   image: davidSessionAdults,
