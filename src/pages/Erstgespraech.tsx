@@ -410,7 +410,7 @@ export default function Erstgespraech() {
                     </div>
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Postal Code / City" : "PLZ / Ortschaft"}</label>
-                      <input type="text" autoComplete="postal-code" className={inputClasses} />
+                      <input type="text" name="postalCode" autoComplete="postal-code" className={inputClasses} />
                     </div>
                   </div>
 
