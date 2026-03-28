@@ -1,6 +1,8 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { getPath } from "@/lib/routes";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Tv } from "lucide-react";

@@ -2,6 +2,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
 import { getPath } from "@/lib/routes";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, ArrowRight } from "lucide-react";
@@ -9,6 +10,7 @@ import { MapPin, Phone, ArrowRight } from "lucide-react";
 export default function Standorte() {
   const { language, country, t, showCH, showDE } = useLanguage();
   const isEN = language === "en";
+  const basePath = getPath("home", language, country);
 
   const locations = [
     ...(showCH

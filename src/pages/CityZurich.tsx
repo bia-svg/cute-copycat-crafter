@@ -1,7 +1,8 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
-
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { getPath } from "@/lib/routes";
 
 import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,7 @@ const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBK
 export default function CityZurich() {
   const { language, country, } = useLanguage();
   const isEN = language === "en";
+  const basePath = getPath("home", language, country);
 
   const services = [
     { title: isEN ? "Stop Smoking" : "Raucherentwöhnung", description: isEN ? "Quit smoking permanently" : "Endlich rauchfrei werden", href: `/${language}/${country}/raucherentwoehnung`, icon: <Cigarette className="w-5 h-5" />, image: `${CDN}/stop_smoking_hypnose_89c11159.jpg` },
@@ -26,6 +28,11 @@ export default function CityZurich() {
   return (
     <>
       <SEO {...pageSEO.cityZurich} pageKey="cityZurich" />
+      <Breadcrumbs items={[
+        { name: "Home", path: basePath },
+        { name: isEN ? "Locations" : "Standorte", path: getPath("locations", language, country) },
+        { name: isEN ? "Zurich" : "Zürich", path: getPath("cityZurich", language, country) },
+      ]} />
 
       <section className="bg-white border-b border-border">
         <div className="container-main py-8 lg:py-12">
