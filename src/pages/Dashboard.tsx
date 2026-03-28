@@ -441,10 +441,48 @@ export default function Dashboard() {
                 <MetricCard title="Paid Leads" value={leadStats.paidLeads} icon={Zap} color="text-blue-600" />
               </div>
 
-              {/* Leads table */}
+              {/* Leads Per Day Chart */}
+              {leads.length > 0 && (() => {
+                const byDay: Record<string, { date: string; session: number; seminar: number; total: number }> = {};
+                leads.forEach(l => {
+                  const d = format(new Date(l.created_at), "yyyy-MM-dd");
+                  if (!byDay[d]) byDay[d] = { date: d, session: 0, seminar: 0, total: 0 };
+                  byDay[d].total++;
+                  if (l.form_type === "seminar") byDay[d].seminar++;
+                  else byDay[d].session++;
+                });
+                const dailyLeads = Object.values(byDay).sort((a, b) => a.date.localeCompare(b.date));
+                return (
+                  <Card className="bg-white border border-gray-200 shadow-sm">
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-sm font-medium text-gray-700">Leads Per Day</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <ChartContainer config={{
+                        session: { label: "Session", color: COLORS.organic },
+                        seminar: { label: "Seminar", color: COLORS.paid },
+                      }} className="h-[220px] w-full">
+                        <BarChart data={dailyLeads}>
+                          <CartesianGrid stroke="#f3f4f6" strokeDasharray="3 3" />
+                          <XAxis dataKey="date" tick={{ fill: "#9ca3af", fontSize: 10 }} tickFormatter={v => format(parseISO(v), "dd/MM")} />
+                          <YAxis tick={{ fill: "#9ca3af", fontSize: 10 }} allowDecimals={false} />
+                          <ChartTooltip content={<ChartTooltipContent />} />
+                          <Bar dataKey="session" fill={COLORS.organic} stackId="a" radius={[0, 0, 0, 0]} name="Session" />
+                          <Bar dataKey="seminar" fill={COLORS.paid} stackId="a" radius={[3, 3, 0, 0]} name="Seminar" />
+                        </BarChart>
+                      </ChartContainer>
+                    </CardContent>
+                  </Card>
+                );
+              })()}
+
+              {/* GDPR-compliant leads table — personal data masked */}
               <Card className="bg-white border border-gray-200 shadow-sm">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-gray-700">Recent Leads</CardTitle>
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-sm font-medium text-gray-700">Leads Log (GDPR Safe)</CardTitle>
+                    <Badge variant="outline" className="text-xs text-gray-500">Personal data masked</Badge>
+                  </div>
                 </CardHeader>
                 <CardContent>
                   {leads.length === 0 ? (
@@ -457,44 +495,50 @@ export default function Dashboard() {
                         <TableHeader>
                           <TableRow className="border-gray-100">
                             <TableHead className="text-gray-500">Date</TableHead>
-                            <TableHead className="text-gray-500">Code</TableHead>
                             <TableHead className="text-gray-500">Name</TableHead>
                             <TableHead className="text-gray-500">Concern</TableHead>
                             <TableHead className="text-gray-500">Type</TableHead>
                             <TableHead className="text-gray-500">Source</TableHead>
                             <TableHead className="text-gray-500">Campaign</TableHead>
-                            <TableHead className="text-gray-500">Postal</TableHead>
+                            <TableHead className="text-gray-500">Region</TableHead>
                             <TableHead className="text-gray-500 text-center">Converted</TableHead>
                           </TableRow>
                         </TableHeader>
                         <TableBody>
-                          {leads.slice(0, 50).map(l => (
-                            <TableRow key={l.id} className="border-gray-100 hover:bg-gray-50">
-                              <TableCell className="text-gray-700 text-sm">{format(new Date(l.created_at), "dd/MM/yy")}</TableCell>
-                              <TableCell className="text-gray-900 font-mono text-xs">{l.tracking_code || "—"}</TableCell>
-                              <TableCell className="text-gray-900 font-medium">{l.name}</TableCell>
-                              <TableCell className="text-gray-700 text-sm">{l.concern || "—"}</TableCell>
-                              <TableCell>
-                                <Badge variant="outline" className={`text-xs ${l.form_type === "session" ? "text-emerald-700 border-emerald-200" : "text-blue-700 border-blue-200"}`}>
-                                  {l.form_type}
-                                </Badge>
-                              </TableCell>
-                              <TableCell>
-                                <Badge variant="outline" className={`text-xs ${l.source === "organic" ? "text-emerald-700" : l.source === "paid" ? "text-blue-700" : "text-gray-500"}`}>
-                                  {l.source}
-                                </Badge>
-                              </TableCell>
-                              <TableCell className="text-gray-600 text-xs">{l.utm_campaign || "—"}</TableCell>
-                              <TableCell className="text-gray-700 text-sm">{l.postal_code || "—"}</TableCell>
-                              <TableCell className="text-center">
-                                {l.converted ? (
-                                  <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Yes</Badge>
-                                ) : (
-                                  <Badge className="bg-gray-50 text-gray-500 border border-gray-200 text-xs">No</Badge>
-                                )}
-                              </TableCell>
-                            </TableRow>
-                          ))}
+                          {leads.slice(0, 50).map(l => {
+                            // Mask name: "Max Mustermann" → "M. M."
+                            const nameParts = (l.name || "").split(" ");
+                            const maskedName = nameParts.map(p => p.charAt(0).toUpperCase() + ".").join(" ");
+                            // Region from postal code prefix + country
+                            const region = [l.postal_code ? l.postal_code.slice(0, 2) + "xxx" : null, l.country].filter(Boolean).join(", ");
+
+                            return (
+                              <TableRow key={l.id} className="border-gray-100 hover:bg-gray-50">
+                                <TableCell className="text-gray-700 text-sm">{format(new Date(l.created_at), "dd/MM/yy HH:mm")}</TableCell>
+                                <TableCell className="text-gray-900 font-medium">{maskedName || "—"}</TableCell>
+                                <TableCell className="text-gray-700 text-sm">{l.concern || "—"}</TableCell>
+                                <TableCell>
+                                  <Badge variant="outline" className={`text-xs ${l.form_type === "session" ? "text-emerald-700 border-emerald-200" : "text-blue-700 border-blue-200"}`}>
+                                    {l.form_type}
+                                  </Badge>
+                                </TableCell>
+                                <TableCell>
+                                  <Badge variant="outline" className={`text-xs ${l.source === "organic" ? "text-emerald-700" : l.source === "paid" ? "text-blue-700" : "text-gray-500"}`}>
+                                    {l.source}
+                                  </Badge>
+                                </TableCell>
+                                <TableCell className="text-gray-600 text-xs">{l.utm_campaign || "—"}</TableCell>
+                                <TableCell className="text-gray-700 text-sm">{region || "—"}</TableCell>
+                                <TableCell className="text-center">
+                                  {l.converted ? (
+                                    <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Yes</Badge>
+                                  ) : (
+                                    <Badge className="bg-gray-50 text-gray-500 border border-gray-200 text-xs">No</Badge>
+                                  )}
+                                </TableCell>
+                              </TableRow>
+                            );
+                          })}
                         </TableBody>
                       </Table>
                     </div>
@@ -506,19 +550,19 @@ export default function Dashboard() {
               <Card className="bg-white border border-gray-200 shadow-sm">
                 <CardHeader className="pb-2">
                   <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
-                    <Globe className="w-4 h-4" /> Leads by Postal Code
+                    <Globe className="w-4 h-4" /> Leads by Region
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   {postalData.length === 0 ? (
-                    <p className="text-gray-400 text-sm py-4 text-center">No postal code data yet.</p>
+                    <p className="text-gray-400 text-sm py-4 text-center">No regional data yet.</p>
                   ) : (
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="overflow-y-auto max-h-[300px]">
                         <Table>
                           <TableHeader>
                             <TableRow className="border-gray-100">
-                              <TableHead className="text-gray-500">Postal Code</TableHead>
+                              <TableHead className="text-gray-500">Postal Prefix</TableHead>
                               <TableHead className="text-gray-500 text-right">Leads</TableHead>
                               <TableHead className="text-gray-500 text-right">Share</TableHead>
                             </TableRow>
