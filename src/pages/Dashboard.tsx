@@ -773,7 +773,7 @@ export default function Dashboard() {
                       <ShieldCheck className="w-8 h-8 text-gray-500" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900">Protected Area</h3>
-                    <p className="text-sm text-gray-500">Enter the 6-digit PIN to access the complete leads list with full contact details.</p>
+                    <p className="text-sm text-gray-500">Enter the 8-digit PIN to access the complete leads list with full contact details.</p>
                     {pinError && (
                       <div className="text-sm text-red-600 bg-red-50 border border-red-200 rounded p-2">{pinError}</div>
                     )}
@@ -781,12 +781,13 @@ export default function Dashboard() {
                       <Input
                         type="password"
                         inputMode="numeric"
-                        maxLength={6}
+                        maxLength={8}
                         value={pinInput}
                         onChange={(e) => setPinInput(e.target.value.replace(/\D/g, "").slice(0, 8))}
                         onKeyDown={(e) => { if (e.key === "Enter") handlePinSubmit(); }}
-                        placeholder="••••••"
-                        className="w-40 text-center text-lg tracking-[0.5em] border-gray-300"
+                        onPaste={(e) => { const text = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 8); setPinInput(text); e.preventDefault(); }}
+                        placeholder="••••••••"
+                        className="w-48 text-center text-lg tracking-[0.3em] border-gray-300"
                       />
                       <Button onClick={handlePinSubmit} disabled={pinLoading || pinInput.length !== 8}>
                         {pinLoading ? "..." : "Unlock"}
