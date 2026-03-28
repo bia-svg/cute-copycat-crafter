@@ -783,7 +783,7 @@ export default function Dashboard() {
                         inputMode="numeric"
                         maxLength={6}
                         value={pinInput}
-                        onChange={(e) => setPinInput(e.target.value.replace(/\D/g, "").slice(0, 6))}
+                        onChange={(e) => setPinInput(e.target.value.replace(/\D/g, "").slice(0, 8))}
                         onKeyDown={(e) => { if (e.key === "Enter") handlePinSubmit(); }}
                         placeholder="••••••"
                         className="w-40 text-center text-lg tracking-[0.5em] border-gray-300"
