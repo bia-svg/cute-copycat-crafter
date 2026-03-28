@@ -9,7 +9,8 @@ import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
-
+import diplomAktivHypnose from "@/assets/diplom-aktiv-hypnose.jpeg";
+import diplomNGH from "@/assets/diplom-ngh-instructor.jpeg";
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
