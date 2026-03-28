@@ -197,12 +197,23 @@ serve(async (req) => {
       ORDER BY segments.date DESC
     `;
 
-    const adsUrl = `https://googleads.googleapis.com/v19/customers/${customerId}/googleAds:search`;
+    // Build auth headers for campaign query (needs Content-Type + login-customer-id)
+    const queryHeaders: Record<string, string> = {
+      Authorization: `Bearer ${accessToken}`,
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "developer-token": developerToken,
+    };
+    if (mccId) {
+      queryHeaders["login-customer-id"] = mccId;
+    }
+
+    const adsUrl = `https://googleads.googleapis.com/v18/customers/${customerId}/googleAds:search`;
     console.log("Google Ads search URL:", adsUrl);
 
     const adsRes = await fetch(adsUrl, {
       method: "POST",
-      headers: authHeaders,
+      headers: queryHeaders,
       body: JSON.stringify({ query, pageSize: 10000 }),
     });
 
