@@ -4,6 +4,8 @@ import { pageSEO } from "@/data/seo";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
 import davidPortrait from "@/assets/david-woods-portrait.jpg";
+import diplomNGHCertified from "@/assets/diplom-ngh-certified-instructor.jpeg";
+import ImageLightbox from "@/components/ImageLightbox";
 
 
 import { Button } from "@/components/ui/button";
@@ -284,9 +286,9 @@ export default function UeberUns() {
                 ? "With his psychological and neuroscientific background, hypnotist David Woods practices a very modern hypnosis approach and developed 'Aktiv-Hypnose'. He sees hypnosis as a simple but extremely effective tool to resolve problem situations and improve quality of life for his clients in the shortest possible time. His goal is to help people live their lives more happily, more consciously and more freely. The successes of his work are reported not only by television shows and newspapers, but also by many clients and participants on our website."
                 : `Vor seinem psychologischen und neurowissenschaftlichen Hintergrund praktiziert Hypnotiseur David Woods einen sehr modernen Hypnose Ansatz und entwickelte die \u201EAktiv Hypnose\u201C. Er betrachtet Hypnose als ein einfaches, aber extrem wirkungsvolles Werkzeug, um bei seinen Klienten innerhalb k\u00FCrzester Zeit Problemsituationen aufzul\u00F6sen und die Lebensqualit\u00E4t zu verbessern. Sein Ziel ist es, Menschen dabei zu helfen, ihr Leben gl\u00FCcklicher, bewusster und freier zu gestalten. \u00DCber die Erfolge seiner Arbeit berichten nicht nur Fernsehsendungen und Zeitungen, sondern auch viele Klienten und Teilnehmer auf unserer Website.`}
             </p>
-            <img
-              src="https://david-j-woods.com/wp-content/uploads/2024/06/9C75D0B5-B663-4657-AFCC-34568D28979E_1_201_a-768x576.jpeg.webp"
-              alt={isEN ? "David J. Woods in session" : "David J. Woods in einer Sitzung"}
+            <ImageLightbox
+              src={diplomNGHCertified}
+              alt="NGH Certified Instructor — David Woods"
               className="w-full h-auto border border-border"
             />
           </div>

@@ -12,6 +12,7 @@ import { CDN } from "@/lib/cdn";
 import diplomAktivHypnose from "@/assets/diplom-aktiv-hypnose.jpeg";
 import diplomNGH from "@/assets/diplom-ngh-instructor.jpeg";
 
+import ImageLightbox from "@/components/ImageLightbox";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -273,7 +274,7 @@ export default function Ausbildung() {
           <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="flex flex-col items-center text-center">
               <div className="border border-border rounded-lg overflow-hidden shadow-sm mb-4">
-                <img src={diplomNGH} alt="NGH Certified Instructor — David Woods" className="w-full h-auto" loading="lazy" />
+                <ImageLightbox src={diplomNGH} alt="NGH Certified Instructor — David Woods" className="w-full h-auto" />
               </div>
               <div className="flex items-center gap-2 mb-2">
                 <Shield className="w-5 h-5 text-blue-600" />
@@ -289,7 +290,7 @@ export default function Ausbildung() {
             </div>
             <div className="flex flex-col items-center text-center">
               <div className="border border-border rounded-lg overflow-hidden shadow-sm mb-4">
-                <img src={diplomAktivHypnose} alt="Diplom — Therapeut in Aktiv-Hypnose" className="w-full h-auto" loading="lazy" />
+                <ImageLightbox src={diplomAktivHypnose} alt="Diplom — Therapeut in Aktiv-Hypnose" className="w-full h-auto" />
               </div>
               <div className="flex items-center gap-2 mb-2">
                 <GraduationCap className="w-5 h-5 text-amber-600" />
