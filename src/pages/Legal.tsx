@@ -80,9 +80,14 @@ export function Impressum() {
 export function Datenschutz() {
   const { language, country, } = useLanguage();
   const isEN = language === "en";
+  const basePath = getPath("home", language, country);
   return (
     <>
       <SEO {...pageSEO.privacy} pageKey="privacy" />
+      <Breadcrumbs items={[
+        { name: "Home", path: basePath },
+        { name: isEN ? "Privacy Policy" : "Datenschutz", path: getPath("privacy", language, country) },
+      ]} />
       <section className="bg-white">
         <div className="container-main py-8 lg:py-12 max-w-3xl">
           <h1 className="text-2xl font-bold text-[#1B3A5C] mb-6">{isEN ? "Privacy Policy" : "Datenschutzerklärung"}</h1>
