@@ -264,12 +264,38 @@ export default function Ausbildung() {
               ? "Upon completion, you receive internationally recognized diplomas."
               : "Nach Abschluss erhalten Sie international anerkannte Diplome."}
           </p>
-          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            <div className="border border-border rounded-lg overflow-hidden shadow-sm">
-              <img src={diplomAktivHypnose} alt="Diplom — Therapeut in Aktiv-Hypnose von David J. Woods" className="w-full h-auto" loading="lazy" />
+          <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="flex flex-col items-center text-center">
+              <div className="border border-border rounded-lg overflow-hidden shadow-sm mb-4">
+                <img src={diplomNGH} alt="NGH Certified Instructor — David Woods" className="w-full h-auto" loading="lazy" />
+              </div>
+              <div className="flex items-center gap-2 mb-2">
+                <Shield className="w-5 h-5 text-blue-600" />
+                <h3 className="font-semibold text-[#1B3A5C]" style={{ fontFamily: "Georgia, serif" }}>
+                  {isEN ? "NGH Certified Instructor" : "NGH-zertifizierter Instructor"}
+                </h3>
+              </div>
+              <p className="text-sm text-muted-foreground max-w-sm">
+                {isEN
+                  ? "This certificate proves that David J. Woods is a certified hypnosis instructor accredited by the National Guild of Hypnotists (NGH) — the world's largest and most respected hypnosis organization."
+                  : "Dieses Zertifikat belegt, dass David J. Woods ein zertifizierter Hypnose-Instructor ist, akkreditiert durch die National Guild of Hypnotists (NGH) — die weltweit grösste und angesehenste Hypnose-Organisation."}
+              </p>
             </div>
-            <div className="border border-border rounded-lg overflow-hidden shadow-sm">
-              <img src={diplomNGH} alt="NGH Certified Instructor — David Woods" className="w-full h-auto" loading="lazy" />
+            <div className="flex flex-col items-center text-center">
+              <div className="border border-border rounded-lg overflow-hidden shadow-sm mb-4">
+                <img src={diplomAktivHypnose} alt="Diplom — Therapeut in Aktiv-Hypnose" className="w-full h-auto" loading="lazy" />
+              </div>
+              <div className="flex items-center gap-2 mb-2">
+                <GraduationCap className="w-5 h-5 text-amber-600" />
+                <h3 className="font-semibold text-[#1B3A5C]" style={{ fontFamily: "Georgia, serif" }}>
+                  {isEN ? "Your Diploma" : "Ihr Diplom"}
+                </h3>
+              </div>
+              <p className="text-sm text-muted-foreground max-w-sm">
+                {isEN
+                  ? "This is the diploma you receive upon completing the 6-day seminar — your official certification as a Therapist in Aktiv-Hypnose®."
+                  : "Dieses Diplom erhalten Sie nach Abschluss des 6-tägigen Seminars — Ihre offizielle Zertifizierung als Therapeut/in in Aktiv-Hypnose®."}
+              </p>
             </div>
           </div>
         </div>
