@@ -648,7 +648,7 @@ export const adultsData: ServicePageData = {
 };
 
 export const childrenData: ServicePageData = {
-  slugCH: "kinder-jugendliche", slugDE: "kinder-jugendliche", slugEN: "kinder-jugendliche",
+  slugCH: "kinder-jugendliche", slugDE: "kinder-jugendliche", slugEN: "children-teens",
   titleCH: "Hypnose für Kinder & Jugendliche Zürich | Kathryn | David J. Woods",
   titleDE: "Hypnose für Kinder & Jugendliche Augsburg | Kathryn | David J. Woods",
   titleEN: "Hypnotherapy for Children & Teens Zurich & Augsburg | David J. Woods",
