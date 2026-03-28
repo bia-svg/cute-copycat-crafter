@@ -263,7 +263,7 @@ export default function UeberUns() {
             <p>
               {isEN
                 ? "He applies his 'Aktiv-Hypnose' not only in hypnosis sessions and coaching, but also shares it through hypnosis training programs in Augsburg, Germany and near Zurich in Switzerland. In his training programs, he also certifies participants as Master Hypnotists with NGH certification. David J. Woods is himself a certified hypnosis trainer of the world's largest hypnosis association, the 'National Guild of Hypnotists'."
-                : "Seine „Aktiv Hypnose" wendet er nicht nur in den Hypnose Sitzungen und Coachings an, sondern gibt sie auch in Form von Hypnose Ausbildungen in Augsburg Deutschland und bei Zürich in der Schweiz, an andere Menschen weiter. Bei seinen Ausbildungsprogrammen bildet er die Teilnehmer auch zum Master Hypnotiseur mit NGH-Zertifizierung aus. Denn David J. Woods ist selbst zertifizierter Hypnose Ausbilder des weltweit größten Hypnose-Verbands „National Guild of Hypnotists"."}
+                : `Seine \u201EAktiv Hypnose\u201C wendet er nicht nur in den Hypnose Sitzungen und Coachings an, sondern gibt sie auch in Form von Hypnose Ausbildungen in Augsburg Deutschland und bei Z\u00FCrich in der Schweiz, an andere Menschen weiter. Bei seinen Ausbildungsprogrammen bildet er die Teilnehmer auch zum Master Hypnotiseur mit NGH-Zertifizierung aus. Denn David J. Woods ist selbst zertifizierter Hypnose Ausbilder des weltweit gr\u00F6\u00DFten Hypnose-Verbands \u201ENational Guild of Hypnotists\u201C.`}
             </p>
           </div>
         </div>
