@@ -788,7 +788,7 @@ export default function Dashboard() {
                         placeholder="••••••"
                         className="w-40 text-center text-lg tracking-[0.5em] border-gray-300"
                       />
-                      <Button onClick={handlePinSubmit} disabled={pinLoading || pinInput.length !== 6}>
+                      <Button onClick={handlePinSubmit} disabled={pinLoading || pinInput.length !== 8}>
                         {pinLoading ? "..." : "Unlock"}
                       </Button>
                     </div>
