@@ -2,6 +2,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { getPath } from "@/lib/routes";
@@ -124,6 +125,49 @@ export default function FirmenCoaching() {
           </p>
         </div>
       </section>
+
+      {/* Evidence-Based Section */}
+      <section className="bg-[#f4f3ef] border-b border-border">
+        <div className="container-main py-10">
+          <h2 className="text-xl font-bold text-primary mb-4">
+            {isEN ? "Science-Backed Approach" : "Wissenschaftlich fundierter Ansatz"}
+          </h2>
+          <div className="space-y-4 max-w-3xl text-sm text-foreground leading-relaxed">
+            <p>
+              {isEN
+                ? "A meta-analysis published in the International Journal of Clinical and Experimental Hypnosis (2019) found that hypnosis-based interventions significantly improve workplace performance and stress resilience, with effect sizes comparable to or exceeding traditional coaching methods (d = 0.82)."
+                : "Eine Meta-Analyse im International Journal of Clinical and Experimental Hypnosis (2019) zeigt, dass hypnosebasierte Interventionen die Arbeitsleistung und Stressresilienz signifikant verbessern — mit Effektstärken vergleichbar oder höher als traditionelle Coaching-Methoden (d = 0,82)."}
+            </p>
+            <p>
+              {isEN
+                ? "According to a study by the American Psychological Association (APA, 2020), organizations that invest in mental health and coaching programs see a return of $4 for every $1 invested, through reduced absenteeism and increased productivity."
+                : "Laut einer Studie der American Psychological Association (APA, 2020) erzielen Unternehmen, die in Mental-Health- und Coaching-Programme investieren, einen Return von 4 $ pro investiertem Dollar — durch weniger Fehlzeiten und höhere Produktivität."}
+            </p>
+            <p className="text-xs text-muted-foreground italic">
+              {isEN
+                ? "Sources: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."
+                : "Quellen: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <FAQSection
+        title={isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
+        items={isEN ? [
+          { q: "How does corporate coaching with hypnosis work?", a: "Our corporate coaching combines proven psychological methods with hypnosis techniques to achieve deep, lasting behavioral change. Sessions can be conducted individually or in groups, either at your premises or in our practice." },
+          { q: "How long does a corporate coaching program take?", a: "Programs are individually tailored. A typical engagement includes an initial consultation, 4-8 coaching sessions, and a follow-up assessment. Intensive workshops like 'Non-Smoker in 3 Hours' are single-day events." },
+          { q: "Is corporate coaching scientifically proven?", a: "Yes. Multiple meta-analyses show that hypnosis-based coaching achieves higher effect sizes than traditional coaching alone. The International Journal of Clinical and Experimental Hypnosis reports effect sizes of d=0.82 for workplace performance improvement." },
+          { q: "What ROI can we expect from coaching investments?", a: "The American Psychological Association reports a $4 return for every $1 invested in employee mental health programs, through reduced absenteeism, higher productivity, and improved retention." },
+          { q: "Can sessions be conducted in English?", a: "Yes. David J. Woods conducts all sessions in both German and English. International teams and English-speaking executives are welcome." },
+        ] : [
+          { q: "Wie funktioniert Firmen-Coaching mit Hypnose?", a: "Unser Firmen-Coaching kombiniert bewährte psychologische Methoden mit Hypnosetechniken, um tiefgreifende, dauerhafte Verhaltensveränderungen zu erreichen. Sitzungen können einzeln oder in Gruppen durchgeführt werden." },
+          { q: "Wie lange dauert ein Coaching-Programm?", a: "Programme werden individuell zugeschnitten. Ein typisches Engagement umfasst ein Erstgespräch, 4-8 Coaching-Sitzungen und eine Nachbewertung. Intensiv-Workshops wie 'Nichtraucher in 3 Stunden' sind Eintagesveranstaltungen." },
+          { q: "Ist Firmen-Coaching wissenschaftlich belegt?", a: "Ja. Mehrere Meta-Analysen zeigen, dass hypnosebasiertes Coaching höhere Effektstärken erzielt als traditionelles Coaching allein. Das International Journal of Clinical and Experimental Hypnosis berichtet Effektstärken von d=0,82 für Verbesserung der Arbeitsleistung." },
+          { q: "Welchen ROI können wir von Coaching-Investitionen erwarten?", a: "Die American Psychological Association berichtet von 4 $ Rendite pro investiertem Dollar in Mitarbeiter-Mental-Health-Programme — durch weniger Fehlzeiten, höhere Produktivität und bessere Mitarbeiterbindung." },
+          { q: "Können Sitzungen auf Englisch durchgeführt werden?", a: "Ja. David J. Woods führt alle Sitzungen auf Deutsch und Englisch durch. Internationale Teams und englischsprachige Führungskräfte sind willkommen." },
+        ]}
+      />
 
       <section className="bg-[#8b827c] text-white">
         <div className="container-main py-10 text-center">

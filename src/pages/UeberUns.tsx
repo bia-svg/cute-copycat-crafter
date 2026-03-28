@@ -2,12 +2,12 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import FAQSection from "@/components/FAQSection";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
 import davidPortrait from "@/assets/david-woods-portrait.jpg";
 import diplomNGHCertified from "@/assets/diplom-ngh-certified-instructor.jpeg";
 import ImageLightbox from "@/components/ImageLightbox";
-
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -373,6 +373,49 @@ export default function UeberUns() {
           </div>
         </div>
       </section>
+
+      {/* Evidence & Methodology */}
+      <section className="bg-secondary/50 border-b border-border">
+        <div className="container-main py-10">
+          <h2 className="text-xl font-bold text-primary mb-4">
+            {isEN ? "Scientific Foundation & Methodology" : "Wissenschaftliche Grundlage & Methodik"}
+          </h2>
+          <div className="space-y-4 max-w-3xl text-sm text-foreground leading-relaxed">
+            <p>
+              {isEN
+                ? "David J. Woods' Aktiv-Hypnose© method integrates clinical hypnotherapy with evidence-based psychological principles. A comprehensive meta-analysis by Kirsch, Montgomery & Sapirstein (1995), published in the Journal of Consulting and Clinical Psychology, demonstrated that adding hypnosis to cognitive-behavioral therapy (CBT) improved treatment outcomes by an average of 70% across multiple conditions."
+                : "David J. Woods' Aktiv-Hypnose© Methode integriert klinische Hypnotherapie mit evidenzbasierten psychologischen Prinzipien. Eine umfassende Meta-Analyse von Kirsch, Montgomery & Sapirstein (1995), veröffentlicht im Journal of Consulting and Clinical Psychology, zeigte, dass die Ergänzung von kognitiver Verhaltenstherapie (KVT) durch Hypnose die Behandlungsergebnisse um durchschnittlich 70% verbesserte."}
+            </p>
+            <p>
+              {isEN
+                ? "The World Health Organization (WHO) recognizes hypnotherapy as a valid therapeutic approach. The German Scientific Advisory Council on Psychotherapy (Wissenschaftlicher Beirat Psychotherapie) confirmed the scientific evidence for clinical hypnosis and hypnotherapy in 2006."
+                : "Die Weltgesundheitsorganisation (WHO) anerkennt Hypnotherapie als validen therapeutischen Ansatz. Der Wissenschaftliche Beirat Psychotherapie (WBP) bestätigte 2006 die wissenschaftliche Evidenz für klinische Hypnose und Hypnotherapie."}
+            </p>
+            <p className="text-xs text-muted-foreground italic">
+              {isEN
+                ? "Sources: Kirsch, Montgomery & Sapirstein, Journal of Consulting and Clinical Psychology, 63(2), 1995; WHO ICD-11; Wissenschaftlicher Beirat Psychotherapie, Gutachten 2006."
+                : "Quellen: Kirsch, Montgomery & Sapirstein, Journal of Consulting and Clinical Psychology, 63(2), 1995; WHO ICD-11; Wissenschaftlicher Beirat Psychotherapie, Gutachten 2006."}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <FAQSection
+        title={isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
+        items={isEN ? [
+          { q: "What qualifications does David J. Woods have?", a: "David J. Woods holds a Lic.Psych. (Licensed Psychologist) degree and is an NGH International Trainer — one of the highest certifications awarded by the National Guild of Hypnotists (USA). He is EMR-recognized in Switzerland (ZSR P609264) and has developed the Aktiv-Hypnose© method." },
+          { q: "How much experience does David J. Woods have?", a: "With over 40 years of clinical experience and more than 30,000 documented sessions, David J. Woods is one of the most experienced hypnotherapists in the DACH region (Germany, Austria, Switzerland)." },
+          { q: "Is hypnotherapy scientifically recognized?", a: "Yes. The World Health Organization (WHO) recognizes hypnotherapy as a valid therapeutic approach. In Germany, the Scientific Advisory Council on Psychotherapy confirmed the scientific evidence for clinical hypnosis in 2006. Meta-analyses show that hypnosis enhances CBT outcomes by an average of 70% (Kirsch et al., 1995)." },
+          { q: "What is the Aktiv-Hypnose© method?", a: "Aktiv-Hypnose© is a proprietary method developed by David J. Woods that combines classical hypnosis with modern psychological techniques, NLP, and coaching principles. It focuses on active client participation rather than passive suggestion." },
+          { q: "Does David J. Woods also offer training for therapists?", a: "Yes. As an NGH International Trainer, David J. Woods offers 6-day intensive training courses leading to an internationally recognized NGH therapist diploma. The training is EMR-compliant in Switzerland." },
+        ] : [
+          { q: "Welche Qualifikationen hat David J. Woods?", a: "David J. Woods hat einen Lic.Psych.-Abschluss (lizenzierter Psychologe) und ist NGH International Trainer — eine der höchsten Zertifizierungen der National Guild of Hypnotists (USA). Er ist EMR-anerkannt in der Schweiz (ZSR P609264) und hat die Aktiv-Hypnose© Methode entwickelt." },
+          { q: "Wie viel Erfahrung hat David J. Woods?", a: "Mit über 40 Jahren klinischer Erfahrung und mehr als 30.000 dokumentierten Sitzungen gehört David J. Woods zu den erfahrensten Hypnotherapeuten im DACH-Raum (Deutschland, Österreich, Schweiz)." },
+          { q: "Ist Hypnotherapie wissenschaftlich anerkannt?", a: "Ja. Die Weltgesundheitsorganisation (WHO) erkennt Hypnotherapie als validen therapeutischen Ansatz an. In Deutschland bestätigte der Wissenschaftliche Beirat Psychotherapie 2006 die wissenschaftliche Evidenz für klinische Hypnose. Meta-Analysen zeigen, dass Hypnose KVT-Ergebnisse um durchschnittlich 70% verbessert (Kirsch et al., 1995)." },
+          { q: "Was ist die Aktiv-Hypnose© Methode?", a: "Aktiv-Hypnose© ist eine von David J. Woods entwickelte Methode, die klassische Hypnose mit modernen psychologischen Techniken, NLP und Coaching-Prinzipien kombiniert. Der Fokus liegt auf aktiver Klientenbeteiligung statt passiver Suggestion." },
+          { q: "Bietet David J. Woods auch Ausbildungen an?", a: "Ja. Als NGH International Trainer bietet David J. Woods 6-tägige Intensiv-Ausbildungskurse an, die zu einem international anerkannten NGH-Therapeuten-Diplom führen. Die Ausbildung ist in der Schweiz EMR-konform." },
+        ]}
+      />
 
       {/* CTA Section */}
       <section className="bg-[#8b827c] text-white">

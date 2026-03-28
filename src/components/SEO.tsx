@@ -95,12 +95,46 @@ export default function SEO({
     "@context": "https://schema.org",
     "@type": "Person",
     name: "David J. Woods",
-    jobTitle: "Lic.Psych., Hypnotherapeut, NGH International Trainer, Dozent & Fachautor",
+    givenName: "David",
+    familyName: "Woods",
+    honorificPrefix: "Lic.Psych.",
+    jobTitle: "Hypnotherapeut, Dozent & Fachautor, NGH International Trainer",
     url: BASE_URL,
-    description: "Licensed psychologist and hypnotherapist with over 40 years of experience and 30,000+ sessions. NGH International Trainer, EMR recognized.",
-    knowsAbout: ["Hypnotherapy", "Psychology", "Smoking Cessation", "Anxiety Treatment", "Weight Loss", "Stress Management", "Corporate Coaching"],
-    worksFor: { "@type": "Organization", name: "David J. Woods — Hypnose & Psychologie" },
-    alumniOf: [{ "@type": "EducationalOrganization", name: "National Guild of Hypnotists (NGH)" }],
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/david-woods-og.jpg",
+    description: "Licensed psychologist and hypnotherapist with over 40 years of clinical experience and more than 30,000 documented sessions. NGH International Trainer, EMR-recognized (ZSR P609264). Developer of the Aktiv-Hypnose© method. Author of 'Go Inside'. Practices in Zurich (Switzerland) and Augsburg (Germany).",
+    knowsAbout: [
+      "Clinical Hypnotherapy", "Cognitive Behavioral Hypnosis", "Smoking Cessation",
+      "Anxiety Disorders", "Phobia Treatment", "Weight Management Psychology",
+      "Stress & Burnout Prevention", "Depression & Trauma Therapy",
+      "Corporate Performance Coaching", "Resilience Training",
+      "NLP (Neuro-Linguistic Programming)", "Self-Hypnosis Techniques",
+    ],
+    hasCredential: [
+      { "@type": "EducationalOccupationalCredential", credentialCategory: "Professional License", name: "Lic.Psych. — Licensed Psychologist" },
+      { "@type": "EducationalOccupationalCredential", credentialCategory: "Professional Certification", name: "NGH International Trainer — National Guild of Hypnotists" },
+      { "@type": "EducationalOccupationalCredential", credentialCategory: "Professional Recognition", name: "EMR Krankenkasse Konform — ZSR Nr. P609264" },
+      { "@type": "EducationalOccupationalCredential", credentialCategory: "Method Development", name: "Developer of Aktiv-Hypnose© Method" },
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "David J. Woods — Hypnose & Psychologie",
+      url: BASE_URL,
+      address: [
+        { "@type": "PostalAddress", streetAddress: "Usteristrasse 23", addressLocality: "Zürich", postalCode: "8001", addressCountry: "CH" },
+        { "@type": "PostalAddress", streetAddress: "Viktoria Str 3b", addressLocality: "Augsburg", postalCode: "86150", addressCountry: "DE" },
+      ],
+    },
+    alumniOf: [
+      { "@type": "EducationalOrganization", name: "National Guild of Hypnotists (NGH)", url: "https://ngh.net" },
+    ],
+    sameAs: [
+      "https://www.google.com/maps/place/David+J.+Woods",
+      "https://vimeo.com/davidjwoods",
+    ],
+    award: [
+      "NGH International Trainer Certification",
+      "EMR Health Insurance Recognition (Switzerland)",
+    ],
   };
 
   /* ── Breadcrumb structured data ── */
