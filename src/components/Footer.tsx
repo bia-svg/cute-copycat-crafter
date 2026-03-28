@@ -32,7 +32,7 @@ export default function Footer() {
           <div>
             <img src={CDN.logo} alt="David J. Woods" className="h-10 brightness-0 invert mb-4" />
             <p className="text-sm opacity-80">
-              {isEN ? "Aktiv-Hypnose\u00a9 \u2014 Psychology and Hypnotherapy for lasting change." : "Aktiv-Hypnose\u00a9 \u2014 Psychologie und Hypnotherapie f\u00fcr nachhaltige Ver\u00e4nderung."}
+              {isEN ? "Aktiv-Hypnose© — Psychology and Hypnotherapy for lasting change." : "Aktiv-Hypnose© — Psychologie und Hypnotherapie für nachhaltige Veränderung."}
             </p>
           </div>
 
@@ -45,9 +45,9 @@ export default function Footer() {
                   <div className="flex items-start gap-2">
                     <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
                     <div>
-                      <div className="font-medium opacity-100">Z\u00fcrich</div>
-                      <div>5 Elements TCM GmbH, Beim L\u00f6wenplatz</div>
-                      <div>Usteristrasse 23, 8001 Z\u00fcrich</div>
+                      <div className="font-medium opacity-100">Zürich</div>
+                      <div>5 Elements TCM GmbH, Beim Löwenplatz</div>
+                      <div>Usteristrasse 23, 8001 Zürich</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
@@ -55,7 +55,7 @@ export default function Footer() {
                     <div>
                       <div className="font-medium opacity-100">Eschenbach</div>
                       <div>Fit+Gsund, Churzhaslen 3</div>
-                      <div>8733 Eschenbach (am Z\u00fcrichsee)</div>
+                      <div>8733 Eschenbach (am Zürichsee)</div>
                     </div>
                   </div>
                   <a href="tel:+41448880901" className="flex items-center gap-1 mt-1 hover:underline">
