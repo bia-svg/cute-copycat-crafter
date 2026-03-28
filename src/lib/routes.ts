@@ -3,6 +3,7 @@ import type { Language, Country } from "@/contexts/LanguageContext";
 type PageKey =
   | "home" | "smoking" | "anxiety" | "weight" | "stress"
   | "depression" | "children" | "adults" | "training" | "seminarSchedule" | "corporate"
+  | "corporateErfolg" | "corporateResilienz" | "corporateStress" | "corporateNichtraucher"
   | "about" | "testimonials" | "successStories" | "media"
   | "contact" | "appointmentConfirmation" | "cityZurich" | "cityAugsburg" | "locations"
   | "impressum" | "privacy" | "terms" | "blog" | "book";
@@ -19,6 +20,10 @@ const slugMap: Record<PageKey, string> = {
   training: "ausbildung",
   seminarSchedule: "seminar-ablauf",
   corporate: "firmen-coaching",
+  corporateErfolg: "firmen-coaching/erfolgs-training",
+  corporateResilienz: "firmen-coaching/resilienz-verstaerken",
+  corporateStress: "firmen-coaching/stress-praevention",
+  corporateNichtraucher: "firmen-coaching/nichtraucher-seminare",
   about: "ueber-uns",
   testimonials: "kundenmeinungen",
   successStories: "erfolgsberichte",

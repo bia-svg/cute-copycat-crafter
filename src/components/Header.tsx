@@ -7,7 +7,7 @@ import {
   Menu, X, ChevronDown, Phone,
   Cigarette, Brain, Scale, Flame, HeartPulse, Users,
   GraduationCap, Building2, Tv, Star, MessageSquare, User,
-  BookOpen, MapPin, Trophy, Newspaper, Award, Calendar
+  BookOpen, MapPin, Trophy, Newspaper, Award, Calendar, Shield
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -69,7 +69,13 @@ export default function Header() {
   const audiences = [
     { icon: <User className="w-5 h-5" />, label: isDE ? "Erwachsene" : "Adult Individual", desc: isDE ? "Persönliche 1:1 Sitzungen mit David" : "Personal 1:1 sessions with David", href: getPath("adults", language, country) },
     { icon: <Users className="w-5 h-5" />, label: isDE ? "Kinder & Jugendliche" : "Children & Teens", desc: isDE ? "Sanfte Therapie mit Kathryn" : "Gentle therapy with Kathryn", href: getPath("children", language, country) },
-    { icon: <Building2 className="w-5 h-5" />, label: isDE ? "Firmen & Unternehmen" : "Corporate & Business", desc: isDE ? "Coaching für Teams & Führungskräfte" : "Coaching for teams & leaders", href: getPath("corporate", language, country) },
+  ];
+
+  const corporateItems = [
+    { icon: <Trophy className="w-5 h-5" />, label: isDE ? "Erfolgs-Training" : "Success Training", desc: isDE ? "Leistungspotenzial maximieren" : "Maximize performance potential", href: getPath("corporateErfolg", language, country) },
+    { icon: <Shield className="w-5 h-5" />, label: isDE ? "Resilienz-Verstärken" : "Resilience Building", desc: isDE ? "Innere Stärke aufbauen" : "Build inner strength", href: getPath("corporateResilienz", language, country) },
+    { icon: <Flame className="w-5 h-5" />, label: isDE ? "Stress-Prävention" : "Stress Prevention", desc: isDE ? "Burnout vorbeugen" : "Prevent burnout", href: getPath("corporateStress", language, country) },
+    { icon: <Cigarette className="w-5 h-5" />, label: isDE ? "Nichtraucher-Seminare" : "Non-Smoker Seminars", desc: isDE ? "Rauchfrei in 3 Stunden" : "Smoke-free in 3 hours", href: getPath("corporateNichtraucher", language, country) },
   ];
 
   const trainingItems = [
@@ -226,6 +232,11 @@ export default function Header() {
           <Link to={getPath("training", language, country)} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary">
             {t("nav.training")}
           </Link>
+          <div className="relative" onMouseEnter={() => handleMouseEnter("corporate")} onMouseLeave={handleMouseLeave}>
+            <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary flex items-center gap-1">
+              {isDE ? "Firmen-Coaching" : "Corporate"} <ChevronDown className="w-3.5 h-3.5" />
+            </button>
+          </div>
           <div className="relative" onMouseEnter={() => handleMouseEnter("about")} onMouseLeave={handleMouseLeave}>
             <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary flex items-center gap-1">
               {t("nav.about")} <ChevronDown className="w-3.5 h-3.5" />
@@ -285,8 +296,34 @@ export default function Header() {
         </div>
       </MegaMenuPanel>
 
+      {/* ── Mega Menu: Firmen-Coaching ── */}
+      <MegaMenuPanel id="corporate">
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="md:col-span-2">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+              {isDE ? "Business Coaching Programme" : "Business Coaching Programs"}
+            </h4>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+              {corporateItems.map(item => <MenuItemLink key={item.label} {...item} />)}
+            </div>
+          </div>
+          <SidebarCard>
+            <p className="font-semibold text-sm text-foreground">{isDE ? "Für Ihr Unternehmen" : "For Your Company"}</p>
+            <p className="text-xs text-muted-foreground">
+              {isDE ? "Individuelles Coaching für Teams & Führungskräfte" : "Individual coaching for teams & executives"}
+            </p>
+            <div className="pt-2">
+              <Link to={getPath("corporate", language, country)} onClick={() => setActiveMenu(null)}>
+                <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs">
+                  {isDE ? "Alle Programme" : "All Programs"}
+                </Button>
+              </Link>
+            </div>
+          </SidebarCard>
+        </div>
+      </MegaMenuPanel>
 
-      {/* ── Mega Menu: Über uns ── */}
+
       <MegaMenuPanel id="about">
         <div className="grid md:grid-cols-3 gap-6">
            <div className="md:col-span-2">
@@ -365,6 +402,9 @@ export default function Header() {
               {t("nav.training")}
             </Link>
           </div>
+
+          {/* Firmen-Coaching */}
+          <MobileSection id="corporate" title={isDE ? "Firmen-Coaching" : "Corporate"} items={corporateItems} />
 
           {/* Über uns */}
           <MobileSection id="about" title={t("nav.about")} items={aboutItems} />
