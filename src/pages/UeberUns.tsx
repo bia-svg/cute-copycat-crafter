@@ -1,6 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
 import davidPortrait from "@/assets/david-woods-portrait.jpg";
