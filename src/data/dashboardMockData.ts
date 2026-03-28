@@ -56,6 +56,15 @@ export interface LeadRecord {
   converted: boolean;
 }
 
+export interface WhatsAppClick {
+  id: string;
+  clicked_at: string;
+  page_path: string | null;
+  utm_source: string | null;
+  utm_medium: string | null;
+  utm_campaign: string | null;
+}
+
 export function formatTime(seconds: number): string {
   const m = Math.floor(seconds / 60);
   const s = seconds % 60;
