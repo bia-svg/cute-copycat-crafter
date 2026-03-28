@@ -69,15 +69,32 @@ export default function WhatsAppButton() {
 
 /**
  * Utility: call this from any form submission to track UTM conversion.
- * Usage: trackFormConversion("erstgespraech_form")
+ * Fires: GTM dataLayer, Meta Pixel Lead, GA4 generate_lead, Google Ads conversion.
  */
 export function trackFormConversion(formType: string, selectedDate?: string) {
   const utms = getUtmParams();
+
+  // 1. GTM dataLayer event (for GA4 + Google Ads tags configured in GTM)
   (window as any).dataLayer = (window as any).dataLayer || [];
   (window as any).dataLayer.push({
-    event: "form_submission",
+    event: "generate_lead",
     form_type: formType,
     selected_date: selectedDate || "",
     ...utms,
   });
+
+  // 2. Meta Pixel Lead event
+  if (typeof (window as any).fbq === "function") {
+    (window as any).fbq("track", "Lead", {
+      content_name: formType,
+      ...utms,
+    });
+  }
+
+  // 3. Google Ads conversion (gtag fallback if GTM doesn't handle it)
+  if (typeof (window as any).gtag === "function") {
+    (window as any).gtag("event", "conversion", {
+      send_to: "AW-618560943/generate_lead",
+    });
+  }
 }
