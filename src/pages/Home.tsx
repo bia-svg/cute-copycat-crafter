@@ -348,13 +348,11 @@ export default function Home() {
               <h3 className="font-semibold text-foreground">NGH International Trainer</h3>
               <p className="text-sm text-muted-foreground">National Guild of Hypnotists</p>
             </div>
-            {showCH && (
-              <div className="text-center p-6 bg-card border border-border rounded-lg">
-                <img src={CDN.emrBadge} alt="EMR" className="h-16 mx-auto mb-3" />
-                <h3 className="font-semibold text-foreground">EMR Krankenkasse Konform</h3>
-                <p className="text-sm text-muted-foreground">ZSR P609264</p>
-              </div>
-            )}
+            <div className="text-center p-6 bg-card border border-border rounded-lg">
+              <img src={CDN.emrBadge} alt="EMR" className="h-16 mx-auto mb-3" />
+              <h3 className="font-semibold text-foreground">EMR Krankenkasse Konform</h3>
+              <p className="text-sm text-muted-foreground">ZSR P609264</p>
+            </div>
             <div className="text-center p-6 bg-card border border-border rounded-lg">
               <div className="text-4xl font-bold text-primary mb-2">40+</div>
               <h3 className="font-semibold text-foreground">{isEN ? "Years of Experience" : "Jahre Erfahrung"}</h3>
