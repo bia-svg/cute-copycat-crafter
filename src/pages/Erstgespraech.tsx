@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { trackFormConversion } from "@/components/WhatsAppButton";
+import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
@@ -206,12 +207,63 @@ export default function Erstgespraech() {
     ...(showDE ? SEMINAR_DATES_DE : []),
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!gdprConsent) {
       toast.error(isEN ? "Please accept the privacy policy to continue." : "Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.");
       return;
     }
+
+    // Collect form data from the form elements
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const firstName = (formData.get("firstName") as string) || "";
+    const lastName = (formData.get("lastName") as string) || "";
+    const email = (formData.get("email") as string) || "";
+    const postalCity = (formData.get("postalCode") as string) || "";
+    const message = (formData.get("message") as string) || "";
+    const bestTime = (formData.get("bestTime") as string) || "";
+    const location = (formData.get("location") as string) || "";
+    const seminarCountry = (formData.get("seminarCountry") as string) || "";
+
+    // Extract UTM params from URL
+    const utmSource = searchParams.get("utm_source") || null;
+    const utmMedium = searchParams.get("utm_medium") || null;
+    const utmCampaign = searchParams.get("utm_campaign") || null;
+    const utmContent = searchParams.get("utm_content") || null;
+    const utmTerm = searchParams.get("utm_term") || null;
+
+    const source = utmMedium === "cpc" || utmSource === "google" ? "paid" : utmSource ? "referral" : "organic";
+
+    const leadData = {
+      name: `${firstName} ${lastName}`.trim(),
+      email,
+      phone: `${phoneCountry} ${phoneNumber}`.trim(),
+      concern: formType === "session" ? selectedConcern : "seminar",
+      form_type: formType,
+      postal_code: postalCity.split(/\s+/)[0] || null,
+      city: postalCity.split(/\s+/).slice(1).join(" ") || (formType === "seminar" ? seminarCountry : location) || null,
+      country: country.toUpperCase(),
+      source,
+      utm_source: utmSource,
+      utm_medium: utmMedium,
+      utm_campaign: utmCampaign,
+      utm_content: utmContent,
+      utm_term: utmTerm,
+      notes: [bestTime && `Best time: ${bestTime}`, message].filter(Boolean).join(" | ") || null,
+    };
+
+    try {
+      // Save to database
+      const { error: dbError } = await supabase.from("leads").insert(leadData);
+      if (dbError) console.error("Lead save error:", dbError);
+
+      // Notify (email + Slack)
+      await supabase.functions.invoke("notify-lead", { body: { lead: leadData } });
+    } catch (err) {
+      console.error("Lead notification error:", err);
+    }
+
     trackFormConversion(formType, formType === "seminar" ? selectedDate : undefined);
     setSubmitted(true);
     toast.success(isEN ? "Thank you! We will contact you shortly." : "Vielen Dank! Wir melden uns in Kürze bei Ihnen.");
@@ -314,18 +366,18 @@ export default function Erstgespraech() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "First Name" : "Vorname"} *</label>
-                      <input type="text" required autoComplete="given-name" className={inputClasses} />
+                      <input type="text" name="firstName" required autoComplete="given-name" className={inputClasses} />
                     </div>
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Last Name" : "Nachname"} *</label>
-                      <input type="text" required autoComplete="family-name" className={inputClasses} />
+                      <input type="text" name="lastName" required autoComplete="family-name" className={inputClasses} />
                     </div>
                   </div>
 
                   {/* Email */}
                   <div>
                     <label className="block text-xs font-medium text-muted-foreground mb-1">E-Mail *</label>
-                    <input type="email" required autoComplete="email" className={inputClasses} />
+                    <input type="email" name="email" required autoComplete="email" className={inputClasses} />
                   </div>
 
                   {/* Phone + PLZ */}
@@ -358,7 +410,7 @@ export default function Erstgespraech() {
                     </div>
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Postal Code / City" : "PLZ / Ortschaft"}</label>
-                      <input type="text" autoComplete="postal-code" className={inputClasses} />
+                      <input type="text" name="postalCode" autoComplete="postal-code" className={inputClasses} />
                     </div>
                   </div>
 
@@ -415,7 +467,7 @@ export default function Erstgespraech() {
                       {/* Preferred Location */}
                       <div>
                         <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Preferred Location" : "Bevorzugter Standort"}</label>
-                        <select className={inputClasses}>
+                        <select name="location" className={inputClasses}>
                           <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
                           <option value="zurich">Zürich — 5 Elements TCM (CH)</option>
                           <option value="eschenbach">Eschenbach — Fit und Gesund (CH)</option>
@@ -432,6 +484,7 @@ export default function Erstgespraech() {
                           {isEN ? "Country" : "Land"} *
                         </label>
                         <select
+                          name="seminarCountry"
                           required
                           className={inputClasses}
                         >
@@ -448,12 +501,12 @@ export default function Erstgespraech() {
                   {/* Best time to reach */}
                   <div>
                     <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Best time to reach you?" : "Wann sind Sie am besten erreichbar?"}</label>
-                    <input type="text" placeholder={isEN ? "e.g. mornings, after 14:00" : "z.B. vormittags, nach 14:00 Uhr"} className={inputClasses} />
+                    <input type="text" name="bestTime" placeholder={isEN ? "e.g. mornings, after 14:00" : "z.B. vormittags, nach 14:00 Uhr"} className={inputClasses} />
                   </div>
 
                   <div>
                     <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Message" : "Kommentar oder Nachricht"}</label>
-                    <textarea rows={4} className={`${inputClasses} resize-none`} />
+                    <textarea name="message" rows={4} className={`${inputClasses} resize-none`} />
                   </div>
 
                   {/* ── DSGVO / GDPR Opt-in Toggle ── */}
