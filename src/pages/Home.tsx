@@ -7,14 +7,26 @@ import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import hero1 from "@/assets/hero-1.jpeg";
-import hero2 from "@/assets/hero-2.jpeg";
-import hero3 from "@/assets/hero-3.jpeg";
-import hero4 from "@/assets/hero-4.jpeg";
-import hero5 from "@/assets/hero-5.jpeg";
-import davidSessionImg from "@/assets/david-office-portrait.jpeg";
+import hero1 from "@/assets/hero-1.webp";
+import hero1Mobile from "@/assets/hero-1-mobile.webp";
+import davidSessionImg from "@/assets/david-office-portrait.webp";
+import davidSessionMobile from "@/assets/david-office-portrait-mobile.webp";
 
-const heroSlides = [hero1, hero2, hero3, hero4, hero5];
+// Lazy-load remaining hero slides
+const heroDesktop = [
+  hero1,
+  () => import("@/assets/hero-2.webp").then(m => m.default),
+  () => import("@/assets/hero-3.webp").then(m => m.default),
+  () => import("@/assets/hero-4.webp").then(m => m.default),
+  () => import("@/assets/hero-5.webp").then(m => m.default),
+];
+const heroMobile = [
+  hero1Mobile,
+  () => import("@/assets/hero-2-mobile.webp").then(m => m.default),
+  () => import("@/assets/hero-3-mobile.webp").then(m => m.default),
+  () => import("@/assets/hero-4-mobile.webp").then(m => m.default),
+  () => import("@/assets/hero-5-mobile.webp").then(m => m.default),
+];
 import {
   Cigarette, Brain, Scale, Flame, HeartPulse, Users,
   Trophy, Shield, Clock, BookOpen, ArrowRight, Star, Award,
