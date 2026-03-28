@@ -54,6 +54,7 @@ export interface LeadRecord {
   utm_campaign: string | null;
   tracking_code: string | null;
   converted: boolean;
+  notes: string | null;
 }
 
 export interface WhatsAppClick {

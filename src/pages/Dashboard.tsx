@@ -5,6 +5,7 @@ import { isAuthenticated, logout, getCurrentUser, getLoginLogs } from "@/lib/das
 import { useDashboardData, DATE_PRESETS } from "@/hooks/useDashboardData";
 import { formatTime, formatCurrency } from "@/data/dashboardMockData";
 import type { DailyTraffic, WhatsAppClick } from "@/data/dashboardMockData";
+import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
