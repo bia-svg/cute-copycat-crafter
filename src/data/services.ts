@@ -1,5 +1,6 @@
 import type { ServicePageData } from "@/pages/ServicePage";
 import davidSessionAdults from "@/assets/david-session-adults.jpeg";
+import sessionHandsImg from "@/assets/session-hands.jpeg";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb";
 
