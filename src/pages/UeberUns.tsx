@@ -219,7 +219,7 @@ export default function UeberUns() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
               {CDN.bekanntAus.map((src, i) => (
-                <img key={i} src={src} alt={`Bekannt aus ${i + 1}`} className="h-8 sm:h-10 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all mix-blend-multiply" />
+                <img key={i} src={src} alt={`David J. Woods bekannt aus TV und Medien – Logo ${i + 1}`} className="h-8 sm:h-10 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all mix-blend-multiply" loading="lazy" />
               ))}
             </div>
           </div>
