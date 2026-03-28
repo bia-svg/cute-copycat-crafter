@@ -93,6 +93,13 @@ export const smokingData: ServicePageData = {
       paragraphs: [
         "Durch die gezielte Arbeit mit dem Unterbewusstsein können diese inneren Verknüpfungen aufgelöst und durch gesündere Muster ersetzt werden. So wird das Aufhören nicht zum ständigen Kampf gegen sich selbst."
       ]
+    },
+    {
+      h2: "Wissenschaftliche Evidenz: Hypnose bei Raucherentwöhnung",
+      paragraphs: [
+        "Eine Meta-Analyse der University of Iowa (Viswesvaran & Schmidt, 1992) verglich 633 Studien und fand, dass Hypnose die effektivste Einzelmethode zur Raucherentwöhnung ist — dreimal wirksamer als Nikotinersatz und 15-mal wirksamer als Willenskraft allein.",
+        "Quellen: Viswesvaran & Schmidt, Journal of Applied Psychology, 77(4), 1992; Hasan et al., Journal of Public Health, 22(6), 2014."
+      ]
     }
   ],
   sectionsEN: [
