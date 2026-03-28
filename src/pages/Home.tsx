@@ -13,8 +13,6 @@ import hero3 from "@/assets/hero-3.jpeg";
 import hero4 from "@/assets/hero-4.jpeg";
 import hero5 from "@/assets/hero-5.jpeg";
 import davidSessionImg from "@/assets/david-session.jpg";
-import diplomAktivHypnose from "@/assets/diplom-aktiv-hypnose.jpeg";
-import diplomNGH from "@/assets/diplom-ngh-instructor.jpeg";
 
 const heroSlides = [hero1, hero2, hero3, hero4, hero5];
 import {
