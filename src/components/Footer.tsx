@@ -45,9 +45,9 @@ export default function Footer() {
                   <div className="flex items-start gap-2">
                     <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
                     <div>
-                      <div className="font-medium opacity-100">Z\u00fcrich</div>
-                      <div>5 Elements TCM GmbH, Beim L\u00f6wenplatz</div>
-                      <div>Usteristrasse 23, 8001 Z\u00fcrich</div>
+                      <div className="font-medium opacity-100">Zürich</div>
+                      <div>5 Elements TCM GmbH, Beim Löwenplatz</div>
+                      <div>Usteristrasse 23, 8001 Zürich</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
