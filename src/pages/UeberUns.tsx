@@ -96,7 +96,7 @@ export default function UeberUns() {
             {/* Sidebar — Photo + Info */}
             <div>
               <div className="border border-border sticky top-32">
-                <img src={davidPortrait} alt="David J. Woods" className="w-full h-auto object-cover" />
+                <img src={davidPortrait} alt="David J. Woods – Lic.Psych., Hypnotherapeut und NGH International Trainer" className="w-full h-auto object-cover" loading="eager" />
                 <div className="p-4 bg-[#f4f3ef]">
                   <h3 className="font-bold text-[#1B3A5C] mb-1">David J. Woods</h3>
                   <p className="text-xs text-muted-foreground">Lic.Psych. · Hypnotherapeut</p>
