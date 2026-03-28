@@ -18,7 +18,7 @@ interface SEOProps {
 
 const BASE_URL = "https://david-j-woods.com";
 
-const OG_IMAGE_DEFAULT = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/david-woods-og.jpg";
+const OG_IMAGE_DEFAULT = "https://david-j-woods.com/images/og-default.jpg";
 
 /* ── Slug maps for hreflang resolution ── */
 const slugMapDE: Record<string, string> = {
