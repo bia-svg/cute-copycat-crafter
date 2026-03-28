@@ -273,7 +273,7 @@ export default function Home() {
                 : "Auch wenn viele anfangs unsicher sind – der Prozess führt in einen Zustand fokussierter Klarheit, in dem Transformation möglich wird."}
             </p>
             <div className="flex items-center gap-3 bg-secondary rounded-lg p-3">
-              <img src={CDN.emrBadge} alt="EMR" className="h-12" />
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12" loading="lazy" />
               <div>
                 <div className="font-semibold text-sm text-foreground">EMR Krankenkasse Konform</div>
                 <div className="text-xs text-muted-foreground">ZSR P609264 — {isEN ? "Recognized by Swiss health insurance" : "Von Schweizer Krankenkassen anerkannt"}</div>
