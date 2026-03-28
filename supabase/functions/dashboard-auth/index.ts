@@ -71,22 +71,29 @@ serve(async (req) => {
       });
     }
 
-    const allowedEmail = Deno.env.get("DASHBOARD_LOGIN_EMAIL");
-    const allowedPassword = Deno.env.get("DASHBOARD_LOGIN_PASSWORD");
+    // Build list of allowed users from env vars
+    const users = [];
+    const e1 = Deno.env.get("DASHBOARD_LOGIN_EMAIL");
+    const p1 = Deno.env.get("DASHBOARD_LOGIN_PASSWORD");
+    if (e1 && p1) users.push({ email: e1, password: p1 });
 
-    if (!allowedEmail || !allowedPassword) {
+    const e2 = Deno.env.get("DASHBOARD_LOGIN_EMAIL_2");
+    const p2 = Deno.env.get("DASHBOARD_LOGIN_PASSWORD_2");
+    if (e2 && p2) users.push({ email: e2, password: p2 });
+
+    if (users.length === 0) {
       throw new Error("Login credentials not configured");
     }
 
-    const emailMatch = email.toLowerCase().trim() === allowedEmail.toLowerCase().trim();
-    const passwordMatch = password === allowedPassword;
+    const inputEmail = email.toLowerCase().trim();
+    const matched = users.find(u => u.email.toLowerCase().trim() === inputEmail && u.password === password);
 
-    if (emailMatch && passwordMatch) {
-      const tokenData = new TextEncoder().encode(`${email}:${Date.now()}:${crypto.randomUUID()}`);
+    if (matched) {
+      const tokenData = new TextEncoder().encode(`${inputEmail}:${Date.now()}:${crypto.randomUUID()}`);
       const tokenHash = await crypto.subtle.digest("SHA-256", tokenData);
       const token = Array.from(new Uint8Array(tokenHash)).map(b => b.toString(16).padStart(2, "0")).join("");
 
-      return new Response(JSON.stringify({ success: true, email: allowedEmail, token }), {
+      return new Response(JSON.stringify({ success: true, email: matched.email, token }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
