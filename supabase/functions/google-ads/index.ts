@@ -129,32 +129,35 @@ serve(async (req) => {
       endDate: new Date().toISOString().split("T")[0],
     }));
 
-    // Build shared auth headers — login-customer-id is REQUIRED on ALL calls when using MCC.
-    const authHeaders: Record<string, string> = {
-      Authorization: `Bearer ${accessToken}`,
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      "developer-token": developerToken,
-    };
-
-    if (mccId) {
-      authHeaders["login-customer-id"] = mccId;
-    }
-
     console.log("Using MCC:", mccId || "none");
     console.log("Using customer:", customerId);
     console.log("developer-token length:", developerToken.length);
+    console.log("developer-token first 4 chars:", developerToken.substring(0, 4));
 
-    // Step 1: List accessible customers (uses shared authHeaders with login-customer-id)
-    const accessibleRes = await fetch(
-      "https://googleads.googleapis.com/v19/customers:listAccessibleCustomers",
-      { method: "GET", headers: authHeaders }
-    );
+    // Step 1: List accessible customers — minimal headers (no Content-Type, no login-customer-id)
+    const listHeaders: Record<string, string> = {
+      Authorization: `Bearer ${accessToken}`,
+      "developer-token": developerToken,
+    };
 
-    const accessibleText = await accessibleRes.text();
-    if (!accessibleRes.ok) {
+    // Try multiple API versions in case v19 is not yet available
+    let accessibleRes: Response | null = null;
+    let accessibleText = "";
+    for (const version of ["v18", "v17", "v19"]) {
+      const url = `https://googleads.googleapis.com/${version}/customers:listAccessibleCustomers`;
+      console.log(`Trying listAccessibleCustomers with ${version}...`);
+      accessibleRes = await fetch(url, { method: "GET", headers: listHeaders });
+      accessibleText = await accessibleRes.text();
+      console.log(`${version} status: ${accessibleRes.status}, isHTML: ${accessibleText.startsWith("<!") || accessibleText.startsWith("<html")}`);
+      if (accessibleRes.ok) {
+        console.log(`Success with ${version}`);
+        break;
+      }
+    }
+
+    if (!accessibleRes || !accessibleRes.ok) {
       console.error("listAccessibleCustomers error body:", accessibleText.substring(0, 800));
-      throw parseGoogleAdsError(accessibleRes.status, accessibleText, "listAccessibleCustomers");
+      throw parseGoogleAdsError(accessibleRes?.status || 500, accessibleText, "listAccessibleCustomers");
     }
 
     const accessibleData = JSON.parse(accessibleText);
