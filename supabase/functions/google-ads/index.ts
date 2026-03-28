@@ -212,7 +212,7 @@ serve(async (req) => {
       queryHeaders["login-customer-id"] = mccId;
     }
 
-    const adsUrl = `https://googleads.googleapis.com/v18/customers/${customerId}/googleAds:search`;
+    const adsUrl = `https://googleads.googleapis.com/${apiVersion}/customers/${customerId}/googleAds:search`;
     console.log("Google Ads search URL:", adsUrl);
 
     const adsRes = await fetch(adsUrl, {
