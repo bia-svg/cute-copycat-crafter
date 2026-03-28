@@ -306,6 +306,34 @@ export default function Home() {
 
 
 
+          {/* Lic.Psych & Aktiv-Hypnose Developer */}
+          <div className="flex flex-wrap justify-center gap-6 mb-8">
+            <div className="p-6 bg-card border border-border rounded-lg w-full sm:w-[calc(50%-12px)] lg:w-[260px]">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-16 h-16 bg-primary flex items-center justify-center shrink-0 rounded">
+                  <span className="text-primary-foreground text-sm font-bold text-center leading-tight">Lic.<br/>Psych.</span>
+                </div>
+              </div>
+              <h3 className="font-semibold text-sm text-foreground mb-2">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                {isEN
+                  ? "University-qualified psychologist with decades of clinical and therapeutic experience."
+                  : "Universitär qualifizierter Psychologe mit jahrzehntelanger klinischer und therapeutischer Erfahrung."}
+              </p>
+            </div>
+            <div className="p-6 bg-card border border-border rounded-lg w-full sm:w-[calc(50%-12px)] lg:w-[260px]">
+              <div className="flex items-center gap-4 mb-4">
+                <img src={CDN.logo} alt="Aktiv-Hypnose©" className="h-14 w-auto shrink-0" />
+              </div>
+              <h3 className="font-semibold text-sm text-foreground mb-2">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                {isEN
+                  ? "Proprietary method combining clinical hypnosis with active participation for faster, lasting results."
+                  : "Eigene Methode, die klinische Hypnose mit aktiver Teilnahme kombiniert für schnellere, nachhaltige Ergebnisse."}
+              </p>
+            </div>
+          </div>
+
           {/* Badges & stats */}
           <div className="flex flex-wrap justify-center gap-6">
             <div className="text-center p-6 bg-card border border-border rounded-lg w-full sm:w-[calc(50%-12px)] lg:w-[260px]">
