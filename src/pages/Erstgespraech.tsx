@@ -385,7 +385,7 @@ export default function Erstgespraech() {
                           className="border border-r-0 border-border px-2 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors rounded-none w-[100px] shrink-0"
                         >
                           {PHONE_COUNTRIES.map(c => (
-                            <option key={c.code} value={c.code}>{c.flag} {c.code}</option>
+                            <option key={c.code} value={c.code}>{c.flag} {c.iso} {c.code}</option>
                           ))}
                         </select>
                         <input
