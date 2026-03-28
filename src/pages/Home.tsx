@@ -286,7 +286,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="rounded-lg overflow-hidden">
-            <img src={davidSessionImg} alt={isEN ? "Hypnotherapy Session" : "Hypnosetherapie Sitzung"} className="w-full h-full object-cover" loading="lazy" />
+            <img src={davidSessionImg} alt={isEN ? "David J. Woods during a hypnotherapy session in his practice" : "David J. Woods während einer Hypnosetherapie-Sitzung in seiner Praxis"} className="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
       </section>
