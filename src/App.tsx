@@ -76,6 +76,10 @@ function AppRoutes() {
           <Route path="/:lang/:country/ausbildung" element={<Ausbildung />} />
           <Route path="/:lang/:country/seminar-ablauf" element={<Navigate to={`/${window.location.pathname.split('/')[1]}/${window.location.pathname.split('/')[2]}/ausbildung#curriculum`} replace />} />
           <Route path="/:lang/:country/firmen-coaching" element={<FirmenCoaching />} />
+          <Route path="/:lang/:country/firmen-coaching/erfolgs-training" element={<ErfolgsTraining />} />
+          <Route path="/:lang/:country/firmen-coaching/resilienz-verstaerken" element={<ResilienzVerstaerken />} />
+          <Route path="/:lang/:country/firmen-coaching/stress-praevention" element={<StressPraevention />} />
+          <Route path="/:lang/:country/firmen-coaching/nichtraucher-seminare" element={<NichtraucherSeminare />} />
 
           {/* About */}
           <Route path="/:lang/:country/ueber-uns" element={<UeberUns />} />
