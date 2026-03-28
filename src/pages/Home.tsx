@@ -7,6 +7,7 @@ import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import hero1 from "@/assets/hero-1.webp";
 import hero1Mobile from "@/assets/hero-1-mobile.webp";
 import davidSessionImg from "@/assets/david-office-portrait.webp";
@@ -68,31 +69,107 @@ function TVLogoCarousel() {
    ══════════════════════════════════════════════════════════════ */
 export default function Home() {
   const { language, country, t, isSwiss, isInternational, showCH, showDE } = useLanguage();
+  const isMobile = useIsMobile();
   const isEN = language === "en";
+  const deferredSectionStyle = {
+    contentVisibility: "auto" as const,
+    containIntrinsicSize: "1px 900px",
+  };
 
   /* ── Hero Slider ── */
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loadedSlides, setLoadedSlides] = useState<Record<number, string>>({ 0: hero1 });
   const [loadedMobile, setLoadedMobile] = useState<Record<number, string>>({ 0: hero1Mobile });
+  const [showMediaLogos, setShowMediaLogos] = useState(false);
   const totalSlides = 5;
-  const goNext = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  const goPrev = () => setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+
+  const goToSlide = (index: number) => {
+    if (isMobile) {
+      if (loadedMobile[index]) {
+        setCurrentSlide(index);
+        return;
+      }
+
+      const loader = heroMobile[index];
+      if (typeof loader === "function") {
+        void loader().then((src) => {
+          setLoadedMobile((prev) => (prev[index] ? prev : { ...prev, [index]: src }));
+          setCurrentSlide(index);
+        });
+        return;
+      }
+
+      setCurrentSlide(index);
+      return;
+    }
+
+    if (loadedSlides[index]) {
+      setCurrentSlide(index);
+      return;
+    }
+
+    const loader = heroDesktop[index];
+    if (typeof loader === "function") {
+      void loader().then((src) => {
+        setLoadedSlides((prev) => (prev[index] ? prev : { ...prev, [index]: src }));
+        setCurrentSlide(index);
+      });
+      return;
+    }
+
+    setCurrentSlide(index);
+  };
+
+  const goNext = () => goToSlide((currentSlide + 1) % totalSlides);
+  const goPrev = () => goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
 
   // Preload next slide
   useEffect(() => {
     const next = (currentSlide + 1) % totalSlides;
+
+    if (isMobile) {
+      if (!loadedMobile[next] && typeof heroMobile[next] === "function") {
+        void (heroMobile[next] as () => Promise<string>)().then((src) =>
+          setLoadedMobile((prev) => (prev[next] ? prev : { ...prev, [next]: src }))
+        );
+      }
+      return;
+    }
+
     if (!loadedSlides[next] && typeof heroDesktop[next] === "function") {
-      (heroDesktop[next] as () => Promise<string>)().then(src => setLoadedSlides(p => ({ ...p, [next]: src })));
+      void (heroDesktop[next] as () => Promise<string>)().then((src) =>
+        setLoadedSlides((prev) => (prev[next] ? prev : { ...prev, [next]: src }))
+      );
     }
-    if (!loadedMobile[next] && typeof heroMobile[next] === "function") {
-      (heroMobile[next] as () => Promise<string>)().then(src => setLoadedMobile(p => ({ ...p, [next]: src })));
-    }
-  }, [currentSlide]);
+  }, [currentSlide, isMobile, loadedMobile, loadedSlides]);
 
   useEffect(() => {
-    const interval = setInterval(goNext, 3000);
-    return () => clearInterval(interval);
-  }, [totalSlides]);
+    if (isMobile) return;
+
+    const interval = window.setInterval(() => {
+      const next = (currentSlide + 1) % totalSlides;
+      if (loadedSlides[next]) {
+        setCurrentSlide(next);
+      }
+    }, 5000);
+
+    return () => window.clearInterval(interval);
+  }, [currentSlide, isMobile, loadedSlides, totalSlides]);
+
+  useEffect(() => {
+    const browserWindow = globalThis as typeof window & {
+      requestIdleCallback?: (callback: IdleRequestCallback, options?: IdleRequestOptions) => number;
+      cancelIdleCallback?: (handle: number) => void;
+    };
+
+    if (browserWindow.requestIdleCallback) {
+      const idleId = browserWindow.requestIdleCallback(() => setShowMediaLogos(true), { timeout: 2500 });
+      return () => browserWindow.cancelIdleCallback?.(idleId);
+    }
+
+    const timeout = browserWindow.setTimeout(() => setShowMediaLogos(true), 1500);
+    return () => browserWindow.clearTimeout(timeout);
+  }, []);
 
   /* ── Services ── */
   const services = [
@@ -166,119 +243,136 @@ export default function Home() {
     <>
       <SEO {...pageSEO.home} pageKey="home" />
       <section className="bg-secondary">
-        {/* Desktop */}
-        <div className="hidden md:grid md:grid-cols-2 container-main py-12 gap-8 items-center">
-          {/* Image */}
-          <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "400px" }}>
-            {loadedSlides[currentSlide] && (
-              <img key={currentSlide} src={loadedSlides[currentSlide]} alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${currentSlide + 1}`}
-                width={400} height={500} loading="eager"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            )}
-            <button onClick={goPrev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity" aria-label="Previous">
-              <ChevronLeft className="w-5 h-5 text-foreground" />
-            </button>
-            <button onClick={goNext} className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity" aria-label="Next">
-              <ChevronRight className="w-5 h-5 text-foreground" />
-            </button>
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {Array.from({length: totalSlides}, (_, i) => (
-                <button key={i} onClick={() => setCurrentSlide(i)}
-                  className={`h-2 rounded-full transition-all ${i === currentSlide ? "bg-primary w-6" : "bg-primary/30 w-2"}`}
-                  aria-label={`Slide ${i + 1}`} />
-              ))}
+        {!isMobile ? (
+          <div className="grid md:grid-cols-2 container-main py-12 gap-8 items-center">
+            <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "400px" }}>
+              {loadedSlides[currentSlide] && (
+                <img
+                  key={currentSlide}
+                  src={loadedSlides[currentSlide]}
+                  alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${currentSlide + 1}`}
+                  width={400}
+                  height={500}
+                  loading="eager"
+                  fetchPriority={currentSlide === 0 ? "high" : "auto"}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              )}
+              <button onClick={goPrev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity" aria-label="Previous">
+                <ChevronLeft className="w-5 h-5 text-foreground" />
+              </button>
+              <button onClick={goNext} className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity" aria-label="Next">
+                <ChevronRight className="w-5 h-5 text-foreground" />
+              </button>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                {Array.from({ length: totalSlides }, (_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => goToSlide(i)}
+                    className={`h-2 rounded-full transition-all ${i === currentSlide ? "bg-primary w-6" : "bg-primary/30 w-2"}`}
+                    aria-label={`Slide ${i + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <h1 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight">
+                {isInternational
+                  ? (isEN ? "Hypnotherapy Sessions and Seminars Across Germany or Switzerland — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in Deutschland oder der Schweiz — David J. Woods")
+                  : country === "ch"
+                    ? (isEN ? "Hypnotherapy Sessions and Seminars Across Switzerland — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in der Schweiz — David J. Woods")
+                    : (isEN ? "Hypnotherapy Sessions and Seminars Across Germany — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in Deutschland — David J. Woods")}
+              </h1>
+              <p className="text-lg italic text-muted-foreground">
+                {isEN ? '"Freedom Begins in the Mind"' : '"Freiheit beginnt im Kopf"'}
+              </p>
+              <p className="text-foreground/80 leading-relaxed">
+                {isEN
+                  ? "With his self-developed Aktiv-Hypnose© method, David J. Woods combines clinical psychology with targeted hypnotherapy. With over 40 years of experience he conducted more than 30,000 sessions for smoking cessation, weight loss, anxiety relief, and peak performance."
+                  : "Mit seiner selbst entwickelten Aktiv-Hypnose© Methode verbindet David J. Woods klinische Psychologie mit gezielter Hypnotherapie. Mit über 40 Jahren Erfahrung hat er mehr als 30.000 Sitzungen durchgeführt — für Raucherentwöhnung, Gewichtsreduktion, Angstbewältigung und Leistungssteigerung."}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link to={getPath("contact", language, country)}>
+                  <Button className="bg-cta text-cta-foreground hover:bg-cta/90">
+                    {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
+                  </Button>
+                </Link>
+                <Link to={getPath("about", language, country)}>
+                  <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                    {isEN ? "About the Method" : "Über die Methode"}
+                  </Button>
+                </Link>
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground mb-2">{isEN ? "As Seen On" : "Bekannt aus"}</p>
+                {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
+              </div>
             </div>
           </div>
-
-          {/* Text */}
-          <div className="space-y-6">
-            <h1 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight">
+        ) : (
+          <div className="container-main py-8 space-y-6">
+            <h1 className="text-2xl font-bold text-foreground leading-tight">
               {isInternational
                 ? (isEN ? "Hypnotherapy Sessions and Seminars Across Germany or Switzerland — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in Deutschland oder der Schweiz — David J. Woods")
                 : country === "ch"
-                ? (isEN ? "Hypnotherapy Sessions and Seminars Across Switzerland — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in der Schweiz — David J. Woods")
-                : (isEN ? "Hypnotherapy Sessions and Seminars Across Germany — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in Deutschland — David J. Woods")}
+                  ? (isEN ? "Hypnotherapy Sessions and Seminars Across Switzerland — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in der Schweiz — David J. Woods")
+                  : (isEN ? "Hypnotherapy Sessions and Seminars Across Germany — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in Deutschland — David J. Woods")}
             </h1>
-            <p className="text-lg italic text-muted-foreground">
-              {isEN ? '"Freedom Begins in the Mind"' : '"Freiheit beginnt im Kopf"'}
-            </p>
-            <p className="text-foreground/80 leading-relaxed">
+            <p className="italic text-muted-foreground">{isEN ? '"Freedom Begins in the Mind"' : '"Freiheit beginnt im Kopf"'}</p>
+            <p className="text-sm text-foreground/80 leading-relaxed">
               {isEN
                 ? "With his self-developed Aktiv-Hypnose© method, David J. Woods combines clinical psychology with targeted hypnotherapy. With over 40 years of experience he conducted more than 30,000 sessions for smoking cessation, weight loss, anxiety relief, and peak performance."
                 : "Mit seiner selbst entwickelten Aktiv-Hypnose© Methode verbindet David J. Woods klinische Psychologie mit gezielter Hypnotherapie. Mit über 40 Jahren Erfahrung hat er mehr als 30.000 Sitzungen durchgeführt — für Raucherentwöhnung, Gewichtsreduktion, Angstbewältigung und Leistungssteigerung."}
             </p>
-            <div className="flex flex-wrap gap-3">
-              <Link to={getPath("contact", language, country)}>
-                <Button className="bg-cta text-cta-foreground hover:bg-cta/90">
-                  {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
-                </Button>
+            <div className="relative aspect-[4/3] max-h-[280px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "210px" }}>
+              {loadedMobile[currentSlide] && (
+                <img
+                  key={currentSlide}
+                  src={loadedMobile[currentSlide]}
+                  alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${currentSlide + 1}`}
+                  width={600}
+                  height={400}
+                  loading="eager"
+                  fetchPriority={currentSlide === 0 ? "high" : "auto"}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              )}
+              <button onClick={goPrev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 rounded-full p-1.5 transition-opacity" aria-label="Previous">
+                <ChevronLeft className="w-5 h-5 text-foreground" />
+              </button>
+              <button onClick={goNext} className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 rounded-full p-1.5 transition-opacity" aria-label="Next">
+                <ChevronRight className="w-5 h-5 text-foreground" />
+              </button>
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                {Array.from({ length: totalSlides }, (_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => goToSlide(i)}
+                    className={`h-2 rounded-full transition-all ${i === currentSlide ? "bg-primary w-6" : "bg-primary/30 w-2"}`}
+                    aria-label={`Slide ${i + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-col gap-3">
+              <Link to={getPath("contact", language, country)} className="block">
+                <Button className="w-full bg-cta text-cta-foreground hover:bg-cta/90">{isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}</Button>
               </Link>
-              <Link to={getPath("about", language, country)}>
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  {isEN ? "About the Method" : "Über die Methode"}
-                </Button>
+              <Link to={getPath("about", language, country)} className="block">
+                <Button variant="outline" className="w-full border-primary text-primary">{isEN ? "About the Method" : "Über die Methode"}</Button>
               </Link>
             </div>
             <div>
               <p className="text-xs text-muted-foreground mb-2">{isEN ? "As Seen On" : "Bekannt aus"}</p>
-              <TVLogoCarousel />
+              {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
             </div>
           </div>
-        </div>
-
-        {/* Mobile */}
-        <div className="md:hidden container-main py-8 space-y-6">
-          <h1 className="text-2xl font-bold text-foreground leading-tight">
-            {isInternational
-              ? (isEN ? "Hypnotherapy Sessions and Seminars Across Germany or Switzerland — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in Deutschland oder der Schweiz — David J. Woods")
-              : country === "ch"
-              ? (isEN ? "Hypnotherapy Sessions and Seminars Across Switzerland — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in der Schweiz — David J. Woods")
-              : (isEN ? "Hypnotherapy Sessions and Seminars Across Germany — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in Deutschland — David J. Woods")}
-          </h1>
-          <p className="italic text-muted-foreground">{isEN ? '"Freedom Begins in the Mind"' : '"Freiheit beginnt im Kopf"'}</p>
-          <p className="text-sm text-foreground/80 leading-relaxed">
-            {isEN
-              ? "With his self-developed Aktiv-Hypnose© method, David J. Woods combines clinical psychology with targeted hypnotherapy. With over 40 years of experience he conducted more than 30,000 sessions for smoking cessation, weight loss, anxiety relief, and peak performance."
-              : "Mit seiner selbst entwickelten Aktiv-Hypnose© Methode verbindet David J. Woods klinische Psychologie mit gezielter Hypnotherapie. Mit über 40 Jahren Erfahrung hat er mehr als 30.000 Sitzungen durchgeführt — für Raucherentwöhnung, Gewichtsreduktion, Angstbewältigung und Leistungssteigerung."}
-          </p>
-          <div className="relative aspect-[4/3] max-h-[280px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "210px" }}>
-            {loadedMobile[currentSlide] && (
-              <img key={currentSlide} src={loadedMobile[currentSlide]} alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${currentSlide + 1}`}
-                width={600} height={400} loading="eager"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            )}
-            <button onClick={goPrev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 rounded-full p-1.5 transition-opacity" aria-label="Previous">
-              <ChevronLeft className="w-5 h-5 text-foreground" />
-            </button>
-            <button onClick={goNext} className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 rounded-full p-1.5 transition-opacity" aria-label="Next">
-              <ChevronRight className="w-5 h-5 text-foreground" />
-            </button>
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-              {Array.from({length: totalSlides}, (_, i) => (
-                <button key={i} onClick={() => setCurrentSlide(i)}
-                  className={`h-2 rounded-full transition-all ${i === currentSlide ? "bg-primary w-6" : "bg-primary/30 w-2"}`} />
-              ))}
-            </div>
-          </div>
-          <div className="flex flex-col gap-3">
-            <Link to={getPath("contact", language, country)} className="block">
-              <Button className="w-full bg-cta text-cta-foreground hover:bg-cta/90">{isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}</Button>
-            </Link>
-            <Link to={getPath("about", language, country)} className="block">
-              <Button variant="outline" className="w-full border-primary text-primary">{isEN ? "About the Method" : "Über die Methode"}</Button>
-            </Link>
-          </div>
-          <div>
-            <p className="text-xs text-muted-foreground mb-2">{isEN ? "As Seen On" : "Bekannt aus"}</p>
-            <TVLogoCarousel />
-          </div>
-        </div>
+        )}
       </section>
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD ═══════════════════ */}
-      <section className="py-16">
+      <section className="py-16" style={deferredSectionStyle}>
         <div className="container-main grid md:grid-cols-2 gap-10 items-center">
           <div className="space-y-5">
             <p className="text-sm font-semibold text-cta uppercase tracking-wider">
@@ -320,7 +414,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ SERVICES ═══════════════════ */}
-      <section className="py-16 bg-secondary">
+      <section className="py-16 bg-secondary" style={deferredSectionStyle}>
         <div className="container-main">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-3">{t("section.services")}</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-10">
@@ -337,7 +431,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ QUALIFICATIONS ═══════════════════ */}
-      <section className="py-16">
+      <section className="py-16" style={deferredSectionStyle}>
         <div className="container-main">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-10">
             {isEN ? "Qualifications & Certifications" : "Qualifikationen & Zertifizierungen"}
@@ -398,7 +492,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      <section className="py-16 bg-primary text-primary-foreground" style={deferredSectionStyle}>
         <div className="container-main">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">
             {isEN ? "Corporate Coaching" : "Firmencoaching"}
@@ -436,7 +530,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ TRAINING ═══════════════════ */}
-      <section className="py-16">
+      <section className="py-16" style={deferredSectionStyle}>
         <div className="container-main">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-3">{t("section.training")}</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-8">
@@ -479,7 +573,7 @@ export default function Home() {
 
 
       {/* ═══════════════════ FINAL CTA ═══════════════════ */}
-      <section className="py-20 bg-cta text-cta-foreground">
+      <section className="py-20 bg-cta text-cta-foreground" style={deferredSectionStyle}>
         <div className="container-main text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             {isEN ? "Ready for Lasting Change?" : "Bereit für nachhaltige Veränderung?"}
