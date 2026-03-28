@@ -1,0 +1,1 @@
+DROP POLICY "anon_read_whatsapp" ON public.whatsapp_clicks;

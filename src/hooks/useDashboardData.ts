@@ -203,16 +203,24 @@ export function useDashboardData(): DashboardState {
       setLeads([]);
     }
 
-    // Fetch WhatsApp clicks
+    // Fetch WhatsApp clicks via secure edge function
     try {
-      const { data: waData } = await supabase
-        .from("whatsapp_clicks")
-        .select("id, clicked_at, page_path, utm_source, utm_medium, utm_campaign")
-        .gte("clicked_at", dateRange.startDate)
-        .lte("clicked_at", dateRange.endDate + "T23:59:59")
-        .order("clicked_at", { ascending: false });
-
-      setWhatsappClicks((waData as WhatsAppClick[]) || []);
+      const session = sessionStorage.getItem("dw_dashboard_session");
+      const sessionData = session ? JSON.parse(session) : null;
+      if (sessionData?.email && sessionData?.token) {
+        const { data: waRes, error: waErr } = await supabase.functions.invoke("fetch-whatsapp-clicks", {
+          body: {
+            startDate: dateRange.startDate,
+            endDate: dateRange.endDate,
+            token: sessionData.token,
+            email: sessionData.email,
+          },
+        });
+        if (waErr) throw waErr;
+        setWhatsappClicks((waRes?.clicks as WhatsAppClick[]) || []);
+      } else {
+        setWhatsappClicks([]);
+      }
     } catch (err) {
       console.error("WhatsApp clicks fetch failed:", err);
       setWhatsappClicks([]);
