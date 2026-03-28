@@ -1,18 +1,38 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-async function getAccessToken(): Promise<string> {
-  const clientId = Deno.env.get("GOOGLE_ADS_CLIENT_ID");
-  const clientSecret = Deno.env.get("GOOGLE_ADS_CLIENT_SECRET");
-  const refreshToken = Deno.env.get("GOOGLE_ADS_REFRESH_TOKEN");
-
-  if (!clientId || !clientSecret || !refreshToken) {
-    throw new Error("Missing OAuth2 credentials (CLIENT_ID, CLIENT_SECRET, or REFRESH_TOKEN)");
+function getRequiredSecret(name: string): string {
+  const value = Deno.env.get(name)?.trim();
+  if (!value) {
+    throw new Error(`${name} not configured`);
   }
+  return value;
+}
+
+function parseGoogleAdsError(status: number, text: string): Error {
+  if (text.startsWith("<!DOCTYPE") || text.startsWith("<html")) {
+    return new Error(
+      "Google Ads returned HTML instead of JSON. Usually this means the refresh token, developer token, or MCC/user access is invalid for this ad account."
+    );
+  }
+
+  try {
+    const parsed = JSON.parse(text);
+    const details = parsed?.error?.message || parsed?.error?.details?.[0]?.message || text;
+    return new Error(`Google Ads API error [${status}]: ${details}`);
+  } catch {
+    return new Error(`Google Ads API error [${status}]: ${text.substring(0, 300)}`);
+  }
+}
+
+async function getAccessToken(): Promise<string> {
+  const clientId = getRequiredSecret("GOOGLE_ADS_CLIENT_ID");
+  const clientSecret = getRequiredSecret("GOOGLE_ADS_CLIENT_SECRET");
+  const refreshToken = getRequiredSecret("GOOGLE_ADS_REFRESH_TOKEN");
 
   const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
@@ -25,10 +45,12 @@ async function getAccessToken(): Promise<string> {
     }),
   });
 
-  const tokenData = await tokenRes.json();
+  const tokenText = await tokenRes.text();
   if (!tokenRes.ok) {
-    throw new Error(`Token refresh failed: ${JSON.stringify(tokenData)}`);
+    throw new Error(`Token refresh failed: ${tokenText}`);
   }
+
+  const tokenData = JSON.parse(tokenText);
   return tokenData.access_token;
 }
 
@@ -38,116 +60,151 @@ serve(async (req) => {
   }
 
   try {
-    const customerId = Deno.env.get("GOOGLE_ADS_CUSTOMER_ID");
-    if (!customerId) throw new Error("GOOGLE_ADS_CUSTOMER_ID not configured");
-
-    const developerToken = Deno.env.get("GOOGLE_ADS_DEVELOPER_TOKEN");
-    if (!developerToken) throw new Error("GOOGLE_ADS_DEVELOPER_TOKEN not configured");
-
+    const customerId = getRequiredSecret("GOOGLE_ADS_CUSTOMER_ID").replace(/-/g, "");
+    const developerToken = getRequiredSecret("GOOGLE_ADS_DEVELOPER_TOKEN");
+    const mccId = Deno.env.get("GOOGLE_ADS_MCC_ID")?.trim().replace(/-/g, "") || "";
     const accessToken = await getAccessToken();
-    const cleanCustomerId = customerId.replace(/-/g, "");
 
     const { startDate, endDate } = await req.json().catch(() => ({
       startDate: "2026-01-01",
       endDate: new Date().toISOString().split("T")[0],
     }));
 
+    const authHeaders: Record<string, string> = {
+      Authorization: `Bearer ${accessToken}`,
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "developer-token": developerToken,
+    };
+
+    if (mccId) {
+      authHeaders["login-customer-id"] = mccId;
+    }
+
+    const accessibleRes = await fetch("https://googleads.googleapis.com/v19/customers:listAccessibleCustomers", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        Accept: "application/json",
+        "developer-token": developerToken,
+      },
+    });
+
+    const accessibleText = await accessibleRes.text();
+    if (!accessibleRes.ok) {
+      console.error("Accessible customers error:", accessibleText.substring(0, 500));
+      throw parseGoogleAdsError(accessibleRes.status, accessibleText);
+    }
+
+    const accessibleData = JSON.parse(accessibleText);
+    const accessibleCustomers: string[] = Array.isArray(accessibleData.resourceNames)
+      ? accessibleData.resourceNames.map((name: string) => name.split("/").pop() || "")
+      : [];
+
+    console.log("Accessible customers:", accessibleCustomers.join(", "));
+    console.log("Using MCC:", mccId || "none");
+    console.log("Using customer:", customerId);
+
+    const hasDirectAccess = accessibleCustomers.includes(customerId);
+    const hasMccAccess = !!mccId && accessibleCustomers.includes(mccId);
+
+    if (!hasDirectAccess && !hasMccAccess) {
+      throw new Error(
+        `The OAuth user behind GOOGLE_ADS_REFRESH_TOKEN does not have access to ad account ${customerId} or MCC ${mccId || "not provided"}. Regenerate the refresh token while logged into the MCC user that manages this account.`
+      );
+    }
+
     const query = `
       SELECT
-        campaign.name, campaign.id, campaign.status,
+        campaign.name,
+        campaign.id,
+        campaign.status,
+        customer.currency_code,
         segments.date,
-        metrics.impressions, metrics.clicks, metrics.cost_micros,
-        metrics.conversions, metrics.conversions_value
+        metrics.impressions,
+        metrics.clicks,
+        metrics.cost_micros,
+        metrics.conversions,
+        metrics.conversions_value
       FROM campaign
       WHERE segments.date BETWEEN '${startDate}' AND '${endDate}'
         AND campaign.status != 'REMOVED'
       ORDER BY segments.date DESC
     `;
 
-    const headers: Record<string, string> = {
-      Authorization: `Bearer ${accessToken}`,
-      "Content-Type": "application/json",
-      "developer-token": developerToken,
-    };
-
-    const mccId = Deno.env.get("GOOGLE_ADS_MCC_ID");
-    if (mccId) {
-      headers["login-customer-id"] = mccId.replace(/-/g, "");
-    }
-
-    const adsUrl = `https://googleads.googleapis.com/v19/customers/${cleanCustomerId}/googleAds:searchStream`;
+    const adsUrl = `https://googleads.googleapis.com/v19/customers/${customerId}/googleAds:search`;
     console.log("Google Ads request URL:", adsUrl);
-    console.log("Customer ID (clean):", cleanCustomerId);
-    console.log("Has developer token:", !!developerToken);
-    console.log("Has MCC ID:", !!mccId);
 
     const adsRes = await fetch(adsUrl, {
       method: "POST",
-      headers,
-      body: JSON.stringify({ query }),
+      headers: authHeaders,
+      body: JSON.stringify({ query, pageSize: 10000 }),
     });
 
-    const rawText = await adsRes.text();
-
+    const adsText = await adsRes.text();
     if (!adsRes.ok) {
-      console.error("Google Ads API error:", rawText.substring(0, 500));
-      if (rawText.startsWith("<!DOCTYPE") || rawText.startsWith("<html")) {
-        throw new Error("Google Ads API returned HTML — auth failure. Verify OAuth2 credentials and developer token.");
-      }
-      throw new Error(`Google Ads API error [${adsRes.status}]: ${rawText.substring(0, 300)}`);
+      console.error("Google Ads API error:", adsText.substring(0, 500));
+      throw parseGoogleAdsError(adsRes.status, adsText);
     }
 
-    let adsData;
-    try {
-      adsData = JSON.parse(rawText);
-    } catch {
-      throw new Error(`Failed to parse response: ${rawText.substring(0, 200)}`);
-    }
-
+    const adsData = JSON.parse(adsText);
     const campaignMap: Record<string, any> = {};
     const dailyMap: Record<string, any> = {};
-    const results = Array.isArray(adsData) ? adsData : [adsData];
+    const currencyCode = adsData.results?.[0]?.customer?.currencyCode || null;
 
-    for (const batch of results) {
-      if (batch.results) {
-        for (const result of batch.results) {
-          const campId = result.campaign?.id || "";
-          const campName = result.campaign?.name || "";
-          const date = result.segments?.date || "";
-          const impressions = parseInt(result.metrics?.impressions || "0", 10);
-          const clicks = parseInt(result.metrics?.clicks || "0", 10);
-          const spend = parseInt(result.metrics?.costMicros || "0", 10) / 1_000_000;
-          const conversions = parseFloat(result.metrics?.conversions || "0");
+    for (const result of adsData.results || []) {
+      const campId = result.campaign?.id || "";
+      const campName = result.campaign?.name || "";
+      const date = result.segments?.date || "";
+      const impressions = parseInt(result.metrics?.impressions || "0", 10);
+      const clicks = parseInt(result.metrics?.clicks || "0", 10);
+      const spend = parseInt(result.metrics?.costMicros || "0", 10) / 1_000_000;
+      const conversions = parseFloat(result.metrics?.conversions || "0");
 
-          if (!campaignMap[campId]) {
-            campaignMap[campId] = { id: campId, name: campName, status: result.campaign?.status || "", impressions: 0, clicks: 0, spend: 0, conversions: 0 };
-          }
-          campaignMap[campId].impressions += impressions;
-          campaignMap[campId].clicks += clicks;
-          campaignMap[campId].spend += spend;
-          campaignMap[campId].conversions += conversions;
-
-          if (!dailyMap[date]) {
-            dailyMap[date] = { date, impressions: 0, clicks: 0, spend: 0, conversions: 0 };
-          }
-          dailyMap[date].impressions += impressions;
-          dailyMap[date].clicks += clicks;
-          dailyMap[date].spend += spend;
-          dailyMap[date].conversions += conversions;
-        }
+      if (!campaignMap[campId]) {
+        campaignMap[campId] = {
+          id: campId,
+          name: campName,
+          status: result.campaign?.status || "",
+          impressions: 0,
+          clicks: 0,
+          spend: 0,
+          conversions: 0,
+          currencyCode,
+        };
       }
+
+      campaignMap[campId].impressions += impressions;
+      campaignMap[campId].clicks += clicks;
+      campaignMap[campId].spend += spend;
+      campaignMap[campId].conversions += conversions;
+
+      if (!dailyMap[date]) {
+        dailyMap[date] = { date, impressions: 0, clicks: 0, spend: 0, conversions: 0, currencyCode };
+      }
+
+      dailyMap[date].impressions += impressions;
+      dailyMap[date].clicks += clicks;
+      dailyMap[date].spend += spend;
+      dailyMap[date].conversions += conversions;
     }
 
-    const campaigns = Object.values(campaignMap);
-    const dailyAds = Object.values(dailyMap).sort((a: any, b: any) => a.date.localeCompare(b.date));
-
-    return new Response(JSON.stringify({ campaigns, dailyAds }), {
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({
+        campaigns: Object.values(campaignMap),
+        dailyAds: Object.values(dailyMap).sort((a: any, b: any) => a.date.localeCompare(b.date)),
+        currencyCode,
+        accessibleCustomers,
+      }),
+      {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      }
+    );
   } catch (error: unknown) {
     console.error("Google Ads error:", error);
-    const msg = error instanceof Error ? error.message : "Unknown error";
-    return new Response(JSON.stringify({ error: msg }), {
+    const message = error instanceof Error ? error.message : "Unknown error";
+
+    return new Response(JSON.stringify({ error: message }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
