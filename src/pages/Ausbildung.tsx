@@ -170,11 +170,17 @@ export default function Ausbildung() {
               <p className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-3">
                 {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
               </p>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1B3A5C] mb-5" style={{ fontFamily: "Georgia, serif" }}>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1B3A5C] mb-3" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN
                   ? "Become an Aktiv-Hypnose© Therapist"
                   : "Werden Sie Aktiv-Hypnose© Therapeut"}
               </h1>
+              <div className="flex items-center gap-2 mb-5">
+                <GraduationCap className="w-5 h-5 text-[#2E7D32]" />
+                <span className="text-sm font-semibold text-[#1B3A5C]">
+                  {isEN ? "Therapist Diploma" : "Therapeuten-Diplom"}
+                </span>
+              </div>
               <p className="text-base lg:text-lg text-[#55504f] leading-relaxed mb-5">
                 {isEN
                   ? "This is not a theoretical seminar. It's a transformative week where you learn to create real change — in yourself and in others. Developed over 40 years of clinical practice by Lic.Psych. David J. Woods, this training combines psychology, neuroscience, and hands-on hypnotherapy into a method that works from day one."
