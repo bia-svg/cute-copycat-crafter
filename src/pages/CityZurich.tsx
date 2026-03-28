@@ -8,6 +8,8 @@ import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { MapPin, CheckCircle, Cigarette, Brain, Scale, Flame, HeartPulse, Users } from "lucide-react";
+import { Helmet } from "react-helmet-async";
+import FAQSection from "@/components/FAQSection";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb";
 
