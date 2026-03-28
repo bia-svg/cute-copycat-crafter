@@ -270,7 +270,7 @@ export default function Home() {
                 ? "Even if many are initially unsure — the process leads to a state of focused clarity where transformation becomes possible."
                 : "Auch wenn viele anfangs unsicher sind – der Prozess führt in einen Zustand fokussierter Klarheit, in dem Transformation möglich wird."}
             </p>
-            {showCH && (
+            {true && (
               <div className="flex items-center gap-3 bg-secondary rounded-lg p-3">
                 <img src={CDN.emrBadge} alt="EMR" className="h-12" />
                 <div>
