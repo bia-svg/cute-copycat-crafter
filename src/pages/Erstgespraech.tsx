@@ -484,6 +484,7 @@ export default function Erstgespraech() {
                           {isEN ? "Country" : "Land"} *
                         </label>
                         <select
+                          name="seminarCountry"
                           required
                           className={inputClasses}
                         >
