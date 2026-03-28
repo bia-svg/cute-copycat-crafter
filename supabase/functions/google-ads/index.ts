@@ -134,37 +134,30 @@ serve(async (req) => {
     console.log("developer-token length:", developerToken.length);
     console.log("developer-token first 4 chars:", developerToken.substring(0, 4));
 
-    // Diagnostic: test WITHOUT developer-token to see if 404 changes
-    const diagHeaders: Record<string, string> = {
-      Authorization: `Bearer ${accessToken}`,
-    };
-    const diagRes = await fetch(
-      "https://googleads.googleapis.com/v18/customers:listAccessibleCustomers",
-      { method: "GET", headers: diagHeaders }
-    );
-    const diagText = await diagRes.text();
-    console.log(`DIAG (no dev-token) status: ${diagRes.status}, body preview: ${diagText.substring(0, 300)}`);
+    // Diagnostic: DNS/connectivity check
+    try {
+      const dnsCheck = await fetch("https://googleads.googleapis.com/", { method: "GET" });
+      console.log(`DNS/base check: status=${dnsCheck.status}`);
+    } catch (e) {
+      console.error("DNS/base check FAILED:", e);
+    }
 
-    // Step 1: List accessible customers — minimal headers (no Content-Type, no login-customer-id)
+    // Step 1: List accessible customers using v20 (current latest)
     const listHeaders: Record<string, string> = {
       Authorization: `Bearer ${accessToken}`,
       "developer-token": developerToken,
     };
 
-    // Try multiple API versions in case v19 is not yet available
-    let accessibleRes: Response | null = null;
-    let accessibleText = "";
-    for (const version of ["v18", "v17", "v19"]) {
-      const url = `https://googleads.googleapis.com/${version}/customers:listAccessibleCustomers`;
-      console.log(`Trying listAccessibleCustomers with ${version}...`);
-      accessibleRes = await fetch(url, { method: "GET", headers: listHeaders });
-      accessibleText = await accessibleRes.text();
-      console.log(`${version} status: ${accessibleRes.status}, isHTML: ${accessibleText.startsWith("<!") || accessibleText.startsWith("<html")}`);
-      if (accessibleRes.ok) {
-        console.log(`Success with ${version}`);
-        break;
-      }
-    }
+    const apiVersion = "v20";
+    const listUrl = `https://googleads.googleapis.com/${apiVersion}/customers:listAccessibleCustomers`;
+    console.log(`Calling listAccessibleCustomers with ${apiVersion}...`);
+    console.log("Request headers:", JSON.stringify({ ...listHeaders, Authorization: "Bearer [REDACTED]" }));
+    
+    const accessibleRes = await fetch(listUrl, { method: "GET", headers: listHeaders });
+    const accessibleText = await accessibleRes.text();
+    console.log(`${apiVersion} status: ${accessibleRes.status}`);
+    console.log(`Response headers:`, JSON.stringify(Object.fromEntries(accessibleRes.headers.entries())));
+    console.log(`Response body (first 500):`, accessibleText.substring(0, 500));
 
     if (!accessibleRes || !accessibleRes.ok) {
       console.error("listAccessibleCustomers error body:", accessibleText.substring(0, 800));
