@@ -165,14 +165,14 @@ export default function Header() {
           <div className="flex items-center gap-4 text-sm sm:text-xs">
             <div className="relative" ref={countryDropdownRef}>
               <button onClick={() => setCountryDropdownOpen(!countryDropdownOpen)} className="flex items-center gap-1.5 hover:underline font-medium">
-                {currentCountry.flag} <span className="hidden sm:inline">{currentCountry.label}</span> <ChevronDown className="w-3 h-3" />
+                <span className="text-lg">{currentCountry.flag}</span> <span>{currentCountry.label}</span> <ChevronDown className="w-3 h-3" />
               </button>
               {countryDropdownOpen && (
                 <div className="absolute right-0 mt-1 bg-card text-foreground border border-border rounded shadow-md min-w-[140px] z-50">
                   {countryOptions.map(opt => (
                     <button key={opt.value} onClick={() => { setCountry(opt.value); setCountryDropdownOpen(false); }}
                       className={`w-full text-left px-3 py-2 text-sm hover:bg-secondary flex items-center gap-2 ${opt.value === country ? "font-bold" : ""}`}>
-                      {opt.flag} {opt.label}
+                      <span className="text-lg">{opt.flag}</span> {opt.label}
                     </button>
                   ))}
                 </div>
@@ -417,7 +417,7 @@ export default function Header() {
                 {countryOptions.map(opt => (
                   <button key={opt.value} onClick={() => setCountry(opt.value)}
                     className={`flex items-center gap-1.5 px-3 py-1.5 text-sm rounded border ${opt.value === country ? "border-primary bg-primary/10 font-semibold text-primary" : "border-border text-foreground"}`}>
-                    {opt.flag} <span className="text-xs">{opt.label}</span>
+                    <span className="text-lg">{opt.flag}</span> <span className="text-xs">{opt.label}</span>
                   </button>
                 ))}
               </div>
