@@ -159,8 +159,6 @@ const PHONE_COUNTRIES = [
   { code: "+263", iso: "ZW", flag: "🇿🇼", name: "Simbabwe", maxDigits: 9, placeholder: "71 234 5678" },
   { code: "+213", iso: "DZ", flag: "🇩🇿", name: "Algerien", maxDigits: 9, placeholder: "551 23 45 67" },
 ].sort((a, b) => a.iso.localeCompare(b.iso));
-  { code: "+675", flag: "🇵🇬", name: "Papua-Neuguinea", maxDigits: 8, placeholder: "7012 3456" },
-];
 
 export default function Erstgespraech() {
   const { language, country, t, isSwiss, isInternational, showCH, showDE } = useLanguage();
