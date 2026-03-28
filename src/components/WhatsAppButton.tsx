@@ -1,4 +1,5 @@
 import { MessageCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 /**
  * Captures UTM params from the current URL and appends them
@@ -29,11 +30,26 @@ function buildWhatsAppUrl(): string {
 export default function WhatsAppButton() {
   const handleClick = () => {
     const utms = getUtmParams();
+
     // GTM dataLayer event
     (window as any).dataLayer = (window as any).dataLayer || [];
     (window as any).dataLayer.push({
       event: "whatsapp_click",
       ...utms,
+    });
+
+    // Log to database (fire-and-forget)
+    supabase.from("whatsapp_clicks").insert({
+      page_path: window.location.pathname,
+      utm_source: utms.utm_source || null,
+      utm_medium: utms.utm_medium || null,
+      utm_campaign: utms.utm_campaign || null,
+      utm_term: utms.utm_term || null,
+      utm_content: utms.utm_content || null,
+      referrer: document.referrer || null,
+      user_agent: navigator.userAgent || null,
+    } as any).then(({ error }) => {
+      if (error) console.error("WhatsApp click log error:", error);
     });
   };
 
