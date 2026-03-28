@@ -16,7 +16,7 @@ export default function Standorte() {
           {
             city: "Zürich",
             subtitle: isEN ? "Main Practice Switzerland" : "Hauptpraxis Schweiz",
-            address: ["Brandschenkestrasse 60", "8002 Zürich"],
+            address: ["5 Elements TCM", "Usteristrasse 23", "8001 Zürich"],
             phone: "+41 44 888 09 01",
             href: getPath("cityZurich", language, country),
           },
