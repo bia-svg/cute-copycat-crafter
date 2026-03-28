@@ -7,14 +7,26 @@ import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import hero1 from "@/assets/hero-1.jpeg";
-import hero2 from "@/assets/hero-2.jpeg";
-import hero3 from "@/assets/hero-3.jpeg";
-import hero4 from "@/assets/hero-4.jpeg";
-import hero5 from "@/assets/hero-5.jpeg";
-import davidSessionImg from "@/assets/david-office-portrait.jpeg";
+import hero1 from "@/assets/hero-1.webp";
+import hero1Mobile from "@/assets/hero-1-mobile.webp";
+import davidSessionImg from "@/assets/david-office-portrait.webp";
+import davidSessionMobile from "@/assets/david-office-portrait-mobile.webp";
 
-const heroSlides = [hero1, hero2, hero3, hero4, hero5];
+// Lazy-load remaining hero slides
+const heroDesktop = [
+  hero1,
+  () => import("@/assets/hero-2.webp").then(m => m.default),
+  () => import("@/assets/hero-3.webp").then(m => m.default),
+  () => import("@/assets/hero-4.webp").then(m => m.default),
+  () => import("@/assets/hero-5.webp").then(m => m.default),
+];
+const heroMobile = [
+  hero1Mobile,
+  () => import("@/assets/hero-2-mobile.webp").then(m => m.default),
+  () => import("@/assets/hero-3-mobile.webp").then(m => m.default),
+  () => import("@/assets/hero-4-mobile.webp").then(m => m.default),
+  () => import("@/assets/hero-5-mobile.webp").then(m => m.default),
+];
 import {
   Cigarette, Brain, Scale, Flame, HeartPulse, Users,
   Trophy, Shield, Clock, BookOpen, ArrowRight, Star, Award,
@@ -60,9 +72,22 @@ export default function Home() {
 
   /* ── Hero Slider ── */
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = heroSlides.length;
+  const [loadedSlides, setLoadedSlides] = useState<Record<number, string>>({ 0: hero1 });
+  const [loadedMobile, setLoadedMobile] = useState<Record<number, string>>({ 0: hero1Mobile });
+  const totalSlides = 5;
   const goNext = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
   const goPrev = () => setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+
+  // Preload next slide
+  useEffect(() => {
+    const next = (currentSlide + 1) % totalSlides;
+    if (!loadedSlides[next] && typeof heroDesktop[next] === "function") {
+      (heroDesktop[next] as () => Promise<string>)().then(src => setLoadedSlides(p => ({ ...p, [next]: src })));
+    }
+    if (!loadedMobile[next] && typeof heroMobile[next] === "function") {
+      (heroMobile[next] as () => Promise<string>)().then(src => setLoadedMobile(p => ({ ...p, [next]: src })));
+    }
+  }, [currentSlide]);
 
   useEffect(() => {
     const interval = setInterval(goNext, 3000);
@@ -145,12 +170,12 @@ export default function Home() {
         <div className="hidden md:grid md:grid-cols-2 container-main py-12 gap-8 items-center">
           {/* Image */}
           <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "400px" }}>
-            {heroSlides.map((src, i) => (
-              <img key={i} src={src} alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${i + 1}`}
-                loading={i === 0 ? "eager" : "lazy"}
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}
-                />
-            ))}
+            {loadedSlides[currentSlide] && (
+              <img key={currentSlide} src={loadedSlides[currentSlide]} alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${currentSlide + 1}`}
+                width={400} height={500} loading="eager"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            )}
             <button onClick={goPrev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity" aria-label="Previous">
               <ChevronLeft className="w-5 h-5 text-foreground" />
             </button>
@@ -158,7 +183,7 @@ export default function Home() {
               <ChevronRight className="w-5 h-5 text-foreground" />
             </button>
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {heroSlides.map((_, i) => (
+              {Array.from({length: totalSlides}, (_, i) => (
                 <button key={i} onClick={() => setCurrentSlide(i)}
                   className={`h-2 rounded-full transition-all ${i === currentSlide ? "bg-primary w-6" : "bg-primary/30 w-2"}`}
                   aria-label={`Slide ${i + 1}`} />
@@ -218,12 +243,12 @@ export default function Home() {
               : "Mit seiner selbst entwickelten Aktiv-Hypnose© Methode verbindet David J. Woods klinische Psychologie mit gezielter Hypnotherapie. Mit über 40 Jahren Erfahrung hat er mehr als 30.000 Sitzungen durchgeführt — für Raucherentwöhnung, Gewichtsreduktion, Angstbewältigung und Leistungssteigerung."}
           </p>
           <div className="relative aspect-[4/3] max-h-[280px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "210px" }}>
-            {heroSlides.map((src, i) => (
-              <img key={i} src={src} alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${i + 1}`}
-                loading={i === 0 ? "eager" : "lazy"}
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${i === currentSlide ? "opacity-100" : "opacity-0"}`}
-                />
-            ))}
+            {loadedMobile[currentSlide] && (
+              <img key={currentSlide} src={loadedMobile[currentSlide]} alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${currentSlide + 1}`}
+                width={600} height={400} loading="eager"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            )}
             <button onClick={goPrev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 rounded-full p-1.5 transition-opacity" aria-label="Previous">
               <ChevronLeft className="w-5 h-5 text-foreground" />
             </button>
@@ -231,7 +256,7 @@ export default function Home() {
               <ChevronRight className="w-5 h-5 text-foreground" />
             </button>
             <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-              {heroSlides.map((_, i) => (
+              {Array.from({length: totalSlides}, (_, i) => (
                 <button key={i} onClick={() => setCurrentSlide(i)}
                   className={`h-2 rounded-full transition-all ${i === currentSlide ? "bg-primary w-6" : "bg-primary/30 w-2"}`} />
               ))}
@@ -286,7 +311,10 @@ export default function Home() {
             </Link>
           </div>
           <div className="rounded-lg overflow-hidden">
-            <img src={davidSessionImg} alt={isEN ? "David J. Woods during a hypnotherapy session in his practice" : "David J. Woods während einer Hypnosetherapie-Sitzung in seiner Praxis"} className="w-full h-full object-cover" loading="lazy" />
+            <picture>
+              <source media="(max-width: 767px)" srcSet={davidSessionMobile} type="image/webp" />
+              <img src={davidSessionImg} alt={isEN ? "David J. Woods during a hypnotherapy session in his practice" : "David J. Woods während einer Hypnosetherapie-Sitzung in seiner Praxis"} className="w-full h-full object-cover" loading="lazy" width={1200} height={800} />
+            </picture>
           </div>
         </div>
       </section>
