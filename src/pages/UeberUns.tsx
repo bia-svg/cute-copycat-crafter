@@ -4,6 +4,8 @@ import { pageSEO } from "@/data/seo";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
 import davidPortrait from "@/assets/david-woods-portrait.jpg";
+import diplomNGHCertified from "@/assets/diplom-ngh-certified-instructor.jpeg";
+import ImageLightbox from "@/components/ImageLightbox";
 
 
 import { Button } from "@/components/ui/button";
