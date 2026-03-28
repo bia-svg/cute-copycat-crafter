@@ -7,9 +7,14 @@ import { getPath } from "@/lib/routes";
 export function Impressum() {
   const { language, country, } = useLanguage();
   const isEN = language === "en";
+  const basePath = getPath("home", language, country);
   return (
     <>
       <SEO {...pageSEO.impressum} pageKey="impressum" />
+      <Breadcrumbs items={[
+        { name: "Home", path: basePath },
+        { name: isEN ? "Legal Notice" : "Impressum", path: getPath("impressum", language, country) },
+      ]} />
       <section className="bg-white">
         <div className="container-main py-8 lg:py-12 max-w-3xl">
           <h1 className="text-2xl font-bold text-[#1B3A5C] mb-6">{isEN ? "Legal Notice" : "Impressum"}</h1>

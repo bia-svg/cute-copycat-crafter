@@ -134,10 +134,16 @@ function getEmbedUrl(video: Video) {
 export default function TvMedien() {
   const { language, country } = useLanguage();
   const isEN = language === "en";
+  const basePath = getPath("home", language, country);
 
   return (
     <>
       <SEO {...pageSEO.media} pageKey="media" />
+      <Breadcrumbs items={[
+        { name: "Home", path: basePath },
+        { name: isEN ? "About" : "Über uns", path: getPath("about", language, country) },
+        { name: isEN ? "TV & Media" : "TV & Medien", path: getPath("media", language, country) },
+      ]} />
       <section className="bg-white border-b border-border">
         <div className="container-main py-8 lg:py-12">
           <div className="flex items-center gap-3 mb-2">

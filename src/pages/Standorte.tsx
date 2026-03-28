@@ -47,6 +47,10 @@ export default function Standorte() {
   return (
     <>
       <SEO {...pageSEO.locations} pageKey="locations" />
+      <Breadcrumbs items={[
+        { name: "Home", path: basePath },
+        { name: isEN ? "Locations" : "Standorte", path: getPath("locations", language, country) },
+      ]} />
     <div className="min-h-screen bg-background">
       {/* Hero */}
       <section className="bg-primary text-primary-foreground py-16 md:py-24">
