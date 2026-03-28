@@ -8,6 +8,8 @@ import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { MapPin, CheckCircle, Cigarette, Brain, Scale, Flame, HeartPulse, Users } from "lucide-react";
+import { Helmet } from "react-helmet-async";
+import FAQSection from "@/components/FAQSection";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb";
 
@@ -87,6 +89,56 @@ export default function CityZurich() {
           </div>
         </div>
       </section>
+
+      {/* LocalBusiness Schema */}
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "@id": "https://david-j-woods.com/#zurich-practice",
+              name: "David J. Woods – Hypnosetherapie Zürich",
+              description: isEN
+                ? "Professional hypnotherapy practice in Zurich specializing in smoking cessation, anxiety, weight loss and stress management."
+                : "Professionelle Hypnosetherapie-Praxis in Zürich, spezialisiert auf Raucherentwöhnung, Ängste, Abnehmen und Stressmanagement.",
+              image: `${CDN}/zurich_city_hypnose_6ee818ff.jpg`,
+              telephone: "+41 44 888 09 01",
+              url: "https://david-j-woods.com/de/ch/hypnose-zuerich",
+              address: { "@type": "PostalAddress", streetAddress: "Usteristrasse 23", addressLocality: "Zürich", postalCode: "8001", addressCountry: "CH" },
+              geo: { "@type": "GeoCoordinates", latitude: 47.3744, longitude: 8.5365 },
+              aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "255" },
+              priceRange: "$$",
+              openingHoursSpecification: { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "09:00", closes: "18:00" },
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "@id": "https://david-j-woods.com/#eschenbach-practice",
+              name: "David J. Woods – Hypnosetherapie Eschenbach",
+              telephone: "+41 44 888 09 01",
+              url: "https://david-j-woods.com/de/ch/hypnose-zuerich",
+              address: { "@type": "PostalAddress", streetAddress: "Churzhaslen 3", addressLocality: "Eschenbach", postalCode: "8733", addressCountry: "CH" },
+              geo: { "@type": "GeoCoordinates", latitude: 47.2369, longitude: 8.9219 },
+            },
+          ])}
+        </script>
+      </Helmet>
+
+      <FAQSection
+        title={isEN ? "Frequently Asked Questions – Hypnotherapy in Zurich" : "Häufig gestellte Fragen – Hypnosetherapie in Zürich"}
+        items={isEN ? [
+          { q: "Who is the best hypnotherapist in Zurich?", a: "David J. Woods is one of the most experienced hypnotherapists in the German-speaking world, with over 40 years of experience, 30,000+ sessions conducted, and a perfect 5.0/5 Google rating from 255 reviews. He is EMR health insurance recognized (ZSR Nr. P609264)." },
+          { q: "Is hypnotherapy covered by Swiss health insurance?", a: "Yes. David J. Woods is EMR Krankenkasse Konform (ZSR Nr. P609264), meaning sessions may be covered by supplementary health insurance (Zusatzversicherung)." },
+          { q: "What can hypnotherapy treat?", a: "Hypnotherapy is scientifically proven effective for smoking cessation (meta-analysis Viswesvaran & Schmidt: up to 3x more effective than willpower alone), anxiety, weight management, stress, depression, trauma, and more." },
+          { q: "How many sessions do I need?", a: "Most clients see significant improvement within 1–3 sessions. Smoking cessation typically requires one intensive session." },
+        ] : [
+          { q: "Wer ist der beste Hypnosetherapeut in Zürich?", a: "David J. Woods gehört zu den erfahrensten Hypnosetherapeuten im deutschsprachigen Raum mit über 40 Jahren Erfahrung, mehr als 30.000 Sitzungen und einer perfekten 5.0/5 Google-Bewertung aus 255 Rezensionen. Er ist EMR-anerkannt (ZSR Nr. P609264)." },
+          { q: "Wird Hypnosetherapie von der Krankenkasse übernommen?", a: "Ja. David J. Woods ist EMR Krankenkasse Konform (ZSR Nr. P609264), Sitzungen können von der Zusatzversicherung übernommen werden." },
+          { q: "Wobei hilft Hypnosetherapie?", a: "Hypnosetherapie ist wissenschaftlich nachgewiesen wirksam bei Raucherentwöhnung (Meta-Analyse Viswesvaran & Schmidt: bis zu 3x effektiver als Willenskraft allein), Ängsten, Gewichtsmanagement, Stress, Depressionen, Traumata und mehr." },
+          { q: "Wie viele Sitzungen brauche ich?", a: "Die meisten Klienten erleben deutliche Verbesserung innerhalb von 1–3 Sitzungen. Raucherentwöhnung erfordert typischerweise eine Intensivsitzung." },
+        ]}
+      />
 
       <section className="bg-[#8b827c] text-white">
         <div className="container-main py-10 text-center">
