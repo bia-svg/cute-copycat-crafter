@@ -1,0 +1,1 @@
+DROP POLICY "anon_read_leads" ON public.leads;
