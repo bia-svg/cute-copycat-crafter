@@ -207,12 +207,63 @@ export default function Erstgespraech() {
     ...(showDE ? SEMINAR_DATES_DE : []),
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!gdprConsent) {
       toast.error(isEN ? "Please accept the privacy policy to continue." : "Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.");
       return;
     }
+
+    // Collect form data from the form elements
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const firstName = (formData.get("firstName") as string) || "";
+    const lastName = (formData.get("lastName") as string) || "";
+    const email = (formData.get("email") as string) || "";
+    const postalCity = (formData.get("postalCode") as string) || "";
+    const message = (formData.get("message") as string) || "";
+    const bestTime = (formData.get("bestTime") as string) || "";
+    const location = (formData.get("location") as string) || "";
+    const seminarCountry = (formData.get("seminarCountry") as string) || "";
+
+    // Extract UTM params from URL
+    const utmSource = searchParams.get("utm_source") || null;
+    const utmMedium = searchParams.get("utm_medium") || null;
+    const utmCampaign = searchParams.get("utm_campaign") || null;
+    const utmContent = searchParams.get("utm_content") || null;
+    const utmTerm = searchParams.get("utm_term") || null;
+
+    const source = utmMedium === "cpc" || utmSource === "google" ? "paid" : utmSource ? "referral" : "organic";
+
+    const leadData = {
+      name: `${firstName} ${lastName}`.trim(),
+      email,
+      phone: `${phoneCountry} ${phoneNumber}`.trim(),
+      concern: formType === "session" ? selectedConcern : "seminar",
+      form_type: formType,
+      postal_code: postalCity.split(/\s+/)[0] || null,
+      city: postalCity.split(/\s+/).slice(1).join(" ") || (formType === "seminar" ? seminarCountry : location) || null,
+      country: country.toUpperCase(),
+      source,
+      utm_source: utmSource,
+      utm_medium: utmMedium,
+      utm_campaign: utmCampaign,
+      utm_content: utmContent,
+      utm_term: utmTerm,
+      notes: [bestTime && `Best time: ${bestTime}`, message].filter(Boolean).join(" | ") || null,
+    };
+
+    try {
+      // Save to database
+      const { error: dbError } = await supabase.from("leads").insert(leadData);
+      if (dbError) console.error("Lead save error:", dbError);
+
+      // Notify (email + Slack)
+      await supabase.functions.invoke("notify-lead", { body: { lead: leadData } });
+    } catch (err) {
+      console.error("Lead notification error:", err);
+    }
+
     trackFormConversion(formType, formType === "seminar" ? selectedDate : undefined);
     setSubmitted(true);
     toast.success(isEN ? "Thank you! We will contact you shortly." : "Vielen Dank! Wir melden uns in Kürze bei Ihnen.");
