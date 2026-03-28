@@ -19,7 +19,14 @@ export default function UeberUns() {
 
   return (
     <>
-      <SEO {...pageSEO.about} />
+      <SEO {...pageSEO.about} pageKey="about" breadcrumbs={[
+        { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+        { name: isEN ? "About Us" : "Über uns", path: getPath("about", language, country) },
+      ]} />
+      <Breadcrumbs items={[
+        { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+        { name: isEN ? "About Us" : "Über uns", path: getPath("about", language, country) },
+      ]} />
 
       {/* Main Bio Section */}
       <section className="bg-white border-b border-border">

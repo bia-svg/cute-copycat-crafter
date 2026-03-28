@@ -17,7 +17,7 @@ export default function Blog() {
 
   return (
     <>
-      <SEO {...pageSEO.blog} />
+      <SEO {...pageSEO.blog} pageKey="blog" />
       {/* Hero */}
       <section className="bg-[#8b827c] text-white py-16">
         <div className="container-main">

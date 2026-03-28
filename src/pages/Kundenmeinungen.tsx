@@ -53,7 +53,14 @@ export default function Kundenmeinungen() {
 
   return (
     <>
-      <SEO {...pageSEO.testimonials} />
+      <SEO {...pageSEO.testimonials} pageKey="testimonials" breadcrumbs={[
+        { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+        { name: isEN ? "Testimonials" : "Kundenmeinungen", path: getPath("testimonials", language, country) },
+      ]} />
+      <Breadcrumbs items={[
+        { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+        { name: isEN ? "Testimonials" : "Kundenmeinungen", path: getPath("testimonials", language, country) },
+      ]} />
       <section className="bg-background border-b border-border">
         <div className="container-main py-8 lg:py-12">
           <div className="flex items-center gap-4 mb-6">
