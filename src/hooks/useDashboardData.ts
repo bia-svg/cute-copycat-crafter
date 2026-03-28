@@ -59,6 +59,7 @@ export interface DashboardState {
   campaigns: CampaignData[];
   dailyAds: DailyAds[];
   leads: LeadRecord[];
+  whatsappClicks: WhatsAppClick[];
   loading: boolean;
   gaError: string | null;
   adsError: string | null;
