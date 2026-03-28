@@ -130,7 +130,7 @@ export default function UeberUns() {
             {/* NGH */}
             <div className="bg-white border border-border p-6">
               <div className="flex items-center gap-4 mb-4">
-                <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-20 w-auto shrink-0" />
+                <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat – National Guild of Hypnotists, USA" className="h-20 w-auto shrink-0" loading="lazy" />
               </div>
               <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">NGH International Trainer</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
