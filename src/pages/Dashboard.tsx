@@ -313,8 +313,8 @@ export default function Dashboard() {
                     <TableHeader>
                       <TableRow className="border-gray-100">
                         <TableHead className="text-gray-500">Page</TableHead>
-                        <TableHead className="text-gray-500 text-right">Views</TableHead>
-                        <TableHead className="text-gray-500 text-right">Avg. Time</TableHead>
+                         <TableHead className="text-gray-500">Views</TableHead>
+                        <TableHead className="text-gray-500 text-right">Avg. Engagement</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
