@@ -7,6 +7,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
+import FAQSection from "@/components/FAQSection";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
 import diplomAktivHypnose from "@/assets/diplom-aktiv-hypnose.jpeg";
