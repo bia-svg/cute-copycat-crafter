@@ -61,11 +61,11 @@ export default function Home() {
   /* ── Hero Slider ── */
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = heroSlides.length;
+  const goNext = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  const goPrev = () => setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }, 5000);
+    const interval = setInterval(goNext, 3000);
     return () => clearInterval(interval);
   }, [totalSlides]);
 
