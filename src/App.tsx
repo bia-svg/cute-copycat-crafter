@@ -2,6 +2,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Route, Routes, Navigate, useLocation } from "react-router-dom";
 import { useEffect, useState, lazy, Suspense } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { getLegacyRedirect } from "@/lib/legacyRedirects";
 import Layout from "@/components/Layout";
 const Home = lazy(() => import("@/pages/Home"));
 
