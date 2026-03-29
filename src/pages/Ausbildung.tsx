@@ -409,7 +409,8 @@ export default function Ausbildung() {
           <div className="space-y-4 max-w-2xl mx-auto">
             {showCH && (
               <>
-                {isInternational && <p className="text-xs font-semibold text-[#8b827c] uppercase tracking-wider mt-2 mb-1">🇨🇭 {isEN ? "Switzerland" : "Schweiz"}</p>}
+              {isInternational && <p className="text-xs font-semibold text-[#8b827c] uppercase tracking-wider mt-2 mb-1">🇨🇭 {isEN ? "Switzerland" : "Schweiz"}</p>}
+                <p className="text-lg font-bold text-[#1B3A5C] mb-3">2990,- CHF</p>
                 {datesCH.map((d, i) => (
                   <div key={`ch-${i}`} className="border border-border p-5 bg-white rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
@@ -440,6 +441,7 @@ export default function Ausbildung() {
             {showDE && (
               <>
                 {isInternational && <p className="text-xs font-semibold text-[#8b827c] uppercase tracking-wider mt-3 mb-1">🇩🇪 {isEN ? "Germany" : "Deutschland"}</p>}
+                <p className="text-lg font-bold text-[#1B3A5C] mb-3">2490,- EUR</p>
                 {datesDE.map((d, i) => (
                   <div key={`de-${i}`} className="border border-border p-5 bg-white rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
