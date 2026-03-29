@@ -25,7 +25,6 @@ import {
   Eye, DollarSign, Target, ArrowUpRight, ArrowDownRight,
   Leaf, Zap, MousePointer, BarChart3, Globe, MessageCircle, ShieldCheck, Lock
 } from "lucide-react";
-import { Input } from "@/components/ui/input";
 import { format, parseISO, startOfMonth } from "date-fns";
 
 /* ═══════ Metric Card ═══════ */
@@ -79,18 +78,19 @@ export default function Dashboard() {
   const [pinUnlocked, setPinUnlocked] = useState(false);
   const [pinError, setPinError] = useState("");
   const [pinLoading, setPinLoading] = useState(false);
+  const normalizedPinInput = pinInput.replace(/\D/g, "").slice(0, 8);
 
   useEffect(() => {
     if (!isAuthenticated()) navigate("/dashboard/login", { replace: true });
   }, [navigate]);
 
   const handlePinSubmit = async () => {
-    if (pinInput.length !== 8) { setPinError("PIN must be 8 digits"); return; }
+    if (normalizedPinInput.length !== 8) { setPinError("PIN must be 8 digits"); return; }
     setPinLoading(true);
     setPinError("");
     try {
       const res = await supabase.functions.invoke("verify-leads-pin", {
-        body: { pin: pinInput },
+        body: { pin: normalizedPinInput },
       });
       if (res.data?.success) {
         setPinUnlocked(true);
