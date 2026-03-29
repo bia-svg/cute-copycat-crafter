@@ -437,6 +437,11 @@ export default function Ausbildung() {
                       <span className="inline-block text-xs font-semibold bg-[#E8F5E9] text-[#2E7D32] px-3 py-1 rounded-full">
                         {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
                       </span>
+                      <p className="text-[11px] text-muted-foreground mt-2 italic max-w-xs mx-auto">
+                        {isEN
+                          ? "Early Bird pricing is available for a limited time or until the current intake is fully booked!"
+                          : "Der Frühbucher-Preis gilt nur für begrenzte Zeit oder bis der aktuelle Kurs ausgebucht ist!"}
+                      </p>
                     </>
                   ) : (
                     <span className="text-2xl font-bold text-[#1B3A5C]">CHF 3.290.-</span>
