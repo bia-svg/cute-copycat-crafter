@@ -779,21 +779,25 @@ export default function Dashboard() {
                     )}
                     <div className="flex items-center justify-center gap-2">
                       <input
-                        type="text"
-                        inputMode="numeric"
-                        maxLength={8}
+                        type="password"
+                        inputMode="text"
                         autoComplete="one-time-code"
                         value={pinInput}
                         onChange={(e) => {
-                          const cleaned = e.target.value.replace(/\D/g, "").slice(0, 8);
-                          setPinInput(cleaned);
+                          setPinError("");
+                          setPinInput(e.target.value);
+                        }}
+                        onPaste={(e) => {
+                          e.preventDefault();
+                          setPinError("");
+                          setPinInput(e.clipboardData.getData("text"));
                         }}
                         onKeyDown={(e) => { if (e.key === "Enter") handlePinSubmit(); }}
                         placeholder="12345678"
                         aria-label="8-digit PIN"
-                        className="flex h-10 w-48 rounded-md border border-gray-300 bg-background px-3 py-2 text-center text-lg font-mono ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                        className="flex h-10 w-48 rounded-md border border-gray-300 bg-background px-3 py-2 text-center text-lg font-mono tracking-[0.3em] ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                       />
-                      <Button onClick={handlePinSubmit} disabled={pinLoading || pinInput.length !== 8}>
+                      <Button onClick={handlePinSubmit} disabled={pinLoading || normalizedPinInput.length !== 8}>
                         {pinLoading ? "..." : "Unlock"}
                       </Button>
                     </div>
