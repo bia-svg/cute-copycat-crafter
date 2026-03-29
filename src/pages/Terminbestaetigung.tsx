@@ -9,11 +9,16 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Link, useSearchParams } from "react-router-dom";
 import { getPath } from "@/lib/routes";
-import { CalendarCheck, CheckCircle2 } from "lucide-react";
+import { CalendarCheck, CalendarIcon, CheckCircle2 } from "lucide-react";
 import { useState, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { PHONE_COUNTRIES } from "@/data/phoneCountries";
+import { format } from "date-fns";
+import { de } from "date-fns/locale";
+import { cn } from "@/lib/utils";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 export default function Terminbestaetigung() {
   const { language, country } = useLanguage();
@@ -25,6 +30,7 @@ export default function Terminbestaetigung() {
   const [dsgvoChecked, setDsgvoChecked] = useState(false);
   const [agbChecked, setAgbChecked] = useState(false);
   const [paymentChecked, setPaymentChecked] = useState(false);
+  const [dob, setDob] = useState<Date | undefined>(undefined);
 
   // Phone country code
   const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
@@ -56,7 +62,7 @@ export default function Terminbestaetigung() {
     const sessionTime = (formData.get("sessionTime") as string)?.trim() || "";
     const email = (formData.get("email") as string)?.trim() || "";
     const phone = phoneNumber.trim();
-    const dob = (formData.get("dob") as string) || "";
+    const dobStr = dob ? format(dob, "yyyy-MM-dd") : "";
     const notes = (formData.get("notes") as string)?.trim() || "";
 
     if (!firstName || !lastName || !street || !postalCode || !city || !sessionDate || !sessionTime || !email || !phone || !location || !dsgvoChecked || !agbChecked || !paymentChecked) {
@@ -96,7 +102,7 @@ export default function Terminbestaetigung() {
       concern: "Terminbestätigung",
       notes: [
         `Adresse: ${street}, ${postalCode} ${city}`,
-        dob && `Geburtsdatum: ${dob}`,
+        dobStr && `Geburtsdatum: ${dobStr}`,
         `Sitzung: ${sessionDate} ${sessionTime}`,
         `Ort: ${locationLabels[location] || location}`,
         notes && `Notizen: ${notes}`,
@@ -192,7 +198,34 @@ export default function Terminbestaetigung() {
               <Label className="text-foreground font-semibold">
                 {isEN ? "Date of Birth" : "Geburtsdatum"}
               </Label>
-              <Input name="dob" type="date" className="mt-2" />
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="outline"
+                    type="button"
+                    className={cn(
+                      "w-full mt-2 justify-start text-left font-normal",
+                      !dob && "text-muted-foreground"
+                    )}
+                  >
+                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    {dob ? format(dob, "dd.MM.yyyy") : (isEN ? "Select date" : "Datum wählen")}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                  <Calendar
+                    mode="single"
+                    selected={dob}
+                    onSelect={setDob}
+                    captionLayout="dropdown-buttons"
+                    fromYear={1930}
+                    toYear={new Date().getFullYear()}
+                    disabled={(date) => date > new Date()}
+                    initialFocus
+                    className={cn("p-3 pointer-events-auto")}
+                  />
+                </PopoverContent>
+              </Popover>
               <p className="text-xs text-muted-foreground mt-1">
                 {isEN ? "Optional: For health insurance" : "Optional: Für die Krankenversicherung"}
               </p>
