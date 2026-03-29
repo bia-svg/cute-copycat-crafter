@@ -254,7 +254,7 @@ export default function Ausbildung() {
             </div>
             <div className="border border-border p-6 text-center">
               <Users className="w-8 h-8 text-[#1B3A5C] mx-auto mb-3" />
-              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "Small Group Premium Format" : "Premium-Kleingruppen"}</h3>
+              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "Small Group Format" : "Kleingruppen-Format"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
                   ? "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity. A selective learning experience."
