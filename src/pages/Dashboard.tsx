@@ -822,7 +822,7 @@ export default function Dashboard() {
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-sm font-medium text-gray-700">Complete Leads List ({leads.length})</CardTitle>
                         <Button size="sm" variant="outline" className="text-xs" onClick={() => {
-                          const headers = ["Date","Name","Email","Phone","Concern","Type","Source","City","Postal Code","Country","Referrer Page","UTM Source","UTM Medium","UTM Campaign","UTM Content","UTM Term","Notes","Converted"];
+                          const headers = ["Date","Name","Email","Phone","Concern","Type","Source","City","Postal Code","Country","Language","Referrer Page","UTM Source","UTM Medium","UTM Campaign","UTM Content","UTM Term","Notes","Converted"];
                           const csvRows = [headers.join(",")];
                           leads.forEach(l => {
                             csvRows.push([
