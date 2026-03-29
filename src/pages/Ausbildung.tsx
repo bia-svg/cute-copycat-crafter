@@ -172,27 +172,27 @@ export default function Ausbildung() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-3">
-                {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
+                {isEN ? "Premium 6-Day Intensive Certification" : "Premium 6-Tage Intensiv-Zertifizierung"}
               </p>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1B3A5C] mb-3" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN
-                  ? "Become an Aktiv-Hypnose© Therapist"
-                  : "Werden Sie Aktiv-Hypnose© Therapeut"}
+                  ? "Become a Certified Aktiv-Hypnose© Therapist"
+                  : "Werden Sie zertifizierter Aktiv-Hypnose© Therapeut"}
               </h1>
               <div className="flex items-center gap-2 mb-5">
                 <GraduationCap className="w-5 h-5 text-[#2E7D32]" />
                 <span className="text-sm font-semibold text-[#1B3A5C]">
-                  {isEN ? "Therapist Diploma" : "Therapeuten-Diplom"}
+                  {isEN ? "Specialist Practitioner Diploma" : "Therapeuten-Diplom"}
                 </span>
               </div>
               <p className="text-base lg:text-lg text-[#55504f] leading-relaxed mb-5">
                 {isEN
-                  ? "This is not a theoretical seminar. It's a transformative week where you learn to create real change — in yourself and in others. Developed over 40 years of clinical practice by Lic.Psych. David J. Woods, this training combines psychology, neuroscience, and hands-on hypnotherapy into a method that works from day one."
-                  : "Dies ist kein theoretisches Seminar. Es ist eine transformative Woche, in der Sie lernen, echte Veränderung zu bewirken — bei sich selbst und bei anderen. Entwickelt über 40 Jahre klinischer Praxis von Lic.Psych. David J. Woods, verbindet diese Ausbildung Psychologie, Neurowissenschaft und praktische Hypnotherapie zu einer Methode, die ab dem ersten Tag wirkt."}
+                  ? "This is not a weekend certificate course. It's an exclusive, high-level practitioner training where you learn to create real, lasting change — in yourself and in your clients. Developed over 40 years of clinical practice by Lic.Psych. David J. Woods, this method-based expert training combines psychology, neuroscience, and hands-on hypnotherapy into a system that works from day one."
+                  : "Dies ist kein Wochenend-Zertifikatskurs. Es ist eine exklusive, hochwertige Praktiker-Ausbildung, in der Sie lernen, echte, nachhaltige Veränderung zu bewirken — bei sich selbst und bei Ihren Klienten. Entwickelt über 40 Jahre klinischer Praxis von Lic.Psych. David J. Woods, verbindet diese methodenbasierte Expertenausbildung Psychologie, Neurowissenschaft und praktische Hypnotherapie zu einem System, das ab dem ersten Tag wirkt."}
               </p>
               <div className="flex flex-wrap gap-4 text-sm text-[#55504f] mb-6">
                 <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "6 Days, 10:00–17:00" : "6 Tage, 10:00–17:00 Uhr"}</span>
-                <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Small Groups Only" : "Nur kleine Gruppen"}</span>
+                <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Small Group Premium Format" : "Premium-Kleingruppen"}</span>
                 <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-[#2E7D32]" /> Aktiv-Hypnose© Diplom</span>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -226,35 +226,35 @@ export default function Ausbildung() {
           </h2>
           <p className="text-sm text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
             {isEN
-              ? "Not a weekend course. Not a certificate mill. A real clinical training built on 30,000+ sessions."
-              : "Kein Wochenendkurs. Keine Zertifikatsfabrik. Eine echte klinische Ausbildung, aufgebaut auf 30.000+ Sitzungen."}
+              ? "Not a mass-market course. Not a certificate mill. A serious premium training with real depth, built on 30,000+ clinical sessions."
+              : "Kein Massenkurs. Keine Zertifikatsfabrik. Eine seriöse Premium-Ausbildung mit echter Tiefe, aufgebaut auf 30.000+ klinischen Sitzungen."}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <div className="border border-border p-6 text-center">
               <Shield className="w-8 h-8 text-[#1B3A5C] mx-auto mb-3" />
-              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "40+ Years of Practice" : "40+ Jahre Praxis"}</h3>
+              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "40+ Years of Clinical Practice" : "40+ Jahre klinische Praxis"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
-                  ? "Every technique taught has been tested and refined in thousands of real clinical sessions."
-                  : "Jede gelehrte Technik wurde in Tausenden realer klinischer Sitzungen getestet und verfeinert."}
+                  ? "Every technique taught has been tested and refined in thousands of real clinical sessions. This is method-based expert training."
+                  : "Jede gelehrte Technik wurde in Tausenden realer klinischer Sitzungen getestet und verfeinert. Eine methodenbasierte Expertenausbildung."}
               </p>
             </div>
             <div className="border border-border p-6 text-center">
               <Users className="w-8 h-8 text-[#1B3A5C] mx-auto mb-3" />
-              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "Small Groups" : "Kleine Gruppen"}</h3>
+              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "Small Group Premium Format" : "Premium-Kleingruppen"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
-                  ? "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity."
-                  : "Strikt begrenzte Teilnehmerzahl garantiert persönliche Betreuung, individuelles Feedback und maximale Lernintensität."}
+                  ? "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity. A selective learning experience."
+                  : "Strikt begrenzte Teilnehmerzahl garantiert persönliche Betreuung, individuelles Feedback und maximale Lernintensität. Ein selektives Lernerlebnis."}
               </p>
             </div>
             <div className="border border-border p-6 text-center">
               <Zap className="w-8 h-8 text-[#1B3A5C] mx-auto mb-3" />
-              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "Practice from Day 1" : "Praxis ab Tag 1"}</h3>
+              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "Hands-On from Day 1" : "Praxis ab Tag 1"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
-                  ? "You won't just watch — you'll hypnotize. Every day combines theory with immediate hands-on application."
-                  : "Sie schauen nicht nur zu — Sie hypnotisieren. Jeder Tag verbindet Theorie mit sofortiger praktischer Anwendung."}
+                  ? "You won't just watch — you'll hypnotize. Every day combines theory with immediate application. A transformational practical training."
+                  : "Sie schauen nicht nur zu — Sie hypnotisieren. Jeder Tag verbindet Theorie mit sofortiger praktischer Anwendung. Eine transformative Praxisausbildung."}
               </p>
             </div>
           </div>
@@ -403,14 +403,26 @@ export default function Ausbildung() {
           </h2>
           <p className="text-sm text-muted-foreground text-center mb-8 max-w-xl mx-auto">
             {isEN
-              ? "Spots are strictly limited to ensure quality. Secure yours now."
-              : "Die Plätze sind strikt begrenzt, um Qualität zu gewährleisten. Sichern Sie sich Ihren jetzt."}
+              ? "Places are strictly limited to ensure the highest quality. Secure yours now."
+              : "Die Plätze sind strikt begrenzt, um höchste Qualität zu gewährleisten. Sichern Sie sich Ihren jetzt."}
           </p>
-          <div className="space-y-4 max-w-2xl mx-auto">
+          <div className="space-y-6 max-w-2xl mx-auto">
             {showCH && (
               <>
-              {isInternational && <p className="text-xs font-semibold text-[#8b827c] uppercase tracking-wider mt-2 mb-1">🇨🇭 {isEN ? "Switzerland" : "Schweiz"}</p>}
-                <p className="text-lg font-bold text-[#1B3A5C] mb-3">2990,- CHF</p>
+                {isInternational && <p className="text-xs font-semibold text-[#8b827c] uppercase tracking-wider mt-2 mb-1">🇨🇭 {isEN ? "Switzerland" : "Schweiz"}</p>}
+                {/* CH Pricing Box */}
+                <div className="bg-white border border-[#81C784] rounded-lg p-5 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[#2E7D32] mb-2">
+                    {isEN ? "6-Day Intensive Certification" : "6-Tage Intensiv-Zertifizierung"}
+                  </p>
+                  <div className="flex items-center justify-center gap-4 mb-2">
+                    <span className="text-base text-muted-foreground line-through">CHF 3.290,-</span>
+                    <span className="text-2xl font-bold text-[#1B3A5C]">CHF 2.990,-</span>
+                  </div>
+                  <span className="inline-block text-xs font-semibold bg-[#E8F5E9] text-[#2E7D32] px-3 py-1 rounded-full">
+                    {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
+                  </span>
+                </div>
                 {datesCH.map((d, i) => (
                   <div key={`ch-${i}`} className="border border-border p-5 bg-white rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
@@ -426,11 +438,11 @@ export default function Ausbildung() {
                     </div>
                     <div className="flex items-center gap-3">
                       <span className={`text-xs font-semibold px-2 py-1 rounded ${d.status === "limited" ? "bg-[#FFF3E0] text-[#E65100]" : "bg-[#E8F5E9] text-[#2E7D32]"}`}>
-                        {d.status === "limited" ? (isEN ? "Limited spots" : "Letzte freie Plätze") : (isEN ? "Available" : "Verfügbar")}
+                        {d.status === "limited" ? (isEN ? "Limited seats" : "Letzte freie Plätze") : (isEN ? "Seats available" : "Plätze verfügbar")}
                       </span>
                       <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=ch&date=${encodeURIComponent(d.date)}`}>
                         <Button size="sm" className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white text-xs">
-                          {isEN ? "Register" : "Anmelden"}
+                          {isEN ? "Secure Your Place" : "Platz sichern"}
                         </Button>
                       </Link>
                     </div>
@@ -441,7 +453,19 @@ export default function Ausbildung() {
             {showDE && (
               <>
                 {isInternational && <p className="text-xs font-semibold text-[#8b827c] uppercase tracking-wider mt-3 mb-1">🇩🇪 {isEN ? "Germany" : "Deutschland"}</p>}
-                <p className="text-lg font-bold text-[#1B3A5C] mb-3">2490,- EUR</p>
+                {/* DE Pricing Box */}
+                <div className="bg-white border border-[#90CAF9] rounded-lg p-5 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[#1565C0] mb-2">
+                    {isEN ? "6-Day Intensive Certification" : "6-Tage Intensiv-Zertifizierung"}
+                  </p>
+                  <div className="flex items-center justify-center gap-4 mb-2">
+                    <span className="text-base text-muted-foreground line-through">€2.790,-</span>
+                    <span className="text-2xl font-bold text-[#1B3A5C]">€2.490,-</span>
+                  </div>
+                  <span className="inline-block text-xs font-semibold bg-[#E3F2FD] text-[#1565C0] px-3 py-1 rounded-full">
+                    {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
+                  </span>
+                </div>
                 {datesDE.map((d, i) => (
                   <div key={`de-${i}`} className="border border-border p-5 bg-white rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
@@ -457,11 +481,11 @@ export default function Ausbildung() {
                     </div>
                     <div className="flex items-center gap-3">
                       <span className={`text-xs font-semibold px-2 py-1 rounded ${d.status === "limited" ? "bg-[#FFF3E0] text-[#E65100]" : "bg-[#E8F5E9] text-[#2E7D32]"}`}>
-                        {d.status === "limited" ? (isEN ? "Limited spots" : "Letzte freie Plätze") : (isEN ? "Available" : "Verfügbar")}
+                        {d.status === "limited" ? (isEN ? "Limited seats" : "Letzte freie Plätze") : (isEN ? "Seats available" : "Plätze verfügbar")}
                       </span>
                       <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de&date=${encodeURIComponent(d.date)}`}>
                         <Button size="sm" className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white text-xs">
-                          {isEN ? "Register" : "Anmelden"}
+                          {isEN ? "Secure Your Place" : "Platz sichern"}
                         </Button>
                       </Link>
                     </div>
@@ -472,8 +496,13 @@ export default function Ausbildung() {
           </div>
           <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <Users className="w-4 h-4" />
-            <span>{isEN ? "Small groups · Strictly limited number of participants" : "Kleine Gruppen · Strikt begrenzte Teilnehmerzahl"}</span>
+            <span>{isEN ? "Small group premium format · Strictly limited seats" : "Premium-Kleingruppen · Strikt begrenzte Teilnehmerzahl"}</span>
           </div>
+          <p className="text-xs text-muted-foreground text-center mt-2 italic">
+            {isEN
+              ? "Early Bird pricing available for a limited time or until the current intake is full."
+              : "Frühbucher-Preis verfügbar für begrenzte Zeit oder bis die aktuelle Gruppe voll ist."}
+          </p>
         </div>
       </section>
 
