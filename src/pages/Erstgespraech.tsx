@@ -70,6 +70,8 @@ export default function Erstgespraech() {
 
     const source = utmMedium === "cpc" || utmSource === "google" ? "paid" : utmSource ? "referral" : "organic";
 
+    const referrerPage = document.referrer ? new URL(document.referrer).pathname : sessionStorage.getItem("dw_prev_page") || null;
+
     const leadData = {
       name: `${firstName} ${lastName}`.trim(),
       email,
@@ -85,6 +87,7 @@ export default function Erstgespraech() {
       utm_campaign: utmCampaign,
       utm_content: utmContent,
       utm_term: utmTerm,
+      tracking_code: referrerPage,
       notes: [bestTime && `Best time: ${bestTime}`, message].filter(Boolean).join(" | ") || null,
     };
 

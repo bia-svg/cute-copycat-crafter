@@ -81,6 +81,8 @@ export default function SeminarAnmeldung() {
     const utmTerm = searchParams.get("utm_term") || null;
     const source = utmMedium === "cpc" || utmSource === "google" ? "paid" : utmSource ? "referral" : "organic";
 
+    const referrerPage = document.referrer ? new URL(document.referrer).pathname : sessionStorage.getItem("dw_prev_page") || null;
+
     const leadData = {
       name: `${firstName} ${lastName}`.trim(),
       email,
@@ -95,6 +97,7 @@ export default function SeminarAnmeldung() {
       utm_campaign: utmCampaign,
       utm_content: utmContent,
       utm_term: utmTerm,
+      tracking_code: referrerPage,
       notes: [`Seminar: ${selectedDate}`, selectedDateObj?.location, message].filter(Boolean).join(" | ") || null,
     };
 

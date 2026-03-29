@@ -66,6 +66,11 @@ function GeoRedirect() {
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
+    // Store previous page for referrer tracking on forms
+    const prevPage = sessionStorage.getItem("dw_current_page");
+    if (prevPage) sessionStorage.setItem("dw_prev_page", prevPage);
+    sessionStorage.setItem("dw_current_page", pathname);
+
     window.scrollTo(0, 0);
     (window as any).dataLayer = (window as any).dataLayer || [];
     (window as any).dataLayer.push({
