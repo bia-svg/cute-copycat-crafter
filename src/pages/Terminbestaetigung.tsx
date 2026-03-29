@@ -29,6 +29,9 @@ export default function Terminbestaetigung() {
   const [dobDay, setDobDay] = useState("");
   const [dobMonth, setDobMonth] = useState("");
   const [dobYear, setDobYear] = useState("");
+  const [sessionDay, setSessionDay] = useState("");
+  const [sessionMonth, setSessionMonth] = useState("");
+  const [sessionYear, setSessionYear] = useState("");
 
   // Phone country code
   const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
@@ -56,7 +59,7 @@ export default function Terminbestaetigung() {
     const street = (formData.get("street") as string)?.trim() || "";
     const postalCode = (formData.get("postalCode") as string)?.trim() || "";
     const city = (formData.get("city") as string)?.trim() || "";
-    const sessionDate = (formData.get("sessionDate") as string) || "";
+    const sessionDate = sessionDay && sessionMonth && sessionYear ? `${sessionDay.padStart(2,"0")}.${sessionMonth.padStart(2,"0")}.${sessionYear}` : "";
     const sessionTime = (formData.get("sessionTime") as string)?.trim() || "";
     const email = (formData.get("email") as string)?.trim() || "";
     const phone = phoneNumber.trim();
@@ -259,7 +262,41 @@ export default function Terminbestaetigung() {
               <Label className="text-foreground font-semibold">
                 {isEN ? "Session: Date?" : "Sitzung: Datum?"} <span className="text-destructive">*</span>
               </Label>
-              <Input name="sessionDate" type="date" className="mt-2" required />
+              <div className="grid grid-cols-3 gap-2 mt-2">
+                <select
+                  value={sessionDay}
+                  onChange={(e) => setSessionDay(e.target.value)}
+                  className="h-10 w-full rounded-md border border-input bg-background px-2 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 appearance-none cursor-pointer"
+                >
+                  <option value="">{isEN ? "Day" : "Tag"}</option>
+                  {Array.from({ length: 31 }, (_, i) => i + 1).map(d => (
+                    <option key={d} value={String(d)}>{d}</option>
+                  ))}
+                </select>
+                <select
+                  value={sessionMonth}
+                  onChange={(e) => setSessionMonth(e.target.value)}
+                  className="h-10 w-full rounded-md border border-input bg-background px-2 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 appearance-none cursor-pointer"
+                >
+                  <option value="">{isEN ? "Month" : "Monat"}</option>
+                  {(isEN
+                    ? ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+                    : ["Jan","Feb","Mär","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez"]
+                  ).map((m, i) => (
+                    <option key={i} value={String(i + 1)}>{m}</option>
+                  ))}
+                </select>
+                <select
+                  value={sessionYear}
+                  onChange={(e) => setSessionYear(e.target.value)}
+                  className="h-10 w-full rounded-md border border-input bg-background px-2 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 appearance-none cursor-pointer"
+                >
+                  <option value="">{isEN ? "Year" : "Jahr"}</option>
+                  {Array.from({ length: 3 }, (_, i) => new Date().getFullYear() + i).map(y => (
+                    <option key={y} value={String(y)}>{y}</option>
+                  ))}
+                </select>
+              </div>
             </div>
             <div>
               <Label className="text-foreground font-semibold">
