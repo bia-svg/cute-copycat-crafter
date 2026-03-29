@@ -23,6 +23,20 @@ export default function Terminbestaetigung() {
   const [loading, setLoading] = useState(false);
   const [searchParams] = useSearchParams();
 
+  // Phone country code
+  const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
+  const [phoneCountry, setPhoneCountry] = useState(defaultPhoneCountry);
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const selectedPhoneCountry = PHONE_COUNTRIES.find(c => c.code === phoneCountry) || PHONE_COUNTRIES[0];
+
+  const handlePhoneChange = useCallback((value: string) => {
+    const cleaned = value.replace(/[^\d\s]/g, "");
+    const digitsOnly = cleaned.replace(/\s/g, "");
+    if (digitsOnly.length <= selectedPhoneCountry.maxDigits) {
+      setPhoneNumber(cleaned);
+    }
+  }, [selectedPhoneCountry.maxDigits]);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (loading) return;
