@@ -448,6 +448,9 @@ export default function Ausbildung() {
                       <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
                         <MapPin className="w-3.5 h-3.5" /> {d.location}
                       </p>
+                      <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
+                        <Clock className="w-3.5 h-3.5" /> {isEN ? "Mon–Fri 10:00–17:00 · Sat 10:00–15:00" : "Mo–Fr 10:00–17:00 · Sa 10:00–15:00"}
+                      </p>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className={`text-xs font-semibold px-2 py-1 rounded ${d.status === "limited" ? "bg-[#FFF3E0] text-[#E65100]" : "bg-[#E8F5E9] text-[#2E7D32]"}`}>
