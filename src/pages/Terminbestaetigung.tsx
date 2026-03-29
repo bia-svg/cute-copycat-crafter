@@ -131,6 +131,7 @@ export default function Terminbestaetigung() {
 
     setLoading(false);
     setSubmitted(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
     toast.success(isEN ? "Appointment confirmed! Thank you." : "Termin bestätigt! Vielen Dank.");
   };
 
