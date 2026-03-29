@@ -900,7 +900,7 @@ export default function Dashboard() {
                          <Table>
                           <TableHeader>
                             <TableRow className="border-gray-100">
-                              <TableHead className="text-gray-500 text-xs sticky left-0 bg-white z-10">Date</TableHead>
+                               <TableHead className="text-gray-500 text-xs sticky left-0 bg-white z-10">Date (CET)</TableHead>
                               <TableHead className="text-gray-500 text-xs">Name</TableHead>
                               <TableHead className="text-gray-500 text-xs">Email</TableHead>
                               <TableHead className="text-gray-500 text-xs">Phone</TableHead>
@@ -919,18 +919,40 @@ export default function Dashboard() {
                               <TableHead className="text-gray-500 text-xs">UTM Term</TableHead>
                               <TableHead className="text-gray-500 text-xs">Notes</TableHead>
                               <TableHead className="text-gray-500 text-xs text-center">Conv.</TableHead>
-                            </TableRow>
-                          </TableHeader>
-                          <TableBody>
-                            {leads.map(l => (
-                              <TableRow key={l.id} className="border-gray-100 hover:bg-gray-50">
-                                <TableCell className="text-gray-900 text-xs font-medium whitespace-nowrap sticky left-0 bg-white">
-                                  {l.created_at ? format(new Date(l.created_at), "dd/MM/yy HH:mm") : "—"}
-                                </TableCell>
-                                <TableCell className="text-gray-900 text-xs font-medium whitespace-nowrap">{l.name || "—"}</TableCell>
-                                <TableCell className="text-blue-700 text-xs">
-                                  <a href={`mailto:${l.email}`} className="hover:underline">{l.email}</a>
-                                </TableCell>
+                              <TableHead className="text-gray-500 text-xs text-center">Share</TableHead>
+                             </TableRow>
+                           </TableHeader>
+                           <TableBody>
+                             {leads.map(l => {
+                               const copyLeadData = () => {
+                                 const lines = [
+                                   `📋 Lead — ${l.name || "—"}`,
+                                   `Date (CET): ${l.created_at ? formatCET(l.created_at) : "—"}`,
+                                   `Name: ${l.name || "—"}`,
+                                   `Email: ${l.email || "—"}`,
+                                   `Phone: ${l.phone || "—"}`,
+                                   `Concern: ${l.concern || "—"}`,
+                                   `Type: ${l.form_type || "—"}`,
+                                   `Source: ${l.source || "direct"}`,
+                                   `City: ${l.city || "—"}`,
+                                   `PLZ: ${l.postal_code || "—"}`,
+                                   `Country: ${l.country || "—"}`,
+                                   `Language: ${(l as any).language || "—"}`,
+                                   l.notes ? `Notes: ${l.notes}` : null,
+                                   l.utm_campaign ? `Campaign: ${l.utm_campaign}` : null,
+                                 ].filter(Boolean).join("\n");
+                                 navigator.clipboard.writeText(lines);
+                                 toast.success("Lead data copied to clipboard");
+                               };
+                               return (
+                               <TableRow key={l.id} className="border-gray-100 hover:bg-gray-50">
+                                 <TableCell className="text-gray-900 text-xs font-medium whitespace-nowrap sticky left-0 bg-white">
+                                   {l.created_at ? formatCET(l.created_at) : "—"}
+                                 </TableCell>
+                                 <TableCell className="text-gray-900 text-xs font-medium whitespace-nowrap">{l.name || "—"}</TableCell>
+                                 <TableCell className="text-blue-700 text-xs">
+                                   <a href={`mailto:${l.email}`} className="hover:underline">{l.email}</a>
+                                 </TableCell>
                                 <TableCell className="text-gray-900 text-xs whitespace-nowrap">
                                   {l.phone ? <a href={`tel:${l.phone}`} className="text-blue-700 hover:underline">{l.phone}</a> : "—"}
                                 </TableCell>
