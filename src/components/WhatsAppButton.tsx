@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 function getUtmParams(): Record<string, string> {
   const params = new URLSearchParams(window.location.search);
