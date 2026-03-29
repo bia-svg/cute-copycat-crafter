@@ -327,9 +327,7 @@ export default function Erstgespraech() {
                     disabled={!gdprConsent}
                     className={`w-full font-semibold py-3 text-white transition-colors ${gdprConsent ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
                   >
-                    {formType === "seminar"
-                      ? (isEN ? "Register for Seminar" : "Seminar-Anmeldung absenden")
-                      : (isEN ? "Send Request" : "Absenden")}
+                    {isEN ? "Send Request" : "Absenden"}
                   </Button>
 
                   <p className="text-[10px] text-muted-foreground text-center">
@@ -337,6 +335,19 @@ export default function Erstgespraech() {
                       ? "Your data will only be used to process your request. We will not share your data with third parties."
                       : "Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Wir geben Ihre Daten nicht an Dritte weiter."}
                   </p>
+
+                  {/* Seminar link */}
+                  <div className="text-center pt-2 border-t border-border">
+                    <p className="text-xs text-muted-foreground mb-1">
+                      {isEN ? "Interested in our training seminars?" : "Interesse an unseren Ausbildungsseminaren?"}
+                    </p>
+                    <Link
+                      to={getPath("seminarRegistration", language, country)}
+                      className="text-xs text-primary hover:underline"
+                    >
+                      {isEN ? "→ Register for a Seminar" : "→ Zur Seminar-Anmeldung"}
+                    </Link>
+                  </div>
                 </form>
               )}
             </div>
