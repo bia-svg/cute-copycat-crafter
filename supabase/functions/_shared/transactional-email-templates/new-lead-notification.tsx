@@ -22,62 +22,67 @@ interface NewLeadProps {
   utmCampaign?: string
 }
 
-const NewLeadNotificationEmail = (props: NewLeadProps) => (
-  <Html lang="de" dir="ltr">
-    <Head />
-    <Preview>Neuer Lead: {props.name || 'Unbekannt'} — {props.formType || 'Kontakt'}</Preview>
-    <Body style={main}>
-      <Container style={container}>
-        <Heading style={h1}>📋 Neuer Lead eingegangen</Heading>
-        <Section style={infoBox}>
-          <Text style={label}>Name</Text>
-          <Text style={value}>{props.name || '—'}</Text>
-          
-          <Text style={label}>E-Mail</Text>
-          <Text style={value}>{props.email || '—'}</Text>
-          
-          <Text style={label}>Telefon</Text>
-          <Text style={value}>{props.phone || '—'}</Text>
-          
-          <Text style={label}>Anliegen</Text>
-          <Text style={value}>{props.concern || '—'}</Text>
-          
-          <Text style={label}>Formular</Text>
-          <Text style={value}>{props.formType || '—'}</Text>
-          
-          <Text style={label}>Stadt / Land</Text>
-          <Text style={value}>{[props.city, props.country].filter(Boolean).join(', ') || '—'}</Text>
-          
-          <Text style={label}>Sprache</Text>
-          <Text style={value}>{props.language || '—'}</Text>
-          
-          {props.notes && (
-            <>
-              <Text style={label}>Notizen</Text>
-              <Text style={value}>{props.notes}</Text>
-            </>
-          )}
-        </Section>
+const NewLeadNotificationEmail = (props: NewLeadProps) => {
+  const isEN = props.language === 'en'
+  return (
+    <Html lang={isEN ? 'en' : 'de'} dir="ltr">
+      <Head />
+      <Preview>{isEN ? 'New Lead' : 'Neuer Lead'}: {props.name || (isEN ? 'Unknown' : 'Unbekannt')} — {props.formType || (isEN ? 'Contact' : 'Kontakt')}</Preview>
+      <Body style={main}>
+        <Container style={container}>
+          <Heading style={h1}>📋 {isEN ? 'New Lead Received' : 'Neuer Lead eingegangen'}</Heading>
+          <Section style={infoBox}>
+            <Text style={label}>{isEN ? 'Name' : 'Name'}</Text>
+            <Text style={value}>{props.name || '—'}</Text>
+            
+            <Text style={label}>{isEN ? 'Email' : 'E-Mail'}</Text>
+            <Text style={value}>{props.email || '—'}</Text>
+            
+            <Text style={label}>{isEN ? 'Phone' : 'Telefon'}</Text>
+            <Text style={value}>{props.phone || '—'}</Text>
+            
+            <Text style={label}>{isEN ? 'Concern' : 'Anliegen'}</Text>
+            <Text style={value}>{props.concern || '—'}</Text>
+            
+            <Text style={label}>{isEN ? 'Form' : 'Formular'}</Text>
+            <Text style={value}>{props.formType || '—'}</Text>
+            
+            <Text style={label}>{isEN ? 'City / Country' : 'Stadt / Land'}</Text>
+            <Text style={value}>{[props.city, props.country].filter(Boolean).join(', ') || '—'}</Text>
+            
+            <Text style={label}>{isEN ? 'Language' : 'Sprache'}</Text>
+            <Text style={value}>{props.language || '—'}</Text>
+            
+            {props.notes && (
+              <>
+                <Text style={label}>{isEN ? 'Notes' : 'Notizen'}</Text>
+                <Text style={value}>{props.notes}</Text>
+              </>
+            )}
+          </Section>
 
-        <Hr style={hr} />
+          <Hr style={hr} />
 
-        <Section style={trackingBox}>
-          <Text style={trackingTitle}>Tracking</Text>
-          <Text style={trackingText}>
-            Quelle: {props.source || 'organic'}
-            {props.utmSource && ` | utm_source: ${props.utmSource}`}
-            {props.utmMedium && ` | utm_medium: ${props.utmMedium}`}
-            {props.utmCampaign && ` | utm_campaign: ${props.utmCampaign}`}
+          <Section style={trackingBox}>
+            <Text style={trackingTitle}>Tracking</Text>
+            <Text style={trackingText}>
+              {isEN ? 'Source' : 'Quelle'}: {props.source || 'organic'}
+              {props.utmSource && ` | utm_source: ${props.utmSource}`}
+              {props.utmMedium && ` | utm_medium: ${props.utmMedium}`}
+              {props.utmCampaign && ` | utm_campaign: ${props.utmCampaign}`}
+            </Text>
+          </Section>
+
+          <Text style={footer}>
+            {isEN
+              ? `This email was sent automatically by ${SITE_NAME}.`
+              : `Diese E-Mail wurde automatisch von ${SITE_NAME} gesendet.`}
           </Text>
-        </Section>
-
-        <Text style={footer}>
-          Diese E-Mail wurde automatisch von {SITE_NAME} gesendet.
-        </Text>
-      </Container>
-    </Body>
-  </Html>
-)
+        </Container>
+      </Body>
+    </Html>
+  )
+}
 
 export const template = {
   component: NewLeadNotificationEmail,
