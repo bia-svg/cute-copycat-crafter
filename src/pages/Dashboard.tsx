@@ -18,7 +18,8 @@ import {
 } from "@/components/ui/chart";
 import {
   AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid,
-  LineChart, Line, Legend, ResponsiveContainer, PieChart, Pie, Cell
+  LineChart, Line, Legend, ResponsiveContainer, PieChart, Pie, Cell,
+  ComposedChart
 } from "recharts";
 import {
   Users, FileText, TrendingUp, LogOut, Clock,
