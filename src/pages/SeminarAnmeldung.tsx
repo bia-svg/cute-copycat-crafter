@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { trackFormConversion } from "@/components/WhatsAppButton";
 import { supabase } from "@/integrations/supabase/client";
+import { sendLeadEmails } from "@/lib/leadEmails";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { getPath } from "@/lib/routes";
