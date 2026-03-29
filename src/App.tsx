@@ -1,6 +1,6 @@
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Route, Routes, Navigate, useLocation } from "react-router-dom";
-import { useEffect, lazy, Suspense } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
