@@ -59,8 +59,8 @@ export default function Terminbestaetigung() {
     const dob = (formData.get("dob") as string) || "";
     const notes = (formData.get("notes") as string)?.trim() || "";
 
-    if (!firstName || !lastName || !street || !postalCode || !city || !sessionDate || !sessionTime || !email || !phone || !location) {
-      toast.error(isEN ? "Please fill in all required fields." : "Bitte füllen Sie alle Pflichtfelder aus.");
+    if (!firstName || !lastName || !street || !postalCode || !city || !sessionDate || !sessionTime || !email || !phone || !location || !dsgvoChecked || !agbChecked || !paymentChecked) {
+      toast.error(isEN ? "Please fill in all required fields and accept all checkboxes." : "Bitte füllen Sie alle Pflichtfelder aus und akzeptieren Sie alle Checkboxen.");
       return;
     }
 
