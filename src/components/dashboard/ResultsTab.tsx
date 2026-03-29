@@ -500,8 +500,8 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
             </div>
             <div className="p-3 bg-blue-50 rounded-lg border border-blue-100 text-center">
               <p className="text-xs text-blue-600 font-medium">Seminar DE</p>
-              <p className="text-xs text-blue-500 line-through">€2,790</p>
-              <p className="text-lg font-bold text-blue-700">€2,490</p>
+               <p className="text-xs text-blue-500 line-through">€2.790,-</p>
+               <p className="text-lg font-bold text-blue-700">€2.490,-</p>
               <p className="text-[10px] text-blue-600">Early Bird</p>
             </div>
           </div>
