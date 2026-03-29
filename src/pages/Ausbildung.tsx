@@ -525,10 +525,10 @@ export default function Ausbildung() {
               ? "In 6 days, you'll have the skills, the confidence, and the diploma to help people transform their lives. The only question is: are you ready?"
               : "In 6 Tagen haben Sie die Fähigkeiten, das Selbstvertrauen und das Diplom, um Menschen bei der Transformation ihres Lebens zu helfen. Die einzige Frage ist: Sind Sie bereit?"}
           </p>
-          <Link to={getPath("contact", language, country)}>
+          <Link to={getPath("seminarRegistration", language, country)}>
             <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-base">
-              {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
-              <MessageSquare className="w-4 h-4 ml-2" />
+              {isEN ? "Register for Seminar" : "Zum Seminar anmelden"}
+              <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </Link>
           <div className="flex items-center justify-center gap-1 mt-6 text-white/60 text-sm">
