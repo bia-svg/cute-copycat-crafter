@@ -103,7 +103,7 @@ export default function CityZurich() {
                 ? "Professional hypnotherapy practice in Zurich specializing in smoking cessation, anxiety, weight loss and stress management."
                 : "Professionelle Hypnosetherapie-Praxis in Zürich, spezialisiert auf Raucherentwöhnung, Ängste, Abnehmen und Stressmanagement.",
               image: `${CDN}/zurich_city_hypnose_6ee818ff.jpg`,
-              telephone: "+41 44 888 09 01",
+              telephone: "+41 79 131 88 78",
               url: "https://david-j-woods.com/de/ch/hypnose-zuerich",
               address: { "@type": "PostalAddress", streetAddress: "Usteristrasse 23", addressLocality: "Zürich", postalCode: "8001", addressCountry: "CH" },
               geo: { "@type": "GeoCoordinates", latitude: 47.3744, longitude: 8.5365 },
