@@ -16,6 +16,7 @@ const Standorte = lazy(() => import("@/pages/Standorte"));
 const TvMedien = lazy(() => import("@/pages/TvMedien"));
 const Erfolgsberichte = lazy(() => import("@/pages/Erfolgsberichte"));
 const Terminbestaetigung = lazy(() => import("@/pages/Terminbestaetigung"));
+const SeminarAnmeldung = lazy(() => import("@/pages/SeminarAnmeldung"));
 const FirmenCoaching = lazy(() => import("@/pages/FirmenCoaching"));
 const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
