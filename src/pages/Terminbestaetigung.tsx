@@ -102,7 +102,7 @@ export default function Terminbestaetigung() {
       concern: "Terminbestätigung",
       notes: [
         `Adresse: ${street}, ${postalCode} ${city}`,
-        dob && `Geburtsdatum: ${dob}`,
+        dobStr && `Geburtsdatum: ${dobStr}`,
         `Sitzung: ${sessionDate} ${sessionTime}`,
         `Ort: ${locationLabels[location] || location}`,
         notes && `Notizen: ${notes}`,
