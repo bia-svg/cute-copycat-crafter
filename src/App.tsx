@@ -44,6 +44,13 @@ const DepressionPage = lazy(() => import("@/pages/services/index").then(m => ({ 
 const ChildrenPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.ChildrenPage })));
 const AdultsPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.AdultsPage })));
 
+function LegacyRedirect() {
+  const location = useLocation();
+  const target = getLegacyRedirect(location.pathname);
+  if (target) return <Navigate to={target} replace />;
+  return null;
+}
+
 function GeoRedirect() {
   const [target, setTarget] = useState("/de/ch");
   const [ready, setReady] = useState(false);
