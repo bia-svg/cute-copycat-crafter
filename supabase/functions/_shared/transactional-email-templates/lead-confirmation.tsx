@@ -14,7 +14,6 @@ interface LeadConfirmationProps {
   language?: string
   phone?: string
   email?: string
-  // Structured fields
   address?: string
   sessionDate?: string
   sessionTime?: string
@@ -24,6 +23,8 @@ interface LeadConfirmationProps {
   seminarLocation?: string
   bestTime?: string
   message?: string
+  profession?: string
+  registrationNumber?: string
 }
 
 const LeadConfirmationEmail = (props: LeadConfirmationProps) => {
@@ -52,6 +53,17 @@ const LeadConfirmationEmail = (props: LeadConfirmationProps) => {
               ? `Thank you${props.name ? `, ${props.name}` : ''}!`
               : `Vielen Dank${props.name ? `, ${props.name}` : ''}!`}
           </Heading>
+
+          {isSeminar && props.registrationNumber && (
+            <Section style={regNumberBox}>
+              <Text style={regNumberLabel}>
+                {isEN ? 'Registration Number' : 'Anmelde-Nr.'}
+              </Text>
+              <Text style={regNumberValue}>
+                {props.registrationNumber}
+              </Text>
+            </Section>
+          )}
 
           <Text style={text}>
             {isEN
@@ -88,6 +100,11 @@ const LeadConfirmationEmail = (props: LeadConfirmationProps) => {
             {props.dateOfBirth && (
               <Text style={summaryLine}>
                 <strong>{isEN ? 'Date of Birth' : 'Geburtsdatum'}:</strong> {props.dateOfBirth}
+              </Text>
+            )}
+            {props.profession && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Profession' : 'Beruf'}:</strong> {props.profession}
               </Text>
             )}
 
@@ -133,6 +150,16 @@ const LeadConfirmationEmail = (props: LeadConfirmationProps) => {
             )}
           </Section>
 
+          {isSeminar && (
+            <Section style={invoiceNote}>
+              <Text style={invoiceText}>
+                {isEN
+                  ? '📄 You will receive a written invoice by email shortly.'
+                  : '📄 Sie erhalten in Kürze eine schriftliche Rechnung per E-Mail.'}
+              </Text>
+            </Section>
+          )}
+
           <Text style={text}>
             {isEN
               ? 'If you have any questions in the meantime, feel free to reach out to us directly.'
@@ -158,23 +185,31 @@ const LeadConfirmationEmail = (props: LeadConfirmationProps) => {
 
 export const template = {
   component: LeadConfirmationEmail,
-  subject: (data: Record<string, any>) =>
-    data.language === 'en'
+  subject: (data: Record<string, any>) => {
+    const isEN = data.language === 'en'
+    if (data.formType === 'seminar' && data.registrationNumber) {
+      return isEN
+        ? `Registration #${data.registrationNumber} — David J. Woods`
+        : `Anmeldung #${data.registrationNumber} — David J. Woods`
+    }
+    return isEN
       ? 'Your request has been received — David J. Woods'
-      : 'Ihre Anfrage wurde empfangen — David J. Woods',
+      : 'Ihre Anfrage wurde empfangen — David J. Woods'
+  },
   displayName: 'Lead confirmation to submitter',
   previewData: {
     name: 'Maria',
-    concern: 'Rauchentwöhnung',
-    formType: 'session',
+    concern: 'Seminar-Anmeldung',
+    formType: 'seminar',
     email: 'maria@example.com',
     phone: '+41 79 123 45 67',
-    address: 'Bahnhofstrasse 10, 8001 Zürich',
-    sessionDate: '15.03.2026',
-    sessionTime: 'Nachmittags',
-    sessionLocation: 'Zürich – 5 Elements TCM, Usteristrasse 23',
+    address: 'Bahnhofstrasse 10, 8001 Zürich, Schweiz',
+    seminarDate: 'Mo-Sa, 15.-20. Juni 2026',
+    seminarLocation: '"Fit+Gsund" Churzhaslen 3, 8733 Eschenbach',
     dateOfBirth: '12.05.1985',
-    message: 'Interessiert an 2 Sitzungen',
+    profession: 'Psychologin',
+    registrationNumber: '12145',
+    message: 'Freue mich auf das Seminar',
     language: 'de',
   },
 } satisfies TemplateEntry
@@ -185,6 +220,11 @@ const h1 = { fontSize: '22px', fontWeight: 'bold' as const, color: '#1B3A5C', ma
 const text = { fontSize: '14px', color: '#444', lineHeight: '1.6', margin: '0 0 16px' }
 const summaryBox = { backgroundColor: '#f8f8f6', padding: '16px 20px', borderRadius: '4px', margin: '0 0 20px' }
 const summaryLine = { fontSize: '13px', color: '#333', margin: '0 0 6px', lineHeight: '1.5' }
+const regNumberBox = { backgroundColor: '#E8F5E9', padding: '12px 20px', borderRadius: '4px', margin: '0 0 16px', textAlign: 'center' as const }
+const regNumberLabel = { fontSize: '11px', color: '#2E7D32', fontWeight: '600' as const, textTransform: 'uppercase' as const, margin: '0 0 4px', letterSpacing: '0.5px' }
+const regNumberValue = { fontSize: '24px', fontWeight: 'bold' as const, color: '#1B3A5C', margin: '0' }
+const invoiceNote = { backgroundColor: '#FFF8E1', padding: '12px 16px', borderRadius: '4px', margin: '0 0 16px' }
+const invoiceText = { fontSize: '13px', color: '#5D4037', margin: '0' }
 const ctaButton = {
   backgroundColor: '#2E7D32',
   color: '#ffffff',

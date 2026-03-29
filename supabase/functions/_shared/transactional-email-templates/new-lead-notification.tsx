@@ -20,7 +20,6 @@ interface NewLeadProps {
   utmSource?: string
   utmMedium?: string
   utmCampaign?: string
-  // Structured fields
   address?: string
   sessionDate?: string
   sessionTime?: string
@@ -30,6 +29,8 @@ interface NewLeadProps {
   seminarLocation?: string
   bestTime?: string
   message?: string
+  profession?: string
+  registrationNumber?: string
 }
 
 const NewLeadNotificationEmail = (props: NewLeadProps) => {
@@ -44,6 +45,13 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
       <Body style={main}>
         <Container style={container}>
           <Heading style={h1}>📋 {isEN ? 'New Lead Received' : 'Neuer Lead eingegangen'}</Heading>
+
+          {isSeminar && props.registrationNumber && (
+            <Section style={regBox}>
+              <Text style={regLabel}>{isEN ? 'Registration #' : 'Anmelde-Nr.'}</Text>
+              <Text style={regValue}>{props.registrationNumber}</Text>
+            </Section>
+          )}
 
           {/* Contact Info */}
           <Section style={infoBox}>
@@ -68,6 +76,12 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
                 <Text style={value}>{props.dateOfBirth}</Text>
               </>
             )}
+            {props.profession && (
+              <>
+                <Text style={label}>{isEN ? 'Profession' : 'Beruf'}</Text>
+                <Text style={value}>{props.profession}</Text>
+              </>
+            )}
             <Text style={label}>{isEN ? 'Language' : 'Sprache'}</Text>
             <Text style={value}>{props.language || '—'}</Text>
           </Section>
@@ -88,7 +102,6 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
               </>
             )}
 
-            {/* Session-specific fields */}
             {isSession && props.sessionDate && (
               <>
                 <Text style={label}>{isEN ? 'Session Date' : 'Sitzungsdatum'}</Text>
@@ -108,7 +121,6 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
               </>
             )}
 
-            {/* Seminar-specific fields */}
             {isSeminar && props.seminarDate && (
               <>
                 <Text style={label}>{isEN ? 'Seminar Date' : 'Seminartermin'}</Text>
@@ -122,7 +134,6 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
               </>
             )}
 
-            {/* General fields */}
             {props.bestTime && (
               <>
                 <Text style={label}>{isEN ? 'Best Time to Reach' : 'Beste Erreichbarkeit'}</Text>
@@ -162,30 +173,31 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
 
 export const template = {
   component: NewLeadNotificationEmail,
-  subject: (data: Record<string, any>) => data.language === 'en'
-    ? `New Lead: ${data.name || 'Unknown'} — ${data.formType === 'session' ? 'Session' : data.formType === 'seminar' ? 'Seminar' : data.formType || 'Contact'}`
-    : `Neuer Lead: ${data.name || 'Unbekannt'} — ${data.formType === 'session' ? 'Sitzung' : data.formType === 'seminar' ? 'Seminar' : data.formType || 'Kontakt'}`,
+  subject: (data: Record<string, any>) => {
+    const regPart = data.registrationNumber ? ` #${data.registrationNumber}` : ''
+    return data.language === 'en'
+      ? `New Lead${regPart}: ${data.name || 'Unknown'} — ${data.formType === 'session' ? 'Session' : data.formType === 'seminar' ? 'Seminar' : data.formType || 'Contact'}`
+      : `Neuer Lead${regPart}: ${data.name || 'Unbekannt'} — ${data.formType === 'session' ? 'Sitzung' : data.formType === 'seminar' ? 'Seminar' : data.formType || 'Kontakt'}`
+  },
   to: 'info@david-j-woods.com',
   displayName: 'New lead notification',
   previewData: {
     name: 'Max Mustermann',
     email: 'max@example.com',
     phone: '+41 79 123 45 67',
-    concern: 'Rauchentwöhnung',
-    formType: 'session',
-    city: 'Zürich',
+    concern: 'Seminar-Anmeldung',
+    formType: 'seminar',
+    city: 'Schweiz',
     country: 'CH',
     language: 'de',
-    address: 'Bahnhofstrasse 10, 8001 Zürich',
-    sessionDate: '15.03.2026',
-    sessionTime: 'Nachmittags',
-    sessionLocation: 'Zürich – 5 Elements TCM, Usteristrasse 23',
+    address: 'Bahnhofstrasse 10, 8001 Zürich, Schweiz',
+    seminarDate: 'Mo-Sa, 15.-20. Juni 2026',
+    seminarLocation: '"Fit+Gsund" Churzhaslen 3, 8733 Eschenbach',
     dateOfBirth: '12.05.1985',
-    message: 'Interessiert an 2 Sitzungen',
-    source: 'paid',
-    utmSource: 'google',
-    utmMedium: 'cpc',
-    utmCampaign: 'hypnose-zuerich',
+    profession: 'Psychologin',
+    registrationNumber: '12145',
+    message: 'Freue mich auf das Seminar',
+    source: 'organic',
   },
 } satisfies TemplateEntry
 
@@ -196,6 +208,9 @@ const infoBox = { backgroundColor: '#f8f8f6', padding: '16px 20px', borderRadius
 const sectionTitle = { fontSize: '14px', fontWeight: '700' as const, color: '#1B3A5C', margin: '0 0 12px', borderBottom: '1px solid #e5e5e5', paddingBottom: '8px' }
 const label = { fontSize: '11px', fontWeight: '600' as const, color: '#888', textTransform: 'uppercase' as const, margin: '10px 0 2px', letterSpacing: '0.5px' }
 const value = { fontSize: '14px', color: '#333', margin: '0 0 4px', lineHeight: '1.4' }
+const regBox = { backgroundColor: '#E8F5E9', padding: '12px 20px', borderRadius: '4px', margin: '0 0 16px', textAlign: 'center' as const }
+const regLabel = { fontSize: '11px', color: '#2E7D32', fontWeight: '600' as const, textTransform: 'uppercase' as const, margin: '0 0 4px', letterSpacing: '0.5px' }
+const regValue = { fontSize: '22px', fontWeight: 'bold' as const, color: '#1B3A5C', margin: '0' }
 const hr = { borderColor: '#e5e5e5', margin: '16px 0' }
 const trackingBox = { padding: '0' }
 const trackingTitle = { fontSize: '11px', fontWeight: '600' as const, color: '#888', textTransform: 'uppercase' as const, margin: '0 0 4px' }
