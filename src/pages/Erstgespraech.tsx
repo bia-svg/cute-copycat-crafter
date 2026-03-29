@@ -105,6 +105,7 @@ export default function Erstgespraech() {
 
     trackFormConversion("session");
     setSubmitted(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
     toast.success(isEN ? "Thank you! We will contact you shortly." : "Vielen Dank! Wir melden uns in Kürze bei Ihnen.");
   };
 
