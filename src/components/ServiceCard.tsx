@@ -14,7 +14,7 @@ export default function ServiceCard({ title, description, href, icon, image }: S
   return (
     <Link to={href} className="group block bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
       {image && (
-        <div className="aspect-[16/10] overflow-hidden">
+        <div className="hidden md:block aspect-[16/10] overflow-hidden">
           <img src={image} alt={title} width={640} height={400} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
         </div>
       )}
