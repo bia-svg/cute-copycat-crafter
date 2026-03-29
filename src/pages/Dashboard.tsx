@@ -32,6 +32,17 @@ import {
 import SessionsTab from "@/components/dashboard/SessionsTab";
 import ResultsTab from "@/components/dashboard/ResultsTab";
 import { format, parseISO, startOfMonth } from "date-fns";
+import { Copy, Check } from "lucide-react";
+import { toast } from "sonner";
+
+/** Format a UTC date string to CET (UTC+1) / CEST (UTC+2) */
+function formatCET(dateStr: string, fmt: string = "dd/MM/yy HH:mm") {
+  return new Date(dateStr).toLocaleString("de-DE", {
+    timeZone: "Europe/Berlin",
+    day: "2-digit", month: "2-digit", year: "2-digit",
+    hour: "2-digit", minute: "2-digit",
+  });
+}
 
 /* ═══════ Metric Card ═══════ */
 function MetricCard({ title, value, icon: Icon, subtitle, color = "text-gray-900" }: {
