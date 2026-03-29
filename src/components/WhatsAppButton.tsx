@@ -11,8 +11,8 @@ function getUtmParams(): Record<string, string> {
   return result;
 }
 
-function buildWhatsAppUrl(): string {
-  const phone = "491719539922";
+function buildWhatsAppUrl(country: string): string {
+  const phone = country === "ch" ? "41791318878" : "491719539922";
   const utms = getUtmParams();
   let message = "Hallo, ich interessiere mich für eine Hypnose-Sitzung.";
   if (Object.keys(utms).length > 0) {
@@ -23,7 +23,7 @@ function buildWhatsAppUrl(): string {
 }
 
 export default function WhatsAppButton() {
-  const { language } = useLanguage();
+  const { language, country } = useLanguage();
   const isEN = language === "en";
 
   const handleClick = () => {
@@ -55,7 +55,7 @@ export default function WhatsAppButton() {
 
   return (
     <a
-      href={buildWhatsAppUrl()}
+      href={buildWhatsAppUrl(country)}
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}
