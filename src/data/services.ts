@@ -795,7 +795,7 @@ export const childrenData: ServicePageData = {
     { q: "Werden die Eltern in den Prozess einbezogen?", a: "Ja, Eltern werden aktiv einbezogen und erhalten praktische Tipps, wie sie ihr Kind im Alltag unterstützen können." },
   ],
   faqEN: [
-    { q: "From what age is hypnosis suitable for children?", a: "Hypnosis can be used from about 6 years of age. The methods are adapted to be age-appropriate." },
+    { q: "From what age is hypnosis suitable for children?", a: "Hypnosis can be used from about 8 years of age. The methods are adapted to be age-appropriate." },
     { q: "Is hypnosis safe for children?", a: "Yes, children's hypnosis is a gentle and safe method. Children are conscious at all times and can control the process themselves." },
     { q: "Are parents involved in the process?", a: "Yes, parents are actively involved and receive practical tips on how to support their child in everyday life." },
   ],
