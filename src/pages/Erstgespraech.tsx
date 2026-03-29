@@ -91,6 +91,7 @@ export default function Erstgespraech() {
       utm_term: utmTerm,
       tracking_code: referrerPage,
       notes: [bestTime && `Best time: ${bestTime}`, message].filter(Boolean).join(" | ") || null,
+      user_agent: navigator.userAgent || null,
     };
 
     try {

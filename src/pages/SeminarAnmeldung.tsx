@@ -146,6 +146,7 @@ export default function SeminarAnmeldung() {
       utm_term: utmTerm,
       tracking_code: referrerPage,
       notes: [`Reg#${regNumber}`, `Seminar: ${selectedDate}`, selectedDateObj?.location, `Beruf: ${profession}`, `Geb: ${dobStr}`, `Adresse: ${fullAddress}`, message].filter(Boolean).join(" | ") || null,
+      user_agent: navigator.userAgent || null,
     };
 
     try {
