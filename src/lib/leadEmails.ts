@@ -14,6 +14,16 @@ interface LeadEmailData {
   utmSource?: string | null;
   utmMedium?: string | null;
   utmCampaign?: string | null;
+  // Structured fields for organized display
+  address?: string;
+  sessionDate?: string;
+  sessionTime?: string;
+  sessionLocation?: string;
+  dateOfBirth?: string;
+  seminarDate?: string;
+  seminarLocation?: string;
+  bestTime?: string;
+  message?: string;
 }
 
 /**
@@ -24,6 +34,31 @@ interface LeadEmailData {
 export async function sendLeadEmails(data: LeadEmailData) {
   const id = crypto.randomUUID();
 
+  const sharedTemplateData = {
+    name: data.name,
+    email: data.email,
+    phone: data.phone,
+    concern: data.concern,
+    formType: data.formType,
+    city: data.city,
+    country: data.country,
+    language: data.language,
+    notes: data.notes,
+    source: data.source,
+    utmSource: data.utmSource,
+    utmMedium: data.utmMedium,
+    utmCampaign: data.utmCampaign,
+    address: data.address,
+    sessionDate: data.sessionDate,
+    sessionTime: data.sessionTime,
+    sessionLocation: data.sessionLocation,
+    dateOfBirth: data.dateOfBirth,
+    seminarDate: data.seminarDate,
+    seminarLocation: data.seminarLocation,
+    bestTime: data.bestTime,
+    message: data.message,
+  };
+
   // 1. Notify David
   try {
     await supabase.functions.invoke("send-transactional-email", {
@@ -31,21 +66,7 @@ export async function sendLeadEmails(data: LeadEmailData) {
         templateName: "new-lead-notification",
         recipientEmail: "info@david-j-woods.com",
         idempotencyKey: `lead-notify-${id}`,
-        templateData: {
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          concern: data.concern,
-          formType: data.formType,
-          city: data.city,
-          country: data.country,
-          language: data.language,
-          notes: data.notes,
-          source: data.source,
-          utmSource: data.utmSource,
-          utmMedium: data.utmMedium,
-          utmCampaign: data.utmCampaign,
-        },
+        templateData: sharedTemplateData,
       },
     });
   } catch (err) {
@@ -60,11 +81,8 @@ export async function sendLeadEmails(data: LeadEmailData) {
         recipientEmail: data.email,
         idempotencyKey: `lead-confirm-${id}`,
         templateData: {
-          name: data.name.split(" ")[0], // first name only
-          concern: data.concern,
-          formType: data.formType,
-          notes: data.notes,
-          language: data.language,
+          ...sharedTemplateData,
+          name: data.name.split(" ")[0], // first name only for greeting
         },
       },
     });

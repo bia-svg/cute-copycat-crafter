@@ -20,43 +20,119 @@ interface NewLeadProps {
   utmSource?: string
   utmMedium?: string
   utmCampaign?: string
+  // Structured fields
+  address?: string
+  sessionDate?: string
+  sessionTime?: string
+  sessionLocation?: string
+  dateOfBirth?: string
+  seminarDate?: string
+  seminarLocation?: string
+  bestTime?: string
+  message?: string
 }
 
 const NewLeadNotificationEmail = (props: NewLeadProps) => {
   const isEN = props.language === 'en'
+  const isSession = props.formType === 'session'
+  const isSeminar = props.formType === 'seminar'
+
   return (
     <Html lang={isEN ? 'en' : 'de'} dir="ltr">
       <Head />
-      <Preview>{isEN ? 'New Lead' : 'Neuer Lead'}: {props.name || (isEN ? 'Unknown' : 'Unbekannt')} — {props.formType || (isEN ? 'Contact' : 'Kontakt')}</Preview>
+      <Preview>{isEN ? 'New Lead' : 'Neuer Lead'}: {props.name || (isEN ? 'Unknown' : 'Unbekannt')} — {props.concern || props.formType || (isEN ? 'Contact' : 'Kontakt')}</Preview>
       <Body style={main}>
         <Container style={container}>
           <Heading style={h1}>📋 {isEN ? 'New Lead Received' : 'Neuer Lead eingegangen'}</Heading>
+
+          {/* Contact Info */}
           <Section style={infoBox}>
+            <Text style={sectionTitle}>{isEN ? '👤 Contact Information' : '👤 Kontaktdaten'}</Text>
             <Text style={label}>{isEN ? 'Name' : 'Name'}</Text>
             <Text style={value}>{props.name || '—'}</Text>
-            
             <Text style={label}>{isEN ? 'Email' : 'E-Mail'}</Text>
             <Text style={value}>{props.email || '—'}</Text>
-            
             <Text style={label}>{isEN ? 'Phone' : 'Telefon'}</Text>
             <Text style={value}>{props.phone || '—'}</Text>
-            
-            <Text style={label}>{isEN ? 'Concern' : 'Anliegen'}</Text>
-            <Text style={value}>{props.concern || '—'}</Text>
-            
-            <Text style={label}>{isEN ? 'Form' : 'Formular'}</Text>
-            <Text style={value}>{props.formType || '—'}</Text>
-            
+            {props.address && (
+              <>
+                <Text style={label}>{isEN ? 'Address' : 'Adresse'}</Text>
+                <Text style={value}>{props.address}</Text>
+              </>
+            )}
             <Text style={label}>{isEN ? 'City / Country' : 'Stadt / Land'}</Text>
             <Text style={value}>{[props.city, props.country].filter(Boolean).join(', ') || '—'}</Text>
-            
+            {props.dateOfBirth && (
+              <>
+                <Text style={label}>{isEN ? 'Date of Birth' : 'Geburtsdatum'}</Text>
+                <Text style={value}>{props.dateOfBirth}</Text>
+              </>
+            )}
             <Text style={label}>{isEN ? 'Language' : 'Sprache'}</Text>
             <Text style={value}>{props.language || '—'}</Text>
-            
-            {props.notes && (
+          </Section>
+
+          {/* Request Details */}
+          <Section style={infoBox}>
+            <Text style={sectionTitle}>{isEN ? '📝 Request Details' : '📝 Anfrage-Details'}</Text>
+            <Text style={label}>{isEN ? 'Type' : 'Typ'}</Text>
+            <Text style={value}>
+              {isSession ? (isEN ? 'Session / Appointment' : 'Sitzung / Termin')
+                : isSeminar ? (isEN ? 'Seminar Registration' : 'Seminar-Anmeldung')
+                : props.formType || '—'}
+            </Text>
+            {props.concern && (
               <>
-                <Text style={label}>{isEN ? 'Notes' : 'Notizen'}</Text>
-                <Text style={value}>{props.notes}</Text>
+                <Text style={label}>{isEN ? 'Concern' : 'Anliegen'}</Text>
+                <Text style={value}>{props.concern}</Text>
+              </>
+            )}
+
+            {/* Session-specific fields */}
+            {isSession && props.sessionDate && (
+              <>
+                <Text style={label}>{isEN ? 'Session Date' : 'Sitzungsdatum'}</Text>
+                <Text style={value}>{props.sessionDate}</Text>
+              </>
+            )}
+            {isSession && props.sessionTime && (
+              <>
+                <Text style={label}>{isEN ? 'Session Time' : 'Sitzungszeit'}</Text>
+                <Text style={value}>{props.sessionTime}</Text>
+              </>
+            )}
+            {isSession && props.sessionLocation && (
+              <>
+                <Text style={label}>{isEN ? 'Session Location' : 'Sitzungsort'}</Text>
+                <Text style={value}>{props.sessionLocation}</Text>
+              </>
+            )}
+
+            {/* Seminar-specific fields */}
+            {isSeminar && props.seminarDate && (
+              <>
+                <Text style={label}>{isEN ? 'Seminar Date' : 'Seminartermin'}</Text>
+                <Text style={value}>{props.seminarDate}</Text>
+              </>
+            )}
+            {isSeminar && props.seminarLocation && (
+              <>
+                <Text style={label}>{isEN ? 'Seminar Location' : 'Seminarort'}</Text>
+                <Text style={value}>{props.seminarLocation}</Text>
+              </>
+            )}
+
+            {/* General fields */}
+            {props.bestTime && (
+              <>
+                <Text style={label}>{isEN ? 'Best Time to Reach' : 'Beste Erreichbarkeit'}</Text>
+                <Text style={value}>{props.bestTime}</Text>
+              </>
+            )}
+            {props.message && (
+              <>
+                <Text style={label}>{isEN ? 'Message' : 'Nachricht'}</Text>
+                <Text style={value}>{props.message}</Text>
               </>
             )}
           </Section>
@@ -87,8 +163,8 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
 export const template = {
   component: NewLeadNotificationEmail,
   subject: (data: Record<string, any>) => data.language === 'en'
-    ? `New Lead: ${data.name || 'Unknown'} — ${data.formType || 'Contact'}`
-    : `Neuer Lead: ${data.name || 'Unbekannt'} — ${data.formType || 'Kontakt'}`,
+    ? `New Lead: ${data.name || 'Unknown'} — ${data.formType === 'session' ? 'Session' : data.formType === 'seminar' ? 'Seminar' : data.formType || 'Contact'}`
+    : `Neuer Lead: ${data.name || 'Unbekannt'} — ${data.formType === 'session' ? 'Sitzung' : data.formType === 'seminar' ? 'Seminar' : data.formType || 'Kontakt'}`,
   to: 'info@david-j-woods.com',
   displayName: 'New lead notification',
   previewData: {
@@ -100,7 +176,12 @@ export const template = {
     city: 'Zürich',
     country: 'CH',
     language: 'de',
-    notes: 'Best time: morgens | Interessiert an 2 Sitzungen',
+    address: 'Bahnhofstrasse 10, 8001 Zürich',
+    sessionDate: '15.03.2026',
+    sessionTime: 'Nachmittags',
+    sessionLocation: 'Zürich – 5 Elements TCM, Usteristrasse 23',
+    dateOfBirth: '12.05.1985',
+    message: 'Interessiert an 2 Sitzungen',
     source: 'paid',
     utmSource: 'google',
     utmMedium: 'cpc',
@@ -111,8 +192,9 @@ export const template = {
 const main = { backgroundColor: '#ffffff', fontFamily: "'Inter', Arial, sans-serif" }
 const container = { padding: '24px 28px', maxWidth: '600px' }
 const h1 = { fontSize: '20px', fontWeight: 'bold' as const, color: '#1B3A5C', margin: '0 0 20px' }
-const infoBox = { backgroundColor: '#f8f8f6', padding: '16px 20px', borderRadius: '4px', margin: '0 0 16px' }
-const label = { fontSize: '11px', fontWeight: '600' as const, color: '#888', textTransform: 'uppercase' as const, margin: '12px 0 2px', letterSpacing: '0.5px' }
+const infoBox = { backgroundColor: '#f8f8f6', padding: '16px 20px', borderRadius: '4px', margin: '0 0 12px' }
+const sectionTitle = { fontSize: '14px', fontWeight: '700' as const, color: '#1B3A5C', margin: '0 0 12px', borderBottom: '1px solid #e5e5e5', paddingBottom: '8px' }
+const label = { fontSize: '11px', fontWeight: '600' as const, color: '#888', textTransform: 'uppercase' as const, margin: '10px 0 2px', letterSpacing: '0.5px' }
 const value = { fontSize: '14px', color: '#333', margin: '0 0 4px', lineHeight: '1.4' }
 const hr = { borderColor: '#e5e5e5', margin: '16px 0' }
 const trackingBox = { padding: '0' }

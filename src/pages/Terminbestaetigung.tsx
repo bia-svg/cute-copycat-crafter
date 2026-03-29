@@ -128,6 +128,7 @@ export default function Terminbestaetigung() {
       await supabase.functions.invoke("notify-lead", { body: { lead: leadData } });
 
       // Send emails (notification to David + confirmation to submitter)
+      const locationLabelsEmail: Record<string, string> = locationLabels;
       await sendLeadEmails({
         name: leadData.name,
         email,
@@ -142,6 +143,12 @@ export default function Terminbestaetigung() {
         utmSource,
         utmMedium,
         utmCampaign,
+        address: `${street}, ${postalCode} ${city}`,
+        sessionDate: sessionDate,
+        sessionTime: sessionTime,
+        sessionLocation: locationLabelsEmail[location] || location,
+        dateOfBirth: dobStr || undefined,
+        message: notes || undefined,
       });
     } catch (err) {
       console.error("Lead notification error:", err);
