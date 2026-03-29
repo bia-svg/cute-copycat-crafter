@@ -265,9 +265,31 @@ export default function Terminbestaetigung() {
             </div>
             <div>
               <Label className="text-foreground font-semibold">
-                {isEN ? "Phone Number with Area Code" : "Telefonnummer mit Vorwahl"} <span className="text-destructive">*</span>
+                {isEN ? "Phone" : "Telefonnummer"} <span className="text-destructive">*</span>
               </Label>
-              <Input name="phone" type="tel" className="mt-2" required />
+              <div className="flex mt-2">
+                <select
+                  value={phoneCountry}
+                  onChange={(e) => { setPhoneCountry(e.target.value); setPhoneNumber(""); }}
+                  className="border border-r-0 border-input px-2 py-2 text-sm bg-background focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors rounded-l-md w-[110px] shrink-0 appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%222%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_6px_center] pr-5 cursor-pointer"
+                >
+                  {PHONE_COUNTRIES.map(c => (
+                    <option key={c.code} value={c.code}>{c.flag} {c.iso} {c.code}</option>
+                  ))}
+                </select>
+                <Input
+                  type="tel"
+                  required
+                  value={phoneNumber}
+                  onChange={(e) => handlePhoneChange(e.target.value)}
+                  placeholder={selectedPhoneCountry.placeholder}
+                  maxLength={selectedPhoneCountry.maxDigits + 4}
+                  className="rounded-l-none border-l-0"
+                />
+              </div>
+              <p className="text-[10px] text-muted-foreground mt-0.5">
+                {isEN ? `Max ${selectedPhoneCountry.maxDigits} digits` : `Max. ${selectedPhoneCountry.maxDigits} Ziffern`}
+              </p>
             </div>
           </div>
 
