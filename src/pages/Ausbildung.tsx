@@ -439,7 +439,7 @@ export default function Ausbildung() {
                       </span>
                     </>
                   ) : (
-                    <span className="text-2xl font-bold text-[#1B3A5C]">CHF 3.290,-</span>
+                    <span className="text-2xl font-bold text-[#1B3A5C]">CHF 3.290.-</span>
                   )}
                 </div>
                 {datesCH.map((d, i) => (
