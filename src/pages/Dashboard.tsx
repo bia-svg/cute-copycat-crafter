@@ -23,8 +23,11 @@ import {
 import {
   Users, FileText, TrendingUp, LogOut, Clock,
   Eye, DollarSign, Target, ArrowUpRight, ArrowDownRight,
-  Leaf, Zap, MousePointer, BarChart3, Globe, MessageCircle, ShieldCheck, Lock
+  Leaf, Zap, MousePointer, BarChart3, Globe, MessageCircle, ShieldCheck, Lock,
+  CalendarCheck, GraduationCap
 } from "lucide-react";
+import SessionsTab from "@/components/dashboard/SessionsTab";
+import ResultsTab from "@/components/dashboard/ResultsTab";
 import { format, parseISO, startOfMonth } from "date-fns";
 
 /* ═══════ Metric Card ═══════ */
@@ -246,6 +249,12 @@ export default function Dashboard() {
               <TabsTrigger value="leads" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Leads</TabsTrigger>
               <TabsTrigger value="all-leads" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
                 <Lock className="w-3 h-3 mr-1" /> All Leads
+              </TabsTrigger>
+              <TabsTrigger value="sessions" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                <CalendarCheck className="w-3 h-3 mr-1" /> Sessions
+              </TabsTrigger>
+              <TabsTrigger value="results" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                <GraduationCap className="w-3 h-3 mr-1" /> Results
               </TabsTrigger>
               <TabsTrigger value="data" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Data Export</TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
@@ -943,6 +952,16 @@ export default function Dashboard() {
                   </Card>
                 </>
               )}
+            </TabsContent>
+
+            {/* ═══════ SESSIONS TAB ═══════ */}
+            <TabsContent value="sessions" className="space-y-5 mt-4">
+              <SessionsTab leads={leads} />
+            </TabsContent>
+
+            {/* ═══════ RESULTS TAB ═══════ */}
+            <TabsContent value="results" className="space-y-5 mt-4">
+              <ResultsTab leads={leads} />
             </TabsContent>
 
             {/* ═══════ DATA EXPORT TAB ═══════ */}
