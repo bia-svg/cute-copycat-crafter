@@ -147,7 +147,7 @@ export default function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-50 bg-card border-b border-border" style={{ containIntrinsicSize: "auto 140px", contentVisibility: "visible" }}>
+    <header className="sticky top-0 z-50 bg-card border-b border-border" style={{ contentVisibility: "visible" }}>
       {/* Top bar */}
       <div className="bg-primary text-primary-foreground text-xs sm:text-xs">
         <div className="container-main flex items-center justify-center sm:justify-between py-2 sm:py-1.5 gap-4">
@@ -217,7 +217,7 @@ export default function Header() {
       {/* Main nav */}
       <div className="container-main flex items-center justify-between h-16">
         <Link to={getPath("home", language, country)} className="flex items-center gap-2">
-          <img src={CDN.logo} alt="David J. Woods – Hypnose und Psychologie Logo" className="h-10" />
+          <img src={CDN.logo} alt="David J. Woods – Hypnose und Psychologie Logo" className="h-10" width="120" height="40" />
         </Link>
 
         {/* Desktop nav */}
