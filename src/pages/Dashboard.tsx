@@ -873,8 +873,9 @@ export default function Dashboard() {
                               <TableHead className="text-gray-500 text-xs">Source</TableHead>
                               <TableHead className="text-gray-500 text-xs">City</TableHead>
                               <TableHead className="text-gray-500 text-xs">PLZ</TableHead>
-                              <TableHead className="text-gray-500 text-xs">Country</TableHead>
-                              <TableHead className="text-gray-500 text-xs">Referrer Page</TableHead>
+                               <TableHead className="text-gray-500 text-xs">Country</TableHead>
+                               <TableHead className="text-gray-500 text-xs">Lang</TableHead>
+                               <TableHead className="text-gray-500 text-xs">Referrer Page</TableHead>
                               <TableHead className="text-gray-500 text-xs">UTM Source</TableHead>
                               <TableHead className="text-gray-500 text-xs">UTM Medium</TableHead>
                               <TableHead className="text-gray-500 text-xs">UTM Campaign</TableHead>
