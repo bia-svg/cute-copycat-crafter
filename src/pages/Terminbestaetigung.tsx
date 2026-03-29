@@ -86,6 +86,8 @@ export default function Terminbestaetigung() {
       zurich: "Zürich – 5 Elements TCM, Usteristrasse 23",
     };
 
+    const referrerPage = document.referrer ? new URL(document.referrer).pathname : sessionStorage.getItem("dw_prev_page") || null;
+
     const leadData = {
       name: `${firstName} ${lastName}`,
       email,
@@ -100,6 +102,7 @@ export default function Terminbestaetigung() {
       utm_campaign: utmCampaign,
       utm_content: utmContent,
       utm_term: utmTerm,
+      tracking_code: referrerPage,
       concern: "Terminbestätigung / Sitzung",
       notes: [
         `Adresse: ${street}, ${postalCode} ${city}`,
