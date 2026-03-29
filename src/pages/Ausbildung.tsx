@@ -533,7 +533,7 @@ export default function Ausbildung() {
           </Link>
           <div className="flex items-center justify-center gap-1 mt-6 text-white/60 text-sm">
             <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-            ★ 5.0 — 263 Google {isEN ? "Reviews" : "Bewertungen"}
+            5.0 — 263 Google {isEN ? "Reviews" : "Bewertungen"}
           </div>
         </div>
       </section>
