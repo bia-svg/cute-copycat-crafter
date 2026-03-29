@@ -1,5 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -18,14 +18,7 @@ serve(async (req) => {
     const { lead } = await req.json();
     if (!lead) throw new Error("Missing lead data");
 
-    // 1) Send email to info@david-j-woods.com via Supabase (simple SMTP-like approach)
-    //    We'll use a Supabase Edge Function to format and relay
-    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-    const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-    const supabase = createClient(supabaseUrl, serviceKey);
-
-    // For now, email notification is handled by storing the lead.
-    // TODO: Add email sending when email domain is configured.
+    // 1) Send Slack notification
 
     // 2) Send Slack notification
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
@@ -64,7 +57,7 @@ serve(async (req) => {
           {
             type: "context",
             elements: [
-              { type: "mrkdwn", text: `📧 Lead also sent to info@david-j-woods.com` },
+              { type: "mrkdwn", text: `🕐 ${new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" })}` },
             ],
           },
         ],

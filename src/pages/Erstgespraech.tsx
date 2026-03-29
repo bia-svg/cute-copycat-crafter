@@ -59,7 +59,7 @@ export default function Erstgespraech() {
     const message = (formData.get("message") as string) || "";
     const bestTime = (formData.get("bestTime") as string) || "";
     const location = (formData.get("location") as string) || "";
-    const seminarCountry = (formData.get("seminarCountry") as string) || "";
+    
 
     // Extract UTM params from URL
     const utmSource = searchParams.get("utm_source") || null;

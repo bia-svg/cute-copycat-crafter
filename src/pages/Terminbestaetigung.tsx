@@ -100,7 +100,7 @@ export default function Terminbestaetigung() {
       utm_campaign: utmCampaign,
       utm_content: utmContent,
       utm_term: utmTerm,
-      concern: "Terminbestätigung",
+      concern: "Terminbestätigung / Sitzung",
       notes: [
         `Adresse: ${street}, ${postalCode} ${city}`,
         dobStr && `Geburtsdatum: ${dobStr}`,
