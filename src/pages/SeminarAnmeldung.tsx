@@ -124,6 +124,9 @@ export default function SeminarAnmeldung() {
         utmSource,
         utmMedium,
         utmCampaign,
+        seminarDate: selectedDate,
+        seminarLocation: selectedDateObj?.location || undefined,
+        message: message || undefined,
       });
     } catch (err) {
       console.error("Lead notification error:", err);
