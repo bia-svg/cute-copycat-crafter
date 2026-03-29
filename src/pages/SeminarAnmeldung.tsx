@@ -91,6 +91,7 @@ export default function SeminarAnmeldung() {
       form_type: "seminar",
       city: seminarCountry === "ch" ? "Schweiz" : "Deutschland",
       country: country.toUpperCase(),
+      language: language,
       source,
       utm_source: utmSource,
       utm_medium: utmMedium,

@@ -918,8 +918,9 @@ export default function Dashboard() {
                                 </TableCell>
                                 <TableCell className="text-gray-700 text-xs">{l.city || "—"}</TableCell>
                                 <TableCell className="text-gray-700 text-xs font-mono">{l.postal_code || "—"}</TableCell>
-                                <TableCell className="text-gray-700 text-xs">{l.country || "—"}</TableCell>
-                                <TableCell className="text-gray-600 text-xs max-w-[150px] truncate" title={l.tracking_code || ""}>{l.tracking_code || "—"}</TableCell>
+                                 <TableCell className="text-gray-700 text-xs">{l.country || "—"}</TableCell>
+                                 <TableCell className="text-gray-700 text-xs uppercase">{(l as any).language || "—"}</TableCell>
+                                 <TableCell className="text-gray-600 text-xs max-w-[150px] truncate" title={l.tracking_code || ""}>{l.tracking_code || "—"}</TableCell>
                                 <TableCell className="text-gray-600 text-xs">{l.utm_source || "—"}</TableCell>
                                 <TableCell className="text-gray-600 text-xs">{l.utm_medium || "—"}</TableCell>
                                 <TableCell className="text-gray-600 text-xs max-w-[120px] truncate" title={l.utm_campaign || ""}>{l.utm_campaign || "—"}</TableCell>
