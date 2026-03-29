@@ -11,8 +11,10 @@ const CONFIRMATION_CONCERN = "Terminbestätigung / Sitzung";
 // Pricing
 const SESSION_PRICE_CH = 750;
 const SESSION_PRICE_DE = 650;
-const SEMINAR_PRICE_CH = 2990;
-const SEMINAR_PRICE_DE = 2490;
+const SEMINAR_PRICE_CH = 2990; // Early bird (regular: 3290)
+const SEMINAR_PRICE_DE = 2490; // Early bird (regular: 2790)
+const SEMINAR_REGULAR_CH = 3290;
+const SEMINAR_REGULAR_DE = 2790;
 
 interface ResultsTabProps {
   leads: LeadRecord[];
