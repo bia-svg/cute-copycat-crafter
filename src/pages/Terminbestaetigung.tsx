@@ -10,9 +10,10 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Link, useSearchParams } from "react-router-dom";
 import { getPath } from "@/lib/routes";
 import { CalendarCheck, CheckCircle2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { PHONE_COUNTRIES } from "@/data/phoneCountries";
 
 export default function Terminbestaetigung() {
   const { language, country } = useLanguage();
