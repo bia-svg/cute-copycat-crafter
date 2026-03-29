@@ -174,7 +174,7 @@ export default function Terminbestaetigung() {
           <div className="w-16 h-1 bg-primary mx-auto" />
         </div>
 
-        <form className="space-y-6" onSubmit={handleSubmit}>
+        <form className="space-y-6 relative z-[51]" onSubmit={handleSubmit}>
           {/* Name */}
           <div>
             <Label className="text-foreground font-semibold">
