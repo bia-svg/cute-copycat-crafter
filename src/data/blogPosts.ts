@@ -1,5 +1,5 @@
 import blogHypnoseLernen from "@/assets/blog-hypnose-lernen.jpg";
-import blogDavidPortrait from "@/assets/blog-david-portrait.jpg";
+import blogDavidPortrait from "@/assets/david-woods-office.jpg";
 import blogAktivUnterschied from "@/assets/blog-aktiv-hypnose-unterschied.jpg";
 import blogHeilendeHypnose from "@/assets/blog-heilende-hypnose.jpg";
 import blogShowTherapie from "@/assets/blog-hypnose-show-therapie.jpg";
