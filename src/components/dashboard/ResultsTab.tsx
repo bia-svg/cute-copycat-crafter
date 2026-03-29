@@ -19,6 +19,14 @@ interface ResultsTabProps {
 }
 
 export default function ResultsTab({ leads }: ResultsTabProps) {
+  // Fetch seminar capacity config
+  const [capacityData, setCapacityData] = useState<{ seminar_date: string; seminar_country: string; max_capacity: number }[]>([]);
+  useEffect(() => {
+    supabase.from("seminar_capacity").select("seminar_date, seminar_country, max_capacity").then(({ data }) => {
+      if (data) setCapacityData(data);
+    });
+  }, []);
+
   const { sessionStats, seminarStats, totalRevenue } = useMemo(() => {
     // Session confirmations only (Terminbestätigung)
     const confirmedSessions = leads.filter(
