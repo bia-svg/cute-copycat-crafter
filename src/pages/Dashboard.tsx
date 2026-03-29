@@ -23,8 +23,11 @@ import {
 import {
   Users, FileText, TrendingUp, LogOut, Clock,
   Eye, DollarSign, Target, ArrowUpRight, ArrowDownRight,
-  Leaf, Zap, MousePointer, BarChart3, Globe, MessageCircle, ShieldCheck, Lock
+  Leaf, Zap, MousePointer, BarChart3, Globe, MessageCircle, ShieldCheck, Lock,
+  CalendarCheck, GraduationCap
 } from "lucide-react";
+import SessionsTab from "@/components/dashboard/SessionsTab";
+import ResultsTab from "@/components/dashboard/ResultsTab";
 import { format, parseISO, startOfMonth } from "date-fns";
 
 /* ═══════ Metric Card ═══════ */
