@@ -23,10 +23,6 @@ export default function Erstgespraech() {
   const [searchParams] = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
   const [gdprConsent, setGdprConsent] = useState(false);
-  const [formType, setFormType] = useState<FormType>(
-    searchParams.get("type") === "seminar" ? "seminar" : "session"
-  );
-  const [selectedDate, setSelectedDate] = useState(searchParams.get("date") || "");
   const [selectedConcern, setSelectedConcern] = useState(searchParams.get("concern") || "");
 
   // Phone country code — CH pre-selected for Swiss site, DE for German site
