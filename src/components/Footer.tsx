@@ -58,8 +58,8 @@ export default function Footer() {
                       <div>8733 Eschenbach (am Zürichsee)</div>
                     </div>
                   </div>
-                  <a href="tel:+41448880901" className="flex items-center gap-1 mt-1 hover:underline">
-                    <Phone className="w-3 h-3" /> +41 44 888 09 01
+                  <a href="tel:+41791318878" className="flex items-center gap-1 mt-1 hover:underline">
+                    <Phone className="w-3 h-3" /> +41 79 131 88 78
                   </a>
                 </>
               )}
