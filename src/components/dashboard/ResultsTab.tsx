@@ -3,8 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import type { LeadRecord } from "@/data/dashboardMockData";
-import { DollarSign, CalendarCheck, GraduationCap, Users } from "lucide-react";
+import { DollarSign, CalendarCheck, GraduationCap, Users, TrendingUp } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { getCurrentUser } from "@/lib/dashboardAuth";
 
 const CONFIRMATION_CONCERN = "Terminbestätigung / Sitzung";
 
@@ -362,6 +363,112 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
                           </TableRow>
                         );
                       })}
+                  </TableBody>
+                </Table>
+              </div>
+            </CardContent>
+          </Card>
+        );
+      })()}
+
+      {/* ═══════ COMMISSION (Bia only) ═══════ */}
+      {(() => {
+        const currentUser = getCurrentUser();
+        const isBia = currentUser?.toLowerCase().includes("bia");
+        if (!isBia) return null;
+
+        const COMMISSION_RATE = 0.10;
+        const MIN_REGISTRATIONS = 5;
+
+        // Calculate commission per seminar group
+        const commissionData = seminarStats.groups.map(g => {
+          const triggered = g.count >= MIN_REGISTRATIONS;
+          const seminarRevenue = g.count * g.price;
+          const commission = triggered ? seminarRevenue * COMMISSION_RATE : 0;
+          return { ...g, triggered, seminarRevenue, commission };
+        });
+
+        const totalCommissionCHF = commissionData
+          .filter(c => c.country === "CH")
+          .reduce((sum, c) => sum + c.commission, 0);
+        const totalCommissionEUR = commissionData
+          .filter(c => c.country !== "CH")
+          .reduce((sum, c) => sum + c.commission, 0);
+
+        return (
+          <Card className="bg-white border border-amber-200 shadow-sm">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-medium text-amber-700 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-amber-600" />
+                Commission Overview — 10% Seminar Revenue
+              </CardTitle>
+              <p className="text-xs text-gray-400">Triggers at ≥{MIN_REGISTRATIONS} registrations per seminar. Only visible to you.</p>
+            </CardHeader>
+            <CardContent>
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="border-gray-100">
+                      <TableHead className="text-gray-500">Country</TableHead>
+                      <TableHead className="text-gray-500">Seminar</TableHead>
+                      <TableHead className="text-gray-500 text-right">Registrations</TableHead>
+                      <TableHead className="text-gray-500 text-right">Seminar Revenue</TableHead>
+                      <TableHead className="text-gray-500 text-center">Triggered?</TableHead>
+                      <TableHead className="text-gray-500 text-right">Commission (10%)</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {commissionData.length === 0 ? (
+                      <TableRow>
+                        <TableCell colSpan={6} className="text-center text-gray-400 py-6">
+                          No seminar registrations yet.
+                        </TableCell>
+                      </TableRow>
+                    ) : (
+                      commissionData.map((c, i) => (
+                        <TableRow key={i} className="border-gray-100">
+                          <TableCell className="font-medium text-gray-900">
+                            {c.country === "CH" ? "🇨🇭" : "🇩🇪"} {c.country}
+                          </TableCell>
+                          <TableCell className="text-gray-700 text-sm">{c.date}</TableCell>
+                          <TableCell className="text-right text-gray-900 font-medium">
+                            {c.count}
+                            {c.count < MIN_REGISTRATIONS && (
+                              <span className="text-xs text-gray-400 ml-1">({MIN_REGISTRATIONS - c.count} more needed)</span>
+                            )}
+                          </TableCell>
+                          <TableCell className="text-right text-gray-700">
+                            {c.currency} {c.seminarRevenue.toLocaleString()}
+                          </TableCell>
+                          <TableCell className="text-center">
+                            <Badge variant="outline" className={`text-xs ${
+                              c.triggered
+                                ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                                : "bg-gray-50 text-gray-400 border-gray-200"
+                            }`}>
+                              {c.triggered ? "✓ Yes" : "✗ No"}
+                            </Badge>
+                          </TableCell>
+                          <TableCell className="text-right font-bold">
+                            {c.triggered ? (
+                              <span className="text-amber-700">{c.currency} {c.commission.toLocaleString()}</span>
+                            ) : (
+                              <span className="text-gray-300">—</span>
+                            )}
+                          </TableCell>
+                        </TableRow>
+                      ))
+                    )}
+                    {(totalCommissionCHF > 0 || totalCommissionEUR > 0) && (
+                      <TableRow className="border-gray-100 bg-amber-50">
+                        <TableCell className="font-bold text-amber-800" colSpan={5}>Total Commission</TableCell>
+                        <TableCell className="text-right font-bold">
+                          {totalCommissionCHF > 0 && <span className="text-amber-700">CHF {totalCommissionCHF.toLocaleString()}</span>}
+                          {totalCommissionCHF > 0 && totalCommissionEUR > 0 && <span className="text-gray-400"> + </span>}
+                          {totalCommissionEUR > 0 && <span className="text-amber-700">€{totalCommissionEUR.toLocaleString()}</span>}
+                        </TableCell>
+                      </TableRow>
+                    )}
                   </TableBody>
                 </Table>
               </div>
