@@ -822,7 +822,7 @@ export default function Dashboard() {
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-sm font-medium text-gray-700">Complete Leads List ({leads.length})</CardTitle>
                         <Button size="sm" variant="outline" className="text-xs" onClick={() => {
-                          const headers = ["Date","Name","Email","Phone","Concern","Type","Source","City","Postal Code","Country","UTM Source","UTM Medium","UTM Campaign","Notes","Converted"];
+                          const headers = ["Date","Name","Email","Phone","Concern","Type","Source","City","Postal Code","Country","Referrer Page","UTM Source","UTM Medium","UTM Campaign","UTM Content","UTM Term","Notes","Converted"];
                           const csvRows = [headers.join(",")];
                           leads.forEach(l => {
                             csvRows.push([
@@ -836,9 +836,12 @@ export default function Dashboard() {
                               `"${(l.city || "").replace(/"/g, '""')}"`,
                               l.postal_code || "",
                               l.country || "",
+                              `"${(l.tracking_code || "").replace(/"/g, '""')}"`,
                               l.utm_source || "",
                               l.utm_medium || "",
                               l.utm_campaign || "",
+                              l.utm_content || "",
+                              l.utm_term || "",
                               `"${(l.notes || "").replace(/"/g, '""')}"`,
                               l.converted ? "Yes" : "No",
                             ].join(","));
