@@ -2,6 +2,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Route, Routes, Navigate, useLocation } from "react-router-dom";
 import { useEffect, useState, lazy, Suspense } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { getLegacyRedirect } from "@/lib/legacyRedirects";
 import Layout from "@/components/Layout";
 const Home = lazy(() => import("@/pages/Home"));
 
@@ -42,6 +43,13 @@ const StressPage = lazy(() => import("@/pages/services/index").then(m => ({ defa
 const DepressionPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.DepressionPage })));
 const ChildrenPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.ChildrenPage })));
 const AdultsPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.AdultsPage })));
+
+function LegacyRedirect() {
+  const location = useLocation();
+  const target = getLegacyRedirect(location.pathname);
+  if (target) return <Navigate to={target} replace />;
+  return null;
+}
 
 function GeoRedirect() {
   const [target, setTarget] = useState("/de/ch");
@@ -93,6 +101,7 @@ function AppRoutes() {
       <ScrollToTop />
       <Layout>
         <Suspense fallback={<PageFallback />}>
+          <LegacyRedirect />
           <Routes>
             <Route path="/" element={<GeoRedirect />} />
             <Route path="/:lang/:country" element={<Home />} />
