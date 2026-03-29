@@ -314,19 +314,26 @@ export default function SeminarAnmeldung() {
                           {/* Price display */}
                           <div className="mt-3 pt-3 border-t border-border/50">
                             {isEarlyBird ? (
-                              <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-2">
-                                  <span className="text-xs text-muted-foreground line-through">{regularPrice}</span>
-                                  <span className="text-base font-bold text-[#2E7D32]">{earlyBirdPrice}</span>
+                              <div>
+                                <div className="flex items-center justify-between">
+                                  <div className="flex items-center gap-2">
+                                    <span className="text-xs text-muted-foreground line-through">{regularPrice}</span>
+                                    <span className="text-base font-bold text-[#2E7D32]">{earlyBirdPrice}</span>
+                                  </div>
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-[10px] font-bold text-white bg-[#2E7D32] px-2 py-0.5 rounded-full animate-pulse">
+                                      {isEN ? `Save ${savings}` : `${savings} sparen`}
+                                    </span>
+                                    <span className="text-[10px] font-semibold text-[#E65100] bg-[#FFF3E0] px-2 py-0.5 rounded-full">
+                                      {isEN ? "Limited offer!" : "Nur noch wenige Plätze!"}
+                                    </span>
+                                  </div>
                                 </div>
-                                <div className="flex items-center gap-1.5">
-                                  <span className="text-[10px] font-bold text-white bg-[#2E7D32] px-2 py-0.5 rounded-full animate-pulse">
-                                    {isEN ? `Save ${savings}` : `${savings} sparen`}
-                                  </span>
-                                  <span className="text-[10px] font-semibold text-[#E65100] bg-[#FFF3E0] px-2 py-0.5 rounded-full">
-                                    {isEN ? "Limited offer!" : "Nur noch wenige Plätze!"}
-                                  </span>
-                                </div>
+                                <p className="text-[10px] text-muted-foreground mt-1.5 italic">
+                                  {isEN
+                                    ? "Early Bird pricing is available for a limited time or until the current intake is fully booked!"
+                                    : "Der Frühbucher-Preis gilt nur für begrenzte Zeit oder bis der aktuelle Kurs ausgebucht ist!"}
+                                </p>
                               </div>
                             ) : (
                               <div className="flex items-center justify-between">
