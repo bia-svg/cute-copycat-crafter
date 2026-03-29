@@ -78,6 +78,10 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const [tab, setTab] = useState("overview");
 
+  useEffect(() => {
+    if (!isAuthenticated()) navigate("/dashboard/login", { replace: true });
+  }, [navigate]);
+
 
   const {
     trafficByDay, topPages, campaigns, dailyAds, leads, whatsappClicks,
