@@ -13,18 +13,6 @@ import { Link } from "react-router-dom";
 import { CheckCircle, Phone, MapPin, Clock, Shield } from "lucide-react";
 import { toast } from "sonner";
 
-/* ── Seminar dates (shared with Ausbildung) ── */
-const SEMINAR_DATES_CH = [
-  { date: "Mo-Sa, 15.-20. Juni 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach" },
-  { date: "Mo-Sa, 07.-12. Sept. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach" },
-];
-const SEMINAR_DATES_DE = [
-  { date: "Mo-Sa, 11.-16. Mai 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg" },
-  { date: "Mo-Sa, 06.-11. Juli 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg" },
-  { date: "Mo-Sa, 14.-19. Sept. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg" },
-];
-
-type FormType = "session" | "seminar";
 
 import { PHONE_COUNTRIES } from "@/data/phoneCountries";
 
