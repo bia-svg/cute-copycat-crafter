@@ -23,7 +23,7 @@ function buildWhatsAppUrl(country: string): string {
 }
 
 export default function WhatsAppButton() {
-  const { language } = useLanguage();
+  const { language, country } = useLanguage();
   const isEN = language === "en";
 
   const handleClick = () => {
