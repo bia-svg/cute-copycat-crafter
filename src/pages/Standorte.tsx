@@ -37,7 +37,7 @@ export default function Standorte() {
             city: "Augsburg",
             subtitle: isEN ? "Practice Germany" : "Praxis Deutschland",
             address: ["Viktoriastrasse 3", "86150 Augsburg"],
-            phone: "+49 171 9539922",
+            phone: "+49 171 953 99 22",
             href: getPath("cityAugsburg", language, country),
           },
         ]

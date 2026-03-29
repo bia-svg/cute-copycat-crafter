@@ -116,7 +116,7 @@ export default function CityZurich() {
               "@type": "LocalBusiness",
               "@id": "https://david-j-woods.com/#eschenbach-practice",
               name: "David J. Woods – Hypnosetherapie Eschenbach",
-              telephone: "+41 44 888 09 01",
+              telephone: "+41 79 131 88 78",
               url: "https://david-j-woods.com/de/ch/hypnose-zuerich",
               address: { "@type": "PostalAddress", streetAddress: "Churzhaslen 3", addressLocality: "Eschenbach", postalCode: "8733", addressCountry: "CH" },
               geo: { "@type": "GeoCoordinates", latitude: 47.2369, longitude: 8.9219 },
