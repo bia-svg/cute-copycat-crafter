@@ -24,6 +24,7 @@ const Buch = lazy(() => import("@/pages/Buch"));
 const Dashboard = lazy(() => import("@/pages/Dashboard"));
 const DashboardLogin = lazy(() => import("@/pages/DashboardLogin"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
+const Unsubscribe = lazy(() => import("@/pages/Unsubscribe"));
 
 const ErfolgsTraining = lazy(() => import("@/pages/corporate/ErfolgsTraining"));
 const ResilienzVerstaerken = lazy(() => import("@/pages/corporate/ResilienzVerstaerken"));
