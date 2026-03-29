@@ -99,7 +99,7 @@ export default function Erstgespraech() {
       console.error("Lead notification error:", err);
     }
 
-    trackFormConversion(formType, formType === "seminar" ? selectedDate : undefined);
+    trackFormConversion("session");
     setSubmitted(true);
     toast.success(isEN ? "Thank you! We will contact you shortly." : "Vielen Dank! Wir melden uns in Kürze bei Ihnen.");
   };
