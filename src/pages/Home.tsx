@@ -587,7 +587,7 @@ export default function Home() {
             <div className="flex gap-0.5">
               {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-300 text-yellow-300" />)}
             </div>
-            <span className="text-sm ml-1">★ 5.0 — 263 Google {isEN ? "Reviews" : "Bewertungen"}</span>
+            <span className="text-sm ml-1">5.0 — 263 Google {isEN ? "Reviews" : "Bewertungen"}</span>
           </div>
           <div>
             <Link to={getPath("contact", language, country)}>

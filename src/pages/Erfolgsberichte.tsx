@@ -159,7 +159,7 @@ export default function Erfolgsberichte() {
               { num: "30.000+", labelDE: "Sitzungen", labelEN: "Sessions" },
               { num: "40+", labelDE: "Jahre Erfahrung", labelEN: "Years Experience" },
               { num: "30+", labelDE: "Länder", labelEN: "Countries" },
-              { num: "★ 5.0", labelDE: "Google Bewertung", labelEN: "Google Rating" },
+              { num: "5.0", labelDE: "Google Bewertung", labelEN: "Google Rating" },
             ].map((stat, i) => (
               <div key={i}>
                 <p className="text-2xl font-bold text-primary">{stat.num}</p>
