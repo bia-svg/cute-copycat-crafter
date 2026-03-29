@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { trackFormConversion } from "@/components/WhatsAppButton";
 import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -13,18 +13,6 @@ import { Link } from "react-router-dom";
 import { CheckCircle, Phone, MapPin, Clock, Shield } from "lucide-react";
 import { toast } from "sonner";
 
-/* ── Seminar dates (shared with Ausbildung) ── */
-const SEMINAR_DATES_CH = [
-  { date: "Mo-Sa, 15.-20. Juni 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach" },
-  { date: "Mo-Sa, 07.-12. Sept. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach" },
-];
-const SEMINAR_DATES_DE = [
-  { date: "Mo-Sa, 11.-16. Mai 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg" },
-  { date: "Mo-Sa, 06.-11. Juli 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg" },
-  { date: "Mo-Sa, 14.-19. Sept. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg" },
-];
-
-type FormType = "session" | "seminar";
 
 import { PHONE_COUNTRIES } from "@/data/phoneCountries";
 
@@ -35,10 +23,6 @@ export default function Erstgespraech() {
   const [searchParams] = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
   const [gdprConsent, setGdprConsent] = useState(false);
-  const [formType, setFormType] = useState<FormType>(
-    searchParams.get("type") === "seminar" ? "seminar" : "session"
-  );
-  const [selectedDate, setSelectedDate] = useState(searchParams.get("date") || "");
   const [selectedConcern, setSelectedConcern] = useState(searchParams.get("concern") || "");
 
   // Phone country code — CH pre-selected for Swiss site, DE for German site
@@ -57,17 +41,6 @@ export default function Erstgespraech() {
     }
   }, [selectedPhoneCountry.maxDigits]);
 
-  useEffect(() => {
-    if (searchParams.get("type") === "seminar") {
-      setFormType("seminar");
-      if (searchParams.get("date")) setSelectedDate(searchParams.get("date") || "");
-    }
-  }, [searchParams]);
-
-  const allDates = [
-    ...(showCH ? SEMINAR_DATES_CH : []),
-    ...(showDE ? SEMINAR_DATES_DE : []),
-  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -101,10 +74,10 @@ export default function Erstgespraech() {
       name: `${firstName} ${lastName}`.trim(),
       email,
       phone: `${phoneCountry} ${phoneNumber}`.trim(),
-      concern: formType === "session" ? selectedConcern : "seminar",
-      form_type: formType,
+      concern: selectedConcern,
+      form_type: "session" as const,
       postal_code: postalCity.split(/\s+/)[0] || null,
-      city: postalCity.split(/\s+/).slice(1).join(" ") || (formType === "seminar" ? seminarCountry : location) || null,
+      city: postalCity.split(/\s+/).slice(1).join(" ") || location || null,
       country: country.toUpperCase(),
       source,
       utm_source: utmSource,
@@ -126,7 +99,7 @@ export default function Erstgespraech() {
       console.error("Lead notification error:", err);
     }
 
-    trackFormConversion(formType, formType === "seminar" ? selectedDate : undefined);
+    trackFormConversion("session");
     setSubmitted(true);
     toast.success(isEN ? "Thank you! We will contact you shortly." : "Vielen Dank! Wir melden uns in Kürze bei Ihnen.");
   };
@@ -149,18 +122,12 @@ export default function Erstgespraech() {
             {/* Left — Info */}
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] mb-4">
-                {formType === "seminar"
-                  ? (isEN ? "Register for Seminar" : "Seminar-Anmeldung")
-                  : (isEN ? "Book Your Free Discovery Call" : "Kostenloses Erstgespräch vereinbaren")}
+                {isEN ? "Book Your Free Discovery Call" : "Kostenloses Erstgespräch vereinbaren"}
               </h1>
               <p className="text-base text-foreground leading-relaxed mb-6">
-                {formType === "seminar"
-                  ? (isEN
-                    ? "Register for the Aktiv-Hypnose© training seminar. We will confirm your spot and send you all details."
-                    : "Melden Sie sich für das Aktiv-Hypnose© Ausbildungsseminar an. Wir bestätigen Ihren Platz und senden Ihnen alle Details.")
-                  : (isEN
-                    ? "Do you have questions or would you like to learn more about our method? Book a free and non-binding discovery call now. We take time for you and advise you individually."
-                    : "Haben Sie Fragen oder möchten Sie mehr über unsere Methode erfahren? Vereinbaren Sie jetzt ein kostenloses und unverbindliches Erstgespräch. Wir nehmen uns Zeit für Sie und beraten Sie individuell.")}
+                {isEN
+                  ? "Do you have questions or would you like to learn more about our method? Book a free and non-binding discovery call now. We take time for you and advise you individually."
+                  : "Haben Sie Fragen oder möchten Sie mehr über unsere Methode erfahren? Vereinbaren Sie jetzt ein kostenloses und unverbindliches Erstgespräch. Wir nehmen uns Zeit für Sie und beraten Sie individuell."}
               </p>
 
               <div className="space-y-3 mb-6">
@@ -276,89 +243,33 @@ export default function Erstgespraech() {
                     </div>
                   </div>
 
-                  {/* ── Type Toggle: Session vs Seminar ── */}
+                  {/* Topic / Service Selection */}
                   <div>
-                    <label className="block text-xs font-medium text-muted-foreground mb-2">
-                      {isEN ? "What are you interested in?" : "Wofür interessieren Sie sich?"} *
-                    </label>
-                    <div className="grid grid-cols-2 gap-2">
-                      <button
-                        type="button"
-                        onClick={() => setFormType("session")}
-                        className={`px-4 py-2.5 text-sm font-medium border transition-colors ${
-                          formType === "session"
-                            ? "bg-[#1B3A5C] text-white border-[#1B3A5C]"
-                            : "bg-white text-foreground border-border hover:border-[#1B3A5C]"
-                        }`}
-                      >
-                        {isEN ? "Therapy Session" : "Therapie-Sitzung"}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setFormType("seminar")}
-                        className={`px-4 py-2.5 text-sm font-medium border transition-colors ${
-                          formType === "seminar"
-                            ? "bg-[#1B3A5C] text-white border-[#1B3A5C]"
-                            : "bg-white text-foreground border-border hover:border-[#1B3A5C]"
-                        }`}
-                      >
-                        {isEN ? "Seminar / Training" : "Seminar / Ausbildung"}
-                      </button>
-                    </div>
+                    <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "What is your concern?" : "Was ist Ihr Anliegen?"} *</label>
+                    <select required className={inputClasses} value={selectedConcern} onChange={(e) => setSelectedConcern(e.target.value)}>
+                      <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
+                      <option value="smoking">{isEN ? "Stop Smoking" : "Raucherentwöhnung"}</option>
+                      <option value="anxiety">{isEN ? "Anxiety & Phobias" : "Ängste & Phobien"}</option>
+                      <option value="weight">{isEN ? "Weight Loss" : "Abnehmen"}</option>
+                      <option value="stress">{isEN ? "Stress & Burnout" : "Stress & Burnout"}</option>
+                      <option value="depression">{isEN ? "Depression & Trauma" : "Depressionen & Traumata"}</option>
+                      <option value="children">{isEN ? "Children & Teens" : "Kinder & Jugendliche"}</option>
+                      <option value="corporate">{isEN ? "Corporate Coaching" : "Firmencoaching"}</option>
+                      <option value="other">{isEN ? "Other" : "Sonstiges"}</option>
+                    </select>
                   </div>
 
-                  {/* ── Conditional Fields ── */}
-                  {formType === "session" ? (
-                    <>
-                      {/* Topic / Service Selection */}
-                      <div>
-                        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "What is your concern?" : "Was ist Ihr Anliegen?"} *</label>
-                        <select required className={inputClasses} value={selectedConcern} onChange={(e) => setSelectedConcern(e.target.value)}>
-                          <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
-                          <option value="smoking">{isEN ? "Stop Smoking" : "Raucherentwöhnung"}</option>
-                          <option value="anxiety">{isEN ? "Anxiety & Phobias" : "Ängste & Phobien"}</option>
-                          <option value="weight">{isEN ? "Weight Loss" : "Abnehmen"}</option>
-                          <option value="stress">{isEN ? "Stress & Burnout" : "Stress & Burnout"}</option>
-                          <option value="depression">{isEN ? "Depression & Trauma" : "Depressionen & Traumata"}</option>
-                          <option value="children">{isEN ? "Children & Teens" : "Kinder & Jugendliche"}</option>
-                          <option value="corporate">{isEN ? "Corporate Coaching" : "Firmencoaching"}</option>
-                          <option value="other">{isEN ? "Other" : "Sonstiges"}</option>
-                        </select>
-                      </div>
-
-                      {/* Preferred Location */}
-                      <div>
-                        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Preferred Location" : "Bevorzugter Standort"}</label>
-                        <select name="location" className={inputClasses}>
-                          <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
-                          <option value="zurich">Zürich — 5 Elements TCM (CH)</option>
-                          <option value="eschenbach">Eschenbach — Fit und Gesund (CH)</option>
-                          <option value="augsburg">Augsburg — Regus HELIO (DE)</option>
-                          <option value="online">{isEN ? "Online Session" : "Online-Sitzung"}</option>
-                        </select>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      {/* Country / Location */}
-                      <div>
-                        <label className="block text-xs font-medium text-muted-foreground mb-1">
-                          {isEN ? "Country" : "Land"} *
-                        </label>
-                        <select
-                          name="seminarCountry"
-                          required
-                          className={inputClasses}
-                        >
-                          <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
-                          <option value="ch">🇨🇭 {isEN ? "Switzerland" : "Schweiz"}</option>
-                          <option value="de">🇩🇪 {isEN ? "Germany" : "Deutschland"}</option>
-                          <option value="at">🇦🇹 {isEN ? "Austria" : "Österreich"}</option>
-                          <option value="other">{isEN ? "Other" : "Anderes Land"}</option>
-                        </select>
-                      </div>
-                    </>
-                  )}
+                  {/* Preferred Location */}
+                  <div>
+                    <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Preferred Location" : "Bevorzugter Standort"}</label>
+                    <select name="location" className={inputClasses}>
+                      <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
+                      <option value="zurich">Zürich — 5 Elements TCM (CH)</option>
+                      <option value="eschenbach">Eschenbach — Fit und Gesund (CH)</option>
+                      <option value="augsburg">Augsburg — Regus HELIO (DE)</option>
+                      <option value="online">{isEN ? "Online Session" : "Online-Sitzung"}</option>
+                    </select>
+                  </div>
 
                   {/* Best time to reach */}
                   <div>
@@ -416,9 +327,7 @@ export default function Erstgespraech() {
                     disabled={!gdprConsent}
                     className={`w-full font-semibold py-3 text-white transition-colors ${gdprConsent ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
                   >
-                    {formType === "seminar"
-                      ? (isEN ? "Register for Seminar" : "Seminar-Anmeldung absenden")
-                      : (isEN ? "Send Request" : "Absenden")}
+                    {isEN ? "Send Request" : "Absenden"}
                   </Button>
 
                   <p className="text-[10px] text-muted-foreground text-center">
@@ -426,6 +335,19 @@ export default function Erstgespraech() {
                       ? "Your data will only be used to process your request. We will not share your data with third parties."
                       : "Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Wir geben Ihre Daten nicht an Dritte weiter."}
                   </p>
+
+                  {/* Seminar link */}
+                  <div className="text-center pt-2 border-t border-border">
+                    <p className="text-xs text-muted-foreground mb-1">
+                      {isEN ? "Interested in our training seminars?" : "Interesse an unseren Ausbildungsseminaren?"}
+                    </p>
+                    <Link
+                      to={getPath("seminarRegistration", language, country)}
+                      className="text-xs text-primary hover:underline"
+                    >
+                      {isEN ? "→ Register for a Seminar" : "→ Zur Seminar-Anmeldung"}
+                    </Link>
+                  </div>
                 </form>
               )}
             </div>
