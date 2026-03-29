@@ -471,7 +471,7 @@ export default function Home() {
               <p className="text-sm text-muted-foreground">National Guild of Hypnotists</p>
             </div>
             <div className="text-center p-6 bg-card border border-border rounded-lg">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge – ZSR P609264" className="h-16 mx-auto mb-3" loading="lazy" />
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge – ZSR P609264" className="h-16 mx-auto mb-3" width={102} height={64} loading="lazy" />
               <h3 className="font-semibold text-foreground">EMR Krankenkasse Konform</h3>
               <p className="text-sm text-muted-foreground">ZSR P609264</p>
             </div>
