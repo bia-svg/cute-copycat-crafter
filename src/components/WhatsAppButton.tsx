@@ -55,7 +55,7 @@ export default function WhatsAppButton() {
 
   return (
     <a
-      href={buildWhatsAppUrl()}
+      href={buildWhatsAppUrl(country)}
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}
