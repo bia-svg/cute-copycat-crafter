@@ -24,6 +24,8 @@ interface LeadEmailData {
   seminarLocation?: string;
   bestTime?: string;
   message?: string;
+  profession?: string;
+  registrationNumber?: string;
 }
 
 /**
@@ -57,6 +59,8 @@ export async function sendLeadEmails(data: LeadEmailData) {
     seminarLocation: data.seminarLocation,
     bestTime: data.bestTime,
     message: data.message,
+    profession: data.profession,
+    registrationNumber: data.registrationNumber,
   };
 
   // 1. Notify David

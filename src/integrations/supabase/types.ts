@@ -255,6 +255,7 @@ export type Database = {
         }
         Returns: number
       }
+      next_seminar_registration_number: { Args: never; Returns: number }
       read_email_batch: {
         Args: { batch_size: number; queue_name: string; vt: number }
         Returns: {
