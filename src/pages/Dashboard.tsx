@@ -992,8 +992,14 @@ export default function Dashboard() {
                                     <span className="text-gray-300">—</span>
                                   )}
                                 </TableCell>
+                                <TableCell className="text-center">
+                                  <Button size="sm" variant="ghost" className="h-7 w-7 p-0" onClick={copyLeadData} title="Copy lead data">
+                                    <Copy className="w-3.5 h-3.5 text-gray-400 hover:text-gray-700" />
+                                  </Button>
+                                </TableCell>
                               </TableRow>
-                            ))}
+                              );
+                            })}
                           </TableBody>
                         </Table>
                       </div>
