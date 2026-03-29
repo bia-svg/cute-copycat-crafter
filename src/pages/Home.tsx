@@ -484,7 +484,7 @@ export default function Home() {
               <div className="flex justify-center gap-0.5 mb-2">
                 {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
               </div>
-              <h3 className="font-semibold text-foreground">★ 5.0 Google</h3>
+              <h3 className="font-semibold text-foreground">5.0 Google</h3>
               <p className="text-sm text-muted-foreground">263 {isEN ? "Reviews" : "Bewertungen"}</p>
             </div>
           </div>
@@ -587,7 +587,7 @@ export default function Home() {
             <div className="flex gap-0.5">
               {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-300 text-yellow-300" />)}
             </div>
-            <span className="text-sm ml-1">★ 5.0 — 263 Google {isEN ? "Reviews" : "Bewertungen"}</span>
+            <span className="text-sm ml-1">5.0 — 263 Google {isEN ? "Reviews" : "Bewertungen"}</span>
           </div>
           <div>
             <Link to={getPath("contact", language, country)}>
