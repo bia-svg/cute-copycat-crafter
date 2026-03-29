@@ -80,6 +80,9 @@ const COLORS = {
 export default function Dashboard() {
   const navigate = useNavigate();
   const [tab, setTab] = useState("overview");
+  const [customOpen, setCustomOpen] = useState(false);
+  const [customStart, setCustomStart] = useState<Date>(new Date());
+  const [customEnd, setCustomEnd] = useState<Date>(new Date());
 
   useEffect(() => {
     if (!isAuthenticated()) navigate("/dashboard/login", { replace: true });
