@@ -101,6 +101,7 @@ function AppRoutes() {
       <ScrollToTop />
       <Layout>
         <Suspense fallback={<PageFallback />}>
+          <LegacyRedirect />
           <Routes>
             <Route path="/" element={<GeoRedirect />} />
             <Route path="/:lang/:country" element={<Home />} />
