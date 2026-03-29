@@ -9,16 +9,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Link, useSearchParams } from "react-router-dom";
 import { getPath } from "@/lib/routes";
-import { CalendarCheck, CalendarIcon, CheckCircle2 } from "lucide-react";
+import { CalendarCheck, CheckCircle2 } from "lucide-react";
 import { useState, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { PHONE_COUNTRIES } from "@/data/phoneCountries";
-import { format } from "date-fns";
-import { de } from "date-fns/locale";
 import { cn } from "@/lib/utils";
-import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 export default function Terminbestaetigung() {
   const { language, country } = useLanguage();
@@ -30,7 +26,9 @@ export default function Terminbestaetigung() {
   const [dsgvoChecked, setDsgvoChecked] = useState(false);
   const [agbChecked, setAgbChecked] = useState(false);
   const [paymentChecked, setPaymentChecked] = useState(false);
-  const [dob, setDob] = useState<Date | undefined>(undefined);
+  const [dobDay, setDobDay] = useState("");
+  const [dobMonth, setDobMonth] = useState("");
+  const [dobYear, setDobYear] = useState("");
 
   // Phone country code
   const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
@@ -62,7 +60,7 @@ export default function Terminbestaetigung() {
     const sessionTime = (formData.get("sessionTime") as string)?.trim() || "";
     const email = (formData.get("email") as string)?.trim() || "";
     const phone = phoneNumber.trim();
-    const dobStr = dob ? format(dob, "yyyy-MM-dd") : "";
+    const dobStr = dobDay && dobMonth && dobYear ? `${dobDay.padStart(2,"0")}.${dobMonth.padStart(2,"0")}.${dobYear}` : "";
     const notes = (formData.get("notes") as string)?.trim() || "";
 
     if (!firstName || !lastName || !street || !postalCode || !city || !sessionDate || !sessionTime || !email || !phone || !location || !dsgvoChecked || !agbChecked || !paymentChecked) {
@@ -198,34 +196,41 @@ export default function Terminbestaetigung() {
               <Label className="text-foreground font-semibold">
                 {isEN ? "Date of Birth" : "Geburtsdatum"}
               </Label>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button
-                    variant="outline"
-                    type="button"
-                    className={cn(
-                      "w-full mt-2 justify-start text-left font-normal",
-                      !dob && "text-muted-foreground"
-                    )}
-                  >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {dob ? format(dob, "dd.MM.yyyy") : (isEN ? "Select date" : "Datum wählen")}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
-                  <Calendar
-                    mode="single"
-                    selected={dob}
-                    onSelect={setDob}
-                    captionLayout="dropdown-buttons"
-                    fromYear={1930}
-                    toYear={new Date().getFullYear()}
-                    disabled={(date) => date > new Date()}
-                    initialFocus
-                    className={cn("p-3 pointer-events-auto")}
-                  />
-                </PopoverContent>
-              </Popover>
+              <div className="grid grid-cols-3 gap-2 mt-2">
+                <select
+                  value={dobDay}
+                  onChange={(e) => setDobDay(e.target.value)}
+                  className="h-10 w-full rounded-md border border-input bg-background px-2 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 appearance-none cursor-pointer"
+                >
+                  <option value="">{isEN ? "Day" : "Tag"}</option>
+                  {Array.from({ length: 31 }, (_, i) => i + 1).map(d => (
+                    <option key={d} value={String(d)}>{d}</option>
+                  ))}
+                </select>
+                <select
+                  value={dobMonth}
+                  onChange={(e) => setDobMonth(e.target.value)}
+                  className="h-10 w-full rounded-md border border-input bg-background px-2 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 appearance-none cursor-pointer"
+                >
+                  <option value="">{isEN ? "Month" : "Monat"}</option>
+                  {(isEN
+                    ? ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+                    : ["Jan","Feb","Mär","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez"]
+                  ).map((m, i) => (
+                    <option key={i} value={String(i + 1)}>{m}</option>
+                  ))}
+                </select>
+                <select
+                  value={dobYear}
+                  onChange={(e) => setDobYear(e.target.value)}
+                  className="h-10 w-full rounded-md border border-input bg-background px-2 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 appearance-none cursor-pointer"
+                >
+                  <option value="">{isEN ? "Year" : "Jahr"}</option>
+                  {Array.from({ length: new Date().getFullYear() - 1929 }, (_, i) => new Date().getFullYear() - i).map(y => (
+                    <option key={y} value={String(y)}>{y}</option>
+                  ))}
+                </select>
+              </div>
               <p className="text-xs text-muted-foreground mt-1">
                 {isEN ? "Optional: For health insurance" : "Optional: Für die Krankenversicherung"}
               </p>
