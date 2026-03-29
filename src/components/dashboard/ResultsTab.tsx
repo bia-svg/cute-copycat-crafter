@@ -279,23 +279,15 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
         const seminars = leads.filter(l => l.form_type === "seminar");
         const regCounts: Record<string, number> = {};
         seminars.forEach(s => {
-          const country = (s.country || "").toLowerCase() === "ch" ? "ch" : "de";
+          // Determine country: city="Schweiz" -> ch, city="Deutschland" -> de, or fallback to country field
+          const cityLower = (s.city || "").toLowerCase();
+          const countryLower = (s.country || "").toLowerCase();
+          const semCountry = cityLower.includes("schweiz") ? "ch" : cityLower.includes("deutschland") ? "de" : countryLower === "ch" ? "ch" : "de";
           const dateMatch = s.notes?.match(/Seminar[:\s]+([^|]+)/i);
           const semDate = dateMatch ? dateMatch[1].trim() : "";
           if (semDate) {
-            const key = `${country}__${semDate}`;
+            const key = `${semCountry}__${semDate}`;
             regCounts[key] = (regCounts[key] || 0) + 1;
-          }
-        });
-
-        // Also match by city field ("Schweiz" -> ch, "Deutschland" -> de)
-        seminars.forEach(s => {
-          const country = (s.city || "").toLowerCase().includes("schweiz") ? "ch" : "de";
-          const dateMatch = s.notes?.match(/Seminar[:\s]+([^|]+)/i);
-          const semDate = dateMatch ? dateMatch[1].trim() : "";
-          if (semDate) {
-            const key = `${country}__${semDate}`;
-            // Already counted above, just ensure we have the right country
           }
         });
 
