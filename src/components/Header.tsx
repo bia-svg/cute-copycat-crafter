@@ -85,7 +85,7 @@ export default function Header() {
   const aboutItems = [
     { icon: <User className="w-5 h-5" />, label: isDE ? "David J. Woods & Team" : "David J. Woods & Team", desc: isDE ? "Lic.Psych. · Über 40 Jahre Erfahrung" : "Lic.Psych. · 40+ years experience", href: getPath("about", language, country) },
     { icon: <Tv className="w-5 h-5" />, label: isDE ? "TV & Medien" : "TV & Media", desc: isDE ? "Medienauftritte & Presse" : "Media appearances & press", href: getPath("media", language, country) },
-    { icon: <Star className="w-5 h-5" />, label: isDE ? "Kundenmeinungen" : "Testimonials", desc: isDE ? "5.0/5 bei Google · 255 Bewertungen" : "5.0/5 on Google · 255 reviews", href: getPath("testimonials", language, country) },
+    { icon: <Star className="w-5 h-5" />, label: isDE ? "Kundenmeinungen" : "Testimonials", desc: isDE ? "★ 5.0 bei Google · 263 Bewertungen" : "★ 5.0 at Google · 263 reviews", href: getPath("testimonials", language, country) },
     { icon: <Trophy className="w-5 h-5" />, label: isDE ? "Erfolgsberichte" : "Success Stories", desc: isDE ? "Video-Erfahrungsberichte unserer Klienten" : "Video testimonials from our clients", href: getPath("successStories", language, country) },
     { icon: <Newspaper className="w-5 h-5" />, label: "Blog", desc: isDE ? "Artikel & Wissen rund um Hypnose" : "Articles & knowledge about hypnosis", href: getPath("blog", language, country) },
     { icon: <MapPin className="w-5 h-5" />, label: isDE ? "Standorte" : "Locations", desc: isDE ? "Unsere Praxen in der Schweiz & Deutschland" : "Our practices in Switzerland & Germany", href: getPath("locations", language, country) },
@@ -334,7 +334,7 @@ export default function Header() {
             </p>
             <div className="flex items-center gap-1 text-yellow-500">
               {"★★★★★".split("").map((s, i) => <span key={i}>{s}</span>)}
-              <span className="text-xs text-muted-foreground ml-1">5.0 (255)</span>
+              <span className="text-xs text-muted-foreground ml-1">5.0 (263)</span>
             </div>
             <div className="pt-2">
               <Link to={getPath("about", language, country)} onClick={() => setActiveMenu(null)}>

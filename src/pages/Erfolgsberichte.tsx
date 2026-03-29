@@ -103,8 +103,8 @@ export default function Erfolgsberichte() {
                   <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <span className="font-semibold text-foreground">5.0 / 5</span>
-              <span>— 255 Google {isEN ? "Reviews" : "Bewertungen"}</span>
+              <span className="font-semibold text-foreground">★ 5.0</span>
+              <span>— 263 Google {isEN ? "Reviews" : "Bewertungen"}</span>
             </div>
           </div>
         </div>
@@ -159,7 +159,7 @@ export default function Erfolgsberichte() {
               { num: "30.000+", labelDE: "Sitzungen", labelEN: "Sessions" },
               { num: "40+", labelDE: "Jahre Erfahrung", labelEN: "Years Experience" },
               { num: "30+", labelDE: "Länder", labelEN: "Countries" },
-              { num: "5.0/5", labelDE: "Google Bewertung", labelEN: "Google Rating" },
+              { num: "★ 5.0", labelDE: "Google Bewertung", labelEN: "Google Rating" },
             ].map((stat, i) => (
               <div key={i}>
                 <p className="text-2xl font-bold text-primary">{stat.num}</p>

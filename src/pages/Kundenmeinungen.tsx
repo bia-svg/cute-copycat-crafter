@@ -69,7 +69,7 @@ export default function Kundenmeinungen() {
                 {isEN ? "Client Testimonials" : "Kundenmeinungen"}
               </h1>
               <p className="text-sm text-muted-foreground mt-1">
-                {isEN ? "5.0 / 5 on Google · 255 Reviews" : "5.0 / 5 bei Google · 255 Bewertungen"}
+                {isEN ? "★ 5.0 at Google · 263 Reviews" : "★ 5.0 bei Google · 263 Bewertungen"}
               </p>
             </div>
             <div className="flex gap-0.5">

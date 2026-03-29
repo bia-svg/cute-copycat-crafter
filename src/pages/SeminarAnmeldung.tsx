@@ -346,7 +346,7 @@ export default function SeminarAnmeldung() {
                 {/* Trust */}
                 <div className="flex items-center justify-center gap-1 mt-8 text-muted-foreground text-sm">
                   <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                  5.0/5 — 255 Google {isEN ? "Reviews" : "Bewertungen"}
+                  ★ 5.0 — 263 Google {isEN ? "Reviews" : "Bewertungen"}
                 </div>
               </>
             )}
