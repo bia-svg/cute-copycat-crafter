@@ -259,10 +259,10 @@ export default function Dashboard() {
                       <YAxis tick={{ fill: "#9ca3af", fontSize: 10 }} />
                       <ChartTooltip content={<ChartTooltipContent />} />
                       <Legend />
-                      <Bar dataKey="organic" fill={COLORS.organic} stackId="channels" name="Organic" />
-                      <Bar dataKey="paid" fill={COLORS.paid} stackId="channels" name="Paid" />
-                      <Bar dataKey="direct" fill={COLORS.direct} stackId="channels" radius={[3, 3, 0, 0]} name="Direct" />
-                      <Line type="monotone" dataKey="total" stroke="#1f2937" strokeWidth={2} dot={false} name="Total" />
+                      <Bar dataKey="total" fill="#e5e7eb" name="Total" radius={[3, 3, 0, 0]} barSize={20} />
+                      <Line type="monotone" dataKey="organic" stroke={COLORS.organic} strokeWidth={2} dot={false} name="Organic" />
+                      <Line type="monotone" dataKey="paid" stroke={COLORS.paid} strokeWidth={2} dot={false} name="Paid" />
+                      <Line type="monotone" dataKey="direct" stroke={COLORS.direct} strokeWidth={2} dot={false} name="Direct" />
                     </ComposedChart>
                   </ChartContainer>
                 </CardContent>
