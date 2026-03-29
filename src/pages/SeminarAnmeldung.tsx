@@ -39,7 +39,9 @@ export default function SeminarAnmeldung() {
   );
   const [selectedDate, setSelectedDate] = useState(searchParams.get("date") || "");
   const [submitted, setSubmitted] = useState(false);
+  const [registrationNumber, setRegistrationNumber] = useState("");
   const [gdprConsent, setGdprConsent] = useState(false);
+  const [agbConsent, setAgbConsent] = useState(false);
 
   // Phone
   const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
@@ -64,6 +66,10 @@ export default function SeminarAnmeldung() {
       toast.error(isEN ? "Please accept the privacy policy to continue." : "Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.");
       return;
     }
+    if (!agbConsent) {
+      toast.error(isEN ? "Please accept the terms and conditions to continue." : "Bitte akzeptieren Sie die AGB, um fortzufahren.");
+      return;
+    }
     if (!selectedDate) {
       toast.error(isEN ? "Please select a seminar date." : "Bitte wählen Sie einen Seminartermin.");
       return;
@@ -74,7 +80,18 @@ export default function SeminarAnmeldung() {
     const firstName = (formData.get("firstName") as string) || "";
     const lastName = (formData.get("lastName") as string) || "";
     const email = (formData.get("email") as string) || "";
+    const street = (formData.get("street") as string) || "";
+    const postalCode = (formData.get("postalCode") as string) || "";
+    const cityField = (formData.get("city") as string) || "";
+    const countryField = (formData.get("countryField") as string) || "";
+    const dobDay = (formData.get("dobDay") as string) || "";
+    const dobMonth = (formData.get("dobMonth") as string) || "";
+    const dobYear = (formData.get("dobYear") as string) || "";
+    const profession = (formData.get("profession") as string) || "";
     const message = (formData.get("message") as string) || "";
+
+    const dobStr = dobDay && dobMonth && dobYear ? `${dobDay}.${dobMonth}.${dobYear}` : "";
+    const fullAddress = [street, `${postalCode} ${cityField}`.trim(), countryField].filter(Boolean).join(", ");
 
     const utmSource = searchParams.get("utm_source") || null;
     const utmMedium = searchParams.get("utm_medium") || null;
@@ -84,6 +101,15 @@ export default function SeminarAnmeldung() {
     const source = utmMedium === "cpc" || utmSource === "google" ? "paid" : utmSource ? "referral" : "organic";
 
     const referrerPage = document.referrer ? new URL(document.referrer).pathname : sessionStorage.getItem("dw_prev_page") || null;
+
+    // Get registration number
+    let regNumber = "";
+    try {
+      const { data: regData } = await supabase.functions.invoke("generate-registration-number");
+      regNumber = regData?.registrationNumber ? String(regData.registrationNumber) : "";
+    } catch (err) {
+      console.error("Registration number error:", err);
+    }
 
     const leadData = {
       name: `${firstName} ${lastName}`.trim(),
@@ -101,7 +127,7 @@ export default function SeminarAnmeldung() {
       utm_content: utmContent,
       utm_term: utmTerm,
       tracking_code: referrerPage,
-      notes: [`Seminar: ${selectedDate}`, selectedDateObj?.location, message].filter(Boolean).join(" | ") || null,
+      notes: [`Reg#${regNumber}`, `Seminar: ${selectedDate}`, selectedDateObj?.location, `Beruf: ${profession}`, `Geb: ${dobStr}`, `Adresse: ${fullAddress}`, message].filter(Boolean).join(" | ") || null,
     };
 
     try {
@@ -109,7 +135,6 @@ export default function SeminarAnmeldung() {
       if (dbError) console.error("Lead save error:", dbError);
       await supabase.functions.invoke("notify-lead", { body: { lead: leadData } });
 
-      // Send emails (notification to David + confirmation to submitter)
       await sendLeadEmails({
         name: leadData.name,
         email,
@@ -127,12 +152,17 @@ export default function SeminarAnmeldung() {
         seminarDate: selectedDate,
         seminarLocation: selectedDateObj?.location || undefined,
         message: message || undefined,
+        address: fullAddress || undefined,
+        dateOfBirth: dobStr || undefined,
+        profession: profession || undefined,
+        registrationNumber: regNumber || undefined,
       });
     } catch (err) {
       console.error("Lead notification error:", err);
     }
 
     trackFormConversion("seminar", selectedDate);
+    setRegistrationNumber(regNumber);
     setSubmitted(true);
     window.scrollTo({ top: 0, behavior: "smooth" });
     toast.success(isEN ? "Thank you! We will confirm your spot shortly." : "Vielen Dank! Wir bestätigen Ihren Platz in Kürze.");
@@ -179,8 +209,18 @@ export default function SeminarAnmeldung() {
               <div className="text-center py-16 border border-border bg-[#f4f3ef] rounded-lg">
                 <CheckCircle className="w-14 h-14 text-[#2E7D32] mx-auto mb-4" />
                 <h2 className="text-xl font-bold text-[#1B3A5C] mb-2">{isEN ? "Registration Received!" : "Anmeldung eingegangen!"}</h2>
-                <p className="text-muted-foreground mb-1">{isEN ? "We will confirm your spot within 24 hours." : "Wir bestätigen Ihren Platz innerhalb von 24 Stunden."}</p>
-                {selectedDate && <p className="text-sm font-semibold text-[#1B3A5C] mt-3">{selectedDate}</p>}
+                {registrationNumber && (
+                  <p className="text-lg font-semibold text-[#2E7D32] mb-3">
+                    {isEN ? "Registration No." : "Anmelde-Nr."}: {registrationNumber}
+                  </p>
+                )}
+                {selectedDate && <p className="text-sm font-semibold text-[#1B3A5C] mb-4">{selectedDate}</p>}
+                <p className="text-muted-foreground mb-1">
+                  {isEN ? "We will confirm your spot within 24 hours." : "Wir bestätigen Ihren Platz innerhalb von 24 Stunden."}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  {isEN ? "You will receive a written invoice by email." : "Sie erhalten eine schriftliche Rechnung per E-Mail."}
+                </p>
               </div>
             ) : (
               <>
@@ -214,7 +254,7 @@ export default function SeminarAnmeldung() {
                   </div>
                 </div>
 
-                {/* STEP 2 — Date (shows when country selected) */}
+                {/* STEP 2 — Date */}
                 {seminarCountry && (
                   <div className="mb-6">
                     <h2 className="text-sm font-semibold text-[#1B3A5C] mb-3 flex items-center gap-2">
@@ -257,7 +297,7 @@ export default function SeminarAnmeldung() {
                   </div>
                 )}
 
-                {/* STEP 3 — Form (shows when date selected) */}
+                {/* STEP 3 — Form */}
                 {selectedDate && (
                   <div className="border border-border p-5 sm:p-6 bg-[#f4f3ef]">
                     <h2 className="text-sm font-semibold text-[#1B3A5C] mb-4 flex items-center gap-2">
@@ -275,6 +315,36 @@ export default function SeminarAnmeldung() {
                           <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Last Name" : "Nachname"} *</label>
                           <input type="text" name="lastName" required autoComplete="family-name" className={inputClasses} />
                         </div>
+                      </div>
+
+                      {/* Date of Birth */}
+                      <div>
+                        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Date of Birth" : "Geburtsdatum"} *</label>
+                        <div className="grid grid-cols-3 gap-2">
+                          <input type="text" name="dobDay" required placeholder={isEN ? "DD" : "TT"} maxLength={2} pattern="\d{1,2}" className={inputClasses} />
+                          <input type="text" name="dobMonth" required placeholder={isEN ? "MM" : "MM"} maxLength={2} pattern="\d{1,2}" className={inputClasses} />
+                          <input type="text" name="dobYear" required placeholder={isEN ? "YYYY" : "JJJJ"} maxLength={4} pattern="\d{4}" className={inputClasses} />
+                        </div>
+                      </div>
+
+                      {/* Address */}
+                      <div>
+                        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Street & Number" : "Strasse & Hausnummer"} *</label>
+                        <input type="text" name="street" required autoComplete="street-address" className={inputClasses} />
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Postal Code" : "PLZ"} *</label>
+                          <input type="text" name="postalCode" required autoComplete="postal-code" className={inputClasses} />
+                        </div>
+                        <div className="sm:col-span-2">
+                          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "City" : "Ort"} *</label>
+                          <input type="text" name="city" required autoComplete="address-level2" className={inputClasses} />
+                        </div>
+                      </div>
+                      <div>
+                        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Country" : "Land"} *</label>
+                        <input type="text" name="countryField" required autoComplete="country-name" className={inputClasses} />
                       </div>
 
                       {/* Email */}
@@ -311,14 +381,21 @@ export default function SeminarAnmeldung() {
                         </p>
                       </div>
 
+                      {/* Profession */}
+                      <div>
+                        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Profession" : "Beruf"} *</label>
+                        <input type="text" name="profession" required className={inputClasses} />
+                      </div>
+
                       {/* Message */}
                       <div>
                         <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Message (optional)" : "Nachricht (optional)"}</label>
                         <textarea name="message" rows={3} className={`${inputClasses} resize-none`} />
                       </div>
 
-                      {/* DSGVO */}
+                      {/* DSGVO + AGB */}
                       <div className="border border-border bg-white p-4 space-y-3">
+                        {/* Privacy */}
                         <div className="flex items-start gap-3">
                           <div className="pt-0.5">
                             <button
@@ -349,6 +426,39 @@ export default function SeminarAnmeldung() {
                             )}
                           </p>
                         </div>
+
+                        {/* AGB */}
+                        <div className="flex items-start gap-3">
+                          <div className="pt-0.5">
+                            <button
+                              type="button"
+                              role="checkbox"
+                              aria-checked={agbConsent}
+                              onClick={() => setAgbConsent(!agbConsent)}
+                              className={`w-5 h-5 border-2 flex items-center justify-center transition-colors ${agbConsent ? "bg-[#2E7D32] border-[#2E7D32]" : "bg-white border-border hover:border-[#1B3A5C]"}`}
+                            >
+                              {agbConsent && (
+                                <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                              )}
+                            </button>
+                          </div>
+                          <p className="text-xs text-foreground leading-relaxed">
+                            {isEN ? (
+                              <>
+                                I have read and accept the{" "}
+                                <Link to={getPath("terms", language, country)} className="text-[#1B3A5C] underline hover:text-[#2E7D32]">terms and conditions (AGB)</Link>. *
+                              </>
+                            ) : (
+                              <>
+                                Ich habe die{" "}
+                                <Link to={getPath("terms", language, country)} className="text-[#1B3A5C] underline hover:text-[#2E7D32]">Allgemeinen Geschäftsbedingungen (AGB)</Link> gelesen und akzeptiere diese. *
+                              </>
+                            )}
+                          </p>
+                        </div>
+
                         <div className="flex items-center gap-2 text-xs text-muted-foreground">
                           <Shield className="w-3.5 h-3.5 text-[#2E7D32]" />
                           {isEN ? "Your data is processed in accordance with GDPR." : "Ihre Daten werden DSGVO-konform verarbeitet."}
@@ -358,8 +468,8 @@ export default function SeminarAnmeldung() {
                       <div className="pb-20 md:pb-0">
                       <Button
                         type="submit"
-                        disabled={!gdprConsent}
-                        className={`w-full font-semibold py-3 text-white transition-colors relative z-[51] ${gdprConsent ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
+                        disabled={!gdprConsent || !agbConsent}
+                        className={`w-full font-semibold py-3 text-white transition-colors relative z-[51] ${gdprConsent && agbConsent ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
                       >
                         {isEN ? "Register for Seminar" : "Seminar-Anmeldung absenden"}
                       </Button>
@@ -367,8 +477,8 @@ export default function SeminarAnmeldung() {
 
                       <p className="text-[10px] text-muted-foreground text-center">
                         {isEN
-                          ? "Your data will only be used to process your registration. We will not share your data with third parties."
-                          : "Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anmeldung verwendet. Wir geben Ihre Daten nicht an Dritte weiter."}
+                          ? "By registering you will receive a written invoice. Your data will only be used to process your registration."
+                          : "Mit Ihrer Anmeldung erhalten Sie eine schriftliche Rechnung. Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anmeldung verwendet."}
                       </p>
                     </form>
                   </div>
