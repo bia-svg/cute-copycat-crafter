@@ -3,8 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import type { LeadRecord } from "@/data/dashboardMockData";
-import { DollarSign, CalendarCheck, GraduationCap, Users } from "lucide-react";
+import { DollarSign, CalendarCheck, GraduationCap, Users, TrendingUp } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { getCurrentUser } from "@/lib/dashboardAuth";
 
 const CONFIRMATION_CONCERN = "Terminbestätigung / Sitzung";
 
