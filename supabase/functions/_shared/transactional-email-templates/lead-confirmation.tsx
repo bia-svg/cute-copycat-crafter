@@ -12,10 +12,30 @@ interface LeadConfirmationProps {
   formType?: string
   notes?: string
   language?: string
+  phone?: string
+  email?: string
+  // Structured fields
+  address?: string
+  sessionDate?: string
+  sessionTime?: string
+  sessionLocation?: string
+  dateOfBirth?: string
+  seminarDate?: string
+  seminarLocation?: string
+  bestTime?: string
+  message?: string
 }
 
 const LeadConfirmationEmail = (props: LeadConfirmationProps) => {
   const isEN = props.language === 'en'
+  const isSession = props.formType === 'session'
+  const isSeminar = props.formType === 'seminar'
+
+  const formTypeLabel = isSession
+    ? (isEN ? 'Session / Appointment' : 'Sitzung / Termin')
+    : isSeminar
+      ? (isEN ? 'Seminar Registration' : 'Seminar-Anmeldung')
+      : props.formType
 
   return (
     <Html lang={isEN ? 'en' : 'de'} dir="ltr">
@@ -40,12 +60,9 @@ const LeadConfirmationEmail = (props: LeadConfirmationProps) => {
           </Text>
 
           <Section style={summaryBox}>
-            {props.formType && (
+            {formTypeLabel && (
               <Text style={summaryLine}>
-                <strong>{isEN ? 'Request type' : 'Anfragetyp'}:</strong>{' '}
-                {props.formType === 'session' ? (isEN ? 'Session / Appointment' : 'Sitzung / Termin')
-                  : props.formType === 'seminar' ? (isEN ? 'Seminar Registration' : 'Seminar-Anmeldung')
-                  : props.formType}
+                <strong>{isEN ? 'Request type' : 'Anfragetyp'}:</strong> {formTypeLabel}
               </Text>
             )}
             {props.concern && (
@@ -53,9 +70,65 @@ const LeadConfirmationEmail = (props: LeadConfirmationProps) => {
                 <strong>{isEN ? 'Concern' : 'Anliegen'}:</strong> {props.concern}
               </Text>
             )}
-            {props.notes && (
+            {props.email && (
               <Text style={summaryLine}>
-                <strong>{isEN ? 'Details' : 'Details'}:</strong> {props.notes}
+                <strong>{isEN ? 'Email' : 'E-Mail'}:</strong> {props.email}
+              </Text>
+            )}
+            {props.phone && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Phone' : 'Telefon'}:</strong> {props.phone}
+              </Text>
+            )}
+            {props.address && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Address' : 'Adresse'}:</strong> {props.address}
+              </Text>
+            )}
+            {props.dateOfBirth && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Date of Birth' : 'Geburtsdatum'}:</strong> {props.dateOfBirth}
+              </Text>
+            )}
+
+            {/* Session-specific */}
+            {isSession && props.sessionDate && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Session Date' : 'Sitzungsdatum'}:</strong> {props.sessionDate}
+              </Text>
+            )}
+            {isSession && props.sessionTime && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Session Time' : 'Sitzungszeit'}:</strong> {props.sessionTime}
+              </Text>
+            )}
+            {isSession && props.sessionLocation && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Session Location' : 'Sitzungsort'}:</strong> {props.sessionLocation}
+              </Text>
+            )}
+
+            {/* Seminar-specific */}
+            {isSeminar && props.seminarDate && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Seminar Date' : 'Seminartermin'}:</strong> {props.seminarDate}
+              </Text>
+            )}
+            {isSeminar && props.seminarLocation && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Seminar Location' : 'Seminarort'}:</strong> {props.seminarLocation}
+              </Text>
+            )}
+
+            {/* General */}
+            {props.bestTime && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Best time to reach you' : 'Beste Erreichbarkeit'}:</strong> {props.bestTime}
+              </Text>
+            )}
+            {props.message && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Your message' : 'Ihre Nachricht'}:</strong> {props.message}
               </Text>
             )}
           </Section>
@@ -91,10 +164,17 @@ export const template = {
       : 'Ihre Anfrage wurde empfangen — David J. Woods',
   displayName: 'Lead confirmation to submitter',
   previewData: {
-    name: 'Maria Müller',
+    name: 'Maria',
     concern: 'Rauchentwöhnung',
     formType: 'session',
-    notes: 'Best time: morgens',
+    email: 'maria@example.com',
+    phone: '+41 79 123 45 67',
+    address: 'Bahnhofstrasse 10, 8001 Zürich',
+    sessionDate: '15.03.2026',
+    sessionTime: 'Nachmittags',
+    sessionLocation: 'Zürich – 5 Elements TCM, Usteristrasse 23',
+    dateOfBirth: '12.05.1985',
+    message: 'Interessiert an 2 Sitzungen',
     language: 'de',
   },
 } satisfies TemplateEntry
