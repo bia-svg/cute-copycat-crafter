@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { isAuthenticated, logout, getCurrentUser, getLoginLogs } from "@/lib/dashboardAuth";
@@ -9,6 +9,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow
 } from "@/components/ui/table";
@@ -25,7 +27,7 @@ import {
   Users, FileText, TrendingUp, LogOut, Clock,
   Eye, DollarSign, Target, ArrowUpRight, ArrowDownRight,
   Leaf, Zap, MousePointer, BarChart3, Globe, MessageCircle, ShieldCheck, Lock,
-  CalendarCheck, GraduationCap
+  CalendarCheck, GraduationCap, Calendar as CalendarIcon
 } from "lucide-react";
 import SessionsTab from "@/components/dashboard/SessionsTab";
 import ResultsTab from "@/components/dashboard/ResultsTab";
@@ -78,6 +80,9 @@ const COLORS = {
 export default function Dashboard() {
   const navigate = useNavigate();
   const [tab, setTab] = useState("overview");
+  const [customOpen, setCustomOpen] = useState(false);
+  const [customStart, setCustomStart] = useState<Date>(new Date());
+  const [customEnd, setCustomEnd] = useState<Date>(new Date());
 
   useEffect(() => {
     if (!isAuthenticated()) navigate("/dashboard/login", { replace: true });
@@ -187,9 +192,9 @@ export default function Dashboard() {
             {DATE_PRESETS.map(preset => (
               <button
                 key={preset.label}
-                onClick={() => setDateRange(preset)}
+                onClick={() => { setCustomOpen(false); setDateRange(preset); }}
                 className={`px-3 py-1.5 text-xs font-medium rounded-full border transition-colors ${
-                  dateRange.label === preset.label
+                  dateRange.label === preset.label && !customOpen
                     ? "bg-gray-900 text-white border-gray-900"
                     : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
                 }`}
@@ -197,6 +202,61 @@ export default function Dashboard() {
                 {preset.label}
               </button>
             ))}
+
+            <Popover open={customOpen} onOpenChange={setCustomOpen}>
+              <PopoverTrigger asChild>
+                <button
+                  className={`px-3 py-1.5 text-xs font-medium rounded-full border transition-colors inline-flex items-center gap-1 ${
+                    dateRange.label === "Custom"
+                      ? "bg-gray-900 text-white border-gray-900"
+                      : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
+                  }`}
+                >
+                  <CalendarIcon className="w-3 h-3" /> Custom
+                </button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-4" align="start">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <div>
+                    <p className="text-xs font-medium text-gray-500 mb-2">Start Date</p>
+                    <Calendar
+                      mode="single"
+                      selected={customStart}
+                      onSelect={(d) => d && setCustomStart(d)}
+                      initialFocus
+                      className="p-2 pointer-events-auto"
+                      disabled={(d) => d > new Date()}
+                    />
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium text-gray-500 mb-2">End Date</p>
+                    <Calendar
+                      mode="single"
+                      selected={customEnd}
+                      onSelect={(d) => d && setCustomEnd(d)}
+                      className="p-2 pointer-events-auto"
+                      disabled={(d) => d > new Date() || d < customStart}
+                    />
+                  </div>
+                </div>
+                <Button
+                  size="sm"
+                  className="w-full mt-3"
+                  disabled={!customStart || !customEnd || customEnd < customStart}
+                  onClick={() => {
+                    setDateRange({
+                      label: "Custom",
+                      startDate: format(customStart, "yyyy-MM-dd"),
+                      endDate: format(customEnd, "yyyy-MM-dd"),
+                    });
+                    setCustomOpen(false);
+                  }}
+                >
+                  Apply
+                </Button>
+              </PopoverContent>
+            </Popover>
+
             <span className="text-xs text-gray-400 ml-2">
               {dateRange.startDate} → {dateRange.endDate}
             </span>
