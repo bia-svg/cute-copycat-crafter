@@ -201,22 +201,37 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          {seminarStats.groups.length === 0 ? (
-            <p className="text-gray-400 text-sm py-8 text-center">No seminar registrations yet.</p>
-          ) : (
-            <div className="overflow-x-auto">
-              <Table>
-                <TableHeader>
-                  <TableRow className="border-gray-100">
-                    <TableHead className="text-gray-500">Country</TableHead>
-                    <TableHead className="text-gray-500">Seminar Date</TableHead>
-                    <TableHead className="text-gray-500 text-right">Registrations</TableHead>
-                    <TableHead className="text-gray-500 text-right">Price / Seat</TableHead>
-                    <TableHead className="text-gray-500 text-right">Projected Revenue</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {seminarStats.groups.map((g, i) => (
+          <div className="overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow className="border-gray-100">
+                  <TableHead className="text-gray-500">Country</TableHead>
+                  <TableHead className="text-gray-500">Seminar Date</TableHead>
+                  <TableHead className="text-gray-500 text-right">Registrations</TableHead>
+                  <TableHead className="text-gray-500 text-right">Price / Seat</TableHead>
+                  <TableHead className="text-gray-500 text-right">Projected Revenue</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {seminarStats.groups.length === 0 ? (
+                  <>
+                    <TableRow className="border-gray-100">
+                      <TableCell className="font-medium text-gray-900">🇨🇭 Switzerland</TableCell>
+                      <TableCell className="text-gray-400">—</TableCell>
+                      <TableCell className="text-right text-gray-900 font-medium">0</TableCell>
+                      <TableCell className="text-right text-gray-700">CHF 2,990</TableCell>
+                      <TableCell className="text-right text-gray-400">CHF 0</TableCell>
+                    </TableRow>
+                    <TableRow className="border-gray-100">
+                      <TableCell className="font-medium text-gray-900">🇩🇪 Germany</TableCell>
+                      <TableCell className="text-gray-400">—</TableCell>
+                      <TableCell className="text-right text-gray-900 font-medium">0</TableCell>
+                      <TableCell className="text-right text-gray-700">€2,490</TableCell>
+                      <TableCell className="text-right text-gray-400">€0</TableCell>
+                    </TableRow>
+                  </>
+                ) : (
+                  seminarStats.groups.map((g, i) => (
                     <TableRow key={i} className="border-gray-100">
                       <TableCell className="font-medium text-gray-900">
                         {g.country === "CH" ? "🇨🇭" : "🇩🇪"} {g.country}
@@ -230,22 +245,22 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
                         </span>
                       </TableCell>
                     </TableRow>
-                  ))}
-                  <TableRow className="border-gray-100 bg-gray-50">
-                    <TableCell className="font-bold text-gray-900" colSpan={2}>Total Seminars</TableCell>
-                    <TableCell className="text-right text-gray-900 font-bold">{seminarStats.total}</TableCell>
-                    <TableCell className="text-right text-gray-500">—</TableCell>
-                    <TableCell className="text-right font-bold">
-                      {seminarStats.revenueCHF > 0 && <span className="text-emerald-700">CHF {seminarStats.revenueCHF.toLocaleString()}</span>}
-                      {seminarStats.revenueCHF > 0 && seminarStats.revenueEUR > 0 && <span className="text-gray-400"> + </span>}
-                      {seminarStats.revenueEUR > 0 && <span className="text-blue-700">€{seminarStats.revenueEUR.toLocaleString()}</span>}
-                      {seminarStats.total === 0 && <span className="text-gray-400">—</span>}
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </div>
-          )}
+                  ))
+                )}
+                <TableRow className="border-gray-100 bg-gray-50">
+                  <TableCell className="font-bold text-gray-900" colSpan={2}>Total Seminars</TableCell>
+                  <TableCell className="text-right text-gray-900 font-bold">{seminarStats.total}</TableCell>
+                  <TableCell className="text-right text-gray-500">—</TableCell>
+                  <TableCell className="text-right font-bold">
+                    {seminarStats.revenueCHF > 0 && <span className="text-emerald-700">CHF {seminarStats.revenueCHF.toLocaleString()}</span>}
+                    {seminarStats.revenueCHF > 0 && seminarStats.revenueEUR > 0 && <span className="text-gray-400"> + </span>}
+                    {seminarStats.revenueEUR > 0 && <span className="text-blue-700">€{seminarStats.revenueEUR.toLocaleString()}</span>}
+                    {seminarStats.total === 0 && <span className="text-gray-400">—</span>}
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
         </CardContent>
       </Card>
 
