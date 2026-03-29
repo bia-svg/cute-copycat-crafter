@@ -147,7 +147,7 @@ export default function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-50 bg-card border-b border-border" style={{ containIntrinsicSize: "auto 140px", contentVisibility: "visible" }}>
+    <header className="sticky top-0 z-50 bg-card border-b border-border" style={{ contentVisibility: "visible" }}>
       {/* Top bar */}
       <div className="bg-primary text-primary-foreground text-xs sm:text-xs">
         <div className="container-main flex items-center justify-center sm:justify-between py-2 sm:py-1.5 gap-4">
