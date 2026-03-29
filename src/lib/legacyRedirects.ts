@@ -8,7 +8,7 @@ const defined = "/de/de";
 
 // Exact and prefix-based redirects
 const exactRedirects: Record<string, string> = {
-  "/standorte-anfahrt": `${defined}/standorte`,
+  "/standorte-anfahrt": `${defined}/erstgespraech`,
   "/hypnose-ausbildungen": `${defined}/ausbildung`,
   "/Hypnose-Ausbildung-Deutschland": `${defined}/ausbildung`,
   "/Hypnose-Ausbildung-Schweiz": `${defined}/ausbildung`,

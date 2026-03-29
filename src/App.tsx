@@ -155,10 +155,10 @@ function AppRoutes() {
             <Route path="/:lang/:country/seminar-registration" element={<SeminarAnmeldung />} />
             <Route path="/:lang/:country/appointment-confirmation" element={<Terminbestaetigung />} />
 
-            <Route path="/:lang/:country/standorte" element={<Standorte />} />
+             <Route path="/:lang/:country/standorte" element={<Navigate to="/de/de/erstgespraech" replace />} />
             <Route path="/:lang/:country/hypnose-zuerich" element={<CityZurich />} />
             <Route path="/:lang/:country/hypnose-augsburg" element={<CityAugsburg />} />
-            <Route path="/:lang/:country/locations" element={<Standorte />} />
+            <Route path="/:lang/:country/locations" element={<Navigate to="/de/de/erstgespraech" replace />} />
             <Route path="/:lang/:country/hypnosis-zurich" element={<CityZurich />} />
             <Route path="/:lang/:country/hypnosis-augsburg" element={<CityAugsburg />} />
 
