@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { trackFormConversion } from "@/components/WhatsAppButton";
 import { supabase } from "@/integrations/supabase/client";
+import { sendLeadEmails } from "@/lib/leadEmails";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
@@ -97,8 +98,25 @@ export default function Erstgespraech() {
       const { error: dbError } = await supabase.from("leads").insert(leadData as any);
       if (dbError) console.error("Lead save error:", dbError);
 
-      // Notify (email + Slack)
+      // Notify (Slack)
       await supabase.functions.invoke("notify-lead", { body: { lead: leadData } });
+
+      // Send emails (notification to David + confirmation to submitter)
+      await sendLeadEmails({
+        name: leadData.name,
+        email,
+        phone: leadData.phone,
+        concern: selectedConcern,
+        formType: "session",
+        city: leadData.city || undefined,
+        country: country.toUpperCase(),
+        language,
+        notes: leadData.notes || undefined,
+        source,
+        utmSource,
+        utmMedium,
+        utmCampaign,
+      });
     } catch (err) {
       console.error("Lead notification error:", err);
     }

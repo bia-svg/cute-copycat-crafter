@@ -12,6 +12,7 @@ import { getPath } from "@/lib/routes";
 import { CalendarCheck, CheckCircle2 } from "lucide-react";
 import { useState, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { sendLeadEmails } from "@/lib/leadEmails";
 import { toast } from "sonner";
 import { PHONE_COUNTRIES } from "@/data/phoneCountries";
 import { cn } from "@/lib/utils";
@@ -125,6 +126,23 @@ export default function Terminbestaetigung() {
 
       // Notify (Slack)
       await supabase.functions.invoke("notify-lead", { body: { lead: leadData } });
+
+      // Send emails (notification to David + confirmation to submitter)
+      await sendLeadEmails({
+        name: leadData.name,
+        email,
+        phone: leadData.phone,
+        concern: "Terminbestätigung / Sitzung",
+        formType: "session",
+        city,
+        country: country.toUpperCase(),
+        language,
+        notes: leadData.notes,
+        source,
+        utmSource,
+        utmMedium,
+        utmCampaign,
+      });
     } catch (err) {
       console.error("Lead notification error:", err);
     }
