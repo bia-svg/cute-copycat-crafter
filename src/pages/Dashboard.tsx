@@ -109,31 +109,47 @@ export default function Dashboard() {
   }, [trafficByDay]);
 
   const adsTotals = useMemo(() => {
-    return campaigns.reduce((acc, c) => ({
+    const result = campaigns.reduce((acc, c) => ({
       spend: acc.spend + c.spend,
       clicks: acc.clicks + c.clicks,
       impressions: acc.impressions + c.impressions,
       conversions: acc.conversions + c.conversions,
     }), { spend: 0, clicks: 0, impressions: 0, conversions: 0 });
+    return result;
   }, [campaigns]);
+
+  const adsCurrency = campaigns.find(c => c.currencyCode)?.currencyCode || "CHF";
+
+  // Paid leads only (for Campaigns tab)
+  const paidLeads = useMemo(() => {
+    return leads.filter(l => l.utm_medium === "cpc" || l.utm_medium === "ppc" || l.utm_source === "google" || l.source === "paid");
+  }, [leads]);
+
+  const paidLeadsByCampaign = useMemo(() => {
+    const map: Record<string, number> = {};
+    paidLeads.forEach(l => {
+      const key = l.utm_campaign || "Unknown";
+      map[key] = (map[key] || 0) + 1;
+    });
+    return map;
+  }, [paidLeads]);
 
   const leadStats = useMemo(() => {
     const sessionLeads = leads.filter(l => l.form_type === "session").length;
     const seminarLeads = leads.filter(l => l.form_type === "seminar").length;
     const organicLeads = leads.filter(l => !l.utm_source || l.source === "organic").length;
-    const paidLeads = leads.filter(l => l.utm_source === "google" || l.source === "paid").length;
+    const paidLeadsCount = paidLeads.length;
     const byPostalCode = leads.reduce((acc, l) => {
       const key = l.postal_code || "Unknown";
       acc[key] = (acc[key] || 0) + 1;
       return acc;
     }, {} as Record<string, number>);
-    return { sessionLeads, seminarLeads, organicLeads, paidLeads, total: leads.length, byPostalCode };
-  }, [leads]);
+    return { sessionLeads, seminarLeads, organicLeads, paidLeads: paidLeadsCount, total: leads.length, byPostalCode };
+  }, [leads, paidLeads]);
 
   const organicCVR = totals.organic > 0 ? ((leadStats.organicLeads / totals.organic) * 100).toFixed(2) : "—";
   const paidCVR = totals.paid > 0 ? ((leadStats.paidLeads / totals.paid) * 100).toFixed(2) : "—";
-  const costPerSession = leadStats.sessionLeads > 0 ? adsTotals.spend / leadStats.sessionLeads : 0;
-  const costPerSeminar = leadStats.seminarLeads > 0 ? adsTotals.spend / leadStats.seminarLeads : 0;
+  const costPerPaidLead = paidLeads.length > 0 ? adsTotals.spend / paidLeads.length : 0;
 
   const monthlyData = useMemo(() => aggregateByMonth(trafficByDay), [trafficByDay]);
 
