@@ -185,7 +185,7 @@ export default function Ausbildung() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-3">
-                {isEN ? "Premium 6-Day Intensive Certification" : "Premium 6-Tage Intensiv-Zertifizierung"}
+                {isEN ? "6-Day Intensive Certification" : "6-Tage Intensiv-Zertifizierung"}
               </p>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1B3A5C] mb-3" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN
