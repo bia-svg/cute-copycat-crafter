@@ -52,7 +52,7 @@ export default function Terminbestaetigung() {
     const sessionDate = (formData.get("sessionDate") as string) || "";
     const sessionTime = (formData.get("sessionTime") as string)?.trim() || "";
     const email = (formData.get("email") as string)?.trim() || "";
-    const phone = (formData.get("phone") as string)?.trim() || "";
+    const phone = phoneNumber.trim();
     const dob = (formData.get("dob") as string) || "";
     const notes = (formData.get("notes") as string)?.trim() || "";
 
