@@ -84,12 +84,13 @@ export default function Dashboard() {
   }, [navigate]);
 
   const handlePinSubmit = async () => {
-    if (normalizedPinInput.length !== 8) { setPinError("PIN must be 8 digits"); return; }
+    const pin = pinInput.replace(/\D/g, "").slice(0, 8);
+    if (pin.length !== 8) { setPinError("PIN must be 8 digits"); return; }
     setPinLoading(true);
     setPinError("");
     try {
       const res = await supabase.functions.invoke("verify-leads-pin", {
-        body: { pin: normalizedPinInput },
+        body: { pin },
       });
       if (res.data?.success) {
         setPinUnlocked(true);
