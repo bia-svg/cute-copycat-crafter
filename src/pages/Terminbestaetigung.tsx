@@ -59,7 +59,7 @@ export default function Terminbestaetigung() {
     const street = (formData.get("street") as string)?.trim() || "";
     const postalCode = (formData.get("postalCode") as string)?.trim() || "";
     const city = (formData.get("city") as string)?.trim() || "";
-    const sessionDate = (formData.get("sessionDate") as string) || "";
+    const sessionDate = sessionDay && sessionMonth && sessionYear ? `${sessionDay.padStart(2,"0")}.${sessionMonth.padStart(2,"0")}.${sessionYear}` : "";
     const sessionTime = (formData.get("sessionTime") as string)?.trim() || "";
     const email = (formData.get("email") as string)?.trim() || "";
     const phone = phoneNumber.trim();
