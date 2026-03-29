@@ -779,25 +779,27 @@ export default function Dashboard() {
                     )}
                     <div className="flex items-center justify-center gap-2">
                       <input
-                        type="password"
-                        inputMode="text"
+                        type="text"
+                        inputMode="numeric"
                         autoComplete="one-time-code"
+                        maxLength={8}
+                        spellCheck={false}
                         value={pinInput}
                         onChange={(e) => {
                           setPinError("");
-                          setPinInput(e.target.value);
+                          setPinInput(e.target.value.replace(/\D/g, "").slice(0, 8));
                         }}
                         onPaste={(e) => {
                           e.preventDefault();
                           setPinError("");
-                          setPinInput(e.clipboardData.getData("text"));
+                          setPinInput(e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 8));
                         }}
                         onKeyDown={(e) => { if (e.key === "Enter") handlePinSubmit(); }}
                         placeholder="12345678"
                         aria-label="8-digit PIN"
                         className="flex h-10 w-48 rounded-md border border-gray-300 bg-background px-3 py-2 text-center text-lg font-mono tracking-[0.3em] ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                       />
-                      <Button onClick={handlePinSubmit} disabled={pinLoading || pinInput.trim().length === 0}>
+                      <Button onClick={handlePinSubmit} disabled={pinLoading || pinInput.length !== 8}>
                         {pinLoading ? "..." : "Unlock"}
                       </Button>
                     </div>
