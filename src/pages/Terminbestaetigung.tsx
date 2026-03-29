@@ -113,6 +113,7 @@ export default function Terminbestaetigung() {
         `Ort: ${locationLabels[location] || location}`,
         notes && `Notizen: ${notes}`,
       ].filter(Boolean).join(" | "),
+      user_agent: navigator.userAgent || null,
     };
 
     try {

@@ -918,6 +918,7 @@ export default function Dashboard() {
                               <TableHead className="text-gray-500 text-xs">UTM Content</TableHead>
                               <TableHead className="text-gray-500 text-xs">UTM Term</TableHead>
                               <TableHead className="text-gray-500 text-xs">Notes</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Device</TableHead>
                               <TableHead className="text-gray-500 text-xs text-center">Conv.</TableHead>
                               <TableHead className="text-gray-500 text-xs text-center">Share</TableHead>
                              </TableRow>
@@ -985,6 +986,15 @@ export default function Dashboard() {
                                 <TableCell className="text-gray-600 text-xs max-w-[100px] truncate" title={l.utm_content || ""}>{l.utm_content || "—"}</TableCell>
                                 <TableCell className="text-gray-600 text-xs max-w-[100px] truncate" title={l.utm_term || ""}>{l.utm_term || "—"}</TableCell>
                                 <TableCell className="text-gray-600 text-xs max-w-[150px] truncate" title={l.notes || ""}>{l.notes || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs whitespace-nowrap">
+                                  {(() => {
+                                    const ua = (l as any).user_agent || "";
+                                    if (!ua) return "—";
+                                    if (/Mobi|Android.*Mobile|iPhone/i.test(ua)) return "📱 Mobile";
+                                    if (/iPad|Tablet|Android(?!.*Mobile)/i.test(ua)) return "📱 Tablet";
+                                    return "💻 Desktop";
+                                  })()}
+                                </TableCell>
                                 <TableCell className="text-center">
                                   {l.converted ? (
                                     <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">✓</Badge>

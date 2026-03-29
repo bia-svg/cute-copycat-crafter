@@ -118,6 +118,7 @@ export type Database = {
           postal_code: string | null
           source: string | null
           tracking_code: string | null
+          user_agent: string | null
           utm_campaign: string | null
           utm_content: string | null
           utm_medium: string | null
@@ -140,6 +141,7 @@ export type Database = {
           postal_code?: string | null
           source?: string | null
           tracking_code?: string | null
+          user_agent?: string | null
           utm_campaign?: string | null
           utm_content?: string | null
           utm_medium?: string | null
@@ -162,6 +164,7 @@ export type Database = {
           postal_code?: string | null
           source?: string | null
           tracking_code?: string | null
+          user_agent?: string | null
           utm_campaign?: string | null
           utm_content?: string | null
           utm_medium?: string | null
