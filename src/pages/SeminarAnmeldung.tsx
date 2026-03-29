@@ -116,16 +116,16 @@ export default function SeminarAnmeldung() {
   return (
     <>
       <SEO
-        title={isEN ? "Register for Seminar – Aktiv-Hypnose©" : "Seminar-Anmeldung – Aktiv-Hypnose©"}
-        description={isEN
-          ? "Register for the 6-day Aktiv-Hypnose© training seminar. Choose your country and date."
-          : "Melden Sie sich für das 6-tägige Aktiv-Hypnose© Ausbildungsseminar an. Wählen Sie Land und Termin."}
-        pageKey="contact"
+        titleDE="Seminar-Anmeldung – Aktiv-Hypnose©"
+        titleEN="Register for Seminar – Aktiv-Hypnose©"
+        descriptionDE="Melden Sie sich für das 6-tägige Aktiv-Hypnose© Ausbildungsseminar an. Wählen Sie Land und Termin."
+        descriptionEN="Register for the 6-day Aktiv-Hypnose© training seminar. Choose your country and date."
+        pageKey="seminarRegistration"
       />
       <Breadcrumbs items={[
         { name: "Home", path: basePath },
         { name: isEN ? "Training" : "Ausbildung", path: getPath("training", language, country) },
-        { name: isEN ? "Register for Seminar" : "Seminar-Anmeldung" },
+        { name: isEN ? "Register for Seminar" : "Seminar-Anmeldung", path: getPath("seminarRegistration", language, country) },
       ]} />
 
       <section className="bg-white border-b border-border">
