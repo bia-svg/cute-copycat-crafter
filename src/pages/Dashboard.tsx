@@ -253,7 +253,7 @@ export default function Dashboard() {
                 </CardHeader>
                 <CardContent>
                   <ChartContainer config={chartConfig} className="h-[300px] w-full">
-                    <BarChart data={trafficByDay}>
+                    <ComposedChart data={trafficByDay}>
                       <CartesianGrid stroke="#f3f4f6" strokeDasharray="3 3" />
                       <XAxis dataKey="date" tick={{ fill: "#9ca3af", fontSize: 10 }} tickFormatter={v => format(parseISO(v), "dd/MM")} />
                       <YAxis tick={{ fill: "#9ca3af", fontSize: 10 }} />
@@ -263,7 +263,7 @@ export default function Dashboard() {
                       <Bar dataKey="paid" fill={COLORS.paid} stackId="channels" name="Paid" />
                       <Bar dataKey="direct" fill={COLORS.direct} stackId="channels" radius={[3, 3, 0, 0]} name="Direct" />
                       <Line type="monotone" dataKey="total" stroke="#1f2937" strokeWidth={2} dot={false} name="Total" />
-                    </BarChart>
+                    </ComposedChart>
                   </ChartContainer>
                 </CardContent>
               </Card>
