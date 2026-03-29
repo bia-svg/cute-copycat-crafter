@@ -116,6 +116,8 @@ export default function Erstgespraech() {
         utmSource,
         utmMedium,
         utmCampaign,
+        bestTime: bestTime || undefined,
+        message: message || undefined,
       });
     } catch (err) {
       console.error("Lead notification error:", err);
