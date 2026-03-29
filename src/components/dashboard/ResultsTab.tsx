@@ -494,8 +494,8 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
             </div>
             <div className="p-3 bg-emerald-50 rounded-lg border border-emerald-100 text-center">
               <p className="text-xs text-emerald-600 font-medium">Seminar CH</p>
-              <p className="text-xs text-emerald-500 line-through">CHF 3,290</p>
-              <p className="text-lg font-bold text-emerald-700">CHF 2,990</p>
+               <p className="text-xs text-emerald-500 line-through">CHF 3.290.-</p>
+               <p className="text-lg font-bold text-emerald-700">CHF 2.990.-</p>
               <p className="text-[10px] text-emerald-600">Early Bird</p>
             </div>
             <div className="p-3 bg-blue-50 rounded-lg border border-blue-100 text-center">
