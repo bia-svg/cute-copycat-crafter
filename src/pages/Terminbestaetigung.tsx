@@ -22,6 +22,9 @@ export default function Terminbestaetigung() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [searchParams] = useSearchParams();
+  const [dsgvoChecked, setDsgvoChecked] = useState(false);
+  const [agbChecked, setAgbChecked] = useState(false);
+  const [paymentChecked, setPaymentChecked] = useState(false);
 
   // Phone country code
   const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
@@ -56,8 +59,8 @@ export default function Terminbestaetigung() {
     const dob = (formData.get("dob") as string) || "";
     const notes = (formData.get("notes") as string)?.trim() || "";
 
-    if (!firstName || !lastName || !street || !postalCode || !city || !sessionDate || !sessionTime || !email || !phone || !location) {
-      toast.error(isEN ? "Please fill in all required fields." : "Bitte füllen Sie alle Pflichtfelder aus.");
+    if (!firstName || !lastName || !street || !postalCode || !city || !sessionDate || !sessionTime || !email || !phone || !location || !dsgvoChecked || !agbChecked || !paymentChecked) {
+      toast.error(isEN ? "Please fill in all required fields and accept all checkboxes." : "Bitte füllen Sie alle Pflichtfelder aus und akzeptieren Sie alle Checkboxen.");
       return;
     }
 
@@ -304,7 +307,7 @@ export default function Terminbestaetigung() {
           {/* DSGVO Consent */}
           <div className="space-y-4 border border-border rounded-lg p-4 bg-secondary/30">
             <div className="flex items-start gap-3">
-              <Checkbox id="dsgvo" required />
+              <Checkbox id="dsgvo" checked={dsgvoChecked} onCheckedChange={(v) => setDsgvoChecked(v === true)} />
               <Label htmlFor="dsgvo" className="text-sm text-foreground font-normal cursor-pointer leading-snug">
                 {isEN
                   ? "I consent to this website storing my submitted information so that my inquiry can be answered."
@@ -314,7 +317,7 @@ export default function Terminbestaetigung() {
             </div>
 
             <div className="flex items-start gap-3">
-              <Checkbox id="agb" required />
+              <Checkbox id="agb" checked={agbChecked} onCheckedChange={(v) => setAgbChecked(v === true)} />
               <Label htmlFor="agb" className="text-sm text-foreground font-normal cursor-pointer leading-snug">
                 {isEN
                   ? "I accept the General Terms and Conditions"
@@ -328,7 +331,7 @@ export default function Terminbestaetigung() {
             </div>
 
             <div className="flex items-start gap-3">
-              <Checkbox id="payment" required />
+              <Checkbox id="payment" checked={paymentChecked} onCheckedChange={(v) => setPaymentChecked(v === true)} />
               <Label htmlFor="payment" className="text-sm text-foreground font-normal cursor-pointer leading-snug">
                 {isEN
                   ? "Our hypnosis sessions are paid on-site in cash."
