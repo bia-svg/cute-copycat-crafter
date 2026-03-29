@@ -42,6 +42,24 @@ export default function SeminarAnmeldung() {
   const [registrationNumber, setRegistrationNumber] = useState("");
   const [gdprConsent, setGdprConsent] = useState(false);
   const [agbConsent, setAgbConsent] = useState(false);
+  const [seminarCounts, setSeminarCounts] = useState<Record<string, number>>({});
+
+  // Fetch seminar registration counts for early bird logic
+  useEffect(() => {
+    supabase.functions.invoke("seminar-counts").then(({ data }) => {
+      if (data?.counts) setSeminarCounts(data.counts);
+    }).catch(() => {});
+  }, []);
+
+  const EARLY_BIRD_THRESHOLD = 3;
+  // Check if any seminar for a country still qualifies for early bird (≤3 registrations)
+  const hasEarlyBirdForCountry = (countryKey: "ch" | "de") => {
+    const countryDates = SEMINAR_DATES[countryKey];
+    return countryDates.some(d => (seminarCounts[`${countryKey}::${d.date}`] || 0) < EARLY_BIRD_THRESHOLD);
+  };
+  const hasEarlyBirdForDate = (countryKey: "ch" | "de", date: string) => {
+    return (seminarCounts[`${countryKey}::${date}`] || 0) < EARLY_BIRD_THRESHOLD;
+  };
 
   // Phone
   const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
