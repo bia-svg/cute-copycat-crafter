@@ -71,10 +71,7 @@ export default function Home() {
   const { language, country, t, isSwiss, isInternational, showCH, showDE } = useLanguage();
   const isMobile = useIsMobile();
   const isEN = language === "en";
-  const deferredSectionStyle = {
-    contentVisibility: "auto" as const,
-    containIntrinsicSize: "1px 900px",
-  };
+  const deferredSectionStyle = {};
 
   /* ── Hero Slider ── */
   const [currentSlide, setCurrentSlide] = useState(0);
