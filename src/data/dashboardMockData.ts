@@ -27,6 +27,7 @@ export interface CampaignData {
   clicks: number;
   spend: number;
   conversions: number;
+  currencyCode?: string;
 }
 
 export interface DailyAds {
