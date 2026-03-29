@@ -136,7 +136,7 @@ export default function Terminbestaetigung() {
         formType: "session",
         city,
         country: country.toUpperCase(),
-        language,
+        language: country === "int" ? "en" : "de",
         notes: leadData.notes,
         source,
         utmSource,

@@ -110,7 +110,7 @@ export default function Erstgespraech() {
         formType: "session",
         city: leadData.city || undefined,
         country: country.toUpperCase(),
-        language,
+        language: country === "int" ? "en" : "de",
         notes: leadData.notes || undefined,
         source,
         utmSource,
