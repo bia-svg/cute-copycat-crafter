@@ -250,6 +250,12 @@ export default function Dashboard() {
               <TabsTrigger value="all-leads" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
                 <Lock className="w-3 h-3 mr-1" /> All Leads
               </TabsTrigger>
+              <TabsTrigger value="sessions" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                <CalendarCheck className="w-3 h-3 mr-1" /> Sessions
+              </TabsTrigger>
+              <TabsTrigger value="results" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                <GraduationCap className="w-3 h-3 mr-1" /> Results
+              </TabsTrigger>
               <TabsTrigger value="data" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Data Export</TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
             </TabsList>
