@@ -423,19 +423,18 @@ export default function Dashboard() {
             {/* ═══════ CAMPAIGNS TAB ═══════ */}
             <TabsContent value="campaigns" className="space-y-5 mt-4">
               <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
-                <MetricCard title="Total Spend" value={formatCurrency(adsTotals.spend)} icon={DollarSign} />
+                <MetricCard title="Total Spend" value={formatCurrency(adsTotals.spend, adsCurrency)} icon={DollarSign} />
                 <MetricCard title="Impressions" value={adsTotals.impressions} icon={Eye} />
                 <MetricCard title="Clicks" value={adsTotals.clicks} icon={MousePointer} />
-                <MetricCard title="Avg CPC" value={adsTotals.clicks > 0 ? formatCurrency(adsTotals.spend / adsTotals.clicks) : "—"} icon={Target} />
+                <MetricCard title="Avg CPC" value={adsTotals.clicks > 0 ? formatCurrency(adsTotals.spend / adsTotals.clicks, adsCurrency) : "—"} icon={Target} />
                 <MetricCard title="CTR" value={adsTotals.impressions > 0 ? `${((adsTotals.clicks / adsTotals.impressions) * 100).toFixed(2)}%` : "—"} icon={TrendingUp} />
               </div>
 
-              {/* Lead cost metrics */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-                <MetricCard title="Session Leads" value={leadStats.sessionLeads} icon={FileText} color="text-emerald-600" />
-                <MetricCard title="Seminar Leads" value={leadStats.seminarLeads} icon={FileText} color="text-blue-600" />
-                <MetricCard title="Cost / Session Lead" value={costPerSession > 0 ? formatCurrency(costPerSession) : "—"} icon={DollarSign} />
-                <MetricCard title="Cost / Seminar Lead" value={costPerSeminar > 0 ? formatCurrency(costPerSeminar) : "—"} icon={DollarSign} />
+              {/* Paid lead metrics only */}
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+                <MetricCard title="Paid Leads" value={paidLeads.length} icon={Zap} color="text-blue-600" subtitle="From Google Ads only" />
+                <MetricCard title="Cost / Lead" value={costPerPaidLead > 0 ? formatCurrency(costPerPaidLead, adsCurrency) : "—"} icon={DollarSign} />
+                <MetricCard title="Paid CVR" value={paidCVR !== "—" ? `${paidCVR}%` : "—"} icon={TrendingUp} subtitle={`${paidLeads.length} leads / ${totals.paid} paid sessions`} />
               </div>
 
               {/* Daily spend chart */}
@@ -446,7 +445,7 @@ export default function Dashboard() {
                   </CardHeader>
                   <CardContent>
                     <ChartContainer config={{
-                      spend: { label: "Spend (CHF)", color: COLORS.paid },
+                      spend: { label: `Spend (${adsCurrency})`, color: COLORS.paid },
                       clicks: { label: "Clicks", color: COLORS.organic },
                     }} className="h-[220px] w-full">
                       <LineChart data={dailyAds}>
@@ -463,10 +462,11 @@ export default function Dashboard() {
                 </Card>
               )}
 
-              {/* Campaign table */}
+              {/* Campaign table with leads per campaign */}
               <Card className="bg-white border border-gray-200 shadow-sm">
                 <CardHeader className="pb-2">
                   <CardTitle className="text-sm font-medium text-gray-700">Campaign Performance</CardTitle>
+                  <p className="text-xs text-gray-400">Leads are matched via UTM campaign parameter from paid traffic only.</p>
                 </CardHeader>
                 <CardContent>
                   {campaigns.length === 0 ? (
@@ -482,32 +482,36 @@ export default function Dashboard() {
                             <TableHead className="text-gray-500 text-right">Clicks</TableHead>
                             <TableHead className="text-gray-500 text-right">CTR</TableHead>
                             <TableHead className="text-gray-500 text-right">CPC</TableHead>
-                            <TableHead className="text-gray-500 text-right">Conv.</TableHead>
-                            <TableHead className="text-gray-500 text-right">CPA</TableHead>
+                            <TableHead className="text-gray-500 text-right">Leads</TableHead>
+                            <TableHead className="text-gray-500 text-right">Cost / Lead</TableHead>
                           </TableRow>
                         </TableHeader>
                         <TableBody>
-                          {campaigns.map(c => (
-                            <TableRow key={c.id} className="border-gray-100 hover:bg-gray-50">
-                              <TableCell className="font-medium text-gray-900">
-                                {c.name}
-                                <Badge variant="outline" className="ml-2 text-xs">{c.status}</Badge>
-                              </TableCell>
-                              <TableCell className="text-right text-gray-900">{formatCurrency(c.spend)}</TableCell>
-                              <TableCell className="text-right text-gray-700">{c.impressions.toLocaleString()}</TableCell>
-                              <TableCell className="text-right text-gray-700">{c.clicks.toLocaleString()}</TableCell>
-                              <TableCell className="text-right text-gray-700">
-                                {c.impressions > 0 ? `${((c.clicks / c.impressions) * 100).toFixed(2)}%` : "—"}
-                              </TableCell>
-                              <TableCell className="text-right text-gray-700">
-                                {c.clicks > 0 ? formatCurrency(c.spend / c.clicks) : "—"}
-                              </TableCell>
-                              <TableCell className="text-right text-gray-900 font-medium">{Math.round(c.conversions)}</TableCell>
-                              <TableCell className="text-right text-gray-700">
-                                {c.conversions > 0 ? formatCurrency(c.spend / c.conversions) : "—"}
-                              </TableCell>
-                            </TableRow>
-                          ))}
+                          {campaigns.map(c => {
+                            // Match leads by campaign name (utm_campaign often matches campaign name)
+                            const campaignLeads = paidLeadsByCampaign[c.name] || 0;
+                            return (
+                              <TableRow key={c.id} className="border-gray-100 hover:bg-gray-50">
+                                <TableCell className="font-medium text-gray-900">
+                                  {c.name}
+                                  <Badge variant="outline" className="ml-2 text-xs">{c.status}</Badge>
+                                </TableCell>
+                                <TableCell className="text-right text-gray-900">{formatCurrency(c.spend, adsCurrency)}</TableCell>
+                                <TableCell className="text-right text-gray-700">{c.impressions.toLocaleString()}</TableCell>
+                                <TableCell className="text-right text-gray-700">{c.clicks.toLocaleString()}</TableCell>
+                                <TableCell className="text-right text-gray-700">
+                                  {c.impressions > 0 ? `${((c.clicks / c.impressions) * 100).toFixed(2)}%` : "—"}
+                                </TableCell>
+                                <TableCell className="text-right text-gray-700">
+                                  {c.clicks > 0 ? formatCurrency(c.spend / c.clicks, adsCurrency) : "—"}
+                                </TableCell>
+                                <TableCell className="text-right text-blue-700 font-medium">{campaignLeads}</TableCell>
+                                <TableCell className="text-right text-gray-700">
+                                  {campaignLeads > 0 ? formatCurrency(c.spend / campaignLeads, adsCurrency) : "—"}
+                                </TableCell>
+                              </TableRow>
+                            );
+                          })}
                         </TableBody>
                       </Table>
                     </div>
