@@ -29,6 +29,9 @@ export default function Terminbestaetigung() {
   const [dobDay, setDobDay] = useState("");
   const [dobMonth, setDobMonth] = useState("");
   const [dobYear, setDobYear] = useState("");
+  const [sessionDay, setSessionDay] = useState("");
+  const [sessionMonth, setSessionMonth] = useState("");
+  const [sessionYear, setSessionYear] = useState("");
 
   // Phone country code
   const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
