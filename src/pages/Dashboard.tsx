@@ -84,8 +84,8 @@ export default function Dashboard() {
   }, [navigate]);
 
   const handlePinSubmit = async () => {
-    const pin = pinInput.replace(/\D/g, "").slice(0, 8);
-    if (pin.length !== 8) { setPinError("PIN must be 8 digits"); return; }
+    const pin = pinInput.trim();
+    if (!pin) { setPinError("Please enter your PIN"); return; }
     setPinLoading(true);
     setPinError("");
     try {

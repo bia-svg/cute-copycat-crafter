@@ -23,14 +23,14 @@ serve(async (req) => {
 
     const storedPin = (Deno.env.get("DASHBOARD_LEADS_PIN") ?? "").trim();
 
-    if (normalizedStoredPin.length !== 8) {
-      return new Response(JSON.stringify({ error: "PIN not configured correctly" }), {
+    if (!storedPin) {
+      return new Response(JSON.stringify({ error: "PIN not configured" }), {
         status: 500,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
-    if (normalizedPin === normalizedStoredPin) {
+    if (normalizedPin === storedPin) {
       return new Response(JSON.stringify({ success: true }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
