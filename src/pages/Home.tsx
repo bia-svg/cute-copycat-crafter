@@ -57,7 +57,7 @@ function TVLogoCarousel() {
     <div className="relative">
       <div ref={scrollRef} className="flex gap-6 overflow-x-auto scrollbar-hide py-2" style={{ scrollbarWidth: "none" }}>
         {CDN.bekanntAus.map((src, i) => (
-          <img key={i} src={src} alt={`David J. Woods bekannt aus Medien – Logo ${i + 1}`} className="h-8 md:h-10 object-contain shrink-0 opacity-60 hover:opacity-100 transition-opacity mix-blend-multiply" loading="lazy" />
+          <img key={i} src={src} alt={`David J. Woods bekannt aus Medien – Logo ${i + 1}`} className="h-8 md:h-10 object-contain shrink-0 opacity-60 hover:opacity-100 transition-opacity mix-blend-multiply" width={80} height={32} loading="lazy" />
         ))}
       </div>
     </div>
@@ -392,7 +392,7 @@ export default function Home() {
                 : "Auch wenn viele anfangs unsicher sind – der Prozess führt in einen Zustand fokussierter Klarheit, in dem Transformation möglich wird."}
             </p>
             <div className="flex items-center gap-3 bg-secondary rounded-lg p-3">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12" loading="lazy" />
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12" width={77} height={48} loading="lazy" />
               <div>
                 <div className="font-semibold text-sm text-foreground">EMR Krankenkasse Konform</div>
                 <div className="text-xs text-muted-foreground">ZSR P609264 — {isEN ? "Recognized by Swiss health insurance" : "Von Schweizer Krankenkassen anerkannt"}</div>
@@ -456,7 +456,7 @@ export default function Home() {
             </div>
             <div className="p-6 bg-card border border-border rounded-lg">
               <div className="flex items-center gap-4 mb-4">
-                <img src={CDN.logo} alt="Aktiv-Hypnose© Logo – Methode von David J. Woods" className="h-14 w-auto shrink-0" loading="lazy" />
+                <img src={CDN.logo} alt="Aktiv-Hypnose© Logo – Methode von David J. Woods" className="h-14 w-auto shrink-0" width={84} height={56} loading="lazy" />
               </div>
               <h3 className="font-semibold text-sm text-foreground mb-2">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
@@ -466,12 +466,12 @@ export default function Home() {
               </p>
             </div>
             <div className="text-center p-6 bg-card border border-border rounded-lg">
-              <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat – National Guild of Hypnotists" className="h-16 mx-auto mb-3" loading="lazy" />
+              <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat – National Guild of Hypnotists" className="h-16 mx-auto mb-3" width={64} height={64} loading="lazy" />
               <h3 className="font-semibold text-foreground">NGH International Trainer</h3>
               <p className="text-sm text-muted-foreground">National Guild of Hypnotists</p>
             </div>
             <div className="text-center p-6 bg-card border border-border rounded-lg">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge – ZSR P609264" className="h-16 mx-auto mb-3" loading="lazy" />
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge – ZSR P609264" className="h-16 mx-auto mb-3" width={102} height={64} loading="lazy" />
               <h3 className="font-semibold text-foreground">EMR Krankenkasse Konform</h3>
               <p className="text-sm text-muted-foreground">ZSR P609264</p>
             </div>
