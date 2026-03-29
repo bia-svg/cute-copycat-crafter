@@ -79,7 +79,7 @@ export default function SEO({
     name: "David J. Woods — Hypnose & Psychologie",
     description: descriptionDE,
     url: BASE_URL,
-    telephone: ["+41 44 888 09 01", "+49 171 9539922"],
+    telephone: ["+41 79 131 88 78", "+49 171 953 99 22"],
     address: [
       { "@type": "PostalAddress", streetAddress: "Usteristrasse 23", addressLocality: "Zürich", postalCode: "8001", addressCountry: "CH" },
       { "@type": "PostalAddress", streetAddress: "Viktoria Str 3b", addressLocality: "Augsburg", postalCode: "86150", addressCountry: "DE" },

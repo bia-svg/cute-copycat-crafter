@@ -1,6 +1,6 @@
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Route, Routes, Navigate, useLocation } from "react-router-dom";
-import { useEffect, lazy, Suspense } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
@@ -41,6 +41,27 @@ const DepressionPage = lazy(() => import("@/pages/services/index").then(m => ({ 
 const ChildrenPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.ChildrenPage })));
 const AdultsPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.AdultsPage })));
 
+function GeoRedirect() {
+  const [target, setTarget] = useState("/de/ch");
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    fetch("https://ipapi.co/json/")
+      .then(r => r.json())
+      .then(data => {
+        const cc = (data.country_code || "").toUpperCase();
+        if (cc === "CH" || cc === "LI") setTarget("/de/ch");
+        else if (cc === "DE" || cc === "AT") setTarget("/de/de");
+        else setTarget("/de/int");
+      })
+      .catch(() => setTarget("/de/ch"))
+      .finally(() => setReady(true));
+  }, []);
+
+  if (!ready) return null;
+  return <Navigate to={target} replace />;
+}
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -66,7 +87,7 @@ function AppRoutes() {
       <Layout>
         <Suspense fallback={<PageFallback />}>
           <Routes>
-            <Route path="/" element={<Navigate to="/de/ch" replace />} />
+            <Route path="/" element={<GeoRedirect />} />
             <Route path="/:lang/:country" element={<Home />} />
 
             <Route path="/:lang/:country/raucherentwoehnung" element={<SmokingPage />} />

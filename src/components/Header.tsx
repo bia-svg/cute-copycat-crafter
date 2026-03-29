@@ -153,12 +153,12 @@ export default function Header() {
         <div className="container-main flex items-center justify-center sm:justify-between py-2 sm:py-1.5 gap-4">
           <div className="hidden sm:flex items-center gap-4">
             {isSwiss ? (
-              <a href="tel:+41448880901" className="flex items-center gap-1 hover:underline">
-                <Phone className="w-3 h-3" /> +41 44 888 09 01
+              <a href="tel:+41791318878" className="flex items-center gap-1 hover:underline">
+                <Phone className="w-3 h-3" /> +41 79 131 88 78
               </a>
             ) : (
               <a href="tel:+491719539922" className="flex items-center gap-1 hover:underline">
-                <Phone className="w-3 h-3" /> +49 171 9539922
+                <Phone className="w-3 h-3" /> +49 171 953 99 22
               </a>
             )}
           </div>

@@ -19,14 +19,14 @@ export default function Standorte() {
             city: "Zürich",
             subtitle: isEN ? "Main Practice Switzerland" : "Hauptpraxis Schweiz",
             address: ["5 Elements TCM, Beim Löwenplatz", "Usteristrasse 23", "8001 Zürich"],
-            phone: "+41 44 888 09 01",
+            phone: "+41 79 131 88 78",
             href: getPath("cityZurich", language, country),
           },
           {
             city: "Eschenbach",
             subtitle: isEN ? "Practice Lake Zurich" : "Praxis am Zürichsee",
             address: ["Fit+Gsund", "Churzhaslen 3", "8733 Eschenbach (am Zürichsee)"],
-            phone: "+41 44 888 09 01",
+            phone: "+41 79 131 88 78",
             href: getPath("cityZurich", language, country),
           },
         ]
@@ -37,7 +37,7 @@ export default function Standorte() {
             city: "Augsburg",
             subtitle: isEN ? "Practice Germany" : "Praxis Deutschland",
             address: ["Viktoriastrasse 3", "86150 Augsburg"],
-            phone: "+49 171 9539922",
+            phone: "+49 171 953 99 22",
             href: getPath("cityAugsburg", language, country),
           },
         ]

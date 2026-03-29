@@ -96,7 +96,7 @@ export default function CityAugsburg() {
               ? "Professional hypnotherapy practice in Augsburg."
               : "Professionelle Hypnosetherapie-Praxis in Augsburg.",
             image: `${CDN}/augsburg_city_hypnose_dba5b1e7.jpg`,
-            telephone: "+49 171 9539922",
+            telephone: "+49 171 953 99 22",
             url: "https://david-j-woods.com/de/de/hypnose-augsburg",
             address: { "@type": "PostalAddress", streetAddress: "Viktoria Str. 3b, 2. OG", addressLocality: "Augsburg", postalCode: "86150", addressCountry: "DE" },
             geo: { "@type": "GeoCoordinates", latitude: 48.3656, longitude: 10.8946 },
