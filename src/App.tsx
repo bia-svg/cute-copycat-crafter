@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes, Navigate, useLocation } from "react-route
 import { useEffect, useState, lazy, Suspense } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Layout from "@/components/Layout";
-import Home from "@/pages/Home";
+const Home = lazy(() => import("@/pages/Home"));
 
 // Lazy-loaded pages for code splitting
 const Erstgespraech = lazy(() => import("@/pages/Erstgespraech"));
