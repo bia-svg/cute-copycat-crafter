@@ -5,7 +5,7 @@ type PageKey =
   | "depression" | "children" | "adults" | "training" | "seminarSchedule" | "corporate"
   | "corporateErfolg" | "corporateResilienz" | "corporateStress" | "corporateNichtraucher"
   | "about" | "testimonials" | "successStories" | "media"
-  | "contact" | "appointmentConfirmation" | "cityZurich" | "cityAugsburg" | "locations"
+  | "contact" | "appointmentConfirmation" | "seminarRegistration" | "cityZurich" | "cityAugsburg" | "locations"
   | "impressum" | "privacy" | "terms" | "blog" | "book";
 
 const slugMapDE: Record<PageKey, string> = {
@@ -30,6 +30,7 @@ const slugMapDE: Record<PageKey, string> = {
   media: "tv-medien",
   contact: "erstgespraech",
   appointmentConfirmation: "terminbestaetigung",
+  seminarRegistration: "seminar-anmeldung",
   cityZurich: "hypnose-zuerich",
   cityAugsburg: "hypnose-augsburg",
   locations: "standorte",
@@ -62,6 +63,7 @@ const slugMapEN: Record<PageKey, string> = {
   media: "tv-media",
   contact: "consultation",
   appointmentConfirmation: "appointment-confirmation",
+  seminarRegistration: "seminar-registration",
   cityZurich: "hypnosis-zurich",
   cityAugsburg: "hypnosis-augsburg",
   locations: "locations",

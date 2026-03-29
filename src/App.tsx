@@ -16,6 +16,7 @@ const Standorte = lazy(() => import("@/pages/Standorte"));
 const TvMedien = lazy(() => import("@/pages/TvMedien"));
 const Erfolgsberichte = lazy(() => import("@/pages/Erfolgsberichte"));
 const Terminbestaetigung = lazy(() => import("@/pages/Terminbestaetigung"));
+const SeminarAnmeldung = lazy(() => import("@/pages/SeminarAnmeldung"));
 const FirmenCoaching = lazy(() => import("@/pages/FirmenCoaching"));
 const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
@@ -133,7 +134,10 @@ function AppRoutes() {
 
             <Route path="/:lang/:country/erstgespraech" element={<Erstgespraech />} />
             <Route path="/:lang/:country/terminbestaetigung" element={<Terminbestaetigung />} />
+            <Route path="/:lang/:country/seminar-anmeldung" element={<SeminarAnmeldung />} />
             <Route path="/:lang/:country/consultation" element={<Erstgespraech />} />
+            <Route path="/:lang/:country/appointment-confirmation" element={<Terminbestaetigung />} />
+            <Route path="/:lang/:country/seminar-registration" element={<SeminarAnmeldung />} />
             <Route path="/:lang/:country/appointment-confirmation" element={<Terminbestaetigung />} />
 
             <Route path="/:lang/:country/standorte" element={<Standorte />} />

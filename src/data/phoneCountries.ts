@@ -140,10 +140,10 @@ const ALL_COUNTRIES: PhoneCountry[] = [
   { code: "+213", iso: "DZ", flag: "🇩🇿", name: "Algerien", maxDigits: 9, placeholder: "551 23 45 67" },
 ].sort((a, b) => a.iso.localeCompare(b.iso));
 
-/** Pinned countries (DE, CH) at top, then the rest alphabetically */
-const PINNED_ISOS = ["DE", "CH"];
+/** Pinned countries at top (in this order), then the rest alphabetically */
+const PINNED_ISOS = ["DE", "CH", "AT", "LI", "IT", "ES", "LU", "AE"];
 
 export const PHONE_COUNTRIES: PhoneCountry[] = [
-  ...ALL_COUNTRIES.filter(c => PINNED_ISOS.includes(c.iso)),
+  ...PINNED_ISOS.map(iso => ALL_COUNTRIES.find(c => c.iso === iso)!).filter(Boolean),
   ...ALL_COUNTRIES.filter(c => !PINNED_ISOS.includes(c.iso)),
 ];
