@@ -66,7 +66,7 @@ function AppRoutes() {
       <Layout>
         <Suspense fallback={<PageFallback />}>
           <Routes>
-            <Route path="/" element={<Navigate to="/de/ch" replace />} />
+            <Route path="/" element={<GeoRedirect />} />
             <Route path="/:lang/:country" element={<Home />} />
 
             <Route path="/:lang/:country/raucherentwoehnung" element={<SmokingPage />} />
