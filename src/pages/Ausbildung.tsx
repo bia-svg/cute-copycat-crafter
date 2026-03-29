@@ -5,6 +5,8 @@
  */
 
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useState, useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
 import FAQSection from "@/components/FAQSection";
