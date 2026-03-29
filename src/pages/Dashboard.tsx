@@ -78,19 +78,19 @@ export default function Dashboard() {
   const [pinUnlocked, setPinUnlocked] = useState(false);
   const [pinError, setPinError] = useState("");
   const [pinLoading, setPinLoading] = useState(false);
-  const normalizedPinInput = pinInput.replace(/\D/g, "").slice(0, 8);
 
   useEffect(() => {
     if (!isAuthenticated()) navigate("/dashboard/login", { replace: true });
   }, [navigate]);
 
   const handlePinSubmit = async () => {
-    if (normalizedPinInput.length !== 8) { setPinError("PIN must be 8 digits"); return; }
+    const pin = pinInput.replace(/\D/g, "").slice(0, 8);
+    if (pin.length !== 8) { setPinError("PIN must be 8 digits"); return; }
     setPinLoading(true);
     setPinError("");
     try {
       const res = await supabase.functions.invoke("verify-leads-pin", {
-        body: { pin: normalizedPinInput },
+        body: { pin },
       });
       if (res.data?.success) {
         setPinUnlocked(true);
@@ -797,7 +797,7 @@ export default function Dashboard() {
                         aria-label="8-digit PIN"
                         className="flex h-10 w-48 rounded-md border border-gray-300 bg-background px-3 py-2 text-center text-lg font-mono tracking-[0.3em] ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                       />
-                      <Button onClick={handlePinSubmit} disabled={pinLoading || normalizedPinInput.length !== 8}>
+                      <Button onClick={handlePinSubmit} disabled={pinLoading || pinInput.trim().length === 0}>
                         {pinLoading ? "..." : "Unlock"}
                       </Button>
                     </div>
