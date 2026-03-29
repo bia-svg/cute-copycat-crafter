@@ -208,6 +208,7 @@ export default function SeminarAnmeldung() {
                         <span className="text-2xl">{c.flag}</span>
                         <p className="font-semibold text-sm text-[#1B3A5C] mt-1">{c.label}</p>
                         <p className="text-xs text-muted-foreground">{c.sub}</p>
+                        <p className="text-sm font-bold text-[#2E7D32] mt-1">{c.price}</p>
                       </button>
                     ))}
                   </div>
