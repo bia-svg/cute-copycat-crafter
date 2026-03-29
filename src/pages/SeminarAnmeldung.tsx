@@ -333,13 +333,15 @@ export default function SeminarAnmeldung() {
                         </div>
                       </div>
 
+                      <div className="pb-20 md:pb-0">
                       <Button
                         type="submit"
                         disabled={!gdprConsent}
-                        className={`w-full font-semibold py-3 text-white transition-colors ${gdprConsent ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
+                        className={`w-full font-semibold py-3 text-white transition-colors relative z-[51] ${gdprConsent ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
                       >
                         {isEN ? "Register for Seminar" : "Seminar-Anmeldung absenden"}
                       </Button>
+                      </div>
 
                       <p className="text-[10px] text-muted-foreground text-center">
                         {isEN

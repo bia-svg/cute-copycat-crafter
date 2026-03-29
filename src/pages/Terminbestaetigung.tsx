@@ -422,15 +422,17 @@ export default function Terminbestaetigung() {
           </div>
 
           {/* Submit */}
+          <div className="pb-20 md:pb-0">
           <Button
             type="submit"
             disabled={loading}
-            className="w-full bg-cta hover:bg-cta/90 text-cta-foreground font-semibold py-3 text-base"
+            className="w-full bg-cta hover:bg-cta/90 text-cta-foreground font-semibold py-3 text-base relative z-[51]"
           >
             {loading
               ? (isEN ? "Sending..." : "Wird gesendet...")
               : (isEN ? "Confirm Appointment" : "Termin bestätigen")}
           </Button>
+          </div>
         </form>
       </div>
     </section>
