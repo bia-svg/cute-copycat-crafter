@@ -778,24 +778,20 @@ export default function Dashboard() {
                       <div className="text-sm text-red-600 bg-red-50 border border-red-200 rounded p-2">{pinError}</div>
                     )}
                     <div className="flex items-center justify-center gap-2">
-                      <Input
-                        type="tel"
+                      <input
+                        type="text"
                         inputMode="numeric"
-                        pattern="[0-9]*"
                         maxLength={8}
                         autoComplete="one-time-code"
                         value={pinInput}
-                        onInput={(e) => setPinInput((e.currentTarget.value || "").replace(/\D/g, "").slice(0, 8))}
-                        onChange={(e) => setPinInput(e.target.value.replace(/\D/g, "").slice(0, 8))}
-                        onPaste={(e) => {
-                          e.preventDefault();
-                          const text = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 8);
-                          setPinInput(text);
+                        onChange={(e) => {
+                          const cleaned = e.target.value.replace(/\D/g, "").slice(0, 8);
+                          setPinInput(cleaned);
                         }}
                         onKeyDown={(e) => { if (e.key === "Enter") handlePinSubmit(); }}
                         placeholder="12345678"
                         aria-label="8-digit PIN"
-                        className="w-48 text-center text-lg font-mono border-gray-300"
+                        className="flex h-10 w-48 rounded-md border border-gray-300 bg-background px-3 py-2 text-center text-lg font-mono ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                       />
                       <Button onClick={handlePinSubmit} disabled={pinLoading || pinInput.length !== 8}>
                         {pinLoading ? "..." : "Unlock"}
