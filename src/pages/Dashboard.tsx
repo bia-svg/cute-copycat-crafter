@@ -862,7 +862,7 @@ export default function Dashboard() {
                           const csvRows = [headers.join(",")];
                           leads.forEach(l => {
                             csvRows.push([
-                              l.created_at ? format(new Date(l.created_at), "yyyy-MM-dd HH:mm") : "",
+                              l.created_at ? formatCET(l.created_at) : "",
                               `"${(l.name || "").replace(/"/g, '""')}"`,
                               `"${(l.email || "").replace(/"/g, '""')}"`,
                               `"${(l.phone || "").replace(/"/g, '""')}"`,
