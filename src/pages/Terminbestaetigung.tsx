@@ -9,7 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Link, useSearchParams } from "react-router-dom";
 import { getPath } from "@/lib/routes";
-import { CalendarCheck, CalendarIcon, CheckCircle2 } from "lucide-react";
+import { CalendarCheck, CheckCircle2 } from "lucide-react";
 import { useState, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
