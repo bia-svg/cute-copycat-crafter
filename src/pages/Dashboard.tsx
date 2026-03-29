@@ -18,7 +18,8 @@ import {
 } from "@/components/ui/chart";
 import {
   AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid,
-  LineChart, Line, Legend, ResponsiveContainer, PieChart, Pie, Cell
+  LineChart, Line, Legend, ResponsiveContainer, PieChart, Pie, Cell,
+  ComposedChart
 } from "recharts";
 import {
   Users, FileText, TrendingUp, LogOut, Clock,
@@ -245,31 +246,24 @@ export default function Dashboard() {
                 <MetricCard title="WhatsApp Clicks" value={whatsappClicks.length} icon={MessageCircle} color="text-green-600" />
               </div>
 
-              {/* Traffic by Day — Organic vs Paid */}
+              {/* Traffic by Day — Channels + Total */}
               <Card className="bg-white border border-gray-200 shadow-sm">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-gray-700">Daily Traffic — Organic vs Paid</CardTitle>
+                  <CardTitle className="text-sm font-medium text-gray-700">Daily Traffic — Channels & Total</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ChartContainer config={chartConfig} className="h-[280px] w-full">
-                    <AreaChart data={trafficByDay}>
-                      <defs>
-                        <linearGradient id="fillOrg" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor={COLORS.organic} stopOpacity={0.2} />
-                          <stop offset="100%" stopColor={COLORS.organic} stopOpacity={0} />
-                        </linearGradient>
-                        <linearGradient id="fillPaid" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor={COLORS.paid} stopOpacity={0.2} />
-                          <stop offset="100%" stopColor={COLORS.paid} stopOpacity={0} />
-                        </linearGradient>
-                      </defs>
+                  <ChartContainer config={chartConfig} className="h-[300px] w-full">
+                    <ComposedChart data={trafficByDay}>
                       <CartesianGrid stroke="#f3f4f6" strokeDasharray="3 3" />
                       <XAxis dataKey="date" tick={{ fill: "#9ca3af", fontSize: 10 }} tickFormatter={v => format(parseISO(v), "dd/MM")} />
                       <YAxis tick={{ fill: "#9ca3af", fontSize: 10 }} />
                       <ChartTooltip content={<ChartTooltipContent />} />
-                      <Area type="monotone" dataKey="organic" stroke={COLORS.organic} fill="url(#fillOrg)" strokeWidth={2} name="Organic" />
-                      <Area type="monotone" dataKey="paid" stroke={COLORS.paid} fill="url(#fillPaid)" strokeWidth={2} name="Paid" />
-                    </AreaChart>
+                      <Legend />
+                      <Bar dataKey="organic" fill={COLORS.organic} stackId="channels" name="Organic" />
+                      <Bar dataKey="paid" fill={COLORS.paid} stackId="channels" name="Paid" />
+                      <Bar dataKey="direct" fill={COLORS.direct} stackId="channels" radius={[3, 3, 0, 0]} name="Direct" />
+                      <Line type="monotone" dataKey="total" stroke="#1f2937" strokeWidth={2} dot={false} name="Total" />
+                    </ComposedChart>
                   </ChartContainer>
                 </CardContent>
               </Card>
