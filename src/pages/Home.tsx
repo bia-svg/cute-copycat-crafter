@@ -466,7 +466,7 @@ export default function Home() {
               </p>
             </div>
             <div className="text-center p-6 bg-card border border-border rounded-lg">
-              <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat – National Guild of Hypnotists" className="h-16 mx-auto mb-3" loading="lazy" />
+              <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat – National Guild of Hypnotists" className="h-16 mx-auto mb-3" width={64} height={64} loading="lazy" />
               <h3 className="font-semibold text-foreground">NGH International Trainer</h3>
               <p className="text-sm text-muted-foreground">National Guild of Hypnotists</p>
             </div>
