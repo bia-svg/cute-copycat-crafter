@@ -918,6 +918,7 @@ export default function Dashboard() {
                               <TableHead className="text-gray-500 text-xs">UTM Content</TableHead>
                               <TableHead className="text-gray-500 text-xs">UTM Term</TableHead>
                               <TableHead className="text-gray-500 text-xs">Notes</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Device</TableHead>
                               <TableHead className="text-gray-500 text-xs text-center">Conv.</TableHead>
                               <TableHead className="text-gray-500 text-xs text-center">Share</TableHead>
                              </TableRow>
