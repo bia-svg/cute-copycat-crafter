@@ -24,6 +24,8 @@ interface LeadEmailData {
   seminarLocation?: string;
   bestTime?: string;
   message?: string;
+  profession?: string;
+  registrationNumber?: string;
 }
 
 /**
