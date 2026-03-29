@@ -62,7 +62,7 @@ export default function Terminbestaetigung() {
     const sessionTime = (formData.get("sessionTime") as string)?.trim() || "";
     const email = (formData.get("email") as string)?.trim() || "";
     const phone = phoneNumber.trim();
-    const dob = (formData.get("dob") as string) || "";
+    const dobStr = dob ? format(dob, "yyyy-MM-dd") : "";
     const notes = (formData.get("notes") as string)?.trim() || "";
 
     if (!firstName || !lastName || !street || !postalCode || !city || !sessionDate || !sessionTime || !email || !phone || !location || !dsgvoChecked || !agbChecked || !paymentChecked) {
