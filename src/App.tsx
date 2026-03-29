@@ -134,7 +134,10 @@ function AppRoutes() {
 
             <Route path="/:lang/:country/erstgespraech" element={<Erstgespraech />} />
             <Route path="/:lang/:country/terminbestaetigung" element={<Terminbestaetigung />} />
+            <Route path="/:lang/:country/seminar-anmeldung" element={<SeminarAnmeldung />} />
             <Route path="/:lang/:country/consultation" element={<Erstgespraech />} />
+            <Route path="/:lang/:country/appointment-confirmation" element={<Terminbestaetigung />} />
+            <Route path="/:lang/:country/seminar-registration" element={<SeminarAnmeldung />} />
             <Route path="/:lang/:country/appointment-confirmation" element={<Terminbestaetigung />} />
 
             <Route path="/:lang/:country/standorte" element={<Standorte />} />
