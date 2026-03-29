@@ -71,7 +71,7 @@ export default function Footer() {
                     <div>Regus, Viktoria Str. 3b, 2. OG</div>
                     <div>86150 Augsburg</div>
                     <a href="tel:+491719539922" className="flex items-center gap-1 mt-1 hover:underline">
-                      <Phone className="w-3 h-3" /> +49 171 9539922
+                      <Phone className="w-3 h-3" /> +49 171 953 99 22
                     </a>
                   </div>
                 </div>

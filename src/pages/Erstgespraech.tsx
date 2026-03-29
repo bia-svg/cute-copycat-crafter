@@ -312,7 +312,7 @@ export default function Erstgespraech() {
                 )}
                 {showDE && (
                   <a href="tel:+491719539922" className="flex items-center gap-2 text-sm hover:text-[#1B3A5C] transition-colors">
-                    <Phone className="w-4 h-4 text-[#1B3A5C]" /> +49 171 9539922
+                    <Phone className="w-4 h-4 text-[#1B3A5C]" /> +49 171 953 99 22
                   </a>
                 )}
                 {showCH && (
