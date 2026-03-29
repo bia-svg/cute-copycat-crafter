@@ -232,7 +232,7 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
                       <TableCell className="text-gray-400">—</TableCell>
                       <TableCell className="text-right text-gray-900 font-medium">0</TableCell>
                       <TableCell className="text-right text-gray-700">
-                        <span className="text-gray-400 line-through text-xs mr-1">CHF 3,290</span> CHF 2,990
+                        <span className="text-gray-400 line-through text-xs mr-1">CHF 3.290.-</span> CHF 2.990.-
                       </TableCell>
                       <TableCell className="text-right text-gray-400">CHF 0</TableCell>
                     </TableRow>
@@ -241,7 +241,7 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
                       <TableCell className="text-gray-400">—</TableCell>
                       <TableCell className="text-right text-gray-900 font-medium">0</TableCell>
                       <TableCell className="text-right text-gray-700">
-                        <span className="text-gray-400 line-through text-xs mr-1">€2,790</span> €2,490
+                        <span className="text-gray-400 line-through text-xs mr-1">€2.790,-</span> €2.490,-
                       </TableCell>
                       <TableCell className="text-right text-gray-400">€0</TableCell>
                     </TableRow>
@@ -494,19 +494,19 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
             </div>
             <div className="p-3 bg-emerald-50 rounded-lg border border-emerald-100 text-center">
               <p className="text-xs text-emerald-600 font-medium">Seminar CH</p>
-              <p className="text-xs text-emerald-500 line-through">CHF 3,290</p>
-              <p className="text-lg font-bold text-emerald-700">CHF 2,990</p>
+               <p className="text-xs text-emerald-500 line-through">CHF 3.290.-</p>
+               <p className="text-lg font-bold text-emerald-700">CHF 2.990.-</p>
               <p className="text-[10px] text-emerald-600">Early Bird</p>
             </div>
             <div className="p-3 bg-blue-50 rounded-lg border border-blue-100 text-center">
               <p className="text-xs text-blue-600 font-medium">Seminar DE</p>
-              <p className="text-xs text-blue-500 line-through">€2,790</p>
-              <p className="text-lg font-bold text-blue-700">€2,490</p>
+               <p className="text-xs text-blue-500 line-through">€2.790,-</p>
+               <p className="text-lg font-bold text-blue-700">€2.490,-</p>
               <p className="text-[10px] text-blue-600">Early Bird</p>
             </div>
           </div>
           <p className="text-xs text-gray-400 mt-3 italic">
-            Note: Revenue calculated at Early Bird price. Regular prices: CHF 3,290 (CH) / €2,790 (DE). Free consultations NOT counted.
+            Note: Revenue calculated at Early Bird price. Regular prices: CHF 3.290.- (CH) / €2.790,- (DE). Free consultations NOT counted.
           </p>
         </CardContent>
       </Card>
