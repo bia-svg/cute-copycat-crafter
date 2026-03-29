@@ -431,8 +431,8 @@ export default function Ausbildung() {
                   {hasEarlyBirdForCountry("ch", datesCH) ? (
                     <>
                       <div className="flex items-center justify-center gap-4 mb-2">
-                        <span className="text-base text-muted-foreground line-through">CHF 3.290,-</span>
-                        <span className="text-2xl font-bold text-[#1B3A5C]">CHF 2.990,-</span>
+                         <span className="text-base text-muted-foreground line-through">CHF 3.290.-</span>
+                        <span className="text-2xl font-bold text-[#1B3A5C]">CHF 2.990.-</span>
                       </div>
                       <span className="inline-block text-xs font-semibold bg-[#E8F5E9] text-[#2E7D32] px-3 py-1 rounded-full">
                         {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
