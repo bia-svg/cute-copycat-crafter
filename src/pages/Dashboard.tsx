@@ -797,7 +797,7 @@ export default function Dashboard() {
                         aria-label="8-digit PIN"
                         className="flex h-10 w-48 rounded-md border border-gray-300 bg-background px-3 py-2 text-center text-lg font-mono tracking-[0.3em] ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                       />
-                      <Button onClick={handlePinSubmit} disabled={pinLoading || normalizedPinInput.length !== 8}>
+                      <Button onClick={handlePinSubmit} disabled={pinLoading || pinInput.trim().length === 0}>
                         {pinLoading ? "..." : "Unlock"}
                       </Button>
                     </div>
