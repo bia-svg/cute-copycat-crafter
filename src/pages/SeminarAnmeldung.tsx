@@ -108,6 +108,23 @@ export default function SeminarAnmeldung() {
       const { error: dbError } = await supabase.from("leads").insert(leadData as any);
       if (dbError) console.error("Lead save error:", dbError);
       await supabase.functions.invoke("notify-lead", { body: { lead: leadData } });
+
+      // Send emails (notification to David + confirmation to submitter)
+      await sendLeadEmails({
+        name: leadData.name,
+        email,
+        phone: leadData.phone,
+        concern: "Seminar-Anmeldung",
+        formType: "seminar",
+        city: leadData.city || undefined,
+        country: country.toUpperCase(),
+        language,
+        notes: leadData.notes || undefined,
+        source,
+        utmSource,
+        utmMedium,
+        utmCampaign,
+      });
     } catch (err) {
       console.error("Lead notification error:", err);
     }
