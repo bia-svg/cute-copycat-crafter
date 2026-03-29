@@ -30,7 +30,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Logo & Info */}
           <div>
-            <img src={CDN.logo} alt="David J. Woods – Hypnose und Psychologie Logo" className="h-12 brightness-0 invert mb-4" width={144} height={36} loading="lazy" />
+            <img src={CDN.logo} alt="David J. Woods – Hypnose und Psychologie Logo" className="h-11 w-auto brightness-0 invert mb-4" width={180} height={44} loading="lazy" />
             <p className="text-sm opacity-80">
               {isEN ? "Aktiv-Hypnose© — Psychology and Hypnotherapy for lasting change." : "Aktiv-Hypnose© — Psychologie und Hypnotherapie für nachhaltige Veränderung."}
             </p>
