@@ -243,89 +243,33 @@ export default function Erstgespraech() {
                     </div>
                   </div>
 
-                  {/* ── Type Toggle: Session vs Seminar ── */}
+                  {/* Topic / Service Selection */}
                   <div>
-                    <label className="block text-xs font-medium text-muted-foreground mb-2">
-                      {isEN ? "What are you interested in?" : "Wofür interessieren Sie sich?"} *
-                    </label>
-                    <div className="grid grid-cols-2 gap-2">
-                      <button
-                        type="button"
-                        onClick={() => setFormType("session")}
-                        className={`px-4 py-2.5 text-sm font-medium border transition-colors ${
-                          formType === "session"
-                            ? "bg-[#1B3A5C] text-white border-[#1B3A5C]"
-                            : "bg-white text-foreground border-border hover:border-[#1B3A5C]"
-                        }`}
-                      >
-                        {isEN ? "Therapy Session" : "Therapie-Sitzung"}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setFormType("seminar")}
-                        className={`px-4 py-2.5 text-sm font-medium border transition-colors ${
-                          formType === "seminar"
-                            ? "bg-[#1B3A5C] text-white border-[#1B3A5C]"
-                            : "bg-white text-foreground border-border hover:border-[#1B3A5C]"
-                        }`}
-                      >
-                        {isEN ? "Seminar / Training" : "Seminar / Ausbildung"}
-                      </button>
-                    </div>
+                    <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "What is your concern?" : "Was ist Ihr Anliegen?"} *</label>
+                    <select required className={inputClasses} value={selectedConcern} onChange={(e) => setSelectedConcern(e.target.value)}>
+                      <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
+                      <option value="smoking">{isEN ? "Stop Smoking" : "Raucherentwöhnung"}</option>
+                      <option value="anxiety">{isEN ? "Anxiety & Phobias" : "Ängste & Phobien"}</option>
+                      <option value="weight">{isEN ? "Weight Loss" : "Abnehmen"}</option>
+                      <option value="stress">{isEN ? "Stress & Burnout" : "Stress & Burnout"}</option>
+                      <option value="depression">{isEN ? "Depression & Trauma" : "Depressionen & Traumata"}</option>
+                      <option value="children">{isEN ? "Children & Teens" : "Kinder & Jugendliche"}</option>
+                      <option value="corporate">{isEN ? "Corporate Coaching" : "Firmencoaching"}</option>
+                      <option value="other">{isEN ? "Other" : "Sonstiges"}</option>
+                    </select>
                   </div>
 
-                  {/* ── Conditional Fields ── */}
-                  {formType === "session" ? (
-                    <>
-                      {/* Topic / Service Selection */}
-                      <div>
-                        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "What is your concern?" : "Was ist Ihr Anliegen?"} *</label>
-                        <select required className={inputClasses} value={selectedConcern} onChange={(e) => setSelectedConcern(e.target.value)}>
-                          <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
-                          <option value="smoking">{isEN ? "Stop Smoking" : "Raucherentwöhnung"}</option>
-                          <option value="anxiety">{isEN ? "Anxiety & Phobias" : "Ängste & Phobien"}</option>
-                          <option value="weight">{isEN ? "Weight Loss" : "Abnehmen"}</option>
-                          <option value="stress">{isEN ? "Stress & Burnout" : "Stress & Burnout"}</option>
-                          <option value="depression">{isEN ? "Depression & Trauma" : "Depressionen & Traumata"}</option>
-                          <option value="children">{isEN ? "Children & Teens" : "Kinder & Jugendliche"}</option>
-                          <option value="corporate">{isEN ? "Corporate Coaching" : "Firmencoaching"}</option>
-                          <option value="other">{isEN ? "Other" : "Sonstiges"}</option>
-                        </select>
-                      </div>
-
-                      {/* Preferred Location */}
-                      <div>
-                        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Preferred Location" : "Bevorzugter Standort"}</label>
-                        <select name="location" className={inputClasses}>
-                          <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
-                          <option value="zurich">Zürich — 5 Elements TCM (CH)</option>
-                          <option value="eschenbach">Eschenbach — Fit und Gesund (CH)</option>
-                          <option value="augsburg">Augsburg — Regus HELIO (DE)</option>
-                          <option value="online">{isEN ? "Online Session" : "Online-Sitzung"}</option>
-                        </select>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      {/* Country / Location */}
-                      <div>
-                        <label className="block text-xs font-medium text-muted-foreground mb-1">
-                          {isEN ? "Country" : "Land"} *
-                        </label>
-                        <select
-                          name="seminarCountry"
-                          required
-                          className={inputClasses}
-                        >
-                          <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
-                          <option value="ch">🇨🇭 {isEN ? "Switzerland" : "Schweiz"}</option>
-                          <option value="de">🇩🇪 {isEN ? "Germany" : "Deutschland"}</option>
-                          <option value="at">🇦🇹 {isEN ? "Austria" : "Österreich"}</option>
-                          <option value="other">{isEN ? "Other" : "Anderes Land"}</option>
-                        </select>
-                      </div>
-                    </>
-                  )}
+                  {/* Preferred Location */}
+                  <div>
+                    <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Preferred Location" : "Bevorzugter Standort"}</label>
+                    <select name="location" className={inputClasses}>
+                      <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
+                      <option value="zurich">Zürich — 5 Elements TCM (CH)</option>
+                      <option value="eschenbach">Eschenbach — Fit und Gesund (CH)</option>
+                      <option value="augsburg">Augsburg — Regus HELIO (DE)</option>
+                      <option value="online">{isEN ? "Online Session" : "Online-Sitzung"}</option>
+                    </select>
+                  </div>
 
                   {/* Best time to reach */}
                   <div>
