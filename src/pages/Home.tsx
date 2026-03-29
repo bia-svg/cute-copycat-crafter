@@ -456,7 +456,7 @@ export default function Home() {
             </div>
             <div className="p-6 bg-card border border-border rounded-lg">
               <div className="flex items-center gap-4 mb-4">
-                <img src={CDN.logo} alt="Aktiv-Hypnose© Logo – Methode von David J. Woods" className="h-14 w-auto shrink-0" loading="lazy" />
+                <img src={CDN.logo} alt="Aktiv-Hypnose© Logo – Methode von David J. Woods" className="h-14 w-auto shrink-0" width={84} height={56} loading="lazy" />
               </div>
               <h3 className="font-semibold text-sm text-foreground mb-2">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
