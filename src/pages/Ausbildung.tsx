@@ -31,6 +31,17 @@ export default function Ausbildung() {
   const { language, country, isInternational, showCH, showDE } = useLanguage();
   const isEN = language === "en";
 
+  const [seminarCounts, setSeminarCounts] = useState<Record<string, number>>({});
+  useEffect(() => {
+    supabase.functions.invoke("seminar-counts").then(({ data }) => {
+      if (data?.counts) setSeminarCounts(data.counts);
+    }).catch(() => {});
+  }, []);
+  const EARLY_BIRD_THRESHOLD = 3;
+  const hasEarlyBirdForCountry = (countryKey: "ch" | "de", dates: { date: string }[]) => {
+    return dates.some(d => (seminarCounts[`${countryKey}::${d.date}`] || 0) < EARLY_BIRD_THRESHOLD);
+  };
+
   /* ── Seminar Dates ── */
   const datesCH = [
     { date: "Mo-Sa, 15.-20. Juni 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "limited" as const },
