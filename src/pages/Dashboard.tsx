@@ -857,7 +857,7 @@ export default function Dashboard() {
                     </CardHeader>
                     <CardContent>
                       <div className="overflow-x-auto max-h-[600px] overflow-y-auto">
-                        <Table>
+                         <Table>
                           <TableHeader>
                             <TableRow className="border-gray-100">
                               <TableHead className="text-gray-500 text-xs sticky left-0 bg-white z-10">Date</TableHead>
@@ -870,7 +870,12 @@ export default function Dashboard() {
                               <TableHead className="text-gray-500 text-xs">City</TableHead>
                               <TableHead className="text-gray-500 text-xs">PLZ</TableHead>
                               <TableHead className="text-gray-500 text-xs">Country</TableHead>
-                              <TableHead className="text-gray-500 text-xs">UTM</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Referrer Page</TableHead>
+                              <TableHead className="text-gray-500 text-xs">UTM Source</TableHead>
+                              <TableHead className="text-gray-500 text-xs">UTM Medium</TableHead>
+                              <TableHead className="text-gray-500 text-xs">UTM Campaign</TableHead>
+                              <TableHead className="text-gray-500 text-xs">UTM Content</TableHead>
+                              <TableHead className="text-gray-500 text-xs">UTM Term</TableHead>
                               <TableHead className="text-gray-500 text-xs">Notes</TableHead>
                               <TableHead className="text-gray-500 text-xs text-center">Conv.</TableHead>
                             </TableRow>
@@ -909,10 +914,13 @@ export default function Dashboard() {
                                 <TableCell className="text-gray-700 text-xs">{l.city || "—"}</TableCell>
                                 <TableCell className="text-gray-700 text-xs font-mono">{l.postal_code || "—"}</TableCell>
                                 <TableCell className="text-gray-700 text-xs">{l.country || "—"}</TableCell>
-                                <TableCell className="text-gray-500 text-xs max-w-[120px] truncate">
-                                  {[l.utm_source, l.utm_medium, l.utm_campaign].filter(Boolean).join(" / ") || "—"}
-                                </TableCell>
-                                <TableCell className="text-gray-600 text-xs max-w-[150px] truncate">{l.notes || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs max-w-[150px] truncate" title={l.tracking_code || ""}>{l.tracking_code || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs">{l.utm_source || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs">{l.utm_medium || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs max-w-[120px] truncate" title={l.utm_campaign || ""}>{l.utm_campaign || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs max-w-[100px] truncate" title={l.utm_content || ""}>{l.utm_content || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs max-w-[100px] truncate" title={l.utm_term || ""}>{l.utm_term || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs max-w-[150px] truncate" title={l.notes || ""}>{l.notes || "—"}</TableCell>
                                 <TableCell className="text-center">
                                   {l.converted ? (
                                     <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">✓</Badge>
