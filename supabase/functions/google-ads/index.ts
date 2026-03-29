@@ -216,7 +216,7 @@ serve(async (req) => {
 
     // The accessible accounts are listed — try the configured customer first,
     // if 403 try each other accessible non-MCC account
-    const customerCandidates = [customerId, ...accessibleCustomers.filter(c => c !== customerId && c !== mccId)];
+    const customerCandidates = [customerId, ...accessibleCustomers.filter(c => c !== customerId)];
     let adsRes: Response | null = null;
     let adsText = "";
     let usedCustomerId = customerId;
