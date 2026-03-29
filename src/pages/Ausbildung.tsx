@@ -205,7 +205,7 @@ export default function Ausbildung() {
               </p>
               <div className="flex flex-wrap gap-4 text-sm text-[#55504f] mb-6">
                 <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "6 Days, 10:00–17:00" : "6 Tage, 10:00–17:00 Uhr"}</span>
-                <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Small Group Premium Format" : "Premium-Kleingruppen"}</span>
+                <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Small Group Format" : "Kleingruppen-Format"}</span>
                 <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-[#2E7D32]" /> Aktiv-Hypnose© Diplom</span>
               </div>
               <div className="flex flex-wrap gap-3">
