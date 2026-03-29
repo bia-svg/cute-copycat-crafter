@@ -198,7 +198,34 @@ export default function Terminbestaetigung() {
               <Label className="text-foreground font-semibold">
                 {isEN ? "Date of Birth" : "Geburtsdatum"}
               </Label>
-              <Input name="dob" type="date" className="mt-2" />
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="outline"
+                    type="button"
+                    className={cn(
+                      "w-full mt-2 justify-start text-left font-normal",
+                      !dob && "text-muted-foreground"
+                    )}
+                  >
+                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    {dob ? format(dob, "dd.MM.yyyy") : (isEN ? "Select date" : "Datum wählen")}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                  <Calendar
+                    mode="single"
+                    selected={dob}
+                    onSelect={setDob}
+                    captionLayout="dropdown-buttons"
+                    fromYear={1930}
+                    toYear={new Date().getFullYear()}
+                    disabled={(date) => date > new Date()}
+                    initialFocus
+                    className={cn("p-3 pointer-events-auto")}
+                  />
+                </PopoverContent>
+              </Popover>
               <p className="text-xs text-muted-foreground mt-1">
                 {isEN ? "Optional: For health insurance" : "Optional: Für die Krankenversicherung"}
               </p>
