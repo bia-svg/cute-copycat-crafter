@@ -86,7 +86,9 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
 
 export const template = {
   component: NewLeadNotificationEmail,
-  subject: (data: Record<string, any>) => `Neuer Lead: ${data.name || 'Unbekannt'} — ${data.formType || 'Kontakt'}`,
+  subject: (data: Record<string, any>) => data.language === 'en'
+    ? `New Lead: ${data.name || 'Unknown'} — ${data.formType || 'Contact'}`
+    : `Neuer Lead: ${data.name || 'Unbekannt'} — ${data.formType || 'Kontakt'}`,
   to: 'info@david-j-woods.com',
   displayName: 'New lead notification',
   previewData: {
