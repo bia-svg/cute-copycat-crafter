@@ -309,31 +309,6 @@ export default function Ausbildung() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          VIDEO — Intensiv-Ausbildungen
-          ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-10 lg:py-14">
-          <h2 className="text-xl font-bold text-[#1B3A5C] mb-2 text-center" style={{ fontFamily: "Georgia, serif" }}>
-            {isEN ? "Intensive Training Programs" : "Intensiv-Ausbildungen"}
-          </h2>
-          <p className="text-sm text-muted-foreground text-center mb-6">
-            Aktiv-Hypnose© Therapeuten-Diplom
-          </p>
-          <div className="max-w-3xl mx-auto">
-            <div className="aspect-video rounded-lg overflow-hidden border border-border shadow-sm">
-              <iframe
-                src="https://www.youtube.com/embed/nQo8M8-pRyc?rel=0"
-                className="w-full h-full"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                allowFullScreen
-                title="Intensiv-Ausbildungen · Aktiv-Hypnose© Therapeuten-Diplom"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ═══════════════════════════════════════════════════════════
           SECTION 3 — Day-by-Day Curriculum
@@ -488,6 +463,32 @@ export default function Ausbildung() {
           <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <Users className="w-4 h-4" />
             <span>{isEN ? "Small groups · Strictly limited number of participants" : "Kleine Gruppen · Strikt begrenzte Teilnehmerzahl"}</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          VIDEO — Intensiv-Ausbildungen
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#f4f3ef] border-b border-border">
+        <div className="container-main py-10 lg:py-14">
+          <h2 className="text-xl font-bold text-[#1B3A5C] mb-2 text-center" style={{ fontFamily: "Georgia, serif" }}>
+            {isEN ? "Intensive Training Programs" : "Intensiv-Ausbildungen"}
+          </h2>
+          <p className="text-sm text-muted-foreground text-center mb-6">
+            Aktiv-Hypnose© Therapeuten-Diplom
+          </p>
+          <div className="max-w-3xl mx-auto">
+            <div className="aspect-video rounded-lg overflow-hidden border border-border shadow-sm">
+              <iframe
+                src="https://www.youtube.com/embed/nQo8M8-pRyc?rel=0"
+                className="w-full h-full"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                allowFullScreen
+                title="Intensiv-Ausbildungen · Aktiv-Hypnose© Therapeuten-Diplom"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
