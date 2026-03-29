@@ -78,7 +78,6 @@ export default function Dashboard() {
   const [pinUnlocked, setPinUnlocked] = useState(false);
   const [pinError, setPinError] = useState("");
   const [pinLoading, setPinLoading] = useState(false);
-  const normalizedPinInput = pinInput.replace(/\D/g, "").slice(0, 8);
 
   useEffect(() => {
     if (!isAuthenticated()) navigate("/dashboard/login", { replace: true });
