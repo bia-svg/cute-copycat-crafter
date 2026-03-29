@@ -773,7 +773,7 @@ export default function Dashboard() {
                       <ShieldCheck className="w-8 h-8 text-gray-500" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900">Protected Area</h3>
-                    <p className="text-sm text-gray-500">Enter the 8-digit PIN to access the complete leads list with full contact details.</p>
+                    <p className="text-sm text-gray-500">Enter your PIN to access the complete leads list with full contact details.</p>
                     {pinError && (
                       <div className="text-sm text-red-600 bg-red-50 border border-red-200 rounded p-2">{pinError}</div>
                     )}
