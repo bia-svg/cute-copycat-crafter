@@ -215,7 +215,7 @@ export default function UeberUns() {
             <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4 text-center">
               {isEN ? "As Seen On" : "Bekannt aus"}
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 bg-muted/50 rounded-lg p-4">
               {CDN.bekanntAus.map((src, i) => (
                 <img key={i} src={src} alt={`David J. Woods bekannt aus TV und Medien – Logo ${i + 1}`} className="h-8 sm:h-10 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all mix-blend-multiply" loading="lazy" />
               ))}

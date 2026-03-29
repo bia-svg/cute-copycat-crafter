@@ -54,7 +54,7 @@ function TVLogoCarousel() {
   }, []);
 
   return (
-    <div className="relative">
+     <div className="relative bg-muted/50 rounded-lg p-3">
       <div ref={scrollRef} className="flex gap-6 overflow-x-auto scrollbar-hide py-2" style={{ scrollbarWidth: "none" }}>
         {CDN.bekanntAus.map((src, i) => (
           <img key={i} src={src} alt={`David J. Woods bekannt aus Medien – Logo ${i + 1}`} className="h-8 md:h-10 object-contain shrink-0 opacity-60 hover:opacity-100 transition-opacity mix-blend-multiply" width={80} height={32} loading="lazy" />
