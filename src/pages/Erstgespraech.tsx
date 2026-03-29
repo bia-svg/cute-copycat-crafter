@@ -41,17 +41,6 @@ export default function Erstgespraech() {
     }
   }, [selectedPhoneCountry.maxDigits]);
 
-  useEffect(() => {
-    if (searchParams.get("type") === "seminar") {
-      setFormType("seminar");
-      if (searchParams.get("date")) setSelectedDate(searchParams.get("date") || "");
-    }
-  }, [searchParams]);
-
-  const allDates = [
-    ...(showCH ? SEMINAR_DATES_CH : []),
-    ...(showDE ? SEMINAR_DATES_DE : []),
-  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
