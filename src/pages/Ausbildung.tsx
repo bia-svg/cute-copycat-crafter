@@ -403,14 +403,26 @@ export default function Ausbildung() {
           </h2>
           <p className="text-sm text-muted-foreground text-center mb-8 max-w-xl mx-auto">
             {isEN
-              ? "Spots are strictly limited to ensure quality. Secure yours now."
-              : "Die Plätze sind strikt begrenzt, um Qualität zu gewährleisten. Sichern Sie sich Ihren jetzt."}
+              ? "Places are strictly limited to ensure the highest quality. Secure yours now."
+              : "Die Plätze sind strikt begrenzt, um höchste Qualität zu gewährleisten. Sichern Sie sich Ihren jetzt."}
           </p>
-          <div className="space-y-4 max-w-2xl mx-auto">
+          <div className="space-y-6 max-w-2xl mx-auto">
             {showCH && (
               <>
-              {isInternational && <p className="text-xs font-semibold text-[#8b827c] uppercase tracking-wider mt-2 mb-1">🇨🇭 {isEN ? "Switzerland" : "Schweiz"}</p>}
-                <p className="text-lg font-bold text-[#1B3A5C] mb-3">2990,- CHF</p>
+                {isInternational && <p className="text-xs font-semibold text-[#8b827c] uppercase tracking-wider mt-2 mb-1">🇨🇭 {isEN ? "Switzerland" : "Schweiz"}</p>}
+                {/* CH Pricing Box */}
+                <div className="bg-white border border-[#81C784] rounded-lg p-5 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[#2E7D32] mb-2">
+                    {isEN ? "6-Day Intensive Certification" : "6-Tage Intensiv-Zertifizierung"}
+                  </p>
+                  <div className="flex items-center justify-center gap-4 mb-2">
+                    <span className="text-base text-muted-foreground line-through">CHF 3.290,-</span>
+                    <span className="text-2xl font-bold text-[#1B3A5C]">CHF 2.990,-</span>
+                  </div>
+                  <span className="inline-block text-xs font-semibold bg-[#E8F5E9] text-[#2E7D32] px-3 py-1 rounded-full">
+                    {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
+                  </span>
+                </div>
                 {datesCH.map((d, i) => (
                   <div key={`ch-${i}`} className="border border-border p-5 bg-white rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
@@ -426,11 +438,11 @@ export default function Ausbildung() {
                     </div>
                     <div className="flex items-center gap-3">
                       <span className={`text-xs font-semibold px-2 py-1 rounded ${d.status === "limited" ? "bg-[#FFF3E0] text-[#E65100]" : "bg-[#E8F5E9] text-[#2E7D32]"}`}>
-                        {d.status === "limited" ? (isEN ? "Limited spots" : "Letzte freie Plätze") : (isEN ? "Available" : "Verfügbar")}
+                        {d.status === "limited" ? (isEN ? "Limited seats" : "Letzte freie Plätze") : (isEN ? "Seats available" : "Plätze verfügbar")}
                       </span>
                       <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=ch&date=${encodeURIComponent(d.date)}`}>
                         <Button size="sm" className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white text-xs">
-                          {isEN ? "Register" : "Anmelden"}
+                          {isEN ? "Secure Your Place" : "Platz sichern"}
                         </Button>
                       </Link>
                     </div>
@@ -441,7 +453,19 @@ export default function Ausbildung() {
             {showDE && (
               <>
                 {isInternational && <p className="text-xs font-semibold text-[#8b827c] uppercase tracking-wider mt-3 mb-1">🇩🇪 {isEN ? "Germany" : "Deutschland"}</p>}
-                <p className="text-lg font-bold text-[#1B3A5C] mb-3">2490,- EUR</p>
+                {/* DE Pricing Box */}
+                <div className="bg-white border border-[#90CAF9] rounded-lg p-5 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[#1565C0] mb-2">
+                    {isEN ? "6-Day Intensive Certification" : "6-Tage Intensiv-Zertifizierung"}
+                  </p>
+                  <div className="flex items-center justify-center gap-4 mb-2">
+                    <span className="text-base text-muted-foreground line-through">€2.790,-</span>
+                    <span className="text-2xl font-bold text-[#1B3A5C]">€2.490,-</span>
+                  </div>
+                  <span className="inline-block text-xs font-semibold bg-[#E3F2FD] text-[#1565C0] px-3 py-1 rounded-full">
+                    {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
+                  </span>
+                </div>
                 {datesDE.map((d, i) => (
                   <div key={`de-${i}`} className="border border-border p-5 bg-white rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
@@ -457,11 +481,11 @@ export default function Ausbildung() {
                     </div>
                     <div className="flex items-center gap-3">
                       <span className={`text-xs font-semibold px-2 py-1 rounded ${d.status === "limited" ? "bg-[#FFF3E0] text-[#E65100]" : "bg-[#E8F5E9] text-[#2E7D32]"}`}>
-                        {d.status === "limited" ? (isEN ? "Limited spots" : "Letzte freie Plätze") : (isEN ? "Available" : "Verfügbar")}
+                        {d.status === "limited" ? (isEN ? "Limited seats" : "Letzte freie Plätze") : (isEN ? "Seats available" : "Plätze verfügbar")}
                       </span>
                       <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de&date=${encodeURIComponent(d.date)}`}>
                         <Button size="sm" className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white text-xs">
-                          {isEN ? "Register" : "Anmelden"}
+                          {isEN ? "Secure Your Place" : "Platz sichern"}
                         </Button>
                       </Link>
                     </div>
@@ -472,8 +496,13 @@ export default function Ausbildung() {
           </div>
           <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <Users className="w-4 h-4" />
-            <span>{isEN ? "Small groups · Strictly limited number of participants" : "Kleine Gruppen · Strikt begrenzte Teilnehmerzahl"}</span>
+            <span>{isEN ? "Small group premium format · Strictly limited seats" : "Premium-Kleingruppen · Strikt begrenzte Teilnehmerzahl"}</span>
           </div>
+          <p className="text-xs text-muted-foreground text-center mt-2 italic">
+            {isEN
+              ? "Early Bird pricing available for a limited time or until the current intake is full."
+              : "Frühbucher-Preis verfügbar für begrenzte Zeit oder bis die aktuelle Gruppe voll ist."}
+          </p>
         </div>
       </section>
 
