@@ -113,6 +113,7 @@ export default function SeminarAnmeldung() {
 
     trackFormConversion("seminar", selectedDate);
     setSubmitted(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
     toast.success(isEN ? "Thank you! We will confirm your spot shortly." : "Vielen Dank! Wir bestätigen Ihren Platz in Kürze.");
   };
 
