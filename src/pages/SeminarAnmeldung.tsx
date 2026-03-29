@@ -250,10 +250,9 @@ export default function SeminarAnmeldung() {
                   </h2>
                   <div className="grid grid-cols-2 gap-3">
                     {([
-                      { key: "ch" as const, flag: "🇨🇭", label: isEN ? "Switzerland" : "Schweiz", sub: "Eschenbach (Zürichsee)", regularPrice: "CHF 3.290,-", earlyBird: "CHF 2.990,-" },
-                      { key: "de" as const, flag: "🇩🇪", label: isEN ? "Germany" : "Deutschland", sub: "Augsburg", regularPrice: "€2.790,-", earlyBird: "€2.490,-" },
+                      { key: "ch" as const, flag: "🇨🇭", label: isEN ? "Switzerland" : "Schweiz", sub: "Eschenbach (Zürichsee)" },
+                      { key: "de" as const, flag: "🇩🇪", label: isEN ? "Germany" : "Deutschland", sub: "Augsburg" },
                     ]).map(c => {
-                      const showEarlyBird = hasEarlyBirdForCountry(c.key);
                       return (
                         <button
                           key={c.key}
@@ -268,21 +267,6 @@ export default function SeminarAnmeldung() {
                           <span className="text-2xl">{c.flag}</span>
                           <p className="font-semibold text-sm text-[#1B3A5C] mt-1">{c.label}</p>
                           <p className="text-xs text-muted-foreground">{c.sub}</p>
-                          {showEarlyBird ? (
-                            <div className="mt-1">
-                              <span className="text-xs text-muted-foreground line-through mr-2">{c.regularPrice}</span>
-                              <span className="text-sm font-bold text-[#2E7D32]">{c.earlyBird}</span>
-                            </div>
-                          ) : (
-                            <div className="mt-1">
-                              <span className="text-sm font-bold text-[#1B3A5C]">{c.regularPrice}</span>
-                            </div>
-                          )}
-                          {showEarlyBird && (
-                            <span className="text-[10px] font-semibold text-[#2E7D32] bg-[#E8F5E9] px-1.5 py-0.5 rounded mt-1 inline-block">
-                              {isEN ? "Early Bird" : "Frühbucher"}
-                            </span>
-                          )}
                         </button>
                       );
                     })}
