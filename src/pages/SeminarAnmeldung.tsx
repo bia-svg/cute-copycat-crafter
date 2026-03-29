@@ -103,7 +103,7 @@ export default function SeminarAnmeldung() {
     };
 
     try {
-      const { error: dbError } = await supabase.from("leads").insert(leadData);
+      const { error: dbError } = await supabase.from("leads").insert(leadData as any);
       if (dbError) console.error("Lead save error:", dbError);
       await supabase.functions.invoke("notify-lead", { body: { lead: leadData } });
     } catch (err) {

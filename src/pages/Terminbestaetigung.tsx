@@ -115,7 +115,7 @@ export default function Terminbestaetigung() {
     };
 
     try {
-      const { error: dbError } = await supabase.from("leads").insert(leadData);
+      const { error: dbError } = await supabase.from("leads").insert(leadData as any);
       if (dbError) {
         console.error("Lead save error:", dbError);
         toast.error(isEN ? "An error occurred. Please try again." : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
