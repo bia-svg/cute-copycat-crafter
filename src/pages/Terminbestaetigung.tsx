@@ -7,15 +7,129 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { getPath } from "@/lib/routes";
-import { CalendarCheck } from "lucide-react";
+import { CalendarCheck, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 export default function Terminbestaetigung() {
   const { language, country } = useLanguage();
   const isEN = language === "en";
   const [location, setLocation] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [searchParams] = useSearchParams();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (loading) return;
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const firstName = (formData.get("firstName") as string)?.trim() || "";
+    const lastName = (formData.get("lastName") as string)?.trim() || "";
+    const street = (formData.get("street") as string)?.trim() || "";
+    const postalCode = (formData.get("postalCode") as string)?.trim() || "";
+    const city = (formData.get("city") as string)?.trim() || "";
+    const sessionDate = (formData.get("sessionDate") as string) || "";
+    const sessionTime = (formData.get("sessionTime") as string)?.trim() || "";
+    const email = (formData.get("email") as string)?.trim() || "";
+    const phone = (formData.get("phone") as string)?.trim() || "";
+    const dob = (formData.get("dob") as string) || "";
+    const notes = (formData.get("notes") as string)?.trim() || "";
+
+    if (!firstName || !lastName || !street || !postalCode || !city || !sessionDate || !sessionTime || !email || !phone || !location) {
+      toast.error(isEN ? "Please fill in all required fields." : "Bitte füllen Sie alle Pflichtfelder aus.");
+      return;
+    }
+
+    setLoading(true);
+
+    const utmSource = searchParams.get("utm_source") || null;
+    const utmMedium = searchParams.get("utm_medium") || null;
+    const utmCampaign = searchParams.get("utm_campaign") || null;
+    const utmContent = searchParams.get("utm_content") || null;
+    const utmTerm = searchParams.get("utm_term") || null;
+    const source = utmMedium === "cpc" || utmSource === "google" ? "paid" : utmSource ? "referral" : "organic";
+
+    const locationLabels: Record<string, string> = {
+      augsburg: "Augsburg – Regus Viktoria Str 3b",
+      eschenbach: "Eschenbach – Fit*gsund Churzhaslen 3",
+      zurich: "Zürich – 5 Elements TCM, Usteristrasse 23",
+    };
+
+    const leadData = {
+      name: `${firstName} ${lastName}`,
+      email,
+      phone,
+      form_type: "session" as const,
+      postal_code: postalCode,
+      city,
+      country: country.toUpperCase(),
+      source,
+      utm_source: utmSource,
+      utm_medium: utmMedium,
+      utm_campaign: utmCampaign,
+      utm_content: utmContent,
+      utm_term: utmTerm,
+      concern: "Terminbestätigung",
+      notes: [
+        `Adresse: ${street}, ${postalCode} ${city}`,
+        dob && `Geburtsdatum: ${dob}`,
+        `Sitzung: ${sessionDate} ${sessionTime}`,
+        `Ort: ${locationLabels[location] || location}`,
+        notes && `Notizen: ${notes}`,
+      ].filter(Boolean).join(" | "),
+    };
+
+    try {
+      const { error: dbError } = await supabase.from("leads").insert(leadData);
+      if (dbError) {
+        console.error("Lead save error:", dbError);
+        toast.error(isEN ? "An error occurred. Please try again." : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
+        setLoading(false);
+        return;
+      }
+
+      // Notify (Slack)
+      await supabase.functions.invoke("notify-lead", { body: { lead: leadData } });
+    } catch (err) {
+      console.error("Lead notification error:", err);
+    }
+
+    setLoading(false);
+    setSubmitted(true);
+    toast.success(isEN ? "Appointment confirmed! Thank you." : "Termin bestätigt! Vielen Dank.");
+  };
+
+  if (submitted) {
+    return (
+      <>
+        <SEO {...pageSEO.appointmentConfirmation} pageKey="appointmentConfirmation" />
+        <section className="bg-background py-16 md:py-24">
+          <div className="container-main max-w-2xl text-center">
+            <CheckCircle2 className="w-16 h-16 text-green-600 mx-auto mb-6" />
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "Appointment Confirmed!" : "Termin bestätigt!"}
+            </h1>
+            <p className="text-lg text-muted-foreground mb-8">
+              {isEN
+                ? "Thank you for confirming your appointment. We look forward to seeing you!"
+                : "Vielen Dank für Ihre Terminbestätigung. Wir freuen uns auf Sie!"}
+            </p>
+            <Link to={getPath("home", language, country)}>
+              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold">
+                {isEN ? "Back to Home" : "Zurück zur Startseite"}
+              </Button>
+            </Link>
+          </div>
+        </section>
+      </>
+    );
+  }
 
   return (
     <>
@@ -30,7 +144,7 @@ export default function Terminbestaetigung() {
           <div className="w-16 h-1 bg-primary mx-auto" />
         </div>
 
-        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+        <form className="space-y-6" onSubmit={handleSubmit}>
           {/* Name */}
           <div>
             <Label className="text-foreground font-semibold">
@@ -38,11 +152,11 @@ export default function Terminbestaetigung() {
             </Label>
             <div className="grid grid-cols-2 gap-4 mt-2">
               <div>
-                <Input placeholder={isEN ? "First Name" : "Vorname"} required />
+                <Input name="firstName" placeholder={isEN ? "First Name" : "Vorname"} required />
                 <p className="text-xs text-muted-foreground mt-1">{isEN ? "First Name" : "Vorname"}</p>
               </div>
               <div>
-                <Input placeholder={isEN ? "Last Name" : "Nachname"} required />
+                <Input name="lastName" placeholder={isEN ? "Last Name" : "Nachname"} required />
                 <p className="text-xs text-muted-foreground mt-1">{isEN ? "Last Name" : "Nachname"}</p>
               </div>
             </div>
@@ -54,13 +168,13 @@ export default function Terminbestaetigung() {
               <Label className="text-foreground font-semibold">
                 {isEN ? "Street & House Number" : "Strasse und Hausnummer"} <span className="text-destructive">*</span>
               </Label>
-              <Input className="mt-2" required />
+              <Input name="street" className="mt-2" required />
             </div>
             <div>
               <Label className="text-foreground font-semibold">
                 {isEN ? "Date of Birth" : "Geburtsdatum"}
               </Label>
-              <Input type="date" className="mt-2" />
+              <Input name="dob" type="date" className="mt-2" />
               <p className="text-xs text-muted-foreground mt-1">
                 {isEN ? "Optional: For health insurance" : "Optional: Für die Krankenversicherung"}
               </p>
@@ -73,13 +187,13 @@ export default function Terminbestaetigung() {
               <Label className="text-foreground font-semibold">
                 {isEN ? "Postal Code" : "Postleitzahl"} <span className="text-destructive">*</span>
               </Label>
-              <Input className="mt-2" required />
+              <Input name="postalCode" className="mt-2" required />
             </div>
             <div>
               <Label className="text-foreground font-semibold">
                 {isEN ? "City" : "Ort"} <span className="text-destructive">*</span>
               </Label>
-              <Input className="mt-2" required />
+              <Input name="city" className="mt-2" required />
             </div>
           </div>
 
@@ -89,13 +203,13 @@ export default function Terminbestaetigung() {
               <Label className="text-foreground font-semibold">
                 {isEN ? "Session: Date?" : "Sitzung: Datum?"} <span className="text-destructive">*</span>
               </Label>
-              <Input type="date" className="mt-2" required />
+              <Input name="sessionDate" type="date" className="mt-2" required />
             </div>
             <div>
               <Label className="text-foreground font-semibold">
                 {isEN ? "Session: Time from – to?" : "Sitzung: Uhrzeit von bis?"} <span className="text-destructive">*</span>
               </Label>
-              <Input className="mt-2" placeholder={isEN ? "e.g. 10:00 – 12:00" : "z.B. 10:00 – 12:00"} required />
+              <Input name="sessionTime" className="mt-2" placeholder={isEN ? "e.g. 10:00 – 12:00" : "z.B. 10:00 – 12:00"} required />
             </div>
           </div>
 
@@ -132,13 +246,13 @@ export default function Terminbestaetigung() {
               <Label className="text-foreground font-semibold">
                 E-Mail <span className="text-destructive">*</span>
               </Label>
-              <Input type="email" className="mt-2" required />
+              <Input name="email" type="email" className="mt-2" required />
             </div>
             <div>
               <Label className="text-foreground font-semibold">
                 {isEN ? "Phone Number with Area Code" : "Telefonnummer mit Vorwahl"} <span className="text-destructive">*</span>
               </Label>
-              <Input type="tel" className="mt-2" required />
+              <Input name="phone" type="tel" className="mt-2" required />
             </div>
           </div>
 
@@ -147,7 +261,7 @@ export default function Terminbestaetigung() {
             <Label className="text-foreground font-semibold">
               {isEN ? "Notes about the appointment" : "Stichpunkte zum Termin"}
             </Label>
-            <Textarea className="mt-2" rows={4} />
+            <Textarea name="notes" className="mt-2" rows={4} />
           </div>
 
           {/* DSGVO Consent */}
@@ -188,8 +302,14 @@ export default function Terminbestaetigung() {
           </div>
 
           {/* Submit */}
-          <Button type="submit" className="w-full bg-cta hover:bg-cta/90 text-cta-foreground font-semibold py-3 text-base">
-            {isEN ? "Confirm Appointment" : "Termin bestätigen"}
+          <Button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-cta hover:bg-cta/90 text-cta-foreground font-semibold py-3 text-base"
+          >
+            {loading
+              ? (isEN ? "Sending..." : "Wird gesendet...")
+              : (isEN ? "Confirm Appointment" : "Termin bestätigen")}
           </Button>
         </form>
       </div>
