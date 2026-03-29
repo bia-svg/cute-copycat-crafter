@@ -5,6 +5,8 @@
  */
 
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useState, useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
 import FAQSection from "@/components/FAQSection";
@@ -28,6 +30,17 @@ const CDN_BASE = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm
 export default function Ausbildung() {
   const { language, country, isInternational, showCH, showDE } = useLanguage();
   const isEN = language === "en";
+
+  const [seminarCounts, setSeminarCounts] = useState<Record<string, number>>({});
+  useEffect(() => {
+    supabase.functions.invoke("seminar-counts").then(({ data }) => {
+      if (data?.counts) setSeminarCounts(data.counts);
+    }).catch(() => {});
+  }, []);
+  const EARLY_BIRD_THRESHOLD = 3;
+  const hasEarlyBirdForCountry = (countryKey: "ch" | "de", dates: { date: string }[]) => {
+    return dates.some(d => (seminarCounts[`${countryKey}::${d.date}`] || 0) < EARLY_BIRD_THRESHOLD);
+  };
 
   /* ── Seminar Dates ── */
   const datesCH = [
@@ -172,7 +185,7 @@ export default function Ausbildung() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-3">
-                {isEN ? "Premium 6-Day Intensive Certification" : "Premium 6-Tage Intensiv-Zertifizierung"}
+                {isEN ? "6-Day Intensive Certification" : "6-Tage Intensiv-Zertifizierung"}
               </p>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1B3A5C] mb-3" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN
@@ -192,7 +205,7 @@ export default function Ausbildung() {
               </p>
               <div className="flex flex-wrap gap-4 text-sm text-[#55504f] mb-6">
                 <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "6 Days, 10:00–17:00" : "6 Tage, 10:00–17:00 Uhr"}</span>
-                <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Small Group Premium Format" : "Premium-Kleingruppen"}</span>
+                <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Small Group Format" : "Kleingruppen-Format"}</span>
                 <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-[#2E7D32]" /> Aktiv-Hypnose© Diplom</span>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -241,7 +254,7 @@ export default function Ausbildung() {
             </div>
             <div className="border border-border p-6 text-center">
               <Users className="w-8 h-8 text-[#1B3A5C] mx-auto mb-3" />
-              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "Small Group Premium Format" : "Premium-Kleingruppen"}</h3>
+              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "Small Group Format" : "Kleingruppen-Format"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
                   ? "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity. A selective learning experience."
@@ -415,13 +428,19 @@ export default function Ausbildung() {
                   <p className="text-xs font-semibold uppercase tracking-wider text-[#2E7D32] mb-2">
                     {isEN ? "6-Day Intensive Certification" : "6-Tage Intensiv-Zertifizierung"}
                   </p>
-                  <div className="flex items-center justify-center gap-4 mb-2">
-                    <span className="text-base text-muted-foreground line-through">CHF 3.290,-</span>
-                    <span className="text-2xl font-bold text-[#1B3A5C]">CHF 2.990,-</span>
-                  </div>
-                  <span className="inline-block text-xs font-semibold bg-[#E8F5E9] text-[#2E7D32] px-3 py-1 rounded-full">
-                    {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
-                  </span>
+                  {hasEarlyBirdForCountry("ch", datesCH) ? (
+                    <>
+                      <div className="flex items-center justify-center gap-4 mb-2">
+                        <span className="text-base text-muted-foreground line-through">CHF 3.290,-</span>
+                        <span className="text-2xl font-bold text-[#1B3A5C]">CHF 2.990,-</span>
+                      </div>
+                      <span className="inline-block text-xs font-semibold bg-[#E8F5E9] text-[#2E7D32] px-3 py-1 rounded-full">
+                        {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-2xl font-bold text-[#1B3A5C]">CHF 3.290,-</span>
+                  )}
                 </div>
                 {datesCH.map((d, i) => (
                   <div key={`ch-${i}`} className="border border-border p-5 bg-white rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
@@ -458,13 +477,19 @@ export default function Ausbildung() {
                   <p className="text-xs font-semibold uppercase tracking-wider text-[#1565C0] mb-2">
                     {isEN ? "6-Day Intensive Certification" : "6-Tage Intensiv-Zertifizierung"}
                   </p>
-                  <div className="flex items-center justify-center gap-4 mb-2">
-                    <span className="text-base text-muted-foreground line-through">€2.790,-</span>
-                    <span className="text-2xl font-bold text-[#1B3A5C]">€2.490,-</span>
-                  </div>
-                  <span className="inline-block text-xs font-semibold bg-[#E3F2FD] text-[#1565C0] px-3 py-1 rounded-full">
-                    {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
-                  </span>
+                  {hasEarlyBirdForCountry("de", datesDE) ? (
+                    <>
+                      <div className="flex items-center justify-center gap-4 mb-2">
+                        <span className="text-base text-muted-foreground line-through">€2.790,-</span>
+                        <span className="text-2xl font-bold text-[#1B3A5C]">€2.490,-</span>
+                      </div>
+                      <span className="inline-block text-xs font-semibold bg-[#E3F2FD] text-[#1565C0] px-3 py-1 rounded-full">
+                        {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-2xl font-bold text-[#1B3A5C]">€2.790,-</span>
+                  )}
                 </div>
                 {datesDE.map((d, i) => (
                   <div key={`de-${i}`} className="border border-border p-5 bg-white rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
@@ -493,10 +518,6 @@ export default function Ausbildung() {
                 ))}
               </>
             )}
-          </div>
-          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
-            <Users className="w-4 h-4" />
-            <span>{isEN ? "Small group premium format · Strictly limited seats" : "Premium-Kleingruppen · Strikt begrenzte Teilnehmerzahl"}</span>
           </div>
           <p className="text-xs text-muted-foreground text-center mt-2 italic">
             {isEN

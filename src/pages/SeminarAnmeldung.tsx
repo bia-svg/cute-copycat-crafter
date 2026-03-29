@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { trackFormConversion } from "@/components/WhatsAppButton";
 import { supabase } from "@/integrations/supabase/client";
 import { sendLeadEmails } from "@/lib/leadEmails";
@@ -42,6 +42,24 @@ export default function SeminarAnmeldung() {
   const [registrationNumber, setRegistrationNumber] = useState("");
   const [gdprConsent, setGdprConsent] = useState(false);
   const [agbConsent, setAgbConsent] = useState(false);
+  const [seminarCounts, setSeminarCounts] = useState<Record<string, number>>({});
+
+  // Fetch seminar registration counts for early bird logic
+  useEffect(() => {
+    supabase.functions.invoke("seminar-counts").then(({ data }) => {
+      if (data?.counts) setSeminarCounts(data.counts);
+    }).catch(() => {});
+  }, []);
+
+  const EARLY_BIRD_THRESHOLD = 3;
+  // Check if any seminar for a country still qualifies for early bird (≤3 registrations)
+  const hasEarlyBirdForCountry = (countryKey: "ch" | "de") => {
+    const countryDates = SEMINAR_DATES[countryKey];
+    return countryDates.some(d => (seminarCounts[`${countryKey}::${d.date}`] || 0) < EARLY_BIRD_THRESHOLD);
+  };
+  const hasEarlyBirdForDate = (countryKey: "ch" | "de", date: string) => {
+    return (seminarCounts[`${countryKey}::${date}`] || 0) < EARLY_BIRD_THRESHOLD;
+  };
 
   // Phone
   const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
@@ -234,29 +252,40 @@ export default function SeminarAnmeldung() {
                     {([
                       { key: "ch" as const, flag: "🇨🇭", label: isEN ? "Switzerland" : "Schweiz", sub: "Eschenbach (Zürichsee)", regularPrice: "CHF 3.290,-", earlyBird: "CHF 2.990,-" },
                       { key: "de" as const, flag: "🇩🇪", label: isEN ? "Germany" : "Deutschland", sub: "Augsburg", regularPrice: "€2.790,-", earlyBird: "€2.490,-" },
-                    ]).map(c => (
-                      <button
-                        key={c.key}
-                        type="button"
-                        onClick={() => { setSeminarCountry(c.key); setSelectedDate(""); }}
-                        className={`border p-4 text-left transition-all ${
-                          seminarCountry === c.key
-                            ? "border-[#1B3A5C] bg-[#1B3A5C]/5 ring-1 ring-[#1B3A5C]"
-                            : "border-border bg-white hover:border-[#1B3A5C]/40"
-                        }`}
-                      >
-                        <span className="text-2xl">{c.flag}</span>
-                        <p className="font-semibold text-sm text-[#1B3A5C] mt-1">{c.label}</p>
-                        <p className="text-xs text-muted-foreground">{c.sub}</p>
-                        <div className="mt-1">
-                          <span className="text-xs text-muted-foreground line-through mr-2">{c.regularPrice}</span>
-                          <span className="text-sm font-bold text-[#2E7D32]">{c.earlyBird}</span>
-                        </div>
-                        <span className="text-[10px] font-semibold text-[#2E7D32] bg-[#E8F5E9] px-1.5 py-0.5 rounded mt-1 inline-block">
-                          {isEN ? "Early Bird" : "Frühbucher"}
-                        </span>
-                      </button>
-                    ))}
+                    ]).map(c => {
+                      const showEarlyBird = hasEarlyBirdForCountry(c.key);
+                      return (
+                        <button
+                          key={c.key}
+                          type="button"
+                          onClick={() => { setSeminarCountry(c.key); setSelectedDate(""); }}
+                          className={`border p-4 text-left transition-all ${
+                            seminarCountry === c.key
+                              ? "border-[#1B3A5C] bg-[#1B3A5C]/5 ring-1 ring-[#1B3A5C]"
+                              : "border-border bg-white hover:border-[#1B3A5C]/40"
+                          }`}
+                        >
+                          <span className="text-2xl">{c.flag}</span>
+                          <p className="font-semibold text-sm text-[#1B3A5C] mt-1">{c.label}</p>
+                          <p className="text-xs text-muted-foreground">{c.sub}</p>
+                          {showEarlyBird ? (
+                            <div className="mt-1">
+                              <span className="text-xs text-muted-foreground line-through mr-2">{c.regularPrice}</span>
+                              <span className="text-sm font-bold text-[#2E7D32]">{c.earlyBird}</span>
+                            </div>
+                          ) : (
+                            <div className="mt-1">
+                              <span className="text-sm font-bold text-[#1B3A5C]">{c.regularPrice}</span>
+                            </div>
+                          )}
+                          {showEarlyBird && (
+                            <span className="text-[10px] font-semibold text-[#2E7D32] bg-[#E8F5E9] px-1.5 py-0.5 rounded mt-1 inline-block">
+                              {isEN ? "Early Bird" : "Frühbucher"}
+                            </span>
+                          )}
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
 
@@ -295,10 +324,6 @@ export default function SeminarAnmeldung() {
                           </div>
                         </button>
                       ))}
-                    </div>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground mt-2">
-                      <Users className="w-3.5 h-3.5" />
-                      {isEN ? "Small groups · Max. 12 participants" : "Kleine Gruppen · Max. 12 Teilnehmer"}
                     </div>
                   </div>
                 )}
