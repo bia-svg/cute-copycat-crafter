@@ -477,13 +477,19 @@ export default function Ausbildung() {
                   <p className="text-xs font-semibold uppercase tracking-wider text-[#1565C0] mb-2">
                     {isEN ? "6-Day Intensive Certification" : "6-Tage Intensiv-Zertifizierung"}
                   </p>
-                  <div className="flex items-center justify-center gap-4 mb-2">
-                    <span className="text-base text-muted-foreground line-through">€2.790,-</span>
-                    <span className="text-2xl font-bold text-[#1B3A5C]">€2.490,-</span>
-                  </div>
-                  <span className="inline-block text-xs font-semibold bg-[#E3F2FD] text-[#1565C0] px-3 py-1 rounded-full">
-                    {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
-                  </span>
+                  {hasEarlyBirdForCountry("de", datesDE) ? (
+                    <>
+                      <div className="flex items-center justify-center gap-4 mb-2">
+                        <span className="text-base text-muted-foreground line-through">€2.790,-</span>
+                        <span className="text-2xl font-bold text-[#1B3A5C]">€2.490,-</span>
+                      </div>
+                      <span className="inline-block text-xs font-semibold bg-[#E3F2FD] text-[#1565C0] px-3 py-1 rounded-full">
+                        {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-2xl font-bold text-[#1B3A5C]">€2.790,-</span>
+                  )}
                 </div>
                 {datesDE.map((d, i) => (
                   <div key={`de-${i}`} className="border border-border p-5 bg-white rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
