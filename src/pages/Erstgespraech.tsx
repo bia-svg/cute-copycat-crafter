@@ -94,7 +94,7 @@ export default function Erstgespraech() {
 
     try {
       // Save to database
-      const { error: dbError } = await supabase.from("leads").insert(leadData);
+      const { error: dbError } = await supabase.from("leads").insert(leadData as any);
       if (dbError) console.error("Lead save error:", dbError);
 
       // Notify (email + Slack)
