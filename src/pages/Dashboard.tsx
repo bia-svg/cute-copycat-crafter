@@ -84,8 +84,8 @@ export default function Dashboard() {
   }, [navigate]);
 
   const handlePinSubmit = async () => {
-    const pin = pinInput.replace(/\D/g, "").slice(0, 8);
-    if (pin.length !== 8) { setPinError("PIN must be 8 digits"); return; }
+    const pin = pinInput.trim();
+    if (!pin) { setPinError("Please enter your PIN"); return; }
     setPinLoading(true);
     setPinError("");
     try {
@@ -773,25 +773,23 @@ export default function Dashboard() {
                       <ShieldCheck className="w-8 h-8 text-gray-500" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900">Protected Area</h3>
-                    <p className="text-sm text-gray-500">Enter the 8-digit PIN to access the complete leads list with full contact details.</p>
+                    <p className="text-sm text-gray-500">Enter your PIN to access the complete leads list with full contact details.</p>
                     {pinError && (
                       <div className="text-sm text-red-600 bg-red-50 border border-red-200 rounded p-2">{pinError}</div>
                     )}
                     <div className="flex items-center justify-center gap-2">
                       <input
-                        type="text"
-                        inputMode="numeric"
+                        type="password"
                         autoComplete="one-time-code"
-                        maxLength={8}
                         spellCheck={false}
                         value={pinInput}
                         onChange={(e) => {
                           setPinError("");
-                          setPinInput(e.target.value.replace(/\D/g, "").slice(0, 8));
+                          setPinInput(e.target.value);
                         }}
                         onKeyDown={(e) => { if (e.key === "Enter") handlePinSubmit(); }}
-                        placeholder="12345678"
-                        aria-label="8-digit PIN"
+                        placeholder="••••••••"
+                        aria-label="PIN"
                         className="flex h-10 w-48 rounded-md border border-gray-300 bg-background px-3 py-2 text-center text-lg font-mono tracking-[0.3em] ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                       />
                       <Button onClick={handlePinSubmit} disabled={pinLoading}>
