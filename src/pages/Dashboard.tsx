@@ -775,44 +775,11 @@ export default function Dashboard() {
 
             {/* ═══════ ALL LEADS TAB (PIN-PROTECTED) ═══════ */}
             <TabsContent value="all-leads" className="space-y-5 mt-4">
-              {!pinUnlocked ? (
-                <Card className="bg-white border border-gray-200 shadow-sm max-w-md mx-auto">
-                  <CardContent className="p-8 text-center space-y-4">
-                    <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-                      <ShieldCheck className="w-8 h-8 text-gray-500" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900">Protected Area</h3>
-                    <p className="text-sm text-gray-500">Enter your PIN to access the complete leads list with full contact details.</p>
-                    {pinError && (
-                      <div className="text-sm text-red-600 bg-red-50 border border-red-200 rounded p-2">{pinError}</div>
-                    )}
-                    <div className="flex items-center justify-center gap-2">
-                      <input
-                        type="password"
-                        autoComplete="one-time-code"
-                        spellCheck={false}
-                        value={pinInput}
-                        onChange={(e) => {
-                          setPinError("");
-                          setPinInput(e.target.value);
-                        }}
-                        onKeyDown={(e) => { if (e.key === "Enter") handlePinSubmit(); }}
-                        placeholder="••••••••"
-                        aria-label="PIN"
-                        className="flex h-10 w-48 rounded-md border border-gray-300 bg-background px-3 py-2 text-center text-lg font-mono tracking-[0.3em] ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                      />
-                      <Button onClick={handlePinSubmit} disabled={pinLoading}>
-                        {pinLoading ? "..." : "Unlock"}
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ) : (
                 <>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <ShieldCheck className="w-5 h-5 text-emerald-600" />
-                      <span className="text-sm font-medium text-emerald-700">Full access unlocked</span>
+                      <span className="text-sm font-medium text-emerald-700">Full access</span>
                     </div>
                     <Badge className="bg-red-50 text-red-700 border border-red-200 text-xs">
                       Contains personal data — handle with care
