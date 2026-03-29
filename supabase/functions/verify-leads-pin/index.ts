@@ -12,17 +12,16 @@ serve(async (req) => {
 
   try {
     const { pin } = await req.json();
-    const normalizedPin = typeof pin === "string" ? pin.replace(/\D/g, "").slice(0, 8) : "";
+    const normalizedPin = typeof pin === "string" ? pin.trim() : "";
 
-    if (normalizedPin.length !== 8) {
-      return new Response(JSON.stringify({ error: "PIN must be 8 digits" }), {
+    if (!normalizedPin) {
+      return new Response(JSON.stringify({ error: "PIN is required" }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
-    const storedPin = Deno.env.get("DASHBOARD_LEADS_PIN");
-    const normalizedStoredPin = storedPin?.replace(/\D/g, "").slice(0, 8) ?? "";
+    const storedPin = (Deno.env.get("DASHBOARD_LEADS_PIN") ?? "").trim();
 
     if (normalizedStoredPin.length !== 8) {
       return new Response(JSON.stringify({ error: "PIN not configured correctly" }), {
