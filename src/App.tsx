@@ -41,6 +41,27 @@ const DepressionPage = lazy(() => import("@/pages/services/index").then(m => ({ 
 const ChildrenPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.ChildrenPage })));
 const AdultsPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.AdultsPage })));
 
+function GeoRedirect() {
+  const [target, setTarget] = useState("/de/ch");
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    fetch("https://ipapi.co/json/")
+      .then(r => r.json())
+      .then(data => {
+        const cc = (data.country_code || "").toUpperCase();
+        if (cc === "CH" || cc === "LI") setTarget("/de/ch");
+        else if (cc === "DE" || cc === "AT") setTarget("/de/de");
+        else setTarget("/de/int");
+      })
+      .catch(() => setTarget("/de/ch"))
+      .finally(() => setReady(true));
+  }, []);
+
+  if (!ready) return null;
+  return <Navigate to={target} replace />;
+}
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
