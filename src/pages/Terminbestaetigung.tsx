@@ -26,7 +26,9 @@ export default function Terminbestaetigung() {
   const [dsgvoChecked, setDsgvoChecked] = useState(false);
   const [agbChecked, setAgbChecked] = useState(false);
   const [paymentChecked, setPaymentChecked] = useState(false);
-  const [dob, setDob] = useState<Date | undefined>(undefined);
+  const [dobDay, setDobDay] = useState("");
+  const [dobMonth, setDobMonth] = useState("");
+  const [dobYear, setDobYear] = useState("");
 
   // Phone country code
   const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
