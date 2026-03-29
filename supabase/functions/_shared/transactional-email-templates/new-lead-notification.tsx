@@ -174,10 +174,24 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
 export const template = {
   component: NewLeadNotificationEmail,
   subject: (data: Record<string, any>) => {
-    const regPart = data.registrationNumber ? ` #${data.registrationNumber}` : ''
-    return data.language === 'en'
-      ? `New Lead${regPart}: ${data.name || 'Unknown'} — ${data.formType === 'session' ? 'Session' : data.formType === 'seminar' ? 'Seminar' : data.formType || 'Contact'}`
-      : `Neuer Lead${regPart}: ${data.name || 'Unbekannt'} — ${data.formType === 'session' ? 'Sitzung' : data.formType === 'seminar' ? 'Seminar' : data.formType || 'Kontakt'}`
+    const name = data.name || (data.language === 'en' ? 'Unknown' : 'Unbekannt')
+    const isEN = data.language === 'en'
+    const isSessionConfirmation = data.formType === 'session' && data.concern?.includes('Terminbestätigung')
+
+    if (data.formType === 'seminar') {
+      const regPart = data.registrationNumber ? ` #${data.registrationNumber}` : ''
+      return isEN
+        ? `New Seminar Registration${regPart}: ${name}`
+        : `Neue Seminar-Anmeldung${regPart}: ${name}`
+    }
+    if (isSessionConfirmation) {
+      return isEN
+        ? `New Session Confirmation: ${name}`
+        : `Neue Sitzungsbestätigung: ${name}`
+    }
+    return isEN
+      ? `New Lead: ${name}`
+      : `Neuer Lead: ${name}`
   },
   to: 'info@david-j-woods.com',
   displayName: 'New lead notification',
