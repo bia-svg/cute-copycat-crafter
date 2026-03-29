@@ -428,13 +428,19 @@ export default function Ausbildung() {
                   <p className="text-xs font-semibold uppercase tracking-wider text-[#2E7D32] mb-2">
                     {isEN ? "6-Day Intensive Certification" : "6-Tage Intensiv-Zertifizierung"}
                   </p>
-                  <div className="flex items-center justify-center gap-4 mb-2">
-                    <span className="text-base text-muted-foreground line-through">CHF 3.290,-</span>
-                    <span className="text-2xl font-bold text-[#1B3A5C]">CHF 2.990,-</span>
-                  </div>
-                  <span className="inline-block text-xs font-semibold bg-[#E8F5E9] text-[#2E7D32] px-3 py-1 rounded-full">
-                    {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
-                  </span>
+                  {hasEarlyBirdForCountry("ch", datesCH) ? (
+                    <>
+                      <div className="flex items-center justify-center gap-4 mb-2">
+                        <span className="text-base text-muted-foreground line-through">CHF 3.290,-</span>
+                        <span className="text-2xl font-bold text-[#1B3A5C]">CHF 2.990,-</span>
+                      </div>
+                      <span className="inline-block text-xs font-semibold bg-[#E8F5E9] text-[#2E7D32] px-3 py-1 rounded-full">
+                        {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-2xl font-bold text-[#1B3A5C]">CHF 3.290,-</span>
+                  )}
                 </div>
                 {datesCH.map((d, i) => (
                   <div key={`ch-${i}`} className="border border-border p-5 bg-white rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
