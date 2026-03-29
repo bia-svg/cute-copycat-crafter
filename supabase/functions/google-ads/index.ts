@@ -228,7 +228,7 @@ serve(async (req) => {
       adsRes = await fetch(adsUrl, {
         method: "POST",
         headers: queryHeaders,
-        body: JSON.stringify({ query, pageSize: 10000 }),
+        body: JSON.stringify({ query }),
       });
 
       adsText = await adsRes.text();
