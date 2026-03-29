@@ -118,7 +118,7 @@ export default function SeminarAnmeldung() {
         formType: "seminar",
         city: leadData.city || undefined,
         country: country.toUpperCase(),
-        language,
+        language: country === "int" ? "en" : "de",
         notes: leadData.notes || undefined,
         source,
         utmSource,
