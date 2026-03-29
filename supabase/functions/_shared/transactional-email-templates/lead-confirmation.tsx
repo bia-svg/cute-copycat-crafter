@@ -187,10 +187,16 @@ export const template = {
   component: LeadConfirmationEmail,
   subject: (data: Record<string, any>) => {
     const isEN = data.language === 'en'
+    const isSessionConfirmation = data.formType === 'session' && data.concern?.includes('Terminbestätigung')
     if (data.formType === 'seminar' && data.registrationNumber) {
       return isEN
         ? `Registration #${data.registrationNumber} — David J. Woods`
         : `Anmeldung #${data.registrationNumber} — David J. Woods`
+    }
+    if (isSessionConfirmation) {
+      return isEN
+        ? 'Session confirmed — David J. Woods'
+        : 'Sitzung bestätigt — David J. Woods'
     }
     return isEN
       ? 'Your request has been received — David J. Woods'
