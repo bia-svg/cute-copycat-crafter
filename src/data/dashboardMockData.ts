@@ -52,6 +52,8 @@ export interface LeadRecord {
   utm_source: string | null;
   utm_medium: string | null;
   utm_campaign: string | null;
+  utm_content: string | null;
+  utm_term: string | null;
   tracking_code: string | null;
   converted: boolean;
   notes: string | null;
