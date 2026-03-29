@@ -26,7 +26,7 @@ export default function Standorte() {
             city: "Eschenbach",
             subtitle: isEN ? "Practice Lake Zurich" : "Praxis am Zürichsee",
             address: ["Fit+Gsund", "Churzhaslen 3", "8733 Eschenbach (am Zürichsee)"],
-            phone: "+41 44 888 09 01",
+            phone: "+41 79 131 88 78",
             href: getPath("cityZurich", language, country),
           },
         ]
