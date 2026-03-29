@@ -297,33 +297,64 @@ export default function SeminarAnmeldung() {
                       {isEN ? "Select Date" : "Termin wählen"}
                     </h2>
                     <div className="space-y-2">
-                      {dates.map((d, i) => (
+                    {dates.map((d, i) => {
+                        const isEarlyBird = seminarCountry && hasEarlyBirdForDate(seminarCountry as "ch" | "de", d.date);
+                        const regularPrice = seminarCountry === "ch" ? "CHF 3.290,-" : "€2.790,-";
+                        const earlyBirdPrice = seminarCountry === "ch" ? "CHF 2.990,-" : "€2.490,-";
+                        const savings = seminarCountry === "ch" ? "CHF 300" : "€300";
+                        return (
                         <button
                           key={i}
                           type="button"
                           onClick={() => setSelectedDate(d.date)}
-                          className={`w-full border p-4 text-left transition-all flex items-center justify-between ${
+                          className={`w-full border p-4 text-left transition-all ${
                             selectedDate === d.date
                               ? "border-[#2E7D32] bg-[#E8F5E9]/50 ring-1 ring-[#2E7D32]"
                               : "border-border bg-white hover:border-[#2E7D32]/40"
                           }`}
                         >
-                          <div>
-                            <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
-                              <Calendar className="w-4 h-4" /> {d.date}
-                            </p>
-                            <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
-                              <MapPin className="w-3.5 h-3.5" /> {d.location}
-                            </p>
+                          <div className="flex items-center justify-between">
+                            <div>
+                              <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
+                                <Calendar className="w-4 h-4" /> {d.date}
+                              </p>
+                              <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
+                                <MapPin className="w-3.5 h-3.5" /> {d.location}
+                              </p>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              {selectedDate === d.date && <CheckCircle className="w-5 h-5 text-[#2E7D32]" />}
+                            </div>
                           </div>
-                          <div className="flex items-center gap-2">
-                            <span className={`text-xs font-semibold px-2 py-1 rounded ${d.status === "limited" ? "bg-[#FFF3E0] text-[#E65100]" : "bg-[#E8F5E9] text-[#2E7D32]"}`}>
-                              {d.status === "limited" ? (isEN ? "Limited" : "Letzte Plätze") : (isEN ? "Available" : "Verfügbar")}
-                            </span>
-                            {selectedDate === d.date && <CheckCircle className="w-5 h-5 text-[#2E7D32]" />}
+                          {/* Price display */}
+                          <div className="mt-3 pt-3 border-t border-border/50">
+                            {isEarlyBird ? (
+                              <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-2">
+                                  <span className="text-xs text-muted-foreground line-through">{regularPrice}</span>
+                                  <span className="text-base font-bold text-[#2E7D32]">{earlyBirdPrice}</span>
+                                </div>
+                                <div className="flex items-center gap-1.5">
+                                  <span className="text-[10px] font-bold text-white bg-[#2E7D32] px-2 py-0.5 rounded-full animate-pulse">
+                                    {isEN ? `Save ${savings}` : `${savings} sparen`}
+                                  </span>
+                                  <span className="text-[10px] font-semibold text-[#E65100] bg-[#FFF3E0] px-2 py-0.5 rounded-full">
+                                    {isEN ? "Limited offer!" : "Nur noch wenige Plätze!"}
+                                  </span>
+                                </div>
+                              </div>
+                            ) : (
+                              <div className="flex items-center justify-between">
+                                <span className="text-base font-bold text-[#1B3A5C]">{regularPrice}</span>
+                                <span className={`text-xs font-semibold px-2 py-1 rounded ${d.status === "limited" ? "bg-[#FFF3E0] text-[#E65100]" : "bg-[#E8F5E9] text-[#2E7D32]"}`}>
+                                  {d.status === "limited" ? (isEN ? "Limited" : "Letzte Plätze") : (isEN ? "Available" : "Verfügbar")}
+                                </span>
+                              </div>
+                            )}
                           </div>
                         </button>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 )}
