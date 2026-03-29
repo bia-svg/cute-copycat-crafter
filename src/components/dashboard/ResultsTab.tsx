@@ -273,6 +273,105 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
         </CardContent>
       </Card>
 
+      {/* ═══════ SEMINAR CAPACITY STATUS ═══════ */}
+      {capacityData.length > 0 && (() => {
+        // Count registrations per seminar date+country from leads
+        const seminars = leads.filter(l => l.form_type === "seminar");
+        const regCounts: Record<string, number> = {};
+        seminars.forEach(s => {
+          const country = (s.country || "").toLowerCase() === "ch" ? "ch" : "de";
+          const dateMatch = s.notes?.match(/Seminar[:\s]+([^|]+)/i);
+          const semDate = dateMatch ? dateMatch[1].trim() : "";
+          if (semDate) {
+            const key = `${country}__${semDate}`;
+            regCounts[key] = (regCounts[key] || 0) + 1;
+          }
+        });
+
+        // Also match by city field ("Schweiz" -> ch, "Deutschland" -> de)
+        seminars.forEach(s => {
+          const country = (s.city || "").toLowerCase().includes("schweiz") ? "ch" : "de";
+          const dateMatch = s.notes?.match(/Seminar[:\s]+([^|]+)/i);
+          const semDate = dateMatch ? dateMatch[1].trim() : "";
+          if (semDate) {
+            const key = `${country}__${semDate}`;
+            // Already counted above, just ensure we have the right country
+          }
+        });
+
+        return (
+          <Card className="bg-white border border-gray-200 shadow-sm">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                <Users className="w-4 h-4 text-indigo-600" />
+                Seminar Capacity Status
+              </CardTitle>
+              <p className="text-xs text-gray-400">Internal only — not shown to the public</p>
+            </CardHeader>
+            <CardContent>
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="border-gray-100">
+                      <TableHead className="text-gray-500">Country</TableHead>
+                      <TableHead className="text-gray-500">Seminar Date</TableHead>
+                      <TableHead className="text-gray-500 text-right">Registered</TableHead>
+                      <TableHead className="text-gray-500 text-right">Max</TableHead>
+                      <TableHead className="text-gray-500 text-right">Available</TableHead>
+                      <TableHead className="text-gray-500">Status</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {capacityData
+                      .sort((a, b) => a.seminar_country.localeCompare(b.seminar_country) || a.seminar_date.localeCompare(b.seminar_date))
+                      .map((cap, i) => {
+                        const key = `${cap.seminar_country}__${cap.seminar_date}`;
+                        const registered = regCounts[key] || 0;
+                        const available = Math.max(0, cap.max_capacity - registered);
+                        const isCH = cap.seminar_country === "ch";
+                        const greenThreshold = isCH ? 13 : 8;
+                        const isGreen = available >= greenThreshold;
+                        const isRed = available === 0;
+                        const isOrange = !isGreen && !isRed;
+
+                        let statusLabel = "";
+                        let statusClass = "";
+                        if (isGreen) {
+                          statusLabel = "Places Available";
+                          statusClass = "bg-emerald-50 text-emerald-700 border-emerald-200";
+                        } else if (isOrange) {
+                          statusLabel = "Limited Places";
+                          statusClass = "bg-amber-50 text-amber-700 border-amber-200";
+                        } else {
+                          statusLabel = "Fully Booked – Waiting List";
+                          statusClass = "bg-red-50 text-red-700 border-red-200";
+                        }
+
+                        return (
+                          <TableRow key={i} className="border-gray-100">
+                            <TableCell className="font-medium text-gray-900">
+                              {isCH ? "🇨🇭 CH" : "🇩🇪 DE"}
+                            </TableCell>
+                            <TableCell className="text-gray-700 text-sm">{cap.seminar_date}</TableCell>
+                            <TableCell className="text-right text-gray-900 font-medium">{registered}</TableCell>
+                            <TableCell className="text-right text-gray-500">{cap.max_capacity}</TableCell>
+                            <TableCell className="text-right text-gray-900 font-medium">{available}</TableCell>
+                            <TableCell>
+                              <Badge variant="outline" className={`text-xs ${statusClass}`}>
+                                {statusLabel}
+                              </Badge>
+                            </TableCell>
+                          </TableRow>
+                        );
+                      })}
+                  </TableBody>
+                </Table>
+              </div>
+            </CardContent>
+          </Card>
+        );
+      })()}
+
       {/* ═══════ PRICING REFERENCE ═══════ */}
       <Card className="bg-white border border-gray-200 shadow-sm">
         <CardHeader className="pb-2">
