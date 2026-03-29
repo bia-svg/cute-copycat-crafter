@@ -64,7 +64,7 @@ serve(async (req) => {
           {
             type: "context",
             elements: [
-              { type: "mrkdwn", text: `📧 Lead also sent to info@david-j-woods.com` },
+              { type: "mrkdwn", text: `🕐 ${new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" })}` },
             ],
           },
         ],
