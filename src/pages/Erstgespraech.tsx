@@ -122,18 +122,12 @@ export default function Erstgespraech() {
             {/* Left — Info */}
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] mb-4">
-                {formType === "seminar"
-                  ? (isEN ? "Register for Seminar" : "Seminar-Anmeldung")
-                  : (isEN ? "Book Your Free Discovery Call" : "Kostenloses Erstgespräch vereinbaren")}
+                {isEN ? "Book Your Free Discovery Call" : "Kostenloses Erstgespräch vereinbaren"}
               </h1>
               <p className="text-base text-foreground leading-relaxed mb-6">
-                {formType === "seminar"
-                  ? (isEN
-                    ? "Register for the Aktiv-Hypnose© training seminar. We will confirm your spot and send you all details."
-                    : "Melden Sie sich für das Aktiv-Hypnose© Ausbildungsseminar an. Wir bestätigen Ihren Platz und senden Ihnen alle Details.")
-                  : (isEN
-                    ? "Do you have questions or would you like to learn more about our method? Book a free and non-binding discovery call now. We take time for you and advise you individually."
-                    : "Haben Sie Fragen oder möchten Sie mehr über unsere Methode erfahren? Vereinbaren Sie jetzt ein kostenloses und unverbindliches Erstgespräch. Wir nehmen uns Zeit für Sie und beraten Sie individuell.")}
+                {isEN
+                  ? "Do you have questions or would you like to learn more about our method? Book a free and non-binding discovery call now. We take time for you and advise you individually."
+                  : "Haben Sie Fragen oder möchten Sie mehr über unsere Methode erfahren? Vereinbaren Sie jetzt ein kostenloses und unverbindliches Erstgespräch. Wir nehmen uns Zeit für Sie und beraten Sie individuell."}
               </p>
 
               <div className="space-y-3 mb-6">
