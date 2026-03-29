@@ -170,6 +170,30 @@ export type Database = {
         }
         Relationships: []
       }
+      seminar_capacity: {
+        Row: {
+          created_at: string
+          id: string
+          max_capacity: number
+          seminar_country: string
+          seminar_date: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          max_capacity: number
+          seminar_country: string
+          seminar_date: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          max_capacity?: number
+          seminar_country?: string
+          seminar_date?: string
+        }
+        Relationships: []
+      }
       suppressed_emails: {
         Row: {
           created_at: string
