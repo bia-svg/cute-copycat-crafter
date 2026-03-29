@@ -30,6 +30,7 @@ const slugMapDE: Record<PageKey, string> = {
   media: "tv-medien",
   contact: "erstgespraech",
   appointmentConfirmation: "terminbestaetigung",
+  seminarRegistration: "seminar-anmeldung",
   cityZurich: "hypnose-zuerich",
   cityAugsburg: "hypnose-augsburg",
   locations: "standorte",
