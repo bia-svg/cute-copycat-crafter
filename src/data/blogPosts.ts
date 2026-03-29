@@ -431,7 +431,7 @@ export const blogPosts: BlogPost[] = [
       { tag: "h2", text: "Behandlungsspektrum in Zürich" },
       { tag: "p", text: "In der Zürcher Praxis werden folgende Bereiche behandelt: Raucherentwöhnung (meist 1-3 Sitzungen), Ängste und Phobien aller Art, nachhaltiges Abnehmen ohne Diät, Stress- und Burnout-Bewältigung, Depressionen und Traumata sowie Coaching für Kinder und Jugendliche." },
       { tag: "h2", text: "Was sagen die Klienten? Google-Bewertungen" },
-      { tag: "p", text: "Mit einer durchschnittlichen Bewertung von 5.0 Sternen bei über 255 Google-Bewertungen gehört die Praxis von David J. Woods zu den bestbewerteten Hypnosetherapie-Praxen in der Schweiz. Klienten heben besonders die professionelle Atmosphäre, die schnellen Ergebnisse und die nachhaltige Wirkung hervor." },
+      { tag: "p", text: "Mit einer durchschnittlichen Bewertung von 5.0 Sternen bei über 263 Google-Bewertungen gehört die Praxis von David J. Woods zu den bestbewerteten Hypnosetherapie-Praxen in der Schweiz. Klienten heben besonders die professionelle Atmosphäre, die schnellen Ergebnisse und die nachhaltige Wirkung hervor." },
       { tag: "h3", text: "Weitere interessante Beiträge" }
     ]
   },

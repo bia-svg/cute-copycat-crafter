@@ -103,8 +103,8 @@ export default function Erfolgsberichte() {
                   <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <span className="font-semibold text-foreground">5.0 / 5</span>
-              <span>— 255 Google {isEN ? "Reviews" : "Bewertungen"}</span>
+              <span className="font-semibold text-foreground">★ 5.0</span>
+              <span>— 263 Google {isEN ? "Reviews" : "Bewertungen"}</span>
             </div>
           </div>
         </div>

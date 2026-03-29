@@ -104,7 +104,7 @@ export default function UeberUns() {
                   <p className="text-xs text-muted-foreground mt-2">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</p>
                   <div className="flex items-center gap-1 mt-3">
                     {[1,2,3,4,5].map(i => <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />)}
-                    <span className="text-xs text-muted-foreground ml-1">5.0 (255)</span>
+                    <span className="text-xs text-muted-foreground ml-1">5.0 (263)</span>
                   </div>
                 </div>
               </div>

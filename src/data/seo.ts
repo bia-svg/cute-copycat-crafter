@@ -62,14 +62,14 @@ export const pageSEO = {
   about: {
     titleDE: "Über David J. Woods — Lic.Psych., Hypnosetherapeut, NGH Trainer",
     titleEN: "About David J. Woods — Lic.Psych., Hypnotherapist, NGH Trainer",
-    descriptionDE: "David J. Woods: Lic.Psych., Hypnosetherapeut, Dozent & Fachautor. Über 40 Jahre Erfahrung, 30.000+ Sitzungen, 5.0/5 Google-Bewertung. NGH International Trainer.",
-    descriptionEN: "David J. Woods: Lic.Psych., Hypnotherapist, Lecturer & Author. 40+ years experience, 30,000+ sessions, 5.0/5 Google rating. NGH International Trainer.",
+    descriptionDE: "David J. Woods: Lic.Psych., Hypnosetherapeut, Dozent & Fachautor. Über 40 Jahre Erfahrung, 30.000+ Sitzungen, ★ 5.0 Google-Bewertung. NGH International Trainer.",
+    descriptionEN: "David J. Woods: Lic.Psych., Hypnotherapist, Lecturer & Author. 40+ years experience, 30,000+ sessions, ★ 5.0 Google rating. NGH International Trainer.",
   },
   testimonials: {
-    titleDE: "Kundenmeinungen — 5.0/5 Google Bewertung · 255 Rezensionen",
-    titleEN: "Client Testimonials — 5.0/5 Google Rating · 255 Reviews",
-    descriptionDE: "Lesen Sie Kundenmeinungen über Hypnosetherapie mit David J. Woods. 5.0/5 Google-Bewertung, 255 Rezensionen. Erfahrungsberichte zu Raucherentwöhnung, Ängsten, Abnehmen und mehr.",
-    descriptionEN: "Read client testimonials about hypnotherapy with David J. Woods. 5.0/5 Google rating, 255 reviews. Experiences with quitting smoking, anxiety, weight loss and more.",
+    titleDE: "Kundenmeinungen — ★ 5.0 Google Bewertung · 263 Rezensionen",
+    titleEN: "Client Testimonials — ★ 5.0 Google Rating · 263 Reviews",
+    descriptionDE: "Lesen Sie Kundenmeinungen über Hypnosetherapie mit David J. Woods. ★ 5.0 Google-Bewertung, 263 Rezensionen. Erfahrungsberichte zu Raucherentwöhnung, Ängsten, Abnehmen und mehr.",
+    descriptionEN: "Read client testimonials about hypnotherapy with David J. Woods. ★ 5.0 Google rating, 263 reviews. Experiences with quitting smoking, anxiety, weight loss and more.",
   },
   successStories: {
     titleDE: "Erfolgsberichte — Video-Erfahrungsberichte unserer Klienten",
