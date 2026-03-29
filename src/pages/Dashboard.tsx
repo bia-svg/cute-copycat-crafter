@@ -918,7 +918,6 @@ export default function Dashboard() {
                     </CardContent>
                   </Card>
                 </>
-              )}
             </TabsContent>
 
             {/* ═══════ SESSIONS TAB ═══════ */}
