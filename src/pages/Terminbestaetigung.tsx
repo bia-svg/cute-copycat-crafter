@@ -79,7 +79,7 @@ export default function Terminbestaetigung() {
     const leadData = {
       name: `${firstName} ${lastName}`,
       email,
-      phone,
+      phone: `${phoneCountry} ${phone}`.trim(),
       form_type: "session" as const,
       postal_code: postalCode,
       city,
