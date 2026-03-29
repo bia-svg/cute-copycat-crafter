@@ -779,19 +779,17 @@ export default function Dashboard() {
                     )}
                     <div className="flex items-center justify-center gap-2">
                       <input
-                        type="text"
-                        inputMode="numeric"
+                        type="password"
                         autoComplete="one-time-code"
-                        maxLength={8}
                         spellCheck={false}
                         value={pinInput}
                         onChange={(e) => {
                           setPinError("");
-                          setPinInput(e.target.value.replace(/\D/g, "").slice(0, 8));
+                          setPinInput(e.target.value);
                         }}
                         onKeyDown={(e) => { if (e.key === "Enter") handlePinSubmit(); }}
-                        placeholder="12345678"
-                        aria-label="8-digit PIN"
+                        placeholder="••••••••"
+                        aria-label="PIN"
                         className="flex h-10 w-48 rounded-md border border-gray-300 bg-background px-3 py-2 text-center text-lg font-mono tracking-[0.3em] ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                       />
                       <Button onClick={handlePinSubmit} disabled={pinLoading}>
