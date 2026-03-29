@@ -954,6 +954,16 @@ export default function Dashboard() {
               )}
             </TabsContent>
 
+            {/* ═══════ SESSIONS TAB ═══════ */}
+            <TabsContent value="sessions" className="space-y-5 mt-4">
+              <SessionsTab leads={leads} />
+            </TabsContent>
+
+            {/* ═══════ RESULTS TAB ═══════ */}
+            <TabsContent value="results" className="space-y-5 mt-4">
+              <ResultsTab leads={leads} />
+            </TabsContent>
+
             {/* ═══════ DATA EXPORT TAB ═══════ */}
             <TabsContent value="data" className="mt-4">
               {(() => {
