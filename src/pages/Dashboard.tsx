@@ -77,36 +77,7 @@ const COLORS = {
 export default function Dashboard() {
   const navigate = useNavigate();
   const [tab, setTab] = useState("overview");
-  const [pinInput, setPinInput] = useState("");
-  const [pinUnlocked, setPinUnlocked] = useState(false);
-  const [pinError, setPinError] = useState("");
-  const [pinLoading, setPinLoading] = useState(false);
 
-  useEffect(() => {
-    if (!isAuthenticated()) navigate("/dashboard/login", { replace: true });
-  }, [navigate]);
-
-  const handlePinSubmit = async () => {
-    const pin = pinInput.trim();
-    if (!pin) { setPinError("Please enter your PIN"); return; }
-    setPinLoading(true);
-    setPinError("");
-    try {
-      const res = await supabase.functions.invoke("verify-leads-pin", {
-        body: { pin },
-      });
-      if (res.data?.success) {
-        setPinUnlocked(true);
-      } else {
-        setPinError(res.data?.error || res.error?.message || "Invalid PIN");
-        setPinInput("");
-      }
-    } catch {
-      setPinError("Connection error");
-    } finally {
-      setPinLoading(false);
-    }
-  };
 
   const {
     trafficByDay, topPages, campaigns, dailyAds, leads, whatsappClicks,
