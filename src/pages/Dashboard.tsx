@@ -248,7 +248,7 @@ export default function Dashboard() {
               <TabsTrigger value="campaigns" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Campaigns</TabsTrigger>
               <TabsTrigger value="leads" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Leads</TabsTrigger>
               <TabsTrigger value="all-leads" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
-                <Lock className="w-3 h-3 mr-1" /> All Leads
+                All Leads
               </TabsTrigger>
               <TabsTrigger value="sessions" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
                 <CalendarCheck className="w-3 h-3 mr-1" /> Sessions
