@@ -63,6 +63,7 @@ const slugMapEN: Record<PageKey, string> = {
   media: "tv-media",
   contact: "consultation",
   appointmentConfirmation: "appointment-confirmation",
+  seminarRegistration: "seminar-registration",
   cityZurich: "hypnosis-zurich",
   cityAugsburg: "hypnosis-augsburg",
   locations: "locations",
