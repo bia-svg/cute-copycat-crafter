@@ -822,7 +822,7 @@ export default function Dashboard() {
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-sm font-medium text-gray-700">Complete Leads List ({leads.length})</CardTitle>
                         <Button size="sm" variant="outline" className="text-xs" onClick={() => {
-                          const headers = ["Date","Name","Email","Phone","Concern","Type","Source","City","Postal Code","Country","Referrer Page","UTM Source","UTM Medium","UTM Campaign","UTM Content","UTM Term","Notes","Converted"];
+                          const headers = ["Date","Name","Email","Phone","Concern","Type","Source","City","Postal Code","Country","Language","Referrer Page","UTM Source","UTM Medium","UTM Campaign","UTM Content","UTM Term","Notes","Converted"];
                           const csvRows = [headers.join(",")];
                           leads.forEach(l => {
                             csvRows.push([
@@ -835,8 +835,9 @@ export default function Dashboard() {
                               l.source || "",
                               `"${(l.city || "").replace(/"/g, '""')}"`,
                               l.postal_code || "",
-                              l.country || "",
-                              `"${(l.tracking_code || "").replace(/"/g, '""')}"`,
+                               l.country || "",
+                               (l as any).language || "",
+                               `"${(l.tracking_code || "").replace(/"/g, '""')}"`,
                               l.utm_source || "",
                               l.utm_medium || "",
                               l.utm_campaign || "",
@@ -872,8 +873,9 @@ export default function Dashboard() {
                               <TableHead className="text-gray-500 text-xs">Source</TableHead>
                               <TableHead className="text-gray-500 text-xs">City</TableHead>
                               <TableHead className="text-gray-500 text-xs">PLZ</TableHead>
-                              <TableHead className="text-gray-500 text-xs">Country</TableHead>
-                              <TableHead className="text-gray-500 text-xs">Referrer Page</TableHead>
+                               <TableHead className="text-gray-500 text-xs">Country</TableHead>
+                               <TableHead className="text-gray-500 text-xs">Lang</TableHead>
+                               <TableHead className="text-gray-500 text-xs">Referrer Page</TableHead>
                               <TableHead className="text-gray-500 text-xs">UTM Source</TableHead>
                               <TableHead className="text-gray-500 text-xs">UTM Medium</TableHead>
                               <TableHead className="text-gray-500 text-xs">UTM Campaign</TableHead>
@@ -916,8 +918,9 @@ export default function Dashboard() {
                                 </TableCell>
                                 <TableCell className="text-gray-700 text-xs">{l.city || "—"}</TableCell>
                                 <TableCell className="text-gray-700 text-xs font-mono">{l.postal_code || "—"}</TableCell>
-                                <TableCell className="text-gray-700 text-xs">{l.country || "—"}</TableCell>
-                                <TableCell className="text-gray-600 text-xs max-w-[150px] truncate" title={l.tracking_code || ""}>{l.tracking_code || "—"}</TableCell>
+                                 <TableCell className="text-gray-700 text-xs">{l.country || "—"}</TableCell>
+                                 <TableCell className="text-gray-700 text-xs uppercase">{(l as any).language || "—"}</TableCell>
+                                 <TableCell className="text-gray-600 text-xs max-w-[150px] truncate" title={l.tracking_code || ""}>{l.tracking_code || "—"}</TableCell>
                                 <TableCell className="text-gray-600 text-xs">{l.utm_source || "—"}</TableCell>
                                 <TableCell className="text-gray-600 text-xs">{l.utm_medium || "—"}</TableCell>
                                 <TableCell className="text-gray-600 text-xs max-w-[120px] truncate" title={l.utm_campaign || ""}>{l.utm_campaign || "—"}</TableCell>

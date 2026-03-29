@@ -96,6 +96,7 @@ export default function Terminbestaetigung() {
       postal_code: postalCode,
       city,
       country: country.toUpperCase(),
+      language: language,
       source,
       utm_source: utmSource,
       utm_medium: utmMedium,

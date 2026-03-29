@@ -81,6 +81,7 @@ export default function Erstgespraech() {
       postal_code: postalCity.split(/\s+/)[0] || null,
       city: postalCity.split(/\s+/).slice(1).join(" ") || location || null,
       country: country.toUpperCase(),
+      language: language,
       source,
       utm_source: utmSource,
       utm_medium: utmMedium,
