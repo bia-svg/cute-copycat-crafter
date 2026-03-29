@@ -296,10 +296,6 @@ export default function SeminarAnmeldung() {
                         </button>
                       ))}
                     </div>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground mt-2">
-                      <Users className="w-3.5 h-3.5" />
-                      {isEN ? "Small groups · Max. 12 participants" : "Kleine Gruppen · Max. 12 Teilnehmer"}
-                    </div>
                   </div>
                 )}
 

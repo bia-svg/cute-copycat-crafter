@@ -494,10 +494,6 @@ export default function Ausbildung() {
               </>
             )}
           </div>
-          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
-            <Users className="w-4 h-4" />
-            <span>{isEN ? "Small group premium format · Strictly limited seats" : "Premium-Kleingruppen · Strikt begrenzte Teilnehmerzahl"}</span>
-          </div>
           <p className="text-xs text-muted-foreground text-center mt-2 italic">
             {isEN
               ? "Early Bird pricing available for a limited time or until the current intake is full."
