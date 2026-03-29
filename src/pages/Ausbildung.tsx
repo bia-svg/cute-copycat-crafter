@@ -226,35 +226,35 @@ export default function Ausbildung() {
           </h2>
           <p className="text-sm text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
             {isEN
-              ? "Not a weekend course. Not a certificate mill. A real clinical training built on 30,000+ sessions."
-              : "Kein Wochenendkurs. Keine Zertifikatsfabrik. Eine echte klinische Ausbildung, aufgebaut auf 30.000+ Sitzungen."}
+              ? "Not a mass-market course. Not a certificate mill. A serious premium training with real depth, built on 30,000+ clinical sessions."
+              : "Kein Massenkurs. Keine Zertifikatsfabrik. Eine seriöse Premium-Ausbildung mit echter Tiefe, aufgebaut auf 30.000+ klinischen Sitzungen."}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <div className="border border-border p-6 text-center">
               <Shield className="w-8 h-8 text-[#1B3A5C] mx-auto mb-3" />
-              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "40+ Years of Practice" : "40+ Jahre Praxis"}</h3>
+              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "40+ Years of Clinical Practice" : "40+ Jahre klinische Praxis"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
-                  ? "Every technique taught has been tested and refined in thousands of real clinical sessions."
-                  : "Jede gelehrte Technik wurde in Tausenden realer klinischer Sitzungen getestet und verfeinert."}
+                  ? "Every technique taught has been tested and refined in thousands of real clinical sessions. This is method-based expert training."
+                  : "Jede gelehrte Technik wurde in Tausenden realer klinischer Sitzungen getestet und verfeinert. Eine methodenbasierte Expertenausbildung."}
               </p>
             </div>
             <div className="border border-border p-6 text-center">
               <Users className="w-8 h-8 text-[#1B3A5C] mx-auto mb-3" />
-              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "Small Groups" : "Kleine Gruppen"}</h3>
+              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "Small Group Premium Format" : "Premium-Kleingruppen"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
-                  ? "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity."
-                  : "Strikt begrenzte Teilnehmerzahl garantiert persönliche Betreuung, individuelles Feedback und maximale Lernintensität."}
+                  ? "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity. A selective learning experience."
+                  : "Strikt begrenzte Teilnehmerzahl garantiert persönliche Betreuung, individuelles Feedback und maximale Lernintensität. Ein selektives Lernerlebnis."}
               </p>
             </div>
             <div className="border border-border p-6 text-center">
               <Zap className="w-8 h-8 text-[#1B3A5C] mx-auto mb-3" />
-              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "Practice from Day 1" : "Praxis ab Tag 1"}</h3>
+              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "Hands-On from Day 1" : "Praxis ab Tag 1"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
-                  ? "You won't just watch — you'll hypnotize. Every day combines theory with immediate hands-on application."
-                  : "Sie schauen nicht nur zu — Sie hypnotisieren. Jeder Tag verbindet Theorie mit sofortiger praktischer Anwendung."}
+                  ? "You won't just watch — you'll hypnotize. Every day combines theory with immediate application. A transformational practical training."
+                  : "Sie schauen nicht nur zu — Sie hypnotisieren. Jeder Tag verbindet Theorie mit sofortiger praktischer Anwendung. Eine transformative Praxisausbildung."}
               </p>
             </div>
           </div>
