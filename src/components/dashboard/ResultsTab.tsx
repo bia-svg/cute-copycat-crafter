@@ -1,12 +1,14 @@
-import { useMemo, useEffect, useState } from "react";
+import { useMemo, useEffect, useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import type { LeadRecord } from "@/data/dashboardMockData";
 import { DollarSign, CalendarCheck, GraduationCap, Users, TrendingUp, Target } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { supabase } from "@/integrations/supabase/client";
 import { getCurrentUser } from "@/lib/dashboardAuth";
+import { format, startOfMonth, endOfMonth, subMonths } from "date-fns";
 
 const CONFIRMATION_CONCERN = "Terminbestätigung / Sitzung";
 
@@ -17,6 +19,22 @@ const SEMINAR_PRICE_CH = 2990; // Early bird (regular: 3290)
 const SEMINAR_PRICE_DE = 2490; // Early bird (regular: 2790)
 const SEMINAR_REGULAR_CH = 3290;
 const SEMINAR_REGULAR_DE = 2790;
+
+// Month options for session goals
+function getMonthOptions() {
+  const months = [];
+  const now = new Date();
+  for (let i = 0; i < 12; i++) {
+    const d = subMonths(now, i);
+    months.push({
+      value: format(d, "yyyy-MM"),
+      label: format(d, "MMMM yyyy"),
+      start: format(startOfMonth(d), "yyyy-MM-dd"),
+      end: format(endOfMonth(d), "yyyy-MM-dd"),
+    });
+  }
+  return months;
+}
 
 interface ResultsTabProps {
   leads: LeadRecord[];
