@@ -587,12 +587,14 @@ export default function Home() {
               </div>
               <span className="text-sm ml-1">5.0 — 264 Google {isEN ? "Reviews" : "Bewertungen"}</span>
             </a>
-            <a href="https://www.kennstdueinen.de/hypnose-augsburg-david-j-woods-hypnose-erfolgscoaching-dipl-psych-mx-physio-sa-therapeut-d300749.html#review-overview" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:opacity-80 transition-opacity">
-              <div className="flex gap-0.5">
-                {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-300 text-yellow-300" />)}
-              </div>
-              <span className="text-sm ml-1">5.0 — 156 KennstDuEinen {isEN ? "Reviews" : "Bewertungen"}</span>
-            </a>
+            {showDE && (
+              <a href="https://www.kennstdueinen.de/hypnose-augsburg-david-j-woods-hypnose-erfolgscoaching-dipl-psych-mx-physio-sa-therapeut-d300749.html#review-overview" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:opacity-80 transition-opacity">
+                <div className="flex gap-0.5">
+                  {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-300 text-yellow-300" />)}
+                </div>
+                <span className="text-sm ml-1">5.0 — 156 KennstDuEinen Bewertungen</span>
+              </a>
+            )}
           </div>
           <div>
             <Link to={getPath("contact", language, country)}>
