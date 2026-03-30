@@ -33,6 +33,7 @@ import SessionsTab from "@/components/dashboard/SessionsTab";
 import ResultsTab from "@/components/dashboard/ResultsTab";
 import SEOTab from "@/components/dashboard/SEOTab";
 import CompetitionTab from "@/components/dashboard/CompetitionTab";
+import WeeklyReportTab from "@/components/dashboard/WeeklyReportTab";
 import { format, parseISO, startOfMonth } from "date-fns";
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
@@ -326,6 +327,9 @@ export default function Dashboard() {
               </TabsTrigger>
               <TabsTrigger value="competition" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
                 <Target className="w-3 h-3 mr-1" /> Competition
+              </TabsTrigger>
+              <TabsTrigger value="weekly-report" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                <FileText className="w-3 h-3 mr-1" /> Weekly Report
               </TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
             </TabsList>
@@ -1035,6 +1039,17 @@ export default function Dashboard() {
                   </Card>
                 );
               })()}
+            </TabsContent>
+
+            {/* ═══════ WEEKLY REPORT TAB ═══════ */}
+            <TabsContent value="weekly-report" className="space-y-5 mt-4">
+              <WeeklyReportTab
+                trafficByDay={trafficByDay}
+                dailyAds={dailyAds}
+                leads={leads}
+                gscDailyMetrics={gscDailyMetrics}
+                dateRange={dateRange}
+              />
             </TabsContent>
 
             {/* ═══════ LOGS TAB ═══════ */}

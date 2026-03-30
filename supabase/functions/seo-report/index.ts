@@ -14,13 +14,19 @@ serve(async (req) => {
     const apiKey = Deno.env.get("LOVABLE_API_KEY");
     if (!apiKey) throw new Error("LOVABLE_API_KEY not configured");
 
-    const { topQueries, topPages, sitePages } = await req.json();
+    const body = await req.json();
+    const { topQueries, topPages, sitePages, customPrompt } = body;
 
-    if (!topQueries || !Array.isArray(topQueries)) {
-      throw new Error("topQueries is required");
-    }
+    // If customPrompt is provided, use it directly (for weekly report AI analysis)
+    let prompt: string;
+    if (customPrompt) {
+      prompt = customPrompt;
+    } else {
+      if (!topQueries || !Array.isArray(topQueries)) {
+        throw new Error("topQueries is required");
+      }
 
-    const prompt = `You are an SEO expert analyzing Google Search Console data for a hypnotherapy practice website (david-j-woods.com).
+      prompt = `You are an SEO expert analyzing Google Search Console data for a hypnotherapy practice website (david-j-woods.com).
 
 The practice offers:
 - Smoking cessation (Raucherentwöhnung)
@@ -66,6 +72,7 @@ Return ONLY valid JSON with this structure:
   "recommendations": [{"priority": 1, "action": "", "expectedResult": "", "effort": ""}],
   "summary": ""
 }`;
+    }
 
     const aiRes = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
@@ -78,7 +85,7 @@ Return ONLY valid JSON with this structure:
         messages: [
           { role: "user", content: prompt },
         ],
-        response_format: { type: "json_object" },
+        ...(customPrompt ? {} : { response_format: { type: "json_object" } }),
       }),
     });
 
@@ -89,6 +96,12 @@ Return ONLY valid JSON with this structure:
 
     const aiData = await aiRes.json();
     const content = aiData.choices?.[0]?.message?.content;
+
+    if (customPrompt) {
+      return new Response(JSON.stringify({ rawText: content }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
 
     let report;
     try {
