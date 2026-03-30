@@ -120,7 +120,7 @@ export default function Erstgespraech() {
         email,
         phone: leadData.phone,
         concern: selectedConcern,
-        formType: "session",
+        formType: "contact",
         city: leadData.city || undefined,
         country: country.toUpperCase(),
         language: country === "int" ? "en" : "de",
