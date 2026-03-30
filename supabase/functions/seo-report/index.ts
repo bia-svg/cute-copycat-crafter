@@ -14,11 +14,17 @@ serve(async (req) => {
     const apiKey = Deno.env.get("LOVABLE_API_KEY");
     if (!apiKey) throw new Error("LOVABLE_API_KEY not configured");
 
-    const { topQueries, topPages, sitePages } = await req.json();
+    const body = await req.json();
+    const { topQueries, topPages, sitePages, customPrompt } = body;
 
-    if (!topQueries || !Array.isArray(topQueries)) {
-      throw new Error("topQueries is required");
-    }
+    // If customPrompt is provided, use it directly (for weekly report AI analysis)
+    let prompt: string;
+    if (customPrompt) {
+      prompt = customPrompt;
+    } else {
+      if (!topQueries || !Array.isArray(topQueries)) {
+        throw new Error("topQueries is required");
+      }
 
     const prompt = `You are an SEO expert analyzing Google Search Console data for a hypnotherapy practice website (david-j-woods.com).
 
