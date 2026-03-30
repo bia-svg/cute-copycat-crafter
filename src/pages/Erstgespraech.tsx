@@ -47,22 +47,32 @@ export default function Erstgespraech() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isSubmitting) return;
-    if (!gdprConsent) {
-      toast.error(isEN ? "Please accept the privacy policy to continue." : "Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.");
-      return;
-    }
-    setIsSubmitting(true);
 
-    // Collect form data from the form elements
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const firstName = (formData.get("firstName") as string) || "";
-    const lastName = (formData.get("lastName") as string) || "";
-    const email = (formData.get("email") as string) || "";
-    const postalCity = (formData.get("postalCode") as string) || "";
-    const message = (formData.get("message") as string) || "";
-    const bestTime = (formData.get("bestTime") as string) || "";
-    const location = (formData.get("location") as string) || "";
+    const firstName = ((formData.get("firstName") as string) || "").trim();
+    const lastName = ((formData.get("lastName") as string) || "").trim();
+    const email = ((formData.get("email") as string) || "").trim();
+    const postalCity = ((formData.get("postalCode") as string) || "").trim();
+    const message = ((formData.get("message") as string) || "").trim();
+    const bestTime = ((formData.get("bestTime") as string) || "").trim();
+    const location = ((formData.get("location") as string) || "").trim();
+    const phone = phoneNumber.trim();
+
+    const fail = (selector: string, msgDE: string, msgEN: string) => {
+      form.querySelector<HTMLElement>(selector)?.focus();
+      toast.error(isEN ? msgEN : msgDE);
+    };
+
+    if (!firstName) return fail('input[name="firstName"]', 'Bitte geben Sie Ihren Vornamen ein.', 'Please enter your first name.');
+    if (!lastName) return fail('input[name="lastName"]', 'Bitte geben Sie Ihren Nachnamen ein.', 'Please enter your last name.');
+    if (!email) return fail('input[name="email"]', 'Bitte geben Sie Ihre E-Mail ein.', 'Please enter your email address.');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('input[name="email"]', 'Bitte geben Sie eine gültige E-Mail ein.', 'Please enter a valid email address.');
+    if (!phone) return fail('input[type="tel"]', 'Bitte geben Sie Ihre Telefonnummer ein.', 'Please enter your phone number.');
+    if (!selectedConcern) return fail('select[name="concern"]', 'Bitte wählen Sie Ihr Anliegen aus.', 'Please select your concern.');
+    if (!gdprConsent) return fail('button[role="checkbox"]', 'Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.', 'Please accept the privacy policy to continue.');
+
+    setIsSubmitting(true);
     
 
     // Extract UTM params from URL
@@ -226,7 +236,7 @@ export default function Erstgespraech() {
                   <p className="text-muted-foreground">{isEN ? "We will contact you shortly." : "Wir melden uns in Kürze bei Ihnen."}</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4 relative z-[40]">
+                <form onSubmit={handleSubmit} noValidate className="space-y-4 relative z-[40]">
                   <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">{isEN ? "Contact Form" : "Kontaktformular"}</h2>
 
                   {/* Name */}
@@ -284,7 +294,7 @@ export default function Erstgespraech() {
                   {/* Topic / Service Selection */}
                   <div>
                     <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "What is your concern?" : "Was ist Ihr Anliegen?"} *</label>
-                    <select required className={inputClasses} value={selectedConcern} onChange={(e) => setSelectedConcern(e.target.value)}>
+                    <select name="concern" className={inputClasses} value={selectedConcern} onChange={(e) => setSelectedConcern(e.target.value)}>
                       <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
                       <option value="smoking">{isEN ? "Stop Smoking" : "Raucherentwöhnung"}</option>
                       <option value="anxiety">{isEN ? "Anxiety & Phobias" : "Ängste & Phobien"}</option>
@@ -363,8 +373,8 @@ export default function Erstgespraech() {
                   <div className="pb-20 md:pb-0">
                   <Button
                     type="submit"
-                    disabled={!gdprConsent || isSubmitting}
-                    className={`w-full font-semibold py-3 text-white transition-colors relative z-[40] ${gdprConsent && !isSubmitting ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
+                    disabled={isSubmitting}
+                    className={`w-full font-semibold py-3 text-white transition-colors relative z-[40] ${!isSubmitting ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
                   >
                     {isEN ? "Send Request" : "Absenden"}
                   </Button>

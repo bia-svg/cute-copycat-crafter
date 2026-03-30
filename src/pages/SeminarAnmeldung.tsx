@@ -82,34 +82,44 @@ export default function SeminarAnmeldung() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isSubmitting) return;
-    if (!gdprConsent) {
-      toast.error(isEN ? "Please accept the privacy policy to continue." : "Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.");
-      return;
-    }
-    if (!agbConsent) {
-      toast.error(isEN ? "Please accept the terms and conditions to continue." : "Bitte akzeptieren Sie die AGB, um fortzufahren.");
-      return;
-    }
-    if (!selectedDate) {
-      toast.error(isEN ? "Please select a seminar date." : "Bitte wählen Sie einen Seminartermin.");
-      return;
-    }
 
-    setIsSubmitting(true);
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const firstName = (formData.get("firstName") as string) || "";
-    const lastName = (formData.get("lastName") as string) || "";
-    const email = (formData.get("email") as string) || "";
-    const street = (formData.get("street") as string) || "";
-    const postalCode = (formData.get("postalCode") as string) || "";
-    const cityField = (formData.get("city") as string) || "";
-    const countryField = (formData.get("countryField") as string) || "";
-    const dobDay = (formData.get("dobDay") as string) || "";
-    const dobMonth = (formData.get("dobMonth") as string) || "";
-    const dobYear = (formData.get("dobYear") as string) || "";
-    const profession = (formData.get("profession") as string) || "";
-    const message = (formData.get("message") as string) || "";
+    const firstName = ((formData.get("firstName") as string) || "").trim();
+    const lastName = ((formData.get("lastName") as string) || "").trim();
+    const email = ((formData.get("email") as string) || "").trim();
+    const street = ((formData.get("street") as string) || "").trim();
+    const postalCode = ((formData.get("postalCode") as string) || "").trim();
+    const cityField = ((formData.get("city") as string) || "").trim();
+    const countryField = ((formData.get("countryField") as string) || "").trim();
+    const dobDay = ((formData.get("dobDay") as string) || "").trim();
+    const dobMonth = ((formData.get("dobMonth") as string) || "").trim();
+    const dobYear = ((formData.get("dobYear") as string) || "").trim();
+    const profession = ((formData.get("profession") as string) || "").trim();
+    const message = ((formData.get("message") as string) || "").trim();
+    const phone = phoneNumber.trim();
+
+    const fail = (selector: string, msgDE: string, msgEN: string) => {
+      form.querySelector<HTMLElement>(selector)?.focus();
+      toast.error(isEN ? msgEN : msgDE);
+    };
+
+    if (!gdprConsent) return fail('button[role="checkbox"]', 'Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.', 'Please accept the privacy policy to continue.');
+    if (!agbConsent) return fail('button[role="checkbox"]', 'Bitte akzeptieren Sie die AGB, um fortzufahren.', 'Please accept the terms and conditions to continue.');
+    if (!selectedDate) return toast.error(isEN ? 'Please select a seminar date.' : 'Bitte wählen Sie einen Seminartermin.');
+    if (!firstName) return fail('input[name="firstName"]', 'Bitte geben Sie Ihren Vornamen ein.', 'Please enter your first name.');
+    if (!lastName) return fail('input[name="lastName"]', 'Bitte geben Sie Ihren Nachnamen ein.', 'Please enter your last name.');
+    if (!dobDay || !dobMonth || !dobYear) return fail('input[name="dobDay"]', 'Bitte geben Sie Ihr Geburtsdatum ein.', 'Please enter your date of birth.');
+    if (!street) return fail('input[name="street"]', 'Bitte geben Sie Strasse und Hausnummer ein.', 'Please enter your street and number.');
+    if (!postalCode) return fail('input[name="postalCode"]', 'Bitte geben Sie die Postleitzahl ein.', 'Please enter your postal code.');
+    if (!cityField) return fail('input[name="city"]', 'Bitte geben Sie den Ort ein.', 'Please enter your city.');
+    if (!countryField) return fail('input[name="countryField"]', 'Bitte geben Sie das Land ein.', 'Please enter your country.');
+    if (!email) return fail('input[name="email"]', 'Bitte geben Sie Ihre E-Mail ein.', 'Please enter your email address.');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('input[name="email"]', 'Bitte geben Sie eine gültige E-Mail ein.', 'Please enter a valid email address.');
+    if (!phone) return fail('input[type="tel"]', 'Bitte geben Sie Ihre Telefonnummer ein.', 'Please enter your phone number.');
+    if (!profession) return fail('input[name="profession"]', 'Bitte geben Sie Ihren Beruf ein.', 'Please enter your profession.');
+
+    setIsSubmitting(true);
 
     const dobStr = dobDay && dobMonth && dobYear ? `${dobDay}.${dobMonth}.${dobYear}` : "";
     const fullAddress = [street, `${postalCode} ${cityField}`.trim(), countryField].filter(Boolean).join(", ");
@@ -375,7 +385,7 @@ export default function SeminarAnmeldung() {
                       <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center">3</span>
                       {isEN ? "Your Details" : "Ihre Daten"}
                     </h2>
-                    <form onSubmit={handleSubmit} className="space-y-4 relative z-[51]">
+                    <form onSubmit={handleSubmit} noValidate className="space-y-4 relative z-[51]">
                       {/* Name */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
@@ -539,8 +549,8 @@ export default function SeminarAnmeldung() {
                       <div className="pb-20 md:pb-0">
                       <Button
                         type="submit"
-                        disabled={!gdprConsent || !agbConsent || isSubmitting}
-                        className={`w-full font-semibold py-3 text-white transition-colors relative z-[40] ${gdprConsent && agbConsent && !isSubmitting ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
+                        disabled={isSubmitting}
+                        className={`w-full font-semibold py-3 text-white transition-colors relative z-[40] ${!isSubmitting ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
                       >
                         {isEN ? "Register for Seminar" : "Seminar-Anmeldung absenden"}
                       </Button>
