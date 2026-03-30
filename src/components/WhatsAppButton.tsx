@@ -59,7 +59,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}
-      className="fixed bottom-20 right-3 z-50 flex items-center gap-2 bg-[#25D366] hover:bg-[#1DA851] text-white rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 md:bottom-6 md:right-6 pr-4 pl-3 py-2.5 md:py-3 md:pl-4 md:pr-5 group"
+      className="fixed bottom-20 right-3 z-[39] flex items-center gap-2 bg-[#25D366] hover:bg-[#1DA851] text-white rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 md:bottom-6 md:right-6 pr-4 pl-3 py-2.5 md:py-3 md:pl-4 md:pr-5 group"
       aria-label="WhatsApp"
     >
       <svg viewBox="0 0 32 32" className="w-7 h-7 md:w-8 md:h-8 shrink-0" fill="currentColor">

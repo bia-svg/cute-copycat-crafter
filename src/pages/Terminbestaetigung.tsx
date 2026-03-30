@@ -453,7 +453,7 @@ export default function Terminbestaetigung() {
           <Button
             type="submit"
             disabled={loading}
-            className="w-full bg-cta hover:bg-cta/90 text-cta-foreground font-semibold py-3 text-base relative z-[51]"
+            className="w-full bg-cta hover:bg-cta/90 text-cta-foreground font-semibold py-3 text-base relative z-[40]"
           >
             {loading
               ? (isEN ? "Sending..." : "Wird gesendet...")
