@@ -81,7 +81,7 @@ export default function Erstgespraech() {
       email,
       phone: `${phoneCountry} ${phoneNumber}`.trim(),
       concern: selectedConcern,
-      form_type: "contact" as const,
+      form_type: "session" as const,
       postal_code: postalCity.split(/\s+/)[0] || null,
       city: postalCity.split(/\s+/).slice(1).join(" ") || location || null,
       country: country.toUpperCase(),
