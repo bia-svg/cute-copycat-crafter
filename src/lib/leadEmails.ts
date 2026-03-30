@@ -16,6 +16,10 @@ interface LeadEmailData {
   utmCampaign?: string | null;
   // Structured fields for organized display
   address?: string;
+  street?: string;
+  postalCode?: string;
+  cityName?: string;
+  countryName?: string;
   sessionDate?: string;
   sessionTime?: string;
   sessionLocation?: string;
