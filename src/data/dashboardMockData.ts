@@ -93,6 +93,25 @@ export interface GSCDailyMetric {
   position: number;
 }
 
+export interface CampaignPageEntry {
+  campaign: string;
+  source: string;
+  medium: string;
+  landingPage: string;
+  sessions: number;
+  conversions: number;
+  bounceRate: number;
+  avgSessionDuration: number;
+}
+
+export interface CampaignPageFlowEntry {
+  campaign: string;
+  source: string;
+  pagePath: string;
+  pageViews: number;
+  engagementDuration: number;
+}
+
 export function formatTime(seconds: number): string {
   const m = Math.floor(seconds / 60);
   const s = seconds % 60;
