@@ -39,6 +39,7 @@ export default function SeminarAnmeldung() {
   );
   const [selectedDate, setSelectedDate] = useState(searchParams.get("date") || "");
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [registrationNumber, setRegistrationNumber] = useState("");
   const [gdprConsent, setGdprConsent] = useState(false);
   const [agbConsent, setAgbConsent] = useState(false);
