@@ -193,7 +193,7 @@ export const template = {
       ? `New Lead: ${name}`
       : `Neuer Lead: ${name}`
   },
-  to: 'info@david-j-woods.com',
+  to: 'info@hypnoseinstitut-woods.com',
   displayName: 'New lead notification',
   previewData: {
     name: 'Max Mustermann',
