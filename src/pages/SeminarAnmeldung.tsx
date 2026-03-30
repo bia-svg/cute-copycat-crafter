@@ -154,10 +154,23 @@ export default function SeminarAnmeldung() {
 
     try {
       const { error: dbError } = await supabase.from("leads").insert(leadData as any);
-      if (dbError) console.error("Lead save error:", dbError);
-      await supabase.functions.invoke("notify-lead", { body: { lead: leadData } });
+      if (dbError) {
+        console.error("Lead save error:", dbError);
+        toast.error(isEN ? "An error occurred. Please try again." : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
+        setIsSubmitting(false);
+        return;
+      }
 
-      await sendLeadEmails({
+      // Show success immediately
+      trackFormConversion("seminar", selectedDate);
+      setRegistrationNumber(regNumber);
+      setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      toast.success(isEN ? "Thank you! We will confirm your spot shortly." : "Vielen Dank! Wir bestätigen Ihren Platz in Kürze.");
+
+      // Fire notifications in background
+      supabase.functions.invoke("notify-lead", { body: { lead: leadData } }).catch(err => console.error("Slack error:", err));
+      sendLeadEmails({
         name: leadData.name,
         email,
         phone: leadData.phone,
@@ -178,18 +191,13 @@ export default function SeminarAnmeldung() {
         dateOfBirth: dobStr || undefined,
         profession: profession || undefined,
         registrationNumber: regNumber || undefined,
-      });
+      }).catch(err => console.error("Email error:", err));
     } catch (err) {
-      console.error("Lead notification error:", err);
+      console.error("Lead save error:", err);
+      toast.error(isEN ? "An error occurred. Please try again." : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
     } finally {
       setIsSubmitting(false);
     }
-
-    trackFormConversion("seminar", selectedDate);
-    setRegistrationNumber(regNumber);
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    toast.success(isEN ? "Thank you! We will confirm your spot shortly." : "Vielen Dank! Wir bestätigen Ihren Platz in Kürze.");
   };
 
   const inputClasses = "w-full border border-border px-3 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";

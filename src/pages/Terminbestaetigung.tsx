@@ -125,12 +125,15 @@ export default function Terminbestaetigung() {
         return;
       }
 
-      // Notify (Slack)
-      await supabase.functions.invoke("notify-lead", { body: { lead: leadData } });
+      // Show success immediately
+      setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      toast.success(isEN ? "Thank you! Your session is confirmed." : "Vielen Dank! Ihre Sitzung ist bestätigt.");
 
-      // Send emails (notification to David + confirmation to submitter)
+      // Fire notifications in background
+      supabase.functions.invoke("notify-lead", { body: { lead: leadData } }).catch(err => console.error("Slack error:", err));
       const locationLabelsEmail: Record<string, string> = locationLabels;
-      await sendLeadEmails({
+      sendLeadEmails({
         name: leadData.name,
         email,
         phone: leadData.phone,
@@ -150,15 +153,13 @@ export default function Terminbestaetigung() {
         sessionLocation: locationLabelsEmail[location] || location,
         dateOfBirth: dobStr || undefined,
         message: notes || undefined,
-      });
+      }).catch(err => console.error("Email error:", err));
     } catch (err) {
-      console.error("Lead notification error:", err);
+      console.error("Lead save error:", err);
+      toast.error(isEN ? "An error occurred. Please try again." : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    toast.success(isEN ? "Appointment confirmed! Thank you." : "Termin bestätigt! Vielen Dank.");
   };
 
   if (submitted) {
