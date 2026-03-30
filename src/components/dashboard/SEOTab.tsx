@@ -12,7 +12,8 @@ import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Legend, ResponsiveContainer,
   ComposedChart, Bar, Area
 } from "recharts";
-import { Search, TrendingUp, Sparkles, Loader2, AlertTriangle, ArrowUpRight, FileText } from "lucide-react";
+import { Search, TrendingUp, Sparkles, Loader2, AlertTriangle, ArrowUpRight, FileText, Download } from "lucide-react";
+import { exportSEOReport } from "@/lib/exportPdf";
 import { supabase } from "@/integrations/supabase/client";
 import type { GSCQuery, GSCTotals, GSCDailyMetric } from "@/data/dashboardMockData";
 import { format, parseISO } from "date-fns";
@@ -234,18 +235,30 @@ export default function SEOTab({ gscQueries, gscTotals, gscDailyMetrics, gscErro
             <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-purple-500" /> AI SEO Report
             </CardTitle>
-            <Button
-              size="sm"
-              onClick={generateReport}
-              disabled={reportLoading || gscQueries.length === 0}
-              className="bg-purple-600 hover:bg-purple-700 text-white text-xs"
-            >
-              {reportLoading ? (
-                <><Loader2 className="w-3 h-3 mr-1 animate-spin" /> Analyzing...</>
-              ) : (
-                <><Sparkles className="w-3 h-3 mr-1" /> Generate Report</>
+            <div className="flex items-center gap-2">
+              {report && (
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => exportSEOReport(report, gscTotals)}
+                  className="text-xs"
+                >
+                  <Download className="w-3 h-3 mr-1" /> Export PDF
+                </Button>
               )}
-            </Button>
+              <Button
+                size="sm"
+                onClick={generateReport}
+                disabled={reportLoading || gscQueries.length === 0}
+                className="bg-purple-600 hover:bg-purple-700 text-white text-xs"
+              >
+                {reportLoading ? (
+                  <><Loader2 className="w-3 h-3 mr-1 animate-spin" /> Analyzing...</>
+                ) : (
+                  <><Sparkles className="w-3 h-3 mr-1" /> Generate Report</>
+                )}
+              </Button>
+            </div>
           </div>
         </CardHeader>
         <CardContent>
