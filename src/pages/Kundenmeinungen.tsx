@@ -69,7 +69,9 @@ export default function Kundenmeinungen() {
                 {isEN ? "Client Testimonials" : "Kundenmeinungen"}
               </h1>
               <p className="text-sm text-muted-foreground mt-1">
-                {isEN ? "★ 5.0 at Google · 263 Reviews" : "★ 5.0 bei Google · 263 Bewertungen"}
+                <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors underline">
+                  {isEN ? "★ 5.0 at Google · 263 Reviews" : "★ 5.0 bei Google · 263 Bewertungen"}
+                </a>
               </p>
             </div>
             <div className="flex gap-0.5">
@@ -86,9 +88,9 @@ export default function Kundenmeinungen() {
           </div>
 
           <div className="mt-8 text-center">
-            <p className="text-sm text-muted-foreground">
-              {isEN ? "Read All Google Reviews" : "Alle Google-Bewertungen lesen"}
-            </p>
+            <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:text-primary/80 underline transition-colors">
+              {isEN ? "Read All Google Reviews →" : "Alle Google-Bewertungen lesen →"}
+            </a>
           </div>
         </div>
       </section>
