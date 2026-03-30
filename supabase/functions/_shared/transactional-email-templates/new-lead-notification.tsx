@@ -21,6 +21,10 @@ interface NewLeadProps {
   utmMedium?: string
   utmCampaign?: string
   address?: string
+  street?: string
+  postalCode?: string
+  cityName?: string
+  countryName?: string
   sessionDate?: string
   sessionTime?: string
   sessionLocation?: string
