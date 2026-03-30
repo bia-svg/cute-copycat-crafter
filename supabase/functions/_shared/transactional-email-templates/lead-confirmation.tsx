@@ -170,6 +170,89 @@ const LeadConfirmationEmail = (props: LeadConfirmationProps) => {
             {isEN ? 'Visit our website' : 'Unsere Website besuchen'}
           </Button>
 
+          {isSession && (
+            <>
+              <Hr style={hr} />
+
+              <Text style={sessionInfoText}>
+                Unsere Hypnosesitzungen werden vor Ort in bar bezahlt.
+              </Text>
+              <Text style={sessionInfoText}>
+                Ich akzeptiere die Allgemeinen Geschäftsbedingungen
+              </Text>
+              <Text style={sessionInfoText}>
+                Ich willige ein, dass diese Website meine übermittelten Informationen speichert, sodass meine Anfrage beantwortet werden kann.
+              </Text>
+
+              <Hr style={thinHr} />
+
+              <Text style={locationHeading}>Sitzungen in Deutschland:</Text>
+              <Text style={locationText}>
+                Regus Business center.<br />
+                Viktoria Str 3b. 2 Floor<br />
+                86150 Augsburg (Am Hauptbahnhof)
+              </Text>
+
+              <Text style={locationHeading}>Sitzungen in der Schweiz:</Text>
+              <Text style={locationText}>
+                Zürich – Beim Löwenplatz<br />
+                Usteristrasse 23 ·<br />
+                8001 Zürich<br />
+                (In den Räumen von 5 Elements TCM GmbH<br />
+                5 Gehminuten vom Hauptbahnhof)
+              </Text>
+              <Text style={locationText}>
+                ZISAG AG / Fit &amp; Gsund<br />
+                Linke Eingang / 2. Stock<br />
+                Churzhaslen 3.<br />
+                8733 Eschenbach (Am Zürichsee)
+              </Text>
+
+              <Hr style={thinHr} />
+
+              <Text style={pricingText}>
+                <strong>Intensiv Sitzungen ca. 2,5 Std.</strong><br />
+                In Deutschland kosten 690 Euro.<br />
+                In der Schweiz kosten 750 CHF.
+              </Text>
+              <Text style={pricingText}>
+                <strong>Aufbau Sitzungen ca. 2 Std</strong><br />
+                In Deutschland kosten 590 Euro.<br />
+                In der Schweiz kosten 650 CHF.
+              </Text>
+              <Text style={pricingText}>
+                EMR Krankenkasse Konform<br />
+                ZSR Nr. P609264<br />
+                &quot;Erfahrungs Medizinische Register&quot;
+              </Text>
+
+              <Hr style={thinHr} />
+
+              <Text style={sessionInfoText}>
+                Die Bezahlung der Sitzung erfolgt vor Ort in bar.
+              </Text>
+
+              <Hr style={thinHr} />
+
+              <Text style={cancelText}>
+                Bitte beachten Sie auch unsere Allgemeinen Geschäftsbedingungen für Sitzungen unter:{' '}
+                <a href="https://david-j-woods.com/agbs/" style={{ color: '#1B3A5C' }}>https://david-j-woods.com/agbs/</a>
+              </Text>
+              <Text style={cancelText}>
+                Absagen einer vereinbarten Sitzung sind bis 5 volle Werktage vor dem Termin kostenlos möglich. Bei späteren Absagen bis 2 volle Werktage vor dem Termin wird eine Gebühr von 50 % des Sitzungspreises fällig. Bei Unangekündigten Fernbleiben oder Absage weniger als 2 volle Werktage vor dem vereinbarten Termin stellen wir gemäß § 615 BGB den vollen Sitzungspreis in Rechnung.
+              </Text>
+
+              <Hr style={thinHr} />
+
+              <Text style={closingText}>
+                Wir freuen uns auf Ihren Besuch<br /><br />
+                Ihr Team von Hypnose-Institut David J. Woods<br />
+                Life Coaching Schweiz GmbH<br />
+                Wellness24 GmbH
+              </Text>
+            </>
+          )}
+
           <Hr style={hr} />
 
           <Text style={footer}>
