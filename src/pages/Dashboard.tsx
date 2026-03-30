@@ -1041,6 +1041,17 @@ export default function Dashboard() {
               })()}
             </TabsContent>
 
+            {/* ═══════ WEEKLY REPORT TAB ═══════ */}
+            <TabsContent value="weekly-report" className="space-y-5 mt-4">
+              <WeeklyReportTab
+                trafficByDay={trafficByDay}
+                dailyAds={dailyAds}
+                leads={leads}
+                gscDailyMetrics={gscDailyMetrics}
+                dateRange={dateRange}
+              />
+            </TabsContent>
+
             {/* ═══════ LOGS TAB ═══════ */}
             <TabsContent value="logs" className="mt-4">
               <Card className="bg-white border border-gray-200 shadow-sm">

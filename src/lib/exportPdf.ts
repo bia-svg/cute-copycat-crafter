@@ -303,3 +303,68 @@ export function exportCompetitionReport(analysis: any) {
   addFooter(doc);
   doc.save(`Competition-Report-${new Date().toISOString().slice(0, 10)}.pdf`);
 }
+
+export function exportWeeklyReport(
+  weeklyData: { weekLabel: string; sessions: number; spend: number; leads: number; cpl: number; avgPosition: number }[],
+  totals: { sessions: number; spend: number; leads: number; cpl: number; avgPosition: number },
+  aiAnalysis: string | null,
+  dateRange: { startDate: string; endDate: string }
+) {
+  const doc = new jsPDF();
+  addHeader(doc, "Weekly Performance Report", `david-j-woods.com · ${dateRange.startDate} → ${dateRange.endDate}`);
+
+  let y = 42;
+
+  // Weekly table
+  y = addSectionTitle(doc, y, "Weekly Metrics");
+  doc.autoTable({
+    startY: y,
+    head: [["Week", "Sessions", "Investment (CHF)", "Leads", "CPL (CHF)", "Avg Position"]],
+    body: [
+      ...weeklyData.map(w => [
+        w.weekLabel,
+        String(w.sessions),
+        w.spend > 0 ? `CHF ${w.spend.toLocaleString()}` : "—",
+        String(w.leads),
+        w.cpl > 0 ? `CHF ${w.cpl.toLocaleString()}` : "—",
+        w.avgPosition > 0 ? String(w.avgPosition) : "—",
+      ]),
+      [
+        "TOTAL / AVG",
+        String(totals.sessions),
+        totals.spend > 0 ? `CHF ${totals.spend.toLocaleString()}` : "—",
+        String(totals.leads),
+        totals.cpl > 0 ? `CHF ${totals.cpl.toLocaleString()}` : "—",
+        totals.avgPosition > 0 ? String(totals.avgPosition) : "—",
+      ],
+    ],
+    theme: "grid",
+    headStyles: { fillColor: COLORS.primary, fontSize: 8 },
+    bodyStyles: { fontSize: 8 },
+    margin: { left: 14, right: 14 },
+    didParseCell: (data: any) => {
+      // Bold the totals row
+      if (data.section === "body" && data.row.index === weeklyData.length) {
+        data.cell.styles.fontStyle = "bold";
+        data.cell.styles.fillColor = COLORS.lightGray;
+      }
+    },
+  });
+  y = doc.lastAutoTable.finalY + 10;
+
+  // AI Analysis
+  if (aiAnalysis) {
+    y = addSectionTitle(doc, y, "AI Performance Analysis");
+    doc.setFontSize(9);
+    doc.setFont("helvetica", "normal");
+    const lines = doc.splitTextToSize(aiAnalysis, 182);
+    if (y + lines.length * 4 > 275) {
+      doc.addPage();
+      y = 20;
+    }
+    doc.text(lines, 14, y);
+  }
+
+  addFooter(doc);
+  doc.save(`Weekly-Report-${dateRange.startDate}-to-${dateRange.endDate}.pdf`);
+}
