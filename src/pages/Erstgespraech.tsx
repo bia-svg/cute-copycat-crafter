@@ -46,6 +46,7 @@ export default function Erstgespraech() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("[Erstgespraech] handleSubmit fired", { isSubmitting, gdprConsent });
     if (isSubmitting) return;
     if (!gdprConsent) {
       toast.error(isEN ? "Please accept the privacy policy to continue." : "Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.");
@@ -98,14 +99,16 @@ export default function Erstgespraech() {
     };
 
     try {
+      console.log("[Erstgespraech] Inserting lead:", JSON.stringify(leadData));
       // Save to database (must succeed)
       const { error: dbError } = await supabase.from("leads").insert(leadData as any);
       if (dbError) {
-        console.error("Lead save error:", dbError);
+        console.error("[Erstgespraech] Lead save error:", dbError);
         toast.error(isEN ? "An error occurred. Please try again." : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
         setIsSubmitting(false);
         return;
       }
+      console.log("[Erstgespraech] Lead saved successfully");
 
       // Show success immediately
       trackFormConversion("session");
