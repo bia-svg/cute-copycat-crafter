@@ -150,6 +150,30 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
 
           <Hr style={hr} />
 
+          {/* Reply to Lead Button */}
+          {props.email && (
+            <Section style={{ textAlign: 'center' as const, margin: '16px 0' }}>
+              <Button
+                href={`mailto:${props.email}?subject=${encodeURIComponent(
+                  props.language === 'en'
+                    ? `Re: Your ${props.formType === 'seminar' ? 'Seminar Registration' : 'Inquiry'} — ${SITE_NAME}`
+                    : `Re: Ihre ${props.formType === 'seminar' ? 'Seminar-Anmeldung' : 'Anfrage'} — ${SITE_NAME}`
+                )}`}
+                style={replyButton}
+              >
+                {props.language === 'en' ? `✉️ Reply to ${props.name?.split(' ')[0] || 'Lead'}` : `✉️ ${props.name?.split(' ')[0] || 'Lead'} antworten`}
+              </Button>
+              {props.phone && (
+                <Button
+                  href={`tel:${props.phone.replace(/\s/g, '')}`}
+                  style={callButton}
+                >
+                  {props.language === 'en' ? `📞 Call ${props.name?.split(' ')[0] || 'Lead'}` : `📞 ${props.name?.split(' ')[0] || 'Lead'} anrufen`}
+                </Button>
+              )}
+            </Section>
+          )}
+
           <Section style={trackingBox}>
             <Text style={trackingTitle}>Tracking</Text>
             <Text style={trackingText}>
