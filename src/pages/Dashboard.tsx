@@ -32,6 +32,7 @@ import {
 import SessionsTab from "@/components/dashboard/SessionsTab";
 import ResultsTab from "@/components/dashboard/ResultsTab";
 import SEOTab from "@/components/dashboard/SEOTab";
+import CompetitionTab from "@/components/dashboard/CompetitionTab";
 import { format, parseISO, startOfMonth } from "date-fns";
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
