@@ -328,6 +328,9 @@ export default function Dashboard() {
               <TabsTrigger value="competition" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
                 <Target className="w-3 h-3 mr-1" /> Competition
               </TabsTrigger>
+              <TabsTrigger value="weekly-report" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                <FileText className="w-3 h-3 mr-1" /> Weekly Report
+              </TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
             </TabsList>
 
