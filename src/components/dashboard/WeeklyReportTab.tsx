@@ -119,7 +119,7 @@ Analyze this weekly performance data and provide a concise executive summary in 
 Weekly data (${dateRange.startDate} to ${dateRange.endDate}):
 ${JSON.stringify(weeklyData, null, 2)}
 
-Totals: Sessions=${totals.sessions}, Spend=CHF ${totals.spend}, Leads=${totals.leads}, CPL=CHF ${totals.cpl}, Avg Position=${totals.avgPosition}
+Totals: Sessions=${totals.sessions}, Spend=EUR  ${totals.spend}, Leads=${totals.leads}, CPL=EUR  ${totals.cpl}, Avg Position=${totals.avgPosition}
 
 Provide:
 1. **Performance Summary** (2-3 sentences on overall trends)
@@ -170,9 +170,9 @@ Keep it professional, data-driven, and under 300 words.`;
                 <TableRow className="border-gray-100">
                   <TableHead className="text-gray-500">Week</TableHead>
                   <TableHead className="text-gray-500 text-right">Sessions</TableHead>
-                  <TableHead className="text-gray-500 text-right">Investment (CHF)</TableHead>
+                  <TableHead className="text-gray-500 text-right">Investment (EUR)</TableHead>
                   <TableHead className="text-gray-500 text-right">Leads</TableHead>
-                  <TableHead className="text-gray-500 text-right">CPL (CHF)</TableHead>
+                  <TableHead className="text-gray-500 text-right">CPL (EUR)</TableHead>
                   <TableHead className="text-gray-500 text-right">Avg Position</TableHead>
                 </TableRow>
               </TableHeader>
@@ -181,7 +181,7 @@ Keep it professional, data-driven, and under 300 words.`;
                   <TableRow key={i} className="border-gray-100">
                     <TableCell className="font-medium text-gray-900">{w.weekLabel}</TableCell>
                     <TableCell className="text-right text-gray-900">{w.sessions}</TableCell>
-                    <TableCell className="text-right text-gray-900">{w.spend > 0 ? `CHF ${w.spend.toLocaleString()}` : "—"}</TableCell>
+                    <TableCell className="text-right text-gray-900">{w.spend > 0 ? `€ ${w.spend.toLocaleString()}` : "—"}</TableCell>
                     <TableCell className="text-right">
                       {w.leads > 0 ? (
                         <span className="text-emerald-700 font-medium">{w.leads}</span>
@@ -190,7 +190,7 @@ Keep it professional, data-driven, and under 300 words.`;
                       )}
                     </TableCell>
                     <TableCell className="text-right text-gray-700">
-                      {w.cpl > 0 ? `CHF ${w.cpl.toLocaleString()}` : "—"}
+                      {w.cpl > 0 ? `€ ${w.cpl.toLocaleString()}` : "—"}
                     </TableCell>
                     <TableCell className="text-right">
                       {w.avgPosition > 0 ? (
@@ -210,11 +210,11 @@ Keep it professional, data-driven, and under 300 words.`;
                   <TableCell className="text-gray-900 font-bold">Total / Average</TableCell>
                   <TableCell className="text-right text-gray-900 font-bold">{totals.sessions}</TableCell>
                   <TableCell className="text-right text-gray-900 font-bold">
-                    {totals.spend > 0 ? `CHF ${totals.spend.toLocaleString()}` : "—"}
+                    {totals.spend > 0 ? `€ ${totals.spend.toLocaleString()}` : "—"}
                   </TableCell>
                   <TableCell className="text-right text-emerald-700 font-bold">{totals.leads}</TableCell>
                   <TableCell className="text-right text-gray-900 font-bold">
-                    {totals.cpl > 0 ? `CHF ${totals.cpl.toLocaleString()}` : "—"}
+                    {totals.cpl > 0 ? `€ ${totals.cpl.toLocaleString()}` : "—"}
                   </TableCell>
                   <TableCell className="text-right font-bold">
                     {totals.avgPosition > 0 ? totals.avgPosition : "—"}
