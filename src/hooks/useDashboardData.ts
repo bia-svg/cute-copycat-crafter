@@ -95,6 +95,7 @@ export function useDashboardData(): DashboardState {
     setLoading(true);
     setGaError(null);
     setAdsError(null);
+    setGscError(null);
 
     // Fetch GA4 data
     try {
