@@ -70,6 +70,21 @@ export interface WhatsAppClick {
   utm_campaign: string | null;
 }
 
+export interface GSCQuery {
+  query: string;
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+}
+
+export interface GSCTotals {
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+}
+
 export function formatTime(seconds: number): string {
   const m = Math.floor(seconds / 60);
   const s = seconds % 60;
