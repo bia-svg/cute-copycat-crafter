@@ -13,6 +13,7 @@ import { CalendarCheck, CheckCircle2 } from "lucide-react";
 import { useState, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { sendLeadEmails } from "@/lib/leadEmails";
+import { logFormSubmission } from "@/lib/formSubmissionLog";
 import { toast } from "sonner";
 import { PHONE_COUNTRIES } from "@/data/phoneCountries";
 import { cn } from "@/lib/utils";

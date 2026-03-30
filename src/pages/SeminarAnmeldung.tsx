@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect } from "react";
 import { trackFormConversion } from "@/components/WhatsAppButton";
 import { supabase } from "@/integrations/supabase/client";
 import { sendLeadEmails } from "@/lib/leadEmails";
+import { logFormSubmission } from "@/lib/formSubmissionLog";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { getPath } from "@/lib/routes";
