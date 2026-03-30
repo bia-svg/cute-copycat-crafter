@@ -81,6 +81,10 @@ serve(async (req) => {
     const p2 = Deno.env.get("DASHBOARD_LOGIN_PASSWORD_2");
     if (e2 && p2) users.push({ email: e2, password: p2 });
 
+    const e3 = Deno.env.get("DASHBOARD_LOGIN_EMAIL_3");
+    const p3 = Deno.env.get("DASHBOARD_LOGIN_PASSWORD_3");
+    if (e3 && p3) users.push({ email: e3, password: p3 });
+
     if (users.length === 0) {
       throw new Error("Login credentials not configured");
     }
