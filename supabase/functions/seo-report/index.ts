@@ -26,7 +26,7 @@ serve(async (req) => {
         throw new Error("topQueries is required");
       }
 
-    const prompt = `You are an SEO expert analyzing Google Search Console data for a hypnotherapy practice website (david-j-woods.com).
+      prompt = `You are an SEO expert analyzing Google Search Console data for a hypnotherapy practice website (david-j-woods.com).
 
 The practice offers:
 - Smoking cessation (Raucherentwöhnung)
@@ -72,6 +72,7 @@ Return ONLY valid JSON with this structure:
   "recommendations": [{"priority": 1, "action": "", "expectedResult": "", "effort": ""}],
   "summary": ""
 }`;
+    }
 
     const aiRes = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
