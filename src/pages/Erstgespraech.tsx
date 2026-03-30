@@ -23,6 +23,7 @@ export default function Erstgespraech() {
   const isDE = language === "de";
   const [searchParams] = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [gdprConsent, setGdprConsent] = useState(false);
   const [selectedConcern, setSelectedConcern] = useState(searchParams.get("concern") || "");
 
