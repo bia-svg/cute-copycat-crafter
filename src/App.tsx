@@ -197,6 +197,7 @@ const App = () => (
     <BrowserRouter>
       <AppRoutes />
     </BrowserRouter>
+    <Toaster position="top-right" richColors />
   </HelmetProvider>
 );
 
