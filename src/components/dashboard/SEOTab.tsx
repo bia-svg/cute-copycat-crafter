@@ -5,13 +5,22 @@ import { Badge } from "@/components/ui/badge";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow
 } from "@/components/ui/table";
+import {
+  ChartContainer, ChartTooltip, ChartTooltipContent
+} from "@/components/ui/chart";
+import {
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Legend, ResponsiveContainer,
+  ComposedChart, Bar, Area
+} from "recharts";
 import { Search, TrendingUp, Sparkles, Loader2, AlertTriangle, ArrowUpRight, FileText } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import type { GSCQuery, GSCTotals } from "@/data/dashboardMockData";
+import type { GSCQuery, GSCTotals, GSCDailyMetric } from "@/data/dashboardMockData";
+import { format, parseISO } from "date-fns";
 
 interface SEOTabProps {
   gscQueries: GSCQuery[];
   gscTotals: GSCTotals | null;
+  gscDailyMetrics: GSCDailyMetric[];
   gscError: string | null;
   gscLive: boolean;
 }
@@ -25,7 +34,7 @@ interface SEOReport {
   summary: string;
 }
 
-export default function SEOTab({ gscQueries, gscTotals, gscError, gscLive }: SEOTabProps) {
+export default function SEOTab({ gscQueries, gscTotals, gscDailyMetrics, gscError, gscLive }: SEOTabProps) {
   const [report, setReport] = useState<SEOReport | null>(null);
   const [reportLoading, setReportLoading] = useState(false);
   const [reportError, setReportError] = useState<string | null>(null);
@@ -52,6 +61,21 @@ export default function SEOTab({ gscQueries, gscTotals, gscError, gscLive }: SEO
     } finally {
       setReportLoading(false);
     }
+  };
+
+  // Format daily metrics for chart — invert position for visual (lower position = better = higher on chart)
+  const chartData = gscDailyMetrics.map(d => ({
+    date: d.date,
+    label: (() => { try { return format(parseISO(d.date), "MMM d"); } catch { return d.date; } })(),
+    clicks: d.clicks,
+    impressions: d.impressions,
+    position: Math.round(d.position * 10) / 10,
+  }));
+
+  const chartConfig = {
+    clicks: { label: "Clicks", color: "#2563eb" },
+    impressions: { label: "Impressions", color: "#94a3b8" },
+    position: { label: "Avg Position", color: "#f59e0b" },
   };
 
   return (
@@ -90,6 +114,73 @@ export default function SEOTab({ gscQueries, gscTotals, gscError, gscLive }: SEO
             </CardContent>
           </Card>
         </div>
+      )}
+
+      {/* Clicks vs Position Over Time Chart */}
+      {chartData.length > 0 && (
+        <Card className="bg-white border border-gray-200 shadow-sm">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+              <TrendingUp className="w-4 h-4" /> Search Performance Over Time
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ChartContainer config={chartConfig} className="h-[300px] w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <ComposedChart data={chartData} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis
+                    dataKey="label"
+                    tick={{ fontSize: 11 }}
+                    interval="preserveStartEnd"
+                  />
+                  <YAxis
+                    yAxisId="left"
+                    tick={{ fontSize: 11 }}
+                    label={{ value: "Clicks / Impressions", angle: -90, position: "insideLeft", style: { fontSize: 10, fill: "#6b7280" } }}
+                  />
+                  <YAxis
+                    yAxisId="right"
+                    orientation="right"
+                    reversed
+                    domain={[1, "auto"]}
+                    tick={{ fontSize: 11 }}
+                    label={{ value: "Position", angle: 90, position: "insideRight", style: { fontSize: 10, fill: "#6b7280" } }}
+                  />
+                  <ChartTooltip content={<ChartTooltipContent />} />
+                  <Legend wrapperStyle={{ fontSize: 12 }} />
+                  <Bar
+                    yAxisId="left"
+                    dataKey="impressions"
+                    fill="#e2e8f0"
+                    name="Impressions"
+                    radius={[2, 2, 0, 0]}
+                    opacity={0.6}
+                  />
+                  <Line
+                    yAxisId="left"
+                    type="monotone"
+                    dataKey="clicks"
+                    stroke="#2563eb"
+                    strokeWidth={2}
+                    dot={false}
+                    name="Clicks"
+                  />
+                  <Line
+                    yAxisId="right"
+                    type="monotone"
+                    dataKey="position"
+                    stroke="#f59e0b"
+                    strokeWidth={2}
+                    strokeDasharray="5 3"
+                    dot={false}
+                    name="Avg Position"
+                  />
+                </ComposedChart>
+              </ResponsiveContainer>
+            </ChartContainer>
+          </CardContent>
+        </Card>
       )}
 
       {/* Top Queries Table */}

@@ -102,7 +102,7 @@ export default function Dashboard() {
 
   const {
     trafficByDay, topPages, campaigns, dailyAds, leads, whatsappClicks,
-    gscQueries, gscTotals, gscError, gscLive,
+    gscQueries, gscTotals, gscDailyMetrics, gscError, gscLive,
     loading, gaError, adsError, gaLive, adsLive,
     dateRange, setDateRange,
   } = useDashboardData();
@@ -884,7 +884,7 @@ export default function Dashboard() {
 
             {/* ═══════ SEO TAB ═══════ */}
             <TabsContent value="seo" className="space-y-5 mt-4">
-              <SEOTab gscQueries={gscQueries} gscTotals={gscTotals} gscError={gscError} gscLive={gscLive} />
+              <SEOTab gscQueries={gscQueries} gscTotals={gscTotals} gscDailyMetrics={gscDailyMetrics} gscError={gscError} gscLive={gscLive} />
             </TabsContent>
 
             {/* ═══════ DATA EXPORT TAB ═══════ */}

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { format, subDays, startOfMonth, endOfMonth, subMonths } from "date-fns";
-import type { DailyTraffic, TopPage, CampaignData, DailyAds, LeadRecord, WhatsAppClick, GSCQuery, GSCTotals } from "@/data/dashboardMockData";
+import type { DailyTraffic, TopPage, CampaignData, DailyAds, LeadRecord, WhatsAppClick, GSCQuery, GSCTotals, GSCDailyMetric } from "@/data/dashboardMockData";
 
 export interface DateRange {
   label: string;
@@ -62,6 +62,7 @@ export interface DashboardState {
   whatsappClicks: WhatsAppClick[];
   gscQueries: GSCQuery[];
   gscTotals: GSCTotals | null;
+  gscDailyMetrics: GSCDailyMetric[];
   gscError: string | null;
   gscLive: boolean;
   loading: boolean;
@@ -90,6 +91,7 @@ export function useDashboardData(): DashboardState {
   const [gscLive, setGscLive] = useState(false);
   const [gscQueries, setGscQueries] = useState<GSCQuery[]>([]);
   const [gscTotals, setGscTotals] = useState<GSCTotals | null>(null);
+  const [gscDailyMetrics, setGscDailyMetrics] = useState<GSCDailyMetric[]>([]);
 
   const fetchData = useCallback(async () => {
     setLoading(true);
@@ -244,12 +246,14 @@ export function useDashboardData(): DashboardState {
       if (data?.error) throw new Error(data.error);
       setGscQueries(data.topQueries || []);
       setGscTotals(data.totals || null);
+      setGscDailyMetrics(data.dailyMetrics || []);
       setGscLive(true);
     } catch (err: any) {
       console.error("GSC fetch failed:", err);
       setGscError(err?.message || "Failed to fetch GSC data");
       setGscQueries([]);
       setGscTotals(null);
+      setGscDailyMetrics([]);
     }
 
     setLoading(false);
@@ -268,6 +272,7 @@ export function useDashboardData(): DashboardState {
     whatsappClicks,
     gscQueries,
     gscTotals,
+    gscDailyMetrics,
     gscError,
     gscLive,
     loading,
