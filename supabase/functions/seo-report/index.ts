@@ -97,6 +97,12 @@ Return ONLY valid JSON with this structure:
     const aiData = await aiRes.json();
     const content = aiData.choices?.[0]?.message?.content;
 
+    if (customPrompt) {
+      return new Response(JSON.stringify({ rawText: content }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     let report;
     try {
       report = JSON.parse(content);
