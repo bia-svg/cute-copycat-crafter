@@ -882,6 +882,11 @@ export default function Dashboard() {
               </>
             </TabsContent>
 
+            {/* ═══════ SEO TAB ═══════ */}
+            <TabsContent value="seo" className="space-y-5 mt-4">
+              <SEOTab gscQueries={gscQueries} gscTotals={gscTotals} gscError={gscError} gscLive={gscLive} />
+            </TabsContent>
+
             {/* ═══════ DATA EXPORT TAB ═══════ */}
             <TabsContent value="data" className="mt-4">
               {(() => {
