@@ -385,7 +385,7 @@ export default function SeminarAnmeldung() {
                       <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center">3</span>
                       {isEN ? "Your Details" : "Ihre Daten"}
                     </h2>
-                    <form onSubmit={handleSubmit} className="space-y-4 relative z-[51]">
+                    <form onSubmit={handleSubmit} noValidate className="space-y-4 relative z-[51]">
                       {/* Name */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
