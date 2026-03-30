@@ -4,6 +4,7 @@ import { useEffect, useState, lazy, Suspense } from "react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { getLegacyRedirect } from "@/lib/legacyRedirects";
 import Layout from "@/components/Layout";
+import { Toaster } from "@/components/ui/sonner";
 const Home = lazy(() => import("@/pages/Home"));
 
 // Lazy-loaded pages for code splitting
@@ -196,6 +197,7 @@ const App = () => (
     <BrowserRouter>
       <AppRoutes />
     </BrowserRouter>
+    <Toaster position="top-right" richColors />
   </HelmetProvider>
 );
 
