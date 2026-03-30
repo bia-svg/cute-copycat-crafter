@@ -272,6 +272,7 @@ export function useDashboardData(): DashboardState {
     whatsappClicks,
     gscQueries,
     gscTotals,
+    gscDailyMetrics,
     gscError,
     gscLive,
     loading,
