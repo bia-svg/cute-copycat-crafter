@@ -15,6 +15,11 @@ interface LeadConfirmationProps {
   phone?: string
   email?: string
   address?: string
+  street?: string
+  postalCode?: string
+  cityName?: string
+  country?: string
+  countryName?: string
   sessionDate?: string
   sessionTime?: string
   sessionLocation?: string
@@ -92,7 +97,22 @@ const LeadConfirmationEmail = (props: LeadConfirmationProps) => {
                 <strong>{isEN ? 'Phone' : 'Telefon'}:</strong> {props.phone}
               </Text>
             )}
-            {props.address && (
+            {props.street && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Street & House Number' : 'Strasse und Hausnummer'}:</strong> {props.street}
+              </Text>
+            )}
+            {(props.postalCode || props.cityName) && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Postcode / City' : 'PLZ / Ort'}:</strong> {[props.postalCode, props.cityName].filter(Boolean).join(' ')}
+              </Text>
+            )}
+            {(props.countryName || props.country) && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Country' : 'Land'}:</strong> {props.countryName || props.country}
+              </Text>
+            )}
+            {props.address && !props.street && !props.postalCode && !props.cityName && !props.countryName && !props.country && (
               <Text style={summaryLine}>
                 <strong>{isEN ? 'Address' : 'Adresse'}:</strong> {props.address}
               </Text>
