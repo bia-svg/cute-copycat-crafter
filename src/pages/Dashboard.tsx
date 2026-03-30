@@ -34,6 +34,7 @@ import ResultsTab from "@/components/dashboard/ResultsTab";
 import SEOTab from "@/components/dashboard/SEOTab";
 import CompetitionTab from "@/components/dashboard/CompetitionTab";
 import WeeklyReportTab from "@/components/dashboard/WeeklyReportTab";
+import CampaignIntelligence from "@/components/dashboard/CampaignIntelligence";
 import { format, parseISO, startOfMonth } from "date-fns";
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
@@ -105,6 +106,7 @@ export default function Dashboard() {
   const {
     trafficByDay, topPages, campaigns, dailyAds, leads, whatsappClicks,
     gscQueries, gscTotals, gscDailyMetrics, gscError, gscLive,
+    campaignPages, campaignPageFlow,
     loading, gaError, adsError, gaLive, adsLive,
     dateRange, setDateRange,
   } = useDashboardData();
@@ -693,6 +695,14 @@ export default function Dashboard() {
                   )}
                 </CardContent>
               </Card>
+
+              {/* Campaign Intelligence */}
+              <CampaignIntelligence
+                campaignPages={campaignPages}
+                campaignPageFlow={campaignPageFlow}
+                leads={leads}
+                dateLabel={dateRange.label}
+              />
             </TabsContent>
 
             {/* ═══════ RESULTS TAB ═══════ */}

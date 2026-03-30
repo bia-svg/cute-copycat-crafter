@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { format, subDays, startOfMonth, endOfMonth, subMonths } from "date-fns";
-import type { DailyTraffic, TopPage, CampaignData, DailyAds, LeadRecord, WhatsAppClick, GSCQuery, GSCTotals, GSCDailyMetric } from "@/data/dashboardMockData";
+import type { DailyTraffic, TopPage, CampaignData, DailyAds, LeadRecord, WhatsAppClick, GSCQuery, GSCTotals, GSCDailyMetric, CampaignPageEntry, CampaignPageFlowEntry } from "@/data/dashboardMockData";
 
 export interface DateRange {
   label: string;
@@ -65,6 +65,8 @@ export interface DashboardState {
   gscDailyMetrics: GSCDailyMetric[];
   gscError: string | null;
   gscLive: boolean;
+  campaignPages: CampaignPageEntry[];
+  campaignPageFlow: CampaignPageFlowEntry[];
   loading: boolean;
   gaError: string | null;
   adsError: string | null;
@@ -92,6 +94,8 @@ export function useDashboardData(): DashboardState {
   const [gscQueries, setGscQueries] = useState<GSCQuery[]>([]);
   const [gscTotals, setGscTotals] = useState<GSCTotals | null>(null);
   const [gscDailyMetrics, setGscDailyMetrics] = useState<GSCDailyMetric[]>([]);
+  const [campaignPages, setCampaignPages] = useState<CampaignPageEntry[]>([]);
+  const [campaignPageFlow, setCampaignPageFlow] = useState<CampaignPageFlowEntry[]>([]);
 
   const fetchData = useCallback(async () => {
     setLoading(true);
@@ -165,12 +169,16 @@ export function useDashboardData(): DashboardState {
           avgTimeSeconds: p.avgTimeSeconds,
         }))
       );
+      setCampaignPages(data.campaignPages || []);
+      setCampaignPageFlow(data.campaignPageFlow || []);
       setGaLive(true);
     } catch (err: any) {
       console.error("GA4 fetch failed:", err);
       setGaError(err?.message || "Failed to fetch GA4 data");
       setTrafficByDay([]);
       setTopPages([]);
+      setCampaignPages([]);
+      setCampaignPageFlow([]);
     }
 
     // Fetch Google Ads data
@@ -280,6 +288,8 @@ export function useDashboardData(): DashboardState {
     adsError,
     gaLive,
     adsLive,
+    campaignPages,
+    campaignPageFlow,
     dateRange,
     setDateRange,
   };

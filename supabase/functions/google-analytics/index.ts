@@ -188,7 +188,83 @@ serve(async (req) => {
       channelBreakdown = Object.values(byDate).sort((a: any, b: any) => a.date.localeCompare(b.date));
     }
 
-    return new Response(JSON.stringify({ dailyData, topPages, channelBreakdown }), {
+    // Report 4: Landing pages by campaign source (for Campaign Intelligence)
+    let campaignPages: any[] = [];
+    try {
+      const cpRes = await fetch(apiBase, {
+        method: "POST",
+        headers: authHeaders,
+        body: JSON.stringify({
+          dateRanges: [{ startDate, endDate }],
+          dimensions: [
+            { name: "sessionCampaignName" },
+            { name: "sessionSource" },
+            { name: "sessionMedium" },
+            { name: "landingPage" },
+          ],
+          metrics: [
+            { name: "sessions" },
+            { name: "conversions" },
+            { name: "bounceRate" },
+            { name: "averageSessionDuration" },
+          ],
+          orderBys: [{ metric: { metricName: "sessions" }, desc: true }],
+          limit: 100,
+        }),
+      });
+      const cpData = await cpRes.json();
+      if (cpRes.ok && cpData.rows) {
+        campaignPages = cpData.rows.map((row: any) => ({
+          campaign: row.dimensionValues[0].value,
+          source: row.dimensionValues[1].value,
+          medium: row.dimensionValues[2].value,
+          landingPage: row.dimensionValues[3].value,
+          sessions: parseInt(row.metricValues[0].value, 10),
+          conversions: parseInt(row.metricValues[1].value, 10),
+          bounceRate: parseFloat(row.metricValues[2].value),
+          avgSessionDuration: parseFloat(row.metricValues[3].value),
+        }));
+      }
+    } catch (e) {
+      console.error("Campaign pages report error:", e);
+    }
+
+    // Report 5: Page navigation flow by source (pages visited per campaign)
+    let campaignPageFlow: any[] = [];
+    try {
+      const flowRes = await fetch(apiBase, {
+        method: "POST",
+        headers: authHeaders,
+        body: JSON.stringify({
+          dateRanges: [{ startDate, endDate }],
+          dimensions: [
+            { name: "sessionCampaignName" },
+            { name: "sessionSource" },
+            { name: "pagePath" },
+          ],
+          metrics: [
+            { name: "screenPageViews" },
+            { name: "userEngagementDuration" },
+          ],
+          orderBys: [{ metric: { metricName: "screenPageViews" }, desc: true }],
+          limit: 200,
+        }),
+      });
+      const flowData = await flowRes.json();
+      if (flowRes.ok && flowData.rows) {
+        campaignPageFlow = flowData.rows.map((row: any) => ({
+          campaign: row.dimensionValues[0].value,
+          source: row.dimensionValues[1].value,
+          pagePath: row.dimensionValues[2].value,
+          pageViews: parseInt(row.metricValues[0].value, 10),
+          engagementDuration: parseFloat(row.metricValues[1].value),
+        }));
+      }
+    } catch (e) {
+      console.error("Campaign page flow report error:", e);
+    }
+
+    return new Response(JSON.stringify({ dailyData, topPages, channelBreakdown, campaignPages, campaignPageFlow }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (error: unknown) {
