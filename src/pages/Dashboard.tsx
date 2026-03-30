@@ -32,6 +32,7 @@ import {
 import SessionsTab from "@/components/dashboard/SessionsTab";
 import ResultsTab from "@/components/dashboard/ResultsTab";
 import SEOTab from "@/components/dashboard/SEOTab";
+import CompetitionTab from "@/components/dashboard/CompetitionTab";
 import { format, parseISO, startOfMonth } from "date-fns";
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
@@ -322,6 +323,9 @@ export default function Dashboard() {
               <TabsTrigger value="data" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Data Export</TabsTrigger>
               <TabsTrigger value="seo" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
                 <Search className="w-3 h-3 mr-1" /> SEO
+              </TabsTrigger>
+              <TabsTrigger value="competition" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                <Target className="w-3 h-3 mr-1" /> Competition
               </TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
             </TabsList>
@@ -885,6 +889,11 @@ export default function Dashboard() {
             {/* ═══════ SEO TAB ═══════ */}
             <TabsContent value="seo" className="space-y-5 mt-4">
               <SEOTab gscQueries={gscQueries} gscTotals={gscTotals} gscDailyMetrics={gscDailyMetrics} gscError={gscError} gscLive={gscLive} />
+            </TabsContent>
+
+            {/* ═══════ COMPETITION TAB ═══════ */}
+            <TabsContent value="competition" className="space-y-5 mt-4">
+              <CompetitionTab gscQueries={gscQueries} />
             </TabsContent>
 
             {/* ═══════ DATA EXPORT TAB ═══════ */}
