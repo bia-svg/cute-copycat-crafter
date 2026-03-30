@@ -263,4 +263,5 @@ const trackingTitle = { fontSize: '11px', fontWeight: '600' as const, color: '#8
 const trackingText = { fontSize: '12px', color: '#666', margin: '0' }
 const footer = { fontSize: '11px', color: '#aaa', margin: '24px 0 0', textAlign: 'center' as const }
 const replyButton = { backgroundColor: '#1B3A5C', color: '#ffffff', padding: '12px 24px', borderRadius: '4px', fontSize: '14px', fontWeight: 'bold' as const, textDecoration: 'none', display: 'inline-block' as const, margin: '0 8px 8px 0' }
+const whatsappButton = { backgroundColor: '#25D366', color: '#ffffff', padding: '12px 24px', borderRadius: '4px', fontSize: '14px', fontWeight: 'bold' as const, textDecoration: 'none', display: 'inline-block' as const, margin: '0 8px 8px 0' }
 const callButton = { backgroundColor: '#2E7D32', color: '#ffffff', padding: '12px 24px', borderRadius: '4px', fontSize: '14px', fontWeight: 'bold' as const, textDecoration: 'none', display: 'inline-block' as const, margin: '0 0 8px 0' }
