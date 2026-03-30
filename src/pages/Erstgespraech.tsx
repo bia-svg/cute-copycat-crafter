@@ -224,7 +224,7 @@ export default function Erstgespraech() {
                   <p className="text-muted-foreground">{isEN ? "We will contact you shortly." : "Wir melden uns in Kürze bei Ihnen."}</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4 relative z-[51]">
+                <form onSubmit={handleSubmit} className="space-y-4 relative z-[40]">
                   <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">{isEN ? "Contact Form" : "Kontaktformular"}</h2>
 
                   {/* Name */}
@@ -362,7 +362,7 @@ export default function Erstgespraech() {
                   <Button
                     type="submit"
                     disabled={!gdprConsent || isSubmitting}
-                    className={`w-full font-semibold py-3 text-white transition-colors relative z-[51] ${gdprConsent && !isSubmitting ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
+                    className={`w-full font-semibold py-3 text-white transition-colors relative z-[40] ${gdprConsent && !isSubmitting ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
                   >
                     {isEN ? "Send Request" : "Absenden"}
                   </Button>
