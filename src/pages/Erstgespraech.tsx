@@ -98,16 +98,13 @@ export default function Erstgespraech() {
     };
 
     try {
-      console.log("[Erstgespraech] Inserting lead:", JSON.stringify(leadData));
-      // Save to database (must succeed)
       const { error: dbError } = await supabase.from("leads").insert(leadData as any);
       if (dbError) {
-        console.error("[Erstgespraech] Lead save error:", dbError);
+        console.error("Lead save error:", dbError);
         toast.error(isEN ? "An error occurred. Please try again." : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
         setIsSubmitting(false);
         return;
       }
-      console.log("[Erstgespraech] Lead saved successfully");
 
       // Show success immediately
       trackFormConversion("session");
