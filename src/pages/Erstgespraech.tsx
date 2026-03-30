@@ -46,6 +46,7 @@ export default function Erstgespraech() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("[Erstgespraech] handleSubmit fired", { isSubmitting, gdprConsent });
     if (isSubmitting) return;
     if (!gdprConsent) {
       toast.error(isEN ? "Please accept the privacy policy to continue." : "Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.");
