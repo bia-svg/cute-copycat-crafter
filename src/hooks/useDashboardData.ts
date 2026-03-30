@@ -246,6 +246,7 @@ export function useDashboardData(): DashboardState {
       if (data?.error) throw new Error(data.error);
       setGscQueries(data.topQueries || []);
       setGscTotals(data.totals || null);
+      setGscDailyMetrics(data.dailyMetrics || []);
       setGscLive(true);
     } catch (err: any) {
       console.error("GSC fetch failed:", err);
