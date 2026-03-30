@@ -1,10 +1,11 @@
 import { useState, useEffect, useMemo } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { getCurrentUser } from "@/lib/dashboardAuth";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Mail, RefreshCw, AlertTriangle, CheckCircle2, Clock, Ban, XCircle } from "lucide-react";
+import { RefreshCw, AlertTriangle, CheckCircle2, Clock, Ban, XCircle } from "lucide-react";
 import { format } from "date-fns";
 
 interface EmailLog {
