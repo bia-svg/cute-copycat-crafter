@@ -94,7 +94,7 @@ export async function sendLeadEmails(data: LeadEmailData) {
         idempotencyKey: `lead-confirm-${id}`,
         templateData: {
           ...sharedTemplateData,
-          name: data.name.split(" ")[0], // first name only for greeting
+          name: data.name, // full name for greeting
         },
       },
     });
