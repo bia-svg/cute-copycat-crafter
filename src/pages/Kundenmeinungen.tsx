@@ -88,9 +88,9 @@ export default function Kundenmeinungen() {
           </div>
 
           <div className="mt-8 text-center">
-            <p className="text-sm text-muted-foreground">
-              {isEN ? "Read All Google Reviews" : "Alle Google-Bewertungen lesen"}
-            </p>
+            <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:text-primary/80 underline transition-colors">
+              {isEN ? "Read All Google Reviews →" : "Alle Google-Bewertungen lesen →"}
+            </a>
           </div>
         </div>
       </section>
