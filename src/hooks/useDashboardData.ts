@@ -253,6 +253,7 @@ export function useDashboardData(): DashboardState {
       setGscError(err?.message || "Failed to fetch GSC data");
       setGscQueries([]);
       setGscTotals(null);
+      setGscDailyMetrics([]);
     }
 
     setLoading(false);
