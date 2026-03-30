@@ -47,22 +47,32 @@ export default function Erstgespraech() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isSubmitting) return;
-    if (!gdprConsent) {
-      toast.error(isEN ? "Please accept the privacy policy to continue." : "Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.");
-      return;
-    }
-    setIsSubmitting(true);
 
-    // Collect form data from the form elements
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const firstName = (formData.get("firstName") as string) || "";
-    const lastName = (formData.get("lastName") as string) || "";
-    const email = (formData.get("email") as string) || "";
-    const postalCity = (formData.get("postalCode") as string) || "";
-    const message = (formData.get("message") as string) || "";
-    const bestTime = (formData.get("bestTime") as string) || "";
-    const location = (formData.get("location") as string) || "";
+    const firstName = ((formData.get("firstName") as string) || "").trim();
+    const lastName = ((formData.get("lastName") as string) || "").trim();
+    const email = ((formData.get("email") as string) || "").trim();
+    const postalCity = ((formData.get("postalCode") as string) || "").trim();
+    const message = ((formData.get("message") as string) || "").trim();
+    const bestTime = ((formData.get("bestTime") as string) || "").trim();
+    const location = ((formData.get("location") as string) || "").trim();
+    const phone = phoneNumber.trim();
+
+    const fail = (selector: string, msgDE: string, msgEN: string) => {
+      form.querySelector<HTMLElement>(selector)?.focus();
+      toast.error(isEN ? msgEN : msgDE);
+    };
+
+    if (!firstName) return fail('input[name="firstName"]', 'Bitte geben Sie Ihren Vornamen ein.', 'Please enter your first name.');
+    if (!lastName) return fail('input[name="lastName"]', 'Bitte geben Sie Ihren Nachnamen ein.', 'Please enter your last name.');
+    if (!email) return fail('input[name="email"]', 'Bitte geben Sie Ihre E-Mail ein.', 'Please enter your email address.');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('input[name="email"]', 'Bitte geben Sie eine gültige E-Mail ein.', 'Please enter a valid email address.');
+    if (!phone) return fail('input[type="tel"]', 'Bitte geben Sie Ihre Telefonnummer ein.', 'Please enter your phone number.');
+    if (!selectedConcern) return fail('select[name="concern"]', 'Bitte wählen Sie Ihr Anliegen aus.', 'Please select your concern.');
+    if (!gdprConsent) return fail('button[role="checkbox"]', 'Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.', 'Please accept the privacy policy to continue.');
+
+    setIsSubmitting(true);
     
 
     // Extract UTM params from URL
