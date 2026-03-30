@@ -319,22 +319,22 @@ export function exportWeeklyReport(
   y = addSectionTitle(doc, y, "Weekly Metrics");
   doc.autoTable({
     startY: y,
-    head: [["Week", "Sessions", "Investment (CHF)", "Leads", "CPL (CHF)", "Avg Position"]],
+    head: [["Week", "Sessions", "Investment (EUR)", "Leads", "CPL (EUR)", "Avg Position"]],
     body: [
       ...weeklyData.map(w => [
         w.weekLabel,
         String(w.sessions),
-        w.spend > 0 ? `CHF ${w.spend.toLocaleString()}` : "—",
+        w.spend > 0 ? `€${w.spend.toLocaleString()}` : "—",
         String(w.leads),
-        w.cpl > 0 ? `CHF ${w.cpl.toLocaleString()}` : "—",
+        w.cpl > 0 ? `€${w.cpl.toLocaleString()}` : "—",
         w.avgPosition > 0 ? String(w.avgPosition) : "—",
       ]),
       [
         "TOTAL / AVG",
         String(totals.sessions),
-        totals.spend > 0 ? `CHF ${totals.spend.toLocaleString()}` : "—",
+        totals.spend > 0 ? `€${totals.spend.toLocaleString()}` : "—",
         String(totals.leads),
-        totals.cpl > 0 ? `CHF ${totals.cpl.toLocaleString()}` : "—",
+        totals.cpl > 0 ? `€${totals.cpl.toLocaleString()}` : "—",
         totals.avgPosition > 0 ? String(totals.avgPosition) : "—",
       ],
     ],
