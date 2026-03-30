@@ -85,7 +85,7 @@ Return ONLY valid JSON with this structure:
         messages: [
           { role: "user", content: prompt },
         ],
-        response_format: { type: "json_object" },
+        ...(customPrompt ? {} : { response_format: { type: "json_object" } }),
       }),
     });
 
