@@ -482,7 +482,7 @@ export default function Home() {
                 {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
               </div>
               <h3 className="font-semibold text-foreground">5.0 Google</h3>
-              <p className="text-sm text-muted-foreground">263 {isEN ? "Reviews" : "Bewertungen"}</p>
+              <p className="text-sm text-muted-foreground">264 {isEN ? "Reviews" : "Bewertungen"}</p>
             </a>
           </div>
         </div>
@@ -580,12 +580,20 @@ export default function Home() {
               ? "Book your free and non-binding discovery call. We take time for you and advise you individually."
               : "Vereinbaren Sie jetzt Ihr kostenloses und unverbindliches Erstgespräch. Wir nehmen uns Zeit für Sie und beraten Sie individuell."}
           </p>
-          <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mb-6 hover:opacity-80 transition-opacity">
-            <div className="flex gap-0.5">
-              {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-300 text-yellow-300" />)}
-            </div>
-            <span className="text-sm ml-1">5.0 — 263 Google {isEN ? "Reviews" : "Bewertungen"}</span>
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+            <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:opacity-80 transition-opacity">
+              <div className="flex gap-0.5">
+                {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-300 text-yellow-300" />)}
+              </div>
+              <span className="text-sm ml-1">5.0 — 264 Google {isEN ? "Reviews" : "Bewertungen"}</span>
+            </a>
+            <a href="https://www.kennstdueinen.de/hypnose-augsburg-david-j-woods-hypnose-erfolgscoaching-dipl-psych-mx-physio-sa-therapeut-d300749.html#review-overview" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:opacity-80 transition-opacity">
+              <div className="flex gap-0.5">
+                {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-300 text-yellow-300" />)}
+              </div>
+              <span className="text-sm ml-1">5.0 — 156 KennstDuEinen {isEN ? "Reviews" : "Bewertungen"}</span>
+            </a>
+          </div>
           <div>
             <Link to={getPath("contact", language, country)}>
               <Button size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold">

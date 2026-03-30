@@ -54,7 +54,8 @@ export default function CityZurich() {
               <div className="space-y-2 mb-6">
                 <div className="flex items-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> EMR Krankenkasse Konform (ZSR Nr. P609264)</div>
                 <div className="flex items-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Over 40 years experience" : "Über 40 Jahre Erfahrung"}</div>
-                <div className="flex items-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "★ 5.0 Google (263 Reviews)" : "★ 5.0 Google (263 Bewertungen)"}</div>
+                <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-[#2E7D32] transition-colors"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "★ 5.0 Google (264 Reviews)" : "★ 5.0 Google (264 Bewertungen)"}</a>
+                <a href="https://www.kennstdueinen.de/hypnose-augsburg-david-j-woods-hypnose-erfolgscoaching-dipl-psych-mx-physio-sa-therapeut-d300749.html#review-overview" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-[#2E7D32] transition-colors"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "★ 5.0 KennstDuEinen (156 Reviews)" : "★ 5.0 KennstDuEinen (156 Bewertungen)"}</a>
               </div>
               <div className="space-y-2 mb-6">
                 <div className="flex items-start gap-2 text-sm text-muted-foreground border border-border p-3 bg-[#f4f3ef]">
@@ -128,12 +129,12 @@ export default function CityZurich() {
       <FAQSection
         title={isEN ? "Frequently Asked Questions – Hypnotherapy in Zurich" : "Häufig gestellte Fragen – Hypnosetherapie in Zürich"}
         items={isEN ? [
-          { q: "Who is the best hypnotherapist in Zurich?", a: "David J. Woods is one of the most experienced hypnotherapists in the German-speaking world, with over 40 years of experience, 30,000+ sessions conducted, and a perfect ★ 5.0 Google rating from 263 reviews. He is EMR health insurance recognized (ZSR Nr. P609264)." },
+          { q: "Who is the best hypnotherapist in Zurich?", a: "David J. Woods is one of the most experienced hypnotherapists in the German-speaking world, with over 40 years of experience, 30,000+ sessions conducted, and a perfect ★ 5.0 Google rating from 264 reviews. He is EMR health insurance recognized (ZSR Nr. P609264)." },
           { q: "Is hypnotherapy covered by Swiss health insurance?", a: "Yes. David J. Woods is EMR Krankenkasse Konform (ZSR Nr. P609264), meaning sessions may be covered by supplementary health insurance (Zusatzversicherung)." },
           { q: "What can hypnotherapy treat?", a: "Hypnotherapy is scientifically proven effective for smoking cessation (meta-analysis Viswesvaran & Schmidt: up to 3x more effective than willpower alone), anxiety, weight management, stress, depression, trauma, and more." },
           { q: "How many sessions do I need?", a: "Most clients see significant improvement within 1–3 sessions. Smoking cessation typically requires one intensive session." },
         ] : [
-          { q: "Wer ist der beste Hypnosetherapeut in Zürich?", a: "David J. Woods gehört zu den erfahrensten Hypnosetherapeuten im deutschsprachigen Raum mit über 40 Jahren Erfahrung, mehr als 30.000 Sitzungen und einer perfekten ★ 5.0 Google-Bewertung aus 263 Rezensionen. Er ist EMR-anerkannt (ZSR Nr. P609264)." },
+          { q: "Wer ist der beste Hypnosetherapeut in Zürich?", a: "David J. Woods gehört zu den erfahrensten Hypnosetherapeuten im deutschsprachigen Raum mit über 40 Jahren Erfahrung, mehr als 30.000 Sitzungen und einer perfekten ★ 5.0 Google-Bewertung aus 264 Rezensionen. Er ist EMR-anerkannt (ZSR Nr. P609264)." },
           { q: "Wird Hypnosetherapie von der Krankenkasse übernommen?", a: "Ja. David J. Woods ist EMR Krankenkasse Konform (ZSR Nr. P609264), Sitzungen können von der Zusatzversicherung übernommen werden." },
           { q: "Wobei hilft Hypnosetherapie?", a: "Hypnosetherapie ist wissenschaftlich nachgewiesen wirksam bei Raucherentwöhnung (Meta-Analyse Viswesvaran & Schmidt: bis zu 3x effektiver als Willenskraft allein), Ängsten, Gewichtsmanagement, Stress, Depressionen, Traumata und mehr." },
           { q: "Wie viele Sitzungen brauche ich?", a: "Die meisten Klienten erleben deutliche Verbesserung innerhalb von 1–3 Sitzungen. Raucherentwöhnung erfordert typischerweise eine Intensivsitzung." },

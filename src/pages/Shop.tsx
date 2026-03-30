@@ -308,7 +308,7 @@ export default function Shop() {
           </p>
           <div className="flex items-center justify-center gap-2 mb-5">
             {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
-            <span className="text-white/90 text-sm ml-2">5.0 — 263 Google {isDE ? "Bewertungen" : "Reviews"}</span>
+            <span className="text-white/90 text-sm ml-2">5.0 — 264 Google {isDE ? "Bewertungen" : "Reviews"}</span>
           </div>
           <Link to={getPath("contact", language, country)}>
             <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-base">

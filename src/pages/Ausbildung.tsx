@@ -616,9 +616,15 @@ export default function Ausbildung() {
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </Link>
-          <div className="flex items-center justify-center gap-1 mt-6 text-white/60 text-sm">
-            <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-            5.0 — 263 Google {isEN ? "Reviews" : "Bewertungen"}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6 text-white/60 text-sm">
+            <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-white/80 transition-colors">
+              <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+              5.0 — 264 Google {isEN ? "Reviews" : "Bewertungen"}
+            </a>
+            <a href="https://www.kennstdueinen.de/hypnose-augsburg-david-j-woods-hypnose-erfolgscoaching-dipl-psych-mx-physio-sa-therapeut-d300749.html#review-overview" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-white/80 transition-colors">
+              <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+              5.0 — 156 KennstDuEinen {isEN ? "Reviews" : "Bewertungen"}
+            </a>
           </div>
         </div>
       </section>
