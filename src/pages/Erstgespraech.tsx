@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import { trackFormConversion } from "@/components/WhatsAppButton";
 import { supabase } from "@/integrations/supabase/client";
 import { sendLeadEmails } from "@/lib/leadEmails";
+import { logFormSubmission } from "@/lib/formSubmissionLog";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
@@ -111,10 +112,12 @@ export default function Erstgespraech() {
       const { error: dbError } = await supabase.from("leads").insert(leadData as any);
       if (dbError) {
         console.error("Lead save error:", dbError);
+        logFormSubmission({ formType: "session", status: "error", errorMessage: dbError.message, formData: { name: leadData.name, concern: leadData.concern, city: leadData.city, country: leadData.country } });
         toast.error(isEN ? "An error occurred. Please try again." : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
         setIsSubmitting(false);
         return;
       }
+      logFormSubmission({ formType: "session", status: "success", formData: { name: leadData.name, concern: leadData.concern, city: leadData.city, country: leadData.country } });
 
       // Show success immediately
       trackFormConversion("session");

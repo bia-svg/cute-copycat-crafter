@@ -101,6 +101,39 @@ export type Database = {
         }
         Relationships: []
       }
+      form_submissions_log: {
+        Row: {
+          created_at: string
+          error_message: string | null
+          form_data: Json | null
+          form_type: string
+          id: string
+          page_path: string | null
+          status: string
+          user_agent: string | null
+        }
+        Insert: {
+          created_at?: string
+          error_message?: string | null
+          form_data?: Json | null
+          form_type: string
+          id?: string
+          page_path?: string | null
+          status?: string
+          user_agent?: string | null
+        }
+        Update: {
+          created_at?: string
+          error_message?: string | null
+          form_data?: Json | null
+          form_type?: string
+          id?: string
+          page_path?: string | null
+          status?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       leads: {
         Row: {
           city: string | null

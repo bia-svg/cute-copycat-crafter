@@ -13,6 +13,7 @@ import { CalendarCheck, CheckCircle2 } from "lucide-react";
 import { useState, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { sendLeadEmails } from "@/lib/leadEmails";
+import { logFormSubmission } from "@/lib/formSubmissionLog";
 import { toast } from "sonner";
 import { PHONE_COUNTRIES } from "@/data/phoneCountries";
 import { cn } from "@/lib/utils";
@@ -135,10 +136,12 @@ export default function Terminbestaetigung() {
       const { error: dbError } = await supabase.from("leads").insert(leadData as any);
       if (dbError) {
         console.error("Lead save error:", dbError);
+        logFormSubmission({ formType: "session-confirm", status: "error", errorMessage: dbError.message, formData: { name: leadData.name, concern: leadData.concern, city: leadData.city, country: leadData.country } });
         toast.error(isEN ? "An error occurred. Please try again." : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
         setLoading(false);
         return;
       }
+      logFormSubmission({ formType: "session-confirm", status: "success", formData: { name: leadData.name, concern: leadData.concern, city: leadData.city, country: leadData.country } });
 
       // Show success immediately
       setSubmitted(true);
