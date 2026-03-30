@@ -694,6 +694,14 @@ export default function Dashboard() {
                   )}
                 </CardContent>
               </Card>
+
+              {/* Campaign Intelligence */}
+              <CampaignIntelligence
+                campaignPages={campaignPages}
+                campaignPageFlow={campaignPageFlow}
+                leads={leads}
+                dateLabel={dateRange.label}
+              />
             </TabsContent>
 
             {/* ═══════ RESULTS TAB ═══════ */}
