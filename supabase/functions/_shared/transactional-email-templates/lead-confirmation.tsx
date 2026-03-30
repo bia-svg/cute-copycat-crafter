@@ -325,4 +325,11 @@ const ctaButton = {
   display: 'inline-block' as const,
 }
 const hr = { borderColor: '#e5e5e5', margin: '24px 0' }
+const thinHr = { borderColor: '#e0e0e0', margin: '16px 0' }
 const footer = { fontSize: '12px', color: '#999', margin: '0', lineHeight: '1.6' }
+const sessionInfoText = { fontSize: '13px', color: '#444', margin: '0 0 8px', lineHeight: '1.5' }
+const locationHeading = { fontSize: '13px', fontWeight: 'bold' as const, color: '#1B3A5C', margin: '12px 0 4px' }
+const locationText = { fontSize: '13px', color: '#444', margin: '0 0 8px', lineHeight: '1.6' }
+const pricingText = { fontSize: '13px', color: '#444', margin: '0 0 10px', lineHeight: '1.6' }
+const cancelText = { fontSize: '12px', color: '#666', margin: '0 0 8px', lineHeight: '1.5' }
+const closingText = { fontSize: '13px', color: '#444', margin: '0', lineHeight: '1.6' }
