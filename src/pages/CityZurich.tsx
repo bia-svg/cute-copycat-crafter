@@ -129,7 +129,7 @@ export default function CityZurich() {
       <FAQSection
         title={isEN ? "Frequently Asked Questions – Hypnotherapy in Zurich" : "Häufig gestellte Fragen – Hypnosetherapie in Zürich"}
         items={isEN ? [
-          { q: "Who is the best hypnotherapist in Zurich?", a: "David J. Woods is one of the most experienced hypnotherapists in the German-speaking world, with over 40 years of experience, 30,000+ sessions conducted, and a perfect ★ 5.0 Google rating from 263 reviews. He is EMR health insurance recognized (ZSR Nr. P609264)." },
+          { q: "Who is the best hypnotherapist in Zurich?", a: "David J. Woods is one of the most experienced hypnotherapists in the German-speaking world, with over 40 years of experience, 30,000+ sessions conducted, and a perfect ★ 5.0 Google rating from 264 reviews. He is EMR health insurance recognized (ZSR Nr. P609264)." },
           { q: "Is hypnotherapy covered by Swiss health insurance?", a: "Yes. David J. Woods is EMR Krankenkasse Konform (ZSR Nr. P609264), meaning sessions may be covered by supplementary health insurance (Zusatzversicherung)." },
           { q: "What can hypnotherapy treat?", a: "Hypnotherapy is scientifically proven effective for smoking cessation (meta-analysis Viswesvaran & Schmidt: up to 3x more effective than willpower alone), anxiety, weight management, stress, depression, trauma, and more." },
           { q: "How many sessions do I need?", a: "Most clients see significant improvement within 1–3 sessions. Smoking cessation typically requires one intensive session." },
