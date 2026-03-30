@@ -5,14 +5,71 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+async function getAccessToken(serviceAccount: any): Promise<string> {
+  const now = Math.floor(Date.now() / 1000);
+  const header = { alg: "RS256", typ: "JWT" };
+  const payload = {
+    iss: serviceAccount.client_email,
+    scope: "https://www.googleapis.com/auth/cloud-platform",
+    aud: "https://oauth2.googleapis.com/token",
+    iat: now,
+    exp: now + 3600,
+  };
+
+  const encode = (obj: any) =>
+    btoa(JSON.stringify(obj)).replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
+  const headerB64 = encode(header);
+  const payloadB64 = encode(payload);
+  const unsignedToken = `${headerB64}.${payloadB64}`;
+
+  const pemContents = serviceAccount.private_key
+    .replace("-----BEGIN PRIVATE KEY-----", "")
+    .replace("-----END PRIVATE KEY-----", "")
+    .replace(/\n/g, "");
+  const binaryKey = Uint8Array.from(atob(pemContents), (c) => c.charCodeAt(0));
+
+  const cryptoKey = await crypto.subtle.importKey(
+    "pkcs8",
+    binaryKey,
+    { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" },
+    false,
+    ["sign"]
+  );
+
+  const signature = await crypto.subtle.sign(
+    "RSASSA-PKCS1-v1_5",
+    cryptoKey,
+    new TextEncoder().encode(unsignedToken)
+  );
+
+  const sigB64 = btoa(String.fromCharCode(...new Uint8Array(signature)))
+    .replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
+
+  const jwt = `${unsignedToken}.${sigB64}`;
+
+  const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion=${jwt}`,
+  });
+
+  const tokenData = await tokenRes.json();
+  if (!tokenRes.ok) throw new Error(`Token exchange failed: ${JSON.stringify(tokenData)}`);
+  return tokenData.access_token;
+}
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
-    if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY not configured");
+    const serviceAccountJson = Deno.env.get("GOOGLE_SERVICE_ACCOUNT_JSON");
+    if (!serviceAccountJson) throw new Error("GOOGLE_SERVICE_ACCOUNT_JSON not configured");
+
+    const serviceAccount = JSON.parse(serviceAccountJson);
+    const accessToken = await getAccessToken(serviceAccount);
+    const projectId = serviceAccount.project_id;
 
     const { topQueries, topPages, sitePages } = await req.json();
 
@@ -30,7 +87,7 @@ The practice offers:
 - Depression & trauma
 - Children & teens therapy
 - Corporate coaching
-- Hypnotherapy training/certification (Ausbildung)
+- Hypnotherapy training/certification (Ausbildung) - teaching Aktiv-Hypnose©
 - Seminars
 
 The site serves Germany and Switzerland markets, in German and English.
@@ -67,30 +124,36 @@ Return ONLY valid JSON with this structure:
   "summary": ""
 }`;
 
-    const aiRes = await fetch("https://ai-gateway.lovable.dev/v1/chat/completions", {
+    // Use Vertex AI Gemini API via service account
+    const vertexUrl = `https://us-central1-aiplatform.googleapis.com/v1/projects/${projectId}/locations/us-central1/publishers/google/models/gemini-2.5-flash:generateContent`;
+
+    const aiRes = await fetch(vertexUrl, {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${LOVABLE_API_KEY}`,
+        "Authorization": `Bearer ${accessToken}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "google/gemini-2.5-flash",
-        messages: [
-          { role: "system", content: "You are an expert SEO consultant. Return only valid JSON." },
-          { role: "user", content: prompt },
+        contents: [
+          {
+            role: "user",
+            parts: [{ text: prompt }],
+          },
         ],
-        temperature: 0.3,
-        response_format: { type: "json_object" },
+        generationConfig: {
+          temperature: 0.3,
+          responseMimeType: "application/json",
+        },
       }),
     });
 
     if (!aiRes.ok) {
       const errText = await aiRes.text();
-      throw new Error(`AI API error [${aiRes.status}]: ${errText}`);
+      throw new Error(`Vertex AI error [${aiRes.status}]: ${errText}`);
     }
 
     const aiData = await aiRes.json();
-    const content = aiData.choices?.[0]?.message?.content;
+    const content = aiData.candidates?.[0]?.content?.parts?.[0]?.text;
 
     let report;
     try {

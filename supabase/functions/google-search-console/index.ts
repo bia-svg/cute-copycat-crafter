@@ -151,7 +151,29 @@ serve(async (req) => {
         }
       : { clicks: 0, impressions: 0, ctr: 0, position: 0 };
 
-    return new Response(JSON.stringify({ topQueries, topPages, totals }), {
+    // Report 4: Daily breakdown for time series chart
+    const dailyRes = await fetch(apiBase, {
+      method: "POST",
+      headers: authHeaders,
+      body: JSON.stringify({
+        startDate,
+        endDate,
+        dimensions: ["date"],
+        rowLimit: 500,
+        dataState: "final",
+      }),
+    });
+
+    const dailyData = await dailyRes.json();
+    const dailyMetrics = (dailyData.rows || []).map((row: any) => ({
+      date: row.keys[0],
+      clicks: row.clicks,
+      impressions: row.impressions,
+      ctr: row.ctr,
+      position: row.position,
+    })).sort((a: any, b: any) => a.date.localeCompare(b.date));
+
+    return new Response(JSON.stringify({ topQueries, topPages, totals, dailyMetrics }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (error: unknown) {
