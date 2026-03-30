@@ -1064,7 +1064,11 @@ export default function Dashboard() {
             </TabsContent>
 
             {/* ═══════ LOGS TAB ═══════ */}
-            <TabsContent value="logs" className="mt-4">
+            <TabsContent value="logs" className="mt-4 space-y-5">
+              {/* Email Logs */}
+              <EmailLogsTab />
+
+              {/* Login History */}
               <Card className="bg-white border border-gray-200 shadow-sm">
                 <CardHeader className="pb-2">
                   <CardTitle className="text-sm font-medium text-gray-700">Login History</CardTitle>
