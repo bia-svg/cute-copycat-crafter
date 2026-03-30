@@ -69,7 +69,9 @@ export default function Kundenmeinungen() {
                 {isEN ? "Client Testimonials" : "Kundenmeinungen"}
               </h1>
               <p className="text-sm text-muted-foreground mt-1">
-                {isEN ? "★ 5.0 at Google · 263 Reviews" : "★ 5.0 bei Google · 263 Bewertungen"}
+                <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors underline">
+                  {isEN ? "★ 5.0 at Google · 263 Reviews" : "★ 5.0 bei Google · 263 Bewertungen"}
+                </a>
               </p>
             </div>
             <div className="flex gap-0.5">
