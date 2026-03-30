@@ -159,44 +159,80 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
     );
   }
 
-  // Goals
-  const goals = useMemo(() => {
-    const confirmedSessions = leads.filter(l => l.form_type === "session" && l.concern === CONFIRMATION_CONCERN);
-    const sessionsDE = confirmedSessions.filter(l => l.country === "DE").length;
-    const sessionsCH = confirmedSessions.filter(l => l.country === "CH").length;
-    const seminars = leads.filter(l => l.form_type === "seminar");
-    const seminarDE = seminars.filter(l => l.country === "DE" || (l.city || "").toLowerCase().includes("deutschland")).length;
-    const seminarCH = seminars.filter(l => l.country === "CH" || (l.city || "").toLowerCase().includes("schweiz")).length;
+  // Session goals — filtered by selected month
+  const sessionGoals = useMemo(() => {
+    const selected = monthOptions.find(m => m.value === sessionGoalMonth);
+    if (!selected) return { de: 0, ch: 0 };
+    const confirmedInMonth = leads.filter(l => {
+      if (l.form_type !== "session" || l.concern !== CONFIRMATION_CONCERN) return false;
+      const d = l.created_at ? l.created_at.slice(0, 10) : "";
+      return d >= selected.start && d <= selected.end;
+    });
+    return {
+      de: confirmedInMonth.filter(l => l.country === "DE").length,
+      ch: confirmedInMonth.filter(l => l.country === "CH").length,
+    };
+  }, [leads, sessionGoalMonth, monthOptions]);
 
-    return [
-      { label: "Sessions DE", current: sessionsDE, target: 40, icon: "🇩🇪", color: "text-blue-700" },
-      { label: "Sessions CH", current: sessionsCH, target: 20, icon: "🇨🇭", color: "text-emerald-700" },
-      { label: "Seminar DE", current: seminarDE, target: 14, icon: "🇩🇪", color: "text-blue-700" },
-      { label: "Seminar CH", current: seminarCH, target: 24, icon: "🇨🇭", color: "text-emerald-700" },
-    ];
-  }, [leads]);
+  // Seminar goals — ALL registrations (not date-filtered)
+  const seminarGoals = useMemo(() => {
+    const seminars = allSeminarLeads.length > 0 ? allSeminarLeads : leads.filter(l => l.form_type === "seminar");
+    return {
+      de: seminars.filter(l => l.country === "DE" || (l.city || "").toLowerCase().includes("deutschland")).length,
+      ch: seminars.filter(l => l.country === "CH" || (l.city || "").toLowerCase().includes("schweiz")).length,
+    };
+  }, [allSeminarLeads, leads]);
+
+  const allGoals = [
+    { label: "Sessions DE", current: sessionGoals.de, target: 40, icon: "🇩🇪", color: "text-blue-700", type: "session" as const },
+    { label: "Sessions CH", current: sessionGoals.ch, target: 20, icon: "🇨🇭", color: "text-emerald-700", type: "session" as const },
+    { label: "Seminar DE", current: seminarGoals.de, target: 14, icon: "🇩🇪", color: "text-blue-700", type: "seminar" as const },
+    { label: "Seminar CH", current: seminarGoals.ch, target: 24, icon: "🇨🇭", color: "text-emerald-700", type: "seminar" as const },
+  ];
 
   return (
     <div className="space-y-5">
       {/* ═══════ GOALS ═══════ */}
       <Card className="bg-white border border-gray-200 shadow-sm">
         <CardHeader className="pb-2">
-          <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
-            <Target className="w-4 h-4 text-indigo-600" />
-            Conversion Goals
-          </CardTitle>
-          <p className="text-xs text-gray-400">Tracked from confirmed bookings in selected date range</p>
+          <div className="flex items-center justify-between">
+            <div>
+              <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                <Target className="w-4 h-4 text-indigo-600" />
+                Conversion Goals
+              </CardTitle>
+              <p className="text-xs text-gray-400 mt-1">Sessions = monthly goal · Seminars = total per edition (all-time)</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-gray-500">Session month:</span>
+              <Select value={sessionGoalMonth} onValueChange={setSessionGoalMonth}>
+                <SelectTrigger className="w-[160px] h-8 text-xs">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {monthOptions.map(m => (
+                    <SelectItem key={m.value} value={m.value} className="text-xs">{m.label}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {goals.map((g, i) => {
+            {allGoals.map((g, i) => {
               const pct = Math.min(100, Math.round((g.current / g.target) * 100));
               const isComplete = g.current >= g.target;
               return (
                 <div key={i} className="border border-gray-100 rounded-lg p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-lg">{g.icon}</span>
-                    <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">{g.label}</span>
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">{g.icon}</span>
+                      <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">{g.label}</span>
+                    </div>
+                    <Badge variant="outline" className="text-[10px] px-1.5 py-0 border-gray-200 text-gray-400">
+                      {g.type === "session" ? "monthly" : "all-time"}
+                    </Badge>
                   </div>
                   <div className="flex items-baseline gap-1 mb-2">
                     <span className={`text-2xl font-bold ${isComplete ? "text-emerald-600" : g.color}`}>{g.current}</span>
