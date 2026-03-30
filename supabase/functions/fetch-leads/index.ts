@@ -28,6 +28,8 @@ serve(async (req) => {
     if (e1) users.push(e1.toLowerCase().trim());
     const e2 = Deno.env.get("DASHBOARD_LOGIN_EMAIL_2");
     if (e2) users.push(e2.toLowerCase().trim());
+    const e3 = Deno.env.get("DASHBOARD_LOGIN_EMAIL_3");
+    if (e3) users.push(e3.toLowerCase().trim());
 
     if (!users.includes(email.toLowerCase().trim())) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
