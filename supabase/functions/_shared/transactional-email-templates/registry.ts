@@ -15,4 +15,9 @@ import { template as leadConfirmation } from './lead-confirmation.tsx'
 export const TEMPLATES: Record<string, TemplateEntry> = {
   'new-lead-notification': newLeadNotification,
   'lead-confirmation': leadConfirmation,
+  // Aliases for specific form types (same templates, different log names)
+  'new-appointment-notification': newLeadNotification,
+  'appointment-confirmation': leadConfirmation,
+  'new-seminar-notification': newLeadNotification,
+  'seminar-confirmation': leadConfirmation,
 }

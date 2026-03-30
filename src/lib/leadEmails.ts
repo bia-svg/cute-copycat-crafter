@@ -40,6 +40,15 @@ interface LeadEmailData {
 export async function sendLeadEmails(data: LeadEmailData) {
   const id = crypto.randomUUID();
 
+  // Pick template names based on form type for clearer logs
+  const notifyTemplate =
+    data.formType === "session" ? "new-appointment-notification"
+    : data.formType === "seminar" ? "new-seminar-notification"
+    : "new-lead-notification";
+  const confirmTemplate =
+    data.formType === "session" ? "appointment-confirmation"
+    : data.formType === "seminar" ? "seminar-confirmation"
+    : "lead-confirmation";
   const sharedTemplateData = {
     name: data.name,
     email: data.email,
@@ -75,7 +84,7 @@ export async function sendLeadEmails(data: LeadEmailData) {
   try {
     await supabase.functions.invoke("send-transactional-email", {
       body: {
-        templateName: "new-lead-notification",
+        templateName: notifyTemplate,
         recipientEmail: "info@hypnoseinstitut-woods.com",
         idempotencyKey: `lead-notify-${id}`,
         templateData: sharedTemplateData,
@@ -89,7 +98,7 @@ export async function sendLeadEmails(data: LeadEmailData) {
   try {
     await supabase.functions.invoke("send-transactional-email", {
       body: {
-        templateName: "lead-confirmation",
+        templateName: confirmTemplate,
         recipientEmail: data.email,
         idempotencyKey: `lead-confirm-${id}`,
         templateData: {
