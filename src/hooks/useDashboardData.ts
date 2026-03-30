@@ -60,6 +60,10 @@ export interface DashboardState {
   dailyAds: DailyAds[];
   leads: LeadRecord[];
   whatsappClicks: WhatsAppClick[];
+  gscQueries: GSCQuery[];
+  gscTotals: GSCTotals | null;
+  gscError: string | null;
+  gscLive: boolean;
   loading: boolean;
   gaError: string | null;
   adsError: string | null;
