@@ -84,7 +84,7 @@ export async function sendLeadEmails(data: LeadEmailData) {
   try {
     await supabase.functions.invoke("send-transactional-email", {
       body: {
-        templateName: "new-lead-notification",
+        templateName: notifyTemplate,
         recipientEmail: "info@hypnoseinstitut-woods.com",
         idempotencyKey: `lead-notify-${id}`,
         templateData: sharedTemplateData,
