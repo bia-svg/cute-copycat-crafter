@@ -79,7 +79,7 @@ export default function SeminarAnmeldung() {
   const dates = seminarCountry ? SEMINAR_DATES[seminarCountry] : [];
   const selectedDateObj = dates.find(d => d.date === selectedDate);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isSubmitting) return;
     if (!gdprConsent) {
@@ -96,7 +96,7 @@ export default function SeminarAnmeldung() {
     }
 
     setIsSubmitting(true);
-    const form = e.target as HTMLFormElement;
+    const form = e.currentTarget;
     const formData = new FormData(form);
     const firstName = (formData.get("firstName") as string) || "";
     const lastName = (formData.get("lastName") as string) || "";
