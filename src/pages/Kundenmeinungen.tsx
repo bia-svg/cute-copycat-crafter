@@ -70,7 +70,7 @@ export default function Kundenmeinungen() {
               </h1>
               <p className="text-sm text-muted-foreground mt-1">
                 <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors underline">
-                  {isEN ? "★ 5.0 at Google · 263 Reviews" : "★ 5.0 bei Google · 263 Bewertungen"}
+                  {isEN ? "★ 5.0 at Google · 264 Reviews" : "★ 5.0 bei Google · 264 Bewertungen"}
                 </a>
               </p>
             </div>
