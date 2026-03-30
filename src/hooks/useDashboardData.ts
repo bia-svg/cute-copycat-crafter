@@ -65,6 +65,8 @@ export interface DashboardState {
   gscDailyMetrics: GSCDailyMetric[];
   gscError: string | null;
   gscLive: boolean;
+  campaignPages: CampaignPageEntry[];
+  campaignPageFlow: CampaignPageFlowEntry[];
   loading: boolean;
   gaError: string | null;
   adsError: string | null;
