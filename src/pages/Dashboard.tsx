@@ -27,10 +27,11 @@ import {
   Users, FileText, TrendingUp, LogOut, Clock,
   Eye, DollarSign, Target, ArrowUpRight, ArrowDownRight,
   Leaf, Zap, MousePointer, BarChart3, Globe, MessageCircle, ShieldCheck, Lock,
-  CalendarCheck, GraduationCap, Calendar as CalendarIcon
+  CalendarCheck, GraduationCap, Calendar as CalendarIcon, Search
 } from "lucide-react";
 import SessionsTab from "@/components/dashboard/SessionsTab";
 import ResultsTab from "@/components/dashboard/ResultsTab";
+import SEOTab from "@/components/dashboard/SEOTab";
 import { format, parseISO, startOfMonth } from "date-fns";
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
@@ -101,6 +102,7 @@ export default function Dashboard() {
 
   const {
     trafficByDay, topPages, campaigns, dailyAds, leads, whatsappClicks,
+    gscQueries, gscTotals, gscError, gscLive,
     loading, gaError, adsError, gaLive, adsLive,
     dateRange, setDateRange,
   } = useDashboardData();
@@ -318,6 +320,9 @@ export default function Dashboard() {
                 Form Submissions
               </TabsTrigger>
               <TabsTrigger value="data" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Data Export</TabsTrigger>
+              <TabsTrigger value="seo" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                <Search className="w-3 h-3 mr-1" /> SEO
+              </TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
             </TabsList>
 
@@ -875,6 +880,11 @@ export default function Dashboard() {
                   </CardContent>
                 </Card>
               </>
+            </TabsContent>
+
+            {/* ═══════ SEO TAB ═══════ */}
+            <TabsContent value="seo" className="space-y-5 mt-4">
+              <SEOTab gscQueries={gscQueries} gscTotals={gscTotals} gscError={gscError} gscLive={gscLive} />
             </TabsContent>
 
             {/* ═══════ DATA EXPORT TAB ═══════ */}

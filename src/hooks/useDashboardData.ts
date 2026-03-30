@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { format, subDays, startOfMonth, endOfMonth, subMonths } from "date-fns";
-import type { DailyTraffic, TopPage, CampaignData, DailyAds, LeadRecord, WhatsAppClick } from "@/data/dashboardMockData";
+import type { DailyTraffic, TopPage, CampaignData, DailyAds, LeadRecord, WhatsAppClick, GSCQuery, GSCTotals } from "@/data/dashboardMockData";
 
 export interface DateRange {
   label: string;
@@ -60,6 +60,10 @@ export interface DashboardState {
   dailyAds: DailyAds[];
   leads: LeadRecord[];
   whatsappClicks: WhatsAppClick[];
+  gscQueries: GSCQuery[];
+  gscTotals: GSCTotals | null;
+  gscError: string | null;
+  gscLive: boolean;
   loading: boolean;
   gaError: string | null;
   adsError: string | null;
@@ -80,13 +84,18 @@ export function useDashboardData(): DashboardState {
   const [loading, setLoading] = useState(true);
   const [gaError, setGaError] = useState<string | null>(null);
   const [adsError, setAdsError] = useState<string | null>(null);
+  const [gscError, setGscError] = useState<string | null>(null);
   const [gaLive, setGaLive] = useState(false);
   const [adsLive, setAdsLive] = useState(false);
+  const [gscLive, setGscLive] = useState(false);
+  const [gscQueries, setGscQueries] = useState<GSCQuery[]>([]);
+  const [gscTotals, setGscTotals] = useState<GSCTotals | null>(null);
 
   const fetchData = useCallback(async () => {
     setLoading(true);
     setGaError(null);
     setAdsError(null);
+    setGscError(null);
 
     // Fetch GA4 data
     try {
@@ -226,6 +235,23 @@ export function useDashboardData(): DashboardState {
       setWhatsappClicks([]);
     }
 
+    // Fetch Google Search Console data
+    try {
+      const { data, error: fnError } = await supabase.functions.invoke("google-search-console", {
+        body: { startDate: dateRange.startDate, endDate: dateRange.endDate },
+      });
+      if (fnError) throw fnError;
+      if (data?.error) throw new Error(data.error);
+      setGscQueries(data.topQueries || []);
+      setGscTotals(data.totals || null);
+      setGscLive(true);
+    } catch (err: any) {
+      console.error("GSC fetch failed:", err);
+      setGscError(err?.message || "Failed to fetch GSC data");
+      setGscQueries([]);
+      setGscTotals(null);
+    }
+
     setLoading(false);
   }, [dateRange]);
 
@@ -240,6 +266,10 @@ export function useDashboardData(): DashboardState {
     dailyAds,
     leads,
     whatsappClicks,
+    gscQueries,
+    gscTotals,
+    gscError,
+    gscLive,
     loading,
     gaError,
     adsError,
