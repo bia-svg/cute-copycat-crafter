@@ -62,6 +62,7 @@ export interface DashboardState {
   whatsappClicks: WhatsAppClick[];
   gscQueries: GSCQuery[];
   gscTotals: GSCTotals | null;
+  gscDailyMetrics: GSCDailyMetric[];
   gscError: string | null;
   gscLive: boolean;
   loading: boolean;
