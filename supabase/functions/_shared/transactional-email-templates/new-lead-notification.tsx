@@ -57,23 +57,22 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
             </Section>
           )}
 
-          {/* Contact Info */}
+          {/* Invoice-friendly contact block */}
+          <Section style={invoiceBlock}>
+            <Text style={sectionTitle}>{isEN ? '📋 Client Details (Invoice)' : '📋 Kundendaten (Rechnung)'}</Text>
+            <Text style={invoiceLine}>{props.name || '—'}</Text>
+            {props.street && <Text style={invoiceLine}>{props.street}</Text>}
+            <Text style={invoiceLine}>
+              {[props.postalCode, props.cityName || props.city].filter(Boolean).join(' ') || '—'}
+            </Text>
+            <Text style={invoiceLine}>{props.countryName || props.country || '—'}</Text>
+            <Text style={invoiceLine}>{props.phone || '—'}</Text>
+            <Text style={invoiceLine}>{props.email || '—'}</Text>
+          </Section>
+
+          {/* Additional Info */}
           <Section style={infoBox}>
-            <Text style={sectionTitle}>{isEN ? '👤 Contact Information' : '👤 Kontaktdaten'}</Text>
-            <Text style={label}>{isEN ? 'Name' : 'Name'}</Text>
-            <Text style={value}>{props.name || '—'}</Text>
-            <Text style={label}>{isEN ? 'Email' : 'E-Mail'}</Text>
-            <Text style={value}>{props.email || '—'}</Text>
-            <Text style={label}>{isEN ? 'Phone' : 'Telefon'}</Text>
-            <Text style={value}>{props.phone || '—'}</Text>
-            {props.address && (
-              <>
-                <Text style={label}>{isEN ? 'Address' : 'Adresse'}</Text>
-                <Text style={value}>{props.address}</Text>
-              </>
-            )}
-            <Text style={label}>{isEN ? 'City / Country' : 'Stadt / Land'}</Text>
-            <Text style={value}>{[props.city, props.country].filter(Boolean).join(', ') || '—'}</Text>
+            <Text style={sectionTitle}>{isEN ? '👤 Additional Information' : '👤 Weitere Informationen'}</Text>
             {props.dateOfBirth && (
               <>
                 <Text style={label}>{isEN ? 'Date of Birth' : 'Geburtsdatum'}</Text>
