@@ -98,7 +98,7 @@ export async function sendLeadEmails(data: LeadEmailData) {
   try {
     await supabase.functions.invoke("send-transactional-email", {
       body: {
-        templateName: "lead-confirmation",
+        templateName: confirmTemplate,
         recipientEmail: data.email,
         idempotencyKey: `lead-confirm-${id}`,
         templateData: {
