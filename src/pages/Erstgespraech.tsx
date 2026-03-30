@@ -98,15 +98,24 @@ export default function Erstgespraech() {
     };
 
     try {
-      // Save to database
+      // Save to database (must succeed)
       const { error: dbError } = await supabase.from("leads").insert(leadData as any);
-      if (dbError) console.error("Lead save error:", dbError);
+      if (dbError) {
+        console.error("Lead save error:", dbError);
+        toast.error(isEN ? "An error occurred. Please try again." : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
+        setIsSubmitting(false);
+        return;
+      }
 
-      // Notify (Slack)
-      await supabase.functions.invoke("notify-lead", { body: { lead: leadData } });
+      // Show success immediately
+      trackFormConversion("session");
+      setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      toast.success(isEN ? "Thank you! We will contact you shortly." : "Vielen Dank! Wir melden uns in Kürze bei Ihnen.");
 
-      // Send emails (notification to David + confirmation to submitter)
-      await sendLeadEmails({
+      // Fire notifications in background (don't block UI)
+      supabase.functions.invoke("notify-lead", { body: { lead: leadData } }).catch(err => console.error("Slack error:", err));
+      sendLeadEmails({
         name: leadData.name,
         email,
         phone: leadData.phone,
@@ -122,17 +131,13 @@ export default function Erstgespraech() {
         utmCampaign,
         bestTime: bestTime || undefined,
         message: message || undefined,
-      });
+      }).catch(err => console.error("Email error:", err));
     } catch (err) {
-      console.error("Lead notification error:", err);
+      console.error("Lead save error:", err);
+      toast.error(isEN ? "An error occurred. Please try again." : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
     } finally {
       setIsSubmitting(false);
     }
-
-    trackFormConversion("session");
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    toast.success(isEN ? "Thank you! We will contact you shortly." : "Vielen Dank! Wir melden uns in Kürze bei Ihnen.");
   };
 
   const inputClasses = "w-full border border-border px-3 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
