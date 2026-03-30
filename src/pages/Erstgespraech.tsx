@@ -131,6 +131,9 @@ export default function Erstgespraech() {
         utmCampaign,
         bestTime: bestTime || undefined,
         message: message || undefined,
+        postalCode: postalCity.split(/\s+/)[0] || undefined,
+        cityName: postalCity.split(/\s+/).slice(1).join(" ") || undefined,
+        countryName: country === "ch" ? "Schweiz" : country === "int" ? "International" : "Deutschland",
       }).catch(err => console.error("Email error:", err));
     } catch (err) {
       console.error("Lead save error:", err);
