@@ -891,6 +891,11 @@ export default function Dashboard() {
               <SEOTab gscQueries={gscQueries} gscTotals={gscTotals} gscDailyMetrics={gscDailyMetrics} gscError={gscError} gscLive={gscLive} />
             </TabsContent>
 
+            {/* ═══════ COMPETITION TAB ═══════ */}
+            <TabsContent value="competition" className="space-y-5 mt-4">
+              <CompetitionTab gscQueries={gscQueries} />
+            </TabsContent>
+
             {/* ═══════ DATA EXPORT TAB ═══════ */}
             <TabsContent value="data" className="mt-4">
               {(() => {
