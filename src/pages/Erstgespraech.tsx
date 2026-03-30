@@ -125,6 +125,8 @@ export default function Erstgespraech() {
       });
     } catch (err) {
       console.error("Lead notification error:", err);
+    } finally {
+      setIsSubmitting(false);
     }
 
     trackFormConversion("session");
