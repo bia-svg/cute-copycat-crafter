@@ -95,6 +95,7 @@ export default function SeminarAnmeldung() {
       return;
     }
 
+    setIsSubmitting(true);
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const firstName = (formData.get("firstName") as string) || "";
