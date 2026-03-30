@@ -40,6 +40,15 @@ interface LeadEmailData {
 export async function sendLeadEmails(data: LeadEmailData) {
   const id = crypto.randomUUID();
 
+  // Pick template names based on form type for clearer logs
+  const notifyTemplate =
+    data.formType === "session" ? "new-appointment-notification"
+    : data.formType === "seminar" ? "new-seminar-notification"
+    : "new-lead-notification";
+  const confirmTemplate =
+    data.formType === "session" ? "appointment-confirmation"
+    : data.formType === "seminar" ? "seminar-confirmation"
+    : "lead-confirmation";
   const sharedTemplateData = {
     name: data.name,
     email: data.email,
