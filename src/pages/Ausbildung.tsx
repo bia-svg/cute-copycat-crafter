@@ -621,12 +621,6 @@ export default function Ausbildung() {
               <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
               5.0 — 264 Google {isEN ? "Reviews" : "Bewertungen"}
             </a>
-            {showDE && (
-              <a href="https://www.kennstdueinen.de/hypnose-augsburg-david-j-woods-hypnose-erfolgscoaching-dipl-psych-mx-physio-sa-therapeut-d300749.html#review-overview" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-white/80 transition-colors">
-                <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                5.0 — 156 KennstDuEinen Bewertungen
-              </a>
-            )}
           </div>
         </div>
       </section>

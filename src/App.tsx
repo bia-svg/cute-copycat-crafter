@@ -68,7 +68,7 @@ function GeoRedirect() {
         else if (cc === "DE" || cc === "AT") setTarget(`/${lang}/de`);
         else setTarget(`/${lang}/int`);
       })
-      .catch(() => setTarget(`/${lang}/ch`))
+      .catch(() => setTarget(`/${lang}/de`))
       .finally(() => setReady(true));
   }, []);
 
