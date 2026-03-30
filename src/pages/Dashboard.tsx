@@ -321,6 +321,9 @@ export default function Dashboard() {
                 Form Submissions
               </TabsTrigger>
               <TabsTrigger value="data" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Data Export</TabsTrigger>
+              <TabsTrigger value="seo" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                <Search className="w-3 h-3 mr-1" /> SEO
+              </TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
             </TabsList>
 
