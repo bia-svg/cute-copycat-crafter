@@ -332,38 +332,28 @@ export default function Erstgespraech() {
 
                   {/* ── DSGVO / GDPR Opt-in Toggle ── */}
                   <div className="border border-border bg-white p-4 space-y-3">
-                    <div className="flex items-start gap-3">
-                      <div className="pt-0.5">
-                        <button
-                          type="button"
-                          role="checkbox"
-                          aria-checked={gdprConsent}
-                          onClick={() => setGdprConsent(!gdprConsent)}
-                          className={`w-5 h-5 border-2 flex items-center justify-center transition-colors ${gdprConsent ? "bg-[#2E7D32] border-[#2E7D32]" : "bg-white border-border hover:border-[#1B3A5C]"}`}
-                        >
-                          {gdprConsent && (
-                            <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>
-                          )}
-                        </button>
-                      </div>
-                      <div>
-                        <p className="text-xs text-foreground leading-relaxed">
-                          {isEN ? (
-                            <>
-                              I agree that my personal data will be processed for the purpose of contacting me. I have read and accept the{" "}
-                              <Link to={getPath("privacy", language, country)} className="text-[#1B3A5C] underline hover:text-[#2E7D32]">privacy policy</Link>. *
-                            </>
-                          ) : (
-                            <>
-                              Ich bin damit einverstanden, dass meine personenbezogenen Daten zum Zweck der Kontaktaufnahme verarbeitet werden. Ich habe die{" "}
-                              <Link to={getPath("privacy", language, country)} className="text-[#1B3A5C] underline hover:text-[#2E7D32]">Datenschutzerklärung</Link> gelesen und akzeptiere diese. *
-                            </>
-                          )}
-                        </p>
-                      </div>
-                    </div>
+                    <label className="flex items-start gap-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="gdprConsent"
+                        checked={gdprConsent}
+                        onChange={(e) => setGdprConsent(e.target.checked)}
+                        className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
+                      />
+                      <span className="text-xs text-foreground leading-relaxed">
+                        {isEN ? (
+                          <>
+                            I agree that my personal data will be processed for the purpose of contacting me. I have read and accept the{" "}
+                            <Link to={getPath("privacy", language, country)} className="text-primary underline hover:text-primary/80">privacy policy</Link>. *
+                          </>
+                        ) : (
+                          <>
+                            Ich bin damit einverstanden, dass meine personenbezogenen Daten zum Zweck der Kontaktaufnahme verarbeitet werden. Ich habe die{" "}
+                            <Link to={getPath("privacy", language, country)} className="text-primary underline hover:text-primary/80">Datenschutzerklärung</Link> gelesen und akzeptiere diese. *
+                          </>
+                        )}
+                      </span>
+                    </label>
                     <div className="flex items-center gap-2 text-xs text-muted-foreground">
                       <Shield className="w-3.5 h-3.5 text-[#2E7D32]" />
                       {isEN ? "Your data is processed in accordance with GDPR." : "Ihre Daten werden DSGVO-konform verarbeitet."}
