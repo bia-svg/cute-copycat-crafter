@@ -549,8 +549,8 @@ export default function SeminarAnmeldung() {
                       <div className="pb-20 md:pb-0">
                       <Button
                         type="submit"
-                        disabled={!gdprConsent || !agbConsent || isSubmitting}
-                        className={`w-full font-semibold py-3 text-white transition-colors relative z-[40] ${gdprConsent && agbConsent && !isSubmitting ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
+                        disabled={isSubmitting}
+                        className={`w-full font-semibold py-3 text-white transition-colors relative z-[40] ${!isSubmitting ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
                       >
                         {isEN ? "Register for Seminar" : "Seminar-Anmeldung absenden"}
                       </Button>
