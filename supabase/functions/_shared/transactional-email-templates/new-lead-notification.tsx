@@ -150,7 +150,7 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
 
           <Hr style={hr} />
 
-          {/* Reply to Lead Button */}
+          {/* Reply to Lead Buttons */}
           {props.email && (
             <Section style={{ textAlign: 'center' as const, margin: '16px 0' }}>
               <Button
@@ -161,15 +161,23 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
                 )}`}
                 style={replyButton}
               >
-                {props.language === 'en' ? `✉️ Reply to ${props.name?.split(' ')[0] || 'Lead'}` : `✉️ ${props.name?.split(' ')[0] || 'Lead'} antworten`}
+                {`✉️ Reply to ${props.name?.split(' ')[0] || 'Lead'}`}
               </Button>
               {props.phone && (
-                <Button
-                  href={`tel:${props.phone.replace(/\s/g, '')}`}
-                  style={callButton}
-                >
-                  {props.language === 'en' ? `📞 Call ${props.name?.split(' ')[0] || 'Lead'}` : `📞 ${props.name?.split(' ')[0] || 'Lead'} anrufen`}
-                </Button>
+                <>
+                  <Button
+                    href={`https://wa.me/${props.phone.replace(/[\s\-\(\)]/g, '').replace(/^\+/, '')}`}
+                    style={whatsappButton}
+                  >
+                    {`💬 WhatsApp ${props.name?.split(' ')[0] || 'Lead'}`}
+                  </Button>
+                  <Button
+                    href={`tel:${props.phone.replace(/\s/g, '')}`}
+                    style={callButton}
+                  >
+                    {`📞 Call ${props.name?.split(' ')[0] || 'Lead'}`}
+                  </Button>
+                </>
               )}
             </Section>
           )}
