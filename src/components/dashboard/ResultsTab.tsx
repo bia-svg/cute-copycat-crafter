@@ -41,6 +41,33 @@ interface ResultsTabProps {
 }
 
 export default function ResultsTab({ leads }: ResultsTabProps) {
+  // Month filter for session goals
+  const monthOptions = useMemo(() => getMonthOptions(), []);
+  const [sessionGoalMonth, setSessionGoalMonth] = useState(monthOptions[0].value);
+
+  // Fetch ALL seminar leads (unfiltered) for seminar goals
+  const [allSeminarLeads, setAllSeminarLeads] = useState<LeadRecord[]>([]);
+  useEffect(() => {
+    const session = sessionStorage.getItem("dw_dashboard_session");
+    const sessionData = session ? JSON.parse(session) : null;
+    if (sessionData?.email && sessionData?.token) {
+      supabase.functions.invoke("fetch-leads", {
+        body: {
+          startDate: "2024-01-01",
+          endDate: format(new Date(), "yyyy-MM-dd"),
+          token: sessionData.token,
+          email: sessionData.email,
+          formType: "seminar",
+        },
+      }).then(({ data }) => {
+        setAllSeminarLeads((data?.leads as LeadRecord[]) || []);
+      }).catch(() => {
+        // Fallback: use filtered leads
+        setAllSeminarLeads(leads.filter(l => l.form_type === "seminar"));
+      });
+    }
+  }, []);
+
   // Fetch seminar capacity config
   const [capacityData, setCapacityData] = useState<{ seminar_date: string; seminar_country: string; max_capacity: number }[]>([]);
   useEffect(() => {
