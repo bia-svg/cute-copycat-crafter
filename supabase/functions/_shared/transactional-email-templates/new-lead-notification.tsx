@@ -21,6 +21,10 @@ interface NewLeadProps {
   utmMedium?: string
   utmCampaign?: string
   address?: string
+  street?: string
+  postalCode?: string
+  cityName?: string
+  countryName?: string
   sessionDate?: string
   sessionTime?: string
   sessionLocation?: string
@@ -53,23 +57,22 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
             </Section>
           )}
 
-          {/* Contact Info */}
+          {/* Invoice-friendly contact block */}
+          <Section style={invoiceBlock}>
+            <Text style={sectionTitle}>{isEN ? '📋 Client Details (Invoice)' : '📋 Kundendaten (Rechnung)'}</Text>
+            <Text style={invoiceLine}>{props.name || '—'}</Text>
+            {props.street && <Text style={invoiceLine}>{props.street}</Text>}
+            <Text style={invoiceLine}>
+              {[props.postalCode, props.cityName || props.city].filter(Boolean).join(' ') || '—'}
+            </Text>
+            <Text style={invoiceLine}>{props.countryName || props.country || '—'}</Text>
+            <Text style={invoiceLine}>{props.phone || '—'}</Text>
+            <Text style={invoiceLine}>{props.email || '—'}</Text>
+          </Section>
+
+          {/* Additional Info */}
           <Section style={infoBox}>
-            <Text style={sectionTitle}>{isEN ? '👤 Contact Information' : '👤 Kontaktdaten'}</Text>
-            <Text style={label}>{isEN ? 'Name' : 'Name'}</Text>
-            <Text style={value}>{props.name || '—'}</Text>
-            <Text style={label}>{isEN ? 'Email' : 'E-Mail'}</Text>
-            <Text style={value}>{props.email || '—'}</Text>
-            <Text style={label}>{isEN ? 'Phone' : 'Telefon'}</Text>
-            <Text style={value}>{props.phone || '—'}</Text>
-            {props.address && (
-              <>
-                <Text style={label}>{isEN ? 'Address' : 'Adresse'}</Text>
-                <Text style={value}>{props.address}</Text>
-              </>
-            )}
-            <Text style={label}>{isEN ? 'City / Country' : 'Stadt / Land'}</Text>
-            <Text style={value}>{[props.city, props.country].filter(Boolean).join(', ') || '—'}</Text>
+            <Text style={sectionTitle}>{isEN ? '👤 Additional Information' : '👤 Weitere Informationen'}</Text>
             {props.dateOfBirth && (
               <>
                 <Text style={label}>{isEN ? 'Date of Birth' : 'Geburtsdatum'}</Text>
@@ -315,9 +318,13 @@ export const template = {
     phone: '+41 79 123 45 67',
     concern: 'Seminar-Anmeldung',
     formType: 'seminar',
-    city: 'Schweiz',
+    city: 'Zürich',
     country: 'CH',
     language: 'de',
+    street: 'Bahnhofstrasse 10',
+    postalCode: '8001',
+    cityName: 'Zürich',
+    countryName: 'Schweiz',
     address: 'Bahnhofstrasse 10, 8001 Zürich, Schweiz',
     seminarDate: 'Mo-Sa, 15.-20. Juni 2026',
     seminarLocation: '"Fit+Gsund" Churzhaslen 3, 8733 Eschenbach',
@@ -332,6 +339,8 @@ export const template = {
 const main = { backgroundColor: '#ffffff', fontFamily: "'Inter', Arial, sans-serif" }
 const container = { padding: '24px 28px', maxWidth: '600px' }
 const h1 = { fontSize: '20px', fontWeight: 'bold' as const, color: '#1B3A5C', margin: '0 0 20px' }
+const invoiceBlock = { backgroundColor: '#EEF2F7', padding: '16px 20px', borderRadius: '4px', margin: '0 0 12px', fontFamily: "'Courier New', monospace" }
+const invoiceLine = { fontSize: '14px', color: '#1B3A5C', margin: '0', lineHeight: '1.6', whiteSpace: 'pre-wrap' as const }
 const infoBox = { backgroundColor: '#f8f8f6', padding: '16px 20px', borderRadius: '4px', margin: '0 0 12px' }
 const sectionTitle = { fontSize: '14px', fontWeight: '700' as const, color: '#1B3A5C', margin: '0 0 12px', borderBottom: '1px solid #e5e5e5', paddingBottom: '8px' }
 const label = { fontSize: '11px', fontWeight: '600' as const, color: '#888', textTransform: 'uppercase' as const, margin: '10px 0 2px', letterSpacing: '0.5px' }

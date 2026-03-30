@@ -16,6 +16,10 @@ interface LeadEmailData {
   utmCampaign?: string | null;
   // Structured fields for organized display
   address?: string;
+  street?: string;
+  postalCode?: string;
+  cityName?: string;
+  countryName?: string;
   sessionDate?: string;
   sessionTime?: string;
   sessionLocation?: string;
@@ -51,6 +55,10 @@ export async function sendLeadEmails(data: LeadEmailData) {
     utmMedium: data.utmMedium,
     utmCampaign: data.utmCampaign,
     address: data.address,
+    street: data.street,
+    postalCode: data.postalCode,
+    cityName: data.cityName,
+    countryName: data.countryName,
     sessionDate: data.sessionDate,
     sessionTime: data.sessionTime,
     sessionLocation: data.sessionLocation,
