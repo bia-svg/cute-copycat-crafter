@@ -5,7 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow
 } from "@/components/ui/table";
-import { Sparkles, Loader2, Globe, Target, DollarSign, Shield, Lightbulb, AlertTriangle } from "lucide-react";
+import { Sparkles, Loader2, Globe, Target, DollarSign, Shield, Lightbulb, AlertTriangle, Download } from "lucide-react";
+import { exportCompetitionReport } from "@/lib/exportPdf";
 import { supabase } from "@/integrations/supabase/client";
 import type { GSCQuery } from "@/data/dashboardMockData";
 
