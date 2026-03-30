@@ -70,7 +70,7 @@ export default function Erstgespraech() {
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('input[name="email"]', 'Bitte geben Sie eine gültige E-Mail ein.', 'Please enter a valid email address.');
     if (!phone) return fail('input[type="tel"]', 'Bitte geben Sie Ihre Telefonnummer ein.', 'Please enter your phone number.');
     if (!selectedConcern) return fail('select[name="concern"]', 'Bitte wählen Sie Ihr Anliegen aus.', 'Please select your concern.');
-    if (!gdprConsent) return fail('button[role="checkbox"]', 'Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.', 'Please accept the privacy policy to continue.');
+    if (!gdprConsent) return fail('input[name="gdprConsent"]', 'Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.', 'Please accept the privacy policy to continue.');
 
     setIsSubmitting(true);
     
