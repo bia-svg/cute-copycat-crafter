@@ -352,7 +352,7 @@ export default function Erstgespraech() {
                   <Button
                     type="submit"
                     disabled={!gdprConsent}
-                    className={`w-full font-semibold py-3 text-white transition-colors relative z-[51] ${gdprConsent ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
+                    className={`w-full font-semibold py-3 text-white transition-colors relative z-[40] ${gdprConsent ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
                   >
                     {isEN ? "Send Request" : "Absenden"}
                   </Button>
