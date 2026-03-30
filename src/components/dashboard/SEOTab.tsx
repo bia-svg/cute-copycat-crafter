@@ -12,7 +12,8 @@ import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Legend, ResponsiveContainer,
   ComposedChart, Bar, Area
 } from "recharts";
-import { Search, TrendingUp, Sparkles, Loader2, AlertTriangle, ArrowUpRight, FileText } from "lucide-react";
+import { Search, TrendingUp, Sparkles, Loader2, AlertTriangle, ArrowUpRight, FileText, Download } from "lucide-react";
+import { exportSEOReport } from "@/lib/exportPdf";
 import { supabase } from "@/integrations/supabase/client";
 import type { GSCQuery, GSCTotals, GSCDailyMetric } from "@/data/dashboardMockData";
 import { format, parseISO } from "date-fns";
