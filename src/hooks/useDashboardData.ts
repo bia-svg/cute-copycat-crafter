@@ -84,8 +84,12 @@ export function useDashboardData(): DashboardState {
   const [loading, setLoading] = useState(true);
   const [gaError, setGaError] = useState<string | null>(null);
   const [adsError, setAdsError] = useState<string | null>(null);
+  const [gscError, setGscError] = useState<string | null>(null);
   const [gaLive, setGaLive] = useState(false);
   const [adsLive, setAdsLive] = useState(false);
+  const [gscLive, setGscLive] = useState(false);
+  const [gscQueries, setGscQueries] = useState<GSCQuery[]>([]);
+  const [gscTotals, setGscTotals] = useState<GSCTotals | null>(null);
 
   const fetchData = useCallback(async () => {
     setLoading(true);
