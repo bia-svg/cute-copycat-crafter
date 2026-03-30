@@ -67,7 +67,24 @@ export default function Terminbestaetigung() {
     const dobStr = dobDay && dobMonth && dobYear ? `${dobDay.padStart(2,"0")}.${dobMonth.padStart(2,"0")}.${dobYear}` : "";
     const notes = (formData.get("notes") as string)?.trim() || "";
 
-    if (!firstName || !lastName || !street || !postalCode || !city || !sessionDate || !sessionTime || !email || !phone || !location || !dsgvoChecked || !agbChecked || !paymentChecked) {
+    const missingFields = [
+      !firstName && "firstName",
+      !lastName && "lastName",
+      !street && "street",
+      !postalCode && "postalCode",
+      !city && "city",
+      !sessionDate && "sessionDate",
+      !sessionTime && "sessionTime",
+      !email && "email",
+      !phone && "phone",
+      !location && "location",
+      !dsgvoChecked && "dsgvoChecked",
+      !agbChecked && "agbChecked",
+      !paymentChecked && "paymentChecked",
+    ].filter(Boolean);
+    
+    if (missingFields.length > 0) {
+      console.error("Missing fields:", missingFields);
       toast.error(isEN ? "Please fill in all required fields and accept all checkboxes." : "Bitte füllen Sie alle Pflichtfelder aus und akzeptieren Sie alle Checkboxen.");
       return;
     }
