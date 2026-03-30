@@ -23,6 +23,7 @@ export default function Erstgespraech() {
   const isDE = language === "de";
   const [searchParams] = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [gdprConsent, setGdprConsent] = useState(false);
   const [selectedConcern, setSelectedConcern] = useState(searchParams.get("concern") || "");
 
@@ -45,10 +46,12 @@ export default function Erstgespraech() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     if (!gdprConsent) {
       toast.error(isEN ? "Please accept the privacy policy to continue." : "Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.");
       return;
     }
+    setIsSubmitting(true);
 
     // Collect form data from the form elements
     const form = e.target as HTMLFormElement;
@@ -122,6 +125,8 @@ export default function Erstgespraech() {
       });
     } catch (err) {
       console.error("Lead notification error:", err);
+    } finally {
+      setIsSubmitting(false);
     }
 
     trackFormConversion("session");
@@ -351,8 +356,8 @@ export default function Erstgespraech() {
                   <div className="pb-20 md:pb-0">
                   <Button
                     type="submit"
-                    disabled={!gdprConsent}
-                    className={`w-full font-semibold py-3 text-white transition-colors relative z-[40] ${gdprConsent ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
+                    disabled={!gdprConsent || isSubmitting}
+                    className={`w-full font-semibold py-3 text-white transition-colors relative z-[40] ${gdprConsent && !isSubmitting ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
                   >
                     {isEN ? "Send Request" : "Absenden"}
                   </Button>

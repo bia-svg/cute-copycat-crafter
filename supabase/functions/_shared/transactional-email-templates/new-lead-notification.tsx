@@ -1,6 +1,6 @@
 import * as React from 'npm:react@18.3.1'
 import {
-  Body, Container, Head, Heading, Html, Preview, Text, Section, Hr,
+  Body, Container, Head, Heading, Html, Preview, Text, Section, Hr, Button,
 } from 'npm:@react-email/components@0.0.22'
 import type { TemplateEntry } from './registry.ts'
 
@@ -150,6 +150,30 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
 
           <Hr style={hr} />
 
+          {/* Reply to Lead Button */}
+          {props.email && (
+            <Section style={{ textAlign: 'center' as const, margin: '16px 0' }}>
+              <Button
+                href={`mailto:${props.email}?subject=${encodeURIComponent(
+                  props.language === 'en'
+                    ? `Re: Your ${props.formType === 'seminar' ? 'Seminar Registration' : 'Inquiry'} — ${SITE_NAME}`
+                    : `Re: Ihre ${props.formType === 'seminar' ? 'Seminar-Anmeldung' : 'Anfrage'} — ${SITE_NAME}`
+                )}`}
+                style={replyButton}
+              >
+                {props.language === 'en' ? `✉️ Reply to ${props.name?.split(' ')[0] || 'Lead'}` : `✉️ ${props.name?.split(' ')[0] || 'Lead'} antworten`}
+              </Button>
+              {props.phone && (
+                <Button
+                  href={`tel:${props.phone.replace(/\s/g, '')}`}
+                  style={callButton}
+                >
+                  {props.language === 'en' ? `📞 Call ${props.name?.split(' ')[0] || 'Lead'}` : `📞 ${props.name?.split(' ')[0] || 'Lead'} anrufen`}
+                </Button>
+              )}
+            </Section>
+          )}
+
           <Section style={trackingBox}>
             <Text style={trackingTitle}>Tracking</Text>
             <Text style={trackingText}>
@@ -230,3 +254,5 @@ const trackingBox = { padding: '0' }
 const trackingTitle = { fontSize: '11px', fontWeight: '600' as const, color: '#888', textTransform: 'uppercase' as const, margin: '0 0 4px' }
 const trackingText = { fontSize: '12px', color: '#666', margin: '0' }
 const footer = { fontSize: '11px', color: '#aaa', margin: '24px 0 0', textAlign: 'center' as const }
+const replyButton = { backgroundColor: '#1B3A5C', color: '#ffffff', padding: '12px 24px', borderRadius: '4px', fontSize: '14px', fontWeight: 'bold' as const, textDecoration: 'none', display: 'inline-block' as const, margin: '0 8px 8px 0' }
+const callButton = { backgroundColor: '#2E7D32', color: '#ffffff', padding: '12px 24px', borderRadius: '4px', fontSize: '14px', fontWeight: 'bold' as const, textDecoration: 'none', display: 'inline-block' as const, margin: '0 0 8px 0' }

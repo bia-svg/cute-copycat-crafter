@@ -39,6 +39,7 @@ export default function SeminarAnmeldung() {
   );
   const [selectedDate, setSelectedDate] = useState(searchParams.get("date") || "");
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [registrationNumber, setRegistrationNumber] = useState("");
   const [gdprConsent, setGdprConsent] = useState(false);
   const [agbConsent, setAgbConsent] = useState(false);
@@ -80,6 +81,7 @@ export default function SeminarAnmeldung() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     if (!gdprConsent) {
       toast.error(isEN ? "Please accept the privacy policy to continue." : "Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren.");
       return;
@@ -93,6 +95,7 @@ export default function SeminarAnmeldung() {
       return;
     }
 
+    setIsSubmitting(true);
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const firstName = (formData.get("firstName") as string) || "";
@@ -178,6 +181,8 @@ export default function SeminarAnmeldung() {
       });
     } catch (err) {
       console.error("Lead notification error:", err);
+    } finally {
+      setIsSubmitting(false);
     }
 
     trackFormConversion("seminar", selectedDate);
@@ -522,8 +527,8 @@ export default function SeminarAnmeldung() {
                       <div className="pb-20 md:pb-0">
                       <Button
                         type="submit"
-                        disabled={!gdprConsent || !agbConsent}
-                        className={`w-full font-semibold py-3 text-white transition-colors relative z-[51] ${gdprConsent && agbConsent ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
+                        disabled={!gdprConsent || !agbConsent || isSubmitting}
+                        className={`w-full font-semibold py-3 text-white transition-colors relative z-[51] ${gdprConsent && agbConsent && !isSubmitting ? "bg-[#2E7D32] hover:bg-[#1B5E20]" : "bg-gray-400 cursor-not-allowed"}`}
                       >
                         {isEN ? "Register for Seminar" : "Seminar-Anmeldung absenden"}
                       </Button>
