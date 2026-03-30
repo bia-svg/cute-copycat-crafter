@@ -60,7 +60,8 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
           formType: "seminar",
         },
       }).then(({ data }) => {
-        setAllSeminarLeads((data?.leads as LeadRecord[]) || []);
+        const all = (data?.leads as LeadRecord[]) || [];
+        setAllSeminarLeads(all.filter(l => l.form_type === "seminar"));
       }).catch(() => {
         // Fallback: use filtered leads
         setAllSeminarLeads(leads.filter(l => l.form_type === "seminar"));
