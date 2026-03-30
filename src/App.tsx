@@ -56,15 +56,19 @@ function GeoRedirect() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    // Detect browser language: if primary language is English, use "en"
+    const browserLang = navigator.language || (navigator as any).userLanguage || "de";
+    const lang = browserLang.toLowerCase().startsWith("en") ? "en" : "de";
+
     fetch("https://ipapi.co/json/")
       .then(r => r.json())
       .then(data => {
         const cc = (data.country_code || "").toUpperCase();
-        if (cc === "CH" || cc === "LI") setTarget("/de/ch");
-        else if (cc === "DE" || cc === "AT") setTarget("/de/de");
-        else setTarget("/de/int");
+        if (cc === "CH" || cc === "LI") setTarget(`/${lang}/ch`);
+        else if (cc === "DE" || cc === "AT") setTarget(`/${lang}/de`);
+        else setTarget(`/${lang}/int`);
       })
-      .catch(() => setTarget("/de/ch"))
+      .catch(() => setTarget(`/${lang}/ch`))
       .finally(() => setReady(true));
   }, []);
 
