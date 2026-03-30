@@ -235,6 +235,23 @@ export function useDashboardData(): DashboardState {
       setWhatsappClicks([]);
     }
 
+    // Fetch Google Search Console data
+    try {
+      const { data, error: fnError } = await supabase.functions.invoke("google-search-console", {
+        body: { startDate: dateRange.startDate, endDate: dateRange.endDate },
+      });
+      if (fnError) throw fnError;
+      if (data?.error) throw new Error(data.error);
+      setGscQueries(data.topQueries || []);
+      setGscTotals(data.totals || null);
+      setGscLive(true);
+    } catch (err: any) {
+      console.error("GSC fetch failed:", err);
+      setGscError(err?.message || "Failed to fetch GSC data");
+      setGscQueries([]);
+      setGscTotals(null);
+    }
+
     setLoading(false);
   }, [dateRange]);
 
@@ -249,6 +266,10 @@ export function useDashboardData(): DashboardState {
     dailyAds,
     leads,
     whatsappClicks,
+    gscQueries,
+    gscTotals,
+    gscError,
+    gscLive,
     loading,
     gaError,
     adsError,
