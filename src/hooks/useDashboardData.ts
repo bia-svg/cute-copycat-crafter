@@ -288,6 +288,8 @@ export function useDashboardData(): DashboardState {
     adsError,
     gaLive,
     adsLive,
+    campaignPages,
+    campaignPageFlow,
     dateRange,
     setDateRange,
   };
