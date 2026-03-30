@@ -114,8 +114,60 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
     );
   }
 
+  // Goals
+  const goals = useMemo(() => {
+    const confirmedSessions = leads.filter(l => l.form_type === "session" && l.concern === CONFIRMATION_CONCERN);
+    const sessionsDE = confirmedSessions.filter(l => l.country === "DE").length;
+    const sessionsCH = confirmedSessions.filter(l => l.country === "CH").length;
+    const seminars = leads.filter(l => l.form_type === "seminar");
+    const seminarDE = seminars.filter(l => l.country === "DE" || (l.city || "").toLowerCase().includes("deutschland")).length;
+    const seminarCH = seminars.filter(l => l.country === "CH" || (l.city || "").toLowerCase().includes("schweiz")).length;
+
+    return [
+      { label: "Sessions DE", current: sessionsDE, target: 40, icon: "🇩🇪", color: "text-blue-700" },
+      { label: "Sessions CH", current: sessionsCH, target: 20, icon: "🇨🇭", color: "text-emerald-700" },
+      { label: "Seminar DE", current: seminarDE, target: 14, icon: "🇩🇪", color: "text-blue-700" },
+      { label: "Seminar CH", current: seminarCH, target: 24, icon: "🇨🇭", color: "text-emerald-700" },
+    ];
+  }, [leads]);
+
   return (
     <div className="space-y-5">
+      {/* ═══════ GOALS ═══════ */}
+      <Card className="bg-white border border-gray-200 shadow-sm">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+            <Target className="w-4 h-4 text-indigo-600" />
+            Conversion Goals
+          </CardTitle>
+          <p className="text-xs text-gray-400">Tracked from confirmed bookings in selected date range</p>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {goals.map((g, i) => {
+              const pct = Math.min(100, Math.round((g.current / g.target) * 100));
+              const isComplete = g.current >= g.target;
+              return (
+                <div key={i} className="border border-gray-100 rounded-lg p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-lg">{g.icon}</span>
+                    <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">{g.label}</span>
+                  </div>
+                  <div className="flex items-baseline gap-1 mb-2">
+                    <span className={`text-2xl font-bold ${isComplete ? "text-emerald-600" : g.color}`}>{g.current}</span>
+                    <span className="text-sm text-gray-400">/ {g.target}</span>
+                  </div>
+                  <Progress value={pct} className="h-2" />
+                  <p className="text-xs text-gray-400 mt-1">
+                    {isComplete ? "✓ Goal reached!" : `${pct}% — ${g.target - g.current} remaining`}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Summary Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         <MetricCard

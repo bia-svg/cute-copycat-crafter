@@ -136,8 +136,7 @@ Keep it professional, data-driven, and under 300 words.`;
       if (error) throw error;
       if (data?.error) throw new Error(data.error);
 
-      // The seo-report returns JSON; we want the raw text analysis
-      const content = data?.report?.summary || data?.rawText || JSON.stringify(data?.report || data, null, 2);
+      const content = data?.rawText || data?.report?.summary || JSON.stringify(data?.report || data, null, 2);
       setAiAnalysis(typeof content === "string" ? content : JSON.stringify(content, null, 2));
     } catch (err: any) {
       console.error("Weekly analysis failed:", err);
