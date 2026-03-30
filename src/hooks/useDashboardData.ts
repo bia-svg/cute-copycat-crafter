@@ -94,6 +94,8 @@ export function useDashboardData(): DashboardState {
   const [gscQueries, setGscQueries] = useState<GSCQuery[]>([]);
   const [gscTotals, setGscTotals] = useState<GSCTotals | null>(null);
   const [gscDailyMetrics, setGscDailyMetrics] = useState<GSCDailyMetric[]>([]);
+  const [campaignPages, setCampaignPages] = useState<CampaignPageEntry[]>([]);
+  const [campaignPageFlow, setCampaignPageFlow] = useState<CampaignPageFlowEntry[]>([]);
 
   const fetchData = useCallback(async () => {
     setLoading(true);
