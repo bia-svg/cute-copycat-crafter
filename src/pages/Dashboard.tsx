@@ -35,6 +35,7 @@ import SEOTab from "@/components/dashboard/SEOTab";
 import CompetitionTab from "@/components/dashboard/CompetitionTab";
 import WeeklyReportTab from "@/components/dashboard/WeeklyReportTab";
 import CampaignIntelligence from "@/components/dashboard/CampaignIntelligence";
+import EmailLogsTab from "@/components/dashboard/EmailLogsTab";
 import { format, parseISO, startOfMonth } from "date-fns";
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
