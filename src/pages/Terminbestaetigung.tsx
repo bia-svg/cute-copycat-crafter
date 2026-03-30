@@ -67,27 +67,25 @@ export default function Terminbestaetigung() {
     const dobStr = dobDay && dobMonth && dobYear ? `${dobDay.padStart(2,"0")}.${dobMonth.padStart(2,"0")}.${dobYear}` : "";
     const notes = (formData.get("notes") as string)?.trim() || "";
 
-    const missingFields = [
-      !firstName && "firstName",
-      !lastName && "lastName",
-      !street && "street",
-      !postalCode && "postalCode",
-      !city && "city",
-      !sessionDate && "sessionDate",
-      !sessionTime && "sessionTime",
-      !email && "email",
-      !phone && "phone",
-      !location && "location",
-      !dsgvoChecked && "dsgvoChecked",
-      !agbChecked && "agbChecked",
-      !paymentChecked && "paymentChecked",
-    ].filter(Boolean);
-    
-    if (missingFields.length > 0) {
-      console.error("Missing fields:", missingFields);
-      toast.error(isEN ? "Please fill in all required fields and accept all checkboxes." : "Bitte füllen Sie alle Pflichtfelder aus und akzeptieren Sie alle Checkboxen.");
-      return;
-    }
+    const fail = (selector: string, msgDE: string, msgEN: string) => {
+      form.querySelector<HTMLElement>(selector)?.focus();
+      toast.error(isEN ? msgEN : msgDE);
+    };
+
+    if (!firstName) return fail('input[name="firstName"]', 'Bitte geben Sie Ihren Vornamen ein.', 'Please enter your first name.');
+    if (!lastName) return fail('input[name="lastName"]', 'Bitte geben Sie Ihren Nachnamen ein.', 'Please enter your last name.');
+    if (!street) return fail('input[name="street"]', 'Bitte geben Sie Strasse und Hausnummer ein.', 'Please enter your street and number.');
+    if (!postalCode) return fail('input[name="postalCode"]', 'Bitte geben Sie die Postleitzahl ein.', 'Please enter your postal code.');
+    if (!city) return fail('input[name="city"]', 'Bitte geben Sie den Ort ein.', 'Please enter your city.');
+    if (!sessionDate) return fail('select', 'Bitte geben Sie das Sitzungsdatum ein.', 'Please enter the session date.');
+    if (!sessionTime) return fail('input[name="sessionTime"]', 'Bitte geben Sie die Sitzungszeit ein.', 'Please enter the session time.');
+    if (!location) return fail('[role="radiogroup"]', 'Bitte wählen Sie den Ort der Sitzung aus.', 'Please select the session location.');
+    if (!email) return fail('input[name="email"]', 'Bitte geben Sie Ihre E-Mail ein.', 'Please enter your email address.');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('input[name="email"]', 'Bitte geben Sie eine gültige E-Mail ein.', 'Please enter a valid email address.');
+    if (!phone) return fail('input[type="tel"]', 'Bitte geben Sie Ihre Telefonnummer ein.', 'Please enter your phone number.');
+    if (!dsgvoChecked) return fail('#dsgvo', 'Bitte akzeptieren Sie die Datenschutzerklärung.', 'Please accept the privacy policy.');
+    if (!agbChecked) return fail('#agb', 'Bitte akzeptieren Sie die AGB.', 'Please accept the terms and conditions.');
+    if (!paymentChecked) return fail('#payment', 'Bitte bestätigen Sie die Zahlungsbedingung.', 'Please confirm the payment condition.');
 
     setLoading(true);
 
