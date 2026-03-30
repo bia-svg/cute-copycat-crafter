@@ -169,12 +169,16 @@ export function useDashboardData(): DashboardState {
           avgTimeSeconds: p.avgTimeSeconds,
         }))
       );
+      setCampaignPages(data.campaignPages || []);
+      setCampaignPageFlow(data.campaignPageFlow || []);
       setGaLive(true);
     } catch (err: any) {
       console.error("GA4 fetch failed:", err);
       setGaError(err?.message || "Failed to fetch GA4 data");
       setTrafficByDay([]);
       setTopPages([]);
+      setCampaignPages([]);
+      setCampaignPageFlow([]);
     }
 
     // Fetch Google Ads data
