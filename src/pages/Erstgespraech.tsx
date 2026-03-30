@@ -44,7 +44,7 @@ export default function Erstgespraech() {
   }, [selectedPhoneCountry.maxDigits]);
 
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isSubmitting) return;
     if (!gdprConsent) {
@@ -54,7 +54,7 @@ export default function Erstgespraech() {
     setIsSubmitting(true);
 
     // Collect form data from the form elements
-    const form = e.target as HTMLFormElement;
+    const form = e.currentTarget;
     const formData = new FormData(form);
     const firstName = (formData.get("firstName") as string) || "";
     const lastName = (formData.get("lastName") as string) || "";
