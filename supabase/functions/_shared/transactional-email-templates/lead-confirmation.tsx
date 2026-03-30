@@ -77,6 +77,11 @@ const LeadConfirmationEmail = (props: LeadConfirmationProps) => {
           </Text>
 
           <Section style={summaryBox}>
+            {props.name && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Name' : 'Name'}:</strong> {props.name}
+              </Text>
+            )}
             {formTypeLabel && (
               <Text style={summaryLine}>
                 <strong>{isEN ? 'Request type' : 'Anfragetyp'}:</strong> {formTypeLabel}
