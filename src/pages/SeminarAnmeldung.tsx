@@ -181,6 +181,8 @@ export default function SeminarAnmeldung() {
       });
     } catch (err) {
       console.error("Lead notification error:", err);
+    } finally {
+      setIsSubmitting(false);
     }
 
     trackFormConversion("seminar", selectedDate);
