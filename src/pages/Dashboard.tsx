@@ -103,6 +103,7 @@ export default function Dashboard() {
 
   const {
     trafficByDay, topPages, campaigns, dailyAds, leads, whatsappClicks,
+    gscQueries, gscTotals, gscError, gscLive,
     loading, gaError, adsError, gaLive, adsLive,
     dateRange, setDateRange,
   } = useDashboardData();
