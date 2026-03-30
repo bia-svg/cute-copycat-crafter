@@ -39,22 +39,21 @@ export default function EmailLogsTab() {
     setLoading(true);
     setError(null);
     try {
-      console.log("Fetching email logs from Supabase...");
-      const { data, error: fetchError } = await supabase
-        .from("email_send_log")
-        .select("*")
-        .order("created_at", { ascending: false })
-        .limit(500);
+      const email = getCurrentUser();
+      const { data, error: fetchError } = await supabase.functions.invoke("fetch-email-logs", {
+        body: { token: "dashboard", email },
+      });
 
       if (fetchError) {
-        console.error("Error fetching email logs:", fetchError);
         setError(fetchError.message);
         return;
       }
-      console.log("Successfully fetched logs:", data?.length || 0, "records");
-      setLogs((data as EmailLog[]) || []);
+      if (data?.error) {
+        setError(data.error);
+        return;
+      }
+      setLogs((data?.logs as EmailLog[]) || []);
     } catch (err: any) {
-      console.error("Unexpected error in fetchLogs:", err);
       setError(err.message || "Failed to fetch logs");
     } finally {
       setLoading(false);
