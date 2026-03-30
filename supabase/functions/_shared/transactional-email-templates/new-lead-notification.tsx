@@ -291,7 +291,6 @@ export const template = {
   subject: (data: Record<string, any>) => {
     const name = data.name || (data.language === 'en' ? 'Unknown' : 'Unbekannt')
     const isEN = data.language === 'en'
-    const isSessionConfirmation = data.formType === 'session' && data.concern?.includes('Terminbestätigung')
 
     if (data.formType === 'seminar') {
       const regPart = data.registrationNumber ? ` #${data.registrationNumber}` : ''
@@ -299,7 +298,7 @@ export const template = {
         ? `New Seminar Registration${regPart}: ${name}`
         : `Neue Seminar-Anmeldung${regPart}: ${name}`
     }
-    if (isSessionConfirmation) {
+    if (data.formType === 'session') {
       return isEN
         ? `New Session Confirmation: ${name}`
         : `Neue Sitzungsbestätigung: ${name}`
