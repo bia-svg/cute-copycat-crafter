@@ -86,18 +86,30 @@ export default function CompetitionTab({ gscQueries }: CompetitionTabProps) {
                 AI-powered analysis based on your GSC keywords · Not real-time SERP data
               </p>
             </div>
-            <Button
-              size="sm"
-              onClick={runAnalysis}
-              disabled={loading || gscQueries.length === 0}
-              className="bg-indigo-600 hover:bg-indigo-700 text-white text-xs"
-            >
-              {loading ? (
-                <><Loader2 className="w-3 h-3 mr-1 animate-spin" /> Analyzing...</>
-              ) : (
-                <><Sparkles className="w-3 h-3 mr-1" /> Run Analysis</>
+            <div className="flex items-center gap-2">
+              {analysis && (
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => exportCompetitionReport(analysis)}
+                  className="text-xs"
+                >
+                  <Download className="w-3 h-3 mr-1" /> Export PDF
+                </Button>
               )}
-            </Button>
+              <Button
+                size="sm"
+                onClick={runAnalysis}
+                disabled={loading || gscQueries.length === 0}
+                className="bg-indigo-600 hover:bg-indigo-700 text-white text-xs"
+              >
+                {loading ? (
+                  <><Loader2 className="w-3 h-3 mr-1 animate-spin" /> Analyzing...</>
+                ) : (
+                  <><Sparkles className="w-3 h-3 mr-1" /> Run Analysis</>
+                )}
+              </Button>
+            </div>
           </div>
         </CardHeader>
         <CardContent>
