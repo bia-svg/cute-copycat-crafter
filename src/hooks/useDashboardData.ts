@@ -91,6 +91,7 @@ export function useDashboardData(): DashboardState {
   const [gscLive, setGscLive] = useState(false);
   const [gscQueries, setGscQueries] = useState<GSCQuery[]>([]);
   const [gscTotals, setGscTotals] = useState<GSCTotals | null>(null);
+  const [gscDailyMetrics, setGscDailyMetrics] = useState<GSCDailyMetric[]>([]);
 
   const fetchData = useCallback(async () => {
     setLoading(true);
