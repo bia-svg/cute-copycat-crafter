@@ -185,34 +185,64 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         </section>
       ))}
 
-      {/* FAQ with Schema.org FAQPage markup */}
+      {/* Testimonials from Google Reviews */}
+      {(() => {
+        const testimonials = getTestimonialsForService(data.slugEN);
+        if (testimonials.length === 0) return null;
+        return (
+          <section className="bg-secondary border-b border-border">
+            <div className="container-main py-10">
+              <h2 className="text-xl font-bold text-primary mb-6">
+                {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {testimonials.map((t, i) => (
+                  <div key={i} className="border border-border bg-card p-5 flex flex-col">
+                    <div className="flex gap-0.5 mb-3">
+                      {Array.from({ length: t.rating }).map((_, j) => (
+                        <Star key={j} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <p className="text-sm text-foreground leading-relaxed mb-3 flex-1">
+                      &bdquo;{t.text}&ldquo;
+                    </p>
+                    <div className="flex items-center justify-between mt-auto pt-2 border-t border-border/50">
+                      <p className="text-xs font-semibold text-primary">{t.name}</p>
+                      <a href={t.link} target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+                        Google <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
+      {/* Topic-specific FAQ — existing items from data */}
       {faq.length > 0 && (
         <section className="bg-white border-b border-border">
           <div className="container-main py-10">
-            <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
+            <h2 className="text-xl font-bold text-primary mb-6">
               {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
             </h2>
-            <div className="space-y-4 max-w-3xl">
+            <div className="space-y-5 max-w-3xl">
               {faq.map((item, i) => (
-                <details key={i} className="border border-border bg-[#f4f3ef] group">
-                  <summary className="font-semibold text-sm text-[#1B3A5C] p-4 cursor-pointer hover:bg-[#EEEEEE] transition-colors list-none flex items-center justify-between">
-                    {item.q}
-                    <ChevronRight className="w-4 h-4 text-muted-foreground group-open:rotate-90 transition-transform shrink-0 ml-2" />
-                  </summary>
-                  <div className="px-4 pb-4">
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
-                  </div>
-                </details>
+                <div key={i}>
+                  <h3 className="font-semibold text-sm text-primary mb-1">{item.q}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
+                </div>
               ))}
             </div>
-            {/* FAQPage Schema */}
+            {/* FAQPage Schema — topic FAQ */}
             <script
               type="application/ld+json"
               dangerouslySetInnerHTML={{
                 __html: JSON.stringify({
                   "@context": "https://schema.org",
                   "@type": "FAQPage",
-                  mainEntity: faq.map((item) => ({
+                  mainEntity: [...faq, ...(isEN ? consultationFaqEN : consultationFaqDE)].map((item) => ({
                     "@type": "Question",
                     name: item.q,
                     acceptedAnswer: {
@@ -225,6 +255,47 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           </div>
         </section>
       )}
+
+      {/* Free Consultation FAQ — shared across all service pages */}
+      <section className="bg-[#f4f3ef] border-b border-border">
+        <div className="container-main py-10">
+          <h2 className="text-xl font-bold text-primary mb-6">
+            {isEN ? "FAQ — Free Consultation" : "FAQ — Kostenloses Erstgespräch"}
+          </h2>
+          <div className="space-y-5 max-w-3xl">
+            {(isEN ? consultationFaqEN : consultationFaqDE).map((item, i) => (
+              <div key={i}>
+                <h3 className="font-semibold text-sm text-primary mb-1">{item.q}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Consultation CTA Row */}
+      <section className="bg-white border-b border-border">
+        <div className="container-main py-10 text-center max-w-2xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary mb-3">
+            {isEN ? "Take the First Step with a Free Consultation" : "Machen Sie den ersten Schritt mit einem kostenlosen Erstgespräch"}
+          </h2>
+          <p className="text-foreground/80 mb-2">
+            {isEN
+              ? "A free consultation offers a clear and professional first impression of your situation and helps determine whether this approach is the right fit for you."
+              : "Ein kostenloses Erstgespräch bietet Ihnen einen klaren und professionellen ersten Eindruck Ihrer Situation und hilft festzustellen, ob dieser Ansatz der richtige für Sie ist."}
+          </p>
+          <p className="text-sm text-muted-foreground mb-6">
+            {isEN
+              ? "Approx. 10–30 minutes • Professional • Honest • Individual"
+              : "Ca. 10–30 Minuten • Professionell • Ehrlich • Individuell"}
+          </p>
+          <Link to={getPath("contact", language, country)}>
+            <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-base">
+              {isEN ? "Request Your Free Consultation" : "Kostenloses Erstgespräch anfragen"}
+            </Button>
+          </Link>
+        </div>
+      </section>
 
       {/* Kathryn Section — only on children/teens page */}
       {(data.slugEN === "kinder-jugendliche" || data.slugCH === "kinder-jugendliche") && (
