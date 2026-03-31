@@ -217,7 +217,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                       ))}
                     </div>
                     <p className="text-sm text-foreground leading-relaxed mb-3 flex-1">
-                      &bdquo;{t.text}&ldquo;
+                      &bdquo;{isEN ? t.textEN : t.textDE}&ldquo;
                     </p>
                     <div className="flex items-center justify-between mt-auto pt-2 border-t border-border/50">
                       <p className="text-xs font-semibold text-primary">{t.name}</p>
