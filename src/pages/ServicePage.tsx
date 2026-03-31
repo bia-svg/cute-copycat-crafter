@@ -12,7 +12,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { CheckCircle, ChevronRight } from "lucide-react";
+import { CheckCircle, ChevronRight, Star, ExternalLink } from "lucide-react";
+import { getTestimonialsForService } from "@/data/serviceTestimonials";
+import { consultationFaqEN, consultationFaqDE } from "@/data/consultationFAQ";
 
 export interface ContentSection {
   h2: string;
