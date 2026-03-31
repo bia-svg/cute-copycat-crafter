@@ -11,10 +11,12 @@ import { Helmet } from "react-helmet-async";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CheckCircle, ChevronRight, Star, ExternalLink } from "lucide-react";
 import { getTestimonialsForService } from "@/data/serviceTestimonials";
 import { consultationFaqEN, consultationFaqDE } from "@/data/consultationFAQ";
+import { trackPageView, trackCtaClick } from "@/lib/ctaTracking";
+import { useEffect, useCallback } from "react";
 
 export interface ContentSection {
   h2: string;
