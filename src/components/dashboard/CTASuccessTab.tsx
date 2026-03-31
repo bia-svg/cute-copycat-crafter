@@ -43,7 +43,8 @@ export default function CTASuccessTab() {
   useEffect(() => {
     async function load() {
       try {
-        const token = getAuthToken();
+        const session = sessionStorage.getItem("dw_dashboard_session");
+        const token = session ? JSON.parse(session).token : "";
         const { data, error } = await supabase.functions.invoke("fetch-cta-data", {
           headers: { Authorization: `Bearer ${token}` },
           body: null,
