@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      cta_clicks: {
+        Row: {
+          clicked_at: string
+          destination: string
+          id: string
+          page_path: string
+          user_agent: string | null
+        }
+        Insert: {
+          clicked_at?: string
+          destination: string
+          id?: string
+          page_path: string
+          user_agent?: string | null
+        }
+        Update: {
+          clicked_at?: string
+          destination?: string
+          id?: string
+          page_path?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       email_send_log: {
         Row: {
           created_at: string
@@ -203,6 +227,27 @@ export type Database = {
           utm_medium?: string | null
           utm_source?: string | null
           utm_term?: string | null
+        }
+        Relationships: []
+      }
+      page_views: {
+        Row: {
+          id: string
+          page_path: string
+          user_agent: string | null
+          viewed_at: string
+        }
+        Insert: {
+          id?: string
+          page_path: string
+          user_agent?: string | null
+          viewed_at?: string
+        }
+        Update: {
+          id?: string
+          page_path?: string
+          user_agent?: string | null
+          viewed_at?: string
         }
         Relationships: []
       }

@@ -11,10 +11,12 @@ import { Helmet } from "react-helmet-async";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CheckCircle, ChevronRight, Star, ExternalLink } from "lucide-react";
 import { getTestimonialsForService } from "@/data/serviceTestimonials";
 import { consultationFaqEN, consultationFaqDE } from "@/data/consultationFAQ";
+import { trackPageView, trackCtaClick } from "@/lib/ctaTracking";
+import { useEffect, useCallback } from "react";
 
 export interface ContentSection {
   h2: string;
@@ -65,6 +67,17 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
   const faq = isEN ? data.faqEN : data.faqCH;
 
   const slug = isEN ? data.slugEN : (isSwiss ? data.slugCH : data.slugDE);
+  const pagePath = `/${language}/${country}/${slug}`;
+
+  // Track pageview once per mount
+  useEffect(() => {
+    trackPageView(pagePath);
+  }, [pagePath]);
+
+  const handleCtaClick = useCallback(() => {
+    const dest = isEN ? "consultation" : "erstgespraech";
+    trackCtaClick(pagePath, dest);
+  }, [pagePath, isEN]);
 
   const BASE_URL = "https://david-j-woods.com";
 
@@ -136,7 +149,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                   <p key={i} className="text-base text-foreground leading-relaxed">{p}</p>
                 ))}
               </div>
-              <Link to={getPath("contact", language, country)}>
+              <Link to={getPath("contact", language, country)} onClick={handleCtaClick}>
                 <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-3">
                   {t("nav.cta")}
                 </Button>
@@ -289,7 +302,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
               ? "Approx. 10–30 minutes • Professional • Honest • Individual"
               : "Ca. 10–30 Minuten • Professionell • Ehrlich • Individuell"}
           </p>
-          <Link to={getPath("contact", language, country)}>
+          <Link to={getPath("contact", language, country)} onClick={handleCtaClick}>
             <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-base">
               {isEN ? "Request Your Free Consultation" : "Kostenloses Erstgespräch anfragen"}
             </Button>
@@ -354,7 +367,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
               ? "Book your free and non-binding discovery call today."
               : "Vereinbaren Sie jetzt Ihr kostenloses und unverbindliches Erstgespräch."}
           </p>
-          <Link to={getPath("contact", language, country)}>
+          <Link to={getPath("contact", language, country)} onClick={handleCtaClick}>
             <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-base">
               {t("nav.cta")}
             </Button>

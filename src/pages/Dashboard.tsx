@@ -35,6 +35,7 @@ import SEOTab from "@/components/dashboard/SEOTab";
 import CompetitionTab from "@/components/dashboard/CompetitionTab";
 import WeeklyReportTab from "@/components/dashboard/WeeklyReportTab";
 import CampaignIntelligence from "@/components/dashboard/CampaignIntelligence";
+import CTASuccessTab from "@/components/dashboard/CTASuccessTab";
 import EmailLogsTab from "@/components/dashboard/EmailLogsTab";
 import { format, parseISO, startOfMonth } from "date-fns";
 import { Copy } from "lucide-react";
@@ -335,6 +336,9 @@ export default function Dashboard() {
                 <FileText className="w-3 h-3 mr-1" /> Weekly Report
               </TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
+              <TabsTrigger value="cta-success" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                <MousePointer className="w-3 h-3 mr-1" /> CTA Success
+              </TabsTrigger>
             </TabsList>
 
             {/* ═══════ OVERVIEW TAB ═══════ */}
@@ -1104,6 +1108,11 @@ export default function Dashboard() {
                   )}
                 </CardContent>
               </Card>
+            </TabsContent>
+
+            {/* ═══════ CTA SUCCESS TAB ═══════ */}
+            <TabsContent value="cta-success" className="mt-4">
+              <CTASuccessTab />
             </TabsContent>
           </Tabs>
         </div>
