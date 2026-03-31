@@ -5,10 +5,13 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { getLegacyRedirect } from "@/lib/legacyRedirects";
 import Layout from "@/components/Layout";
 import { Toaster } from "@/components/ui/sonner";
-const Home = lazy(() => import("@/pages/Home"));
 
-// Lazy-loaded pages for code splitting
-const Erstgespraech = lazy(() => import("@/pages/Erstgespraech"));
+// Eager-loaded: most-visited pages (no loading flash)
+import Home from "@/pages/Home";
+import Erstgespraech from "@/pages/Erstgespraech";
+import { SmokingPage, AnxietyPage, WeightPage, StressPage, DepressionPage, ChildrenPage, AdultsPage } from "@/pages/services/index";
+
+// Lazy-loaded: less-visited pages
 const UeberUns = lazy(() => import("@/pages/UeberUns"));
 const Kundenmeinungen = lazy(() => import("@/pages/Kundenmeinungen"));
 const Ausbildung = lazy(() => import("@/pages/Ausbildung"));
@@ -36,14 +39,6 @@ const NichtraucherSeminare = lazy(() => import("@/pages/corporate/NichtraucherSe
 const LegalModule = lazy(() => import("@/pages/Legal").then(m => ({ default: m.Impressum })));
 const DatenschutzPage = lazy(() => import("@/pages/Legal").then(m => ({ default: m.Datenschutz })));
 const AGBPage = lazy(() => import("@/pages/Legal").then(m => ({ default: m.AGB })));
-
-const SmokingPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.SmokingPage })));
-const AnxietyPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.AnxietyPage })));
-const WeightPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.WeightPage })));
-const StressPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.StressPage })));
-const DepressionPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.DepressionPage })));
-const ChildrenPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.ChildrenPage })));
-const AdultsPage = lazy(() => import("@/pages/services/index").then(m => ({ default: m.AdultsPage })));
 
 function LegacyRedirect() {
   const location = useLocation();
