@@ -233,69 +233,50 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         );
       })()}
 
-      {/* Topic-specific FAQ — existing items from data */}
-      {faq.length > 0 && (
-        <section className="bg-white border-b border-border">
-          <div className="container-main py-10">
-            <h2 className="text-xl font-bold text-primary mb-6">
-              {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
-            </h2>
-            <div className="space-y-5 max-w-3xl">
-              {faq.map((item, i) => (
-                <div key={i}>
-                  <h3 className="font-semibold text-sm text-primary mb-1">{item.q}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
-                </div>
-              ))}
-            </div>
-            {/* FAQPage Schema — topic FAQ */}
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  "@context": "https://schema.org",
-                  "@type": "FAQPage",
-                  mainEntity: [...faq, ...(isEN ? consultationFaqEN : consultationFaqDE)].map((item) => ({
-                    "@type": "Question",
-                    name: item.q,
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: item.a,
-                    },
-                  })),
-                }),
-              }} />
-          </div>
-        </section>
-      )}
-
-      {/* Free Consultation FAQ — shared across all service pages */}
-      <section className="bg-[#f4f3ef] border-b border-border">
+      {/* Unified FAQ — topic-specific + consultation items */}
+      <section className="bg-white border-b border-border">
         <div className="container-main py-10">
           <h2 className="text-xl font-bold text-primary mb-6">
-            {isEN ? "FAQ — Free Consultation" : "FAQ — Kostenloses Erstgespräch"}
+            {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
           </h2>
           <div className="space-y-5 max-w-3xl">
-            {(isEN ? consultationFaqEN : consultationFaqDE).map((item, i) => (
+            {[...faq, ...(isEN ? consultationFaqEN : consultationFaqDE)].map((item, i) => (
               <div key={i}>
                 <h3 className="font-semibold text-sm text-primary mb-1">{item.q}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
               </div>
             ))}
           </div>
+          {/* FAQPage Schema */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: [...faq, ...(isEN ? consultationFaqEN : consultationFaqDE)].map((item) => ({
+                  "@type": "Question",
+                  name: item.q,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: item.a,
+                  },
+                })),
+              }),
+            }} />
         </div>
       </section>
 
       {/* Consultation CTA Row */}
-      <section className="bg-white border-b border-border">
+      <section className="bg-[#f4f3ef] border-b border-border">
         <div className="container-main py-10 text-center max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold text-primary mb-3">
             {isEN ? "Take the First Step with a Free Consultation" : "Machen Sie den ersten Schritt mit einem kostenlosen Erstgespräch"}
           </h2>
           <p className="text-foreground/80 mb-2">
             {isEN
-              ? "A free consultation offers a clear and professional first impression of your situation and helps determine whether this approach is the right fit for you."
-              : "Ein kostenloses Erstgespräch bietet Ihnen einen klaren und professionellen ersten Eindruck Ihrer Situation und hilft festzustellen, ob dieser Ansatz der richtige für Sie ist."}
+              ? "Receive a professional, honest first assessment of your situation and discover whether this approach feels right for you."
+              : "Erhalten Sie eine professionelle, ehrliche Ersteinschätzung Ihrer Situation und finden Sie heraus, ob dieser Ansatz der richtige für Sie ist."}
           </p>
           <p className="text-sm text-muted-foreground mb-6">
             {isEN
