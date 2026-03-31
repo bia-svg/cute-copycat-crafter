@@ -138,7 +138,7 @@ export const smokingData: ServicePageData = {
   ],
   image: `${CDN}/stop_smoking_hypnose_89c11159.jpg`,
   faqCH: [
-    { q: "Wie viele Sitzungen brauche ich, um mit dem Rauchen aufzuhören?", a: "In der Regel reichen 1-3 Intensivsitzungen aus, um dauerhaft rauchfrei zu werden. Eine Studie der University of Iowa (Viswesvaran & Schmidt, 1992) bestätigt, dass Hypnose die effektivste Einzelmethode zur Raucherentwöhnung ist." },
+    { q: "Wie viele Sitzungen brauche ich, um mit dem Rauchen aufzuhören?", a: "In der Regel reichen 1-3 Intensivsitzungen aus, um Ihr Ziel eines rauchfreien Lebens zu unterstützen. Eine Studie der University of Iowa (Viswesvaran & Schmidt, 1992) bestätigt, dass Hypnose die effektivste Einzelmethode zur Raucherentwöhnung ist." },
     { q: "Übernimmt die Krankenkasse die Kosten für Hypnose?", a: "In der Schweiz sind unsere Leistungen EMR Krankenkasse konform (ZSR Nr. P609264). Viele Zusatzversicherungen übernehmen einen Teil der Kosten. Erkundigen Sie sich bei Ihrer Versicherung." },
     { q: "Gibt es Entzugserscheinungen nach der Hypnose?", a: "Die meisten Klienten berichten von deutlich reduzierten oder gar keinen Entzugserscheinungen, da die Hypnose direkt am Unterbewusstsein ansetzt und die emotionalen Auslöser des Rauchens löst." },
     { q: "Kann ich nach der Hypnose wirklich dauerhaft rauchfrei bleiben?", a: "Ja. Laut einer Meta-Analyse (Hasan et al., 2014) liegt die Erfolgsrate bei Raucherentwöhnung durch Hypnose bei bis zu 64% nach 6 Monaten — deutlich höher als bei Nikotinersatztherapie allein." },
