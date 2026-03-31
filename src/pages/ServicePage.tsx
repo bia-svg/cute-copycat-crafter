@@ -216,9 +216,14 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                         <Star key={j} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
-                    <p className="text-sm text-foreground leading-relaxed mb-3 flex-1">
+                    <p className="text-sm text-foreground leading-relaxed mb-1 flex-1">
                       &bdquo;{isEN ? t.textEN : t.textDE}&ldquo;
                     </p>
+                    {t.name === "Chantal Ianiro" && (
+                      <p className="text-xs italic text-muted-foreground mb-3">
+                        {isEN ? "Individual results may vary." : "Individuelle Ergebnisse können variieren."}
+                      </p>
+                    )}
                     <div className="flex items-center justify-between mt-auto pt-2 border-t border-border/50">
                       <p className="text-xs font-semibold text-primary">{t.name}</p>
                       <a href={t.link} target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
