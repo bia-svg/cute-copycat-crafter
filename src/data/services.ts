@@ -19,7 +19,7 @@ export const smokingData: ServicePageData = {
   h1CH: "Effektive Raucherentwöhnung mit Hypnose in Zürich",
   h1DE: "Effektive Raucherentwöhnung mit Hypnose in Augsburg",
   h1EN: "Effective Stop Smoking Hypnotherapy in Zurich & Augsburg",
-  benefitsCH: ["Rauchfrei ohne ständigen inneren Kampf", "Mehr Freiheit, Energie und Lebensqualität", "Endlich Nichtraucher werden", "Dauerhafte Veränderung statt ständigem Rückfall"],
+  benefitsCH: ["Rauchfrei ohne ständigen inneren Kampf", "Mehr Freiheit, Energie und Lebensqualität", "Unterstützung auf dem Weg in ein rauchfreies Leben", "Nachhaltige Begleitung statt ständigem Rückfall"],
   benefitsEN: ["Smoke-free without constant inner struggle", "More freedom, energy and quality of life", "Finally become a non-smoker", "Lasting change instead of constant relapse"],
   introCH: [
     "Viele Menschen möchten mit dem Rauchen aufhören, schaffen es aber trotz guter Vorsätze immer wieder nicht dauerhaft. Der Grund liegt oft nicht im fehlenden Willen, sondern in tief verankerten Gewohnheiten, emotionalen Auslösern und unbewussten Verknüpfungen im Unterbewusstsein.",
