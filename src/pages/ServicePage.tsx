@@ -302,7 +302,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
               ? "Approx. 10–30 minutes • Professional • Honest • Individual"
               : "Ca. 10–30 Minuten • Professionell • Ehrlich • Individuell"}
           </p>
-          <Link to={getPath("contact", language, country)}>
+          <Link to={getPath("contact", language, country)} onClick={handleCtaClick}>
             <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-base">
               {isEN ? "Request Your Free Consultation" : "Kostenloses Erstgespräch anfragen"}
             </Button>
