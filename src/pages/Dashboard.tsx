@@ -1109,6 +1109,11 @@ export default function Dashboard() {
                 </CardContent>
               </Card>
             </TabsContent>
+
+            {/* ═══════ CTA SUCCESS TAB ═══════ */}
+            <TabsContent value="cta-success" className="mt-4">
+              <CTASuccessTab />
+            </TabsContent>
           </Tabs>
         </div>
       </div>
