@@ -219,7 +219,7 @@ export default function Home() {
       title: t("service.depression"),
       description: isEN
         ? "Hypnosis for depression and trauma helps you discover new perspectives and regain your joy of life."
-        : "Die Hypnose gegen Depressionen sowie die Hypnose gegen Traumata hilft Ihnen dabei, neue Perspektiven zu entdecken und Ihre Lebensfreude wiederzugewinnen.",
+        : "Die hypnotische Begleitung hilft Ihnen dabei, neue Perspektiven zu entdecken und Ihre Lebensfreude wiederzugewinnen.",
       href: getPath("depression", language, country),
       icon: <HeartPulse className="w-5 h-5" />,
       image: CDN.depressionTrauma,

@@ -13,13 +13,13 @@ export const smokingData: ServicePageData = {
   titleCH: "Raucherentwöhnung Hypnose Zürich | Endlich Rauchfrei | David J. Woods",
   titleDE: "Raucherentwöhnung Hypnose Augsburg | Endlich Rauchfrei | David J. Woods",
   titleEN: "Stop Smoking Hypnotherapy Zurich & Augsburg | David J. Woods",
-  metaDescCH: "Endlich Nichtraucher werden durch professionelle Hypnose in Zürich. EMR anerkannt. Ohne ständigen Kampf und Entzugserscheinungen. Jetzt kostenloses Erstgespräch sichern.",
-  metaDescDE: "Endlich Nichtraucher werden durch Hypnose in Augsburg. Ohne ständigen Kampf und Entzugserscheinungen. Jetzt Erstgespräch sichern.",
+  metaDescCH: "Unterstützung auf dem Weg in ein rauchfreies Leben durch professionelle Hypnose in Zürich. EMR anerkannt. Ohne ständigen Kampf und Entzugserscheinungen. Jetzt kostenloses Erstgespräch sichern.",
+  metaDescDE: "Unterstützung auf dem Weg in ein rauchfreies Leben durch Hypnose in Augsburg. Ohne ständigen Kampf und Entzugserscheinungen. Jetzt Erstgespräch sichern.",
   metaDescEN: "Quit smoking permanently with professional hypnotherapy in Zurich and Augsburg. No constant struggle or withdrawal symptoms. Book your free discovery call.",
   h1CH: "Effektive Raucherentwöhnung mit Hypnose in Zürich",
   h1DE: "Effektive Raucherentwöhnung mit Hypnose in Augsburg",
   h1EN: "Effective Stop Smoking Hypnotherapy in Zurich & Augsburg",
-  benefitsCH: ["Rauchfrei ohne ständigen inneren Kampf", "Mehr Freiheit, Energie und Lebensqualität", "Endlich Nichtraucher werden", "Dauerhafte Veränderung statt ständigem Rückfall"],
+  benefitsCH: ["Rauchfrei ohne ständigen inneren Kampf", "Mehr Freiheit, Energie und Lebensqualität", "Unterstützung auf dem Weg in ein rauchfreies Leben", "Nachhaltige Begleitung statt ständigem Rückfall"],
   benefitsEN: ["Smoke-free without constant inner struggle", "More freedom, energy and quality of life", "Finally become a non-smoker", "Lasting change instead of constant relapse"],
   introCH: [
     "Viele Menschen möchten mit dem Rauchen aufhören, schaffen es aber trotz guter Vorsätze immer wieder nicht dauerhaft. Der Grund liegt oft nicht im fehlenden Willen, sondern in tief verankerten Gewohnheiten, emotionalen Auslösern und unbewussten Verknüpfungen im Unterbewusstsein.",
@@ -41,7 +41,7 @@ export const smokingData: ServicePageData = {
     {
       h2: "Rauchfrei mit Hypnose — Psychologische Gründe fürs Rauchen lösen",
       paragraphs: [
-        "Aufhören zu rauchen gelingt dauerhaft, wenn die psychologischen Gründe fürs Rauchen gezielt gelöst werden. Die meisten Raucher greifen nicht nur aus Gewohnheit zur Zigarette, sondern weil das Rauchen unbewusst mit bestimmten emotionalen Zuständen verknüpft ist."
+        "Aufhören zu rauchen gelingt nachhaltig, wenn die psychologischen Gründe fürs Rauchen gezielt gelöst werden. Die meisten Raucher greifen nicht nur aus Gewohnheit zur Zigarette, sondern weil das Rauchen unbewusst mit bestimmten emotionalen Zuständen verknüpft ist."
       ],
       bullets: [
         "Stress & Frust",
@@ -58,7 +58,7 @@ export const smokingData: ServicePageData = {
       h2: "Aufhören zu rauchen ohne ständigen Kampf",
       paragraphs: [
         "Durch die gezielte Arbeit mit dem Unterbewusstsein können diese inneren Verknüpfungen aufgelöst und durch gesündere Muster ersetzt werden. So wird das Aufhören nicht zum ständigen Kampf gegen sich selbst, sondern zu einer natürlichen Veränderung von innen heraus.",
-        "Die meisten Klienten berichten bereits nach der ersten Sitzung von einem deutlich reduzierten Verlangen nach Zigaretten. Viele schaffen es, nach nur 1-3 Intensivsitzungen dauerhaft rauchfrei zu bleiben."
+        "Die meisten Klienten berichten bereits nach der ersten Sitzung von einem deutlich reduzierten Verlangen nach Zigaretten. Viele schaffen es, nach nur 1-3 Intensivsitzungen den Wunsch nach Zigaretten deutlich zu reduzieren."
       ]
     },
     {
@@ -75,7 +75,7 @@ export const smokingData: ServicePageData = {
     {
       h2: "Rauchfrei mit Hypnose — Psychologische Gründe fürs Rauchen lösen",
       paragraphs: [
-        "Aufhören zu rauchen gelingt dauerhaft, wenn die psychologischen Gründe fürs Rauchen gezielt gelöst werden."
+        "Aufhören zu rauchen gelingt nachhaltig, wenn die psychologischen Gründe fürs Rauchen gezielt gelöst werden."
       ],
       bullets: [
         "Stress & Frust",
@@ -138,10 +138,10 @@ export const smokingData: ServicePageData = {
   ],
   image: `${CDN}/stop_smoking_hypnose_89c11159.jpg`,
   faqCH: [
-    { q: "Wie viele Sitzungen brauche ich, um mit dem Rauchen aufzuhören?", a: "In der Regel reichen 1-3 Intensivsitzungen aus, um dauerhaft rauchfrei zu werden. Eine Studie der University of Iowa (Viswesvaran & Schmidt, 1992) bestätigt, dass Hypnose die effektivste Einzelmethode zur Raucherentwöhnung ist." },
+    { q: "Wie viele Sitzungen brauche ich, um mit dem Rauchen aufzuhören?", a: "In der Regel reichen 1-3 Intensivsitzungen aus, um Ihr Ziel eines rauchfreien Lebens zu unterstützen. Eine Studie der University of Iowa (Viswesvaran & Schmidt, 1992) bestätigt, dass Hypnose die effektivste Einzelmethode zur Raucherentwöhnung ist." },
     { q: "Übernimmt die Krankenkasse die Kosten für Hypnose?", a: "In der Schweiz sind unsere Leistungen EMR Krankenkasse konform (ZSR Nr. P609264). Viele Zusatzversicherungen übernehmen einen Teil der Kosten. Erkundigen Sie sich bei Ihrer Versicherung." },
     { q: "Gibt es Entzugserscheinungen nach der Hypnose?", a: "Die meisten Klienten berichten von deutlich reduzierten oder gar keinen Entzugserscheinungen, da die Hypnose direkt am Unterbewusstsein ansetzt und die emotionalen Auslöser des Rauchens löst." },
-    { q: "Kann ich nach der Hypnose wirklich dauerhaft rauchfrei bleiben?", a: "Ja. Laut einer Meta-Analyse (Hasan et al., 2014) liegt die Erfolgsrate bei Raucherentwöhnung durch Hypnose bei bis zu 64% nach 6 Monaten — deutlich höher als bei Nikotinersatztherapie allein." },
+    { q: "Kann Hypnose den Wunsch nach Zigaretten reduzieren?", a: "Wir unterstützen Sie dabei. Laut einer Meta-Analyse (Hasan et al., 2014) liegt die Erfolgsrate bei Raucherentwöhnung durch Hypnose bei bis zu 64% nach 6 Monaten — deutlich höher als bei Nikotinersatztherapie allein." },
     { q: "Wie unterscheidet sich Hypnose von Nikotinpflastern oder Medikamenten?", a: "Nikotinersatzprodukte behandeln nur die körperliche Abhängigkeit. Hypnose adressiert die tieferliegenden psychologischen Ursachen des Rauchens — Stress, Gewohnheiten, emotionale Verknüpfungen. Laut Viswesvaran & Schmidt (1992) ist Hypnose dreimal wirksamer als Nikotinersatztherapie." },
   ],
   faqEN: [
@@ -467,24 +467,24 @@ export const stressData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const depressionData: ServicePageData = {
   slugCH: "depressionen-traumata", slugDE: "depressionen-traumata", slugEN: "depression-trauma",
-  titleCH: "Hypnose gegen Depressionen & Traumata Zürich | David J. Woods",
-  titleDE: "Hypnose gegen Depressionen & Traumata Augsburg | David J. Woods",
+  titleCH: "Hypnotische Begleitung bei depressiven Verstimmungen & Traumata Zürich | David J. Woods",
+  titleDE: "Hypnotische Begleitung bei depressiven Verstimmungen & Traumata Augsburg | David J. Woods",
   titleEN: "Hypnotherapy for Depression & Trauma Zurich & Augsburg | David J. Woods",
   metaDescCH: "Überwinden Sie Depressionen und Traumata mit Hypnose in Zürich. Neue Perspektiven entdecken und Lebensfreude wiedergewinnen. EMR anerkannt.",
   metaDescDE: "Überwinden Sie Depressionen und Traumata mit Hypnose in Augsburg. Neue Perspektiven entdecken und Lebensfreude wiedergewinnen.",
   metaDescEN: "Overcome depression and trauma with professional hypnotherapy. Discover new perspectives and regain your joy of life.",
-  h1CH: "Hypnose gegen Depressionen & Traumata",
-  h1DE: "Hypnose gegen Depressionen & Traumata",
+  h1CH: "Hypnotische Begleitung bei depressiven Verstimmungen & Traumata",
+  h1DE: "Hypnotische Begleitung bei depressiven Verstimmungen & Traumata",
   h1EN: "Hypnotherapy for Depression & Trauma",
   benefitsCH: ["Mehr Lebensqualität bekommen", "Überwinden von Blockaden", "Fröhlich leben können", "Ruhiger schlafen können"],
   benefitsEN: ["Gain more quality of life", "Overcome blocks", "Live happily again", "Sleep more peacefully"],
   introCH: [
-    "Traurige Lebensphasen überwinden mit Hypnose gegen Depressionen & Traumata.",
-    "Die Hypnose gegen Depressionen sowie die Hypnose gegen Traumata hilft Ihnen dabei, neue Perspektiven zu entdecken und Ihre Lebensfreude wiederzugewinnen. Denn viele Menschen leiden an Phasen im Leben, in denen sie sehr traurig sind. Diese können durch persönliche oder berufliche Schicksalsschläge eingeleitet werden und starten eine Abwärtsspirale im Leben der Betroffenen.",
-    "Wenn auch Sie so etwas erlebt haben und Schwierigkeiten haben, diese negative Lebensphase eigenständig zu verlassen, sollten Sie es unbedingt mit einer Hypnose gegen Depressionen bzw. einer Hypnose gegen Traumata probieren!"
+    "Traurige Lebensphasen überwinden mit hypnotischer Begleitung bei depressiven Verstimmungen & Traumata.",
+    "Die hypnotische Begleitung hilft Ihnen dabei, neue Perspektiven zu entdecken und Ihre Lebensfreude wiederzugewinnen. Denn viele Menschen leiden an Phasen im Leben, in denen sie sehr traurig sind. Diese können durch persönliche oder berufliche Schicksalsschläge eingeleitet werden und starten eine Abwärtsspirale im Leben der Betroffenen.",
+    "Wenn auch Sie so etwas erlebt haben und Schwierigkeiten haben, diese negative Lebensphase eigenständig zu verlassen, sollten Sie es unbedingt mit hypnotischer Begleitung bei depressiven Verstimmungen bzw. bei Traumata probieren!"
   ],
   introDE: [
-    "Die Hypnose gegen Depressionen sowie die Hypnose gegen Traumata hilft Ihnen dabei, neue Perspektiven zu entdecken und Ihre Lebensfreude wiederzugewinnen.",
+    "Die hypnotische Begleitung hilft Ihnen dabei, neue Perspektiven zu entdecken und Ihre Lebensfreude wiederzugewinnen.",
     "Viele Menschen leiden an Phasen im Leben, in denen sie sehr traurig sind. Diese können durch persönliche oder berufliche Schicksalsschläge eingeleitet werden und starten eine Abwärtsspirale im Leben der Betroffenen."
   ],
   introEN: [
@@ -704,18 +704,18 @@ export const childrenData: ServicePageData = {
   benefitsCH: ["Besser konzentrieren können", "Alltagsängste bewältigen", "Zukunftsfokussiert sein", "Lernfähigkeit verbessern"],
   benefitsEN: ["Better concentration", "Overcome everyday fears", "Future-focused mindset", "Improve learning ability"],
   introCH: [
-    "Hypnose-Therapie für Kinder & Jugendliche: Neue Wege zur inneren Heilung.",
+    "Hypnose-Therapie für Kinder & Jugendliche: Neue Wege zu innerem Gleichgewicht und Wohlbefinden.",
     "Mit Kathryn – einfühlsam, professionell, wirkungsvoll.",
     "Weil Kinder keine kleinen Erwachsenen sind – sondern grosse Persönlichkeiten in Entwicklung.",
     "Verhaltensveränderungen, Ängste, Wutausbrüche, Rückzug oder Leistungsabfall in der Schule – wenn Kinder oder Jugendliche aus dem Gleichgewicht geraten, stehen Eltern oft vor einem Rätsel. Die Ursachen sind vielfältig: schulischer Druck, familiäre Belastungen, soziale Ängste, Mobbing oder emotionale Krisen.",
     "In diesen Momenten brauchen junge Menschen jemanden, der sie versteht – auf Augenhöhe, mit Feingefühl und Fachwissen."
   ],
   introDE: [
-    "Hypnose-Therapie für Kinder & Jugendliche: Neue Wege zur inneren Heilung. Mit Kathryn – einfühlsam, professionell, wirkungsvoll.",
+    "Hypnose-Therapie für Kinder & Jugendliche: Neue Wege zu innerem Gleichgewicht und Wohlbefinden. Mit Kathryn – einfühlsam, professionell, wirkungsvoll.",
     "Verhaltensveränderungen, Ängste, Wutausbrüche, Rückzug oder Leistungsabfall in der Schule – wenn Kinder oder Jugendliche aus dem Gleichgewicht geraten, stehen Eltern oft vor einem Rätsel."
   ],
   introEN: [
-    "Hypnotherapy for children and teenagers: New paths to inner healing. With Kathryn – empathetic, professional, effective.",
+    "Hypnotherapy for children and teenagers: New paths to inner balance and well-being. With Kathryn – empathetic, professional, effective.",
     "Because children are not small adults – they are great personalities in development. Behavioral changes, fears, outbursts of anger, withdrawal, or declining school performance – when children or teenagers lose their balance, parents are often at a loss."
   ],
   sectionsCH: [
