@@ -397,6 +397,23 @@ export default function Erstgespraech() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <section className="bg-[#f4f3ef] border-t border-border">
+        <div className="container-main py-10 lg:py-14">
+          <h2 className="text-xl font-bold text-primary mb-6">
+            {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
+          </h2>
+          <div className="space-y-5 max-w-3xl">
+            {(isEN ? consultationFaqEN : consultationFaqDE).map((item, i) => (
+              <div key={i}>
+                <h3 className="font-semibold text-sm text-primary mb-1">{item.q}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
