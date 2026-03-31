@@ -479,12 +479,12 @@ export const depressionData: ServicePageData = {
   benefitsCH: ["Mehr Lebensqualität bekommen", "Überwinden von Blockaden", "Fröhlich leben können", "Ruhiger schlafen können"],
   benefitsEN: ["Gain more quality of life", "Overcome blocks", "Live happily again", "Sleep more peacefully"],
   introCH: [
-    "Traurige Lebensphasen überwinden mit Hypnose gegen Depressionen & Traumata.",
-    "Die Hypnose gegen Depressionen sowie die Hypnose gegen Traumata hilft Ihnen dabei, neue Perspektiven zu entdecken und Ihre Lebensfreude wiederzugewinnen. Denn viele Menschen leiden an Phasen im Leben, in denen sie sehr traurig sind. Diese können durch persönliche oder berufliche Schicksalsschläge eingeleitet werden und starten eine Abwärtsspirale im Leben der Betroffenen.",
-    "Wenn auch Sie so etwas erlebt haben und Schwierigkeiten haben, diese negative Lebensphase eigenständig zu verlassen, sollten Sie es unbedingt mit einer Hypnose gegen Depressionen bzw. einer Hypnose gegen Traumata probieren!"
+    "Traurige Lebensphasen überwinden mit hypnotischer Begleitung bei depressiven Verstimmungen & Traumata.",
+    "Die hypnotische Begleitung hilft Ihnen dabei, neue Perspektiven zu entdecken und Ihre Lebensfreude wiederzugewinnen. Denn viele Menschen leiden an Phasen im Leben, in denen sie sehr traurig sind. Diese können durch persönliche oder berufliche Schicksalsschläge eingeleitet werden und starten eine Abwärtsspirale im Leben der Betroffenen.",
+    "Wenn auch Sie so etwas erlebt haben und Schwierigkeiten haben, diese negative Lebensphase eigenständig zu verlassen, sollten Sie es unbedingt mit hypnotischer Begleitung bei depressiven Verstimmungen bzw. bei Traumata probieren!"
   ],
   introDE: [
-    "Die Hypnose gegen Depressionen sowie die Hypnose gegen Traumata hilft Ihnen dabei, neue Perspektiven zu entdecken und Ihre Lebensfreude wiederzugewinnen.",
+    "Die hypnotische Begleitung hilft Ihnen dabei, neue Perspektiven zu entdecken und Ihre Lebensfreude wiederzugewinnen.",
     "Viele Menschen leiden an Phasen im Leben, in denen sie sehr traurig sind. Diese können durch persönliche oder berufliche Schicksalsschläge eingeleitet werden und starten eine Abwärtsspirale im Leben der Betroffenen."
   ],
   introEN: [
