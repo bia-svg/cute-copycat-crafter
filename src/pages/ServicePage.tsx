@@ -367,7 +367,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
               ? "Book your free and non-binding discovery call today."
               : "Vereinbaren Sie jetzt Ihr kostenloses und unverbindliches Erstgespräch."}
           </p>
-          <Link to={getPath("contact", language, country)}>
+          <Link to={getPath("contact", language, country)} onClick={handleCtaClick}>
             <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-base">
               {t("nav.cta")}
             </Button>
