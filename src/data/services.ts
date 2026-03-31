@@ -715,7 +715,7 @@ export const childrenData: ServicePageData = {
     "Verhaltensveränderungen, Ängste, Wutausbrüche, Rückzug oder Leistungsabfall in der Schule – wenn Kinder oder Jugendliche aus dem Gleichgewicht geraten, stehen Eltern oft vor einem Rätsel."
   ],
   introEN: [
-    "Hypnotherapy for children and teenagers: New paths to inner healing. With Kathryn – empathetic, professional, effective.",
+    "Hypnotherapy for children and teenagers: New paths to inner balance and well-being. With Kathryn – empathetic, professional, effective.",
     "Because children are not small adults – they are great personalities in development. Behavioral changes, fears, outbursts of anger, withdrawal, or declining school performance – when children or teenagers lose their balance, parents are often at a loss."
   ],
   sectionsCH: [
