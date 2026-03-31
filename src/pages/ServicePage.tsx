@@ -67,6 +67,17 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
   const faq = isEN ? data.faqEN : data.faqCH;
 
   const slug = isEN ? data.slugEN : (isSwiss ? data.slugCH : data.slugDE);
+  const pagePath = `/${language}/${country}/${slug}`;
+
+  // Track pageview once per mount
+  useEffect(() => {
+    trackPageView(pagePath);
+  }, [pagePath]);
+
+  const handleCtaClick = useCallback(() => {
+    const dest = isEN ? "consultation" : "erstgespraech";
+    trackCtaClick(pagePath, dest);
+  }, [pagePath, isEN]);
 
   const BASE_URL = "https://david-j-woods.com";
 
