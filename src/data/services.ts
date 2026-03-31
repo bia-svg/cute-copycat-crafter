@@ -58,7 +58,7 @@ export const smokingData: ServicePageData = {
       h2: "Aufhören zu rauchen ohne ständigen Kampf",
       paragraphs: [
         "Durch die gezielte Arbeit mit dem Unterbewusstsein können diese inneren Verknüpfungen aufgelöst und durch gesündere Muster ersetzt werden. So wird das Aufhören nicht zum ständigen Kampf gegen sich selbst, sondern zu einer natürlichen Veränderung von innen heraus.",
-        "Die meisten Klienten berichten bereits nach der ersten Sitzung von einem deutlich reduzierten Verlangen nach Zigaretten. Viele schaffen es, nach nur 1-3 Intensivsitzungen dauerhaft rauchfrei zu bleiben."
+        "Die meisten Klienten berichten bereits nach der ersten Sitzung von einem deutlich reduzierten Verlangen nach Zigaretten. Viele schaffen es, nach nur 1-3 Intensivsitzungen den Wunsch nach Zigaretten deutlich zu reduzieren."
       ]
     },
     {
