@@ -336,6 +336,9 @@ export default function Dashboard() {
                 <FileText className="w-3 h-3 mr-1" /> Weekly Report
               </TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
+              <TabsTrigger value="cta-success" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                <MousePointer className="w-3 h-3 mr-1" /> CTA Success
+              </TabsTrigger>
             </TabsList>
 
             {/* ═══════ OVERVIEW TAB ═══════ */}
