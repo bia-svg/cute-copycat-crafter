@@ -711,7 +711,7 @@ export const childrenData: ServicePageData = {
     "In diesen Momenten brauchen junge Menschen jemanden, der sie versteht – auf Augenhöhe, mit Feingefühl und Fachwissen."
   ],
   introDE: [
-    "Hypnose-Therapie für Kinder & Jugendliche: Neue Wege zur inneren Heilung. Mit Kathryn – einfühlsam, professionell, wirkungsvoll.",
+    "Hypnose-Therapie für Kinder & Jugendliche: Neue Wege zu innerem Gleichgewicht und Wohlbefinden. Mit Kathryn – einfühlsam, professionell, wirkungsvoll.",
     "Verhaltensveränderungen, Ängste, Wutausbrüche, Rückzug oder Leistungsabfall in der Schule – wenn Kinder oder Jugendliche aus dem Gleichgewicht geraten, stehen Eltern oft vor einem Rätsel."
   ],
   introEN: [
