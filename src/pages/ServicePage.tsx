@@ -149,7 +149,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                   <p key={i} className="text-base text-foreground leading-relaxed">{p}</p>
                 ))}
               </div>
-              <Link to={getPath("contact", language, country)}>
+              <Link to={getPath("contact", language, country)} onClick={handleCtaClick}>
                 <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-3">
                   {t("nav.cta")}
                 </Button>
