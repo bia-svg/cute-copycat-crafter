@@ -75,7 +75,7 @@ export const smokingData: ServicePageData = {
     {
       h2: "Rauchfrei mit Hypnose — Psychologische Gründe fürs Rauchen lösen",
       paragraphs: [
-        "Aufhören zu rauchen gelingt dauerhaft, wenn die psychologischen Gründe fürs Rauchen gezielt gelöst werden."
+        "Aufhören zu rauchen gelingt nachhaltig, wenn die psychologischen Gründe fürs Rauchen gezielt gelöst werden."
       ],
       bullets: [
         "Stress & Frust",
