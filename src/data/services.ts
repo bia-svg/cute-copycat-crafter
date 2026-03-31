@@ -704,7 +704,7 @@ export const childrenData: ServicePageData = {
   benefitsCH: ["Besser konzentrieren können", "Alltagsängste bewältigen", "Zukunftsfokussiert sein", "Lernfähigkeit verbessern"],
   benefitsEN: ["Better concentration", "Overcome everyday fears", "Future-focused mindset", "Improve learning ability"],
   introCH: [
-    "Hypnose-Therapie für Kinder & Jugendliche: Neue Wege zur inneren Heilung.",
+    "Hypnose-Therapie für Kinder & Jugendliche: Neue Wege zu innerem Gleichgewicht und Wohlbefinden.",
     "Mit Kathryn – einfühlsam, professionell, wirkungsvoll.",
     "Weil Kinder keine kleinen Erwachsenen sind – sondern grosse Persönlichkeiten in Entwicklung.",
     "Verhaltensveränderungen, Ängste, Wutausbrüche, Rückzug oder Leistungsabfall in der Schule – wenn Kinder oder Jugendliche aus dem Gleichgewicht geraten, stehen Eltern oft vor einem Rätsel. Die Ursachen sind vielfältig: schulischer Druck, familiäre Belastungen, soziale Ängste, Mobbing oder emotionale Krisen.",
