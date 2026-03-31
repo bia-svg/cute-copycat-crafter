@@ -4,6 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { sendLeadEmails } from "@/lib/leadEmails";
 import { logFormSubmission } from "@/lib/formSubmissionLog";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { consultationFaqEN, consultationFaqDE } from "@/data/consultationFAQ";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
 import { getPath } from "@/lib/routes";
