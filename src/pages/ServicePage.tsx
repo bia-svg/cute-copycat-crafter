@@ -336,25 +336,6 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           </div>
         </section>
       )}
-
-      {/* CTA */}
-      <section className="bg-[#8b827c] text-white">
-        <div className="container-main py-10 text-center">
-          <h2 className="text-2xl font-bold mb-3">
-            {isEN ? "Ready for Lasting Change?" : "Bereit für nachhaltige Veränderung?"}
-          </h2>
-          <p className="text-white/80 mb-6 max-w-xl mx-auto">
-            {isEN
-              ? "Book your free and non-binding discovery call today."
-              : "Vereinbaren Sie jetzt Ihr kostenloses und unverbindliches Erstgespräch."}
-          </p>
-          <Link to={getPath("contact", language, country)} onClick={handleCtaClick}>
-            <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-base">
-              {t("nav.cta")}
-            </Button>
-          </Link>
-        </div>
-      </section>
     </>
   );
 }
