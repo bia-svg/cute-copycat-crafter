@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { RefreshCw, AlertTriangle, CheckCircle2, Clock, Ban, XCircle, FileText } from "lucide-react";
+import { RefreshCw, AlertTriangle, CheckCircle2, Clock, Ban, XCircle, FileText, LogIn } from "lucide-react";
 
 interface EmailLog {
   id: string;
