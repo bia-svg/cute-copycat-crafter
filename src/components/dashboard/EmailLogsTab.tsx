@@ -207,7 +207,7 @@ export default function EmailLogsTab() {
             </Card>
           ))}
         </div>
-      ) : (
+      ) : viewMode === "emails" ? (
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
           {[
             { label: "Total", value: emailStats.total, color: "text-gray-900" },
@@ -215,6 +215,21 @@ export default function EmailLogsTab() {
             { label: "Pending", value: emailStats.pending, color: "text-amber-600" },
             { label: "Failed", value: emailStats.failed, color: "text-red-600" },
             { label: "Suppressed", value: emailStats.suppressed, color: "text-gray-500" },
+          ].map(s => (
+            <Card key={s.label} className="bg-white border border-gray-200 shadow-sm">
+              <CardContent className="p-3">
+                <p className="text-xs text-gray-500 uppercase tracking-wide">{s.label}</p>
+                <p className={`text-xl font-bold ${s.color}`}>{s.value}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      ) : (
+        <div className="grid grid-cols-3 gap-3">
+          {[
+            { label: "Total Logins", value: loginLogs.length, color: "text-gray-900" },
+            { label: "Successful", value: loginLogs.filter(l => l.success).length, color: "text-emerald-600" },
+            { label: "Failed", value: loginLogs.filter(l => !l.success).length, color: "text-red-600" },
           ].map(s => (
             <Card key={s.label} className="bg-white border border-gray-200 shadow-sm">
               <CardContent className="p-3">
