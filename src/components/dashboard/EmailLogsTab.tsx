@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { RefreshCw, AlertTriangle, CheckCircle2, Clock, Ban, XCircle, FileText } from "lucide-react";
+import { RefreshCw, AlertTriangle, CheckCircle2, Clock, Ban, XCircle, FileText, LogIn } from "lucide-react";
 
 interface EmailLog {
   id: string;
@@ -27,6 +27,15 @@ interface FormLog {
   created_at: string;
 }
 
+interface LoginLog {
+  id: string;
+  email: string;
+  success: boolean;
+  ip_address: string | null;
+  user_agent: string | null;
+  created_at: string;
+}
+
 const EMAIL_STATUS_CONFIG: Record<string, { label: string; color: string; icon: any }> = {
   sent: { label: "Sent", color: "bg-emerald-50 text-emerald-700 border-emerald-200", icon: CheckCircle2 },
   pending: { label: "Pending", color: "bg-amber-50 text-amber-700 border-amber-200", icon: Clock },
@@ -43,11 +52,12 @@ const FORM_STATUS_CONFIG: Record<string, { label: string; color: string; icon: a
   validation_error: { label: "Validation", color: "bg-amber-50 text-amber-700 border-amber-200", icon: AlertTriangle },
 };
 
-type ViewMode = "forms" | "emails";
+type ViewMode = "forms" | "emails" | "logins";
 
 export default function EmailLogsTab() {
   const [emailLogs, setEmailLogs] = useState<EmailLog[]>([]);
   const [formLogs, setFormLogs] = useState<FormLog[]>([]);
+  const [loginLogs, setLoginLogs] = useState<LoginLog[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>("forms");
@@ -66,6 +76,11 @@ export default function EmailLogsTab() {
       if (emailRes.error) setError(emailRes.error.message);
       else if (emailRes.data?.error) setError(emailRes.data.error);
       else setEmailLogs((emailRes.data?.logs as EmailLog[]) || []);
+
+      // Store login logs from the same response
+      if (emailRes.data?.loginLogs) {
+        setLoginLogs(emailRes.data.loginLogs as LoginLog[]);
+      }
 
       if (formRes.error) console.error("Form logs error:", formRes.error);
       else if (formRes.data?.error) console.error("Form logs error:", formRes.data.error);
@@ -157,6 +172,19 @@ export default function EmailLogsTab() {
         >
           📧 Email Delivery
         </Button>
+        <Button
+          size="sm"
+          variant={viewMode === "logins" ? "default" : "outline"}
+          onClick={() => { setViewMode("logins"); setStatusFilter("all"); }}
+          className="text-xs"
+        >
+          <LogIn className="w-3 h-3 mr-1" /> Admin Logins
+          {loginLogs.filter(l => !l.success).length > 0 && (
+            <span className="ml-1.5 bg-red-500 text-white rounded-full px-1.5 text-[10px] font-bold">
+              {loginLogs.filter(l => !l.success).length}
+            </span>
+          )}
+        </Button>
         <div className="flex-1" />
         <Button size="sm" variant="outline" onClick={fetchLogs} disabled={loading} className="text-xs">
           <RefreshCw className={`w-3 h-3 mr-1 ${loading ? "animate-spin" : ""}`} /> Refresh
@@ -179,7 +207,7 @@ export default function EmailLogsTab() {
             </Card>
           ))}
         </div>
-      ) : (
+      ) : viewMode === "emails" ? (
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
           {[
             { label: "Total", value: emailStats.total, color: "text-gray-900" },
@@ -187,6 +215,21 @@ export default function EmailLogsTab() {
             { label: "Pending", value: emailStats.pending, color: "text-amber-600" },
             { label: "Failed", value: emailStats.failed, color: "text-red-600" },
             { label: "Suppressed", value: emailStats.suppressed, color: "text-gray-500" },
+          ].map(s => (
+            <Card key={s.label} className="bg-white border border-gray-200 shadow-sm">
+              <CardContent className="p-3">
+                <p className="text-xs text-gray-500 uppercase tracking-wide">{s.label}</p>
+                <p className={`text-xl font-bold ${s.color}`}>{s.value}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      ) : (
+        <div className="grid grid-cols-3 gap-3">
+          {[
+            { label: "Total Logins", value: loginLogs.length, color: "text-gray-900" },
+            { label: "Successful", value: loginLogs.filter(l => l.success).length, color: "text-emerald-600" },
+            { label: "Failed", value: loginLogs.filter(l => !l.success).length, color: "text-red-600" },
           ].map(s => (
             <Card key={s.label} className="bg-white border border-gray-200 shadow-sm">
               <CardContent className="p-3">
@@ -212,7 +255,7 @@ export default function EmailLogsTab() {
               <option value="error">Error</option>
               <option value="validation_error">Validation Error</option>
             </>
-          ) : (
+          ) : viewMode === "emails" ? (
             <>
               <option value="sent">Sent</option>
               <option value="pending">Pending</option>
@@ -220,10 +263,15 @@ export default function EmailLogsTab() {
               <option value="dlq">DLQ</option>
               <option value="suppressed">Suppressed</option>
             </>
+          ) : (
+            <>
+              <option value="success">Success</option>
+              <option value="failed">Failed</option>
+            </>
           )}
         </select>
         <span className="text-xs text-gray-400">
-          {viewMode === "forms" ? filteredForms.length : filteredEmails.length} entries
+          {viewMode === "forms" ? filteredForms.length : viewMode === "emails" ? filteredEmails.length : loginLogs.filter(l => statusFilter === "all" ? true : statusFilter === "success" ? l.success : !l.success).length} entries
         </span>
       </div>
 
@@ -292,7 +340,7 @@ export default function EmailLogsTab() {
                   })}
                 </TableBody>
               </Table>
-            ) : (
+            ) : viewMode === "emails" ? (
               <Table>
                 <TableHeader>
                   <TableRow className="border-gray-100">
@@ -341,6 +389,53 @@ export default function EmailLogsTab() {
                       </TableRow>
                     );
                   })}
+                </TableBody>
+              </Table>
+            ) : (
+              <Table>
+                <TableHeader>
+                  <TableRow className="border-gray-100">
+                    <TableHead className="text-gray-500 text-xs">Time (CET)</TableHead>
+                    <TableHead className="text-gray-500 text-xs">Email</TableHead>
+                    <TableHead className="text-gray-500 text-xs text-center">Status</TableHead>
+                    <TableHead className="text-gray-500 text-xs">IP Address</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {loginLogs.length === 0 && !loading && (
+                    <TableRow>
+                      <TableCell colSpan={4} className="text-center text-gray-400 py-12">
+                        No login attempts logged yet.
+                      </TableCell>
+                    </TableRow>
+                  )}
+                  {loading && (
+                    <TableRow>
+                      <TableCell colSpan={4} className="text-center text-gray-400 py-12">Loading...</TableCell>
+                    </TableRow>
+                  )}
+                  {loginLogs
+                    .filter(l => statusFilter === "all" ? true : statusFilter === "success" ? l.success : !l.success)
+                    .map(log => (
+                    <TableRow key={log.id} className={`border-gray-100 hover:bg-gray-50 ${!log.success ? "bg-red-50/30" : ""}`}>
+                      <TableCell className="text-xs text-gray-700 whitespace-nowrap">
+                        {formatDate(log.created_at)}
+                      </TableCell>
+                      <TableCell className="text-xs text-gray-700">{log.email}</TableCell>
+                      <TableCell className="text-center">
+                        {log.success ? (
+                          <Badge className="bg-emerald-50 text-emerald-700 border-emerald-200 border text-[10px] inline-flex items-center gap-1">
+                            <CheckCircle2 className="w-3 h-3" /> Success
+                          </Badge>
+                        ) : (
+                          <Badge className="bg-red-50 text-red-700 border-red-200 border text-[10px] inline-flex items-center gap-1">
+                            <XCircle className="w-3 h-3" /> Failed
+                          </Badge>
+                        )}
+                      </TableCell>
+                      <TableCell className="text-xs text-gray-500">{log.ip_address || "—"}</TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
               </Table>
             )}

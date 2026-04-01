@@ -7,7 +7,6 @@ export interface LoginLog {
 }
 
 const SESSION_KEY = "dw_dashboard_session";
-const LOGS_KEY = "dw_dashboard_logs";
 
 export async function authenticate(email: string, password: string): Promise<boolean> {
   try {
@@ -16,7 +15,6 @@ export async function authenticate(email: string, password: string): Promise<boo
     });
 
     const success = !error && data?.success === true;
-    addLoginLog(email.toLowerCase().trim(), success);
 
     if (success) {
       sessionStorage.setItem(SESSION_KEY, JSON.stringify({
@@ -28,7 +26,6 @@ export async function authenticate(email: string, password: string): Promise<boo
 
     return success;
   } catch {
-    addLoginLog(email.toLowerCase().trim(), false);
     return false;
   }
 }
@@ -47,16 +44,6 @@ export function logout(): void {
   sessionStorage.removeItem(SESSION_KEY);
 }
 
-function addLoginLog(email: string, success: boolean): void {
-  const logs = getLoginLogs();
-  logs.unshift({ email, timestamp: new Date().toISOString(), success });
-  localStorage.setItem(LOGS_KEY, JSON.stringify(logs.slice(0, 100)));
-}
-
 export function getLoginLogs(): LoginLog[] {
-  try {
-    return JSON.parse(localStorage.getItem(LOGS_KEY) || "[]");
-  } catch {
-    return [];
-  }
+  return [];
 }

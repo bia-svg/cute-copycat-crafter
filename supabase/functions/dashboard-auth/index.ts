@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -91,6 +92,23 @@ serve(async (req) => {
 
     const inputEmail = email.toLowerCase().trim();
     const matched = users.find(u => u.email.toLowerCase().trim() === inputEmail && u.password === password);
+
+    // Log the attempt to database
+    const userAgent = req.headers.get("user-agent") || null;
+    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || req.headers.get("cf-connecting-ip") || null;
+    try {
+      const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+      const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+      const sb = createClient(supabaseUrl, serviceKey);
+      await sb.from("dashboard_login_logs").insert({
+        email: inputEmail,
+        success: !!matched,
+        ip_address: ip,
+        user_agent: userAgent,
+      });
+    } catch (logErr) {
+      console.error("Failed to log login attempt:", logErr);
+    }
 
     if (matched) {
       const tokenData = new TextEncoder().encode(`${inputEmail}:${Date.now()}:${crypto.randomUUID()}`);
