@@ -340,7 +340,7 @@ export default function EmailLogsTab() {
                   })}
                 </TableBody>
               </Table>
-            ) : (
+            ) : viewMode === "emails" ? (
               <Table>
                 <TableHeader>
                   <TableRow className="border-gray-100">
@@ -389,6 +389,53 @@ export default function EmailLogsTab() {
                       </TableRow>
                     );
                   })}
+                </TableBody>
+              </Table>
+            ) : (
+              <Table>
+                <TableHeader>
+                  <TableRow className="border-gray-100">
+                    <TableHead className="text-gray-500 text-xs">Time (CET)</TableHead>
+                    <TableHead className="text-gray-500 text-xs">Email</TableHead>
+                    <TableHead className="text-gray-500 text-xs text-center">Status</TableHead>
+                    <TableHead className="text-gray-500 text-xs">IP Address</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {loginLogs.length === 0 && !loading && (
+                    <TableRow>
+                      <TableCell colSpan={4} className="text-center text-gray-400 py-12">
+                        No login attempts logged yet.
+                      </TableCell>
+                    </TableRow>
+                  )}
+                  {loading && (
+                    <TableRow>
+                      <TableCell colSpan={4} className="text-center text-gray-400 py-12">Loading...</TableCell>
+                    </TableRow>
+                  )}
+                  {loginLogs
+                    .filter(l => statusFilter === "all" ? true : statusFilter === "success" ? l.success : !l.success)
+                    .map(log => (
+                    <TableRow key={log.id} className={`border-gray-100 hover:bg-gray-50 ${!log.success ? "bg-red-50/30" : ""}`}>
+                      <TableCell className="text-xs text-gray-700 whitespace-nowrap">
+                        {formatDate(log.created_at)}
+                      </TableCell>
+                      <TableCell className="text-xs text-gray-700">{log.email}</TableCell>
+                      <TableCell className="text-center">
+                        {log.success ? (
+                          <Badge className="bg-emerald-50 text-emerald-700 border-emerald-200 border text-[10px] inline-flex items-center gap-1">
+                            <CheckCircle2 className="w-3 h-3" /> Success
+                          </Badge>
+                        ) : (
+                          <Badge className="bg-red-50 text-red-700 border-red-200 border text-[10px] inline-flex items-center gap-1">
+                            <XCircle className="w-3 h-3" /> Failed
+                          </Badge>
+                        )}
+                      </TableCell>
+                      <TableCell className="text-xs text-gray-500">{log.ip_address || "—"}</TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
               </Table>
             )}
