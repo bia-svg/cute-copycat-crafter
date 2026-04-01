@@ -27,6 +27,15 @@ interface FormLog {
   created_at: string;
 }
 
+interface LoginLog {
+  id: string;
+  email: string;
+  success: boolean;
+  ip_address: string | null;
+  user_agent: string | null;
+  created_at: string;
+}
+
 const EMAIL_STATUS_CONFIG: Record<string, { label: string; color: string; icon: any }> = {
   sent: { label: "Sent", color: "bg-emerald-50 text-emerald-700 border-emerald-200", icon: CheckCircle2 },
   pending: { label: "Pending", color: "bg-amber-50 text-amber-700 border-amber-200", icon: Clock },
@@ -43,11 +52,12 @@ const FORM_STATUS_CONFIG: Record<string, { label: string; color: string; icon: a
   validation_error: { label: "Validation", color: "bg-amber-50 text-amber-700 border-amber-200", icon: AlertTriangle },
 };
 
-type ViewMode = "forms" | "emails";
+type ViewMode = "forms" | "emails" | "logins";
 
 export default function EmailLogsTab() {
   const [emailLogs, setEmailLogs] = useState<EmailLog[]>([]);
   const [formLogs, setFormLogs] = useState<FormLog[]>([]);
+  const [loginLogs, setLoginLogs] = useState<LoginLog[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>("forms");
