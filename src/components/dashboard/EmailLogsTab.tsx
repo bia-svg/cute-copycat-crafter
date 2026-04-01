@@ -255,7 +255,7 @@ export default function EmailLogsTab() {
               <option value="error">Error</option>
               <option value="validation_error">Validation Error</option>
             </>
-          ) : (
+          ) : viewMode === "emails" ? (
             <>
               <option value="sent">Sent</option>
               <option value="pending">Pending</option>
@@ -263,10 +263,15 @@ export default function EmailLogsTab() {
               <option value="dlq">DLQ</option>
               <option value="suppressed">Suppressed</option>
             </>
+          ) : (
+            <>
+              <option value="success">Success</option>
+              <option value="failed">Failed</option>
+            </>
           )}
         </select>
         <span className="text-xs text-gray-400">
-          {viewMode === "forms" ? filteredForms.length : filteredEmails.length} entries
+          {viewMode === "forms" ? filteredForms.length : viewMode === "emails" ? filteredEmails.length : loginLogs.filter(l => statusFilter === "all" ? true : statusFilter === "success" ? l.success : !l.success).length} entries
         </span>
       </div>
 
