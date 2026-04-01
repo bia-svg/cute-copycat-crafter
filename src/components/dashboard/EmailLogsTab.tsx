@@ -77,6 +77,11 @@ export default function EmailLogsTab() {
       else if (emailRes.data?.error) setError(emailRes.data.error);
       else setEmailLogs((emailRes.data?.logs as EmailLog[]) || []);
 
+      // Store login logs from the same response
+      if (emailRes.data?.loginLogs) {
+        setLoginLogs(emailRes.data.loginLogs as LoginLog[]);
+      }
+
       if (formRes.error) console.error("Form logs error:", formRes.error);
       else if (formRes.data?.error) console.error("Form logs error:", formRes.data.error);
       else setFormLogs((formRes.data?.logs as FormLog[]) || []);
