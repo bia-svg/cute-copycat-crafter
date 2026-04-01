@@ -172,6 +172,19 @@ export default function EmailLogsTab() {
         >
           📧 Email Delivery
         </Button>
+        <Button
+          size="sm"
+          variant={viewMode === "logins" ? "default" : "outline"}
+          onClick={() => { setViewMode("logins"); setStatusFilter("all"); }}
+          className="text-xs"
+        >
+          <LogIn className="w-3 h-3 mr-1" /> Admin Logins
+          {loginLogs.filter(l => !l.success).length > 0 && (
+            <span className="ml-1.5 bg-red-500 text-white rounded-full px-1.5 text-[10px] font-bold">
+              {loginLogs.filter(l => !l.success).length}
+            </span>
+          )}
+        </Button>
         <div className="flex-1" />
         <Button size="sm" variant="outline" onClick={fetchLogs} disabled={loading} className="text-xs">
           <RefreshCw className={`w-3 h-3 mr-1 ${loading ? "animate-spin" : ""}`} /> Refresh
