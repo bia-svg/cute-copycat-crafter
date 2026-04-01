@@ -48,7 +48,16 @@ serve(async (req) => {
 
     if (error) throw error;
 
-    return new Response(JSON.stringify({ logs: data }), {
+    // Also fetch login logs
+    const { data: loginLogs, error: loginErr } = await supabase
+      .from("dashboard_login_logs")
+      .select("id, email, success, ip_address, user_agent, created_at")
+      .order("created_at", { ascending: false })
+      .limit(200);
+
+    if (loginErr) console.error("Login logs fetch error:", loginErr);
+
+    return new Response(JSON.stringify({ logs: data, loginLogs: loginLogs || [] }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (error) {
