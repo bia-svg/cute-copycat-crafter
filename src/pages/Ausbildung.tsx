@@ -395,11 +395,13 @@ export default function Ausbildung() {
 
           {showCH && (
             <div className="bg-[#E8F5E9] border border-[#81C784] p-4 mt-8 max-w-2xl mx-auto text-center rounded-lg">
-              <p className="text-sm font-semibold text-[#2E7D32]">EMR Krankenkasse Konform · ZSR Nr. P609264</p>
+              <p className="text-sm font-semibold text-[#2E7D32]">
+                {isEN ? "For EMR Members:" : "Für EMR-Mitglieder:"}
+              </p>
               <p className="text-xs text-muted-foreground mt-1">
                 {isEN
-                  ? "Many Swiss supplementary insurances cover part of the costs."
-                  : "Viele Schweizer Zusatzversicherungen übernehmen einen Teil der Kosten."}
+                  ? "Detailed hours and content documentation for possible EMR submission included."
+                  : "Ausführlicher Stunden- und Inhaltsnachweis zur möglichen EMR-Einreichung inklusive."}
               </p>
             </div>
           )}
