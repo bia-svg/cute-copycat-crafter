@@ -44,10 +44,10 @@ export default function CTASuccessTab() {
     async function load() {
       try {
         const session = sessionStorage.getItem("dw_dashboard_session");
-        const token = session ? JSON.parse(session).token : "";
+        const sessionData = session ? JSON.parse(session) : null;
+        if (!sessionData?.token || !sessionData?.email) throw new Error("Not authenticated");
         const { data, error } = await supabase.functions.invoke("fetch-cta-data", {
-          headers: { Authorization: `Bearer ${token}` },
-          body: null,
+          body: { token: sessionData.token, email: sessionData.email, days: 90 },
         });
         if (error) throw error;
         setViews(data.views || []);
