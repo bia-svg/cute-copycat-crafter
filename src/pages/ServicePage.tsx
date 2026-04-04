@@ -293,16 +293,16 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       {(data.slugEN === "kinder-jugendliche" || data.slugCH === "kinder-jugendliche") && (
         <section className="bg-secondary border-t border-border">
           <div className="container-main py-12">
-            <div className="grid md:grid-cols-[280px_1fr] gap-8 items-start">
-              <div className="mx-auto md:mx-0">
+            <div className="grid md:grid-cols-[220px_1fr] gap-8 items-start">
+              <div className="mx-auto md:mx-0 w-48 md:w-full">
                 <div className="border border-border overflow-hidden rounded-lg">
                   <img src={CDN.kathrynPortrait} alt="Kathryn Woods – Kinder- und Jugendtherapeutin" className="w-full h-auto" loading="lazy" />
-                   <div className="p-2.5 md:p-3 bg-card">
-                     <h3 className="font-semibold text-foreground text-xs md:text-sm leading-tight">Kathryn</h3>
-                     <p className="text-[10px] md:text-xs text-muted-foreground leading-tight mt-0.5">
-                       {isEN ? "Psychological Counselor" : "Psychologische Beraterin"}
-                     </p>
-                   </div>
+                  <div className="p-4 bg-card">
+                    <h3 className="font-bold text-foreground text-sm">Kathryn</h3>
+                    <p className="text-xs text-muted-foreground">
+                      {isEN ? "Psychological Counselor" : "Psychologische Beraterin"}
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="space-y-4">
