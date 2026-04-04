@@ -126,7 +126,7 @@ export default function NichtraucherSeminare() {
           </h2>
           <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
             <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-base">
-              {isEN ? "Contact Us" : "Jetzt Kontakt aufnehmen"}
+              {isEN ? "Register Now!" : "Jetzt anmelden!"}
             </Button>
           </Link>
         </div>
