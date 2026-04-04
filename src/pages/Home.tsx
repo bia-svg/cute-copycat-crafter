@@ -592,15 +592,10 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-3">
               {isEN ? "Take the First Step with a Free Consultation" : "Machen Sie den ersten Schritt mit einem kostenlosen Erstgespräch"}
             </h2>
-            <p className="text-center text-foreground/80 mb-2">
+            <p className="text-center text-foreground/80 text-sm md:text-base mb-5">
               {isEN
-                ? "Receive a professional, honest first assessment of your situation and discover whether this approach feels right for you."
-                : "Erhalten Sie eine professionelle, ehrliche Ersteinschätzung Ihrer Situation und finden Sie heraus, ob dieser Ansatz der richtige für Sie ist."}
-            </p>
-            <p className="text-sm text-muted-foreground text-center mb-6">
-              {isEN
-                ? "Approx. 10–30 minutes • Professional • Honest • Individual"
-                : "Ca. 10–30 Minuten • Professionell • Ehrlich • Individuell"}
+                ? "Send your request here and I will reply within 24 hours. Or use the WhatsApp button for a faster response."
+                : "Senden Sie hier Ihre Anfrage und ich melde mich innerhalb von 24 Stunden. Oder nutzen Sie den WhatsApp-Button für eine schnellere Antwort."}
             </p>
             <div className="border border-border p-5 sm:p-6 bg-white">
               <InlineContactForm />
