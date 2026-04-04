@@ -233,37 +233,37 @@ export default function Ausbildung() {
           SECTION 2 — What makes this different
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-white border-b border-border">
-        <div className="container-main py-10 lg:py-14">
-          <h2 className="text-2xl font-bold text-[#1B3A5C] mb-2 text-center" style={{ fontFamily: "Georgia, serif" }}>
+        <div className="container-main py-6 lg:py-10">
+          <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "What Makes This Training Different" : "Was diese Ausbildung besonders macht"}
           </h2>
-          <p className="text-sm text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+          <p className="text-xs md:text-sm text-muted-foreground text-center mb-5 md:mb-6 max-w-2xl mx-auto">
             {isEN
               ? "Not a mass-market course. Not a certificate mill. A serious premium training with real depth, built on 30,000+ clinical sessions."
               : "Kein Massenkurs. Keine Zertifikatsfabrik. Eine seriöse Premium-Ausbildung mit echter Tiefe, aufgebaut auf 30.000+ klinischen Sitzungen."}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="border border-border p-6 text-center">
-              <Shield className="w-8 h-8 text-[#1B3A5C] mx-auto mb-3" />
-              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "40+ Years of Clinical Practice" : "40+ Jahre klinische Praxis"}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            <div className="border border-border p-4 text-center">
+              <Shield className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
+              <h3 className="font-bold text-sm text-[#1B3A5C] mb-1">{isEN ? "40+ Years of Clinical Practice" : "40+ Jahre klinische Praxis"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
                   ? "Every technique taught has been tested and refined in thousands of real clinical sessions. This is method-based expert training."
                   : "Jede gelehrte Technik wurde in Tausenden realer klinischer Sitzungen getestet und verfeinert. Eine methodenbasierte Expertenausbildung."}
               </p>
             </div>
-            <div className="border border-border p-6 text-center">
-              <Users className="w-8 h-8 text-[#1B3A5C] mx-auto mb-3" />
-              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "Small Group Format" : "Kleingruppen-Format"}</h3>
+            <div className="border border-border p-4 text-center">
+              <Users className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
+              <h3 className="font-bold text-sm text-[#1B3A5C] mb-1">{isEN ? "Small Group Format" : "Kleingruppen-Format"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
                   ? "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity. A selective learning experience."
                   : "Strikt begrenzte Teilnehmerzahl garantiert persönliche Betreuung, individuelles Feedback und maximale Lernintensität. Ein selektives Lernerlebnis."}
               </p>
             </div>
-            <div className="border border-border p-6 text-center">
-              <Zap className="w-8 h-8 text-[#1B3A5C] mx-auto mb-3" />
-              <h3 className="font-bold text-sm text-[#1B3A5C] mb-2">{isEN ? "Hands-On from Day 1" : "Praxis ab Tag 1"}</h3>
+            <div className="border border-border p-4 text-center">
+              <Zap className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
+              <h3 className="font-bold text-sm text-[#1B3A5C] mb-1">{isEN ? "Hands-On from Day 1" : "Praxis ab Tag 1"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
                   ? "You won't just watch — you'll hypnotize. Every day combines theory with immediate application. A transformational practical training."
