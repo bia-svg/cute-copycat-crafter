@@ -275,12 +275,8 @@ export default function Home() {
             </div>
 
             <div className="space-y-6">
-              <h1 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight">
-                {isInternational
-                  ? (isEN ? "Hypnotherapy Sessions and Seminars Across Germany or Switzerland — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in Deutschland oder der Schweiz — David J. Woods")
-                  : country === "ch"
-                    ? (isEN ? "Hypnotherapy Sessions and Seminars Across Switzerland — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in der Schweiz — David J. Woods")
-                    : (isEN ? "Hypnotherapy Sessions and Seminars Across Germany — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in Deutschland — David J. Woods")}
+              <h1 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight tracking-tight">
+                Lic. Psych. David J. Woods
               </h1>
               <p className="text-lg italic text-muted-foreground">
                 {isEN ? '"Freedom Begins in the Mind"' : '"Freiheit beginnt im Kopf"'}
@@ -310,12 +306,8 @@ export default function Home() {
           </div>
         ) : (
           <div className="container-main py-8 space-y-6">
-            <h1 className="text-2xl font-bold text-foreground leading-tight">
-              {isInternational
-                ? (isEN ? "Hypnotherapy Sessions and Seminars Across Germany or Switzerland — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in Deutschland oder der Schweiz — David J. Woods")
-                : country === "ch"
-                  ? (isEN ? "Hypnotherapy Sessions and Seminars Across Switzerland — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in der Schweiz — David J. Woods")
-                  : (isEN ? "Hypnotherapy Sessions and Seminars Across Germany — David J. Woods" : "Hypnosetherapie-Sitzungen und Seminare in Deutschland — David J. Woods")}
+            <h1 className="text-2xl font-bold text-foreground leading-tight tracking-tight">
+              Lic. Psych. David J. Woods
             </h1>
             <p className="italic text-muted-foreground">{isEN ? '"Freedom Begins in the Mind"' : '"Freiheit beginnt im Kopf"'}</p>
             <p className="text-sm text-foreground/80 leading-relaxed">
