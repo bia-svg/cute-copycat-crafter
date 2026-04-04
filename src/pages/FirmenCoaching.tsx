@@ -99,32 +99,14 @@ export default function FirmenCoaching() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
             {topics.map((item) => (
-              <Link key={item.title} to={item.href} className="block bg-white border border-border rounded-lg shadow-sm hover:shadow-lg hover:border-primary transition-all duration-300 group overflow-hidden">
-                {/* Mobile: horizontal card matching session service cards */}
-                <div className="flex md:hidden">
-                  <div className="w-28 min-h-[7rem] shrink-0 bg-primary/5 flex items-center justify-center">
-                    <span className="text-primary w-10 h-10">{item.icon}</span>
-                  </div>
-                  <div className="flex flex-col justify-center p-4 min-w-0">
-                    <h3 className="font-semibold text-foreground text-[0.95rem] leading-tight mb-1">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground line-clamp-2 mb-2">{item.desc}</p>
-                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-cta group-hover:gap-2 transition-all">
-                      Details <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </div>
-                </div>
-                {/* Desktop: vertical card */}
-                <div className="hidden md:block p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-primary">{item.icon}</span>
-                    <h3 className="font-semibold text-primary">{item.title}</h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">{item.desc}</p>
-                  <span className="inline-flex items-center gap-1 text-sm font-medium text-cta group-hover:gap-2 transition-all">
-                    Details <ArrowRight className="w-4 h-4" />
-                  </span>
-                </div>
-              </Link>
+              <ServiceCard
+                key={item.title}
+                title={item.title}
+                description={item.desc}
+                href={item.href}
+                icon={item.icon}
+                image={item.image}
+              />
             ))}
           </div>
         </div>
