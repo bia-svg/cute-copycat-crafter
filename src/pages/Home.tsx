@@ -543,19 +543,19 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ TRAINING ═══════════════════ */}
-      <section className="py-10 md:py-16" style={deferredSectionStyle}>
+      <section className="py-8 md:py-16" style={deferredSectionStyle}>
         <div className="container-main">
-          <h2 className="text-xl md:text-3xl font-bold text-foreground text-center mb-1 md:mb-3">{t("section.training")}</h2>
-          <p className="text-center text-muted-foreground text-sm md:text-base max-w-2xl mx-auto mb-4 md:mb-8">
+          <h2 className="text-lg md:text-3xl font-bold text-foreground text-center mb-0.5 md:mb-3">{t("section.training")}</h2>
+          <p className="text-center text-muted-foreground text-xs md:text-base max-w-2xl mx-auto mb-2 md:mb-8">
             {isEN ? "Aktiv-Hypnose© Therapist Diploma — 6-Day Intensive Training" : "Aktiv-Hypnose© Therapeuten-Diplom — 6-Tage Intensiv-Ausbildung"}
           </p>
-          <div className="bg-card border border-border rounded-lg p-4 md:p-8 max-w-3xl mx-auto">
-            <p className="text-foreground/80 leading-relaxed text-sm md:text-base mb-4 md:mb-6">
+          <div className="bg-card border border-border rounded-lg p-3 md:p-8 max-w-3xl mx-auto">
+            <p className="text-foreground/80 leading-snug text-xs md:text-base mb-3 md:mb-6">
               {isEN
-                ? "Training for people who want to create real change – well-founded, practical, and sustainably effective. Training takes place in small groups and is strictly limited."
-                : "Ausbildung für Menschen, die echte Veränderung bewirken wollen – fundiert, praxisnah und nachhaltig wirksam. Die Ausbildung findet bewusst in kleinen Gruppen statt und ist strikt begrenzt."}
+                ? "Training for people who want to create real change – practical, effective, and held in small, strictly limited groups."
+                : "Ausbildung für Menschen, die echte Veränderung bewirken wollen – praxisnah, wirksam und in kleinen, strikt begrenzten Gruppen."}
             </p>
-            <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6">
+            <div className="grid grid-cols-3 gap-1.5 md:gap-4 mb-3 md:mb-6">
               {[
                 { num: "350+", label: isEN ? "Pages Training Manual" : "Seiten Ausbildungsmappe" },
                 { num: "150+", label: isEN ? "Pages Example Texts" : "Seiten Beispieltexte" },
@@ -564,18 +564,18 @@ export default function Home() {
                 { num: "✓", label: isEN ? "Aktiv-Hypnose© Diploma" : "Aktiv-Hypnose© Diplom" },
               ].map(item => (
                 <div key={item.label} className="text-center">
-                  <div className="text-lg md:text-2xl font-bold text-primary">{item.num}</div>
-                  <div className="text-[10px] md:text-xs text-muted-foreground leading-tight">{item.label}</div>
+                  <div className="text-base md:text-2xl font-bold text-primary">{item.num}</div>
+                  <div className="text-[9px] md:text-xs text-muted-foreground leading-tight">{item.label}</div>
                 </div>
               ))}
             </div>
-            <div className="flex items-center gap-2 bg-secondary rounded p-1.5 md:p-2 mb-3 md:mb-6">
-              <CheckCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-cta" />
-              <span className="text-xs md:text-sm font-medium text-foreground">EMR Krankenkasse Konform</span>
+            <div className="flex items-center gap-1.5 bg-secondary rounded p-1 md:p-2 mb-2 md:mb-6">
+              <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-cta" />
+              <span className="text-[11px] md:text-sm font-medium text-foreground">EMR Krankenkasse Konform</span>
             </div>
             <div className="text-center">
               <Link to={getPath("training", language, country)}>
-                <Button className="bg-cta text-cta-foreground hover:bg-cta/90 text-sm md:text-base">
+                <Button className="bg-cta text-cta-foreground hover:bg-cta/90 text-xs md:text-base px-4 py-1.5 md:px-6 md:py-2">
                   {isEN ? "All Training Details" : "Alle Ausbildungsdetails"}
                 </Button>
               </Link>
