@@ -6,6 +6,7 @@ import { CDN } from "@/lib/cdn";
 import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import InlineContactForm from "@/components/InlineContactForm";
 import { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import hero1 from "@/assets/hero-1.webp";
@@ -569,31 +570,26 @@ export default function Home() {
       </section>
 
 
-      {/* ═══════════════════ FINAL CTA ═══════════════════ */}
-      <section className="py-20 bg-cta text-cta-foreground" style={deferredSectionStyle}>
-        <div className="container-main text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            {isEN ? "Ready for Lasting Change?" : "Bereit für nachhaltige Veränderung?"}
-          </h2>
-          <p className="opacity-90 max-w-xl mx-auto mb-6">
-            {isEN
-              ? "Book your free and non-binding discovery call. We take time for you and advise you individually."
-              : "Vereinbaren Sie jetzt Ihr kostenloses und unverbindliches Erstgespräch. Wir nehmen uns Zeit für Sie und beraten Sie individuell."}
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-            <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:opacity-80 transition-opacity">
-              <div className="flex gap-0.5">
-                {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-300 text-yellow-300" />)}
-              </div>
-              <span className="text-sm ml-1">5.0 — 264 Google {isEN ? "Reviews" : "Bewertungen"}</span>
-            </a>
-          </div>
-          <div>
-            <Link to={getPath("contact", language, country)}>
-              <Button size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold">
-                {t("nav.cta")}
-              </Button>
-            </Link>
+      {/* ═══════════════════ INLINE CONTACT FORM ═══════════════════ */}
+      <section className="py-16 bg-[#f4f3ef]" style={deferredSectionStyle}>
+        <div className="container-main">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-3">
+              {isEN ? "Take the First Step with a Free Consultation" : "Machen Sie den ersten Schritt mit einem kostenlosen Erstgespräch"}
+            </h2>
+            <p className="text-center text-foreground/80 mb-2">
+              {isEN
+                ? "Receive a professional, honest first assessment of your situation and discover whether this approach feels right for you."
+                : "Erhalten Sie eine professionelle, ehrliche Ersteinschätzung Ihrer Situation und finden Sie heraus, ob dieser Ansatz der richtige für Sie ist."}
+            </p>
+            <p className="text-sm text-muted-foreground text-center mb-6">
+              {isEN
+                ? "Approx. 10–30 minutes • Professional • Honest • Individual"
+                : "Ca. 10–30 Minuten • Professionell • Ehrlich • Individuell"}
+            </p>
+            <div className="border border-border p-5 sm:p-6 bg-white">
+              <InlineContactForm />
+            </div>
           </div>
         </div>
       </section>
