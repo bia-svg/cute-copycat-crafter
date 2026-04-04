@@ -430,7 +430,7 @@ export default function SeminarAnmeldung() {
                         <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Street & Number" : "Strasse & Hausnummer"} *</label>
                         <input type="text" name="street" required autoComplete="street-address" className={inputClasses} />
                       </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                         <div>
                           <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Postal Code" : "PLZ"} *</label>
                           <input type="text" name="postalCode" required autoComplete="postal-code" className={inputClasses} />
