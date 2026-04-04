@@ -30,6 +30,10 @@ interface LeadEmailData {
   message?: string;
   profession?: string;
   registrationNumber?: string;
+  bookedPrice?: string;
+  priceType?: string;
+  regularPrice?: string;
+  savingsAmount?: string;
 }
 
 /**
@@ -78,6 +82,10 @@ export async function sendLeadEmails(data: LeadEmailData) {
     message: data.message,
     profession: data.profession,
     registrationNumber: data.registrationNumber,
+    bookedPrice: data.bookedPrice,
+    priceType: data.priceType,
+    regularPrice: data.regularPrice,
+    savingsAmount: data.savingsAmount,
   };
 
   // 1. Notify David
