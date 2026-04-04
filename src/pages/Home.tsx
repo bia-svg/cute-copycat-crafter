@@ -13,6 +13,10 @@ import hero1 from "@/assets/hero-1.webp";
 import hero1Mobile from "@/assets/hero-1-mobile.webp";
 import davidSessionImg from "@/assets/david-office-portrait.webp";
 import davidSessionMobile from "@/assets/david-office-portrait-mobile.webp";
+import corporateSuccessImg from "@/assets/corporate-success.jpg";
+import corporateResilienceImg from "@/assets/corporate-resilience.jpg";
+import corporateStressImg from "@/assets/corporate-stress.jpg";
+import corporateNonsmokerImg from "@/assets/corporate-nonsmoker.jpg";
 
 // Lazy-load remaining hero slides
 const heroDesktop = [
@@ -501,31 +505,31 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
-      <section className="py-16 bg-primary text-primary-foreground" style={deferredSectionStyle}>
+       <section className="py-16 bg-muted/50" style={deferredSectionStyle}>
         <div className="container-main">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3 text-foreground">
             {isEN ? "Corporate Coaching" : "Firmencoaching"}
           </h2>
-          <p className="text-center opacity-80 max-w-2xl mx-auto mb-10">
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-10">
             {isEN
               ? "Performance Coaching: Maximize Your Team's Potential. We offer tailored solutions for companies of all sizes."
               : "Erfolgs-Coaching: Leistungsfähigkeit maximieren. Wir bieten maßgeschneiderte Lösungen für Unternehmen jeder Größe."}
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {[
-              { icon: <Trophy className="w-8 h-8" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Success is ultimately decided in the mind." : "Letztendlich entscheidet sich Erfolg im Kopf.", href: getPath("corporateErfolg", language, country) },
-              { icon: <Shield className="w-8 h-8" />, title: isEN ? "Resilience Building" : "Resilienz-Verstärken", desc: isEN ? "Build inner strength for challenging times." : "Innere Stärke aufbauen für schwere Zeiten.", href: getPath("corporateResilienz", language, country) },
-              { icon: <Clock className="w-8 h-8" />, title: isEN ? "Stress Prevention" : "Stress-Prävention", desc: isEN ? "Burnout prevention for leaders and teams." : "Burnout-Prävention für Führungskräfte und Teams.", href: getPath("corporateStress", language, country) },
-              { icon: <Cigarette className="w-8 h-8" />, title: isEN ? "Non-Smoker Seminars" : "Nichtraucher-Seminare", desc: isEN ? "'Non-smoker in 3 hours' — corporate wellness." : "'Nichtraucher in 3 Stunden' — Firmen-Wellness.", href: getPath("corporateNichtraucher", language, country) },
+              { icon: <Trophy className="w-6 h-6" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Success is ultimately decided in the mind." : "Letztendlich entscheidet sich Erfolg im Kopf.", href: getPath("corporateErfolg", language, country), image: corporateSuccessImg },
+              { icon: <Shield className="w-6 h-6" />, title: isEN ? "Resilience Building" : "Resilienz-Verstärken", desc: isEN ? "Build inner strength for challenging times." : "Innere Stärke aufbauen für schwere Zeiten.", href: getPath("corporateResilienz", language, country), image: corporateResilienceImg },
+              { icon: <Clock className="w-6 h-6" />, title: isEN ? "Stress Prevention" : "Stress-Prävention", desc: isEN ? "Burnout prevention for leaders and teams." : "Burnout-Prävention für Führungskräfte und Teams.", href: getPath("corporateStress", language, country), image: corporateStressImg },
+              { icon: <Cigarette className="w-6 h-6" />, title: isEN ? "Non-Smoker Seminars" : "Nichtraucher-Seminare", desc: isEN ? "'Non-smoker in 3 hours' — corporate wellness." : "'Nichtraucher in 3 Stunden' — Firmen-Wellness.", href: getPath("corporateNichtraucher", language, country), image: corporateNonsmokerImg },
             ].map((item) => (
-              <Link key={item.title} to={item.href} className="bg-primary-foreground/10 rounded-lg p-6 text-center hover:bg-primary-foreground/20 transition-colors group">
-                <div className="flex justify-center mb-3 opacity-90">{item.icon}</div>
-                <h3 className="font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm opacity-80 mb-4">{item.desc}</p>
-                <span className="inline-flex items-center gap-1 text-xs font-medium opacity-70 group-hover:opacity-100">
-                  {isEN ? "Learn more" : "Mehr erfahren"} →
-                </span>
-              </Link>
+              <ServiceCard
+                key={item.title}
+                title={item.title}
+                description={item.desc}
+                href={item.href}
+                icon={item.icon}
+                image={item.image}
+              />
             ))}
           </div>
           <div className="text-center mt-8">
