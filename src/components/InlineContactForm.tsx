@@ -156,7 +156,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-4">
+    <form onSubmit={handleSubmit} noValidate className="space-y-3">
       {/* Name */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
