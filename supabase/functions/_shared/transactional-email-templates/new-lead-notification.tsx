@@ -35,6 +35,10 @@ interface NewLeadProps {
   message?: string
   profession?: string
   registrationNumber?: string
+  bookedPrice?: string
+  priceType?: string
+  regularPrice?: string
+  savingsAmount?: string
 }
 
 const NewLeadNotificationEmail = (props: NewLeadProps) => {
