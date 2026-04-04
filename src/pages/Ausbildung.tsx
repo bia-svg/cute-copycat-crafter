@@ -329,35 +329,35 @@ export default function Ausbildung() {
           SECTION 3 — Day-by-Day Curriculum
           ═══════════════════════════════════════════════════════════ */}
       <section id="curriculum" className="bg-[#f4f3ef] border-b border-border scroll-mt-20">
-        <div className="container-main py-10 lg:py-14">
-          <h2 className="text-2xl font-bold text-[#1B3A5C] mb-2 text-center" style={{ fontFamily: "Georgia, serif" }}>
+        <div className="container-main py-8 lg:py-12">
+          <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Your 6-Day Journey" : "Ihre 6-Tage Reise"}
           </h2>
-          <p className="text-sm text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+          <p className="text-xs md:text-sm text-muted-foreground text-center mb-6 md:mb-8 max-w-2xl mx-auto">
             {isEN
               ? "Each day builds on the previous, taking you from fundamentals to advanced clinical techniques."
               : "Jeder Tag baut auf dem vorherigen auf und führt Sie von den Grundlagen zu fortgeschrittenen klinischen Techniken."}
           </p>
-          <div className="max-w-4xl mx-auto space-y-5">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
             {days.map((day) => (
-              <div key={day.day} className={`border rounded-lg p-6 ${day.color}`}>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className={`p-3 rounded-full bg-white shadow-sm ${day.iconColor}`}>
+              <div key={day.day} className="bg-white border border-border rounded-lg p-4 md:p-5 shadow-sm">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 rounded-lg bg-[#f4f3ef] text-[#1B3A5C]">
                     {day.icon}
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    <p className="text-[10px] font-semibold uppercase tracking-wider text-[#2E7D32]">
                       {isEN ? `Day ${day.day}` : `Tag ${day.day}`}
                     </p>
-                    <h3 className="text-lg font-bold text-[#1B3A5C]">
+                    <h3 className="text-sm md:text-base font-bold text-[#1B3A5C]">
                       {isEN ? day.titleEN : day.titleDE}
                     </h3>
                   </div>
                 </div>
-                <ul className="space-y-2 ml-1">
+                <ul className="space-y-1.5">
                   {(isEN ? day.topicsEN : day.topicsDE).map((topic, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-sm text-[#55504f]">
-                      <CheckCircle className="w-4 h-4 text-[#2E7D32] mt-0.5 shrink-0" />
+                    <li key={i} className="flex items-start gap-2 text-xs text-[#55504f]">
+                      <CheckCircle className="w-3.5 h-3.5 text-[#2E7D32] mt-0.5 shrink-0" />
                       {topic}
                     </li>
                   ))}
