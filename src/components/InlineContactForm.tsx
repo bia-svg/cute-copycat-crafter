@@ -37,7 +37,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
     }
   }, [selectedPhoneCountry.maxDigits]);
 
-  const inputClasses = "w-full border border-border px-3 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
+  const inputClasses = "w-full border border-border px-3 py-2 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
