@@ -259,7 +259,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
             onChange={(e) => setGdprConsent(e.target.checked)}
             className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
           />
-          <span className="text-xs text-foreground leading-relaxed">
+          <span className="text-xs text-foreground leading-snug">
             {isEN ? (
               <>
                 I agree that my personal data will be processed for the purpose of contacting me. I have read and accept the{" "}
