@@ -535,68 +535,56 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ TRAINING ═══════════════════ */}
-      <section className="py-14 md:py-24" style={deferredSectionStyle}>
+      <section className="py-8 md:py-16" style={deferredSectionStyle}>
         <div className="container-main">
-          <div className="max-w-3xl mx-auto relative bg-card border border-border/60 rounded-3xl overflow-hidden shadow-[0_12px_48px_-12px_hsl(var(--primary)/0.15),0_4px_16px_-4px_hsl(var(--primary)/0.08)]">
-            {/* Premium silver/platinum header accent */}
-            <div className="h-1.5 w-full bg-gradient-to-r from-transparent via-[hsl(213,15%,78%)] to-transparent" />
-            
-            <div className="p-6 md:p-12">
-              {/* Featured label */}
-              <div className="text-center mb-3 md:mb-4">
-                <span className="inline-flex items-center gap-1.5 text-[10px] md:text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground/70 border border-border/60 rounded-full px-3 py-1 md:px-4 md:py-1.5 bg-secondary/30">
-                  <Award className="w-3 h-3 md:w-3.5 md:h-3.5" />
+          <div className="max-w-3xl mx-auto relative bg-card border border-[hsl(213,18%,82%)] rounded-2xl overflow-hidden shadow-[0_8px_32px_-8px_hsl(213,20%,60%,0.18),0_2px_8px_-2px_hsl(213,20%,60%,0.10)]">
+            {/* Silver/sage accent bar */}
+            <div className="h-1 w-full bg-gradient-to-r from-[hsl(213,15%,82%)] via-[hsl(160,12%,65%)] to-[hsl(213,15%,82%)]" />
+
+            <div className="px-5 py-4 md:px-10 md:py-8">
+              {/* Label + Title — compact header */}
+              <div className="text-center mb-3 md:mb-5">
+                <span className="inline-flex items-center gap-1.5 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.18em] text-[hsl(213,15%,50%)] border border-[hsl(213,15%,82%)] rounded-full px-3 py-0.5 md:px-4 md:py-1 bg-[hsl(213,18%,95%)] mb-2 md:mb-3">
+                  <Award className="w-3 h-3" />
                   {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
                 </span>
-              </div>
-
-              {/* Header */}
-              <div className="text-center mb-5 md:mb-10">
-                <h2 className="text-[1.35rem] md:text-[2.25rem] font-bold text-foreground leading-tight mb-3 md:mb-4">{t("section.training")}</h2>
-                <p className="text-muted-foreground text-xs md:text-lg max-w-xl mx-auto font-medium">
-                  {isEN ? "Aktiv-Hypnose© Therapist Diploma — 6-Day Intensive Training" : "Aktiv-Hypnose© Therapeuten-Diplom — 6-Tage Intensiv-Ausbildung"}
+                <h2 className="text-lg md:text-[1.75rem] font-bold text-foreground leading-tight">{t("section.training")}</h2>
+                <p className="text-muted-foreground text-[11px] md:text-sm mt-1 font-medium">
+                  {isEN ? "Aktiv-Hypnose© Therapist Diploma — 6-Day Intensive" : "Aktiv-Hypnose© Therapeuten-Diplom — 6-Tage Intensiv"}
                 </p>
               </div>
 
-              {/* Elegant divider */}
-              <div className="flex items-center justify-center gap-3 mb-5 md:mb-10">
-                <div className="h-px w-12 bg-gradient-to-r from-transparent to-border" />
-                <div className="w-1.5 h-1.5 rounded-full bg-primary/30" />
-                <div className="h-px w-12 bg-gradient-to-l from-transparent to-border" />
-              </div>
-
-              <p className="text-foreground/80 leading-relaxed text-xs md:text-base mb-5 md:mb-10 text-center max-w-xl mx-auto">
+              {/* Compact intro */}
+              <p className="text-foreground/75 text-[11px] md:text-sm mb-3 md:mb-5 text-center max-w-lg mx-auto leading-snug">
                 {isEN
-                  ? "Training for people who want to create real change – practical, effective, and held in small, strictly limited groups."
-                  : "Ausbildung für Menschen, die echte Veränderung bewirken wollen – praxisnah, wirksam und in kleinen, strikt begrenzten Gruppen."}
+                  ? "Training for people who want to create real change – practical, effective, in small strictly limited groups."
+                  : "Ausbildung für Menschen, die echte Veränderung bewirken wollen – praxisnah, wirksam, in kleinen strikt begrenzten Gruppen."}
               </p>
 
-              {/* Stats grid — premium mini cards */}
-              <div className="grid grid-cols-3 md:grid-cols-5 gap-2.5 md:gap-4 mb-5 md:mb-10">
+              {/* Stats — compact grid */}
+              <div className="grid grid-cols-5 gap-1.5 md:gap-3 mb-3 md:mb-5">
                 {[
-                  { num: "350+", label: isEN ? "Pages Training Manual" : "Seiten Ausbildungsmappe" },
-                  { num: "150+", label: isEN ? "Pages Example Texts" : "Seiten Beispieltexte" },
-                  { num: "50+", label: isEN ? "Short Videos" : "Kurzvideos" },
-                  { num: "50+", label: isEN ? "Audio Recordings" : "Audioaufnahmen" },
-                  { num: "✓", label: isEN ? "Aktiv-Hypnose© Diploma" : "Aktiv-Hypnose© Diplom" },
+                  { num: "350+", label: isEN ? "Pages Manual" : "Seiten Mappe" },
+                  { num: "150+", label: isEN ? "Example Texts" : "Beispieltexte" },
+                  { num: "50+", label: isEN ? "Videos" : "Videos" },
+                  { num: "50+", label: isEN ? "Audio" : "Audio" },
+                  { num: "✓", label: isEN ? "Diploma" : "Diplom" },
                 ].map(item => (
-                  <div key={item.label} className="text-center bg-gradient-to-b from-secondary/40 to-secondary/70 border border-border/40 rounded-xl py-3 md:py-5 px-1.5">
-                    <div className="text-xl md:text-3xl font-bold text-primary mb-1">{item.num}</div>
-                    <div className="text-[8px] md:text-xs text-muted-foreground leading-tight font-medium">{item.label}</div>
+                  <div key={item.label} className="text-center bg-[hsl(213,20%,96%)] border border-[hsl(213,15%,88%)] rounded-lg py-2 md:py-3 px-1">
+                    <div className="text-sm md:text-xl font-bold text-primary">{item.num}</div>
+                    <div className="text-[7px] md:text-[10px] text-muted-foreground leading-tight font-medium mt-0.5">{item.label}</div>
                   </div>
                 ))}
               </div>
 
-              {/* EMR Trust Badge — quality seal */}
-              <div className="flex items-center justify-center gap-2.5 bg-gradient-to-r from-primary/[0.04] via-primary/[0.07] to-primary/[0.04] border border-primary/12 rounded-xl px-5 py-3 md:py-3.5 mb-6 md:mb-10 max-w-sm mx-auto">
-                <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-cta flex-shrink-0" />
-                <span className="text-xs md:text-sm font-semibold text-foreground tracking-wide">EMR Krankenkasse Konform</span>
-              </div>
-
-              {/* CTA */}
-              <div className="text-center">
+              {/* EMR + CTA row */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 md:gap-4">
+                <div className="inline-flex items-center gap-1.5 bg-[hsl(160,14%,94%)] border border-[hsl(160,12%,82%)] rounded-lg px-3 py-1.5 md:px-4 md:py-2">
+                  <CheckCircle className="w-3.5 h-3.5 text-cta flex-shrink-0" />
+                  <span className="text-[10px] md:text-xs font-semibold text-foreground/85 tracking-wide">EMR Krankenkasse Konform</span>
+                </div>
                 <Link to={getPath("training", language, country)}>
-                  <Button className="bg-cta text-cta-foreground hover:bg-cta/90 text-xs md:text-base px-5 py-2 md:px-8 md:py-2.5 shadow-md">
+                  <Button className="bg-cta text-cta-foreground hover:bg-cta/90 text-xs md:text-sm px-5 py-2 md:px-7 md:py-2 shadow-md">
                     {isEN ? "All Training Details" : "Alle Ausbildungsdetails"}
                   </Button>
                 </Link>
