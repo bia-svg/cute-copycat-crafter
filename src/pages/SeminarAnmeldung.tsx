@@ -488,7 +488,7 @@ export default function SeminarAnmeldung() {
                       {/* Message */}
                       <div>
                         <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Message (optional)" : "Nachricht (optional)"}</label>
-                        <textarea name="message" rows={3} className={`${inputClasses} resize-none`} />
+                        <textarea name="message" rows={2} className={`${inputClasses} resize-none`} />
                       </div>
 
                       {/* DSGVO + AGB */}
