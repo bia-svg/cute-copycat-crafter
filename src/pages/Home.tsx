@@ -545,14 +545,16 @@ export default function Home() {
                   <Award className="w-3 h-3" />
                   {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
                 </span>
-                <h2 className="text-lg md:text-[1.75rem] font-bold text-foreground leading-tight">{t("section.training")}</h2>
-                <p className="text-muted-foreground text-[11px] md:text-sm mt-1 font-medium">
-                  {isEN ? "Aktiv-Hypnose© Therapist Diploma — 6-Day Intensive" : "Aktiv-Hypnose© Therapeuten-Diplom — 6-Tage Intensiv"}
+                <h2 className="text-lg md:text-[1.75rem] font-bold text-foreground leading-tight">
+                  {isEN ? "Intensive Training" : "Intensiv-Ausbildungen"}
+                </h2>
+                <p className="text-base md:text-xl font-bold text-foreground/90 mt-1 md:mt-2">
+                  Aktiv-Hypnose© {isEN ? "Therapist Diploma" : "Therapeuten-Diplom"}
                 </p>
               </div>
 
               {/* Compact intro */}
-              <p className="text-foreground/75 text-[11px] md:text-sm mb-3 md:mb-5 text-center max-w-lg mx-auto leading-snug">
+              <p className="text-foreground/75 text-[11px] md:text-sm mb-4 md:mb-6 text-center max-w-lg mx-auto leading-snug">
                 {isEN
                   ? "Training for people who want to create real change – practical, effective, in small strictly limited groups."
                   : "Ausbildung für Menschen, die echte Veränderung bewirken wollen – praxisnah, wirksam, in kleinen strikt begrenzten Gruppen."}
