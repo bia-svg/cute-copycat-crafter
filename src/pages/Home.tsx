@@ -417,8 +417,8 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-          <div className="rounded-lg overflow-hidden aspect-[4/5] md:aspect-[3/4]">
-            <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-full object-cover object-top" loading="lazy" width={1200} height={800} />
+          <div className="rounded-lg overflow-hidden">
+            <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-auto object-cover object-top rounded-lg" loading="lazy" width={1200} height={800} />
           </div>
         </div>
       </section>
