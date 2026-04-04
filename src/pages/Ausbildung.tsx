@@ -525,7 +525,7 @@ export default function Ausbildung() {
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                       <div className="flex flex-wrap items-center gap-1.5">
-                        {((seminarCounts[`de::${d.date}`] || 0) < EARLY_BIRD_THRESHOLD || d.forceEarlyBird) && (
+                        {((seminarCounts[`de::${d.date}`] || 0) < EARLY_BIRD_THRESHOLD || (d as any).forceEarlyBird) && (
                           <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E3F2FD] text-[#1565C0]">
                             {isEN ? "Early Bird" : "Frühbucher"}
                           </span>
