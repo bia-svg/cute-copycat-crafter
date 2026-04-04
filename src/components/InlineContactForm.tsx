@@ -4,7 +4,8 @@ import { sendLeadEmails } from "@/lib/leadEmails";
 import { logFormSubmission } from "@/lib/formSubmissionLog";
 import { trackFormConversion } from "@/components/WhatsAppButton";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
+import { getPath } from "@/lib/routes";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import { toast } from "sonner";
@@ -47,6 +48,10 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
     const firstName = ((formData.get("firstName") as string) || "").trim();
     const lastName = ((formData.get("lastName") as string) || "").trim();
     const email = ((formData.get("email") as string) || "").trim();
+    const postalCity = ((formData.get("postalCode") as string) || "").trim();
+    const message = ((formData.get("message") as string) || "").trim();
+    const bestTime = ((formData.get("bestTime") as string) || "").trim();
+    const location = ((formData.get("location") as string) || "").trim();
     const phone = phoneNumber.trim();
 
     const fail = (selector: string, msgDE: string, msgEN: string) => {
@@ -71,12 +76,16 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
     const utmTerm = searchParams.get("utm_term") || null;
     const source = utmMedium === "cpc" || utmSource === "google" ? "paid" : utmSource ? "referral" : "organic";
 
+    const referrerPage = document.referrer ? new URL(document.referrer).pathname : sessionStorage.getItem("dw_prev_page") || null;
+
     const leadData = {
       name: `${firstName} ${lastName}`.trim(),
       email,
       phone: `${phoneCountry} ${phoneNumber}`.trim(),
       concern: selectedConcern,
       form_type: "session" as const,
+      postal_code: postalCity.split(/\s+/)[0] || null,
+      city: postalCity.split(/\s+/).slice(1).join(" ") || location || null,
       country: country.toUpperCase(),
       language,
       source,
@@ -85,6 +94,8 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       utm_campaign: utmCampaign,
       utm_content: utmContent,
       utm_term: utmTerm,
+      tracking_code: referrerPage,
+      notes: [bestTime && `Best time: ${bestTime}`, message].filter(Boolean).join(" | ") || null,
       user_agent: navigator.userAgent || null,
     };
 
@@ -109,12 +120,18 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
         phone: leadData.phone,
         concern: selectedConcern,
         formType: "contact",
+        city: leadData.city || undefined,
         country: country.toUpperCase(),
         language: country === "int" ? "en" : "de",
+        notes: leadData.notes || undefined,
         source,
         utmSource,
         utmMedium,
         utmCampaign,
+        bestTime: bestTime || undefined,
+        message: message || undefined,
+        postalCode: postalCity.split(/\s+/)[0] || undefined,
+        cityName: postalCity.split(/\s+/).slice(1).join(" ") || undefined,
         countryName: country === "ch" ? "Schweiz" : country === "int" ? "International" : "Deutschland",
       }).catch(err => console.error("Email error:", err));
     } catch (err) {
@@ -129,7 +146,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
     return (
       <div className="text-center py-8">
         <CheckCircle className="w-10 h-10 text-[#2E7D32] mx-auto mb-3" />
-        <h3 className="text-lg font-bold text-[#1B3A5C] mb-1">{isEN ? "Thank You!" : "Vielen Dank!"}</h3>
+        <h3 className="text-lg font-bold text-primary mb-1">{isEN ? "Thank You!" : "Vielen Dank!"}</h3>
         <p className="text-sm text-muted-foreground">{isEN ? "We will contact you shortly." : "Wir melden uns in Kürze bei Ihnen."}</p>
       </div>
     );
@@ -137,6 +154,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-4">
+      {/* Name */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "First Name" : "Vorname"} *</label>
@@ -148,11 +166,13 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
         </div>
       </div>
 
+      {/* Email */}
       <div>
         <label className="block text-xs font-medium text-muted-foreground mb-1">E-Mail *</label>
         <input type="email" name="email" required autoComplete="email" className={inputClasses} />
       </div>
 
+      {/* Phone + Postal Code */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Phone" : "Telefonnummer"} *</label>
@@ -176,34 +196,79 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
               className={`${inputClasses} border-l-0`}
             />
           </div>
+          <p className="text-[10px] text-muted-foreground mt-0.5">
+            {isEN ? `Max ${selectedPhoneCountry.maxDigits} digits` : `Max. ${selectedPhoneCountry.maxDigits} Ziffern`}
+          </p>
         </div>
         <div>
-          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Concern" : "Anliegen"} *</label>
-          <select name="concern" className={inputClasses} value={selectedConcern} onChange={(e) => setSelectedConcern(e.target.value)}>
-            <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
-            <option value="smoking">{isEN ? "Stop Smoking" : "Raucherentwöhnung"}</option>
-            <option value="anxiety">{isEN ? "Anxiety & Phobias" : "Ängste & Phobien"}</option>
-            <option value="weight">{isEN ? "Weight Loss" : "Abnehmen"}</option>
-            <option value="stress">{isEN ? "Stress & Burnout" : "Stress & Burnout"}</option>
-            <option value="depression">{isEN ? "Depression & Trauma" : "Depressionen & Traumata"}</option>
-            <option value="children">{isEN ? "Children & Teens" : "Kinder & Jugendliche"}</option>
-            <option value="other">{isEN ? "Other" : "Sonstiges"}</option>
-          </select>
+          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Postal Code / City" : "PLZ / Ortschaft"}</label>
+          <input type="text" name="postalCode" autoComplete="postal-code" className={inputClasses} />
         </div>
       </div>
 
-      <div className="flex items-start gap-2">
-        <input
-          type="checkbox"
-          name="gdprConsent"
-          checked={gdprConsent}
-          onChange={(e) => setGdprConsent(e.target.checked)}
-          className="mt-1 shrink-0"
-        />
-        <label className="text-xs text-muted-foreground leading-relaxed">
-          {isEN
-            ? "I agree that my personal data will be processed for the purpose of contacting me. I have read and accept the privacy policy."
-            : "Ich stimme zu, dass meine personenbezogenen Daten zum Zweck der Kontaktaufnahme verarbeitet werden. Ich habe die Datenschutzerklärung gelesen und akzeptiert."} *
+      {/* Concern */}
+      <div>
+        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "What is your concern?" : "Was ist Ihr Anliegen?"} *</label>
+        <select name="concern" className={inputClasses} value={selectedConcern} onChange={(e) => setSelectedConcern(e.target.value)}>
+          <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
+          <option value="smoking">{isEN ? "Stop Smoking" : "Raucherentwöhnung"}</option>
+          <option value="anxiety">{isEN ? "Anxiety & Phobias" : "Ängste & Phobien"}</option>
+          <option value="weight">{isEN ? "Weight Loss" : "Abnehmen"}</option>
+          <option value="stress">{isEN ? "Stress & Burnout" : "Stress & Burnout"}</option>
+          <option value="depression">{isEN ? "Depression & Trauma" : "Depressionen & Traumata"}</option>
+          <option value="children">{isEN ? "Children & Teens" : "Kinder & Jugendliche"}</option>
+          <option value="corporate">{isEN ? "Corporate Coaching" : "Firmencoaching"}</option>
+          <option value="other">{isEN ? "Other" : "Sonstiges"}</option>
+        </select>
+      </div>
+
+      {/* Preferred Location */}
+      <div>
+        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Preferred Location" : "Bevorzugter Standort"}</label>
+        <select name="location" className={inputClasses}>
+          <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
+          <option value="zurich">Zürich — 5 Elements TCM (CH)</option>
+          <option value="eschenbach">Eschenbach — Fit und Gesund (CH)</option>
+          <option value="augsburg">Augsburg — Regus HELIO (DE)</option>
+          <option value="online">{isEN ? "Online Session" : "Online-Sitzung"}</option>
+        </select>
+      </div>
+
+      {/* Best time to reach */}
+      <div>
+        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Best time to reach you?" : "Wann sind Sie am besten erreichbar?"}</label>
+        <input type="text" name="bestTime" placeholder={isEN ? "e.g. mornings, after 14:00" : "z.B. vormittags, nach 14:00 Uhr"} className={inputClasses} />
+      </div>
+
+      {/* Message */}
+      <div>
+        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Message" : "Kommentar oder Nachricht"}</label>
+        <textarea name="message" rows={3} className={`${inputClasses} resize-none`} />
+      </div>
+
+      {/* GDPR */}
+      <div className="border border-border bg-white p-3 space-y-2">
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            name="gdprConsent"
+            checked={gdprConsent}
+            onChange={(e) => setGdprConsent(e.target.checked)}
+            className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
+          />
+          <span className="text-xs text-foreground leading-relaxed">
+            {isEN ? (
+              <>
+                I agree that my personal data will be processed for the purpose of contacting me. I have read and accept the{" "}
+                <Link to={getPath("privacy", language, country)} className="underline hover:text-primary">privacy policy</Link>. *
+              </>
+            ) : (
+              <>
+                Ich stimme zu, dass meine personenbezogenen Daten zum Zweck der Kontaktaufnahme verarbeitet werden. Ich habe die{" "}
+                <Link to={getPath("privacy", language, country)} className="underline hover:text-primary">Datenschutzerklärung</Link> gelesen und akzeptiert. *
+              </>
+            )}
+          </span>
         </label>
       </div>
 
