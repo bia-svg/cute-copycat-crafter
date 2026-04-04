@@ -240,7 +240,7 @@ export default function Erstgespraech() {
                   <p className="text-muted-foreground">{isEN ? "We will contact you shortly." : "Wir melden uns in Kürze bei Ihnen."}</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} noValidate className="space-y-4 relative z-[40]">
+                <form onSubmit={handleSubmit} noValidate className="space-y-2.5 relative z-[40]">
                   <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">{isEN ? "Contact Form" : "Kontaktformular"}</h2>
 
                   {/* Name */}
