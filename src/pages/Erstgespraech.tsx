@@ -232,7 +232,7 @@ export default function Erstgespraech() {
             </div>
 
             {/* Right — Form */}
-            <div className="border border-border p-5 sm:p-6 bg-[#f4f3ef]">
+            <div className="border border-border p-3 sm:p-4 bg-[#f4f3ef]">
               {submitted ? (
                 <div className="text-center py-12">
                   <CheckCircle className="w-12 h-12 text-[#2E7D32] mx-auto mb-4" />
