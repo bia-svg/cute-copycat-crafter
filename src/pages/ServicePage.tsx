@@ -297,12 +297,12 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
               <div className="mx-auto md:mx-0">
                 <div className="border border-border overflow-hidden rounded-lg">
                   <img src={CDN.kathrynPortrait} alt="Kathryn Woods – Kinder- und Jugendtherapeutin" className="w-full h-auto" loading="lazy" />
-                  <div className="p-4 bg-card">
-                    <h3 className="font-bold text-foreground text-sm">Kathryn</h3>
-                    <p className="text-xs text-muted-foreground">
-                      {isEN ? "Psychological Counselor" : "Psychologische Beraterin"}
-                    </p>
-                  </div>
+                   <div className="p-2.5 md:p-3 bg-card">
+                     <h3 className="font-semibold text-foreground text-xs md:text-sm leading-tight">Kathryn</h3>
+                     <p className="text-[10px] md:text-xs text-muted-foreground leading-tight mt-0.5">
+                       {isEN ? "Psychological Counselor" : "Psychologische Beraterin"}
+                     </p>
+                   </div>
                 </div>
               </div>
               <div className="space-y-4">
