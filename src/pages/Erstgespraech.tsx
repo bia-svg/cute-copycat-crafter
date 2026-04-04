@@ -156,7 +156,7 @@ export default function Erstgespraech() {
     }
   };
 
-  const inputClasses = "w-full border border-border px-3 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
+  const inputClasses = "w-full border border-border px-2.5 py-1.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
 
   const basePath = getPath("home", language, country);
 
@@ -169,8 +169,8 @@ export default function Erstgespraech() {
       ]} />
 
       <section className="bg-white border-b border-border">
-        <div className="container-main py-8 lg:py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="container-main py-6 lg:py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Left — Info */}
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] mb-4">
@@ -232,7 +232,7 @@ export default function Erstgespraech() {
             </div>
 
             {/* Right — Form */}
-            <div className="border border-border p-5 sm:p-6 bg-[#f4f3ef]">
+            <div className="border border-border p-3 sm:p-4 bg-[#f4f3ef]">
               {submitted ? (
                 <div className="text-center py-12">
                   <CheckCircle className="w-12 h-12 text-[#2E7D32] mx-auto mb-4" />
@@ -240,11 +240,11 @@ export default function Erstgespraech() {
                   <p className="text-muted-foreground">{isEN ? "We will contact you shortly." : "Wir melden uns in Kürze bei Ihnen."}</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} noValidate className="space-y-4 relative z-[40]">
+                <form onSubmit={handleSubmit} noValidate className="space-y-2.5 relative z-[40]">
                   <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">{isEN ? "Contact Form" : "Kontaktformular"}</h2>
 
                   {/* Name */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "First Name" : "Vorname"} *</label>
                       <input type="text" name="firstName" required autoComplete="given-name" className={inputClasses} />
@@ -262,9 +262,9 @@ export default function Erstgespraech() {
                   </div>
 
                   {/* Phone + PLZ */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Phone" : "Telefonnummer"} *</label>
+                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                     <div>
+                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Phone" : "Telefonnummer"} *</label>
                       <div className="flex">
                       <select
                           value={phoneCountry}
@@ -331,11 +331,11 @@ export default function Erstgespraech() {
 
                   <div>
                     <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Message" : "Kommentar oder Nachricht"}</label>
-                    <textarea name="message" rows={4} className={`${inputClasses} resize-none`} />
+                    <textarea name="message" rows={2} className={`${inputClasses} resize-none`} />
                   </div>
 
                   {/* ── DSGVO / GDPR Opt-in Toggle ── */}
-                  <div className="border border-border bg-white p-4 space-y-3">
+                  <div className="border border-border bg-white p-2.5 space-y-1.5">
                     <label className="flex items-start gap-3 cursor-pointer">
                       <input
                         type="checkbox"
