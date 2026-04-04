@@ -285,22 +285,19 @@ export default function Home() {
               <p className="text-lg italic font-semibold text-cta">
                 {isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}
               </p>
-              <div className="text-foreground/80 leading-relaxed space-y-3 text-[0.95rem]">
-                <p>
+              <div className="text-foreground/80 leading-relaxed text-[0.95rem]">
+                <p className="mb-2">
                   {isEN
-                    ? "David J. Woods combines clinical psychology with targeted medical hypnotherapy. With over 40 years of experience, he has conducted more than 30,000 sessions and trained over 2,500 people in hypnotherapy."
-                    : "David J. Woods verbindet klinische Psychologie mit gezielter medizinischer Hypnotherapie. Mit über 40 Jahren Erfahrung hat er mehr als 30.000 Sitzungen durchgeführt und über 2.500 Menschen in Hypnotherapie ausgebildet."}
+                    ? "Expert psychological knowledge, modern hypnosis and profound transformation – established in Germany, Switzerland and internationally."
+                    : "Fundiertes psychologisches Fachwissen, moderne Hypnose und tiefgreifende Transformation – etabliert in Deutschland, der Schweiz und international."}
                 </p>
-                <p>
-                  {isEN
-                    ? 'He is the author of the book "Go Inside" and has contributed to many professional publications. He has also developed over 100 audio files; numerous MP3 and CD downloads are available to his clients.'
-                    : 'Er ist Autor des Buches „Go Inside" und war an vielen Fachpublikationen beteiligt. Zudem hat er über 100 Audio-Dateien entwickelt; zahlreiche MP3- und CD-Downloads stehen seinen Klienten zur Verfügung.'}
-                </p>
-                <p>
-                  {isEN
-                    ? "Over 60 international TV appearances as well as numerous reports in media, magazines, and newspapers."
-                    : "Über 60 internationale TV-Auftritte sowie zahlreiche Berichte in Medien, Magazinen und Zeitungen."}
-                </p>
+                <ul className="space-y-1 text-sm">
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Over 40 years of experience" : "Über 40 Jahre Erfahrung"}</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "More than 30,000 sessions conducted" : "Mehr als 30.000 durchgeführte Sitzungen"}</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Over 2,500 trained hypnotherapists" : "Über 2.500 ausgebildete Hypnotiseure"}</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? 'Author of "Go Inside" & professional MP3 downloads' : "Autor von Go Inside und Entwickler professioneller MP3-Downloads"}</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "International media presence with 30+ TV appearances" : "Internationale Medienpräsenz mit über 30 internationalen TV-Auftritten"}</li>
+                </ul>
               </div>
               <div className="flex flex-wrap gap-3">
                 <Link to={getPath("contact", language, country)}>
@@ -326,22 +323,19 @@ export default function Home() {
               Lic. Psych. David J. Woods
             </h1>
             <p className="italic font-semibold text-cta">{isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}</p>
-            <div className="text-sm text-foreground/80 leading-relaxed space-y-2">
-              <p>
+            <div className="text-sm text-foreground/80 leading-relaxed">
+              <p className="mb-2">
                 {isEN
-                  ? "David J. Woods combines clinical psychology with targeted medical hypnotherapy. With over 40 years of experience, he has conducted more than 30,000 sessions and trained over 2,500 people in hypnotherapy."
-                  : "David J. Woods verbindet klinische Psychologie mit gezielter medizinischer Hypnotherapie. Mit über 40 Jahren Erfahrung hat er mehr als 30.000 Sitzungen durchgeführt und über 2.500 Menschen in Hypnotherapie ausgebildet."}
+                  ? "Expert psychological knowledge, modern hypnosis and profound transformation – established in Germany, Switzerland and internationally."
+                  : "Fundiertes psychologisches Fachwissen, moderne Hypnose und tiefgreifende Transformation – etabliert in Deutschland, der Schweiz und international."}
               </p>
-              <p>
-                {isEN
-                  ? 'He is the author of the book "Go Inside" and has contributed to many professional publications. He has also developed over 100 audio files; numerous MP3 and CD downloads are available to his clients.'
-                  : 'Er ist Autor des Buches „Go Inside" und war an vielen Fachpublikationen beteiligt. Zudem hat er über 100 Audio-Dateien entwickelt; zahlreiche MP3- und CD-Downloads stehen seinen Klienten zur Verfügung.'}
-              </p>
-              <p>
-                {isEN
-                  ? "Over 60 international TV appearances as well as numerous reports in media, magazines, and newspapers."
-                  : "Über 60 internationale TV-Auftritte sowie zahlreiche Berichte in Medien, Magazinen und Zeitungen."}
-              </p>
+              <ul className="space-y-1 text-xs">
+                <li className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "Over 40 years of experience" : "Über 40 Jahre Erfahrung"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "More than 30,000 sessions conducted" : "Mehr als 30.000 durchgeführte Sitzungen"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "Over 2,500 trained hypnotherapists" : "Über 2.500 ausgebildete Hypnotiseure"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? 'Author of "Go Inside" & professional MP3 downloads' : "Autor von Go Inside und Entwickler professioneller MP3-Downloads"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "International media presence with 30+ TV appearances" : "Internationale Medienpräsenz mit über 30 internationalen TV-Auftritten"}</li>
+              </ul>
             </div>
             <div className="relative aspect-[4/3] max-h-[280px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "210px" }}>
               {loadedMobile[currentSlide] && (
