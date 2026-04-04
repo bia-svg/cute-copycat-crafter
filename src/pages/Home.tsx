@@ -454,52 +454,48 @@ export default function Home() {
 
 
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-6 bg-card border border-border rounded-lg">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 bg-primary flex items-center justify-center shrink-0 rounded">
-                  <span className="text-primary-foreground text-sm font-bold text-center leading-tight">Lic.<br/>Psych.</span>
-                </div>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+            <div className="text-center p-4 md:p-6 bg-card border border-border rounded-lg shadow-sm">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-primary flex items-center justify-center shrink-0 rounded mx-auto mb-3">
+                <span className="text-primary-foreground text-[0.65rem] md:text-sm font-bold text-center leading-tight">Lic.<br/>Psych.</span>
               </div>
-              <h3 className="font-semibold text-sm text-foreground mb-2">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
+              <h3 className="font-semibold text-xs md:text-sm text-foreground mb-1 md:mb-2">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
+              <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
                 {isEN
                   ? "University-qualified psychologist with decades of clinical and therapeutic experience."
                   : "Universitär qualifizierter Psychologe mit jahrzehntelanger klinischer und therapeutischer Erfahrung."}
               </p>
             </div>
-            <div className="p-6 bg-card border border-border rounded-lg">
-              <div className="flex items-center gap-4 mb-4">
-                <img src={CDN.logo} alt="Aktiv-Hypnose© Logo – Methode von David J. Woods" className="h-14 w-auto shrink-0" width={84} height={56} loading="lazy" />
-              </div>
-              <h3 className="font-semibold text-sm text-foreground mb-2">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
+            <div className="text-center p-4 md:p-6 bg-card border border-border rounded-lg shadow-sm">
+              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo – Methode von David J. Woods" className="h-10 md:h-14 w-auto shrink-0 mx-auto mb-3" width={84} height={56} loading="lazy" />
+              <h3 className="font-semibold text-xs md:text-sm text-foreground mb-1 md:mb-2">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
+              <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
                 {isEN
                   ? "Proprietary method combining clinical hypnosis with active participation for faster, lasting results."
                   : "Eigene Methode, die klinische Hypnose mit aktiver Teilnahme kombiniert für schnellere, nachhaltige Ergebnisse."}
               </p>
             </div>
-            <div className="text-center p-6 bg-card border border-border rounded-lg">
-              <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat – National Guild of Hypnotists" className="h-16 mx-auto mb-3" width={64} height={64} loading="lazy" />
-              <h3 className="font-semibold text-foreground">NGH International Trainer</h3>
-              <p className="text-sm text-muted-foreground">National Guild of Hypnotists</p>
+            <div className="text-center p-4 md:p-6 bg-card border border-border rounded-lg shadow-sm">
+              <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat – National Guild of Hypnotists" className="h-12 md:h-16 mx-auto mb-2 md:mb-3" width={64} height={64} loading="lazy" />
+              <h3 className="font-semibold text-xs md:text-base text-foreground">NGH International Trainer</h3>
+              <p className="text-[0.65rem] md:text-sm text-muted-foreground">National Guild of Hypnotists</p>
             </div>
-            <div className="text-center p-6 bg-card border border-border rounded-lg">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge – ZSR P609264" className="h-16 mx-auto mb-3" width={102} height={64} loading="lazy" />
-              <h3 className="font-semibold text-foreground">EMR Krankenkasse Konform</h3>
-              <p className="text-sm text-muted-foreground">ZSR P609264</p>
+            <div className="text-center p-4 md:p-6 bg-card border border-border rounded-lg shadow-sm">
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge – ZSR P609264" className="h-12 md:h-16 mx-auto mb-2 md:mb-3" width={102} height={64} loading="lazy" />
+              <h3 className="font-semibold text-xs md:text-base text-foreground">EMR Krankenkasse Konform</h3>
+              <p className="text-[0.65rem] md:text-sm text-muted-foreground">ZSR P609264</p>
             </div>
-            <div className="text-center p-6 bg-card border border-border rounded-lg">
-              <div className="text-4xl font-bold text-primary mb-2">40+</div>
-              <h3 className="font-semibold text-foreground">{isEN ? "Years of Experience" : "Jahre Erfahrung"}</h3>
-              <p className="text-sm text-muted-foreground">30.000+ {isEN ? "Sessions" : "Sitzungen"}</p>
+            <div className="text-center p-4 md:p-6 bg-card border border-border rounded-lg shadow-sm">
+              <div className="text-2xl md:text-4xl font-bold text-primary mb-1 md:mb-2">40+</div>
+              <h3 className="font-semibold text-xs md:text-base text-foreground">{isEN ? "Years of Experience" : "Jahre Erfahrung"}</h3>
+              <p className="text-[0.65rem] md:text-sm text-muted-foreground">30.000+ {isEN ? "Sessions" : "Sitzungen"}</p>
             </div>
-            <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="text-center p-6 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors">
-              <div className="flex justify-center gap-0.5 mb-2">
-                {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
+            <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="text-center p-4 md:p-6 bg-card border border-border rounded-lg shadow-sm hover:border-primary/50 transition-colors">
+              <div className="flex justify-center gap-0.5 mb-1 md:mb-2">
+                {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-yellow-400 text-yellow-400" />)}
               </div>
-              <h3 className="font-semibold text-foreground">5.0 Google</h3>
-              <p className="text-sm text-muted-foreground">264 {isEN ? "Reviews" : "Bewertungen"}</p>
+              <h3 className="font-semibold text-xs md:text-base text-foreground">5.0 Google</h3>
+              <p className="text-[0.65rem] md:text-sm text-muted-foreground">264 {isEN ? "Reviews" : "Bewertungen"}</p>
             </a>
           </div>
         </div>
