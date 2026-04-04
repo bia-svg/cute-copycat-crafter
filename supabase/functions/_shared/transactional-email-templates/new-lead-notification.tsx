@@ -390,3 +390,7 @@ const locationText = { fontSize: '13px', color: '#444', margin: '0 0 8px', lineH
 const pricingText = { fontSize: '13px', color: '#444', margin: '0 0 10px', lineHeight: '1.6' }
 const cancelText = { fontSize: '12px', color: '#666', margin: '0 0 8px', lineHeight: '1.5' }
 const closingText = { fontSize: '13px', color: '#444', margin: '0', lineHeight: '1.6' }
+const pricingBox = { backgroundColor: '#FFF8E1', padding: '16px 20px', borderRadius: '4px', margin: '12px 0', border: '1px solid #FFE082' }
+const pricingSectionTitle = { fontSize: '14px', fontWeight: '700' as const, color: '#1B3A5C', margin: '0 0 10px', borderBottom: '1px solid #FFE082', paddingBottom: '8px' }
+const pricingLine = { fontSize: '14px', color: '#333', margin: '0 0 6px', lineHeight: '1.5' }
+const pricingHighlight = { fontSize: '14px', fontWeight: 'bold' as const, color: '#2E7D32', margin: '8px 0 0' }
