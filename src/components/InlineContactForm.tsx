@@ -37,7 +37,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
     }
   }, [selectedPhoneCountry.maxDigits]);
 
-  const inputClasses = "w-full border border-border px-3 py-2.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
+  const inputClasses = "w-full border border-border px-3 py-2 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -156,9 +156,9 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-4">
+    <form onSubmit={handleSubmit} noValidate className="space-y-3">
       {/* Name */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
           <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "First Name" : "Vorname"} *</label>
           <input type="text" name="firstName" required autoComplete="given-name" className={inputClasses} />
@@ -176,14 +176,14 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       </div>
 
       {/* Phone + Postal Code */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
           <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Phone" : "Telefonnummer"} *</label>
           <div className="flex">
             <select
               value={phoneCountry}
               onChange={(e) => { setPhoneCountry(e.target.value); setPhoneNumber(""); }}
-              className="border border-r-0 border-border px-2 py-2.5 text-sm bg-card focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors w-[110px] shrink-0 appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%222%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_6px_center] pr-5 cursor-pointer"
+              className="border border-r-0 border-border px-2 py-2 text-sm bg-card focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors w-[110px] shrink-0 appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%222%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_6px_center] pr-5 cursor-pointer"
             >
               {PHONE_COUNTRIES.map(c => (
                 <option key={c.code} value={c.code}>{c.flag} {c.iso} {c.code}</option>
@@ -246,12 +246,12 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       {/* Message */}
       <div>
         <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Message" : "Kommentar oder Nachricht"}</label>
-        <textarea name="message" rows={3} className={`${inputClasses} resize-none`} />
+        <textarea name="message" rows={2} className={`${inputClasses} resize-none`} />
       </div>
 
       {/* GDPR */}
-      <div className="border border-border bg-white p-3 space-y-2">
-        <label className="flex items-start gap-3 cursor-pointer">
+      <div className="border border-border bg-white p-2.5 space-y-1.5">
+        <label className="flex items-start gap-2.5 cursor-pointer">
           <input
             type="checkbox"
             name="gdprConsent"
@@ -259,7 +259,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
             onChange={(e) => setGdprConsent(e.target.checked)}
             className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
           />
-          <span className="text-xs text-foreground leading-relaxed">
+          <span className="text-xs text-foreground leading-snug">
             {isEN ? (
               <>
                 I agree that my personal data will be processed for the purpose of contacting me. I have read and accept the{" "}
