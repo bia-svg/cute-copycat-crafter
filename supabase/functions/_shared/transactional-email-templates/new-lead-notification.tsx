@@ -161,12 +161,8 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
                   </Text>
                 )}
               </Section>
-            )}
-              <>
-                <Text style={label}>{isEN ? 'Seminar Location' : 'Seminarort'}</Text>
-                <Text style={value}>{props.seminarLocation}</Text>
-              </>
-            )}
+
+
 
             {props.bestTime && (
               <>
