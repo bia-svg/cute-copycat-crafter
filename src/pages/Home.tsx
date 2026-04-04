@@ -538,30 +538,42 @@ export default function Home() {
       <section className="py-10 md:py-20 bg-primary" style={deferredSectionStyle}>
         <div className="container-main">
           <div className="max-w-3xl mx-auto relative bg-white rounded-2xl overflow-hidden shadow-[0_16px_48px_-8px_rgba(0,0,0,0.3),0_4px_12px_-2px_rgba(0,0,0,0.15)]">
-            <div className="px-5 py-8 md:px-10 md:py-12">
-              {/* Label + Title */}
-              <div className="text-center mb-5 md:mb-8">
-                <span className="inline-flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] text-[hsl(213,10%,35%)] border border-[hsl(213,12%,78%)] rounded-full px-4 py-1 md:px-5 md:py-1.5 bg-gradient-to-r from-[hsl(213,10%,91%)] to-[hsl(213,10%,95%)] mb-3 md:mb-4 shadow-sm">
-                  <Award className="w-3 h-3" />
-                  {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
-                </span>
-                <h2 className="text-lg md:text-[1.75rem] font-bold text-foreground leading-tight">
-                  {isEN ? "Intensive Training" : "Intensiv-Ausbildungen"}
-                </h2>
-                <p className="text-base md:text-xl font-bold text-foreground/90 mt-1 md:mt-2">
-                  Aktiv-Hypnose© {isEN ? "Therapist Diploma" : "Therapeuten-Diplom"}
-                </p>
-              </div>
+            {/* Label + Title */}
+            <div className="text-center pt-6 pb-3 md:pt-10 md:pb-4 px-5 md:px-10">
+              <span className="inline-flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] text-[hsl(213,10%,35%)] border border-[hsl(213,12%,78%)] rounded-full px-4 py-1 md:px-5 md:py-1.5 bg-gradient-to-r from-[hsl(213,10%,91%)] to-[hsl(213,10%,95%)] mb-3 md:mb-4 shadow-sm">
+                <Award className="w-3 h-3" />
+                {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
+              </span>
+              <h2 className="text-lg md:text-[1.75rem] font-bold text-foreground leading-tight">
+                {isEN ? "Intensive Training" : "Intensiv-Ausbildungen"}
+              </h2>
+              <p className="text-base md:text-xl font-bold text-foreground/90 mt-1 md:mt-2">
+                Aktiv-Hypnose© {isEN ? "Therapist Diploma" : "Therapeuten-Diplom"}
+              </p>
+            </div>
 
+            {/* Seminar room photo */}
+            <div className="px-5 md:px-10 pb-3 md:pb-4">
+              <div className="rounded-xl overflow-hidden">
+                <img
+                  src={CDN.trainingSeminar}
+                  alt={isEN ? "Professional hypnotherapy training seminar" : "Professionelles Hypnosetherapie-Ausbildungsseminar"}
+                  className="w-full h-32 md:h-52 object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div className="px-5 pb-6 md:px-10 md:pb-10">
               {/* Compact intro */}
-              <p className="text-foreground/75 text-[11px] md:text-sm mb-4 md:mb-6 text-center max-w-lg mx-auto leading-snug">
+              <p className="text-foreground/75 text-[11px] md:text-sm mb-3 md:mb-5 text-center max-w-lg mx-auto leading-snug">
                 {isEN
                   ? "Training for people who want to create real change – practical, effective, in small strictly limited groups."
                   : "Ausbildung für Menschen, die echte Veränderung bewirken wollen – praxisnah, wirksam, in kleinen strikt begrenzten Gruppen."}
               </p>
 
               {/* Stats — compact grid */}
-              <div className="grid grid-cols-5 gap-1.5 md:gap-3 mb-4 md:mb-6">
+              <div className="grid grid-cols-5 gap-1.5 md:gap-3 mb-3 md:mb-5">
                 {[
                   { num: "350+", label: isEN ? "Pages Manual" : "Seiten Mappe" },
                   { num: "150+", label: isEN ? "Example Texts" : "Beispieltexte" },
