@@ -85,7 +85,7 @@ export default function Home() {
   const [loadedSlides, setLoadedSlides] = useState<Record<number, string>>({ 0: hero1 });
   const [loadedMobile, setLoadedMobile] = useState<Record<number, string>>({ 0: hero1Mobile });
   const [showMediaLogos, setShowMediaLogos] = useState(false);
-  const totalSlides = 5;
+  const totalSlides = 6;
 
   const goToSlide = (index: number) => {
     if (isMobile) {
