@@ -313,7 +313,7 @@ export default function SeminarAnmeldung() {
                     </h2>
                     <div className="space-y-2">
                     {dates.map((d, i) => {
-                        const isEarlyBird = seminarCountry && hasEarlyBirdForDate(seminarCountry as "ch" | "de", d.date);
+                        const isEarlyBird = d.forceEarlyBird || (seminarCountry && hasEarlyBirdForDate(seminarCountry as "ch" | "de", d.date));
                         const regularPrice = seminarCountry === "ch" ? "CHF 3.290.-" : "€2.790,-";
                         const earlyBirdPrice = seminarCountry === "ch" ? "CHF 2.990.-" : "€2.490,-";
                         const savings = seminarCountry === "ch" ? "CHF 300" : "€300";
