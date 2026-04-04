@@ -535,55 +535,72 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ TRAINING ═══════════════════ */}
-      <section className="py-12 md:py-20" style={deferredSectionStyle}>
+      <section className="py-14 md:py-24" style={deferredSectionStyle}>
         <div className="container-main">
-          <div className="max-w-3xl mx-auto bg-card border-2 border-border/80 rounded-2xl p-5 md:p-10 shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.12)]">
-            {/* Header */}
-            <div className="text-center mb-4 md:mb-8">
-              <h2 className="text-xl md:text-[2rem] font-bold text-foreground leading-tight mb-2 md:mb-3">{t("section.training")}</h2>
-              <p className="text-muted-foreground text-xs md:text-base max-w-xl mx-auto">
-                {isEN ? "Aktiv-Hypnose© Therapist Diploma — 6-Day Intensive Training" : "Aktiv-Hypnose© Therapeuten-Diplom — 6-Tage Intensiv-Ausbildung"}
+          <div className="max-w-3xl mx-auto relative bg-card border border-border/60 rounded-3xl overflow-hidden shadow-[0_12px_48px_-12px_hsl(var(--primary)/0.15),0_4px_16px_-4px_hsl(var(--primary)/0.08)]">
+            {/* Premium silver/platinum header accent */}
+            <div className="h-1.5 w-full bg-gradient-to-r from-transparent via-[hsl(213,15%,78%)] to-transparent" />
+            
+            <div className="p-6 md:p-12">
+              {/* Featured label */}
+              <div className="text-center mb-3 md:mb-4">
+                <span className="inline-flex items-center gap-1.5 text-[10px] md:text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground/70 border border-border/60 rounded-full px-3 py-1 md:px-4 md:py-1.5 bg-secondary/30">
+                  <Award className="w-3 h-3 md:w-3.5 md:h-3.5" />
+                  {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
+                </span>
+              </div>
+
+              {/* Header */}
+              <div className="text-center mb-5 md:mb-10">
+                <h2 className="text-[1.35rem] md:text-[2.25rem] font-bold text-foreground leading-tight mb-3 md:mb-4">{t("section.training")}</h2>
+                <p className="text-muted-foreground text-xs md:text-lg max-w-xl mx-auto font-medium">
+                  {isEN ? "Aktiv-Hypnose© Therapist Diploma — 6-Day Intensive Training" : "Aktiv-Hypnose© Therapeuten-Diplom — 6-Tage Intensiv-Ausbildung"}
+                </p>
+              </div>
+
+              {/* Elegant divider */}
+              <div className="flex items-center justify-center gap-3 mb-5 md:mb-10">
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-border" />
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/30" />
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-border" />
+              </div>
+
+              <p className="text-foreground/80 leading-relaxed text-xs md:text-base mb-5 md:mb-10 text-center max-w-xl mx-auto">
+                {isEN
+                  ? "Training for people who want to create real change – practical, effective, and held in small, strictly limited groups."
+                  : "Ausbildung für Menschen, die echte Veränderung bewirken wollen – praxisnah, wirksam und in kleinen, strikt begrenzten Gruppen."}
               </p>
-            </div>
 
-            {/* Divider */}
-            <div className="w-16 h-0.5 bg-primary/20 mx-auto mb-4 md:mb-8" />
+              {/* Stats grid — premium mini cards */}
+              <div className="grid grid-cols-3 md:grid-cols-5 gap-2.5 md:gap-4 mb-5 md:mb-10">
+                {[
+                  { num: "350+", label: isEN ? "Pages Training Manual" : "Seiten Ausbildungsmappe" },
+                  { num: "150+", label: isEN ? "Pages Example Texts" : "Seiten Beispieltexte" },
+                  { num: "50+", label: isEN ? "Short Videos" : "Kurzvideos" },
+                  { num: "50+", label: isEN ? "Audio Recordings" : "Audioaufnahmen" },
+                  { num: "✓", label: isEN ? "Aktiv-Hypnose© Diploma" : "Aktiv-Hypnose© Diplom" },
+                ].map(item => (
+                  <div key={item.label} className="text-center bg-gradient-to-b from-secondary/40 to-secondary/70 border border-border/40 rounded-xl py-3 md:py-5 px-1.5">
+                    <div className="text-xl md:text-3xl font-bold text-primary mb-1">{item.num}</div>
+                    <div className="text-[8px] md:text-xs text-muted-foreground leading-tight font-medium">{item.label}</div>
+                  </div>
+                ))}
+              </div>
 
-            <p className="text-foreground/80 leading-relaxed text-xs md:text-base mb-4 md:mb-8 text-center max-w-xl mx-auto">
-              {isEN
-                ? "Training for people who want to create real change – practical, effective, and held in small, strictly limited groups."
-                : "Ausbildung für Menschen, die echte Veränderung bewirken wollen – praxisnah, wirksam und in kleinen, strikt begrenzten Gruppen."}
-            </p>
+              {/* EMR Trust Badge — quality seal */}
+              <div className="flex items-center justify-center gap-2.5 bg-gradient-to-r from-primary/[0.04] via-primary/[0.07] to-primary/[0.04] border border-primary/12 rounded-xl px-5 py-3 md:py-3.5 mb-6 md:mb-10 max-w-sm mx-auto">
+                <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-cta flex-shrink-0" />
+                <span className="text-xs md:text-sm font-semibold text-foreground tracking-wide">EMR Krankenkasse Konform</span>
+              </div>
 
-            {/* Stats grid */}
-            <div className="grid grid-cols-3 md:grid-cols-5 gap-2 md:gap-5 mb-4 md:mb-8">
-              {[
-                { num: "350+", label: isEN ? "Pages Training Manual" : "Seiten Ausbildungsmappe" },
-                { num: "150+", label: isEN ? "Pages Example Texts" : "Seiten Beispieltexte" },
-                { num: "50+", label: isEN ? "Short Videos" : "Kurzvideos" },
-                { num: "50+", label: isEN ? "Audio Recordings" : "Audioaufnahmen" },
-                { num: "✓", label: isEN ? "Aktiv-Hypnose© Diploma" : "Aktiv-Hypnose© Diplom" },
-              ].map(item => (
-                <div key={item.label} className="text-center bg-secondary/50 rounded-xl py-2.5 md:py-4 px-1">
-                  <div className="text-lg md:text-3xl font-bold text-primary mb-0.5">{item.num}</div>
-                  <div className="text-[9px] md:text-xs text-muted-foreground leading-tight">{item.label}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* EMR Trust Badge */}
-            <div className="flex items-center justify-center gap-2 bg-primary/5 border border-primary/10 rounded-xl px-4 py-2.5 md:py-3 mb-5 md:mb-8 max-w-sm mx-auto">
-              <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-cta flex-shrink-0" />
-              <span className="text-xs md:text-sm font-semibold text-foreground tracking-wide">EMR Krankenkasse Konform</span>
-            </div>
-
-            {/* CTA */}
-            <div className="text-center">
-              <Link to={getPath("training", language, country)}>
-                <Button className="bg-cta text-cta-foreground hover:bg-cta/90 text-xs md:text-base px-4 py-1.5 md:px-6 md:py-2">
-                  {isEN ? "All Training Details" : "Alle Ausbildungsdetails"}
-                </Button>
-              </Link>
+              {/* CTA */}
+              <div className="text-center">
+                <Link to={getPath("training", language, country)}>
+                  <Button className="bg-cta text-cta-foreground hover:bg-cta/90 text-xs md:text-base px-5 py-2 md:px-8 md:py-2.5 shadow-md">
+                    {isEN ? "All Training Details" : "Alle Ausbildungsdetails"}
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
