@@ -251,7 +251,7 @@ export default function SeminarAnmeldung() {
         <div className="container-main py-4 lg:py-6">
           <div className="max-w-3xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-8">
+            <div className="text-center mb-4">
               <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#2E7D32] bg-[#E8F5E9] px-3 py-1 rounded-full mb-4">
                 <GraduationCap className="w-3.5 h-3.5" />
                 {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
