@@ -541,7 +541,7 @@ export default function Home() {
             <div className="px-5 py-5 md:px-10 md:py-8">
               {/* Label + Title */}
               <div className="text-center mb-3 md:mb-5">
-                <span className="inline-flex items-center gap-1.5 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.18em] text-primary border border-primary/20 rounded-full px-3 py-0.5 md:px-4 md:py-1 bg-primary/5 mb-2 md:mb-3">
+                <span className="inline-flex items-center gap-1.5 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.18em] text-[hsl(213,10%,40%)] border border-[hsl(213,12%,80%)] rounded-full px-3 py-0.5 md:px-4 md:py-1 bg-gradient-to-r from-[hsl(213,10%,93%)] to-[hsl(213,10%,96%)] mb-2 md:mb-3">
                   <Award className="w-3 h-3" />
                   {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
                 </span>
