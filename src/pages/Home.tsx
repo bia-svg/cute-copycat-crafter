@@ -478,7 +478,6 @@ export default function Home() {
             <div className="text-center p-4 md:p-6 bg-card border border-border rounded-lg shadow-sm">
               <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat – National Guild of Hypnotists" className="h-12 md:h-16 mx-auto mb-2 md:mb-3" width={64} height={64} loading="lazy" />
               <h3 className="font-semibold text-xs md:text-base text-foreground">NGH International Trainer</h3>
-              <p className="text-[0.65rem] md:text-sm text-muted-foreground">National Guild of Hypnotists</p>
             </div>
             <div className="text-center p-4 md:p-6 bg-card border border-border rounded-lg shadow-sm">
               <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge – ZSR P609264" className="h-12 md:h-16 mx-auto mb-2 md:mb-3" width={102} height={64} loading="lazy" />
