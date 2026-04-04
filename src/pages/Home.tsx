@@ -567,7 +567,7 @@ export default function Home() {
                   { num: "50+", label: isEN ? "Audio" : "Audio" },
                   { num: "✓", label: isEN ? "Diploma" : "Diplom" },
                 ].map(item => (
-                  <div key={item.label} className="text-center bg-primary/5 border border-primary/10 rounded-lg py-2 md:py-3 px-1">
+                  <div key={item.label} className="text-center bg-gradient-to-b from-[hsl(213,10%,95%)] to-[hsl(213,10%,92%)] border border-[hsl(213,12%,82%)] rounded-lg py-2 md:py-3 px-1">
                     <div className="text-sm md:text-xl font-bold text-primary">{item.num}</div>
                     <div className="text-[7px] md:text-[10px] text-muted-foreground leading-tight font-medium mt-0.5">{item.label}</div>
                   </div>
