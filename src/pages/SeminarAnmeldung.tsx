@@ -397,14 +397,14 @@ export default function SeminarAnmeldung() {
 
                 {/* STEP 3 — Form */}
                 {selectedDate && (
-                  <div className="border border-border p-5 sm:p-6 bg-[#f4f3ef]">
-                    <h2 className="text-sm font-semibold text-[#1B3A5C] mb-4 flex items-center gap-2">
+                   <div className="border border-border p-3 sm:p-4 bg-[#f4f3ef]">
+                    <h2 className="text-sm font-semibold text-[#1B3A5C] mb-2.5 flex items-center gap-2">
                       <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center">3</span>
                       {isEN ? "Your Details" : "Ihre Daten"}
                     </h2>
-                    <form onSubmit={handleSubmit} noValidate className="space-y-4 relative z-[51]">
+                    <form onSubmit={handleSubmit} noValidate className="space-y-2.5 relative z-[51]">
                       {/* Name */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         <div>
                           <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "First Name" : "Vorname"} *</label>
                           <input type="text" name="firstName" required autoComplete="given-name" className={inputClasses} />
