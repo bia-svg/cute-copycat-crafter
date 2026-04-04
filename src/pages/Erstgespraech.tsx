@@ -335,7 +335,7 @@ export default function Erstgespraech() {
                   </div>
 
                   {/* ── DSGVO / GDPR Opt-in Toggle ── */}
-                  <div className="border border-border bg-white p-4 space-y-3">
+                  <div className="border border-border bg-white p-2.5 space-y-1.5">
                     <label className="flex items-start gap-3 cursor-pointer">
                       <input
                         type="checkbox"
