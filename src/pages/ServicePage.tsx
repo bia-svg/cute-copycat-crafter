@@ -273,27 +273,27 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         </div>
       </section>
 
-      {/* Consultation CTA Row */}
+      {/* Consultation CTA Row with Inline Form */}
       <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-10 text-center max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold text-primary mb-3">
-            {isEN ? "Take the First Step with a Free Consultation" : "Machen Sie den ersten Schritt mit einem kostenlosen Erstgespräch"}
-          </h2>
-          <p className="text-foreground/80 mb-2">
-            {isEN
-              ? "Receive a professional, honest first assessment of your situation and discover whether this approach feels right for you."
-              : "Erhalten Sie eine professionelle, ehrliche Ersteinschätzung Ihrer Situation und finden Sie heraus, ob dieser Ansatz der richtige für Sie ist."}
-          </p>
-          <p className="text-sm text-muted-foreground mb-6">
-            {isEN
-              ? "Approx. 10–30 minutes • Professional • Honest • Individual"
-              : "Ca. 10–30 Minuten • Professionell • Ehrlich • Individuell"}
-          </p>
-          <Link to={getPath("contact", language, country)} onClick={handleCtaClick}>
-            <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-base">
-              {isEN ? "Request Your Free Consultation" : "Kostenloses Erstgespräch anfragen"}
-            </Button>
-          </Link>
+        <div className="container-main py-10">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-2xl font-bold text-primary mb-3 text-center">
+              {isEN ? "Take the First Step with a Free Consultation" : "Machen Sie den ersten Schritt mit einem kostenlosen Erstgespräch"}
+            </h2>
+            <p className="text-foreground/80 mb-2 text-center">
+              {isEN
+                ? "Receive a professional, honest first assessment of your situation and discover whether this approach feels right for you."
+                : "Erhalten Sie eine professionelle, ehrliche Ersteinschätzung Ihrer Situation und finden Sie heraus, ob dieser Ansatz der richtige für Sie ist."}
+            </p>
+            <p className="text-sm text-muted-foreground mb-6 text-center">
+              {isEN
+                ? "Approx. 10–30 minutes • Professional • Honest • Individual"
+                : "Ca. 10–30 Minuten • Professionell • Ehrlich • Individuell"}
+            </p>
+            <div className="border border-border p-5 sm:p-6 bg-white">
+              <InlineContactForm />
+            </div>
+          </div>
         </div>
       </section>
 
