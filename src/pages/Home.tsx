@@ -385,7 +385,7 @@ export default function Home() {
               <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12" width={77} height={48} loading="lazy" />
               <div>
                 <div className="font-semibold text-sm text-foreground">EMR Krankenkasse Konform</div>
-                <div className="text-xs text-muted-foreground">ZSR P609264 — {isEN ? "Recognized by Swiss health insurance" : "Von Schweizer Krankenkassen anerkannt"}</div>
+                <div className="text-xs text-muted-foreground">ZSR P609264</div>
               </div>
             </div>
             <Link to={getPath("about", language, country)}>
