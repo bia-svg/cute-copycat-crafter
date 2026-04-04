@@ -576,7 +576,7 @@ export default function Home() {
 
               {/* EMR + CTA row */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 md:gap-4">
-                <div className="inline-flex items-center gap-1.5 bg-cta/5 border border-cta/15 rounded-lg px-3 py-1.5 md:px-4 md:py-2">
+                <div className="inline-flex items-center gap-1.5 bg-[hsl(160,30%,95%)] border border-[hsl(160,25%,82%)] rounded-lg px-3 py-1.5 md:px-4 md:py-2">
                   <CheckCircle className="w-3.5 h-3.5 text-cta flex-shrink-0" />
                   <span className="text-[10px] md:text-xs font-semibold text-foreground/85 tracking-wide">EMR Krankenkasse Konform</span>
                 </div>
