@@ -618,7 +618,7 @@ export default function Home() {
                 ? "Send your request here and I will reply within 24 hours. Or use the WhatsApp button for a faster response."
                 : "Senden Sie hier Ihre Anfrage und ich melde mich innerhalb von 24 Stunden. Oder nutzen Sie den WhatsApp-Button für eine schnellere Antwort."}
             </p>
-            <div className="border border-border p-5 sm:p-6 bg-white">
+            <div className="border border-border p-4 sm:p-5 bg-white">
               <InlineContactForm />
             </div>
           </div>
