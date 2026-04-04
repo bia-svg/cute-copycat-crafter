@@ -88,13 +88,15 @@ export default function FirmenCoaching() {
           <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
             {isEN ? "Topics for Your Company" : "Themen für Ihr Unternehmen"}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
             {topics.map((item) => (
-              <Link key={item.title} to={item.href} className="bg-white border border-border rounded-lg shadow-sm hover:shadow-lg hover:border-primary transition-all duration-300 group overflow-hidden">
-                {/* Mobile: compact horizontal card */}
-                <div className="flex md:hidden p-4 gap-4 items-start">
-                  <span className="shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">{item.icon}</span>
-                  <div className="min-w-0">
+              <Link key={item.title} to={item.href} className="block bg-white border border-border rounded-lg shadow-sm hover:shadow-lg hover:border-primary transition-all duration-300 group overflow-hidden">
+                {/* Mobile: horizontal card matching session service cards */}
+                <div className="flex md:hidden">
+                  <div className="w-28 min-h-[7rem] shrink-0 bg-primary/5 flex items-center justify-center">
+                    <span className="text-primary w-10 h-10">{item.icon}</span>
+                  </div>
+                  <div className="flex flex-col justify-center p-4 min-w-0">
                     <h3 className="font-semibold text-foreground text-[0.95rem] leading-tight mb-1">{item.title}</h3>
                     <p className="text-sm text-muted-foreground line-clamp-2 mb-2">{item.desc}</p>
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-cta group-hover:gap-2 transition-all">
