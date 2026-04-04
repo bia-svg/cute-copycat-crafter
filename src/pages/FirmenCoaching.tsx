@@ -7,6 +7,11 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { getPath } from "@/lib/routes";
 import { Trophy, Shield, Clock, Cigarette, ArrowRight } from "lucide-react";
+import ServiceCard from "@/components/ServiceCard";
+import corporateSuccessImg from "@/assets/corporate-success.jpg";
+import corporateResilienceImg from "@/assets/corporate-resilience.jpg";
+import corporateStressImg from "@/assets/corporate-stress.jpg";
+import corporateNonsmokerImg from "@/assets/corporate-nonsmoker.jpg";
 
 export default function FirmenCoaching() {
   const { language, country } = useLanguage();
@@ -20,6 +25,7 @@ export default function FirmenCoaching() {
         ? "In the success coaching, participants learn that hard work alone is no guarantee for success. Success is ultimately decided in the mind."
         : "Im Erfolgscoaching lernen die Teilnehmer, dass harte Arbeit und häufiges Training allein noch lange keine Garantie für Erfolg sind. Denn letztendlich entscheidet sich Erfolg im Kopf.",
       href: getPath("corporateErfolg", language, country),
+      image: corporateSuccessImg,
     },
     {
       icon: <Shield className="w-6 h-6" />,
@@ -28,6 +34,7 @@ export default function FirmenCoaching() {
         ? "Through resilience coaching, participants work primarily on inner strength — essential in difficult times, under pressure, stress or problems."
         : "Durch das Resilienz Coaching arbeiten die Teilnehmer vor allem an der inneren Stärke. Diese ist vor allem in schweren Zeiten und bei aufkommendem Druck sowie Ärger, Stress oder Problemen wichtig.",
       href: getPath("corporateResilienz", language, country),
+      image: corporateResilienceImg,
     },
     {
       icon: <Clock className="w-6 h-6" />,
@@ -36,6 +43,7 @@ export default function FirmenCoaching() {
         ? "David J. Woods and his team have been supporting people from business, sports, and the music industry with burnout prevention for over 20 years."
         : "Mit der Burnout-Prävention unterstützen David J. Woods und sein Team seit mehr als 20 Jahren Menschen aus Wirtschaft, Leistungssport und vielen weiteren Tätigkeitsfeldern.",
       href: getPath("corporateStress", language, country),
+      image: corporateStressImg,
     },
     {
       icon: <Cigarette className="w-6 h-6" />,
@@ -44,6 +52,7 @@ export default function FirmenCoaching() {
         ? "The 'Non-smoker in 3 hours' program is more than simple smoking cessation. It permanently boosts your employees' performance."
         : "Das Programm \u201eNichtraucher in 3 Stunden\u201c ist mehr als eine einfache Rauchentwöhnung. Denn durch dieses Business Coaching steigern Ihre Mitarbeiter dauerhaft ihre Leistungsfähigkeit.",
       href: getPath("corporateNichtraucher", language, country),
+      image: corporateNonsmokerImg,
     },
   ];
 
