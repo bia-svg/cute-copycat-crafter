@@ -321,12 +321,24 @@ export default function Home() {
             <h1 className="text-2xl font-bold text-foreground leading-tight tracking-tight">
               Lic. Psych. David J. Woods
             </h1>
-            <p className="italic text-muted-foreground">{isEN ? '"Freedom Begins in the Mind"' : '"Freiheit beginnt im Kopf"'}</p>
-            <p className="text-sm text-foreground/80 leading-relaxed">
-              {isEN
-                ? "With his self-developed Aktiv-Hypnose© method, David J. Woods combines clinical psychology with targeted hypnotherapy. With over 40 years of experience he conducted more than 30,000 sessions for smoking cessation, weight loss, anxiety relief, and peak performance."
-                : "Mit seiner selbst entwickelten Aktiv-Hypnose© Methode verbindet David J. Woods klinische Psychologie mit gezielter Hypnotherapie. Mit über 40 Jahren Erfahrung hat er mehr als 30.000 Sitzungen durchgeführt — für Raucherentwöhnung, Gewichtsreduktion, Angstbewältigung und Leistungssteigerung."}
-            </p>
+            <p className="italic font-semibold text-cta">{isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}</p>
+            <div className="text-sm text-foreground/80 leading-relaxed space-y-2">
+              <p>
+                {isEN
+                  ? "David J. Woods combines clinical psychology with targeted medical hypnotherapy. With over 40 years of experience, he has conducted more than 30,000 sessions and trained over 2,500 people in hypnotherapy."
+                  : "David J. Woods verbindet klinische Psychologie mit gezielter medizinischer Hypnotherapie. Mit über 40 Jahren Erfahrung hat er mehr als 30.000 Sitzungen durchgeführt und über 2.500 Menschen in Hypnotherapie ausgebildet."}
+              </p>
+              <p>
+                {isEN
+                  ? 'He is the author of the book "Go Inside" and has contributed to many professional publications. He has also developed over 100 audio files; numerous MP3 and CD downloads are available to his clients.'
+                  : 'Er ist Autor des Buches „Go Inside" und war an vielen Fachpublikationen beteiligt. Zudem hat er über 100 Audio-Dateien entwickelt; zahlreiche MP3- und CD-Downloads stehen seinen Klienten zur Verfügung.'}
+              </p>
+              <p>
+                {isEN
+                  ? "Over 60 international TV appearances as well as numerous reports in media, magazines, and newspapers."
+                  : "Über 60 internationale TV-Auftritte sowie zahlreiche Berichte in Medien, Magazinen und Zeitungen."}
+              </p>
+            </div>
             <div className="relative aspect-[4/3] max-h-[280px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "210px" }}>
               {loadedMobile[currentSlide] && (
                 <img
