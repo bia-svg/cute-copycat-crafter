@@ -169,8 +169,8 @@ export default function Erstgespraech() {
       ]} />
 
       <section className="bg-white border-b border-border">
-        <div className="container-main py-8 lg:py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="container-main py-6 lg:py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Left — Info */}
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] mb-4">
