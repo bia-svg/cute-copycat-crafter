@@ -88,17 +88,31 @@ export default function FirmenCoaching() {
           <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
             {isEN ? "Topics for Your Company" : "Themen für Ihr Unternehmen"}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
             {topics.map((item) => (
-              <Link key={item.title} to={item.href} className="bg-white border border-border p-6 hover:border-[#1B3A5C] transition-colors group">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-[#1B3A5C]">{item.icon}</span>
-                  <h3 className="font-semibold text-[#1B3A5C]">{item.title}</h3>
+              <Link key={item.title} to={item.href} className="bg-white border border-border rounded-lg shadow-sm hover:shadow-lg hover:border-primary transition-all duration-300 group overflow-hidden">
+                {/* Mobile: compact horizontal card */}
+                <div className="flex md:hidden p-4 gap-4 items-start">
+                  <span className="shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">{item.icon}</span>
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-foreground text-[0.95rem] leading-tight mb-1">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground line-clamp-2 mb-2">{item.desc}</p>
+                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-cta group-hover:gap-2 transition-all">
+                      Details <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-3">{item.desc}</p>
-                <span className="inline-flex items-center gap-1 text-sm font-medium text-[#2E7D32] group-hover:underline">
-                  Details <ArrowRight className="w-4 h-4" />
-                </span>
+                {/* Desktop: vertical card */}
+                <div className="hidden md:block p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-primary">{item.icon}</span>
+                    <h3 className="font-semibold text-primary">{item.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">{item.desc}</p>
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-cta group-hover:gap-2 transition-all">
+                    Details <ArrowRight className="w-4 h-4" />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
