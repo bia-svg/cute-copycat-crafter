@@ -607,18 +607,15 @@ export default function Home() {
 
 
       {/* ═══════════════════ INLINE CONTACT FORM ═══════════════════ */}
-      <section className="py-16 bg-[#f4f3ef]" style={deferredSectionStyle}>
+      <section className="py-8 md:py-12 bg-[#f4f3ef]" style={deferredSectionStyle}>
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-3">
-              {isEN ? "Take the First Step with a Free Consultation" : "Machen Sie den ersten Schritt mit einem kostenlosen Erstgespräch"}
-            </h2>
-            <p className="text-center text-foreground/80 text-sm md:text-base mb-5">
+            <p className="text-center text-foreground/90 text-sm md:text-base font-semibold leading-snug mb-3 md:mb-4">
               {isEN
-                ? "Send your request here and I will reply within 24 hours. Or use the WhatsApp button for a faster response."
-                : "Senden Sie hier Ihre Anfrage und ich melde mich innerhalb von 24 Stunden. Oder nutzen Sie den WhatsApp-Button für eine schnellere Antwort."}
+                ? <>Send your request here and I will reply within 24 hours.<br className="hidden sm:inline" /> Or use the green WhatsApp button for a faster response.</>
+                : <>Senden Sie hier Ihre Anfrage und ich melde mich innerhalb von 24 Stunden.<br className="hidden sm:inline" /> Oder nutzen Sie den grünen WhatsApp-Button für eine schnellere Antwort.</>}
             </p>
-            <div className="border border-border p-4 sm:p-5 bg-white">
+            <div className="border border-border p-3 sm:p-4 bg-white">
               <InlineContactForm />
             </div>
           </div>
