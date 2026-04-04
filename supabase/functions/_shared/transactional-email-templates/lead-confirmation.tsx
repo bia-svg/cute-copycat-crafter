@@ -160,6 +160,23 @@ const LeadConfirmationEmail = (props: LeadConfirmationProps) => {
                 <strong>{isEN ? 'Seminar Date' : 'Seminartermin'}:</strong> {props.seminarDate}
               </Text>
             )}
+            {isSeminar && props.bookedPrice && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Booked Price' : 'Gebuchter Preis'}:</strong> {props.bookedPrice}
+                {props.priceType && (
+                  <> ({props.priceType})</>
+                )}
+              </Text>
+            )}
+            {isSeminar && props.savingsAmount && (
+              <Text style={summaryLine}>
+                <strong>{isEN ? 'Regular Price' : 'Regulärer Preis'}:</strong> {props.regularPrice}
+                {' — '}
+                <span style={{ color: '#2E7D32', fontWeight: 'bold' as const }}>
+                  {isEN ? 'You save' : 'Sie sparen'}: {props.savingsAmount}
+                </span>
+              </Text>
+            )}
             {isSeminar && props.seminarLocation && (
               <Text style={summaryLine}>
                 <strong>{isEN ? 'Seminar Location' : 'Seminarort'}:</strong> {props.seminarLocation}
