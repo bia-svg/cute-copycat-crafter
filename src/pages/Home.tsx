@@ -11,8 +11,7 @@ import { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import hero1 from "@/assets/david-office-portrait.webp";
 import hero1Mobile from "@/assets/david-office-portrait-mobile.webp";
-import davidSessionImg from "@/assets/david-office-portrait.webp";
-import davidSessionMobile from "@/assets/david-office-portrait-mobile.webp";
+import davidSessionImg from "@/assets/david-portrait-outdoor.jpg";
 import corporateSuccessImg from "@/assets/corporate-success.jpg";
 import corporateResilienceImg from "@/assets/corporate-resilience.jpg";
 import corporateStressImg from "@/assets/corporate-stress.jpg";
@@ -418,11 +417,8 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-          <div className="rounded-lg overflow-hidden">
-            <picture>
-              <source media="(max-width: 767px)" srcSet={davidSessionMobile} type="image/webp" />
-              <img src={davidSessionImg} alt={isEN ? "David J. Woods during a hypnotherapy session in his practice" : "David J. Woods während einer Hypnosetherapie-Sitzung in seiner Praxis"} className="w-full h-full object-cover" loading="lazy" width={1200} height={800} />
-            </picture>
+          <div className="rounded-lg overflow-hidden aspect-[4/5] md:aspect-[3/4]">
+            <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-full object-cover object-top" loading="lazy" width={1200} height={800} />
           </div>
         </div>
       </section>
