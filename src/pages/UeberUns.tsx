@@ -126,14 +126,12 @@ export default function UeberUns() {
           </p>
 
           {/* Credential Cards with Badge Images */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 mb-10">
             {/* NGH */}
-            <div className="bg-white border border-border p-6">
-              <div className="flex items-center gap-4 mb-4">
-                <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat – National Guild of Hypnotists, USA" className="h-20 w-auto shrink-0" loading="lazy" />
-              </div>
-              <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">NGH International Trainer</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
+            <div className="bg-white border border-border p-4 md:p-6 rounded-lg shadow-sm text-center">
+              <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat" className="h-12 md:h-20 mx-auto mb-2 md:mb-4" loading="lazy" />
+              <h3 className="font-semibold text-xs md:text-sm text-[#1B3A5C] mb-1 md:mb-2">NGH International Trainer</h3>
+              <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
                 {isEN
                   ? "Certified by the National Guild of Hypnotists — the world's oldest and largest hypnotherapy organization, founded in 1950 in Boston, USA."
                   : "Zertifiziert von der National Guild of Hypnotists — der weltweit ältesten und größten Hypnose-Organisation, gegründet 1950 in Boston, USA."}
@@ -141,25 +139,21 @@ export default function UeberUns() {
             </div>
 
             {/* EMR */}
-              <div className="bg-white border border-border p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge – Schweizer Zusatzversicherung anerkannt, ZSR P609264" className="h-20 w-auto shrink-0" loading="lazy" />
-                </div>
-                <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">EMR Krankenkasse Konform</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Von Schweizer Krankenkassen anerkannt. ZSR Nr. P609264. Viele Zusatzversicherungen übernehmen einen Teil der Kosten.
-                </p>
-              </div>
+            <div className="bg-white border border-border p-4 md:p-6 rounded-lg shadow-sm text-center">
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge" className="h-12 md:h-20 mx-auto mb-2 md:mb-4" loading="lazy" />
+              <h3 className="font-semibold text-xs md:text-sm text-[#1B3A5C] mb-1 md:mb-2">EMR Krankenkasse Konform</h3>
+              <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
+                Von Schweizer Krankenkassen anerkannt. ZSR Nr. P609264. Viele Zusatzversicherungen übernehmen einen Teil der Kosten.
+              </p>
+            </div>
 
             {/* Lic.Psych */}
-            <div className="bg-white border border-border p-6">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-20 h-20 bg-[#1B3A5C] flex items-center justify-center shrink-0">
-                  <span className="text-white text-lg font-bold text-center leading-tight">Lic.<br/>Psych.</span>
-                </div>
+            <div className="bg-white border border-border p-4 md:p-6 rounded-lg shadow-sm text-center">
+              <div className="w-12 h-12 md:w-20 md:h-20 bg-[#1B3A5C] flex items-center justify-center mx-auto mb-2 md:mb-4">
+                <span className="text-white text-[0.6rem] md:text-lg font-bold text-center leading-tight">Lic.<br/>Psych.</span>
               </div>
-              <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
+              <h3 className="font-semibold text-xs md:text-sm text-[#1B3A5C] mb-1 md:mb-2">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
+              <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
                 {isEN
                   ? "University-qualified psychologist with decades of clinical and therapeutic experience."
                   : "Universitär qualifizierter Psychologe mit jahrzehntelanger klinischer und therapeutischer Erfahrung."}
@@ -167,12 +161,10 @@ export default function UeberUns() {
             </div>
 
             {/* Aktiv-Hypnose Developer */}
-            <div className="bg-white border border-border p-6">
-              <div className="flex items-center gap-4 mb-4">
-                <img src={CDN.logo} alt="Aktiv-Hypnose© Logo – Methode entwickelt von David J. Woods" className="h-16 w-auto shrink-0" loading="lazy" />
-              </div>
-              <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
+            <div className="bg-white border border-border p-4 md:p-6 rounded-lg shadow-sm text-center">
+              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-10 md:h-16 mx-auto mb-2 md:mb-4" loading="lazy" />
+              <h3 className="font-semibold text-xs md:text-sm text-[#1B3A5C] mb-1 md:mb-2">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
+              <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
                 {isEN
                   ? "Proprietary method combining clinical hypnosis with active participation for faster, lasting results."
                   : "Eigene Methode, die klinische Hypnose mit aktiver Teilnahme kombiniert für schnellere, nachhaltige Ergebnisse."}
@@ -180,14 +172,12 @@ export default function UeberUns() {
             </div>
 
             {/* Author */}
-            <Link to={getPath("book", language, country)} className="bg-white border border-border p-6 hover:shadow-md transition-shadow group">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-20 h-20 bg-[#2E7D32] flex items-center justify-center shrink-0">
-                  <BookOpen className="w-10 h-10 text-white" />
-                </div>
+            <Link to={getPath("book", language, country)} className="bg-white border border-border p-4 md:p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow group">
+              <div className="w-12 h-12 md:w-20 md:h-20 bg-[#2E7D32] flex items-center justify-center mx-auto mb-2 md:mb-4">
+                <BookOpen className="w-6 h-6 md:w-10 md:h-10 text-white" />
               </div>
-              <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2 group-hover:text-[#2E7D32] transition-colors">{isEN ? "Author & Specialist Writer" : "Autor & Fachautor"}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
+              <h3 className="font-semibold text-xs md:text-sm text-[#1B3A5C] mb-1 md:mb-2 group-hover:text-[#2E7D32] transition-colors">{isEN ? "Author & Specialist Writer" : "Autor & Fachautor"}</h3>
+              <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
                 {isEN
                   ? "Author of 'Go InSide' and numerous specialist publications on hypnotherapy and personal development."
                   : "Autor von 'Go InSide' und zahlreichen Fachpublikationen zu Hypnotherapie und Persönlichkeitsentwicklung."}
@@ -195,14 +185,12 @@ export default function UeberUns() {
             </Link>
 
             {/* TV Expert */}
-            <Link to={getPath("media", language, country)} className="bg-white border border-border p-6 hover:shadow-md transition-shadow group">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-20 h-20 bg-[#1B3A5C] flex items-center justify-center shrink-0">
-                  <Tv className="w-10 h-10 text-white" />
-                </div>
+            <Link to={getPath("media", language, country)} className="bg-white border border-border p-4 md:p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow group">
+              <div className="w-12 h-12 md:w-20 md:h-20 bg-[#1B3A5C] flex items-center justify-center mx-auto mb-2 md:mb-4">
+                <Tv className="w-6 h-6 md:w-10 md:h-10 text-white" />
               </div>
-              <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2 group-hover:text-[#2E7D32] transition-colors">{isEN ? "TV Expert & Media Personality" : "TV-Experte & Medienpersönlichkeit"}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
+              <h3 className="font-semibold text-xs md:text-sm text-[#1B3A5C] mb-1 md:mb-2 group-hover:text-[#2E7D32] transition-colors">{isEN ? "TV Expert & Media Personality" : "TV-Experte & Medienpersönlichkeit"}</h3>
+              <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
                 {isEN
                   ? "Regular appearances on German and Swiss television as a hypnotherapy expert."
                   : "Regelmäßige Auftritte im deutschen und Schweizer Fernsehen als Hypnose-Experte."}
