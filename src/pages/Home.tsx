@@ -6,6 +6,7 @@ import { CDN } from "@/lib/cdn";
 import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import InlineContactForm from "@/components/InlineContactForm";
 import { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import hero1 from "@/assets/hero-1.webp";
