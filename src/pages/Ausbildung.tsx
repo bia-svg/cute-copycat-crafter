@@ -49,7 +49,7 @@ export default function Ausbildung() {
     { date: "Mo-Sa, 23.-28. Nov. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const },
   ];
   const datesDE = [
-    { date: "Mo-Sa, 11.-16. Mai 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "limited" as const },
+    { date: "Mo-Sa, 11.-16. Mai 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "limited" as const, forceEarlyBird: true },
     { date: "Mo-Sa, 06.-11. Juli 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
     { date: "Mo-Sa, 14.-19. Sept. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
     { date: "Mo-Sa, 16.-21. Nov. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
@@ -525,7 +525,7 @@ export default function Ausbildung() {
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                       <div className="flex flex-wrap items-center gap-1.5">
-                        {(seminarCounts[`de::${d.date}`] || 0) < EARLY_BIRD_THRESHOLD && (
+                        {((seminarCounts[`de::${d.date}`] || 0) < EARLY_BIRD_THRESHOLD || (d as any).forceEarlyBird) && (
                           <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E3F2FD] text-[#1565C0]">
                             {isEN ? "Early Bird" : "Frühbucher"}
                           </span>

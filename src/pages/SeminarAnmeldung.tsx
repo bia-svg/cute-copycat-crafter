@@ -21,7 +21,7 @@ const SEMINAR_DATES = {
     { date: "Mo-Sa, 23.-28. Nov. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const },
   ],
   de: [
-    { date: "Mo-Sa, 11.-16. Mai 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "limited" as const },
+    { date: "Mo-Sa, 11.-16. Mai 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "limited" as const, forceEarlyBird: true },
     { date: "Mo-Sa, 06.-11. Juli 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
     { date: "Mo-Sa, 14.-19. Sept. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
     { date: "Mo-Sa, 16.-21. Nov. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
@@ -313,7 +313,7 @@ export default function SeminarAnmeldung() {
                     </h2>
                     <div className="space-y-2">
                     {dates.map((d, i) => {
-                        const isEarlyBird = seminarCountry && hasEarlyBirdForDate(seminarCountry as "ch" | "de", d.date);
+                        const isEarlyBird = (d as any).forceEarlyBird || (seminarCountry && hasEarlyBirdForDate(seminarCountry as "ch" | "de", d.date));
                         const regularPrice = seminarCountry === "ch" ? "CHF 3.290.-" : "€2.790,-";
                         const earlyBirdPrice = seminarCountry === "ch" ? "CHF 2.990.-" : "€2.490,-";
                         const savings = seminarCountry === "ch" ? "CHF 300" : "€300";
