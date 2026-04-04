@@ -492,7 +492,7 @@ export default function SeminarAnmeldung() {
                       </div>
 
                       {/* DSGVO + AGB */}
-                      <div className="border border-border bg-white p-4 space-y-3">
+                      <div className="border border-border bg-white p-3 space-y-2.5">
                         {/* Privacy */}
                         <div className="flex items-start gap-3">
                           <div className="pt-0.5">
