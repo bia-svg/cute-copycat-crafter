@@ -541,7 +541,7 @@ export default function Home() {
             <div className="px-5 py-5 md:px-10 md:py-8">
               {/* Label + Title */}
               <div className="text-center mb-3 md:mb-5">
-                <span className="inline-flex items-center gap-1.5 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.18em] text-primary border border-primary/20 rounded-full px-3 py-0.5 md:px-4 md:py-1 bg-primary/5 mb-2 md:mb-3">
+                <span className="inline-flex items-center gap-1.5 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.18em] text-[hsl(213,10%,40%)] border border-[hsl(213,12%,80%)] rounded-full px-3 py-0.5 md:px-4 md:py-1 bg-gradient-to-r from-[hsl(213,10%,93%)] to-[hsl(213,10%,96%)] mb-2 md:mb-3">
                   <Award className="w-3 h-3" />
                   {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
                 </span>
@@ -567,7 +567,7 @@ export default function Home() {
                   { num: "50+", label: isEN ? "Audio" : "Audio" },
                   { num: "✓", label: isEN ? "Diploma" : "Diplom" },
                 ].map(item => (
-                  <div key={item.label} className="text-center bg-primary/5 border border-primary/10 rounded-lg py-2 md:py-3 px-1">
+                  <div key={item.label} className="text-center bg-gradient-to-b from-[hsl(213,10%,95%)] to-[hsl(213,10%,92%)] border border-[hsl(213,12%,82%)] rounded-lg py-2 md:py-3 px-1">
                     <div className="text-sm md:text-xl font-bold text-primary">{item.num}</div>
                     <div className="text-[7px] md:text-[10px] text-muted-foreground leading-tight font-medium mt-0.5">{item.label}</div>
                   </div>
@@ -576,7 +576,7 @@ export default function Home() {
 
               {/* EMR + CTA row */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 md:gap-4">
-                <div className="inline-flex items-center gap-1.5 bg-cta/5 border border-cta/15 rounded-lg px-3 py-1.5 md:px-4 md:py-2">
+                <div className="inline-flex items-center gap-1.5 bg-[hsl(160,30%,95%)] border border-[hsl(160,25%,82%)] rounded-lg px-3 py-1.5 md:px-4 md:py-2">
                   <CheckCircle className="w-3.5 h-3.5 text-cta flex-shrink-0" />
                   <span className="text-[10px] md:text-xs font-semibold text-foreground/85 tracking-wide">EMR Krankenkasse Konform</span>
                 </div>
