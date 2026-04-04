@@ -141,6 +141,33 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
               </>
             )}
 
+            {isSeminar && props.bookedPrice && (
+              <Section style={pricingBox}>
+                <Text style={pricingSectionTitle}>{isEN ? '💰 Pricing Details' : '💰 Preisdetails'}</Text>
+                <Text style={pricingLine}>
+                  <strong>{isEN ? 'Booked Price' : 'Gebuchter Preis'}:</strong> {props.bookedPrice}
+                </Text>
+                <Text style={pricingLine}>
+                  <strong>{isEN ? 'Price Type' : 'Preisart'}:</strong> {props.priceType}
+                </Text>
+                {props.regularPrice && (
+                  <Text style={pricingLine}>
+                    <strong>{isEN ? 'Regular Price' : 'Regulärer Preis'}:</strong> {props.regularPrice}
+                  </Text>
+                )}
+                {props.savingsAmount && (
+                  <Text style={pricingHighlight}>
+                    ✅ {isEN ? 'Savings' : 'Ersparnis'}: {props.savingsAmount}
+                  </Text>
+                )}
+              </Section>
+            )}
+              <>
+                <Text style={label}>{isEN ? 'Seminar Location' : 'Seminarort'}</Text>
+                <Text style={value}>{props.seminarLocation}</Text>
+              </>
+            )}
+
             {props.bestTime && (
               <>
                 <Text style={label}>{isEN ? 'Best Time to Reach' : 'Beste Erreichbarkeit'}</Text>
