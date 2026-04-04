@@ -13,6 +13,10 @@ import hero1 from "@/assets/hero-1.webp";
 import hero1Mobile from "@/assets/hero-1-mobile.webp";
 import davidSessionImg from "@/assets/david-office-portrait.webp";
 import davidSessionMobile from "@/assets/david-office-portrait-mobile.webp";
+import corporateSuccessImg from "@/assets/corporate-success.jpg";
+import corporateResilienceImg from "@/assets/corporate-resilience.jpg";
+import corporateStressImg from "@/assets/corporate-stress.jpg";
+import corporateNonsmokerImg from "@/assets/corporate-nonsmoker.jpg";
 
 // Lazy-load remaining hero slides
 const heroDesktop = [
