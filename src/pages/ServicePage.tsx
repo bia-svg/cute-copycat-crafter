@@ -273,23 +273,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         </div>
       </section>
 
-      {/* Consultation CTA Row with Inline Form */}
-      <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-8">
-          <div className="max-w-2xl mx-auto">
-            <p className="text-center text-foreground/90 text-sm md:text-base font-semibold leading-snug mb-3 md:mb-4">
-              {isEN
-                ? <>Send your request here and I will reply within 24 hours.<br className="hidden sm:inline" /> Or use the green WhatsApp button for a faster response.</>
-                : <>Senden Sie hier Ihre Anfrage und ich melde mich innerhalb von 24 Stunden.<br className="hidden sm:inline" /> Oder nutzen Sie den grünen WhatsApp-Button für eine schnellere Antwort.</>}
-            </p>
-            <div className="border border-border p-3 sm:p-4 bg-white">
-              <InlineContactForm />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Kathryn Section — only on children/teens page */}
+      {/* Kathryn Section — only on children/teens page, shown BEFORE contact form */}
       {(data.slugEN === "kinder-jugendliche" || data.slugCH === "kinder-jugendliche") && (
         <section className="bg-secondary border-t border-border">
           <div className="container-main py-12">
@@ -334,6 +318,22 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           </div>
         </section>
       )}
+
+      {/* Consultation CTA Row with Inline Form */}
+      <section className="bg-[#f4f3ef] border-b border-border">
+        <div className="container-main py-8">
+          <div className="max-w-2xl mx-auto">
+            <p className="text-center text-foreground/90 text-sm md:text-base font-semibold leading-snug mb-3 md:mb-4">
+              {isEN
+                ? <>Send your request here and I will reply within 24 hours.<br className="hidden sm:inline" /> Or use the green WhatsApp button for a faster response.</>
+                : <>Senden Sie hier Ihre Anfrage und ich melde mich innerhalb von 24 Stunden.<br className="hidden sm:inline" /> Oder nutzen Sie den grünen WhatsApp-Button für eine schnellere Antwort.</>}
+            </p>
+            <div className="border border-border p-3 sm:p-4 bg-white">
+              <InlineContactForm />
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
