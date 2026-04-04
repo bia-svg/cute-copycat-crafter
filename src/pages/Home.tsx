@@ -535,19 +535,28 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ TRAINING ═══════════════════ */}
-      <section className="py-8 md:py-16" style={deferredSectionStyle}>
+      <section className="py-12 md:py-20" style={deferredSectionStyle}>
         <div className="container-main">
-          <h2 className="text-lg md:text-3xl font-bold text-foreground text-center mb-0.5 md:mb-3">{t("section.training")}</h2>
-          <p className="text-center text-muted-foreground text-xs md:text-base max-w-2xl mx-auto mb-2 md:mb-8">
-            {isEN ? "Aktiv-Hypnose© Therapist Diploma — 6-Day Intensive Training" : "Aktiv-Hypnose© Therapeuten-Diplom — 6-Tage Intensiv-Ausbildung"}
-          </p>
-          <div className="bg-card border border-border rounded-lg p-3 md:p-8 max-w-3xl mx-auto">
-            <p className="text-foreground/80 leading-snug text-xs md:text-base mb-3 md:mb-6">
+          <div className="max-w-3xl mx-auto bg-card border-2 border-border/80 rounded-2xl p-5 md:p-10 shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.12)]">
+            {/* Header */}
+            <div className="text-center mb-4 md:mb-8">
+              <h2 className="text-xl md:text-[2rem] font-bold text-foreground leading-tight mb-2 md:mb-3">{t("section.training")}</h2>
+              <p className="text-muted-foreground text-xs md:text-base max-w-xl mx-auto">
+                {isEN ? "Aktiv-Hypnose© Therapist Diploma — 6-Day Intensive Training" : "Aktiv-Hypnose© Therapeuten-Diplom — 6-Tage Intensiv-Ausbildung"}
+              </p>
+            </div>
+
+            {/* Divider */}
+            <div className="w-16 h-0.5 bg-primary/20 mx-auto mb-4 md:mb-8" />
+
+            <p className="text-foreground/80 leading-relaxed text-xs md:text-base mb-4 md:mb-8 text-center max-w-xl mx-auto">
               {isEN
                 ? "Training for people who want to create real change – practical, effective, and held in small, strictly limited groups."
                 : "Ausbildung für Menschen, die echte Veränderung bewirken wollen – praxisnah, wirksam und in kleinen, strikt begrenzten Gruppen."}
             </p>
-            <div className="grid grid-cols-3 gap-1.5 md:gap-4 mb-3 md:mb-6">
+
+            {/* Stats grid */}
+            <div className="grid grid-cols-3 md:grid-cols-5 gap-2 md:gap-5 mb-4 md:mb-8">
               {[
                 { num: "350+", label: isEN ? "Pages Training Manual" : "Seiten Ausbildungsmappe" },
                 { num: "150+", label: isEN ? "Pages Example Texts" : "Seiten Beispieltexte" },
@@ -555,16 +564,20 @@ export default function Home() {
                 { num: "50+", label: isEN ? "Audio Recordings" : "Audioaufnahmen" },
                 { num: "✓", label: isEN ? "Aktiv-Hypnose© Diploma" : "Aktiv-Hypnose© Diplom" },
               ].map(item => (
-                <div key={item.label} className="text-center">
-                  <div className="text-base md:text-2xl font-bold text-primary">{item.num}</div>
+                <div key={item.label} className="text-center bg-secondary/50 rounded-xl py-2.5 md:py-4 px-1">
+                  <div className="text-lg md:text-3xl font-bold text-primary mb-0.5">{item.num}</div>
                   <div className="text-[9px] md:text-xs text-muted-foreground leading-tight">{item.label}</div>
                 </div>
               ))}
             </div>
-            <div className="flex items-center gap-1.5 bg-secondary rounded p-1 md:p-2 mb-2 md:mb-6">
-              <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-cta" />
-              <span className="text-[11px] md:text-sm font-medium text-foreground">EMR Krankenkasse Konform</span>
+
+            {/* EMR Trust Badge */}
+            <div className="flex items-center justify-center gap-2 bg-primary/5 border border-primary/10 rounded-xl px-4 py-2.5 md:py-3 mb-5 md:mb-8 max-w-sm mx-auto">
+              <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-cta flex-shrink-0" />
+              <span className="text-xs md:text-sm font-semibold text-foreground tracking-wide">EMR Krankenkasse Konform</span>
             </div>
+
+            {/* CTA */}
             <div className="text-center">
               <Link to={getPath("training", language, country)}>
                 <Button className="bg-cta text-cta-foreground hover:bg-cta/90 text-xs md:text-base px-4 py-1.5 md:px-6 md:py-2">
