@@ -366,9 +366,11 @@ export default function SeminarAnmeldung() {
                                     <span className="text-[10px] font-bold text-white bg-[#2E7D32] px-2 py-0.5 rounded-full animate-pulse">
                                       {isEN ? `Save ${savings}` : `${savings} sparen`}
                                     </span>
-                                    <span className="text-[10px] font-semibold text-[#E65100] bg-[#FFF3E0] px-2 py-0.5 rounded-full">
-                                      {isEN ? "Limited offer!" : "Nur noch wenige Plätze!"}
-                                    </span>
+                                    {d.status === "limited" && (
+                                      <span className="text-[10px] font-semibold text-[#E65100] bg-[#FFF3E0] px-2 py-0.5 rounded-full">
+                                        {isEN ? "Limited seats!" : "Letzte Plätze!"}
+                                      </span>
+                                    )}
                                   </div>
                                 </div>
                                 <p className="text-[10px] text-muted-foreground mt-1.5 italic">
