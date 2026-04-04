@@ -262,9 +262,9 @@ export default function Erstgespraech() {
                   </div>
 
                   {/* Phone + PLZ */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Phone" : "Telefonnummer"} *</label>
+                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                     <div>
+                       <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Phone" : "Telefonnummer"} *</label>
                       <div className="flex">
                       <select
                           value={phoneCountry}
