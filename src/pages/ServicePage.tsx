@@ -8,6 +8,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
 import { Helmet } from "react-helmet-async";
+import InlineContactForm from "@/components/InlineContactForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 import { Button } from "@/components/ui/button";
