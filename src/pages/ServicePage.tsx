@@ -293,8 +293,8 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       {(data.slugEN === "kinder-jugendliche" || data.slugCH === "kinder-jugendliche") && (
         <section className="bg-secondary border-t border-border">
           <div className="container-main py-12">
-            <div className="grid md:grid-cols-[220px_1fr] gap-8 items-start">
-              <div className="mx-auto md:mx-0 w-48 md:w-full">
+            <div className="grid md:grid-cols-[240px_1fr] gap-8 items-start">
+              <div className="mx-auto md:mx-0 w-56 md:w-full">
                 <div className="border border-border overflow-hidden rounded-lg">
                   <img src={CDN.kathrynPortrait} alt="Kathryn Woods – Kinder- und Jugendtherapeutin" className="w-full h-auto" loading="lazy" />
                   <div className="p-4 bg-card">
