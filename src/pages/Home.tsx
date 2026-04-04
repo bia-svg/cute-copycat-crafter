@@ -538,10 +538,10 @@ export default function Home() {
       <section className="py-10 md:py-20 bg-primary" style={deferredSectionStyle}>
         <div className="container-main">
           <div className="max-w-3xl mx-auto relative bg-white rounded-2xl overflow-hidden shadow-[0_16px_48px_-8px_rgba(0,0,0,0.3),0_4px_12px_-2px_rgba(0,0,0,0.15)]">
-            <div className="px-5 py-5 md:px-10 md:py-8">
+            <div className="px-5 py-6 md:px-10 md:py-10">
               {/* Label + Title */}
-              <div className="text-center mb-3 md:mb-5">
-                <span className="inline-flex items-center gap-1.5 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.18em] text-[hsl(213,10%,40%)] border border-[hsl(213,12%,80%)] rounded-full px-3 py-0.5 md:px-4 md:py-1 bg-gradient-to-r from-[hsl(213,10%,93%)] to-[hsl(213,10%,96%)] mb-2 md:mb-3">
+              <div className="text-center mb-4 md:mb-6">
+                <span className="inline-flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] text-[hsl(213,10%,35%)] border border-[hsl(213,12%,78%)] rounded-full px-4 py-1 md:px-5 md:py-1.5 bg-gradient-to-r from-[hsl(213,10%,91%)] to-[hsl(213,10%,95%)] mb-3 md:mb-4 shadow-sm">
                   <Award className="w-3 h-3" />
                   {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
                 </span>
