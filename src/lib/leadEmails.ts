@@ -30,6 +30,10 @@ interface LeadEmailData {
   message?: string;
   profession?: string;
   registrationNumber?: string;
+  bookedPrice?: string;
+  priceType?: string;
+  regularPrice?: string;
+  savingsAmount?: string;
 }
 
 /**
