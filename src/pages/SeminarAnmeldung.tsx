@@ -248,7 +248,7 @@ export default function SeminarAnmeldung() {
       ]} />
 
       <section className="bg-white border-b border-border">
-        <div className="container-main py-8 lg:py-12">
+        <div className="container-main py-4 lg:py-6">
           <div className="max-w-3xl mx-auto">
             {/* Header */}
             <div className="text-center mb-8">
