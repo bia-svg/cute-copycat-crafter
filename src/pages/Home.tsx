@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 import InlineContactForm from "@/components/InlineContactForm";
 import { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import hero1 from "@/assets/hero-1.webp";
-import hero1Mobile from "@/assets/hero-1-mobile.webp";
+import hero1 from "@/assets/david-office-portrait.webp";
+import hero1Mobile from "@/assets/david-office-portrait-mobile.webp";
 import davidSessionImg from "@/assets/david-office-portrait.webp";
 import davidSessionMobile from "@/assets/david-office-portrait-mobile.webp";
 import corporateSuccessImg from "@/assets/corporate-success.jpg";
@@ -21,6 +21,7 @@ import corporateNonsmokerImg from "@/assets/corporate-nonsmoker.jpg";
 // Lazy-load remaining hero slides
 const heroDesktop = [
   hero1,
+  () => import("@/assets/hero-1.webp").then(m => m.default),
   () => import("@/assets/hero-2.webp").then(m => m.default),
   () => import("@/assets/hero-3.webp").then(m => m.default),
   () => import("@/assets/hero-4.webp").then(m => m.default),
@@ -28,6 +29,7 @@ const heroDesktop = [
 ];
 const heroMobile = [
   hero1Mobile,
+  () => import("@/assets/hero-1-mobile.webp").then(m => m.default),
   () => import("@/assets/hero-2-mobile.webp").then(m => m.default),
   () => import("@/assets/hero-3-mobile.webp").then(m => m.default),
   () => import("@/assets/hero-4-mobile.webp").then(m => m.default),
