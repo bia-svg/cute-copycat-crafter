@@ -535,16 +535,13 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ TRAINING ═══════════════════ */}
-      <section className="py-8 md:py-16" style={deferredSectionStyle}>
+      <section className="py-10 md:py-20 bg-primary" style={deferredSectionStyle}>
         <div className="container-main">
-          <div className="max-w-3xl mx-auto relative bg-card border border-[hsl(213,18%,82%)] rounded-2xl overflow-hidden shadow-[0_8px_32px_-8px_hsl(213,20%,60%,0.18),0_2px_8px_-2px_hsl(213,20%,60%,0.10)]">
-            {/* Silver/sage accent bar */}
-            <div className="h-1 w-full bg-gradient-to-r from-[hsl(213,15%,82%)] via-[hsl(160,12%,65%)] to-[hsl(213,15%,82%)]" />
-
-            <div className="px-5 py-4 md:px-10 md:py-8">
-              {/* Label + Title — compact header */}
+          <div className="max-w-3xl mx-auto relative bg-white rounded-2xl overflow-hidden shadow-[0_16px_48px_-8px_rgba(0,0,0,0.3),0_4px_12px_-2px_rgba(0,0,0,0.15)]">
+            <div className="px-5 py-5 md:px-10 md:py-8">
+              {/* Label + Title */}
               <div className="text-center mb-3 md:mb-5">
-                <span className="inline-flex items-center gap-1.5 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.18em] text-[hsl(213,15%,50%)] border border-[hsl(213,15%,82%)] rounded-full px-3 py-0.5 md:px-4 md:py-1 bg-[hsl(213,18%,95%)] mb-2 md:mb-3">
+                <span className="inline-flex items-center gap-1.5 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.18em] text-primary border border-primary/20 rounded-full px-3 py-0.5 md:px-4 md:py-1 bg-primary/5 mb-2 md:mb-3">
                   <Award className="w-3 h-3" />
                   {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
                 </span>
@@ -570,7 +567,7 @@ export default function Home() {
                   { num: "50+", label: isEN ? "Audio" : "Audio" },
                   { num: "✓", label: isEN ? "Diploma" : "Diplom" },
                 ].map(item => (
-                  <div key={item.label} className="text-center bg-[hsl(213,20%,96%)] border border-[hsl(213,15%,88%)] rounded-lg py-2 md:py-3 px-1">
+                  <div key={item.label} className="text-center bg-primary/5 border border-primary/10 rounded-lg py-2 md:py-3 px-1">
                     <div className="text-sm md:text-xl font-bold text-primary">{item.num}</div>
                     <div className="text-[7px] md:text-[10px] text-muted-foreground leading-tight font-medium mt-0.5">{item.label}</div>
                   </div>
@@ -579,7 +576,7 @@ export default function Home() {
 
               {/* EMR + CTA row */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 md:gap-4">
-                <div className="inline-flex items-center gap-1.5 bg-[hsl(160,14%,94%)] border border-[hsl(160,12%,82%)] rounded-lg px-3 py-1.5 md:px-4 md:py-2">
+                <div className="inline-flex items-center gap-1.5 bg-cta/5 border border-cta/15 rounded-lg px-3 py-1.5 md:px-4 md:py-2">
                   <CheckCircle className="w-3.5 h-3.5 text-cta flex-shrink-0" />
                   <span className="text-[10px] md:text-xs font-semibold text-foreground/85 tracking-wide">EMR Krankenkasse Konform</span>
                 </div>
