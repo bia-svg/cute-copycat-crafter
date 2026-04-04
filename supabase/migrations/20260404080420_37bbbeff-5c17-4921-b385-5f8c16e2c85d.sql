@@ -1,0 +1,1 @@
+ALTER TABLE public.leads DROP CONSTRAINT leads_tracking_code_key;

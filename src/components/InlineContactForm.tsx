@@ -104,7 +104,10 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       if (dbError) {
         console.error("Lead save error:", dbError);
         logFormSubmission({ formType: "session", status: "error", errorMessage: dbError.message, formData: { name: leadData.name, concern: leadData.concern } });
-        toast.error(isEN ? "An error occurred. Please try again." : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
+        const userMsg = dbError.message?.includes("duplicate")
+          ? (isEN ? "This inquiry was already submitted. Please try with different details." : "Diese Anfrage wurde bereits gesendet. Bitte versuchen Sie es mit anderen Angaben.")
+          : (isEN ? "A technical error occurred while sending. Please try again or contact us directly." : "Beim Senden ist ein technischer Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.");
+        toast.error(userMsg);
         setIsSubmitting(false);
         return;
       }
