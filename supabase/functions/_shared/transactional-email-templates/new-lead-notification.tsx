@@ -162,9 +162,7 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
                   </Text>
                 )}
               </Section>
-
-
-
+            )}
             {props.bestTime && (
               <>
                 <Text style={label}>{isEN ? 'Best Time to Reach' : 'Beste Erreichbarkeit'}</Text>
