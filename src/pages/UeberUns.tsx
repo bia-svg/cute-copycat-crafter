@@ -292,8 +292,8 @@ export default function UeberUns() {
       {/* Kathryn Section */}
       <section className="bg-white border-b border-border">
         <div className="container-main py-10 lg:py-14">
-          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 items-start">
-            <div className="mx-auto lg:mx-0">
+          <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 items-start">
+            <div className="mx-auto md:mx-0 w-64 md:w-full">
               <div className="border border-border overflow-hidden rounded-lg">
                 <img src={CDN.kathrynPortrait} alt="Kathryn - Psychologische Beraterin" className="w-full h-auto" />
                 <div className="p-4 bg-[#f4f3ef]">
