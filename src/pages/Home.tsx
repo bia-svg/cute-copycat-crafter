@@ -561,7 +561,7 @@ export default function Home() {
               </p>
 
               {/* Stats — compact grid */}
-              <div className="grid grid-cols-5 gap-1.5 md:gap-3 mb-3 md:mb-5">
+              <div className="grid grid-cols-5 gap-1.5 md:gap-3 mb-4 md:mb-6">
                 {[
                   { num: "350+", label: isEN ? "Pages Manual" : "Seiten Mappe" },
                   { num: "150+", label: isEN ? "Example Texts" : "Beispieltexte" },
