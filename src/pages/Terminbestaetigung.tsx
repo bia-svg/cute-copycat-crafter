@@ -213,17 +213,17 @@ export default function Terminbestaetigung() {
   return (
     <>
       <SEO {...pageSEO.appointmentConfirmation} pageKey="appointmentConfirmation" />
-      <section className="bg-background py-12 md:py-16">
+      <section className="bg-background py-6 md:py-10">
       <div className="container-main max-w-3xl">
-        <div className="text-center mb-10">
-          <CalendarCheck className="w-10 h-10 text-primary mx-auto mb-3" />
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2" style={{ fontFamily: "Georgia, serif" }}>
+        <div className="text-center mb-5">
+          <CalendarCheck className="w-9 h-9 text-primary mx-auto mb-2" />
+          <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-1.5" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Appointment Confirmation" : "Terminbestätigung"}
           </h1>
-          <div className="w-16 h-1 bg-primary mx-auto" />
+          <div className="w-14 h-0.5 bg-primary mx-auto" />
         </div>
 
-        <form className="space-y-6 relative z-[51]" onSubmit={handleSubmit} noValidate>
+        <form className="space-y-4 relative z-[51]" onSubmit={handleSubmit} noValidate>
           {/* Name */}
           <div>
             <Label className="text-foreground font-semibold">
