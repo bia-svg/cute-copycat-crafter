@@ -251,7 +251,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
 
       {/* GDPR */}
       <div className="border border-border bg-white p-2.5 space-y-1.5">
-        <label className="flex items-start gap-3 cursor-pointer">
+        <label className="flex items-start gap-2.5 cursor-pointer">
           <input
             type="checkbox"
             name="gdprConsent"
