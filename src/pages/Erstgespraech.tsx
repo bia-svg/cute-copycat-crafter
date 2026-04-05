@@ -25,7 +25,7 @@ export default function Erstgespraech() {
         <div className="container-main py-6 lg:py-8">
           <div className="max-w-2xl mx-auto">
             <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] mb-4 text-center">
-              {isEN ? "Book Your Free Discovery Call" : "Kostenloses Erstgespräch vereinbaren"}
+              {isEN ? "Get More Information" : "Mehr Informationen erhalten"}
             </h1>
             <div className="border border-border p-3 sm:p-4 bg-[#f4f3ef]">
               <InlineContactForm />
