@@ -56,6 +56,11 @@ export default function DashboardLogin() {
   };
 
   return (
+    <>
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Dashboard Login | David J. Woods</title>
+      </Helmet>
     <div className="min-h-screen bg-[hsl(220,15%,10%)] flex items-center justify-center p-4">
       <Card className="w-full max-w-md bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)] text-white">
         <CardHeader className="text-center space-y-2">
