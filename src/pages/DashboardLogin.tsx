@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { authenticate } from "@/lib/dashboardAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { Input } from "@/components/ui/input";
@@ -55,6 +56,11 @@ export default function DashboardLogin() {
   };
 
   return (
+    <>
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Dashboard Login | David J. Woods</title>
+      </Helmet>
     <div className="min-h-screen bg-[hsl(220,15%,10%)] flex items-center justify-center p-4">
       <Card className="w-full max-w-md bg-[hsl(220,15%,13%)] border-[hsl(220,15%,20%)] text-white">
         <CardHeader className="text-center space-y-2">
@@ -135,5 +141,6 @@ export default function DashboardLogin() {
         </CardContent>
       </Card>
     </div>
+    </>
   );
 }
