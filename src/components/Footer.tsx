@@ -21,7 +21,7 @@ function InstagramIcon({ className }: { className?: string }) {
 }
 
 export default function Footer() {
-  const { language, country, t, showCH, showDE } = useLanguage();
+  const { language, country, t } = useLanguage();
   const isEN = language === "en";
 
   return (
@@ -36,68 +36,64 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Contact */}
+          {/* Main Institutes */}
           <div>
-            <h4 className="font-semibold mb-3">{isEN ? "Contact" : "Kontakt"}</h4>
+            <h4 className="font-semibold mb-3">{isEN ? "Main Institutes" : "Hauptstandorte"}</h4>
             <div className="space-y-2 text-sm opacity-80">
-              {showCH && (
-                <>
-                  <div className="flex items-start gap-2">
-                    <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                    <div>
-                      <div className="font-medium opacity-100">Zürich</div>
-                      <div>5 Elements TCM GmbH, Beim Löwenplatz</div>
-                      <div>Usteristrasse 23, 8001 Zürich</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                    <div>
-                      <div className="font-medium opacity-100">Eschenbach</div>
-                      <div>Fit+Gsund, Churzhaslen 3</div>
-                      <div>8733 Eschenbach (am Zürichsee)</div>
-                    </div>
-                  </div>
-                  <a href="tel:+41791318878" className="flex items-center gap-1 mt-1 hover:underline">
-                    <Phone className="w-3 h-3" /> +41 79 131 88 78
-                  </a>
-                </>
-              )}
-              {showDE && (
-                <div className="flex items-start gap-2 mt-3">
-                  <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                  <div>
-                    <div className="font-medium opacity-100">Augsburg</div>
-                    <div>Regus, Viktoria Str. 3b, 2. OG</div>
-                    <div>86150 Augsburg</div>
-                    <a href="tel:+491719539922" className="flex items-center gap-1 mt-1 hover:underline">
-                      <Phone className="w-3 h-3" /> +49 171 953 99 22
-                    </a>
-                  </div>
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
+                <div>
+                  <div className="font-medium opacity-100">Zürich</div>
+                  <div>5 Elements TCM GmbH, Beim Löwenplatz</div>
+                  <div>Usteristrasse 23, 8001 Zürich</div>
                 </div>
-              )}
-            </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
+                <div>
+                  <div className="font-medium opacity-100">Eschenbach</div>
+                  <div>Fit+Gsund, Churzhaslen 3</div>
+                  <div>8733 Eschenbach (am Zürichsee)</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
+                <div>
+                  <div className="font-medium opacity-100">Augsburg</div>
+                  <div>Regus, Viktoria Str. 3b, 2. OG</div>
+                  <div>86150 Augsburg</div>
+                </div>
+              </div>
+              <div className="mt-2 space-y-1">
+                <a href="tel:+41791318878" className="flex items-center gap-1 hover:underline">
+                  <Phone className="w-3 h-3" /> +41 79 131 88 78 (CH)
+                </a>
+                <a href="tel:+491719539922" className="flex items-center gap-1 hover:underline">
+                  <Phone className="w-3 h-3" /> +49 171 953 99 22 (DE)
+                </a>
+              </div>
 
-            {/* Social Links */}
-            <div className="flex items-center gap-3 mt-4">
-              <a
-                href="https://de.linkedin.com/in/david-j-woods-85b30b186/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="opacity-80 hover:opacity-100 transition-opacity"
-              >
-                <LinkedInIcon className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.instagram.com/hypnoseinstitut_woods/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="opacity-80 hover:opacity-100 transition-opacity"
-              >
-                <InstagramIcon className="w-5 h-5" />
-              </a>
+              {/* Social Links */}
+              <div className="flex items-center gap-3 mt-4">
+                <a
+                  href="https://de.linkedin.com/in/david-j-woods-85b30b186/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="opacity-80 hover:opacity-100 transition-opacity"
+                >
+                  <LinkedInIcon className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.instagram.com/hypnoseinstitut_woods/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="opacity-80 hover:opacity-100 transition-opacity"
+                >
+                  <InstagramIcon className="w-5 h-5" />
+                </a>
+              </div>
             </div>
           </div>
 
