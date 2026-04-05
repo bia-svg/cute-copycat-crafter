@@ -152,32 +152,17 @@ export default function Header() {
       <div className="bg-primary text-primary-foreground text-xs sm:text-xs">
         <div className="container-main flex items-center justify-center sm:justify-between py-2 sm:py-1.5 gap-4">
           <div className="hidden sm:flex items-center gap-4">
-            {isSwiss ? (
-              <a href="tel:+41791318878" className="flex items-center gap-1 hover:underline">
-                <Phone className="w-3 h-3" /> +41 79 131 88 78
-              </a>
-            ) : (
-              <a href="tel:+491719539922" className="flex items-center gap-1 hover:underline">
-                <Phone className="w-3 h-3" /> +49 171 953 99 22
-              </a>
-            )}
+            <a href="tel:+41791318878" className="flex items-center gap-1 hover:underline">
+              <Phone className="w-3 h-3" /> +41 79 131 88 78
+            </a>
+            <span className="opacity-50">·</span>
+            <a href="tel:+491719539922" className="flex items-center gap-1 hover:underline">
+              <Phone className="w-3 h-3" /> +49 171 953 99 22
+            </a>
           </div>
-          <div className="flex items-center gap-4 text-sm sm:text-xs">
-            <div className="relative" ref={countryDropdownRef}>
-              <button onClick={() => setCountryDropdownOpen(!countryDropdownOpen)} className="flex items-center gap-1.5 hover:underline font-medium">
-                <span className="text-lg">{currentCountry.flag}</span> <span>{currentCountry.label}</span> <ChevronDown className="w-3 h-3" />
-              </button>
-              {countryDropdownOpen && (
-                <div className="absolute right-0 mt-1 bg-card text-foreground border border-border rounded shadow-md min-w-[140px] z-50">
-                  {countryOptions.map(opt => (
-                    <button key={opt.value} onClick={() => { setCountry(opt.value); setCountryDropdownOpen(false); }}
-                      className={`w-full text-left px-3 py-2 text-sm hover:bg-secondary flex items-center gap-2 ${opt.value === country ? "font-bold" : ""}`}>
-                      <span className="text-lg">{opt.flag}</span> {opt.label}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+          <div className="flex items-center gap-2 text-sm sm:text-xs">
+            <span className="text-xs opacity-70 hidden sm:inline">{isDE ? "Standorte: Deutschland · Schweiz" : "Locations: Germany · Switzerland"}</span>
+            <span className="opacity-50 hidden sm:inline">|</span>
             <div className="relative" ref={langDropdownRef}>
               <button onClick={() => setLangDropdownOpen(!langDropdownOpen)} className="flex items-center gap-1.5 hover:underline font-medium">
                 {currentLanguage.label} <ChevronDown className="w-3 h-3" />
