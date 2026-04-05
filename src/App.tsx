@@ -48,11 +48,10 @@ function LegacyRedirect() {
 }
 
 function GeoRedirect() {
-  const [target, setTarget] = useState("/de/ch");
+  const [target, setTarget] = useState("/de/int");
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    // Detect browser language: if primary language is English, use "en"
     const browserLang = navigator.language || (navigator as any).userLanguage || "de";
     const lang = browserLang.toLowerCase().startsWith("en") ? "en" : "de";
 
@@ -64,7 +63,7 @@ function GeoRedirect() {
         else if (cc === "DE" || cc === "AT") setTarget(`/${lang}/de`);
         else setTarget(`/${lang}/int`);
       })
-      .catch(() => setTarget(`/${lang}/de`))
+      .catch(() => setTarget(`/${lang}/int`))
       .finally(() => setReady(true));
   }, []);
 
