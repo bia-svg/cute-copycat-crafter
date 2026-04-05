@@ -24,9 +24,14 @@ export default function Erstgespraech() {
       <section className="bg-white border-b border-border">
         <div className="container-main py-6 lg:py-8">
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] mb-4 text-center">
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] mb-2 text-center">
               {isEN ? "Get More Information" : "Mehr Informationen erhalten"}
             </h1>
+            <p className="text-sm text-muted-foreground text-center mb-4 leading-snug">
+              {isEN
+                ? <>Send your request here and I will reply within 24 hours.<br />Or use the green WhatsApp button for a faster response.</>
+                : <>Senden Sie hier Ihre Anfrage und ich melde mich innerhalb von 24 Stunden.<br />Oder nutzen Sie den grünen WhatsApp-Button für eine schnellere Antwort.</>}
+            </p>
             <div className="border border-border p-3 sm:p-4 bg-[#f4f3ef]">
               <InlineContactForm />
             </div>
