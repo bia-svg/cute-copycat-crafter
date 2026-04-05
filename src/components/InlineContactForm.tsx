@@ -22,7 +22,6 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [gdprConsent, setGdprConsent] = useState(false);
-  const [selectedConcern, setSelectedConcern] = useState(defaultConcern || "");
   const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
   const [phoneCountry, setPhoneCountry] = useState(defaultPhoneCountry);
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -45,13 +44,11 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const firstName = ((formData.get("firstName") as string) || "").trim();
-    const lastName = ((formData.get("lastName") as string) || "").trim();
+    const fullName = ((formData.get("fullName") as string) || "").trim();
     const email = ((formData.get("email") as string) || "").trim();
-    const postalCity = ((formData.get("postalCode") as string) || "").trim();
+    const postalCode = ((formData.get("postalCode") as string) || "").trim();
     const message = ((formData.get("message") as string) || "").trim();
     const bestTime = ((formData.get("bestTime") as string) || "").trim();
-    const location = ((formData.get("location") as string) || "").trim();
     const phone = phoneNumber.trim();
 
     const fail = (selector: string, msgDE: string, msgEN: string) => {
@@ -59,12 +56,10 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       toast.error(isEN ? msgEN : msgDE);
     };
 
-    if (!firstName) return fail('input[name="firstName"]', 'Bitte geben Sie Ihren Vornamen ein.', 'Please enter your first name.');
-    if (!lastName) return fail('input[name="lastName"]', 'Bitte geben Sie Ihren Nachnamen ein.', 'Please enter your last name.');
+    if (!fullName) return fail('input[name="fullName"]', 'Bitte geben Sie Ihren Namen ein.', 'Please enter your full name.');
     if (!email) return fail('input[name="email"]', 'Bitte geben Sie Ihre E-Mail ein.', 'Please enter your email address.');
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('input[name="email"]', 'Bitte geben Sie eine gültige E-Mail ein.', 'Please enter a valid email address.');
     if (!phone) return fail('input[type="tel"]', 'Bitte geben Sie Ihre Telefonnummer ein.', 'Please enter your phone number.');
-    if (!selectedConcern) return fail('select[name="concern"]', 'Bitte wählen Sie Ihr Anliegen aus.', 'Please select your concern.');
     if (!gdprConsent) return fail('input[name="gdprConsent"]', 'Bitte akzeptieren Sie die Datenschutzerklärung.', 'Please accept the privacy policy.');
 
     setIsSubmitting(true);
@@ -79,13 +74,13 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
     const referrerPage = document.referrer ? new URL(document.referrer).pathname : sessionStorage.getItem("dw_prev_page") || null;
 
     const leadData = {
-      name: `${firstName} ${lastName}`.trim(),
+      name: fullName,
       email,
       phone: `${phoneCountry} ${phoneNumber}`.trim(),
-      concern: selectedConcern,
+      concern: defaultConcern || "general",
       form_type: "session" as const,
-      postal_code: postalCity.split(/\s+/)[0] || null,
-      city: postalCity.split(/\s+/).slice(1).join(" ") || location || null,
+      postal_code: postalCode || null,
+      city: null,
       country: country.toUpperCase(),
       language,
       source,
@@ -103,7 +98,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       const { error: dbError } = await supabase.from("leads").insert(leadData as any);
       if (dbError) {
         console.error("Lead save error:", dbError);
-        logFormSubmission({ formType: "session", status: "error", errorMessage: dbError.message, formData: { name: leadData.name, concern: leadData.concern } });
+        logFormSubmission({ formType: "session", status: "error", errorMessage: dbError.message, formData: { name: leadData.name } });
         const userMsg = dbError.message?.includes("duplicate")
           ? (isEN ? "This inquiry was already submitted. Please try with different details." : "Diese Anfrage wurde bereits gesendet. Bitte versuchen Sie es mit anderen Angaben.")
           : (isEN ? "A technical error occurred while sending. Please try again or contact us directly." : "Beim Senden ist ein technischer Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.");
@@ -111,7 +106,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
         setIsSubmitting(false);
         return;
       }
-      logFormSubmission({ formType: "session", status: "success", formData: { name: leadData.name, concern: leadData.concern } });
+      logFormSubmission({ formType: "session", status: "success", formData: { name: leadData.name } });
       trackFormConversion("session");
       setSubmitted(true);
       toast.success(isEN ? "Thank you! We will contact you shortly." : "Vielen Dank! Wir melden uns in Kürze bei Ihnen.");
@@ -121,9 +116,9 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
         name: leadData.name,
         email,
         phone: leadData.phone,
-        concern: selectedConcern,
+        concern: defaultConcern || "general",
         formType: "contact",
-        city: leadData.city || undefined,
+        city: undefined,
         country: country.toUpperCase(),
         language: country === "int" ? "en" : "de",
         notes: leadData.notes || undefined,
@@ -133,8 +128,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
         utmCampaign,
         bestTime: bestTime || undefined,
         message: message || undefined,
-        postalCode: postalCity.split(/\s+/)[0] || undefined,
-        cityName: postalCity.split(/\s+/).slice(1).join(" ") || undefined,
+        postalCode: postalCode || undefined,
         countryName: country === "ch" ? "Schweiz" : country === "int" ? "International" : "Deutschland",
       }).catch(err => console.error("Email error:", err));
     } catch (err) {
@@ -147,26 +141,29 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
 
   if (submitted) {
     return (
-      <div className="text-center py-8">
-        <CheckCircle className="w-10 h-10 text-[#2E7D32] mx-auto mb-3" />
-        <h3 className="text-lg font-bold text-primary mb-1">{isEN ? "Thank You!" : "Vielen Dank!"}</h3>
-        <p className="text-sm text-muted-foreground">{isEN ? "We will contact you shortly." : "Wir melden uns in Kürze bei Ihnen."}</p>
+      <div className="text-center py-6">
+        <div className="bg-[#E8F5E9] border border-[#A5D6A7] rounded-lg p-4 mb-3">
+          <CheckCircle className="w-8 h-8 text-[#2E7D32] mx-auto mb-2" />
+          <h3 className="text-base font-bold text-[#2E7D32] mb-1">
+            {isEN ? "✓ Your request was sent." : "✓ Ihre Anfrage wurde gesendet."}
+          </h3>
+          <p className="text-sm text-[#2E7D32]/80">
+            {isEN ? "We'll be in touch within 24 hours." : "Wir melden uns innerhalb von 24 Stunden."}
+          </p>
+        </div>
+        <Button disabled className="w-full bg-gray-400 text-white font-semibold py-3 cursor-not-allowed">
+          {isEN ? "Sent ✓" : "Gesendet ✓"}
+        </Button>
       </div>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-2.5">
-      {/* Name */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        <div>
-          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "First Name" : "Vorname"} *</label>
-          <input type="text" name="firstName" required autoComplete="given-name" className={inputClasses} />
-        </div>
-        <div>
-          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Last Name" : "Nachname"} *</label>
-          <input type="text" name="lastName" required autoComplete="family-name" className={inputClasses} />
-        </div>
+      {/* Full Name */}
+      <div>
+        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Full Name" : "Vor- und Nachname"} *</label>
+        <input type="text" name="fullName" required autoComplete="name" className={inputClasses} />
       </div>
 
       {/* Email */}
@@ -183,7 +180,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
             <select
               value={phoneCountry}
               onChange={(e) => { setPhoneCountry(e.target.value); setPhoneNumber(""); }}
-              className="border border-r-0 border-border px-2 py-2 text-sm bg-card focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors w-[110px] shrink-0 appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%222%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_6px_center] pr-5 cursor-pointer"
+              className="border border-r-0 border-border px-2 py-1.5 text-sm bg-card focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors w-[110px] shrink-0 appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%222%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_6px_center] pr-5 cursor-pointer"
             >
               {PHONE_COUNTRIES.map(c => (
                 <option key={c.code} value={c.code}>{c.flag} {c.iso} {c.code}</option>
@@ -204,48 +201,26 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
           </p>
         </div>
         <div>
-          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Postal Code / City" : "PLZ / Ortschaft"}</label>
+          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Postal Code / ZIP" : "PLZ"}</label>
           <input type="text" name="postalCode" autoComplete="postal-code" className={inputClasses} />
         </div>
       </div>
 
-      {/* Concern */}
-      <div>
-        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "What is your concern?" : "Was ist Ihr Anliegen?"} *</label>
-        <select name="concern" className={inputClasses} value={selectedConcern} onChange={(e) => setSelectedConcern(e.target.value)}>
-          <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
-          <option value="smoking">{isEN ? "Stop Smoking" : "Raucherentwöhnung"}</option>
-          <option value="anxiety">{isEN ? "Anxiety & Phobias" : "Ängste & Phobien"}</option>
-          <option value="weight">{isEN ? "Weight Loss" : "Abnehmen"}</option>
-          <option value="stress">{isEN ? "Stress & Burnout" : "Stress & Burnout"}</option>
-          <option value="depression">{isEN ? "Depression & Trauma" : "Depressionen & Traumata"}</option>
-          <option value="children">{isEN ? "Children & Teens" : "Kinder & Jugendliche"}</option>
-          <option value="corporate">{isEN ? "Corporate Coaching" : "Firmencoaching"}</option>
-          <option value="other">{isEN ? "Other" : "Sonstiges"}</option>
-        </select>
-      </div>
-
-      {/* Preferred Location */}
-      <div>
-        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Preferred Location" : "Bevorzugter Standort"}</label>
-        <select name="location" className={inputClasses}>
-          <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
-          <option value="zurich">Zürich — 5 Elements TCM (CH)</option>
-          <option value="eschenbach">Eschenbach — Fit und Gesund (CH)</option>
-          <option value="augsburg">Augsburg — Regus HELIO (DE)</option>
-          <option value="online">{isEN ? "Online Session" : "Online-Sitzung"}</option>
-        </select>
-      </div>
-
-      {/* Best time to reach */}
+      {/* Best time to reach — dropdown */}
       <div>
         <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Best time to reach you?" : "Wann sind Sie am besten erreichbar?"}</label>
-        <input type="text" name="bestTime" placeholder={isEN ? "e.g. mornings, after 14:00" : "z.B. vormittags, nach 14:00 Uhr"} className={inputClasses} />
+        <select name="bestTime" className={inputClasses}>
+          <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
+          <option value="morning">{isEN ? "Morning (8–12h)" : "Vormittags (8–12 Uhr)"}</option>
+          <option value="afternoon">{isEN ? "Afternoon (12–17h)" : "Nachmittags (12–17 Uhr)"}</option>
+          <option value="evening">{isEN ? "Evening (after 17h)" : "Abends (nach 17 Uhr)"}</option>
+          <option value="flexible">{isEN ? "Flexible" : "Flexibel"}</option>
+        </select>
       </div>
 
       {/* Message */}
       <div>
-        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Message" : "Kommentar oder Nachricht"}</label>
+        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Message (optional)" : "Nachricht (optional)"}</label>
         <textarea name="message" rows={2} className={`${inputClasses} resize-none`} />
       </div>
 
@@ -282,8 +257,14 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       >
         {isSubmitting
           ? (isEN ? "Sending..." : "Wird gesendet...")
-          : (isEN ? "Request Your Free Consultation" : "Kostenloses Erstgespräch anfragen")}
+          : (isEN ? "Send Request" : "Anfrage senden")}
       </Button>
+
+      <p className="text-[10px] text-muted-foreground text-center">
+        {isEN
+          ? "We reply within 24 hours — or use the WhatsApp button for a quicker response."
+          : "Wir antworten innerhalb von 24 Stunden — oder nutzen Sie den WhatsApp-Button für eine schnellere Antwort."}
+      </p>
     </form>
   );
 }
