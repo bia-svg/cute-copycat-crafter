@@ -289,8 +289,8 @@ export default function Home() {
               <div className="text-foreground/80 leading-relaxed text-[0.95rem]">
                 <p className="mb-2">
                   {isEN
-                    ? "Expert psychological knowledge, modern hypnosis and profound transformation – established in Germany, Switzerland and internationally."
-                    : "Fundiertes psychologisches Fachwissen, moderne Hypnose und tiefgreifende Transformation – etabliert in Deutschland, der Schweiz und international."}
+                    ? <>Expert psychological knowledge, modern hypnosis and profound transformation – established in Germany 🇩🇪, Switzerland 🇨🇭 and internationally 🌍.</>
+                    : <>Fundiertes psychologisches Fachwissen, moderne Hypnose und tiefgreifende Transformation – etabliert in Deutschland 🇩🇪, der Schweiz 🇨🇭 und international 🌍.</>}
                 </p>
                 <ul className="space-y-1 text-sm">
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Over 40 years of experience" : "Über 40 Jahre Erfahrung"}</li>
