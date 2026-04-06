@@ -282,9 +282,9 @@ export const anxietyData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const weightData: ServicePageData = {
   slugCH: "abnehmen", slugDE: "abnehmen", slugEN: "weight-loss",
-  titleCH: "Abnehmen mit Hypnose Zürich | Dauerhaft Gewicht verlieren | David J. Woods",
-  titleDE: "Abnehmen mit Hypnose Augsburg | Dauerhaft Gewicht verlieren | David J. Woods",
-  titleEN: "Weight Loss Hypnotherapy Zurich & Augsburg | David J. Woods",
+  titleCH: "Abnehmen mit Hypnose Schweiz | Dauerhaft Gewicht verlieren | David J. Woods",
+  titleDE: "Abnehmen mit Hypnose Deutschland | Dauerhaft Gewicht verlieren | David J. Woods",
+  titleEN: "Weight Loss Hypnotherapy — Germany & Switzerland | David J. Woods",
   metaDescCH: "Abnehmen mit Hypnose in Zürich. Essverhalten nachhaltig verändern ohne Jo-Jo-Effekt. EMR anerkannt. Kostenloses Erstgespräch.",
   metaDescDE: "Abnehmen mit Hypnose in Augsburg. Essverhalten nachhaltig verändern ohne Jo-Jo-Effekt. Kostenloses Erstgespräch.",
   metaDescEN: "Lose weight permanently with hypnotherapy. Change eating habits at the subconscious level. No yo-yo effect. Book your free discovery call.",
