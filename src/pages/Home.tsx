@@ -422,7 +422,7 @@ export default function Home() {
             </Link>
           </div>
           {/* Photo on desktop – right column */}
-          <div className="hidden md:block rounded-lg overflow-hidden">
+          <div className="hidden md:block rounded-lg overflow-hidden max-w-[280px]">
             <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-auto object-cover object-top rounded-lg" loading="lazy" width={1200} height={800} />
           </div>
         </div>
