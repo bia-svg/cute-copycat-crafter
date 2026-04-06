@@ -319,23 +319,23 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div className="container-main py-8 space-y-6">
+          <div className="container-main py-4 space-y-3">
             <h1 className="text-2xl font-bold text-foreground leading-tight tracking-tight">
               Lic. Psych. David J. Woods
             </h1>
-            <p className="italic font-semibold text-cta">{isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}</p>
-            <div className="text-sm text-foreground/80 leading-relaxed">
-              <p className="mb-2">
+            <p className="italic font-semibold text-cta text-sm">{isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}</p>
+            <div className="text-sm text-foreground/80 leading-snug">
+              <p className="mb-1.5">
                 {isEN
                   ? <>Expert psychological knowledge, modern hypnosis and profound transformation – established in Germany 🇩🇪, Switzerland 🇨🇭 and internationally 🌍.</>
                   : <>Fundiertes psychologisches Fachwissen, moderne Hypnose und tiefgreifende Transformation – etabliert in Deutschland 🇩🇪, der Schweiz 🇨🇭 und international 🌍.</>}
               </p>
-              <ul className="space-y-1 text-xs">
-                <li className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "Over 40 years of experience" : "Über 40 Jahre Erfahrung"}</li>
-                <li className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "More than 30,000 sessions conducted" : "Mehr als 30.000 durchgeführte Sitzungen"}</li>
-                <li className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "Over 2,500 trained hypnotherapists" : "Über 2.500 ausgebildete Hypnotiseure"}</li>
-                <li className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? 'Author of "Go Inside" & professional MP3 downloads' : "Autor von Go Inside und Entwickler professioneller MP3-Downloads"}</li>
-                <li className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "International media presence with 30+ TV appearances" : "Internationale Medienpräsenz mit über 30 internationalen TV-Auftritten"}</li>
+              <ul className="space-y-0.5 text-xs">
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "Over 40 years of experience" : "Über 40 Jahre Erfahrung"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "More than 30,000 sessions conducted" : "Mehr als 30.000 durchgeführte Sitzungen"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "Over 2,500 trained hypnotherapists" : "Über 2.500 ausgebildete Hypnotiseure"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? 'Author of "Go Inside" & professional MP3 downloads' : "Autor von Go Inside und Entwickler professioneller MP3-Downloads"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "International media presence with 30+ TV appearances" : "Internationale Medienpräsenz mit über 30 internationalen TV-Auftritten"}</li>
               </ul>
             </div>
             <div className="relative aspect-[4/3] max-h-[280px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "210px" }}>
