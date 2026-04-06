@@ -692,9 +692,9 @@ export const adultsData: ServicePageData = {
 
 export const childrenData: ServicePageData = {
   slugCH: "kinder-jugendliche", slugDE: "kinder-jugendliche", slugEN: "children-teens",
-  titleCH: "Hypnose für Kinder & Jugendliche Zürich | Kathryn | David J. Woods",
-  titleDE: "Hypnose für Kinder & Jugendliche Augsburg | Kathryn | David J. Woods",
-  titleEN: "Hypnotherapy for Children & Teens Zurich & Augsburg | David J. Woods",
+  titleCH: "Hypnose für Kinder & Jugendliche Schweiz | Kathryn | David J. Woods",
+  titleDE: "Hypnose für Kinder & Jugendliche Deutschland | Kathryn | David J. Woods",
+  titleEN: "Hypnotherapy for Children & Teens — Germany & Switzerland | David J. Woods",
   metaDescCH: "Sanfte Hypnose-Therapie für Kinder und Jugendliche in Zürich. Ängste, Konzentrationsprobleme und Selbstwert stärken. Mit Kathryn. Erstgespräch vereinbaren.",
   metaDescDE: "Sanfte Hypnose-Therapie für Kinder und Jugendliche in Augsburg. Ängste, Konzentrationsprobleme und Selbstwert stärken. Erstgespräch vereinbaren.",
   metaDescEN: "Gentle hypnotherapy for children and teenagers. Strengthen confidence, overcome fears, improve concentration. Book your free discovery call.",
