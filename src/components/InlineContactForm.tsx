@@ -206,16 +206,10 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
         </div>
       </div>
 
-      {/* Best time to reach — dropdown */}
+      {/* Best time to reach */}
       <div>
         <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Best time to reach you?" : "Wann sind Sie am besten erreichbar?"}</label>
-        <select name="bestTime" className={inputClasses}>
-          <option value="">{isEN ? "Please select..." : "Bitte wählen..."}</option>
-          <option value="morning">{isEN ? "Morning (8–12h)" : "Vormittags (8–12 Uhr)"}</option>
-          <option value="afternoon">{isEN ? "Afternoon (12–17h)" : "Nachmittags (12–17 Uhr)"}</option>
-          <option value="evening">{isEN ? "Evening (after 17h)" : "Abends (nach 17 Uhr)"}</option>
-          <option value="flexible">{isEN ? "Flexible" : "Flexibel"}</option>
-        </select>
+        <input type="text" name="bestTime" autoComplete="off" className={inputClasses} />
       </div>
 
       {/* Message */}
