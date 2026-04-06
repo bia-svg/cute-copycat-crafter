@@ -170,6 +170,20 @@ export const serviceTestimonials: Record<string, ServiceTestimonial[]> = {
       textEN: "I would like to thank you again. You performed a great miracle for our son Joshua. Since the age of three, he had suffered from a needle phobia, which meant no vaccinations, no blood tests, and we even had to switch off the television if anything like that appeared. He was facing major dental surgery, but no doctor wanted to operate on him because he had already fainted during the consultation. You resolved this with just one session. The dental surgery went perfectly. He can no longer even imagine ever having had this phobia. Thank you so very much again. You gave him his quality of life back.",
       link: "https://share.google/SGm12iRl4fuRtKxRD",
     },
+    {
+      name: "Markus M., München",
+      rating: 5,
+      textDE: "Vielen Dank. Nach einem Notalarm im Gymnasium entwickelte unsere Tochter starke Angst und konnte fast ein Jahr lang nicht mehr regulär zur Schule gehen. Trotz Schulbegleitung schaffte sie nur kurze Zeit im Unterricht. Nach nur einem Termin bei David J. Woods konnten wir eine deutliche Veränderung feststellen. Sie wirkte innerlich viel stabiler und wir konnten die Wiedereingliederung in die Schule endlich wieder angehen. Für uns war das ein sehr wichtiger Wendepunkt.",
+      textEN: "Thank you so much. After an emergency alarm at her secondary school, our daughter developed severe anxiety and was unable to attend school regularly for almost a year. Even with a school companion, she could only manage short periods in class. After just one session with David J. Woods, we noticed a significant change. She seemed much more stable inside, and we were finally able to start the process of reintegrating her into school. For us, this was a very important turning point.",
+      link: "https://www.google.com/maps/reviews/",
+    },
+    {
+      name: "Martina K., Lindau am Bodensee",
+      rating: 5,
+      textDE: "Wir sind sehr dankbar, dass wir mit unserem Sohn zur Hypnose gegangen sind. Durch massives Mobbing in der Schule litt er unter Bauchschmerzen, Schlafproblemen, Rückzug und deutlich schlechteren Noten. Selbst ein Schulwechsel brachte keine wirkliche Besserung. Nach der Hypnose fanden wir ihn wieder viel mutiger, stabiler und lebendiger. Auch seine schulischen Leistungen haben sich deutlich verbessert. Heute hat er wieder echte Chancen auf das Gymnasium. Vielen Dank für diese wertvolle Hilfe.",
+      textEN: "We are very grateful that we took our son for hypnosis. Due to severe bullying at school, he was suffering from stomach aches, sleep problems, withdrawal, and noticeably worse grades. Even changing schools didn't bring any real improvement. After the hypnosis, we found him much braver, more stable, and more lively again. His academic performance has also improved significantly. Today he has a real chance of attending grammar school again. Thank you so much for this invaluable help.",
+      link: "https://www.google.com/maps/reviews/",
+    },
   ],
 };
 
