@@ -30,8 +30,8 @@ export const pageSEO = {
     descriptionEN: "Manage stress and burnout with hypnotherapy. Stress reduction, burnout prevention, find inner peace. David J. Woods — Zurich & Augsburg.",
   },
   depression: {
-    titleDE: "Depressionen & Traumata überwinden durch Hypnose",
-    titleEN: "Overcome Depression & Trauma with Hypnosis",
+    titleDE: "Depressionen & Traumata überwinden durch Hypnose — Deutschland & Schweiz",
+    titleEN: "Overcome Depression & Trauma with Hypnosis — Germany & Switzerland",
     descriptionDE: "Depressionen und Traumata überwinden mit Hypnosetherapie. Neue Perspektiven entdecken, Lebensfreude zurückgewinnen. David J. Woods — Zürich & Augsburg.",
     descriptionEN: "Overcome depression and trauma with hypnotherapy. Discover new perspectives, regain joy of life. David J. Woods — Zurich & Augsburg.",
   },
