@@ -57,7 +57,7 @@ export default function Footer() {
                   <div>
                     <div className="flex items-center gap-2 mb-1.5">
                       <span className="text-base" role="img" aria-label="Germany">🇩🇪</span>
-                      <span className="font-medium opacity-100">Deutschland</span>
+                      <span className="font-medium opacity-100">{isEN ? "Germany" : "Deutschland"}</span>
                       <a href="tel:+491719539922" className="flex items-center gap-1 hover:underline ml-auto text-xs">
                         <Phone className="w-3 h-3" /> +49 171 953 99 22
                       </a>
