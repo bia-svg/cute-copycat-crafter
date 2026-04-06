@@ -165,7 +165,7 @@ export default function Header() {
             <span className="opacity-50 hidden sm:inline">|</span>
             <div className="relative" ref={langDropdownRef}>
               <button onClick={() => setLangDropdownOpen(!langDropdownOpen)} className="flex items-center gap-1.5 hover:underline font-medium">
-                {currentLanguage.label} <ChevronDown className="w-3 h-3" />
+                {currentLanguage.flag} {currentLanguage.label} <ChevronDown className="w-3 h-3" />
               </button>
               {langDropdownOpen && (
                 <div className="absolute right-0 mt-1 bg-card text-foreground border border-border rounded shadow-md min-w-[100px] z-50">
