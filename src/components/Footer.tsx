@@ -29,7 +29,7 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container-main py-12">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-[1fr_1fr_2fr] gap-8">
           {/* Logo & Info */}
           <div>
             <img src={CDN.logo} alt="David J. Woods – Hypnose und Psychologie Logo" className="h-11 w-auto brightness-0 invert mb-4" width={180} height={44} loading="lazy" />
