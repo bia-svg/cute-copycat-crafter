@@ -31,8 +31,8 @@ export default function Header() {
     { value: "int" as const, label: "International", flag: "🌍" },
   ];
   const languageOptions = [
-    { value: "de" as const, label: "Deutsch" },
-    { value: "en" as const, label: "English" },
+    { value: "de" as const, label: "Deutsch", flag: "🇩🇪" },
+    { value: "en" as const, label: "English", flag: "🇬🇧" },
   ];
   const currentCountry = countryOptions.find(c => c.value === country) || countryOptions[0];
   const currentLanguage = languageOptions.find(l => l.value === language) || languageOptions[0];
