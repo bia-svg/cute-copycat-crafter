@@ -503,17 +503,17 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
-       <section className="py-16 bg-muted/50" style={deferredSectionStyle}>
+        <section className="py-8 md:py-16 bg-muted/50" style={deferredSectionStyle}>
         <div className="container-main">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3 text-foreground">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-2 text-foreground">
             {isEN ? "Corporate Coaching" : "Firmencoaching"}
           </h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-10">
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-5 md:mb-10">
             {isEN
               ? "Performance Coaching: Maximize Your Team's Potential. We offer tailored solutions for companies of all sizes."
               : "Erfolgs-Coaching: Leistungsfähigkeit maximieren. Wir bieten maßgeschneiderte Lösungen für Unternehmen jeder Größe."}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {[
               { icon: <Trophy className="w-6 h-6" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Success is ultimately decided in the mind." : "Letztendlich entscheidet sich Erfolg im Kopf.", href: getPath("corporateErfolg", language, country), image: corporateSuccessImg },
               { icon: <Shield className="w-6 h-6" />, title: isEN ? "Resilience Building" : "Resilienz-Verstärken", desc: isEN ? "Build inner strength for challenging times." : "Innere Stärke aufbauen für schwere Zeiten.", href: getPath("corporateResilienz", language, country), image: corporateResilienceImg },
@@ -530,7 +530,7 @@ export default function Home() {
               />
             ))}
           </div>
-          <div className="text-center mt-8">
+          <div className="text-center mt-5 md:mt-8">
             <Link to={getPath("corporate", language, country)}>
               <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold">
                 {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
