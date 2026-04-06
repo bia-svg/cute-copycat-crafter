@@ -19,23 +19,23 @@ export default function ServiceCard({ title, description, href, icon, image }: S
       {image && (
         <>
           {/* Mobile: horizontal card with small thumbnail */}
-          <div className="flex md:hidden">
-            <div className="w-28 min-h-[7rem] shrink-0 overflow-hidden">
+           <div className="flex md:hidden">
+            <div className="w-24 min-h-[5.5rem] shrink-0 overflow-hidden">
               <img
                 src={image}
                 alt={title}
-                width={112}
-                height={112}
+                width={96}
+                height={88}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
             </div>
-            <div className="flex flex-col justify-center p-4 min-w-0">
-              <div className="flex items-center gap-2 text-primary mb-1.5">
+            <div className="flex flex-col justify-center p-3 min-w-0">
+              <div className="flex items-center gap-2 text-primary mb-1">
                 {icon}
                 <h3 className="font-semibold text-foreground text-[0.95rem] leading-tight">{title}</h3>
               </div>
-              <p className="text-sm text-muted-foreground line-clamp-2 mb-2">{description}</p>
+              <p className="text-sm text-muted-foreground line-clamp-2 mb-1.5">{description}</p>
               <span className="inline-flex items-center gap-1 text-sm font-semibold text-cta group-hover:gap-2 transition-all">
                 Details <ArrowRight className="w-4 h-4" />
               </span>
