@@ -37,7 +37,7 @@ const heroMobile = [
 import {
   Cigarette, Brain, Scale, Flame, HeartPulse, Users,
   Trophy, Shield, Clock, BookOpen, ArrowRight, Star, Award,
-  ChevronLeft, ChevronRight, CheckCircle
+  ChevronLeft, ChevronRight, CheckCircle, Tv
 } from "lucide-react";
 
 /* ══════════════════════════════════════════════════════════════
@@ -450,47 +450,53 @@ export default function Home() {
 
 
 
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-            <div className="text-center p-4 md:p-6 bg-card border border-border rounded-lg shadow-sm">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-primary flex items-center justify-center shrink-0 rounded mx-auto mb-3">
-                <span className="text-primary-foreground text-[0.65rem] md:text-sm font-bold text-center leading-tight">Lic.<br/>Psych.</span>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+            {/* 1 – Licensed Psychologist */}
+            <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-primary flex items-center justify-center shrink-0 rounded mx-auto mb-2">
+                <span className="text-primary-foreground text-[0.6rem] md:text-xs font-bold text-center leading-tight">Lic.<br/>Psych.</span>
               </div>
-              <h3 className="font-semibold text-xs md:text-sm text-foreground mb-1 md:mb-2">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
-              <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
-                {isEN
-                  ? "University-qualified psychologist with decades of clinical and therapeutic experience."
-                  : "Universitär qualifizierter Psychologe mit jahrzehntelanger klinischer und therapeutischer Erfahrung."}
-              </p>
+              <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
             </div>
-            <div className="text-center p-4 md:p-6 bg-card border border-border rounded-lg shadow-sm">
-              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo – Methode von David J. Woods" className="h-10 md:h-14 w-auto shrink-0 mx-auto mb-3" width={84} height={56} loading="lazy" />
-              <h3 className="font-semibold text-xs md:text-sm text-foreground mb-1 md:mb-2">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
-              <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
-                {isEN
-                  ? "Proprietary method combining clinical hypnosis with active participation for faster, lasting results."
-                  : "Eigene Methode, die klinische Hypnose mit aktiver Teilnahme kombiniert für schnellere, nachhaltige Ergebnisse."}
-              </p>
+            {/* 2 – Aktiv-Hypnose© */}
+            <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
+              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-8 md:h-11 w-auto shrink-0 mx-auto mb-2" width={84} height={56} loading="lazy" />
+              <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
             </div>
-            <div className="text-center p-4 md:p-6 bg-card border border-border rounded-lg shadow-sm">
-              <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat – National Guild of Hypnotists" className="h-12 md:h-16 mx-auto mb-2 md:mb-3" width={64} height={64} loading="lazy" />
-              <h3 className="font-semibold text-xs md:text-base text-foreground">NGH International Trainer</h3>
+            {/* 3 – NGH */}
+            <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
+              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-10 md:h-12 mx-auto mb-2" width={64} height={64} loading="lazy" />
+              <h3 className="font-semibold text-xs md:text-sm text-foreground">NGH International Trainer</h3>
             </div>
-            <div className="text-center p-4 md:p-6 bg-card border border-border rounded-lg shadow-sm">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge – ZSR P609264" className="h-12 md:h-16 mx-auto mb-2 md:mb-3" width={102} height={64} loading="lazy" />
-              <h3 className="font-semibold text-xs md:text-base text-foreground">EMR Krankenkasse Konform</h3>
-              <p className="text-[0.65rem] md:text-sm text-muted-foreground">ZSR P609264</p>
+            {/* 4 – EMR */}
+            <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-10 md:h-12 mx-auto mb-2" width={102} height={64} loading="lazy" />
+              <h3 className="font-semibold text-xs md:text-sm text-foreground">EMR Krankenkasse Konform</h3>
+              <p className="text-[0.6rem] md:text-xs text-muted-foreground">ZSR P609264</p>
             </div>
-            <div className="text-center p-4 md:p-6 bg-card border border-border rounded-lg shadow-sm">
-              <div className="text-2xl md:text-4xl font-bold text-primary mb-1 md:mb-2">40+</div>
-              <h3 className="font-semibold text-xs md:text-base text-foreground">{isEN ? "Years of Experience" : "Jahre Erfahrung"}</h3>
-              <p className="text-[0.65rem] md:text-sm text-muted-foreground">30.000+ {isEN ? "Sessions" : "Sitzungen"}</p>
+            {/* 5 – Author */}
+            <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
+              <BookOpen className="w-8 h-8 md:w-10 md:h-10 text-primary mx-auto mb-2" />
+              <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Author & Specialist Writer" : "Autor & Fachautor"}</h3>
             </div>
-            <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="text-center p-4 md:p-6 bg-card border border-border rounded-lg shadow-sm hover:border-primary/50 transition-colors">
-              <div className="flex justify-center gap-0.5 mb-1 md:mb-2">
-                {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-yellow-400 text-yellow-400" />)}
+            {/* 6 – TV Expert */}
+            <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
+              <Tv className="w-8 h-8 md:w-10 md:h-10 text-primary mx-auto mb-2" />
+              <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "TV Expert & Media Personality" : "TV-Experte & Medienpersönlichkeit"}</h3>
+            </div>
+            {/* 7 – 40+ Years */}
+            <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
+              <div className="text-xl md:text-3xl font-bold text-primary mb-1">40+</div>
+              <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Years of Experience" : "Jahre Erfahrung"}</h3>
+              <p className="text-[0.6rem] md:text-xs text-muted-foreground">30.000+ {isEN ? "Sessions" : "Sitzungen"}</p>
+            </div>
+            {/* 8 – Google Reviews */}
+            <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm hover:border-primary/50 transition-colors">
+              <div className="flex justify-center gap-0.5 mb-1">
+                {[1,2,3,4,5].map(i => <Star key={i} className="w-3.5 h-3.5 md:w-4 md:h-4 fill-yellow-400 text-yellow-400" />)}
               </div>
-              <h3 className="font-semibold text-xs md:text-base text-foreground">5.0 Google</h3>
-              <p className="text-[0.65rem] md:text-sm text-muted-foreground">264 {isEN ? "Reviews" : "Bewertungen"}</p>
+              <h3 className="font-semibold text-xs md:text-sm text-foreground">5.0 Google Reviews</h3>
+              <p className="text-[0.6rem] md:text-xs text-muted-foreground">264 {isEN ? "Reviews" : "Bewertungen"}</p>
             </a>
           </div>
         </div>
