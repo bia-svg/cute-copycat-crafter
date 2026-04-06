@@ -287,10 +287,15 @@ export default function Home() {
                 {isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}
               </p>
               <div className="text-foreground/80 leading-relaxed text-[0.95rem]">
-                <p className="mb-2">
+                <p className="mb-1">
                   {isEN
-                    ? <>Expert psychological knowledge, modern hypnosis and profound transformation – established in Germany 🇩🇪, Switzerland 🇨🇭 and internationally 🌍.</>
-                    : <>Fundiertes psychologisches Fachwissen, moderne Hypnose und tiefgreifende Transformation – etabliert in Deutschland 🇩🇪, der Schweiz 🇨🇭 und international 🌍.</>}
+                    ? "Expert psychological knowledge, modern hypnosis and profound transformation."
+                    : "Fundiertes psychologisches Fachwissen, moderne Hypnose und tiefgreifende Transformation."}
+                </p>
+                <p className="mb-3 text-sm font-medium tracking-wide">
+                  {isEN
+                    ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
+                    : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
                 </p>
                 <ul className="space-y-1 text-sm">
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Over 40 years of experience" : "Über 40 Jahre Erfahrung"}</li>
