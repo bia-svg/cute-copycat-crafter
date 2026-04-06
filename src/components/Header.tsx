@@ -31,8 +31,8 @@ export default function Header() {
     { value: "int" as const, label: "International", flag: "🌍" },
   ];
   const languageOptions = [
-    { value: "de" as const, label: "Deutsch" },
-    { value: "en" as const, label: "English" },
+    { value: "de" as const, label: "Deutsch", flag: "🇩🇪" },
+    { value: "en" as const, label: "English", flag: "🇬🇧" },
   ];
   const currentCountry = countryOptions.find(c => c.value === country) || countryOptions[0];
   const currentLanguage = languageOptions.find(l => l.value === language) || languageOptions[0];
@@ -165,14 +165,14 @@ export default function Header() {
             <span className="opacity-50 hidden sm:inline">|</span>
             <div className="relative" ref={langDropdownRef}>
               <button onClick={() => setLangDropdownOpen(!langDropdownOpen)} className="flex items-center gap-1.5 hover:underline font-medium">
-                {currentLanguage.label} <ChevronDown className="w-3 h-3" />
+                {currentLanguage.flag} {currentLanguage.label} <ChevronDown className="w-3 h-3" />
               </button>
               {langDropdownOpen && (
                 <div className="absolute right-0 mt-1 bg-card text-foreground border border-border rounded shadow-md min-w-[100px] z-50">
                   {languageOptions.map(opt => (
                     <button key={opt.value} onClick={() => { setLanguage(opt.value); setLangDropdownOpen(false); }}
                       className={`w-full text-left px-3 py-2 text-sm hover:bg-secondary ${opt.value === language ? "font-bold" : ""}`}>
-                      {opt.label}
+                      {opt.flag} {opt.label}
                     </button>
                   ))}
                 </div>
@@ -398,7 +398,7 @@ export default function Header() {
                 {languageOptions.map(opt => (
                   <button key={opt.value} onClick={() => setLanguage(opt.value)}
                     className={`px-4 py-1.5 text-sm rounded border ${opt.value === language ? "border-primary bg-primary/10 font-semibold text-primary" : "border-border text-foreground"}`}>
-                    {opt.label}
+                    {opt.flag} {opt.label}
                   </button>
                 ))}
               </div>
