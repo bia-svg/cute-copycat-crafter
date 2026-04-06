@@ -52,13 +52,15 @@ export interface ServicePageData {
   faqEN: { q: string; a: string }[];
 }
 
-const CHAR_LIMIT = 120;
+const TESTIMONIAL_PREVIEW_CHAR_LIMIT = 75;
 
 function ServiceTestimonialCard({ t, isEN }: { t: ReturnType<typeof getTestimonialsForService>[number]; isEN: boolean }) {
   const [expanded, setExpanded] = useState(false);
   const text = isEN ? t.textEN : t.textDE;
-  const needsTruncation = text.length > CHAR_LIMIT;
-  const displayText = expanded || !needsTruncation ? text : text.slice(0, CHAR_LIMIT).replace(/\s+\S*$/, "") + "…";
+  const needsTruncation = text.length > TESTIMONIAL_PREVIEW_CHAR_LIMIT;
+  const displayText = expanded || !needsTruncation
+    ? text
+    : text.slice(0, TESTIMONIAL_PREVIEW_CHAR_LIMIT).replace(/\s+\S*$/, "") + "…";
 
   return (
     <div className="border border-border bg-card p-5 flex flex-col">
@@ -70,11 +72,6 @@ function ServiceTestimonialCard({ t, isEN }: { t: ReturnType<typeof getTestimoni
       <p className="text-sm text-foreground leading-relaxed mb-1 flex-1">
         &bdquo;{displayText}&ldquo;
       </p>
-      {t.name === "Chantal Ianiro" && (
-        <p className="text-xs italic text-muted-foreground mb-3">
-          {isEN ? "Individual results may vary." : "Individuelle Ergebnisse können variieren."}
-        </p>
-      )}
       {needsTruncation && (
         <button
           onClick={() => setExpanded(!expanded)}

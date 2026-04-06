@@ -160,6 +160,17 @@ export const serviceTestimonials: Record<string, ServiceTestimonial[]> = {
       link: "https://www.google.com/maps/reviews/ChZDSUhNMG9nS0VOYVp3SkRON2V2RFdBEAE",
     },
   ],
+
+  // Kinder & Jugendliche / Children & Teens
+  "children-teens": [
+    {
+      name: "Birgit W.",
+      rating: 5,
+      textDE: "Ich möchte mich nochmals bei Dir bedanken. Du hast ein großes Wunder bei unserem Sohn Joshua vollbracht. Er hatte seit seinem dritten Lebensjahr eine Spritzenphobie, d.h. wir hatten keine Impfungen, Bluttests ect. sogar den Fernseher mussten wir ausschalten wenn etwas dergleichen zu sehen war. Er stand vor einer großen Zahn-OP, aber kein Arzt wollte ihn operieren, da er schon beim Vorgespräch in Ohnmacht fiel. Du hast ihn mit einer einmaligen Sitzung geheilt. Die Zahn-OP ist optimal gelaufen. Er kann sich gar nicht mehr Vorstellen diese Phobie gehabt zu haben. Nochmals vielen vielen Dank. Du hast ihm seine Lebensqualität zurück gebracht.",
+      textEN: "I would like to thank you again. You performed a great miracle for our son Joshua. Since the age of three, he had suffered from a needle phobia, which meant no vaccinations, no blood tests, and we even had to switch off the television if anything like that appeared. He was facing major dental surgery, but no doctor wanted to operate on him because he had already fainted during the consultation. You resolved this with just one session. The dental surgery went perfectly. He can no longer even imagine ever having had this phobia. Thank you so very much again. You gave him his quality of life back.",
+      link: "https://share.google/SGm12iRl4fuRtKxRD",
+    },
+  ],
 };
 
 /**
@@ -173,6 +184,7 @@ export function getTestimonialsForService(slugEN: string): ServiceTestimonial[] 
     "stress-burnout": "stress-burnout",
     "depression-trauma": "depression",
     "adults": "adults",
+    "children-teens": "children-teens",
   };
   return serviceTestimonials[map[slugEN] || ""] || [];
 }
