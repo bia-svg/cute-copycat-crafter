@@ -100,15 +100,6 @@ export default function Footer() {
                   </div>
                 </div>
 
-                {/* Social Links */}
-                <div className="flex items-center gap-3 mt-3">
-                  <a href="https://de.linkedin.com/in/david-j-woods-85b30b186/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="opacity-80 hover:opacity-100 transition-opacity">
-                    <LinkedInIcon className="w-5 h-5" />
-                  </a>
-                  <a href="https://www.instagram.com/hypnoseinstitut_woods/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="opacity-80 hover:opacity-100 transition-opacity">
-                    <InstagramIcon className="w-5 h-5" />
-                  </a>
-                </div>
               </div>
             )}
           </div>
