@@ -503,17 +503,17 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
-        <section className="py-8 md:py-16 bg-muted/50" style={deferredSectionStyle}>
+        <section className="py-6 md:py-8 bg-muted/50" style={deferredSectionStyle}>
         <div className="container-main">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-1 text-foreground">
             {isEN ? "Corporate Coaching" : "Firmencoaching"}
           </h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-3 md:mb-5 text-sm md:text-base leading-snug">
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-2 md:mb-3 text-sm md:text-base leading-snug">
             {isEN
               ? "Performance Coaching: Maximize Your Team's Potential. We offer tailored solutions for companies of all sizes."
               : "Erfolgs-Coaching: Leistungsfähigkeit maximieren. Wir bieten maßgeschneiderte Lösungen für Unternehmen jeder Größe."}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
             {[
               { icon: <Trophy className="w-6 h-6" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Success is ultimately decided in the mind." : "Letztendlich entscheidet sich Erfolg im Kopf.", href: getPath("corporateErfolg", language, country), image: corporateSuccessImg },
               { icon: <Shield className="w-6 h-6" />, title: isEN ? "Resilience Building" : "Resilienz-Verstärken", desc: isEN ? "Build inner strength for challenging times." : "Innere Stärke aufbauen für schwere Zeiten.", href: getPath("corporateResilienz", language, country), image: corporateResilienceImg },
