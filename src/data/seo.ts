@@ -6,7 +6,7 @@ export const pageSEO = {
     descriptionEN: "Hypnotherapy with David J. Woods. Lic.Psych., NGH International Trainer. 40+ years experience, 30,000+ sessions. Quit smoking, anxiety, weight loss, stress, depression. Practices in Zurich & Augsburg.",
   },
   smoking: {
-    titleDE: "Raucherentwöhnung durch Hypnose — Rauchfrei in einer Sitzung",
+    titleDE: "Raucherentwöhnung durch Hypnose — Deutschland & Schweiz",
     titleEN: "Stop Smoking with Hypnosis — Smoke-Free in One Session",
     descriptionDE: "Raucherentwöhnung durch Hypnose mit David J. Woods. Endlich rauchfrei werden — ohne Entzugserscheinungen. Über 40 Jahre Erfahrung. Praxen in Zürich & Augsburg. Jetzt Erstgespräch buchen.",
     descriptionEN: "Quit smoking through hypnosis with David J. Woods. Finally become smoke-free — without withdrawal symptoms. 40+ years experience. Practices in Zurich & Augsburg.",
