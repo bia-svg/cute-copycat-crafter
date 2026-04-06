@@ -116,7 +116,7 @@ const LeadConfirmationEmail = (props: LeadConfirmationProps) => {
                 <strong>{isEN ? 'Postcode / City' : 'PLZ / Ort'}:</strong> {[props.postalCode, props.cityName].filter(Boolean).join(' ')}
               </Text>
             )}
-            {(props.countryName || props.country) && (
+            {(isSession || isSeminar) && (props.countryName || props.country) && (
               <Text style={summaryLine}>
                 <strong>{isEN ? 'Country' : 'Land'}:</strong> {props.countryName || props.country}
               </Text>
