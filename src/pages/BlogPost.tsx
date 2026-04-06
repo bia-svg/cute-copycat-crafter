@@ -115,7 +115,7 @@ export default function BlogPost() {
             <img src={davidPortrait} alt="David J. Woods – Lic.Psych., Hypnotherapeut und Autor" className="w-20 h-20 object-cover rounded-full flex-shrink-0" loading="lazy" />
             <div>
               <p className="font-bold text-[#1B3A5C]">David J. Woods</p>
-              <p className="text-sm text-muted-foreground">Lic.Psych. · NGH International Trainer · {isDE ? "Über 40 Jahre Erfahrung" : "Over 40 years experience"}</p>
+              <p className="text-sm text-muted-foreground">Lic.Psych. · NGH International Trainer · {isDE ? "Über 35+ Jahre Erfahrung" : "Over 35+ years experience"}</p>
               <p className="text-sm text-muted-foreground mt-2">
                 {isDE
                   ? "David J. Woods ist einer der erfahrensten Hypnosetherapeuten im deutschsprachigen Raum mit über 30.000 durchgeführten Sitzungen."
