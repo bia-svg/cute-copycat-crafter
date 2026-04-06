@@ -52,14 +52,13 @@ export interface ServicePageData {
   faqEN: { q: string; a: string }[];
 }
 
-const SENTENCE_LIMIT = 3;
+const CHAR_LIMIT = 120;
 
 function ServiceTestimonialCard({ t, isEN }: { t: ReturnType<typeof getTestimonialsForService>[number]; isEN: boolean }) {
   const [expanded, setExpanded] = useState(false);
   const text = isEN ? t.textEN : t.textDE;
-  const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
-  const needsTruncation = sentences.length > SENTENCE_LIMIT;
-  const displayText = expanded || !needsTruncation ? text : sentences.slice(0, SENTENCE_LIMIT).join("").trim() + "…";
+  const needsTruncation = text.length > CHAR_LIMIT;
+  const displayText = expanded || !needsTruncation ? text : text.slice(0, CHAR_LIMIT).replace(/\s+\S*$/, "") + "…";
 
   return (
     <div className="border border-border bg-card p-5 flex flex-col">
