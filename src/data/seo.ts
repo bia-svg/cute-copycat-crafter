@@ -7,7 +7,7 @@ export const pageSEO = {
   },
   smoking: {
     titleDE: "Raucherentwöhnung durch Hypnose — Deutschland & Schweiz",
-    titleEN: "Stop Smoking with Hypnosis — Smoke-Free in One Session",
+    titleEN: "Stop Smoking with Hypnosis — Germany & Switzerland",
     descriptionDE: "Raucherentwöhnung durch Hypnose mit David J. Woods. Endlich rauchfrei werden — ohne Entzugserscheinungen. Über 40 Jahre Erfahrung. Praxen in Zürich & Augsburg. Jetzt Erstgespräch buchen.",
     descriptionEN: "Quit smoking through hypnosis with David J. Woods. Finally become smoke-free — without withdrawal symptoms. 40+ years experience. Practices in Zurich & Augsburg.",
   },
