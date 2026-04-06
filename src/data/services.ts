@@ -467,9 +467,9 @@ export const stressData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const depressionData: ServicePageData = {
   slugCH: "depressionen-traumata", slugDE: "depressionen-traumata", slugEN: "depression-trauma",
-  titleCH: "Hypnotische Begleitung bei depressiven Verstimmungen & Traumata Zürich | David J. Woods",
-  titleDE: "Hypnotische Begleitung bei depressiven Verstimmungen & Traumata Augsburg | David J. Woods",
-  titleEN: "Hypnotherapy for Depression & Trauma Zurich & Augsburg | David J. Woods",
+  titleCH: "Hypnotische Begleitung bei depressiven Verstimmungen & Traumata Schweiz | David J. Woods",
+  titleDE: "Hypnotische Begleitung bei depressiven Verstimmungen & Traumata Deutschland | David J. Woods",
+  titleEN: "Hypnotherapy for Depression & Trauma — Germany & Switzerland | David J. Woods",
   metaDescCH: "Überwinden Sie Depressionen und Traumata mit Hypnose in Zürich. Neue Perspektiven entdecken und Lebensfreude wiedergewinnen. EMR anerkannt.",
   metaDescDE: "Überwinden Sie Depressionen und Traumata mit Hypnose in Augsburg. Neue Perspektiven entdecken und Lebensfreude wiedergewinnen.",
   metaDescEN: "Overcome depression and trauma with professional hypnotherapy. Discover new perspectives and regain your joy of life.",
