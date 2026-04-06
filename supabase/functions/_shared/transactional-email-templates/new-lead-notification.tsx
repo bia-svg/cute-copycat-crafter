@@ -173,7 +173,32 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
                 <Text style={value}>{props.message}</Text>
               </>
             )}
-          </Section>
+            </Section>
+          )}
+
+          {/* For general contact forms: show user-entered info without section headers */}
+          {!isSession && !isSeminar && (props.bestTime || props.message || props.concern) && (
+            <Section style={infoBox}>
+              {props.concern && props.concern !== 'general' && (
+                <>
+                  <Text style={label}>{isEN ? 'Concern' : 'Anliegen'}</Text>
+                  <Text style={value}>{props.concern}</Text>
+                </>
+              )}
+              {props.bestTime && (
+                <>
+                  <Text style={label}>{isEN ? 'Best Time to Reach' : 'Beste Erreichbarkeit'}</Text>
+                  <Text style={value}>{props.bestTime}</Text>
+                </>
+              )}
+              {props.message && (
+                <>
+                  <Text style={label}>{isEN ? 'Message' : 'Nachricht'}</Text>
+                  <Text style={value}>{props.message}</Text>
+                </>
+              )}
+            </Section>
+          )}
 
           <Hr style={hr} />
 
