@@ -1,7 +1,7 @@
 export const pageSEO = {
   home: {
-    titleDE: "Hypnosetherapie & Psychologie — Zürich & Augsburg",
-    titleEN: "Hypnotherapy & Psychology — Zurich & Augsburg",
+    titleDE: "Hypnosetherapie & Psychologie",
+    titleEN: "Hypnotherapy & Psychology",
     descriptionDE: "Hypnosetherapie mit David J. Woods. Lic.Psych., NGH International Trainer. Über 40 Jahre Erfahrung, 30.000+ Sitzungen. Raucherentwöhnung, Ängste, Abnehmen, Stress, Depression. Praxen in Zürich & Augsburg.",
     descriptionEN: "Hypnotherapy with David J. Woods. Lic.Psych., NGH International Trainer. 40+ years experience, 30,000+ sessions. Quit smoking, anxiety, weight loss, stress, depression. Practices in Zurich & Augsburg.",
   },
