@@ -385,34 +385,34 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD ═══════════════════ */}
-      <section className="py-8 md:py-16" style={deferredSectionStyle}>
-        <div className="container-main grid md:grid-cols-2 gap-6 md:gap-10 items-center">
-          <div className="space-y-3 md:space-y-5">
-            <p className="text-sm font-semibold text-cta uppercase tracking-wider">
+      <section className="py-4 md:py-6" style={deferredSectionStyle}>
+        <div className="container-main grid md:grid-cols-2 gap-4 md:gap-6 items-center">
+          <div className="space-y-2 md:space-y-3">
+            <p className="text-xs font-semibold text-cta uppercase tracking-wider">
               {isEN ? "Aktiv-Hypnose© Method" : "Aktiv-Hypnose© Methode"}
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+            <h2 className="text-xl md:text-2xl font-bold text-foreground leading-tight">
               {isEN ? "Psychology and Hypnotherapy for Lasting Change" : "Psychologie und Hypnotherapie für nachhaltige Veränderung"}
             </h2>
-            <p className="text-foreground/80 leading-relaxed">
+            <p className="text-sm text-foreground/80 leading-snug">
               {isEN
                 ? "David J. Woods combines psychological expertise, physiological depth, and modern coaching techniques into a method that works: clear, efficient, and solution-oriented."
                 : "David J. Woods vereint psychologisches Fachwissen, physiologische Tiefe und moderne Coaching-Techniken zu einer Methode, die wirkt: klar, effizient und lösungsorientiert."}
             </p>
-            <p className="text-foreground/70 leading-relaxed">
+            <p className="text-sm text-foreground/70 leading-snug">
               {isEN
                 ? "Even if many are initially unsure — the process leads to a state of focused clarity where transformation becomes possible."
                 : "Auch wenn viele anfangs unsicher sind – der Prozess führt in einen Zustand fokussierter Klarheit, in dem Transformation möglich wird."}
             </p>
-            <div className="flex items-center gap-3 bg-secondary rounded-lg p-3">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12" width={77} height={48} loading="lazy" />
+            <div className="flex items-center gap-2 bg-secondary rounded-md p-2">
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-10" width={64} height={40} loading="lazy" />
               <div>
-                <div className="font-semibold text-sm text-foreground">EMR Krankenkasse Konform</div>
-                <div className="text-xs text-muted-foreground">ZSR P609264</div>
+                <div className="font-semibold text-xs text-foreground">EMR Krankenkasse Konform</div>
+                <div className="text-[11px] text-muted-foreground">ZSR P609264</div>
               </div>
             </div>
             <Link to={getPath("about", language, country)}>
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground mt-2">
+              <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground mt-1">
                 {isEN ? "More About Our Method" : "Mehr über unsere Methode"}
               </Button>
             </Link>
