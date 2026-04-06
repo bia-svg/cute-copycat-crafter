@@ -29,6 +29,7 @@ const CDN_BASE = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm
 
 export default function Ausbildung() {
   const { language, country, isInternational, showCH, showDE } = useLanguage();
+  const [activeTab, setActiveTab] = useState<"ch" | "de">("ch");
   const isEN = language === "en";
 
   const [seminarCounts, setSeminarCounts] = useState<Record<string, number>>({});
@@ -409,23 +410,49 @@ export default function Ausbildung() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          SECTION 5 — Upcoming Dates
+          SECTION 5 — Upcoming Dates with Country Tabs
           ═══════════════════════════════════════════════════════════ */}
       <section id="dates" className="bg-[#f4f3ef] border-b border-border scroll-mt-20">
         <div className="container-main py-10 lg:py-14">
           <h2 className="text-2xl font-bold text-[#1B3A5C] mb-2 text-center" style={{ fontFamily: "Georgia, serif" }}>
-            {isEN ? "Upcoming Training Dates" : "Nächste Ausbildungstermine"}
+            {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
           </h2>
-          <p className="text-sm text-muted-foreground text-center mb-8 max-w-xl mx-auto">
+          <p className="text-sm text-muted-foreground text-center mb-6 max-w-xl mx-auto">
             {isEN
-              ? "Places are strictly limited to ensure the highest quality. Secure yours now."
-              : "Die Plätze sind strikt begrenzt, um höchste Qualität zu gewährleisten. Sichern Sie sich Ihren jetzt."}
+              ? "Choose your preferred country and seminar date, then fill in your details. We'll confirm your place within 24 hours."
+              : "Wählen Sie Ihr bevorzugtes Land und Seminar-Datum, dann füllen Sie Ihre Daten aus. Wir bestätigen Ihren Platz innerhalb von 24 Stunden."}
           </p>
-          <div className="space-y-6 max-w-2xl mx-auto">
-            {showCH && (
+
+          {/* Country Tabs */}
+          <div className="flex justify-center gap-3 mb-8 max-w-md mx-auto">
+            <button
+              onClick={() => setActiveTab("ch")}
+              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg border-2 font-semibold text-sm transition-all ${
+                activeTab === "ch"
+                  ? "border-[#1B3A5C] bg-[#1B3A5C] text-white shadow-md"
+                  : "border-border bg-white text-[#1B3A5C] hover:border-[#1B3A5C]/40"
+              }`}
+            >
+              <span className="text-lg">🇨🇭</span>
+              {isEN ? "Switzerland" : "Schweiz"}
+            </button>
+            <button
+              onClick={() => setActiveTab("de")}
+              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg border-2 font-semibold text-sm transition-all ${
+                activeTab === "de"
+                  ? "border-[#1B3A5C] bg-[#1B3A5C] text-white shadow-md"
+                  : "border-border bg-white text-[#1B3A5C] hover:border-[#1B3A5C]/40"
+              }`}
+            >
+              <span className="text-lg">🇩🇪</span>
+              {isEN ? "Germany" : "Deutschland"}
+            </button>
+          </div>
+
+          <div className="space-y-4 max-w-2xl mx-auto">
+            {/* CH Content */}
+            {activeTab === "ch" && (
               <>
-                {isInternational && <p className="text-xs font-semibold text-[#8b827c] uppercase tracking-wider mt-2 mb-1">🇨🇭 {isEN ? "Switzerland" : "Schweiz"}</p>}
-                {/* CH Pricing Box */}
                 <div className="bg-white border border-[#81C784] rounded-lg p-5 text-center">
                   <p className="text-xs font-semibold uppercase tracking-wider text-[#2E7D32] mb-2">
                     {isEN ? "6-Day Intensive Certification" : "6-Tage Intensiv-Zertifizierung"}
@@ -433,17 +460,12 @@ export default function Ausbildung() {
                   {hasEarlyBirdForCountry("ch", datesCH) ? (
                     <>
                       <div className="flex items-center justify-center gap-4 mb-2">
-                         <span className="text-base text-muted-foreground line-through">CHF 3.290.-</span>
+                        <span className="text-base text-muted-foreground line-through">CHF 3.290.-</span>
                         <span className="text-2xl font-bold text-[#1B3A5C]">CHF 2.990.-</span>
                       </div>
                       <span className="inline-block text-xs font-semibold bg-[#E8F5E9] text-[#2E7D32] px-3 py-1 rounded-full">
                         {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
                       </span>
-                      <p className="text-[11px] text-muted-foreground mt-2 italic max-w-xs mx-auto">
-                        {isEN
-                          ? "Early Bird pricing is available for a limited time or until the current intake is fully booked!"
-                          : "Der Frühbucher-Preis gilt nur für begrenzte Zeit oder bis der aktuelle Kurs ausgebucht ist!"}
-                      </p>
                     </>
                   ) : (
                     <span className="text-2xl font-bold text-[#1B3A5C]">CHF 3.290.-</span>
@@ -483,10 +505,10 @@ export default function Ausbildung() {
                 ))}
               </>
             )}
-            {showDE && (
+
+            {/* DE Content */}
+            {activeTab === "de" && (
               <>
-                {isInternational && <p className="text-xs font-semibold text-[#8b827c] uppercase tracking-wider mt-3 mb-1">🇩🇪 {isEN ? "Germany" : "Deutschland"}</p>}
-                {/* DE Pricing Box */}
                 <div className="bg-white border border-[#90CAF9] rounded-lg p-5 text-center">
                   <p className="text-xs font-semibold uppercase tracking-wider text-[#1565C0] mb-2">
                     {isEN ? "6-Day Intensive Certification" : "6-Tage Intensiv-Zertifizierung"}
@@ -500,11 +522,6 @@ export default function Ausbildung() {
                       <span className="inline-block text-xs font-semibold bg-[#E3F2FD] text-[#1565C0] px-3 py-1 rounded-full">
                         {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
                       </span>
-                      <p className="text-[11px] text-muted-foreground mt-2 italic max-w-xs mx-auto">
-                        {isEN
-                          ? "Early Bird pricing is available for a limited time or until the current intake is fully booked!"
-                          : "Der Frühbucher-Preis gilt nur für begrenzte Zeit oder bis der aktuelle Kurs ausgebucht ist!"}
-                      </p>
                     </>
                   ) : (
                     <span className="text-2xl font-bold text-[#1B3A5C]">€2.790,-</span>
@@ -545,7 +562,7 @@ export default function Ausbildung() {
               </>
             )}
           </div>
-          <p className="text-xs text-muted-foreground text-center mt-2 italic">
+          <p className="text-xs text-muted-foreground text-center mt-4 italic">
             {isEN
               ? "Early Bird pricing available for a limited time or until the current intake is full."
               : "Frühbucher-Preis verfügbar für begrenzte Zeit oder bis die aktuelle Gruppe voll ist."}
