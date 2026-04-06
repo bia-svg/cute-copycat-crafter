@@ -18,8 +18,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 import { getTestimonialsForService } from "@/data/serviceTestimonials";
 import { consultationFaqEN, consultationFaqDE } from "@/data/consultationFAQ";
 import { trackPageView, trackCtaClick } from "@/lib/ctaTracking";
-import { useEffect, useCallback } from "react";
-
+import { useEffect, useCallback, useState } from "react";
 export interface ContentSection {
   h2: string;
   paragraphs: string[];
@@ -51,6 +50,48 @@ export interface ServicePageData {
   image: string;
   faqCH: { q: string; a: string }[];
   faqEN: { q: string; a: string }[];
+}
+
+const SENTENCE_LIMIT = 4;
+
+function ServiceTestimonialCard({ t, isEN }: { t: ReturnType<typeof getTestimonialsForService>[number]; isEN: boolean }) {
+  const [expanded, setExpanded] = useState(false);
+  const text = isEN ? t.textEN : t.textDE;
+  const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+  const needsTruncation = sentences.length > SENTENCE_LIMIT;
+  const displayText = expanded || !needsTruncation ? text : sentences.slice(0, SENTENCE_LIMIT).join("").trim() + "…";
+
+  return (
+    <div className="border border-border bg-card p-5 flex flex-col">
+      <div className="flex gap-0.5 mb-3">
+        {Array.from({ length: t.rating }).map((_, j) => (
+          <Star key={j} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+        ))}
+      </div>
+      <p className="text-sm text-foreground leading-relaxed mb-1 flex-1">
+        &bdquo;{displayText}&ldquo;
+      </p>
+      {t.name === "Chantal Ianiro" && (
+        <p className="text-xs italic text-muted-foreground mb-3">
+          {isEN ? "Individual results may vary." : "Individuelle Ergebnisse können variieren."}
+        </p>
+      )}
+      {needsTruncation && (
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="text-xs text-primary hover:text-primary/80 font-medium self-start mb-3 transition-colors"
+        >
+          {expanded ? (isEN ? "SHOW LESS ▲" : "WENIGER ▲") : (isEN ? "READ MORE »" : "WEITERLESEN »")}
+        </button>
+      )}
+      <div className="flex items-center justify-between mt-auto pt-2 border-t border-border/50">
+        <p className="text-xs font-semibold text-primary">{t.name}</p>
+        <a href={t.link} target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+          Google <ExternalLink className="w-3 h-3" />
+        </a>
+      </div>
+    </div>
+  );
 }
 
 export default function ServicePage({ data }: { data: ServicePageData }) {
@@ -212,27 +253,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {testimonials.map((t, i) => (
-                  <div key={i} className="border border-border bg-card p-5 flex flex-col">
-                    <div className="flex gap-0.5 mb-3">
-                      {Array.from({ length: t.rating }).map((_, j) => (
-                        <Star key={j} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                      ))}
-                    </div>
-                    <p className="text-sm text-foreground leading-relaxed mb-1 flex-1">
-                      &bdquo;{isEN ? t.textEN : t.textDE}&ldquo;
-                    </p>
-                    {t.name === "Chantal Ianiro" && (
-                      <p className="text-xs italic text-muted-foreground mb-3">
-                        {isEN ? "Individual results may vary." : "Individuelle Ergebnisse können variieren."}
-                      </p>
-                    )}
-                    <div className="flex items-center justify-between mt-auto pt-2 border-t border-border/50">
-                      <p className="text-xs font-semibold text-primary">{t.name}</p>
-                      <a href={t.link} target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
-                        Google <ExternalLink className="w-3 h-3" />
-                      </a>
-                    </div>
-                  </div>
+                  <ServiceTestimonialCard key={i} t={t} isEN={isEN} />
                 ))}
               </div>
             </div>
