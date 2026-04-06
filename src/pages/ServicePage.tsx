@@ -52,7 +52,7 @@ export interface ServicePageData {
   faqEN: { q: string; a: string }[];
 }
 
-const SENTENCE_LIMIT = 4;
+const SENTENCE_LIMIT = 3;
 
 function ServiceTestimonialCard({ t, isEN }: { t: ReturnType<typeof getTestimonialsForService>[number]; isEN: boolean }) {
   const [expanded, setExpanded] = useState(false);
