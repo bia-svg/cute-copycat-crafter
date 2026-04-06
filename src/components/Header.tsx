@@ -183,15 +183,13 @@ export default function Header() {
       {/* Trust Bar */}
       <div className="bg-[#8b827c] text-white text-[10px] sm:text-xs">
         <div className="container-main flex items-center justify-center gap-x-1.5 py-1 sm:py-1.5 flex-wrap">
-          <span className="whitespace-nowrap">EMR</span>
-          <span className="opacity-50 sm:hidden">·</span>
-          <span className="whitespace-nowrap hidden sm:inline">EMR-Krankenkasse Konform</span>
-          <span className="opacity-50 hidden sm:inline">·</span>
+          <span className="whitespace-nowrap">{isDE ? "EMR-Krankenkasse konform" : "EMR Health Insurance Approved"}</span>
+          <span className="opacity-50">·</span>
           <span className="whitespace-nowrap">NGH International Trainer</span>
           <span className="opacity-50">·</span>
           <span className="whitespace-nowrap">{isDE ? "★ 5.0 bei Google" : "★ 5.0 at Google"}</span>
           <span className="opacity-50 hidden sm:inline">·</span>
-          <span className="whitespace-nowrap hidden sm:inline">{isDE ? "Über 35+ Jahre Erfahrung" : "35+ Years Experience"}</span>
+          <span className="whitespace-nowrap hidden sm:inline">{isDE ? "35+ Jahre Erfahrung" : "35+ Years Experience"}</span>
           <span className="opacity-50 hidden sm:inline">·</span>
           <span className="whitespace-nowrap hidden sm:inline">{isDE ? "30.000+ Sitzungen" : "30,000+ Sessions"}</span>
         </div>
