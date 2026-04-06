@@ -247,8 +247,8 @@ export default function Home() {
       <SEO {...pageSEO.home} pageKey="home" />
       <section className="bg-secondary">
         {!isMobile ? (
-          <div className="grid md:grid-cols-2 container-main py-12 gap-8 items-center">
-            <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "400px" }}>
+          <div className="grid md:grid-cols-2 container-main py-8 gap-6 items-center">
+            <div className="relative w-full max-w-[350px] aspect-[4/5] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "350px" }}>
               {Object.entries(loadedSlides).map(([idx, src]) => (
                 <img
                   key={idx}
