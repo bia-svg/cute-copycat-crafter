@@ -88,34 +88,27 @@ export async function sendLeadEmails(data: LeadEmailData) {
     savingsAmount: data.savingsAmount,
   };
 
-  // 1. Notify David
-  try {
-    await supabase.functions.invoke("send-transactional-email", {
-      body: {
-        templateName: notifyTemplate,
-        recipientEmail: "info@hypnoseinstitut-woods.com",
-        idempotencyKey: `lead-notify-${id}`,
-        templateData: sharedTemplateData,
-      },
-    });
-  } catch (err) {
-    console.error("Lead notification email error:", err);
-  }
+  // Fire both emails in parallel so neither blocks the other
+  const notifyPromise = supabase.functions.invoke("send-transactional-email", {
+    body: {
+      templateName: notifyTemplate,
+      recipientEmail: "info@hypnoseinstitut-woods.com",
+      idempotencyKey: `lead-notify-${id}`,
+      templateData: sharedTemplateData,
+    },
+  }).catch(err => console.error("Lead notification email error:", err));
 
-  // 2. Confirmation to the submitter
-  try {
-    await supabase.functions.invoke("send-transactional-email", {
-      body: {
-        templateName: confirmTemplate,
-        recipientEmail: data.email,
-        idempotencyKey: `lead-confirm-${id}`,
-        templateData: {
-          ...sharedTemplateData,
-          name: data.name, // full name for greeting
-        },
+  const confirmPromise = supabase.functions.invoke("send-transactional-email", {
+    body: {
+      templateName: confirmTemplate,
+      recipientEmail: data.email,
+      idempotencyKey: `lead-confirm-${id}`,
+      templateData: {
+        ...sharedTemplateData,
+        name: data.name,
       },
-    });
-  } catch (err) {
-    console.error("Lead confirmation email error:", err);
-  }
+    },
+  }).catch(err => console.error("Lead confirmation email error:", err));
+
+  await Promise.all([notifyPromise, confirmPromise]);
 }
