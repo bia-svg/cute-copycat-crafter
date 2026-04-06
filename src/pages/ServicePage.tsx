@@ -18,8 +18,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 import { getTestimonialsForService } from "@/data/serviceTestimonials";
 import { consultationFaqEN, consultationFaqDE } from "@/data/consultationFAQ";
 import { trackPageView, trackCtaClick } from "@/lib/ctaTracking";
-import { useEffect, useCallback } from "react";
-
+import { useEffect, useCallback, useState } from "react";
 export interface ContentSection {
   h2: string;
   paragraphs: string[];
