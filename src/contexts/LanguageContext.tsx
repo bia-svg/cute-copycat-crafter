@@ -42,7 +42,7 @@ const translations: Record<string, Record<Language, string>> = {
   "service.children": { de: "Kinder & Jugendliche", en: "Children & Teens" },
   "service.corporate": { de: "Firmencoaching", en: "Corporate Coaching" },
 
-  "section.services": { de: "Intensiv Einzelsitzungen", en: "Intensive Individual Sessions" },
+  "section.services": { de: "Intensive Einzelsitzungen", en: "Intensive Sessions" },
   "section.training": { de: "Intensiv-Ausbildungen · Aktiv-Hypnose© Therapeuten-Diplom", en: "Intensive Training · Aktiv-Hypnose© Therapist Diploma" },
   "section.shop": { de: "Onlineshop für Ihre Selbsthypnose", en: "Online Shop for Self-Hypnosis" },
 
