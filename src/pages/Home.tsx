@@ -404,6 +404,9 @@ export default function Home() {
                 ? "Even if many are initially unsure — the process leads to a state of focused clarity where transformation becomes possible."
                 : "Auch wenn viele anfangs unsicher sind – der Prozess führt in einen Zustand fokussierter Klarheit, in dem Transformation möglich wird."}
             </p>
+            <div className="rounded-lg overflow-hidden max-w-xs">
+              <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-auto object-cover object-top rounded-lg" loading="lazy" width={1200} height={800} />
+            </div>
             <div className="flex items-center gap-2 bg-secondary rounded-md p-2">
               <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-10" width={64} height={40} loading="lazy" />
               <div>
@@ -416,9 +419,6 @@ export default function Home() {
                 {isEN ? "More About Our Method" : "Mehr über unsere Methode"}
               </Button>
             </Link>
-          </div>
-          <div className="rounded-lg overflow-hidden">
-            <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-auto object-cover object-top rounded-lg" loading="lazy" width={1200} height={800} />
           </div>
         </div>
       </section>
