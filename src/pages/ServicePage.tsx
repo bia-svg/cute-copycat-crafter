@@ -240,38 +240,51 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       })()}
 
       {/* Unified FAQ — topic-specific + consultation items */}
-      <section className="bg-white border-b border-border">
-        <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-primary mb-6">
-            {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
-          </h2>
-          <div className="space-y-5 max-w-3xl">
-            {[...faq, ...(isEN ? consultationFaqEN : consultationFaqDE)].map((item, i) => (
-              <div key={i}>
-                <h3 className="font-semibold text-sm text-primary mb-1">{item.q}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
-              </div>
-            ))}
-          </div>
-          {/* FAQPage Schema */}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                mainEntity: [...faq, ...(isEN ? consultationFaqEN : consultationFaqDE)].map((item) => ({
-                  "@type": "Question",
-                  name: item.q,
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: item.a,
-                  },
-                })),
-              }),
-            }} />
-        </div>
-      </section>
+      {(() => {
+        const allFaq = [...faq, ...(isEN ? consultationFaqEN : consultationFaqDE)];
+        return (
+          <section className="bg-white border-b border-border">
+            <div className="container-main py-10">
+              <h2 className="text-xl font-bold text-primary mb-6">
+                {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
+              </h2>
+              <Accordion type="single" collapsible className="max-w-3xl space-y-2">
+                {allFaq.map((item, i) => (
+                  <AccordionItem
+                    key={i}
+                    value={`faq-${i}`}
+                    className="border border-border bg-secondary/30 rounded-md px-4"
+                  >
+                    <AccordionTrigger className="text-sm font-semibold text-primary hover:no-underline py-4">
+                      {item.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4">
+                      {item.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+              {/* FAQPage Schema */}
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    mainEntity: allFaq.map((item) => ({
+                      "@type": "Question",
+                      name: item.q,
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: item.a,
+                      },
+                    })),
+                  }),
+                }} />
+            </div>
+          </section>
+        );
+      })()}
 
       {/* Kathryn Section — only on children/teens page, shown BEFORE contact form */}
       {(data.slugEN === "kinder-jugendliche" || data.slugCH === "kinder-jugendliche") && (
