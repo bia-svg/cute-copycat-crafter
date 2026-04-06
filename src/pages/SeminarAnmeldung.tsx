@@ -186,9 +186,9 @@ export default function SeminarAnmeldung() {
       // Determine pricing at time of booking
       const isEarlyBirdAtBooking = selectedDateObj && ((selectedDateObj as any).forceEarlyBird || hasEarlyBirdForDate(seminarCountry as "ch" | "de", selectedDate));
       const isCH = seminarCountry === "ch";
-      const bookedPrice = isEarlyBirdAtBooking ? (isCH ? "CHF 2.990.-" : "€2.490,-") : (isCH ? "CHF 3.290.-" : "€2.790,-");
+      const bookedPrice = isEarlyBirdAtBooking ? (isCH ? "CHF 2.690.-" : "€2.490,-") : (isCH ? "CHF 2.990.-" : "€2.790,-");
       const priceType = isEarlyBirdAtBooking ? "Frühbucherpreis" : "Regulärer Preis";
-      const regularPrice = isCH ? "CHF 3.290.-" : "€2.790,-";
+      const regularPrice = isCH ? "CHF 2.990.-" : "€2.790,-";
       const savingsAmount = isEarlyBirdAtBooking ? (isCH ? "CHF 300" : "€300") : undefined;
 
       sendLeadEmails({
