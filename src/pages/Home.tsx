@@ -387,8 +387,8 @@ export default function Home() {
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD ═══════════════════ */}
       <section className="py-4 md:py-6" style={deferredSectionStyle}>
         <div className="container-main">
-          {/* Side-by-side layout on all screens */}
-          <div className="grid grid-cols-[1fr_auto] gap-3 md:gap-6 items-center">
+          {/* Desktop: side-by-side | Mobile: text only, no photo */}
+          <div className="grid md:grid-cols-[1fr_auto] gap-3 md:gap-6 items-center">
             <div className="space-y-1.5 md:space-y-3">
               <p className="text-xs font-semibold text-cta uppercase tracking-wider">
                 {isEN ? "Aktiv-Hypnose© Method" : "Aktiv-Hypnose© Methode"}
@@ -407,8 +407,8 @@ export default function Home() {
                   : "Auch wenn viele anfangs unsicher sind – der Prozess führt in einen Zustand fokussierter Klarheit, in dem Transformation möglich wird."}
               </p>
             </div>
-            {/* Photo – right column on all screens */}
-            <div className="rounded-lg overflow-hidden w-[110px] md:w-[280px] shrink-0">
+            {/* Photo – desktop only */}
+            <div className="hidden md:block rounded-lg overflow-hidden w-[280px] shrink-0">
               <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-auto object-cover object-top rounded-lg" loading="lazy" width={1200} height={800} />
             </div>
           </div>
