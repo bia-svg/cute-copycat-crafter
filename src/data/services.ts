@@ -159,9 +159,9 @@ export const smokingData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const anxietyData: ServicePageData = {
   slugCH: "aengste-phobien", slugDE: "aengste-phobien", slugEN: "anxiety-phobias",
-  titleCH: "Hypnose gegen Ängste & Phobien Zürich | EMR Konform | David J. Woods",
-  titleDE: "Hypnose gegen Ängste & Phobien Augsburg | David J. Woods",
-  titleEN: "Hypnotherapy for Anxiety & Phobias Zurich & Augsburg | David J. Woods",
+  titleCH: "Hypnose gegen Ängste & Phobien Schweiz | EMR Konform | David J. Woods",
+  titleDE: "Hypnose gegen Ängste & Phobien Deutschland | David J. Woods",
+  titleEN: "Hypnotherapy for Anxiety & Phobias — Germany & Switzerland | David J. Woods",
   metaDescCH: "Lösen Sie Ängste und Phobien dauerhaft mit Hypnose in Zürich. EMR anerkannt. Panikattacken, soziale Ängste, Platzangst überwinden. Kostenloses Erstgespräch.",
   metaDescDE: "Lösen Sie Ängste und Phobien dauerhaft mit Hypnose in Augsburg. Panikattacken, soziale Ängste, Platzangst überwinden. Kostenloses Erstgespräch.",
   metaDescEN: "Overcome anxiety and phobias permanently with professional hypnotherapy. Panic attacks, social anxiety, claustrophobia. Book your free discovery call.",
