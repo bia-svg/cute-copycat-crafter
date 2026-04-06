@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
-import { Phone, MapPin } from "lucide-react";
+import { Phone, MapPin, ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 function LinkedInIcon({ className }: { className?: string }) {
   return (
