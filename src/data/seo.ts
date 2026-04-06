@@ -36,8 +36,8 @@ export const pageSEO = {
     descriptionEN: "Overcome depression and trauma with hypnotherapy. Discover new perspectives, regain joy of life. David J. Woods — Zurich & Augsburg.",
   },
   children: {
-    titleDE: "Hypnose für Kinder & Jugendliche",
-    titleEN: "Hypnosis for Children & Teens",
+    titleDE: "Hypnose für Kinder & Jugendliche — Deutschland & Schweiz",
+    titleEN: "Hypnosis for Children & Teens — Germany & Switzerland",
     descriptionDE: "Sanfte Hypnosetherapie für Kinder und Jugendliche. Ängste, Bettnässen, Schulprobleme, Konzentration. Kathryn Woods — Zürich & Augsburg.",
     descriptionEN: "Gentle hypnotherapy for children and teenagers. Anxiety, bedwetting, school issues, concentration. Kathryn Woods — Zurich & Augsburg.",
   },
