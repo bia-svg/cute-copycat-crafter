@@ -385,9 +385,9 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD ═══════════════════ */}
-      <section className="py-16" style={deferredSectionStyle}>
-        <div className="container-main grid md:grid-cols-2 gap-10 items-center">
-          <div className="space-y-5">
+      <section className="py-8 md:py-16" style={deferredSectionStyle}>
+        <div className="container-main grid md:grid-cols-2 gap-6 md:gap-10 items-center">
+          <div className="space-y-3 md:space-y-5">
             <p className="text-sm font-semibold text-cta uppercase tracking-wider">
               {isEN ? "Aktiv-Hypnose© Method" : "Aktiv-Hypnose© Methode"}
             </p>
