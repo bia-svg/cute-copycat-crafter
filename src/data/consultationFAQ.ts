@@ -9,9 +9,8 @@ export const consultationFaqEN = [
 ];
 
 export const consultationFaqDE = [
-  { q: "Wie läuft der Ablauf?", a: "Senden Sie uns einfach Ihre Anfrage über das Formular. Wir melden uns innerhalb von 24 Stunden mit allen Informationen — unverbindlich und ohne Druck." },
-  { q: "Bei welchen Themen können Sie helfen?", a: "Wir arbeiten mit einer Vielzahl von Anliegen wie Stress, Ängsten, Raucherentwöhnung, Gewichtsmanagement und mehr. Wenn Sie unsicher sind, ob Ihr Thema passt, fragen Sie einfach — wir beraten Sie gerne." },
+  { q: "Wie läuft der Ablauf?", a: "Senden Sie uns einfach Ihre Anfrage über das Formular. Wir melden uns innerhalb von 24 Stunden mit allen Informationen — unverbindlich und ohne Druck. Sie können uns auch über den WhatsApp-Button auf der Seite für eine schnellere Antwort erreichen." },
+  { q: "Bei welchen Themen können Sie helfen?", a: "Wir arbeiten mit einer Vielzahl von Anliegen, darunter Stress, Ängste, Raucherentwöhnung, Gewichtsmanagement, Burnout-Prävention, depressive Zustände, traumatischer Stress sowie Themen bei Kindern und Jugendlichen. Grundsätzlich kann alles, was mit emotionalen Mustern, psychosomatischen Symptomen oder unbewussten Blockaden zusammenhängt, oft wirksam mit unseren Methoden behandelt werden." },
   { q: "Entstehen Kosten oder Verpflichtungen?", a: "Nein. Das erste Gespräch ist völlig kostenlos und unverbindlich. Sie entscheiden danach in Ruhe, ob Sie weitermachen möchten." },
-  { q: "Wie schnell erhalte ich eine Antwort?", a: "Wir antworten in der Regel innerhalb von 24 Stunden. Für eine schnellere Kommunikation können Sie uns auch über den WhatsApp-Button auf der Seite erreichen." },
-  { q: "Sind auch Online-Sitzungen möglich?", a: "Ja. Neben unseren Standorten in der Schweiz und Deutschland bieten wir auch Online-Sitzungen für Klienten weltweit an." },
+  { q: "Sind auch Online-Sitzungen möglich?", a: "Grundsätzlich ja. Neben unseren Standorten in der Schweiz und Deutschland bieten wir auch Online-Beratungen für Klienten weltweit an. Natürlich ist es nicht ganz dasselbe wie eine persönliche Sitzung vor Ort, aber eine Online-Beratung ist von überall auf der Welt möglich. Online-Hypnose kann in manchen Fällen ebenfalls möglich sein und müsste individuell beurteilt werden." },
 ];
