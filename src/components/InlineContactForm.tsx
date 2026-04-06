@@ -201,8 +201,8 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
           </p>
         </div>
         <div>
-          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Postal Code / ZIP" : "PLZ"}</label>
-          <input type="text" name="postalCode" autoComplete="postal-code" className={inputClasses} />
+          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Postal Code and City" : "Postleitzahl und Ort"} *</label>
+          <input type="text" name="postalCode" required autoComplete="postal-code" className={inputClasses} />
         </div>
       </div>
 
