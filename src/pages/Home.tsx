@@ -424,15 +424,15 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ SERVICES ═══════════════════ */}
-      <section className="py-16 bg-secondary" style={deferredSectionStyle}>
+      <section className="py-8 md:py-12 bg-secondary" style={deferredSectionStyle}>
         <div className="container-main">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-3">{t("section.services")}</h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-2">{t("section.services")}</h2>
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-5 md:mb-8">
             {isEN
               ? "Topics can also be combined during the session. Additionally, you receive over 30 hypnosis audio recordings for home use."
               : "Dabei können Themen im Zuge der Sitzung auch kombiniert werden. Zusätzlich erhalten Sie über 30 Hypnose Audioaufnahmen für zuhause."}
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {services.map((s) => (
               <ServiceCard key={s.title} {...s} />
             ))}
