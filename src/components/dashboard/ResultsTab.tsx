@@ -15,9 +15,9 @@ const CONFIRMATION_CONCERN = "Terminbestätigung / Sitzung";
 // Pricing
 const SESSION_PRICE_CH = 750;
 const SESSION_PRICE_DE = 650;
-const SEMINAR_PRICE_CH = 2990; // Early bird (regular: 3290)
+const SEMINAR_PRICE_CH = 2690; // Early bird (regular: 2990)
 const SEMINAR_PRICE_DE = 2490; // Early bird (regular: 2790)
-const SEMINAR_REGULAR_CH = 3290;
+const SEMINAR_REGULAR_CH = 2990;
 const SEMINAR_REGULAR_DE = 2790;
 
 // Month options for session goals
@@ -367,7 +367,7 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
                       <TableCell className="text-gray-400">—</TableCell>
                       <TableCell className="text-right text-gray-900 font-medium">0</TableCell>
                       <TableCell className="text-right text-gray-700">
-                        <span className="text-gray-400 line-through text-xs mr-1">CHF 3.290.-</span> CHF 2.990.-
+                        <span className="text-gray-400 line-through text-xs mr-1">CHF 2.990.-</span> CHF 2.690.-
                       </TableCell>
                       <TableCell className="text-right text-gray-400">CHF 0</TableCell>
                     </TableRow>
@@ -629,8 +629,8 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
             </div>
             <div className="p-3 bg-emerald-50 rounded-lg border border-emerald-100 text-center">
               <p className="text-xs text-emerald-600 font-medium">Seminar CH</p>
-               <p className="text-xs text-emerald-500 line-through">CHF 3.290.-</p>
-               <p className="text-lg font-bold text-emerald-700">CHF 2.990.-</p>
+               <p className="text-xs text-emerald-500 line-through">CHF 2.990.-</p>
+               <p className="text-lg font-bold text-emerald-700">CHF 2.690.-</p>
               <p className="text-[10px] text-emerald-600">Early Bird</p>
             </div>
             <div className="p-3 bg-blue-50 rounded-lg border border-blue-100 text-center">
@@ -641,7 +641,7 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
             </div>
           </div>
           <p className="text-xs text-gray-400 mt-3 italic">
-            Note: Revenue calculated at Early Bird price. Regular prices: CHF 3.290.- (CH) / €2.790,- (DE). Free consultations NOT counted.
+            Note: Revenue calculated at Early Bird price. Regular prices: CHF 2.990.- (CH) / €2.790,- (DE). Free consultations NOT counted.
           </p>
         </CardContent>
       </Card>
