@@ -386,7 +386,7 @@ export default function Home() {
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD ═══════════════════ */}
       <section className="py-4 md:py-6" style={deferredSectionStyle}>
-        <div className="container-main grid md:grid-cols-2 gap-4 md:gap-6 items-center">
+        <div className="container-main grid md:grid-cols-[1fr_auto] gap-4 md:gap-6 items-center">
           <div className="space-y-2 md:space-y-3">
             <p className="text-xs font-semibold text-cta uppercase tracking-wider">
               {isEN ? "Aktiv-Hypnose© Method" : "Aktiv-Hypnose© Methode"}
