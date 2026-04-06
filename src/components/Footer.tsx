@@ -29,79 +29,82 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container-main py-12">
-        <div className="grid md:grid-cols-[1fr_1fr_2fr] gap-8">
-          {/* Logo & Info */}
-          <div>
-            <img src={CDN.logo} alt="David J. Woods – Hypnose und Psychologie Logo" className="h-11 w-auto brightness-0 invert mb-4" width={180} height={44} loading="lazy" />
-            <p className="text-sm opacity-80">
-              {isEN ? "Aktiv-Hypnose© — Psychology and Hypnotherapy for lasting change." : "Aktiv-Hypnose© — Psychologie und Hypnotherapie für nachhaltige Veränderung."}
-            </p>
-          </div>
+        <div className="grid md:grid-cols-[1fr_2fr] gap-8">
+          {/* Logo & Info + Institutes (stacked on desktop) */}
+          <div className="space-y-6">
+            {/* Logo */}
+            <div>
+              <img src={CDN.logo} alt="David J. Woods – Hypnose und Psychologie Logo" className="h-11 w-auto brightness-0 invert mb-4" width={180} height={44} loading="lazy" />
+              <p className="text-sm opacity-80">
+                {isEN ? "Aktiv-Hypnose© — Psychology and Hypnotherapy for lasting change." : "Aktiv-Hypnose© — Psychologie und Hypnotherapie für nachhaltige Veränderung."}
+              </p>
+            </div>
 
-          <div>
-            <button
-              onClick={() => setInstitutesOpen(!institutesOpen)}
-              className="flex items-center gap-2 font-semibold mb-2 w-full text-left hover:opacity-90 transition-opacity"
-              aria-expanded={institutesOpen}
-            >
-              <span>{isEN ? "Main Institutes in Germany and Switzerland" : "Hauptstandorte in Deutschland und der Schweiz"}</span>
-              <ChevronDown className={`w-4 h-4 shrink-0 transition-transform duration-200 ${institutesOpen ? "rotate-180" : ""}`} />
-            </button>
+            {/* Institutes accordion - below logo */}
+            <div>
+              <button
+                onClick={() => setInstitutesOpen(!institutesOpen)}
+                className="flex items-center gap-2 font-semibold mb-2 w-full text-left hover:opacity-90 transition-opacity"
+                aria-expanded={institutesOpen}
+              >
+                <span>{isEN ? "Main Institutes in Germany and Switzerland" : "Hauptstandorte in Deutschland und der Schweiz"}</span>
+                <ChevronDown className={`w-4 h-4 shrink-0 transition-transform duration-200 ${institutesOpen ? "rotate-180" : ""}`} />
+              </button>
 
-            {institutesOpen && (
-              <div className="space-y-4 text-sm opacity-80 mt-2 animate-in fade-in-0 slide-in-from-top-2 duration-200">
-                {/* Germany */}
-                <div>
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <span className="text-base" role="img" aria-label="Germany">🇩🇪</span>
-                    <span className="font-medium opacity-100">Deutschland</span>
-                    <a href="tel:+491719539922" className="flex items-center gap-1 hover:underline ml-auto text-xs">
-                      <Phone className="w-3 h-3" /> +49 171 953 99 22
-                    </a>
+              {institutesOpen && (
+                <div className="space-y-4 text-sm opacity-80 mt-2 animate-in fade-in-0 slide-in-from-top-2 duration-200">
+                  {/* Germany */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="text-base" role="img" aria-label="Germany">🇩🇪</span>
+                      <span className="font-medium opacity-100">Deutschland</span>
+                      <a href="tel:+491719539922" className="flex items-center gap-1 hover:underline ml-auto text-xs">
+                        <Phone className="w-3 h-3" /> +49 171 953 99 22
+                      </a>
+                    </div>
+                    <div className="pl-6">
+                      <div className="flex items-start gap-2">
+                        <MapPin className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                        <div>
+                          <div className="font-medium opacity-100">Augsburg</div>
+                          <div>Regus, Viktoria Str. 3b, 2. OG</div>
+                          <div>86150 Augsburg</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="pl-6">
-                    <div className="flex items-start gap-2">
-                      <MapPin className="w-3.5 h-3.5 mt-0.5 shrink-0" />
-                      <div>
-                        <div className="font-medium opacity-100">Augsburg</div>
-                        <div>Regus, Viktoria Str. 3b, 2. OG</div>
-                        <div>86150 Augsburg</div>
+
+                  {/* Switzerland */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="text-base" role="img" aria-label="Switzerland">🇨🇭</span>
+                      <span className="font-medium opacity-100">Switzerland</span>
+                      <a href="tel:+41791318878" className="flex items-center gap-1 hover:underline ml-auto text-xs">
+                        <Phone className="w-3 h-3" /> +41 79 131 88 78
+                      </a>
+                    </div>
+                    <div className="space-y-2 pl-6">
+                      <div className="flex items-start gap-2">
+                        <MapPin className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                        <div>
+                          <div className="font-medium opacity-100">Zürich</div>
+                          <div>5 Elements TCM GmbH, Beim Löwenplatz</div>
+                          <div>Usteristrasse 23, 8001 Zürich</div>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <MapPin className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                        <div>
+                          <div className="font-medium opacity-100">Eschenbach</div>
+                          <div>Fit+Gsund, Churzhaslen 3</div>
+                          <div>8733 Eschenbach (am Zürichsee)</div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                {/* Switzerland */}
-                <div>
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <span className="text-base" role="img" aria-label="Switzerland">🇨🇭</span>
-                    <span className="font-medium opacity-100">Switzerland</span>
-                    <a href="tel:+41791318878" className="flex items-center gap-1 hover:underline ml-auto text-xs">
-                      <Phone className="w-3 h-3" /> +41 79 131 88 78
-                    </a>
-                  </div>
-                  <div className="space-y-2 pl-6">
-                    <div className="flex items-start gap-2">
-                      <MapPin className="w-3.5 h-3.5 mt-0.5 shrink-0" />
-                      <div>
-                        <div className="font-medium opacity-100">Zürich</div>
-                        <div>5 Elements TCM GmbH, Beim Löwenplatz</div>
-                        <div>Usteristrasse 23, 8001 Zürich</div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <MapPin className="w-3.5 h-3.5 mt-0.5 shrink-0" />
-                      <div>
-                        <div className="font-medium opacity-100">Eschenbach</div>
-                        <div>Fit+Gsund, Churzhaslen 3</div>
-                        <div>8733 Eschenbach (am Zürichsee)</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            )}
+              )}
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -110,7 +113,7 @@ export default function Footer() {
             <div className="grid grid-cols-2 gap-x-6 gap-y-4 text-sm opacity-80">
               {/* About Us */}
               <div>
-                <h5 className="font-medium opacity-100 mb-1.5 text-xs uppercase tracking-wider">{isEN ? "About Us" : "Über uns"}</h5>
+                <h5 className="inline-block bg-primary-foreground/15 text-primary-foreground px-2.5 py-1 rounded text-[11px] uppercase tracking-wider font-semibold mb-2">{isEN ? "About Us" : "Über uns"}</h5>
                 <div className="space-y-1">
                   <Link to={getPath("about", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "David J. Woods & Team" : "David J. Woods & Team"}</Link>
                   <Link to={getPath("media", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "TV & Media" : "TV & Medien"}</Link>
@@ -123,18 +126,18 @@ export default function Footer() {
               {/* Business & Training */}
               <div className="space-y-4">
                 <div>
-                  <h5 className="font-medium opacity-100 mb-1.5 text-xs uppercase tracking-wider">{isEN ? "Business Coaching" : "Firmencoaching"}</h5>
+                  <h5 className="inline-block bg-primary-foreground/15 text-primary-foreground px-2.5 py-1 rounded text-[11px] uppercase tracking-wider font-semibold mb-2">{isEN ? "Business Coaching" : "Firmencoaching"}</h5>
                   <Link to={getPath("corporate", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "All Corporate Programs" : "Alle Firmenprogramme"}</Link>
                 </div>
                 <div>
-                  <h5 className="font-medium opacity-100 mb-1.5 text-xs uppercase tracking-wider">{isEN ? "Training" : "Ausbildung"}</h5>
+                  <h5 className="inline-block bg-primary-foreground/15 text-primary-foreground px-2.5 py-1 rounded text-[11px] uppercase tracking-wider font-semibold mb-2">{isEN ? "Training" : "Ausbildung"}</h5>
                   <Link to={getPath("training", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Learn to Be a Hypnotherapist" : "Hypnosetherapeut werden"}</Link>
                 </div>
               </div>
 
               {/* Hypnotherapy */}
               <div className="col-span-2">
-                <h5 className="font-medium opacity-100 mb-1.5 text-xs uppercase tracking-wider">{isEN ? "Hypnotherapy" : "Hypnosetherapie"}</h5>
+                <h5 className="inline-block bg-primary-foreground/15 text-primary-foreground px-2.5 py-1 rounded text-[11px] uppercase tracking-wider font-semibold mb-2 max-md:mx-auto max-md:block max-md:text-center max-md:w-fit">{isEN ? "Hypnotherapy" : "Hypnosetherapie"}</h5>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-1">
                   <Link to={getPath("smoking", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Stop Smoking" : "Raucherentwöhnung"}</Link>
                   <Link to={getPath("stress", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Stress & Burnout" : "Stress & Burnout"}</Link>
