@@ -157,7 +157,7 @@ export default function Erfolgsberichte() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto text-center">
             {[
               { num: "30.000+", labelDE: "Sitzungen", labelEN: "Sessions" },
-              { num: "40+", labelDE: "Jahre Erfahrung", labelEN: "Years Experience" },
+              { num: "35+", labelDE: "Jahre Erfahrung", labelEN: "Years Experience" },
               { num: "30+", labelDE: "Länder", labelEN: "Countries" },
               { num: "5.0", labelDE: "Google Bewertung", labelEN: "Google Rating" },
             ].map((stat, i) => (
