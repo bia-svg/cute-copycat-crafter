@@ -138,7 +138,7 @@ export default function Footer() {
               {/* Hypnotherapy */}
               <div className="col-span-2">
                 <h5 className="inline-block bg-primary-foreground/15 text-primary-foreground px-2.5 py-1 rounded text-[11px] uppercase tracking-wider font-semibold mb-2 max-md:mx-auto max-md:block max-md:text-center max-md:w-fit">{isEN ? "Hypnotherapy" : "Hypnosetherapie"}</h5>
-                <div className="grid grid-cols-2 gap-x-6 gap-y-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
                   <Link to={getPath("smoking", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Stop Smoking" : "Raucherentwöhnung"}</Link>
                   <Link to={getPath("stress", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Stress & Burnout" : "Stress & Burnout"}</Link>
                   <Link to={getPath("anxiety", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Anxiety & Phobias" : "Ängste & Phobien"}</Link>
