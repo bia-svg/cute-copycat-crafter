@@ -505,10 +505,10 @@ export default function Home() {
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
         <section className="py-8 md:py-16 bg-muted/50" style={deferredSectionStyle}>
         <div className="container-main">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-2 text-foreground">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-1 text-foreground">
             {isEN ? "Corporate Coaching" : "Firmencoaching"}
           </h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-5 md:mb-10">
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-3 md:mb-5 text-sm md:text-base leading-snug">
             {isEN
               ? "Performance Coaching: Maximize Your Team's Potential. We offer tailored solutions for companies of all sizes."
               : "Erfolgs-Coaching: Leistungsfähigkeit maximieren. Wir bieten maßgeschneiderte Lösungen für Unternehmen jeder Größe."}
