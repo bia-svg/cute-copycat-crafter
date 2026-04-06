@@ -465,7 +465,7 @@ export default function Home() {
             </div>
             {/* 3 – NGH */}
             <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
-              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-10 md:h-12 mx-auto mb-2" width={64} height={64} loading="lazy" />
+              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-10 md:h-12 w-10 md:w-12 object-contain mx-auto mb-2" loading="lazy" />
               <h3 className="font-semibold text-xs md:text-sm text-foreground">NGH International Trainer</h3>
             </div>
             {/* 4 – EMR */}
