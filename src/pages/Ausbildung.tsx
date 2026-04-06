@@ -29,6 +29,7 @@ const CDN_BASE = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm
 
 export default function Ausbildung() {
   const { language, country, isInternational, showCH, showDE } = useLanguage();
+  const [activeTab, setActiveTab] = useState<"ch" | "de">("ch");
   const isEN = language === "en";
 
   const [seminarCounts, setSeminarCounts] = useState<Record<string, number>>({});
