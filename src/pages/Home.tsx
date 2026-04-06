@@ -386,7 +386,7 @@ export default function Home() {
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD ═══════════════════ */}
       <section className="py-4 md:py-6" style={deferredSectionStyle}>
-        <div className="container-main grid md:grid-cols-2 gap-4 md:gap-6 items-center">
+        <div className="container-main grid md:grid-cols-[1fr_auto] gap-4 md:gap-6 items-center">
           <div className="space-y-2 md:space-y-3">
             <p className="text-xs font-semibold text-cta uppercase tracking-wider">
               {isEN ? "Aktiv-Hypnose© Method" : "Aktiv-Hypnose© Methode"}
@@ -422,7 +422,7 @@ export default function Home() {
             </Link>
           </div>
           {/* Photo on desktop – right column */}
-          <div className="hidden md:block rounded-lg overflow-hidden">
+          <div className="hidden md:block rounded-lg overflow-hidden max-w-[280px]">
             <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-auto object-cover object-top rounded-lg" loading="lazy" width={1200} height={800} />
           </div>
         </div>
