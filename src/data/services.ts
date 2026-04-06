@@ -10,9 +10,9 @@ const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBK
    ═══════════════════════════════════════════════════════════════ */
 export const smokingData: ServicePageData = {
   slugCH: "raucherentwoehnung", slugDE: "raucherentwoehnung", slugEN: "stop-smoking",
-  titleCH: "Raucherentwöhnung Hypnose Zürich | Endlich Rauchfrei | David J. Woods",
-  titleDE: "Raucherentwöhnung Hypnose Augsburg | Endlich Rauchfrei | David J. Woods",
-  titleEN: "Stop Smoking Hypnotherapy Zurich & Augsburg | David J. Woods",
+  titleCH: "Raucherentwöhnung Hypnose Schweiz | Endlich Rauchfrei | David J. Woods",
+  titleDE: "Raucherentwöhnung Hypnose Deutschland | Endlich Rauchfrei | David J. Woods",
+  titleEN: "Stop Smoking Hypnotherapy — Germany & Switzerland | David J. Woods",
   metaDescCH: "Unterstützung auf dem Weg in ein rauchfreies Leben durch professionelle Hypnose in Zürich. EMR anerkannt. Ohne ständigen Kampf und Entzugserscheinungen. Jetzt kostenloses Erstgespräch sichern.",
   metaDescDE: "Unterstützung auf dem Weg in ein rauchfreies Leben durch Hypnose in Augsburg. Ohne ständigen Kampf und Entzugserscheinungen. Jetzt Erstgespräch sichern.",
   metaDescEN: "Quit smoking permanently with professional hypnotherapy in Zurich and Augsburg. No constant struggle or withdrawal symptoms. Book your free discovery call.",
