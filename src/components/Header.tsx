@@ -398,7 +398,7 @@ export default function Header() {
                 {languageOptions.map(opt => (
                   <button key={opt.value} onClick={() => setLanguage(opt.value)}
                     className={`px-4 py-1.5 text-sm rounded border ${opt.value === language ? "border-primary bg-primary/10 font-semibold text-primary" : "border-border text-foreground"}`}>
-                    {opt.label}
+                    {opt.flag} {opt.label}
                   </button>
                 ))}
               </div>
