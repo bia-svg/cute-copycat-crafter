@@ -470,7 +470,7 @@ export default function Home() {
             </div>
             {/* 4 – EMR */}
             <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-10 md:h-12 mx-auto mb-2" width={102} height={64} loading="lazy" />
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-10 md:h-12 object-contain mx-auto mb-2" loading="lazy" />
               <h3 className="font-semibold text-xs md:text-sm text-foreground">EMR Krankenkasse Konform</h3>
               <p className="text-[0.6rem] md:text-xs text-muted-foreground">ZSR P609264</p>
             </div>
