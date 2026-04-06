@@ -68,14 +68,14 @@ export default function UeberUns() {
                   <p className="text-xs text-muted-foreground">{isEN ? "Sessions" : "Sitzungen"}</p>
                 </div>
                 <div className="border border-border p-4 text-center bg-[#f4f3ef]">
-                  <BookOpen className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
-                  <p className="text-xl font-bold text-[#1B3A5C]">350+</p>
-                  <p className="text-xs text-muted-foreground">{isEN ? "Training Pages" : "Seiten Ausbildung"}</p>
+                  <Users className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
+                  <p className="text-xl font-bold text-[#1B3A5C]">{isEN ? "2,500+" : "2.500+"}</p>
+                  <p className="text-xs text-muted-foreground">{isEN ? "Trained Hypnotists" : "ausgebildete Hypnotiseure"}</p>
                 </div>
                 <div className="border border-border p-4 text-center bg-[#f4f3ef]">
                   <Tv className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
-                  <p className="text-xl font-bold text-[#1B3A5C]">TV</p>
-                  <p className="text-xs text-muted-foreground">{isEN ? "Media Appearances" : "Medienauftritte"}</p>
+                  <p className="text-xl font-bold text-[#1B3A5C]">30+</p>
+                  <p className="text-xs text-muted-foreground">{isEN ? "TV & Media Appearances" : "TV- & Medienauftritte"}</p>
                 </div>
               </div>
 
