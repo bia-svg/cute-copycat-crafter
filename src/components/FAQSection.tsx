@@ -1,5 +1,10 @@
-import { ChevronRight } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 
 interface FAQItem {
   q: string;
@@ -13,7 +18,7 @@ interface FAQSectionProps {
 
 /**
  * Reusable FAQ section with FAQPage JSON-LD schema.
- * Use on any page that needs FAQ structured data for SEO/GEO.
+ * Uses accordion display — one item open at a time.
  */
 export default function FAQSection({ title, items }: FAQSectionProps) {
   if (!items || items.length === 0) return null;
@@ -22,19 +27,22 @@ export default function FAQSection({ title, items }: FAQSectionProps) {
     <section className="bg-white border-b border-border">
       <div className="container-main py-10">
         <h2 className="text-xl font-bold text-primary mb-6">{title}</h2>
-        <div className="space-y-4 max-w-3xl">
+        <Accordion type="single" collapsible className="max-w-3xl space-y-2">
           {items.map((item, i) => (
-            <details key={i} className="border border-border bg-secondary/30 group">
-              <summary className="font-semibold text-sm text-primary p-4 cursor-pointer hover:bg-secondary transition-colors list-none flex items-center justify-between">
+            <AccordionItem
+              key={i}
+              value={`faq-${i}`}
+              className="border border-border bg-secondary/30 rounded-md px-4"
+            >
+              <AccordionTrigger className="text-sm font-semibold text-primary hover:no-underline py-4">
                 {item.q}
-                <ChevronRight className="w-4 h-4 text-muted-foreground group-open:rotate-90 transition-transform shrink-0 ml-2" />
-              </summary>
-              <div className="px-4 pb-4">
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
-              </div>
-            </details>
+              </AccordionTrigger>
+              <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4">
+                {item.a}
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
 
         {/* FAQPage Schema */}
         <Helmet>

@@ -1,4 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { consultationFaqEN, consultationFaqDE } from "@/data/consultationFAQ";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
@@ -58,14 +59,22 @@ export default function Erstgespraech() {
           <h2 className="text-xl font-bold text-primary mb-6">
             {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
           </h2>
-          <div className="space-y-5 max-w-3xl">
+          <Accordion type="single" collapsible className="max-w-3xl space-y-2">
             {(isEN ? consultationFaqEN : consultationFaqDE).map((item, i) => (
-              <div key={i}>
-                <h3 className="font-semibold text-sm text-primary mb-1">{item.q}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
-              </div>
+              <AccordionItem
+                key={i}
+                value={`faq-${i}`}
+                className="border border-border bg-secondary/30 rounded-md px-4"
+              >
+                <AccordionTrigger className="text-sm font-semibold text-primary hover:no-underline py-4">
+                  {item.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4">
+                  {item.a}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
     </>
