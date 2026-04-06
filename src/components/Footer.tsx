@@ -127,10 +127,17 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-primary-foreground/20 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs opacity-70">
           <div>© {new Date().getFullYear()} David J. Woods. {t("footer.rights")}</div>
-          <div className="flex gap-4">
+          <div className="flex items-center gap-4">
             <Link to={getPath("impressum", language, country)} className="hover:underline">{t("footer.impressum")}</Link>
             <Link to={getPath("privacy", language, country)} className="hover:underline">{t("footer.datenschutz")}</Link>
             <Link to={getPath("terms", language, country)} className="hover:underline">{t("footer.agb")}</Link>
+            <span className="w-px h-3 bg-primary-foreground/30" />
+            <a href="https://de.linkedin.com/in/david-j-woods-85b30b186/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:opacity-100 transition-opacity">
+              <LinkedInIcon className="w-4 h-4" />
+            </a>
+            <a href="https://www.instagram.com/hypnoseinstitut_woods/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-100 transition-opacity">
+              <InstagramIcon className="w-4 h-4" />
+            </a>
           </div>
         </div>
 
