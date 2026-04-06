@@ -358,14 +358,8 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="flex flex-col gap-3">
-              <Link to={getPath("contact", language, country)} className="block">
-                <Button className="w-full bg-cta text-cta-foreground hover:bg-cta/90">{isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}</Button>
-              </Link>
-              <Link to={getPath("about", language, country)} className="block">
-                <Button variant="outline" className="w-full border-primary text-primary">{isEN ? "About the Method" : "Über die Methode"}</Button>
-              </Link>
-            </div>
+
+
             <div>
               <p className="text-xs text-muted-foreground mb-2">{isEN ? "As Seen On" : "Bekannt aus"}</p>
               {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
