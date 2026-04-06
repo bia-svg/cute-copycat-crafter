@@ -70,7 +70,7 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
             <Text style={invoiceLine}>
               {[props.postalCode, props.cityName || props.city].filter(Boolean).join(' ') || '—'}
             </Text>
-            <Text style={invoiceLine}>{props.countryName || props.country || '—'}</Text>
+            {(isSession || isSeminar) && <Text style={invoiceLine}>{props.countryName || props.country || '—'}</Text>}
             <Text style={invoiceLine}>{props.phone || '—'}</Text>
             <Text style={invoiceLine}>{props.email || '—'}</Text>
           </Section>
