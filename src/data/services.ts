@@ -373,9 +373,9 @@ export const weightData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const stressData: ServicePageData = {
   slugCH: "stress-burnout", slugDE: "stress-burnout", slugEN: "stress-burnout",
-  titleCH: "Hypnose gegen Stress & Burnout Zürich | EMR Konform | David J. Woods",
-  titleDE: "Hypnose gegen Stress & Burnout Augsburg | David J. Woods",
-  titleEN: "Stress & Burnout Hypnotherapy Zurich & Augsburg | David J. Woods",
+  titleCH: "Hypnose gegen Stress & Burnout Schweiz | EMR Konform | David J. Woods",
+  titleDE: "Hypnose gegen Stress & Burnout Deutschland | David J. Woods",
+  titleEN: "Stress & Burnout Hypnotherapy — Germany & Switzerland | David J. Woods",
   metaDescCH: "Dauerhafte Stressreduktion und Burnout-Prävention mit Hypnose in Zürich. EMR anerkannt. Wieder ruhig schlafen und klar denken. Erstgespräch vereinbaren.",
   metaDescDE: "Dauerhafte Stressreduktion und Burnout-Prävention mit Hypnose in Augsburg. Wieder ruhig schlafen und klar denken. Erstgespräch vereinbaren.",
   metaDescEN: "Lasting stress reduction and burnout prevention with hypnotherapy in Zurich and Augsburg. Sleep peacefully and think clearly again.",
