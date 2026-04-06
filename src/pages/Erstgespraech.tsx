@@ -21,10 +21,10 @@ export default function Erstgespraech() {
         { name: isEN ? "Free Discovery Call" : "Erstgespräch", path: getPath("contact", language, country) },
       ]} />
 
-      <section className="bg-white border-b border-border">
-        <div className="container-main py-6 lg:py-8">
+      <section className="py-10 lg:py-14 bg-[#F5F3EF]">
+        <div className="container-main">
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] mb-2 text-center">
+            <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2 text-center">
               {isEN ? "Get More Information" : "Mehr Informationen erhalten"}
             </h1>
             <p className="text-sm text-muted-foreground text-center mb-4 leading-snug">
@@ -32,12 +32,12 @@ export default function Erstgespraech() {
                 ? <>Send your request here and I will reply within 24 hours.<br />Or use the green WhatsApp button for a faster response.</>
                 : <>Senden Sie hier Ihre Anfrage und ich melde mich innerhalb von 24 Stunden.<br />Oder nutzen Sie den grünen WhatsApp-Button für eine schnellere Antwort.</>}
             </p>
-            <div className="border border-border p-3 sm:p-4 bg-[#f4f3ef]">
+            <div className="bg-white rounded-lg border border-border/60 p-4 sm:p-6 shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)]">
               <InlineContactForm />
             </div>
 
             {/* Seminar link */}
-            <div className="text-center pt-4 border-t border-border mt-4">
+            <div className="text-center pt-4 mt-4">
               <p className="text-xs text-muted-foreground mb-1">
                 {isEN ? "Interested in our training seminars?" : "Interesse an unseren Ausbildungsseminaren?"}
               </p>
