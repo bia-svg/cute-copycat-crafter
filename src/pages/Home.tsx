@@ -389,7 +389,7 @@ export default function Home() {
         <div className="container-main">
           {/* Desktop: side-by-side | Mobile: text only, no photo */}
           <div className="grid md:grid-cols-[1fr_auto] gap-3 md:gap-6 items-center">
-            <div className="space-y-1.5 md:space-y-3">
+            <div className="space-y-1.5 md:space-y-3 text-center md:text-left">
               <p className="text-xs font-semibold text-cta uppercase tracking-wider">
                 {isEN ? "Aktiv-Hypnose© Method" : "Aktiv-Hypnose© Methode"}
               </p>
@@ -413,7 +413,7 @@ export default function Home() {
             </div>
           </div>
           {/* EMR + Button below on all screens */}
-          <div className="flex flex-wrap items-center gap-2 mt-2 md:mt-3">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-2 md:mt-3">
             <div className="flex items-center gap-2 bg-secondary rounded-md p-2">
               <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-9 md:h-10" width={64} height={40} loading="lazy" />
               <div>
