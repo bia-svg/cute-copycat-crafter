@@ -641,7 +641,7 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
             </div>
           </div>
           <p className="text-xs text-gray-400 mt-3 italic">
-            Note: Revenue calculated at Early Bird price. Regular prices: CHF 3.290.- (CH) / €2.790,- (DE). Free consultations NOT counted.
+            Note: Revenue calculated at Early Bird price. Regular prices: CHF 2.990.- (CH) / €2.790,- (DE). Free consultations NOT counted.
           </p>
         </CardContent>
       </Card>

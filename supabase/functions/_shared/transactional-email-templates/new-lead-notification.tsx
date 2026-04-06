@@ -382,9 +382,9 @@ export const template = {
     registrationNumber: '12145',
     message: 'Freue mich auf das Seminar',
     source: 'organic',
-    bookedPrice: 'CHF 2.990.-',
+    bookedPrice: 'CHF 2.690.-',
     priceType: 'Frühbucherpreis',
-    regularPrice: 'CHF 3.290.-',
+    regularPrice: 'CHF 2.990.-',
     savingsAmount: 'CHF 300',
   },
 } satisfies TemplateEntry
