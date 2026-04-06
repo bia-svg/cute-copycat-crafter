@@ -10,9 +10,9 @@ const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBK
    ═══════════════════════════════════════════════════════════════ */
 export const smokingData: ServicePageData = {
   slugCH: "raucherentwoehnung", slugDE: "raucherentwoehnung", slugEN: "stop-smoking",
-  titleCH: "Raucherentwöhnung Hypnose Zürich | Endlich Rauchfrei | David J. Woods",
-  titleDE: "Raucherentwöhnung Hypnose Augsburg | Endlich Rauchfrei | David J. Woods",
-  titleEN: "Stop Smoking Hypnotherapy Zurich & Augsburg | David J. Woods",
+  titleCH: "Raucherentwöhnung Hypnose Schweiz | Endlich Rauchfrei | David J. Woods",
+  titleDE: "Raucherentwöhnung Hypnose Deutschland | Endlich Rauchfrei | David J. Woods",
+  titleEN: "Stop Smoking Hypnotherapy — Germany & Switzerland | David J. Woods",
   metaDescCH: "Unterstützung auf dem Weg in ein rauchfreies Leben durch professionelle Hypnose in Zürich. EMR anerkannt. Ohne ständigen Kampf und Entzugserscheinungen. Jetzt kostenloses Erstgespräch sichern.",
   metaDescDE: "Unterstützung auf dem Weg in ein rauchfreies Leben durch Hypnose in Augsburg. Ohne ständigen Kampf und Entzugserscheinungen. Jetzt Erstgespräch sichern.",
   metaDescEN: "Quit smoking permanently with professional hypnotherapy in Zurich and Augsburg. No constant struggle or withdrawal symptoms. Book your free discovery call.",
@@ -159,9 +159,9 @@ export const smokingData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const anxietyData: ServicePageData = {
   slugCH: "aengste-phobien", slugDE: "aengste-phobien", slugEN: "anxiety-phobias",
-  titleCH: "Hypnose gegen Ängste & Phobien Zürich | EMR Konform | David J. Woods",
-  titleDE: "Hypnose gegen Ängste & Phobien Augsburg | David J. Woods",
-  titleEN: "Hypnotherapy for Anxiety & Phobias Zurich & Augsburg | David J. Woods",
+  titleCH: "Hypnose gegen Ängste & Phobien Schweiz | EMR Konform | David J. Woods",
+  titleDE: "Hypnose gegen Ängste & Phobien Deutschland | David J. Woods",
+  titleEN: "Hypnotherapy for Anxiety & Phobias — Germany & Switzerland | David J. Woods",
   metaDescCH: "Lösen Sie Ängste und Phobien dauerhaft mit Hypnose in Zürich. EMR anerkannt. Panikattacken, soziale Ängste, Platzangst überwinden. Kostenloses Erstgespräch.",
   metaDescDE: "Lösen Sie Ängste und Phobien dauerhaft mit Hypnose in Augsburg. Panikattacken, soziale Ängste, Platzangst überwinden. Kostenloses Erstgespräch.",
   metaDescEN: "Overcome anxiety and phobias permanently with professional hypnotherapy. Panic attacks, social anxiety, claustrophobia. Book your free discovery call.",
@@ -282,9 +282,9 @@ export const anxietyData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const weightData: ServicePageData = {
   slugCH: "abnehmen", slugDE: "abnehmen", slugEN: "weight-loss",
-  titleCH: "Abnehmen mit Hypnose Zürich | Dauerhaft Gewicht verlieren | David J. Woods",
-  titleDE: "Abnehmen mit Hypnose Augsburg | Dauerhaft Gewicht verlieren | David J. Woods",
-  titleEN: "Weight Loss Hypnotherapy Zurich & Augsburg | David J. Woods",
+  titleCH: "Abnehmen mit Hypnose Schweiz | Dauerhaft Gewicht verlieren | David J. Woods",
+  titleDE: "Abnehmen mit Hypnose Deutschland | Dauerhaft Gewicht verlieren | David J. Woods",
+  titleEN: "Weight Loss Hypnotherapy — Germany & Switzerland | David J. Woods",
   metaDescCH: "Abnehmen mit Hypnose in Zürich. Essverhalten nachhaltig verändern ohne Jo-Jo-Effekt. EMR anerkannt. Kostenloses Erstgespräch.",
   metaDescDE: "Abnehmen mit Hypnose in Augsburg. Essverhalten nachhaltig verändern ohne Jo-Jo-Effekt. Kostenloses Erstgespräch.",
   metaDescEN: "Lose weight permanently with hypnotherapy. Change eating habits at the subconscious level. No yo-yo effect. Book your free discovery call.",
@@ -373,9 +373,9 @@ export const weightData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const stressData: ServicePageData = {
   slugCH: "stress-burnout", slugDE: "stress-burnout", slugEN: "stress-burnout",
-  titleCH: "Hypnose gegen Stress & Burnout Zürich | EMR Konform | David J. Woods",
-  titleDE: "Hypnose gegen Stress & Burnout Augsburg | David J. Woods",
-  titleEN: "Stress & Burnout Hypnotherapy Zurich & Augsburg | David J. Woods",
+  titleCH: "Hypnose gegen Stress & Burnout Schweiz | EMR Konform | David J. Woods",
+  titleDE: "Hypnose gegen Stress & Burnout Deutschland | David J. Woods",
+  titleEN: "Stress & Burnout Hypnotherapy — Germany & Switzerland | David J. Woods",
   metaDescCH: "Dauerhafte Stressreduktion und Burnout-Prävention mit Hypnose in Zürich. EMR anerkannt. Wieder ruhig schlafen und klar denken. Erstgespräch vereinbaren.",
   metaDescDE: "Dauerhafte Stressreduktion und Burnout-Prävention mit Hypnose in Augsburg. Wieder ruhig schlafen und klar denken. Erstgespräch vereinbaren.",
   metaDescEN: "Lasting stress reduction and burnout prevention with hypnotherapy in Zurich and Augsburg. Sleep peacefully and think clearly again.",
@@ -467,9 +467,9 @@ export const stressData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const depressionData: ServicePageData = {
   slugCH: "depressionen-traumata", slugDE: "depressionen-traumata", slugEN: "depression-trauma",
-  titleCH: "Hypnotische Begleitung bei depressiven Verstimmungen & Traumata Zürich | David J. Woods",
-  titleDE: "Hypnotische Begleitung bei depressiven Verstimmungen & Traumata Augsburg | David J. Woods",
-  titleEN: "Hypnotherapy for Depression & Trauma Zurich & Augsburg | David J. Woods",
+  titleCH: "Hypnotische Begleitung bei depressiven Verstimmungen & Traumata Schweiz | David J. Woods",
+  titleDE: "Hypnotische Begleitung bei depressiven Verstimmungen & Traumata Deutschland | David J. Woods",
+  titleEN: "Hypnotherapy for Depression & Trauma — Germany & Switzerland | David J. Woods",
   metaDescCH: "Überwinden Sie Depressionen und Traumata mit Hypnose in Zürich. Neue Perspektiven entdecken und Lebensfreude wiedergewinnen. EMR anerkannt.",
   metaDescDE: "Überwinden Sie Depressionen und Traumata mit Hypnose in Augsburg. Neue Perspektiven entdecken und Lebensfreude wiedergewinnen.",
   metaDescEN: "Overcome depression and trauma with professional hypnotherapy. Discover new perspectives and regain your joy of life.",
@@ -692,9 +692,9 @@ export const adultsData: ServicePageData = {
 
 export const childrenData: ServicePageData = {
   slugCH: "kinder-jugendliche", slugDE: "kinder-jugendliche", slugEN: "children-teens",
-  titleCH: "Hypnose für Kinder & Jugendliche Zürich | Kathryn | David J. Woods",
-  titleDE: "Hypnose für Kinder & Jugendliche Augsburg | Kathryn | David J. Woods",
-  titleEN: "Hypnotherapy for Children & Teens Zurich & Augsburg | David J. Woods",
+  titleCH: "Hypnose für Kinder & Jugendliche Schweiz | Kathryn | David J. Woods",
+  titleDE: "Hypnose für Kinder & Jugendliche Deutschland | Kathryn | David J. Woods",
+  titleEN: "Hypnotherapy for Children & Teens — Germany & Switzerland | David J. Woods",
   metaDescCH: "Sanfte Hypnose-Therapie für Kinder und Jugendliche in Zürich. Ängste, Konzentrationsprobleme und Selbstwert stärken. Mit Kathryn. Erstgespräch vereinbaren.",
   metaDescDE: "Sanfte Hypnose-Therapie für Kinder und Jugendliche in Augsburg. Ängste, Konzentrationsprobleme und Selbstwert stärken. Erstgespräch vereinbaren.",
   metaDescEN: "Gentle hypnotherapy for children and teenagers. Strengthen confidence, overcome fears, improve concentration. Book your free discovery call.",
