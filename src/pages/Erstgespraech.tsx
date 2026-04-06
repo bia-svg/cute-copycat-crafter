@@ -1,4 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { consultationFaqEN, consultationFaqDE } from "@/data/consultationFAQ";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";

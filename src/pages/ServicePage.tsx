@@ -14,6 +14,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { CheckCircle, ChevronRight, Star, ExternalLink } from "lucide-react";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { getTestimonialsForService } from "@/data/serviceTestimonials";
 import { consultationFaqEN, consultationFaqDE } from "@/data/consultationFAQ";
 import { trackPageView, trackCtaClick } from "@/lib/ctaTracking";
