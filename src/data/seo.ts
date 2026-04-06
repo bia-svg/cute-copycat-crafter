@@ -24,8 +24,8 @@ export const pageSEO = {
     descriptionEN: "Weight loss through hypnosis with David J. Woods. Sustainably change eating habits without dieting. 40+ years experience. Practices in Zurich & Augsburg.",
   },
   stress: {
-    titleDE: "Stress & Burnout bewältigen durch Hypnose",
-    titleEN: "Manage Stress & Burnout with Hypnosis",
+    titleDE: "Stress & Burnout bewältigen durch Hypnose — Deutschland & Schweiz",
+    titleEN: "Manage Stress & Burnout with Hypnosis — Germany & Switzerland",
     descriptionDE: "Stress und Burnout bewältigen mit Hypnosetherapie. Stressreduktion, Burnout-Prävention, innere Ruhe finden. David J. Woods — Zürich & Augsburg.",
     descriptionEN: "Manage stress and burnout with hypnotherapy. Stress reduction, burnout prevention, find inner peace. David J. Woods — Zurich & Augsburg.",
   },
