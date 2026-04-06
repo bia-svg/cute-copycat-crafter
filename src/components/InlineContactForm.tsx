@@ -60,6 +60,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
     if (!email) return fail('input[name="email"]', 'Bitte geben Sie Ihre E-Mail ein.', 'Please enter your email address.');
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('input[name="email"]', 'Bitte geben Sie eine gültige E-Mail ein.', 'Please enter a valid email address.');
     if (!phone) return fail('input[type="tel"]', 'Bitte geben Sie Ihre Telefonnummer ein.', 'Please enter your phone number.');
+    if (!postalCode) return fail('input[name="postalCode"]', 'Bitte geben Sie Ihre Postleitzahl und Ihren Ort ein.', 'Please enter your postal code and city.');
     if (!gdprConsent) return fail('input[name="gdprConsent"]', 'Bitte akzeptieren Sie die Datenschutzerklärung.', 'Please accept the privacy policy.');
 
     setIsSubmitting(true);
