@@ -12,8 +12,8 @@ export const pageSEO = {
     descriptionEN: "Quit smoking through hypnosis with David J. Woods. Finally become smoke-free — without withdrawal symptoms. 40+ years experience. Practices in Zurich & Augsburg.",
   },
   anxiety: {
-    titleDE: "Ängste & Phobien überwinden durch Hypnose",
-    titleEN: "Overcome Anxiety & Phobias with Hypnosis",
+    titleDE: "Ängste & Phobien überwinden durch Hypnose — Deutschland & Schweiz",
+    titleEN: "Overcome Anxiety & Phobias with Hypnosis — Germany & Switzerland",
     descriptionDE: "Ängste und Phobien dauerhaft überwinden mit Hypnosetherapie. Flugangst, Höhenangst, Platzangst, Spinnenphobie, Panikattacken. David J. Woods — Zürich & Augsburg.",
     descriptionEN: "Permanently overcome anxiety and phobias with hypnotherapy. Fear of flying, heights, claustrophobia, spider phobia, panic attacks. David J. Woods — Zurich & Augsburg.",
   },
