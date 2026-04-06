@@ -349,7 +349,7 @@ export const blogPosts: BlogPost[] = [
       { tag: "h2", text: "Was kostet Raucherentwöhnung durch Hypnose in der Schweiz?" },
       { tag: "p", text: "In der Schweiz sind die Leistungen von David J. Woods EMR Krankenkasse konform (ZSR Nr. P609264). Das bedeutet: Viele Zusatzversicherungen übernehmen einen Teil der Kosten. Im Vergleich zu den jährlichen Ausgaben für Zigaretten — bei einem Päckchen pro Tag sind das über CHF 3.000 pro Jahr — ist die Investition in 1-3 Hypnose-Sitzungen wirtschaftlich äußerst sinnvoll." },
       { tag: "h2", text: "Fazit: Lohnt sich Hypnose zur Raucherentwöhnung?" },
-      { tag: "p", text: "Die wissenschaftliche Evidenz ist eindeutig: Hypnose gehört zu den wirksamsten Methoden der Raucherentwöhnung. Mit über 40 Jahren Erfahrung und mehr als 30.000 dokumentierten Sitzungen bietet David J. Woods eine der umfassendsten Expertisen im deutschsprachigen Raum." },
+      { tag: "p", text: "Die wissenschaftliche Evidenz ist eindeutig: Hypnose gehört zu den wirksamsten Methoden der Raucherentwöhnung. Mit über 35+ Jahren Erfahrung und mehr als 30.000 dokumentierten Sitzungen bietet David J. Woods eine der umfassendsten Expertisen im deutschsprachigen Raum." },
       { tag: "p", text: "Quellen: Viswesvaran & Schmidt, Journal of Applied Psychology, 77(4), 1992; Hasan et al., Journal of Public Health, 22(6), 2014; Barnes et al., Cochrane Database of Systematic Reviews, 2019." },
       { tag: "h3", text: "Weitere interessante Beiträge" }
     ]
@@ -369,7 +369,7 @@ export const blogPosts: BlogPost[] = [
       { tag: "h2", text: "Welche Arten von Ängsten können mit Hypnose behandelt werden?" },
       { tag: "p", text: "In der Praxis von David J. Woods werden regelmäßig folgende Angstformen behandelt: Flugangst und Höhenangst, soziale Phobien und Prüfungsangst, Panikattacken und generalisierte Angststörung, Klaustrophobie und Agoraphobie, Zahnarztangst und medizinische Phobien sowie Erwartungsängste und Zukunftsängste." },
       { tag: "h2", text: "Die Aktiv-Hypnose© Methode bei Angststörungen" },
-      { tag: "p", text: "David J. Woods hat über 40 Jahre klinischer Erfahrung in der Behandlung von Angststörungen gesammelt. Seine Aktiv-Hypnose© Methode unterscheidet sich von passiver Suggestionstherapie: Der Klient wird aktiv in den Veränderungsprozess einbezogen. Diese Herangehensweise führt zu tiefgreifenderen und nachhaltigeren Ergebnissen, weil nicht nur Symptome behandelt, sondern die Wurzeln der Angst aufgelöst werden." },
+      { tag: "p", text: "David J. Woods hat über 35+ Jahre klinischer Erfahrung in der Behandlung von Angststörungen gesammelt. Seine Aktiv-Hypnose© Methode unterscheidet sich von passiver Suggestionstherapie: Der Klient wird aktiv in den Veränderungsprozess einbezogen. Diese Herangehensweise führt zu tiefgreifenderen und nachhaltigeren Ergebnissen, weil nicht nur Symptome behandelt, sondern die Wurzeln der Angst aufgelöst werden." },
       { tag: "p", text: "Quellen: Spiegel, American Journal of Clinical Hypnosis, 56(1), 2013; Kirsch, Montgomery & Sapirstein, Journal of Consulting and Clinical Psychology, 63(2), 1995; WHO Mental Health Atlas, 2020." },
       { tag: "h3", text: "Weitere interessante Beiträge" }
     ]
@@ -423,7 +423,7 @@ export const blogPosts: BlogPost[] = [
     contentText: "Hypnose in Zürich: Erfahrungen aus der Praxis von David J. Woods. Wenn Sie in Zürich oder Umgebung nach professioneller Hypnosetherapie suchen, stehen Sie vor einer wichtigen Entscheidung...",
     content: [
       { tag: "h1", text: "Hypnose in Zürich: Erfahrungen aus der Praxis von David J. Woods" },
-      { tag: "p", text: "Wenn Sie in Zürich oder Umgebung nach professioneller Hypnosetherapie suchen, stehen Sie vor einer wichtigen Entscheidung. Die Qualifikation und Erfahrung des Therapeuten sind entscheidend für den Erfolg der Behandlung. David J. Woods praktiziert seit über 40 Jahren und hat mehr als 30.000 Sitzungen dokumentiert — eine Erfahrung, die im DACH-Raum ihresgleichen sucht." },
+      { tag: "p", text: "Wenn Sie in Zürich oder Umgebung nach professioneller Hypnosetherapie suchen, stehen Sie vor einer wichtigen Entscheidung. Die Qualifikation und Erfahrung des Therapeuten sind entscheidend für den Erfolg der Behandlung. David J. Woods praktiziert seit über 35+ Jahren und hat mehr als 30.000 Sitzungen dokumentiert — eine Erfahrung, die im DACH-Raum ihresgleichen sucht." },
       { tag: "h2", text: "Zwei Standorte in der Region Zürich" },
       { tag: "p", text: "David J. Woods bietet Hypnosetherapie an zwei Standorten in der Region Zürich an: Im Herzen von Zürich, bei 5 Elements TCM GmbH, Beim Löwenplatz, Usteristrasse 23, 8001 Zürich — zentral gelegen und optimal mit öffentlichen Verkehrsmitteln erreichbar. Sowie in Eschenbach am Zürichsee, bei Fit+Gsund, Churzhaslen 3, 8733 Eschenbach — ideal für Klienten aus der Region Zürichsee, Rapperswil-Jona und Umgebung." },
       { tag: "h2", text: "EMR-Anerkennung: Krankenkasse übernimmt Kosten" },
@@ -438,7 +438,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "raucherentwoehnung-durch-hypnose-so-funktioniert-es",
     title: "Raucherentwöhnung durch Hypnose: So werden Sie rauchfrei in einer Sitzung",
-    metaDescription: "Rauchfrei durch Hypnose — ohne Entzugserscheinungen. Erfahren Sie, wie Aktiv-Hypnose© bei der Raucherentwöhnung wirkt. Über 40 Jahre Erfahrung.",
+    metaDescription: "Rauchfrei durch Hypnose — ohne Entzugserscheinungen. Erfahren Sie, wie Aktiv-Hypnose© bei der Raucherentwöhnung wirkt. Über 35+ Jahre Erfahrung.",
     featuredImage: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/stop_smoking_hypnose_793eb91c.jpg",
     contentText: "Raucherentwöhnung durch Hypnose: So werden Sie rauchfrei in einer Sitzung. Rauchen aufzuhören ist für viele Menschen eine der größten Herausforderungen...",
     content: [
@@ -447,7 +447,7 @@ export const blogPosts: BlogPost[] = [
       { tag: "h2", text: "Warum scheitern herkömmliche Methoden?" },
       { tag: "p", text: "Das Verlangen nach einer Zigarette ist nicht nur körperlich, sondern vor allem psychologisch verankert. Nikotin verändert die Belohnungsmechanismen im Gehirn, doch die eigentlichen Auslöser — Stress, Gewohnheit, soziale Situationen — sind im Unterbewusstsein programmiert. Genau hier setzt die Hypnose an: Sie erreicht das Unterbewusstsein direkt und kann die verankerten Muster nachhaltig verändern." },
       { tag: "h2", text: "Aktiv-Hypnose© für Raucherentwöhnung" },
-      { tag: "p", text: "Die von David J. Woods entwickelte Aktiv-Hypnose© Methode geht über klassische Suggestionshypnose hinaus. Statt nur passiv Suggestionen zu empfangen, wird der Klient aktiv in den Veränderungsprozess einbezogen. David J. Woods hat in über 40 Jahren Berufserfahrung Tausende von Rauchern erfolgreich bei der Entwöhnung begleitet — viele davon in nur einer einzigen Sitzung." },
+      { tag: "p", text: "Die von David J. Woods entwickelte Aktiv-Hypnose© Methode geht über klassische Suggestionshypnose hinaus. Statt nur passiv Suggestionen zu empfangen, wird der Klient aktiv in den Veränderungsprozess einbezogen. David J. Woods hat in über 35+ Jahren Berufserfahrung Tausende von Rauchern erfolgreich bei der Entwöhnung begleitet — viele davon in nur einer einzigen Sitzung." },
       { tag: "h2", text: "Was erwartet Sie in einer Sitzung?" },
       { tag: "p", text: "Eine typische Raucherentwöhnungssitzung mit David J. Woods dauert etwa 2-3 Stunden und umfasst: ein ausführliches Vorgespräch zur Analyse Ihrer individuellen Rauchmuster, die hypnotherapeutische Intervention mit der Aktiv-Hypnose© Methode, sowie Selbsthypnose-Techniken für zu Hause. Zusätzlich erhalten Sie über 30 Hypnose-Audioaufnahmen zur Vertiefung der Wirkung." },
       { tag: "p", text: "Quellen: Viswesvaran & Schmidt, Journal of Applied Psychology, 1992; American Lung Association; WHO Framework Convention on Tobacco Control." },
@@ -468,7 +468,7 @@ export const blogPosts: BlogPost[] = [
       { tag: "h2", text: "Wie Hypnose Ängste löst" },
       { tag: "p", text: "Phobien und Ängste sind im limbischen System des Gehirns verankert — dem emotionalen Zentrum, das auch körperliche Stressreaktionen steuert. Hypnose ermöglicht einen direkten Zugang zu diesen Hirnregionen und kann die gespeicherten Angstreaktionen gezielt überarbeiten. Die Aktiv-Hypnose© Methode von David J. Woods nutzt dabei eine Kombination aus tiefenpsychologischer Analyse, Desensibilisierung und positiver Neuprogrammierung." },
       { tag: "h2", text: "Welche Ängste behandelt David J. Woods?" },
-      { tag: "p", text: "In seiner Praxis in Zürich und Augsburg behandelt David J. Woods seit über 40 Jahren ein breites Spektrum an Ängsten: Flugangst, Höhenangst, Platzangst (Agoraphobie), Spinnenphobie, Prüfungsangst, soziale Ängste, Panikattacken und generalisierte Angststörungen. Viele Klienten berichten bereits nach einer bis drei Sitzungen von einer deutlichen Verbesserung." },
+      { tag: "p", text: "In seiner Praxis in Zürich und Augsburg behandelt David J. Woods seit über 35+ Jahren ein breites Spektrum an Ängsten: Flugangst, Höhenangst, Platzangst (Agoraphobie), Spinnenphobie, Prüfungsangst, soziale Ängste, Panikattacken und generalisierte Angststörungen. Viele Klienten berichten bereits nach einer bis drei Sitzungen von einer deutlichen Verbesserung." },
       { tag: "p", text: "Quellen: WHO Global Health Estimates, 2019; DGPPN Leitlinien, 2021; Kirsch et al., Journal of Consulting and Clinical Psychology, 1995; WBP Gutachten zu Hypnotherapie, 2006." },
       { tag: "h3", text: "Weitere interessante Beiträge" }
     ]
@@ -485,7 +485,7 @@ export const blogPosts: BlogPost[] = [
       { tag: "h2", text: "Warum Diäten scheitern — und Hypnose nicht" },
       { tag: "p", text: "Unser Essverhalten wird zu 90% vom Unterbewusstsein gesteuert. Emotionales Essen, Frustessen, Heißhungerattacken — all diese Muster sind tief im Unterbewusstsein verankert. Solange man nur auf der bewussten Ebene (Diät, Kalorienzählen) ansetzt, bleibt die Ursache unberührt. Hypnose erreicht genau diese unbewussten Programme und kann sie nachhaltig verändern." },
       { tag: "h2", text: "Aktiv-Hypnose© für nachhaltiges Abnehmen" },
-      { tag: "p", text: "David J. Woods setzt seine Aktiv-Hypnose© Methode seit über 40 Jahren erfolgreich zur Gewichtsreduktion ein. Der Ansatz umfasst: Analyse und Auflösung emotionaler Essmuster, Neuprogrammierung des Sättigungsempfindens, Stärkung der Motivation für gesunde Ernährung und Bewegung, sowie Selbsthypnose-Techniken für den Alltag. In seinem Buch 'Go InSide' beschreibt David Woods zudem seine einzigartigen Hypnosetexte zum Abnehmen, Hungerregeln und Anti-Raucher-Menüs." },
+      { tag: "p", text: "David J. Woods setzt seine Aktiv-Hypnose© Methode seit über 35+ Jahren erfolgreich zur Gewichtsreduktion ein. Der Ansatz umfasst: Analyse und Auflösung emotionaler Essmuster, Neuprogrammierung des Sättigungsempfindens, Stärkung der Motivation für gesunde Ernährung und Bewegung, sowie Selbsthypnose-Techniken für den Alltag. In seinem Buch 'Go InSide' beschreibt David Woods zudem seine einzigartigen Hypnosetexte zum Abnehmen, Hungerregeln und Anti-Raucher-Menüs." },
       { tag: "h2", text: "Was sagt die Wissenschaft?" },
       { tag: "p", text: "Eine Studie der Universität Tübingen (Enck et al., 2010) konnte zeigen, dass Hypnose bei Gewichtsreduktion zu nachhaltigeren Ergebnissen führt als reine Verhaltenstherapie. Die Teilnehmer der Hypnosegruppe hatten nach 18 Monaten signifikant mehr Gewicht verloren und gehalten. Auch eine Meta-Analyse von Allison & Faith (1996) bestätigt: Hypnose verstärkt die Wirkung anderer Gewichtsreduktionsprogramme deutlich." },
       { tag: "p", text: "Quellen: Mann et al., American Psychologist, 62(3), 2007; Enck et al., International Journal of Clinical and Experimental Hypnosis, 58(1), 2010; Allison & Faith, Journal of Consulting and Clinical Psychology, 64(3), 1996." },
@@ -502,7 +502,7 @@ export const blogPosts: BlogPost[] = [
       { tag: "h1", text: "Aktiv-Hypnose© Ausbildung: In 6 Tagen zum zertifizierten Therapeuten" },
       { tag: "p", text: "Die Nachfrage nach qualifizierten Hypnosetherapeuten wächst stetig — sowohl in der Schweiz als auch in Deutschland. Immer mehr Menschen suchen nach Alternativen zu herkömmlichen Therapiemethoden. Wenn Sie selbst therapeutisch arbeiten möchten oder Ihre bestehende Praxis erweitern wollen, bietet die Aktiv-Hypnose© Ausbildung von David J. Woods eine einzigartige Möglichkeit." },
       { tag: "h2", text: "Was macht die Aktiv-Hypnose© Ausbildung besonders?" },
-      { tag: "p", text: "Im Gegensatz zu vielen anderen Hypnose-Ausbildungen, die sich über Monate oder gar Jahre erstrecken, komprimiert David J. Woods sein gesamtes Wissen aus über 40 Jahren Berufserfahrung in einen 6-tägigen Intensivkurs. Das Konzept: maximale Praxis, minimale Theorie-Überlastung. Die Teilnehmer hypnotisieren sich bereits ab dem ersten Tag gegenseitig und sammeln so wertvolle praktische Erfahrung." },
+      { tag: "p", text: "Im Gegensatz zu vielen anderen Hypnose-Ausbildungen, die sich über Monate oder gar Jahre erstrecken, komprimiert David J. Woods sein gesamtes Wissen aus über 35+ Jahren Berufserfahrung in einen 6-tägigen Intensivkurs. Das Konzept: maximale Praxis, minimale Theorie-Überlastung. Die Teilnehmer hypnotisieren sich bereits ab dem ersten Tag gegenseitig und sammeln so wertvolle praktische Erfahrung." },
       { tag: "h2", text: "Was ist im Ausbildungspaket enthalten?" },
       { tag: "p", text: "Die Ausbildung umfasst ein umfangreiches Materialpaket: über 350 Seiten Ausbildungsmappe, über 150 Seiten Beispiel-Hypnosetexte, mehr als 50 Kurzvideos, über 50 Audioaufnahmen sowie persönliche Betreuung auch nach dem Seminar. Nach erfolgreichem Abschluss erhalten die Teilnehmer das Aktiv-Hypnose© Therapeuten-Diplom. David J. Woods ist zudem NGH International Trainer — eine der höchsten Zertifizierungen der National Guild of Hypnotists (USA)." },
       { tag: "h2", text: "Für wen ist die Ausbildung geeignet?" },

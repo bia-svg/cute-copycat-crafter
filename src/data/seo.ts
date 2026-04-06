@@ -2,14 +2,14 @@ export const pageSEO = {
   home: {
     titleDE: "Hypnosetherapie & Psychologie",
     titleEN: "Hypnotherapy & Psychology",
-    descriptionDE: "Hypnosetherapie mit David J. Woods. Lic.Psych., NGH International Trainer. Über 40 Jahre Erfahrung, 30.000+ Sitzungen. Raucherentwöhnung, Ängste, Abnehmen, Stress, Depression. Praxen in Zürich & Augsburg.",
-    descriptionEN: "Hypnotherapy with David J. Woods. Lic.Psych., NGH International Trainer. 40+ years experience, 30,000+ sessions. Quit smoking, anxiety, weight loss, stress, depression. Practices in Zurich & Augsburg.",
+    descriptionDE: "Hypnosetherapie mit David J. Woods. Lic.Psych., NGH International Trainer. Über 35+ Jahre Erfahrung, 30.000+ Sitzungen. Raucherentwöhnung, Ängste, Abnehmen, Stress, Depression. Praxen in Zürich & Augsburg.",
+    descriptionEN: "Hypnotherapy with David J. Woods. Lic.Psych., NGH International Trainer. 35+ years experience, 30,000+ sessions. Quit smoking, anxiety, weight loss, stress, depression. Practices in Zurich & Augsburg.",
   },
   smoking: {
     titleDE: "Raucherentwöhnung durch Hypnose — Deutschland & Schweiz",
     titleEN: "Stop Smoking with Hypnosis — Germany & Switzerland",
-    descriptionDE: "Raucherentwöhnung durch Hypnose mit David J. Woods. Endlich rauchfrei werden — ohne Entzugserscheinungen. Über 40 Jahre Erfahrung. Praxen in Zürich & Augsburg. Jetzt Erstgespräch buchen.",
-    descriptionEN: "Quit smoking through hypnosis with David J. Woods. Finally become smoke-free — without withdrawal symptoms. 40+ years experience. Practices in Zurich & Augsburg.",
+    descriptionDE: "Raucherentwöhnung durch Hypnose mit David J. Woods. Endlich rauchfrei werden — ohne Entzugserscheinungen. Über 35+ Jahre Erfahrung. Praxen in Zürich & Augsburg. Jetzt Erstgespräch buchen.",
+    descriptionEN: "Quit smoking through hypnosis with David J. Woods. Finally become smoke-free — without withdrawal symptoms. 35+ years experience. Practices in Zurich & Augsburg.",
   },
   anxiety: {
     titleDE: "Ängste & Phobien überwinden durch Hypnose — Deutschland & Schweiz",
@@ -20,8 +20,8 @@ export const pageSEO = {
   weight: {
     titleDE: "Abnehmen durch Hypnose — Deutschland & Schweiz",
     titleEN: "Weight Loss with Hypnosis — Germany & Switzerland",
-    descriptionDE: "Abnehmen durch Hypnose mit David J. Woods. Essverhalten nachhaltig verändern ohne Diät. Über 40 Jahre Erfahrung. Praxen in Zürich & Augsburg.",
-    descriptionEN: "Weight loss through hypnosis with David J. Woods. Sustainably change eating habits without dieting. 40+ years experience. Practices in Zurich & Augsburg.",
+    descriptionDE: "Abnehmen durch Hypnose mit David J. Woods. Essverhalten nachhaltig verändern ohne Diät. Über 35+ Jahre Erfahrung. Praxen in Zürich & Augsburg.",
+    descriptionEN: "Weight loss through hypnosis with David J. Woods. Sustainably change eating habits without dieting. 35+ years experience. Practices in Zurich & Augsburg.",
   },
   stress: {
     titleDE: "Stress & Burnout bewältigen durch Hypnose — Deutschland & Schweiz",
@@ -62,8 +62,8 @@ export const pageSEO = {
   about: {
     titleDE: "Über David J. Woods — Lic.Psych., Hypnosetherapeut, NGH Trainer",
     titleEN: "About David J. Woods — Lic.Psych., Hypnotherapist, NGH Trainer",
-    descriptionDE: "David J. Woods: Lic.Psych., Hypnosetherapeut, Dozent & Fachautor. Über 40 Jahre Erfahrung, 30.000+ Sitzungen, ★ 5.0 Google-Bewertung. NGH International Trainer.",
-    descriptionEN: "David J. Woods: Lic.Psych., Hypnotherapist, Lecturer & Author. 40+ years experience, 30,000+ sessions, ★ 5.0 Google rating. NGH International Trainer.",
+    descriptionDE: "David J. Woods: Lic.Psych., Hypnosetherapeut, Dozent & Fachautor. Über 35+ Jahre Erfahrung, 30.000+ Sitzungen, ★ 5.0 Google-Bewertung. NGH International Trainer.",
+    descriptionEN: "David J. Woods: Lic.Psych., Hypnotherapist, Lecturer & Author. 35+ years experience, 30,000+ sessions, ★ 5.0 Google rating. NGH International Trainer.",
   },
   testimonials: {
     titleDE: "Kundenmeinungen — ★ 5.0 Google Bewertung · 263 Rezensionen",

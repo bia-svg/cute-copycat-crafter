@@ -201,8 +201,8 @@ export default function Ausbildung() {
               </div>
               <p className="text-base lg:text-lg text-[#55504f] leading-relaxed mb-5">
                 {isEN
-                  ? "This is not a weekend certificate course. It's an exclusive, high-level practitioner training where you learn to create real, lasting change — in yourself and in your clients. Developed over 40 years of clinical practice by Lic.Psych. David J. Woods, this method-based expert training combines psychology, neuroscience, and hands-on hypnotherapy into a system that works from day one."
-                  : "Dies ist kein Wochenend-Zertifikatskurs. Es ist eine exklusive, hochwertige Praktiker-Ausbildung, in der Sie lernen, echte, nachhaltige Veränderung zu bewirken — bei sich selbst und bei Ihren Klienten. Entwickelt über 40 Jahre klinischer Praxis von Lic.Psych. David J. Woods, verbindet diese methodenbasierte Expertenausbildung Psychologie, Neurowissenschaft und praktische Hypnotherapie zu einem System, das ab dem ersten Tag wirkt."}
+                  ? "This is not a weekend certificate course. It's an exclusive, high-level practitioner training where you learn to create real, lasting change — in yourself and in your clients. Developed over 35+ years of clinical practice by Lic.Psych. David J. Woods, this method-based expert training combines psychology, neuroscience, and hands-on hypnotherapy into a system that works from day one."
+                  : "Dies ist kein Wochenend-Zertifikatskurs. Es ist eine exklusive, hochwertige Praktiker-Ausbildung, in der Sie lernen, echte, nachhaltige Veränderung zu bewirken — bei sich selbst und bei Ihren Klienten. Entwickelt über 35+ Jahre klinischer Praxis von Lic.Psych. David J. Woods, verbindet diese methodenbasierte Expertenausbildung Psychologie, Neurowissenschaft und praktische Hypnotherapie zu einem System, das ab dem ersten Tag wirkt."}
               </p>
               <div className="flex flex-wrap gap-4 text-sm text-[#55504f] mb-6">
                 <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "6 Days, 10:00–17:00" : "6 Tage, 10:00–17:00 Uhr"}</span>
@@ -246,7 +246,7 @@ export default function Ausbildung() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
             <div className="border border-border p-4 text-center">
               <Shield className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
-              <h3 className="font-bold text-sm text-[#1B3A5C] mb-1">{isEN ? "40+ Years of Clinical Practice" : "40+ Jahre klinische Praxis"}</h3>
+              <h3 className="font-bold text-sm text-[#1B3A5C] mb-1">{isEN ? "35+ Years of Clinical Practice" : "35+ Jahre klinische Praxis"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
                   ? "Every technique taught has been tested and refined in thousands of real clinical sessions. This is method-based expert training."
@@ -603,14 +603,14 @@ export default function Ausbildung() {
       <FAQSection
         title={isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
         items={isEN ? [
-          { q: "What certification do I receive after the training?", a: "You receive the Aktiv-Hypnose© Therapist Diploma — David J. Woods' proprietary method developed over 40 years of clinical practice. David himself is an NGH-certified International Trainer, which ensures the highest teaching standard. In Switzerland, the training is EMR-compliant (ZSR P609264), enabling health insurance billing." },
+          { q: "What certification do I receive after the training?", a: "You receive the Aktiv-Hypnose© Therapist Diploma — David J. Woods' proprietary method developed over 35+ years of clinical practice. David himself is an NGH-certified International Trainer, which ensures the highest teaching standard. In Switzerland, the training is EMR-compliant (ZSR P609264), enabling health insurance billing." },
           { q: "Do I need prior experience in hypnosis or psychology?", a: "No prior experience is required. The 6-day intensive training is designed for beginners and experienced practitioners alike. David J. Woods teaches from the fundamentals to advanced techniques in a structured curriculum." },
           { q: "How many participants are in each training group?", a: "Groups are intentionally kept small (typically 8–12 participants) to ensure intensive, hands-on learning with personal feedback from David J. Woods." },
           { q: "What is Aktiv-Hypnose© and why is it different?", a: "Aktiv-Hypnose© is a clinical method developed by Lic.Psych. David J. Woods that combines psychology, neuroscience, and practical hypnotherapy. Unlike passive approaches, it actively involves the client in the therapeutic process, leading to faster and more lasting results." },
           { q: "Can I practice professionally after the 6-day training?", a: "Yes. After completing the training and receiving your Aktiv-Hypnose© Therapist Diploma, you are qualified to work as a hypnotherapist. The training includes practical guidance on building a successful practice." },
           { q: "What is the scientific basis for hypnotherapy?", a: "Hypnotherapy is recognized by the World Health Organization (WHO) and validated by numerous meta-analyses. A landmark study by Kirsch et al. (1995) showed that adding hypnosis to cognitive-behavioral therapy improves outcomes by 70%. The German Scientific Advisory Council confirmed the evidence for clinical hypnosis in 2006." },
         ] : [
-          { q: "Welches Zertifikat erhalte ich nach der Ausbildung?", a: "Sie erhalten das Aktiv-Hypnose© Therapeuten-Diplom — die von David J. Woods über 40 Jahre klinischer Praxis entwickelte Methode. David selbst ist NGH-zertifizierter International Trainer, was höchsten Ausbildungsstandard garantiert. In der Schweiz ist die Ausbildung EMR-konform (ZSR P609264), was die Abrechnung über Krankenkassen ermöglicht." },
+          { q: "Welches Zertifikat erhalte ich nach der Ausbildung?", a: "Sie erhalten das Aktiv-Hypnose© Therapeuten-Diplom — die von David J. Woods über 35+ Jahre klinischer Praxis entwickelte Methode. David selbst ist NGH-zertifizierter International Trainer, was höchsten Ausbildungsstandard garantiert. In der Schweiz ist die Ausbildung EMR-konform (ZSR P609264), was die Abrechnung über Krankenkassen ermöglicht." },
           { q: "Brauche ich Vorkenntnisse in Hypnose oder Psychologie?", a: "Nein. Die 6-tägige Intensiv-Ausbildung ist für Anfänger und erfahrene Praktiker gleichermaßen konzipiert. David J. Woods unterrichtet von den Grundlagen bis zu fortgeschrittenen Techniken." },
           { q: "Wie viele Teilnehmer sind in jeder Gruppe?", a: "Gruppen werden bewusst klein gehalten (typischerweise 8–12 Teilnehmer), um intensives, praxisnahes Lernen mit persönlichem Feedback von David J. Woods zu gewährleisten." },
           { q: "Was ist Aktiv-Hypnose© und warum ist sie anders?", a: "Aktiv-Hypnose© ist eine klinische Methode, die von Lic.Psych. David J. Woods entwickelt wurde und Psychologie, Neurowissenschaft und praktische Hypnotherapie verbindet. Im Gegensatz zu passiven Ansätzen wird der Klient aktiv in den therapeutischen Prozess einbezogen, was zu schnelleren und nachhaltigeren Ergebnissen führt." },

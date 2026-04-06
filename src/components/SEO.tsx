@@ -101,7 +101,7 @@ export default function SEO({
     jobTitle: "Hypnotherapeut, Dozent & Fachautor, NGH International Trainer",
     url: BASE_URL,
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/david-woods-og.jpg",
-    description: "Licensed psychologist and hypnotherapist with over 40 years of clinical experience and more than 30,000 documented sessions. NGH International Trainer, EMR-recognized (ZSR P609264). Developer of the Aktiv-Hypnose© method. Author of 'Go Inside'. Practices in Zurich (Switzerland) and Augsburg (Germany).",
+    description: "Licensed psychologist and hypnotherapist with over 35+ years of clinical experience and more than 30,000 documented sessions. NGH International Trainer, EMR-recognized (ZSR P609264). Developer of the Aktiv-Hypnose© method. Author of 'Go Inside'. Practices in Zurich (Switzerland) and Augsburg (Germany).",
     knowsAbout: [
       "Clinical Hypnotherapy", "Cognitive Behavioral Hypnosis", "Smoking Cessation",
       "Anxiety Disorders", "Phobia Treatment", "Weight Management Psychology",

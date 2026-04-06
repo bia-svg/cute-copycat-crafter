@@ -570,8 +570,8 @@ export const adultsData: ServicePageData = {
   h1CH: "Hypnosetherapie für Erwachsene — Persönliche 1:1 Sitzungen",
   h1DE: "Hypnosetherapie für Erwachsene — Persönliche 1:1 Sitzungen",
   h1EN: "Hypnotherapy for Adults — Personal 1:1 Sessions",
-  benefitsCH: ["Individuelle Intensiv-Sitzungen mit David persönlich", "Über 40 Jahre Erfahrung & 30.000+ Sitzungen", "Aktiv-Hypnose© — klinisch fundiert & nachhaltig", "Themen können flexibel kombiniert werden"],
-  benefitsEN: ["Individual intensive sessions with David personally", "Over 40 years experience & 30,000+ sessions", "Aktiv-Hypnose© — clinically grounded & lasting", "Topics can be flexibly combined"],
+  benefitsCH: ["Individuelle Intensiv-Sitzungen mit David persönlich", "Über 35+ Jahre Erfahrung & 30.000+ Sitzungen", "Aktiv-Hypnose© — klinisch fundiert & nachhaltig", "Themen können flexibel kombiniert werden"],
+  benefitsEN: ["Individual intensive sessions with David personally", "Over 35+ years experience & 30,000+ sessions", "Aktiv-Hypnose© — clinically grounded & lasting", "Topics can be flexibly combined"],
   introCH: [
     "Die Einzelsitzungen für Erwachsene werden ausschliesslich von Lic.Psych. David J. Woods persönlich durchgeführt. Mit seiner selbst entwickelten Aktiv-Hypnose© Methode verbindet er klinische Psychologie, physiologische Tiefe und moderne Coaching-Techniken zu einem Ansatz, der wirkt.",
     "Ob Raucherentwöhnung, Gewichtsreduktion, Ängste, Stress, Depressionen oder Leistungssteigerung — David arbeitet gezielt an Ihren individuellen Themen. Die Sitzungen sind intensiv, lösungsorientiert und auf nachhaltige Veränderung ausgerichtet.",
@@ -590,7 +590,7 @@ export const adultsData: ServicePageData = {
     {
       h2: "David J. Woods — Lic.Psych., NGH International Trainer",
       paragraphs: [
-        "David J. Woods ist lizenzierter Psychologe, NGH International Trainer und Entwickler der Aktiv-Hypnose© Methode. Mit über 40 Jahren Berufserfahrung und mehr als 30.000 durchgeführten Sitzungen gehört er zu den erfahrensten Hypnotherapeuten Europas.",
+        "David J. Woods ist lizenzierter Psychologe, NGH International Trainer und Entwickler der Aktiv-Hypnose© Methode. Mit über 35+ Jahren Berufserfahrung und mehr als 30.000 durchgeführten Sitzungen gehört er zu den erfahrensten Hypnotherapeuten Europas.",
         "Seine Arbeit zeichnet sich durch eine klare, strukturierte und gleichzeitig einfühlsame Vorgehensweise aus. Er verbindet wissenschaftlich fundierte Psychologie mit gezielter Hypnotherapie — immer individuell auf den Klienten abgestimmt."
       ]
     },
@@ -624,7 +624,7 @@ export const adultsData: ServicePageData = {
     {
       h2: "David J. Woods — Lic.Psych., NGH International Trainer",
       paragraphs: [
-        "David J. Woods ist lizenzierter Psychologe und Entwickler der Aktiv-Hypnose© Methode. Mit über 40 Jahren Erfahrung und mehr als 30.000 Sitzungen gehört er zu den erfahrensten Hypnotherapeuten Europas."
+        "David J. Woods ist lizenzierter Psychologe und Entwickler der Aktiv-Hypnose© Methode. Mit über 35+ Jahren Erfahrung und mehr als 30.000 Sitzungen gehört er zu den erfahrensten Hypnotherapeuten Europas."
       ]
     },
     {
@@ -645,7 +645,7 @@ export const adultsData: ServicePageData = {
     {
       h2: "David J. Woods — Lic.Psych., NGH International Trainer",
       paragraphs: [
-        "David J. Woods is a licensed psychologist, NGH International Trainer, and developer of the Aktiv-Hypnose© method. With over 40 years of professional experience and more than 30,000 sessions conducted, he is one of the most experienced hypnotherapists in Europe.",
+        "David J. Woods is a licensed psychologist, NGH International Trainer, and developer of the Aktiv-Hypnose© method. With over 35+ years of professional experience and more than 30,000 sessions conducted, he is one of the most experienced hypnotherapists in Europe.",
         "His work is characterized by a clear, structured, and at the same time empathetic approach. He combines scientifically grounded psychology with targeted hypnotherapy — always individually tailored to the client."
       ]
     },

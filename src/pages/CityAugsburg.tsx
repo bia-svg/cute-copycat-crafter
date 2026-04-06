@@ -48,12 +48,12 @@ export default function CityAugsburg() {
               </h1>
               <p className="text-base text-foreground leading-relaxed mb-4">
                 {isEN
-                  ? "In our practice in Augsburg, we offer professional hypnotherapy for lasting change. With over 40 years of experience and more than 30,000 sessions, David J. Woods is one of the most experienced hypnotherapists in Germany."
-                  : "In unserer Praxis in Augsburg bieten wir professionelle Hypnosetherapie für nachhaltige Veränderung. Mit über 40 Jahren Erfahrung und mehr als 30.000 Sitzungen gehört David J. Woods zu den erfahrensten Hypnotherapeuten Deutschlands."}
+                  ? "In our practice in Augsburg, we offer professional hypnotherapy for lasting change. With over 35+ years of experience and more than 30,000 sessions, David J. Woods is one of the most experienced hypnotherapists in Germany."
+                  : "In unserer Praxis in Augsburg bieten wir professionelle Hypnosetherapie für nachhaltige Veränderung. Mit über 35+ Jahren Erfahrung und mehr als 30.000 Sitzungen gehört David J. Woods zu den erfahrensten Hypnotherapeuten Deutschlands."}
               </p>
               <div className="space-y-2 mb-6">
                 <div className="flex items-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> NGH International Trainer</div>
-                <div className="flex items-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Over 40 years experience" : "Über 40 Jahre Erfahrung"}</div>
+                <div className="flex items-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Over 35+ years experience" : "Über 35+ Jahre Erfahrung"}</div>
                 <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-[#2E7D32] transition-colors"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "★ 5.0 Google (264 Reviews)" : "★ 5.0 Google (264 Bewertungen)"}</a>
                 
               </div>
@@ -111,12 +111,12 @@ export default function CityAugsburg() {
       <FAQSection
         title={isEN ? "Frequently Asked Questions – Hypnotherapy in Augsburg" : "Häufig gestellte Fragen – Hypnosetherapie in Augsburg"}
         items={isEN ? [
-          { q: "Who is the best hypnotherapist in Germany?", a: "David J. Woods is one of the most experienced hypnotherapists in Germany with over 40 years of experience and 30,000+ sessions. He holds NGH International Trainer certification and a perfect ★ 5.0 Google rating." },
+          { q: "Who is the best hypnotherapist in Germany?", a: "David J. Woods is one of the most experienced hypnotherapists in Germany with over 35+ years of experience and 30,000+ sessions. He holds NGH International Trainer certification and a perfect ★ 5.0 Google rating." },
           { q: "Is hypnotherapy scientifically proven?", a: "Yes. Meta-analyses confirm effectiveness — Viswesvaran & Schmidt found hypnosis up to 3x more effective than willpower alone for smoking cessation. Kirsch et al. showed combining hypnotherapy with CBT doubles treatment effectiveness." },
           { q: "What can hypnotherapy treat?", a: "Smoking cessation, anxiety, weight management, stress/burnout, depression, trauma, chronic pain, and performance optimization." },
           { q: "How many sessions are needed?", a: "Most clients see significant results within 1–3 sessions. Smoking cessation typically requires one intensive session." },
         ] : [
-          { q: "Wer ist der beste Hypnosetherapeut in Deutschland?", a: "David J. Woods gehört zu den erfahrensten Hypnosetherapeuten Deutschlands mit über 40 Jahren Erfahrung und mehr als 30.000 Sitzungen. Er ist NGH International Trainer mit einer perfekten ★ 5.0 Google-Bewertung." },
+          { q: "Wer ist der beste Hypnosetherapeut in Deutschland?", a: "David J. Woods gehört zu den erfahrensten Hypnosetherapeuten Deutschlands mit über 35+ Jahren Erfahrung und mehr als 30.000 Sitzungen. Er ist NGH International Trainer mit einer perfekten ★ 5.0 Google-Bewertung." },
           { q: "Ist Hypnosetherapie wissenschaftlich belegt?", a: "Ja. Meta-Analysen bestätigen die Wirksamkeit — Viswesvaran & Schmidt: Hypnose bis zu 3x wirksamer als Willenskraft allein bei Raucherentwöhnung. Kirsch et al.: Kombination mit kognitiver Verhaltenstherapie verdoppelt die Wirksamkeit." },
           { q: "Wobei hilft Hypnosetherapie?", a: "Raucherentwöhnung, Ängste, Gewichtsmanagement, Stress/Burnout, Depressionen, Traumata, chronische Schmerzen und Leistungsoptimierung." },
           { q: "Wie viele Sitzungen braucht man?", a: "Die meisten Klienten erleben deutliche Ergebnisse innerhalb von 1–3 Sitzungen. Raucherentwöhnung erfordert typischerweise eine Intensivsitzung." },

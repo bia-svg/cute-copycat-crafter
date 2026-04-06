@@ -83,7 +83,7 @@ export default function Header() {
   ];
 
   const aboutItems = [
-    { icon: <User className="w-5 h-5" />, label: isDE ? "David J. Woods & Team" : "David J. Woods & Team", desc: isDE ? "Lic.Psych. · Über 40 Jahre Erfahrung" : "Lic.Psych. · 40+ years experience", href: getPath("about", language, country) },
+    { icon: <User className="w-5 h-5" />, label: isDE ? "David J. Woods & Team" : "David J. Woods & Team", desc: isDE ? "Lic.Psych. · Über 35+ Jahre Erfahrung" : "Lic.Psych. · 35+ years experience", href: getPath("about", language, country) },
     { icon: <Tv className="w-5 h-5" />, label: isDE ? "TV & Medien" : "TV & Media", desc: isDE ? "Medienauftritte & Presse" : "Media appearances & press", href: getPath("media", language, country) },
     { icon: <Star className="w-5 h-5" />, label: isDE ? "Kundenmeinungen" : "Testimonials", desc: isDE ? "★ 5.0 bei Google · 264 Bewertungen" : "★ 5.0 at Google · 264 reviews", href: getPath("testimonials", language, country) },
     { icon: <Trophy className="w-5 h-5" />, label: isDE ? "Erfolgsberichte" : "Success Stories", desc: isDE ? "Video-Erfahrungsberichte unserer Klienten" : "Video testimonials from our clients", href: getPath("successStories", language, country) },
@@ -191,7 +191,7 @@ export default function Header() {
           <span className="opacity-50">·</span>
           <span className="whitespace-nowrap">{isDE ? "★ 5.0 bei Google" : "★ 5.0 at Google"}</span>
           <span className="opacity-50 hidden sm:inline">·</span>
-          <span className="whitespace-nowrap hidden sm:inline">{isDE ? "Über 40 Jahre Erfahrung" : "40+ Years Experience"}</span>
+          <span className="whitespace-nowrap hidden sm:inline">{isDE ? "Über 35+ Jahre Erfahrung" : "35+ Years Experience"}</span>
           <span className="opacity-50 hidden sm:inline">·</span>
           <span className="whitespace-nowrap hidden sm:inline">{isDE ? "30.000+ Sitzungen" : "30,000+ Sessions"}</span>
         </div>
