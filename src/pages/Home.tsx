@@ -328,7 +328,7 @@ export default function Home() {
                 <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "International media presence with 30+ TV appearances" : "Internationale Medienpräsenz mit über 30 internationalen TV-Auftritten"}</li>
               </ul>
             </div>
-            <div className="relative aspect-[4/3] max-h-[280px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "210px" }}>
+            <div className="relative aspect-[4/3] max-h-[240px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "180px" }}>
               {Object.entries(loadedMobile).map(([idx, src]) => (
                 <img
                   key={idx}
