@@ -24,6 +24,7 @@ function InstagramIcon({ className }: { className?: string }) {
 export default function Footer() {
   const { language, country, t } = useLanguage();
   const isEN = language === "en";
+  const [institutesOpen, setInstitutesOpen] = useState(false);
 
   return (
     <footer className="bg-primary text-primary-foreground">
