@@ -50,6 +50,27 @@ export default function Footer() {
 
             {institutesOpen && (
               <div className="space-y-4 text-sm opacity-80 mt-2 animate-in fade-in-0 slide-in-from-top-2 duration-200">
+                {/* Germany */}
+                <div>
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="text-base" role="img" aria-label="Germany">🇩🇪</span>
+                    <span className="font-medium opacity-100">Deutschland</span>
+                    <a href="tel:+491719539922" className="flex items-center gap-1 hover:underline ml-auto text-xs">
+                      <Phone className="w-3 h-3" /> +49 171 953 99 22
+                    </a>
+                  </div>
+                  <div className="pl-6">
+                    <div className="flex items-start gap-2">
+                      <MapPin className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                      <div>
+                        <div className="font-medium opacity-100">Augsburg</div>
+                        <div>Regus, Viktoria Str. 3b, 2. OG</div>
+                        <div>86150 Augsburg</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Switzerland */}
                 <div>
                   <div className="flex items-center gap-2 mb-1.5">
@@ -74,27 +95,6 @@ export default function Footer() {
                         <div className="font-medium opacity-100">Eschenbach</div>
                         <div>Fit+Gsund, Churzhaslen 3</div>
                         <div>8733 Eschenbach (am Zürichsee)</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Germany */}
-                <div>
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <span className="text-base" role="img" aria-label="Germany">🇩🇪</span>
-                    <span className="font-medium opacity-100">Deutschland</span>
-                    <a href="tel:+491719539922" className="flex items-center gap-1 hover:underline ml-auto text-xs">
-                      <Phone className="w-3 h-3" /> +49 171 953 99 22
-                    </a>
-                  </div>
-                  <div className="pl-6">
-                    <div className="flex items-start gap-2">
-                      <MapPin className="w-3.5 h-3.5 mt-0.5 shrink-0" />
-                      <div>
-                        <div className="font-medium opacity-100">Augsburg</div>
-                        <div>Regus, Viktoria Str. 3b, 2. OG</div>
-                        <div>86150 Augsburg</div>
                       </div>
                     </div>
                   </div>
