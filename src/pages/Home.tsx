@@ -247,8 +247,8 @@ export default function Home() {
       <SEO {...pageSEO.home} pageKey="home" />
       <section className="bg-secondary">
         {!isMobile ? (
-          <div className="grid md:grid-cols-2 container-main py-12 gap-8 items-center">
-            <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "400px" }}>
+          <div className="grid md:grid-cols-2 container-main py-8 gap-6 items-center">
+            <div className="relative w-full max-w-[350px] aspect-[4/5] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "350px" }}>
               {Object.entries(loadedSlides).map(([idx, src]) => (
                 <img
                   key={idx}
@@ -279,7 +279,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4">
               <h1 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight tracking-tight">
                 Lic. Psych. David J. Woods
               </h1>
@@ -300,18 +300,8 @@ export default function Home() {
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "International media presence with 30+ TV appearances" : "Internationale Medienpräsenz mit über 30 internationalen TV-Auftritten"}</li>
                 </ul>
               </div>
-              <div className="flex flex-wrap gap-3">
-                <Link to={getPath("contact", language, country)}>
-                  <Button className="bg-cta text-cta-foreground hover:bg-cta/90">
-                    {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
-                  </Button>
-                </Link>
-                <Link to={getPath("about", language, country)}>
-                  <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                    {isEN ? "About the Method" : "Über die Methode"}
-                  </Button>
-                </Link>
-              </div>
+
+
               <div>
                 <p className="text-xs text-muted-foreground mb-2">{isEN ? "As Seen On" : "Bekannt aus"}</p>
                 {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
@@ -338,7 +328,7 @@ export default function Home() {
                 <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "International media presence with 30+ TV appearances" : "Internationale Medienpräsenz mit über 30 internationalen TV-Auftritten"}</li>
               </ul>
             </div>
-            <div className="relative aspect-[4/3] max-h-[280px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "210px" }}>
+            <div className="relative aspect-[4/3] max-h-[240px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "180px" }}>
               {Object.entries(loadedMobile).map(([idx, src]) => (
                 <img
                   key={idx}
@@ -368,14 +358,8 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="flex flex-col gap-3">
-              <Link to={getPath("contact", language, country)} className="block">
-                <Button className="w-full bg-cta text-cta-foreground hover:bg-cta/90">{isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}</Button>
-              </Link>
-              <Link to={getPath("about", language, country)} className="block">
-                <Button variant="outline" className="w-full border-primary text-primary">{isEN ? "About the Method" : "Über die Methode"}</Button>
-              </Link>
-            </div>
+
+
             <div>
               <p className="text-xs text-muted-foreground mb-2">{isEN ? "As Seen On" : "Bekannt aus"}</p>
               {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
