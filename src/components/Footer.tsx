@@ -104,19 +104,47 @@ export default function Footer() {
             )}
           </div>
 
-          {/* Links */}
+          {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-3">{isEN ? "Quick Links" : "Schnellzugriff"}</h4>
-            <div className="space-y-2 text-sm opacity-80">
-              <Link to={getPath("about", language, country)} className="block hover:underline hover:opacity-100">
-                {t("nav.about")}
-              </Link>
-              <Link to={getPath("contact", language, country)} className="block hover:underline hover:opacity-100">
-                {t("nav.cta")}
-              </Link>
-              <Link to={getPath("training", language, country)} className="block hover:underline hover:opacity-100">
-                {t("nav.training")}
-              </Link>
+            <h4 className="font-semibold mb-4">{isEN ? "Quick Links" : "Schnellzugriff"}</h4>
+            <div className="grid grid-cols-2 gap-x-6 gap-y-4 text-sm opacity-80">
+              {/* About Us */}
+              <div>
+                <h5 className="font-medium opacity-100 mb-1.5 text-xs uppercase tracking-wider">{isEN ? "About Us" : "Über uns"}</h5>
+                <div className="space-y-1">
+                  <Link to={getPath("about", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "David J. Woods & Team" : "David J. Woods & Team"}</Link>
+                  <Link to={getPath("media", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "TV & Media" : "TV & Medien"}</Link>
+                  <Link to={getPath("successStories", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Success Stories" : "Erfolgsberichte"}</Link>
+                  <Link to={getPath("blog", language, country)} className="block hover:underline hover:opacity-100">Blog</Link>
+                  <Link to={getPath("testimonials", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Testimonials" : "Kundenmeinungen"}</Link>
+                </div>
+              </div>
+
+              {/* Business & Training */}
+              <div className="space-y-4">
+                <div>
+                  <h5 className="font-medium opacity-100 mb-1.5 text-xs uppercase tracking-wider">{isEN ? "Business Coaching" : "Firmencoaching"}</h5>
+                  <Link to={getPath("corporate", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "All Corporate Programs" : "Alle Firmenprogramme"}</Link>
+                </div>
+                <div>
+                  <h5 className="font-medium opacity-100 mb-1.5 text-xs uppercase tracking-wider">{isEN ? "Training" : "Ausbildung"}</h5>
+                  <Link to={getPath("training", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Learn to Be a Hypnotherapist" : "Hypnosetherapeut werden"}</Link>
+                </div>
+              </div>
+
+              {/* Hypnotherapy */}
+              <div className="col-span-2">
+                <h5 className="font-medium opacity-100 mb-1.5 text-xs uppercase tracking-wider">{isEN ? "Hypnotherapy" : "Hypnosetherapie"}</h5>
+                <div className="grid grid-cols-2 gap-x-6 gap-y-1">
+                  <Link to={getPath("smoking", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Stop Smoking" : "Raucherentwöhnung"}</Link>
+                  <Link to={getPath("stress", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Stress & Burnout" : "Stress & Burnout"}</Link>
+                  <Link to={getPath("anxiety", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Anxiety & Phobias" : "Ängste & Phobien"}</Link>
+                  <Link to={getPath("depression", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Depression & Trauma" : "Depressionen & Traumata"}</Link>
+                  <Link to={getPath("weight", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Weight Loss" : "Abnehmen"}</Link>
+                  <Link to={getPath("adults", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Adults / Individual Sessions" : "Erwachsene / Einzelsitzungen"}</Link>
+                  <Link to={getPath("children", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Children & Teens" : "Kinder & Jugendliche"}</Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
