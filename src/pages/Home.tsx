@@ -300,18 +300,8 @@ export default function Home() {
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "International media presence with 30+ TV appearances" : "Internationale Medienpräsenz mit über 30 internationalen TV-Auftritten"}</li>
                 </ul>
               </div>
-              <div className="flex flex-wrap gap-3">
-                <Link to={getPath("contact", language, country)}>
-                  <Button className="bg-cta text-cta-foreground hover:bg-cta/90">
-                    {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
-                  </Button>
-                </Link>
-                <Link to={getPath("about", language, country)}>
-                  <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                    {isEN ? "About the Method" : "Über die Methode"}
-                  </Button>
-                </Link>
-              </div>
+
+
               <div>
                 <p className="text-xs text-muted-foreground mb-2">{isEN ? "As Seen On" : "Bekannt aus"}</p>
                 {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
