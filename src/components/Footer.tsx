@@ -128,6 +128,9 @@ export default function Footer() {
             <Link to={getPath("impressum", language, country)} className="hover:underline">{t("footer.impressum")}</Link>
             <Link to={getPath("privacy", language, country)} className="hover:underline">{t("footer.datenschutz")}</Link>
             <Link to={getPath("terms", language, country)} className="hover:underline">{t("footer.agb")}</Link>
+            <Link to={`/${language}/${country}/terminbestaetigung`} className="opacity-30 hover:opacity-70 transition-opacity text-[10px]">
+              {isEN ? "Appointment Confirmation" : "Terminbestätigung"}
+            </Link>
             <span className="w-px h-3 bg-primary-foreground/30" />
             <a href="https://de.linkedin.com/in/david-j-woods-85b30b186/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:opacity-100 transition-opacity">
               <LinkedInIcon className="w-4 h-4" />
