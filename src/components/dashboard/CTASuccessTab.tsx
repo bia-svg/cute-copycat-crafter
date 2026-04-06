@@ -99,8 +99,8 @@ export default function CTASuccessTab() {
       map[day].clicks++;
     });
     return Object.entries(map)
-      .map(([date, d]) => ({ date: format(parseISO(date), "dd/MM"), views: d.views, clicks: d.clicks }))
-      .sort((a, b) => a.date.localeCompare(b.date));
+      .sort((a, b) => a[0].localeCompare(b[0]))
+      .map(([date, d]) => ({ date: format(parseISO(date), "dd/MM"), views: d.views, clicks: d.clicks }));
   }, [views, clicks]);
 
   const totalViews = views.length;
