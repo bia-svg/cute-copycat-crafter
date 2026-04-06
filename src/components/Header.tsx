@@ -152,17 +152,15 @@ export default function Header() {
       <div className="bg-primary text-primary-foreground text-xs sm:text-xs">
         <div className="container-main flex items-center justify-center sm:justify-between py-2 sm:py-1.5 gap-4">
           <div className="hidden sm:flex items-center gap-4">
-            <a href="tel:+41791318878" className="flex items-center gap-1 hover:underline">
-              <Phone className="w-3 h-3" /> +41 79 131 88 78
+            <a href="tel:+491719539922" className="flex items-center gap-1.5 hover:underline">
+              🇩🇪 {isDE ? "Deutschland" : "Germany"} <Phone className="w-3 h-3" /> +49 171 953 99 22
             </a>
-            <span className="opacity-50">·</span>
-            <a href="tel:+491719539922" className="flex items-center gap-1 hover:underline">
-              <Phone className="w-3 h-3" /> +49 171 953 99 22
+            <span className="opacity-50">|</span>
+            <a href="tel:+41791318878" className="flex items-center gap-1.5 hover:underline">
+              🇨🇭 {isDE ? "Schweiz" : "Switzerland"} <Phone className="w-3 h-3" /> +41 79 131 88 78
             </a>
           </div>
           <div className="flex items-center gap-2 text-sm sm:text-xs">
-            <span className="text-xs opacity-70 hidden sm:inline">{isDE ? "Standorte: Deutschland · Schweiz" : "Locations: Germany · Switzerland"}</span>
-            <span className="opacity-50 hidden sm:inline">|</span>
             <div className="relative" ref={langDropdownRef}>
               <button onClick={() => setLangDropdownOpen(!langDropdownOpen)} className="flex items-center gap-1.5 hover:underline font-medium">
                 {currentLanguage.flag} {currentLanguage.label} <ChevronDown className="w-3 h-3" />
