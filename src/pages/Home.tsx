@@ -320,10 +320,15 @@ export default function Home() {
             </h1>
             <p className="italic font-semibold text-cta text-sm">{isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}</p>
             <div className="text-sm text-foreground/80 leading-snug">
-              <p className="mb-1.5">
+              <p className="mb-1">
                 {isEN
-                  ? <>Expert psychological knowledge, modern hypnosis and profound transformation – established in Germany 🇩🇪, Switzerland 🇨🇭 and internationally 🌍.</>
-                  : <>Fundiertes psychologisches Fachwissen, moderne Hypnose und tiefgreifende Transformation – etabliert in Deutschland 🇩🇪, der Schweiz 🇨🇭 und international 🌍.</>}
+                  ? "Expert psychological knowledge, modern hypnosis and profound transformation."
+                  : "Fundiertes psychologisches Fachwissen, moderne Hypnose und tiefgreifende Transformation."}
+              </p>
+              <p className="mb-2 text-xs font-medium tracking-wide">
+                {isEN
+                  ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
+                  : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
               </p>
               <ul className="space-y-0.5 text-xs">
                 <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "Over 40 years of experience" : "Über 40 Jahre Erfahrung"}</li>
