@@ -487,7 +487,7 @@ export default function Home() {
             </div>
             {/* 7 – 35+ Years */}
             <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
-              <div className="text-xl md:text-3xl font-bold text-primary mb-1">40+</div>
+              <div className="text-xl md:text-3xl font-bold text-primary mb-1">35+</div>
               <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Years of Experience" : "Jahre Erfahrung"}</h3>
               <p className="text-[0.6rem] md:text-xs text-muted-foreground">30.000+ {isEN ? "Sessions" : "Sitzungen"}</p>
             </div>

@@ -59,7 +59,7 @@ export default function UeberUns() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
                 <div className="border border-border p-4 text-center bg-[#f4f3ef]">
                   <Award className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
-                  <p className="text-xl font-bold text-[#1B3A5C]">40+</p>
+                  <p className="text-xl font-bold text-[#1B3A5C]">35+</p>
                   <p className="text-xs text-muted-foreground">{isEN ? "Years Experience" : "Jahre Erfahrung"}</p>
                 </div>
                 <div className="border border-border p-4 text-center bg-[#f4f3ef]">
