@@ -86,12 +86,12 @@ const LeadConfirmationEmail = (props: LeadConfirmationProps) => {
                 <strong>{isEN ? 'Name' : 'Name'}:</strong> {props.name}
               </Text>
             )}
-            {formTypeLabel && (
+            {(isSession || isSeminar) && formTypeLabel && (
               <Text style={summaryLine}>
                 <strong>{isEN ? 'Request type' : 'Anfragetyp'}:</strong> {formTypeLabel}
               </Text>
             )}
-            {props.concern && (
+            {(isSession || isSeminar) && props.concern && (
               <Text style={summaryLine}>
                 <strong>{isEN ? 'Concern' : 'Anliegen'}:</strong> {props.concern}
               </Text>
