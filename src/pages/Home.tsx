@@ -405,7 +405,7 @@ export default function Home() {
                 : "Auch wenn viele anfangs unsicher sind – der Prozess führt in einen Zustand fokussierter Klarheit, in dem Transformation möglich wird."}
             </p>
             {/* Photo inline on mobile only */}
-            <div className="rounded-lg overflow-hidden md:hidden">
+            <div className="rounded-lg overflow-hidden md:hidden max-w-[240px]">
               <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-auto object-cover object-top rounded-lg" loading="lazy" width={1200} height={800} />
             </div>
             <div className="flex items-center gap-2 bg-secondary rounded-md p-2">
