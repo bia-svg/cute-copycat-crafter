@@ -18,8 +18,8 @@ export const pageSEO = {
     descriptionEN: "Permanently overcome anxiety and phobias with hypnotherapy. Fear of flying, heights, claustrophobia, spider phobia, panic attacks. David J. Woods — Zurich & Augsburg.",
   },
   weight: {
-    titleDE: "Abnehmen durch Hypnose — Essverhalten nachhaltig verändern",
-    titleEN: "Weight Loss with Hypnosis — Change Eating Habits Sustainably",
+    titleDE: "Abnehmen durch Hypnose — Deutschland & Schweiz",
+    titleEN: "Weight Loss with Hypnosis — Germany & Switzerland",
     descriptionDE: "Abnehmen durch Hypnose mit David J. Woods. Essverhalten nachhaltig verändern ohne Diät. Über 40 Jahre Erfahrung. Praxen in Zürich & Augsburg.",
     descriptionEN: "Weight loss through hypnosis with David J. Woods. Sustainably change eating habits without dieting. 40+ years experience. Practices in Zurich & Augsburg.",
   },
