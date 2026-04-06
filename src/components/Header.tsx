@@ -172,7 +172,7 @@ export default function Header() {
                   {languageOptions.map(opt => (
                     <button key={opt.value} onClick={() => { setLanguage(opt.value); setLangDropdownOpen(false); }}
                       className={`w-full text-left px-3 py-2 text-sm hover:bg-secondary ${opt.value === language ? "font-bold" : ""}`}>
-                      {opt.label}
+                      {opt.flag} {opt.label}
                     </button>
                   ))}
                 </div>
