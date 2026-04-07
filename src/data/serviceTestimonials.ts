@@ -105,8 +105,8 @@ export const serviceTestimonials: Record<string, ServiceTestimonial[]> = {
     {
       name: "Jana Kaprol",
       rating: 5,
-      textDE: "David hat mit seiner wunderbar einfühlsamen Art jeden von uns individuell angesprochen.",
-      textEN: "David, with his wonderfully empathetic approach, addressed each of us individually.",
+      textDE: "David ist mit seiner wundervoll emphatischen Art auf jeden von uns sehr individuell eingegangen. Ich bin sehr dankbar für den wertvollen Input des Seminars. Ich, als erfahrene Hypnotiseurin, durfte wieder einiges dazulernen und mich ganz neu inspirieren lassen :-) Das war großartig!",
+      textEN: "David, with his wonderfully empathetic approach, addressed each of us very individually. I am very grateful for the valuable input from the seminar. As an experienced hypnotist, I was able to learn new things and find fresh inspiration :-) It was fantastic!",
       link: "https://www.google.com/maps/reviews/ChZDSUhNMG9nS0VJQ0FnSUM1OVB6SVZBEAE",
     },
   ],
