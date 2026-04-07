@@ -638,7 +638,7 @@ export default function Ausbildung() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6 text-white/60 text-sm">
             <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-white/80 transition-colors">
               <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-              5.0 — 264 Google {isEN ? "Reviews" : "Bewertungen"}
+              5.0 — 266 Google {isEN ? "Reviews" : "Bewertungen"}
             </a>
           </div>
         </div>
