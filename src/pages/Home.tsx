@@ -497,7 +497,7 @@ export default function Home() {
                 {[1,2,3,4,5].map(i => <Star key={i} className="w-3.5 h-3.5 md:w-4 md:h-4 fill-yellow-400 text-yellow-400" />)}
               </div>
               <h3 className="font-semibold text-xs md:text-sm text-foreground">5.0 Google Reviews</h3>
-              <p className="text-[0.6rem] md:text-xs text-muted-foreground">264 {isEN ? "Reviews" : "Bewertungen"}</p>
+              <p className="text-[0.6rem] md:text-xs text-muted-foreground"><p className="text-[0.6rem] md:text-xs text-muted-foreground">266 {isEN ? "Reviews" : "Bewertungen"}</p></p>
             </a>
           </div>
         </div>

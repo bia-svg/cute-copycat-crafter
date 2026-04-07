@@ -54,7 +54,7 @@ export default function CityAugsburg() {
               <div className="space-y-2 mb-6">
                 <div className="flex items-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> NGH International Trainer</div>
                 <div className="flex items-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Over 35+ years experience" : "Über 35+ Jahre Erfahrung"}</div>
-                <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-[#2E7D32] transition-colors"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "★ 5.0 Google (264 Reviews)" : "★ 5.0 Google (264 Bewertungen)"}</a>
+                <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-[#2E7D32] transition-colors"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-[#2E7D32] transition-colors"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "★ 5.0 Google (266 Reviews)" : "★ 5.0 Google (266 Bewertungen)"}</a></a>
                 
               </div>
               <a href="https://maps.google.com/?q=Regus,+Viktoria+Str.+3b,+86150+Augsburg" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm text-muted-foreground border border-border p-3 bg-[#f4f3ef] mb-6 hover:text-[#2E7D32] transition-colors">
