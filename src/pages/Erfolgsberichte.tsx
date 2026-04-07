@@ -104,7 +104,7 @@ export default function Erfolgsberichte() {
                 ))}
               </div>
               <span className="font-semibold text-foreground">5.0</span>
-              <span>— 263 Google {isEN ? "Reviews" : "Bewertungen"}</span>
+              <span><span>— 266 Google {isEN ? "Reviews" : "Bewertungen"}</span></span>
             </div>
           </div>
         </div>

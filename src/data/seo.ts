@@ -66,10 +66,10 @@ export const pageSEO = {
     descriptionEN: "David J. Woods: Lic.Psych., Hypnotherapist, Lecturer & Author. 35+ years experience, 30,000+ sessions, ★ 5.0 Google rating. NGH International Trainer.",
   },
   testimonials: {
-    titleDE: "Kundenmeinungen — ★ 5.0 Google Bewertung · 263 Rezensionen",
-    titleEN: "Client Testimonials — ★ 5.0 Google Rating · 263 Reviews",
-    descriptionDE: "Lesen Sie Kundenmeinungen über Hypnosetherapie mit David J. Woods. ★ 5.0 Google-Bewertung, 263 Rezensionen. Erfahrungsberichte zu Raucherentwöhnung, Ängsten, Abnehmen und mehr.",
-    descriptionEN: "Read client testimonials about hypnotherapy with David J. Woods. ★ 5.0 Google rating, 263 reviews. Experiences with quitting smoking, anxiety, weight loss and more.",
+    titleDE: "Kundenmeinungen — ★ 5.0 Google Bewertung · 266 Rezensionen",
+    titleEN: "Client Testimonials — ★ 5.0 Google Rating · 266 Reviews",
+    descriptionDE: "Lesen Sie Kundenmeinungen über Hypnosetherapie mit David J. Woods. ★ 5.0 Google-Bewertung, 266 Rezensionen. Erfahrungsberichte zu Raucherentwöhnung, Ängsten, Abnehmen und mehr.",
+    descriptionEN: "Read client testimonials about hypnotherapy with David J. Woods. ★ 5.0 Google rating, 266 reviews. Experiences with quitting smoking, anxiety, weight loss and more.",
   },
   successStories: {
     titleDE: "Erfolgsberichte — Video-Erfahrungsberichte unserer Klienten",
