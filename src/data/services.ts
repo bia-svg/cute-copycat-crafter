@@ -354,7 +354,7 @@ export const weightData: ServicePageData = {
   ],
   image: `${CDN}/weight_loss_hypnose_e8b657b0.jpg`,
   faqCH: [
-    { q: "Wie schnell kann ich mit Hypnose abnehmen?", a: "Hypnose ist kein Wundermittel für schnelles Abnehmen, sondern verändert Ihr Essverhalten nachhaltig. Die meisten Klienten berichten von spürbaren Veränderungen bereits nach der ersten Sitzung." },
+    { q: "Wie schnell kann ich mit Hypnose abnehmen?", a: "Hypnose sorgt nicht dafür, dass der Körper „magisch“ Gewicht verliert – sie hilft dabei, genau die inneren Muster zu verändern, die das Abnehmen bisher erschwert haben. Viele Menschen essen nicht nur aus Hunger, sondern aus Gewohnheit, Stress, Frust, Langeweile, Belohnung oder alten emotionalen Verknüpfungen. Genau dort setzt Hypnose an: Sie kann helfen, das Essverhalten bewusster zu steuern, Heißhunger und unnötige Essimpulse zu reduzieren, alte Gewohnheiten zu durchbrechen und die Motivation für gesündere Entscheidungen deutlich zu stärken. Wie schnell jemand abnimmt, hängt deshalb immer vom bisherigen Essverhalten, dem Lebensstil und der tatsächlichen Umsetzung im Alltag ab. Viele Klienten spüren jedoch bereits nach der ersten intensiven Sitzung, dass sie weniger aus emotionalen Gründen essen, schneller satt sind und leichter in ein natürliches Kaloriendefizit kommen – ohne ständig das Gefühl zu haben, auf etwas verzichten zu müssen." },
     { q: "Muss ich während der Hypnose-Therapie eine Diät machen?", a: "Nein, das Ziel ist es, Ihr inneres Programm so zu verändern, dass gesündere Entscheidungen natürlich und ohne Zwang fallen." },
     { q: "Hilft Hypnose auch bei emotionalem Essen?", a: "Ja, gerade bei emotionalem Essen ist Hypnose besonders wirksam, da sie direkt an den unterbewussten Auslösern ansetzt." },
   ],
