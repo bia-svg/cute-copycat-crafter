@@ -280,7 +280,7 @@ export default function Home() {
             </div>
 
             <div className="space-y-4 text-center">
-              <h1 className="text-[1.65rem] lg:text-[2.1rem] font-bold text-foreground leading-tight tracking-tight">
+              <h1 className="text-[1.5rem] lg:text-[1.85rem] font-semibold text-foreground leading-tight tracking-tight">
                 Lic. Psych. David J. Woods
               </h1>
               <p className="text-sm font-semibold tracking-wide text-foreground/70">
