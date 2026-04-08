@@ -429,19 +429,18 @@ export default function Ausbildung() {
               onClick={() => setActiveTab("ch")}
               className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg border-2 font-semibold text-sm transition-all ${
                 activeTab === "ch"
-                  ? "border-[#1B3A5C] bg-[#1B3A5C] text-white shadow-md"
-                  : "border-border bg-white text-[#1B3A5C] hover:border-[#1B3A5C]/40"
+                  ? "border-primary bg-primary/15 text-foreground shadow-md"
+                  : "border-border bg-white text-foreground hover:border-primary/40"
               }`}
             >
-              <span className="text-lg">🇨🇭</span>
-              {isEN ? "Switzerland" : "Schweiz"}
+              🇨🇭 {isEN ? "Switzerland" : "Schweiz"}
             </button>
             <button
               onClick={() => setActiveTab("de")}
               className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg border-2 font-semibold text-sm transition-all ${
                 activeTab === "de"
-                  ? "border-[#1B3A5C] bg-[#1B3A5C] text-white shadow-md"
-                  : "border-border bg-white text-[#1B3A5C] hover:border-[#1B3A5C]/40"
+                  ? "border-primary bg-primary/15 text-foreground shadow-md"
+                  : "border-border bg-white text-foreground hover:border-primary/40"
               }`}
             >
               <span className="text-lg">🇩🇪</span>
@@ -619,12 +618,12 @@ export default function Ausbildung() {
         ]}
       />
 
-      <section className="bg-[#1B3A5C] text-white">
+      <section className="bg-primary/15">
         <div className="container-main py-12 lg:py-16 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: "Georgia, serif" }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Your Journey Starts Here" : "Ihre Reise beginnt hier"}
           </h2>
-          <p className="text-white/80 max-w-xl mx-auto mb-6">
+          <p className="text-muted-foreground max-w-xl mx-auto mb-6">
             {isEN
               ? "In 6 days, you'll have the skills, the confidence, and the diploma to help people transform their lives. The only question is: are you ready?"
               : "In 6 Tagen haben Sie die Fähigkeiten, das Selbstvertrauen und das Diplom, um Menschen bei der Transformation ihres Lebens zu helfen. Die einzige Frage ist: Sind Sie bereit?"}
@@ -635,8 +634,8 @@ export default function Ausbildung() {
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </Link>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6 text-white/60 text-sm">
-            <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-white/80 transition-colors">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6 text-muted-foreground text-sm">
+            <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-foreground transition-colors">
               <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
               5.0 — 266 Google {isEN ? "Reviews" : "Bewertungen"}
             </a>
