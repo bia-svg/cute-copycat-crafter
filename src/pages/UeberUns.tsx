@@ -8,6 +8,7 @@ import { CDN } from "@/lib/cdn";
 import davidPortrait from "@/assets/david-woods-portrait.webp";
 import diplomNGHCertified from "@/assets/diplom-ngh-certified-instructor.webp";
 import ImageLightbox from "@/components/ImageLightbox";
+import AcademicSeal from "@/components/AcademicSeal";
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";

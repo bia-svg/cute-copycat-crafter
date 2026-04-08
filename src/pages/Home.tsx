@@ -4,6 +4,7 @@ import { pageSEO } from "@/data/seo";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
 import ServiceCard from "@/components/ServiceCard";
+import AcademicSeal from "@/components/AcademicSeal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import InlineContactForm from "@/components/InlineContactForm";
