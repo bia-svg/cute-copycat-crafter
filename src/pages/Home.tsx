@@ -298,11 +298,12 @@ export default function Home() {
                     : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
                 </p>
                 <ul className="space-y-1 text-sm">
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Over 35+ years of experience" : "Über 35+ Jahre Erfahrung"}</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "More than 30,000 sessions conducted" : "Mehr als 30.000 durchgeführte Sitzungen"}</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Over 2,500 trained hypnotherapists" : "Über 2.500 ausgebildete Hypnotiseure"}</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? 'Author of "Go Inside" & professional MP3 downloads' : "Autor von Go Inside und Entwickler professioneller MP3-Downloads"}</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "International media presence with 30+ TV appearances" : "Internationale Medienpräsenz mit über 30 internationalen TV-Auftritten"}</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Author of Go Inside" : "Autor von Go Inside"}</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Professional MP3 programs" : "Professionelle MP3-Programme"}</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
                 </ul>
               </div>
 
@@ -331,11 +332,12 @@ export default function Home() {
                   : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
               </p>
               <ul className="space-y-0.5 text-xs">
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "Over 35+ years of experience" : "Über 35+ Jahre Erfahrung"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "More than 30,000 sessions conducted" : "Mehr als 30.000 durchgeführte Sitzungen"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "Over 2,500 trained hypnotherapists" : "Über 2.500 ausgebildete Hypnotiseure"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? 'Author of "Go Inside" & professional MP3 downloads' : "Autor von Go Inside und Entwickler professioneller MP3-Downloads"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "International media presence with 30+ TV appearances" : "Internationale Medienpräsenz mit über 30 internationalen TV-Auftritten"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "Author of Go Inside" : "Autor von Go Inside"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "Professional MP3 programs" : "Professionelle MP3-Programme"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
               </ul>
             </div>
             <div className="relative aspect-[4/3] max-h-[240px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "180px" }}>
