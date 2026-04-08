@@ -160,8 +160,8 @@ export default function UeberUns() {
 
             {/* Lic.Psych */}
             <div className="bg-white border border-border p-4 md:p-6 rounded-lg shadow-sm text-center">
-              <div className="w-12 h-12 md:w-20 md:h-20 bg-[#1B3A5C] flex items-center justify-center mx-auto mb-2 md:mb-4">
-                <span className="text-white text-[0.6rem] md:text-lg font-bold text-center leading-tight">Lic.<br/>Psych.</span>
+              <div className="w-12 h-12 md:w-20 md:h-20 rounded-full border-2 border-primary/40 bg-primary/8 flex items-center justify-center mx-auto mb-2 md:mb-4 shadow-[inset_0_0_0_3px_hsl(var(--primary)/0.12)]">
+                <span className="text-primary text-[0.6rem] md:text-base font-bold text-center leading-tight tracking-wide font-serif italic">Lic.<br/>Psych.</span>
               </div>
               <h3 className="font-semibold text-xs md:text-sm text-[#1B3A5C] mb-1 md:mb-2">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
               <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
