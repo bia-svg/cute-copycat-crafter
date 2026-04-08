@@ -4,7 +4,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { getPath } from "@/lib/routes";
 import { CDN } from "@/lib/cdn";
 import {
-  Menu, X, ChevronDown, Phone,
+  Menu, X, ChevronDown, Phone, Home,
   Cigarette, Brain, Scale, Flame, HeartPulse, Users,
   GraduationCap, Building2, Tv, Star, MessageSquare, User,
   BookOpen, MapPin, Trophy, Newspaper, Award, Calendar, Shield
@@ -228,10 +228,15 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Mobile toggle */}
-        <button className="lg:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile home + toggle */}
+        <div className="flex items-center gap-1 lg:hidden">
+          <Link to={getPath("home", language, country)} className="p-2 text-muted-foreground hover:text-primary transition-colors" aria-label="Home">
+            <Home className="w-5 h-5" />
+          </Link>
+          <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)}>
+            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* ── Mega Menu: Hypnosetherapie ── */}
