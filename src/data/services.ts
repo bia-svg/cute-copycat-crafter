@@ -539,7 +539,7 @@ export const depressionData: ServicePageData = {
   ],
   image: `${CDN}/depression_trauma_hypnose_6d353629.jpg`,
   faqCH: [
-    { q: "Kann Hypnose eine Psychotherapie ersetzen?", a: "Hypnose kann eine wertvolle Ergänzung zur Psychotherapie sein. Bei schweren Depressionen empfehlen wir immer auch die Zusammenarbeit mit einem Facharzt oder Psychotherapeuten." },
+    { q: "Kann Hypnose eine Psychotherapie ersetzen?", a: "Hypnose kann in vielen Fällen eine sehr direkte und wirkungsvolle Methode sein, um emotionale Ursachen und unbewusste Belastungsmuster gezielt zu bearbeiten. Während klassische Psychotherapie häufig stärker über bewusste Gespräche, Analyse und langfristige Verhaltensveränderung arbeitet, setzt Hypnose direkter an den tieferliegenden emotionalen und unterbewussten Verknüpfungen an. Dadurch können viele Themen oft schneller und gezielter erreicht werden. Dennoch kommt es immer auf die individuelle Situation an. Besonders bei schweren Depressionen oder wenn ein möglicher organischer bzw. medizinischer Hintergrund vermutet wird, sollte zusätzlich immer eine ärztliche oder psychotherapeutische Abklärung erfolgen. In vielen Fällen kann Hypnose eine sehr wertvolle eigenständige Methode sein – bei komplexeren oder schwereren Verläufen kann sie ebenso sinnvoll begleitend zu einer Psychotherapie oder medizinischen Behandlung eingesetzt werden." },
     { q: "Hilft Hypnose auch bei Traumata aus der Kindheit?", a: "Ja, Hypnose kann besonders wirksam bei der Verarbeitung von Kindheitstraumata sein, da sie direkt mit dem Unterbewusstsein arbeitet, wo diese Erlebnisse gespeichert sind." },
   ],
   faqEN: [
