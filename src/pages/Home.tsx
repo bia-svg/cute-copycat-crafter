@@ -280,22 +280,22 @@ export default function Home() {
             </div>
 
             <div className="space-y-4 text-center">
-              <h1 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight tracking-tight">
+              <h1 className="text-[1.65rem] lg:text-[2.1rem] font-bold text-foreground leading-tight tracking-tight">
                 Lic. Psych. David J. Woods
               </h1>
+              <p className="text-sm font-semibold tracking-wide text-foreground/70">
+                {isEN
+                  ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
+                  : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
+              </p>
               <p className="text-lg italic font-semibold text-cta">
                 {isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}
               </p>
               <div className="text-foreground/80 leading-relaxed text-[0.95rem] flex flex-col items-center">
-                <p className="mb-1 text-center">
+                <p className="mb-3 text-center">
                   {isEN
                     ? "Psychology · Hypnosis · Deep Transformation"
                     : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
-                </p>
-                <p className="mb-3 text-sm font-medium tracking-wide text-center">
-                  {isEN
-                    ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
-                    : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
                 </p>
                 <ul className="space-y-1 text-sm text-left">
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
@@ -316,20 +316,20 @@ export default function Home() {
           </div>
         ) : (
           <div className="container-main py-4 space-y-3 text-center">
-            <h1 className="text-2xl font-bold text-foreground leading-tight tracking-tight">
+            <h1 className="text-xl font-bold text-foreground leading-tight tracking-tight">
               Lic. Psych. David J. Woods
             </h1>
+            <p className="text-xs font-semibold tracking-wide text-foreground/70">
+              {isEN
+                ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
+                : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
+            </p>
             <p className="italic font-semibold text-cta text-sm">{isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}</p>
             <div className="text-sm text-foreground/80 leading-snug">
-              <p className="mb-1">
+              <p className="mb-2">
                 {isEN
                   ? "Psychology · Hypnosis · Deep Transformation"
                   : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
-              </p>
-              <p className="mb-2 text-xs font-medium tracking-wide">
-                {isEN
-                  ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
-                  : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
               </p>
               <ul className="space-y-0.5 text-xs inline-block text-left">
                 <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
