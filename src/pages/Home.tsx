@@ -459,8 +459,8 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto">
             {/* 1 – Licensed Psychologist */}
             <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-primary/40 bg-primary/8 flex items-center justify-center shrink-0 mx-auto mb-2 shadow-[inset_0_0_0_2px_hsl(var(--primary)/0.12)]">
-                <span className="text-primary text-[0.55rem] md:text-[0.65rem] font-bold text-center leading-tight tracking-wide font-serif italic">Lic.<br/>Psych.</span>
+              <div className="mb-2">
+                <AcademicSeal size="sm" />
               </div>
               <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
             </div>
