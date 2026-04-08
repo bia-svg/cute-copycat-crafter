@@ -235,8 +235,8 @@ export default function Header() {
           </Link>
           <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
+          </button>
+        </div>
 
       {/* ── Mega Menu: Hypnosetherapie ── */}
       <MegaMenuPanel id="sessions">
