@@ -272,6 +272,19 @@ export default function Ausbildung() {
               </p>
             </div>
           </div>
+
+          {/* EMR Badge */}
+          <div className="mt-6 md:mt-8 flex flex-col items-center text-center">
+            <div className="inline-flex items-center gap-2 bg-[#e8f5e9] border border-[#a5d6a7] rounded-full px-4 py-1.5">
+              <img src={CDN.emrBadge} alt="EMR Badge" className="w-5 h-5 object-contain" />
+              <span className="text-xs font-semibold text-[#2E7D32] tracking-wide">EMR Krankenkasse konform</span>
+            </div>
+            <p className="mt-2 text-[11px] text-muted-foreground max-w-md leading-relaxed">
+              {isEN
+                ? "EMR-compliant structure. Upon request, participants receive an hours and course content certificate for possible submission."
+                : "EMR-konform aufgebaut. Auf Wunsch erhalten Teilnehmer einen Stunden- und Inhaltsnachweis zur möglichen Einreichung."}
+            </p>
+          </div>
         </div>
       </section>
 
