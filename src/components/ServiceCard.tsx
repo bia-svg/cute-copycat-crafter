@@ -43,7 +43,7 @@ export default function ServiceCard({ title, description, href, icon, image }: S
           </div>
           {/* Desktop: vertical card */}
           <div className="hidden md:block">
-            <div className="aspect-[16/9] overflow-hidden">
+            <div className="aspect-[2/1] overflow-hidden">
               <img
                 src={image}
                 alt={title}
