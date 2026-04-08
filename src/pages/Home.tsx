@@ -578,14 +578,21 @@ export default function Home() {
               </div>
 
               {/* EMR badge + arrow hint */}
-              <div className="flex items-center justify-center gap-3">
-                <div className="inline-flex items-center gap-1.5 bg-[hsl(160,30%,95%)] border border-[hsl(160,25%,82%)] rounded-lg px-3 py-1.5 md:px-4 md:py-2">
-                  <CheckCircle className="w-3.5 h-3.5 text-cta flex-shrink-0" />
-                  <span className="text-[10px] md:text-xs font-semibold text-foreground/85 tracking-wide">EMR Krankenkasse Konform</span>
+              <div className="flex flex-col items-center gap-1.5">
+                <div className="flex items-center justify-center gap-3">
+                  <div className="inline-flex items-center gap-1.5 bg-[hsl(160,30%,95%)] border border-[hsl(160,25%,82%)] rounded-lg px-3 py-1.5 md:px-4 md:py-2">
+                    <CheckCircle className="w-3.5 h-3.5 text-cta flex-shrink-0" />
+                    <span className="text-[10px] md:text-xs font-semibold text-foreground/85 tracking-wide">EMR Krankenkasse Konform</span>
+                  </div>
+                  <span className="text-xs md:text-sm font-semibold text-primary flex items-center gap-1">
+                    {isEN ? "View Details" : "Details ansehen"} →
+                  </span>
                 </div>
-                <span className="text-xs md:text-sm font-semibold text-primary flex items-center gap-1">
-                  {isEN ? "View Details" : "Details ansehen"} →
-                </span>
+                <p className="text-[9px] md:text-[11px] text-muted-foreground/80 text-center max-w-xs md:max-w-sm leading-snug">
+                  {isEN
+                    ? "EMR-compliant structure. Participants receive an optional hours and course content certificate for possible submission."
+                    : "EMR-konform aufgebaut. Auf Wunsch erhalten Teilnehmer einen Stunden- und Inhaltsnachweis zur möglichen Einreichung."}
+                </p>
               </div>
             </div>
           </Link>
