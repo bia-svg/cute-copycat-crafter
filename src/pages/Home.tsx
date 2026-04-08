@@ -547,13 +547,13 @@ export default function Home() {
                 <img
                   src={CDN.trainingSeminar}
                   alt={isEN ? "Professional hypnotherapy training seminar" : "Professionelles Hypnosetherapie-Ausbildungsseminar"}
-                  className="w-full h-32 md:h-52 object-cover"
+                  className="w-full h-40 md:h-52 object-cover"
                   loading="lazy"
                 />
               </div>
             </div>
 
-            <div className="px-5 pb-6 md:px-10 md:pb-10">
+            <div className="px-5 pb-7 md:px-10 md:pb-10">
               {/* Compact intro */}
               <p className="text-foreground/75 text-[11px] md:text-sm mb-3 md:mb-5 text-center max-w-lg mx-auto leading-snug">
                 {isEN
@@ -562,7 +562,7 @@ export default function Home() {
               </p>
 
               {/* Stats — compact grid */}
-              <div className="grid grid-cols-5 gap-1.5 md:gap-3 mb-3 md:mb-5">
+              <div className="grid grid-cols-3 md:grid-cols-5 gap-2 md:gap-3 mb-4 md:mb-5">
                 {[
                   { num: "350+", label: isEN ? "Pages Manual" : "Seiten Mappe" },
                   { num: "150+", label: isEN ? "Example Texts" : "Beispieltexte" },
