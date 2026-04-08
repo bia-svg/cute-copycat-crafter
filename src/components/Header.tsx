@@ -228,9 +228,13 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Mobile toggle */}
-        <button className="lg:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        {/* Mobile home + toggle */}
+        <div className="flex items-center gap-1 lg:hidden">
+          <Link to={getPath("home", language, country)} className="p-2 text-muted-foreground hover:text-primary transition-colors" aria-label="Home">
+            <Home className="w-5 h-5" />
+          </Link>
+          <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)}>
+            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
