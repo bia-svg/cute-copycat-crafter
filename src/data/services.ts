@@ -446,7 +446,7 @@ export const stressData: ServicePageData = {
   ],
   image: `${CDN}/stress_burnout_hypnose_9be40f00.jpg`,
   faqCH: [
-    { q: "Kann Hypnose bei chronischem Stress helfen?", a: "Ja, Hypnose kann die inneren Stressmuster gezielt verändern und so zu einer dauerhaften Stressreduktion beitragen." },
+    { q: "Kann Hypnose bei chronischem Stress helfen?", a: "Ja, Hypnose kann bei chronischem Stress sehr wirksam unterstützen, indem sie nicht nur kurzfristig entspannt, sondern die eigentlichen inneren Stressmuster gezielt beeinflusst. Viele Menschen stehen über längere Zeit unter Druck, bis der Körper in einen dauerhaften Alarmzustand gerät und das Nervensystem selbst normale Alltagssituationen bereits als Belastung bewertet. Genau hier setzt Hypnose an: Sie kann helfen, die automatische Stressreaktion zu reduzieren, das Nervensystem zu beruhigen und mehr innere Gelassenheit sowie emotionale Stabilität aufzubauen. Gleichzeitig unterstützt sie dabei, die eigene Resilienz zu stärken, sich besser abzugrenzen und mit Belastungen bewusster und ruhiger umzugehen. So entsteht nicht nur Entspannung im Moment, sondern oft eine nachhaltige Veränderung im Umgang mit Stress." },
     { q: "Wie erkenne ich, ob ich Burnout-gefährdet bin?", a: "Typische Anzeichen sind chronische Erschöpfung, Schlafprobleme, Konzentrationsschwierigkeiten, ein Gefühl der inneren Leere und zunehmende Gleichgültigkeit gegenüber Dingen, die Ihnen früher wichtig waren." },
     { q: "Wie viele Sitzungen sind bei Burnout nötig?", a: "Die Anzahl hängt von der Schwere der Situation ab. Viele Klienten berichten nach 2-4 Sitzungen von deutlichen Verbesserungen." },
   ],
