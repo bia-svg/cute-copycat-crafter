@@ -279,7 +279,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 text-center">
               <h1 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight tracking-tight">
                 Lic. Psych. David J. Woods
               </h1>
@@ -297,7 +297,7 @@ export default function Home() {
                     ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
                     : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
                 </p>
-                <ul className="space-y-1 text-sm">
+                <ul className="space-y-1 text-sm inline-block text-left">
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
