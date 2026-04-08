@@ -18,11 +18,10 @@ const BackToTop = () => {
       onClick={scrollToTop}
       aria-label="Back to top"
       className={`fixed bottom-6 left-6 z-40 w-10 h-10 rounded-full
-        bg-white/90 backdrop-blur-sm border border-border/60
-        shadow-[0_2px_12px_-2px_rgba(0,0,0,0.12)]
+        bg-white border-2 border-[#5B6878]
+        shadow-[0_2px_10px_-2px_rgba(0,0,0,0.15)]
         flex items-center justify-center
-        text-muted-foreground hover:text-primary hover:border-primary/30
-        hover:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.18)]
+        text-[#5B6878] hover:bg-[#5B6878] hover:text-white
         transition-all duration-300
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
     >
