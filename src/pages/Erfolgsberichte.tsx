@@ -171,22 +171,27 @@ export default function Erfolgsberichte() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-primary text-primary-foreground py-12 md:py-16">
-        <div className="container-main text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: "Georgia, serif" }}>
-            {isEN ? "Write Your Own Success Story" : "Schreiben Sie Ihre eigene Erfolgsgeschichte"}
-          </h2>
-          <p className="opacity-80 max-w-xl mx-auto mb-6">
-            {isEN
-              ? "Book your free discovery call and take the first step towards positive change."
-              : "Vereinbaren Sie Ihr kostenloses Erstgespräch und machen Sie den ersten Schritt zu positiver Veränderung."}
-          </p>
-          <Link to={getPath("contact", language, country)}>
-            <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold px-8 py-3">
-              <MessageSquare className="w-4 h-4 mr-2" />
-              {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
-            </Button>
-          </Link>
+      <section className="bg-background py-10 lg:py-14">
+        <div className="container-main">
+          <div className="relative max-w-2xl mx-auto bg-primary/10 border border-primary/25 rounded-2xl px-6 py-10 md:px-10 md:py-12 text-center shadow-sm">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full tracking-wide uppercase">
+              {isEN ? "Next Step" : "Nächster Schritt"}
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "Write Your Own Success Story" : "Schreiben Sie Ihre eigene Erfolgsgeschichte"}
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto mb-6">
+              {isEN
+                ? "Book your free discovery call and take the first step towards positive change."
+                : "Vereinbaren Sie Ihr kostenloses Erstgespräch und machen Sie den ersten Schritt zu positiver Veränderung."}
+            </p>
+            <Link to={getPath("contact", language, country)}>
+              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold px-8 py-3 text-base">
+                <MessageSquare className="w-4 h-4 mr-2" />
+                {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
     </>

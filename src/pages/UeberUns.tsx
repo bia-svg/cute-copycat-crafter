@@ -406,21 +406,26 @@ export default function UeberUns() {
       />
 
       {/* CTA Section */}
-      <section className="bg-[#8b827c] text-white">
-        <div className="container-main py-10 text-center">
-          <h2 className="text-2xl font-bold mb-3">
-            {isEN ? "Ready for Lasting Change?" : "Bereit für nachhaltige Veränderung?"}
-          </h2>
-          <p className="text-white/80 mb-6 max-w-xl mx-auto">
-            {isEN
-              ? "Book your free and non-binding discovery call. We take time for you and advise you individually."
-              : "Vereinbaren Sie jetzt Ihr kostenloses und unverbindliches Erstgespräch. Wir nehmen uns Zeit für Sie und beraten Sie individuell."}
-          </p>
-          <Link to={getPath("contact", language, country)}>
-            <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-base">
-              {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
-            </Button>
-          </Link>
+      <section className="bg-background py-10 lg:py-14">
+        <div className="container-main">
+          <div className="relative max-w-2xl mx-auto bg-primary/10 border border-primary/25 rounded-2xl px-6 py-10 md:px-10 md:py-12 text-center shadow-sm">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full tracking-wide uppercase">
+              {isEN ? "Next Step" : "Nächster Schritt"}
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "Ready for Lasting Change?" : "Bereit für nachhaltige Veränderung?"}
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto mb-6">
+              {isEN
+                ? "Book your free and non-binding discovery call. We take time for you and advise you individually."
+                : "Vereinbaren Sie jetzt Ihr kostenloses und unverbindliches Erstgespräch. Wir nehmen uns Zeit für Sie und beraten Sie individuell."}
+            </p>
+            <Link to={getPath("contact", language, country)}>
+              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold px-8 py-3 text-base">
+                {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
     </>

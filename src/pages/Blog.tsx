@@ -87,21 +87,26 @@ export default function Blog() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 bg-[#f4f3ef] border-t border-border">
-        <div className="container-main text-center">
-          <h2 className="text-2xl font-bold text-[#1B3A5C] mb-3">
-            {isDE ? "Haben Sie Fragen zur Hypnose?" : "Have questions about hypnosis?"}
-          </h2>
-          <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-            {isDE
-              ? "Vereinbaren Sie ein kostenloses Erstgespräch und erfahren Sie, wie Aktiv-Hypnose© Ihnen helfen kann."
-              : "Book a free discovery call and learn how Aktiv-Hypnose© can help you."}
-          </p>
-          <Link to={getPath("contact", language, country)}>
-            <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3">
-              {isDE ? "Kostenloses Erstgespräch" : "Free Discovery Call"}
-            </Button>
-          </Link>
+      <section className="bg-background py-10 lg:py-14">
+        <div className="container-main">
+          <div className="relative max-w-2xl mx-auto bg-primary/10 border border-primary/25 rounded-2xl px-6 py-10 md:px-10 md:py-12 text-center shadow-sm">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full tracking-wide uppercase">
+              {isDE ? "Nächster Schritt" : "Next Step"}
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4" style={{ fontFamily: "Georgia, serif" }}>
+              {isDE ? "Haben Sie Fragen zur Hypnose?" : "Have questions about hypnosis?"}
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto mb-6">
+              {isDE
+                ? "Vereinbaren Sie ein kostenloses Erstgespräch und erfahren Sie, wie Aktiv-Hypnose© Ihnen helfen kann."
+                : "Book a free discovery call and learn how Aktiv-Hypnose© can help you."}
+            </p>
+            <Link to={getPath("contact", language, country)}>
+              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold px-8 py-3 text-base">
+                {isDE ? "Kostenloses Erstgespräch" : "Free Discovery Call"}
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
     </>
