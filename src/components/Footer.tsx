@@ -27,7 +27,7 @@ export default function Footer() {
   const [institutesOpen, setInstitutesOpen] = useState(false);
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-primary/15 text-foreground">
       <div className="container-main py-12">
         <div className="grid md:grid-cols-[1fr_2fr] gap-8">
           {/* Logo & Info + Institutes (stacked on desktop) */}
