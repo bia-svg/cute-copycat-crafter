@@ -43,13 +43,13 @@ export default function ServiceCard({ title, description, href, icon, image }: S
           </div>
           {/* Desktop: vertical card */}
           <div className="hidden md:block">
-            <div className="aspect-[2/1] overflow-hidden">
+            <div className="aspect-[5/3] overflow-hidden">
               <img
                 src={image}
                 alt={title}
                 width={640}
-                height={360}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                height={384}
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
             </div>
