@@ -128,22 +128,22 @@ export default function UeberUns() {
 
       {/* Diplomas & Credentials Section — with images */}
       <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-10">
-          <h2 className="text-2xl font-bold text-[#1B3A5C] mb-2">
+        <div className="container-main py-6 md:py-8">
+          <h2 className="text-2xl font-bold text-[#1B3A5C] mb-1">
             {isEN ? "Diplomas & Certifications" : "Diplome & Zertifizierungen"}
           </h2>
-          <p className="text-sm text-muted-foreground mb-8 max-w-2xl">
+          <p className="text-sm text-muted-foreground mb-4 max-w-2xl">
             {isEN
               ? "Internationally recognized certifications and professional qualifications."
               : "International anerkannte Zertifizierungen und berufliche Qualifikationen."}
           </p>
 
           {/* Credential Cards with Badge Images */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 mb-10">
+          <div className="grid grid-cols-3 lg:grid-cols-3 gap-2 md:gap-3 mb-6">
             {/* NGH */}
-            <div className="bg-white border border-border p-4 md:p-6 rounded-lg shadow-sm text-center">
-              <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat" className="h-12 md:h-20 mx-auto mb-2 md:mb-4" loading="lazy" />
-              <h3 className="font-semibold text-xs md:text-sm text-[#1B3A5C] mb-1 md:mb-2">NGH International Trainer</h3>
+            <div className="bg-white border border-border p-2.5 md:p-4 rounded-lg shadow-sm text-center">
+              <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat" className="h-9 md:h-14 mx-auto mb-1.5 md:mb-2" loading="lazy" />
+              <h3 className="font-semibold text-[10px] md:text-sm text-[#1B3A5C] mb-0.5 md:mb-1">NGH International Trainer</h3>
               <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
                 {isEN
                   ? "Certified by the National Guild of Hypnotists — the world's oldest and largest hypnotherapy organization, founded in 1950 in Boston, USA."
@@ -152,18 +152,18 @@ export default function UeberUns() {
             </div>
 
             {/* EMR */}
-            <div className="bg-white border border-border p-4 md:p-6 rounded-lg shadow-sm text-center">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge" className="h-12 md:h-20 mx-auto mb-2 md:mb-4" loading="lazy" />
-              <h3 className="font-semibold text-xs md:text-sm text-[#1B3A5C] mb-1 md:mb-2">EMR Krankenkasse Konform</h3>
+            <div className="bg-white border border-border p-2.5 md:p-4 rounded-lg shadow-sm text-center">
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge" className="h-9 md:h-14 mx-auto mb-1.5 md:mb-2" loading="lazy" />
+              <h3 className="font-semibold text-[10px] md:text-sm text-[#1B3A5C] mb-0.5 md:mb-1">EMR Krankenkasse Konform</h3>
               <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
                 Von Schweizer Krankenkassen anerkannt. ZSR Nr. P609264. Viele Zusatzversicherungen übernehmen einen Teil der Kosten.
               </p>
             </div>
 
             {/* Lic.Psych */}
-            <div className="bg-white border border-border p-4 md:p-6 rounded-lg shadow-sm text-center">
-              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-16 md:h-24 w-16 md:w-24 object-contain mx-auto mb-2 md:mb-4" loading="lazy" width={512} height={512} />
-              <h3 className="font-semibold text-xs md:text-sm text-[#1B3A5C] mb-1 md:mb-2">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
+            <div className="bg-white border border-border p-2.5 md:p-4 rounded-lg shadow-sm text-center">
+              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-12 md:h-16 w-12 md:w-16 object-contain mx-auto mb-1.5 md:mb-2" loading="lazy" width={512} height={512} />
+              <h3 className="font-semibold text-[10px] md:text-sm text-[#1B3A5C] mb-0.5 md:mb-1">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
               <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
                 {isEN
                   ? "University-qualified psychologist with decades of clinical and therapeutic experience."
@@ -172,9 +172,9 @@ export default function UeberUns() {
             </div>
 
             {/* Aktiv-Hypnose Developer */}
-            <div className="bg-white border border-border p-4 md:p-6 rounded-lg shadow-sm text-center">
-              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-10 md:h-16 mx-auto mb-2 md:mb-4" loading="lazy" />
-              <h3 className="font-semibold text-xs md:text-sm text-[#1B3A5C] mb-1 md:mb-2">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
+            <div className="bg-white border border-border p-2.5 md:p-4 rounded-lg shadow-sm text-center">
+              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-7 md:h-12 mx-auto mb-1.5 md:mb-2" loading="lazy" />
+              <h3 className="font-semibold text-[10px] md:text-sm text-[#1B3A5C] mb-0.5 md:mb-1">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
               <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
                 {isEN
                   ? "Proprietary method combining clinical hypnosis with active participation for faster, lasting results."
@@ -183,11 +183,11 @@ export default function UeberUns() {
             </div>
 
             {/* Author */}
-            <Link to={getPath("book", language, country)} className="bg-white border border-border p-4 md:p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow group">
-              <div className="w-12 h-12 md:w-20 md:h-20 bg-[#2E7D32] flex items-center justify-center mx-auto mb-2 md:mb-4">
-                <BookOpen className="w-6 h-6 md:w-10 md:h-10 text-white" />
+            <Link to={getPath("book", language, country)} className="bg-white border border-border p-2.5 md:p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow group">
+              <div className="w-9 h-9 md:w-14 md:h-14 bg-[#2E7D32] flex items-center justify-center mx-auto mb-1.5 md:mb-2">
+                <BookOpen className="w-4 h-4 md:w-7 md:h-7 text-white" />
               </div>
-              <h3 className="font-semibold text-xs md:text-sm text-[#1B3A5C] mb-1 md:mb-2 group-hover:text-[#2E7D32] transition-colors">{isEN ? "Author & Specialist Writer" : "Autor & Fachautor"}</h3>
+              <h3 className="font-semibold text-[10px] md:text-sm text-[#1B3A5C] mb-0.5 md:mb-1 group-hover:text-[#2E7D32] transition-colors">{isEN ? "Author & Specialist Writer" : "Autor & Fachautor"}</h3>
               <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
                 {isEN
                   ? "Author of 'Go InSide' and numerous specialist publications on hypnotherapy and personal development."
@@ -196,11 +196,11 @@ export default function UeberUns() {
             </Link>
 
             {/* TV Expert */}
-            <Link to={getPath("media", language, country)} className="bg-white border border-border p-4 md:p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow group">
-              <div className="w-12 h-12 md:w-20 md:h-20 bg-[#1B3A5C] flex items-center justify-center mx-auto mb-2 md:mb-4">
-                <Tv className="w-6 h-6 md:w-10 md:h-10 text-white" />
+            <Link to={getPath("media", language, country)} className="bg-white border border-border p-2.5 md:p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow group">
+              <div className="w-9 h-9 md:w-14 md:h-14 bg-[#1B3A5C] flex items-center justify-center mx-auto mb-1.5 md:mb-2">
+                <Tv className="w-4 h-4 md:w-7 md:h-7 text-white" />
               </div>
-              <h3 className="font-semibold text-xs md:text-sm text-[#1B3A5C] mb-1 md:mb-2 group-hover:text-[#2E7D32] transition-colors">{isEN ? "TV Expert & Media Personality" : "TV-Experte & Medienpersönlichkeit"}</h3>
+              <h3 className="font-semibold text-[10px] md:text-sm text-[#1B3A5C] mb-0.5 md:mb-1 group-hover:text-[#2E7D32] transition-colors">{isEN ? "TV Expert & Media Personality" : "TV-Experte & Medienpersönlichkeit"}</h3>
               <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
                 {isEN
                   ? "Regular appearances on German and Swiss television as a hypnotherapy expert."
