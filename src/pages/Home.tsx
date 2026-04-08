@@ -528,7 +528,7 @@ export default function Home() {
         <div className="mx-6 md:mx-auto md:max-w-[1200px]">
           <Link to={getPath("training", language, country)} className="block max-w-sm md:max-w-5xl mx-auto relative bg-white rounded-2xl overflow-hidden shadow-[0_16px_48px_-8px_rgba(0,0,0,0.3),0_4px_12px_-2px_rgba(0,0,0,0.15)] transition-transform duration-200 hover:scale-[1.01] hover:shadow-[0_20px_56px_-8px_rgba(0,0,0,0.35),0_6px_16px_-2px_rgba(0,0,0,0.18)] cursor-pointer">
             {/* Label + Title */}
-            <div className="text-center pt-6 pb-3 md:pt-10 md:pb-4 px-5 md:px-10">
+            <div className="text-center pt-4 pb-2 md:pt-10 md:pb-4 px-5 md:px-10">
               <span className="inline-flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] text-[hsl(213,10%,35%)] border border-[hsl(213,12%,78%)] rounded-full px-4 py-1 md:px-5 md:py-1.5 bg-gradient-to-r from-[hsl(213,10%,91%)] to-[hsl(213,10%,95%)] mb-3 md:mb-4 shadow-sm">
                 <Award className="w-3 h-3" />
                 {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
@@ -542,27 +542,27 @@ export default function Home() {
             </div>
 
             {/* Seminar room photo */}
-            <div className="px-5 md:px-10 pb-3 md:pb-4">
+            <div className="px-5 md:px-10 pb-2 md:pb-4">
               <div className="rounded-xl overflow-hidden">
                 <img
                   src={CDN.trainingSeminar}
                   alt={isEN ? "Professional hypnotherapy training seminar" : "Professionelles Hypnosetherapie-Ausbildungsseminar"}
-                  className="w-full h-44 md:h-52 object-cover"
+                  className="w-full h-36 md:h-52 object-cover"
                   loading="lazy"
                 />
               </div>
             </div>
 
-            <div className="px-5 pb-7 md:px-10 md:pb-10">
+            <div className="px-5 pb-5 md:px-10 md:pb-10">
               {/* Compact intro */}
-              <p className="text-foreground/75 text-[11px] md:text-sm mb-4 md:mb-5 text-center max-w-lg mx-auto leading-relaxed">
+              <p className="text-foreground/75 text-[11px] md:text-sm mb-3 md:mb-5 text-center max-w-lg mx-auto leading-snug md:leading-relaxed">
                 {isEN
                   ? "Training for people who want to create real change – practical, effective, in small strictly limited groups."
                   : "Ausbildung für Menschen, die echte Veränderung bewirken wollen – praxisnah, wirksam, in kleinen strikt begrenzten Gruppen."}
               </p>
 
               {/* Stats — compact grid */}
-              <div className="grid grid-cols-3 md:grid-cols-5 gap-2 md:gap-3 mb-4 md:mb-5">
+              <div className="grid grid-cols-5 gap-1 md:gap-3 mb-3 md:mb-5">
                 {[
                   { num: "350+", label: isEN ? "Pages Manual" : "Seiten Mappe" },
                   { num: "150+", label: isEN ? "Example Texts" : "Beispieltexte" },
@@ -570,9 +570,9 @@ export default function Home() {
                   { num: "50+", label: isEN ? "Audio" : "Audio" },
                   { num: "✓", label: isEN ? "Diploma" : "Diplom" },
                 ].map(item => (
-                  <div key={item.label} className="text-center bg-gradient-to-b from-[hsl(213,10%,95%)] to-[hsl(213,10%,92%)] border border-[hsl(213,12%,82%)] rounded-lg py-2 md:py-3 px-1">
-                    <div className="text-sm md:text-xl font-bold text-primary">{item.num}</div>
-                    <div className="text-[7px] md:text-[10px] text-muted-foreground leading-tight font-medium mt-0.5">{item.label}</div>
+                  <div key={item.label} className="text-center bg-gradient-to-b from-[hsl(213,10%,95%)] to-[hsl(213,10%,92%)] border border-[hsl(213,12%,82%)] rounded-lg py-1.5 md:py-3 px-0.5 md:px-1">
+                    <div className="text-xs md:text-xl font-bold text-primary">{item.num}</div>
+                    <div className="text-[6px] md:text-[10px] text-muted-foreground leading-tight font-medium mt-0.5">{item.label}</div>
                   </div>
                 ))}
               </div>
