@@ -444,9 +444,9 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ QUALIFICATIONS ═══════════════════ */}
-      <section className="py-8 md:py-12" style={deferredSectionStyle}>
+      <section className="py-8 md:py-12 bg-primary" style={deferredSectionStyle}>
         <div className="container-main">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-5 md:mb-7">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground text-center mb-5 md:mb-7">
             {isEN ? "Qualifications & Certifications" : "Qualifikationen & Zertifizierungen"}
           </h2>
 
