@@ -524,11 +524,11 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ TRAINING ═══════════════════ */}
-      <section className="py-6 md:py-7 bg-primary/15" style={deferredSectionStyle}>
+      <section className="py-5 md:py-5 bg-primary/15" style={deferredSectionStyle}>
         <div className="mx-6 md:mx-auto md:max-w-[1200px]">
           <Link to={getPath("training", language, country)} className="block max-w-sm md:max-w-5xl mx-auto relative bg-white rounded-2xl overflow-hidden shadow-[0_16px_48px_-8px_rgba(0,0,0,0.3),0_4px_12px_-2px_rgba(0,0,0,0.15)] transition-transform duration-200 hover:scale-[1.01] hover:shadow-[0_20px_56px_-8px_rgba(0,0,0,0.35),0_6px_16px_-2px_rgba(0,0,0,0.18)] cursor-pointer">
             {/* Label + Title */}
-            <div className="text-center pt-6 pb-3 md:pt-8 md:pb-4 px-5 md:px-10">
+            <div className="text-center pt-5 pb-2 md:pt-6 md:pb-3 px-5 md:px-10">
               <span className="inline-flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] text-[hsl(213,10%,35%)] border border-[hsl(213,12%,78%)] rounded-full px-4 py-1 md:px-5 md:py-1.5 bg-gradient-to-r from-[hsl(213,10%,91%)] to-[hsl(213,10%,95%)] mb-3 md:mb-4 shadow-sm">
                 <Award className="w-3 h-3" />
                 {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
@@ -542,7 +542,7 @@ export default function Home() {
             </div>
 
             {/* Seminar room photo */}
-            <div className="px-5 md:px-10 pb-4 md:pb-5">
+            <div className="px-5 md:px-10 pb-3 md:pb-3">
               <div className="rounded-xl overflow-hidden">
                 <img
                   src={CDN.trainingSeminar}
@@ -553,7 +553,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="px-5 pb-7 md:px-10 md:pb-8">
+            <div className="px-5 pb-5 md:px-10 md:pb-6">
               {/* Compact intro */}
               <p className="text-foreground/75 text-[11px] md:text-sm mb-3 md:mb-5 text-center max-w-lg mx-auto leading-snug md:leading-relaxed">
                 {isEN
