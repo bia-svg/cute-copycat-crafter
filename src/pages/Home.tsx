@@ -289,8 +289,8 @@ export default function Home() {
               <div className="text-foreground/80 leading-relaxed text-[0.95rem]">
                 <p className="mb-1">
                   {isEN
-                    ? "Expert psychological knowledge, modern hypnosis and profound transformation."
-                    : "Fundiertes psychologisches Fachwissen, moderne Hypnose und tiefgreifende Transformation."}
+                    ? "Psychology · Hypnosis · Deep Transformation"
+                    : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
                 </p>
                 <p className="mb-3 text-sm font-medium tracking-wide">
                   {isEN
@@ -322,8 +322,8 @@ export default function Home() {
             <div className="text-sm text-foreground/80 leading-snug">
               <p className="mb-1">
                 {isEN
-                  ? "Expert psychological knowledge, modern hypnosis and profound transformation."
-                  : "Fundiertes psychologisches Fachwissen, moderne Hypnose und tiefgreifende Transformation."}
+                  ? "Psychology · Hypnosis · Deep Transformation"
+                  : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
               </p>
               <p className="mb-2 text-xs font-medium tracking-wide">
                 {isEN
