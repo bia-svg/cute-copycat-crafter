@@ -410,15 +410,15 @@ export default function Home() {
           </div>
           {/* EMR + Button below on all screens */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-2 md:mt-3">
-            <div className="flex items-center gap-2 bg-secondary rounded-md p-2">
+            <div className="flex items-center gap-2 bg-primary-foreground/10 rounded-md p-2">
               <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-9 md:h-10" width={64} height={40} loading="lazy" />
               <div>
-                <div className="font-semibold text-xs text-foreground">EMR Krankenkasse Konform</div>
-                <div className="text-[11px] text-muted-foreground">ZSR P609264</div>
+                <div className="font-semibold text-xs text-primary-foreground">EMR Krankenkasse Konform</div>
+                <div className="text-[11px] text-primary-foreground/60">ZSR P609264</div>
               </div>
             </div>
             <Link to={getPath("about", language, country)}>
-              <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              <Button variant="outline" size="sm" className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                 {isEN ? "More About Our Method" : "Mehr über unsere Methode"}
               </Button>
             </Link>
