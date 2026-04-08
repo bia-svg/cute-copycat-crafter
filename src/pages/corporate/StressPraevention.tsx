@@ -119,16 +119,24 @@ export default function StressPraevention() {
         </div>
       </section>
 
-      <section className="bg-[#8b827c] text-white">
-        <div className="container-main py-10 text-center">
-          <h2 className="text-2xl font-bold mb-3">
-            {isEN ? "Prevent Burnout — Get in Touch Now" : "Burnout vorbeugen — Jetzt Kontakt aufnehmen"}
-          </h2>
-          <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
-            <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-base">
-              {isEN ? "Request Consultation" : "Beratung anfragen"}
-            </Button>
-          </Link>
+      <section className="bg-background">
+        <div className="container-main py-10 flex justify-center">
+          <div className="relative bg-primary/10 border border-primary/25 rounded-2xl px-8 py-8 text-center max-w-2xl w-full">
+            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full whitespace-nowrap">
+              {isEN ? "Next Step" : "N\u00e4chster Schritt"}
+            </span>
+            <h2 className="text-xl font-bold text-primary mb-2 mt-2">
+              {isEN ? "Prevent Burnout \u2014 Get in Touch Now" : "Burnout vorbeugen \u2014 Jetzt Kontakt aufnehmen"}
+            </h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              {isEN ? "Take the next step for your team." : "Gehen Sie den n\u00e4chsten Schritt f\u00fcr Ihr Team."}
+            </p>
+            <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-3 text-base">
+                {isEN ? "Request Consultation" : "Beratung anfragen"}
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
     </>
