@@ -386,18 +386,18 @@ export default function Home() {
           {/* Desktop: side-by-side | Mobile: text only, no photo */}
           <div className="grid md:grid-cols-[1fr_auto] gap-3 md:gap-6 items-center">
             <div className="space-y-1.5 md:space-y-3 text-center md:text-left">
-              <p className="text-xs font-semibold text-cta uppercase tracking-wider">
+              <p className="text-xs font-semibold text-primary-foreground/70 uppercase tracking-wider">
                 {isEN ? "Aktiv-Hypnose© Method" : "Aktiv-Hypnose© Methode"}
               </p>
-              <h2 className="text-lg md:text-2xl font-bold text-foreground leading-tight">
+              <h2 className="text-lg md:text-2xl font-bold text-primary-foreground leading-tight">
                 {isEN ? "Psychology and Hypnotherapy for Lasting Change" : "Psychologie und Hypnotherapie für nachhaltige Veränderung"}
               </h2>
-              <p className="text-xs md:text-sm text-foreground/80 leading-snug">
+              <p className="text-xs md:text-sm text-primary-foreground/80 leading-snug">
                 {isEN
                   ? "David J. Woods combines psychological expertise, physiological depth, and modern coaching techniques into a method that works: clear, efficient, and solution-oriented."
                   : "David J. Woods vereint psychologisches Fachwissen, physiologische Tiefe und moderne Coaching-Techniken zu einer Methode, die wirkt: klar, effizient und lösungsorientiert."}
               </p>
-              <p className="text-xs md:text-sm text-foreground/70 leading-snug hidden md:block">
+              <p className="text-xs md:text-sm text-primary-foreground/70 leading-snug hidden md:block">
                 {isEN
                   ? "Even if many are initially unsure — the process leads to a state of focused clarity where transformation becomes possible."
                   : "Auch wenn viele anfangs unsicher sind – der Prozess führt in einen Zustand fokussierter Klarheit, in dem Transformation möglich wird."}
