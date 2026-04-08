@@ -181,7 +181,7 @@ export default function Header() {
       </div>
 
       {/* Trust Bar */}
-      <div className="bg-[#8b827c] text-white text-[10px] sm:text-xs">
+      <div className="bg-[#3d4f5f] text-white text-[10px] sm:text-xs">
         <div className="container-main flex items-center justify-center gap-x-1.5 py-1 sm:py-1.5 flex-wrap">
           <span className="whitespace-nowrap">{isDE ? "EMR Konform" : "EMR Approved"}</span>
           <span className="opacity-50">·</span>
