@@ -461,22 +461,22 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto">
             {/* 1 – Licensed Psychologist */}
             <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
-              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-14 md:h-16 w-14 md:w-16 object-contain mx-auto mb-2" loading="lazy" width={512} height={512} />
+              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-14 md:h-20 w-14 md:w-20 object-contain mx-auto mb-2" loading="lazy" width={512} height={512} />
               <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
             </div>
             {/* 2 – Aktiv-Hypnose© */}
             <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
-              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-8 md:h-11 w-auto object-contain shrink-0 mx-auto mb-2" loading="lazy" />
+              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-8 md:h-14 w-auto object-contain shrink-0 mx-auto mb-2" loading="lazy" />
               <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
             </div>
             {/* 3 – NGH */}
             <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
-              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-10 md:h-12 w-10 md:w-12 object-contain mx-auto mb-2" loading="lazy" />
+              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-10 md:h-16 w-10 md:w-16 object-contain mx-auto mb-2" loading="lazy" />
               <h3 className="font-semibold text-xs md:text-sm text-foreground">NGH International Trainer</h3>
             </div>
             {/* 4 – EMR */}
             <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-10 md:h-12 object-contain mx-auto mb-2" loading="lazy" />
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-10 md:h-16 object-contain mx-auto mb-2" loading="lazy" />
               <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "EMR Approved" : "EMR Krankenkasse Konform"}</h3>
               <p className="text-[0.6rem] md:text-xs text-muted-foreground">ZSR P609264</p>
             </div>
