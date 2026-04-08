@@ -153,7 +153,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/15 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs opacity-75">
+        <div className="border-t border-white/20 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs opacity-85">
           <div>© {new Date().getFullYear()} David J. Woods. {t("footer.rights")}</div>
           <div className="flex items-center gap-4">
             <Link to={getPath("impressum", language, country)} className="hover:underline">{t("footer.impressum")}</Link>
@@ -173,7 +173,7 @@ export default function Footer() {
         </div>
 
         {/* Medical Disclaimer */}
-        <div className="border-t border-white/15 mt-6 pt-4 text-xs text-center opacity-65 max-w-3xl mx-auto">
+        <div className="border-t border-white/20 mt-6 pt-4 text-xs text-center opacity-75 max-w-3xl mx-auto">
           {isEN
             ? "We expressly point out that our services do NOT replace the work of a medical doctor, psychiatrist, or licensed healthcare practitioner. We do not treat illnesses and we do not provide medical diagnoses."
             : "Wir weisen ausdrücklich darauf hin, dass unsere Tätigkeit NICHT die Tätigkeit eines Arztes, Psychiaters oder Heilpraktikers ersetzt. Wir behandeln weder Krankheiten noch stellen wir medizinische Diagnosen."}
