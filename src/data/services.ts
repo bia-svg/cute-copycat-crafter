@@ -786,12 +786,12 @@ export const childrenData: ServicePageData = {
   ],
   image: "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm3GvBKfW5muS6V4PFb/children_teens_hypnose_new-ioh53iWPiVHDd8N8zCMpqx.webp",
   faqCH: [
-    { q: "Ab welchem Alter ist Hypnose für Kinder geeignet?", a: "Hypnose kann bereits ab einem Alter von ca. 8 Jahren eingesetzt werden. Die Methoden werden altersgerecht angepasst." },
+    { q: "Ab welchem Alter ist Hypnose f\u00FCr Kinder geeignet?", a: "In der Regel ist Hypnose f\u00FCr Kinder ab etwa 8 Jahren gut geeignet. Entscheidend ist jedoch nicht nur das Alter, sondern vor allem die individuelle Reife des Kindes. Wenn ein Kind sich bereits ausreichend ausdr\u00FCcken kann, seine Gef\u00FChle oder sein Thema in einer kindgerechten Form beschreiben kann und im Vorgespr\u00E4ch aufmerksam sowie kooperativ mitarbeitet, kann Hypnose sehr wirkungsvoll eingesetzt werden. Gerade j\u00FCngere Menschen sind oft besonders gut ansprechbar, weil sie noch weniger innere Blockaden aufgebaut haben und emotional oft direkter zug\u00E4nglich sind als Erwachsene. Wichtig ist jedoch immer, dass das Kind selbst bereit ist, sich helfen zu lassen und nicht nur \u201Egeschickt wird\u201C." },
     { q: "Ist Hypnose für Kinder sicher?", a: "Ja, Kinderhypnose ist eine sanfte und sichere Methode. Die Kinder sind jederzeit bei Bewusstsein und können den Prozess selbst steuern." },
     { q: "Werden die Eltern in den Prozess einbezogen?", a: "Ja, Eltern werden aktiv einbezogen und erhalten praktische Tipps, wie sie ihr Kind im Alltag unterstützen können." },
   ],
   faqEN: [
-    { q: "From what age is hypnosis suitable for children?", a: "Hypnosis can be used from about 8 years of age. The methods are adapted to be age-appropriate." },
+    { q: "From what age is hypnosis suitable for children?", a: "As a rule, hypnosis is well suited for children from around 8 years of age. However, the deciding factor is not just age but above all the child\u2019s individual maturity. If a child can already express themselves sufficiently, describe their feelings or their issue in an age-appropriate way, and participates attentively and cooperatively in the preliminary talk, hypnosis can be used very effectively. Younger people in particular are often especially receptive because they have built up fewer inner blockages and are often more directly accessible emotionally than adults. What is always important, however, is that the child themselves is willing to accept help and is not simply \u201Csent\u201D." },
     { q: "Is hypnosis safe for children?", a: "Yes, children's hypnosis is a gentle and safe method. Children are conscious at all times and can control the process themselves." },
     { q: "Are parents involved in the process?", a: "Yes, parents are actively involved and receive practical tips on how to support their child in everyday life." },
   ],
