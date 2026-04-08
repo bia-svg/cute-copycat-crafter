@@ -259,7 +259,9 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
 
       {/* Unified FAQ — topic-specific + consultation items */}
       {(() => {
-        const allFaq = [...faq, ...(isEN ? consultationFaqEN : consultationFaqDE)];
+        const consultItems = (isEN ? consultationFaqEN : consultationFaqDE)
+          .filter(item => !faq.some(f => f.q.toLowerCase().includes("themen") && item.q.toLowerCase().includes("themen") || f.q.toLowerCase().includes("topics") && item.q.toLowerCase().includes("topics")));
+        const allFaq = [...faq, ...consultItems];
         return (
           <section className="bg-white border-b border-border">
             <div className="container-main py-10">
