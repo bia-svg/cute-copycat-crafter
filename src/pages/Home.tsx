@@ -427,7 +427,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ SERVICES ═══════════════════ */}
-      <section className="py-4 md:py-5 bg-secondary" style={deferredSectionStyle}>
+      <section className="py-4 md:py-5 bg-secondary mx-3 md:mx-auto md:max-w-[1200px] border border-primary/15 rounded-2xl" style={deferredSectionStyle}>
         <div className="container-main">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-0.5">{t("section.services")}</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-2 md:mb-3">
