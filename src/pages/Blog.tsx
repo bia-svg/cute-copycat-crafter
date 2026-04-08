@@ -25,15 +25,15 @@ export default function Blog() {
         { name: "Blog", path: getPath("blog", language, country) },
       ]} />
       {/* Hero */}
-      <section className="bg-[#8b827c] text-white py-16">
-        <div className="container-main">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#8BB8E8] mb-2">
+      <section className="bg-primary/15 py-16">
+        <div className="container-main text-center">
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">
             {isDE ? "Wissen & Einblicke" : "Knowledge & Insights"}
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             {isDE ? "Blog — Hypnose verstehen" : "Blog — Understanding Hypnosis"}
           </h1>
-          <p className="text-lg text-white/80 max-w-2xl">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {isDE
               ? "Fachartikel, Erfahrungsberichte und wissenschaftliche Hintergründe rund um Hypnose, Aktiv-Hypnose© und persönliche Veränderung."
               : "Expert articles, case studies and scientific background on hypnosis, Aktiv-Hypnose© and personal transformation."}
