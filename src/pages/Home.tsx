@@ -453,7 +453,7 @@ export default function Home() {
 
 
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+          <div className="grid grid-cols-2 gap-3 md:gap-4 max-w-2xl mx-auto">
             {/* 1 – Licensed Psychologist */}
             <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
               <div className="w-10 h-10 md:w-12 md:h-12 bg-primary flex items-center justify-center shrink-0 rounded mx-auto mb-2">
@@ -474,33 +474,9 @@ export default function Home() {
             {/* 4 – EMR */}
             <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
               <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-10 md:h-12 object-contain mx-auto mb-2" loading="lazy" />
-              <h3 className="font-semibold text-xs md:text-sm text-foreground">EMR Krankenkasse Konform</h3>
+              <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "EMR Approved" : "EMR Krankenkasse Konform"}</h3>
               <p className="text-[0.6rem] md:text-xs text-muted-foreground">ZSR P609264</p>
             </div>
-            {/* 5 – Author */}
-            <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
-              <BookOpen className="w-8 h-8 md:w-10 md:h-10 text-primary mx-auto mb-2" />
-              <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Author & Specialist Writer" : "Autor & Fachautor"}</h3>
-            </div>
-            {/* 6 – TV Expert */}
-            <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
-              <Tv className="w-8 h-8 md:w-10 md:h-10 text-primary mx-auto mb-2" />
-              <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "TV Expert & Media Personality" : "TV-Experte & Medienpersönlichkeit"}</h3>
-            </div>
-            {/* 7 – 35+ Years */}
-            <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
-              <div className="text-xl md:text-3xl font-bold text-primary mb-1">35+</div>
-              <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Years of Experience" : "Jahre Erfahrung"}</h3>
-              <p className="text-[0.6rem] md:text-xs text-muted-foreground">30.000+ {isEN ? "Sessions" : "Sitzungen"}</p>
-            </div>
-            {/* 8 – Google Reviews */}
-            <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm hover:border-primary/50 transition-colors">
-              <div className="flex justify-center gap-0.5 mb-1">
-                {[1,2,3,4,5].map(i => <Star key={i} className="w-3.5 h-3.5 md:w-4 md:h-4 fill-yellow-400 text-yellow-400" />)}
-              </div>
-              <h3 className="font-semibold text-xs md:text-sm text-foreground">5.0 Google Reviews</h3>
-              <p className="text-[0.6rem] md:text-xs text-muted-foreground"><p className="text-[0.6rem] md:text-xs text-muted-foreground">266 {isEN ? "Reviews" : "Bewertungen"}</p></p>
-            </a>
           </div>
         </div>
       </section>
