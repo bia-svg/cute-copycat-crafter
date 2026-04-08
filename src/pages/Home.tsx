@@ -381,23 +381,23 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD ═══════════════════ */}
-      <section className="py-4 md:py-6 mx-3 md:mx-auto md:max-w-[1200px] border border-primary/15 rounded-2xl" style={deferredSectionStyle}>
+      <section className="py-6 md:py-10 bg-primary" style={deferredSectionStyle}>
         <div className="container-main">
           {/* Desktop: side-by-side | Mobile: text only, no photo */}
           <div className="grid md:grid-cols-[1fr_auto] gap-3 md:gap-6 items-center">
             <div className="space-y-1.5 md:space-y-3 text-center md:text-left">
-              <p className="text-xs font-semibold text-cta uppercase tracking-wider">
+              <p className="text-xs font-semibold text-primary-foreground/70 uppercase tracking-wider">
                 {isEN ? "Aktiv-Hypnose© Method" : "Aktiv-Hypnose© Methode"}
               </p>
-              <h2 className="text-lg md:text-2xl font-bold text-foreground leading-tight">
+              <h2 className="text-lg md:text-2xl font-bold text-primary-foreground leading-tight">
                 {isEN ? "Psychology and Hypnotherapy for Lasting Change" : "Psychologie und Hypnotherapie für nachhaltige Veränderung"}
               </h2>
-              <p className="text-xs md:text-sm text-foreground/80 leading-snug">
+              <p className="text-xs md:text-sm text-primary-foreground/80 leading-snug">
                 {isEN
                   ? "David J. Woods combines psychological expertise, physiological depth, and modern coaching techniques into a method that works: clear, efficient, and solution-oriented."
                   : "David J. Woods vereint psychologisches Fachwissen, physiologische Tiefe und moderne Coaching-Techniken zu einer Methode, die wirkt: klar, effizient und lösungsorientiert."}
               </p>
-              <p className="text-xs md:text-sm text-foreground/70 leading-snug hidden md:block">
+              <p className="text-xs md:text-sm text-primary-foreground/70 leading-snug hidden md:block">
                 {isEN
                   ? "Even if many are initially unsure — the process leads to a state of focused clarity where transformation becomes possible."
                   : "Auch wenn viele anfangs unsicher sind – der Prozess führt in einen Zustand fokussierter Klarheit, in dem Transformation möglich wird."}
@@ -410,15 +410,15 @@ export default function Home() {
           </div>
           {/* EMR + Button below on all screens */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-2 md:mt-3">
-            <div className="flex items-center gap-2 bg-secondary rounded-md p-2">
+            <div className="flex items-center gap-2 bg-primary-foreground/10 rounded-md p-2">
               <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-9 md:h-10" width={64} height={40} loading="lazy" />
               <div>
-                <div className="font-semibold text-xs text-foreground">EMR Krankenkasse Konform</div>
-                <div className="text-[11px] text-muted-foreground">ZSR P609264</div>
+                <div className="font-semibold text-xs text-primary-foreground">EMR Krankenkasse Konform</div>
+                <div className="text-[11px] text-primary-foreground/60">ZSR P609264</div>
               </div>
             </div>
             <Link to={getPath("about", language, country)}>
-              <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              <Button variant="outline" size="sm" className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                 {isEN ? "More About Our Method" : "Mehr über unsere Methode"}
               </Button>
             </Link>
