@@ -27,14 +27,14 @@ export default function Footer() {
   const [institutesOpen, setInstitutesOpen] = useState(false);
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-primary/15 text-foreground">
       <div className="container-main py-12">
         <div className="grid md:grid-cols-[1fr_2fr] gap-8">
           {/* Logo & Info + Institutes (stacked on desktop) */}
           <div className="space-y-6">
             {/* Logo */}
             <div>
-              <img src={CDN.logo} alt="David J. Woods – Hypnose und Psychologie Logo" className="h-11 w-auto brightness-0 invert mb-4" width={180} height={44} loading="lazy" />
+              <img src={CDN.logo} alt="David J. Woods – Hypnose und Psychologie Logo" className="h-11 w-auto mb-4" width={180} height={44} loading="lazy" />
               <p className="text-sm opacity-80">
                 {isEN ? "Aktiv-Hypnose© — Psychology and Hypnotherapy for lasting change." : "Aktiv-Hypnose© — Psychologie und Hypnotherapie für nachhaltige Veränderung."}
               </p>
@@ -113,7 +113,7 @@ export default function Footer() {
             <div className="grid grid-cols-2 gap-x-6 gap-y-4 text-sm opacity-80">
               {/* About Us */}
               <div>
-                <h5 className="inline-block bg-primary-foreground/15 text-primary-foreground px-2.5 py-1 rounded text-[11px] uppercase tracking-wider font-semibold mb-2">{isEN ? "About Us" : "Über uns"}</h5>
+                <h5 className="inline-block bg-primary/20 text-foreground px-2.5 py-1 rounded text-[11px] uppercase tracking-wider font-semibold mb-2">{isEN ? "About Us" : "Über uns"}</h5>
                 <div className="space-y-1">
                   <Link to={getPath("about", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "David J. Woods & Team" : "David J. Woods & Team"}</Link>
                   <Link to={getPath("media", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "TV & Media" : "TV & Medien"}</Link>
@@ -126,18 +126,18 @@ export default function Footer() {
               {/* Business & Training */}
               <div className="space-y-4">
                 <div>
-                  <h5 className="inline-block bg-primary-foreground/15 text-primary-foreground px-2.5 py-1 rounded text-[11px] uppercase tracking-wider font-semibold mb-2">{isEN ? "Business Coaching" : "Firmencoaching"}</h5>
+                  <h5 className="inline-block bg-primary/20 text-foreground px-2.5 py-1 rounded text-[11px] uppercase tracking-wider font-semibold mb-2">{isEN ? "Business Coaching" : "Firmencoaching"}</h5>
                   <Link to={getPath("corporate", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "All Corporate Programs" : "Alle Firmenprogramme"}</Link>
                 </div>
                 <div>
-                  <h5 className="inline-block bg-primary-foreground/15 text-primary-foreground px-2.5 py-1 rounded text-[11px] uppercase tracking-wider font-semibold mb-2">{isEN ? "Training" : "Ausbildung"}</h5>
+                  <h5 className="inline-block bg-primary/20 text-foreground px-2.5 py-1 rounded text-[11px] uppercase tracking-wider font-semibold mb-2">{isEN ? "Training" : "Ausbildung"}</h5>
                   <Link to={getPath("training", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Learn to Be a Hypnotherapist" : "Hypnosetherapeut werden"}</Link>
                 </div>
               </div>
 
               {/* Hypnotherapy */}
               <div className="col-span-2">
-                <h5 className="inline-block bg-primary-foreground/15 text-primary-foreground px-2.5 py-1 rounded text-[11px] uppercase tracking-wider font-semibold mb-2 max-md:mx-auto max-md:block max-md:text-center max-md:w-fit">{isEN ? "Hypnotherapy" : "Hypnosetherapie"}</h5>
+                <h5 className="inline-block bg-primary/20 text-foreground px-2.5 py-1 rounded text-[11px] uppercase tracking-wider font-semibold mb-2 max-md:mx-auto max-md:block max-md:text-center max-md:w-fit">{isEN ? "Hypnotherapy" : "Hypnosetherapie"}</h5>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
                   <Link to={getPath("smoking", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Stop Smoking" : "Raucherentwöhnung"}</Link>
                   <Link to={getPath("stress", language, country)} className="block hover:underline hover:opacity-100">{isEN ? "Stress & Burnout" : "Stress & Burnout"}</Link>
@@ -153,7 +153,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-primary-foreground/20 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs opacity-70">
+        <div className="border-t border-foreground/15 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs opacity-70">
           <div>© {new Date().getFullYear()} David J. Woods. {t("footer.rights")}</div>
           <div className="flex items-center gap-4">
             <Link to={getPath("impressum", language, country)} className="hover:underline">{t("footer.impressum")}</Link>
@@ -162,7 +162,7 @@ export default function Footer() {
             <Link to={`/${language}/${country}/terminbestaetigung`} className="opacity-30 hover:opacity-70 transition-opacity text-[10px]">
               {isEN ? "Appointment Confirmation" : "Terminbestätigung"}
             </Link>
-            <span className="w-px h-3 bg-primary-foreground/30" />
+            <span className="w-px h-3 bg-foreground/30" />
             <a href="https://de.linkedin.com/in/david-j-woods-85b30b186/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:opacity-100 transition-opacity">
               <LinkedInIcon className="w-4 h-4" />
             </a>
@@ -173,7 +173,7 @@ export default function Footer() {
         </div>
 
         {/* Medical Disclaimer */}
-        <div className="border-t border-primary-foreground/20 mt-6 pt-4 text-xs text-center opacity-60 max-w-3xl mx-auto">
+        <div className="border-t border-foreground/15 mt-6 pt-4 text-xs text-center opacity-60 max-w-3xl mx-auto">
           {isEN
             ? "We expressly point out that our services do NOT replace the work of a medical doctor, psychiatrist, or licensed healthcare practitioner. We do not treat illnesses and we do not provide medical diagnoses."
             : "Wir weisen ausdrücklich darauf hin, dass unsere Tätigkeit NICHT die Tätigkeit eines Arztes, Psychiaters oder Heilpraktikers ersetzt. Wir behandeln weder Krankheiten noch stellen wir medizinische Diagnosen."}

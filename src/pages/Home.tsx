@@ -459,8 +459,8 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto">
             {/* 1 – Licensed Psychologist */}
             <div className="text-center p-3 md:p-5 bg-card border border-border rounded-lg shadow-sm">
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-primary flex items-center justify-center shrink-0 rounded mx-auto mb-2">
-                <span className="text-primary-foreground text-[0.6rem] md:text-xs font-bold text-center leading-tight">Lic.<br/>Psych.</span>
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/15 flex items-center justify-center shrink-0 rounded mx-auto mb-2">
+                <span className="text-foreground text-[0.6rem] md:text-xs font-bold text-center leading-tight">Lic.<br/>Psych.</span>
               </div>
               <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
             </div>
