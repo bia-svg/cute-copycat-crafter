@@ -286,18 +286,18 @@ export default function Home() {
               <p className="text-lg italic font-semibold text-cta">
                 {isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}
               </p>
-              <div className="text-foreground/80 leading-relaxed text-[0.95rem]">
-                <p className="mb-1">
+              <div className="text-foreground/80 leading-relaxed text-[0.95rem] flex flex-col items-center">
+                <p className="mb-1 text-center">
                   {isEN
                     ? "Psychology · Hypnosis · Deep Transformation"
                     : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
                 </p>
-                <p className="mb-3 text-sm font-medium tracking-wide">
+                <p className="mb-3 text-sm font-medium tracking-wide text-center">
                   {isEN
                     ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
                     : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
                 </p>
-                <ul className="space-y-1 text-sm inline-block text-left">
+                <ul className="space-y-1 text-sm text-left">
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
