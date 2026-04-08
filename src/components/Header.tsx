@@ -148,8 +148,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-card border-b border-border" style={{ contentVisibility: "visible" }}>
-      {/* Top bar */}
-      <div className="bg-primary/15 text-foreground text-xs sm:text-xs">
+      {/* Top bar – phone numbers + language switch (footer color) */}
+      <div className="bg-footer text-footer-foreground text-xs sm:text-xs">
         <div className="container-main flex items-center justify-center sm:justify-between py-2 sm:py-1.5 gap-4">
           <div className="hidden sm:flex items-center gap-4">
             <a href="tel:+491719539922" className="flex items-center gap-1.5 hover:underline">
@@ -180,17 +180,17 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Trust Bar */}
-      <div className="bg-[#3d4f5f] text-white text-[10px] sm:text-xs">
+      {/* Trust Bar – lighter blue with dark text */}
+      <div className="bg-primary/15 text-foreground text-[10px] sm:text-xs">
         <div className="container-main flex items-center justify-center gap-x-1.5 py-1 sm:py-1.5 flex-wrap">
           <span className="whitespace-nowrap">{isDE ? "EMR Konform" : "EMR Approved"}</span>
-          <span className="opacity-50">·</span>
+          <span className="opacity-40">·</span>
           <span className="whitespace-nowrap">NGH International Trainer</span>
-          <span className="opacity-50">·</span>
-          <span className="whitespace-nowrap">{isDE ? "266 " : "266 "}<span className="text-[#FFD700]">★</span>{isDE ? " 5.0 bei Google" : " 5.0 on Google"}</span>
-          <span className="opacity-50 hidden sm:inline">·</span>
+          <span className="opacity-40">·</span>
+          <span className="whitespace-nowrap">{isDE ? "266 " : "266 "}<span className="text-[#DAA520]">★</span>{isDE ? " 5.0 bei Google" : " 5.0 on Google"}</span>
+          <span className="opacity-40 hidden sm:inline">·</span>
           <span className="whitespace-nowrap hidden sm:inline">{isDE ? "35+ Jahre Erfahrung" : "35+ Years Experience"}</span>
-          <span className="opacity-50 hidden sm:inline">·</span>
+          <span className="opacity-40 hidden sm:inline">·</span>
           <span className="whitespace-nowrap hidden sm:inline">{isDE ? "30.000+ Sitzungen" : "30,000+ Sessions"}</span>
         </div>
       </div>
