@@ -176,16 +176,26 @@ export default function FirmenCoaching() {
         ]}
       />
 
-      <section className="bg-[#8b827c] text-white">
-        <div className="container-main py-10 text-center">
-          <h2 className="text-2xl font-bold mb-3">
-            {isEN ? "Invest in Your Team's Potential" : "Investieren Sie in das Potenzial Ihres Teams"}
-          </h2>
-          <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
-            <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-base">
-              {isEN ? "Request Consultation" : "Beratung anfragen"}
-            </Button>
-          </Link>
+      <section className="bg-background py-10 lg:py-14">
+        <div className="container-main">
+          <div className="relative max-w-2xl mx-auto bg-primary/10 border border-primary/25 rounded-2xl px-6 py-10 md:px-10 md:py-12 text-center shadow-sm">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full tracking-wide uppercase">
+              {isEN ? "Next Step" : "Nächster Schritt"}
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "Take the Next Step for Your Team" : "Der nächste Schritt für Ihr Team"}
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto mb-6">
+              {isEN
+                ? "Discover how our corporate programs can strengthen your team's performance, resilience, and well-being."
+                : "Erfahren Sie, wie unsere Firmenprogramme die Leistung, Resilienz und das Wohlbefinden Ihres Teams stärken können."}
+            </p>
+            <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
+              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold px-8 py-3 text-base">
+                {isEN ? "Request a Consultation" : "Beratung anfragen"}
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
     </>
