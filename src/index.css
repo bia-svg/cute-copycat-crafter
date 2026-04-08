@@ -41,6 +41,9 @@
 
     --radius: 0.25rem;
 
+    --footer: 210 15% 37%;
+    --footer-foreground: 210 10% 95%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 123 46% 33%;
