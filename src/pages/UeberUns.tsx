@@ -161,9 +161,7 @@ export default function UeberUns() {
 
             {/* Lic.Psych */}
             <div className="bg-white border border-border p-4 md:p-6 rounded-lg shadow-sm text-center">
-              <div className="mb-2 md:mb-4">
-                <AcademicSeal size="lg" />
-              </div>
+              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-12 md:h-20 w-12 md:w-20 object-contain mx-auto mb-2 md:mb-4" loading="lazy" width={512} height={512} />
               <h3 className="font-semibold text-xs md:text-sm text-[#1B3A5C] mb-1 md:mb-2">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
               <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
                 {isEN
