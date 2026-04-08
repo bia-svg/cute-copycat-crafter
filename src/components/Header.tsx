@@ -237,6 +237,7 @@ export default function Header() {
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
+      </div>
 
       {/* ── Mega Menu: Hypnosetherapie ── */}
       <MegaMenuPanel id="sessions">
