@@ -28,17 +28,28 @@ export default function UeberUns() {
         { name: isEN ? "About Us" : "Über uns", path: getPath("about", language, country) },
       ]} />
 
+      {/* Hero Banner */}
+      <section className="bg-primary/15 py-12 md:py-16">
+        <div className="container-main text-center">
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">
+            Lic.Psych. · Hypnotherapeut · Dozent & Fachautor · NGH International Trainer
+          </p>
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            {isEN ? "About David J. Woods" : "Über David J. Woods"}
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            {isEN
+              ? "Licensed Psychologist, NGH International Trainer, and developer of the Aktiv-Hypnose© method — with over 35 years of experience."
+              : "Lizenzierter Psychologe, NGH International Trainer und Entwickler der Aktiv-Hypnose© Methode — mit über 35 Jahren Erfahrung."}
+          </p>
+        </div>
+      </section>
+
       {/* Main Bio Section */}
       <section className="bg-white border-b border-border">
         <div className="container-main py-8 lg:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] mb-4">
-                {isEN ? "About David J. Woods" : "Über David J. Woods"}
-              </h1>
-              <p className="text-sm font-medium text-[#2E7D32] mb-4">
-                Lic.Psych. · Hypnotherapeut · Dozent & Fachautor · NGH International Trainer
-              </p>
               <p className="text-base text-foreground leading-relaxed mb-4">
                 {isEN
                   ? "David J. Woods combines psychological expertise, physiological depth, and modern coaching techniques into a method that works: clear, efficient, and solution-oriented. Instead of superficial motivation, it's about real inner strength, mental stability, and conscious self-leadership."

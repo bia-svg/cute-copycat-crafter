@@ -86,7 +86,7 @@ export default function Erfolgsberichte() {
         { name: isEN ? "Success Stories" : "Erfolgsberichte", path: getPath("successStories", language, country) },
       ]} />
       {/* Hero */}
-      <section className="bg-secondary py-12 md:py-16">
+      <section className="bg-primary/15 py-12 md:py-16">
         <div className="container-main">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: "Georgia, serif" }}>
