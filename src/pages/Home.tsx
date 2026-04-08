@@ -381,7 +381,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD ═══════════════════ */}
-      <section className="py-6 md:py-10 bg-primary/10" style={deferredSectionStyle}>
+      <section className="py-6 md:py-10 bg-primary/15" style={deferredSectionStyle}>
         <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-2xl border border-primary/15 py-4 md:py-6 shadow-sm">
         <div className="container-main">
           {/* Desktop: side-by-side | Mobile: text only, no photo */}
@@ -446,9 +446,10 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ QUALIFICATIONS ═══════════════════ */}
-      <section className="py-8 md:py-12 bg-primary" style={deferredSectionStyle}>
+      <section className="py-6 md:py-10 bg-primary/15" style={deferredSectionStyle}>
+        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-2xl border border-primary/15 py-6 md:py-8 shadow-sm">
         <div className="container-main">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground text-center mb-5 md:mb-7">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-5 md:mb-7">
             {isEN ? "Qualifications & Certifications" : "Qualifikationen & Zertifizierungen"}
           </h2>
 
@@ -480,6 +481,7 @@ export default function Home() {
               <p className="text-[0.6rem] md:text-xs text-muted-foreground">ZSR P609264</p>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
