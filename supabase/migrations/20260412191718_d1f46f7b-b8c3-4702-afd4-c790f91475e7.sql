@@ -1,0 +1,1 @@
+CREATE POLICY "service_role_select_whatsapp_clicks" ON public.whatsapp_clicks FOR SELECT TO public USING (auth.role() = 'service_role'::text);

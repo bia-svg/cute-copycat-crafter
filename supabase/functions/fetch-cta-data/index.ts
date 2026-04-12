@@ -42,7 +42,7 @@ serve(async (req) => {
 
     const since = new Date(Date.now() - days * 86400000).toISOString();
 
-    const [viewsRes, clicksRes] = await Promise.all([
+    const [viewsRes, clicksRes, waRes] = await Promise.all([
       supabase
         .from("page_views")
         .select("page_path, viewed_at")
@@ -53,12 +53,18 @@ serve(async (req) => {
         .select("page_path, destination, clicked_at")
         .gte("clicked_at", since)
         .order("clicked_at", { ascending: true }),
+      supabase
+        .from("whatsapp_clicks")
+        .select("id, clicked_at, page_path")
+        .gte("clicked_at", since)
+        .order("clicked_at", { ascending: true }),
     ]);
 
     if (viewsRes.error) throw viewsRes.error;
     if (clicksRes.error) throw clicksRes.error;
+    if (waRes.error) throw waRes.error;
 
-    return new Response(JSON.stringify({ views: viewsRes.data || [], clicks: clicksRes.data || [] }), {
+    return new Response(JSON.stringify({ views: viewsRes.data || [], clicks: clicksRes.data || [], whatsappClicks: waRes.data || [] }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (err) {
