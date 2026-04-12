@@ -27,7 +27,7 @@ import {
   Users, FileText, TrendingUp, LogOut, Clock,
   Eye, DollarSign, Target, ArrowUpRight, ArrowDownRight,
   Leaf, Zap, MousePointer, BarChart3, Globe, MessageCircle, ShieldCheck, Lock,
-  CalendarCheck, GraduationCap, Calendar as CalendarIcon, Search
+  CalendarCheck, GraduationCap, Calendar as CalendarIcon, Search, Sparkles
 } from "lucide-react";
 import SessionsTab from "@/components/dashboard/SessionsTab";
 import ResultsTab from "@/components/dashboard/ResultsTab";
@@ -37,6 +37,7 @@ import WeeklyReportTab from "@/components/dashboard/WeeklyReportTab";
 import CampaignIntelligence from "@/components/dashboard/CampaignIntelligence";
 import CTASuccessTab from "@/components/dashboard/CTASuccessTab";
 import EmailLogsTab from "@/components/dashboard/EmailLogsTab";
+import AIChatTab from "@/components/dashboard/AIChatTab";
 import { format, parseISO, startOfMonth } from "date-fns";
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
@@ -338,6 +339,9 @@ export default function Dashboard() {
               <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
               <TabsTrigger value="cta-success" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
                 <MousePointer className="w-3 h-3 mr-1" /> CTA Success
+              </TabsTrigger>
+              <TabsTrigger value="ai-chat" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                <Sparkles className="w-3 h-3 mr-1" /> AI Chat
               </TabsTrigger>
             </TabsList>
 
@@ -1113,6 +1117,17 @@ export default function Dashboard() {
             {/* ═══════ CTA SUCCESS TAB ═══════ */}
             <TabsContent value="cta-success" className="mt-4">
               <CTASuccessTab />
+            </TabsContent>
+
+            {/* ═══════ AI CHAT TAB ═══════ */}
+            <TabsContent value="ai-chat" className="mt-4">
+              <AIChatTab dashboardState={{
+                trafficByDay, topPages, campaigns, dailyAds, leads, whatsappClicks,
+                gscQueries, gscTotals, gscDailyMetrics, gscError, gscLive,
+                campaignPages, campaignPageFlow,
+                loading, gaError, adsError, gaLive, adsLive,
+                dateRange, setDateRange,
+              }} />
             </TabsContent>
           </Tabs>
         </div>
