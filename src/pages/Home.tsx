@@ -11,30 +11,27 @@ import { Link } from "react-router-dom";
 import InlineContactForm from "@/components/InlineContactForm";
 import { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import hero1 from "@/assets/david-office-portrait.webp";
-import hero1Mobile from "@/assets/david-office-portrait-mobile.webp";
+import hero1 from "@/assets/hero-4.webp";
+import hero1Mobile from "@/assets/hero-4-mobile.webp";
 import davidSessionImg from "@/assets/david-portrait-outdoor.jpg";
 import corporateSuccessImg from "@/assets/corporate-success.jpg";
-import corporateResilienceImg from "@/assets/corporate-resilience.jpg";
-import corporateStressImg from "@/assets/corporate-stress.jpg";
-import corporateNonsmokerImg from "@/assets/corporate-nonsmoker.jpg";
+import davidOfficePortrait from "@/assets/david-office-portrait.webp";
+import davidOfficePortraitMobile from "@/assets/david-office-portrait-mobile.webp";
 
-// Lazy-load remaining hero slides
+// Hero slider order (5 images): Flipchart → Active work → Therapeutic session → Conversation at table → Desk with cup
 const heroDesktop = [
   hero1,
-  () => import("@/assets/hero-1.webp").then(m => m.default),
-  () => import("@/assets/hero-2.webp").then(m => m.default),
-  () => import("@/assets/hero-3.webp").then(m => m.default),
-  () => import("@/assets/hero-4.webp").then(m => m.default),
   () => import("@/assets/hero-5.webp").then(m => m.default),
+  () => import("@/assets/hero-1.webp").then(m => m.default),
+  () => import("@/assets/hero-3.webp").then(m => m.default),
+  () => Promise.resolve(davidOfficePortrait),
 ];
 const heroMobile = [
   hero1Mobile,
-  () => import("@/assets/hero-1-mobile.webp").then(m => m.default),
-  () => import("@/assets/hero-2-mobile.webp").then(m => m.default),
-  () => import("@/assets/hero-3-mobile.webp").then(m => m.default),
-  () => import("@/assets/hero-4-mobile.webp").then(m => m.default),
   () => import("@/assets/hero-5-mobile.webp").then(m => m.default),
+  () => import("@/assets/hero-1-mobile.webp").then(m => m.default),
+  () => import("@/assets/hero-3-mobile.webp").then(m => m.default),
+  () => Promise.resolve(davidOfficePortraitMobile),
 ];
 import {
   Cigarette, Brain, Scale, Flame, HeartPulse, Users,
