@@ -99,7 +99,7 @@ export default function UeberUns() {
                 </div>
               )}
 
-              <Link to={getPath("contact", language, country)}>
+              <Link to={getPath("contact", language, country)}">
                 <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-3">
                   {isEN ? "Book Free Discovery Call" : "Kostenloses Erstgespräch vereinbaren"}
                 </Button>
@@ -253,6 +253,9 @@ export default function UeberUns() {
           </div>
         </div>
       </section>
+
+      {/* Ein glückliches, bewusstes und freies Leben */}
+      <section className="bg-[#f4f3ef] border-b border-border">
         <div className="container-main py-10 lg:py-14">
           <p className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32] mb-2">
             {isEN ? "The Goal:" : "Das Ziel:"}
@@ -264,7 +267,7 @@ export default function UeberUns() {
               <p className="text-base text-foreground leading-relaxed">
                 {isEN
                   ? "With his psychological and neuroscientific background, hypnotist David Woods practices a very modern hypnosis approach and developed 'Aktiv-Hypnose'. He sees hypnosis as a simple but extremely effective tool to resolve problem situations and improve quality of life for his clients in the shortest possible time. His goal is to help people live their lives more happily, more consciously and more freely. The successes of his work are reported not only by television shows and newspapers, but also by many clients and participants on our website."
-                  : `Vor seinem psychologischen und neurowissenschaftlichen Hintergrund praktiziert Hypnotiseur David Woods einen sehr modernen Hypnose Ansatz und entwickelte die \u201EAktiv Hypnose\u201C. Er betrachtet Hypnose als ein einfaches, aber extrem wirkungsvolles Werkzeug, um bei seinen Klienten innerhalb k\u00FCrzester Zeit Problemsituationen aufzul\u00F6sen und die Lebensqualit\u00E4t zu verbessern. Sein Ziel ist es, Menschen dabei zu helfen, ihr Leben gl\u00FCcklicher, bewusster und freier zu gestalten. \u00DCber die Erfolge seiner Arbeit berichten nicht nur Fernsehsendungen und Zeitungen, sondern auch viele Klienten und Teilnehmer auf unserer Website.`}
+                  : `Vor seinem psychologischen und neurowissenschaftlichen Hintergrund praktiziert Hypnotiseur David Woods einen sehr modernen Hypnose Ansatz und entwickelte die "Aktiv Hypnose". Er betrachtet Hypnose als ein einfaches, aber extrem wirkungsvolles Werkzeug, um bei seinen Klienten innerhalb kürzester Zeit Problemsituationen aufzulösen und die Lebensqualität zu verbessern. Sein Ziel ist es, Menschen dabei zu helfen, ihr Leben glücklicher, bewusster und freier zu gestalten. Über die Erfolge seiner Arbeit berichten nicht nur Fernsehsendungen und Zeitungen, sondern auch viele Klienten und Teilnehmer auf unserer Website.`}
               </p>
               <div className="mx-auto lg:mx-0 w-64 lg:w-full">
                 <ImageLightbox
