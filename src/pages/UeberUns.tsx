@@ -243,7 +243,7 @@ export default function UeberUns() {
             <p>
               {isEN
                 ? "Today, David J. Woods specifically trains participants to become 'Therapists in Aktiv-Hypnose©' — with a clear focus on effective application, practical experience and sustainable change work."
-                : "Heute bildet David J. Woods Teilnehmer gezielt zum \"Therapeuten in Aktiv-Hypnose©\" aus – mit einem klaren Fokus auf wirksame Anwendung, praktische Erfahrung und nachhaltige Veränderungsarbeit."}
+                : "In seinen Ausbildungsprogrammen bildet er die Teilnehmer heute gezielt in seiner eigenen Methode zum \"Therapeuten in Aktiv-Hypnose©\" aus."}
             </p>
             <p>
               {isEN
