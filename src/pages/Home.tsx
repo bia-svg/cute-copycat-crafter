@@ -156,7 +156,7 @@ export default function Home() {
       if (loadedSlides[next]) {
         setCurrentSlide(next);
       }
-    }, 5000);
+    }, 4500);
 
     return () => window.clearInterval(interval);
   }, [currentSlide, isMobile, loadedSlides, totalSlides]);
