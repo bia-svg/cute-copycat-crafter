@@ -23,7 +23,8 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
   const [gdprConsent, setGdprConsent] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
 
-  const inputClasses = "w-full border border-border px-2.5 py-1.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
+  const inputClasses = "w-full border border-border px-2.5 py-1 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
+  const labelClasses = "block text-xs font-medium text-foreground/80 mb-0.5";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
