@@ -449,7 +449,6 @@ export default function SeminarAnmeldung() {
                           autoComplete="tel"
                           value={phoneNumber}
                           onChange={(e) => setPhoneNumber(e.target.value)}
-                          placeholder={isEN ? "e.g. +49 151 23456789" : "z.B. +49 151 23456789"}
                           className={inputClasses}
                         />
                       </div>
