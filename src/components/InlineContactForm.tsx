@@ -23,7 +23,8 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
   const [gdprConsent, setGdprConsent] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
 
-  const inputClasses = "w-full border border-border px-2.5 py-1.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
+  const inputClasses = "w-full border border-border px-2.5 py-1 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
+  const labelClasses = "block text-xs font-medium text-foreground/80 mb-0.5";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -147,23 +148,23 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-2.5">
+    <form onSubmit={handleSubmit} noValidate className="space-y-2">
       {/* Full Name */}
       <div>
-        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Full Name" : "Vor- und Nachname"} *</label>
+        <label className={labelClasses}>{isEN ? "Full Name" : "Vor- und Nachname"} *</label>
         <input type="text" name="fullName" required autoComplete="name" className={inputClasses} />
       </div>
 
       {/* Email */}
       <div>
-        <label className="block text-xs font-medium text-muted-foreground mb-1">E-Mail *</label>
+        <label className={labelClasses}>E-Mail *</label>
         <input type="email" name="email" required autoComplete="email" className={inputClasses} />
       </div>
 
       {/* Phone + Postal Code */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
         <div>
-          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Phone incl. area code" : "Tel. mit Vorwahl"} *</label>
+          <label className={labelClasses}>{isEN ? "Phone incl. area code" : "Tel. mit Vorwahl"} *</label>
           <input
             type="tel"
             required
@@ -174,26 +175,26 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
           />
         </div>
         <div>
-          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Postal code / City" : "PLZ / Ort"} *</label>
+          <label className={labelClasses}>{isEN ? "Postal code / City" : "PLZ / Ort"} *</label>
           <input type="text" name="postalCode" required autoComplete="postal-code" className={inputClasses} />
         </div>
       </div>
 
       {/* Best time to reach */}
       <div>
-        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Available from – to" : "Erreichbar von – bis"}</label>
+        <label className={labelClasses}>{isEN ? "Available from – to" : "Erreichbar von – bis"}</label>
         <input type="text" name="bestTime" autoComplete="off" className={inputClasses} />
       </div>
 
       {/* Message */}
       <div>
-        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Your concern / Message" : "Ihr Anliegen / Nachricht"}</label>
-        <textarea name="message" rows={2} className={`${inputClasses} resize-none`} />
+        <label className={labelClasses}>{isEN ? "Your concern / Message" : "Ihr Anliegen / Nachricht"}</label>
+        <textarea name="message" rows={1} className={`${inputClasses} resize-none min-h-[40px]`} />
       </div>
 
       {/* GDPR */}
-      <div className="border border-border bg-white p-2.5 space-y-1.5">
-        <label className="flex items-start gap-2.5 cursor-pointer">
+      <div className="border border-border bg-white p-2">
+        <label className="flex items-start gap-2 cursor-pointer">
           <input
             type="checkbox"
             name="gdprConsent"
@@ -201,7 +202,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
             onChange={(e) => setGdprConsent(e.target.checked)}
             className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
           />
-          <span className="text-xs text-foreground leading-snug">
+          <span className="text-xs text-foreground/80 leading-snug">
             {isEN ? (
               <>
                 I have read the{" "}
@@ -222,17 +223,17 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold py-3"
+        className="w-full bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold py-2.5 mt-1"
       >
         {isSubmitting
           ? (isEN ? "Sending..." : "Wird gesendet...")
           : (isEN ? "Request without obligation" : "Unverbindlich anfragen")}
       </Button>
 
-      <p className="text-[10px] text-muted-foreground text-center">
+      <p className="text-[10px] text-muted-foreground text-center pt-0.5">
         {isEN
-          ? "We reply within 24 hours — or use the WhatsApp button for a quicker response."
-          : "Wir antworten innerhalb von 24 Stunden — oder nutzen Sie den WhatsApp-Button für eine schnellere Antwort."}
+          ? "Reply within 24 hours. Often faster via WhatsApp."
+          : "Antwort innerhalb von 24 Stunden. Per WhatsApp oft schneller."}
       </p>
     </form>
   );

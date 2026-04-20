@@ -604,7 +604,10 @@ export default function Home() {
       <section className="py-10 md:py-16 bg-[#F5F3EF]" style={deferredSectionStyle}>
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white rounded-lg border border-border/60 p-4 sm:p-6 shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)]">
+            <h2 className="text-lg sm:text-xl font-semibold text-primary mb-3 text-center">
+              {language === "en" ? "Your Request" : "Ihre Anfrage"}
+            </h2>
+            <div className="bg-white rounded-lg border border-border/40 p-4 sm:p-6 shadow-[0_4px_20px_-6px_rgba(27,58,92,0.12)]">
               <InlineContactForm />
             </div>
           </div>

@@ -28,7 +28,7 @@ export default function Erstgespraech() {
             <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2 text-center">
               {isEN ? "Get More Information" : "Mehr Informationen erhalten"}
             </h1>
-            <div className="bg-white rounded-lg border border-border/60 p-4 sm:p-6 shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)]">
+            <div className="bg-white rounded-lg border border-border/40 p-4 sm:p-6 shadow-[0_4px_20px_-6px_rgba(27,58,92,0.12)]">
               <InlineContactForm />
             </div>
 
