@@ -99,7 +99,7 @@ export default function UeberUns() {
                 </div>
               )}
 
-              <Link to={getPath("contact", language, country)}">
+              <Link to={getPath("contact", language, country)}>
                 <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-3">
                   {isEN ? "Book Free Discovery Call" : "Kostenloses Erstgespräch vereinbaren"}
                 </Button>
@@ -243,7 +243,7 @@ export default function UeberUns() {
             <p>
               {isEN
                 ? "Today, David J. Woods specifically trains participants to become 'Therapists in Aktiv-Hypnose©' — with a clear focus on effective application, practical experience and sustainable change work."
-                : "Heute bildet David J. Woods Teilnehmer gezielt zum „Therapeuten in Aktiv-Hypnose©" aus – mit einem klaren Fokus auf wirksame Anwendung, praktische Erfahrung und nachhaltige Veränderungsarbeit."}
+                : "Heute bildet David J. Woods Teilnehmer gezielt zum „Therapeuten in Aktiv-Hypnose©“ aus – mit einem klaren Fokus auf wirksame Anwendung, praktische Erfahrung und nachhaltige Veränderungsarbeit."}
             </p>
             <p>
               {isEN
@@ -409,7 +409,7 @@ export default function UeberUns() {
                 ? "Book your free and non-binding discovery call. We take time for you and advise you individually."
                 : "Vereinbaren Sie jetzt Ihr kostenloses und unverbindliches Erstgespräch. Wir nehmen uns Zeit für Sie und beraten Sie individuell."}
             </p>
-            <Link to={getPath("contact", language, country)}">
+            <Link to={getPath("contact", language, country)}>
               <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold px-8 py-3 text-base">
                 {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
               </Button>
