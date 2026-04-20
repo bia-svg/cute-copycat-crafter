@@ -260,7 +260,7 @@ export default function Home() {
                   height={500}
                   loading={idx === "0" ? "eager" : "lazy"}
                   fetchPriority={idx === "0" ? "high" : "auto"}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${Number(idx) === currentSlide ? "opacity-100" : "opacity-0"}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${Number(idx) === currentSlide ? "opacity-100" : "opacity-0"}`}
                 />
               ))}
               <button onClick={goPrev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity" aria-label="Previous">
@@ -350,7 +350,7 @@ export default function Home() {
                   height={400}
                   loading={idx === "0" ? "eager" : "lazy"}
                   fetchPriority={idx === "0" ? "high" : "auto"}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${Number(idx) === currentSlide ? "opacity-100" : "opacity-0"}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${Number(idx) === currentSlide ? "opacity-100" : "opacity-0"}`}
                 />
               ))}
               <button onClick={goPrev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/70 hover:bg-background/90 rounded-full p-1.5 transition-opacity" aria-label="Previous">
