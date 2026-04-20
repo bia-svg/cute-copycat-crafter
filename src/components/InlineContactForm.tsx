@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { sendLeadEmails } from "@/lib/leadEmails";
 import { logFormSubmission } from "@/lib/formSubmissionLog";
@@ -9,7 +9,6 @@ import { getPath } from "@/lib/routes";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import { toast } from "sonner";
-import { PHONE_COUNTRIES } from "@/data/phoneCountries";
 
 interface InlineContactFormProps {
   defaultConcern?: string;
@@ -22,19 +21,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [gdprConsent, setGdprConsent] = useState(false);
-  const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
-  const [phoneCountry, setPhoneCountry] = useState(defaultPhoneCountry);
   const [phoneNumber, setPhoneNumber] = useState("");
-
-  const selectedPhoneCountry = PHONE_COUNTRIES.find(c => c.code === phoneCountry) || PHONE_COUNTRIES[0];
-
-  const handlePhoneChange = useCallback((value: string) => {
-    const cleaned = value.replace(/[^\d\s]/g, "");
-    const digitsOnly = cleaned.replace(/\s/g, "");
-    if (digitsOnly.length <= selectedPhoneCountry.maxDigits) {
-      setPhoneNumber(cleaned);
-    }
-  }, [selectedPhoneCountry.maxDigits]);
 
   const inputClasses = "w-full border border-border px-2.5 py-1.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
 
