@@ -223,32 +223,54 @@ export default function UeberUns() {
         </div>
       </section>
 
-      {/* Ausbildung zum Therapeuten in Aktiv-Hypnose© */}
+      {/* Ein kurzer Überblick zu David J. Woods */}
       <section className="bg-white border-b border-border">
         <div className="container-main py-10 lg:py-14">
           <h2 className="text-2xl font-bold text-[#1B3A5C] mb-6">
-            {isEN ? "Training to Become a Therapist in Aktiv-Hypnose©" : "Ausbildung zum Therapeuten in Aktiv-Hypnose©"}
+            {isEN ? "A Brief Overview of David J. Woods" : "Ein kurzer Überblick zu David J. Woods"}
           </h2>
           <div className="space-y-4 text-base text-foreground leading-relaxed max-w-4xl">
             <p>
               {isEN
-                ? "David J. Woods applies his self-developed Aktiv-Hypnose© not only in intensive hypnosis sessions and coaching, but also passes on this effective knowledge to others through professional training programs."
-                : "David J. Woods wendet seine eigens entwickelte Aktiv-Hypnose© nicht nur in intensiven Hypnose-Sitzungen und Coachings an, sondern gibt dieses wirkungsvolle Wissen auch in Form professioneller Ausbildungen an andere Menschen weiter."}
+                ? "David J. Woods was born in London and became deeply involved with hypnosis and psychology at an early age. After studying psychology in Mexico (UNAM), the USA (Boston) and Great Britain (Cambridge), he completed international training programs as a hypnotist and hypnosis trainer."
+                : "David J. Woods wurde in London geboren und beschäftigte sich bereits früh intensiv mit Hypnose und Psychologie. Nach seinem Psychologiestudium in Mexiko (UNAM), den USA (Boston) und Großbritannien (Cambridge) absolvierte er internationale Ausbildungen zum Hypnotiseur und Hypnose-Trainer."}
             </p>
             <p>
               {isEN
-                ? "His training programs are aimed at people who want to learn modern, in-depth and practice-oriented hypnosis professionally — in Germany, Switzerland and internationally."
-                : "Seine Ausbildungsprogramme richten sich an Menschen, die moderne, tiefgehende und praxisorientierte Hypnose professionell erlernen möchten – in Deutschland, in der Schweiz und auch international."}
+                ? "His central concern is to support people on the basis of depth-psychologically grounded approaches and clear, comprehensible connections in achieving personal goals, sustainably resolving blockages and fully unfolding their own potential."
+                : "Sein zentrales Anliegen ist es, Menschen auf Basis tiefenpsychologisch fundierter Ansätze und klarer, nachvollziehbarer Zusammenhänge dabei zu unterstützen, persönliche Ziele zu erreichen, Blockaden nachhaltig zu lösen und ihr eigenes Potenzial vollständig zu entfalten."}
             </p>
             <p>
               {isEN
-                ? "Today, David J. Woods specifically trains participants to become 'Therapists in Aktiv-Hypnose©' — with a clear focus on effective application, practical experience and sustainable change work."
-                : "In seinen Ausbildungsprogrammen bildet er die Teilnehmer heute gezielt in seiner eigenen Methode zum \"Therapeuten in Aktiv-Hypnose©\" aus."}
+                ? "David J. Woods has been working successfully in Germany and Switzerland for many years and is currently also working internationally, including in Dubai."
+                : "David J. Woods ist seit vielen Jahren erfolgreich in Deutschland und der Schweiz tätig und arbeitet aktuell zusätzlich international, unter anderem in Dubai."}
             </p>
+
+            <h3 className="text-xl font-bold text-[#1B3A5C] pt-4">
+              {isEN ? "Early Interest in Hypnosis in Childhood & Youth" : "Frühes Interesse für Hypnose in der Kindheit & Jugend"}
+            </h3>
             <p>
               {isEN
-                ? "David J. Woods is himself a certified hypnosis trainer of the world-renowned National Guild of Hypnotists (NGH). However, today's training programs deliberately focus on his own modern and practice-strong method of Aktiv-Hypnose©."
-                : "David J. Woods ist selbst zertifizierter Hypnose-Ausbilder der weltweit bekannten National Guild of Hypnotists (NGH). Die heutigen Ausbildungsprogramme konzentrieren sich jedoch bewusst auf seine eigene, moderne und praxisstarke Methode der Aktiv-Hypnose©."}
+                ? "Already in his childhood in England, David J. Woods was fascinated by the topic of hypnosis as well as hypnotherapy. As a teenager he therefore gathered first experiences with the subject and later engaged more intensively with hypnosis. He also dealt with depth psychology and various coaching methods."
+                : "Bereits in seiner Kindheit in England war David J. Woods vom Thema Hypnose sowie der Hypnosetherapie fasziniert. Daher sammelte er bereits als Jugendlicher erste Erfahrungen mit dem Thema und setzte sich später intensiver mit der Hypnose auseinander. Zudem befasste er sich auch mit der Tiefenpsychologie und verschiedenen Coaching-Methoden."}
+            </p>
+
+            <h3 className="text-xl font-bold text-[#1B3A5C] pt-4">
+              {isEN ? "Hypnosis Training in South America, England & Germany" : "Hypnose-Ausbildung in Südamerika, England & Deutschland"}
+            </h3>
+            <p>
+              {isEN
+                ? "In order to also use the theoretical knowledge in practice, several years of training in various hypnosis institutes followed his studies. He visited not only experienced hypnotists and hypnosis trainers in South America, but also in England and Germany. David J. Woods speaks fluent German, English and Spanish, so he was able to combine all the practical knowledge in himself."
+                : "Um das theoretische Wissen auch in der Praxis zu nutzen, folgte nach seinem Studium eine mehrjährige Ausbildung in verschiedenen Hypnose-Instituten. Dazu besuchte er nicht nur erfahrene Hypnotiseure und Hypnose Ausbilder in Südamerika, sondern auch in England und Deutschland. David J. Woods spricht fließend Deutsch, Englisch und Spanisch, sodass er das ganze praktische Wissen in sich vereinen konnte."}
+            </p>
+
+            <h3 className="text-xl font-bold text-[#1B3A5C] pt-4">
+              {isEN ? "Certified Hypnosis Trainer of the National Guild of Hypnotists" : "Zertifizierter Hypnose-Ausbilder der National Guild of Hypnotists"}
+            </h3>
+            <p>
+              {isEN
+                ? "He applies his Aktiv-Hypnose© not only in hypnosis sessions and coaching, but also passes it on in the form of hypnosis training programs in Augsburg, Germany and near Zurich in Switzerland to other people. In his training programs, he today specifically trains the participants in his own method to become 'Therapists in Aktiv-Hypnose©'. David J. Woods is himself a certified hypnosis trainer of the world's largest hypnosis association, the 'National Guild of Hypnotists'."
+                : "Seine Aktiv-Hypnose© wendet er nicht nur in den Hypnose-Sitzungen und Coachings an, sondern gibt sie auch in Form von Hypnose-Ausbildungen in Augsburg Deutschland und bei Zürich in der Schweiz an andere Menschen weiter. In seinen Ausbildungsprogrammen bildet er die Teilnehmer heute gezielt in seiner eigenen Methode zum „Therapeuten in Aktiv-Hypnose©“ aus. Denn David J. Woods ist selbst zertifizierter Hypnose-Ausbilder des weltweit größten Hypnose-Verbands „National Guild of Hypnotists“."}
             </p>
           </div>
         </div>
