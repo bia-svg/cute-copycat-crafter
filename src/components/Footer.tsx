@@ -124,18 +124,22 @@ export default function Footer() {
               </div>
 
               {/* Training & Business */}
-              <div>
-                <h5 className="text-white/70 text-[10px] uppercase tracking-wider font-semibold mb-1.5 pb-1 border-b border-white/15">{isEN ? "Training & Business" : "Ausbildung & Business"}</h5>
-                <ul className="space-y-0.5">
-                  <li>
-                    <Link to={getPath("training", language, country)} className="block py-0.5 font-medium hover:underline hover:opacity-100">
-                      {isEN ? "Become a Hypnotherapist" : "Hypnosetherapeut werden"}
-                    </Link>
-                  </li>
-                  <li><Link to={getPath("seminarSchedule", language, country)} className="block py-0.5 hover:underline hover:opacity-100">{isEN ? "Seminars & Trainings" : "Seminare & Ausbildungen"}</Link></li>
-                  <li><Link to={getPath("corporate", language, country)} className="block py-0.5 hover:underline hover:opacity-100">{isEN ? "Business Coaching" : "Business Coaching"}</Link></li>
-                  <li><Link to={getPath("corporate", language, country)} className="block py-0.5 hover:underline hover:opacity-100">{isEN ? "Corporate Programs" : "Corporate Programme"}</Link></li>
-                </ul>
+              <div className="space-y-4">
+                {/* Training Block */}
+                <div>
+                  <h5 className="text-white/70 text-[10px] uppercase tracking-wider font-semibold mb-1.5 pb-1 border-b border-white/15">{isEN ? "Training" : "Ausbildung"}</h5>
+                  <Link to={getPath("training", language, country)} className="block py-0.5 hover:underline hover:opacity-100">
+                    {isEN ? "Become a Hypnotherapist / Seminars" : "Hypnosetherapeut werden / Seminare & Ausbildungen"}
+                  </Link>
+                </div>
+
+                {/* Business Block */}
+                <div>
+                  <h5 className="text-white/70 text-[10px] uppercase tracking-wider font-semibold mb-1.5 pb-1 border-b border-white/15">{isEN ? "Business" : "Business"}</h5>
+                  <Link to={getPath("corporate", language, country)} className="block py-0.5 hover:underline hover:opacity-100">
+                    {isEN ? "Business Coaching / Corporate Programs" : "Business Coaching / Corporate Programme"}
+                  </Link>
+                </div>
               </div>
 
               {/* Hypnotherapy */}
