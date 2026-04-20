@@ -65,7 +65,7 @@ function TVLogoCarousel() {
      <div className="relative bg-muted/50 rounded-lg p-3">
       <div ref={scrollRef} className="flex gap-6 overflow-x-auto scrollbar-hide py-2" style={{ scrollbarWidth: "none" }}>
         {CDN.bekanntAus.map((src, i) => (
-          <img key={i} src={src} alt={`David J. Woods bekannt aus Medien – Logo ${i + 1}`} className="h-8 md:h-10 object-contain shrink-0 opacity-80 hover:opacity-100 transition-opacity mix-blend-multiply" width={80} height={32} loading="lazy" />
+          <img key={i} src={src} alt={`David J. Woods bekannt aus Medien – Logo ${i + 1}`} className="h-8 md:h-10 object-contain shrink-0 opacity-100 hover:opacity-100 transition-opacity mix-blend-multiply" width={80} height={32} loading="lazy" />
         ))}
       </div>
     </div>
@@ -437,7 +437,7 @@ export default function Home() {
               ? "Topics can also be combined during the session."
               : "Dabei können Themen im Zuge der Sitzung auch kombiniert werden."}
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-3">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-3">
             {services.map((s) => (
               <ServiceCard key={s.title} {...s} />
             ))}
@@ -494,7 +494,7 @@ export default function Home() {
               ? "Performance Coaching: Maximize Your Team's Potential. We offer tailored solutions for companies of all sizes."
               : "Erfolgs-Coaching: Leistungsfähigkeit maximieren. Wir bieten maßgeschneiderte Lösungen für Unternehmen jeder Größe."}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-4">
             {[
               { icon: <Trophy className="w-6 h-6" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Success is ultimately decided in the mind." : "Letztendlich entscheidet sich Erfolg im Kopf.", href: getPath("corporateErfolg", language, country), image: corporateSuccessImg },
               { icon: <Shield className="w-6 h-6" />, title: isEN ? "Resilience Building" : "Resilienz-Verstärken", desc: isEN ? "Build inner strength for challenging times." : "Innere Stärke aufbauen für schwere Zeiten.", href: getPath("corporateResilienz", language, country), image: corporateResilienceImg },
