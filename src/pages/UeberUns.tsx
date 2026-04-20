@@ -99,7 +99,7 @@ export default function UeberUns() {
                 </div>
               )}
 
-              <Link to={getPath("contact", language, country)}">
+              <Link to={getPath("contact", language, country)}>
                 <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-3">
                   {isEN ? "Book Free Discovery Call" : "Kostenloses Erstgespräch vereinbaren"}
                 </Button>
