@@ -409,7 +409,7 @@ export default function UeberUns() {
                 ? "Book your free and non-binding discovery call. We take time for you and advise you individually."
                 : "Vereinbaren Sie jetzt Ihr kostenloses und unverbindliches Erstgespräch. Wir nehmen uns Zeit für Sie und beraten Sie individuell."}
             </p>
-            <Link to={getPath("contact", language, country)}">
+            <Link to={getPath("contact", language, country)}>
               <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold px-8 py-3 text-base">
                 {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
               </Button>
