@@ -163,7 +163,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       {/* Phone + Postal Code */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
-          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Phone number including country code" : "Telefonnummer inklusive Vorwahl"} *</label>
+          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Phone incl. area code" : "Tel. mit Vorwahl"} *</label>
           <input
             type="tel"
             required
@@ -174,7 +174,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
           />
         </div>
         <div>
-          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Postal Code and City" : "Postleitzahl und Ort"} *</label>
+          <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Postal code / City" : "PLZ / Ort"} *</label>
           <input type="text" name="postalCode" required autoComplete="postal-code" className={inputClasses} />
         </div>
       </div>
