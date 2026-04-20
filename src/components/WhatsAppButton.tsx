@@ -14,10 +14,10 @@ function getUtmParams(): Record<string, string> {
 function buildWhatsAppUrl(country: string): string {
   const phone = country === "ch" ? "41791318878" : "491719539922";
   const utms = getUtmParams();
-  let message = "Hallo, ich interessiere mich für eine Hypnose-Sitzung.";
+  const message = "Hallo Herr Woods, ich interessiere mich für Hypnose und hätte gerne weitere Informationen.";
   if (Object.keys(utms).length > 0) {
     const tag = Object.entries(utms).map(([k, v]) => `${k}=${v}`).join("&");
-    message += `\n\n[ref: ${tag}]`;
+    return `https://wa.me/${phone}?text=${encodeURIComponent(message + "\n\n[ref: " + tag + "]")}`;
   }
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
