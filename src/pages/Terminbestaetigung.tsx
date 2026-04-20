@@ -10,12 +10,11 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Link, useSearchParams } from "react-router-dom";
 import { getPath } from "@/lib/routes";
 import { CalendarCheck, CheckCircle2 } from "lucide-react";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { sendLeadEmails } from "@/lib/leadEmails";
 import { logFormSubmission } from "@/lib/formSubmissionLog";
 import { toast } from "sonner";
-import { PHONE_COUNTRIES } from "@/data/phoneCountries";
 import { cn } from "@/lib/utils";
 
 export default function Terminbestaetigung() {
@@ -35,19 +34,7 @@ export default function Terminbestaetigung() {
   const [sessionMonth, setSessionMonth] = useState("");
   const [sessionYear, setSessionYear] = useState("");
 
-  // Phone country code
-  const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
-  const [phoneCountry, setPhoneCountry] = useState(defaultPhoneCountry);
   const [phoneNumber, setPhoneNumber] = useState("");
-  const selectedPhoneCountry = PHONE_COUNTRIES.find(c => c.code === phoneCountry) || PHONE_COUNTRIES[0];
-
-  const handlePhoneChange = useCallback((value: string) => {
-    const cleaned = value.replace(/[^\d\s]/g, "");
-    const digitsOnly = cleaned.replace(/\s/g, "");
-    if (digitsOnly.length <= selectedPhoneCountry.maxDigits) {
-      setPhoneNumber(cleaned);
-    }
-  }, [selectedPhoneCountry.maxDigits]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
