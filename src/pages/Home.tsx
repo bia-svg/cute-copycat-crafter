@@ -15,6 +15,9 @@ import hero1 from "@/assets/hero-4.webp";
 import hero1Mobile from "@/assets/hero-4-mobile.webp";
 import davidSessionImg from "@/assets/david-portrait-outdoor.jpg";
 import corporateSuccessImg from "@/assets/corporate-success.jpg";
+import corporateResilienceImg from "@/assets/corporate-resilience.jpg";
+import corporateStressImg from "@/assets/corporate-stress.jpg";
+import corporateNonsmokerImg from "@/assets/corporate-nonsmoker.jpg";
 import davidOfficePortrait from "@/assets/david-office-portrait.webp";
 import davidOfficePortraitMobile from "@/assets/david-office-portrait-mobile.webp";
 
