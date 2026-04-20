@@ -11,7 +11,7 @@ import { useSearchParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Calendar, MapPin, Shield, Users, Star, GraduationCap } from "lucide-react";
 import { toast } from "sonner";
-import { PHONE_COUNTRIES } from "@/data/phoneCountries";
+
 
 /* ── Seminar dates ── */
 const SEMINAR_DATES = {
@@ -64,18 +64,7 @@ export default function SeminarAnmeldung() {
   };
 
   // Phone
-  const defaultPhoneCountry = country === "ch" ? "+41" : "+49";
-  const [phoneCountry, setPhoneCountry] = useState(defaultPhoneCountry);
   const [phoneNumber, setPhoneNumber] = useState("");
-  const selectedPhoneCountry = PHONE_COUNTRIES.find(c => c.code === phoneCountry) || PHONE_COUNTRIES[0];
-
-  const handlePhoneChange = useCallback((value: string) => {
-    const cleaned = value.replace(/[^\d\s]/g, "");
-    const digitsOnly = cleaned.replace(/\s/g, "");
-    if (digitsOnly.length <= selectedPhoneCountry.maxDigits) {
-      setPhoneNumber(cleaned);
-    }
-  }, [selectedPhoneCountry.maxDigits]);
 
   const dates = seminarCountry ? SEMINAR_DATES[seminarCountry] : [];
   const selectedDateObj = dates.find(d => d.date === selectedDate);
@@ -146,7 +135,7 @@ export default function SeminarAnmeldung() {
     const leadData = {
       name: `${firstName} ${lastName}`.trim(),
       email,
-      phone: `${phoneCountry} ${phoneNumber}`.trim(),
+      phone: phoneNumber.trim(),
       concern: "seminar",
       form_type: "seminar",
       city: seminarCountry === "ch" ? "Schweiz" : "Deutschland",
@@ -453,30 +442,16 @@ export default function SeminarAnmeldung() {
 
                       {/* Phone */}
                       <div>
-                        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Phone" : "Telefonnummer"} *</label>
-                        <div className="flex">
-                          <select
-                            value={phoneCountry}
-                            onChange={(e) => { setPhoneCountry(e.target.value); setPhoneNumber(""); }}
-                            className="border border-r-0 border-border px-2 py-1.5 text-sm bg-card focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors rounded-l-md w-[110px] shrink-0 appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%222%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_6px_center] pr-5 cursor-pointer"
-                          >
-                            {PHONE_COUNTRIES.map(c => (
-                              <option key={c.code} value={c.code}>{c.flag} {c.iso} {c.code}</option>
-                            ))}
-                          </select>
-                          <input
-                            type="tel"
-                            required
-                            value={phoneNumber}
-                            onChange={(e) => handlePhoneChange(e.target.value)}
-                            placeholder={selectedPhoneCountry.placeholder}
-                            maxLength={selectedPhoneCountry.maxDigits + 4}
-                            className={`${inputClasses} border-l-0`}
-                          />
-                        </div>
-                        <p className="text-[10px] text-muted-foreground mt-0.5">
-                          {isEN ? `Max ${selectedPhoneCountry.maxDigits} digits` : `Max. ${selectedPhoneCountry.maxDigits} Ziffern`}
-                        </p>
+                        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Phone number including country code" : "Telefonnummer inklusive Vorwahl"} *</label>
+                        <input
+                          type="tel"
+                          required
+                          autoComplete="tel"
+                          value={phoneNumber}
+                          onChange={(e) => setPhoneNumber(e.target.value)}
+                          placeholder={isEN ? "e.g. +49 151 23456789" : "z.B. +49 151 23456789"}
+                          className={inputClasses}
+                        />
                       </div>
 
                       {/* Profession */}
