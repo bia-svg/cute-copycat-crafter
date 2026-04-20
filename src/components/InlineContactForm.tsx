@@ -181,13 +181,13 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
 
       {/* Best time to reach */}
       <div>
-        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Best time to reach you?" : "Wann sind Sie am besten erreichbar?"}</label>
+        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Available from – to" : "Erreichbar von – bis"}</label>
         <input type="text" name="bestTime" autoComplete="off" className={inputClasses} />
       </div>
 
       {/* Message */}
       <div>
-        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Message (optional)" : "Nachricht (optional)"}</label>
+        <label className="block text-xs font-medium text-muted-foreground mb-1">{isEN ? "Your concern / Message" : "Ihr Anliegen / Nachricht"}</label>
         <textarea name="message" rows={2} className={`${inputClasses} resize-none`} />
       </div>
 
@@ -204,13 +204,15 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
           <span className="text-xs text-foreground leading-snug">
             {isEN ? (
               <>
-                I agree that my personal data will be processed for the purpose of contacting me. I have read and accept the{" "}
-                <Link to={getPath("privacy", language, country)} className="underline hover:text-primary">privacy policy</Link>. *
+                I have read the{" "}
+                <Link to={getPath("privacy", language, country)} className="underline hover:text-primary">privacy policy</Link>{" "}
+                and agree to be contacted. *
               </>
             ) : (
               <>
-                Ich stimme zu, dass meine personenbezogenen Daten zum Zweck der Kontaktaufnahme verarbeitet werden. Ich habe die{" "}
-                <Link to={getPath("privacy", language, country)} className="underline hover:text-primary">Datenschutzerklärung</Link> gelesen und akzeptiert. *
+                Ich habe die{" "}
+                <Link to={getPath("privacy", language, country)} className="underline hover:text-primary">Datenschutzerklärung</Link>{" "}
+                gelesen und stimme der Kontaktaufnahme zu. *
               </>
             )}
           </span>
@@ -224,7 +226,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       >
         {isSubmitting
           ? (isEN ? "Sending..." : "Wird gesendet...")
-          : (isEN ? "Send Request" : "Anfrage senden")}
+          : (isEN ? "Request without obligation" : "Unverbindlich anfragen")}
       </Button>
 
       <p className="text-[10px] text-muted-foreground text-center">
