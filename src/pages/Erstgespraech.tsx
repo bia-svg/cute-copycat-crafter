@@ -28,11 +28,6 @@ export default function Erstgespraech() {
             <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2 text-center">
               {isEN ? "Get More Information" : "Mehr Informationen erhalten"}
             </h1>
-            <p className="text-sm text-muted-foreground text-center mb-4 leading-snug">
-              {isEN
-                ? <>Send your request here and I will reply within 24 hours.<br />Or use the green WhatsApp button for a faster response.</>
-                : <>Senden Sie hier Ihre Anfrage und ich melde mich innerhalb von 24 Stunden.<br />Oder nutzen Sie den grünen WhatsApp-Button für eine schnellere Antwort.</>}
-            </p>
             <div className="bg-white rounded-lg border border-border/60 p-4 sm:p-6 shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)]">
               <InlineContactForm />
             </div>
