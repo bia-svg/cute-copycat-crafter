@@ -604,11 +604,6 @@ export default function Home() {
       <section className="py-10 md:py-16 bg-[#F5F3EF]" style={deferredSectionStyle}>
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
-            <p className="text-center text-foreground/90 text-sm md:text-base font-semibold leading-snug mb-4 md:mb-5">
-              {isEN
-                ? <>Send your request here and I will reply within 24 hours.<br className="hidden sm:inline" /> Or use the green WhatsApp button for a faster response.</>
-                : <>Senden Sie hier Ihre Anfrage und ich melde mich innerhalb von 24 Stunden.<br className="hidden sm:inline" /> Oder nutzen Sie den grünen WhatsApp-Button für eine schnellere Antwort.</>}
-            </p>
             <div className="bg-white rounded-lg border border-border/60 p-4 sm:p-6 shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)]">
               <InlineContactForm />
             </div>
