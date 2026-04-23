@@ -339,12 +339,6 @@ export default function Header() {
       {/* ── Mobile Menu ── */}
       {mobileOpen && (
         <div className="lg:hidden bg-card border-t border-border max-h-[80vh] overflow-y-auto">
-          {/* Home */}
-          <Link to={getPath("home", language, country)} onClick={() => setMobileOpen(false)}
-            className="block px-4 py-3 font-medium text-foreground border-b border-border">
-            Home
-          </Link>
-
           {/* Hypnosetherapie */}
           <div className="border-b border-border">
             <button onClick={() => setMobileAccordion(mobileAccordion === "sessions" ? null : "sessions")} className="flex items-center justify-between w-full px-4 py-3 text-left font-medium text-foreground">
