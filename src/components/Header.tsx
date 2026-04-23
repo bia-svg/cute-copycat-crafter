@@ -388,29 +388,6 @@ export default function Header() {
           {/* Über uns */}
           <MobileSection id="about" title={t("nav.about")} items={aboutItems} />
 
-          {/* Language selector */}
-          <div className="border-b border-border px-4 py-3 flex items-center gap-4">
-            <div className="flex-1">
-              <p className="text-xs text-muted-foreground mb-1.5">{isDE ? "Sprache" : "Language"}</p>
-              <div className="flex gap-1">
-                {languageOptions.map(opt => (
-                  <button key={opt.value} onClick={() => setLanguage(opt.value)}
-                    className={`px-4 py-1.5 text-sm rounded border ${opt.value === language ? "border-primary bg-primary/10 font-semibold text-primary" : "border-border text-foreground"}`}>
-                    {opt.flag} {opt.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="p-4">
-            <Link to={getPath("contact", language, country)} onClick={() => setMobileOpen(false)}>
-              <Button className="w-full bg-cta text-cta-foreground hover:bg-cta/90">
-                {t("nav.cta")}
-              </Button>
-            </Link>
-          </div>
         </div>
       )}
     </header>
