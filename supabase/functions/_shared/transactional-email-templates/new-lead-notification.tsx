@@ -42,6 +42,29 @@ interface NewLeadProps {
   savingsAmount?: string
 }
 
+/**
+ * Normalize a phone number into a wa.me-compatible international format.
+ * - Strips spaces, dashes, brackets, dots, slashes, bullets and other separators
+ * - Removes leading "+" or "00" (international prefixes)
+ * - If number still starts with "0" (local format), prepends a default country
+ *   code based on the lead's country (DE -> 49, CH -> 41, AT -> 43)
+ * - Returns null if the result isn't a plausible international number
+ */
+function normalizeWhatsAppNumber(raw?: string, country?: string): string | null {
+  if (!raw) return null
+  let n = raw.trim().replace(/[^\d+]/g, '')
+  if (n.startsWith('+')) n = n.slice(1)
+  else if (n.startsWith('00')) n = n.slice(2)
+  if (n.startsWith('0')) {
+    const c = (country || '').toLowerCase()
+    const cc = c === 'de' ? '49' : c === 'ch' ? '41' : c === 'at' ? '43' : null
+    if (!cc) return null
+    n = cc + n.slice(1)
+  }
+  if (!/^\d{8,15}$/.test(n)) return null
+  return n
+}
+
 const NewLeadNotificationEmail = (props: NewLeadProps) => {
   const isEN = props.language === 'en'
   const isSession = props.formType === 'session'
