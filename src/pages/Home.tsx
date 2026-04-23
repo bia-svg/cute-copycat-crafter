@@ -553,6 +553,10 @@ export default function Home() {
                   alt={isEN ? "Professional hypnotherapy training seminar" : "Professionelles Hypnosetherapie-Ausbildungsseminar"}
                   className="w-full h-44 md:h-72 object-cover"
                   loading="lazy"
+                  decoding="async"
+                  width={1200}
+                  height={500}
+                  sizes="(min-width: 768px) 1120px, 100vw"
                 />
               </div>
             </div>
