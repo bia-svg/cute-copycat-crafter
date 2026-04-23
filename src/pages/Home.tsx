@@ -350,8 +350,10 @@ export default function Home() {
                   alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${Number(idx) + 1}`}
                   width={600}
                   height={400}
+                  sizes="100vw"
                   loading={idx === "0" ? "eager" : "lazy"}
                   fetchPriority={idx === "0" ? "high" : "auto"}
+                  decoding={idx === "0" ? "sync" : "async"}
                   className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${Number(idx) === currentSlide ? "opacity-100" : "opacity-0"}`}
                 />
               ))}
