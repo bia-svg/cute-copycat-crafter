@@ -484,39 +484,41 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
-        <section className="py-6 md:py-8 bg-muted/50" style={deferredSectionStyle}>
+        <section className="py-6 md:py-12 bg-muted/50" style={deferredSectionStyle}>
         <div className="container-main">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-1 text-foreground">
-            {isEN ? "Corporate Coaching" : "Firmencoaching"}
-          </h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-2 md:mb-3 text-sm md:text-base leading-snug">
-            {isEN
-              ? "Performance Coaching: Maximize Your Team's Potential. We offer tailored solutions for companies of all sizes."
-              : "Erfolgs-Coaching: Leistungsfähigkeit maximieren. Wir bieten maßgeschneiderte Lösungen für Unternehmen jeder Größe."}
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-4">
-            {[
-              { icon: <Trophy className="w-6 h-6" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Success is ultimately decided in the mind." : "Letztendlich entscheidet sich Erfolg im Kopf.", href: getPath("corporateErfolg", language, country), image: corporateSuccessImg },
-              { icon: <Shield className="w-6 h-6" />, title: isEN ? "Resilience Building" : "Resilienz-Verstärken", desc: isEN ? "Build inner strength for challenging times." : "Innere Stärke aufbauen für schwere Zeiten.", href: getPath("corporateResilienz", language, country), image: corporateResilienceImg },
-              { icon: <Clock className="w-6 h-6" />, title: isEN ? "Stress Prevention" : "Stress-Prävention", desc: isEN ? "Burnout prevention for leaders and teams." : "Burnout-Prävention für Führungskräfte und Teams.", href: getPath("corporateStress", language, country), image: corporateStressImg },
-              { icon: <Cigarette className="w-6 h-6" />, title: isEN ? "Non-Smoker Seminars" : "Nichtraucher-Seminare", desc: isEN ? "'Non-smoker in 3 hours' — corporate wellness." : "'Nichtraucher in 3 Stunden' — Firmen-Wellness.", href: getPath("corporateNichtraucher", language, country), image: corporateNonsmokerImg },
-            ].map((item) => (
-              <ServiceCard
-                key={item.title}
-                title={item.title}
-                description={item.desc}
-                href={item.href}
-                icon={item.icon}
-                image={item.image}
-              />
-            ))}
-          </div>
-          <div className="text-center mt-4 md:mt-5">
-            <Link to={getPath("corporate", language, country)}>
-              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold">
-                {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
-              </Button>
-            </Link>
+          <div className="md:bg-card md:border md:border-border md:rounded-2xl md:shadow-sm md:px-8 md:py-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-1 text-foreground">
+              {isEN ? "Corporate Coaching" : "Firmencoaching"}
+            </h2>
+            <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-2 md:mb-5 text-sm md:text-base leading-snug">
+              {isEN
+                ? "Performance Coaching: Maximize Your Team's Potential. We offer tailored solutions for companies of all sizes."
+                : "Erfolgs-Coaching: Leistungsfähigkeit maximieren. Wir bieten maßgeschneiderte Lösungen für Unternehmen jeder Größe."}
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-4">
+              {[
+                { icon: <Trophy className="w-6 h-6" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Success is ultimately decided in the mind." : "Letztendlich entscheidet sich Erfolg im Kopf.", href: getPath("corporateErfolg", language, country), image: corporateSuccessImg },
+                { icon: <Shield className="w-6 h-6" />, title: isEN ? "Resilience Building" : "Resilienz-Verstärken", desc: isEN ? "Build inner strength for challenging times." : "Innere Stärke aufbauen für schwere Zeiten.", href: getPath("corporateResilienz", language, country), image: corporateResilienceImg },
+                { icon: <Clock className="w-6 h-6" />, title: isEN ? "Stress Prevention" : "Stress-Prävention", desc: isEN ? "Burnout prevention for leaders and teams." : "Burnout-Prävention für Führungskräfte und Teams.", href: getPath("corporateStress", language, country), image: corporateStressImg },
+                { icon: <Cigarette className="w-6 h-6" />, title: isEN ? "Non-Smoker Seminars" : "Nichtraucher-Seminare", desc: isEN ? "'Non-smoker in 3 hours' — corporate wellness." : "'Nichtraucher in 3 Stunden' — Firmen-Wellness.", href: getPath("corporateNichtraucher", language, country), image: corporateNonsmokerImg },
+              ].map((item) => (
+                <ServiceCard
+                  key={item.title}
+                  title={item.title}
+                  description={item.desc}
+                  href={item.href}
+                  icon={item.icon}
+                  image={item.image}
+                />
+              ))}
+            </div>
+            <div className="text-center mt-4 md:mt-6">
+              <Link to={getPath("corporate", language, country)}>
+                <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold">
+                  {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
