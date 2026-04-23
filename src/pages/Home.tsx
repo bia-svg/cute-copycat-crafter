@@ -65,7 +65,7 @@ function TVLogoCarousel() {
      <div className="relative bg-muted/50 rounded-lg p-3">
       <div ref={scrollRef} className="flex gap-6 overflow-x-auto scrollbar-hide py-2" style={{ scrollbarWidth: "none" }}>
         {CDN.bekanntAus.map((src, i) => (
-          <img key={i} src={src} alt={`David J. Woods bekannt aus Medien – Logo ${i + 1}`} className="h-8 md:h-10 object-contain shrink-0 opacity-100 hover:opacity-100 transition-opacity mix-blend-multiply" width={80} height={32} loading="lazy" />
+          <img key={i} src={src} alt={`David J. Woods bekannt aus Medien – Logo ${i + 1}`} className="h-8 md:h-10 object-contain shrink-0 opacity-100 hover:opacity-100 transition-opacity mix-blend-multiply" width={80} height={40} loading="lazy" decoding="async" sizes="(min-width: 768px) 100px, 80px" />
         ))}
       </div>
     </div>
@@ -258,8 +258,10 @@ export default function Home() {
                   alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${Number(idx) + 1}`}
                   width={400}
                   height={500}
+                  sizes="(min-width: 768px) 460px, 100vw"
                   loading={idx === "0" ? "eager" : "lazy"}
                   fetchPriority={idx === "0" ? "high" : "auto"}
+                  decoding={idx === "0" ? "sync" : "async"}
                   className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${Number(idx) === currentSlide ? "opacity-100" : "opacity-0"}`}
                 />
               ))}
@@ -348,8 +350,10 @@ export default function Home() {
                   alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${Number(idx) + 1}`}
                   width={600}
                   height={400}
+                  sizes="100vw"
                   loading={idx === "0" ? "eager" : "lazy"}
                   fetchPriority={idx === "0" ? "high" : "auto"}
+                  decoding={idx === "0" ? "sync" : "async"}
                   className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${Number(idx) === currentSlide ? "opacity-100" : "opacity-0"}`}
                 />
               ))}
@@ -406,13 +410,13 @@ export default function Home() {
             </div>
             {/* Photo – desktop only */}
             <div className="hidden md:block rounded-lg overflow-hidden w-[280px] shrink-0">
-              <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-auto object-cover object-top rounded-lg" loading="lazy" width={1200} height={800} />
+              <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-auto object-cover object-top rounded-lg" loading="lazy" decoding="async" width={1200} height={800} sizes="280px" />
             </div>
           </div>
           {/* EMR + Button below on all screens */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-2 md:mt-3">
             <div className="flex items-center gap-2 bg-secondary rounded-md p-2">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-9 md:h-10" width={64} height={40} loading="lazy" />
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-9 md:h-10" width={64} height={40} loading="lazy" decoding="async" />
               <div>
                 <div className="font-semibold text-xs text-foreground">EMR Krankenkasse Konform</div>
                 <div className="text-[11px] text-muted-foreground">ZSR P609264</div>
@@ -459,22 +463,22 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 max-w-4xl md:max-w-5xl mx-auto">
             {/* 1 – Licensed Psychologist */}
             <div className="text-center p-3 md:p-6 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-14 md:h-24 w-14 md:w-24 object-contain mx-auto mb-2 md:mb-3" loading="lazy" width={512} height={512} />
+              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-14 md:h-24 w-14 md:w-24 object-contain mx-auto mb-2 md:mb-3" loading="lazy" decoding="async" width={512} height={512} sizes="(min-width: 768px) 96px, 56px" />
               <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
             </div>
             {/* 2 – Aktiv-Hypnose© */}
             <div className="text-center p-3 md:p-6 bg-card border border-border rounded-lg shadow-sm flex flex-col items-center justify-center transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-8 md:h-16 w-auto object-contain shrink-0 mx-auto mb-2 md:mb-3" loading="lazy" />
+              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-8 md:h-16 w-auto object-contain shrink-0 mx-auto mb-2 md:mb-3" loading="lazy" decoding="async" width={160} height={64} />
               <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
             </div>
             {/* 3 – NGH */}
             <div className="text-center p-3 md:p-6 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-10 md:h-20 w-10 md:w-20 object-contain mx-auto mb-2 md:mb-3" loading="lazy" />
+              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-10 md:h-20 w-10 md:w-20 object-contain mx-auto mb-2 md:mb-3" loading="lazy" decoding="async" width={160} height={160} />
               <h3 className="font-semibold text-xs md:text-sm text-foreground">NGH International Trainer</h3>
             </div>
             {/* 4 – EMR */}
             <div className="text-center p-3 md:p-6 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-10 md:h-20 object-contain mx-auto mb-2 md:mb-3" loading="lazy" />
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-10 md:h-20 object-contain mx-auto mb-2 md:mb-3" loading="lazy" decoding="async" width={160} height={80} />
               <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "EMR Approved" : "EMR Krankenkasse Konform"}</h3>
               <p className="text-[0.6rem] md:text-xs text-muted-foreground">ZSR P609264</p>
             </div>
@@ -549,6 +553,10 @@ export default function Home() {
                   alt={isEN ? "Professional hypnotherapy training seminar" : "Professionelles Hypnosetherapie-Ausbildungsseminar"}
                   className="w-full h-44 md:h-72 object-cover"
                   loading="lazy"
+                  decoding="async"
+                  width={1200}
+                  height={500}
+                  sizes="(min-width: 768px) 1120px, 100vw"
                 />
               </div>
             </div>
