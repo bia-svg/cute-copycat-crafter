@@ -484,13 +484,13 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
-        <section className="py-6 md:py-12 bg-muted/50" style={deferredSectionStyle}>
+        <section className="py-6 md:py-8 bg-muted/50" style={deferredSectionStyle}>
         <div className="container-main">
-          <div className="md:bg-card md:border md:border-border md:rounded-2xl md:shadow-sm md:px-8 md:py-10">
+          <div className="md:bg-card md:border md:border-border md:rounded-2xl md:shadow-sm md:px-8 md:py-7">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-1 text-foreground">
               {isEN ? "Corporate Coaching" : "Firmencoaching"}
             </h2>
-            <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-2 md:mb-5 text-sm md:text-base leading-snug">
+            <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-2 md:mb-4 text-sm md:text-base leading-snug">
               {isEN
                 ? "Performance Coaching: Maximize Your Team's Potential. We offer tailored solutions for companies of all sizes."
                 : "Erfolgs-Coaching: Leistungsfähigkeit maximieren. Wir bieten maßgeschneiderte Lösungen für Unternehmen jeder Größe."}
