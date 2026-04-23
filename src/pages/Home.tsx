@@ -468,7 +468,7 @@ export default function Home() {
             </div>
             {/* 2 – Aktiv-Hypnose© */}
             <div className="text-center p-3 md:p-6 bg-card border border-border rounded-lg shadow-sm flex flex-col items-center justify-center transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-8 md:h-16 w-auto object-contain shrink-0 mx-auto mb-2 md:mb-3" loading="lazy" />
+              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-8 md:h-16 w-auto object-contain shrink-0 mx-auto mb-2 md:mb-3" loading="lazy" decoding="async" width={160} height={64} />
               <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
             </div>
             {/* 3 – NGH */}
