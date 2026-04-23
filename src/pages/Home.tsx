@@ -429,15 +429,15 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ SERVICES ═══════════════════ */}
-      <section className="py-4 md:py-5 bg-secondary mx-3 md:mx-auto md:max-w-[1200px] border border-primary/15 rounded-2xl" style={deferredSectionStyle}>
+      <section className="py-4 md:py-4 bg-secondary mx-3 md:mx-auto md:max-w-[1200px] border border-primary/15 rounded-2xl" style={deferredSectionStyle}>
         <div className="container-main">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-0.5">{t("section.services")}</h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-2 md:mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-0.5 md:mb-0">{t("section.services")}</h2>
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-2 md:mb-2 md:text-sm">
             {isEN
               ? "Topics can also be combined during the session."
               : "Dabei können Themen im Zuge der Sitzung auch kombiniert werden."}
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-3">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-2.5">
             {services.map((s) => (
               <ServiceCard key={s.title} {...s} />
             ))}
