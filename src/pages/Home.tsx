@@ -410,7 +410,7 @@ export default function Home() {
             </div>
             {/* Photo – desktop only */}
             <div className="hidden md:block rounded-lg overflow-hidden w-[280px] shrink-0">
-              <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-auto object-cover object-top rounded-lg" loading="lazy" width={1200} height={800} />
+              <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-auto object-cover object-top rounded-lg" loading="lazy" decoding="async" width={1200} height={800} sizes="280px" />
             </div>
           </div>
           {/* EMR + Button below on all screens */}
