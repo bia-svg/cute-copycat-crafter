@@ -193,14 +193,14 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       </div>
 
       {/* GDPR */}
-      <div className="border border-border bg-white p-2">
+      <div className="border border-border rounded-md bg-white p-2.5">
         <label className="flex items-start gap-2 cursor-pointer">
           <input
             type="checkbox"
             name="gdprConsent"
             checked={gdprConsent}
             onChange={(e) => setGdprConsent(e.target.checked)}
-            className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
+            className="mt-0.5 h-4 w-4 shrink-0 accent-primary rounded"
           />
           <span className="text-xs text-foreground/80 leading-snug">
             {isEN ? (
