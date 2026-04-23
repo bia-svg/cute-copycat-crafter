@@ -203,7 +203,7 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-1">
-          <Link to={getPath("home", language, country)} className="px-2 py-2 text-muted-foreground hover:text-primary transition-colors" aria-label="Home">
+          <Link to={getPath("home", language, country)} className="px-2 py-2 text-cta hover:text-cta/80 transition-colors" aria-label="Home">
             <Home className="w-[18px] h-[18px]" />
           </Link>
           <div className="relative" onMouseEnter={() => handleMouseEnter("sessions")} onMouseLeave={handleMouseLeave}>
