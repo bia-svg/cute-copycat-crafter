@@ -43,23 +43,23 @@ export default function ServiceCard({ title, description, href, icon, image }: S
           </div>
           {/* Desktop: vertical card */}
           <div className="hidden md:block">
-            <div className="aspect-[5/3] overflow-hidden">
+            <div className="aspect-[16/9] overflow-hidden">
               <img
                 src={image}
                 alt={title}
                 width={640}
-                height={384}
+                height={360}
                 className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
             </div>
-            <div className="px-4 py-3">
-              <div className="flex items-center gap-2 text-primary mb-1">
+            <div className="px-4 py-2.5">
+              <div className="flex items-center gap-2 text-primary mb-0.5">
                 {icon}
-                <h3 className="font-semibold text-foreground text-sm">{title}</h3>
+                <h3 className="font-semibold text-foreground text-sm line-clamp-1">{title}</h3>
               </div>
-              <p className="text-xs text-muted-foreground line-clamp-2">{description}</p>
-              <span className="inline-flex items-center gap-1 text-xs text-primary font-medium mt-2 group-hover:gap-2 transition-all">
+              <p className="text-xs text-muted-foreground line-clamp-2 leading-snug">{description}</p>
+              <span className="inline-flex items-center gap-1 text-xs text-primary font-medium mt-1.5 group-hover:gap-2 transition-all">
                 Details <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </div>
