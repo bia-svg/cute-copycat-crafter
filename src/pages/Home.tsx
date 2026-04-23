@@ -512,7 +512,7 @@ export default function Home() {
                 />
               ))}
             </div>
-            <div className="text-center mt-4 md:mt-6">
+            <div className="text-center mt-4 md:mt-5">
               <Link to={getPath("corporate", language, country)}>
                 <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold">
                   {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
