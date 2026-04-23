@@ -416,7 +416,7 @@ export default function Home() {
           {/* EMR + Button below on all screens */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-2 md:mt-3">
             <div className="flex items-center gap-2 bg-secondary rounded-md p-2">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-9 md:h-10" width={64} height={40} loading="lazy" />
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-9 md:h-10" width={64} height={40} loading="lazy" decoding="async" />
               <div>
                 <div className="font-semibold text-xs text-foreground">EMR Krankenkasse Konform</div>
                 <div className="text-[11px] text-muted-foreground">ZSR P609264</div>
