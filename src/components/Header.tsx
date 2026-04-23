@@ -339,12 +339,6 @@ export default function Header() {
       {/* ── Mobile Menu ── */}
       {mobileOpen && (
         <div className="lg:hidden bg-card border-t border-border max-h-[80vh] overflow-y-auto">
-          {/* Home */}
-          <Link to={getPath("home", language, country)} onClick={() => setMobileOpen(false)}
-            className="block px-4 py-3 font-medium text-foreground border-b border-border">
-            Home
-          </Link>
-
           {/* Hypnosetherapie */}
           <div className="border-b border-border">
             <button onClick={() => setMobileAccordion(mobileAccordion === "sessions" ? null : "sessions")} className="flex items-center justify-between w-full px-4 py-3 text-left font-medium text-foreground">
@@ -394,29 +388,6 @@ export default function Header() {
           {/* Über uns */}
           <MobileSection id="about" title={t("nav.about")} items={aboutItems} />
 
-          {/* Language selector */}
-          <div className="border-b border-border px-4 py-3 flex items-center gap-4">
-            <div className="flex-1">
-              <p className="text-xs text-muted-foreground mb-1.5">{isDE ? "Sprache" : "Language"}</p>
-              <div className="flex gap-1">
-                {languageOptions.map(opt => (
-                  <button key={opt.value} onClick={() => setLanguage(opt.value)}
-                    className={`px-4 py-1.5 text-sm rounded border ${opt.value === language ? "border-primary bg-primary/10 font-semibold text-primary" : "border-border text-foreground"}`}>
-                    {opt.flag} {opt.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="p-4">
-            <Link to={getPath("contact", language, country)} onClick={() => setMobileOpen(false)}>
-              <Button className="w-full bg-cta text-cta-foreground hover:bg-cta/90">
-                {t("nav.cta")}
-              </Button>
-            </Link>
-          </div>
         </div>
       )}
     </header>
