@@ -126,12 +126,12 @@ export default function Header() {
 
   const MobileSection = ({ id, title, items }: { id: string; title: string; items: typeof therapyGoals }) => (
     <div className="border-b border-border">
-      <button onClick={() => setMobileAccordion(mobileAccordion === id ? null : id)} className="flex items-center justify-between w-full px-5 py-4 text-left font-medium text-foreground">
-        <span>{title}</span>
+      <button onClick={() => setMobileAccordion(mobileAccordion === id ? null : id)} className="flex items-center w-full px-8 py-4 text-left font-medium text-foreground gap-3">
+        <span className="flex-1">{title}</span>
         <ChevronDown className={`w-5 h-5 text-cta transition-transform ${mobileAccordion === id ? "rotate-180" : ""}`} strokeWidth={2.5} />
       </button>
       {mobileAccordion === id && (
-        <div className="px-5 pb-3 space-y-1">
+        <div className="px-8 pb-3 space-y-1">
           {items.map((item) => (
             <Link key={item.label} to={item.href} onClick={() => setMobileOpen(false)} className="flex items-start gap-3 p-2 rounded-md hover:bg-secondary">
               <span className="text-primary mt-0.5">{item.icon}</span>
