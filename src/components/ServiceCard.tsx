@@ -51,8 +51,10 @@ export default function ServiceCard({ title, description, href, icon, image }: S
                 alt={title}
                 width={640}
                 height={360}
+                sizes="(min-width: 1024px) 380px, (min-width: 768px) 50vw, 100vw"
                 className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="px-4 py-2.5">
