@@ -26,8 +26,10 @@ export default function ServiceCard({ title, description, href, icon, image }: S
                 alt={title}
                 width={96}
                 height={88}
+                sizes="96px"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="flex flex-col justify-center p-3 min-w-0">
