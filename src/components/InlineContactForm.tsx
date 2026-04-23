@@ -23,7 +23,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
   const [gdprConsent, setGdprConsent] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
 
-  const inputClasses = "w-full border border-border px-2.5 py-1 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
+  const inputClasses = "w-full border border-border rounded-md px-3 py-1.5 text-sm bg-white focus:border-[#1B3A5C] focus:ring-1 focus:ring-[#1B3A5C] outline-none transition-colors";
   const labelClasses = "block text-xs font-medium text-foreground/80 mb-0.5";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -193,14 +193,14 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       </div>
 
       {/* GDPR */}
-      <div className="border border-border bg-white p-2">
+      <div className="border border-border rounded-md bg-white p-2.5">
         <label className="flex items-start gap-2 cursor-pointer">
           <input
             type="checkbox"
             name="gdprConsent"
             checked={gdprConsent}
             onChange={(e) => setGdprConsent(e.target.checked)}
-            className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
+            className="mt-0.5 h-4 w-4 shrink-0 accent-primary rounded"
           />
           <span className="text-xs text-foreground/80 leading-snug">
             {isEN ? (
@@ -223,7 +223,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold py-2.5 mt-1"
+        className="w-full bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold py-2.5 mt-1 rounded-md"
       >
         {isSubmitting
           ? (isEN ? "Sending..." : "Wird gesendet...")
