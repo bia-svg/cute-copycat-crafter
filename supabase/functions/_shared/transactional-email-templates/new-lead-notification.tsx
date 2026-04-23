@@ -42,6 +42,29 @@ interface NewLeadProps {
   savingsAmount?: string
 }
 
+/**
+ * Normalize a phone number into a wa.me-compatible international format.
+ * - Strips spaces, dashes, brackets, dots, slashes, bullets and other separators
+ * - Removes leading "+" or "00" (international prefixes)
+ * - If number still starts with "0" (local format), prepends a default country
+ *   code based on the lead's country (DE -> 49, CH -> 41, AT -> 43)
+ * - Returns null if the result isn't a plausible international number
+ */
+function normalizeWhatsAppNumber(raw?: string, country?: string): string | null {
+  if (!raw) return null
+  let n = raw.trim().replace(/[^\d+]/g, '')
+  if (n.startsWith('+')) n = n.slice(1)
+  else if (n.startsWith('00')) n = n.slice(2)
+  if (n.startsWith('0')) {
+    const c = (country || '').toLowerCase()
+    const cc = c === 'de' ? '49' : c === 'ch' ? '41' : c === 'at' ? '43' : null
+    if (!cc) return null
+    n = cc + n.slice(1)
+  }
+  if (!/^\d{8,15}$/.test(n)) return null
+  return n
+}
+
 const NewLeadNotificationEmail = (props: NewLeadProps) => {
   const isEN = props.language === 'en'
   const isSession = props.formType === 'session'
@@ -202,37 +225,29 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
 
           <Hr style={hr} />
 
-          {/* Reply to Lead Buttons */}
-          {props.email && (
-            <Section style={{ textAlign: 'center' as const, margin: '16px 0' }}>
-              <Button
-                href={`mailto:${props.email}?subject=${encodeURIComponent(
-                  props.language === 'en'
-                    ? `Re: Your ${props.formType === 'seminar' ? 'Seminar Registration' : 'Inquiry'} — ${SITE_NAME}`
-                    : `Re: Ihre ${props.formType === 'seminar' ? 'Seminar-Anmeldung' : 'Anfrage'} — ${SITE_NAME}`
-                )}`}
-                style={replyButton}
-              >
-                {`✉️ Reply to ${props.name?.split(' ')[0] || 'Lead'}`}
-              </Button>
-              {props.phone && (
-                <>
+          {/* Lead Action Buttons */}
+          {props.phone && (() => {
+            const waNumber = normalizeWhatsAppNumber(props.phone, props.country)
+            const firstName = props.name?.split(' ')[0] || 'Lead'
+            return (
+              <Section style={{ textAlign: 'center' as const, margin: '16px 0' }}>
+                {waNumber && (
                   <Button
-                    href={`https://wa.me/${props.phone.replace(/[\s\-\(\)]/g, '').replace(/^\+/, '')}`}
+                    href={`https://wa.me/${waNumber}`}
                     style={whatsappButton}
                   >
-                    {`💬 WhatsApp ${props.name?.split(' ')[0] || 'Lead'}`}
+                    {`💬 WhatsApp ${firstName}`}
                   </Button>
-                  <Button
-                    href={`tel:${props.phone.replace(/\s/g, '')}`}
-                    style={callButton}
-                  >
-                    {`📞 Call ${props.name?.split(' ')[0] || 'Lead'}`}
-                  </Button>
-                </>
-              )}
-            </Section>
-          )}
+                )}
+                <Button
+                  href={`tel:${props.phone.replace(/\s/g, '')}`}
+                  style={callButton}
+                >
+                  {`📞 Call ${firstName}`}
+                </Button>
+              </Section>
+            )
+          })()}
 
           <Section style={trackingBox}>
             <Text style={trackingTitle}>Tracking</Text>
