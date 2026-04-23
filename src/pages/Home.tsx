@@ -463,7 +463,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 max-w-4xl md:max-w-5xl mx-auto">
             {/* 1 – Licensed Psychologist */}
             <div className="text-center p-3 md:p-6 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-14 md:h-24 w-14 md:w-24 object-contain mx-auto mb-2 md:mb-3" loading="lazy" width={512} height={512} />
+              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-14 md:h-24 w-14 md:w-24 object-contain mx-auto mb-2 md:mb-3" loading="lazy" decoding="async" width={512} height={512} sizes="(min-width: 768px) 96px, 56px" />
               <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
             </div>
             {/* 2 – Aktiv-Hypnose© */}
