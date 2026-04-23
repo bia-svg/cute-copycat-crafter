@@ -202,37 +202,29 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
 
           <Hr style={hr} />
 
-          {/* Reply to Lead Buttons */}
-          {props.email && (
-            <Section style={{ textAlign: 'center' as const, margin: '16px 0' }}>
-              <Button
-                href={`mailto:${props.email}?subject=${encodeURIComponent(
-                  props.language === 'en'
-                    ? `Re: Your ${props.formType === 'seminar' ? 'Seminar Registration' : 'Inquiry'} — ${SITE_NAME}`
-                    : `Re: Ihre ${props.formType === 'seminar' ? 'Seminar-Anmeldung' : 'Anfrage'} — ${SITE_NAME}`
-                )}`}
-                style={replyButton}
-              >
-                {`✉️ Reply to ${props.name?.split(' ')[0] || 'Lead'}`}
-              </Button>
-              {props.phone && (
-                <>
+          {/* Lead Action Buttons */}
+          {props.phone && (() => {
+            const waNumber = normalizeWhatsAppNumber(props.phone, props.country)
+            const firstName = props.name?.split(' ')[0] || 'Lead'
+            return (
+              <Section style={{ textAlign: 'center' as const, margin: '16px 0' }}>
+                {waNumber && (
                   <Button
-                    href={`https://wa.me/${props.phone.replace(/[\s\-\(\)]/g, '').replace(/^\+/, '')}`}
+                    href={`https://wa.me/${waNumber}`}
                     style={whatsappButton}
                   >
-                    {`💬 WhatsApp ${props.name?.split(' ')[0] || 'Lead'}`}
+                    {`💬 WhatsApp ${firstName}`}
                   </Button>
-                  <Button
-                    href={`tel:${props.phone.replace(/\s/g, '')}`}
-                    style={callButton}
-                  >
-                    {`📞 Call ${props.name?.split(' ')[0] || 'Lead'}`}
-                  </Button>
-                </>
-              )}
-            </Section>
-          )}
+                )}
+                <Button
+                  href={`tel:${props.phone.replace(/\s/g, '')}`}
+                  style={callButton}
+                >
+                  {`📞 Call ${firstName}`}
+                </Button>
+              </Section>
+            )
+          })()}
 
           <Section style={trackingBox}>
             <Text style={trackingTitle}>Tracking</Text>
