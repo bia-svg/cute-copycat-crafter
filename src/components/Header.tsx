@@ -126,12 +126,12 @@ export default function Header() {
 
   const MobileSection = ({ id, title, items }: { id: string; title: string; items: typeof therapyGoals }) => (
     <div className="border-b border-border">
-      <button onClick={() => setMobileAccordion(mobileAccordion === id ? null : id)} className="flex items-center justify-between w-full px-5 py-4 text-left font-medium text-foreground">
-        <span>{title}</span>
+      <button onClick={() => setMobileAccordion(mobileAccordion === id ? null : id)} className="flex items-center w-full px-8 py-4 text-left font-medium text-foreground gap-3">
+        <span className="flex-1">{title}</span>
         <ChevronDown className={`w-5 h-5 text-cta transition-transform ${mobileAccordion === id ? "rotate-180" : ""}`} strokeWidth={2.5} />
       </button>
       {mobileAccordion === id && (
-        <div className="px-5 pb-3 space-y-1">
+        <div className="px-8 pb-3 space-y-1">
           {items.map((item) => (
             <Link key={item.label} to={item.href} onClick={() => setMobileOpen(false)} className="flex items-start gap-3 p-2 rounded-md hover:bg-secondary">
               <span className="text-primary mt-0.5">{item.icon}</span>
@@ -341,12 +341,12 @@ export default function Header() {
         <div className="lg:hidden bg-card border-t border-border max-h-[80vh] overflow-y-auto">
           {/* Hypnosetherapie */}
           <div className="border-b border-border">
-            <button onClick={() => setMobileAccordion(mobileAccordion === "sessions" ? null : "sessions")} className="flex items-center justify-between w-full px-5 py-4 text-left font-medium text-foreground">
-              <span>{t("nav.sessions")}</span>
+            <button onClick={() => setMobileAccordion(mobileAccordion === "sessions" ? null : "sessions")} className="flex items-center w-full px-8 py-4 text-left font-medium text-foreground gap-3">
+              <span className="flex-1">{t("nav.sessions")}</span>
               <ChevronDown className={`w-5 h-5 text-cta transition-transform ${mobileAccordion === "sessions" ? "rotate-180" : ""}`} strokeWidth={2.5} />
             </button>
             {mobileAccordion === "sessions" && (
-              <div className="px-5 pb-3 space-y-1">
+              <div className="px-8 pb-3 space-y-1">
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-1 pb-1">
                   {isDE ? "Therapieziele" : "Therapy Goals"}
                 </p>
@@ -377,7 +377,7 @@ export default function Header() {
 
           {/* Ausbildung — direct link */}
           <div className="border-b border-border">
-            <Link to={getPath("training", language, country)} onClick={() => setMobileOpen(false)} className="flex items-center px-5 py-4 font-medium text-foreground">
+            <Link to={getPath("training", language, country)} onClick={() => setMobileOpen(false)} className="flex items-center px-8 py-4 font-medium text-foreground">
               {t("nav.training")}
             </Link>
           </div>
