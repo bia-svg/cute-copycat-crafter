@@ -478,7 +478,7 @@ export default function Home() {
             </div>
             {/* 4 – EMR */}
             <div className="text-center p-3 md:p-6 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-10 md:h-20 object-contain mx-auto mb-2 md:mb-3" loading="lazy" />
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-10 md:h-20 object-contain mx-auto mb-2 md:mb-3" loading="lazy" decoding="async" width={160} height={80} />
               <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "EMR Approved" : "EMR Krankenkasse Konform"}</h3>
               <p className="text-[0.6rem] md:text-xs text-muted-foreground">ZSR P609264</p>
             </div>
