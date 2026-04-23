@@ -473,7 +473,7 @@ export default function Home() {
             </div>
             {/* 3 – NGH */}
             <div className="text-center p-3 md:p-6 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-10 md:h-20 w-10 md:w-20 object-contain mx-auto mb-2 md:mb-3" loading="lazy" />
+              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-10 md:h-20 w-10 md:w-20 object-contain mx-auto mb-2 md:mb-3" loading="lazy" decoding="async" width={160} height={160} />
               <h3 className="font-semibold text-xs md:text-sm text-foreground">NGH International Trainer</h3>
             </div>
             {/* 4 – EMR */}
