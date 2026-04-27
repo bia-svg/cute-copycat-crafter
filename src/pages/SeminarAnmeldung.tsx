@@ -282,8 +282,8 @@ export default function SeminarAnmeldung() {
                   </h2>
                   <div className="grid grid-cols-2 gap-3">
                     {([
-                      { key: "ch" as const, flag: "🇨🇭", label: isEN ? "Switzerland" : "Schweiz", sub: "Eschenbach (Zürichsee)" },
                       { key: "de" as const, flag: "🇩🇪", label: isEN ? "Germany" : "Deutschland", sub: "Augsburg" },
+                      { key: "ch" as const, flag: "🇨🇭", label: isEN ? "Switzerland" : "Schweiz", sub: "Eschenbach (Zürichsee)" },
                     ]).map(c => {
                       return (
                         <button
