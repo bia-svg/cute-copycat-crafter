@@ -45,7 +45,7 @@ export default function FAQSection({ title, items }: FAQSectionProps) {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="group border border-[#E5DFD2] bg-white rounded-2xl px-5 md:px-6 shadow-[0_1px_2px_rgba(27,58,92,0.04)] hover:border-[#2E7D32]/40 hover:shadow-[0_2px_6px_rgba(46,125,50,0.06)] transition-all data-[state=open]:bg-[#F4F9F4] data-[state=open]:border-[#2E7D32]/40 data-[state=open]:shadow-[0_2px_8px_rgba(46,125,50,0.08)]"
+                className="group border border-[#E2E8EE] bg-white rounded-2xl px-5 md:px-6 shadow-[0_1px_2px_rgba(27,58,92,0.04)] hover:border-[#2E7D32]/40 hover:shadow-[0_2px_6px_rgba(46,125,50,0.06)] transition-all data-[state=open]:bg-[#F4F9F4] data-[state=open]:border-[#2E7D32]/40 data-[state=open]:shadow-[0_2px_8px_rgba(46,125,50,0.08)]"
               >
                 <AccordionTrigger
                   className="text-[15px] md:text-base font-semibold text-primary hover:no-underline py-4 md:py-4.5 text-left gap-4 [&>svg]:hidden"
