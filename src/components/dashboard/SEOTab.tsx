@@ -325,6 +325,283 @@ export default function SEOTab({
         </CardContent>
       </Card>
 
+      {/* Top Pages with CTR / Position */}
+      {gscTopPages.length > 0 && (
+        <Card className="bg-white border border-gray-200 shadow-sm">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+              <FileText className="w-4 h-4" /> Top Pages — CTR & Position
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="max-h-[420px] overflow-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="text-xs">Page</TableHead>
+                    <TableHead className="text-xs text-right">Clicks</TableHead>
+                    <TableHead className="text-xs text-right">Impressions</TableHead>
+                    <TableHead className="text-xs text-right">CTR</TableHead>
+                    <TableHead className="text-xs text-right">Position</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {gscTopPages.map((p, i) => {
+                    let pagePath = p.page;
+                    try { pagePath = new URL(p.page).pathname; } catch { /* keep raw */ }
+                    const ctrLow = p.ctr < 0.02 && p.position <= 15;
+                    return (
+                      <TableRow key={i}>
+                        <TableCell className="text-sm font-medium max-w-[300px] truncate" title={p.page}>
+                          <span className="font-mono text-xs">{pagePath}</span>
+                        </TableCell>
+                        <TableCell className="text-sm text-right">{p.clicks}</TableCell>
+                        <TableCell className="text-sm text-right">{p.impressions.toLocaleString()}</TableCell>
+                        <TableCell className="text-sm text-right">
+                          <span className={ctrLow ? "text-amber-600 font-semibold" : "text-gray-700"}>
+                            {(p.ctr * 100).toFixed(2)}%
+                          </span>
+                        </TableCell>
+                        <TableCell className="text-sm text-right">
+                          <span className={p.position <= 3 ? "text-emerald-600 font-semibold" : p.position <= 10 ? "text-blue-600" : "text-amber-600"}>
+                            {p.position.toFixed(1)}
+                          </span>
+                        </TableCell>
+                      </TableRow>
+                    );
+                  })}
+                </TableBody>
+              </Table>
+            </div>
+            <p className="text-xs text-gray-400 mt-2">
+              Pages with <span className="text-amber-600 font-medium">amber CTR</span> rank well (pos ≤ 15) but underperform on clicks — prime targets to rewrite title/meta.
+            </p>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Auto Quick Wins (no AI) */}
+      {autoQuickWins.length > 0 && (
+        <Card className="bg-white border border-gray-200 shadow-sm">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+              <Zap className="w-4 h-4 text-emerald-500" /> Auto Quick Wins
+              <Badge variant="outline" className="text-xs ml-1">{autoQuickWins.length}</Badge>
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-xs text-gray-500 mb-3">
+              Keywords ranking <strong>4–15</strong> with <strong>50+ impressions</strong> but <strong>CTR &lt; 3%</strong>. Highest-impact CTR opportunities — rewrite title/meta to push them up.
+            </p>
+            <div className="max-h-[400px] overflow-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="text-xs">Keyword</TableHead>
+                    <TableHead className="text-xs text-right">Pos</TableHead>
+                    <TableHead className="text-xs text-right">Impr.</TableHead>
+                    <TableHead className="text-xs text-right">CTR</TableHead>
+                    <TableHead className="text-xs text-right">Clicks</TableHead>
+                    <TableHead className="text-xs text-right">Potential +Clicks</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {autoQuickWins.map((q, i) => (
+                    <TableRow key={i}>
+                      <TableCell className="text-sm font-medium">{q.query}</TableCell>
+                      <TableCell className="text-sm text-right text-amber-600">{q.position.toFixed(1)}</TableCell>
+                      <TableCell className="text-sm text-right">{q.impressions.toLocaleString()}</TableCell>
+                      <TableCell className="text-sm text-right">{(q.ctr * 100).toFixed(2)}%</TableCell>
+                      <TableCell className="text-sm text-right">{q.clicks}</TableCell>
+                      <TableCell className="text-sm text-right">
+                        <Badge className="bg-emerald-100 text-emerald-700 text-xs">+{q.potentialClicks}</Badge>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Position Distribution + Device Breakdown */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+        {gscDistribution && gscDistribution.total > 0 && (
+          <Card className="bg-white border border-gray-200 shadow-sm">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                <Target className="w-4 h-4" /> Keyword Position Distribution
+                <Badge variant="outline" className="text-xs ml-1">{gscDistribution.total} kw</Badge>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ChartContainer config={{}} className="h-[220px] w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={distData} layout="vertical" margin={{ left: 10, right: 30 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" horizontal={false} />
+                    <XAxis type="number" tick={{ fontSize: 11 }} />
+                    <YAxis type="category" dataKey="name" tick={{ fontSize: 11 }} width={50} />
+                    <ChartTooltip content={<ChartTooltipContent />} />
+                    <Bar dataKey="value" radius={[0, 4, 4, 0]}>
+                      {distData.map((entry, i) => (<Cell key={i} fill={entry.color} />))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </ChartContainer>
+              <div className="grid grid-cols-4 gap-2 mt-2 text-center">
+                {distData.map(d => (
+                  <div key={d.name}>
+                    <p className="text-xs text-gray-500">{d.name}</p>
+                    <p className="text-sm font-semibold" style={{ color: d.color }}>{d.value}</p>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {gscByDevice.length > 0 && (
+          <Card className="bg-white border border-gray-200 shadow-sm">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                <Smartphone className="w-4 h-4" /> Clicks by Device
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ChartContainer config={{}} className="h-[220px] w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={gscByDevice.map(d => ({ name: DEVICE_LABELS[d.device] || d.device, value: d.clicks }))}
+                      dataKey="value"
+                      nameKey="name"
+                      cx="50%"
+                      cy="50%"
+                      outerRadius={70}
+                      label={(e: any) => `${e.name}: ${e.value}`}
+                    >
+                      {gscByDevice.map((d, i) => (
+                        <Cell key={i} fill={DEVICE_COLORS[d.device] || "#6b7280"} />
+                      ))}
+                    </Pie>
+                    <ChartTooltip content={<ChartTooltipContent />} />
+                  </PieChart>
+                </ResponsiveContainer>
+              </ChartContainer>
+              <div className="grid grid-cols-3 gap-2 mt-2 text-center text-xs">
+                {gscByDevice.map(d => (
+                  <div key={d.device}>
+                    <p className="text-gray-500">{DEVICE_LABELS[d.device] || d.device}</p>
+                    <p className="text-gray-700">CTR {(d.ctr * 100).toFixed(2)}%</p>
+                    <p className="text-gray-400">Pos {d.position.toFixed(1)}</p>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+      </div>
+
+      {/* Country breakdown */}
+      {gscByCountry.length > 0 && (
+        <Card className="bg-white border border-gray-200 shadow-sm">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+              <Globe className="w-4 h-4" /> Top Countries
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="text-xs">Country</TableHead>
+                  <TableHead className="text-xs text-right">Clicks</TableHead>
+                  <TableHead className="text-xs text-right">Impressions</TableHead>
+                  <TableHead className="text-xs text-right">CTR</TableHead>
+                  <TableHead className="text-xs text-right">Position</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {gscByCountry.slice(0, 10).map((c, i) => (
+                  <TableRow key={i}>
+                    <TableCell className="text-sm font-medium uppercase">
+                      {COUNTRY_NAMES[c.country] || c.country}
+                    </TableCell>
+                    <TableCell className="text-sm text-right">{c.clicks.toLocaleString()}</TableCell>
+                    <TableCell className="text-sm text-right">{c.impressions.toLocaleString()}</TableCell>
+                    <TableCell className="text-sm text-right">{(c.ctr * 100).toFixed(2)}%</TableCell>
+                    <TableCell className="text-sm text-right">{c.position.toFixed(1)}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Long-term snapshot history */}
+      {historyData.length > 0 ? (
+        <Card className="bg-white border border-gray-200 shadow-sm">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+              <History className="w-4 h-4" /> Long-Term SEO Evolution
+              <Badge variant="outline" className="text-xs ml-1">{historyData.length} snapshots</Badge>
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-xs text-gray-500 mb-3">
+              Weekly snapshots (rolling 28-day window) — tracks evolution beyond Search Console's 16-month limit.
+            </p>
+            <ChartContainer config={chartConfig} className="h-[260px] w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <ComposedChart data={historyData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis dataKey="label" tick={{ fontSize: 11 }} />
+                  <YAxis yAxisId="left" tick={{ fontSize: 11 }} />
+                  <YAxis yAxisId="right" orientation="right" reversed domain={[1, "auto"]} tick={{ fontSize: 11 }} />
+                  <ChartTooltip content={<ChartTooltipContent />} />
+                  <Legend wrapperStyle={{ fontSize: 12 }} />
+                  <Bar yAxisId="left" dataKey="clicks" fill="#2563eb" name="Clicks" radius={[2, 2, 0, 0]} />
+                  <Line yAxisId="right" type="monotone" dataKey="position" stroke="#f59e0b" strokeWidth={2} dot name="Avg Position" />
+                </ComposedChart>
+              </ResponsiveContainer>
+            </ChartContainer>
+
+            <div className="mt-4">
+              <p className="text-xs font-medium text-gray-600 mb-1">Keywords by ranking band over time</p>
+              <ChartContainer config={{}} className="h-[200px] w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart data={historyData} stackOffset="expand">
+                    <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                    <XAxis dataKey="label" tick={{ fontSize: 11 }} />
+                    <YAxis tickFormatter={(v) => `${Math.round(v * 100)}%`} tick={{ fontSize: 11 }} />
+                    <ChartTooltip content={<ChartTooltipContent />} />
+                    <Legend wrapperStyle={{ fontSize: 12 }} />
+                    <Area type="monotone" dataKey="top3" stackId="1" stroke="#10b981" fill="#10b981" name="Top 3" />
+                    <Area type="monotone" dataKey="pos4_10" stackId="1" stroke="#3b82f6" fill="#3b82f6" name="4-10" />
+                    <Area type="monotone" dataKey="pos11_20" stackId="1" stroke="#f59e0b" fill="#f59e0b" name="11-20" />
+                    <Area type="monotone" dataKey="pos21_plus" stackId="1" stroke="#94a3b8" fill="#94a3b8" name="21+" />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </ChartContainer>
+            </div>
+          </CardContent>
+        </Card>
+      ) : (
+        <Card className="bg-white border border-gray-200 shadow-sm">
+          <CardContent className="p-4 text-center">
+            <History className="w-5 h-5 text-gray-300 mx-auto mb-2" />
+            <p className="text-sm text-gray-400">
+              No long-term snapshots yet. The first weekly snapshot will be saved on Monday at 03:00 UTC.
+            </p>
+            <p className="text-xs text-gray-300 mt-1">
+              Each snapshot captures a rolling 28-day window of GSC metrics for permanent history.
+            </p>
+          </CardContent>
+        </Card>
+      )}
+
       {/* AI Report Section */}
       <Card className="bg-white border border-gray-200 shadow-sm">
         <CardHeader className="pb-2">
