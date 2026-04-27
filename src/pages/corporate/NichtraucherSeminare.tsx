@@ -42,7 +42,7 @@ export default function NichtraucherSeminare() {
         descriptionEN="The 'Smoke-Free in 3 Hours' program by David J. Woods. Effective smoking cessation for employees and executives directly at your company."
       />
 
-      <section className="bg-white border-b border-border">
+      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
         <div className="container-main py-8 lg:py-12">
           <Link to={getPath("corporate", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-4">
             <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
@@ -89,7 +89,7 @@ export default function NichtraucherSeminare() {
         </div>
       </section>
 
-      <section className="bg-white border-y border-border">
+      <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
         <div className="container-main py-10 md:py-12">
           <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl p-5 md:p-7 lg:p-8">
             <h2 className="text-xl font-bold text-[#1B3A5C] mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>

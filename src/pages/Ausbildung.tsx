@@ -229,7 +229,7 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION 2 — What makes this different
           ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-white border-b border-border">
+      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
         <div className="container-main py-6 lg:py-10">
           <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "What Makes This Training Different" : "Was diese Ausbildung besonders macht"}
@@ -455,7 +455,7 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION — Day-by-Day Curriculum
           ═══════════════════════════════════════════════════════════ */}
-      <section id="curriculum" className="bg-white border-b border-border scroll-mt-20">
+      <section id="curriculum" className="bg-[#F1F4F7] border-b border-[#E2E8EE] scroll-mt-20">
         <div className="container-main py-8 lg:py-12">
           <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Your 6-Day Journey" : "Ihre 6-Tage Reise"}
@@ -552,7 +552,7 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           INCLUDED — Alles, was Sie erhalten
           ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-white border-b border-border">
+      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
         <div className="container-main py-10 lg:py-14">
           <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-2 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Everything You Receive" : "Alles, was Sie erhalten"}
