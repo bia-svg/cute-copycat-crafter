@@ -239,7 +239,8 @@ export default function Ausbildung() {
               ? "Not a mass-market course. Not a certificate mill. A serious premium training with real depth, built on 30,000+ clinical sessions."
               : "Kein Massenkurs. Keine Zertifikatsfabrik. Eine seriöse Premium-Ausbildung mit echter Tiefe, aufgebaut auf 30.000+ klinischen Sitzungen."}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               { icon: <Shield className="w-6 h-6 text-[#1B3A5C]" />, titleDE: "35+ Jahre klinische Praxis", titleEN: "35+ Years of Clinical Practice", textDE: "Jede gelehrte Technik wurde in Tausenden realer klinischer Sitzungen getestet und verfeinert. Eine methodenbasierte Expertenausbildung.", textEN: "Every technique taught has been tested and refined in thousands of real clinical sessions. This is method-based expert training." },
               { icon: <Users className="w-6 h-6 text-[#1B3A5C]" />, titleDE: "Kleingruppen-Format", titleEN: "Small Group Format", textDE: "Strikt begrenzte Teilnehmerzahl garantiert persönliche Betreuung, individuelles Feedback und maximale Lernintensität. Ein selektives Lernerlebnis.", textEN: "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity. A selective learning experience." },
@@ -256,7 +257,7 @@ export default function Ausbildung() {
           </div>
 
           {/* EMR Badge */}
-          <div className="mt-6 md:mt-8 flex flex-col items-center text-center">
+          <div className="mt-6 md:mt-7 flex flex-col items-center text-center">
             <div className="inline-flex items-center gap-2 bg-[#e8f5e9] border border-[#a5d6a7] rounded-full px-4 py-1.5">
               <img src={CDN.emrBadge} alt="EMR Badge" className="w-5 h-5 object-contain" />
               <span className="text-xs font-semibold text-[#2E7D32] tracking-wide">EMR Krankenkasse konform</span>
@@ -266,6 +267,7 @@ export default function Ausbildung() {
                 ? "EMR-compliant structure. Upon request, participants receive an hours and course content certificate for possible submission."
                 : "EMR-konform aufgebaut. Auf Wunsch erhalten Teilnehmer einen Stunden- und Inhaltsnachweis zur möglichen Einreichung."}
             </p>
+          </div>
           </div>
         </div>
       </section>
@@ -284,6 +286,7 @@ export default function Ausbildung() {
               : "Wählen Sie Ihr bevorzugtes Land und Seminar-Datum, dann füllen Sie Ihre Daten aus. Wir bestätigen Ihren Platz innerhalb von 24 Stunden."}
           </p>
 
+          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
           {/* Country Tabs */}
           <div className="flex justify-center gap-3 mb-8 max-w-md mx-auto">
             <button
@@ -437,8 +440,9 @@ export default function Ausbildung() {
               </div>
             );
           })()}
+          </div>
           <div className="max-w-2xl mx-auto mt-5">
-            <p className="text-xs md:text-sm text-[#1B3A5C]/80 text-center bg-[#F1F4F7] border border-[#D9DFE6] rounded-full px-4 py-2">
+            <p className="text-xs md:text-sm text-[#1B3A5C]/80 text-center bg-white border border-[#D9DFE6] rounded-full px-4 py-2">
               <span className="font-semibold text-[#2E7D32]">{isEN ? "Early Bird:" : "Frühbucherpreis:"}</span>{" "}
               {isEN
                 ? "available for a limited time or until the current intake is full."
@@ -461,32 +465,34 @@ export default function Ausbildung() {
               ? "Each day builds on the previous, taking you from fundamentals to advanced clinical techniques."
               : "Jeder Tag baut auf dem vorherigen auf und führt Sie von den Grundlagen zu fortgeschrittenen klinischen Techniken."}
           </p>
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-            {days.map((day) => (
-              <div key={day.day} className="bg-white border border-[#1B3A5C]/12 rounded-2xl p-4 md:p-5 shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_16px_rgba(27,58,92,0.09)] hover:border-[#1B3A5C]/25 transition-all">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-lg bg-white text-[#1B3A5C]">
-                    {day.icon}
+          <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {days.map((day) => (
+                <div key={day.day} className="bg-white border border-[#1B3A5C]/12 rounded-2xl p-4 md:p-5 shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_16px_rgba(27,58,92,0.09)] hover:border-[#1B3A5C]/25 transition-all">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 rounded-lg bg-white text-[#1B3A5C]">
+                      {day.icon}
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-semibold uppercase tracking-wider text-[#2E7D32]">
+                        {isEN ? `Day ${day.day}` : `Tag ${day.day}`}
+                      </p>
+                      <h3 className="text-sm md:text-base font-bold text-[#1B3A5C]">
+                        {isEN ? day.titleEN : day.titleDE}
+                      </h3>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-wider text-[#2E7D32]">
-                      {isEN ? `Day ${day.day}` : `Tag ${day.day}`}
-                    </p>
-                    <h3 className="text-sm md:text-base font-bold text-[#1B3A5C]">
-                      {isEN ? day.titleEN : day.titleDE}
-                    </h3>
-                  </div>
+                  <ul className="space-y-1.5">
+                    {(isEN ? day.topicsEN : day.topicsDE).map((topic, i) => (
+                      <li key={i} className="flex items-start gap-2 text-xs text-[#55504f]">
+                        <CheckCircle className="w-3.5 h-3.5 text-[#2E7D32] mt-0.5 shrink-0" />
+                        {topic}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="space-y-1.5">
-                  {(isEN ? day.topicsEN : day.topicsDE).map((topic, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-[#55504f]">
-                      <CheckCircle className="w-3.5 h-3.5 text-[#2E7D32] mt-0.5 shrink-0" />
-                      {topic}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -504,38 +510,40 @@ export default function Ausbildung() {
               ? "Upon completion, you receive internationally recognized diplomas."
               : "Nach Abschluss erhalten Sie international anerkannte Diplome."}
           </p>
-          <div className="grid sm:grid-cols-2 gap-5 md:gap-6 max-w-3xl mx-auto">
-            <div className="flex flex-col items-center text-center bg-white border border-[#1B3A5C]/12 rounded-2xl p-5 md:p-6 shadow-[0_3px_14px_rgba(27,58,92,0.06)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all">
-              <div className="border border-[#1B3A5C]/10 rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06)] mb-3 max-w-[200px] md:max-w-[260px] bg-white">
-                <ImageLightbox src={diplomNGH} alt="NGH Certified Instructor — David Woods" className="w-full h-auto" />
+          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+            <div className="grid sm:grid-cols-2 gap-5 md:gap-6">
+              <div className="flex flex-col items-center text-center bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 shadow-[0_2px_10px_rgba(27,58,92,0.04)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all">
+                <div className="border border-[#1B3A5C]/10 rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06)] mb-3 max-w-[200px] md:max-w-[260px] bg-white">
+                  <ImageLightbox src={diplomNGH} alt="NGH Certified Instructor — David Woods" className="w-full h-auto" />
+                </div>
+                <div className="flex items-center gap-1.5 mb-1.5">
+                  <Shield className="w-4 h-4 text-blue-600" />
+                  <h3 className="font-semibold text-sm text-[#1B3A5C]" style={{ fontFamily: "Georgia, serif" }}>
+                    {isEN ? "NGH Certified Instructor" : "NGH-zertifizierter Instructor"}
+                  </h3>
+                </div>
+                <p className="text-xs text-muted-foreground max-w-sm leading-relaxed">
+                  {isEN
+                    ? "This certificate proves that David J. Woods is a certified hypnosis instructor accredited by the National Guild of Hypnotists (NGH) — the world's largest and most respected hypnosis organization."
+                    : "Dieses Zertifikat belegt, dass David J. Woods ein zertifizierter Hypnose-Instructor ist, akkreditiert durch die National Guild of Hypnotists (NGH) — die weltweit grösste und angesehenste Hypnose-Organisation."}
+                </p>
               </div>
-              <div className="flex items-center gap-1.5 mb-1.5">
-                <Shield className="w-4 h-4 text-blue-600" />
-                <h3 className="font-semibold text-sm text-[#1B3A5C]" style={{ fontFamily: "Georgia, serif" }}>
-                  {isEN ? "NGH Certified Instructor" : "NGH-zertifizierter Instructor"}
-                </h3>
+              <div className="flex flex-col items-center text-center bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 shadow-[0_2px_10px_rgba(27,58,92,0.04)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all">
+                <div className="border border-[#1B3A5C]/10 rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06)] mb-3 max-w-[200px] md:max-w-[260px] bg-white">
+                  <ImageLightbox src={diplomAktivHypnose} alt="Diplom — Therapeut in Aktiv-Hypnose" className="w-full h-auto" />
+                </div>
+                <div className="flex items-center gap-1.5 mb-1.5">
+                  <GraduationCap className="w-4 h-4 text-amber-600" />
+                  <h3 className="font-semibold text-sm text-[#1B3A5C]" style={{ fontFamily: "Georgia, serif" }}>
+                    {isEN ? "Your Diploma" : "Ihr Diplom"}
+                  </h3>
+                </div>
+                <p className="text-xs text-muted-foreground max-w-sm leading-relaxed">
+                  {isEN
+                    ? "This is the diploma you receive upon completing the 6-day seminar — your official certification as a Therapist in Aktiv-Hypnose®."
+                    : "Dieses Diplom erhalten Sie nach Abschluss des 6-tägigen Seminars — Ihre offizielle Zertifizierung als Therapeut/in in Aktiv-Hypnose®."}
+                </p>
               </div>
-              <p className="text-xs text-muted-foreground max-w-sm leading-relaxed">
-                {isEN
-                  ? "This certificate proves that David J. Woods is a certified hypnosis instructor accredited by the National Guild of Hypnotists (NGH) — the world's largest and most respected hypnosis organization."
-                  : "Dieses Zertifikat belegt, dass David J. Woods ein zertifizierter Hypnose-Instructor ist, akkreditiert durch die National Guild of Hypnotists (NGH) — die weltweit grösste und angesehenste Hypnose-Organisation."}
-              </p>
-            </div>
-            <div className="flex flex-col items-center text-center bg-white border border-[#1B3A5C]/12 rounded-2xl p-5 md:p-6 shadow-[0_3px_14px_rgba(27,58,92,0.06)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all">
-              <div className="border border-[#1B3A5C]/10 rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06)] mb-3 max-w-[200px] md:max-w-[260px] bg-white">
-                <ImageLightbox src={diplomAktivHypnose} alt="Diplom — Therapeut in Aktiv-Hypnose" className="w-full h-auto" />
-              </div>
-              <div className="flex items-center gap-1.5 mb-1.5">
-                <GraduationCap className="w-4 h-4 text-amber-600" />
-                <h3 className="font-semibold text-sm text-[#1B3A5C]" style={{ fontFamily: "Georgia, serif" }}>
-                  {isEN ? "Your Diploma" : "Ihr Diplom"}
-                </h3>
-              </div>
-              <p className="text-xs text-muted-foreground max-w-sm leading-relaxed">
-                {isEN
-                  ? "This is the diploma you receive upon completing the 6-day seminar — your official certification as a Therapist in Aktiv-Hypnose®."
-                  : "Dieses Diplom erhalten Sie nach Abschluss des 6-tägigen Seminars — Ihre offizielle Zertifizierung als Therapeut/in in Aktiv-Hypnose®."}
-              </p>
             </div>
           </div>
         </div>
@@ -555,38 +563,40 @@ export default function Ausbildung() {
               : "Ein vollständiges Paket aus Materialien, Zertifizierung und laufender Begleitung."}
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 max-w-5xl mx-auto">
-            {[
-              { n: "350+", l: isEN ? "Pages of training manual" : "Seiten Ausbildungsmappe" },
-              { n: "150+", l: isEN ? "Pages of sample texts" : "Seiten Beispieltexte" },
-              { n: "50+", l: isEN ? "Short videos" : "Kurzvideos" },
-              { n: "50+", l: isEN ? "Audio recordings" : "Audioaufnahmen" },
-              { n: "1", l: isEN ? "Aktiv-Hypnose® Diploma" : "Aktiv-Hypnose® Diplom" },
-              { n: "∞", l: isEN ? "Ongoing support" : "Laufende Unterstützung" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-[#F1F4F7] border border-[#E2E8EE] rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-center min-h-[110px] shadow-sm"
-              >
-                <div className="text-2xl md:text-3xl font-bold text-[#1B3A5C] mb-1" style={{ fontFamily: "Georgia, serif" }}>
-                  {item.n}
+          <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
+              {[
+                { n: "350+", l: isEN ? "Pages of training manual" : "Seiten Ausbildungsmappe" },
+                { n: "150+", l: isEN ? "Pages of sample texts" : "Seiten Beispieltexte" },
+                { n: "50+", l: isEN ? "Short videos" : "Kurzvideos" },
+                { n: "50+", l: isEN ? "Audio recordings" : "Audioaufnahmen" },
+                { n: "1", l: isEN ? "Aktiv-Hypnose® Diploma" : "Aktiv-Hypnose® Diplom" },
+                { n: "∞", l: isEN ? "Ongoing support" : "Laufende Unterstützung" },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white border border-[#E2E8EE] rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-center min-h-[110px] shadow-[0_2px_8px_rgba(27,58,92,0.04)]"
+                >
+                  <div className="text-2xl md:text-3xl font-bold text-[#1B3A5C] mb-1" style={{ fontFamily: "Georgia, serif" }}>
+                    {item.n}
+                  </div>
+                  <div className="text-xs md:text-[13px] text-muted-foreground leading-snug">
+                    {item.l}
+                  </div>
                 </div>
-                <div className="text-xs md:text-[13px] text-muted-foreground leading-snug">
-                  {item.l}
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-[#2E7D32]/30 bg-[#2E7D32]/5 p-4 md:p-5">
-            <p className="text-sm md:text-[15px] text-[#1B3A5C] leading-relaxed">
-              <span className="font-semibold text-[#2E7D32]">
-                {isEN ? "For EMR members:" : "Für EMR-Mitglieder:"}
-              </span>{" "}
-              {isEN
-                ? "Detailed certificate of hours and content for possible EMR submission included."
-                : "Ausführlicher Stunden- und Inhaltsnachweis zur möglichen EMR-Einreichung inklusive."}
-            </p>
+            <div className="mt-6 md:mt-7 rounded-2xl border border-[#2E7D32]/30 bg-[#2E7D32]/5 p-4 md:p-5">
+              <p className="text-sm md:text-[15px] text-[#1B3A5C] leading-relaxed text-center">
+                <span className="font-semibold text-[#2E7D32]">
+                  {isEN ? "For EMR members:" : "Für EMR-Mitglieder:"}
+                </span>{" "}
+                {isEN
+                  ? "Detailed certificate of hours and content for possible EMR submission included."
+                  : "Ausführlicher Stunden- und Inhaltsnachweis zur möglichen EMR-Einreichung inklusive."}
+              </p>
+            </div>
           </div>
         </div>
       </section>
