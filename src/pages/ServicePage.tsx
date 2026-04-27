@@ -219,84 +219,204 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
 
       <Breadcrumbs items={breadcrumbItems} />
 
-      {/* Hero */}
-      <section className="bg-white border-b border-border">
-        <div className="container-main py-8 lg:py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            <div>
-              <p className="text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
-                Lic.Psych. David J. Woods
-              </p>
-              <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-4">
-                {h1}
-              </h1>
-              <div className="space-y-2 mb-6">
-                {benefits.map((b) => (
-                  <div key={b} className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
-                    <span>{b}</span>
-                  </div>
-                ))}
-              </div>
-              {/* Intro paragraphs — full legacy text */}
-              <div className="space-y-4 mb-6">
-                {intro.map((p, i) => (
-                  <p key={i} className="text-base text-foreground leading-relaxed">{p}</p>
-                ))}
-              </div>
-              <Link to={getPath("contact", language, country)} onClick={handleCtaClick}>
-                <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-3">
-                  {t("nav.cta")}
-                </Button>
-              </Link>
-            </div>
-            <div className="border border-border">
-              <img src={data.image} alt={h1} className="w-full h-auto" loading="eager" />
-              <div className="bg-[#E8F5E9] border-t border-[#81C784] p-3">
-                <p className="text-xs font-semibold text-[#2E7D32]">EMR Krankenkasse Konform · ZSR Nr. P609264</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Smoking page uses unified premium section system (silver/white alternating, rounded inner cards) */}
+      {(() => {
+        const isSmoking = data.slugEN === "stop-smoking";
 
-      {/* Rich Content Sections — preserving all legacy H2s and paragraphs */}
-      {sections.map((section, idx) => (
-        <section key={idx} className={`${idx % 2 === 0 ? "bg-[#f4f3ef]" : "bg-white"} border-b border-border`}>
-          <div className="container-main py-10">
-            <div className={section.image ? "grid md:grid-cols-2 gap-8 items-start" : ""}>
-              <div>
-                <h2 className="text-xl sm:text-2xl font-bold text-[#1B3A5C] mb-5">{section.h2}</h2>
-                <div className="space-y-4 max-w-3xl">
-                  {section.paragraphs.map((p, pi) => (
-                    <p key={pi} className="text-base text-foreground leading-relaxed">{p}</p>
-                  ))}
+        if (isSmoking) {
+          return (
+            <>
+              {/* Hero — soft silver-grey background, compact, balanced */}
+              <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
+                <div className="container-main py-6 md:py-8 lg:py-10">
+                  <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+                      <div>
+                        <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
+                          Lic.Psych. David J. Woods
+                        </p>
+                        <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-3">
+                          {h1}
+                        </h1>
+                        <div className="space-y-1.5 mb-4">
+                          {benefits.map((b) => (
+                            <div key={b} className="flex items-center gap-2 text-sm">
+                              <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
+                              <span>{b}</span>
+                            </div>
+                          ))}
+                        </div>
+                        {/* Compact intro: only first paragraph in hero */}
+                        <p className="text-sm md:text-base text-foreground leading-relaxed mb-4">
+                          {intro[0]}
+                        </p>
+                        <Link to={getPath("contact", language, country)} onClick={handleCtaClick}>
+                          <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-2.5">
+                            {t("nav.cta")}
+                          </Button>
+                        </Link>
+                      </div>
+                      <div className="border border-[#E8EDF3] rounded-2xl overflow-hidden">
+                        <img src={data.image} alt={h1} className="w-full h-auto" loading="eager" />
+                        <div className="bg-[#E8F5E9] border-t border-[#81C784] p-2.5">
+                          <p className="text-xs font-semibold text-[#2E7D32]">EMR Krankenkasse Konform · ZSR Nr. P609264</p>
+                        </div>
+                      </div>
+                    </div>
+                    {/* Remaining intro paragraphs below hero grid for full content preservation */}
+                    {intro.length > 1 && (
+                      <div className="mt-5 pt-5 border-t border-[#E8EDF3] grid md:grid-cols-2 gap-x-6 gap-y-3">
+                        {intro.slice(1).map((p, i) => (
+                          <p key={i} className="text-sm text-foreground leading-relaxed">{p}</p>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
-                {section.bullets && section.bullets.length > 0 && (
-                  <ul className="mt-5 space-y-2 max-w-3xl">
-                    {section.bullets.map((b, bi) => (
-                      <li key={bi} className="flex items-start gap-2 text-sm text-foreground">
-                        <ChevronRight className="w-4 h-4 text-[#2E7D32] shrink-0 mt-0.5" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+              </section>
+
+              {/* Content sections — alternating A/B with inner white rounded cards */}
+              {sections.map((section, idx) => {
+                const isA = idx % 2 === 0;
+                return (
+                  <section key={idx} className={`${isA ? "bg-[#F8FAFC] border-[#E8EDF3]" : "bg-[#E8EDF3] border-[#D8E0EA]"} border-b`}>
+                    <div className="container-main py-6 md:py-9">
+                      <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+                        <div className={section.image ? "grid md:grid-cols-2 gap-6 items-start" : ""}>
+                          <div>
+                            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B3A5C] mb-3">{section.h2}</h2>
+                            <div className="space-y-3">
+                              {section.paragraphs.map((p, pi) => (
+                                <p key={pi} className="text-sm md:text-base text-foreground leading-relaxed">{p}</p>
+                              ))}
+                            </div>
+                            {section.bullets && section.bullets.length > 0 && (
+                              <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">
+                                {section.bullets.map((b, bi) => (
+                                  <li key={bi} className="flex items-start gap-2 text-sm text-foreground">
+                                    <ChevronRight className="w-4 h-4 text-[#2E7D32] shrink-0 mt-0.5" />
+                                    <span>{b}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </div>
+                          {section.image && (
+                            <div className="border border-[#E8EDF3] rounded-2xl overflow-hidden">
+                              <img src={section.image} alt={section.h2} className="w-full h-auto object-cover" loading="lazy" />
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                );
+              })}
+            </>
+          );
+        }
+
+        // Default (other service pages, unchanged)
+        return (
+          <>
+            {/* Hero */}
+            <section className="bg-white border-b border-border">
+              <div className="container-main py-8 lg:py-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                  <div>
+                    <p className="text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
+                      Lic.Psych. David J. Woods
+                    </p>
+                    <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-4">
+                      {h1}
+                    </h1>
+                    <div className="space-y-2 mb-6">
+                      {benefits.map((b) => (
+                        <div key={b} className="flex items-center gap-2 text-sm">
+                          <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
+                          <span>{b}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="space-y-4 mb-6">
+                      {intro.map((p, i) => (
+                        <p key={i} className="text-base text-foreground leading-relaxed">{p}</p>
+                      ))}
+                    </div>
+                    <Link to={getPath("contact", language, country)} onClick={handleCtaClick}>
+                      <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-3">
+                        {t("nav.cta")}
+                      </Button>
+                    </Link>
+                  </div>
+                  <div className="border border-border">
+                    <img src={data.image} alt={h1} className="w-full h-auto" loading="eager" />
+                    <div className="bg-[#E8F5E9] border-t border-[#81C784] p-3">
+                      <p className="text-xs font-semibold text-[#2E7D32]">EMR Krankenkasse Konform · ZSR Nr. P609264</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              {section.image && (
-                <div className="border border-border rounded-lg overflow-hidden">
-                  <img src={section.image} alt={section.h2} className="w-full h-auto object-cover" loading="lazy" />
+            </section>
+
+            {sections.map((section, idx) => (
+              <section key={idx} className={`${idx % 2 === 0 ? "bg-[#f4f3ef]" : "bg-white"} border-b border-border`}>
+                <div className="container-main py-10">
+                  <div className={section.image ? "grid md:grid-cols-2 gap-8 items-start" : ""}>
+                    <div>
+                      <h2 className="text-xl sm:text-2xl font-bold text-[#1B3A5C] mb-5">{section.h2}</h2>
+                      <div className="space-y-4 max-w-3xl">
+                        {section.paragraphs.map((p, pi) => (
+                          <p key={pi} className="text-base text-foreground leading-relaxed">{p}</p>
+                        ))}
+                      </div>
+                      {section.bullets && section.bullets.length > 0 && (
+                        <ul className="mt-5 space-y-2 max-w-3xl">
+                          {section.bullets.map((b, bi) => (
+                            <li key={bi} className="flex items-start gap-2 text-sm text-foreground">
+                              <ChevronRight className="w-4 h-4 text-[#2E7D32] shrink-0 mt-0.5" />
+                              <span>{b}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                    {section.image && (
+                      <div className="border border-border rounded-lg overflow-hidden">
+                        <img src={section.image} alt={section.h2} className="w-full h-auto object-cover" loading="lazy" />
+                      </div>
+                    )}
+                  </div>
                 </div>
-              )}
-            </div>
-          </div>
-        </section>
-      ))}
+              </section>
+            ))}
+          </>
+        );
+      })()}
 
       {/* Testimonials from Google Reviews */}
       {(() => {
         const testimonials = getTestimonialsForService(data.slugEN);
         if (testimonials.length === 0) return null;
+        const isSmoking = data.slugEN === "stop-smoking";
+        if (isSmoking) {
+          return (
+            <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
+              <div className="container-main py-6 md:py-9">
+                <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B3A5C] mb-4 text-center">
+                    {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {testimonials.map((t, i) => (
+                      <ServiceTestimonialCard key={i} t={t} isEN={isEN} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+          );
+        }
         return (
           <section className="bg-secondary border-b border-border">
             <div className="container-main py-10">
@@ -373,13 +493,13 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       )}
 
       {/* Consultation CTA Row with Inline Form */}
-      <section className="py-10 md:py-16 bg-[#F5F3EF]">
+      <section className={`py-10 md:py-16 ${data.slugEN === "stop-smoking" ? "bg-[#E8EDF3]" : "bg-[#F5F3EF]"}`}>
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-lg sm:text-xl font-semibold text-primary mb-3 text-center">
               {isEN ? "Your Request" : "Ihre Anfrage"}
             </h2>
-            <div className="bg-white rounded-lg border border-border/40 p-4 sm:p-6 shadow-[0_4px_20px_-6px_rgba(27,58,92,0.12)]">
+            <div className="bg-white rounded-2xl border border-[#E8EDF3] p-4 sm:p-6 shadow-[0_4px_20px_-6px_rgba(27,58,92,0.12)]">
               <InlineContactForm />
             </div>
           </div>
