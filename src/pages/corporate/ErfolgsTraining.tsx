@@ -66,6 +66,7 @@ export default function ErfolgsTraining() {
               />
             </div>
           </div>
+        </div>
       </section>
 
       {/* Results — Banner */}
