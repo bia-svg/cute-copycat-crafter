@@ -71,50 +71,56 @@ export default function NichtraucherSeminare() {
         </div>
       </section>
 
-      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
-        <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
-            {isEN ? "Against these disadvantages & risks:" : "Gegen folgende Nachteile & Risiken:"}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {risks.map((item) => (
-              <div key={item} className="flex items-center gap-2 text-sm">
-                <span className="text-red-500">✕</span>
-                <span>{item}</span>
-              </div>
-            ))}
+      <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+        <div className="container-main py-10 md:py-12">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
+            <h2 className="text-xl font-bold text-[#1B3A5C] mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "Against these disadvantages & risks" : "Gegen folgende Nachteile & Risiken"}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {risks.map((item) => (
+                <div key={item} className="flex items-center gap-2 text-sm bg-white border border-[#E2E8EE] rounded-xl p-3">
+                  <span className="text-red-500">✕</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white border-b border-border">
-        <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
-            {isEN ? "The 4 Phases of the Program" : "Der Ablauf der Rauchfrei von David J. Woods"}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {phases.map((p, i) => (
-              <div key={i} className="border border-[#E2E8EE] p-5 bg-[#F1F4F7]">
-                <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">{p.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
-              </div>
-            ))}
+      <section className="bg-white border-y border-border">
+        <div className="container-main py-10 md:py-12">
+          <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl p-5 md:p-7 lg:p-8">
+            <h2 className="text-xl font-bold text-[#1B3A5C] mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "The 4 Phases of the Program" : "Der Ablauf der Rauchfrei von David J. Woods"}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {phases.map((p, i) => (
+                <div key={i} className="border border-[#E2E8EE] p-5 bg-white rounded-2xl shadow-[0_1px_3px_rgba(27,58,92,0.04)]">
+                  <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">{p.title}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
-        <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
-            {isEN ? "Results of the program:" : "Die Ergebnisse des Programms:"}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {results.map((item) => (
-              <div key={item} className="flex items-center gap-2 text-sm">
-                <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
-                <span>{item}</span>
-              </div>
-            ))}
+      <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+        <div className="container-main py-10 md:py-12">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
+            <h2 className="text-xl font-bold text-[#1B3A5C] mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "Results of the program" : "Die Ergebnisse des Programms"}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {results.map((item) => (
+                <div key={item} className="flex items-center gap-2 text-sm bg-white border border-[#E2E8EE] rounded-xl p-3">
+                  <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
