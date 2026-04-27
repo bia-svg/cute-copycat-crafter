@@ -93,10 +93,10 @@ export default function TrainingTestimonialsCarousel() {
                         loading="lazy"
                       />
                     </div>
-                    <div className="p-5 md:p-6">
-                      <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <h3 className="text-base md:text-lg font-bold text-foreground">{t.name}</h3>
-                        <span className="text-xs text-muted-foreground bg-secondary px-2 py-0.5 rounded">
+                    <div className="p-3 md:p-5">
+                      <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                        <h3 className="text-sm md:text-lg font-bold text-foreground">{t.name}</h3>
+                        <span className="text-[10px] md:text-xs text-muted-foreground bg-secondary px-2 py-0.5 rounded">
                           {isEN ? t.topicEN : t.topicDE}
                         </span>
                       </div>
