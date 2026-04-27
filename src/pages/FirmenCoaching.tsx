@@ -92,69 +92,75 @@ export default function FirmenCoaching() {
         </div>
       </section>
 
-      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
-        <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
-            {isEN ? "Topics for Your Company" : "Themen für Ihr Unternehmen"}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-            {topics.map((item) => (
-              <ServiceCard
-                key={item.title}
-                title={item.title}
-                description={item.desc}
-                href={item.href}
-                icon={item.icon}
-                image={item.image}
-              />
-            ))}
+      <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+        <div className="container-main py-10 md:py-12">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
+            <h2 className="text-xl font-bold text-[#1B3A5C] mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "Topics for Your Company" : "Themen für Ihr Unternehmen"}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+              {topics.map((item) => (
+                <ServiceCard
+                  key={item.title}
+                  title={item.title}
+                  description={item.desc}
+                  href={item.href}
+                  icon={item.icon}
+                  image={item.image}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white border-b border-border">
-        <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
-            {isEN ? "Why Leadership & Performance Coaching is valuable:" : "Warum Leadership & Performance Coaching wertvoll ist:"}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {benefits.map((item) => (
-              <div key={item} className="flex items-start gap-2 text-sm">
-                <span className="text-[#2E7D32] mt-0.5">•</span>
-                <span>{item}</span>
-              </div>
-            ))}
+      <section className="bg-white border-y border-border">
+        <div className="container-main py-10 md:py-12">
+          <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl p-5 md:p-7 lg:p-8">
+            <h2 className="text-xl font-bold text-[#1B3A5C] mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "Why Leadership & Performance Coaching is valuable" : "Warum Leadership & Performance Coaching wertvoll ist"}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {benefits.map((item) => (
+                <div key={item} className="flex items-start gap-2 text-sm bg-white border border-[#E2E8EE] rounded-xl p-3">
+                  <span className="text-[#2E7D32] mt-0.5">•</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-muted-foreground mt-6 max-w-3xl mx-auto text-center">
+              {isEN
+                ? "Leadership & Performance Coaching creates the foundation for growth, clarity and sustainable development — because real business success starts with the people who shape it every day."
+                : "Leadership & Performance Coaching schafft die Grundlage für Wachstum, Klarheit und nachhaltige Entwicklung — denn echter Unternehmenserfolg beginnt bei den Menschen, die ihn täglich gestalten."}
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground mt-6 max-w-3xl">
-            {isEN
-              ? "Leadership & Performance Coaching creates the foundation for growth, clarity and sustainable development — because real business success starts with the people who shape it every day."
-              : "Leadership & Performance Coaching schafft die Grundlage für Wachstum, Klarheit und nachhaltige Entwicklung — denn echter Unternehmenserfolg beginnt bei den Menschen, die ihn täglich gestalten."}
-          </p>
         </div>
       </section>
 
       {/* Evidence-Based Section */}
-      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
-        <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-primary mb-4">
-            {isEN ? "Science-Backed Approach" : "Wissenschaftlich fundierter Ansatz"}
-          </h2>
-          <div className="space-y-4 max-w-3xl text-sm text-foreground leading-relaxed">
-            <p>
-              {isEN
-                ? "A meta-analysis published in the International Journal of Clinical and Experimental Hypnosis (2019) found that hypnosis-based interventions significantly improve workplace performance and stress resilience, with effect sizes comparable to or exceeding traditional coaching methods (d = 0.82)."
-                : "Eine Meta-Analyse im International Journal of Clinical and Experimental Hypnosis (2019) zeigt, dass hypnosebasierte Interventionen die Arbeitsleistung und Stressresilienz signifikant verbessern — mit Effektstärken vergleichbar oder höher als traditionelle Coaching-Methoden (d = 0,82)."}
-            </p>
-            <p>
-              {isEN
-                ? "According to a study by the American Psychological Association (APA, 2020), organizations that invest in mental health and coaching programs see a return of $4 for every $1 invested, through reduced absenteeism and increased productivity."
-                : "Laut einer Studie der American Psychological Association (APA, 2020) erzielen Unternehmen, die in Mental-Health- und Coaching-Programme investieren, einen Return von 4 $ pro investiertem Dollar — durch weniger Fehlzeiten und höhere Produktivität."}
-            </p>
-            <p className="text-xs text-muted-foreground italic">
-              {isEN
-                ? "Sources: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."
-                : "Quellen: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."}
-            </p>
+      <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+        <div className="container-main py-10 md:py-12">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
+            <h2 className="text-xl font-bold text-primary mb-4 text-center" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "Science-Backed Approach" : "Wissenschaftlich fundierter Ansatz"}
+            </h2>
+            <div className="space-y-4 max-w-3xl mx-auto text-sm text-foreground leading-relaxed">
+              <p>
+                {isEN
+                  ? "A meta-analysis published in the International Journal of Clinical and Experimental Hypnosis (2019) found that hypnosis-based interventions significantly improve workplace performance and stress resilience, with effect sizes comparable to or exceeding traditional coaching methods (d = 0.82)."
+                  : "Eine Meta-Analyse im International Journal of Clinical and Experimental Hypnosis (2019) zeigt, dass hypnosebasierte Interventionen die Arbeitsleistung und Stressresilienz signifikant verbessern — mit Effektstärken vergleichbar oder höher als traditionelle Coaching-Methoden (d = 0,82)."}
+              </p>
+              <p>
+                {isEN
+                  ? "According to a study by the American Psychological Association (APA, 2020), organizations that invest in mental health and coaching programs see a return of $4 for every $1 invested, through reduced absenteeism and increased productivity."
+                  : "Laut einer Studie der American Psychological Association (APA, 2020) erzielen Unternehmen, die in Mental-Health- und Coaching-Programme investieren, einen Return von 4 $ pro investiertem Dollar — durch weniger Fehlzeiten und höhere Produktivität."}
+              </p>
+              <p className="text-xs text-muted-foreground italic">
+                {isEN
+                  ? "Sources: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."
+                  : "Quellen: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."}
+              </p>
+            </div>
           </div>
         </div>
       </section>
