@@ -368,20 +368,21 @@ export default function Ausbildung() {
             {/* DE Content */}
             {activeTab === "de" && (
               <>
-                <div className="bg-white border border-[#1B3A5C]/15 rounded-2xl px-6 py-4 text-center shadow-[0_2px_10px_rgba(27,58,92,0.05)]">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1565C0] mb-2">
+                <div className="flex items-baseline justify-center gap-x-3 gap-y-1 flex-wrap pb-2 mb-1 border-b border-[#1B3A5C]/10">
+                  <span className="text-[13px] text-[#1B3A5C]/70">
                     {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
-                  </p>
+                  </span>
+                  <span className="text-[#1B3A5C]/25">·</span>
                   {hasEarlyBirdForCountry("de", datesDE) ? (
-                    <div className="flex items-baseline justify-center gap-3 flex-wrap">
-                      <span className="text-xs text-muted-foreground/70 line-through">€2.790,-</span>
-                      <span className="text-2xl font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>€2.490,-</span>
-                      <span className="text-[11px] font-medium text-[#1565C0]">
-                        {isEN ? "Early Bird Price" : "Frühbucherpreis"}
+                    <>
+                      <span className="text-xs text-muted-foreground/60 line-through">€2.790,-</span>
+                      <span className="text-lg font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>€2.490,-</span>
+                      <span className="text-[12px] text-[#1565C0]">
+                        {isEN ? "Early Bird" : "Frühbucher"}
                       </span>
-                    </div>
+                    </>
                   ) : (
-                    <span className="text-2xl font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>€2.790,-</span>
+                    <span className="text-lg font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>€2.790,-</span>
                   )}
                 </div>
                 {(showAllDates ? datesDE : datesDE.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
