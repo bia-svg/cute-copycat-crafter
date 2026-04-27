@@ -76,85 +76,96 @@ export default function FirmenCoaching() {
         { name: isEN ? "Business Coaching" : "Firmen-Coaching", path: getPath("corporate", language, country) },
       ]} />
 
-      <section className="bg-white border-b border-border">
-        <div className="container-main py-8 lg:py-12">
-          <p className="text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
-            {isEN ? "For Companies & Organizations" : "Für Firmen & Organisationen"}
-          </p>
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-4">
-            {isEN ? "Leadership & Performance Coaching for Companies" : "Leadership & Performance Coaching für Unternehmen"}
-          </h1>
-          <p className="text-base text-foreground leading-relaxed mb-6 max-w-3xl">
-            {isEN
-              ? "Professional Leadership & Performance Coaching supports companies in strategically developing executives and employees, unlocking potential, and sustainably improving collaboration. Through individually tailored coaching impulses, leadership skills, personal responsibility, motivation and team dynamics are strengthened."
-              : "Professionelles Leadership & Performance Coaching unterstützt Unternehmen dabei, Führungskräfte und Mitarbeiter gezielt weiterzuentwickeln, Potenziale freizusetzen und die Zusammenarbeit nachhaltig zu verbessern. Durch individuell abgestimmte Coaching-Impulse werden Führungskompetenz, Eigenverantwortung, Motivation und Teamdynamik gestärkt."}
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
-            {isEN ? "Topics for Your Company" : "Themen für Ihr Unternehmen"}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-            {topics.map((item) => (
-              <ServiceCard
-                key={item.title}
-                title={item.title}
-                description={item.desc}
-                href={item.href}
-                icon={item.icon}
-                image={item.image}
-              />
-            ))}
+      {/* Hero — Premium silver-grey */}
+      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
+        <div className="container-main py-6 md:py-8 lg:py-10">
+          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+            <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
+              {isEN ? "For Companies & Organizations" : "Für Firmen & Organisationen"}
+            </p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-3">
+              {isEN ? "Leadership & Performance Coaching for Companies" : "Leadership & Performance Coaching für Unternehmen"}
+            </h1>
+            <p className="text-sm md:text-base text-foreground/80 leading-relaxed max-w-3xl">
+              {isEN
+                ? "Professional Leadership & Performance Coaching supports companies in strategically developing executives and employees, unlocking potential, and sustainably improving collaboration. Through individually tailored coaching impulses, leadership skills, personal responsibility, motivation and team dynamics are strengthened."
+                : "Professionelles Leadership & Performance Coaching unterstützt Unternehmen dabei, Führungskräfte und Mitarbeiter gezielt weiterzuentwickeln, Potenziale freizusetzen und die Zusammenarbeit nachhaltig zu verbessern. Durch individuell abgestimmte Coaching-Impulse werden Führungskompetenz, Eigenverantwortung, Motivation und Teamdynamik gestärkt."}
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-white border-b border-border">
-        <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
-            {isEN ? "Why Leadership & Performance Coaching is valuable:" : "Warum Leadership & Performance Coaching wertvoll ist:"}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {benefits.map((item) => (
-              <div key={item} className="flex items-start gap-2 text-sm">
-                <span className="text-[#2E7D32] mt-0.5">•</span>
-                <span>{item}</span>
-              </div>
-            ))}
+      {/* Topics — Banner */}
+      <section className="bg-[#F8FAFC]">
+        <div className="container-main py-6 md:py-9">
+          <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+            <h2 className="text-xl font-bold text-[#1B3A5C] mb-5 text-center">
+              {isEN ? "Topics for Your Company" : "Themen für Ihr Unternehmen"}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+              {topics.map((item) => (
+                <ServiceCard
+                  key={item.title}
+                  title={item.title}
+                  description={item.desc}
+                  href={item.href}
+                  icon={item.icon}
+                  image={item.image}
+                />
+              ))}
+            </div>
           </div>
-          <p className="text-sm text-muted-foreground mt-6 max-w-3xl">
-            {isEN
-              ? "Leadership & Performance Coaching creates the foundation for growth, clarity and sustainable development — because real business success starts with the people who shape it every day."
-              : "Leadership & Performance Coaching schafft die Grundlage für Wachstum, Klarheit und nachhaltige Entwicklung — denn echter Unternehmenserfolg beginnt bei den Menschen, die ihn täglich gestalten."}
-          </p>
         </div>
       </section>
 
-      {/* Evidence-Based Section */}
-      <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-primary mb-4">
-            {isEN ? "Science-Backed Approach" : "Wissenschaftlich fundierter Ansatz"}
-          </h2>
-          <div className="space-y-4 max-w-3xl text-sm text-foreground leading-relaxed">
-            <p>
+      {/* Benefits — Banner */}
+      <section className="bg-[#E8EDF3]">
+        <div className="container-main py-6 md:py-9">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+            <h2 className="text-xl font-bold text-[#1B3A5C] mb-5">
+              {isEN ? "Why Leadership & Performance Coaching is valuable:" : "Warum Leadership & Performance Coaching wertvoll ist:"}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {benefits.map((item) => (
+                <div key={item} className="flex items-start gap-2 text-sm">
+                  <span className="text-[#2E7D32] mt-0.5">•</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-muted-foreground mt-5 max-w-3xl">
               {isEN
-                ? "A meta-analysis published in the International Journal of Clinical and Experimental Hypnosis (2019) found that hypnosis-based interventions significantly improve workplace performance and stress resilience, with effect sizes comparable to or exceeding traditional coaching methods (d = 0.82)."
-                : "Eine Meta-Analyse im International Journal of Clinical and Experimental Hypnosis (2019) zeigt, dass hypnosebasierte Interventionen die Arbeitsleistung und Stressresilienz signifikant verbessern — mit Effektstärken vergleichbar oder höher als traditionelle Coaching-Methoden (d = 0,82)."}
+                ? "Leadership & Performance Coaching creates the foundation for growth, clarity and sustainable development — because real business success starts with the people who shape it every day."
+                : "Leadership & Performance Coaching schafft die Grundlage für Wachstum, Klarheit und nachhaltige Entwicklung — denn echter Unternehmenserfolg beginnt bei den Menschen, die ihn täglich gestalten."}
             </p>
-            <p>
-              {isEN
-                ? "According to a study by the American Psychological Association (APA, 2020), organizations that invest in mental health and coaching programs see a return of $4 for every $1 invested, through reduced absenteeism and increased productivity."
-                : "Laut einer Studie der American Psychological Association (APA, 2020) erzielen Unternehmen, die in Mental-Health- und Coaching-Programme investieren, einen Return von 4 $ pro investiertem Dollar — durch weniger Fehlzeiten und höhere Produktivität."}
-            </p>
-            <p className="text-xs text-muted-foreground italic">
-              {isEN
-                ? "Sources: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."
-                : "Quellen: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."}
-            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Evidence — Banner */}
+      <section className="bg-[#F8FAFC]">
+        <div className="container-main py-6 md:py-9">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+            <h2 className="text-xl font-bold text-primary mb-4">
+              {isEN ? "Science-Backed Approach" : "Wissenschaftlich fundierter Ansatz"}
+            </h2>
+            <div className="space-y-3 max-w-3xl text-sm text-foreground/80 leading-relaxed">
+              <p>
+                {isEN
+                  ? "A meta-analysis published in the International Journal of Clinical and Experimental Hypnosis (2019) found that hypnosis-based interventions significantly improve workplace performance and stress resilience, with effect sizes comparable to or exceeding traditional coaching methods (d = 0.82)."
+                  : "Eine Meta-Analyse im International Journal of Clinical and Experimental Hypnosis (2019) zeigt, dass hypnosebasierte Interventionen die Arbeitsleistung und Stressresilienz signifikant verbessern — mit Effektstärken vergleichbar oder höher als traditionelle Coaching-Methoden (d = 0,82)."}
+              </p>
+              <p>
+                {isEN
+                  ? "According to a study by the American Psychological Association (APA, 2020), organizations that invest in mental health and coaching programs see a return of $4 for every $1 invested, through reduced absenteeism and increased productivity."
+                  : "Laut einer Studie der American Psychological Association (APA, 2020) erzielen Unternehmen, die in Mental-Health- und Coaching-Programme investieren, einen Return von 4 $ pro investiertem Dollar — durch weniger Fehlzeiten und höhere Produktivität."}
+              </p>
+              <p className="text-xs text-muted-foreground italic">
+                {isEN
+                  ? "Sources: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."
+                  : "Quellen: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."}
+              </p>
+            </div>
           </div>
         </div>
       </section>
