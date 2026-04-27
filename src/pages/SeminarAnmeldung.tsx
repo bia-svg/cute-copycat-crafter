@@ -274,8 +274,10 @@ export default function SeminarAnmeldung() {
               </div>
             ) : (
               <>
+                {/* STEPS 1 + 2 wrapper — soft silver-grey backdrop */}
+                <div className="mb-6 rounded-2xl bg-[#F1F4F7] border border-[#E2E8EE] p-4 sm:p-5">
                 {/* STEP 1 — Country */}
-                <div className="mb-6">
+                <div className="mb-5">
                   <h2 className="text-sm font-semibold text-[#1B3A5C] mb-3 flex items-center gap-2">
                     <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center">1</span>
                     {isEN ? "Choose Country" : "Land wählen"}
@@ -285,15 +287,20 @@ export default function SeminarAnmeldung() {
                       { key: "de" as const, flag: "🇩🇪", label: isEN ? "Germany" : "Deutschland", sub: "Augsburg" },
                       { key: "ch" as const, flag: "🇨🇭", label: isEN ? "Switzerland" : "Schweiz", sub: "Eschenbach (Zürichsee)" },
                     ]).map(c => {
+                      const isActive = seminarCountry === c.key;
+                      const activeClasses = c.key === "de"
+                        ? "border-[#1B3A5C]/60 bg-[#E6EEF7] ring-1 ring-[#1B3A5C]/30"
+                        : "border-[#2E7D32]/50 bg-[#E8F5E9] ring-1 ring-[#2E7D32]/25";
+                      const hoverClasses = c.key === "de"
+                        ? "hover:border-[#1B3A5C]/40"
+                        : "hover:border-[#2E7D32]/40";
                       return (
                         <button
                           key={c.key}
                           type="button"
                           onClick={() => { setSeminarCountry(c.key); setSelectedDate(""); }}
-                          className={`border p-4 text-left transition-all ${
-                            seminarCountry === c.key
-                              ? "border-[#1B3A5C] bg-[#1B3A5C]/5 ring-1 ring-[#1B3A5C]"
-                              : "border-border bg-white hover:border-[#1B3A5C]/40"
+                          className={`border rounded-xl p-4 text-left transition-all ${
+                            isActive ? activeClasses : `border-[#E2E8EE] bg-white ${hoverClasses}`
                           }`}
                         >
                           <span className="text-2xl">{c.flag}</span>
@@ -307,7 +314,7 @@ export default function SeminarAnmeldung() {
 
                 {/* STEP 2 — Date */}
                 {seminarCountry && (
-                  <div className="mb-6">
+                  <div>
                     <h2 className="text-sm font-semibold text-[#1B3A5C] mb-3 flex items-center gap-2">
                       <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center">2</span>
                       {isEN ? "Select Date" : "Termin wählen"}
@@ -383,6 +390,8 @@ export default function SeminarAnmeldung() {
                     </div>
                   </div>
                 )}
+                </div>
+                {/* /STEPS 1+2 wrapper */}
 
                 {/* STEP 3 — Form */}
                 {selectedDate && (
