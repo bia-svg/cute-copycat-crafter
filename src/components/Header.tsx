@@ -86,7 +86,7 @@ export default function Header() {
     { icon: <User className="w-5 h-5" />, label: isDE ? "David J. Woods & Team" : "David J. Woods & Team", desc: isDE ? "Lic.Psych. · Über 35+ Jahre Erfahrung" : "Lic.Psych. · 35+ years experience", href: getPath("about", language, country) },
     { icon: <Tv className="w-5 h-5" />, label: isDE ? "TV & Medien" : "TV & Media", desc: isDE ? "Medienauftritte & Presse" : "Media appearances & press", href: getPath("media", language, country) },
     { icon: <Star className="w-5 h-5" />, label: isDE ? "Kundenmeinungen" : "Testimonials", desc: isDE ? "★ 5.0 bei Google · 266 Bewertungen" : "★ 5.0 at Google · 266 reviews", href: getPath("testimonials", language, country) },
-    { icon: <Trophy className="w-5 h-5" />, label: isDE ? "Erfolgsberichte" : "Success Stories", desc: isDE ? "Video-Erfahrungsberichte unserer Klienten" : "Video testimonials from our clients", href: getPath("successStories", language, country) },
+    { icon: <Trophy className="w-5 h-5" />, label: isDE ? "Erfolgsberichte" : "Success Stories", desc: isDE ? "Video-Erfahrungsberichte unserer Ausbildungsteilnehmer" : "Video testimonials from our training participants", href: getPath("successStories", language, country) },
     { icon: <Newspaper className="w-5 h-5" />, label: "Blog", desc: isDE ? "Artikel & Wissen rund um Hypnose" : "Articles & knowledge about hypnosis", href: getPath("blog", language, country) },
     { icon: <PlayCircle className="w-5 h-5" />, label: isDE ? "Wie funktioniert Hypnose?" : "How Does Hypnosis Work?", desc: isDE ? "Verstehen, wie Hypnose wirklich wirkt" : "Understand how hypnosis really works", href: getPath("howHypnosisWorks", language, country) },
   ];
