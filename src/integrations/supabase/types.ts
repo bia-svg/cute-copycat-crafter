@@ -302,6 +302,66 @@ export type Database = {
         }
         Relationships: []
       }
+      seo_snapshots: {
+        Row: {
+          clicks: number
+          created_at: string
+          ctr: number
+          id: string
+          impressions: number
+          keywords_11_20: number
+          keywords_21_plus: number
+          keywords_4_10: number
+          keywords_top3: number
+          metadata: Json | null
+          period_end: string
+          period_start: string
+          position: number
+          snapshot_date: string
+          top_pages: Json | null
+          top_queries: Json | null
+          total_keywords: number
+        }
+        Insert: {
+          clicks?: number
+          created_at?: string
+          ctr?: number
+          id?: string
+          impressions?: number
+          keywords_11_20?: number
+          keywords_21_plus?: number
+          keywords_4_10?: number
+          keywords_top3?: number
+          metadata?: Json | null
+          period_end: string
+          period_start: string
+          position?: number
+          snapshot_date: string
+          top_pages?: Json | null
+          top_queries?: Json | null
+          total_keywords?: number
+        }
+        Update: {
+          clicks?: number
+          created_at?: string
+          ctr?: number
+          id?: string
+          impressions?: number
+          keywords_11_20?: number
+          keywords_21_plus?: number
+          keywords_4_10?: number
+          keywords_top3?: number
+          metadata?: Json | null
+          period_end?: string
+          period_start?: string
+          position?: number
+          snapshot_date?: string
+          top_pages?: Json | null
+          top_queries?: Json | null
+          total_keywords?: number
+        }
+        Relationships: []
+      }
       suppressed_emails: {
         Row: {
           created_at: string

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { format, subDays, startOfMonth, endOfMonth, subMonths } from "date-fns";
-import type { DailyTraffic, TopPage, CampaignData, DailyAds, LeadRecord, WhatsAppClick, GSCQuery, GSCTotals, GSCDailyMetric, CampaignPageEntry, CampaignPageFlowEntry } from "@/data/dashboardMockData";
+import type { DailyTraffic, TopPage, CampaignData, DailyAds, LeadRecord, WhatsAppClick, GSCQuery, GSCTotals, GSCDailyMetric, GSCPage, GSCCountrySegment, GSCDeviceSegment, GSCDistribution, SEOSnapshot, CampaignPageEntry, CampaignPageFlowEntry } from "@/data/dashboardMockData";
 
 export interface DateRange {
   label: string;
@@ -62,9 +62,16 @@ export interface DashboardState {
   whatsappClicks: WhatsAppClick[];
   gscQueries: GSCQuery[];
   gscTotals: GSCTotals | null;
+  gscPreviousTotals: GSCTotals | null;
+  gscPreviousPeriod: { startDate: string; endDate: string } | null;
   gscDailyMetrics: GSCDailyMetric[];
+  gscTopPages: GSCPage[];
+  gscByCountry: GSCCountrySegment[];
+  gscByDevice: GSCDeviceSegment[];
+  gscDistribution: GSCDistribution | null;
   gscError: string | null;
   gscLive: boolean;
+  seoSnapshots: SEOSnapshot[];
   campaignPages: CampaignPageEntry[];
   campaignPageFlow: CampaignPageFlowEntry[];
   loading: boolean;
@@ -93,7 +100,14 @@ export function useDashboardData(): DashboardState {
   const [gscLive, setGscLive] = useState(false);
   const [gscQueries, setGscQueries] = useState<GSCQuery[]>([]);
   const [gscTotals, setGscTotals] = useState<GSCTotals | null>(null);
+  const [gscPreviousTotals, setGscPreviousTotals] = useState<GSCTotals | null>(null);
+  const [gscPreviousPeriod, setGscPreviousPeriod] = useState<{ startDate: string; endDate: string } | null>(null);
   const [gscDailyMetrics, setGscDailyMetrics] = useState<GSCDailyMetric[]>([]);
+  const [gscTopPages, setGscTopPages] = useState<GSCPage[]>([]);
+  const [gscByCountry, setGscByCountry] = useState<GSCCountrySegment[]>([]);
+  const [gscByDevice, setGscByDevice] = useState<GSCDeviceSegment[]>([]);
+  const [gscDistribution, setGscDistribution] = useState<GSCDistribution | null>(null);
+  const [seoSnapshots, setSeoSnapshots] = useState<SEOSnapshot[]>([]);
   const [campaignPages, setCampaignPages] = useState<CampaignPageEntry[]>([]);
   const [campaignPageFlow, setCampaignPageFlow] = useState<CampaignPageFlowEntry[]>([]);
 
@@ -254,14 +268,39 @@ export function useDashboardData(): DashboardState {
       if (data?.error) throw new Error(data.error);
       setGscQueries(data.topQueries || []);
       setGscTotals(data.totals || null);
+      setGscPreviousTotals(data.previousTotals || null);
+      setGscPreviousPeriod(data.previousPeriod || null);
       setGscDailyMetrics(data.dailyMetrics || []);
+      setGscTopPages(data.topPages || []);
+      setGscByCountry(data.byCountry || []);
+      setGscByDevice(data.byDevice || []);
+      setGscDistribution(data.distribution || null);
       setGscLive(true);
     } catch (err: any) {
       console.error("GSC fetch failed:", err);
       setGscError(err?.message || "Failed to fetch GSC data");
       setGscQueries([]);
       setGscTotals(null);
+      setGscPreviousTotals(null);
+      setGscPreviousPeriod(null);
       setGscDailyMetrics([]);
+      setGscTopPages([]);
+      setGscByCountry([]);
+      setGscByDevice([]);
+      setGscDistribution(null);
+    }
+
+    // Fetch long-term SEO snapshots (history beyond GSC's 16-month window)
+    try {
+      const { data, error: snapErr } = await supabase
+        .from("seo_snapshots")
+        .select("id, snapshot_date, period_start, period_end, clicks, impressions, ctr, position, keywords_top3, keywords_4_10, keywords_11_20, keywords_21_plus, total_keywords")
+        .order("snapshot_date", { ascending: true });
+      if (snapErr) throw snapErr;
+      setSeoSnapshots((data as SEOSnapshot[]) || []);
+    } catch (err) {
+      console.error("SEO snapshots fetch failed:", err);
+      setSeoSnapshots([]);
     }
 
     setLoading(false);
@@ -280,9 +319,16 @@ export function useDashboardData(): DashboardState {
     whatsappClicks,
     gscQueries,
     gscTotals,
+    gscPreviousTotals,
+    gscPreviousPeriod,
     gscDailyMetrics,
+    gscTopPages,
+    gscByCountry,
+    gscByDevice,
+    gscDistribution,
     gscError,
     gscLive,
+    seoSnapshots,
     loading,
     gaError,
     adsError,

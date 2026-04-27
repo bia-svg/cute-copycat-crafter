@@ -93,6 +93,53 @@ export interface GSCDailyMetric {
   position: number;
 }
 
+export interface GSCPage {
+  page: string;
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+}
+
+export interface GSCSegment {
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+}
+
+export interface GSCCountrySegment extends GSCSegment {
+  country: string;
+}
+
+export interface GSCDeviceSegment extends GSCSegment {
+  device: string;
+}
+
+export interface GSCDistribution {
+  top3: number;
+  pos4_10: number;
+  pos11_20: number;
+  pos21_plus: number;
+  total: number;
+}
+
+export interface SEOSnapshot {
+  id: string;
+  snapshot_date: string;
+  period_start: string;
+  period_end: string;
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+  keywords_top3: number;
+  keywords_4_10: number;
+  keywords_11_20: number;
+  keywords_21_plus: number;
+  total_keywords: number;
+}
+
 export interface CampaignPageEntry {
   campaign: string;
   source: string;
