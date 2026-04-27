@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { getPath } from "@/lib/routes";
 import { CheckCircle, ArrowLeft } from "lucide-react";
+import corporateNonsmokerImg from "@/assets/corporate-nonsmoker.jpg";
 
 export default function NichtraucherSeminare() {
   const { language, country } = useLanguage();
@@ -48,7 +49,8 @@ export default function NichtraucherSeminare() {
           <Link to={getPath("corporate", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-3">
             <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
           </Link>
-          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm grid md:grid-cols-[1fr_280px] lg:grid-cols-[1fr_340px] gap-5 md:gap-7 items-start">
+            <div>
             <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
             <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-4">
               {isEN ? "Smoke-Free in 3 Hours — Seminar by David J. Woods" : "Rauchfrei in 3 Stunden — Seminar by David J. Woods"}
@@ -68,6 +70,15 @@ export default function NichtraucherSeminare() {
                   ? "For this special business coaching, we are happy to come directly to your company and offer you a unique group smoking cessation. All you need is a room with enough space, comfortable seating, a flip chart, and an audio system with microphone."
                   : "Für dieses spezielle Business Coaching kommen wir gerne auch direkt in Ihre Firma und bieten Ihnen eine einzigartige Rauchentwöhnung in der Gruppe an. Alles, was Sie dazu brauchen, ist ein Raum mit ausreichend Platz, eine bequeme Bestuhlung, ein Flip Chart sowie eine Audio-Anlage mit Mikrofon."}
               </p>
+            </div>
+            </div>
+            <div className="md:order-last">
+              <img
+                src={corporateNonsmokerImg}
+                alt={isEN ? "Non-Smoker Seminar" : "Nichtraucher-Seminar"}
+                className="w-full h-48 md:h-full md:max-h-[340px] object-cover rounded-2xl border border-[#E2E8EE]"
+                loading="eager"
+              />
             </div>
           </div>
         </div>
