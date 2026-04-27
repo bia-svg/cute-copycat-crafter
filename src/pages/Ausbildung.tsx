@@ -451,35 +451,35 @@ export default function Ausbildung() {
           SECTION — Day-by-Day Curriculum
           ═══════════════════════════════════════════════════════════ */}
       <section id="curriculum" className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
-        <div className="container-main py-8 lg:py-12">
-          <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
+        <div className="container-main py-4 md:py-7 lg:py-10">
+          <h2 className="text-lg md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Your 6-Day Journey" : "Ihre 6-Tage Reise"}
           </h2>
-          <p className="text-xs md:text-sm text-muted-foreground text-center mb-6 md:mb-8 max-w-2xl mx-auto">
+          <p className="text-[11px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-2xl mx-auto leading-snug">
             {isEN
               ? "Each day builds on the previous, taking you from fundamentals to advanced clinical techniques."
               : "Jeder Tag baut auf dem vorherigen auf und führt Sie von den Grundlagen zu fortgeschrittenen klinischen Techniken."}
           </p>
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-2.5 md:gap-3">
             {days.map((day) => (
-              <div key={day.day} className="bg-white border border-[#1B3A5C]/22 rounded-2xl p-4 md:p-5 shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:shadow-[0_14px_30px_rgba(27,58,92,0.15)] hover:border-[#1B3A5C]/40 hover:-translate-y-0.5 transition-all duration-300">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-lg bg-white text-[#1B3A5C]">
+              <div key={day.day} className="bg-white border border-[#1B3A5C]/22 rounded-xl md:rounded-2xl p-3 md:p-4 shadow-[0_4px_12px_rgba(27,58,92,0.08)] md:shadow-[0_6px_18px_rgba(27,58,92,0.10)] md:hover:shadow-[0_12px_26px_rgba(27,58,92,0.14)] md:hover:border-[#1B3A5C]/40 md:hover:-translate-y-0.5 transition-all duration-300">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="p-1.5 rounded-lg bg-[#1B3A5C]/10 ring-1 ring-[#1B3A5C]/20 text-[#1B3A5C] shrink-0">
                     {day.icon}
                   </div>
-                  <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-wider text-[#2E7D32]">
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-semibold uppercase tracking-wider text-[#2E7D32] leading-tight">
                       {isEN ? `Day ${day.day}` : `Tag ${day.day}`}
                     </p>
-                    <h3 className="text-sm md:text-base font-bold text-[#1B3A5C]">
+                    <h3 className="text-sm md:text-[15px] font-bold text-[#1B3A5C] leading-tight">
                       {isEN ? day.titleEN : day.titleDE}
                     </h3>
                   </div>
                 </div>
-                <ul className="space-y-1.5">
+                <ul className="space-y-1">
                   {(isEN ? day.topicsEN : day.topicsDE).map((topic, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-[#55504f]">
-                      <CheckCircle className="w-3.5 h-3.5 text-[#2E7D32] mt-0.5 shrink-0" />
+                    <li key={i} className="flex items-start gap-1.5 text-[11px] md:text-xs text-[#55504f] leading-snug">
+                      <CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#2E7D32] mt-0.5 shrink-0" />
                       {topic}
                     </li>
                   ))}
