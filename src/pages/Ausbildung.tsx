@@ -185,35 +185,35 @@ export default function Ausbildung() {
           SECTION 1 — HERO: Why this training exists
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-6 lg:py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="container-main py-4 md:py-6 lg:py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8 items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-2">
+              <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-1.5">
                 {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
               </p>
-              <h1 className="text-2xl sm:text-3xl lg:text-[2.25rem] leading-tight font-bold text-[#1B3A5C] mb-3" style={{ fontFamily: "Georgia, serif" }}>
+              <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-bold text-[#1B3A5C] mb-2 md:mb-3" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN
                   ? "Become a Certified Aktiv-Hypnose© Therapist"
                   : "Werden Sie zertifizierter Aktiv-Hypnose© Therapeut"}
               </h1>
-              <p className="text-sm lg:text-base text-[#55504f] leading-relaxed mb-4">
+              <p className="text-[13px] md:text-sm lg:text-base text-[#55504f] leading-snug md:leading-relaxed mb-2.5 md:mb-4">
                 {isEN
                   ? "In just 6 days, you'll learn a proven, hands-on method for real change work. Not a superficial weekend certification, but a high-quality intensive training with a clear system, direct application, and professional guidance. Ideal for anyone who wants to support people safely and effectively."
                   : "In nur 6 Tagen lernen Sie eine fundierte, praxisnahe Methode für echte Veränderungsarbeit. Keine oberflächliche Wochenend-Zertifizierung, sondern eine hochwertige Intensiv-Ausbildung mit klarem System, direkter Anwendung und professioneller Begleitung. Ideal für alle, die Menschen sicher und wirksam begleiten möchten."}
               </p>
-              <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#55504f] mb-4">
-                <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "6-Day Intensive Training" : "6 Tage Intensiv-Ausbildung"}</span>
-                <span className="flex items-center gap-1.5"><GraduationCap className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Specialist Practitioner Diploma" : "Therapeuten-Diplom"}</span>
+              <div className="flex flex-wrap gap-x-3 gap-y-1 text-[12px] md:text-sm text-[#55504f] mb-2.5 md:mb-4">
+                <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#2E7D32]" /> {isEN ? "6-Day Intensive Training" : "6 Tage Intensiv-Ausbildung"}</span>
+                <span className="flex items-center gap-1.5"><GraduationCap className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#2E7D32]" /> {isEN ? "Specialist Practitioner Diploma" : "Therapeuten-Diplom"}</span>
               </div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 md:gap-3">
                 <a href="#dates">
-                  <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-2.5">
+                  <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-5 py-2 md:px-6 md:py-2.5 text-sm">
                     {isEN ? "View Dates & Register" : "Termine & Anmeldung"}
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </a>
                 <a href="#curriculum">
-                  <Button variant="outline" className="border-[#55504f] text-[#55504f] font-semibold px-6 py-2.5">
+                  <Button variant="outline" className="border-[#55504f] text-[#55504f] font-semibold px-5 py-2 md:px-6 md:py-2.5 text-sm">
                     {isEN ? "See Full Curriculum" : "Gesamtes Curriculum"}
                   </Button>
                 </a>
@@ -276,18 +276,18 @@ export default function Ausbildung() {
           SECTION — Upcoming Dates with Country Tabs (moved up)
           ═══════════════════════════════════════════════════════════ */}
       <section id="dates" className="bg-[#f4f3ef] border-b border-border scroll-mt-20">
-        <div className="container-main py-10 lg:py-14">
-          <h2 className="text-2xl font-bold text-[#1B3A5C] mb-2 text-center" style={{ fontFamily: "Georgia, serif" }}>
+        <div className="container-main py-5 md:py-8 lg:py-12">
+          <h2 className="text-lg md:text-2xl font-bold text-[#1B3A5C] mb-1.5 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
           </h2>
-          <p className="text-sm text-muted-foreground text-center mb-6 max-w-xl mx-auto">
+          <p className="text-[12px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-xl mx-auto leading-snug">
             {isEN
               ? "Choose your preferred country and seminar date, then fill in your details. We'll confirm your place within 24 hours."
               : "Wählen Sie Ihr bevorzugtes Land und Seminar-Datum, dann füllen Sie Ihre Daten aus. Wir bestätigen Ihren Platz innerhalb von 24 Stunden."}
           </p>
 
           {/* Country Tabs */}
-          <div className="flex justify-center gap-3 mb-8 max-w-md mx-auto">
+          <div className="flex justify-center gap-2 md:gap-3 mb-4 md:mb-6 max-w-md mx-auto">
             <button
               onClick={() => { setActiveTab("de"); setShowAllDates(false); }}
               className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border font-semibold text-sm transition-all ${
@@ -311,7 +311,7 @@ export default function Ausbildung() {
             </button>
           </div>
 
-          <div className="space-y-4 max-w-2xl mx-auto">
+          <div className="space-y-2.5 md:space-y-4 max-w-2xl mx-auto">
             {/* CH Content */}
             {activeTab === "ch" && (
               <>
@@ -333,7 +333,7 @@ export default function Ausbildung() {
                   )}
                 </div>
                 {(showAllDates ? datesCH : datesCH.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
-                  <div key={`ch-${i}`} className="border border-[#1B3A5C]/12 p-5 bg-white rounded-2xl shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <div key={`ch-${i}`} className="border border-[#1B3A5C]/12 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
                       <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
                         <Calendar className="w-4 h-4" /> {d.date}
@@ -388,7 +388,7 @@ export default function Ausbildung() {
                   )}
                 </div>
                 {(showAllDates ? datesDE : datesDE.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
-                  <div key={`de-${i}`} className="border border-[#1B3A5C]/12 p-5 bg-white rounded-2xl shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <div key={`de-${i}`} className="border border-[#1B3A5C]/12 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
                       <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
                         <Calendar className="w-4 h-4" /> {d.date}
@@ -439,7 +439,7 @@ export default function Ausbildung() {
               </div>
             );
           })()}
-          <p className="text-sm md:text-[15px] text-[#1B3A5C]/85 text-center mt-7 max-w-2xl mx-auto font-medium">
+          <p className="text-[12px] md:text-[15px] text-[#1B3A5C]/85 text-center mt-4 md:mt-6 max-w-2xl mx-auto font-medium leading-snug">
             {isEN
               ? "Early Bird pricing available for a limited time or until the current intake is full."
               : "Frühbucher-Preis verfügbar für begrenzte Zeit oder bis die aktuelle Gruppe voll ist."}
@@ -451,7 +451,7 @@ export default function Ausbildung() {
           SECTION — Day-by-Day Curriculum
           ═══════════════════════════════════════════════════════════ */}
       <section id="curriculum" className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
-        <div className="container-main py-4 md:py-7 lg:py-10">
+        <div className="container-main py-3.5 md:py-6 lg:py-9">
           <h2 className="text-lg md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Your 6-Day Journey" : "Ihre 6-Tage Reise"}
           </h2>
@@ -494,43 +494,43 @@ export default function Ausbildung() {
           DIPLOMAS — Visual proof of certification (Ihr Abschluss)
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-6 lg:py-8">
-          <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
+        <div className="container-main py-4 md:py-7 lg:py-9">
+          <h2 className="text-lg md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Your Certification" : "Ihr Abschluss"}
           </h2>
-          <p className="text-xs md:text-sm text-muted-foreground text-center mb-4 md:mb-5 max-w-2xl mx-auto">
+          <p className="text-[12px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-2xl mx-auto leading-snug">
             {isEN
               ? "Upon completion, you receive internationally recognized diplomas."
               : "Nach Abschluss erhalten Sie international anerkannte Diplome."}
           </p>
-          <div className="grid sm:grid-cols-2 gap-5 md:gap-6 max-w-3xl mx-auto">
-            <div className="flex flex-col items-center text-center bg-white border border-[#1B3A5C]/12 rounded-2xl p-5 md:p-6 shadow-[0_3px_14px_rgba(27,58,92,0.06)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all">
-              <div className="border border-[#1B3A5C]/10 rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06)] mb-3 max-w-[200px] md:max-w-[260px] bg-white">
+          <div className="grid sm:grid-cols-2 gap-3 md:gap-5 max-w-3xl mx-auto">
+            <div className="flex flex-col items-center text-center bg-white border border-[#1B3A5C]/12 rounded-2xl p-3.5 md:p-5 shadow-[0_3px_14px_rgba(27,58,92,0.06)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all">
+              <div className="border border-[#1B3A5C]/10 rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06)] mb-2 md:mb-3 max-w-[150px] md:max-w-[230px] bg-white">
                 <ImageLightbox src={diplomNGH} alt="NGH Certified Instructor — David Woods" className="w-full h-auto" />
               </div>
-              <div className="flex items-center gap-1.5 mb-1.5">
+              <div className="flex items-center gap-1.5 mb-1">
                 <Shield className="w-4 h-4 text-blue-600" />
                 <h3 className="font-semibold text-sm text-[#1B3A5C]" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "NGH Certified Instructor" : "NGH-zertifizierter Instructor"}
                 </h3>
               </div>
-              <p className="text-xs text-muted-foreground max-w-sm leading-relaxed">
+              <p className="text-[11px] md:text-xs text-muted-foreground max-w-sm leading-snug md:leading-relaxed">
                 {isEN
                   ? "This certificate proves that David J. Woods is a certified hypnosis instructor accredited by the National Guild of Hypnotists (NGH) — the world's largest and most respected hypnosis organization."
                   : "Dieses Zertifikat belegt, dass David J. Woods ein zertifizierter Hypnose-Instructor ist, akkreditiert durch die National Guild of Hypnotists (NGH) — die weltweit grösste und angesehenste Hypnose-Organisation."}
               </p>
             </div>
-            <div className="flex flex-col items-center text-center bg-white border border-[#1B3A5C]/12 rounded-2xl p-5 md:p-6 shadow-[0_3px_14px_rgba(27,58,92,0.06)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all">
-              <div className="border border-[#1B3A5C]/10 rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06)] mb-3 max-w-[200px] md:max-w-[260px] bg-white">
+            <div className="flex flex-col items-center text-center bg-white border border-[#1B3A5C]/12 rounded-2xl p-3.5 md:p-5 shadow-[0_3px_14px_rgba(27,58,92,0.06)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all">
+              <div className="border border-[#1B3A5C]/10 rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06)] mb-2 md:mb-3 max-w-[150px] md:max-w-[230px] bg-white">
                 <ImageLightbox src={diplomAktivHypnose} alt="Diplom — Therapeut in Aktiv-Hypnose" className="w-full h-auto" />
               </div>
-              <div className="flex items-center gap-1.5 mb-1.5">
+              <div className="flex items-center gap-1.5 mb-1">
                 <GraduationCap className="w-4 h-4 text-amber-600" />
                 <h3 className="font-semibold text-sm text-[#1B3A5C]" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "Your Diploma" : "Ihr Diplom"}
                 </h3>
               </div>
-              <p className="text-xs text-muted-foreground max-w-sm leading-relaxed">
+              <p className="text-[11px] md:text-xs text-muted-foreground max-w-sm leading-snug md:leading-relaxed">
                 {isEN
                   ? "This is the diploma you receive upon completing the 6-day seminar — your official certification as a Therapist in Aktiv-Hypnose®."
                   : "Dieses Diplom erhalten Sie nach Abschluss des 6-tägigen Seminars — Ihre offizielle Zertifizierung als Therapeut/in in Aktiv-Hypnose®."}
@@ -544,17 +544,17 @@ export default function Ausbildung() {
           INCLUDED — Alles, was Sie erhalten
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#DDE1E4] border-b border-border">
-        <div className="container-main py-10 lg:py-14">
-          <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-2 text-center" style={{ fontFamily: "Georgia, serif" }}>
+        <div className="container-main py-4 md:py-7 lg:py-10">
+          <h2 className="text-lg md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Everything You Receive" : "Alles, was Sie erhalten"}
           </h2>
-          <p className="text-sm text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+          <p className="text-[12px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-2xl mx-auto leading-snug">
             {isEN
               ? "A complete package of materials, certification and ongoing support."
               : "Ein vollständiges Paket aus Materialien, Zertifizierung und laufender Begleitung."}
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3 max-w-5xl mx-auto">
             {[
               { n: "350+", l: isEN ? "Pages of training manual" : "Seiten Ausbildungsmappe" },
               { n: "150+", l: isEN ? "Pages of sample texts" : "Seiten Beispieltexte" },
@@ -565,12 +565,12 @@ export default function Ausbildung() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-white border border-[#1B3A5C]/22 rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-center min-h-[110px] shadow-[0_4px_14px_rgba(27,58,92,0.08)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.12)] hover:border-[#1B3A5C]/40 transition-all"
+                className="bg-white border border-[#1B3A5C]/22 rounded-xl md:rounded-2xl p-2.5 md:p-4 text-center flex flex-col items-center justify-center min-h-[78px] md:min-h-[100px] shadow-[0_4px_12px_rgba(27,58,92,0.07)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.12)] hover:border-[#1B3A5C]/40 transition-all"
               >
-                <div className="text-2xl md:text-3xl font-bold text-[#1B3A5C] mb-1" style={{ fontFamily: "Georgia, serif" }}>
+                <div className="text-lg md:text-2xl lg:text-3xl font-bold text-[#1B3A5C] leading-none mb-1" style={{ fontFamily: "Georgia, serif" }}>
                   {item.n}
                 </div>
-                <div className="text-xs md:text-[13px] text-muted-foreground leading-snug">
+                <div className="text-[10px] md:text-[12px] lg:text-[13px] text-muted-foreground leading-tight">
                   {item.l}
                 </div>
               </div>
@@ -610,28 +610,28 @@ export default function Ausbildung() {
         ]}
       />
 
-      <section className="bg-[#DDE1E4] py-7 md:py-10">
+      <section className="bg-[#DDE1E4] py-4 md:py-7">
         <div className="container-main">
-          <div className="relative max-w-2xl mx-auto bg-gradient-to-br from-white via-[#F1F4F7] to-[#E8ECEF] border border-[#1B3A5C]/18 rounded-3xl px-7 py-7 md:px-10 md:py-9 text-center shadow-[0_6px_24px_rgba(27,58,92,0.10)]">
+          <div className="relative max-w-2xl mx-auto bg-gradient-to-br from-white via-[#F1F4F7] to-[#E8ECEF] border border-[#1B3A5C]/18 rounded-3xl px-5 py-5 md:px-9 md:py-7 text-center shadow-[0_6px_24px_rgba(27,58,92,0.10)]">
             {/* Decorative top accent */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-[11px] font-semibold px-4 py-1 rounded-full tracking-wide uppercase shadow-sm">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-[10px] md:text-[11px] font-semibold px-3.5 py-1 rounded-full tracking-wide uppercase shadow-sm">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
-            <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2.5" style={{ fontFamily: "Georgia, serif" }}>
+            <h2 className="text-lg md:text-2xl font-bold text-foreground mb-1.5 md:mb-2.5" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Your Journey Starts Here" : "Ihre Reise beginnt hier"}
             </h2>
-            <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto mb-5 leading-relaxed">
+            <p className="text-[13px] md:text-base text-muted-foreground max-w-xl mx-auto mb-3 md:mb-5 leading-snug md:leading-relaxed">
               {isEN
                 ? "In 6 days, you'll gain the knowledge, the confidence, and the diploma to support people professionally. Are you ready?"
                 : "In 6 Tagen gewinnen Sie das Wissen, die Sicherheit und das Diplom, um Menschen professionell zu begleiten. Sind Sie bereit?"}
             </p>
             <Link to={`${getPath("seminarRegistration", language, country)}?country=de`}>
-              <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-sm md:text-base rounded-full shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] transition-all">
+              <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-2.5 md:px-8 md:py-3 text-sm md:text-base rounded-full shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] transition-all">
                 {isEN ? "Register for Seminar" : "Zum Seminar anmelden"}
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
-            <div className="flex items-center justify-center gap-3 mt-4 text-muted-foreground text-xs md:text-sm">
+            <div className="flex items-center justify-center gap-3 mt-2.5 md:mt-4 text-muted-foreground text-[11px] md:text-sm">
               <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-foreground transition-colors">
                 <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
                 5.0 — 266 Google {isEN ? "Reviews" : "Bewertungen"}

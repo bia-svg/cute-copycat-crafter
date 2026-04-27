@@ -63,13 +63,13 @@ export default function TrainingTestimonialsCarousel() {
   }, [api]);
 
   return (
-    <section className="bg-secondary/40 py-8 md:py-10">
+    <section className="bg-secondary/40 py-5 md:py-9">
       <div className="container-main">
-        <div className="max-w-3xl mx-auto text-center mb-6 md:mb-7">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1B3A5C] mb-3" style={{ fontFamily: "Georgia, serif" }}>
+        <div className="max-w-3xl mx-auto text-center mb-3 md:mb-6">
+          <h2 className="text-lg md:text-3xl font-bold text-[#1B3A5C] mb-1.5 md:mb-3" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "What Our Seminar Participants Say" : "Das sagen unsere Seminarteilnehmer"}
           </h2>
-          <p className="text-base text-muted-foreground">
+          <p className="text-[12px] md:text-base text-muted-foreground leading-snug">
             {isEN
               ? "Real video testimonials from participants of the Aktiv-Hypnose® Training"
               : "Echte Video-Erfahrungsberichte von Teilnehmern der Aktiv-Hypnose® Ausbildung"}
@@ -93,10 +93,10 @@ export default function TrainingTestimonialsCarousel() {
                         loading="lazy"
                       />
                     </div>
-                    <div className="p-5 md:p-6">
-                      <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <h3 className="text-base md:text-lg font-bold text-foreground">{t.name}</h3>
-                        <span className="text-xs text-muted-foreground bg-secondary px-2 py-0.5 rounded">
+                    <div className="p-3 md:p-5">
+                      <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                        <h3 className="text-sm md:text-lg font-bold text-foreground">{t.name}</h3>
+                        <span className="text-[10px] md:text-xs text-muted-foreground bg-secondary px-2 py-0.5 rounded">
                           {isEN ? t.topicEN : t.topicDE}
                         </span>
                       </div>
@@ -145,7 +145,7 @@ export default function TrainingTestimonialsCarousel() {
           </Carousel>
 
           {/* Dots */}
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex justify-center gap-2 mt-3 md:mt-5">
             {trainingTestimonials.map((_, i) => (
               <button
                 key={i}
@@ -159,7 +159,7 @@ export default function TrainingTestimonialsCarousel() {
           </div>
 
           {/* Counter for clear progress indication */}
-          <div className="text-center mt-3 text-xs text-muted-foreground tabular-nums">
+          <div className="text-center mt-2 text-[11px] md:text-xs text-muted-foreground tabular-nums">
             {current + 1} / {trainingTestimonials.length}
           </div>
         </div>
