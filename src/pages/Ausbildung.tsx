@@ -617,9 +617,9 @@ export default function Ausbildung() {
         ]}
       />
 
-      <section className="bg-background py-5 md:py-7">
+      <section className="bg-[#DDE1E4] py-7 md:py-10">
         <div className="container-main">
-          <div className="relative max-w-2xl mx-auto bg-gradient-to-br from-primary/12 via-primary/8 to-primary/5 border border-primary/20 rounded-3xl px-7 py-7 md:px-10 md:py-9 text-center shadow-[0_8px_28px_rgba(27,58,92,0.10)]">
+          <div className="relative max-w-2xl mx-auto bg-gradient-to-br from-white via-[#F1F4F7] to-[#E8ECEF] border border-[#1B3A5C]/18 rounded-3xl px-7 py-7 md:px-10 md:py-9 text-center shadow-[0_6px_24px_rgba(27,58,92,0.10)]">
             {/* Decorative top accent */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-[11px] font-semibold px-4 py-1 rounded-full tracking-wide uppercase shadow-sm">
               {isEN ? "Next Step" : "Nächster Schritt"}
