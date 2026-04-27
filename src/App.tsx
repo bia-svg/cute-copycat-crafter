@@ -91,7 +91,7 @@ function ScrollToTop() {
         }
         const header = document.querySelector("header") as HTMLElement | null;
         const headerH = header ? header.getBoundingClientRect().height : 0;
-        const top = el.getBoundingClientRect().top + window.scrollY - headerH + 56;
+        const top = el.getBoundingClientRect().top + window.scrollY - headerH + 88;
         window.scrollTo({ top, behavior: "smooth" });
       };
       setTimeout(() => scrollToHash(), 100);
