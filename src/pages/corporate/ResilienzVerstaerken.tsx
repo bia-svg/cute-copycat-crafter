@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { getPath } from "@/lib/routes";
 import { CheckCircle, ArrowLeft } from "lucide-react";
+import corporateResilienceImg from "@/assets/corporate-resilience.jpg";
 
 export default function ResilienzVerstaerken() {
   const { language, country } = useLanguage();
@@ -55,7 +56,8 @@ export default function ResilienzVerstaerken() {
           <Link to={getPath("corporate", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-3">
             <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
           </Link>
-          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm grid md:grid-cols-[1fr_280px] lg:grid-cols-[1fr_340px] gap-5 md:gap-7 items-start">
+            <div>
             <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
             <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-4">
               {isEN ? "Resilience Coaching by David J. Woods" : "Resilienz Coaching by David J. Woods"}
@@ -67,6 +69,15 @@ export default function ResilienzVerstaerken() {
                   ? "A resilience coaching for inner strength is a great opportunity not only in difficult times. In today's world, performance pressure at work, conflicts with colleagues, or personal setbacks affect more and more people. The key is how we deal with negative experiences. Inner strength enables us to better handle challenges instead of seeing them as insurmountable hurdles."
                   : "Ein Resilienz Coaching für innere Stärke ist nicht nur in schweren Zeiten eine großartige Möglichkeit. Denn gerade in der heutigen Zeit setzen Leistungsdruck im Beruf, Ärger mit Kollegen oder persönliche Schicksalsschläge vielen Menschen immer stärker zu. Doch wir alle erleben immer wieder negative Erfahrungen im Laufe unseres Lebens, weshalb es entscheidend ist, wie wir mit diesen umgehen. Innere Stärke ermöglicht es uns, besser mit negativen Erfahrungen umzugehen und Herausforderungen anzunehmen."}
               </p>
+            </div>
+            </div>
+            <div className="md:order-last">
+              <img
+                src={corporateResilienceImg}
+                alt={isEN ? "Resilience Coaching" : "Resilienz Coaching"}
+                className="w-full h-48 md:h-full md:max-h-[340px] object-cover rounded-2xl border border-[#E2E8EE]"
+                loading="eager"
+              />
             </div>
           </div>
         </div>

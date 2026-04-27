@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { getPath } from "@/lib/routes";
 import { ArrowLeft } from "lucide-react";
+import corporateStressImg from "@/assets/corporate-stress.jpg";
 
 export default function StressPraevention() {
   const { language, country } = useLanguage();
@@ -47,7 +48,8 @@ export default function StressPraevention() {
           <Link to={getPath("corporate", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-3">
             <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
           </Link>
-          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm grid md:grid-cols-[1fr_280px] lg:grid-cols-[1fr_340px] gap-5 md:gap-7 items-start">
+            <div>
             <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
             <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-4">
               {isEN ? "Stress Prevention by David J. Woods" : "Stress-Prävention by David J. Woods"}
@@ -64,6 +66,15 @@ export default function StressPraevention() {
                   ? "Unlike conventional approaches, David J. Woods doesn't focus on short-term stress management, but on forward-looking, profound change. In his success trainings and resilience coachings, stress is not treated in isolation – it is prevented where it originates: in thinking, feeling and acting."
                   : "Anders als klassische Ansätze setzt David J. Woods nicht auf kurzfristige Stressbewältigung, sondern auf vorausschauende, tiefgreifende Veränderung. In seinen Erfolgstrainings und Resilienz-Coachings wird Stress nicht isoliert betrachtet – er wird dort verhindert, wo er entsteht: im Denken, Fühlen und Handeln."}
               </p>
+            </div>
+            </div>
+            <div className="md:order-last">
+              <img
+                src={corporateStressImg}
+                alt={isEN ? "Stress Prevention" : "Stress-Prävention"}
+                className="w-full h-48 md:h-full md:max-h-[340px] object-cover rounded-2xl border border-[#E2E8EE]"
+                loading="eager"
+              />
             </div>
           </div>
         </div>
