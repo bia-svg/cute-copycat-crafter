@@ -286,6 +286,7 @@ export default function Ausbildung() {
               : "Wählen Sie Ihr bevorzugtes Land und Seminar-Datum, dann füllen Sie Ihre Daten aus. Wir bestätigen Ihren Platz innerhalb von 24 Stunden."}
           </p>
 
+          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
           {/* Country Tabs */}
           <div className="flex justify-center gap-3 mb-8 max-w-md mx-auto">
             <button
