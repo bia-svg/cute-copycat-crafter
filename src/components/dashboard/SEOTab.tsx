@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -9,19 +9,32 @@ import {
   ChartContainer, ChartTooltip, ChartTooltipContent
 } from "@/components/ui/chart";
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Legend, ResponsiveContainer,
-  ComposedChart, Bar, Area
+  Line, XAxis, YAxis, CartesianGrid, Legend, ResponsiveContainer,
+  ComposedChart, Bar, BarChart, PieChart, Pie, Cell, AreaChart, Area
 } from "recharts";
-import { Search, TrendingUp, Sparkles, Loader2, AlertTriangle, ArrowUpRight, FileText, Download } from "lucide-react";
+import {
+  Search, TrendingUp, TrendingDown, Sparkles, Loader2, AlertTriangle,
+  ArrowUpRight, FileText, Download, Trophy, Globe, Smartphone, Target, History, Zap
+} from "lucide-react";
 import { exportSEOReport } from "@/lib/exportPdf";
 import { supabase } from "@/integrations/supabase/client";
-import type { GSCQuery, GSCTotals, GSCDailyMetric } from "@/data/dashboardMockData";
+import type {
+  GSCQuery, GSCTotals, GSCDailyMetric, GSCPage,
+  GSCCountrySegment, GSCDeviceSegment, GSCDistribution, SEOSnapshot
+} from "@/data/dashboardMockData";
 import { format, parseISO } from "date-fns";
 
 interface SEOTabProps {
   gscQueries: GSCQuery[];
   gscTotals: GSCTotals | null;
+  gscPreviousTotals: GSCTotals | null;
+  gscPreviousPeriod: { startDate: string; endDate: string } | null;
   gscDailyMetrics: GSCDailyMetric[];
+  gscTopPages: GSCPage[];
+  gscByCountry: GSCCountrySegment[];
+  gscByDevice: GSCDeviceSegment[];
+  gscDistribution: GSCDistribution | null;
+  seoSnapshots: SEOSnapshot[];
   gscError: string | null;
   gscLive: boolean;
 }
@@ -35,7 +48,46 @@ interface SEOReport {
   summary: string;
 }
 
-export default function SEOTab({ gscQueries, gscTotals, gscDailyMetrics, gscError, gscLive }: SEOTabProps) {
+const COUNTRY_NAMES: Record<string, string> = {
+  deu: "Germany", che: "Switzerland", aut: "Austria",
+  usa: "United States", gbr: "United Kingdom", fra: "France",
+  ita: "Italy", esp: "Spain", nld: "Netherlands", bra: "Brazil",
+  prt: "Portugal", pol: "Poland", bel: "Belgium",
+};
+const DEVICE_LABELS: Record<string, string> = {
+  DESKTOP: "Desktop", MOBILE: "Mobile", TABLET: "Tablet",
+};
+const DEVICE_COLORS: Record<string, string> = {
+  DESKTOP: "#2563eb", MOBILE: "#10b981", TABLET: "#f59e0b",
+};
+
+function Delta({ current, previous, lowerIsBetter = false, format: fmt = "int", suffix = "" }: {
+  current: number; previous: number; lowerIsBetter?: boolean; format?: "int" | "pct" | "decimal"; suffix?: string;
+}) {
+  if (previous === 0 && current === 0) return null;
+  if (previous === 0) return <span className="text-xs text-gray-400">new</span>;
+  const diff = current - previous;
+  const pct = (diff / previous) * 100;
+  const isPositive = lowerIsBetter ? diff < 0 : diff > 0;
+  const Icon = diff > 0 ? TrendingUp : TrendingDown;
+  const color = isPositive ? "text-emerald-600" : diff === 0 ? "text-gray-400" : "text-red-500";
+  const display =
+    fmt === "pct" ? `${diff > 0 ? "+" : ""}${(diff * 100).toFixed(2)}pp` :
+    fmt === "decimal" ? `${diff > 0 ? "+" : ""}${diff.toFixed(1)}` :
+    `${diff > 0 ? "+" : ""}${diff.toLocaleString()}`;
+  return (
+    <span className={`inline-flex items-center gap-0.5 text-xs font-medium ${color}`}>
+      <Icon className="w-3 h-3" />
+      {display}{suffix} <span className="text-gray-400 font-normal">({pct > 0 ? "+" : ""}{pct.toFixed(0)}%)</span>
+    </span>
+  );
+}
+
+export default function SEOTab({
+  gscQueries, gscTotals, gscPreviousTotals, gscPreviousPeriod,
+  gscDailyMetrics, gscTopPages, gscByCountry, gscByDevice, gscDistribution,
+  seoSnapshots, gscError, gscLive
+}: SEOTabProps) {
   const [report, setReport] = useState<SEOReport | null>(null);
   const [reportLoading, setReportLoading] = useState(false);
   const [reportError, setReportError] = useState<string | null>(null);
@@ -52,7 +104,7 @@ export default function SEOTab({ gscQueries, gscTotals, gscDailyMetrics, gscErro
         "/seminar-anmeldung", "/erwachsene",
       ];
       const { data, error } = await supabase.functions.invoke("seo-report", {
-        body: { topQueries: gscQueries, topPages: [], sitePages },
+        body: { topQueries: gscQueries, topPages: gscTopPages, sitePages },
       });
       if (error) throw error;
       if (data?.error) throw new Error(data.error);
@@ -64,7 +116,7 @@ export default function SEOTab({ gscQueries, gscTotals, gscDailyMetrics, gscErro
     }
   };
 
-  // Format daily metrics for chart — invert position for visual (lower position = better = higher on chart)
+  // Daily chart data
   const chartData = gscDailyMetrics.map(d => ({
     date: d.date,
     label: (() => { try { return format(parseISO(d.date), "MMM d"); } catch { return d.date; } })(),
@@ -79,6 +131,40 @@ export default function SEOTab({ gscQueries, gscTotals, gscDailyMetrics, gscErro
     position: { label: "Avg Position", color: "#f59e0b" },
   };
 
+  // Auto Quick Wins (no AI): pos 4-15, impressions >= 50, CTR < 3%
+  const autoQuickWins = useMemo(() => {
+    return gscQueries
+      .filter(q => q.position >= 4 && q.position <= 15 && q.impressions >= 50 && q.ctr < 0.03)
+      .sort((a, b) => b.impressions - a.impressions)
+      .slice(0, 15)
+      .map(q => ({
+        ...q,
+        potentialClicks: Math.round(q.impressions * 0.05) - q.clicks, // assume ~5% CTR achievable
+      }))
+      .filter(q => q.potentialClicks > 0);
+  }, [gscQueries]);
+
+  // Distribution chart data
+  const distData = gscDistribution ? [
+    { name: "Top 3", value: gscDistribution.top3, color: "#10b981" },
+    { name: "4-10", value: gscDistribution.pos4_10, color: "#3b82f6" },
+    { name: "11-20", value: gscDistribution.pos11_20, color: "#f59e0b" },
+    { name: "21+", value: gscDistribution.pos21_plus, color: "#94a3b8" },
+  ] : [];
+
+  // Snapshot history chart
+  const historyData = seoSnapshots.map(s => ({
+    date: s.snapshot_date,
+    label: (() => { try { return format(parseISO(s.snapshot_date), "MMM d"); } catch { return s.snapshot_date; } })(),
+    clicks: s.clicks,
+    impressions: s.impressions,
+    position: Math.round(s.position * 10) / 10,
+    top3: s.keywords_top3,
+    pos4_10: s.keywords_4_10,
+    pos11_20: s.keywords_11_20,
+    pos21_plus: s.keywords_21_plus,
+  }));
+
   return (
     <div className="space-y-5">
       {gscError && (
@@ -87,35 +173,46 @@ export default function SEOTab({ gscQueries, gscTotals, gscDailyMetrics, gscErro
         </div>
       )}
 
-      {/* Totals */}
+      {/* Totals with deltas vs previous period */}
       {gscTotals && (
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           <Card className="bg-white border border-gray-200 shadow-sm">
             <CardContent className="p-4">
               <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Search Clicks</p>
               <p className="text-2xl font-bold text-gray-900 mt-1">{gscTotals.clicks.toLocaleString()}</p>
+              {gscPreviousTotals && <div className="mt-1"><Delta current={gscTotals.clicks} previous={gscPreviousTotals.clicks} /></div>}
             </CardContent>
           </Card>
           <Card className="bg-white border border-gray-200 shadow-sm">
             <CardContent className="p-4">
               <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Impressions</p>
               <p className="text-2xl font-bold text-gray-900 mt-1">{gscTotals.impressions.toLocaleString()}</p>
+              {gscPreviousTotals && <div className="mt-1"><Delta current={gscTotals.impressions} previous={gscPreviousTotals.impressions} /></div>}
             </CardContent>
           </Card>
           <Card className="bg-white border border-gray-200 shadow-sm">
             <CardContent className="p-4">
               <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Avg CTR</p>
-              <p className="text-2xl font-bold text-blue-600 mt-1">{(gscTotals.ctr * 100).toFixed(1)}%</p>
+              <p className="text-2xl font-bold text-blue-600 mt-1">{(gscTotals.ctr * 100).toFixed(2)}%</p>
+              {gscPreviousTotals && <div className="mt-1"><Delta current={gscTotals.ctr} previous={gscPreviousTotals.ctr} format="pct" /></div>}
             </CardContent>
           </Card>
           <Card className="bg-white border border-gray-200 shadow-sm">
             <CardContent className="p-4">
               <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Avg Position</p>
               <p className="text-2xl font-bold text-gray-900 mt-1">{gscTotals.position.toFixed(1)}</p>
+              {gscPreviousTotals && <div className="mt-1"><Delta current={gscTotals.position} previous={gscPreviousTotals.position} lowerIsBetter format="decimal" /></div>}
             </CardContent>
           </Card>
         </div>
       )}
+
+      {gscPreviousPeriod && (
+        <p className="text-xs text-gray-400 -mt-3">
+          Compared to previous period: {gscPreviousPeriod.startDate} → {gscPreviousPeriod.endDate}
+        </p>
+      )}
+
 
       {/* Clicks vs Position Over Time Chart */}
       {chartData.length > 0 && (
