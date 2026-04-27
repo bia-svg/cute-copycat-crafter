@@ -69,7 +69,7 @@ export default function WieFunktioniertHypnose() {
             <div className="flex justify-center mt-8">
               <Button asChild size="lg" className="bg-[#1B3A5C] hover:bg-[#1B3A5C]/90 text-white">
                 <Link to={basePath + "#sessions"}>
-                  {isEN ? "Learn more about hypnosis sessions" : "Mehr über Hypnose-Sitzungen erfahren"}
+                  {isEN ? "Go to hypnosis sessions" : "Zu den Hypnose-Sitzungen"}
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </Link>
               </Button>
