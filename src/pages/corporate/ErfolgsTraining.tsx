@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { getPath } from "@/lib/routes";
 import { CheckCircle, ArrowLeft } from "lucide-react";
+import corporateSuccessImg from "@/assets/corporate-success.jpg";
 
 export default function ErfolgsTraining() {
   const { language, country } = useLanguage();
@@ -34,7 +35,8 @@ export default function ErfolgsTraining() {
           <Link to={getPath("corporate", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-3">
             <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
           </Link>
-          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm grid md:grid-cols-[1fr_280px] lg:grid-cols-[1fr_340px] gap-5 md:gap-7 items-start">
+            <div>
             <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
               {isEN ? "Business Coaching" : "Business Coaching"}
             </p>
