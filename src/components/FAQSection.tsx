@@ -59,7 +59,7 @@ export default function FAQSection({ title, items, sectionClassName }: FAQSectio
                     <Plus className="h-4 w-4" strokeWidth={2.5} />
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="text-sm text-foreground/75 leading-relaxed pb-5 pt-0 pr-10">
+                <AccordionContent className="text-[13px] md:text-sm text-foreground/75 leading-relaxed pb-4 md:pb-5 pt-0 pr-10">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>
