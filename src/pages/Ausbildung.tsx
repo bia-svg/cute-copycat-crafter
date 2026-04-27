@@ -466,7 +466,7 @@ export default function Ausbildung() {
           </p>
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
             {days.map((day) => (
-              <div key={day.day} className="bg-[#f4f3ef] border border-border rounded-lg p-4 md:p-5 shadow-sm">
+              <div key={day.day} className="bg-white border border-[#1B3A5C]/12 rounded-2xl p-4 md:p-5 shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_16px_rgba(27,58,92,0.09)] hover:border-[#1B3A5C]/25 transition-all">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 rounded-lg bg-white text-[#1B3A5C]">
                     {day.icon}
