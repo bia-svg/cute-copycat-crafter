@@ -561,7 +561,7 @@ export default function Ausbildung() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-[#f4f3ef] border border-border rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-center min-h-[110px] shadow-sm"
+                className="bg-white border border-[#1B3A5C]/22 rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-center min-h-[110px] shadow-[0_4px_14px_rgba(27,58,92,0.08)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.12)] hover:border-[#1B3A5C]/40 transition-all"
               >
                 <div className="text-2xl md:text-3xl font-bold text-[#1B3A5C] mb-1" style={{ fontFamily: "Georgia, serif" }}>
                   {item.n}
@@ -573,8 +573,8 @@ export default function Ausbildung() {
             ))}
           </div>
 
-          <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-[#a5d6a7] bg-[#e8f5e9] p-4 md:p-5">
-            <p className="text-sm md:text-[15px] text-[#1B3A5C] leading-relaxed">
+          <div className="max-w-3xl mx-auto mt-8 rounded-xl border border-[#a5d6a7] bg-[#e8f5e9] px-4 py-2.5 md:px-5 md:py-2.5">
+            <p className="text-sm text-[#1B3A5C] leading-snug text-center md:whitespace-nowrap">
               <span className="font-semibold text-[#2E7D32]">
                 {isEN ? "For EMR members:" : "Für EMR-Mitglieder:"}
               </span>{" "}
