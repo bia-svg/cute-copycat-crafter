@@ -27,6 +27,7 @@ const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const Buch = lazy(() => import("@/pages/Buch"));
 const Dashboard = lazy(() => import("@/pages/Dashboard"));
+const WieFunktioniertHypnose = lazy(() => import("@/pages/WieFunktioniertHypnose"));
 const DashboardLogin = lazy(() => import("@/pages/DashboardLogin"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const Unsubscribe = lazy(() => import("@/pages/Unsubscribe"));
@@ -166,6 +167,9 @@ function AppRoutes() {
 
             <Route path="/:lang/:country/buch-go-inside" element={<Buch />} />
             <Route path="/:lang/:country/book-go-inside" element={<Buch />} />
+
+            <Route path="/:lang/:country/wie-funktioniert-hypnose" element={<WieFunktioniertHypnose />} />
+            <Route path="/:lang/:country/how-hypnosis-works" element={<WieFunktioniertHypnose />} />
 
             <Route path="/:lang/:country/impressum" element={<LegalModule />} />
             <Route path="/:lang/:country/datenschutz" element={<DatenschutzPage />} />
