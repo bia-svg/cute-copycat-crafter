@@ -250,7 +250,7 @@ export default function Ausbildung() {
                   {c.icon}
                 </div>
                 <h3 className="font-bold text-base text-[#1B3A5C] mb-2">{isEN ? c.titleEN : c.titleDE}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{isEN ? c.textEN : c.titleDE && (isEN ? c.textEN : c.textDE)}</p>
+                <p className="text-xs text-muted-foreground leading-relaxed">{isEN ? c.textEN : c.textDE}</p>
               </div>
             ))}
           </div>
