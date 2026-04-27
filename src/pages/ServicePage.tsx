@@ -389,7 +389,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       )}
 
       {/* Consultation CTA Row with Inline Form */}
-      <section className={`py-10 md:py-16 ${data.slugEN === "stop-smoking" ? "bg-[#E8EDF3]" : "bg-[#F5F3EF]"}`}>
+      <section className="py-10 md:py-16 bg-[#E8EDF3]">
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-lg sm:text-xl font-semibold text-primary mb-3 text-center">
