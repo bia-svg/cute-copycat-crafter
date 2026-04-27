@@ -417,14 +417,14 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         </section>
       )}
 
-      {/* Consultation CTA Row with Inline Form */}
-      <section className="py-10 md:py-14 bg-[#F1F4F7] border-t border-[#E2E8EE]">
+      {/* Consultation CTA Row with Inline Form — matches homepage layout */}
+      <section className="py-10 md:py-16 bg-[#F1F4F7] border-t border-[#E2E8EE]">
         <div className="container-main">
-          <div className="max-w-2xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
-            <h2 className="text-lg sm:text-xl font-semibold text-primary mb-4 text-center" style={{ fontFamily: "Georgia, serif" }}>
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-lg sm:text-xl font-semibold text-primary mb-3 text-center">
               {isEN ? "Your Request" : "Ihre Anfrage"}
             </h2>
-            <div className="bg-white rounded-2xl border border-[#E2E8EE] p-4 sm:p-6 shadow-[0_4px_20px_-6px_rgba(27,58,92,0.08)]">
+            <div className="bg-white rounded-lg border border-border/40 p-4 sm:p-6 shadow-[0_4px_20px_-6px_rgba(27,58,92,0.12)]">
               <InlineContactForm />
             </div>
           </div>
