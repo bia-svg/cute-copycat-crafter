@@ -7,7 +7,7 @@ import {
   Menu, X, ChevronDown, Phone, Home,
   Cigarette, Brain, Scale, Flame, HeartPulse, Users,
   GraduationCap, Building2, Tv, Star, MessageSquare, User,
-  BookOpen, MapPin, Trophy, Newspaper, Award, Calendar, Shield
+  BookOpen, MapPin, Trophy, Newspaper, Award, Calendar, Shield, PlayCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -88,7 +88,7 @@ export default function Header() {
     { icon: <Star className="w-5 h-5" />, label: isDE ? "Kundenmeinungen" : "Testimonials", desc: isDE ? "★ 5.0 bei Google · 266 Bewertungen" : "★ 5.0 at Google · 266 reviews", href: getPath("testimonials", language, country) },
     { icon: <Trophy className="w-5 h-5" />, label: isDE ? "Erfolgsberichte" : "Success Stories", desc: isDE ? "Video-Erfahrungsberichte unserer Klienten" : "Video testimonials from our clients", href: getPath("successStories", language, country) },
     { icon: <Newspaper className="w-5 h-5" />, label: "Blog", desc: isDE ? "Artikel & Wissen rund um Hypnose" : "Articles & knowledge about hypnosis", href: getPath("blog", language, country) },
-    { icon: <MapPin className="w-5 h-5" />, label: isDE ? "Standorte" : "Locations", desc: isDE ? "Unsere Praxen in der Schweiz & Deutschland" : "Our practices in Switzerland & Germany", href: getPath("locations", language, country) },
+    { icon: <PlayCircle className="w-5 h-5" />, label: isDE ? "Wie funktioniert Hypnose?" : "How Does Hypnosis Work?", desc: isDE ? "Verstehen, wie Hypnose wirklich wirkt" : "Understand how hypnosis really works", href: getPath("howHypnosisWorks", language, country) },
   ];
 
   /* ── Shared Components ── */

@@ -6,7 +6,7 @@ type PageKey =
   | "corporateErfolg" | "corporateResilienz" | "corporateStress" | "corporateNichtraucher"
   | "about" | "testimonials" | "successStories" | "media"
   | "contact" | "appointmentConfirmation" | "seminarRegistration" | "cityZurich" | "cityAugsburg" | "locations"
-  | "impressum" | "privacy" | "terms" | "blog" | "book";
+  | "impressum" | "privacy" | "terms" | "blog" | "book" | "howHypnosisWorks";
 
 const slugMapDE: Record<PageKey, string> = {
   home: "",
@@ -39,6 +39,7 @@ const slugMapDE: Record<PageKey, string> = {
   terms: "agb",
   blog: "blog",
   book: "buch-go-inside",
+  howHypnosisWorks: "wie-funktioniert-hypnose",
 };
 
 const slugMapEN: Record<PageKey, string> = {
@@ -72,6 +73,7 @@ const slugMapEN: Record<PageKey, string> = {
   terms: "terms",
   blog: "blog",
   book: "book-go-inside",
+  howHypnosisWorks: "how-hypnosis-works",
 };
 
 export function getPath(page: PageKey, language: Language, country: Country): string {
