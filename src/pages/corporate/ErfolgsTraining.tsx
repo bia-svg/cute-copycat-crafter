@@ -72,6 +72,15 @@ export default function ErfolgsTraining() {
                   : "Daher bieten wir Ihnen unser Erfolgs-Training nicht als Standardangebot, sondern als individuelles Mentalcoaching an. Dies bedeutet, dass wir das Business Coaching individuell an Sie bzw. die Teilnehmer anpassen. Dazu kommen wir auch gerne zu Ihnen ins Unternehmen."}
               </p>
             </div>
+            </div>
+            <div className="md:order-last">
+              <img
+                src={corporateSuccessImg}
+                alt={isEN ? "Success Training" : "Erfolgs-Training"}
+                className="w-full h-48 md:h-full md:max-h-[340px] object-cover rounded-2xl border border-[#E2E8EE]"
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
       </section>
