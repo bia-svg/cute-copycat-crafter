@@ -214,6 +214,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
             })}
           </script>
         )}
+      </Helmet>
 
       <Breadcrumbs items={breadcrumbItems} />
 
