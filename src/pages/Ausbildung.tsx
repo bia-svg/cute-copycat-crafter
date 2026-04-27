@@ -572,17 +572,6 @@ export default function Ausbildung() {
               </div>
             ))}
           </div>
-
-          <div className="max-w-3xl mx-auto mt-8 rounded-xl border border-[#a5d6a7] bg-[#e8f5e9] px-4 py-2.5 md:px-5 md:py-2.5">
-            <p className="text-sm text-[#1B3A5C] leading-snug text-center md:whitespace-nowrap">
-              <span className="font-semibold text-[#2E7D32]">
-                {isEN ? "For EMR members:" : "Für EMR-Mitglieder:"}
-              </span>{" "}
-              {isEN
-                ? "Detailed certificate of hours and content for possible EMR submission included."
-                : "Ausführlicher Stunden- und Inhaltsnachweis zur möglichen EMR-Einreichung inklusive."}
-            </p>
-          </div>
         </div>
       </section>
 
