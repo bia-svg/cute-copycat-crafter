@@ -182,7 +182,7 @@ export default function Ausbildung() {
           SECTION 1 — HERO: Why this training exists
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-10 lg:py-16">
+        <div className="container-main py-8 lg:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-3">
