@@ -622,9 +622,9 @@ export default function Ausbildung() {
         ]}
       />
 
-      <section className="bg-background py-10 lg:py-14">
+      <section className="bg-background py-6 md:py-8">
         <div className="container-main">
-          <div className="relative max-w-2xl mx-auto bg-primary/10 border border-primary/25 rounded-2xl px-6 py-10 md:px-10 md:py-12 text-center shadow-sm">
+          <div className="relative max-w-2xl mx-auto bg-primary/10 border border-primary/25 rounded-2xl px-6 py-8 md:px-10 md:py-10 text-center shadow-sm">
             {/* Decorative top accent */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full tracking-wide uppercase">
               {isEN ? "Next Step" : "Nächster Schritt"}
