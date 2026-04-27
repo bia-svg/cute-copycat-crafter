@@ -239,7 +239,8 @@ export default function Ausbildung() {
               ? "Not a mass-market course. Not a certificate mill. A serious premium training with real depth, built on 30,000+ clinical sessions."
               : "Kein Massenkurs. Keine Zertifikatsfabrik. Eine seriöse Premium-Ausbildung mit echter Tiefe, aufgebaut auf 30.000+ klinischen Sitzungen."}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               { icon: <Shield className="w-6 h-6 text-[#1B3A5C]" />, titleDE: "35+ Jahre klinische Praxis", titleEN: "35+ Years of Clinical Practice", textDE: "Jede gelehrte Technik wurde in Tausenden realer klinischer Sitzungen getestet und verfeinert. Eine methodenbasierte Expertenausbildung.", textEN: "Every technique taught has been tested and refined in thousands of real clinical sessions. This is method-based expert training." },
               { icon: <Users className="w-6 h-6 text-[#1B3A5C]" />, titleDE: "Kleingruppen-Format", titleEN: "Small Group Format", textDE: "Strikt begrenzte Teilnehmerzahl garantiert persönliche Betreuung, individuelles Feedback und maximale Lernintensität. Ein selektives Lernerlebnis.", textEN: "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity. A selective learning experience." },
