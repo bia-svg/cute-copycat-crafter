@@ -35,7 +35,7 @@ export default function FAQSection({ title, items }: FAQSectionProps) {
           {title}
         </h2>
 
-        <div className="max-w-2xl md:max-w-4xl lg:max-w-5xl mx-auto bg-white/70 backdrop-blur-sm border border-[#E5DFD2] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-3 md:p-5 lg:p-6">
+        <div className="max-w-2xl md:max-w-4xl lg:max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-3 md:p-5 lg:p-6">
           <Accordion
             type="single"
             collapsible
