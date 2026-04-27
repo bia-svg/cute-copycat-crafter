@@ -230,33 +230,33 @@ export default function Ausbildung() {
           SECTION 2 — What makes this different
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#DDE1E4] border-b border-border">
-        <div className="container-main py-6 lg:py-10">
+        <div className="container-main py-4 lg:py-6">
           <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "What Makes This Training Different" : "Was diese Ausbildung besonders macht"}
           </h2>
-          <p className="text-xs md:text-sm text-muted-foreground text-center mb-5 md:mb-6 max-w-2xl mx-auto">
+          <p className="text-xs md:text-sm text-muted-foreground text-center mb-3 md:mb-4 max-w-2xl mx-auto">
             {isEN
               ? "Not a mass-market course. Not a certificate mill. A serious premium training with real depth, built on 30,000+ clinical sessions."
               : "Kein Massenkurs. Keine Zertifikatsfabrik. Eine seriöse Premium-Ausbildung mit echter Tiefe, aufgebaut auf 30.000+ klinischen Sitzungen."}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {[
               { icon: <Shield className="w-6 h-6 text-[#1B3A5C]" />, titleDE: "35+ Jahre klinische Praxis", titleEN: "35+ Years of Clinical Practice", textDE: "Jede gelehrte Technik wurde in Tausenden realer klinischer Sitzungen getestet und verfeinert. Eine methodenbasierte Expertenausbildung.", textEN: "Every technique taught has been tested and refined in thousands of real clinical sessions. This is method-based expert training." },
               { icon: <Users className="w-6 h-6 text-[#1B3A5C]" />, titleDE: "Kleingruppen-Format", titleEN: "Small Group Format", textDE: "Strikt begrenzte Teilnehmerzahl garantiert persönliche Betreuung, individuelles Feedback und maximale Lernintensität. Ein selektives Lernerlebnis.", textEN: "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity. A selective learning experience." },
               { icon: <Zap className="w-6 h-6 text-[#1B3A5C]" />, titleDE: "Praxis ab Tag 1", titleEN: "Hands-On from Day 1", textDE: "Sie schauen nicht nur zu — Sie hypnotisieren. Jeder Tag verbindet Theorie mit sofortiger praktischer Anwendung. Eine transformative Praxisausbildung.", textEN: "You won't just watch — you'll hypnotize. Every day combines theory with immediate application. A transformational practical training." },
             ].map((c, i) => (
-              <div key={i} className="group relative bg-white border border-[#1B3A5C]/30 rounded-2xl p-7 text-center shadow-[0_8px_24px_rgba(27,58,92,0.12)] hover:shadow-[0_18px_42px_rgba(27,58,92,0.20)] hover:border-[#1B3A5C]/55 hover:-translate-y-1 transition-all duration-300">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1B3A5C]/15 to-[#1B3A5C]/8 ring-1 ring-[#1B3A5C]/20 mb-4 shadow-[0_2px_8px_rgba(27,58,92,0.10)] group-hover:from-[#1B3A5C]/22 group-hover:to-[#1B3A5C]/12 group-hover:ring-[#1B3A5C]/30 transition-all">
+              <div key={i} className="group relative bg-white border border-[#1B3A5C]/30 rounded-2xl p-5 text-center shadow-[0_8px_24px_rgba(27,58,92,0.12)] hover:shadow-[0_18px_42px_rgba(27,58,92,0.20)] hover:border-[#1B3A5C]/55 hover:-translate-y-1 transition-all duration-300">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-[#1B3A5C]/15 to-[#1B3A5C]/8 ring-1 ring-[#1B3A5C]/20 mb-2.5 shadow-[0_2px_8px_rgba(27,58,92,0.10)] group-hover:from-[#1B3A5C]/22 group-hover:to-[#1B3A5C]/12 group-hover:ring-[#1B3A5C]/30 transition-all">
                   {c.icon}
                 </div>
-                <h3 className="font-bold text-base text-[#1B3A5C] mb-2">{isEN ? c.titleEN : c.titleDE}</h3>
+                <h3 className="font-bold text-base text-[#1B3A5C] mb-1.5">{isEN ? c.titleEN : c.titleDE}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{isEN ? c.textEN : c.textDE}</p>
               </div>
             ))}
           </div>
 
           {/* EMR Badge */}
-          <div className="mt-6 md:mt-8 flex flex-col items-center text-center">
+          <div className="mt-3 md:mt-4 flex flex-col items-center text-center">
             <div className="inline-flex items-center gap-2 bg-[#e8f5e9] border border-[#a5d6a7] rounded-full px-4 py-1.5">
               <img src={CDN.emrBadge} alt="EMR Badge" className="w-5 h-5 object-contain" />
               <span className="text-xs font-semibold text-[#2E7D32] tracking-wide">EMR Krankenkasse konform</span>
