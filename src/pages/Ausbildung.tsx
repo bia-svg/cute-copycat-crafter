@@ -186,12 +186,12 @@ export default function Ausbildung() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-3">
-                {isEN ? "6-Day Intensive Certification" : "6-Tage Intensiv-Zertifizierung"}
+                {isEN ? "Learn Hypnosis · 6-Day Intensive Certification" : "Hypnose lernen · 6-Tage Intensiv-Zertifizierung"}
               </p>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1B3A5C] mb-3" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN
-                  ? "Become a Certified Aktiv-Hypnose© Therapist"
-                  : "Werden Sie zertifizierter Aktiv-Hypnose© Therapeut"}
+                  ? "Learn Hypnosis: Become a Certified Aktiv-Hypnose© Therapist"
+                  : "Hypnose lernen: Werden Sie zertifizierter Aktiv-Hypnose© Therapeut"}
               </h1>
               <div className="flex items-center gap-2 mb-5">
                 <GraduationCap className="w-5 h-5 text-[#2E7D32]" />
@@ -201,8 +201,8 @@ export default function Ausbildung() {
               </div>
               <p className="text-base lg:text-lg text-[#55504f] leading-relaxed mb-5">
                 {isEN
-                  ? "This is not a weekend certificate course. It's an exclusive, high-level practitioner training where you learn to create real, lasting change — in yourself and in your clients. Developed over 35+ years of clinical practice by Lic.Psych. David J. Woods, this method-based expert training combines psychology, neuroscience, and hands-on hypnotherapy into a system that works from day one."
-                  : "Dies ist kein Wochenend-Zertifikatskurs. Es ist eine exklusive, hochwertige Praktiker-Ausbildung, in der Sie lernen, echte, nachhaltige Veränderung zu bewirken — bei sich selbst und bei Ihren Klienten. Entwickelt über 35+ Jahre klinischer Praxis von Lic.Psych. David J. Woods, verbindet diese methodenbasierte Expertenausbildung Psychologie, Neurowissenschaft und praktische Hypnotherapie zu einem System, das ab dem ersten Tag wirkt."}
+                  ? "Learn hypnosis professionally in 6 days — this is not a weekend certificate course, but an exclusive, high-level practitioner training where you learn to create real, lasting change in yourself and in your clients. Developed over 35+ years of clinical practice by Lic. Psych. David J. Woods, this method-based expert training combines psychology, neuroscience, and hands-on hypnotherapy into a system that works from day one."
+                  : "Hypnose lernen auf professionellem Niveau in 6 Tagen — dies ist kein Wochenend-Zertifikatskurs, sondern eine exklusive, hochwertige Praktiker-Ausbildung, in der Sie lernen, echte, nachhaltige Veränderung zu bewirken — bei sich selbst und bei Ihren Klienten. Entwickelt über 35+ Jahre klinischer Praxis von Lic. Psych. David J. Woods, verbindet diese methodenbasierte Expertenausbildung Psychologie, Neurowissenschaft und praktische Hypnotherapie zu einem System, das ab dem ersten Tag wirkt."}
               </p>
               <div className="flex flex-wrap gap-4 text-sm text-[#55504f] mb-6">
                 <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "6 Days, 10:00–17:00" : "6 Tage, 10:00–17:00 Uhr"}</span>

@@ -159,6 +159,61 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
             })),
           })}
         </script>
+
+        {/* Service JSON-LD with AggregateRating for rich snippets (★ stars in SERP) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalBusiness",
+            "@id": `${BASE_URL}/${language}/${country}/${slug}#service`,
+            name: title.replace(/ \| .*$/, ""),
+            description: metaDesc,
+            url: `${BASE_URL}/${language}/${country}/${slug}`,
+            image: data.image,
+            priceRange: "$$",
+            telephone: ["+41 79 131 88 78", "+49 171 953 99 22"],
+            address: [
+              { "@type": "PostalAddress", streetAddress: "Usteristrasse 23", addressLocality: "Zürich", postalCode: "8001", addressCountry: "CH" },
+              { "@type": "PostalAddress", streetAddress: "Viktoriastr. 3b", addressLocality: "Augsburg", postalCode: "86150", addressCountry: "DE" },
+            ],
+            areaServed: [
+              { "@type": "Country", name: "Switzerland" },
+              { "@type": "Country", name: "Germany" },
+            ],
+            provider: {
+              "@type": "Person",
+              name: "David J. Woods",
+              honorificPrefix: "Lic.Psych.",
+              jobTitle: "Hypnotherapist, NGH International Trainer",
+              url: BASE_URL,
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "5.0",
+              reviewCount: "266",
+              bestRating: "5",
+            },
+            medicalSpecialty: "Hypnotherapy",
+          })}
+        </script>
+
+        {/* FAQPage JSON-LD — enables expandable FAQ rich result in SERP */}
+        {faq && faq.length > 0 && (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faq.map((item) => ({
+                "@type": "Question",
+                name: item.q,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.a,
+                },
+              })),
+            })}
+          </script>
+        )}
       </Helmet>
 
       <Breadcrumbs items={breadcrumbItems} />
