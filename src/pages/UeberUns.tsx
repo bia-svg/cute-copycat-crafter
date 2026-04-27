@@ -73,7 +73,7 @@ export default function UeberUns() {
       <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-            <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-6 lg:gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.55fr_1fr] gap-6 lg:gap-8 items-stretch">
               <div>
                 <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B3A5C] mb-3">
                   {isEN ? "Psychology, Depth & Modern Coaching" : "Psychologie, Tiefe & modernes Coaching"}
@@ -101,27 +101,35 @@ export default function UeberUns() {
                 )}
               </div>
 
-              {/* Stats grid — 2x2 compact, white cards */}
-              <div className="grid grid-cols-2 gap-2.5 md:gap-3">
-                <div className="bg-white border border-[#E8EDF3] rounded-xl p-3 text-center shadow-[0_2px_8px_rgba(27,58,92,0.04)]">
-                  <Award className="w-5 h-5 text-[#1B3A5C] mx-auto mb-1" />
-                  <p className="text-lg md:text-xl font-bold text-[#1B3A5C] leading-none">35+</p>
-                  <p className="text-[0.7rem] md:text-xs text-muted-foreground mt-1">{isEN ? "Years Experience" : "Jahre Erfahrung"}</p>
+              {/* Stats — 2x2 mobile, balanced 1-column on desktop to fully fill right side */}
+              <div className="grid grid-cols-2 lg:grid-cols-1 gap-2.5 md:gap-3 lg:h-full lg:content-stretch">
+                <div className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-xl p-3 lg:p-4 text-center lg:text-left shadow-[0_2px_8px_rgba(27,58,92,0.04)] lg:flex lg:items-center lg:gap-4 lg:flex-1">
+                  <Award className="w-5 h-5 lg:w-7 lg:h-7 text-[#1B3A5C] mx-auto lg:mx-0 mb-1 lg:mb-0 flex-shrink-0" />
+                  <div>
+                    <p className="text-lg md:text-xl lg:text-2xl font-bold text-[#1B3A5C] leading-none">35+</p>
+                    <p className="text-[0.7rem] md:text-xs lg:text-sm text-muted-foreground mt-1">{isEN ? "Years Experience" : "Jahre Erfahrung"}</p>
+                  </div>
                 </div>
-                <div className="bg-white border border-[#E8EDF3] rounded-xl p-3 text-center shadow-[0_2px_8px_rgba(27,58,92,0.04)]">
-                  <Users className="w-5 h-5 text-[#1B3A5C] mx-auto mb-1" />
-                  <p className="text-lg md:text-xl font-bold text-[#1B3A5C] leading-none">30.000+</p>
-                  <p className="text-[0.7rem] md:text-xs text-muted-foreground mt-1">{isEN ? "Sessions" : "Sitzungen"}</p>
+                <div className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-xl p-3 lg:p-4 text-center lg:text-left shadow-[0_2px_8px_rgba(27,58,92,0.04)] lg:flex lg:items-center lg:gap-4 lg:flex-1">
+                  <Users className="w-5 h-5 lg:w-7 lg:h-7 text-[#1B3A5C] mx-auto lg:mx-0 mb-1 lg:mb-0 flex-shrink-0" />
+                  <div>
+                    <p className="text-lg md:text-xl lg:text-2xl font-bold text-[#1B3A5C] leading-none">30.000+</p>
+                    <p className="text-[0.7rem] md:text-xs lg:text-sm text-muted-foreground mt-1">{isEN ? "Sessions" : "Sitzungen"}</p>
+                  </div>
                 </div>
-                <div className="bg-white border border-[#E8EDF3] rounded-xl p-3 text-center shadow-[0_2px_8px_rgba(27,58,92,0.04)]">
-                  <GraduationCap className="w-5 h-5 text-[#1B3A5C] mx-auto mb-1" />
-                  <p className="text-lg md:text-xl font-bold text-[#1B3A5C] leading-none">{isEN ? "2,500+" : "2.500+"}</p>
-                  <p className="text-[0.7rem] md:text-xs text-muted-foreground mt-1">{isEN ? "Trained Hypnotists" : "ausgebildete Hypnotiseure"}</p>
+                <div className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-xl p-3 lg:p-4 text-center lg:text-left shadow-[0_2px_8px_rgba(27,58,92,0.04)] lg:flex lg:items-center lg:gap-4 lg:flex-1">
+                  <GraduationCap className="w-5 h-5 lg:w-7 lg:h-7 text-[#1B3A5C] mx-auto lg:mx-0 mb-1 lg:mb-0 flex-shrink-0" />
+                  <div>
+                    <p className="text-lg md:text-xl lg:text-2xl font-bold text-[#1B3A5C] leading-none">{isEN ? "2,500+" : "2.500+"}</p>
+                    <p className="text-[0.7rem] md:text-xs lg:text-sm text-muted-foreground mt-1">{isEN ? "Trained Hypnotists" : "ausgebildete Hypnotiseure"}</p>
+                  </div>
                 </div>
-                <div className="bg-white border border-[#E8EDF3] rounded-xl p-3 text-center shadow-[0_2px_8px_rgba(27,58,92,0.04)]">
-                  <Tv className="w-5 h-5 text-[#1B3A5C] mx-auto mb-1" />
-                  <p className="text-lg md:text-xl font-bold text-[#1B3A5C] leading-none">30+</p>
-                  <p className="text-[0.7rem] md:text-xs text-muted-foreground mt-1">{isEN ? "TV & Media" : "TV- & Medienauftritte"}</p>
+                <div className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-xl p-3 lg:p-4 text-center lg:text-left shadow-[0_2px_8px_rgba(27,58,92,0.04)] lg:flex lg:items-center lg:gap-4 lg:flex-1">
+                  <Tv className="w-5 h-5 lg:w-7 lg:h-7 text-[#1B3A5C] mx-auto lg:mx-0 mb-1 lg:mb-0 flex-shrink-0" />
+                  <div>
+                    <p className="text-lg md:text-xl lg:text-2xl font-bold text-[#1B3A5C] leading-none">30+</p>
+                    <p className="text-[0.7rem] md:text-xs lg:text-sm text-muted-foreground mt-1">{isEN ? "TV & Media" : "TV- & Medienauftritte"}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -419,6 +427,7 @@ export default function UeberUns() {
       </section>
 
       <FAQSection
+        sectionClassName="bg-[#F8FAFC] border-y border-[#E8EDF3]"
         title={isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
         items={isEN ? [
           { q: "What qualifications does David J. Woods have?", a: "David J. Woods holds a Lic.Psych. (Licensed Psychologist) degree and is an NGH International Trainer — one of the highest certifications awarded by the National Guild of Hypnotists (USA). He is EMR-recognized in Switzerland (ZSR P609264) and has developed the Aktiv-Hypnose© method." },
