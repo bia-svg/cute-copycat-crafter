@@ -123,24 +123,7 @@ export default function StressPraevention() {
         </div>
       </section>
 
-      <section className="bg-white border-b border-border">
-        <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
-            {isEN ? "The 12 Phases of Burnout Development" : "Die 12 Phasen der Burnout-Entwicklung"}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {phases.map((p) => (
-              <div key={p.phase} className="border border-[#E2E8EE] p-3 bg-[#F1F4F7]">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center font-bold">{p.phase}</span>
-                  <h3 className="font-semibold text-xs text-[#1B3A5C]">{p.title}</h3>
-                </div>
-                <p className="text-xs text-muted-foreground italic">&bdquo;{p.quote}&ldquo;</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       <section className="bg-background">
         <div className="container-main py-10 flex justify-center">
