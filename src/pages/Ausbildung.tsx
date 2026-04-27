@@ -563,41 +563,41 @@ export default function Ausbildung() {
               : "Ein vollständiges Paket aus Materialien, Zertifizierung und laufender Begleitung."}
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 max-w-5xl mx-auto">
-            {[
-              { n: "350+", l: isEN ? "Pages of training manual" : "Seiten Ausbildungsmappe" },
-              { n: "150+", l: isEN ? "Pages of sample texts" : "Seiten Beispieltexte" },
-              { n: "50+", l: isEN ? "Short videos" : "Kurzvideos" },
-              { n: "50+", l: isEN ? "Audio recordings" : "Audioaufnahmen" },
-              { n: "1", l: isEN ? "Aktiv-Hypnose® Diploma" : "Aktiv-Hypnose® Diplom" },
-              { n: "∞", l: isEN ? "Ongoing support" : "Laufende Unterstützung" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-[#F1F4F7] border border-[#E2E8EE] rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-center min-h-[110px] shadow-sm"
-              >
-                <div className="text-2xl md:text-3xl font-bold text-[#1B3A5C] mb-1" style={{ fontFamily: "Georgia, serif" }}>
-                  {item.n}
+          <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
+              {[
+                { n: "350+", l: isEN ? "Pages of training manual" : "Seiten Ausbildungsmappe" },
+                { n: "150+", l: isEN ? "Pages of sample texts" : "Seiten Beispieltexte" },
+                { n: "50+", l: isEN ? "Short videos" : "Kurzvideos" },
+                { n: "50+", l: isEN ? "Audio recordings" : "Audioaufnahmen" },
+                { n: "1", l: isEN ? "Aktiv-Hypnose® Diploma" : "Aktiv-Hypnose® Diplom" },
+                { n: "∞", l: isEN ? "Ongoing support" : "Laufende Unterstützung" },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white border border-[#E2E8EE] rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-center min-h-[110px] shadow-[0_2px_8px_rgba(27,58,92,0.04)]"
+                >
+                  <div className="text-2xl md:text-3xl font-bold text-[#1B3A5C] mb-1" style={{ fontFamily: "Georgia, serif" }}>
+                    {item.n}
+                  </div>
+                  <div className="text-xs md:text-[13px] text-muted-foreground leading-snug">
+                    {item.l}
+                  </div>
                 </div>
-                <div className="text-xs md:text-[13px] text-muted-foreground leading-snug">
-                  {item.l}
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-[#2E7D32]/30 bg-[#2E7D32]/5 p-4 md:p-5">
-            <p className="text-sm md:text-[15px] text-[#1B3A5C] leading-relaxed">
-              <span className="font-semibold text-[#2E7D32]">
-                {isEN ? "For EMR members:" : "Für EMR-Mitglieder:"}
-              </span>{" "}
-              {isEN
-                ? "Detailed certificate of hours and content for possible EMR submission included."
-                : "Ausführlicher Stunden- und Inhaltsnachweis zur möglichen EMR-Einreichung inklusive."}
-            </p>
+            <div className="mt-6 md:mt-7 rounded-2xl border border-[#2E7D32]/30 bg-[#2E7D32]/5 p-4 md:p-5">
+              <p className="text-sm md:text-[15px] text-[#1B3A5C] leading-relaxed text-center">
+                <span className="font-semibold text-[#2E7D32]">
+                  {isEN ? "For EMR members:" : "Für EMR-Mitglieder:"}
+                </span>{" "}
+                {isEN
+                  ? "Detailed certificate of hours and content for possible EMR submission included."
+                  : "Ausführlicher Stunden- und Inhaltsnachweis zur möglichen EMR-Einreichung inklusive."}
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
 
       {/* Educational hypnosis video moved to dedicated page /wie-funktioniert-hypnose */}
 
