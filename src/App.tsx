@@ -81,12 +81,20 @@ function ScrollToTop() {
     sessionStorage.setItem("dw_current_page", pathname);
 
     if (hash) {
-      // Defer to allow target section to render
-      setTimeout(() => {
-        const el = document.querySelector(hash);
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-        else window.scrollTo(0, 0);
-      }, 100);
+      // Defer to allow target section to render, then offset by sticky header height
+      const scrollToHash = (attempt = 0) => {
+        const el = document.querySelector(hash) as HTMLElement | null;
+        if (!el) {
+          if (attempt < 10) setTimeout(() => scrollToHash(attempt + 1), 100);
+          else window.scrollTo(0, 0);
+          return;
+        }
+        const header = document.querySelector("header") as HTMLElement | null;
+        const headerH = header ? header.getBoundingClientRect().height : 0;
+        const top = el.getBoundingClientRect().top + window.scrollY - headerH - 8;
+        window.scrollTo({ top, behavior: "smooth" });
+      };
+      setTimeout(() => scrollToHash(), 100);
     } else {
       window.scrollTo(0, 0);
     }
