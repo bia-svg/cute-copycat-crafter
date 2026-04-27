@@ -262,9 +262,9 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       {/* Rich Content Sections — preserving all legacy H2s and paragraphs */}
       {sections.map((section, idx) => {
         return (
-        <section key={idx} className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+        <section key={idx} className="bg-[#E8EDF3] border-y border-[#D8E0EA]">
           <div className="container-main py-10 md:py-12">
-            <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
+            <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
               <div className={section.image ? "grid md:grid-cols-2 gap-8 items-start" : ""}>
                 <div>
                   <h2 className="text-xl sm:text-2xl font-bold text-[#1B3A5C] mb-5">{section.h2}</h2>
@@ -285,7 +285,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                   )}
                 </div>
                 {section.image && (
-                  <div className="border border-[#E2E8EE] rounded-2xl overflow-hidden">
+                  <div className="border border-[#E8EDF3] rounded-2xl overflow-hidden">
                     <img src={section.image} alt={section.h2} className="w-full h-auto object-cover" loading="lazy" />
                   </div>
                 )}
@@ -301,9 +301,9 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         const testimonials = getTestimonialsForService(data.slugEN);
         if (testimonials.length === 0) return null;
         return (
-          <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+          <section className="bg-[#F8FAFC] border-y border-[#E8EDF3]">
             <div className="container-main py-10 md:py-12">
-              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
+              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
                 <h2 className="text-xl font-bold text-primary mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
                 </h2>
@@ -324,9 +324,9 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           .filter(item => !faq.some(f => f.q.toLowerCase().includes("themen") && item.q.toLowerCase().includes("themen") || f.q.toLowerCase().includes("topics") && item.q.toLowerCase().includes("topics")));
         const allFaq = [...faq, ...consultItems];
         return (
-          <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+          <section className="bg-[#E8EDF3] border-y border-[#D8E0EA]">
             <div className="container-main py-10 md:py-12">
-              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
+              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
                 <h2 className="text-xl font-bold text-primary mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
                 </h2>
@@ -335,7 +335,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                     <AccordionItem
                       key={i}
                       value={`faq-${i}`}
-                      className="border border-[#E2E8EE] bg-white rounded-2xl px-4 md:px-5"
+                      className="border border-[#E8EDF3] bg-white rounded-2xl px-4 md:px-5"
                     >
                       <AccordionTrigger className="text-sm font-semibold text-primary hover:no-underline py-4 text-left">
                         {item.q}
@@ -371,14 +371,14 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
 
       {/* Kathryn Section — only on children/teens page, shown BEFORE contact form */}
       {(data.slugEN === "kinder-jugendliche" || data.slugCH === "kinder-jugendliche") && (
-        <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+        <section className="bg-[#F8FAFC] border-y border-[#E8EDF3]">
           <div className="container-main py-10 md:py-12">
-            <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
+            <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
               <div className="grid md:grid-cols-[260px_1fr] gap-7 items-start">
                 <div className="mx-auto md:mx-0 w-60 md:w-full">
-                  <div className="border border-[#E2E8EE] overflow-hidden rounded-2xl">
+                  <div className="border border-[#E8EDF3] overflow-hidden rounded-2xl">
                     <img src={CDN.kathrynPortrait} alt="Kathryn Woods – Kinder- und Jugendtherapeutin" className="w-full h-auto" loading="lazy" />
-                    <div className="p-4 bg-[#F1F4F7]">
+                    <div className="p-4 bg-[#E8EDF3]">
                       <h3 className="font-bold text-foreground text-sm">Kathryn</h3>
                       <p className="text-xs text-muted-foreground">
                         {isEN ? "Psychological Counselor" : "Psychologische Beraterin"}
@@ -418,7 +418,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       )}
 
       {/* Consultation CTA Row with Inline Form — matches homepage layout */}
-      <section className="py-10 md:py-16 bg-[#F1F4F7] border-t border-[#E2E8EE]">
+      <section className="py-10 md:py-16 bg-[#F8FAFC] border-t border-[#E8EDF3]">
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-lg sm:text-xl font-semibold text-primary mb-3 text-center">
