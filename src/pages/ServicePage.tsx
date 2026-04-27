@@ -493,13 +493,13 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       )}
 
       {/* Consultation CTA Row with Inline Form */}
-      <section className="py-10 md:py-16 bg-[#F5F3EF]">
+      <section className={`py-10 md:py-16 ${data.slugEN === "stop-smoking" ? "bg-[#E8EDF3]" : "bg-[#F5F3EF]"}`}>
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-lg sm:text-xl font-semibold text-primary mb-3 text-center">
               {isEN ? "Your Request" : "Ihre Anfrage"}
             </h2>
-            <div className="bg-white rounded-lg border border-border/40 p-4 sm:p-6 shadow-[0_4px_20px_-6px_rgba(27,58,92,0.12)]">
+            <div className="bg-white rounded-2xl border border-[#E8EDF3] p-4 sm:p-6 shadow-[0_4px_20px_-6px_rgba(27,58,92,0.12)]">
               <InlineContactForm />
             </div>
           </div>
