@@ -57,7 +57,7 @@ export default function CityAugsburg() {
                 <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-[#2E7D32] transition-colors"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-[#2E7D32] transition-colors"><CheckCircle className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "★ 5.0 Google (266 Reviews)" : "★ 5.0 Google (266 Bewertungen)"}</a></a>
                 
               </div>
-              <a href="https://maps.google.com/?q=Regus,+Viktoria+Str.+3b,+86150+Augsburg" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm text-muted-foreground border border-border p-3 bg-[#F1F4F7] mb-6 hover:text-[#2E7D32] transition-colors">
+              <a href="https://maps.google.com/?q=Regus,+Viktoria+Str.+3b,+86150+Augsburg" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm text-muted-foreground border border-[#E2E8EE] p-3 bg-[#F1F4F7] mb-6 hover:text-[#2E7D32] transition-colors">
                 <MapPin className="w-4 h-4 mt-0.5 text-[#1B3A5C] shrink-0" />
                 <span>Regus, Viktoria Str. 3b, 2. OG, 86150 Augsburg ({isEN ? "near the main train station" : "nahe dem Hauptbahnhof"})</span>
               </a>
@@ -74,7 +74,7 @@ export default function CityAugsburg() {
         </div>
       </section>
 
-      <section className="bg-[#F1F4F7] border-b border-border">
+      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
         <div className="container-main py-10">
           <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
             {isEN ? "Our Services in Augsburg" : "Unsere Leistungen in Augsburg"}

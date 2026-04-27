@@ -71,7 +71,7 @@ export default function NichtraucherSeminare() {
         </div>
       </section>
 
-      <section className="bg-[#F1F4F7] border-b border-border">
+      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
         <div className="container-main py-10">
           <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
             {isEN ? "Against these disadvantages & risks:" : "Gegen folgende Nachteile & Risiken:"}
@@ -94,7 +94,7 @@ export default function NichtraucherSeminare() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {phases.map((p, i) => (
-              <div key={i} className="border border-border p-5 bg-[#F1F4F7]">
+              <div key={i} className="border border-[#E2E8EE] p-5 bg-[#F1F4F7]">
                 <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">{p.title}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
               </div>
@@ -103,7 +103,7 @@ export default function NichtraucherSeminare() {
         </div>
       </section>
 
-      <section className="bg-[#F1F4F7] border-b border-border">
+      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
         <div className="container-main py-10">
           <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
             {isEN ? "Results of the program:" : "Die Ergebnisse des Programms:"}

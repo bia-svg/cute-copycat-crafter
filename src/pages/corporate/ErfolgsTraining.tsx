@@ -72,7 +72,7 @@ export default function ErfolgsTraining() {
         </div>
       </section>
 
-      <section className="bg-[#F1F4F7] border-b border-border">
+      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
         <div className="container-main py-10">
           <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
             {isEN ? "Results you can expect:" : "Diese Resultate können Sie erwarten:"}

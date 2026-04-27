@@ -49,7 +49,7 @@ export default function Erstgespraech() {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-[#F1F4F7] border-t border-border">
+      <section className="bg-[#F1F4F7] border-t border-[#E2E8EE]">
         <div className="container-main py-10 lg:py-14">
           <h2 className="text-xl font-bold text-primary mb-6">
             {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
