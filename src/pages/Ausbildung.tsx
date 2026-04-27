@@ -187,28 +187,21 @@ export default function Ausbildung() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-2">
-                {isEN ? "Learn Hypnosis · 6-Day Intensive Certification" : "Hypnose lernen · 6-Tage Intensiv-Zertifizierung"}
+                {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
               </p>
-              <h1 className="text-2xl sm:text-3xl lg:text-[2.25rem] leading-tight font-bold text-[#1B3A5C] mb-2" style={{ fontFamily: "Georgia, serif" }}>
+              <h1 className="text-2xl sm:text-3xl lg:text-[2.25rem] leading-tight font-bold text-[#1B3A5C] mb-3" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN
-                  ? "Learn Hypnosis: Become a Certified Aktiv-Hypnose© Therapist"
-                  : "Hypnose lernen: Werden Sie zertifizierter Aktiv-Hypnose© Therapeut"}
+                  ? "Become a Certified Aktiv-Hypnose© Therapist"
+                  : "Werden Sie zertifizierter Aktiv-Hypnose© Therapeut"}
               </h1>
-              <div className="flex items-center gap-2 mb-3">
-                <GraduationCap className="w-5 h-5 text-[#2E7D32]" />
-                <span className="text-sm font-semibold text-[#1B3A5C]">
-                  {isEN ? "Specialist Practitioner Diploma" : "Therapeuten-Diplom"}
-                </span>
-              </div>
               <p className="text-sm lg:text-base text-[#55504f] leading-relaxed mb-4">
                 {isEN
                   ? "In just 6 days, you'll learn a proven, hands-on method for real change work. Not a superficial weekend certification, but a high-quality intensive training with a clear system, direct application, and professional guidance. Ideal for anyone who wants to support people safely and effectively."
                   : "In nur 6 Tagen lernen Sie eine fundierte, praxisnahe Methode für echte Veränderungsarbeit. Keine oberflächliche Wochenend-Zertifizierung, sondern eine hochwertige Intensiv-Ausbildung mit klarem System, direkter Anwendung und professioneller Begleitung. Ideal für alle, die Menschen sicher und wirksam begleiten möchten."}
               </p>
               <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#55504f] mb-4">
-                <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "6 Days, 10:00–17:00" : "6 Tage, 10:00–17:00 Uhr"}</span>
-                <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Small Group Format" : "Kleingruppen-Format"}</span>
-                <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-[#2E7D32]" /> Aktiv-Hypnose© Diplom</span>
+                <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "6-Day Intensive Training" : "6 Tage Intensiv-Ausbildung"}</span>
+                <span className="flex items-center gap-1.5"><GraduationCap className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Specialist Practitioner Diploma" : "Therapeuten-Diplom"}</span>
               </div>
               <div className="flex flex-wrap gap-3">
                 <a href="#dates">
