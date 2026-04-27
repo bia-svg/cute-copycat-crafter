@@ -42,85 +42,96 @@ export default function NichtraucherSeminare() {
         descriptionEN="The 'Smoke-Free in 3 Hours' program by David J. Woods. Effective smoking cessation for employees and executives directly at your company."
       />
 
-      <section className="bg-white border-b border-border">
-        <div className="container-main py-8 lg:py-12">
-          <Link to={getPath("corporate", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-4">
+      {/* Hero */}
+      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
+        <div className="container-main py-6 md:py-8 lg:py-10">
+          <Link to={getPath("corporate", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-3">
             <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
           </Link>
+          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+            <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-4">
+              {isEN ? "Smoke-Free in 3 Hours — Seminar by David J. Woods" : "Rauchfrei in 3 Stunden — Seminar by David J. Woods"}
+            </h1>
 
-          <p className="text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-6">
-            {isEN ? "Smoke-Free in 3 Hours — Seminar by David J. Woods" : "Rauchfrei in 3 Stunden — Seminar by David J. Woods"}
-          </h1>
-
-          <div className="prose prose-sm max-w-none text-foreground space-y-4">
-            <p>
-              {isEN
-                ? "The 'Smoke-Free in 3 Hours' program delivers exactly what it promises. In just 3 hours, David J. Woods turns participants into non-smokers. What makes it special, besides the short time, is the permanence of this smoking cessation. David J. Woods works entirely without pressure, using exclusively his specially developed method."
-                : "Das \u201eRauchfrei in 3 Stunden\u201c-Programm hält genau das, was es spricht. Denn in gerade 3 Stunden macht David J. Woods die Teilnehmer der Rauchentwöhnung zu Nichtrauchern. Das Besondere dabei ist neben der kurzen Zeit auch die Dauerhaftigkeit dieser Rauchentwöhnung. Dabei arbeitet David J. Woods ganz ohne Druck, sondern ausschließlich mit seiner speziell entwickelten Methode."}
-            </p>
-            <p className="font-semibold text-[#1B3A5C]">
-              {isEN ? "Directly at your company!" : "Direkt bei Ihnen im Unternehmen!"}
-            </p>
-            <p>
-              {isEN
-                ? "For this special business coaching, we are happy to come directly to your company and offer you a unique group smoking cessation. All you need is a room with enough space, comfortable seating, a flip chart, and an audio system with microphone."
-                : "Für dieses spezielle Business Coaching kommen wir gerne auch direkt in Ihre Firma und bieten Ihnen eine einzigartige Rauchentwöhnung in der Gruppe an. Alles, was Sie dazu brauchen, ist ein Raum mit ausreichend Platz, eine bequeme Bestuhlung, ein Flip Chart sowie eine Audio-Anlage mit Mikrofon."}
-            </p>
+            <div className="prose prose-sm max-w-none text-foreground/85 space-y-3">
+              <p>
+                {isEN
+                  ? "The 'Smoke-Free in 3 Hours' program delivers exactly what it promises. In just 3 hours, David J. Woods turns participants into non-smokers. What makes it special, besides the short time, is the permanence of this smoking cessation. David J. Woods works entirely without pressure, using exclusively his specially developed method."
+                  : "Das \u201eRauchfrei in 3 Stunden\u201c-Programm hält genau das, was es spricht. Denn in gerade 3 Stunden macht David J. Woods die Teilnehmer der Rauchentwöhnung zu Nichtrauchern. Das Besondere dabei ist neben der kurzen Zeit auch die Dauerhaftigkeit dieser Rauchentwöhnung. Dabei arbeitet David J. Woods ganz ohne Druck, sondern ausschließlich mit seiner speziell entwickelten Methode."}
+              </p>
+              <p className="font-semibold text-[#1B3A5C]">
+                {isEN ? "Directly at your company!" : "Direkt bei Ihnen im Unternehmen!"}
+              </p>
+              <p>
+                {isEN
+                  ? "For this special business coaching, we are happy to come directly to your company and offer you a unique group smoking cessation. All you need is a room with enough space, comfortable seating, a flip chart, and an audio system with microphone."
+                  : "Für dieses spezielle Business Coaching kommen wir gerne auch direkt in Ihre Firma und bieten Ihnen eine einzigartige Rauchentwöhnung in der Gruppe an. Alles, was Sie dazu brauchen, ist ein Raum mit ausreichend Platz, eine bequeme Bestuhlung, ein Flip Chart sowie eine Audio-Anlage mit Mikrofon."}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
-            {isEN ? "Against these disadvantages & risks:" : "Gegen folgende Nachteile & Risiken:"}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {risks.map((item) => (
-              <div key={item} className="flex items-center gap-2 text-sm">
-                <span className="text-red-500">✕</span>
-                <span>{item}</span>
-              </div>
-            ))}
+      {/* Risks — Banner */}
+      <section className="bg-[#F8FAFC]">
+        <div className="container-main py-6 md:py-9">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+            <h2 className="text-xl font-bold text-[#1B3A5C] mb-5">
+              {isEN ? "Disadvantages & risks of smoking:" : "Folgende Nachteile & Risiken des Rauchens:"}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {risks.map((item) => (
+                <div key={item} className="flex items-center gap-2 text-sm">
+                  <span className="text-red-500">✕</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white border-b border-border">
-        <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
-            {isEN ? "The 4 Phases of the Program" : "Der Ablauf der Rauchfrei von David J. Woods"}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {phases.map((p, i) => (
-              <div key={i} className="border border-border p-5 bg-[#f4f3ef]">
-                <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">{p.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
-              </div>
-            ))}
+      {/* Phases — Banner */}
+      <section className="bg-[#E8EDF3]">
+        <div className="container-main py-6 md:py-9">
+          <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+            <h2 className="text-xl font-bold text-[#1B3A5C] mb-5">
+              {isEN ? "The 4 Phases of the Program" : "Der Ablauf der Rauchfrei von David J. Woods"}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+              {phases.map((p, i) => (
+                <div key={i} className="bg-white border border-[#E8EDF3] rounded-2xl p-4 shadow-[0_1px_2px_rgba(27,58,92,0.04)]">
+                  <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">{p.title}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
-            {isEN ? "Results of the program:" : "Die Ergebnisse des Programms:"}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {results.map((item) => (
-              <div key={item} className="flex items-center gap-2 text-sm">
-                <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
-                <span>{item}</span>
-              </div>
-            ))}
+      {/* Results — Banner */}
+      <section className="bg-[#F8FAFC]">
+        <div className="container-main py-6 md:py-9">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+            <h2 className="text-xl font-bold text-[#1B3A5C] mb-5">
+              {isEN ? "Results of the program:" : "Die Ergebnisse des Programms:"}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {results.map((item) => (
+                <div key={item} className="flex items-center gap-2 text-sm">
+                  <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-background">
-        <div className="container-main py-10 flex justify-center">
+      <section className="bg-[#E8EDF3]">
+        <div className="container-main py-8 md:py-10 flex justify-center">
           <div className="relative bg-primary/10 border border-primary/25 rounded-2xl px-8 py-8 text-center max-w-2xl w-full">
             <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full whitespace-nowrap">
               {isEN ? "Next Step" : "N\u00e4chster Schritt"}
