@@ -260,52 +260,59 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       </section>
 
       {/* Rich Content Sections — preserving all legacy H2s and paragraphs */}
-      {sections.map((section, idx) => (
-        <section key={idx} className={`${idx % 2 === 0 ? "bg-[#F1F4F7]" : "bg-white"} border-b border-border`}>
-          <div className="container-main py-10">
-            <div className={section.image ? "grid md:grid-cols-2 gap-8 items-start" : ""}>
-              <div>
-                <h2 className="text-xl sm:text-2xl font-bold text-[#1B3A5C] mb-5">{section.h2}</h2>
-                <div className="space-y-4 max-w-3xl">
-                  {section.paragraphs.map((p, pi) => (
-                    <p key={pi} className="text-base text-foreground leading-relaxed">{p}</p>
-                  ))}
-                </div>
-                {section.bullets && section.bullets.length > 0 && (
-                  <ul className="mt-5 space-y-2 max-w-3xl">
-                    {section.bullets.map((b, bi) => (
-                      <li key={bi} className="flex items-start gap-2 text-sm text-foreground">
-                        <ChevronRight className="w-4 h-4 text-[#2E7D32] shrink-0 mt-0.5" />
-                        <span>{b}</span>
-                      </li>
+      {sections.map((section, idx) => {
+        const isSilver = idx % 2 === 0;
+        return (
+        <section key={idx} className={`${isSilver ? "bg-[#F1F4F7] border-y border-[#E2E8EE]" : "bg-white border-y border-border"}`}>
+          <div className="container-main py-10 md:py-12">
+            <div className={`max-w-5xl mx-auto ${isSilver ? "bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)]" : "bg-[#F1F4F7]/70 border border-[#E2E8EE]"} rounded-3xl p-5 md:p-7 lg:p-8`}>
+              <div className={section.image ? "grid md:grid-cols-2 gap-8 items-start" : ""}>
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-bold text-[#1B3A5C] mb-5">{section.h2}</h2>
+                  <div className="space-y-4">
+                    {section.paragraphs.map((p, pi) => (
+                      <p key={pi} className="text-base text-foreground leading-relaxed">{p}</p>
                     ))}
-                  </ul>
+                  </div>
+                  {section.bullets && section.bullets.length > 0 && (
+                    <ul className="mt-5 space-y-2">
+                      {section.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-sm text-foreground">
+                          <ChevronRight className="w-4 h-4 text-[#2E7D32] shrink-0 mt-0.5" />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+                {section.image && (
+                  <div className="border border-[#E2E8EE] rounded-2xl overflow-hidden">
+                    <img src={section.image} alt={section.h2} className="w-full h-auto object-cover" loading="lazy" />
+                  </div>
                 )}
               </div>
-              {section.image && (
-                <div className="border border-border rounded-lg overflow-hidden">
-                  <img src={section.image} alt={section.h2} className="w-full h-auto object-cover" loading="lazy" />
-                </div>
-              )}
             </div>
           </div>
         </section>
-      ))}
+        );
+      })}
 
       {/* Testimonials from Google Reviews */}
       {(() => {
         const testimonials = getTestimonialsForService(data.slugEN);
         if (testimonials.length === 0) return null;
         return (
-          <section className="bg-secondary border-b border-border">
-            <div className="container-main py-10">
-              <h2 className="text-xl font-bold text-primary mb-6">
-                {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                {testimonials.map((t, i) => (
-                  <ServiceTestimonialCard key={i} t={t} isEN={isEN} />
-                ))}
+          <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+            <div className="container-main py-10 md:py-12">
+              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
+                <h2 className="text-xl font-bold text-primary mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
+                  {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                  {testimonials.map((t, i) => (
+                    <ServiceTestimonialCard key={i} t={t} isEN={isEN} />
+                  ))}
+                </div>
               </div>
             </div>
           </section>
@@ -318,27 +325,29 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           .filter(item => !faq.some(f => f.q.toLowerCase().includes("themen") && item.q.toLowerCase().includes("themen") || f.q.toLowerCase().includes("topics") && item.q.toLowerCase().includes("topics")));
         const allFaq = [...faq, ...consultItems];
         return (
-          <section className="bg-white border-b border-border">
-            <div className="container-main py-10">
-              <h2 className="text-xl font-bold text-primary mb-6">
-                {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
-              </h2>
-              <Accordion type="single" collapsible className="max-w-3xl space-y-2">
-                {allFaq.map((item, i) => (
-                  <AccordionItem
-                    key={i}
-                    value={`faq-${i}`}
-                    className="border border-border bg-secondary/30 rounded-md px-4"
-                  >
-                    <AccordionTrigger className="text-sm font-semibold text-primary hover:no-underline py-4">
-                      {item.q}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4">
-                      {item.a}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+          <section className="bg-white border-y border-border">
+            <div className="container-main py-10 md:py-12">
+              <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl p-5 md:p-7 lg:p-8">
+                <h2 className="text-xl font-bold text-primary mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
+                  {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
+                </h2>
+                <Accordion type="single" collapsible className="space-y-2">
+                  {allFaq.map((item, i) => (
+                    <AccordionItem
+                      key={i}
+                      value={`faq-${i}`}
+                      className="border border-[#E2E8EE] bg-white rounded-2xl px-4 md:px-5"
+                    >
+                      <AccordionTrigger className="text-sm font-semibold text-primary hover:no-underline py-4 text-left">
+                        {item.q}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4">
+                        {item.a}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
               {/* FAQPage Schema */}
               <script
                 type="application/ld+json"
