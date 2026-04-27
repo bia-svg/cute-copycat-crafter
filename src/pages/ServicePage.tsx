@@ -312,52 +312,16 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         );
       })()}
 
-      {/* Unified FAQ — topic-specific + consultation items */}
+      {/* Unified FAQ — uses shared FAQSection (centered, green plus, green open state) */}
       {(() => {
         const consultItems = (isEN ? consultationFaqEN : consultationFaqDE)
           .filter(item => !faq.some(f => f.q.toLowerCase().includes("themen") && item.q.toLowerCase().includes("themen") || f.q.toLowerCase().includes("topics") && item.q.toLowerCase().includes("topics")));
         const allFaq = [...faq, ...consultItems];
         return (
-          <section className="bg-white border-b border-border">
-            <div className="container-main py-10">
-              <h2 className="text-xl font-bold text-primary mb-6">
-                {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
-              </h2>
-              <Accordion type="single" collapsible className="max-w-3xl space-y-2">
-                {allFaq.map((item, i) => (
-                  <AccordionItem
-                    key={i}
-                    value={`faq-${i}`}
-                    className="border border-border bg-secondary/30 rounded-md px-4"
-                  >
-                    <AccordionTrigger className="text-sm font-semibold text-primary hover:no-underline py-4">
-                      {item.q}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4">
-                      {item.a}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-              {/* FAQPage Schema */}
-              <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                  __html: JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "FAQPage",
-                    mainEntity: allFaq.map((item) => ({
-                      "@type": "Question",
-                      name: item.q,
-                      acceptedAnswer: {
-                        "@type": "Answer",
-                        text: item.a,
-                      },
-                    })),
-                  }),
-                }} />
-            </div>
-          </section>
+          <FAQSection
+            title={isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
+            items={allFaq}
+          />
         );
       })()}
 
