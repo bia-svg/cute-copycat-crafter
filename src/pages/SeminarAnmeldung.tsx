@@ -390,6 +390,8 @@ export default function SeminarAnmeldung() {
                     </div>
                   </div>
                 )}
+                </div>
+                {/* /STEPS 1+2 wrapper */}
 
                 {/* STEP 3 — Form */}
                 {selectedDate && (
