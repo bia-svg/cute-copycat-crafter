@@ -594,6 +594,11 @@ export default function Ausbildung() {
       {/* Educational hypnosis video moved to dedicated page /wie-funktioniert-hypnose */}
 
       {/* ═══════════════════════════════════════════════════════════
+          SECTION — Training Participant Video Testimonials
+          ═══════════════════════════════════════════════════════════ */}
+      <TrainingTestimonialsCarousel />
+
+      {/* ═══════════════════════════════════════════════════════════
           SECTION 6 — FAQ + Final CTA
           ═══════════════════════════════════════════════════════════ */}
 
