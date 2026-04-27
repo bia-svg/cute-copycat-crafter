@@ -275,7 +275,7 @@ export default function SeminarAnmeldung() {
             ) : (
               <>
                 {/* STEPS 1 + 2 wrapper — soft silver-grey backdrop */}
-                <div className="mb-6 rounded-2xl bg-[#F1F4F7] border border-[#E2E8EE] p-4 sm:p-5">
+                <div className="mb-6 rounded-2xl bg-[#FAF8F4] border border-[#EDE8DF] p-4 sm:p-5">
                 {/* STEP 1 — Country */}
                 <div className="mb-5">
                   <h2 className="text-sm font-semibold text-[#1B3A5C] mb-3 flex items-center gap-2">
