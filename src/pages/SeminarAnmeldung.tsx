@@ -399,7 +399,7 @@ export default function SeminarAnmeldung() {
 
                 {/* STEP 3 — Form */}
                 {selectedDate && (
-                   <div className="border border-border p-3 sm:p-4 bg-[#f4f3ef]">
+                   <div className={`border p-3 sm:p-4 ${seminarCountry === "de" ? "border-[#1B3A5C]/20 bg-[#EEF4FB]" : "border-[#2E7D32]/20 bg-[#EEF6EF]"}`}>
                     <h2 className="text-sm font-semibold text-[#1B3A5C] mb-2.5 flex items-center gap-2">
                       <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center">3</span>
                       {isEN ? "Your Details" : "Ihre Daten"}
