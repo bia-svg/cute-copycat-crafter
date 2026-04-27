@@ -332,8 +332,12 @@ export default function SeminarAnmeldung() {
                           onClick={() => setSelectedDate(d.date)}
                           className={`w-full border p-4 text-left transition-all ${
                             selectedDate === d.date
-                              ? "border-[#2E7D32] bg-[#E8F5E9]/50 ring-1 ring-[#2E7D32]"
-                              : "border-border bg-white hover:border-[#2E7D32]/40"
+                              ? seminarCountry === "de"
+                                ? "border-[#1B3A5C]/60 bg-[#E6EEF7] ring-1 ring-[#1B3A5C]/30"
+                                : "border-[#2E7D32]/50 bg-[#E8F5E9] ring-1 ring-[#2E7D32]/25"
+                              : seminarCountry === "de"
+                                ? "border-border bg-white hover:border-[#1B3A5C]/40"
+                                : "border-border bg-white hover:border-[#2E7D32]/40"
                           }`}
                         >
                           <div className="flex items-center justify-between">
@@ -346,7 +350,7 @@ export default function SeminarAnmeldung() {
                               </p>
                             </div>
                             <div className="flex items-center gap-2">
-                              {selectedDate === d.date && <CheckCircle className="w-5 h-5 text-[#2E7D32]" />}
+                              {selectedDate === d.date && <CheckCircle className={`w-5 h-5 ${seminarCountry === "de" ? "text-[#1B3A5C]" : "text-[#2E7D32]"}`} />}
                             </div>
                           </div>
                           {/* Price display */}
