@@ -245,8 +245,8 @@ export default function Ausbildung() {
               { icon: <Users className="w-6 h-6 text-[#1B3A5C]" />, titleDE: "Kleingruppen-Format", titleEN: "Small Group Format", textDE: "Strikt begrenzte Teilnehmerzahl garantiert persönliche Betreuung, individuelles Feedback und maximale Lernintensität. Ein selektives Lernerlebnis.", textEN: "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity. A selective learning experience." },
               { icon: <Zap className="w-6 h-6 text-[#1B3A5C]" />, titleDE: "Praxis ab Tag 1", titleEN: "Hands-On from Day 1", textDE: "Sie schauen nicht nur zu — Sie hypnotisieren. Jeder Tag verbindet Theorie mit sofortiger praktischer Anwendung. Eine transformative Praxisausbildung.", textEN: "You won't just watch — you'll hypnotize. Every day combines theory with immediate application. A transformational practical training." },
             ].map((c, i) => (
-              <div key={i} className="group relative bg-white border border-[#1B3A5C]/20 rounded-2xl p-7 text-center shadow-[0_4px_16px_rgba(27,58,92,0.08)] hover:shadow-[0_14px_36px_rgba(27,58,92,0.16)] hover:border-[#1B3A5C]/45 hover:-translate-y-1 transition-all duration-300">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1B3A5C]/10 to-[#1B3A5C]/5 ring-1 ring-[#1B3A5C]/10 mb-4 group-hover:from-[#1B3A5C]/15 group-hover:to-[#1B3A5C]/8 transition-colors">
+              <div key={i} className="group relative bg-white border border-[#1B3A5C]/30 rounded-2xl p-7 text-center shadow-[0_8px_24px_rgba(27,58,92,0.12)] hover:shadow-[0_18px_42px_rgba(27,58,92,0.20)] hover:border-[#1B3A5C]/55 hover:-translate-y-1 transition-all duration-300">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1B3A5C]/15 to-[#1B3A5C]/8 ring-1 ring-[#1B3A5C]/20 mb-4 shadow-[0_2px_8px_rgba(27,58,92,0.10)] group-hover:from-[#1B3A5C]/22 group-hover:to-[#1B3A5C]/12 group-hover:ring-[#1B3A5C]/30 transition-all">
                   {c.icon}
                 </div>
                 <h3 className="font-bold text-base text-[#1B3A5C] mb-2">{isEN ? c.titleEN : c.titleDE}</h3>
@@ -313,24 +313,20 @@ export default function Ausbildung() {
             {/* CH Content */}
             {activeTab === "ch" && (
               <>
-                <div className="relative overflow-hidden bg-gradient-to-br from-[#F4FAF5] via-white to-[#EAF5EC] border border-[#81C784]/60 rounded-3xl px-6 py-6 text-center shadow-[0_6px_20px_rgba(46,125,50,0.08)]">
-                  <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-[#2E7D32]/5 blur-2xl pointer-events-none" />
-                  <p className="relative text-[11px] font-semibold uppercase tracking-[0.14em] text-[#2E7D32] mb-3">
-                    {isEN ? "6-Day Intensive Certification" : "6-Tage Intensiv-Zertifizierung"}
+                <div className="bg-white border border-[#1B3A5C]/15 rounded-2xl px-6 py-4 text-center shadow-[0_2px_10px_rgba(27,58,92,0.05)]">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#2E7D32] mb-2">
+                    {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
                   </p>
                   {hasEarlyBirdForCountry("ch", datesCH) ? (
-                    <>
-                      <div className="relative flex items-baseline justify-center gap-3 mb-3">
-                        <span className="text-sm text-muted-foreground/70 line-through">CHF 2.990.-</span>
-                        <span className="text-3xl font-bold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>CHF 2.690.-</span>
-                      </div>
-                      <span className="relative inline-flex items-center gap-1.5 text-[11px] font-medium text-[#2E7D32]/90 bg-white/70 border border-[#2E7D32]/20 px-3 py-1 rounded-full">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#2E7D32]" />
-                        {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
+                    <div className="flex items-baseline justify-center gap-3 flex-wrap">
+                      <span className="text-xs text-muted-foreground/70 line-through">CHF 2.990.-</span>
+                      <span className="text-2xl font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>CHF 2.690.-</span>
+                      <span className="text-[11px] font-medium text-[#2E7D32]">
+                        {isEN ? "Early Bird Price" : "Frühbucherpreis"}
                       </span>
-                    </>
+                    </div>
                   ) : (
-                    <span className="relative text-3xl font-bold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>CHF 2.990.-</span>
+                    <span className="text-2xl font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>CHF 2.990.-</span>
                   )}
                 </div>
                 {(showAllDates ? datesCH : datesCH.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
@@ -371,24 +367,20 @@ export default function Ausbildung() {
             {/* DE Content */}
             {activeTab === "de" && (
               <>
-                <div className="relative overflow-hidden bg-gradient-to-br from-[#F2F8FE] via-white to-[#E5EFFB] border border-[#90CAF9]/60 rounded-3xl px-6 py-6 text-center shadow-[0_6px_20px_rgba(21,101,192,0.08)]">
-                  <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-[#1565C0]/5 blur-2xl pointer-events-none" />
-                  <p className="relative text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1565C0] mb-3">
-                    {isEN ? "6-Day Intensive Certification" : "6-Tage Intensiv-Zertifizierung"}
+                <div className="bg-white border border-[#1B3A5C]/15 rounded-2xl px-6 py-4 text-center shadow-[0_2px_10px_rgba(27,58,92,0.05)]">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1565C0] mb-2">
+                    {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
                   </p>
                   {hasEarlyBirdForCountry("de", datesDE) ? (
-                    <>
-                      <div className="relative flex items-baseline justify-center gap-3 mb-3">
-                        <span className="text-sm text-muted-foreground/70 line-through">€2.790,-</span>
-                        <span className="text-3xl font-bold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>€2.490,-</span>
-                      </div>
-                      <span className="relative inline-flex items-center gap-1.5 text-[11px] font-medium text-[#1565C0]/90 bg-white/70 border border-[#1565C0]/20 px-3 py-1 rounded-full">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#1565C0]" />
-                        {isEN ? "Early Bird Price — Limited Time" : "Frühbucher-Preis — Nur für kurze Zeit"}
+                    <div className="flex items-baseline justify-center gap-3 flex-wrap">
+                      <span className="text-xs text-muted-foreground/70 line-through">€2.790,-</span>
+                      <span className="text-2xl font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>€2.490,-</span>
+                      <span className="text-[11px] font-medium text-[#1565C0]">
+                        {isEN ? "Early Bird Price" : "Frühbucherpreis"}
                       </span>
-                    </>
+                    </div>
                   ) : (
-                    <span className="relative text-3xl font-bold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>€2.790,-</span>
+                    <span className="text-2xl font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>€2.790,-</span>
                   )}
                 </div>
                 {(showAllDates ? datesDE : datesDE.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
@@ -443,7 +435,7 @@ export default function Ausbildung() {
               </div>
             );
           })()}
-          <p className="text-xs text-muted-foreground text-center mt-4 italic">
+          <p className="text-sm md:text-[15px] text-[#1B3A5C]/85 text-center mt-7 max-w-2xl mx-auto font-medium">
             {isEN
               ? "Early Bird pricing available for a limited time or until the current intake is full."
               : "Frühbucher-Preis verfügbar für begrenzte Zeit oder bis die aktuelle Gruppe voll ist."}
@@ -466,7 +458,7 @@ export default function Ausbildung() {
           </p>
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
             {days.map((day) => (
-              <div key={day.day} className="bg-white border border-[#1B3A5C]/12 rounded-2xl p-4 md:p-5 shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_16px_rgba(27,58,92,0.09)] hover:border-[#1B3A5C]/25 transition-all">
+              <div key={day.day} className="bg-white border border-[#1B3A5C]/22 rounded-2xl p-4 md:p-5 shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:shadow-[0_14px_30px_rgba(27,58,92,0.15)] hover:border-[#1B3A5C]/40 hover:-translate-y-0.5 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 rounded-lg bg-white text-[#1B3A5C]">
                     {day.icon}
@@ -569,7 +561,7 @@ export default function Ausbildung() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-[#f4f3ef] border border-border rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-center min-h-[110px] shadow-sm"
+                className="bg-white border border-[#1B3A5C]/22 rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-center min-h-[110px] shadow-[0_4px_14px_rgba(27,58,92,0.08)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.12)] hover:border-[#1B3A5C]/40 transition-all"
               >
                 <div className="text-2xl md:text-3xl font-bold text-[#1B3A5C] mb-1" style={{ fontFamily: "Georgia, serif" }}>
                   {item.n}
@@ -581,8 +573,8 @@ export default function Ausbildung() {
             ))}
           </div>
 
-          <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-[#a5d6a7] bg-[#e8f5e9] p-4 md:p-5">
-            <p className="text-sm md:text-[15px] text-[#1B3A5C] leading-relaxed">
+          <div className="max-w-3xl mx-auto mt-8 rounded-xl border border-[#a5d6a7] bg-[#e8f5e9] px-4 py-2.5 md:px-5 md:py-2.5">
+            <p className="text-sm text-[#1B3A5C] leading-snug text-center md:whitespace-nowrap">
               <span className="font-semibold text-[#2E7D32]">
                 {isEN ? "For EMR members:" : "Für EMR-Mitglieder:"}
               </span>{" "}
@@ -625,9 +617,9 @@ export default function Ausbildung() {
         ]}
       />
 
-      <section className="bg-background py-5 md:py-7">
+      <section className="bg-[#DDE1E4] py-7 md:py-10">
         <div className="container-main">
-          <div className="relative max-w-2xl mx-auto bg-gradient-to-br from-primary/12 via-primary/8 to-primary/5 border border-primary/20 rounded-3xl px-7 py-7 md:px-10 md:py-9 text-center shadow-[0_8px_28px_rgba(27,58,92,0.10)]">
+          <div className="relative max-w-2xl mx-auto bg-gradient-to-br from-white via-[#F1F4F7] to-[#E8ECEF] border border-[#1B3A5C]/18 rounded-3xl px-7 py-7 md:px-10 md:py-9 text-center shadow-[0_6px_24px_rgba(27,58,92,0.10)]">
             {/* Decorative top accent */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-[11px] font-semibold px-4 py-1 rounded-full tracking-wide uppercase shadow-sm">
               {isEN ? "Next Step" : "Nächster Schritt"}
