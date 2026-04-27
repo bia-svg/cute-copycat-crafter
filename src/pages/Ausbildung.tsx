@@ -311,7 +311,7 @@ export default function Ausbildung() {
             </button>
           </div>
 
-          <div className="space-y-4 max-w-2xl mx-auto">
+          <div className="space-y-2.5 md:space-y-4 max-w-2xl mx-auto">
             {/* CH Content */}
             {activeTab === "ch" && (
               <>
