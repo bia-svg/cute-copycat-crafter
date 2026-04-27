@@ -16,6 +16,7 @@ import diplomAktivHypnose from "@/assets/diplom-aktiv-hypnose.webp";
 import diplomNGH from "@/assets/diplom-ngh-instructor.webp";
 
 import ImageLightbox from "@/components/ImageLightbox";
+import TrainingTestimonialsCarousel from "@/components/TrainingTestimonialsCarousel";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -592,6 +593,11 @@ export default function Ausbildung() {
       </section>
 
       {/* Educational hypnosis video moved to dedicated page /wie-funktioniert-hypnose */}
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION — Training Participant Video Testimonials
+          ═══════════════════════════════════════════════════════════ */}
+      <TrainingTestimonialsCarousel />
 
       {/* ═══════════════════════════════════════════════════════════
           SECTION 6 — FAQ + Final CTA
