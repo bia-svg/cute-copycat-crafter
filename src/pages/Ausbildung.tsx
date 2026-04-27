@@ -624,28 +624,28 @@ export default function Ausbildung() {
         ]}
       />
 
-      <section className="bg-background py-4 md:py-6">
+      <section className="bg-background py-5 md:py-7">
         <div className="container-main">
-          <div className="relative max-w-2xl mx-auto bg-primary/10 border border-primary/25 rounded-2xl px-6 py-6 md:px-8 md:py-7 text-center shadow-sm">
+          <div className="relative max-w-2xl mx-auto bg-gradient-to-br from-primary/12 via-primary/8 to-primary/5 border border-primary/20 rounded-3xl px-7 py-7 md:px-10 md:py-9 text-center shadow-[0_8px_28px_rgba(27,58,92,0.10)]">
             {/* Decorative top accent */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-[11px] font-semibold px-3 py-1 rounded-full tracking-wide uppercase">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-[11px] font-semibold px-4 py-1 rounded-full tracking-wide uppercase shadow-sm">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
-            <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2" style={{ fontFamily: "Georgia, serif" }}>
+            <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2.5" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Your Journey Starts Here" : "Ihre Reise beginnt hier"}
             </h2>
-            <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto mb-4">
+            <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto mb-5 leading-relaxed">
               {isEN
                 ? "In 6 days, you'll gain the knowledge, the confidence, and the diploma to support people professionally. Are you ready?"
                 : "In 6 Tagen gewinnen Sie das Wissen, die Sicherheit und das Diplom, um Menschen professionell zu begleiten. Sind Sie bereit?"}
             </p>
             <Link to={`${getPath("seminarRegistration", language, country)}?country=de`}>
-              <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-7 py-2.5 text-sm md:text-base">
+              <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-sm md:text-base rounded-full shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] transition-all">
                 {isEN ? "Register for Seminar" : "Zum Seminar anmelden"}
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
-            <div className="flex items-center justify-center gap-3 mt-3 text-muted-foreground text-xs md:text-sm">
+            <div className="flex items-center justify-center gap-3 mt-4 text-muted-foreground text-xs md:text-sm">
               <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-foreground transition-colors">
                 <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
                 5.0 — 266 Google {isEN ? "Reviews" : "Bewertungen"}
