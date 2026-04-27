@@ -240,39 +240,19 @@ export default function Ausbildung() {
               : "Kein Massenkurs. Keine Zertifikatsfabrik. Eine seriöse Premium-Ausbildung mit echter Tiefe, aufgebaut auf 30.000+ klinischen Sitzungen."}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-            <div className="group bg-white border-2 border-[#1B3A5C]/15 rounded-2xl p-6 text-center shadow-[0_2px_8px_rgba(27,58,92,0.06)] hover:shadow-[0_8px_24px_rgba(27,58,92,0.12)] hover:border-[#1B3A5C]/35 hover:-translate-y-0.5 transition-all duration-300">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1B3A5C]/8 mb-3 group-hover:bg-[#1B3A5C]/15 transition-colors">
-                <Shield className="w-6 h-6 text-[#1B3A5C]" />
+            {[
+              { icon: <Shield className="w-6 h-6 text-[#1B3A5C]" />, titleDE: "35+ Jahre klinische Praxis", titleEN: "35+ Years of Clinical Practice", textDE: "Jede gelehrte Technik wurde in Tausenden realer klinischer Sitzungen getestet und verfeinert. Eine methodenbasierte Expertenausbildung.", textEN: "Every technique taught has been tested and refined in thousands of real clinical sessions. This is method-based expert training." },
+              { icon: <Users className="w-6 h-6 text-[#1B3A5C]" />, titleDE: "Kleingruppen-Format", titleEN: "Small Group Format", textDE: "Strikt begrenzte Teilnehmerzahl garantiert persönliche Betreuung, individuelles Feedback und maximale Lernintensität. Ein selektives Lernerlebnis.", textEN: "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity. A selective learning experience." },
+              { icon: <Zap className="w-6 h-6 text-[#1B3A5C]" />, titleDE: "Praxis ab Tag 1", titleEN: "Hands-On from Day 1", textDE: "Sie schauen nicht nur zu — Sie hypnotisieren. Jeder Tag verbindet Theorie mit sofortiger praktischer Anwendung. Eine transformative Praxisausbildung.", textEN: "You won't just watch — you'll hypnotize. Every day combines theory with immediate application. A transformational practical training." },
+            ].map((c, i) => (
+              <div key={i} className="group relative bg-white border border-[#1B3A5C]/20 rounded-2xl p-7 text-center shadow-[0_4px_16px_rgba(27,58,92,0.08)] hover:shadow-[0_14px_36px_rgba(27,58,92,0.16)] hover:border-[#1B3A5C]/45 hover:-translate-y-1 transition-all duration-300">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1B3A5C]/10 to-[#1B3A5C]/5 ring-1 ring-[#1B3A5C]/10 mb-4 group-hover:from-[#1B3A5C]/15 group-hover:to-[#1B3A5C]/8 transition-colors">
+                  {c.icon}
+                </div>
+                <h3 className="font-bold text-base text-[#1B3A5C] mb-2">{isEN ? c.titleEN : c.titleDE}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{isEN ? c.textEN : c.titleDE && (isEN ? c.textEN : c.textDE)}</p>
               </div>
-              <h3 className="font-bold text-base text-[#1B3A5C] mb-2">{isEN ? "35+ Years of Clinical Practice" : "35+ Jahre klinische Praxis"}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                {isEN
-                  ? "Every technique taught has been tested and refined in thousands of real clinical sessions. This is method-based expert training."
-                  : "Jede gelehrte Technik wurde in Tausenden realer klinischer Sitzungen getestet und verfeinert. Eine methodenbasierte Expertenausbildung."}
-              </p>
-            </div>
-            <div className="group bg-white border-2 border-[#1B3A5C]/15 rounded-2xl p-6 text-center shadow-[0_2px_8px_rgba(27,58,92,0.06)] hover:shadow-[0_8px_24px_rgba(27,58,92,0.12)] hover:border-[#1B3A5C]/35 hover:-translate-y-0.5 transition-all duration-300">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1B3A5C]/8 mb-3 group-hover:bg-[#1B3A5C]/15 transition-colors">
-                <Users className="w-6 h-6 text-[#1B3A5C]" />
-              </div>
-              <h3 className="font-bold text-base text-[#1B3A5C] mb-2">{isEN ? "Small Group Format" : "Kleingruppen-Format"}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                {isEN
-                  ? "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity. A selective learning experience."
-                  : "Strikt begrenzte Teilnehmerzahl garantiert persönliche Betreuung, individuelles Feedback und maximale Lernintensität. Ein selektives Lernerlebnis."}
-              </p>
-            </div>
-            <div className="group bg-white border-2 border-[#1B3A5C]/15 rounded-2xl p-6 text-center shadow-[0_2px_8px_rgba(27,58,92,0.06)] hover:shadow-[0_8px_24px_rgba(27,58,92,0.12)] hover:border-[#1B3A5C]/35 hover:-translate-y-0.5 transition-all duration-300">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1B3A5C]/8 mb-3 group-hover:bg-[#1B3A5C]/15 transition-colors">
-                <Zap className="w-6 h-6 text-[#1B3A5C]" />
-              </div>
-              <h3 className="font-bold text-base text-[#1B3A5C] mb-2">{isEN ? "Hands-On from Day 1" : "Praxis ab Tag 1"}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                {isEN
-                  ? "You won't just watch — you'll hypnotize. Every day combines theory with immediate application. A transformational practical training."
-                  : "Sie schauen nicht nur zu — Sie hypnotisieren. Jeder Tag verbindet Theorie mit sofortiger praktischer Anwendung. Eine transformative Praxisausbildung."}
-              </p>
-            </div>
+            ))}
           </div>
 
           {/* EMR Badge */}
