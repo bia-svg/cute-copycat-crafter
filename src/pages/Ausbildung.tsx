@@ -351,7 +351,7 @@ export default function Ausbildung() {
                     <span className="text-2xl font-bold text-[#1B3A5C]">CHF 2.990.-</span>
                   )}
                 </div>
-                {datesCH.map((d, i) => (
+                {(showAllDates ? datesCH : datesCH.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
                   <div key={`ch-${i}`} className="border border-border p-5 bg-white rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
                       <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
