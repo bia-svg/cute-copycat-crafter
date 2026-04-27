@@ -31,6 +31,8 @@ const CDN_BASE = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm
 export default function Ausbildung() {
   const { language, country, isInternational, showCH, showDE } = useLanguage();
   const [activeTab, setActiveTab] = useState<"ch" | "de">("de");
+  const [showAllDates, setShowAllDates] = useState(false);
+  const INITIAL_DATES_VISIBLE = 2;
   const isEN = language === "en";
 
   const [seminarCounts, setSeminarCounts] = useState<Record<string, number>>({});
@@ -187,28 +189,21 @@ export default function Ausbildung() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-2">
-                {isEN ? "Learn Hypnosis · 6-Day Intensive Certification" : "Hypnose lernen · 6-Tage Intensiv-Zertifizierung"}
+                {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
               </p>
-              <h1 className="text-2xl sm:text-3xl lg:text-[2.25rem] leading-tight font-bold text-[#1B3A5C] mb-2" style={{ fontFamily: "Georgia, serif" }}>
+              <h1 className="text-2xl sm:text-3xl lg:text-[2.25rem] leading-tight font-bold text-[#1B3A5C] mb-3" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN
-                  ? "Learn Hypnosis: Become a Certified Aktiv-Hypnose© Therapist"
-                  : "Hypnose lernen: Werden Sie zertifizierter Aktiv-Hypnose© Therapeut"}
+                  ? "Become a Certified Aktiv-Hypnose© Therapist"
+                  : "Werden Sie zertifizierter Aktiv-Hypnose© Therapeut"}
               </h1>
-              <div className="flex items-center gap-2 mb-3">
-                <GraduationCap className="w-5 h-5 text-[#2E7D32]" />
-                <span className="text-sm font-semibold text-[#1B3A5C]">
-                  {isEN ? "Specialist Practitioner Diploma" : "Therapeuten-Diplom"}
-                </span>
-              </div>
               <p className="text-sm lg:text-base text-[#55504f] leading-relaxed mb-4">
                 {isEN
                   ? "In just 6 days, you'll learn a proven, hands-on method for real change work. Not a superficial weekend certification, but a high-quality intensive training with a clear system, direct application, and professional guidance. Ideal for anyone who wants to support people safely and effectively."
                   : "In nur 6 Tagen lernen Sie eine fundierte, praxisnahe Methode für echte Veränderungsarbeit. Keine oberflächliche Wochenend-Zertifizierung, sondern eine hochwertige Intensiv-Ausbildung mit klarem System, direkter Anwendung und professioneller Begleitung. Ideal für alle, die Menschen sicher und wirksam begleiten möchten."}
               </p>
               <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#55504f] mb-4">
-                <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "6 Days, 10:00–17:00" : "6 Tage, 10:00–17:00 Uhr"}</span>
-                <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Small Group Format" : "Kleingruppen-Format"}</span>
-                <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-[#2E7D32]" /> Aktiv-Hypnose© Diplom</span>
+                <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "6-Day Intensive Training" : "6 Tage Intensiv-Ausbildung"}</span>
+                <span className="flex items-center gap-1.5"><GraduationCap className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Specialist Practitioner Diploma" : "Therapeuten-Diplom"}</span>
               </div>
               <div className="flex flex-wrap gap-3">
                 <a href="#dates">
@@ -244,28 +239,34 @@ export default function Ausbildung() {
               ? "Not a mass-market course. Not a certificate mill. A serious premium training with real depth, built on 30,000+ clinical sessions."
               : "Kein Massenkurs. Keine Zertifikatsfabrik. Eine seriöse Premium-Ausbildung mit echter Tiefe, aufgebaut auf 30.000+ klinischen Sitzungen."}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <div className="border border-border p-4 text-center">
-              <Shield className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
-              <h3 className="font-bold text-sm text-[#1B3A5C] mb-1">{isEN ? "35+ Years of Clinical Practice" : "35+ Jahre klinische Praxis"}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+            <div className="group bg-white border-2 border-[#1B3A5C]/15 rounded-2xl p-6 text-center shadow-[0_2px_8px_rgba(27,58,92,0.06)] hover:shadow-[0_8px_24px_rgba(27,58,92,0.12)] hover:border-[#1B3A5C]/35 hover:-translate-y-0.5 transition-all duration-300">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1B3A5C]/8 mb-3 group-hover:bg-[#1B3A5C]/15 transition-colors">
+                <Shield className="w-6 h-6 text-[#1B3A5C]" />
+              </div>
+              <h3 className="font-bold text-base text-[#1B3A5C] mb-2">{isEN ? "35+ Years of Clinical Practice" : "35+ Jahre klinische Praxis"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
                   ? "Every technique taught has been tested and refined in thousands of real clinical sessions. This is method-based expert training."
                   : "Jede gelehrte Technik wurde in Tausenden realer klinischer Sitzungen getestet und verfeinert. Eine methodenbasierte Expertenausbildung."}
               </p>
             </div>
-            <div className="border border-border p-4 text-center">
-              <Users className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
-              <h3 className="font-bold text-sm text-[#1B3A5C] mb-1">{isEN ? "Small Group Format" : "Kleingruppen-Format"}</h3>
+            <div className="group bg-white border-2 border-[#1B3A5C]/15 rounded-2xl p-6 text-center shadow-[0_2px_8px_rgba(27,58,92,0.06)] hover:shadow-[0_8px_24px_rgba(27,58,92,0.12)] hover:border-[#1B3A5C]/35 hover:-translate-y-0.5 transition-all duration-300">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1B3A5C]/8 mb-3 group-hover:bg-[#1B3A5C]/15 transition-colors">
+                <Users className="w-6 h-6 text-[#1B3A5C]" />
+              </div>
+              <h3 className="font-bold text-base text-[#1B3A5C] mb-2">{isEN ? "Small Group Format" : "Kleingruppen-Format"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
                   ? "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity. A selective learning experience."
                   : "Strikt begrenzte Teilnehmerzahl garantiert persönliche Betreuung, individuelles Feedback und maximale Lernintensität. Ein selektives Lernerlebnis."}
               </p>
             </div>
-            <div className="border border-border p-4 text-center">
-              <Zap className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
-              <h3 className="font-bold text-sm text-[#1B3A5C] mb-1">{isEN ? "Hands-On from Day 1" : "Praxis ab Tag 1"}</h3>
+            <div className="group bg-white border-2 border-[#1B3A5C]/15 rounded-2xl p-6 text-center shadow-[0_2px_8px_rgba(27,58,92,0.06)] hover:shadow-[0_8px_24px_rgba(27,58,92,0.12)] hover:border-[#1B3A5C]/35 hover:-translate-y-0.5 transition-all duration-300">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1B3A5C]/8 mb-3 group-hover:bg-[#1B3A5C]/15 transition-colors">
+                <Zap className="w-6 h-6 text-[#1B3A5C]" />
+              </div>
+              <h3 className="font-bold text-base text-[#1B3A5C] mb-2">{isEN ? "Hands-On from Day 1" : "Praxis ab Tag 1"}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {isEN
                   ? "You won't just watch — you'll hypnotize. Every day combines theory with immediate application. A transformational practical training."
@@ -306,7 +307,7 @@ export default function Ausbildung() {
           {/* Country Tabs */}
           <div className="flex justify-center gap-3 mb-8 max-w-md mx-auto">
             <button
-              onClick={() => setActiveTab("de")}
+              onClick={() => { setActiveTab("de"); setShowAllDates(false); }}
               className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg border-2 font-semibold text-sm transition-all ${
                 activeTab === "de"
                   ? "border-primary bg-primary/15 text-foreground shadow-md"
@@ -317,7 +318,7 @@ export default function Ausbildung() {
               {isEN ? "Germany" : "Deutschland"}
             </button>
             <button
-              onClick={() => setActiveTab("ch")}
+              onClick={() => { setActiveTab("ch"); setShowAllDates(false); }}
               className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg border-2 font-semibold text-sm transition-all ${
                 activeTab === "ch"
                   ? "border-primary bg-primary/15 text-foreground shadow-md"
@@ -350,7 +351,7 @@ export default function Ausbildung() {
                     <span className="text-2xl font-bold text-[#1B3A5C]">CHF 2.990.-</span>
                   )}
                 </div>
-                {datesCH.map((d, i) => (
+                {(showAllDates ? datesCH : datesCH.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
                   <div key={`ch-${i}`} className="border border-border p-5 bg-white rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
                       <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
@@ -406,7 +407,7 @@ export default function Ausbildung() {
                     <span className="text-2xl font-bold text-[#1B3A5C]">€2.790,-</span>
                   )}
                 </div>
-                {datesDE.map((d, i) => (
+                {(showAllDates ? datesDE : datesDE.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
                   <div key={`de-${i}`} className="border border-border p-5 bg-white rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
                       <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
@@ -441,6 +442,23 @@ export default function Ausbildung() {
               </>
             )}
           </div>
+          {(() => {
+            const totalForTab = activeTab === "ch" ? datesCH.length : datesDE.length;
+            const hidden = totalForTab - INITIAL_DATES_VISIBLE;
+            if (hidden <= 0) return null;
+            return (
+              <div className="text-center mt-5">
+                <button
+                  onClick={() => setShowAllDates((v) => !v)}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#1B3A5C] border border-[#1B3A5C]/25 hover:border-[#1B3A5C]/50 hover:bg-white rounded-full px-5 py-2 transition-all"
+                >
+                  {showAllDates
+                    ? (isEN ? "Show fewer dates" : "Weniger Termine anzeigen")
+                    : (isEN ? `Show all dates (+${hidden})` : `Weitere Termine anzeigen (+${hidden})`)}
+                </button>
+              </div>
+            );
+          })()}
           <p className="text-xs text-muted-foreground text-center mt-4 italic">
             {isEN
               ? "Early Bird pricing available for a limited time or until the current intake is full."
