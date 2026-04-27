@@ -324,9 +324,9 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           .filter(item => !faq.some(f => f.q.toLowerCase().includes("themen") && item.q.toLowerCase().includes("themen") || f.q.toLowerCase().includes("topics") && item.q.toLowerCase().includes("topics")));
         const allFaq = [...faq, ...consultItems];
         return (
-          <section className="bg-white border-y border-border">
+          <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
             <div className="container-main py-10 md:py-12">
-              <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl p-5 md:p-7 lg:p-8">
+              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
                 <h2 className="text-xl font-bold text-primary mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
                 </h2>
