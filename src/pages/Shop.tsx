@@ -273,7 +273,7 @@ export default function Shop() {
       </section>
 
       {/* Upsell to Training */}
-      <section className="py-10 bg-[#f4f3ef] border-t border-border">
+      <section className="py-10 bg-[#F1F4F7] border-t border-[#E2E8EE]">
         <div className="container-main">
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
             <div className="flex-1">

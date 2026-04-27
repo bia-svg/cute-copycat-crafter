@@ -184,7 +184,7 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION 1 — HERO: Why this training exists
           ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#F1F4F7] border-b border-border">
+      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
         <div className="container-main py-6 lg:py-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
@@ -273,7 +273,7 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION — Upcoming Dates with Country Tabs (moved up)
           ═══════════════════════════════════════════════════════════ */}
-      <section id="dates" className="bg-[#F1F4F7] border-b border-border scroll-mt-20">
+      <section id="dates" className="bg-[#F1F4F7] border-b border-[#E2E8EE] scroll-mt-20">
         <div className="container-main py-10 lg:py-14">
           <h2 className="text-2xl font-bold text-[#1B3A5C] mb-2 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
@@ -494,7 +494,7 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           DIPLOMAS — Visual proof of certification (Ihr Abschluss)
           ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#F1F4F7] border-b border-border">
+      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
         <div className="container-main py-6 lg:py-8">
           <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Your Certification" : "Ihr Abschluss"}
@@ -566,7 +566,7 @@ export default function Ausbildung() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-[#F1F4F7] border border-border rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-center min-h-[110px] shadow-sm"
+                className="bg-[#F1F4F7] border border-[#E2E8EE] rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-center min-h-[110px] shadow-sm"
               >
                 <div className="text-2xl md:text-3xl font-bold text-[#1B3A5C] mb-1" style={{ fontFamily: "Georgia, serif" }}>
                   {item.n}

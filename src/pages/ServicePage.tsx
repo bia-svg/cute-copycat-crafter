@@ -261,7 +261,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
 
       {/* Rich Content Sections — preserving all legacy H2s and paragraphs */}
       {sections.map((section, idx) => (
-        <section key={idx} className={`${idx % 2 === 0 ? "bg-[#f4f3ef]" : "bg-white"} border-b border-border`}>
+        <section key={idx} className={`${idx % 2 === 0 ? "bg-[#F1F4F7]" : "bg-white"} border-b border-border`}>
           <div className="container-main py-10">
             <div className={section.image ? "grid md:grid-cols-2 gap-8 items-start" : ""}>
               <div>
@@ -408,7 +408,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       )}
 
       {/* Consultation CTA Row with Inline Form */}
-      <section className="py-10 md:py-16 bg-[#F5F3EF]">
+      <section className="py-10 md:py-16 bg-[#F1F4F7]">
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-lg sm:text-xl font-semibold text-primary mb-3 text-center">

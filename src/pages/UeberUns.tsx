@@ -70,22 +70,22 @@ export default function UeberUns() {
 
               {/* Stats Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-                <div className="border border-border p-4 text-center bg-[#f4f3ef]">
+                <div className="border border-[#E2E8EE] p-4 text-center bg-[#F1F4F7]">
                   <Award className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
                   <p className="text-xl font-bold text-[#1B3A5C]">35+</p>
                   <p className="text-xs text-muted-foreground">{isEN ? "Years Experience" : "Jahre Erfahrung"}</p>
                 </div>
-                <div className="border border-border p-4 text-center bg-[#f4f3ef]">
+                <div className="border border-[#E2E8EE] p-4 text-center bg-[#F1F4F7]">
                   <Users className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
                   <p className="text-xl font-bold text-[#1B3A5C]">30.000+</p>
                   <p className="text-xs text-muted-foreground">{isEN ? "Sessions" : "Sitzungen"}</p>
                 </div>
-                <div className="border border-border p-4 text-center bg-[#f4f3ef]">
+                <div className="border border-[#E2E8EE] p-4 text-center bg-[#F1F4F7]">
                   <Users className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
                   <p className="text-xl font-bold text-[#1B3A5C]">{isEN ? "2,500+" : "2.500+"}</p>
                   <p className="text-xs text-muted-foreground">{isEN ? "Trained Hypnotists" : "ausgebildete Hypnotiseure"}</p>
                 </div>
-                <div className="border border-border p-4 text-center bg-[#f4f3ef]">
+                <div className="border border-[#E2E8EE] p-4 text-center bg-[#F1F4F7]">
                   <Tv className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
                   <p className="text-xl font-bold text-[#1B3A5C]">30+</p>
                   <p className="text-xs text-muted-foreground">{isEN ? "TV & Media Appearances" : "TV- & Medienauftritte"}</p>
@@ -110,7 +110,7 @@ export default function UeberUns() {
             <div>
               <div className="border border-border sticky top-32">
                 <img src={davidPortrait} alt="David J. Woods – Lic.Psych., Hypnotherapeut und NGH International Trainer" className="w-full h-auto object-cover" loading="eager" />
-                <div className="p-4 bg-[#f4f3ef]">
+                <div className="p-4 bg-[#F1F4F7]">
                   <h3 className="font-bold text-[#1B3A5C] mb-1">David J. Woods</h3>
                   <p className="text-xs text-muted-foreground">Lic.Psych. · Hypnotherapeut</p>
                   <p className="text-xs text-muted-foreground">NGH International Trainer</p>
@@ -127,7 +127,7 @@ export default function UeberUns() {
       </section>
 
       {/* Diplomas & Credentials Section — with images */}
-      <section className="bg-[#f4f3ef] border-b border-border">
+      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
         <div className="container-main py-6 md:py-8">
           <h2 className="text-2xl font-bold text-[#1B3A5C] mb-1">
             {isEN ? "Diplomas & Certifications" : "Diplome & Zertifizierungen"}
@@ -277,7 +277,7 @@ export default function UeberUns() {
       </section>
 
       {/* Ein glückliches, bewusstes und freies Leben */}
-      <section className="bg-[#f4f3ef] border-b border-border">
+      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
         <div className="container-main py-10 lg:py-14">
           <p className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32] mb-2">
             {isEN ? "The Goal:" : "Das Ziel:"}
@@ -309,7 +309,7 @@ export default function UeberUns() {
             <div className="mx-auto md:mx-0 w-64 md:w-full">
               <div className="border border-border overflow-hidden rounded-lg">
                 <img src={CDN.kathrynPortrait} alt="Kathryn - Psychologische Beraterin" className="w-full h-auto" />
-                <div className="p-4 bg-[#f4f3ef]">
+                <div className="p-4 bg-[#F1F4F7]">
                   <h3 className="font-bold text-[#1B3A5C] text-sm">Kathryn</h3>
                   <p className="text-xs text-muted-foreground">
                     {isEN ? "Psychological Counselor" : "Psychologische Beraterin"}
@@ -358,7 +358,7 @@ export default function UeberUns() {
                   isEN ? "Master Hypnotist" : "Master-Hypnotiseurin",
                   isEN ? "Homeopathy" : "Homöopathie",
                 ].map((tag) => (
-                  <span key={tag} className="px-3 py-1 bg-[#f4f3ef] text-xs font-medium text-[#55504f] border border-border rounded-full">
+                  <span key={tag} className="px-3 py-1 bg-[#F1F4F7] text-xs font-medium text-[#55504f] border border-[#E2E8EE] rounded-full">
                     {tag}
                   </span>
                 ))}
