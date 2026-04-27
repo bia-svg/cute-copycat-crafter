@@ -67,34 +67,57 @@ export default function StressPraevention() {
         </div>
       </section>
 
-      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
-        <div className="container-main py-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">
-                {isEN ? "External Causes of Burnout:" : "Äußere Umstände als Ursache für Burnout:"}
-              </h2>
-              <ul className="space-y-2">
-                {outerCauses.map((c) => (
-                  <li key={c} className="flex items-start gap-2 text-sm">
-                    <span className="text-[#1B3A5C] mt-1">•</span>
-                    <span>{c}</span>
-                  </li>
-                ))}
-              </ul>
+      <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+        <div className="container-main py-10 md:py-12">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">
+                  {isEN ? "External Causes of Burnout" : "Äußere Umstände als Ursache für Burnout"}
+                </h2>
+                <ul className="space-y-2">
+                  {outerCauses.map((c) => (
+                    <li key={c} className="flex items-start gap-2 text-sm bg-white border border-[#E2E8EE] rounded-xl p-2.5">
+                      <span className="text-[#1B3A5C] mt-1">•</span>
+                      <span>{c}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">
+                  {isEN ? "Internal Causes of Burnout" : "Innere Umstände als Ursache für Burnout"}
+                </h2>
+                <ul className="space-y-2">
+                  {innerCauses.map((c) => (
+                    <li key={c} className="flex items-start gap-2 text-sm bg-white border border-[#E2E8EE] rounded-xl p-2.5">
+                      <span className="text-[#1B3A5C] mt-1">•</span>
+                      <span>{c}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div>
-              <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">
-                {isEN ? "Internal Causes of Burnout:" : "Innere Umstände als Ursache für Burnout:"}
-              </h2>
-              <ul className="space-y-2">
-                {innerCauses.map((c) => (
-                  <li key={c} className="flex items-start gap-2 text-sm">
-                    <span className="text-[#1B3A5C] mt-1">•</span>
-                    <span>{c}</span>
-                  </li>
-                ))}
-              </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white border-y border-border">
+        <div className="container-main py-10 md:py-12">
+          <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl p-5 md:p-7 lg:p-8">
+            <h2 className="text-xl font-bold text-[#1B3A5C] mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "The 12 Phases of Burnout Development" : "Die 12 Phasen der Burnout-Entwicklung"}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {phases.map((p) => (
+                <div key={p.phase} className="border border-[#E2E8EE] p-3 bg-white rounded-2xl shadow-[0_1px_3px_rgba(27,58,92,0.04)]">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center font-bold">{p.phase}</span>
+                    <h3 className="font-semibold text-xs text-[#1B3A5C]">{p.title}</h3>
+                  </div>
+                  <p className="text-xs text-muted-foreground italic">&bdquo;{p.quote}&ldquo;</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
