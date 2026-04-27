@@ -38,7 +38,7 @@ export default function FAQSection({ title, items }: FAQSectionProps) {
         <Accordion
           type="single"
           collapsible
-          className="max-w-2xl mx-auto space-y-2.5"
+          className="max-w-2xl md:max-w-4xl lg:max-w-5xl mx-auto space-y-2.5"
         >
           {items.map((item, i) => (
             <AccordionItem
