@@ -440,8 +440,9 @@ export default function Ausbildung() {
               </div>
             );
           })()}
+          </div>
           <div className="max-w-2xl mx-auto mt-5">
-            <p className="text-xs md:text-sm text-[#1B3A5C]/80 text-center bg-[#F1F4F7] border border-[#D9DFE6] rounded-full px-4 py-2">
+            <p className="text-xs md:text-sm text-[#1B3A5C]/80 text-center bg-white border border-[#D9DFE6] rounded-full px-4 py-2">
               <span className="font-semibold text-[#2E7D32]">{isEN ? "Early Bird:" : "Frühbucherpreis:"}</span>{" "}
               {isEN
                 ? "available for a limited time or until the current intake is full."
