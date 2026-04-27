@@ -288,7 +288,7 @@ export default function Ausbildung() {
           <div className="flex justify-center gap-3 mb-8 max-w-md mx-auto">
             <button
               onClick={() => { setActiveTab("de"); setShowAllDates(false); }}
-              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg border-2 font-semibold text-sm transition-all ${
+              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl border-2 font-semibold text-sm transition-all ${
                 activeTab === "de"
                   ? "border-primary bg-primary/15 text-foreground shadow-md"
                   : "border-border bg-white text-foreground hover:border-primary/40"
@@ -299,7 +299,7 @@ export default function Ausbildung() {
             </button>
             <button
               onClick={() => { setActiveTab("ch"); setShowAllDates(false); }}
-              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg border-2 font-semibold text-sm transition-all ${
+              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl border-2 font-semibold text-sm transition-all ${
                 activeTab === "ch"
                   ? "border-primary bg-primary/15 text-foreground shadow-md"
                   : "border-border bg-white text-foreground hover:border-primary/40"
