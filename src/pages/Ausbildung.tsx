@@ -334,7 +334,7 @@ export default function Ausbildung() {
                   )}
                 </div>
                 {(showAllDates ? datesCH : datesCH.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
-                  <div key={`ch-${i}`} className="border border-border p-5 bg-white rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <div key={`ch-${i}`} className="border border-[#1B3A5C]/12 p-5 bg-white rounded-2xl shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
                       <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
                         <Calendar className="w-4 h-4" /> {d.date}
@@ -392,7 +392,7 @@ export default function Ausbildung() {
                   )}
                 </div>
                 {(showAllDates ? datesDE : datesDE.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
-                  <div key={`de-${i}`} className="border border-border p-5 bg-white rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <div key={`de-${i}`} className="border border-[#1B3A5C]/12 p-5 bg-white rounded-2xl shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
                       <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
                         <Calendar className="w-4 h-4" /> {d.date}
