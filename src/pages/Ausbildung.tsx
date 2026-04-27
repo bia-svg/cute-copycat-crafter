@@ -184,7 +184,7 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION 1 — HERO: Why this training exists
           ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
+      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-6 lg:py-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
@@ -229,7 +229,7 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION 2 — What makes this different
           ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
+      <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
         <div className="container-main py-6 lg:py-10">
           <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "What Makes This Training Different" : "Was diese Ausbildung besonders macht"}
@@ -239,7 +239,7 @@ export default function Ausbildung() {
               ? "Not a mass-market course. Not a certificate mill. A serious premium training with real depth, built on 30,000+ clinical sessions."
               : "Kein Massenkurs. Keine Zertifikatsfabrik. Eine seriöse Premium-Ausbildung mit echter Tiefe, aufgebaut auf 30.000+ klinischen Sitzungen."}
           </p>
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               { icon: <Shield className="w-6 h-6 text-[#1B3A5C]" />, titleDE: "35+ Jahre klinische Praxis", titleEN: "35+ Years of Clinical Practice", textDE: "Jede gelehrte Technik wurde in Tausenden realer klinischer Sitzungen getestet und verfeinert. Eine methodenbasierte Expertenausbildung.", textEN: "Every technique taught has been tested and refined in thousands of real clinical sessions. This is method-based expert training." },
@@ -275,7 +275,7 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION — Upcoming Dates with Country Tabs (moved up)
           ═══════════════════════════════════════════════════════════ */}
-      <section id="dates" className="bg-[#F1F4F7] border-b border-[#E2E8EE] scroll-mt-20">
+      <section id="dates" className="bg-[#E8EDF3] border-b border-[#D8E0EA] scroll-mt-20">
         <div className="container-main py-10 lg:py-14">
           <h2 className="text-2xl font-bold text-[#1B3A5C] mb-2 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
@@ -286,7 +286,7 @@ export default function Ausbildung() {
               : "Wählen Sie Ihr bevorzugtes Land und Seminar-Datum, dann füllen Sie Ihre Daten aus. Wir bestätigen Ihren Platz innerhalb von 24 Stunden."}
           </p>
 
-          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
           {/* Country Tabs */}
           <div className="flex justify-center gap-3 mb-8 max-w-md mx-auto">
             <button
@@ -324,7 +324,7 @@ export default function Ausbildung() {
                     <div className="flex items-center justify-center gap-3 flex-wrap">
                       <span className="text-xs text-muted-foreground/70 line-through">CHF 2.990.-</span>
                       <span className="text-2xl font-bold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>CHF 2.690.-</span>
-                      <span className="inline-flex items-center gap-1.5 text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#D9DFE6] px-2.5 py-0.5 rounded-full">
+                      <span className="inline-flex items-center gap-1.5 text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F8FAFC] border border-[#D9DFE6] px-2.5 py-0.5 rounded-full">
                         <span className="w-1 h-1 rounded-full bg-[#2E7D32]" />
                         {isEN ? "Early Bird" : "Frühbucherpreis"}
                       </span>
@@ -379,7 +379,7 @@ export default function Ausbildung() {
                     <div className="flex items-center justify-center gap-3 flex-wrap">
                       <span className="text-xs text-muted-foreground/70 line-through">€2.790,-</span>
                       <span className="text-2xl font-bold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>€2.490,-</span>
-                      <span className="inline-flex items-center gap-1.5 text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#D9DFE6] px-2.5 py-0.5 rounded-full">
+                      <span className="inline-flex items-center gap-1.5 text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#E8EDF3] border border-[#D9DFE6] px-2.5 py-0.5 rounded-full">
                         <span className="w-1 h-1 rounded-full bg-[#2E7D32]" />
                         {isEN ? "Early Bird" : "Frühbucherpreis"}
                       </span>
@@ -455,7 +455,7 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION — Day-by-Day Curriculum
           ═══════════════════════════════════════════════════════════ */}
-      <section id="curriculum" className="bg-[#F1F4F7] border-b border-[#E2E8EE] scroll-mt-20">
+      <section id="curriculum" className="bg-[#F8FAFC] border-b border-[#E8EDF3] scroll-mt-20">
         <div className="container-main py-8 lg:py-12">
           <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Your 6-Day Journey" : "Ihre 6-Tage Reise"}
@@ -465,7 +465,7 @@ export default function Ausbildung() {
               ? "Each day builds on the previous, taking you from fundamentals to advanced clinical techniques."
               : "Jeder Tag baut auf dem vorherigen auf und führt Sie von den Grundlagen zu fortgeschrittenen klinischen Techniken."}
           </p>
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {days.map((day) => (
                 <div key={day.day} className="bg-white border border-[#1B3A5C]/12 rounded-2xl p-4 md:p-5 shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_16px_rgba(27,58,92,0.09)] hover:border-[#1B3A5C]/25 transition-all">
@@ -500,7 +500,7 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           DIPLOMAS — Visual proof of certification (Ihr Abschluss)
           ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
+      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-6 lg:py-8">
           <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Your Certification" : "Ihr Abschluss"}
@@ -510,9 +510,9 @@ export default function Ausbildung() {
               ? "Upon completion, you receive internationally recognized diplomas."
               : "Nach Abschluss erhalten Sie international anerkannte Diplome."}
           </p>
-          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
             <div className="grid sm:grid-cols-2 gap-5 md:gap-6">
-              <div className="flex flex-col items-center text-center bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 shadow-[0_2px_10px_rgba(27,58,92,0.04)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all">
+              <div className="flex flex-col items-center text-center bg-white border border-[#E8EDF3] rounded-2xl p-5 md:p-6 shadow-[0_2px_10px_rgba(27,58,92,0.04)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all">
                 <div className="border border-[#1B3A5C]/10 rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06)] mb-3 max-w-[200px] md:max-w-[260px] bg-white">
                   <ImageLightbox src={diplomNGH} alt="NGH Certified Instructor — David Woods" className="w-full h-auto" />
                 </div>
@@ -528,7 +528,7 @@ export default function Ausbildung() {
                     : "Dieses Zertifikat belegt, dass David J. Woods ein zertifizierter Hypnose-Instructor ist, akkreditiert durch die National Guild of Hypnotists (NGH) — die weltweit grösste und angesehenste Hypnose-Organisation."}
                 </p>
               </div>
-              <div className="flex flex-col items-center text-center bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 shadow-[0_2px_10px_rgba(27,58,92,0.04)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all">
+              <div className="flex flex-col items-center text-center bg-white border border-[#E8EDF3] rounded-2xl p-5 md:p-6 shadow-[0_2px_10px_rgba(27,58,92,0.04)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all">
                 <div className="border border-[#1B3A5C]/10 rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06)] mb-3 max-w-[200px] md:max-w-[260px] bg-white">
                   <ImageLightbox src={diplomAktivHypnose} alt="Diplom — Therapeut in Aktiv-Hypnose" className="w-full h-auto" />
                 </div>
@@ -552,7 +552,7 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           INCLUDED — Alles, was Sie erhalten
           ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
+      <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
         <div className="container-main py-10 lg:py-14">
           <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-2 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Everything You Receive" : "Alles, was Sie erhalten"}
@@ -563,7 +563,7 @@ export default function Ausbildung() {
               : "Ein vollständiges Paket aus Materialien, Zertifizierung und laufender Begleitung."}
           </p>
 
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
               {[
                 { n: "350+", l: isEN ? "Pages of training manual" : "Seiten Ausbildungsmappe" },
@@ -575,7 +575,7 @@ export default function Ausbildung() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="bg-white border border-[#E2E8EE] rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-center min-h-[110px] shadow-[0_2px_8px_rgba(27,58,92,0.04)]"
+                  className="bg-white border border-[#E8EDF3] rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-center min-h-[110px] shadow-[0_2px_8px_rgba(27,58,92,0.04)]"
                 >
                   <div className="text-2xl md:text-3xl font-bold text-[#1B3A5C] mb-1" style={{ fontFamily: "Georgia, serif" }}>
                     {item.n}

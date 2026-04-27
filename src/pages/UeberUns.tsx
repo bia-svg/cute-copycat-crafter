@@ -48,7 +48,7 @@ export default function UeberUns() {
       </section>
 
       {/* Main Bio Section */}
-      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
+      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-8 lg:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
@@ -70,22 +70,22 @@ export default function UeberUns() {
 
               {/* Stats Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-                <div className="border border-[#E2E8EE] p-4 text-center bg-[#F1F4F7]">
+                <div className="border border-[#E8EDF3] p-4 text-center bg-[#F8FAFC]">
                   <Award className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
                   <p className="text-xl font-bold text-[#1B3A5C]">35+</p>
                   <p className="text-xs text-muted-foreground">{isEN ? "Years Experience" : "Jahre Erfahrung"}</p>
                 </div>
-                <div className="border border-[#E2E8EE] p-4 text-center bg-[#F1F4F7]">
+                <div className="border border-[#D8E0EA] p-4 text-center bg-[#E8EDF3]">
                   <Users className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
                   <p className="text-xl font-bold text-[#1B3A5C]">30.000+</p>
                   <p className="text-xs text-muted-foreground">{isEN ? "Sessions" : "Sitzungen"}</p>
                 </div>
-                <div className="border border-[#E2E8EE] p-4 text-center bg-[#F1F4F7]">
+                <div className="border border-[#E8EDF3] p-4 text-center bg-[#F8FAFC]">
                   <Users className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
                   <p className="text-xl font-bold text-[#1B3A5C]">{isEN ? "2,500+" : "2.500+"}</p>
                   <p className="text-xs text-muted-foreground">{isEN ? "Trained Hypnotists" : "ausgebildete Hypnotiseure"}</p>
                 </div>
-                <div className="border border-[#E2E8EE] p-4 text-center bg-[#F1F4F7]">
+                <div className="border border-[#D8E0EA] p-4 text-center bg-[#E8EDF3]">
                   <Tv className="w-6 h-6 text-[#1B3A5C] mx-auto mb-2" />
                   <p className="text-xl font-bold text-[#1B3A5C]">30+</p>
                   <p className="text-xs text-muted-foreground">{isEN ? "TV & Media Appearances" : "TV- & Medienauftritte"}</p>
@@ -110,7 +110,7 @@ export default function UeberUns() {
             <div>
               <div className="border border-border sticky top-32">
                 <img src={davidPortrait} alt="David J. Woods – Lic.Psych., Hypnotherapeut und NGH International Trainer" className="w-full h-auto object-cover" loading="eager" />
-                <div className="p-4 bg-[#F1F4F7]">
+                <div className="p-4 bg-[#F8FAFC]">
                   <h3 className="font-bold text-[#1B3A5C] mb-1">David J. Woods</h3>
                   <p className="text-xs text-muted-foreground">Lic.Psych. · Hypnotherapeut</p>
                   <p className="text-xs text-muted-foreground">NGH International Trainer</p>
@@ -127,9 +127,9 @@ export default function UeberUns() {
       </section>
 
       {/* Diplomas & Credentials Section — with images */}
-      <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+      <section className="bg-[#E8EDF3] border-y border-[#D8E0EA]">
         <div className="container-main py-8 md:py-10">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
             <h2 className="text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Diplomas & Certifications" : "Diplome & Zertifizierungen"}
             </h2>
@@ -142,7 +142,7 @@ export default function UeberUns() {
             {/* Credential Cards with Badge Images */}
             <div className="grid grid-cols-3 lg:grid-cols-3 gap-2 md:gap-3 mb-6">
               {/* NGH */}
-              <div className="bg-white border border-[#E2E8EE] p-2.5 md:p-4 rounded-2xl shadow-[0_1px_3px_rgba(27,58,92,0.04)] text-center">
+              <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-4 rounded-2xl shadow-[0_1px_3px_rgba(27,58,92,0.04)] text-center">
                 <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat" className="h-9 md:h-14 mx-auto mb-1.5 md:mb-2" loading="lazy" />
                 <h3 className="font-semibold text-[10px] md:text-sm text-[#1B3A5C] mb-0.5 md:mb-1">NGH International Trainer</h3>
                 <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
@@ -153,7 +153,7 @@ export default function UeberUns() {
               </div>
 
               {/* EMR */}
-              <div className="bg-white border border-[#E2E8EE] p-2.5 md:p-4 rounded-2xl shadow-[0_1px_3px_rgba(27,58,92,0.04)] text-center">
+              <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-4 rounded-2xl shadow-[0_1px_3px_rgba(27,58,92,0.04)] text-center">
                 <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge" className="h-9 md:h-14 mx-auto mb-1.5 md:mb-2" loading="lazy" />
                 <h3 className="font-semibold text-[10px] md:text-sm text-[#1B3A5C] mb-0.5 md:mb-1">EMR Krankenkasse Konform</h3>
                 <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
@@ -162,7 +162,7 @@ export default function UeberUns() {
               </div>
 
               {/* Lic.Psych */}
-              <div className="bg-white border border-[#E2E8EE] p-2.5 md:p-4 rounded-2xl shadow-[0_1px_3px_rgba(27,58,92,0.04)] text-center">
+              <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-4 rounded-2xl shadow-[0_1px_3px_rgba(27,58,92,0.04)] text-center">
                 <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-12 md:h-16 w-12 md:w-16 object-contain mx-auto mb-1.5 md:mb-2" loading="lazy" width={512} height={512} />
                 <h3 className="font-semibold text-[10px] md:text-sm text-[#1B3A5C] mb-0.5 md:mb-1">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
                 <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
@@ -173,7 +173,7 @@ export default function UeberUns() {
               </div>
 
               {/* Aktiv-Hypnose Developer */}
-              <div className="bg-white border border-[#E2E8EE] p-2.5 md:p-4 rounded-2xl shadow-[0_1px_3px_rgba(27,58,92,0.04)] text-center">
+              <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-4 rounded-2xl shadow-[0_1px_3px_rgba(27,58,92,0.04)] text-center">
                 <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-7 md:h-12 mx-auto mb-1.5 md:mb-2" loading="lazy" />
                 <h3 className="font-semibold text-[10px] md:text-sm text-[#1B3A5C] mb-0.5 md:mb-1">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
                 <p className="text-[0.65rem] md:text-xs text-muted-foreground leading-relaxed hidden md:block">
@@ -184,7 +184,7 @@ export default function UeberUns() {
               </div>
 
               {/* Author */}
-              <Link to={getPath("book", language, country)} className="bg-white border border-[#E2E8EE] p-2.5 md:p-4 rounded-2xl shadow-[0_1px_3px_rgba(27,58,92,0.04)] text-center hover:shadow-md transition-shadow group">
+              <Link to={getPath("book", language, country)} className="bg-white border border-[#E8EDF3] p-2.5 md:p-4 rounded-2xl shadow-[0_1px_3px_rgba(27,58,92,0.04)] text-center hover:shadow-md transition-shadow group">
                 <div className="w-9 h-9 md:w-14 md:h-14 bg-[#2E7D32] flex items-center justify-center mx-auto mb-1.5 md:mb-2 rounded-xl">
                   <BookOpen className="w-4 h-4 md:w-7 md:h-7 text-white" />
                 </div>
@@ -197,7 +197,7 @@ export default function UeberUns() {
               </Link>
 
               {/* TV Expert */}
-              <Link to={getPath("media", language, country)} className="bg-white border border-[#E2E8EE] p-2.5 md:p-4 rounded-2xl shadow-[0_1px_3px_rgba(27,58,92,0.04)] text-center hover:shadow-md transition-shadow group">
+              <Link to={getPath("media", language, country)} className="bg-white border border-[#E8EDF3] p-2.5 md:p-4 rounded-2xl shadow-[0_1px_3px_rgba(27,58,92,0.04)] text-center hover:shadow-md transition-shadow group">
                 <div className="w-9 h-9 md:w-14 md:h-14 bg-[#1B3A5C] flex items-center justify-center mx-auto mb-1.5 md:mb-2 rounded-xl">
                   <Tv className="w-4 h-4 md:w-7 md:h-7 text-white" />
                 </div>
@@ -215,7 +215,7 @@ export default function UeberUns() {
               <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4 text-center">
                 {isEN ? "As Seen On" : "Bekannt aus"}
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-2xl p-4">
+              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 bg-[#F8FAFC]/70 border border-[#E8EDF3] rounded-2xl p-4">
                 {CDN.bekanntAus.map((src, i) => (
                   <img key={i} src={src} alt={`David J. Woods bekannt aus TV und Medien – Logo ${i + 1}`} className="h-8 sm:h-10 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all mix-blend-multiply" loading="lazy" />
                 ))}
@@ -226,9 +226,9 @@ export default function UeberUns() {
       </section>
 
       {/* Ein kurzer Überblick zu David J. Woods */}
-      <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+      <section className="bg-[#E8EDF3] border-y border-[#D8E0EA]">
         <div className="container-main py-10 md:py-12">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
             <h2 className="text-2xl font-bold text-[#1B3A5C] mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "A Brief Overview of David J. Woods" : "Ein kurzer Überblick zu David J. Woods"}
             </h2>
@@ -281,9 +281,9 @@ export default function UeberUns() {
       </section>
 
       {/* Ein glückliches, bewusstes und freies Leben */}
-      <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+      <section className="bg-[#F8FAFC] border-y border-[#E8EDF3]">
         <div className="container-main py-10 md:py-12">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
             <p className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32] mb-2 text-center">
               {isEN ? "The Goal" : "Das Ziel"}
             </p>
@@ -300,7 +300,7 @@ export default function UeberUns() {
                 <ImageLightbox
                   src={diplomNGHCertified}
                   alt="NGH Certified Instructor — David Woods"
-                  className="w-full h-auto border border-[#E2E8EE] rounded-2xl"
+                  className="w-full h-auto border border-[#E8EDF3] rounded-2xl"
                 />
               </div>
             </div>
@@ -309,12 +309,12 @@ export default function UeberUns() {
       </section>
 
       {/* Kathryn Section */}
-      <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+      <section className="bg-[#E8EDF3] border-y border-[#D8E0EA]">
         <div className="container-main py-10 md:py-12">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
             <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-7 items-start">
               <div className="mx-auto md:mx-0 w-60 md:w-full">
-                <div className="border border-[#E2E8EE] overflow-hidden rounded-2xl bg-white">
+                <div className="border border-[#E8EDF3] overflow-hidden rounded-2xl bg-white">
                   <img src={CDN.kathrynPortrait} alt="Kathryn - Psychologische Beraterin" className="w-full h-auto" />
                   <div className="p-4 bg-white">
                     <h3 className="font-bold text-[#1B3A5C] text-sm">Kathryn</h3>
@@ -365,7 +365,7 @@ export default function UeberUns() {
                     isEN ? "Master Hypnotist" : "Master-Hypnotiseurin",
                     isEN ? "Homeopathy" : "Homöopathie",
                   ].map((tag) => (
-                    <span key={tag} className="px-3 py-1 bg-white text-xs font-medium text-[#55504f] border border-[#E2E8EE] rounded-full">
+                    <span key={tag} className="px-3 py-1 bg-white text-xs font-medium text-[#55504f] border border-[#E8EDF3] rounded-full">
                       {tag}
                     </span>
                   ))}
@@ -382,9 +382,9 @@ export default function UeberUns() {
       </section>
 
       {/* Evidence & Methodology */}
-      <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+      <section className="bg-[#F8FAFC] border-y border-[#E8EDF3]">
         <div className="container-main py-10 md:py-12">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
             <h2 className="text-xl font-bold text-primary mb-4 text-center" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Scientific Foundation & Methodology" : "Wissenschaftliche Grundlage & Methodik"}
             </h2>

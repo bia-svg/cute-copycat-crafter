@@ -76,7 +76,7 @@ export default function FirmenCoaching() {
         { name: isEN ? "Business Coaching" : "Firmen-Coaching", path: getPath("corporate", language, country) },
       ]} />
 
-      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
+      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-8 lg:py-12">
           <p className="text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
             {isEN ? "For Companies & Organizations" : "Für Firmen & Organisationen"}
@@ -92,9 +92,9 @@ export default function FirmenCoaching() {
         </div>
       </section>
 
-      <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+      <section className="bg-[#F8FAFC] border-y border-[#E8EDF3]">
         <div className="container-main py-10 md:py-12">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
             <h2 className="text-xl font-bold text-[#1B3A5C] mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Topics for Your Company" : "Themen für Ihr Unternehmen"}
             </h2>
@@ -114,15 +114,15 @@ export default function FirmenCoaching() {
         </div>
       </section>
 
-      <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+      <section className="bg-[#E8EDF3] border-y border-[#D8E0EA]">
         <div className="container-main py-10 md:py-12">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
             <h2 className="text-xl font-bold text-[#1B3A5C] mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Why Leadership & Performance Coaching is valuable" : "Warum Leadership & Performance Coaching wertvoll ist"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {benefits.map((item) => (
-                <div key={item} className="flex items-start gap-2 text-sm bg-white border border-[#E2E8EE] rounded-xl p-3">
+                <div key={item} className="flex items-start gap-2 text-sm bg-white border border-[#E8EDF3] rounded-xl p-3">
                   <span className="text-[#2E7D32] mt-0.5">•</span>
                   <span>{item}</span>
                 </div>
@@ -138,9 +138,9 @@ export default function FirmenCoaching() {
       </section>
 
       {/* Evidence-Based Section */}
-      <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+      <section className="bg-[#F8FAFC] border-y border-[#E8EDF3]">
         <div className="container-main py-10 md:py-12">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
             <h2 className="text-xl font-bold text-primary mb-4 text-center" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Science-Backed Approach" : "Wissenschaftlich fundierter Ansatz"}
             </h2>

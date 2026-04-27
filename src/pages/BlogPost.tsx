@@ -111,7 +111,7 @@ export default function BlogPost() {
           </div>
 
           {/* Author Box */}
-          <div className="mt-12 p-6 bg-[#F1F4F7] border border-[#E2E8EE] flex gap-5 items-start">
+          <div className="mt-12 p-6 bg-[#E8EDF3] border border-[#D8E0EA] flex gap-5 items-start">
             <img src={davidPortrait} alt="David J. Woods – Lic.Psych., Hypnotherapeut und Autor" className="w-20 h-20 object-cover rounded-full flex-shrink-0" loading="lazy" />
             <div>
               <p className="font-bold text-[#1B3A5C]">David J. Woods</p>
@@ -141,7 +141,7 @@ export default function BlogPost() {
       </article>
 
       {/* Related Posts */}
-      <section className="py-12 bg-[#F1F4F7] border-t border-[#E2E8EE]">
+      <section className="py-12 bg-[#F8FAFC] border-t border-[#E8EDF3]">
         <div className="container-main">
           <h2 className="text-2xl font-bold text-[#1B3A5C] mb-8">
             {isDE ? "Weitere Artikel" : "More Articles"}

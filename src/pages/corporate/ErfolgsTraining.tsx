@@ -72,15 +72,15 @@ export default function ErfolgsTraining() {
         </div>
       </section>
 
-      <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
+      <section className="bg-[#E8EDF3] border-y border-[#D8E0EA]">
         <div className="container-main py-10 md:py-12">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
             <h2 className="text-xl font-bold text-[#1B3A5C] mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Results you can expect" : "Diese Resultate können Sie erwarten"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {results.map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm bg-white border border-[#E2E8EE] rounded-xl p-3">
+                <div key={item} className="flex items-center gap-2 text-sm bg-white border border-[#E8EDF3] rounded-xl p-3">
                   <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
                   <span>{item}</span>
                 </div>
