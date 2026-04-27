@@ -94,7 +94,7 @@ export default function UeberUns() {
                     : "Sein Ansatz basiert auf der Überzeugung, dass echte Veränderung im Unterbewusstsein beginnt – ob Raucherentwöhnung, Angstbewältigung, Gewichtsmanagement oder Stressreduktion."}
                 </p>
                 {showCH && (
-                  <div className="mt-4 bg-[#E8F5E9] border border-[#81C784] rounded-xl p-3">
+                  <div className="hidden md:block mt-4 bg-[#E8F5E9] border border-[#81C784] rounded-xl p-3">
                     <p className="text-sm font-semibold text-[#2E7D32]">EMR Krankenkasse Konform · ZSR Nr. P609264</p>
                     <p className="text-xs text-muted-foreground mt-0.5">Viele Schweizer Zusatzversicherungen übernehmen einen Teil der Kosten.</p>
                   </div>
