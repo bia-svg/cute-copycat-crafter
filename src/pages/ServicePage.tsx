@@ -418,9 +418,9 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       )}
 
       {/* Consultation CTA Row with Inline Form */}
-      <section className="py-10 md:py-14 bg-white border-t border-border">
+      <section className="py-10 md:py-14 bg-[#F1F4F7] border-t border-[#E2E8EE]">
         <div className="container-main">
-          <div className="max-w-2xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl p-5 md:p-7 lg:p-8">
+          <div className="max-w-2xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
             <h2 className="text-lg sm:text-xl font-semibold text-primary mb-4 text-center" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Your Request" : "Ihre Anfrage"}
             </h2>
