@@ -41,86 +41,94 @@ export default function StressPraevention() {
         descriptionEN="Stress prevention and burnout prevention for companies. Success training and resilience coaching with David J. Woods."
       />
 
-      <section className="bg-white border-b border-border">
-        <div className="container-main py-8 lg:py-12">
-          <Link to={getPath("corporate", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-4">
+      {/* Hero */}
+      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
+        <div className="container-main py-6 md:py-8 lg:py-10">
+          <Link to={getPath("corporate", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-3">
             <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
           </Link>
+          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+            <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-4">
+              {isEN ? "Stress Prevention by David J. Woods" : "Stress-Prävention by David J. Woods"}
+            </h1>
 
-          <p className="text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-6">
-            {isEN ? "Stress Prevention by David J. Woods" : "Stress-Prävention by David J. Woods"}
-          </h1>
-
-          <div className="prose prose-sm max-w-none text-foreground space-y-4">
-            <p>
-              {isEN
-                ? "Stress prevention is one of the central topics for long-term health and performance – both in personal and professional contexts. For over 20 years, David J. Woods has been supporting people from various fields – from business to professional sports to the music and creative industries – with one goal: sustainable mental strength, inner stability and healthy performance."
-                : "Stressprävention zählt heute zu den zentralen Themen für langfristige Gesundheit und Leistungsfähigkeit – sowohl im persönlichen als auch im beruflichen Kontext. Seit über 20 Jahren begleitet David J. Woods Menschen aus unterschiedlichsten Bereichen – von der Wirtschaft über den Profisport bis hin zur Musik- und Kreativbranche – mit einem Ziel: nachhaltige mentale Stärke, innere Stabilität und gesunde Leistungsbereitschaft."}
-            </p>
-            <p>
-              {isEN
-                ? "Unlike conventional approaches, David J. Woods doesn't focus on short-term stress management, but on forward-looking, profound change. In his success trainings and resilience coachings, stress is not treated in isolation – it is prevented where it originates: in thinking, feeling and acting."
-                : "Anders als klassische Ansätze setzt David J. Woods nicht auf kurzfristige Stressbewältigung, sondern auf vorausschauende, tiefgreifende Veränderung. In seinen Erfolgstrainings und Resilienz-Coachings wird Stress nicht isoliert betrachtet – er wird dort verhindert, wo er entsteht: im Denken, Fühlen und Handeln."}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">
-                {isEN ? "External Causes of Burnout:" : "Äußere Umstände als Ursache für Burnout:"}
-              </h2>
-              <ul className="space-y-2">
-                {outerCauses.map((c) => (
-                  <li key={c} className="flex items-start gap-2 text-sm">
-                    <span className="text-[#1B3A5C] mt-1">•</span>
-                    <span>{c}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">
-                {isEN ? "Internal Causes of Burnout:" : "Innere Umstände als Ursache für Burnout:"}
-              </h2>
-              <ul className="space-y-2">
-                {innerCauses.map((c) => (
-                  <li key={c} className="flex items-start gap-2 text-sm">
-                    <span className="text-[#1B3A5C] mt-1">•</span>
-                    <span>{c}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="prose prose-sm max-w-none text-foreground/85 space-y-3">
+              <p>
+                {isEN
+                  ? "Stress prevention is one of the central topics for long-term health and performance – both in personal and professional contexts. For over 20 years, David J. Woods has been supporting people from various fields – from business to professional sports to the music and creative industries – with one goal: sustainable mental strength, inner stability and healthy performance."
+                  : "Stressprävention zählt heute zu den zentralen Themen für langfristige Gesundheit und Leistungsfähigkeit – sowohl im persönlichen als auch im beruflichen Kontext. Seit über 20 Jahren begleitet David J. Woods Menschen aus unterschiedlichsten Bereichen – von der Wirtschaft über den Profisport bis hin zur Musik- und Kreativbranche – mit einem Ziel: nachhaltige mentale Stärke, innere Stabilität und gesunde Leistungsbereitschaft."}
+              </p>
+              <p>
+                {isEN
+                  ? "Unlike conventional approaches, David J. Woods doesn't focus on short-term stress management, but on forward-looking, profound change. In his success trainings and resilience coachings, stress is not treated in isolation – it is prevented where it originates: in thinking, feeling and acting."
+                  : "Anders als klassische Ansätze setzt David J. Woods nicht auf kurzfristige Stressbewältigung, sondern auf vorausschauende, tiefgreifende Veränderung. In seinen Erfolgstrainings und Resilienz-Coachings wird Stress nicht isoliert betrachtet – er wird dort verhindert, wo er entsteht: im Denken, Fühlen und Handeln."}
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white border-b border-border">
-        <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
-            {isEN ? "The 12 Phases of Burnout Development" : "Die 12 Phasen der Burnout-Entwicklung"}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {phases.map((p) => (
-              <div key={p.phase} className="border border-border p-3 bg-[#f4f3ef]">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center font-bold">{p.phase}</span>
-                  <h3 className="font-semibold text-xs text-[#1B3A5C]">{p.title}</h3>
-                </div>
-                <p className="text-xs text-muted-foreground italic">&bdquo;{p.quote}&ldquo;</p>
+      {/* Causes — Banner */}
+      <section className="bg-[#F8FAFC]">
+        <div className="container-main py-6 md:py-9">
+          <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              <div>
+                <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">
+                  {isEN ? "External Causes of Burnout:" : "Äußere Umstände als Ursache für Burnout:"}
+                </h2>
+                <ul className="space-y-2">
+                  {outerCauses.map((c) => (
+                    <li key={c} className="flex items-start gap-2 text-sm">
+                      <span className="text-[#1B3A5C] mt-1">•</span>
+                      <span>{c}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
+              <div>
+                <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">
+                  {isEN ? "Internal Causes of Burnout:" : "Innere Umstände als Ursache für Burnout:"}
+                </h2>
+                <ul className="space-y-2">
+                  {innerCauses.map((c) => (
+                    <li key={c} className="flex items-start gap-2 text-sm">
+                      <span className="text-[#1B3A5C] mt-1">•</span>
+                      <span>{c}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-background">
-        <div className="container-main py-10 flex justify-center">
+      {/* Phases — Banner */}
+      <section className="bg-[#E8EDF3]">
+        <div className="container-main py-6 md:py-9">
+          <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+            <h2 className="text-xl font-bold text-[#1B3A5C] mb-5">
+              {isEN ? "The 12 Phases of Burnout Development" : "Die 12 Phasen der Burnout-Entwicklung"}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {phases.map((p) => (
+                <div key={p.phase} className="bg-white border border-[#E8EDF3] rounded-2xl p-3 shadow-[0_1px_2px_rgba(27,58,92,0.04)]">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center font-bold">{p.phase}</span>
+                    <h3 className="font-semibold text-xs text-[#1B3A5C]">{p.title}</h3>
+                  </div>
+                  <p className="text-xs text-muted-foreground italic">&bdquo;{p.quote}&ldquo;</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#F8FAFC]">
+        <div className="container-main py-8 md:py-10 flex justify-center">
           <div className="relative bg-primary/10 border border-primary/25 rounded-2xl px-8 py-8 text-center max-w-2xl w-full">
             <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full whitespace-nowrap">
               {isEN ? "Next Step" : "N\u00e4chster Schritt"}
