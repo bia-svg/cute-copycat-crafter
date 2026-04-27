@@ -1,9 +1,7 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
-import { Star } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { getPath } from "@/lib/routes";
 
 const trainingTestimonials = [
   {
@@ -30,10 +28,28 @@ const trainingTestimonials = [
     topicDE: "Geschäftsführer & Business Coach",
     topicEN: "CEO & Business Coach",
   },
+  {
+    name: "Sina Wegener",
+    vimeoId: "420060536",
+    topicDE: "Opernsängerin & Gesangslehrerin",
+    topicEN: "Opera Singer & Voice Teacher",
+  },
+  {
+    name: "Nora Lobjanidze",
+    vimeoId: "423800554",
+    topicDE: "Fitness-Model, Moderatorin & Coach",
+    topicEN: "Fitness Model, Presenter & Coach",
+  },
+  {
+    name: "Benedikt Hessler",
+    vimeoId: "420047365",
+    topicDE: "Unternehmer & Energie-Branche",
+    topicEN: "Entrepreneur & Energy Sector",
+  },
 ];
 
 export default function TrainingTestimonialsCarousel() {
-  const { language, country } = useLanguage();
+  const { language } = useLanguage();
   const isEN = language === "en";
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
@@ -60,8 +76,8 @@ export default function TrainingTestimonialsCarousel() {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <Carousel setApi={setApi} opts={{ loop: true, align: "start" }} className="relative">
+        <div className="max-w-3xl mx-auto relative">
+          <Carousel setApi={setApi} opts={{ loop: true, align: "start", startIndex: 0 }} className="relative">
             <CarouselContent>
               {trainingTestimonials.map((t, i) => (
                 <CarouselItem key={i}>
@@ -94,12 +110,42 @@ export default function TrainingTestimonialsCarousel() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-4 lg:-left-12" />
-            <CarouselNext className="hidden md:flex -right-4 lg:-right-12" />
+
+            {/* Desktop arrows: large, prominent, outside the card */}
+            <CarouselPrevious
+              aria-label={isEN ? "Previous testimonial" : "Vorheriges Video"}
+              className="hidden md:flex h-12 w-12 -left-6 lg:-left-16 bg-white shadow-lg border-[#1B3A5C]/20 text-[#1B3A5C] hover:bg-[#1B3A5C] hover:text-white hover:border-[#1B3A5C] transition-colors"
+            >
+              <ChevronLeft className="!h-6 !w-6" />
+            </CarouselPrevious>
+            <CarouselNext
+              aria-label={isEN ? "Next testimonial" : "Nächstes Video"}
+              className="hidden md:flex h-12 w-12 -right-6 lg:-right-16 bg-white shadow-lg border-[#1B3A5C]/20 text-[#1B3A5C] hover:bg-[#1B3A5C] hover:text-white hover:border-[#1B3A5C] transition-colors"
+            >
+              <ChevronRight className="!h-6 !w-6" />
+            </CarouselNext>
+
+            {/* Mobile arrows: visible, overlayed on the video edges */}
+            <button
+              type="button"
+              onClick={() => api?.scrollPrev()}
+              aria-label={isEN ? "Previous testimonial" : "Vorheriges Video"}
+              className="md:hidden absolute left-2 top-[28%] -translate-y-1/2 z-10 h-10 w-10 rounded-full bg-white/95 shadow-lg border border-[#1B3A5C]/20 text-[#1B3A5C] flex items-center justify-center active:scale-95 transition"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => api?.scrollNext()}
+              aria-label={isEN ? "Next testimonial" : "Nächstes Video"}
+              className="md:hidden absolute right-2 top-[28%] -translate-y-1/2 z-10 h-10 w-10 rounded-full bg-white/95 shadow-lg border border-[#1B3A5C]/20 text-[#1B3A5C] flex items-center justify-center active:scale-95 transition"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
           </Carousel>
 
           {/* Dots */}
-          <div className="flex justify-center gap-2 mt-5">
+          <div className="flex justify-center gap-2 mt-6">
             {trainingTestimonials.map((_, i) => (
               <button
                 key={i}
@@ -112,17 +158,9 @@ export default function TrainingTestimonialsCarousel() {
             ))}
           </div>
 
-          {/* Link to all testimonials */}
-          <div className="text-center mt-7">
-            <Link
-              to={getPath("successStories", language, country)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#1B3A5C] hover:text-[#2E7D32] underline underline-offset-4 decoration-1 transition-colors"
-            >
-              {isEN ? "View more testimonials" : "Weitere Erfahrungsberichte ansehen"}
-              <span aria-hidden="true">→</span>
-            </Link>
+          {/* Counter for clear progress indication */}
+          <div className="text-center mt-3 text-xs text-muted-foreground tabular-nums">
+            {current + 1} / {trainingTestimonials.length}
           </div>
         </div>
       </div>
