@@ -26,7 +26,7 @@ export default function FAQSection({ title, items }: FAQSectionProps) {
   if (!items || items.length === 0) return null;
 
   return (
-    <section className="bg-[#FAF7F2] border-y border-[#EDE7DC]">
+    <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
       <div className="container-main py-9 md:py-12">
         <h2
           className="text-xl md:text-2xl font-bold text-primary mb-5 md:mb-7 text-center"
