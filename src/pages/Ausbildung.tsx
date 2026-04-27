@@ -437,11 +437,14 @@ export default function Ausbildung() {
               </div>
             );
           })()}
-          <p className="text-xs text-muted-foreground text-center mt-4 italic">
-            {isEN
-              ? "Early Bird pricing available for a limited time or until the current intake is full."
-              : "Frühbucher-Preis verfügbar für begrenzte Zeit oder bis die aktuelle Gruppe voll ist."}
-          </p>
+          <div className="max-w-2xl mx-auto mt-5">
+            <p className="text-xs md:text-sm text-[#1B3A5C]/80 text-center bg-[#F1F4F7] border border-[#D9DFE6] rounded-full px-4 py-2">
+              <span className="font-semibold text-[#2E7D32]">{isEN ? "Early Bird:" : "Frühbucherpreis:"}</span>{" "}
+              {isEN
+                ? "available for a limited time or until the current intake is full."
+                : "verfügbar für begrenzte Zeit oder bis die aktuelle Gruppe voll ist."}
+            </p>
+          </div>
         </div>
       </section>
 
