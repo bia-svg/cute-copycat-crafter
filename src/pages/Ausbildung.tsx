@@ -276,18 +276,18 @@ export default function Ausbildung() {
           SECTION — Upcoming Dates with Country Tabs (moved up)
           ═══════════════════════════════════════════════════════════ */}
       <section id="dates" className="bg-[#f4f3ef] border-b border-border scroll-mt-20">
-        <div className="container-main py-10 lg:py-14">
-          <h2 className="text-2xl font-bold text-[#1B3A5C] mb-2 text-center" style={{ fontFamily: "Georgia, serif" }}>
+        <div className="container-main py-5 md:py-8 lg:py-12">
+          <h2 className="text-lg md:text-2xl font-bold text-[#1B3A5C] mb-1.5 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
           </h2>
-          <p className="text-sm text-muted-foreground text-center mb-6 max-w-xl mx-auto">
+          <p className="text-[12px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-xl mx-auto leading-snug">
             {isEN
               ? "Choose your preferred country and seminar date, then fill in your details. We'll confirm your place within 24 hours."
               : "Wählen Sie Ihr bevorzugtes Land und Seminar-Datum, dann füllen Sie Ihre Daten aus. Wir bestätigen Ihren Platz innerhalb von 24 Stunden."}
           </p>
 
           {/* Country Tabs */}
-          <div className="flex justify-center gap-3 mb-8 max-w-md mx-auto">
+          <div className="flex justify-center gap-2 md:gap-3 mb-4 md:mb-6 max-w-md mx-auto">
             <button
               onClick={() => { setActiveTab("de"); setShowAllDates(false); }}
               className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border font-semibold text-sm transition-all ${
