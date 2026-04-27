@@ -159,7 +159,7 @@ export default function TrainingTestimonialsCarousel() {
           </div>
 
           {/* Counter for clear progress indication */}
-          <div className="text-center mt-3 text-xs text-muted-foreground tabular-nums">
+          <div className="text-center mt-2 text-[11px] md:text-xs text-muted-foreground tabular-nums">
             {current + 1} / {trainingTestimonials.length}
           </div>
         </div>
