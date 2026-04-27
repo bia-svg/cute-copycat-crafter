@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { format, subDays, startOfMonth, endOfMonth, subMonths } from "date-fns";
-import type { DailyTraffic, TopPage, CampaignData, DailyAds, LeadRecord, WhatsAppClick, GSCQuery, GSCTotals, GSCDailyMetric, CampaignPageEntry, CampaignPageFlowEntry } from "@/data/dashboardMockData";
+import type { DailyTraffic, TopPage, CampaignData, DailyAds, LeadRecord, WhatsAppClick, GSCQuery, GSCTotals, GSCDailyMetric, GSCPage, GSCCountrySegment, GSCDeviceSegment, GSCDistribution, SEOSnapshot, CampaignPageEntry, CampaignPageFlowEntry } from "@/data/dashboardMockData";
 
 export interface DateRange {
   label: string;
@@ -62,9 +62,16 @@ export interface DashboardState {
   whatsappClicks: WhatsAppClick[];
   gscQueries: GSCQuery[];
   gscTotals: GSCTotals | null;
+  gscPreviousTotals: GSCTotals | null;
+  gscPreviousPeriod: { startDate: string; endDate: string } | null;
   gscDailyMetrics: GSCDailyMetric[];
+  gscTopPages: GSCPage[];
+  gscByCountry: GSCCountrySegment[];
+  gscByDevice: GSCDeviceSegment[];
+  gscDistribution: GSCDistribution | null;
   gscError: string | null;
   gscLive: boolean;
+  seoSnapshots: SEOSnapshot[];
   campaignPages: CampaignPageEntry[];
   campaignPageFlow: CampaignPageFlowEntry[];
   loading: boolean;
@@ -93,7 +100,14 @@ export function useDashboardData(): DashboardState {
   const [gscLive, setGscLive] = useState(false);
   const [gscQueries, setGscQueries] = useState<GSCQuery[]>([]);
   const [gscTotals, setGscTotals] = useState<GSCTotals | null>(null);
+  const [gscPreviousTotals, setGscPreviousTotals] = useState<GSCTotals | null>(null);
+  const [gscPreviousPeriod, setGscPreviousPeriod] = useState<{ startDate: string; endDate: string } | null>(null);
   const [gscDailyMetrics, setGscDailyMetrics] = useState<GSCDailyMetric[]>([]);
+  const [gscTopPages, setGscTopPages] = useState<GSCPage[]>([]);
+  const [gscByCountry, setGscByCountry] = useState<GSCCountrySegment[]>([]);
+  const [gscByDevice, setGscByDevice] = useState<GSCDeviceSegment[]>([]);
+  const [gscDistribution, setGscDistribution] = useState<GSCDistribution | null>(null);
+  const [seoSnapshots, setSeoSnapshots] = useState<SEOSnapshot[]>([]);
   const [campaignPages, setCampaignPages] = useState<CampaignPageEntry[]>([]);
   const [campaignPageFlow, setCampaignPageFlow] = useState<CampaignPageFlowEntry[]>([]);
 
