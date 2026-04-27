@@ -307,39 +307,22 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         );
       })}
 
-      {/* Testimonials from Google Reviews */}
+      {/* Testimonials from Google Reviews — unified premium banner */}
       {(() => {
         const testimonials = getTestimonialsForService(data.slugEN);
         if (testimonials.length === 0) return null;
-        const isSmoking = data.slugEN === "stop-smoking";
-        if (isSmoking) {
-          return (
-            <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
-              <div className="container-main py-6 md:py-9">
-                <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-                  <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B3A5C] mb-4 text-center">
-                    {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
-                  </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {testimonials.map((t, i) => (
-                      <ServiceTestimonialCard key={i} t={t} isEN={isEN} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
-          );
-        }
         return (
-          <section className="bg-secondary border-b border-border">
-            <div className="container-main py-10">
-              <h2 className="text-xl font-bold text-primary mb-6">
-                {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                {testimonials.map((t, i) => (
-                  <ServiceTestimonialCard key={i} t={t} isEN={isEN} />
-                ))}
+          <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
+            <div className="container-main py-6 md:py-9">
+              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B3A5C] mb-4 text-center">
+                  {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {testimonials.map((t, i) => (
+                    <ServiceTestimonialCard key={i} t={t} isEN={isEN} />
+                  ))}
+                </div>
               </div>
             </div>
           </section>
