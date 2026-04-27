@@ -276,7 +276,7 @@ export default function UeberUns() {
                 <p className="text-xs md:text-sm text-foreground leading-relaxed">
                   {isEN
                     ? "Certified hypnosis trainer of the National Guild of Hypnotists — the world's largest hypnosis association. Trains participants in his proprietary Aktiv-Hypnose© method to become certified 'Therapists in Aktiv-Hypnose©' in Augsburg and near Zurich."
-                    : "Zertifizierter Hypnose-Ausbilder der National Guild of Hypnotists – des weltweit größten Hypnose-Verbands. Bildet Teilnehmer in seiner Aktiv-Hypnose© Methode zu „Therapeuten in Aktiv-Hypnose©" aus – in Augsburg und bei Zürich."}
+                    : `Zertifizierter Hypnose-Ausbilder der National Guild of Hypnotists – des weltweit größten Hypnose-Verbands. Bildet Teilnehmer in seiner Aktiv-Hypnose© Methode zu „Therapeuten in Aktiv-Hypnose©" aus – in Augsburg und bei Zürich.`}
                 </p>
               </div>
             </div>
