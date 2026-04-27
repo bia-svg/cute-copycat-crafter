@@ -268,14 +268,39 @@ export function useDashboardData(): DashboardState {
       if (data?.error) throw new Error(data.error);
       setGscQueries(data.topQueries || []);
       setGscTotals(data.totals || null);
+      setGscPreviousTotals(data.previousTotals || null);
+      setGscPreviousPeriod(data.previousPeriod || null);
       setGscDailyMetrics(data.dailyMetrics || []);
+      setGscTopPages(data.topPages || []);
+      setGscByCountry(data.byCountry || []);
+      setGscByDevice(data.byDevice || []);
+      setGscDistribution(data.distribution || null);
       setGscLive(true);
     } catch (err: any) {
       console.error("GSC fetch failed:", err);
       setGscError(err?.message || "Failed to fetch GSC data");
       setGscQueries([]);
       setGscTotals(null);
+      setGscPreviousTotals(null);
+      setGscPreviousPeriod(null);
       setGscDailyMetrics([]);
+      setGscTopPages([]);
+      setGscByCountry([]);
+      setGscByDevice([]);
+      setGscDistribution(null);
+    }
+
+    // Fetch long-term SEO snapshots (history beyond GSC's 16-month window)
+    try {
+      const { data, error: snapErr } = await supabase
+        .from("seo_snapshots")
+        .select("id, snapshot_date, period_start, period_end, clicks, impressions, ctr, position, keywords_top3, keywords_4_10, keywords_11_20, keywords_21_plus, total_keywords")
+        .order("snapshot_date", { ascending: true });
+      if (snapErr) throw snapErr;
+      setSeoSnapshots((data as SEOSnapshot[]) || []);
+    } catch (err) {
+      console.error("SEO snapshots fetch failed:", err);
+      setSeoSnapshots([]);
     }
 
     setLoading(false);
