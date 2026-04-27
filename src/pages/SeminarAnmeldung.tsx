@@ -250,8 +250,8 @@ export default function SeminarAnmeldung() {
               </h1>
               <p className="text-muted-foreground max-w-lg mx-auto">
                 {isEN
-                  ? "Choose your preferred country and date, then fill in your details. We'll confirm your spot within 24 hours."
-                  : "Wählen Sie Ihr bevorzugtes Land und Datum, dann füllen Sie Ihre Daten aus. Wir bestätigen Ihren Platz innerhalb von 24 Stunden."}
+                  ? "Choose your preferred seminar location and date, then fill in your details. We'll confirm your spot within 24 hours."
+                  : "Wählen Sie Ihren gewünschten Seminarort und Termin, dann füllen Sie Ihre Daten aus. Wir bestätigen Ihren Platz innerhalb von 24 Stunden."}
               </p>
             </div>
 
