@@ -63,13 +63,13 @@ export default function TrainingTestimonialsCarousel() {
   }, [api]);
 
   return (
-    <section className="bg-secondary/40 py-8 md:py-10">
+    <section className="bg-secondary/40 py-5 md:py-9">
       <div className="container-main">
-        <div className="max-w-3xl mx-auto text-center mb-6 md:mb-7">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1B3A5C] mb-3" style={{ fontFamily: "Georgia, serif" }}>
+        <div className="max-w-3xl mx-auto text-center mb-3 md:mb-6">
+          <h2 className="text-lg md:text-3xl font-bold text-[#1B3A5C] mb-1.5 md:mb-3" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "What Our Seminar Participants Say" : "Das sagen unsere Seminarteilnehmer"}
           </h2>
-          <p className="text-base text-muted-foreground">
+          <p className="text-[12px] md:text-base text-muted-foreground leading-snug">
             {isEN
               ? "Real video testimonials from participants of the Aktiv-Hypnose® Training"
               : "Echte Video-Erfahrungsberichte von Teilnehmern der Aktiv-Hypnose® Ausbildung"}
