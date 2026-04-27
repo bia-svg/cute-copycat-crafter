@@ -25,19 +25,21 @@ export default function FAQSection({ title, items }: FAQSectionProps) {
 
   return (
     <section className="bg-white border-b border-border">
-      <div className="container-main py-10">
-        <h2 className="text-xl font-bold text-primary mb-6">{title}</h2>
-        <Accordion type="single" collapsible className="max-w-3xl space-y-2">
+      <div className="container-main py-10 lg:py-14">
+        <h2 className="text-xl md:text-2xl font-bold text-primary mb-6 md:mb-8 text-center" style={{ fontFamily: "Georgia, serif" }}>
+          {title}
+        </h2>
+        <Accordion type="single" collapsible className="max-w-2xl mx-auto space-y-3">
           {items.map((item, i) => (
             <AccordionItem
               key={i}
               value={`faq-${i}`}
-              className="border border-border bg-secondary/30 rounded-md px-4"
+              className="border border-border bg-secondary/30 rounded-lg px-5 md:px-6 shadow-sm"
             >
-              <AccordionTrigger className="text-sm font-semibold text-primary hover:no-underline py-4">
+              <AccordionTrigger className="text-[15px] md:text-base font-semibold text-primary hover:no-underline py-5 md:py-6 text-left">
                 {item.q}
               </AccordionTrigger>
-              <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4">
+              <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5 md:pb-6">
                 {item.a}
               </AccordionContent>
             </AccordionItem>
