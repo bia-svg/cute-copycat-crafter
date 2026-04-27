@@ -1,5 +1,4 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { consultationFaqEN, consultationFaqDE } from "@/data/consultationFAQ";
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
@@ -7,6 +6,7 @@ import { getPath } from "@/lib/routes";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Link } from "react-router-dom";
 import InlineContactForm from "@/components/InlineContactForm";
+import FAQSection from "@/components/FAQSection";
 
 export default function Erstgespraech() {
   const { language, country } = useLanguage();
@@ -22,13 +22,14 @@ export default function Erstgespraech() {
         { name: isEN ? "Free Discovery Call" : "Erstgespräch", path: getPath("contact", language, country) },
       ]} />
 
-      <section className="py-10 lg:py-14 bg-[#F5F3EF]">
+      {/* Form section — silver-grey premium background, white inner card */}
+      <section className="py-8 md:py-12 bg-[#F1F4F7] border-y border-[#E2E8EE]">
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2 text-center">
+            <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-4 text-center">
               {isEN ? "Get More Information" : "Mehr Informationen erhalten"}
             </h1>
-            <div className="bg-white rounded-lg border border-border/40 p-4 sm:p-6 shadow-[0_4px_20px_-6px_rgba(27,58,92,0.12)]">
+            <div className="bg-white rounded-2xl border border-[#E2E8EE] p-4 sm:p-6 shadow-[0_4px_20px_-6px_rgba(27,58,92,0.08)]">
               <InlineContactForm />
             </div>
 
@@ -48,30 +49,12 @@ export default function Erstgespraech() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="bg-[#f4f3ef] border-t border-border">
-        <div className="container-main py-10 lg:py-14">
-          <h2 className="text-xl font-bold text-primary mb-6">
-            {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
-          </h2>
-          <Accordion type="single" collapsible className="max-w-3xl space-y-2">
-            {(isEN ? consultationFaqEN : consultationFaqDE).map((item, i) => (
-              <AccordionItem
-                key={i}
-                value={`faq-${i}`}
-                className="border border-border bg-secondary/30 rounded-md px-4"
-              >
-                <AccordionTrigger className="text-sm font-semibold text-primary hover:no-underline py-4">
-                  {item.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4">
-                  {item.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
+      {/* FAQ Section — unified style (centered, green plus, mint open state) */}
+      <FAQSection
+        title={isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
+        items={isEN ? consultationFaqEN : consultationFaqDE}
+        sectionClassName="bg-[#F8FAFC] border-t border-[#E2E8EE]"
+      />
     </>
   );
 }
