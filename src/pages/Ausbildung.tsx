@@ -239,25 +239,19 @@ export default function Ausbildung() {
               ? "Not a mass-market course. Not a certificate mill. A serious premium training with real depth, built on 30,000+ clinical sessions."
               : "Kein Massenkurs. Keine Zertifikatsfabrik. Eine seriöse Premium-Ausbildung mit echter Tiefe, aufgebaut auf 30.000+ klinischen Sitzungen."}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3 max-w-5xl mx-auto">
             {[
-              { icon: <Shield className="w-4 h-4 md:w-6 md:h-6 text-[#1B3A5C]" />, titleDE: "35+ Jahre klinische Praxis", titleEN: "35+ Years of Clinical Practice", textDE: "Jede gelehrte Technik wurde in Tausenden realer klinischer Sitzungen getestet und verfeinert. Eine methodenbasierte Expertenausbildung.", textEN: "Every technique taught has been tested and refined in thousands of real clinical sessions. This is method-based expert training." },
-              { icon: <Users className="w-4 h-4 md:w-6 md:h-6 text-[#1B3A5C]" />, titleDE: "Kleingruppen-Format", titleEN: "Small Group Format", textDE: "Strikt begrenzte Teilnehmerzahl garantiert persönliche Betreuung, individuelles Feedback und maximale Lernintensität. Ein selektives Lernerlebnis.", textEN: "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity. A selective learning experience." },
-              { icon: <Zap className="w-4 h-4 md:w-6 md:h-6 text-[#1B3A5C]" />, titleDE: "Praxis ab Tag 1", titleEN: "Hands-On from Day 1", textDE: "Sie schauen nicht nur zu — Sie hypnotisieren. Jeder Tag verbindet Theorie mit sofortiger praktischer Anwendung. Eine transformative Praxisausbildung.", textEN: "You won't just watch — you'll hypnotize. Every day combines theory with immediate application. A transformational practical training." },
+              { icon: <Shield className="w-4 h-4 md:w-5 md:h-5 text-[#1B3A5C]" />, titleDE: "35+ Jahre klinische Praxis", titleEN: "35+ Years of Clinical Practice", textDE: "Jede gelehrte Technik wurde in Tausenden realer klinischer Sitzungen getestet und verfeinert. Eine methodenbasierte Expertenausbildung.", textEN: "Every technique taught has been tested and refined in thousands of real clinical sessions. This is method-based expert training." },
+              { icon: <Users className="w-4 h-4 md:w-5 md:h-5 text-[#1B3A5C]" />, titleDE: "Kleingruppen-Format", titleEN: "Small Group Format", textDE: "Strikt begrenzte Teilnehmerzahl garantiert persönliche Betreuung, individuelles Feedback und maximale Lernintensität. Ein selektives Lernerlebnis.", textEN: "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity. A selective learning experience." },
+              { icon: <Zap className="w-4 h-4 md:w-5 md:h-5 text-[#1B3A5C]" />, titleDE: "Praxis ab Tag 1", titleEN: "Hands-On from Day 1", textDE: "Sie schauen nicht nur zu — Sie hypnotisieren. Jeder Tag verbindet Theorie mit sofortiger praktischer Anwendung. Eine transformative Praxisausbildung.", textEN: "You won't just watch — you'll hypnotize. Every day combines theory with immediate application. A transformational practical training." },
             ].map((c, i) => (
-              <div key={i} className="group relative bg-white border border-[#1B3A5C]/30 rounded-xl md:rounded-2xl p-3 md:p-5 text-left md:text-center shadow-[0_4px_12px_rgba(27,58,92,0.08)] md:shadow-[0_8px_24px_rgba(27,58,92,0.12)] md:hover:shadow-[0_18px_42px_rgba(27,58,92,0.20)] md:hover:border-[#1B3A5C]/55 md:hover:-translate-y-1 transition-all duration-300">
-                {/* Mobile: inline icon + title */}
-                <div className="flex items-center gap-2 md:hidden mb-1">
-                  <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#1B3A5C]/10 ring-1 ring-[#1B3A5C]/20 shrink-0">
+              <div key={i} className="group relative bg-white border border-[#1B3A5C]/30 rounded-xl md:rounded-2xl p-3 md:p-4 text-left shadow-[0_4px_12px_rgba(27,58,92,0.08)] md:shadow-[0_6px_18px_rgba(27,58,92,0.10)] md:hover:shadow-[0_12px_28px_rgba(27,58,92,0.16)] md:hover:border-[#1B3A5C]/55 md:hover:-translate-y-0.5 transition-all duration-300">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span className="inline-flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#1B3A5C]/10 ring-1 ring-[#1B3A5C]/20 shrink-0">
                     {c.icon}
                   </span>
-                  <h3 className="font-bold text-sm text-[#1B3A5C] leading-tight">{isEN ? c.titleEN : c.titleDE}</h3>
+                  <h3 className="font-bold text-sm md:text-base text-[#1B3A5C] leading-tight">{isEN ? c.titleEN : c.titleDE}</h3>
                 </div>
-                {/* Desktop: centered icon box + title */}
-                <div className="hidden md:inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-[#1B3A5C]/15 to-[#1B3A5C]/8 ring-1 ring-[#1B3A5C]/20 mb-2.5 shadow-[0_2px_8px_rgba(27,58,92,0.10)] group-hover:from-[#1B3A5C]/22 group-hover:to-[#1B3A5C]/12 group-hover:ring-[#1B3A5C]/30 transition-all">
-                  {c.icon}
-                </div>
-                <h3 className="hidden md:block font-bold text-base text-[#1B3A5C] mb-1.5">{isEN ? c.titleEN : c.titleDE}</h3>
                 <p className="text-[11px] md:text-xs text-muted-foreground leading-snug md:leading-relaxed">{isEN ? c.textEN : c.textDE}</p>
               </div>
             ))}
