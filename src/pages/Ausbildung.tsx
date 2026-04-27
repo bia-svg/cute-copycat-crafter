@@ -185,35 +185,35 @@ export default function Ausbildung() {
           SECTION 1 — HERO: Why this training exists
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-6 lg:py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="container-main py-4 md:py-6 lg:py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8 items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-2">
+              <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-1.5">
                 {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
               </p>
-              <h1 className="text-2xl sm:text-3xl lg:text-[2.25rem] leading-tight font-bold text-[#1B3A5C] mb-3" style={{ fontFamily: "Georgia, serif" }}>
+              <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-bold text-[#1B3A5C] mb-2 md:mb-3" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN
                   ? "Become a Certified Aktiv-Hypnose© Therapist"
                   : "Werden Sie zertifizierter Aktiv-Hypnose© Therapeut"}
               </h1>
-              <p className="text-sm lg:text-base text-[#55504f] leading-relaxed mb-4">
+              <p className="text-[13px] md:text-sm lg:text-base text-[#55504f] leading-snug md:leading-relaxed mb-2.5 md:mb-4">
                 {isEN
                   ? "In just 6 days, you'll learn a proven, hands-on method for real change work. Not a superficial weekend certification, but a high-quality intensive training with a clear system, direct application, and professional guidance. Ideal for anyone who wants to support people safely and effectively."
                   : "In nur 6 Tagen lernen Sie eine fundierte, praxisnahe Methode für echte Veränderungsarbeit. Keine oberflächliche Wochenend-Zertifizierung, sondern eine hochwertige Intensiv-Ausbildung mit klarem System, direkter Anwendung und professioneller Begleitung. Ideal für alle, die Menschen sicher und wirksam begleiten möchten."}
               </p>
-              <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#55504f] mb-4">
-                <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "6-Day Intensive Training" : "6 Tage Intensiv-Ausbildung"}</span>
-                <span className="flex items-center gap-1.5"><GraduationCap className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Specialist Practitioner Diploma" : "Therapeuten-Diplom"}</span>
+              <div className="flex flex-wrap gap-x-3 gap-y-1 text-[12px] md:text-sm text-[#55504f] mb-2.5 md:mb-4">
+                <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#2E7D32]" /> {isEN ? "6-Day Intensive Training" : "6 Tage Intensiv-Ausbildung"}</span>
+                <span className="flex items-center gap-1.5"><GraduationCap className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#2E7D32]" /> {isEN ? "Specialist Practitioner Diploma" : "Therapeuten-Diplom"}</span>
               </div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 md:gap-3">
                 <a href="#dates">
-                  <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-2.5">
+                  <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-5 py-2 md:px-6 md:py-2.5 text-sm">
                     {isEN ? "View Dates & Register" : "Termine & Anmeldung"}
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </a>
                 <a href="#curriculum">
-                  <Button variant="outline" className="border-[#55504f] text-[#55504f] font-semibold px-6 py-2.5">
+                  <Button variant="outline" className="border-[#55504f] text-[#55504f] font-semibold px-5 py-2 md:px-6 md:py-2.5 text-sm">
                     {isEN ? "See Full Curriculum" : "Gesamtes Curriculum"}
                   </Button>
                 </a>
