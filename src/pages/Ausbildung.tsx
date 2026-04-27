@@ -465,32 +465,34 @@ export default function Ausbildung() {
               ? "Each day builds on the previous, taking you from fundamentals to advanced clinical techniques."
               : "Jeder Tag baut auf dem vorherigen auf und führt Sie von den Grundlagen zu fortgeschrittenen klinischen Techniken."}
           </p>
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-            {days.map((day) => (
-              <div key={day.day} className="bg-white border border-[#1B3A5C]/12 rounded-2xl p-4 md:p-5 shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_16px_rgba(27,58,92,0.09)] hover:border-[#1B3A5C]/25 transition-all">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-lg bg-white text-[#1B3A5C]">
-                    {day.icon}
+          <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {days.map((day) => (
+                <div key={day.day} className="bg-white border border-[#1B3A5C]/12 rounded-2xl p-4 md:p-5 shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_16px_rgba(27,58,92,0.09)] hover:border-[#1B3A5C]/25 transition-all">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 rounded-lg bg-white text-[#1B3A5C]">
+                      {day.icon}
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-semibold uppercase tracking-wider text-[#2E7D32]">
+                        {isEN ? `Day ${day.day}` : `Tag ${day.day}`}
+                      </p>
+                      <h3 className="text-sm md:text-base font-bold text-[#1B3A5C]">
+                        {isEN ? day.titleEN : day.titleDE}
+                      </h3>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-wider text-[#2E7D32]">
-                      {isEN ? `Day ${day.day}` : `Tag ${day.day}`}
-                    </p>
-                    <h3 className="text-sm md:text-base font-bold text-[#1B3A5C]">
-                      {isEN ? day.titleEN : day.titleDE}
-                    </h3>
-                  </div>
+                  <ul className="space-y-1.5">
+                    {(isEN ? day.topicsEN : day.topicsDE).map((topic, i) => (
+                      <li key={i} className="flex items-start gap-2 text-xs text-[#55504f]">
+                        <CheckCircle className="w-3.5 h-3.5 text-[#2E7D32] mt-0.5 shrink-0" />
+                        {topic}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="space-y-1.5">
-                  {(isEN ? day.topicsEN : day.topicsDE).map((topic, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-[#55504f]">
-                      <CheckCircle className="w-3.5 h-3.5 text-[#2E7D32] mt-0.5 shrink-0" />
-                      {topic}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
