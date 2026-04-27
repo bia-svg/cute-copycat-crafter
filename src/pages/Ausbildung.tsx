@@ -289,90 +289,7 @@ export default function Ausbildung() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          SECTION 3 — Day-by-Day Curriculum
-          ═══════════════════════════════════════════════════════════ */}
-      <section id="curriculum" className="bg-[#f4f3ef] border-b border-border scroll-mt-20">
-        <div className="container-main py-8 lg:py-12">
-          <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
-            {isEN ? "Your 6-Day Journey" : "Ihre 6-Tage Reise"}
-          </h2>
-          <p className="text-xs md:text-sm text-muted-foreground text-center mb-6 md:mb-8 max-w-2xl mx-auto">
-            {isEN
-              ? "Each day builds on the previous, taking you from fundamentals to advanced clinical techniques."
-              : "Jeder Tag baut auf dem vorherigen auf und führt Sie von den Grundlagen zu fortgeschrittenen klinischen Techniken."}
-          </p>
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-            {days.map((day) => (
-              <div key={day.day} className="bg-white border border-border rounded-lg p-4 md:p-5 shadow-sm">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-lg bg-[#f4f3ef] text-[#1B3A5C]">
-                    {day.icon}
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-wider text-[#2E7D32]">
-                      {isEN ? `Day ${day.day}` : `Tag ${day.day}`}
-                    </p>
-                    <h3 className="text-sm md:text-base font-bold text-[#1B3A5C]">
-                      {isEN ? day.titleEN : day.titleDE}
-                    </h3>
-                  </div>
-                </div>
-                <ul className="space-y-1.5">
-                  {(isEN ? day.topicsEN : day.topicsDE).map((topic, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-[#55504f]">
-                      <CheckCircle className="w-3.5 h-3.5 text-[#2E7D32] mt-0.5 shrink-0" />
-                      {topic}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 4 — What's Included
-          ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-white border-b border-border">
-        <div className="container-main py-10 lg:py-14">
-          <h2 className="text-2xl font-bold text-[#1B3A5C] text-center mb-8" style={{ fontFamily: "Georgia, serif" }}>
-            {isEN ? "Everything You Receive" : "Alles, was Sie erhalten"}
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
-            {[
-              { num: "350+", labelDE: "Seiten Ausbildungsmappe", labelEN: "Page Training Manual", icon: <BookOpen className="w-5 h-5" /> },
-              { num: "150+", labelDE: "Seiten Beispieltexte", labelEN: "Pages Sample Scripts", icon: <MessageSquare className="w-5 h-5" /> },
-              { num: "50+", labelDE: "Kurzvideos", labelEN: "Short Videos", icon: <Zap className="w-5 h-5" /> },
-              { num: "50+", labelDE: "Audioaufnahmen", labelEN: "Audio Recordings", icon: <Heart className="w-5 h-5" /> },
-              { num: "1", labelDE: "Aktiv-Hypnose© Diplom", labelEN: "Aktiv-Hypnose© Diploma", icon: <Award className="w-5 h-5" /> },
-              { num: "∞", labelDE: "Laufende Unterstützung", labelEN: "Ongoing Support", icon: <Shield className="w-5 h-5" /> },
-            ].map((item, i) => (
-              <div key={i} className="bg-[#f4f3ef] border border-border p-4 text-center rounded-lg">
-                <div className="text-[#2E7D32] mx-auto mb-2 flex justify-center">{item.icon}</div>
-                <p className="text-2xl font-bold text-[#1B3A5C]">{item.num}</p>
-                <p className="text-[11px] text-muted-foreground mt-1 leading-tight">{isEN ? item.labelEN : item.labelDE}</p>
-              </div>
-            ))}
-          </div>
-
-          {showCH && (
-            <div className="bg-[#E8F5E9] border border-[#81C784] p-4 mt-8 max-w-2xl mx-auto text-center rounded-lg">
-              <p className="text-sm font-semibold text-[#2E7D32]">
-                {isEN ? "For EMR Members:" : "Für EMR-Mitglieder:"}
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                {isEN
-                  ? "Detailed hours and content documentation for possible EMR submission included."
-                  : "Ausführlicher Stunden- und Inhaltsnachweis zur möglichen EMR-Einreichung inklusive."}
-              </p>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION 5 — Upcoming Dates with Country Tabs
+          SECTION — Upcoming Dates with Country Tabs (moved up)
           ═══════════════════════════════════════════════════════════ */}
       <section id="dates" className="bg-[#f4f3ef] border-b border-border scroll-mt-20">
         <div className="container-main py-10 lg:py-14">
@@ -528,6 +445,99 @@ export default function Ausbildung() {
               ? "Early Bird pricing available for a limited time or until the current intake is full."
               : "Frühbucher-Preis verfügbar für begrenzte Zeit oder bis die aktuelle Gruppe voll ist."}
           </p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION — Day-by-Day Curriculum
+          ═══════════════════════════════════════════════════════════ */}
+      <section id="curriculum" className="bg-white border-b border-border scroll-mt-20">
+        <div className="container-main py-8 lg:py-12">
+          <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
+            {isEN ? "Your 6-Day Journey" : "Ihre 6-Tage Reise"}
+          </h2>
+          <p className="text-xs md:text-sm text-muted-foreground text-center mb-6 md:mb-8 max-w-2xl mx-auto">
+            {isEN
+              ? "Each day builds on the previous, taking you from fundamentals to advanced clinical techniques."
+              : "Jeder Tag baut auf dem vorherigen auf und führt Sie von den Grundlagen zu fortgeschrittenen klinischen Techniken."}
+          </p>
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+            {days.map((day) => (
+              <div key={day.day} className="bg-[#f4f3ef] border border-border rounded-lg p-4 md:p-5 shadow-sm">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 rounded-lg bg-white text-[#1B3A5C]">
+                    {day.icon}
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-semibold uppercase tracking-wider text-[#2E7D32]">
+                      {isEN ? `Day ${day.day}` : `Tag ${day.day}`}
+                    </p>
+                    <h3 className="text-sm md:text-base font-bold text-[#1B3A5C]">
+                      {isEN ? day.titleEN : day.titleDE}
+                    </h3>
+                  </div>
+                </div>
+                <ul className="space-y-1.5">
+                  {(isEN ? day.topicsEN : day.topicsDE).map((topic, i) => (
+                    <li key={i} className="flex items-start gap-2 text-xs text-[#55504f]">
+                      <CheckCircle className="w-3.5 h-3.5 text-[#2E7D32] mt-0.5 shrink-0" />
+                      {topic}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          DIPLOMAS — Visual proof of certification (Ihr Abschluss)
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#f4f3ef] border-b border-border">
+        <div className="container-main py-6 lg:py-8">
+          <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
+            {isEN ? "Your Certification" : "Ihr Abschluss"}
+          </h2>
+          <p className="text-xs md:text-sm text-muted-foreground text-center mb-4 md:mb-5 max-w-2xl mx-auto">
+            {isEN
+              ? "Upon completion, you receive internationally recognized diplomas."
+              : "Nach Abschluss erhalten Sie international anerkannte Diplome."}
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4 md:gap-5 max-w-3xl mx-auto">
+            <div className="flex flex-col items-center text-center">
+              <div className="border border-border rounded-lg overflow-hidden shadow-sm mb-2 max-w-[200px] md:max-w-[260px] bg-white">
+                <ImageLightbox src={diplomNGH} alt="NGH Certified Instructor — David Woods" className="w-full h-auto" />
+              </div>
+              <div className="flex items-center gap-1.5 mb-1">
+                <Shield className="w-4 h-4 text-blue-600" />
+                <h3 className="font-semibold text-sm text-[#1B3A5C]" style={{ fontFamily: "Georgia, serif" }}>
+                  {isEN ? "NGH Certified Instructor" : "NGH-zertifizierter Instructor"}
+                </h3>
+              </div>
+              <p className="text-xs text-muted-foreground max-w-sm">
+                {isEN
+                  ? "This certificate proves that David J. Woods is a certified hypnosis instructor accredited by the National Guild of Hypnotists (NGH) — the world's largest and most respected hypnosis organization."
+                  : "Dieses Zertifikat belegt, dass David J. Woods ein zertifizierter Hypnose-Instructor ist, akkreditiert durch die National Guild of Hypnotists (NGH) — die weltweit grösste und angesehenste Hypnose-Organisation."}
+              </p>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <div className="border border-border rounded-lg overflow-hidden shadow-sm mb-2 max-w-[200px] md:max-w-[260px] bg-white">
+                <ImageLightbox src={diplomAktivHypnose} alt="Diplom — Therapeut in Aktiv-Hypnose" className="w-full h-auto" />
+              </div>
+              <div className="flex items-center gap-1.5 mb-1">
+                <GraduationCap className="w-4 h-4 text-amber-600" />
+                <h3 className="font-semibold text-sm text-[#1B3A5C]" style={{ fontFamily: "Georgia, serif" }}>
+                  {isEN ? "Your Diploma" : "Ihr Diplom"}
+                </h3>
+              </div>
+              <p className="text-xs text-muted-foreground max-w-sm">
+                {isEN
+                  ? "This is the diploma you receive upon completing the 6-day seminar — your official certification as a Therapist in Aktiv-Hypnose®."
+                  : "Dieses Diplom erhalten Sie nach Abschluss des 6-tägigen Seminars — Ihre offizielle Zertifizierung als Therapeut/in in Aktiv-Hypnose®."}
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
