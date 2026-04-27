@@ -261,11 +261,10 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
 
       {/* Rich Content Sections — preserving all legacy H2s and paragraphs */}
       {sections.map((section, idx) => {
-        const isSilver = idx % 2 === 0;
         return (
-        <section key={idx} className={`${isSilver ? "bg-[#F1F4F7] border-y border-[#E2E8EE]" : "bg-white border-y border-border"}`}>
+        <section key={idx} className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
           <div className="container-main py-10 md:py-12">
-            <div className={`max-w-5xl mx-auto ${isSilver ? "bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)]" : "bg-[#F1F4F7]/70 border border-[#E2E8EE]"} rounded-3xl p-5 md:p-7 lg:p-8`}>
+            <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
               <div className={section.image ? "grid md:grid-cols-2 gap-8 items-start" : ""}>
                 <div>
                   <h2 className="text-xl sm:text-2xl font-bold text-[#1B3A5C] mb-5">{section.h2}</h2>
@@ -325,9 +324,9 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           .filter(item => !faq.some(f => f.q.toLowerCase().includes("themen") && item.q.toLowerCase().includes("themen") || f.q.toLowerCase().includes("topics") && item.q.toLowerCase().includes("topics")));
         const allFaq = [...faq, ...consultItems];
         return (
-          <section className="bg-white border-y border-border">
+          <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
             <div className="container-main py-10 md:py-12">
-              <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl p-5 md:p-7 lg:p-8">
+              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
                 <h2 className="text-xl font-bold text-primary mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
                 </h2>
@@ -419,9 +418,9 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       )}
 
       {/* Consultation CTA Row with Inline Form */}
-      <section className="py-10 md:py-14 bg-white border-t border-border">
+      <section className="py-10 md:py-14 bg-[#F1F4F7] border-t border-[#E2E8EE]">
         <div className="container-main">
-          <div className="max-w-2xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl p-5 md:p-7 lg:p-8">
+          <div className="max-w-2xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
             <h2 className="text-lg sm:text-xl font-semibold text-primary mb-4 text-center" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Your Request" : "Ihre Anfrage"}
             </h2>
