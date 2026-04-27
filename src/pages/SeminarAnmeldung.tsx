@@ -256,7 +256,7 @@ export default function SeminarAnmeldung() {
             </div>
 
             {submitted ? (
-              <div className="text-center py-16 border border-[#D8E0EA] bg-[#E8EDF3] rounded-lg">
+              <div className="text-center py-16 border border-border bg-[#f4f3ef] rounded-lg">
                 <CheckCircle className="w-14 h-14 text-[#2E7D32] mx-auto mb-4" />
                 <h2 className="text-xl font-bold text-[#1B3A5C] mb-2">{isEN ? "Registration Received!" : "Anmeldung eingegangen!"}</h2>
                 {registrationNumber && (
@@ -386,7 +386,7 @@ export default function SeminarAnmeldung() {
 
                 {/* STEP 3 — Form */}
                 {selectedDate && (
-                   <div className="border border-[#E8EDF3] p-3 sm:p-4 bg-[#F8FAFC]">
+                   <div className="border border-border p-3 sm:p-4 bg-[#f4f3ef]">
                     <h2 className="text-sm font-semibold text-[#1B3A5C] mb-2.5 flex items-center gap-2">
                       <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center">3</span>
                       {isEN ? "Your Details" : "Ihre Daten"}

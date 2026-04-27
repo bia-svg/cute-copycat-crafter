@@ -50,19 +50,19 @@ export function Impressum() {
             <div>
               <h2 className="font-semibold text-[#1B3A5C] mb-1">{isEN ? "Practice Locations" : "Praxisstandorte"}</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
-                <div className="p-3 bg-[#E8EDF3] rounded">
+                <div className="p-3 bg-[#f4f3ef] rounded">
                   <p className="font-semibold text-[#1B3A5C]">Zürich 🇨🇭</p>
                   <p>5 Elements TCM GmbH</p>
                   <p>Beim Löwenplatz, Usteristrasse 23</p>
                   <p>8001 Zürich</p>
                 </div>
-                <div className="p-3 bg-[#F8FAFC] rounded">
+                <div className="p-3 bg-[#f4f3ef] rounded">
                   <p className="font-semibold text-[#1B3A5C]">Eschenbach 🇨🇭</p>
                   <p>Fit+Gsund</p>
                   <p>Churzhaslen 3</p>
                   <p>8733 Eschenbach (am Zürichsee)</p>
                 </div>
-                <div className="p-3 bg-[#E8EDF3] rounded">
+                <div className="p-3 bg-[#f4f3ef] rounded">
                   <p className="font-semibold text-[#1B3A5C]">Augsburg 🇩🇪</p>
                   <p>Regus</p>
                   <p>Viktoria Str. 3b, 2. OG</p>

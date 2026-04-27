@@ -260,58 +260,52 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       </section>
 
       {/* Rich Content Sections — preserving all legacy H2s and paragraphs */}
-      {sections.map((section, idx) => {
-        return (
-        <section key={idx} className="bg-[#E8EDF3] border-y border-[#D8E0EA]">
-          <div className="container-main py-10 md:py-12">
-            <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
-              <div className={section.image ? "grid md:grid-cols-2 gap-8 items-start" : ""}>
-                <div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-[#1B3A5C] mb-5">{section.h2}</h2>
-                  <div className="space-y-4">
-                    {section.paragraphs.map((p, pi) => (
-                      <p key={pi} className="text-base text-foreground leading-relaxed">{p}</p>
-                    ))}
-                  </div>
-                  {section.bullets && section.bullets.length > 0 && (
-                    <ul className="mt-5 space-y-2">
-                      {section.bullets.map((b, bi) => (
-                        <li key={bi} className="flex items-start gap-2 text-sm text-foreground">
-                          <ChevronRight className="w-4 h-4 text-[#2E7D32] shrink-0 mt-0.5" />
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+      {sections.map((section, idx) => (
+        <section key={idx} className={`${idx % 2 === 0 ? "bg-[#f4f3ef]" : "bg-white"} border-b border-border`}>
+          <div className="container-main py-10">
+            <div className={section.image ? "grid md:grid-cols-2 gap-8 items-start" : ""}>
+              <div>
+                <h2 className="text-xl sm:text-2xl font-bold text-[#1B3A5C] mb-5">{section.h2}</h2>
+                <div className="space-y-4 max-w-3xl">
+                  {section.paragraphs.map((p, pi) => (
+                    <p key={pi} className="text-base text-foreground leading-relaxed">{p}</p>
+                  ))}
                 </div>
-                {section.image && (
-                  <div className="border border-[#E8EDF3] rounded-2xl overflow-hidden">
-                    <img src={section.image} alt={section.h2} className="w-full h-auto object-cover" loading="lazy" />
-                  </div>
+                {section.bullets && section.bullets.length > 0 && (
+                  <ul className="mt-5 space-y-2 max-w-3xl">
+                    {section.bullets.map((b, bi) => (
+                      <li key={bi} className="flex items-start gap-2 text-sm text-foreground">
+                        <ChevronRight className="w-4 h-4 text-[#2E7D32] shrink-0 mt-0.5" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
                 )}
               </div>
+              {section.image && (
+                <div className="border border-border rounded-lg overflow-hidden">
+                  <img src={section.image} alt={section.h2} className="w-full h-auto object-cover" loading="lazy" />
+                </div>
+              )}
             </div>
           </div>
         </section>
-        );
-      })}
+      ))}
 
       {/* Testimonials from Google Reviews */}
       {(() => {
         const testimonials = getTestimonialsForService(data.slugEN);
         if (testimonials.length === 0) return null;
         return (
-          <section className="bg-[#F8FAFC] border-y border-[#E8EDF3]">
-            <div className="container-main py-10 md:py-12">
-              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
-                <h2 className="text-xl font-bold text-primary mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
-                  {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                  {testimonials.map((t, i) => (
-                    <ServiceTestimonialCard key={i} t={t} isEN={isEN} />
-                  ))}
-                </div>
+          <section className="bg-secondary border-b border-border">
+            <div className="container-main py-10">
+              <h2 className="text-xl font-bold text-primary mb-6">
+                {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {testimonials.map((t, i) => (
+                  <ServiceTestimonialCard key={i} t={t} isEN={isEN} />
+                ))}
               </div>
             </div>
           </section>
@@ -324,29 +318,27 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           .filter(item => !faq.some(f => f.q.toLowerCase().includes("themen") && item.q.toLowerCase().includes("themen") || f.q.toLowerCase().includes("topics") && item.q.toLowerCase().includes("topics")));
         const allFaq = [...faq, ...consultItems];
         return (
-          <section className="bg-[#E8EDF3] border-y border-[#D8E0EA]">
-            <div className="container-main py-10 md:py-12">
-              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
-                <h2 className="text-xl font-bold text-primary mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
-                  {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
-                </h2>
-                <Accordion type="single" collapsible className="space-y-2">
-                  {allFaq.map((item, i) => (
-                    <AccordionItem
-                      key={i}
-                      value={`faq-${i}`}
-                      className="border border-[#E8EDF3] bg-white rounded-2xl px-4 md:px-5"
-                    >
-                      <AccordionTrigger className="text-sm font-semibold text-primary hover:no-underline py-4 text-left">
-                        {item.q}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4">
-                        {item.a}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </div>
+          <section className="bg-white border-b border-border">
+            <div className="container-main py-10">
+              <h2 className="text-xl font-bold text-primary mb-6">
+                {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
+              </h2>
+              <Accordion type="single" collapsible className="max-w-3xl space-y-2">
+                {allFaq.map((item, i) => (
+                  <AccordionItem
+                    key={i}
+                    value={`faq-${i}`}
+                    className="border border-border bg-secondary/30 rounded-md px-4"
+                  >
+                    <AccordionTrigger className="text-sm font-semibold text-primary hover:no-underline py-4">
+                      {item.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4">
+                      {item.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
               {/* FAQPage Schema */}
               <script
                 type="application/ld+json"
@@ -371,54 +363,52 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
 
       {/* Kathryn Section — only on children/teens page, shown BEFORE contact form */}
       {(data.slugEN === "kinder-jugendliche" || data.slugCH === "kinder-jugendliche") && (
-        <section className="bg-[#F8FAFC] border-y border-[#E8EDF3]">
-          <div className="container-main py-10 md:py-12">
-            <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
-              <div className="grid md:grid-cols-[260px_1fr] gap-7 items-start">
-                <div className="mx-auto md:mx-0 w-60 md:w-full">
-                  <div className="border border-[#E8EDF3] overflow-hidden rounded-2xl">
-                    <img src={CDN.kathrynPortrait} alt="Kathryn Woods – Kinder- und Jugendtherapeutin" className="w-full h-auto" loading="lazy" />
-                    <div className="p-4 bg-[#E8EDF3]">
-                      <h3 className="font-bold text-foreground text-sm">Kathryn</h3>
-                      <p className="text-xs text-muted-foreground">
-                        {isEN ? "Psychological Counselor" : "Psychologische Beraterin"}
-                      </p>
-                    </div>
+        <section className="bg-secondary border-t border-border">
+          <div className="container-main py-12">
+            <div className="grid md:grid-cols-[280px_1fr] gap-8 items-start">
+              <div className="mx-auto md:mx-0 w-64 md:w-full">
+                <div className="border border-border overflow-hidden rounded-lg">
+                  <img src={CDN.kathrynPortrait} alt="Kathryn Woods – Kinder- und Jugendtherapeutin" className="w-full h-auto" loading="lazy" />
+                  <div className="p-4 bg-card">
+                    <h3 className="font-bold text-foreground text-sm">Kathryn</h3>
+                    <p className="text-xs text-muted-foreground">
+                      {isEN ? "Psychological Counselor" : "Psychologische Beraterin"}
+                    </p>
                   </div>
                 </div>
-                <div className="space-y-4">
-                  <h2 className="text-2xl font-bold text-[#1B3A5C]">
-                    {isEN ? "Your Therapist: Kathryn" : "Ihre Therapeutin: Kathryn"}
-                  </h2>
-                  <p className="text-foreground/80 leading-relaxed">
-                    {isEN
-                      ? "Over many years, Kathryn has intensively studied the fields of psychology and personality development, with a particular focus on educational work with children and adolescents. She completed numerous training programs in modern communication techniques such as NLP and mental coaching, and was personally trained as a Master Hypnotist by David J. Woods."
-                      : "Über viele Jahre hinweg setzte sich Kathryn intensiv mit den Themen Psychologie und Persönlichkeitsentwicklung auseinander, insbesondere mit einem Schwerpunkt auf die pädagogische Arbeit mit Kindern und Jugendlichen. Sie absolvierte zahlreiche Ausbildungen in modernen Kommunikationstechniken wie NLP und Mental Coaching und wurde zudem von David J. Woods persönlich zur Master-Hypnotiseurin ausgebildet."}
-                  </p>
-                  <p className="text-foreground/80 leading-relaxed">
-                    {isEN
-                      ? "Through her empathetic, structured and clear approach, she quickly builds trust and ensures that even young people feel safe and understood during hypnosis."
-                      : "Durch ihre einfühlsame, strukturierte und klare Art schafft sie schnell Vertrauen und sorgt dafür, dass sich auch junge Menschen bei der Hypnose sicher und verstanden fühlen."}
-                  </p>
-                  <p className="text-foreground/80 leading-relaxed">
-                    {isEN
-                      ? "Kathryn is multilingual, speaking fluent Russian and German as well as excellent English. In our practice, she is your competent contact for hypnosis sessions specifically for children and adolescents."
-                      : "Kathryn ist mehrsprachig aufgewachsen und spricht fließend Russisch und Deutsch sowie sehr gutes Englisch. In unserer Praxis ist sie Ihre kompetente Ansprechpartnerin für Hypnosesitzungen speziell bei Kindern und Jugendlichen."}
-                  </p>
-                  <Link to={getPath("contact", language, country)}>
-                    <Button className="bg-cta text-cta-foreground hover:bg-cta/90 mt-2">
-                      {isEN ? "Book a Session with Kathryn" : "Sitzung mit Kathryn buchen"}
-                    </Button>
-                  </Link>
-                </div>
+              </div>
+              <div className="space-y-4">
+                <h2 className="text-2xl font-bold text-foreground">
+                  {isEN ? "Your Therapist: Kathryn" : "Ihre Therapeutin: Kathryn"}
+                </h2>
+                <p className="text-foreground/80 leading-relaxed">
+                  {isEN
+                    ? "Over many years, Kathryn has intensively studied the fields of psychology and personality development, with a particular focus on educational work with children and adolescents. She completed numerous training programs in modern communication techniques such as NLP and mental coaching, and was personally trained as a Master Hypnotist by David J. Woods."
+                    : "Über viele Jahre hinweg setzte sich Kathryn intensiv mit den Themen Psychologie und Persönlichkeitsentwicklung auseinander, insbesondere mit einem Schwerpunkt auf die pädagogische Arbeit mit Kindern und Jugendlichen. Sie absolvierte zahlreiche Ausbildungen in modernen Kommunikationstechniken wie NLP und Mental Coaching und wurde zudem von David J. Woods persönlich zur Master-Hypnotiseurin ausgebildet."}
+                </p>
+                <p className="text-foreground/80 leading-relaxed">
+                  {isEN
+                    ? "Through her empathetic, structured and clear approach, she quickly builds trust and ensures that even young people feel safe and understood during hypnosis."
+                    : "Durch ihre einfühlsame, strukturierte und klare Art schafft sie schnell Vertrauen und sorgt dafür, dass sich auch junge Menschen bei der Hypnose sicher und verstanden fühlen."}
+                </p>
+                <p className="text-foreground/80 leading-relaxed">
+                  {isEN
+                    ? "Kathryn is multilingual, speaking fluent Russian and German as well as excellent English. In our practice, she is your competent contact for hypnosis sessions specifically for children and adolescents."
+                    : "Kathryn ist mehrsprachig aufgewachsen und spricht fließend Russisch und Deutsch sowie sehr gutes Englisch. In unserer Praxis ist sie Ihre kompetente Ansprechpartnerin für Hypnosesitzungen speziell bei Kindern und Jugendlichen."}
+                </p>
+                <Link to={getPath("contact", language, country)}>
+                  <Button className="bg-cta text-cta-foreground hover:bg-cta/90 mt-2">
+                    {isEN ? "Book a Session with Kathryn" : "Sitzung mit Kathryn buchen"}
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
         </section>
       )}
 
-      {/* Consultation CTA Row with Inline Form — matches homepage layout */}
-      <section className="py-10 md:py-16 bg-[#F8FAFC] border-t border-[#E8EDF3]">
+      {/* Consultation CTA Row with Inline Form */}
+      <section className="py-10 md:py-16 bg-[#F5F3EF]">
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-lg sm:text-xl font-semibold text-primary mb-3 text-center">

@@ -49,7 +49,7 @@ export default function ResilienzVerstaerken() {
         descriptionEN="Resilience coaching for inner strength. The 7 pillars of resilience. Master challenges through inner strength."
       />
 
-      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
+      <section className="bg-white border-b border-border">
         <div className="container-main py-8 lg:py-12">
           <Link to={getPath("corporate", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-4">
             <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
@@ -70,52 +70,48 @@ export default function ResilienzVerstaerken() {
         </div>
       </section>
 
-      <section className="bg-[#F8FAFC] border-y border-[#E8EDF3]">
-        <div className="container-main py-10 md:py-12">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7 lg:p-8">
-            <h2 className="text-xl font-bold text-[#1B3A5C] mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
-              {isEN ? "The 7 Pillars of Resilience" : "Die 7 Säulen der Resilienz"}
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {pillars.map((p, i) => (
-                <div key={i} className="bg-white border border-[#E8EDF3] p-4 rounded-2xl shadow-[0_1px_3px_rgba(27,58,92,0.04)]">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center font-bold">{i + 1}</span>
-                    <h3 className="font-semibold text-sm text-[#1B3A5C]">{p.title}</h3>
-                  </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
+      <section className="bg-[#f4f3ef] border-b border-border">
+        <div className="container-main py-10">
+          <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
+            {isEN ? "The 7 Pillars of Resilience" : "Die 7 Säulen der Resilienz"}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {pillars.map((p, i) => (
+              <div key={i} className="bg-white border border-border p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center font-bold">{i + 1}</span>
+                  <h3 className="font-semibold text-sm text-[#1B3A5C]">{p.title}</h3>
                 </div>
-              ))}
-            </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#E8EDF3] border-y border-[#D8E0EA]">
-        <div className="container-main py-10 md:py-12">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">{isEN ? "Resilience Coaching Benefits" : "Resilienz Coaching für innere Stärke"}</h2>
-                <div className="space-y-2">
-                  {coachingBenefits.map((item) => (
-                    <div key={item} className="flex items-center gap-2 text-sm bg-white border border-[#E8EDF3] rounded-xl p-2.5">
-                      <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
+      <section className="bg-white border-b border-border">
+        <div className="container-main py-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">{isEN ? "Resilience Coaching Benefits:" : "Resilienz Coaching für innere Stärke:"}</h2>
+              <div className="space-y-2">
+                {coachingBenefits.map((item) => (
+                  <div key={item} className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
-              <div>
-                <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">{isEN ? "Concrete Steps" : "Konkrete Schritte im Resilienz Coaching"}</h2>
-                <div className="space-y-2">
-                  {steps.map((item) => (
-                    <div key={item} className="flex items-center gap-2 text-sm bg-white border border-[#E8EDF3] rounded-xl p-2.5">
-                      <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
+            </div>
+            <div>
+              <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">{isEN ? "Concrete Steps:" : "Konkrete Schritte im Resilienz Coaching:"}</h2>
+              <div className="space-y-2">
+                {steps.map((item) => (
+                  <div key={item} className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

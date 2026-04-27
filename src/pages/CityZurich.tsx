@@ -58,11 +58,11 @@ export default function CityZurich() {
                 
               </div>
               <div className="space-y-2 mb-6">
-                <div className="flex items-start gap-2 text-sm text-muted-foreground border border-[#D8E0EA] p-3 bg-[#E8EDF3]">
+                <div className="flex items-start gap-2 text-sm text-muted-foreground border border-border p-3 bg-[#f4f3ef]">
                   <MapPin className="w-4 h-4 mt-0.5 text-[#1B3A5C] shrink-0" />
                   <span>5 Elements TCM GmbH, Beim Löwenplatz, Usteristrasse 23, 8001 Zürich</span>
                 </div>
-                <div className="flex items-start gap-2 text-sm text-muted-foreground border border-[#E8EDF3] p-3 bg-[#F8FAFC]">
+                <div className="flex items-start gap-2 text-sm text-muted-foreground border border-border p-3 bg-[#f4f3ef]">
                   <MapPin className="w-4 h-4 mt-0.5 text-[#1B3A5C] shrink-0" />
                   <span>Fit+Gsund, Churzhaslen 3, 8733 Eschenbach ({isEN ? "on Lake Zurich" : "am Zürichsee"})</span>
                 </div>
@@ -80,7 +80,7 @@ export default function CityZurich() {
         </div>
       </section>
 
-      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
+      <section className="bg-[#f4f3ef] border-b border-border">
         <div className="container-main py-10">
           <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
             {isEN ? "Our Services in Zurich" : "Unsere Leistungen in Zürich"}
