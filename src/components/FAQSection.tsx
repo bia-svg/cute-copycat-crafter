@@ -28,28 +28,28 @@ export default function FAQSection({ title, items, sectionClassName }: FAQSectio
 
   return (
     <section className={sectionClassName ?? "bg-[#FAF7F2] border-y border-[#EDE7DC]"}>
-      <div className="container-main py-9 md:py-12">
+      <div className="container-main py-5 md:py-9">
         <h2
-          className="text-xl md:text-2xl font-bold text-primary mb-5 md:mb-7 text-center"
+          className="text-lg md:text-2xl font-bold text-primary mb-3 md:mb-6 text-center"
           style={{ fontFamily: "Georgia, serif" }}
         >
           {title}
         </h2>
 
-        <div className="max-w-2xl md:max-w-4xl lg:max-w-5xl mx-auto bg-white/70 backdrop-blur-sm border border-[#E5DFD2] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-3 md:p-5 lg:p-6">
+        <div className="max-w-2xl md:max-w-4xl lg:max-w-5xl mx-auto bg-white/70 backdrop-blur-sm border border-[#E5DFD2] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-2.5 md:p-5 lg:p-6">
           <Accordion
             type="single"
             collapsible
-            className="space-y-2.5"
+            className="space-y-1.5 md:space-y-2.5"
           >
             {items.map((item, i) => (
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="group border border-[#E5DFD2] bg-white rounded-2xl px-5 md:px-6 shadow-[0_1px_2px_rgba(27,58,92,0.04)] hover:border-[#2E7D32]/40 hover:shadow-[0_2px_6px_rgba(46,125,50,0.06)] transition-all data-[state=open]:bg-[#F4F9F4] data-[state=open]:border-[#2E7D32]/40 data-[state=open]:shadow-[0_2px_8px_rgba(46,125,50,0.08)]"
+                className="group border border-[#E5DFD2] bg-white rounded-2xl px-4 md:px-6 shadow-[0_1px_2px_rgba(27,58,92,0.04)] hover:border-[#2E7D32]/40 hover:shadow-[0_2px_6px_rgba(46,125,50,0.06)] transition-all data-[state=open]:bg-[#F4F9F4] data-[state=open]:border-[#2E7D32]/40 data-[state=open]:shadow-[0_2px_8px_rgba(46,125,50,0.08)]"
               >
                 <AccordionTrigger
-                  className="text-[15px] md:text-base font-semibold text-primary hover:no-underline py-4 md:py-4.5 text-left gap-4 [&>svg]:hidden"
+                  className="text-[14px] md:text-base font-semibold text-primary hover:no-underline py-3 md:py-4 text-left gap-3 md:gap-4 [&>svg]:hidden"
                 >
                   <span className="flex-1">{item.q}</span>
                   <span
