@@ -581,11 +581,14 @@ export default function Ausbildung() {
             ))}
           </div>
 
-          <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-[#2E7D32]/30 bg-[#2E7D32]/5 p-4 md:p-5">
-            <p className="text-sm md:text-[15px] text-[#1B3A5C] leading-relaxed">
-              <span className="font-semibold text-[#2E7D32]">
-                {isEN ? "For EMR members:" : "Für EMR-Mitglieder:"}
-              </span>{" "}
+          <div className="mt-8 flex flex-col items-center text-center">
+            <div className="inline-flex items-center gap-2 bg-[#e8f5e9] border border-[#a5d6a7] rounded-full px-4 py-1.5">
+              <img src={CDN.emrBadge} alt="EMR Badge" className="w-5 h-5 object-contain" />
+              <span className="text-xs font-semibold text-[#2E7D32] tracking-wide">
+                {isEN ? "For EMR members" : "Für EMR-Mitglieder"}
+              </span>
+            </div>
+            <p className="mt-2 text-[11px] text-muted-foreground max-w-md leading-relaxed">
               {isEN
                 ? "Detailed certificate of hours and content for possible EMR submission included."
                 : "Ausführlicher Stunden- und Inhaltsnachweis zur möglichen EMR-Einreichung inklusive."}
