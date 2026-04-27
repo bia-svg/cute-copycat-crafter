@@ -39,6 +39,7 @@ const slugMapDE: Record<PageKey, string> = {
   terms: "agb",
   blog: "blog",
   book: "buch-go-inside",
+  howHypnosisWorks: "wie-funktioniert-hypnose",
 };
 
 const slugMapEN: Record<PageKey, string> = {
