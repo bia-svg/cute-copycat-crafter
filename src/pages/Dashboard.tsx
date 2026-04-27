@@ -108,7 +108,9 @@ export default function Dashboard() {
 
   const {
     trafficByDay, topPages, campaigns, dailyAds, leads, whatsappClicks,
-    gscQueries, gscTotals, gscDailyMetrics, gscError, gscLive,
+    gscQueries, gscTotals, gscPreviousTotals, gscPreviousPeriod,
+    gscDailyMetrics, gscTopPages, gscByCountry, gscByDevice, gscDistribution,
+    gscError, gscLive, seoSnapshots,
     campaignPages, campaignPageFlow,
     loading, gaError, adsError, gaLive, adsLive,
     dateRange, setDateRange,
@@ -911,7 +913,20 @@ export default function Dashboard() {
 
             {/* ═══════ SEO TAB ═══════ */}
             <TabsContent value="seo" className="space-y-5 mt-4">
-              <SEOTab gscQueries={gscQueries} gscTotals={gscTotals} gscDailyMetrics={gscDailyMetrics} gscError={gscError} gscLive={gscLive} />
+              <SEOTab
+                gscQueries={gscQueries}
+                gscTotals={gscTotals}
+                gscPreviousTotals={gscPreviousTotals}
+                gscPreviousPeriod={gscPreviousPeriod}
+                gscDailyMetrics={gscDailyMetrics}
+                gscTopPages={gscTopPages}
+                gscByCountry={gscByCountry}
+                gscByDevice={gscByDevice}
+                gscDistribution={gscDistribution}
+                seoSnapshots={seoSnapshots}
+                gscError={gscError}
+                gscLive={gscLive}
+              />
             </TabsContent>
 
             {/* ═══════ COMPETITION TAB ═══════ */}
@@ -1123,7 +1138,9 @@ export default function Dashboard() {
             <TabsContent value="ai-chat" className="mt-4">
               <AIChatTab dashboardState={{
                 trafficByDay, topPages, campaigns, dailyAds, leads, whatsappClicks,
-                gscQueries, gscTotals, gscDailyMetrics, gscError, gscLive,
+                gscQueries, gscTotals, gscPreviousTotals, gscPreviousPeriod,
+                gscDailyMetrics, gscTopPages, gscByCountry, gscByDevice, gscDistribution,
+                gscError, gscLive, seoSnapshots,
                 campaignPages, campaignPageFlow,
                 loading, gaError, adsError, gaLive, adsLive,
                 dateRange, setDateRange,
