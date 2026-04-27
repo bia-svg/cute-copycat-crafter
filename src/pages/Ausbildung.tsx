@@ -581,7 +581,7 @@ export default function Ausbildung() {
             ))}
           </div>
 
-          <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-[#2E7D32]/30 bg-[#2E7D32]/5 p-4 md:p-5">
+          <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-[#a5d6a7] bg-[#e8f5e9] p-4 md:p-5">
             <p className="text-sm md:text-[15px] text-[#1B3A5C] leading-relaxed">
               <span className="font-semibold text-[#2E7D32]">
                 {isEN ? "For EMR members:" : "Für EMR-Mitglieder:"}
