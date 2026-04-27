@@ -598,6 +598,8 @@ export default function Ausbildung() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
 
       {/* Educational hypnosis video moved to dedicated page /wie-funktioniert-hypnose */}
 
