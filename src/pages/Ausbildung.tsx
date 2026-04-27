@@ -183,42 +183,42 @@ export default function Ausbildung() {
           SECTION 1 — HERO: Why this training exists
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-8 lg:py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="container-main py-6 lg:py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-3">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-2">
                 {isEN ? "Learn Hypnosis · 6-Day Intensive Certification" : "Hypnose lernen · 6-Tage Intensiv-Zertifizierung"}
               </p>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1B3A5C] mb-3" style={{ fontFamily: "Georgia, serif" }}>
+              <h1 className="text-2xl sm:text-3xl lg:text-[2.25rem] leading-tight font-bold text-[#1B3A5C] mb-2" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN
                   ? "Learn Hypnosis: Become a Certified Aktiv-Hypnose© Therapist"
                   : "Hypnose lernen: Werden Sie zertifizierter Aktiv-Hypnose© Therapeut"}
               </h1>
-              <div className="flex items-center gap-2 mb-5">
+              <div className="flex items-center gap-2 mb-3">
                 <GraduationCap className="w-5 h-5 text-[#2E7D32]" />
                 <span className="text-sm font-semibold text-[#1B3A5C]">
                   {isEN ? "Specialist Practitioner Diploma" : "Therapeuten-Diplom"}
                 </span>
               </div>
-              <p className="text-base lg:text-lg text-[#55504f] leading-relaxed mb-5">
+              <p className="text-sm lg:text-base text-[#55504f] leading-relaxed mb-4">
                 {isEN
-                  ? "Learn hypnosis professionally in 6 days — this is not a weekend certificate course, but an exclusive, high-level practitioner training where you learn to create real, lasting change in yourself and in your clients. Developed over 35+ years of clinical practice by Lic. Psych. David J. Woods, this method-based expert training combines psychology, neuroscience, and hands-on hypnotherapy into a system that works from day one."
-                  : "Hypnose lernen auf professionellem Niveau in 6 Tagen — dies ist kein Wochenend-Zertifikatskurs, sondern eine exklusive, hochwertige Praktiker-Ausbildung, in der Sie lernen, echte, nachhaltige Veränderung zu bewirken — bei sich selbst und bei Ihren Klienten. Entwickelt über 35+ Jahre klinischer Praxis von Lic. Psych. David J. Woods, verbindet diese methodenbasierte Expertenausbildung Psychologie, Neurowissenschaft und praktische Hypnotherapie zu einem System, das ab dem ersten Tag wirkt."}
+                  ? "In just 6 days, you'll learn a proven, hands-on method for real change work. Not a superficial weekend certification, but a high-quality intensive training with a clear system, direct application, and professional guidance. Ideal for anyone who wants to support people safely and effectively."
+                  : "In nur 6 Tagen lernen Sie eine fundierte, praxisnahe Methode für echte Veränderungsarbeit. Keine oberflächliche Wochenend-Zertifizierung, sondern eine hochwertige Intensiv-Ausbildung mit klarem System, direkter Anwendung und professioneller Begleitung. Ideal für alle, die Menschen sicher und wirksam begleiten möchten."}
               </p>
-              <div className="flex flex-wrap gap-4 text-sm text-[#55504f] mb-6">
+              <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#55504f] mb-4">
                 <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "6 Days, 10:00–17:00" : "6 Tage, 10:00–17:00 Uhr"}</span>
                 <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-[#2E7D32]" /> {isEN ? "Small Group Format" : "Kleingruppen-Format"}</span>
                 <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-[#2E7D32]" /> Aktiv-Hypnose© Diplom</span>
               </div>
               <div className="flex flex-wrap gap-3">
                 <a href="#dates">
-                  <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-3">
+                  <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-2.5">
                     {isEN ? "View Dates & Register" : "Termine & Anmeldung"}
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </a>
                 <a href="#curriculum">
-                  <Button variant="outline" className="border-[#55504f] text-[#55504f] font-semibold px-6 py-3">
+                  <Button variant="outline" className="border-[#55504f] text-[#55504f] font-semibold px-6 py-2.5">
                     {isEN ? "See Full Curriculum" : "Gesamtes Curriculum"}
                   </Button>
                 </a>
