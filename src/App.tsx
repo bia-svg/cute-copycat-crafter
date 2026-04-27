@@ -73,21 +73,30 @@ function GeoRedirect() {
 }
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
     // Store previous page for referrer tracking on forms
     const prevPage = sessionStorage.getItem("dw_current_page");
     if (prevPage) sessionStorage.setItem("dw_prev_page", prevPage);
     sessionStorage.setItem("dw_current_page", pathname);
 
-    window.scrollTo(0, 0);
+    if (hash) {
+      // Defer to allow target section to render
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        else window.scrollTo(0, 0);
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
     (window as any).dataLayer = (window as any).dataLayer || [];
     (window as any).dataLayer.push({
       event: "virtual_page_view",
       page_path: pathname,
       page_location: window.location.href,
     });
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 }
 
