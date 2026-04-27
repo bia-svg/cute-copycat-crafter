@@ -93,7 +93,7 @@ export default function ResilienzVerstaerken() {
 
       <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
         <div className="container-main py-10 md:py-12">
-          <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl p-5 md:p-7 lg:p-8">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">{isEN ? "Resilience Coaching Benefits" : "Resilienz Coaching für innere Stärke"}</h2>

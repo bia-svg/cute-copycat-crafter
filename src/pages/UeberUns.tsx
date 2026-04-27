@@ -228,7 +228,7 @@ export default function UeberUns() {
       {/* Ein kurzer Überblick zu David J. Woods */}
       <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
         <div className="container-main py-10 md:py-12">
-          <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl p-5 md:p-7 lg:p-8">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
             <h2 className="text-2xl font-bold text-[#1B3A5C] mb-6 text-center" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "A Brief Overview of David J. Woods" : "Ein kurzer Überblick zu David J. Woods"}
             </h2>
@@ -311,7 +311,7 @@ export default function UeberUns() {
       {/* Kathryn Section */}
       <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
         <div className="container-main py-10 md:py-12">
-          <div className="max-w-5xl mx-auto bg-[#F1F4F7]/70 border border-[#E2E8EE] rounded-3xl p-5 md:p-7 lg:p-8">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] shadow-[0_4px_20px_rgba(27,58,92,0.05)] rounded-3xl p-5 md:p-7 lg:p-8">
             <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-7 items-start">
               <div className="mx-auto md:mx-0 w-60 md:w-full">
                 <div className="border border-[#E2E8EE] overflow-hidden rounded-2xl bg-white">
