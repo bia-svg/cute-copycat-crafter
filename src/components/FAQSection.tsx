@@ -26,7 +26,7 @@ export default function FAQSection({ title, items }: FAQSectionProps) {
   if (!items || items.length === 0) return null;
 
   return (
-    <section className="bg-[#FAF7F2] border-y border-[#EDE7DC]">
+    <section className="bg-[#F1F4F7] border-y border-[#E2E8EE]">
       <div className="container-main py-9 md:py-12">
         <h2
           className="text-xl md:text-2xl font-bold text-primary mb-5 md:mb-7 text-center"
@@ -35,7 +35,7 @@ export default function FAQSection({ title, items }: FAQSectionProps) {
           {title}
         </h2>
 
-        <div className="max-w-2xl md:max-w-4xl lg:max-w-5xl mx-auto bg-white/70 backdrop-blur-sm border border-[#E5DFD2] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-3 md:p-5 lg:p-6">
+        <div className="max-w-2xl md:max-w-4xl lg:max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-3 md:p-5 lg:p-6">
           <Accordion
             type="single"
             collapsible
@@ -45,7 +45,7 @@ export default function FAQSection({ title, items }: FAQSectionProps) {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="group border border-[#E5DFD2] bg-white rounded-2xl px-5 md:px-6 shadow-[0_1px_2px_rgba(27,58,92,0.04)] hover:border-[#2E7D32]/40 hover:shadow-[0_2px_6px_rgba(46,125,50,0.06)] transition-all data-[state=open]:bg-[#F4F9F4] data-[state=open]:border-[#2E7D32]/40 data-[state=open]:shadow-[0_2px_8px_rgba(46,125,50,0.08)]"
+                className="group border border-[#E2E8EE] bg-white rounded-2xl px-5 md:px-6 shadow-[0_1px_2px_rgba(27,58,92,0.04)] hover:border-[#2E7D32]/40 hover:shadow-[0_2px_6px_rgba(46,125,50,0.06)] transition-all data-[state=open]:bg-[#F4F9F4] data-[state=open]:border-[#2E7D32]/40 data-[state=open]:shadow-[0_2px_8px_rgba(46,125,50,0.08)]"
               >
                 <AccordionTrigger
                   className="text-[15px] md:text-base font-semibold text-primary hover:no-underline py-4 md:py-4.5 text-left gap-4 [&>svg]:hidden"
