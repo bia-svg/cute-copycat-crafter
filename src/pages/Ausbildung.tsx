@@ -451,7 +451,7 @@ export default function Ausbildung() {
           SECTION — Day-by-Day Curriculum
           ═══════════════════════════════════════════════════════════ */}
       <section id="curriculum" className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
-        <div className="container-main py-4 md:py-7 lg:py-10">
+        <div className="container-main py-3.5 md:py-6 lg:py-9">
           <h2 className="text-lg md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Your 6-Day Journey" : "Ihre 6-Tage Reise"}
           </h2>
