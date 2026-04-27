@@ -542,6 +542,56 @@ export default function Ausbildung() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
+          INCLUDED — Alles, was Sie erhalten
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-white border-b border-border">
+        <div className="container-main py-10 lg:py-14">
+          <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-2 text-center" style={{ fontFamily: "Georgia, serif" }}>
+            {isEN ? "Everything You Receive" : "Alles, was Sie erhalten"}
+          </h2>
+          <p className="text-sm text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+            {isEN
+              ? "A complete package of materials, certification and ongoing support."
+              : "Ein vollständiges Paket aus Materialien, Zertifizierung und laufender Begleitung."}
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 max-w-5xl mx-auto">
+            {[
+              { n: "350+", l: isEN ? "Pages of training manual" : "Seiten Ausbildungsmappe" },
+              { n: "150+", l: isEN ? "Pages of sample texts" : "Seiten Beispieltexte" },
+              { n: "50+", l: isEN ? "Short videos" : "Kurzvideos" },
+              { n: "50+", l: isEN ? "Audio recordings" : "Audioaufnahmen" },
+              { n: "1", l: isEN ? "Aktiv-Hypnose® Diploma" : "Aktiv-Hypnose® Diplom" },
+              { n: "∞", l: isEN ? "Ongoing support" : "Laufende Unterstützung" },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-[#f4f3ef] border border-border rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-center min-h-[110px] shadow-sm"
+              >
+                <div className="text-2xl md:text-3xl font-bold text-[#1B3A5C] mb-1" style={{ fontFamily: "Georgia, serif" }}>
+                  {item.n}
+                </div>
+                <div className="text-xs md:text-[13px] text-muted-foreground leading-snug">
+                  {item.l}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-[#2E7D32]/30 bg-[#2E7D32]/5 p-4 md:p-5">
+            <p className="text-sm md:text-[15px] text-[#1B3A5C] leading-relaxed">
+              <span className="font-semibold text-[#2E7D32]">
+                {isEN ? "For EMR members:" : "Für EMR-Mitglieder:"}
+              </span>{" "}
+              {isEN
+                ? "Detailed certificate of hours and content for possible EMR submission included."
+                : "Ausführlicher Stunden- und Inhaltsnachweis zur möglichen EMR-Einreichung inklusive."}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
           VIDEO — Intensiv-Ausbildungen
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#f4f3ef] border-b border-border">
