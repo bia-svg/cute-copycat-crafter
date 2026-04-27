@@ -22,7 +22,7 @@ export default function Erstgespraech() {
         { name: isEN ? "Free Discovery Call" : "Erstgespräch", path: getPath("contact", language, country) },
       ]} />
 
-      <section className="py-10 lg:py-14 bg-[#F5F3EF]">
+      <section className="py-10 lg:py-14 bg-[#F1F4F7]">
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2 text-center">
@@ -49,7 +49,7 @@ export default function Erstgespraech() {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-[#f4f3ef] border-t border-border">
+      <section className="bg-[#F1F4F7] border-t border-border">
         <div className="container-main py-10 lg:py-14">
           <h2 className="text-xl font-bold text-primary mb-6">
             {isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}

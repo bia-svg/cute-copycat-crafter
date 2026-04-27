@@ -67,7 +67,7 @@ export default function StressPraevention() {
         </div>
       </section>
 
-      <section className="bg-[#f4f3ef] border-b border-border">
+      <section className="bg-[#F1F4F7] border-b border-border">
         <div className="container-main py-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
@@ -107,7 +107,7 @@ export default function StressPraevention() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {phases.map((p) => (
-              <div key={p.phase} className="border border-border p-3 bg-[#f4f3ef]">
+              <div key={p.phase} className="border border-border p-3 bg-[#F1F4F7]">
                 <div className="flex items-center gap-2 mb-1">
                   <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center font-bold">{p.phase}</span>
                   <h3 className="font-semibold text-xs text-[#1B3A5C]">{p.title}</h3>

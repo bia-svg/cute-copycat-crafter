@@ -101,7 +101,7 @@ export default function Buch() {
       </section>
 
       {/* Description */}
-      <section className="bg-[#f4f3ef] border-b border-border">
+      <section className="bg-[#F1F4F7] border-b border-border">
         <div className="container-main py-10">
           <h2 className="text-2xl font-bold text-[#1B3A5C] mb-6">
             {isEN ? "Description" : "Beschreibung"}
