@@ -17,7 +17,7 @@ export const smokingData: ServicePageData = {
   metaDescDE: "Raucherentwöhnung mit Hypnose in Augsburg — meist in 1 Intensivsitzung rauchfrei, ohne ständigen Kampf. Lic. Psych. David J. Woods, 35+ Jahre Erfahrung, ★ 5.0 (266 Google-Bewertungen). Kostenloses Erstgespräch.",
   metaDescEN: "Stop smoking with hypnosis in Zurich & Augsburg — often smoke-free in one intensive session, without constant struggle. Lic. Psych. David J. Woods, 35+ years, ★ 5.0 (266 reviews). Free discovery call.",
   h1CH: "Effektive Raucherentwöhnung mit Hypnose in Zürich",
-  h1DE: "Effektive Raucherentwöhnung mit Hypnose in Augsburg",
+  h1DE: "Effektive Raucherentwöhnung mit Hypnose",
   h1EN: "Effective Stop Smoking Hypnotherapy in Zurich & Augsburg",
   benefitsCH: ["Rauchfrei ohne ständigen inneren Kampf", "Mehr Freiheit, Energie und Lebensqualität", "Unterstützung auf dem Weg in ein rauchfreies Leben", "Nachhaltige Begleitung statt ständigem Rückfall"],
   benefitsEN: ["Smoke-free without constant inner struggle", "More freedom, energy and quality of life", "Finally become a non-smoker", "Lasting change instead of constant relapse"],
