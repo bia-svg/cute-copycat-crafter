@@ -288,10 +288,10 @@ export default function Ausbildung() {
           <div className="flex justify-center gap-3 mb-8 max-w-md mx-auto">
             <button
               onClick={() => { setActiveTab("de"); setShowAllDates(false); }}
-              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl border-2 font-semibold text-sm transition-all ${
+              className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border font-semibold text-sm transition-all ${
                 activeTab === "de"
-                  ? "border-primary bg-primary/15 text-foreground shadow-md"
-                  : "border-border bg-white text-foreground hover:border-primary/40"
+                  ? "border-[#C5CCD4] bg-[#EAEEF2] text-[#1B3A5C] shadow-[0_1px_3px_rgba(27,58,92,0.06)]"
+                  : "border-[#E2E8EE] bg-white text-[#1B3A5C]/70 hover:border-[#C5CCD4] hover:text-[#1B3A5C]"
               }`}
             >
               <span className="text-lg">🇩🇪</span>
@@ -299,10 +299,10 @@ export default function Ausbildung() {
             </button>
             <button
               onClick={() => { setActiveTab("ch"); setShowAllDates(false); }}
-              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl border-2 font-semibold text-sm transition-all ${
+              className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border font-semibold text-sm transition-all ${
                 activeTab === "ch"
-                  ? "border-primary bg-primary/15 text-foreground shadow-md"
-                  : "border-border bg-white text-foreground hover:border-primary/40"
+                  ? "border-[#C5CCD4] bg-[#EAEEF2] text-[#1B3A5C] shadow-[0_1px_3px_rgba(27,58,92,0.06)]"
+                  : "border-[#E2E8EE] bg-white text-[#1B3A5C]/70 hover:border-[#C5CCD4] hover:text-[#1B3A5C]"
               }`}
             >
               🇨🇭 {isEN ? "Switzerland" : "Schweiz"}
@@ -313,20 +313,21 @@ export default function Ausbildung() {
             {/* CH Content */}
             {activeTab === "ch" && (
               <>
-                <div className="bg-white border border-[#1B3A5C]/15 rounded-2xl px-6 py-4 text-center shadow-[0_2px_10px_rgba(27,58,92,0.05)]">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#2E7D32] mb-2">
+                <div className="flex items-baseline justify-center gap-x-3 gap-y-1 flex-wrap pb-2 mb-1 border-b border-[#1B3A5C]/10">
+                  <span className="text-[13px] text-[#1B3A5C]/70">
                     {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
-                  </p>
+                  </span>
+                  <span className="text-[#1B3A5C]/25">·</span>
                   {hasEarlyBirdForCountry("ch", datesCH) ? (
-                    <div className="flex items-baseline justify-center gap-3 flex-wrap">
-                      <span className="text-xs text-muted-foreground/70 line-through">CHF 2.990.-</span>
-                      <span className="text-2xl font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>CHF 2.690.-</span>
-                      <span className="text-[11px] font-medium text-[#2E7D32]">
-                        {isEN ? "Early Bird Price" : "Frühbucherpreis"}
+                    <>
+                      <span className="text-xs text-muted-foreground/60 line-through">CHF 2.990.-</span>
+                      <span className="text-lg font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>CHF 2.690.-</span>
+                      <span className="text-[12px] text-[#2E7D32]">
+                        {isEN ? "Early Bird" : "Frühbucher"}
                       </span>
-                    </div>
+                    </>
                   ) : (
-                    <span className="text-2xl font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>CHF 2.990.-</span>
+                    <span className="text-lg font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>CHF 2.990.-</span>
                   )}
                 </div>
                 {(showAllDates ? datesCH : datesCH.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
@@ -367,20 +368,21 @@ export default function Ausbildung() {
             {/* DE Content */}
             {activeTab === "de" && (
               <>
-                <div className="bg-white border border-[#1B3A5C]/15 rounded-2xl px-6 py-4 text-center shadow-[0_2px_10px_rgba(27,58,92,0.05)]">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1565C0] mb-2">
+                <div className="flex items-baseline justify-center gap-x-3 gap-y-1 flex-wrap pb-2 mb-1 border-b border-[#1B3A5C]/10">
+                  <span className="text-[13px] text-[#1B3A5C]/70">
                     {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
-                  </p>
+                  </span>
+                  <span className="text-[#1B3A5C]/25">·</span>
                   {hasEarlyBirdForCountry("de", datesDE) ? (
-                    <div className="flex items-baseline justify-center gap-3 flex-wrap">
-                      <span className="text-xs text-muted-foreground/70 line-through">€2.790,-</span>
-                      <span className="text-2xl font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>€2.490,-</span>
-                      <span className="text-[11px] font-medium text-[#1565C0]">
-                        {isEN ? "Early Bird Price" : "Frühbucherpreis"}
+                    <>
+                      <span className="text-xs text-muted-foreground/60 line-through">€2.790,-</span>
+                      <span className="text-lg font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>€2.490,-</span>
+                      <span className="text-[12px] text-[#1565C0]">
+                        {isEN ? "Early Bird" : "Frühbucher"}
                       </span>
-                    </div>
+                    </>
                   ) : (
-                    <span className="text-2xl font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>€2.790,-</span>
+                    <span className="text-lg font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>€2.790,-</span>
                   )}
                 </div>
                 {(showAllDates ? datesDE : datesDE.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
