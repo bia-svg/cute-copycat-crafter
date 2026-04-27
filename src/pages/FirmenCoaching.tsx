@@ -187,7 +187,7 @@ export default function FirmenCoaching() {
         ]}
       />
 
-      <section className="bg-background py-10 lg:py-14">
+      <section className="bg-[#E8EDF3] py-8 lg:py-12">
         <div className="container-main">
           <div className="relative max-w-2xl mx-auto bg-primary/10 border border-primary/25 rounded-2xl px-6 py-10 md:px-10 md:py-12 text-center shadow-sm">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full tracking-wide uppercase">
