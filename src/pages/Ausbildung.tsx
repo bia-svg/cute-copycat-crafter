@@ -219,7 +219,7 @@ export default function Ausbildung() {
                 </a>
               </div>
             </div>
-            <div className="border border-border rounded-lg overflow-hidden shadow-sm">
+            <div className="border border-[#1B3A5C]/12 rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(27,58,92,0.08)]">
               <img src={`${CDN_BASE}/training_seminar_979f1a53.jpg`} alt={isEN ? "Hypnotherapy Training Seminar" : "Hypnose Ausbildung Seminar"} className="w-full h-auto" />
             </div>
           </div>
