@@ -142,35 +142,31 @@
    ============================================================ */
 @media (min-width: 1440px) {
   body {
+    /* Soft, seamless gradient: bright near center, fading gently to a faint cool grey-blue at edges. No hard stops. */
     background:
-      linear-gradient(
-        to right,
-        #E8EDF3 0%,
-        #EEF2F6 calc(50% - 650px),
-        #FFFFFF calc(50% - 600px),
-        #FFFFFF calc(50% + 600px),
-        #EEF2F6 calc(50% + 650px),
-        #E8EDF3 100%
+      radial-gradient(
+        ellipse 75% 100% at 50% 50%,
+        #FFFFFF 0%,
+        #FAFBFD 55%,
+        #F1F4F8 85%,
+        #EAEEF3 100%
       );
     background-attachment: fixed;
   }
 
-  body::before,
-  body::after {
+  /* Very subtle inner glow on the central content column — almost imperceptible, just guides the eye */
+  body::before {
     content: "";
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1320px;
+    max-width: 100%;
     pointer-events: none;
-    z-index: 1;
-  }
-  body::before {
-    left: calc(50% - 624px);
-    background: linear-gradient(to right, rgba(27, 58, 92, 0.06), rgba(27, 58, 92, 0));
-  }
-  body::after {
-    right: calc(50% - 624px);
-    background: linear-gradient(to left, rgba(27, 58, 92, 0.06), rgba(27, 58, 92, 0));
+    z-index: 0;
+    box-shadow: 0 0 80px 0 rgba(27, 58, 92, 0.04);
+    background: transparent;
   }
 }
