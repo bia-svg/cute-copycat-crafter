@@ -141,6 +141,22 @@
    - No effect on mobile, tablet, or standard laptops
    ============================================================ */
 @media (min-width: 1440px) {
+  /* Outer screen padding — Website sits like a "card" inside the screen.
+     The html element gets a clean off-white background and ~28px of padding
+     all around, so the body (which carries the framing gradients) no longer
+     touches the screen edges. */
+  html {
+    background-color: #FAFBFC;
+    padding: 28px;
+    box-sizing: border-box;
+    min-height: 100vh;
+  }
+  body {
+    min-height: calc(100vh - 56px);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
   /* Layered background:
      1) Radial light cone — bright behind content, slightly darker/cooler outside
      2) Subtle horizontal vignette on the far left/right edges
