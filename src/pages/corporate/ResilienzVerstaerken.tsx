@@ -43,11 +43,18 @@ export default function ResilienzVerstaerken() {
 
   return (
     <>
+      {/* SEO: title/desc + BreadcrumbList JSON-LD */}
       <SEO
         titleDE="Resilienz Coaching für Unternehmen — David J. Woods"
         titleEN="Resilience Coaching for Companies — David J. Woods"
         descriptionDE="Resilienz Coaching für innere Stärke. Die 7 Säulen der Resilienz. Meistern Sie Herausforderungen durch innere Stärke."
         descriptionEN="Resilience coaching for inner strength. The 7 pillars of resilience. Master challenges through inner strength."
+        pageKey="corporateResilienz"
+        breadcrumbs={[
+          { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+          { name: isEN ? "Business Coaching" : "Firmen-Coaching", path: getPath("corporate", language, country) },
+          { name: isEN ? "Resilience Building" : "Resilienz-Verstärken", path: getPath("corporateResilienz", language, country) },
+        ]}
       />
 
       {/* Hero */}

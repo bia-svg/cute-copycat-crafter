@@ -36,11 +36,18 @@ export default function NichtraucherSeminare() {
 
   return (
     <>
+      {/* SEO: title/desc + BreadcrumbList JSON-LD */}
       <SEO
         titleDE="Rauchfrei in 3 Stunden — Nichtraucher-Seminare für Unternehmen"
         titleEN="Smoke-Free in 3 Hours — Non-Smoker Seminars for Companies"
         descriptionDE="Das 'Rauchfrei in 3 Stunden'-Programm von David J. Woods. Effektive Rauchentwöhnung für Mitarbeiter und Führungskräfte direkt in Ihrem Unternehmen."
         descriptionEN="The 'Smoke-Free in 3 Hours' program by David J. Woods. Effective smoking cessation for employees and executives directly at your company."
+        pageKey="corporateNichtraucher"
+        breadcrumbs={[
+          { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+          { name: isEN ? "Business Coaching" : "Firmen-Coaching", path: getPath("corporate", language, country) },
+          { name: isEN ? "Non-Smoker Seminars" : "Nichtraucher-Seminare", path: getPath("corporateNichtraucher", language, country) },
+        ]}
       />
 
       {/* Hero */}
