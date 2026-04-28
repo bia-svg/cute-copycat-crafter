@@ -177,13 +177,68 @@ export default function Ausbildung() {
     },
   ];
 
+  /* ── SEO: Course JSON-LD built from REAL curriculum + REAL upcoming dates ──
+     Helps Google show course rich results and feeds AI Overviews / GEO with structured
+     facts: provider, mode, language, schedule, price (EUR/CHF), duration. */
+  const courseJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: isEN ? "Aktiv-Hypnose© Training — 6-Day Intensive" : "Aktiv-Hypnose© Ausbildung — 6-Tage-Intensivkurs",
+    description: isEN
+      ? "6-day intensive hypnosis training by NGH International Trainer Lic. Psych. David J. Woods. Aktiv-Hypnose© Therapist Diploma. EMR-recognized in Switzerland."
+      : "6-Tage Intensiv-Ausbildung in Hypnose mit NGH International Trainer Lic. Psych. David J. Woods. Aktiv-Hypnose© Therapeuten-Diplom. EMR-anerkannt in der Schweiz.",
+    inLanguage: isEN ? "en" : "de",
+    educationalCredentialAwarded: "Aktiv-Hypnose© Therapeuten-Diplom",
+    timeRequired: "P6D",
+    syllabusSections: days.map((d) => ({
+      "@type": "Syllabus",
+      name: isEN ? d.titleEN : d.titleDE,
+      description: (isEN ? d.topicsEN : d.topicsDE).join("; "),
+    })),
+    provider: {
+      "@type": "Organization",
+      name: "David J. Woods — Hypnose & Psychologie",
+      url: "https://david-j-woods.com",
+      sameAs: "https://david-j-woods.com",
+    },
+    instructor: {
+      "@type": "Person",
+      name: "David J. Woods",
+      honorificPrefix: "Lic.Psych.",
+      jobTitle: "NGH International Trainer, Hypnotherapist",
+    },
+    hasCourseInstance: [
+      ...datesCH.map((d) => ({
+        "@type": "CourseInstance",
+        name: `Aktiv-Hypnose© Ausbildung — ${d.date}`,
+        courseMode: "onsite",
+        location: { "@type": "Place", name: d.location, address: { "@type": "PostalAddress", addressCountry: "CH" } },
+        inLanguage: "de",
+        offers: { "@type": "Offer", price: "2990", priceCurrency: "CHF", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/ch/ausbildung" },
+      })),
+      ...datesDE.map((d) => ({
+        "@type": "CourseInstance",
+        name: `Aktiv-Hypnose© Ausbildung — ${d.date}`,
+        courseMode: "onsite",
+        location: { "@type": "Place", name: d.location, address: { "@type": "PostalAddress", addressCountry: "DE" } },
+        inLanguage: "de",
+        offers: { "@type": "Offer", price: "2790", priceCurrency: "EUR", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/de/ausbildung" },
+      })),
+    ],
+  };
+
   return (
     <>
-      {/* SEO: BreadcrumbList JSON-LD for rich-result eligibility */}
-      <SEO {...pageSEO.training} pageKey="training" breadcrumbs={[
-        { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
-        { name: isEN ? "Training" : "Ausbildung", path: getPath("training", language, country) },
-      ]} />
+      {/* SEO: BreadcrumbList + Course JSON-LD (overrides default org schema for this page) */}
+      <SEO
+        {...pageSEO.training}
+        pageKey="training"
+        jsonLd={courseJsonLd}
+        breadcrumbs={[
+          { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+          { name: isEN ? "Training" : "Ausbildung", path: getPath("training", language, country) },
+        ]}
+      />
 
       {/* ═══════════════════════════════════════════════════════════
           SECTION 1 — HERO: Why this training exists
