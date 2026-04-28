@@ -613,7 +613,7 @@ export default function Home() {
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-lg sm:text-xl font-semibold text-primary mb-3 text-center">
-              {language === "en" ? "Your Request" : "Ihre Anfrage"}
+              {language === "en" ? "Request a free consultation" : "Unverbindlich beraten lassen"}
             </h2>
             <div className="bg-white rounded-lg border-2 border-[#D1D5DB] p-4 sm:p-6 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
               <InlineContactForm />
