@@ -182,16 +182,16 @@
         #ECEFF3 100%
       ),
       /* Soft white "passepartout" — visibly thicker outer margin around the
-         ~1200px content. White band extended to ±840px (vs. previous ±600px)
+         ~1200px content. White band extended to ±780px (vs. previous ±600px)
          so the inner white frame is ~30–40% wider on each side.
          Tone is #FAFBFC (minimally softer than pure white) for more depth. */
       linear-gradient(
         to right,
         transparent 0%,
-        transparent calc(50% - 870px),
-        #FAFBFC calc(50% - 840px),
-        #FAFBFC calc(50% + 840px),
-        transparent calc(50% + 870px),
+        transparent calc(50% - 810px),
+        #FAFBFC calc(50% - 780px),
+        #FAFBFC calc(50% + 780px),
+        transparent calc(50% + 810px),
         transparent 100%
       );
     background-repeat: repeat, no-repeat, no-repeat, no-repeat;
@@ -211,11 +211,11 @@
     z-index: 1;
   }
   body::before {
-    left: calc(50% - 864px);
+    left: calc(50% - 804px);
     background: linear-gradient(to right, rgba(27, 58, 92, 0.06), rgba(27, 58, 92, 0));
   }
   body::after {
-    right: calc(50% - 864px);
+    right: calc(50% - 804px);
     background: linear-gradient(to left, rgba(27, 58, 92, 0.06), rgba(27, 58, 92, 0));
   }
 }
