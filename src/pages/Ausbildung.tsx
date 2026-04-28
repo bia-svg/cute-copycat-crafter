@@ -227,13 +227,88 @@ export default function Ausbildung() {
     ],
   };
 
+  /* ── SEO: Event JSON-LD per seminar date ──
+     Each upcoming training date is also exposed as a schema.org/Event so it can appear in
+     Google "Events" rich results. Dates are derived from the REAL date strings above using
+     a small parser (no fabricated data). */
+  const monthMap: Record<string, number> = {
+    jan: 1, januar: 1, january: 1,
+    feb: 2, februar: 2, february: 2,
+    mar: 3, mär: 3, märz: 3, march: 3,
+    apr: 4, april: 4,
+    mai: 5, may: 5,
+    jun: 6, juni: 6, june: 6,
+    jul: 7, juli: 7, july: 7,
+    aug: 8, august: 8,
+    sep: 9, sept: 9, september: 9,
+    okt: 10, oct: 10, oktober: 10, october: 10,
+    nov: 11, november: 11,
+    dez: 12, dec: 12, dezember: 12, december: 12,
+  };
+  /** Parses strings like "Mo-Sa, 15.-20. Juni 2026" → { start: "2026-06-15", end: "2026-06-20" } */
+  const parseDateRange = (s: string): { start: string; end: string } | null => {
+    const m = s.match(/(\d{1,2})\.?\s*[-–]\s*(\d{1,2})\.\s*([A-Za-zäöüÄÖÜ.]+)\s*(\d{4})/);
+    if (!m) return null;
+    const [, d1, d2, monthRaw, year] = m;
+    const month = monthMap[monthRaw.toLowerCase().replace(/\.$/, "")];
+    if (!month) return null;
+    const pad = (n: string | number) => String(n).padStart(2, "0");
+    return { start: `${year}-${pad(month)}-${pad(d1)}`, end: `${year}-${pad(month)}-${pad(d2)}` };
+  };
+  const buildEvent = (
+    d: { date: string; location: string },
+    countryCode: "CH" | "DE",
+    price: string,
+    currency: "CHF" | "EUR",
+    url: string,
+  ) => {
+    const range = parseDateRange(d.date);
+    if (!range) return null;
+    return {
+      "@context": "https://schema.org",
+      "@type": "EducationEvent",
+      name: `Aktiv-Hypnose© Ausbildung — ${d.date}`,
+      description: "6-Tage Intensiv-Ausbildung in Hypnose mit NGH International Trainer Lic. Psych. David J. Woods. Aktiv-Hypnose© Therapeuten-Diplom.",
+      startDate: range.start,
+      endDate: range.end,
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      eventStatus: "https://schema.org/EventScheduled",
+      location: {
+        "@type": "Place",
+        name: d.location,
+        address: { "@type": "PostalAddress", addressCountry: countryCode },
+      },
+      organizer: {
+        "@type": "Organization",
+        name: "David J. Woods — Hypnose & Psychologie",
+        url: "https://david-j-woods.com",
+      },
+      performer: { "@type": "Person", name: "David J. Woods" },
+      inLanguage: "de",
+      offers: {
+        "@type": "Offer",
+        price,
+        priceCurrency: currency,
+        availability: "https://schema.org/InStock",
+        url,
+        validFrom: new Date().toISOString().split("T")[0],
+      },
+    };
+  };
+  const eventJsonLd = [
+    ...datesCH.map(d => buildEvent(d, "CH", "2990", "CHF", "https://david-j-woods.com/de/ch/ausbildung")),
+    ...datesDE.map(d => buildEvent(d, "DE", "2790", "EUR", "https://david-j-woods.com/de/de/ausbildung")),
+  ].filter(Boolean) as Record<string, unknown>[];
+
+  const allSchemaForPage = [courseJsonLd, ...eventJsonLd];
+
   return (
     <>
       {/* SEO: BreadcrumbList + Course JSON-LD (overrides default org schema for this page) */}
       <SEO
         {...pageSEO.training}
         pageKey="training"
-        jsonLd={courseJsonLd}
+        jsonLd={allSchemaForPage}
         breadcrumbs={[
           { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
           { name: isEN ? "Training" : "Ausbildung", path: getPath("training", language, country) },
