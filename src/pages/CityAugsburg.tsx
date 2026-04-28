@@ -29,12 +29,47 @@ export default function CityAugsburg() {
 
   return (
     <>
-      {/* SEO: BreadcrumbList JSON-LD for rich-result eligibility */}
-      <SEO {...pageSEO.cityAugsburg} pageKey="cityAugsburg" breadcrumbs={[
-        { name: isEN ? "Home" : "Startseite", path: basePath },
-        { name: isEN ? "Locations" : "Standorte", path: getPath("locations", language, country) },
-        { name: "Augsburg", path: getPath("cityAugsburg", language, country) },
-      ]} />
+      {/* SEO: BreadcrumbList + city-specific LocalBusiness/MedicalBusiness JSON-LD.
+          Asserts the Augsburg practice as a discrete local entity for Maps + Local Pack ranking. */}
+      <SEO
+        {...pageSEO.cityAugsburg}
+        pageKey="cityAugsburg"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": ["LocalBusiness", "MedicalBusiness"],
+            "@id": "https://david-j-woods.com/de/de/hypnose-augsburg#localbusiness",
+            name: "David J. Woods — Hypnose Augsburg",
+            description: isEN
+              ? "Hypnotherapy practice in Augsburg led by Lic. Psych. David J. Woods. NGH International Trainer."
+              : "Hypnose-Praxis in Augsburg von Lic. Psych. David J. Woods. NGH International Trainer.",
+            url: "https://david-j-woods.com/de/de/hypnose-augsburg",
+            telephone: "+49 171 953 99 22",
+            medicalSpecialty: "Hypnotherapy",
+            priceRange: "$$",
+            image: `${CDN}/augsburg_city_hypnose_dba5b1e7.jpg`,
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Viktoria Str 3b",
+              addressLocality: "Augsburg",
+              postalCode: "86150",
+              addressCountry: "DE",
+            },
+            geo: { "@type": "GeoCoordinates", latitude: 48.3705, longitude: 10.8978 },
+            areaServed: [
+              { "@type": "City", name: "Augsburg" },
+              { "@type": "State", name: "Bayern" },
+            ],
+            aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "266", bestRating: "5" },
+            sameAs: ["https://share.google/SGm12iRl4fuRtKxRD"],
+          },
+        ]}
+        breadcrumbs={[
+          { name: isEN ? "Home" : "Startseite", path: basePath },
+          { name: isEN ? "Locations" : "Standorte", path: getPath("locations", language, country) },
+          { name: "Augsburg", path: getPath("cityAugsburg", language, country) },
+        ]}
+      />
       <Breadcrumbs items={[
         { name: "Home", path: basePath },
         { name: isEN ? "Locations" : "Standorte", path: getPath("locations", language, country) },
