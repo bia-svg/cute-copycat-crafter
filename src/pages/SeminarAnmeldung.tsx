@@ -45,6 +45,8 @@ export default function SeminarAnmeldung() {
   const [gdprConsent, setGdprConsent] = useState(false);
   const [agbConsent, setAgbConsent] = useState(false);
   const [seminarCounts, setSeminarCounts] = useState<Record<string, number>>({});
+  const [showAllDates, setShowAllDates] = useState(false);
+  const INITIAL_DATES_VISIBLE = 2;
 
   // Fetch seminar registration counts for early bird logic
   useEffect(() => {
