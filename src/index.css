@@ -146,12 +146,12 @@
      On very large displays (≥1920px) it grows further to ~72px. */
   html {
     background-color: #FAFBFC;
-    padding: 48px;
+    padding: 16px 48px;
     box-sizing: border-box;
     min-height: 100vh;
   }
   body {
-    min-height: calc(100vh - 96px);
+    min-height: calc(100vh - 32px);
     border-radius: 10px;
     overflow: hidden;
   }
@@ -215,9 +215,9 @@
 /* Even larger outer padding on very wide screens (iMac etc.) */
 @media (min-width: 1920px) {
   html {
-    padding: 72px;
+    padding: 24px 72px;
   }
   body {
-    min-height: calc(100vh - 144px);
+    min-height: calc(100vh - 48px);
   }
 }
