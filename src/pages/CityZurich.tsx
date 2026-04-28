@@ -108,7 +108,7 @@ export default function CityZurich() {
                 </div>
               </div>
               <Link to={`/${language}/${country}/erstgespraech`}>
-                <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-3">
+                <Button className="bg-[#4CAF50] hover:bg-[#43A047] text-white font-semibold px-6 py-3">
                   {isEN ? "Book Free Discovery Call" : "Kostenloses Erstgespräch vereinbaren"}
                 </Button>
               </Link>
@@ -187,7 +187,7 @@ export default function CityZurich() {
             {isEN ? "Ready for Lasting Change?" : "Bereit für nachhaltige Veränderung?"}
           </h2>
           <Link to={`/${language}/${country}/erstgespraech`}>
-            <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-8 py-3 text-base">
+            <Button className="bg-[#4CAF50] hover:bg-[#43A047] text-white font-semibold px-8 py-3 text-base">
               {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
             </Button>
           </Link>

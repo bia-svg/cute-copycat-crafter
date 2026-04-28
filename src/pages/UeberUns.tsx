@@ -59,7 +59,7 @@ export default function UeberUns() {
                   <span className="text-xs text-muted-foreground ml-1">5.0 (266) · Google</span>
                 </div>
                 <Link to={getPath("contact", language, country)}>
-                  <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-6 py-2.5">
+                  <Button className="bg-[#4CAF50] hover:bg-[#43A047] text-white font-semibold px-6 py-2.5">
                     {isEN ? "Book Free Discovery Call" : "Kostenloses Erstgespräch"}
                   </Button>
                 </Link>
@@ -388,7 +388,7 @@ export default function UeberUns() {
                   ))}
                 </div>
                 <Link to={`${getPath("contact", language, country)}?concern=children`}>
-                  <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-5 py-2.5">
+                  <Button className="bg-[#4CAF50] hover:bg-[#43A047] text-white font-semibold px-5 py-2.5">
                     {isEN ? "Book Session for Children & Teens" : "Sitzung für Kinder & Jugendliche buchen"}
                   </Button>
                 </Link>
@@ -460,7 +460,7 @@ export default function UeberUns() {
                 : "Vereinbaren Sie jetzt Ihr kostenloses und unverbindliches Erstgespräch. Wir nehmen uns Zeit für Sie und beraten Sie individuell."}
             </p>
             <Link to={getPath("contact", language, country)}>
-              <Button className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-semibold px-7 py-3">
+              <Button className="bg-[#4CAF50] hover:bg-[#43A047] text-white font-semibold px-7 py-3">
                 {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
               </Button>
             </Link>
