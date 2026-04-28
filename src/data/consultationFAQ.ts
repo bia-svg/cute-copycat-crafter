@@ -3,7 +3,7 @@
  */
 export const consultationFaqEN = [
   { q: "What kind of topics can you help with?", a: "We work with a wide range of concerns, including stress, anxiety, smoking, weight management, burnout prevention, depressive states, traumatic stress, and also issues affecting children and teens. In general, anything connected to emotional patterns, psychosomatic symptoms, or subconscious blocks can often be addressed effectively with our methods." },
-  { q: "Is there any cost or obligation?", a: "No. The initial conversation is completely free and non-binding. You decide afterwards whether you'd like to proceed." },
+  { q: "Is there any cost or obligation?", a: "No. The initial consultation is non-binding and takes place by phone. You decide afterwards in your own time whether you'd like to book a session.\n\nHypnosis enables direct change on an emotional level — areas that otherwise often require longer processes. At the same time, many topics are highly individual and can reach back into early life phases or formative experiences. The effect can therefore vary: some changes are felt immediately, others develop step by step.\n\nAfter the session, any open points can of course be clarified. If needed, we discuss the next steps together." },
   { q: "Can sessions be done online?", a: "Generally, yes. In addition to our locations in Switzerland and Germany, we also offer online consultations for clients worldwide. Naturally, it is not quite the same as a one-to-one in-person session, but an online consultation is possible from anywhere in the world. Online hypnosis may also be possible in some cases and would need to be assessed individually." },
 ];
 
