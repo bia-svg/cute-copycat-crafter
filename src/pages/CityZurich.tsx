@@ -29,12 +29,47 @@ export default function CityZurich() {
 
   return (
     <>
-      {/* SEO: BreadcrumbList JSON-LD for rich-result eligibility */}
-      <SEO {...pageSEO.cityZurich} pageKey="cityZurich" breadcrumbs={[
-        { name: isEN ? "Home" : "Startseite", path: basePath },
-        { name: isEN ? "Locations" : "Standorte", path: getPath("locations", language, country) },
-        { name: isEN ? "Zurich" : "Zürich", path: getPath("cityZurich", language, country) },
-      ]} />
+      {/* SEO: BreadcrumbList + city-specific LocalBusiness/MedicalBusiness JSON-LD.
+          Asserts the Zurich practice as a discrete local entity for Maps + Local Pack ranking. */}
+      <SEO
+        {...pageSEO.cityZurich}
+        pageKey="cityZurich"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": ["LocalBusiness", "MedicalBusiness"],
+            "@id": "https://david-j-woods.com/de/ch/hypnose-zuerich#localbusiness",
+            name: "David J. Woods — Hypnose Zürich",
+            description: isEN
+              ? "Hypnotherapy practice in Zurich led by Lic. Psych. David J. Woods. EMR-recognized (ZSR P609264)."
+              : "Hypnose-Praxis in Zürich von Lic. Psych. David J. Woods. EMR-anerkannt (ZSR P609264).",
+            url: "https://david-j-woods.com/de/ch/hypnose-zuerich",
+            telephone: "+41 79 131 88 78",
+            medicalSpecialty: "Hypnotherapy",
+            priceRange: "$$",
+            image: `${CDN}/zurich_city_hypnose_6ee818ff.jpg`,
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Usteristrasse 23",
+              addressLocality: "Zürich",
+              postalCode: "8001",
+              addressCountry: "CH",
+            },
+            geo: { "@type": "GeoCoordinates", latitude: 47.3735, longitude: 8.5378 },
+            areaServed: [
+              { "@type": "City", name: "Zürich" },
+              { "@type": "City", name: "Eschenbach" },
+            ],
+            aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "266", bestRating: "5" },
+            sameAs: ["https://share.google/SGm12iRl4fuRtKxRD"],
+          },
+        ]}
+        breadcrumbs={[
+          { name: isEN ? "Home" : "Startseite", path: basePath },
+          { name: isEN ? "Locations" : "Standorte", path: getPath("locations", language, country) },
+          { name: isEN ? "Zurich" : "Zürich", path: getPath("cityZurich", language, country) },
+        ]}
+      />
       <Breadcrumbs items={[
         { name: "Home", path: basePath },
         { name: isEN ? "Locations" : "Standorte", path: getPath("locations", language, country) },

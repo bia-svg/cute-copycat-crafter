@@ -73,18 +73,22 @@ export default function SEO({
   const resolvedOgImage = ogImage || OG_IMAGE_DEFAULT;
 
   /* ── Default structured data ── */
+  // SEO: dual @type so the entity qualifies for both ProfessionalService and MedicalBusiness
+  // rich-result categories. medicalSpecialty asserts hypnotherapy as the practiced clinical area
+  // for AI Overviews / generative engines (GEO).
   const defaultJsonLd = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": ["ProfessionalService", "MedicalBusiness"],
     name: "David J. Woods — Hypnose & Psychologie",
     description: descriptionDE,
     url: BASE_URL,
     telephone: ["+41 79 131 88 78", "+49 171 953 99 22"],
+    medicalSpecialty: "Hypnotherapy",
     address: [
       { "@type": "PostalAddress", streetAddress: "Usteristrasse 23", addressLocality: "Zürich", postalCode: "8001", addressCountry: "CH" },
       { "@type": "PostalAddress", streetAddress: "Viktoria Str 3b", addressLocality: "Augsburg", postalCode: "86150", addressCountry: "DE" },
     ],
-    aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "255", bestRating: "5" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "266", bestRating: "5" },
     founder: { "@type": "Person", name: "David J. Woods", jobTitle: "Lic.Psych., Hypnotherapeut, NGH International Trainer" },
     areaServed: [{ "@type": "Country", name: "Switzerland" }, { "@type": "Country", name: "Germany" }],
     sameAs: ["https://www.google.com/maps/place/David+J.+Woods"],
