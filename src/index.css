@@ -141,20 +141,46 @@
    - No effect on mobile, tablet, or standard laptops
    ============================================================ */
 @media (min-width: 1440px) {
+  /* Layered background:
+     1) Radial light cone — bright behind content, slightly darker/cooler outside
+     2) Subtle horizontal vignette on the far left/right edges
+     3) Almost-invisible noise texture to remove sterile flatness
+     The central content area (~1200–1300px) stays clean white via the inner linear gradient. */
   body {
-    background:
+    background-image:
+      /* extremely faint noise — only visible as micro-texture */
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.025 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+      /* soft side vignette — weich, max ~6% Unterschied */
       linear-gradient(
         to right,
-        #E8EDF3 0%,
-        #EEF2F6 calc(50% - 650px),
+        rgba(27, 58, 92, 0.05) 0%,
+        rgba(27, 58, 92, 0) 18%,
+        rgba(27, 58, 92, 0) 82%,
+        rgba(27, 58, 92, 0.05) 100%
+      ),
+      /* radial light cone — Mitte hell, außen leicht dunkler/kühler */
+      radial-gradient(
+        ellipse 90% 70% at 50% 45%,
+        #F9FAFB 0%,
+        #F4F6F9 45%,
+        #ECEFF3 100%
+      ),
+      /* keep the clean white "frame" inside ~1200px */
+      linear-gradient(
+        to right,
+        transparent 0%,
+        transparent calc(50% - 620px),
         #FFFFFF calc(50% - 600px),
         #FFFFFF calc(50% + 600px),
-        #EEF2F6 calc(50% + 650px),
-        #E8EDF3 100%
+        transparent calc(50% + 620px),
+        transparent 100%
       );
-    background-attachment: fixed;
+    background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 160px 160px, auto, auto, auto;
+    background-attachment: fixed, fixed, fixed, fixed;
   }
 
+  /* Keep the existing soft inner shadow on the central column (frame effect) */
   body::before,
   body::after {
     content: "";
