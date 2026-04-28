@@ -6,6 +6,8 @@ import blogShowTherapie from "@/assets/blog-hypnose-show-therapie.jpg";
 import blogMeditationGehirn from "@/assets/blog-meditation-gehirn.jpg";
 import blogAbnehmenSinnvoll from "@/assets/blog-abnehmen-sinnvoll.jpg";
 
+// SEO: optional published/updated ISO dates per post; only emitted in Article JSON-LD when set
+// (we deliberately do NOT invent dates — leave undefined until the real ones are provided).
 export interface BlogPost {
   slug: string;
   title: string;
@@ -13,6 +15,8 @@ export interface BlogPost {
   featuredImage: string;
   content: { tag: string; text: string }[];
   contentText: string;
+  publishedDate?: string; // ISO 8601, e.g. "2024-03-15"
+  updatedDate?: string;   // ISO 8601
 }
 
 export const blogPosts: BlogPost[] = [

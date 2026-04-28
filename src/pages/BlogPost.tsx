@@ -28,8 +28,9 @@ export default function BlogPost() {
   const readTime = Math.ceil((post.contentText?.length || 500) / 250);
   const basePath = getPath("home", language, country);
 
-  // SEO: build Article JSON-LD using actual post metadata (no invented data)
-  const articleJsonLd = {
+  // SEO: Article JSON-LD built from REAL post metadata only.
+  // datePublished / dateModified are conditionally included — never fabricated.
+  const articleJsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
@@ -51,9 +52,9 @@ export default function BlogPost() {
       "@id": `https://david-j-woods.com/${language}/${country}/blog/${slug}`,
     },
     inLanguage: isDE ? "de" : "en",
-    datePublished: "2024-01-15",
-    dateModified: "2025-06-01",
   };
+  if (post.publishedDate) articleJsonLd.datePublished = post.publishedDate;
+  if (post.updatedDate)   articleJsonLd.dateModified   = post.updatedDate;
 
   return (
     <>
