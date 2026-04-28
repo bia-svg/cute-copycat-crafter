@@ -29,7 +29,12 @@ export default function CityZurich() {
 
   return (
     <>
-      <SEO {...pageSEO.cityZurich} pageKey="cityZurich" />
+      {/* SEO: BreadcrumbList JSON-LD for rich-result eligibility */}
+      <SEO {...pageSEO.cityZurich} pageKey="cityZurich" breadcrumbs={[
+        { name: isEN ? "Home" : "Startseite", path: basePath },
+        { name: isEN ? "Locations" : "Standorte", path: getPath("locations", language, country) },
+        { name: isEN ? "Zurich" : "Zürich", path: getPath("cityZurich", language, country) },
+      ]} />
       <Breadcrumbs items={[
         { name: "Home", path: basePath },
         { name: isEN ? "Locations" : "Standorte", path: getPath("locations", language, country) },

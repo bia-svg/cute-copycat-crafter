@@ -179,7 +179,11 @@ export default function Ausbildung() {
 
   return (
     <>
-      <SEO {...pageSEO.training} pageKey="training" />
+      {/* SEO: BreadcrumbList JSON-LD for rich-result eligibility */}
+      <SEO {...pageSEO.training} pageKey="training" breadcrumbs={[
+        { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+        { name: isEN ? "Training" : "Ausbildung", path: getPath("training", language, country) },
+      ]} />
 
       {/* ═══════════════════════════════════════════════════════════
           SECTION 1 — HERO: Why this training exists

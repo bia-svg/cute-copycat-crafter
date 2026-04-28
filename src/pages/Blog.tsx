@@ -19,7 +19,11 @@ export default function Blog() {
 
   return (
     <>
-      <SEO {...pageSEO.blog} pageKey="blog" />
+      {/* SEO: BreadcrumbList JSON-LD via SEO component (rich result eligibility) */}
+      <SEO {...pageSEO.blog} pageKey="blog" breadcrumbs={[
+        { name: isDE ? "Startseite" : "Home", path: basePath },
+        { name: "Blog", path: getPath("blog", language, country) },
+      ]} />
       <Breadcrumbs items={[
         { name: "Home", path: basePath },
         { name: "Blog", path: getPath("blog", language, country) },
