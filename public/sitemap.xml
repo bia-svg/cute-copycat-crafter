@@ -14,7 +14,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://david-j-woods.com/de/ch"/>
     <priority>1.0</priority><changefreq>weekly</changefreq>
-  </url>
+  <lastmod>2026-04-28</lastmod></url>
   <url>
     <loc>https://david-j-woods.com/de/de</loc>
     <xhtml:link rel="alternate" hreflang="de-CH" href="https://david-j-woods.com/de/ch"/>
@@ -24,7 +24,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://david-j-woods.com/de/ch"/>
     <priority>1.0</priority><changefreq>weekly</changefreq>
-  </url>
+  <lastmod>2026-04-28</lastmod></url>
   <url>
     <loc>https://david-j-woods.com/en/ch</loc>
     <xhtml:link rel="alternate" hreflang="de-CH" href="https://david-j-woods.com/de/ch"/>
@@ -34,7 +34,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://david-j-woods.com/de/ch"/>
     <priority>0.9</priority><changefreq>weekly</changefreq>
-  </url>
+  <lastmod>2026-04-28</lastmod></url>
   <url>
     <loc>https://david-j-woods.com/en/de</loc>
     <xhtml:link rel="alternate" hreflang="de-CH" href="https://david-j-woods.com/de/ch"/>
@@ -44,7 +44,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://david-j-woods.com/de/ch"/>
     <priority>0.9</priority><changefreq>weekly</changefreq>
-  </url>
+  <lastmod>2026-04-28</lastmod></url>
   <url>
     <loc>https://david-j-woods.com/en/int</loc>
     <xhtml:link rel="alternate" hreflang="de-CH" href="https://david-j-woods.com/de/ch"/>
@@ -54,7 +54,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://david-j-woods.com/de/ch"/>
     <priority>0.9</priority><changefreq>weekly</changefreq>
-  </url>
+  <lastmod>2026-04-28</lastmod></url>
 
   <!-- ═══════════════════════════════════════════
        SERVICES — Raucherentwöhnung / Stop Smoking
@@ -67,7 +67,7 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/stop-smoking"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/stop-smoking"/>
     <priority>0.9</priority><changefreq>monthly</changefreq>
-  </url>
+  <lastmod>2026-04-28</lastmod></url>
   <url>
     <loc>https://david-j-woods.com/de/de/raucherentwoehnung</loc>
     <xhtml:link rel="alternate" hreflang="de-CH" href="https://david-j-woods.com/de/ch/raucherentwoehnung"/>
@@ -76,7 +76,7 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/stop-smoking"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/stop-smoking"/>
     <priority>0.9</priority><changefreq>monthly</changefreq>
-  </url>
+  <lastmod>2026-04-28</lastmod></url>
   <url>
     <loc>https://david-j-woods.com/en/ch/stop-smoking</loc>
     <xhtml:link rel="alternate" hreflang="de-CH" href="https://david-j-woods.com/de/ch/raucherentwoehnung"/>
@@ -85,9 +85,9 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/stop-smoking"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/stop-smoking"/>
     <priority>0.8</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/en/de/stop-smoking</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/stop-smoking</loc><priority>0.8</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/stop-smoking</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/stop-smoking</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- Ängste & Phobien / Anxiety & Phobias -->
   <url>
@@ -98,11 +98,11 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/anxiety-phobias"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/anxiety-phobias"/>
     <priority>0.9</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/aengste-phobien</loc><priority>0.9</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/anxiety-phobias</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/anxiety-phobias</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/anxiety-phobias</loc><priority>0.8</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/aengste-phobien</loc><priority>0.9</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/anxiety-phobias</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/anxiety-phobias</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/anxiety-phobias</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- Abnehmen / Weight Loss -->
   <url>
@@ -113,11 +113,11 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/weight-loss"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/weight-loss"/>
     <priority>0.9</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/abnehmen</loc><priority>0.9</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/weight-loss</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/weight-loss</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/weight-loss</loc><priority>0.8</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/abnehmen</loc><priority>0.9</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/weight-loss</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/weight-loss</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/weight-loss</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- Stress & Burnout -->
   <url>
@@ -128,11 +128,11 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/stress-burnout"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/stress-burnout"/>
     <priority>0.9</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/stress-burnout</loc><priority>0.9</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/stress-burnout</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/stress-burnout</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/stress-burnout</loc><priority>0.8</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/stress-burnout</loc><priority>0.9</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/stress-burnout</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/stress-burnout</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/stress-burnout</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- Depressionen & Traumata / Depression & Trauma -->
   <url>
@@ -143,11 +143,11 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/depression-trauma"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/depression-trauma"/>
     <priority>0.9</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/depressionen-traumata</loc><priority>0.9</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/depression-trauma</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/depression-trauma</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/depression-trauma</loc><priority>0.8</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/depressionen-traumata</loc><priority>0.9</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/depression-trauma</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/depression-trauma</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/depression-trauma</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- Kinder & Jugendliche / Children & Teens -->
   <url>
@@ -158,11 +158,11 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/children-teens"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/children-teens"/>
     <priority>0.8</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/kinder-jugendliche</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/children-teens</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/children-teens</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/children-teens</loc><priority>0.7</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/kinder-jugendliche</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/children-teens</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/children-teens</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/children-teens</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- Erwachsene / Adults -->
   <url>
@@ -173,11 +173,11 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/adults"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/adults"/>
     <priority>0.8</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/erwachsene</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/adults</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/adults</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/adults</loc><priority>0.7</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/erwachsene</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/adults</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/adults</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/adults</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- ═══════════════════════════════════════════
        TRAINING — Ausbildung / Training
@@ -190,11 +190,11 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/training"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/training"/>
     <priority>0.9</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/ausbildung</loc><priority>0.9</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/training</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/training</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/training</loc><priority>0.8</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/ausbildung</loc><priority>0.9</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/training</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/training</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/training</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- ═══════════════════════════════════════════
        CORPORATE — Firmen-Coaching / Business Coaching
@@ -207,35 +207,35 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/business-coaching"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/business-coaching"/>
     <priority>0.8</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/firmen-coaching</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/business-coaching</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/business-coaching</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/business-coaching</loc><priority>0.7</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/firmen-coaching</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/business-coaching</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/business-coaching</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/business-coaching</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- Corporate Sub-pages DE -->
-  <url><loc>https://david-j-woods.com/de/ch/firmen-coaching/erfolgs-training</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/firmen-coaching/erfolgs-training</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/de/ch/firmen-coaching/resilienz-verstaerken</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/firmen-coaching/resilienz-verstaerken</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/de/ch/firmen-coaching/stress-praevention</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/firmen-coaching/stress-praevention</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/de/ch/firmen-coaching/nichtraucher-seminare</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/firmen-coaching/nichtraucher-seminare</loc><priority>0.7</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/firmen-coaching/erfolgs-training</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/firmen-coaching/erfolgs-training</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/ch/firmen-coaching/resilienz-verstaerken</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/firmen-coaching/resilienz-verstaerken</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/ch/firmen-coaching/stress-praevention</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/firmen-coaching/stress-praevention</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/ch/firmen-coaching/nichtraucher-seminare</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/firmen-coaching/nichtraucher-seminare</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- Corporate Sub-pages EN -->
-  <url><loc>https://david-j-woods.com/en/ch/business-coaching/success-training</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/business-coaching/success-training</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/business-coaching/success-training</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/business-coaching/resilience-building</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/business-coaching/resilience-building</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/business-coaching/resilience-building</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/business-coaching/stress-prevention</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/business-coaching/stress-prevention</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/business-coaching/stress-prevention</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/business-coaching/non-smoker-seminars</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/business-coaching/non-smoker-seminars</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/business-coaching/non-smoker-seminars</loc><priority>0.6</priority></url>
+  <url><loc>https://david-j-woods.com/en/ch/business-coaching/success-training</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/business-coaching/success-training</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/business-coaching/success-training</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/business-coaching/resilience-building</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/business-coaching/resilience-building</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/business-coaching/resilience-building</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/business-coaching/stress-prevention</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/business-coaching/stress-prevention</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/business-coaching/stress-prevention</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/business-coaching/non-smoker-seminars</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/business-coaching/non-smoker-seminars</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/business-coaching/non-smoker-seminars</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- ═══════════════════════════════════════════
        ABOUT
@@ -248,11 +248,11 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/about-us"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/about-us"/>
     <priority>0.8</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/ueber-uns</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/about-us</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/about-us</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/about-us</loc><priority>0.7</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/ueber-uns</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/about-us</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/about-us</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/about-us</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- Kundenmeinungen / Testimonials -->
   <url>
@@ -263,11 +263,11 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/testimonials"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/testimonials"/>
     <priority>0.8</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/kundenmeinungen</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/testimonials</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/testimonials</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/testimonials</loc><priority>0.7</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/kundenmeinungen</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/testimonials</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/testimonials</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/testimonials</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- Erfolgsberichte / Success Stories -->
   <url>
@@ -278,11 +278,11 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/success-stories"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/success-stories"/>
     <priority>0.8</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/erfolgsberichte</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/success-stories</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/success-stories</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/success-stories</loc><priority>0.7</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/erfolgsberichte</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/success-stories</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/success-stories</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/success-stories</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- TV & Medien / TV & Media -->
   <url>
@@ -293,11 +293,11 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/tv-media"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/tv-media"/>
     <priority>0.7</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/tv-medien</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/tv-media</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/tv-media</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/tv-media</loc><priority>0.6</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/tv-medien</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/tv-media</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/tv-media</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/tv-media</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- ═══════════════════════════════════════════
        CONTACT — Erstgespräch / Consultation
@@ -310,11 +310,11 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/consultation"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/consultation"/>
     <priority>0.9</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/erstgespraech</loc><priority>0.9</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/consultation</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/consultation</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/consultation</loc><priority>0.8</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/erstgespraech</loc><priority>0.9</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/consultation</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/consultation</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/consultation</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- ═══════════════════════════════════════════
        LOCATIONS
@@ -327,11 +327,11 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/locations"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/locations"/>
     <priority>0.7</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/standorte</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/locations</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/locations</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/locations</loc><priority>0.6</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/standorte</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/locations</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/locations</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/locations</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- Hypnose Zürich / Hypnosis Zurich -->
   <url>
@@ -340,9 +340,9 @@
     <xhtml:link rel="alternate" hreflang="en-CH" href="https://david-j-woods.com/en/ch/hypnosis-zurich"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/hypnosis-zurich"/>
     <priority>0.9</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/en/ch/hypnosis-zurich</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/hypnosis-zurich</loc><priority>0.7</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/hypnosis-zurich</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/hypnosis-zurich</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- Hypnose Augsburg / Hypnosis Augsburg -->
   <url>
@@ -351,9 +351,9 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/hypnosis-augsburg"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/hypnosis-augsburg"/>
     <priority>0.9</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/en/de/hypnosis-augsburg</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/hypnosis-augsburg</loc><priority>0.7</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/hypnosis-augsburg</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/hypnosis-augsburg</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- ═══════════════════════════════════════════
        BOOK
@@ -366,11 +366,11 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/book-go-inside"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/book-go-inside"/>
     <priority>0.7</priority><changefreq>monthly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/buch-go-inside</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/book-go-inside</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/book-go-inside</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/book-go-inside</loc><priority>0.6</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/buch-go-inside</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/book-go-inside</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/book-go-inside</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/book-go-inside</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- ═══════════════════════════════════════════
        BLOG — Listing + All Posts
@@ -383,112 +383,112 @@
     <xhtml:link rel="alternate" hreflang="en-DE" href="https://david-j-woods.com/en/de/blog"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://david-j-woods.com/en/int/blog"/>
     <priority>0.7</priority><changefreq>weekly</changefreq>
-  </url>
-  <url><loc>https://david-j-woods.com/de/de/blog</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/blog</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/blog</loc><priority>0.6</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/blog</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/blog</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- Blog Posts (DE-CH + DE-DE + EN-CH + EN-DE + EN-INT) -->
-  <url><loc>https://david-j-woods.com/de/ch/blog/wie-funktioniert-hypnose</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/wie-funktioniert-hypnose</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/wie-funktioniert-hypnose</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/blog/wie-funktioniert-hypnose</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/blog/wie-funktioniert-hypnose</loc><priority>0.6</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/wie-funktioniert-hypnose</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/wie-funktioniert-hypnose</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/wie-funktioniert-hypnose</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/blog/wie-funktioniert-hypnose</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/blog/wie-funktioniert-hypnose</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/was-ist-selbsthypnose-und-wie-kann-man-hypnose-selber-lernen</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/was-ist-selbsthypnose-und-wie-kann-man-hypnose-selber-lernen</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/was-ist-selbsthypnose-und-wie-kann-man-hypnose-selber-lernen</loc><priority>0.6</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/was-ist-selbsthypnose-und-wie-kann-man-hypnose-selber-lernen</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/was-ist-selbsthypnose-und-wie-kann-man-hypnose-selber-lernen</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/was-ist-selbsthypnose-und-wie-kann-man-hypnose-selber-lernen</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/kann-man-hypnotisieren-lernen</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/kann-man-hypnotisieren-lernen</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/kann-man-hypnotisieren-lernen</loc><priority>0.6</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/kann-man-hypnotisieren-lernen</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/kann-man-hypnotisieren-lernen</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/kann-man-hypnotisieren-lernen</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/was-ist-hypnose</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/was-ist-hypnose</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/was-ist-hypnose</loc><priority>0.6</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/was-ist-hypnose</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/was-ist-hypnose</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/was-ist-hypnose</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/wer-ist-david-j-woods</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/wer-ist-david-j-woods</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/wer-ist-david-j-woods</loc><priority>0.6</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/wer-ist-david-j-woods</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/wer-ist-david-j-woods</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/wer-ist-david-j-woods</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/was-ist-aktiv-hypnose</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/was-ist-aktiv-hypnose</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/was-ist-aktiv-hypnose</loc><priority>0.6</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/was-ist-aktiv-hypnose</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/was-ist-aktiv-hypnose</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/was-ist-aktiv-hypnose</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/hypnose-nur-show-oder-wirksame-therapie</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/hypnose-nur-show-oder-wirksame-therapie</loc><priority>0.7</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/hypnose-nur-show-oder-wirksame-therapie</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/hypnose-nur-show-oder-wirksame-therapie</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/planet-wissen-wie-meditation-das-gehirn-umbaut</loc><priority>0.6</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/planet-wissen-wie-meditation-das-gehirn-umbaut</loc><priority>0.6</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/planet-wissen-wie-meditation-das-gehirn-umbaut</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/planet-wissen-wie-meditation-das-gehirn-umbaut</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/erwartungsaengste-loswerden-mit-hypnose</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/erwartungsaengste-loswerden-mit-hypnose</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/erwartungsaengste-loswerden-mit-hypnose</loc><priority>0.6</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/erwartungsaengste-loswerden-mit-hypnose</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/erwartungsaengste-loswerden-mit-hypnose</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/erwartungsaengste-loswerden-mit-hypnose</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/wie-sinnvoll-ist-das-abnehmen-mit-hypnose</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/wie-sinnvoll-ist-das-abnehmen-mit-hypnose</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/wie-sinnvoll-ist-das-abnehmen-mit-hypnose</loc><priority>0.6</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/wie-sinnvoll-ist-das-abnehmen-mit-hypnose</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/wie-sinnvoll-ist-das-abnehmen-mit-hypnose</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/wie-sinnvoll-ist-das-abnehmen-mit-hypnose</loc><priority>0.6</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- New SEO blog posts -->
-  <url><loc>https://david-j-woods.com/de/ch/blog/hypnose-raucherentwoehnung-erfahrungen</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/hypnose-raucherentwoehnung-erfahrungen</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/hypnose-raucherentwoehnung-erfahrungen</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/blog/hypnose-raucherentwoehnung-erfahrungen</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/blog/hypnose-raucherentwoehnung-erfahrungen</loc><priority>0.7</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/hypnose-raucherentwoehnung-erfahrungen</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/hypnose-raucherentwoehnung-erfahrungen</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/hypnose-raucherentwoehnung-erfahrungen</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/blog/hypnose-raucherentwoehnung-erfahrungen</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/blog/hypnose-raucherentwoehnung-erfahrungen</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/hypnose-gegen-angst-was-hilft-wirklich</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/hypnose-gegen-angst-was-hilft-wirklich</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/hypnose-gegen-angst-was-hilft-wirklich</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/blog/hypnose-gegen-angst-was-hilft-wirklich</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/blog/hypnose-gegen-angst-was-hilft-wirklich</loc><priority>0.7</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/hypnose-gegen-angst-was-hilft-wirklich</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/hypnose-gegen-angst-was-hilft-wirklich</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/hypnose-gegen-angst-was-hilft-wirklich</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/blog/hypnose-gegen-angst-was-hilft-wirklich</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/blog/hypnose-gegen-angst-was-hilft-wirklich</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/hypnosetherapie-ausbildung-schweiz-deutschland</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/hypnosetherapie-ausbildung-schweiz-deutschland</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/hypnosetherapie-ausbildung-schweiz-deutschland</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/blog/hypnosetherapie-ausbildung-schweiz-deutschland</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/blog/hypnosetherapie-ausbildung-schweiz-deutschland</loc><priority>0.7</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/hypnosetherapie-ausbildung-schweiz-deutschland</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/hypnosetherapie-ausbildung-schweiz-deutschland</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/hypnosetherapie-ausbildung-schweiz-deutschland</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/blog/hypnosetherapie-ausbildung-schweiz-deutschland</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/blog/hypnosetherapie-ausbildung-schweiz-deutschland</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/stress-burnout-praevention-mit-hypnose</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/stress-burnout-praevention-mit-hypnose</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/stress-burnout-praevention-mit-hypnose</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/blog/stress-burnout-praevention-mit-hypnose</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/blog/stress-burnout-praevention-mit-hypnose</loc><priority>0.7</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/stress-burnout-praevention-mit-hypnose</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/stress-burnout-praevention-mit-hypnose</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/stress-burnout-praevention-mit-hypnose</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/blog/stress-burnout-praevention-mit-hypnose</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/blog/stress-burnout-praevention-mit-hypnose</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/hypnose-zurich-erfahrungen-praxis</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/hypnose-zurich-erfahrungen-praxis</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/blog/hypnose-zurich-erfahrungen-praxis</loc><priority>0.7</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/hypnose-zurich-erfahrungen-praxis</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/hypnose-zurich-erfahrungen-praxis</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/blog/hypnose-zurich-erfahrungen-praxis</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- New blog posts — March 2026 -->
-  <url><loc>https://david-j-woods.com/de/ch/blog/raucherentwoehnung-durch-hypnose-so-funktioniert-es</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/raucherentwoehnung-durch-hypnose-so-funktioniert-es</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/raucherentwoehnung-durch-hypnose-so-funktioniert-es</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/blog/raucherentwoehnung-durch-hypnose-so-funktioniert-es</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/blog/raucherentwoehnung-durch-hypnose-so-funktioniert-es</loc><priority>0.7</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/raucherentwoehnung-durch-hypnose-so-funktioniert-es</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/raucherentwoehnung-durch-hypnose-so-funktioniert-es</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/raucherentwoehnung-durch-hypnose-so-funktioniert-es</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/blog/raucherentwoehnung-durch-hypnose-so-funktioniert-es</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/blog/raucherentwoehnung-durch-hypnose-so-funktioniert-es</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/hypnose-gegen-aengste-phobien-wirksamkeit</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/hypnose-gegen-aengste-phobien-wirksamkeit</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/hypnose-gegen-aengste-phobien-wirksamkeit</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/blog/hypnose-gegen-aengste-phobien-wirksamkeit</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/blog/hypnose-gegen-aengste-phobien-wirksamkeit</loc><priority>0.7</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/hypnose-gegen-aengste-phobien-wirksamkeit</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/hypnose-gegen-aengste-phobien-wirksamkeit</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/hypnose-gegen-aengste-phobien-wirksamkeit</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/blog/hypnose-gegen-aengste-phobien-wirksamkeit</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/blog/hypnose-gegen-aengste-phobien-wirksamkeit</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/abnehmen-mit-hypnose-nachhaltig-ohne-diaet</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/abnehmen-mit-hypnose-nachhaltig-ohne-diaet</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/abnehmen-mit-hypnose-nachhaltig-ohne-diaet</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/blog/abnehmen-mit-hypnose-nachhaltig-ohne-diaet</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/blog/abnehmen-mit-hypnose-nachhaltig-ohne-diaet</loc><priority>0.7</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/abnehmen-mit-hypnose-nachhaltig-ohne-diaet</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/abnehmen-mit-hypnose-nachhaltig-ohne-diaet</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/abnehmen-mit-hypnose-nachhaltig-ohne-diaet</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/blog/abnehmen-mit-hypnose-nachhaltig-ohne-diaet</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/blog/abnehmen-mit-hypnose-nachhaltig-ohne-diaet</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/aktiv-hypnose-ausbildung-therapeut-werden</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/aktiv-hypnose-ausbildung-therapeut-werden</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/aktiv-hypnose-ausbildung-therapeut-werden</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/blog/aktiv-hypnose-ausbildung-therapeut-werden</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/blog/aktiv-hypnose-ausbildung-therapeut-werden</loc><priority>0.7</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/aktiv-hypnose-ausbildung-therapeut-werden</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/aktiv-hypnose-ausbildung-therapeut-werden</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/aktiv-hypnose-ausbildung-therapeut-werden</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/blog/aktiv-hypnose-ausbildung-therapeut-werden</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/blog/aktiv-hypnose-ausbildung-therapeut-werden</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
-  <url><loc>https://david-j-woods.com/de/ch/blog/hypnose-kinder-jugendliche-sanfte-therapie</loc><priority>0.8</priority></url>
-  <url><loc>https://david-j-woods.com/de/de/blog/hypnose-kinder-jugendliche-sanfte-therapie</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/blog/hypnose-kinder-jugendliche-sanfte-therapie</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/de/blog/hypnose-kinder-jugendliche-sanfte-therapie</loc><priority>0.7</priority></url>
-  <url><loc>https://david-j-woods.com/en/int/blog/hypnose-kinder-jugendliche-sanfte-therapie</loc><priority>0.7</priority></url>
+  <url><loc>https://david-j-woods.com/de/ch/blog/hypnose-kinder-jugendliche-sanfte-therapie</loc><priority>0.8</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/de/blog/hypnose-kinder-jugendliche-sanfte-therapie</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/blog/hypnose-kinder-jugendliche-sanfte-therapie</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/de/blog/hypnose-kinder-jugendliche-sanfte-therapie</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/int/blog/hypnose-kinder-jugendliche-sanfte-therapie</loc><priority>0.7</priority><lastmod>2026-04-28</lastmod></url>
 
   <!-- ═══════════════════════════════════════════
        LEGAL
@@ -498,10 +498,10 @@
     <xhtml:link rel="alternate" hreflang="de-CH" href="https://david-j-woods.com/de/ch/impressum"/>
     <xhtml:link rel="alternate" hreflang="en-CH" href="https://david-j-woods.com/en/ch/imprint"/>
     <priority>0.3</priority>
-  </url>
-  <url><loc>https://david-j-woods.com/en/ch/imprint</loc><priority>0.3</priority></url>
-  <url><loc>https://david-j-woods.com/de/ch/datenschutz</loc><priority>0.3</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/privacy-policy</loc><priority>0.3</priority></url>
-  <url><loc>https://david-j-woods.com/de/ch/agb</loc><priority>0.3</priority></url>
-  <url><loc>https://david-j-woods.com/en/ch/terms</loc><priority>0.3</priority></url>
+  <lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/imprint</loc><priority>0.3</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/ch/datenschutz</loc><priority>0.3</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/privacy-policy</loc><priority>0.3</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/de/ch/agb</loc><priority>0.3</priority><lastmod>2026-04-28</lastmod></url>
+  <url><loc>https://david-j-woods.com/en/ch/terms</loc><priority>0.3</priority><lastmod>2026-04-28</lastmod></url>
 </urlset>
