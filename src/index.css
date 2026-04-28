@@ -165,14 +165,17 @@
         #F4F6F9 45%,
         #ECEFF3 100%
       ),
-      /* keep the clean white "frame" inside ~1200px */
+      /* Soft white "passepartout" — visibly thicker outer margin around the
+         ~1200px content. White band extended to ±840px (vs. previous ±600px)
+         so the inner white frame is ~30–40% wider on each side.
+         Tone is #FAFBFC (minimally softer than pure white) for more depth. */
       linear-gradient(
         to right,
         transparent 0%,
-        transparent calc(50% - 620px),
-        #FFFFFF calc(50% - 600px),
-        #FFFFFF calc(50% + 600px),
-        transparent calc(50% + 620px),
+        transparent calc(50% - 870px),
+        #FAFBFC calc(50% - 840px),
+        #FAFBFC calc(50% + 840px),
+        transparent calc(50% + 870px),
         transparent 100%
       );
     background-repeat: repeat, no-repeat, no-repeat, no-repeat;
