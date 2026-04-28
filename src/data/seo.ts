@@ -113,6 +113,12 @@ export const pageSEO = {
     descriptionDE: "Hypnose in Augsburg mit Lic. Psych. David J. Woods — Raucherentwöhnung, Ängste, Abnehmen, Stress, Burnout. Praxis Viktoriastr. 3b, am Hauptbahnhof, 86150 Augsburg. ★ 5.0 (266 Google-Bewertungen).",
     descriptionEN: "Hypnosis in Augsburg with Lic. Psych. David J. Woods — quit smoking, anxiety, weight loss, stress, burnout. Practice Viktoriastr. 3b, at central station, 86150 Augsburg. ★ 5.0 (266 Google reviews).",
   },
+  shop: {
+    titleDE: "Shop · Hypnose-Audios & Bücher von David J. Woods",
+    titleEN: "Shop · Hypnosis Audios & Books by David J. Woods",
+    descriptionDE: "Online-Shop für Selbsthypnose: 30+ Hypnose-Audios, Buch 'Go Inside' und Bundles von Lic. Psych. David J. Woods. Sofort als Download — Raucherentwöhnung, Abnehmen, Stress, Ängste.",
+    descriptionEN: "Online shop for self-hypnosis: 30+ hypnosis audios, the book 'Go Inside' and bundles by Lic. Psych. David J. Woods. Instant download — quit smoking, weight loss, stress, anxiety.",
+  },
   blog: {
     titleDE: "Hypnose-Blog · Wissen & Artikel von Lic. Psych. David J. Woods",
     titleEN: "Hypnosis Blog · Knowledge & Articles by Lic. Psych. David J. Woods",
