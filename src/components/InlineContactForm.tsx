@@ -227,7 +227,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       >
         {isSubmitting
           ? (isEN ? "Sending..." : "Wird gesendet...")
-          : (isEN ? "Request without obligation" : "Unverbindlich anfragen")}
+          : (isEN ? "Send request" : "Anfrage senden")}
       </Button>
 
       <p className="text-[10px] text-muted-foreground text-center pt-0.5">
