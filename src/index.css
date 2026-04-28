@@ -195,11 +195,11 @@
     z-index: 1;
   }
   body::before {
-    left: calc(50% - 624px);
+    left: calc(50% - 864px);
     background: linear-gradient(to right, rgba(27, 58, 92, 0.06), rgba(27, 58, 92, 0));
   }
   body::after {
-    right: calc(50% - 624px);
+    right: calc(50% - 864px);
     background: linear-gradient(to left, rgba(27, 58, 92, 0.06), rgba(27, 58, 92, 0));
   }
 }
