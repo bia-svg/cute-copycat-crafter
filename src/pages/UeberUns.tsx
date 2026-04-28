@@ -58,11 +58,6 @@ export default function UeberUns() {
                   {[1,2,3,4,5].map(i => <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />)}
                   <span className="text-xs text-muted-foreground ml-1">5.0 (266) · Google</span>
                 </div>
-                <Link to={getPath("contact", language, country)}>
-                  <Button className="bg-[#4CAF50] hover:bg-[#43A047] text-white font-semibold px-6 py-2.5">
-                    {isEN ? "Book Free Discovery Call" : "Kostenloses Erstgespräch"}
-                  </Button>
-                </Link>
               </div>
             </div>
           </div>
