@@ -70,6 +70,18 @@ export default function SeminarAnmeldung() {
 
   const dates = seminarCountry ? SEMINAR_DATES[seminarCountry] : [];
   const selectedDateObj = dates.find(d => d.date === selectedDate);
+  const visibleDates = showAllDates ? dates : dates.slice(0, INITIAL_DATES_VISIBLE);
+  const hiddenDatesCount = Math.max(0, dates.length - INITIAL_DATES_VISIBLE);
+
+  // Auto-expand if a preselected date is in the hidden range
+  useEffect(() => {
+    if (selectedDate && dates.length > INITIAL_DATES_VISIBLE) {
+      const idx = dates.findIndex(d => d.date === selectedDate);
+      if (idx >= INITIAL_DATES_VISIBLE) setShowAllDates(true);
+    }
+  }, [selectedDate, seminarCountry]);
+
+
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
