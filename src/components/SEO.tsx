@@ -91,7 +91,12 @@ export default function SEO({
     aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "266", bestRating: "5" },
     founder: { "@type": "Person", name: "David J. Woods", jobTitle: "Lic.Psych., Hypnotherapeut, NGH International Trainer" },
     areaServed: [{ "@type": "Country", name: "Switzerland" }, { "@type": "Country", name: "Germany" }],
-    sameAs: ["https://www.google.com/maps/place/David+J.+Woods"],
+    // GEO/E-E-A-T: external entity links strengthen knowledge graph signals for AI engines
+    sameAs: [
+      "https://www.google.com/maps/place/David+J.+Woods",
+      "https://de.linkedin.com/in/david-j-woods-85b30b186/",
+      "https://www.instagram.com/hypnoseinstitut_woods/",
+    ],
   };
 
   /* ── Person schema for GEO/Entity Authority ── */
@@ -131,8 +136,11 @@ export default function SEO({
     alumniOf: [
       { "@type": "EducationalOrganization", name: "National Guild of Hypnotists (NGH)", url: "https://ngh.net" },
     ],
+    // GEO/E-E-A-T: Person entity sameAs links — verified social/professional profiles
     sameAs: [
       "https://www.google.com/maps/place/David+J.+Woods",
+      "https://de.linkedin.com/in/david-j-woods-85b30b186/",
+      "https://www.instagram.com/hypnoseinstitut_woods/",
       "https://vimeo.com/davidjwoods",
     ],
     award: [
