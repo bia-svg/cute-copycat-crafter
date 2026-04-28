@@ -23,7 +23,7 @@ export default function Erstgespraech() {
       ]} />
 
       {/* Form section — silver-grey premium background, white inner card */}
-      <section className="py-8 md:py-12 bg-[#F5F7FA] border-y border-[#E2E8EE]">
+      <section className="py-8 md:py-12 bg-[#F8FAFC] border-y border-[#E8EDF3]">
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-4 text-center">
