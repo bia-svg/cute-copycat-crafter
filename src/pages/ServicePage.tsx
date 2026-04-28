@@ -395,7 +395,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
             <h2 className="text-lg sm:text-xl font-semibold text-primary mb-3 text-center">
               {isEN ? "Your Request" : "Ihre Anfrage"}
             </h2>
-            <div className="bg-white rounded-2xl border border-[#E5E7EB] p-4 sm:p-6 shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
+            <div className="bg-white rounded-2xl border-2 border-[#D1D5DB] p-4 sm:p-6 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
               <InlineContactForm />
             </div>
           </div>
