@@ -35,11 +35,18 @@ export default function StressPraevention() {
 
   return (
     <>
+      {/* SEO: title/desc + BreadcrumbList JSON-LD */}
       <SEO
         titleDE="Stress-Prävention & Burnout-Vorbeugung — David J. Woods"
         titleEN="Stress Prevention & Burnout Prevention — David J. Woods"
         descriptionDE="Stress-Prävention und Burnout-Vorbeugung für Unternehmen. Erfolgs-Training und Resilienz Coaching mit David J. Woods."
         descriptionEN="Stress prevention and burnout prevention for companies. Success training and resilience coaching with David J. Woods."
+        pageKey="corporateStress"
+        breadcrumbs={[
+          { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+          { name: isEN ? "Business Coaching" : "Firmen-Coaching", path: getPath("corporate", language, country) },
+          { name: isEN ? "Stress Prevention" : "Stress-Prävention", path: getPath("corporateStress", language, country) },
+        ]}
       />
 
       {/* Hero */}

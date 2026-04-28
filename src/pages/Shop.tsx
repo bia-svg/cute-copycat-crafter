@@ -9,6 +9,10 @@ import { getPath } from "@/lib/routes";
 import { ShoppingCart, Clock, Star, Headphones, BookOpen, Download, ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CDN } from "@/lib/cdn";
+// SEO: shared SEO component (replaces manual Helmet) + Breadcrumb structured data
+import SEO from "@/components/SEO";
+import { pageSEO } from "@/data/seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 
@@ -173,6 +177,19 @@ export default function Shop() {
 
   return (
     <>
+      {/* SEO: localized title/description + BreadcrumbList JSON-LD for rich results */}
+      <SEO
+        {...pageSEO.shop}
+        pageKey="home"
+        breadcrumbs={[
+          { name: isDE ? "Startseite" : "Home", path: getPath("home", language, country) },
+          { name: "Shop", path: `/${language}/${country}/shop` },
+        ]}
+      />
+      <Breadcrumbs items={[
+        { name: isDE ? "Startseite" : "Home", path: getPath("home", language, country) },
+        { name: "Shop", path: `/${language}/${country}/shop` },
+      ]} />
 
       {/* Hero */}
       <section className="bg-[#55504f] text-white py-14">

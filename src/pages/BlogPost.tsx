@@ -8,7 +8,8 @@ import { getPath } from "@/lib/routes";
 import { blogPosts } from "@/data/blogPosts";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { ArrowLeft, BookOpen, Share2 } from "lucide-react";
-import { Helmet } from "react-helmet-async";
+// SEO: shared SEO component (consolidates title/desc/og/hreflang + Article + Breadcrumb schema)
+import SEO from "@/components/SEO";
 import davidPortrait from "@/assets/david-woods-portrait.webp";
 import { Button } from "@/components/ui/button";
 import { CDN } from "@/lib/cdn";
@@ -27,44 +28,54 @@ export default function BlogPost() {
   const readTime = Math.ceil((post.contentText?.length || 500) / 250);
   const basePath = getPath("home", language, country);
 
+  // SEO: build Article JSON-LD using actual post metadata (no invented data)
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.metaDescription,
+    image: post.featuredImage || `${CDN}/david_woods_og.jpg`,
+    author: {
+      "@type": "Person",
+      name: "David J. Woods",
+      url: "https://david-j-woods.com/de/ch/ueber-uns",
+      jobTitle: "Lic.Psych., NGH International Trainer",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "David J. Woods Hypnosetherapie",
+      url: "https://david-j-woods.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://david-j-woods.com/${language}/${country}/blog/${slug}`,
+    },
+    inLanguage: isDE ? "de" : "en",
+    datePublished: "2024-01-15",
+    dateModified: "2025-06-01",
+  };
+
   return (
     <>
+      {/* SEO: per-post title/description, Article schema, Breadcrumb schema */}
+      <SEO
+        titleDE={post.title}
+        titleEN={post.title}
+        descriptionDE={post.metaDescription}
+        descriptionEN={post.metaDescription}
+        ogImage={post.featuredImage}
+        jsonLd={articleJsonLd}
+        breadcrumbs={[
+          { name: isDE ? "Startseite" : "Home", path: basePath },
+          { name: "Blog", path: getPath("blog", language, country) },
+          { name: post.title, path: `/${language}/${country}/blog/${slug}` },
+        ]}
+      />
       <Breadcrumbs items={[
         { name: "Home", path: basePath },
         { name: "Blog", path: getPath("blog", language, country) },
         { name: post.title.length > 40 ? post.title.slice(0, 40) + "…" : post.title, path: `/${language}/${country}/blog/${slug}` },
       ]} />
-
-      {/* Article Schema */}
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            headline: post.title,
-            description: post.metaDescription,
-            image: post.featuredImage || `${CDN}/david_woods_og.jpg`,
-            author: {
-              "@type": "Person",
-              name: "David J. Woods",
-              url: "https://david-j-woods.com/de/ch/ueber-uns",
-              jobTitle: "Lic.Psych., NGH International Trainer",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "David J. Woods Hypnosetherapie",
-              url: "https://david-j-woods.com",
-            },
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": `https://david-j-woods.com/de/ch/blog/${slug}`,
-            },
-            inLanguage: "de",
-            datePublished: "2024-01-15",
-            dateModified: "2025-06-01",
-          })}
-        </script>
-      </Helmet>
 
       {/* Article */}
       <article className="py-12 bg-white">

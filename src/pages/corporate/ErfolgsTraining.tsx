@@ -22,11 +22,18 @@ export default function ErfolgsTraining() {
 
   return (
     <>
+      {/* SEO: title/desc + BreadcrumbList JSON-LD */}
       <SEO
         titleDE="Erfolgs-Training für Unternehmen — David J. Woods"
         titleEN="Success Training for Companies — David J. Woods"
         descriptionDE="Individuelles Erfolgs-Training für Ihr Unternehmen. Maximale Leistungsfähigkeit Ihrer Mitarbeiter und Führungskräfte durch Mentalcoaching."
         descriptionEN="Individual success training for your company. Maximum performance of your employees and executives through mental coaching."
+        pageKey="corporateErfolg"
+        breadcrumbs={[
+          { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
+          { name: isEN ? "Business Coaching" : "Firmen-Coaching", path: getPath("corporate", language, country) },
+          { name: isEN ? "Success Training" : "Erfolgs-Training", path: getPath("corporateErfolg", language, country) },
+        ]}
       />
 
       {/* Hero */}
