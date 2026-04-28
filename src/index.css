@@ -132,3 +132,45 @@
     background-color: hsl(123 41% 43%) !important; /* ~#43A047, ca. 12% dunkler als #4CAF50 */
   }
 }
+
+/* ============================================================
+   Large-screen framing (≥1440px only)
+   - Outer side areas get a very subtle darker gradient
+   - Center stays clean (max ~1300px)
+   - Soft inner shadow on the central column for premium frame effect
+   - No effect on mobile, tablet, or standard laptops
+   ============================================================ */
+@media (min-width: 1440px) {
+  body {
+    background:
+      linear-gradient(
+        to right,
+        #E8EDF3 0%,
+        #EEF2F6 calc(50% - 650px),
+        #FFFFFF calc(50% - 600px),
+        #FFFFFF calc(50% + 600px),
+        #EEF2F6 calc(50% + 650px),
+        #E8EDF3 100%
+      );
+    background-attachment: fixed;
+  }
+
+  body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 24px;
+    pointer-events: none;
+    z-index: 1;
+  }
+  body::before {
+    left: calc(50% - 624px);
+    background: linear-gradient(to right, rgba(27, 58, 92, 0.06), rgba(27, 58, 92, 0));
+  }
+  body::after {
+    right: calc(50% - 624px);
+    background: linear-gradient(to left, rgba(27, 58, 92, 0.06), rgba(27, 58, 92, 0));
+  }
+}
