@@ -45,6 +45,8 @@ export default function SeminarAnmeldung() {
   const [gdprConsent, setGdprConsent] = useState(false);
   const [agbConsent, setAgbConsent] = useState(false);
   const [seminarCounts, setSeminarCounts] = useState<Record<string, number>>({});
+  const [showAllDates, setShowAllDates] = useState(false);
+  const INITIAL_DATES_VISIBLE = 2;
 
   // Fetch seminar registration counts for early bird logic
   useEffect(() => {
@@ -68,6 +70,18 @@ export default function SeminarAnmeldung() {
 
   const dates = seminarCountry ? SEMINAR_DATES[seminarCountry] : [];
   const selectedDateObj = dates.find(d => d.date === selectedDate);
+  const visibleDates = showAllDates ? dates : dates.slice(0, INITIAL_DATES_VISIBLE);
+  const hiddenDatesCount = Math.max(0, dates.length - INITIAL_DATES_VISIBLE);
+
+  // Auto-expand if a preselected date is in the hidden range
+  useEffect(() => {
+    if (selectedDate && dates.length > INITIAL_DATES_VISIBLE) {
+      const idx = dates.findIndex(d => d.date === selectedDate);
+      if (idx >= INITIAL_DATES_VISIBLE) setShowAllDates(true);
+    }
+  }, [selectedDate, seminarCountry]);
+
+
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -320,7 +334,7 @@ export default function SeminarAnmeldung() {
                       {isEN ? "Select Date" : "Termin wählen"}
                     </h2>
                     <div className="space-y-2">
-                    {dates.map((d, i) => {
+                    {visibleDates.map((d, i) => {
                         const isEarlyBird = (d as any).forceEarlyBird || (seminarCountry && hasEarlyBirdForDate(seminarCountry as "ch" | "de", d.date));
                         const regularPrice = seminarCountry === "ch" ? "CHF 2.990.-" : "€2.790,-";
                         const earlyBirdPrice = seminarCountry === "ch" ? "CHF 2.690.-" : "€2.490,-";
@@ -392,6 +406,19 @@ export default function SeminarAnmeldung() {
                         );
                       })}
                     </div>
+                    {hiddenDatesCount > 0 && (
+                      <div className="text-center mt-4">
+                        <button
+                          type="button"
+                          onClick={() => setShowAllDates((v) => !v)}
+                          className="inline-flex items-center gap-2 text-sm font-semibold text-[#1B3A5C] border border-[#1B3A5C]/25 hover:border-[#1B3A5C]/50 hover:bg-white rounded-full px-5 py-2 transition-all"
+                        >
+                          {showAllDates
+                            ? (isEN ? "Show fewer dates" : "Weniger Termine anzeigen")
+                            : (isEN ? `Show all dates (+${hiddenDatesCount})` : `Weitere Termine anzeigen (+${hiddenDatesCount})`)}
+                        </button>
+                      </div>
+                    )}
                   </div>
                 )}
                 </div>
