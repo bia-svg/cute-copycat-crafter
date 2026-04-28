@@ -215,9 +215,9 @@
 /* Even larger outer padding on very wide screens (iMac etc.) */
 @media (min-width: 1920px) {
   html {
-    padding: 72px;
+    padding: 24px 72px;
   }
   body {
-    min-height: calc(100vh - 144px);
+    min-height: calc(100vh - 48px);
   }
 }
