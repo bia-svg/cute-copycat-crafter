@@ -456,12 +456,12 @@ export default function UeberUns() {
             </h2>
             <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto mb-5">
               {isEN
-                ? "Book your free and non-binding discovery call. We take time for you and advise you individually."
-                : "Vereinbaren Sie jetzt Ihr kostenloses und unverbindliches Erstgespräch. Wir nehmen uns Zeit für Sie und beraten Sie individuell."}
+                ? "Arrange a non-binding telephone consultation. We take time for your concern and advise you individually."
+                : "Vereinbaren Sie eine unverbindliche telefonische Erstberatung. Wir nehmen uns Zeit für Ihr Anliegen und beraten Sie individuell."}
             </p>
             <Link to={getPath("contact", language, country)}>
               <Button className="bg-[#4CAF50] hover:bg-[#43A047] text-white font-semibold px-7 py-3">
-                {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
+                {isEN ? "Request Consultation" : "Beratung anfragen"}
               </Button>
             </Link>
           </div>
