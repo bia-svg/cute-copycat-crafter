@@ -283,8 +283,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="space-y-4 text-center">
-              <h1 className="text-[1.5rem] lg:text-[1.85rem] font-semibold text-foreground leading-tight tracking-tight">
+            <div className="space-y-3 text-center">
+              <h1 className="text-[1.65rem] lg:text-[2rem] font-bold text-foreground leading-tight tracking-tight">
                 Lic. Psych. David J. Woods
               </h1>
               <p className="text-sm font-semibold tracking-wide text-foreground/70">
@@ -292,24 +292,14 @@ export default function Home() {
                   ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
                   : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
               </p>
-              <p className="text-lg italic font-semibold text-cta">
+              <p className="text-xl lg:text-2xl italic font-semibold text-cta">
                 {isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}
               </p>
-              <div className="text-foreground/80 leading-relaxed text-[0.95rem] flex flex-col items-center">
-                <p className="mb-3 text-center">
-                  {isEN
-                    ? "Psychology · Hypnosis · Deep Transformation"
-                    : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
-                </p>
-                <ul className="space-y-1.5 text-sm text-left inline-block">
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
-                </ul>
-              </div>
-
+              <p className="text-foreground/80 text-[1rem] font-medium">
+                {isEN
+                  ? "Psychology · Hypnosis · Deep Transformation"
+                  : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
+              </p>
 
               <div>
                 <p className="text-xs text-muted-foreground mb-2">{isEN ? "As Seen On" : "Bekannt aus"}</p>
