@@ -28,9 +28,9 @@
     --accent: 30 5% 95%;
     --accent-foreground: 30 3% 15%;
 
-    /* CTA Green #2E7D32 */
-    --cta: 123 38% 49%;
-    --cta-foreground: 0 0% 98%;
+    /* CTA Mint Green #a5d6a7 — abgestimmt auf EMR-Badge auf der Ausbildung-Seite */
+    --cta: 123 38% 74%;
+    --cta-foreground: 123 46% 18%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
