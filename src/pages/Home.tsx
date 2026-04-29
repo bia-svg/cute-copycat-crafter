@@ -373,7 +373,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
-      <section className="pt-1 pb-1.5 md:pt-2 md:pb-3 bg-primary/15" style={deferredSectionStyle}>
+      <section className="pt-5 pb-5 md:pt-8 md:pb-8 bg-primary/15" style={deferredSectionStyle}>
         <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border border-primary/15 py-2 md:py-3 px-3 md:px-6 shadow-sm">
           <div className="grid md:grid-cols-[1fr_170px] gap-2 md:gap-6 md:items-center">
             {/* LEFT – text + bullets, centered on both */}
