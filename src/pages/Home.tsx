@@ -283,27 +283,30 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-between space-y-3 text-center min-w-0 py-1">
-              <div className="space-y-3">
-                <h1 className="text-[1.65rem] lg:text-[2rem] font-bold text-foreground leading-tight tracking-tight">
-                  Lic. Psych. David J. Woods
-                </h1>
-                <p className="text-sm font-semibold tracking-wide text-foreground/70">
+            <div className="flex flex-col justify-between text-center min-w-0 py-1">
+              <div className="space-y-3 flex flex-col items-center">
+                <p className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground font-medium">
                   {isEN
-                    ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
-                    : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
+                    ? "Germany · Switzerland · International"
+                    : "Deutschland · Schweiz · International"}
                 </p>
-                <p className="text-xl lg:text-2xl italic font-semibold text-cta">
-                  {isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}
-                </p>
-                <p className="text-foreground/80 text-base font-medium">
+                <h1 className="text-[1.5rem] lg:text-[1.85rem] font-medium text-foreground leading-[1.15] tracking-tight">
+                  Lic. Psych. <span className="font-semibold">David J. Woods</span>
+                </h1>
+                <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-cta/30 bg-cta/5">
+                  <span className="h-px w-5 bg-cta/40" aria-hidden="true" />
+                  <span className="italic font-semibold text-cta text-sm lg:text-base tracking-wide">
+                    {isEN ? "Freedom Begins in the Mind" : "Freiheit beginnt im Kopf"}
+                  </span>
+                  <span className="h-px w-5 bg-cta/40" aria-hidden="true" />
+                </div>
+                <p className="text-foreground/75 text-sm lg:text-[15px] font-normal tracking-wide">
                   {isEN
                     ? "Psychology · Hypnosis · Deep Transformation"
                     : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
                 </p>
               </div>
-              <div className="mt-auto pt-1">
-                <p className="text-xs text-muted-foreground mb-1">{isEN ? "As Seen On" : "Bekannt aus"}</p>
+              <div className="mt-auto pt-3">
                 {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
               </div>
             </div>
