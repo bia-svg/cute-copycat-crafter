@@ -249,16 +249,16 @@ export default function Home() {
       <SEO {...pageSEO.home} pageKey="home" />
       <section className="bg-secondary">
         {!isMobile ? (
-          <div className="grid md:grid-cols-2 container-main py-8 gap-6 items-stretch">
-            <div className="relative w-full max-w-[460px] rounded-2xl overflow-hidden mx-auto group min-h-[340px]">
+          <div className="grid md:grid-cols-[auto_1fr] container-main py-4 gap-6 items-center">
+            <div className="relative w-full max-w-[360px] rounded-2xl overflow-hidden mx-auto group min-h-[260px]">
               {Object.entries(loadedSlides).map(([idx, src]) => (
                 <img
                   key={idx}
                   src={src}
                   alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${Number(idx) + 1}`}
-                  width={400}
-                  height={500}
-                  sizes="(min-width: 768px) 460px, 100vw"
+                  width={360}
+                  height={420}
+                  sizes="(min-width: 768px) 360px, 100vw"
                   loading={idx === "0" ? "eager" : "lazy"}
                   fetchPriority={idx === "0" ? "high" : "auto"}
                   decoding={idx === "0" ? "sync" : "async"}
