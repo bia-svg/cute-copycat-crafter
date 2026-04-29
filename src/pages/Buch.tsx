@@ -53,7 +53,7 @@ export default function Buch() {
               <p className="text-xs font-semibold uppercase tracking-wider text-[#2E7D32] mb-2">
                 {isEN ? "Book by David J. Woods" : "Buch von David J. Woods"}
               </p>
-              <h1 className="text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4">
+              <h1 className="text-3xl sm:text-4xl font-light text-[#1B3A5C] mb-4 tracking-tight">
                 Go InSide
               </h1>
               <p className="text-lg text-muted-foreground mb-2">
@@ -103,7 +103,7 @@ export default function Buch() {
       {/* Description */}
       <section className="bg-[#f4f3ef] border-b border-border">
         <div className="container-main py-10">
-          <h2 className="text-2xl font-bold text-[#1B3A5C] mb-6">
+          <h2 className="text-2xl font-light text-[#1B3A5C] mb-6 tracking-tight">
             {isEN ? "Description" : "Beschreibung"}
           </h2>
 
@@ -122,7 +122,7 @@ export default function Buch() {
 
             {/* Book Details */}
             <div className="bg-white border border-border p-6 mt-6">
-              <h3 className="font-semibold text-[#1B3A5C] mb-4">{isEN ? "Book Details" : "Buchdetails"}</h3>
+              <h3 className="font-light text-[#1B3A5C] mb-4 tracking-tight">{isEN ? "Book Details" : "Buchdetails"}</h3>
               <div className="grid grid-cols-2 gap-y-3 text-sm">
                 <span className="text-muted-foreground">ISBN:</span>
                 <span className="font-medium">3934473881</span>
@@ -139,7 +139,7 @@ export default function Buch() {
 
             {/* About Co-Author */}
             <div className="bg-white border border-border p-6">
-              <h3 className="font-semibold text-[#1B3A5C] mb-3">{isEN ? "About the Co-Author" : "Über die Co-Autorin"}</h3>
+              <h3 className="font-light text-[#1B3A5C] mb-3 tracking-tight">{isEN ? "About the Co-Author" : "Über die Co-Autorin"}</h3>
               <p className="text-sm text-foreground leading-relaxed">
                 {isEN
                   ? "Elisabeth Engler was born in Munich in 1963. For 10 years she was a self-employed bookseller. Since 1994, her interest in NT (New Thinking) has grown — including removing blockages, cosmic ordering, consciousness work, positive thinking, mental programming, and meditation. Since 2005 she has worked as an author and NT therapist."
@@ -154,7 +154,7 @@ export default function Buch() {
       <section className="bg-[#8b827c] text-white">
         <div className="container-main py-10 text-center">
           <BookOpen className="w-10 h-10 mx-auto mb-4 opacity-80" />
-          <h2 className="text-2xl font-bold mb-3">
+          <h2 className="text-2xl font-light mb-3 tracking-tight">
             {isEN ? "Interested in Go InSide?" : "Interesse an Go InSide?"}
           </h2>
           <p className="text-white/80 mb-6 max-w-xl mx-auto">

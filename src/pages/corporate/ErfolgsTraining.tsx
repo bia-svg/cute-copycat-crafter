@@ -47,7 +47,7 @@ export default function ErfolgsTraining() {
             <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
               {isEN ? "Business Coaching" : "Business Coaching"}
             </p>
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-4">
+            <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] leading-tight mb-4 tracking-tight">
               {isEN ? "Success Training by David J. Woods" : "Erfolgs-Training by David J. Woods"}
             </h1>
 
@@ -80,7 +80,7 @@ export default function ErfolgsTraining() {
       <section className="bg-[#F8FAFC]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-bold text-[#1B3A5C] mb-5">
+            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
               {isEN ? "Results you can expect:" : "Diese Resultate können Sie erwarten:"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -101,7 +101,7 @@ export default function ErfolgsTraining() {
             <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full whitespace-nowrap">
               {isEN ? "Next Step" : "N\u00e4chster Schritt"}
             </span>
-            <h2 className="text-xl font-bold text-primary mb-2 mt-2">
+            <h2 className="text-xl font-light text-primary mb-2 mt-2 tracking-tight">
               {isEN ? "Request a Free Consultation" : "Kostenlose Beratung anfragen"}
             </h2>
             <p className="text-sm text-muted-foreground mb-4">

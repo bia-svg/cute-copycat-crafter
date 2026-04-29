@@ -197,7 +197,7 @@ export default function Shop() {
           <p className="text-sm font-semibold uppercase tracking-wider text-white/60 mb-2">
             {isDE ? "Online Shop für Selbsthypnose" : "Online Shop for Self-Hypnosis"}
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
+          <h1 className="text-3xl md:text-4xl font-light mb-4 tracking-tight">
             {isDE ? "Hypnose-Audios & Bücher" : "Hypnosis Audios & Books"}
           </h1>
           <p className="text-lg text-white/80 max-w-2xl">
@@ -211,7 +211,7 @@ export default function Shop() {
       {/* Featured Products */}
       <section className="py-14 bg-white">
         <div className="container-main">
-          <h2 className="text-2xl font-bold text-[#1B3A5C] mb-8">
+          <h2 className="text-2xl font-light text-[#1B3A5C] mb-8 tracking-tight">
             {isDE ? "Empfohlene Angebote" : "Featured Offers"}
           </h2>
 
@@ -226,7 +226,7 @@ export default function Shop() {
                     {categoryIcons[product.category]}
                     <span>{catLabels[product.category]}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#1B3A5C] mb-2">{isDE ? product.titleDE : product.titleEN}</h3>
+                  <h3 className="text-xl font-light text-[#1B3A5C] mb-2 tracking-tight">{isDE ? product.titleDE : product.titleEN}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{isDE ? product.descDE : product.descEN}</p>
                   {product.benefitsDE && (
                     <ul className="space-y-1.5 mb-5">
@@ -252,7 +252,7 @@ export default function Shop() {
           </div>
 
           {/* Individual Audio Programs */}
-          <h2 className="text-2xl font-bold text-[#1B3A5C] mb-2">
+          <h2 className="text-2xl font-light text-[#1B3A5C] mb-2 tracking-tight">
             {isDE ? "Einzelne Hypnose-Audios" : "Individual Hypnosis Audios"}
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl">
@@ -272,7 +272,7 @@ export default function Shop() {
                     <span>{catLabels.audio}</span>
                     {product.duration && <><span>\u00b7</span><Clock className="w-3 h-3" /><span>{product.duration}</span></>}
                   </div>
-                  <h3 className="text-base font-bold text-[#1B3A5C] mb-2">{isDE ? product.titleDE : product.titleEN}</h3>
+                  <h3 className="text-base font-light text-[#1B3A5C] mb-2 tracking-tight">{isDE ? product.titleDE : product.titleEN}</h3>
                   <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{isDE ? product.descDE : product.descEN}</p>
                   <div className="flex items-center justify-between pt-3 border-t border-border">
                     <span className="text-lg font-bold text-[#1B3A5C]">{isInternational && product.priceCHF ? `${product.price} / ${product.priceCHF}` : isSwiss && product.priceCHF ? product.priceCHF : product.price}</span>
@@ -294,7 +294,7 @@ export default function Shop() {
         <div className="container-main">
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
             <div className="flex-1">
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-2">
+              <h2 className="text-xl font-light text-[#1B3A5C] mb-2 tracking-tight">
                 {isDE ? "Professionelle Ausbildung gesucht?" : "Looking for Professional Training?"}
               </h2>
               <p className="text-muted-foreground">
@@ -315,7 +315,7 @@ export default function Shop() {
       {/* CTA */}
       <section className="bg-[#8b827c] text-white py-10">
         <div className="container-main text-center">
-          <h2 className="text-2xl font-bold mb-3">
+          <h2 className="text-2xl font-light mb-3 tracking-tight">
             {isDE ? "Fragen zu unseren Produkten?" : "Questions About Our Products?"}
           </h2>
           <p className="text-white/80 mb-4 max-w-xl mx-auto">

@@ -325,7 +325,7 @@ export default function Ausbildung() {
               <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-1.5">
                 {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
               </p>
-              <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-bold text-[#1B3A5C] mb-2 md:mb-3" style={{ fontFamily: "Georgia, serif" }}>
+              <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-2 md:mb-3 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN
                   ? "Become a Certified Aktiv-Hypnose© Therapist"
                   : "Werden Sie zertifizierter Aktiv-Hypnose© Therapeut"}
@@ -365,7 +365,7 @@ export default function Ausbildung() {
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#DDE1E4] border-b border-border">
         <div className="container-main py-3 md:py-6 lg:py-10">
-          <h2 className="text-lg md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
+          <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "What Makes This Training Different" : "Was diese Ausbildung besonders macht"}
           </h2>
           <p className="text-[11px] md:text-sm text-muted-foreground text-center mb-2.5 md:mb-4 max-w-2xl mx-auto leading-snug">
@@ -384,7 +384,7 @@ export default function Ausbildung() {
                   <span className="inline-flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#1B3A5C]/10 ring-1 ring-[#1B3A5C]/20 shrink-0">
                     {c.icon}
                   </span>
-                  <h3 className="font-bold text-sm md:text-base text-[#1B3A5C] leading-tight">{isEN ? c.titleEN : c.titleDE}</h3>
+                  <h3 className="font-light text-sm md:text-base text-[#1B3A5C] leading-tight tracking-tight">{isEN ? c.titleEN : c.titleDE}</h3>
                 </div>
                 <p className="text-[11px] md:text-xs text-muted-foreground leading-snug md:leading-relaxed">{isEN ? c.textEN : c.textDE}</p>
               </div>
@@ -411,7 +411,7 @@ export default function Ausbildung() {
           ═══════════════════════════════════════════════════════════ */}
       <section id="dates" className="bg-[#f4f3ef] border-b border-border scroll-mt-20">
         <div className="container-main py-5 md:py-8 lg:py-12">
-          <h2 className="text-lg md:text-2xl font-bold text-[#1B3A5C] mb-1.5 text-center" style={{ fontFamily: "Georgia, serif" }}>
+          <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1.5 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
           </h2>
           <p className="text-[12px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-xl mx-auto leading-snug">
@@ -586,7 +586,7 @@ export default function Ausbildung() {
           ═══════════════════════════════════════════════════════════ */}
       <section id="curriculum" className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
         <div className="container-main py-3.5 md:py-6 lg:py-9">
-          <h2 className="text-lg md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
+          <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Your 6-Day Journey" : "Ihre 6-Tage Reise"}
           </h2>
           <p className="text-[11px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-2xl mx-auto leading-snug">
@@ -605,7 +605,7 @@ export default function Ausbildung() {
                     <p className="text-[10px] font-semibold uppercase tracking-wider text-[#2E7D32] leading-tight">
                       {isEN ? `Day ${day.day}` : `Tag ${day.day}`}
                     </p>
-                    <h3 className="text-sm md:text-[15px] font-bold text-[#1B3A5C] leading-tight">
+                    <h3 className="text-sm md:text-[15px] font-light text-[#1B3A5C] leading-tight tracking-tight">
                       {isEN ? day.titleEN : day.titleDE}
                     </h3>
                   </div>
@@ -629,7 +629,7 @@ export default function Ausbildung() {
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#f4f3ef] border-b border-border">
         <div className="container-main py-4 md:py-7 lg:py-9">
-          <h2 className="text-lg md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
+          <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Your Certification" : "Ihr Abschluss"}
           </h2>
           <p className="text-[12px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-2xl mx-auto leading-snug">
@@ -644,7 +644,7 @@ export default function Ausbildung() {
               </div>
               <div className="flex items-center gap-1.5 mb-1">
                 <Shield className="w-4 h-4 text-blue-600" />
-                <h3 className="font-semibold text-sm text-[#1B3A5C]" style={{ fontFamily: "Georgia, serif" }}>
+                <h3 className="font-light text-sm text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "NGH Certified Instructor" : "NGH-zertifizierter Instructor"}
                 </h3>
               </div>
@@ -660,7 +660,7 @@ export default function Ausbildung() {
               </div>
               <div className="flex items-center gap-1.5 mb-1">
                 <GraduationCap className="w-4 h-4 text-amber-600" />
-                <h3 className="font-semibold text-sm text-[#1B3A5C]" style={{ fontFamily: "Georgia, serif" }}>
+                <h3 className="font-light text-sm text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "Your Diploma" : "Ihr Diplom"}
                 </h3>
               </div>
@@ -679,7 +679,7 @@ export default function Ausbildung() {
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#DDE1E4] border-b border-border">
         <div className="container-main py-4 md:py-7 lg:py-10">
-          <h2 className="text-lg md:text-2xl font-bold text-[#1B3A5C] mb-1 text-center" style={{ fontFamily: "Georgia, serif" }}>
+          <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Everything You Receive" : "Alles, was Sie erhalten"}
           </h2>
           <p className="text-[12px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-2xl mx-auto leading-snug">
@@ -751,7 +751,7 @@ export default function Ausbildung() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-[10px] md:text-[11px] font-semibold px-3.5 py-1 rounded-full tracking-wide uppercase shadow-sm">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
-            <h2 className="text-lg md:text-2xl font-bold text-foreground mb-1.5 md:mb-2.5" style={{ fontFamily: "Georgia, serif" }}>
+            <h2 className="text-lg md:text-2xl font-light text-foreground mb-1.5 md:mb-2.5 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Your Journey Starts Here" : "Ihre Reise beginnt hier"}
             </h2>
             <p className="text-[13px] md:text-base text-muted-foreground max-w-xl mx-auto mb-3 md:mb-5 leading-snug md:leading-relaxed">

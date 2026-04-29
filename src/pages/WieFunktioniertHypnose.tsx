@@ -36,7 +36,7 @@ export default function WieFunktioniertHypnose() {
       <section className="bg-[#EAF1F8] border-b border-border">
         <div className="container-main py-10 lg:py-14 text-center">
           <h1
-            className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1B3A5C] mb-3"
+            className="text-2xl md:text-3xl lg:text-4xl font-light text-[#1B3A5C] mb-3 tracking-tight"
             style={{ fontFamily: "Georgia, serif" }}
           >
             {title}

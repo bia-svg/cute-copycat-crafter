@@ -58,7 +58,7 @@ export default function StressPraevention() {
           <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm grid md:grid-cols-[1fr_280px] lg:grid-cols-[1fr_340px] gap-5 md:gap-7 md:items-stretch">
             <div>
             <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-4">
+            <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] leading-tight mb-4 tracking-tight">
               {isEN ? "Stress Prevention by David J. Woods" : "Stress-Prävention by David J. Woods"}
             </h1>
 
@@ -93,7 +93,7 @@ export default function StressPraevention() {
           <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div>
-                <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">
+                <h2 className="text-lg font-light text-[#1B3A5C] mb-4 tracking-tight">
                   {isEN ? "External Causes of Burnout:" : "Äußere Umstände als Ursache für Burnout:"}
                 </h2>
                 <ul className="space-y-2">
@@ -106,7 +106,7 @@ export default function StressPraevention() {
                 </ul>
               </div>
               <div>
-                <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">
+                <h2 className="text-lg font-light text-[#1B3A5C] mb-4 tracking-tight">
                   {isEN ? "Internal Causes of Burnout:" : "Innere Umstände als Ursache für Burnout:"}
                 </h2>
                 <ul className="space-y-2">
@@ -127,7 +127,7 @@ export default function StressPraevention() {
       <section className="bg-[#E8EDF3]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-bold text-[#1B3A5C] mb-5">
+            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
               {isEN ? "The 12 Phases of Burnout Development" : "Die 12 Phasen der Burnout-Entwicklung"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -135,7 +135,7 @@ export default function StressPraevention() {
                 <div key={p.phase} className="bg-white border border-[#E8EDF3] rounded-2xl p-3 shadow-[0_1px_2px_rgba(27,58,92,0.04)]">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center font-bold">{p.phase}</span>
-                    <h3 className="font-semibold text-xs text-[#1B3A5C]">{p.title}</h3>
+                    <h3 className="font-light text-xs text-[#1B3A5C] tracking-tight">{p.title}</h3>
                   </div>
                   <p className="text-xs text-muted-foreground italic">&bdquo;{p.quote}&ldquo;</p>
                 </div>
@@ -151,7 +151,7 @@ export default function StressPraevention() {
             <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full whitespace-nowrap">
               {isEN ? "Next Step" : "N\u00e4chster Schritt"}
             </span>
-            <h2 className="text-xl font-bold text-primary mb-2 mt-2">
+            <h2 className="text-xl font-light text-primary mb-2 mt-2 tracking-tight">
               {isEN ? "Prevent Burnout \u2014 Get in Touch Now" : "Burnout vorbeugen \u2014 Jetzt Kontakt aufnehmen"}
             </h2>
             <p className="text-sm text-muted-foreground mb-4">

@@ -178,7 +178,7 @@ export default function Terminbestaetigung() {
         <section className="bg-background py-16 md:py-24">
           <div className="container-main max-w-2xl text-center">
             <CheckCircle2 className="w-16 h-16 text-green-600 mx-auto mb-6" />
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: "Georgia, serif" }}>
+            <h1 className="text-3xl md:text-4xl font-light text-foreground mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Appointment Confirmed!" : "Termin bestätigt!"}
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
@@ -204,7 +204,7 @@ export default function Terminbestaetigung() {
       <div className="container-main max-w-3xl">
         <div className="text-center mb-3">
           <CalendarCheck className="w-8 h-8 text-primary mx-auto mb-1.5" />
-          <h1 className="text-xl md:text-2xl font-bold text-foreground mb-1" style={{ fontFamily: "Georgia, serif" }}>
+          <h1 className="text-xl md:text-2xl font-light text-foreground mb-1 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Appointment Confirmation" : "Terminbestätigung"}
           </h1>
           <div className="w-12 h-0.5 bg-primary mx-auto" />

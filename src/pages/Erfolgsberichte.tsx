@@ -89,7 +89,7 @@ export default function Erfolgsberichte() {
       <section className="bg-primary/15 py-12 md:py-16">
         <div className="container-main">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{ fontFamily: "Georgia, serif" }}>
+            <h1 className="text-3xl md:text-4xl font-light text-foreground mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Success Stories from Our Satisfied Clients" : "Erfolgsberichte unserer zufriedenen Kunden"}
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -131,7 +131,7 @@ export default function Erfolgsberichte() {
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <h3 className="text-lg font-bold text-foreground">{t.name}</h3>
+                    <h3 className="text-lg font-light text-foreground tracking-tight">{t.name}</h3>
                     <span className="text-xs text-muted-foreground bg-secondary px-2 py-0.5 rounded">
                       {isEN ? t.topicEN : t.topicDE}
                     </span>
@@ -177,7 +177,7 @@ export default function Erfolgsberichte() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full tracking-wide uppercase">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4" style={{ fontFamily: "Georgia, serif" }}>
+            <h2 className="text-2xl md:text-3xl font-light text-foreground mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Write Your Own Success Story" : "Schreiben Sie Ihre eigene Erfolgsgeschichte"}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto mb-6">

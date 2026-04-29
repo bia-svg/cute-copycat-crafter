@@ -83,7 +83,7 @@ export default function FirmenCoaching() {
             <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
               {isEN ? "For Companies & Organizations" : "Für Firmen & Organisationen"}
             </p>
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-3">
+            <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] leading-tight mb-3 tracking-tight">
               {isEN ? "Leadership & Performance Coaching for Companies" : "Leadership & Performance Coaching für Unternehmen"}
             </h1>
             <p className="text-sm md:text-base text-foreground/80 leading-relaxed max-w-3xl">
@@ -99,7 +99,7 @@ export default function FirmenCoaching() {
       <section className="bg-[#F8FAFC]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-bold text-[#1B3A5C] mb-5 text-center">
+            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 text-center tracking-tight">
               {isEN ? "Topics for Your Company" : "Themen für Ihr Unternehmen"}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -122,7 +122,7 @@ export default function FirmenCoaching() {
       <section className="bg-[#E8EDF3]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-bold text-[#1B3A5C] mb-5">
+            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
               {isEN ? "Why Leadership & Performance Coaching is valuable:" : "Warum Leadership & Performance Coaching wertvoll ist:"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -146,7 +146,7 @@ export default function FirmenCoaching() {
       <section className="bg-[#F8FAFC]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-bold text-primary mb-4">
+            <h2 className="text-xl font-light text-primary mb-4 tracking-tight">
               {isEN ? "Science-Backed Approach" : "Wissenschaftlich fundierter Ansatz"}
             </h2>
             <div className="space-y-3 max-w-3xl text-sm text-foreground/80 leading-relaxed">
@@ -193,7 +193,7 @@ export default function FirmenCoaching() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full tracking-wide uppercase">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4" style={{ fontFamily: "Georgia, serif" }}>
+            <h2 className="text-2xl md:text-3xl font-light text-foreground mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Take the Next Step for Your Team" : "Der nächste Schritt für Ihr Team"}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto mb-6">

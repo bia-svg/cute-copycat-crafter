@@ -229,7 +229,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                 <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
                   Lic.Psych. David J. Woods
                 </p>
-                <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-3">
+                <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] leading-tight mb-3 tracking-tight">
                   {h1}
                 </h1>
                 <div className="space-y-1.5 mb-4">
@@ -278,7 +278,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
               <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
                 <div className={section.image ? "grid md:grid-cols-2 gap-6 items-start" : ""}>
                   <div>
-                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B3A5C] mb-3">{section.h2}</h2>
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-3 tracking-tight">{section.h2}</h2>
                     <div className="space-y-3">
                       {section.paragraphs.map((p, pi) => (
                         <p key={pi} className="text-sm md:text-base text-foreground leading-relaxed">{p}</p>
@@ -315,7 +315,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
             <div className="container-main py-6 md:py-9">
               <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B3A5C] mb-4 text-center">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-4 text-center tracking-tight">
                   {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -351,7 +351,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                 <div className="border border-border overflow-hidden rounded-lg">
                   <img src={CDN.kathrynPortrait} alt="Kathryn Woods – Kinder- und Jugendtherapeutin" className="w-full h-auto" loading="lazy" />
                   <div className="p-4 bg-card">
-                    <h3 className="font-bold text-foreground text-sm">Kathryn</h3>
+                    <h3 className="font-light text-foreground text-sm tracking-tight">Kathryn</h3>
                     <p className="text-xs text-muted-foreground">
                       {isEN ? "Psychological Counselor" : "Psychologische Beraterin"}
                     </p>
@@ -359,7 +359,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                 </div>
               </div>
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-foreground">
+                <h2 className="text-2xl font-light text-foreground tracking-tight">
                   {isEN ? "Your Therapist: Kathryn" : "Ihre Therapeutin: Kathryn"}
                 </h2>
                 <p className="text-foreground/80 leading-relaxed">
@@ -392,7 +392,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       <section className="py-10 md:py-16 bg-[#F8FAFC]">
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-lg sm:text-xl font-semibold text-primary mb-3 text-center">
+            <h2 className="text-lg sm:text-xl font-light text-primary mb-3 text-center tracking-tight">
               {isEN ? "Request a free consultation" : "Unverbindlich beraten lassen"}
             </h2>
             <div className="bg-white rounded-2xl border-2 border-[#D1D5DB] p-4 sm:p-6 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">

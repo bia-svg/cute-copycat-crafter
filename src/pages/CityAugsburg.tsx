@@ -83,7 +83,7 @@ export default function CityAugsburg() {
               <p className="text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
                 {isEN ? "Hypnotherapy in Augsburg" : "Hypnosetherapie in Augsburg"}
               </p>
-              <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-4">
+              <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] leading-tight mb-4 tracking-tight">
                 {isEN ? "Professional Hypnotherapy in Augsburg" : "Professionelle Hypnose in Augsburg & Bayern"}
               </h1>
               <p className="text-base text-foreground leading-relaxed mb-4">
@@ -116,7 +116,7 @@ export default function CityAugsburg() {
 
       <section className="bg-[#f4f3ef] border-b border-border">
         <div className="container-main py-10">
-          <h2 className="text-xl font-bold text-[#1B3A5C] mb-6">
+          <h2 className="text-xl font-light text-[#1B3A5C] mb-6 tracking-tight">
             {isEN ? "Our Services in Augsburg" : "Unsere Leistungen in Augsburg"}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -165,7 +165,7 @@ export default function CityAugsburg() {
 
       <section className="bg-[#8b827c] text-white">
         <div className="container-main py-10 text-center">
-          <h2 className="text-2xl font-bold mb-3">
+          <h2 className="text-2xl font-light mb-3 tracking-tight">
             {isEN ? "Ready for Lasting Change?" : "Bereit für nachhaltige Veränderung?"}
           </h2>
           <Link to={`/${language}/${country}/erstgespraech`}>

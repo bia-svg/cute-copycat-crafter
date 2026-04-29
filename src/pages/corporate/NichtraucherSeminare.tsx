@@ -59,7 +59,7 @@ export default function NichtraucherSeminare() {
           <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm grid md:grid-cols-[1fr_280px] lg:grid-cols-[1fr_340px] gap-5 md:gap-7 md:items-stretch">
             <div>
             <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-4">
+            <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] leading-tight mb-4 tracking-tight">
               {isEN ? "Smoke-Free in 3 Hours — Seminar by David J. Woods" : "Rauchfrei in 3 Stunden — Seminar by David J. Woods"}
             </h1>
 
@@ -95,7 +95,7 @@ export default function NichtraucherSeminare() {
       <section className="bg-[#F8FAFC]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-bold text-[#1B3A5C] mb-5">
+            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
               {isEN ? "Disadvantages & risks of smoking:" : "Folgende Nachteile & Risiken des Rauchens:"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -114,13 +114,13 @@ export default function NichtraucherSeminare() {
       <section className="bg-[#E8EDF3]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-bold text-[#1B3A5C] mb-5">
+            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
               {isEN ? "The 4 Phases of the Program" : "Der Ablauf der Rauchfrei von David J. Woods"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
               {phases.map((p, i) => (
                 <div key={i} className="bg-white border border-[#E8EDF3] rounded-2xl p-4 shadow-[0_1px_2px_rgba(27,58,92,0.04)]">
-                  <h3 className="font-semibold text-sm text-[#1B3A5C] mb-2">{p.title}</h3>
+                  <h3 className="font-light text-sm text-[#1B3A5C] mb-2 tracking-tight">{p.title}</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
                 </div>
               ))}
@@ -133,7 +133,7 @@ export default function NichtraucherSeminare() {
       <section className="bg-[#F8FAFC]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-bold text-[#1B3A5C] mb-5">
+            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
               {isEN ? "Results of the program:" : "Die Ergebnisse des Programms:"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -154,7 +154,7 @@ export default function NichtraucherSeminare() {
             <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full whitespace-nowrap">
               {isEN ? "Next Step" : "N\u00e4chster Schritt"}
             </span>
-            <h2 className="text-xl font-bold text-primary mb-2 mt-2">
+            <h2 className="text-xl font-light text-primary mb-2 mt-2 tracking-tight">
               {isEN ? "Book the Smoke-Free Seminar" : "Rauchfrei-Seminar buchen"}
             </h2>
             <p className="text-sm text-muted-foreground mb-4">

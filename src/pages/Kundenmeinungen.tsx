@@ -65,7 +65,7 @@ export default function Kundenmeinungen() {
         <div className="container-main py-8 lg:py-12">
           <div className="flex items-center gap-4 mb-6">
             <div>
-              <h1 className="text-2xl sm:text-3xl font-bold text-primary">
+              <h1 className="text-2xl sm:text-3xl font-light text-primary tracking-tight">
                 {isEN ? "Client Testimonials" : "Kundenmeinungen"}
               </h1>
               <p className="text-sm text-muted-foreground mt-1">
@@ -101,7 +101,7 @@ export default function Kundenmeinungen() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full tracking-wide uppercase">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4" style={{ fontFamily: "Georgia, serif" }}>
+            <h2 className="text-2xl md:text-3xl font-light text-foreground mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Ready for Your Own Success Story?" : "Bereit für Ihre eigene Erfolgsgeschichte?"}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto mb-6">
