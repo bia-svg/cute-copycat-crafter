@@ -382,7 +382,7 @@ export default function Home() {
           <div className="grid md:grid-cols-[1fr_170px] gap-2 md:gap-6 md:items-center">
             {/* LEFT – text + bullets, centered on both */}
             <div className="flex flex-col items-center text-center md:items-center md:text-center">
-              <h2 className="text-[15px] md:text-lg font-bold text-foreground leading-tight">
+              <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 leading-tight">
                 {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
               <p className="text-[11.5px] md:text-[13px] text-foreground/80 leading-snug mt-0.5 md:mt-1 max-w-[640px]">
@@ -447,7 +447,7 @@ export default function Home() {
       {/* ═══════════════════ QUALIFICATIONS — slim trust banner ═══════════════════ */}
       <section className="pt-5 pb-5 md:pt-8 md:pb-8 bg-primary/15" style={deferredSectionStyle}>
         <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border border-primary/15 py-3 md:py-4 px-3 md:px-6 shadow-sm">
-          <h2 className="text-[15px] md:text-lg font-bold text-foreground text-center leading-tight mb-2 md:mb-3">
+          <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 text-center leading-tight mb-2 md:mb-3">
             {isEN ? "Qualifications & Certifications" : "Qualifikationen & Zertifizierungen"}
           </h2>
 
@@ -524,10 +524,10 @@ export default function Home() {
                 <Award className="w-3 h-3" />
                 {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
               </span>
-              <h2 className="text-lg md:text-[1.75rem] font-bold text-foreground leading-tight">
+              <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 leading-tight">
                 {isEN ? "Intensive Training" : "Intensiv-Ausbildungen"}
               </h2>
-              <p className="text-base md:text-xl font-bold text-foreground/90 mt-1 md:mt-2">
+              <p className="text-base md:text-lg font-light tracking-[0.01em] text-foreground/85 mt-1 md:mt-2">
                 Aktiv-Hypnose© {isEN ? "Therapist Diploma" : "Therapeuten-Diplom"}
               </p>
             </div>
@@ -599,7 +599,7 @@ export default function Home() {
       <section className="py-10 md:py-16 bg-[#F8FAFC] border-y border-[#E8EDF3]" style={deferredSectionStyle}>
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-lg sm:text-xl font-semibold text-primary mb-3 text-center">
+            <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 mb-3 text-center">
               {language === "en" ? "Request a free consultation" : "Unverbindlich beraten lassen"}
             </h2>
             <div className="bg-white rounded-lg border-2 border-[#D1D5DB] p-4 sm:p-6 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
