@@ -313,13 +313,15 @@ export default function SeminarAnmeldung() {
                           key={c.key}
                           type="button"
                           onClick={() => { setSeminarCountry(c.key); setSelectedDate(""); }}
-                          className={`border rounded-xl p-4 text-left transition-all ${
+                          className={`border rounded-xl px-3 py-2 text-left transition-all flex items-center gap-2.5 ${
                             isActive ? activeClasses : `border-[#E2E8EE] bg-white ${hoverClasses}`
                           }`}
                         >
-                          <span className="text-2xl">{c.flag}</span>
-                          <p className="font-semibold text-sm text-[#1B3A5C] mt-1">{c.label}</p>
-                          <p className="text-xs text-muted-foreground">{c.sub}</p>
+                          <span className="text-xl leading-none">{c.flag}</span>
+                          <div className="min-w-0">
+                            <p className="font-semibold text-sm text-[#1B3A5C] leading-tight">{c.label}</p>
+                            <p className="text-[11px] text-muted-foreground leading-tight truncate">{c.sub}</p>
+                          </div>
                         </button>
                       );
                     })}
