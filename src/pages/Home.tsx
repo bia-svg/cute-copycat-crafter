@@ -284,51 +284,51 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col justify-between text-center min-w-0 py-1">
-              <div className="space-y-3 flex flex-col items-center">
+              <div className="flex flex-col items-center justify-center flex-1">
                 <p className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground font-medium">
                   {isEN
                     ? "Germany · Switzerland · International"
                     : "Deutschland · Schweiz · International"}
                 </p>
-                <h1 className="text-[1.5rem] lg:text-[1.85rem] font-medium text-foreground leading-[1.15] tracking-tight">
-                  Lic. Psych. <span className="font-semibold">David J. Woods</span>
+                <h1 className="mt-3 text-[1.4rem] lg:text-[1.7rem] font-light text-foreground leading-[1.2] tracking-tight">
+                  Lic. Psych. <span className="font-medium">David J. Woods</span>
                 </h1>
-                <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-cta/30 bg-cta/5">
-                  <span className="h-px w-5 bg-cta/40" aria-hidden="true" />
-                  <span className="italic font-semibold text-cta text-sm lg:text-base tracking-wide">
+                <div className="mt-5 inline-flex items-center gap-3 px-3.5 py-1 rounded-full border border-foreground/15 bg-background/60">
+                  <span className="h-px w-4 bg-foreground/20" aria-hidden="true" />
+                  <span className="font-normal text-foreground/80 text-[13px] lg:text-sm tracking-[0.08em]">
                     {isEN ? "Freedom Begins in the Mind" : "Freiheit beginnt im Kopf"}
                   </span>
-                  <span className="h-px w-5 bg-cta/40" aria-hidden="true" />
+                  <span className="h-px w-4 bg-foreground/20" aria-hidden="true" />
                 </div>
-                <p className="text-foreground/75 text-sm lg:text-[15px] font-normal tracking-wide">
+                <p className="mt-4 text-foreground/65 text-[13px] lg:text-sm font-normal tracking-wide">
                   {isEN
                     ? "Psychology · Hypnosis · Deep Transformation"
                     : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
                 </p>
               </div>
-              <div className="mt-auto pt-3">
+              <div className="mt-auto pt-2">
                 {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
               </div>
             </div>
           </div>
         ) : (
-          <div className="container-main py-3 space-y-2 text-center flex flex-col items-center">
+          <div className="container-main py-3 text-center flex flex-col items-center">
             <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-medium">
               {isEN
                 ? "Germany · Switzerland · International"
                 : "Deutschland · Schweiz · International"}
             </p>
-            <h1 className="text-xl font-medium text-foreground leading-[1.15] tracking-tight">
-              Lic. Psych. <span className="font-semibold">David J. Woods</span>
+            <h1 className="mt-2 text-[1.2rem] font-light text-foreground leading-[1.2] tracking-tight">
+              Lic. Psych. <span className="font-medium">David J. Woods</span>
             </h1>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cta/30 bg-cta/5">
-              <span className="h-px w-4 bg-cta/40" aria-hidden="true" />
-              <span className="italic font-semibold text-cta text-sm tracking-wide">
+            <div className="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-foreground/15 bg-background/60">
+              <span className="h-px w-3 bg-foreground/20" aria-hidden="true" />
+              <span className="font-normal text-foreground/80 text-[12px] tracking-[0.08em]">
                 {isEN ? "Freedom Begins in the Mind" : "Freiheit beginnt im Kopf"}
               </span>
-              <span className="h-px w-4 bg-cta/40" aria-hidden="true" />
+              <span className="h-px w-3 bg-foreground/20" aria-hidden="true" />
             </div>
-            <p className="text-sm text-foreground/75 font-normal tracking-wide">
+            <p className="mt-2.5 text-[13px] text-foreground/65 font-normal tracking-wide">
               {isEN
                 ? "Psychology · Hypnosis · Deep Transformation"
                 : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
