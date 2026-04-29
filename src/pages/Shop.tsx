@@ -277,7 +277,7 @@ export default function Shop() {
                   <div className="flex items-center justify-between pt-3 border-t border-border">
                     <span className="text-lg font-bold text-[#1B3A5C]">{isInternational && product.priceCHF ? `${product.price} / ${product.priceCHF}` : isSwiss && product.priceCHF ? product.priceCHF : product.price}</span>
                     <Link to={getPath("contact", language, country)}>
-                      <Button variant="outline" size="sm" className="text-[#4CAF50] border-[#4CAF50] hover:bg-[#4CAF50] hover:text-white">
+                      <Button variant="outline" size="sm" className="text-[#1B3D1F] border-[#a5d6a7] hover:bg-[#a5d6a7] hover:text-[#1B3D1F]">
                         {isDE ? "Bestellen" : "Order"}
                       </Button>
                     </Link>
