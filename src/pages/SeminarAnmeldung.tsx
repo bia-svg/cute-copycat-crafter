@@ -298,8 +298,8 @@ export default function SeminarAnmeldung() {
                   </h2>
                   <div className="grid grid-cols-2 gap-3">
                     {([
-                      { key: "de" as const, flag: "🇩🇪", label: isEN ? "Germany" : "Deutschland", sub: "Augsburg" },
-                      { key: "ch" as const, flag: "🇨🇭", label: isEN ? "Switzerland" : "Schweiz", sub: "Eschenbach (Zürichsee)" },
+                      { key: "de" as const, flag: "🇩🇪", label: isEN ? "Germany" : "Deutschland" },
+                      { key: "ch" as const, flag: "🇨🇭", label: isEN ? "Switzerland" : "Schweiz" },
                     ]).map(c => {
                       const isActive = seminarCountry === c.key;
                       const activeClasses = c.key === "de"
@@ -318,10 +318,7 @@ export default function SeminarAnmeldung() {
                           }`}
                         >
                           <span className="text-xl leading-none">{c.flag}</span>
-                          <div className="min-w-0">
-                            <p className="font-semibold text-sm text-[#1B3A5C] leading-tight">{c.label}</p>
-                            <p className="text-[11px] text-muted-foreground leading-tight truncate">{c.sub}</p>
-                          </div>
+                          <p className="font-semibold text-sm text-[#1B3A5C] leading-tight">{c.label}</p>
                         </button>
                       );
                     })}
