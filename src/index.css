@@ -28,7 +28,7 @@
     --accent: 30 5% 95%;
     --accent-foreground: 30 3% 15%;
 
-    /* CTA Mint Green #a5d6a7 — abgestimmt auf EMR-Badge auf der Ausbildung-Seite */
+    /* CTA Mint Green #c8e6c9 — abgestimmt auf EMR-Badge auf der Ausbildung-Seite */
     --cta: 123 38% 74%;
     --cta-foreground: 123 46% 18%;
 
@@ -140,7 +140,7 @@
     transition: background-color 0.2s ease;
   }
   .hover\:bg-cta\/90:hover {
-    background-color: hsl(123 38% 66%) !important; /* etwas dunklerer Mintgrün-Hover, abgestimmt auf #a5d6a7 */
+    background-color: hsl(123 38% 66%) !important; /* etwas dunklerer Mintgrün-Hover, abgestimmt auf #c8e6c9 */
   }
 }
 

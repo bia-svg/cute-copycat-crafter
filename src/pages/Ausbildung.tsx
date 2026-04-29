@@ -341,7 +341,7 @@ export default function Ausbildung() {
               </div>
               <div className="flex flex-wrap gap-2 md:gap-3">
                 <a href="#dates">
-                  <Button className="bg-[#a5d6a7] hover:bg-[#8bc78e] text-[#1B3D1F] font-semibold px-5 py-2 md:px-6 md:py-2.5 text-sm">
+                  <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-semibold px-5 py-2 md:px-6 md:py-2.5 text-sm">
                     {isEN ? "View Dates & Register" : "Termine & Anmeldung"}
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
@@ -393,7 +393,7 @@ export default function Ausbildung() {
 
           {/* EMR Badge */}
           <div className="mt-2.5 md:mt-4 flex flex-col items-center text-center">
-            <div className="inline-flex items-center gap-2 bg-[#e8f5e9] border border-[#a5d6a7] rounded-full px-3 py-1 md:px-4 md:py-1.5">
+            <div className="inline-flex items-center gap-2 bg-[#e8f5e9] border border-[#c8e6c9] rounded-full px-3 py-1 md:px-4 md:py-1.5">
               <img src={CDN.emrBadge} alt="EMR Badge" className="w-4 h-4 md:w-5 md:h-5 object-contain" />
               <span className="text-[11px] md:text-xs font-semibold text-[#2E7D32] tracking-wide">EMR Krankenkasse konform</span>
             </div>
@@ -760,7 +760,7 @@ export default function Ausbildung() {
                 : "In 6 Tagen gewinnen Sie das Wissen, die Sicherheit und das Diplom, um Menschen professionell zu begleiten. Sind Sie bereit?"}
             </p>
             <Link to={`${getPath("seminarRegistration", language, country)}?country=de`}>
-              <Button className="bg-[#a5d6a7] hover:bg-[#8bc78e] text-[#1B3D1F] font-semibold px-6 py-2.5 md:px-8 md:py-3 text-sm md:text-base rounded-full shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] transition-all">
+              <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-semibold px-6 py-2.5 md:px-8 md:py-3 text-sm md:text-base rounded-full shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] transition-all">
                 {isEN ? "Register for Seminar" : "Zum Seminar anmelden"}
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
