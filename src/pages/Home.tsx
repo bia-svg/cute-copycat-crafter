@@ -444,41 +444,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════ QUALIFICATIONS ═══════════════════ */}
-      <section className="py-6 md:py-10 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-2xl border border-primary/15 py-6 md:py-8 shadow-sm">
-        <div className="container-main">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-5 md:mb-7">
+      {/* ═══════════════════ QUALIFICATIONS — slim trust banner ═══════════════════ */}
+      <section className="pt-5 pb-5 md:pt-8 md:pb-8 bg-primary/15" style={deferredSectionStyle}>
+        <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border border-primary/15 py-3 md:py-4 px-3 md:px-6 shadow-sm">
+          <h2 className="text-[15px] md:text-lg font-bold text-foreground text-center leading-tight mb-2 md:mb-3">
             {isEN ? "Qualifications & Certifications" : "Qualifikationen & Zertifizierungen"}
           </h2>
 
-
-
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 max-w-4xl md:max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 max-w-3xl mx-auto">
             {/* 1 – Licensed Psychologist */}
-            <div className="text-center p-3 md:p-6 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-14 md:h-24 w-14 md:w-24 object-contain mx-auto mb-2 md:mb-3" loading="lazy" decoding="async" width={512} height={512} sizes="(min-width: 768px) 96px, 56px" />
-              <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
+            <div className="text-center p-2 md:p-3 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
+              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-10 md:h-14 w-10 md:w-14 object-contain mx-auto mb-1 md:mb-1.5" loading="lazy" decoding="async" width={512} height={512} sizes="(min-width: 768px) 56px, 40px" />
+              <h3 className="font-semibold text-[11px] md:text-xs text-foreground leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
             </div>
             {/* 2 – Aktiv-Hypnose© */}
-            <div className="text-center p-3 md:p-6 bg-card border border-border rounded-lg shadow-sm flex flex-col items-center justify-center transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-8 md:h-16 w-auto object-contain shrink-0 mx-auto mb-2 md:mb-3" loading="lazy" decoding="async" width={160} height={64} />
-              <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
+            <div className="text-center p-2 md:p-3 bg-card border border-border rounded-lg shadow-sm flex flex-col items-center justify-center transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
+              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-6 md:h-10 w-auto object-contain shrink-0 mx-auto mb-1 md:mb-1.5" loading="lazy" decoding="async" width={160} height={64} />
+              <h3 className="font-semibold text-[11px] md:text-xs text-foreground leading-tight">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
             </div>
             {/* 3 – NGH */}
-            <div className="text-center p-3 md:p-6 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-10 md:h-20 w-10 md:w-20 object-contain mx-auto mb-2 md:mb-3" loading="lazy" decoding="async" width={160} height={160} />
-              <h3 className="font-semibold text-xs md:text-sm text-foreground">NGH International Trainer</h3>
+            <div className="text-center p-2 md:p-3 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
+              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-8 md:h-12 w-8 md:w-12 object-contain mx-auto mb-1 md:mb-1.5" loading="lazy" decoding="async" width={160} height={160} />
+              <h3 className="font-semibold text-[11px] md:text-xs text-foreground leading-tight">NGH International Trainer</h3>
             </div>
             {/* 4 – EMR */}
-            <div className="text-center p-3 md:p-6 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-10 md:h-20 object-contain mx-auto mb-2 md:mb-3" loading="lazy" decoding="async" width={160} height={80} />
-              <h3 className="font-semibold text-xs md:text-sm text-foreground">{isEN ? "EMR Approved" : "EMR Krankenkasse Konform"}</h3>
-              <p className="text-[0.6rem] md:text-xs text-muted-foreground">ZSR P609264</p>
+            <div className="text-center p-2 md:p-3 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-8 md:h-12 object-contain mx-auto mb-1 md:mb-1.5" loading="lazy" decoding="async" width={160} height={80} />
+              <h3 className="font-semibold text-[11px] md:text-xs text-foreground leading-tight">{isEN ? "EMR Approved" : "EMR Krankenkasse Konform"}</h3>
+              <p className="text-[9px] md:text-[10px] text-muted-foreground">ZSR P609264</p>
             </div>
           </div>
-        </div>
         </div>
       </section>
 
