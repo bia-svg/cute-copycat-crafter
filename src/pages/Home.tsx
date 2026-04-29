@@ -367,10 +367,10 @@ export default function Home() {
             </div>
 
 
-            <div>
-              <p className="text-xs text-muted-foreground mb-2">{isEN ? "As Seen On" : "Bekannt aus"}</p>
+            <div className="w-full">
               {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
             </div>
+          </div>
           </div>
         )}
       </section>
