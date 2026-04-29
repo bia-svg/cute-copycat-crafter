@@ -374,34 +374,23 @@ export default function Home() {
         )}
       </section>
 
-      {/* ═══════════════════ AKTIV-HYPNOSE METHOD ═══════════════════ */}
+      {/* ═══════════════════ AKTIV-HYPNOSE METHOD — flat premium banner ═══════════════════ */}
       <section className="pt-1.5 pb-2 md:pt-2 md:pb-3 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[1040px] bg-card rounded-2xl border border-primary/15 py-2 md:py-2.5 px-2 md:px-6 shadow-sm">
-        <div className="container-main">
-          {/* Desktop: 3 columns (text+bullets | photo | EMR+link) | Mobile: text only, centered */}
-          <div className="grid md:grid-cols-[1fr_180px_auto] gap-3 md:gap-6 md:items-center">
-            {/* LEFT – text + single-column bullets, horizontally centered within its column */}
-            <div className="flex flex-col text-center md:text-left md:justify-center md:items-center">
-              <h2 className="text-lg md:text-xl font-bold text-foreground leading-tight whitespace-nowrap">
+        <div className="mx-3 md:mx-auto md:max-w-[1040px] bg-card rounded-xl border border-primary/15 py-3 md:py-3 px-4 md:px-6 shadow-sm">
+          <div className="grid md:grid-cols-[1fr_170px] gap-4 md:gap-6 md:items-center">
+            {/* LEFT – text + bullets, centered */}
+            <div className="flex flex-col text-center md:text-left items-center md:items-start">
+              <h2 className="text-base md:text-lg font-bold text-foreground leading-tight">
                 {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
-              <p className="text-xs md:text-[13px] text-foreground/80 leading-snug mt-1">
+              <p className="text-xs md:text-[13px] text-foreground/80 leading-snug mt-1 max-w-[640px]">
                 {isEN
                   ? "David J. Woods combines psychological expertise, physiological depth, and modern coaching techniques into a clear, efficient, and solution-oriented method."
                   : "David J. Woods verbindet psychologisches Fachwissen, physiologische Tiefe und moderne Coaching-Techniken zu einer klaren, effizienten und lösungsorientierten Methode."}
               </p>
 
-              {/* MOBILE: all 5 points stacked, vertically centered */}
-              <ul className="md:hidden flex flex-col items-start justify-center gap-0.5 text-xs text-foreground/80 text-left mt-2 mx-auto w-fit">
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
-              </ul>
-
-              {/* DESKTOP: single column of all 5 bullets, compact spacing */}
-              <ul className="hidden md:flex flex-col justify-center gap-0.5 text-[13px] text-foreground/80 mt-2">
+              {/* Bullets — same on mobile & desktop, compact 2-col on desktop */}
+              <ul className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-0.5 text-[12.5px] md:text-[13px] text-foreground/80 text-left mx-auto md:mx-0 w-fit">
                 <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
                 <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
                 <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
@@ -410,40 +399,20 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* MIDDLE – Photo (desktop only) — vertically reduced */}
-            <div className="hidden md:block rounded-lg overflow-hidden w-[180px] h-[180px] shrink-0">
-              <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-full object-cover object-top rounded-lg" loading="lazy" decoding="async" width={1200} height={800} sizes="180px" />
-            </div>
-
-            {/* RIGHT – EMR badge + link (desktop only) — compact */}
-            <div className="hidden md:flex flex-col items-center justify-center gap-2 w-[150px] shrink-0">
-              <div className="flex flex-col items-center gap-1 bg-secondary rounded-lg p-2 w-full">
-                <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-14 w-auto object-contain" width={140} height={56} loading="lazy" decoding="async" />
+            {/* RIGHT – EMR badge + link, compact, centered */}
+            <div className="flex flex-col items-center justify-center gap-1.5 mt-2 md:mt-0">
+              <div className="flex flex-col items-center gap-1 bg-secondary rounded-lg px-3 py-1.5 w-full max-w-[170px]">
+                <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-10 w-auto object-contain" width={120} height={40} loading="lazy" decoding="async" />
                 <div className="text-center">
-                  <div className="font-semibold text-[11px] text-foreground leading-tight">EMR Krankenkasse Konform</div>
-                  <div className="text-[10px] text-muted-foreground">ZSR P609264</div>
+                  <div className="font-semibold text-[10.5px] text-foreground leading-tight">EMR Krankenkasse Konform</div>
+                  <div className="text-[9.5px] text-muted-foreground">ZSR P609264</div>
                 </div>
               </div>
-              <Link to={getPath("about", language, country)} className="text-[11px] text-foreground/70 hover:text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors text-center leading-snug">
+              <Link to={getPath("about", language, country)} className="text-[10.5px] md:text-[11px] text-foreground/70 hover:text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors text-center leading-snug">
                 {isEN ? "More about David J. Woods & Team" : "Mehr über David J. Woods & Team"}
               </Link>
             </div>
           </div>
-
-          {/* MOBILE: EMR + link below */}
-          <div className="md:hidden flex flex-col items-center gap-3 mt-4">
-            <div className="flex items-center gap-2 bg-secondary rounded-md p-2">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-9" width={64} height={40} loading="lazy" decoding="async" />
-              <div>
-                <div className="font-semibold text-xs text-foreground">EMR Krankenkasse Konform</div>
-                <div className="text-[11px] text-muted-foreground">ZSR P609264</div>
-              </div>
-            </div>
-            <Link to={getPath("about", language, country)} className="text-sm text-foreground/70 hover:text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors">
-              {isEN ? "More about David J. Woods & Team" : "Mehr über David J. Woods & Team"}
-            </Link>
-          </div>
-        </div>
         </div>
       </section>
 
