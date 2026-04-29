@@ -293,12 +293,12 @@ export default function Home() {
                 <h1 className="mt-3 text-[1.4rem] lg:text-[1.7rem] font-light text-foreground leading-[1.2] tracking-tight">
                   Lic. Psych. <span className="font-medium">David J. Woods</span>
                 </h1>
-                <div className="mt-5 inline-flex items-center gap-3 px-3.5 py-1 rounded-full border border-foreground/15 bg-background/60">
-                  <span className="h-px w-4 bg-foreground/20" aria-hidden="true" />
-                  <span className="font-normal text-foreground/80 text-[13px] lg:text-sm tracking-[0.08em]">
+                <div className="mt-5 inline-flex items-center gap-3.5 px-5 py-1.5 rounded-full border border-primary/25 bg-gradient-to-b from-background to-primary/[0.04] shadow-[0_1px_2px_rgba(27,58,92,0.06),inset_0_1px_0_rgba(255,255,255,0.5)]">
+                  <span className="h-px w-5 bg-primary/30" aria-hidden="true" />
+                  <span className="font-medium text-primary text-[13.5px] lg:text-[15px] tracking-[0.12em]">
                     {isEN ? "Freedom Begins in the Mind" : "Freiheit beginnt im Kopf"}
                   </span>
-                  <span className="h-px w-4 bg-foreground/20" aria-hidden="true" />
+                  <span className="h-px w-5 bg-primary/30" aria-hidden="true" />
                 </div>
                 <p className="mt-4 text-foreground/65 text-[13px] lg:text-sm font-normal tracking-wide">
                   {isEN
@@ -321,19 +321,19 @@ export default function Home() {
             <h1 className="mt-2 text-[1.2rem] font-light text-foreground leading-[1.2] tracking-tight">
               Lic. Psych. <span className="font-medium">David J. Woods</span>
             </h1>
-            <div className="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-foreground/15 bg-background/60">
-              <span className="h-px w-3 bg-foreground/20" aria-hidden="true" />
-              <span className="font-normal text-foreground/80 text-[12px] tracking-[0.08em]">
+            <div className="mt-3 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-primary/25 bg-gradient-to-b from-background to-primary/[0.04] shadow-[0_1px_2px_rgba(27,58,92,0.06),inset_0_1px_0_rgba(255,255,255,0.5)]">
+              <span className="h-px w-4 bg-primary/30" aria-hidden="true" />
+              <span className="font-medium text-primary text-[13px] tracking-[0.12em]">
                 {isEN ? "Freedom Begins in the Mind" : "Freiheit beginnt im Kopf"}
               </span>
-              <span className="h-px w-3 bg-foreground/20" aria-hidden="true" />
+              <span className="h-px w-4 bg-primary/30" aria-hidden="true" />
             </div>
             <p className="mt-2.5 text-[13px] text-foreground/65 font-normal tracking-wide">
               {isEN
                 ? "Psychology · Hypnosis · Deep Transformation"
                 : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
             </p>
-            <div className="relative aspect-[4/3] max-h-[240px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "180px" }}>
+            <div className="mt-6 relative aspect-[4/3] max-h-[240px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "180px" }}>
               {Object.entries(loadedMobile).map(([idx, src]) => (
                 <img
                   key={idx}
