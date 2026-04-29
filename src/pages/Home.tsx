@@ -370,9 +370,9 @@ export default function Home() {
       <section className="py-3 md:py-5 bg-primary/15" style={deferredSectionStyle}>
         <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-2xl border border-primary/15 py-3 md:py-4 shadow-sm">
         <div className="container-main">
-          {/* Desktop: side-by-side compact | Mobile: text-only, centered */}
-          <div className="grid md:grid-cols-[1fr_240px] gap-4 md:gap-6 md:items-stretch">
-            {/* LEFT – text column */}
+          {/* Desktop: 3 columns (text+bullets | photo | EMR+link) | Mobile: text only, centered */}
+          <div className="grid md:grid-cols-[1fr_220px_auto] gap-4 md:gap-6 md:items-stretch">
+            {/* LEFT – text + single-column bullets */}
             <div className="flex flex-col text-center md:text-left">
               <p className="text-xs font-semibold text-cta uppercase tracking-wider">
                 {isEN ? "Aktiv-Hypnose© Method" : "Aktiv-Hypnose© Methode"}
@@ -395,37 +395,33 @@ export default function Home() {
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
               </ul>
 
-              {/* DESKTOP: two columns of bullets – tightly grouped on the left */}
-              <div className="hidden md:grid [grid-template-columns:auto_auto] justify-start gap-x-6 gap-y-1 text-sm text-foreground/80 mt-3">
-                <ul className="space-y-1">
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
-                </ul>
-                <ul className="space-y-1">
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
-                </ul>
-              </div>
-
-              {/* DESKTOP: EMR badge + link, pushed to the right, bottom-aligned with image */}
-              <div className="hidden md:flex flex-col items-end gap-2 mt-auto pt-3 self-end text-right">
-                <div className="flex items-center gap-2 bg-secondary rounded-md p-2">
-                  <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-9" width={64} height={40} loading="lazy" decoding="async" />
-                  <div className="text-left">
-                    <div className="font-semibold text-xs text-foreground">EMR Krankenkasse Konform</div>
-                    <div className="text-[11px] text-muted-foreground">ZSR P609264</div>
-                  </div>
-                </div>
-                <Link to={getPath("about", language, country)} className="text-sm text-foreground/70 hover:text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors">
-                  {isEN ? "More about David J. Woods & Team" : "Mehr über David J. Woods & Team"}
-                </Link>
-              </div>
+              {/* DESKTOP: single column of all 5 bullets */}
+              <ul className="hidden md:flex flex-col gap-1 text-sm text-foreground/80 mt-3">
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
+              </ul>
             </div>
 
-            {/* RIGHT – Photo (desktop only) */}
-            <div className="hidden md:block rounded-lg overflow-hidden w-[240px] shrink-0 self-stretch">
-              <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-full object-cover object-top rounded-lg" loading="lazy" decoding="async" width={1200} height={800} sizes="240px" />
+            {/* MIDDLE – Photo (desktop only) */}
+            <div className="hidden md:block rounded-lg overflow-hidden w-[220px] shrink-0 self-stretch">
+              <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-full object-cover object-top rounded-lg" loading="lazy" decoding="async" width={1200} height={800} sizes="220px" />
+            </div>
+
+            {/* RIGHT – EMR badge (larger) + link (desktop only) */}
+            <div className="hidden md:flex flex-col items-center justify-center gap-3 w-[160px] shrink-0 self-stretch">
+              <div className="flex flex-col items-center gap-2 bg-secondary rounded-lg p-3 w-full">
+                <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-20 w-auto object-contain" width={140} height={80} loading="lazy" decoding="async" />
+                <div className="text-center">
+                  <div className="font-semibold text-xs text-foreground leading-tight">EMR Krankenkasse Konform</div>
+                  <div className="text-[11px] text-muted-foreground">ZSR P609264</div>
+                </div>
+              </div>
+              <Link to={getPath("about", language, country)} className="text-xs text-foreground/70 hover:text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors text-center leading-snug">
+                {isEN ? "More about David J. Woods & Team" : "Mehr über David J. Woods & Team"}
+              </Link>
             </div>
           </div>
 
