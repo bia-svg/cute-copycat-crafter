@@ -328,7 +328,7 @@ export default function Home() {
               </span>
               <span className="h-px w-6 bg-primary/25" aria-hidden="true" />
             </div>
-            <p className="mt-3 text-[12px] text-foreground/85 font-normal uppercase tracking-[0.22em] flex items-center justify-center gap-2">
+            <p className="mt-3 text-[10.5px] text-foreground/85 font-normal uppercase tracking-[0.12em] flex flex-wrap items-center justify-center gap-x-1.5 gap-y-0.5 px-3">
               <span>{isEN ? "Psychology" : "Psychologie"}</span>
               <span className="text-primary/60" aria-hidden="true">·</span>
               <span>{isEN ? "Hypnosis" : "Hypnose"}</span>
