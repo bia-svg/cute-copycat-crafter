@@ -29,10 +29,7 @@ export default function FAQSection({ title, items, sectionClassName }: FAQSectio
   return (
     <section className={sectionClassName ?? "bg-[#FAF7F2] border-y border-[#EDE7DC]"}>
       <div className="container-main py-5 md:py-9">
-        <h2
-          className="text-lg md:text-2xl font-bold text-primary mb-3 md:mb-6 text-center"
-          style={{ fontFamily: "Georgia, serif" }}
-        >
+        <h2 className="text-lg md:text-xl font-light tracking-tight text-foreground/90 leading-tight mb-3 md:mb-6 text-center">
           {title}
         </h2>
 
