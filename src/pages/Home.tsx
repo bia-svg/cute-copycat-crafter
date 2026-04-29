@@ -367,7 +367,7 @@ export default function Home() {
             </div>
 
 
-            <div className="w-full">
+            <div className="w-full mt-6">
               {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
             </div>
           </div>
