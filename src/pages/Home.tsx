@@ -430,7 +430,7 @@ export default function Home() {
       {/* ═══════════════════ SERVICES ═══════════════════ */}
       <section id="sessions" className="py-4 md:py-4 bg-secondary mx-3 md:mx-auto md:max-w-[1200px] border border-primary/15 rounded-2xl" style={deferredSectionStyle}>
         <div className="container-main">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-0.5 md:mb-0">{t("section.services")}</h2>
+          <h2 className="text-xl md:text-2xl font-medium tracking-tight text-foreground text-center mb-0.5 md:mb-0">{t("section.services")}</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-2 md:mb-2 md:text-sm">
             {isEN
               ? "Topics can also be combined during the session."
@@ -478,17 +478,12 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
-        <section className="py-5 md:py-8 bg-muted/50" style={deferredSectionStyle}>
+        <section className="py-6 md:py-9 bg-muted/50" style={deferredSectionStyle}>
         <div className="container-main">
-          <div className="bg-card border border-border rounded-2xl shadow-sm px-4 py-5 md:px-8 md:py-7">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-1 text-foreground">
+          <div className="max-w-[1080px] mx-auto bg-card border border-border rounded-2xl shadow-sm px-4 py-5 md:px-7 md:py-6">
+            <h2 className="text-xl md:text-2xl font-medium tracking-tight text-center mb-4 md:mb-5 text-foreground">
               {isEN ? "Corporate Coaching" : "Firmencoaching"}
             </h2>
-            <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-3 md:mb-4 text-sm md:text-base leading-snug">
-              {isEN
-                ? "Performance Coaching: Maximize Your Team's Potential. We offer tailored solutions for companies of all sizes."
-                : "Erfolgs-Coaching: Leistungsfähigkeit maximieren. Wir bieten maßgeschneiderte Lösungen für Unternehmen jeder Größe."}
-            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               {[
                 { icon: <Trophy className="w-6 h-6" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Success is ultimately decided in the mind." : "Letztendlich entscheidet sich Erfolg im Kopf.", href: getPath("corporateErfolg", language, country), image: corporateSuccessImg },
@@ -506,10 +501,11 @@ export default function Home() {
                 />
               ))}
             </div>
-            <div className="text-center mt-4 md:mt-5">
+            <div className="text-center mt-5 md:mt-6">
               <Link to={getPath("corporate", language, country)}>
-                <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold">
+                <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary/5 hover:text-primary font-medium tracking-wide rounded-full px-6">
                   {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
+                  <ArrowRight className="w-4 h-4 ml-1.5" />
                 </Button>
               </Link>
             </div>
