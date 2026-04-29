@@ -368,12 +368,12 @@ export default function Home() {
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD ═══════════════════ */}
       <section className="py-3 md:py-5 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-2xl border border-primary/15 py-3 md:py-4 shadow-sm">
+        <div className="mx-3 md:mx-auto md:max-w-[1040px] bg-card rounded-2xl border border-primary/15 py-3 md:py-4 px-2 md:px-8 shadow-sm">
         <div className="container-main">
           {/* Desktop: 3 columns (text+bullets | photo | EMR+link) | Mobile: text only, centered */}
-          <div className="grid md:grid-cols-[1fr_220px_auto] gap-4 md:gap-6 md:items-stretch">
-            {/* LEFT – text + single-column bullets */}
-            <div className="flex flex-col text-center md:text-left md:justify-center md:py-1">
+          <div className="grid md:grid-cols-[1fr_220px_auto] gap-4 md:gap-8 md:items-stretch">
+            {/* LEFT – text + single-column bullets, horizontally centered within its column */}
+            <div className="flex flex-col text-center md:text-left md:justify-center md:py-1 md:items-center">
               <p className="text-xs font-semibold text-cta uppercase tracking-wider">
                 {isEN ? "Aktiv-Hypnose© Method" : "Aktiv-Hypnose© Methode"}
               </p>
