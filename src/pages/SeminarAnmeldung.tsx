@@ -81,6 +81,16 @@ export default function SeminarAnmeldung() {
     }
   }, [selectedDate, seminarCountry]);
 
+  // Smooth-scroll Step 3 / form into view after a date is selected
+  useEffect(() => {
+    if (!selectedDate) return;
+    const t = setTimeout(() => {
+      const el = document.getElementById("seminar-step-3");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
+    return () => clearTimeout(t);
+  }, [selectedDate]);
+
 
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
