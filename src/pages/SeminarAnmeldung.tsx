@@ -358,8 +358,8 @@ export default function SeminarAnmeldung() {
                               <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
                                 <Calendar className="w-4 h-4" /> {d.date}
                               </p>
-                              <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
-                                <MapPin className="w-3.5 h-3.5" /> {d.location}
+                              <p className="flex items-center gap-1.5 text-[11px] text-muted-foreground mt-0.5 leading-tight">
+                                <MapPin className="w-3 h-3 shrink-0" /> {d.location}
                               </p>
                             </div>
                             <div className="flex items-center gap-2">
@@ -367,7 +367,7 @@ export default function SeminarAnmeldung() {
                             </div>
                           </div>
                           {/* Price display */}
-                          <div className="mt-3 pt-3 border-t border-border/50">
+                          <div className="mt-2 pt-2 border-t border-border/50">
                             {isEarlyBird ? (
                               <div>
                                 <div className="flex items-center justify-between">
