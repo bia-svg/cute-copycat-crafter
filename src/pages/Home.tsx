@@ -367,7 +367,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD ═══════════════════ */}
-      <section className="py-3 md:py-5 bg-primary/15" style={deferredSectionStyle}>
+      <section className="pt-2 pb-3 md:pt-3 md:pb-5 bg-primary/15" style={deferredSectionStyle}>
         <div className="mx-3 md:mx-auto md:max-w-[1040px] bg-card rounded-2xl border border-primary/15 py-3 md:py-4 px-2 md:px-8 shadow-sm">
         <div className="container-main">
           {/* Desktop: 3 columns (text+bullets | photo | EMR+link) | Mobile: text only, centered */}
