@@ -102,7 +102,7 @@ export default function CityAugsburg() {
                 <span>Regus, Viktoria Str. 3b, 2. OG, 86150 Augsburg ({isEN ? "near the main train station" : "nahe dem Hauptbahnhof"})</span>
               </a>
               <Link to={`/${language}/${country}/erstgespraech`}>
-                <Button className="bg-[#4CAF50] hover:bg-[#43A047] text-white font-semibold px-6 py-3">
+                <Button className="bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3">
                   {isEN ? "Book Free Discovery Call" : "Kostenloses Erstgespräch vereinbaren"}
                 </Button>
               </Link>
@@ -169,7 +169,7 @@ export default function CityAugsburg() {
             {isEN ? "Ready for Lasting Change?" : "Bereit für nachhaltige Veränderung?"}
           </h2>
           <Link to={`/${language}/${country}/erstgespraech`}>
-            <Button className="bg-[#4CAF50] hover:bg-[#43A047] text-white font-semibold px-8 py-3 text-base">
+            <Button className="bg-cta hover:bg-cta/90 text-white font-semibold px-8 py-3 text-base">
               {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
             </Button>
           </Link>
