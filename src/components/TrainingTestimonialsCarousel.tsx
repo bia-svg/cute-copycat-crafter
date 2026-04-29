@@ -66,7 +66,7 @@ export default function TrainingTestimonialsCarousel() {
     <section className="bg-secondary/40 py-5 md:py-9">
       <div className="container-main">
         <div className="max-w-3xl mx-auto text-center mb-3 md:mb-6">
-          <h2 className="text-lg md:text-3xl font-bold text-[#1B3A5C] mb-1.5 md:mb-3" style={{ fontFamily: "Georgia, serif" }}>
+          <h2 className="text-lg md:text-xl font-light tracking-tight text-foreground/90 leading-tight mb-1.5 md:mb-3">
             {isEN ? "What Our Seminar Participants Say" : "Das sagen unsere Seminarteilnehmer"}
           </h2>
           <p className="text-[12px] md:text-base text-muted-foreground leading-snug">
