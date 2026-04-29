@@ -383,19 +383,21 @@ export default function Home() {
                   ? "David J. Woods combines psychological expertise, physiological depth, and modern coaching techniques into a method that works: clear, efficient, and solution-oriented."
                   : "David J. Woods vereint psychologisches Fachwissen, physiologische Tiefe und moderne Coaching-Techniken zu einer Methode, die wirkt: klar, effizient und lösungsorientiert."}
               </p>
-              <p className="text-xs md:text-sm text-foreground/70 leading-snug hidden md:block">
-                {isEN
-                  ? "Even if many are initially unsure — the process leads to a state of focused clarity where transformation becomes possible."
-                  : "Auch wenn viele anfangs unsicher sind – der Prozess führt in einen Zustand fokussierter Klarheit, in dem Transformation möglich wird."}
-              </p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1 text-xs md:text-sm text-foreground/80 text-left mt-2">
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
+              </ul>
             </div>
             {/* Photo – desktop only */}
-            <div className="hidden md:block rounded-lg overflow-hidden w-[280px] shrink-0">
-              <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-auto object-cover object-top rounded-lg" loading="lazy" decoding="async" width={1200} height={800} sizes="280px" />
+            <div className="hidden md:block rounded-lg overflow-hidden w-[260px] shrink-0">
+              <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-auto object-cover object-top rounded-lg" loading="lazy" decoding="async" width={1200} height={800} sizes="260px" />
             </div>
           </div>
           {/* EMR + Button below on all screens */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-2 md:mt-3">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-3 md:mt-4">
             <div className="flex items-center gap-2 bg-secondary rounded-md p-2">
               <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-9 md:h-10" width={64} height={40} loading="lazy" decoding="async" />
               <div>
@@ -403,10 +405,8 @@ export default function Home() {
                 <div className="text-[11px] text-muted-foreground">ZSR P609264</div>
               </div>
             </div>
-            <Link to={getPath("about", language, country)}>
-              <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                {isEN ? "More About Our Method" : "Mehr über unsere Methode"}
-              </Button>
+            <Link to={getPath("about", language, country)} className="text-sm text-foreground/70 hover:text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors">
+              {isEN ? "More about David J. Woods & Team" : "Mehr über David J. Woods & Team"}
             </Link>
           </div>
         </div>
