@@ -249,8 +249,8 @@ export default function Home() {
       <SEO {...pageSEO.home} pageKey="home" />
       <section className="bg-secondary">
         {!isMobile ? (
-          <div className="grid md:grid-cols-[auto_1fr] container-main py-4 gap-6 items-center">
-            <div className="relative w-full max-w-[360px] rounded-2xl overflow-hidden mx-auto group min-h-[260px]">
+          <div className="grid md:grid-cols-[360px_1fr] container-main py-4 gap-6 items-center">
+            <div className="relative w-[360px] aspect-[4/5] rounded-2xl overflow-hidden mx-auto group">
               {Object.entries(loadedSlides).map(([idx, src]) => (
                 <img
                   key={idx}
@@ -283,7 +283,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="space-y-3 text-center">
+            <div className="flex flex-col justify-center space-y-3 text-center min-w-0">
               <h1 className="text-[1.65rem] lg:text-[2rem] font-bold text-foreground leading-tight tracking-tight">
                 Lic. Psych. David J. Woods
               </h1>
@@ -295,12 +295,11 @@ export default function Home() {
               <p className="text-xl lg:text-2xl italic font-semibold text-cta">
                 {isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}
               </p>
-              <p className="text-foreground/80 text-[1rem] font-medium">
+              <p className="text-foreground/80 text-base font-medium">
                 {isEN
                   ? "Psychology · Hypnosis · Deep Transformation"
                   : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
               </p>
-
               <div>
                 <p className="text-xs text-muted-foreground mb-2">{isEN ? "As Seen On" : "Bekannt aus"}</p>
                 {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
