@@ -373,7 +373,7 @@ export default function Home() {
           {/* Desktop: 3 columns (text+bullets | photo | EMR+link) | Mobile: text only, centered */}
           <div className="grid md:grid-cols-[1fr_220px_auto] gap-4 md:gap-6 md:items-stretch">
             {/* LEFT – text + single-column bullets */}
-            <div className="flex flex-col text-center md:text-left">
+            <div className="flex flex-col text-center md:text-left md:justify-center md:py-1">
               <p className="text-xs font-semibold text-cta uppercase tracking-wider">
                 {isEN ? "Aktiv-Hypnose© Method" : "Aktiv-Hypnose© Methode"}
               </p>
@@ -396,7 +396,7 @@ export default function Home() {
               </ul>
 
               {/* DESKTOP: single column of all 5 bullets */}
-              <ul className="hidden md:flex flex-col gap-1 text-sm text-foreground/80 mt-3">
+              <ul className="hidden md:flex flex-col gap-1.5 text-sm text-foreground/80 mt-2.5">
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
