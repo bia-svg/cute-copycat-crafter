@@ -62,8 +62,8 @@ function TVLogoCarousel() {
   }, []);
 
   return (
-     <div className="relative bg-muted/50 rounded-lg p-3">
-      <div ref={scrollRef} className="flex gap-6 overflow-x-auto scrollbar-hide py-2" style={{ scrollbarWidth: "none" }}>
+     <div className="relative bg-muted/50 rounded-lg p-2">
+      <div ref={scrollRef} className="flex gap-6 overflow-x-auto overflow-y-hidden scrollbar-hide py-1" style={{ scrollbarWidth: "none", msOverflowStyle: "none" } as React.CSSProperties}>
         {CDN.bekanntAus.map((src, i) => (
           <img key={i} src={src} alt={`David J. Woods bekannt aus Medien – Logo ${i + 1}`} className="h-8 md:h-10 object-contain shrink-0 opacity-100 hover:opacity-100 transition-opacity mix-blend-multiply" width={80} height={40} loading="lazy" decoding="async" sizes="(min-width: 768px) 100px, 80px" />
         ))}
@@ -249,7 +249,7 @@ export default function Home() {
       <SEO {...pageSEO.home} pageKey="home" />
       <section className="bg-secondary">
         {!isMobile ? (
-          <div className="grid md:grid-cols-[340px_1fr] container-main py-4 gap-8 items-stretch">
+          <div className="grid md:grid-cols-[340px_1fr] container-main py-2 md:pb-1 gap-8 items-stretch">
             <div className="relative w-[340px] aspect-[4/3] rounded-2xl overflow-hidden mx-auto group self-center">
               {Object.entries(loadedSlides).map(([idx, src]) => (
                 <img
@@ -283,8 +283,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-between space-y-5 text-center min-w-0 py-2">
-              <div className="space-y-4">
+            <div className="flex flex-col justify-between space-y-3 text-center min-w-0 py-1">
+              <div className="space-y-3">
                 <h1 className="text-[1.65rem] lg:text-[2rem] font-bold text-foreground leading-tight tracking-tight">
                   Lic. Psych. David J. Woods
                 </h1>
@@ -302,8 +302,8 @@ export default function Home() {
                     : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
                 </p>
               </div>
-              <div className="mt-auto pt-2">
-                <p className="text-xs text-muted-foreground mb-2">{isEN ? "As Seen On" : "Bekannt aus"}</p>
+              <div className="mt-auto pt-1">
+                <p className="text-xs text-muted-foreground mb-1">{isEN ? "As Seen On" : "Bekannt aus"}</p>
                 {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
               </div>
             </div>
@@ -367,7 +367,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD ═══════════════════ */}
-      <section className="py-3 md:py-5 bg-primary/15" style={deferredSectionStyle}>
+      <section className="pt-2 pb-3 md:pt-3 md:pb-5 bg-primary/15" style={deferredSectionStyle}>
         <div className="mx-3 md:mx-auto md:max-w-[1040px] bg-card rounded-2xl border border-primary/15 py-3 md:py-4 px-2 md:px-8 shadow-sm">
         <div className="container-main">
           {/* Desktop: 3 columns (text+bullets | photo | EMR+link) | Mobile: text only, centered */}
