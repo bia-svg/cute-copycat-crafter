@@ -65,7 +65,7 @@ function TVLogoCarousel() {
      <div className="relative bg-muted/50 rounded-lg p-2">
       <div ref={scrollRef} className="flex gap-6 overflow-x-auto overflow-y-hidden scrollbar-hide py-1" style={{ scrollbarWidth: "none", msOverflowStyle: "none" } as React.CSSProperties}>
         {CDN.bekanntAus.map((src, i) => (
-          <img key={i} src={src} alt={`David J. Woods bekannt aus Medien – Logo ${i + 1}`} className="h-8 md:h-10 object-contain shrink-0 opacity-100 hover:opacity-100 transition-opacity mix-blend-multiply" width={80} height={40} loading="lazy" decoding="async" sizes="(min-width: 768px) 100px, 80px" />
+          <img key={i} src={src} alt={`David J. Woods bekannt aus Medien – Logo ${i + 1}`} className="h-7 md:h-9 object-contain shrink-0 grayscale opacity-60 hover:opacity-90 transition-opacity mix-blend-multiply" width={80} height={40} loading="lazy" decoding="async" sizes="(min-width: 768px) 100px, 80px" />
         ))}
       </div>
     </div>
