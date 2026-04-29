@@ -203,7 +203,7 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-1">
-          <Link to={getPath("home", language, country)} className="px-2 py-2 text-cta hover:text-cta/80 transition-colors" aria-label="Home">
+          <Link to={getPath("home", language, country)} className="px-2 py-2 text-[#2E7D32] hover:text-[#2E7D32]/80 transition-colors" aria-label="Home">
             <Home className="w-[18px] h-[18px]" />
           </Link>
           <div className="relative" onMouseEnter={() => handleMouseEnter("sessions")} onMouseLeave={handleMouseLeave}>
@@ -233,7 +233,7 @@ export default function Header() {
 
         {/* Mobile home + toggle */}
         <div className="flex items-center gap-3 lg:hidden">
-          <Link to={getPath("home", language, country)} className="p-2 text-cta hover:text-cta/80 transition-colors" aria-label="Home">
+          <Link to={getPath("home", language, country)} className="p-2 text-[#2E7D32] hover:text-[#2E7D32]/80 transition-colors" aria-label="Home">
             <Home className="w-5 h-5" />
           </Link>
           <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)}>
