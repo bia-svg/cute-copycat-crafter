@@ -395,8 +395,8 @@ export default function Home() {
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
               </ul>
 
-              {/* DESKTOP: two columns of bullets */}
-              <div className="hidden md:grid grid-cols-2 gap-x-5 gap-y-1 text-sm text-foreground/80 mt-3">
+              {/* DESKTOP: two columns of bullets – tightly grouped on the left */}
+              <div className="hidden md:grid [grid-template-columns:auto_auto] justify-start gap-x-6 gap-y-1 text-sm text-foreground/80 mt-3">
                 <ul className="space-y-1">
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
@@ -408,11 +408,11 @@ export default function Home() {
                 </ul>
               </div>
 
-              {/* DESKTOP: EMR badge + link, bottom-aligned with image */}
-              <div className="hidden md:flex flex-col items-start gap-2 mt-auto pt-3">
+              {/* DESKTOP: EMR badge + link, pushed to the right, bottom-aligned with image */}
+              <div className="hidden md:flex flex-col items-end gap-2 mt-auto pt-3 self-end text-right">
                 <div className="flex items-center gap-2 bg-secondary rounded-md p-2">
                   <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-9" width={64} height={40} loading="lazy" decoding="async" />
-                  <div>
+                  <div className="text-left">
                     <div className="font-semibold text-xs text-foreground">EMR Krankenkasse Konform</div>
                     <div className="text-[11px] text-muted-foreground">ZSR P609264</div>
                   </div>
