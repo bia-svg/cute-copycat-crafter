@@ -283,8 +283,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-between space-y-5 text-center min-w-0 py-2">
-              <div className="space-y-4">
+            <div className="flex flex-col justify-between space-y-3 text-center min-w-0 py-1">
+              <div className="space-y-3">
                 <h1 className="text-[1.65rem] lg:text-[2rem] font-bold text-foreground leading-tight tracking-tight">
                   Lic. Psych. David J. Woods
                 </h1>
@@ -302,8 +302,8 @@ export default function Home() {
                     : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
                 </p>
               </div>
-              <div className="mt-auto pt-2">
-                <p className="text-xs text-muted-foreground mb-2">{isEN ? "As Seen On" : "Bekannt aus"}</p>
+              <div className="mt-auto pt-1">
+                <p className="text-xs text-muted-foreground mb-1">{isEN ? "As Seen On" : "Bekannt aus"}</p>
                 {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
               </div>
             </div>
