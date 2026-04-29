@@ -447,7 +447,7 @@ export default function Home() {
       {/* ═══════════════════ QUALIFICATIONS — slim trust banner ═══════════════════ */}
       <section className="pt-5 pb-5 md:pt-8 md:pb-8 bg-primary/15" style={deferredSectionStyle}>
         <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border border-primary/15 py-3 md:py-4 px-3 md:px-6 shadow-sm">
-          <h2 className="text-[15px] md:text-lg font-bold text-foreground text-center leading-tight mb-2 md:mb-3">
+          <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 text-center leading-tight mb-2 md:mb-3">
             {isEN ? "Qualifications & Certifications" : "Qualifikationen & Zertifizierungen"}
           </h2>
 
