@@ -373,7 +373,7 @@ export default function Home() {
           {/* Desktop: 3 columns (text+bullets | photo | EMR+link) | Mobile: text only, centered */}
           <div className="grid md:grid-cols-[1fr_220px_auto] gap-4 md:gap-6 md:items-stretch">
             {/* LEFT – text + single-column bullets */}
-            <div className="flex flex-col text-center md:text-left">
+            <div className="flex flex-col text-center md:text-left md:justify-center md:py-1">
               <p className="text-xs font-semibold text-cta uppercase tracking-wider">
                 {isEN ? "Aktiv-Hypnose© Method" : "Aktiv-Hypnose© Methode"}
               </p>
