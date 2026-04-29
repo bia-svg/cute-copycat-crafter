@@ -581,7 +581,7 @@ export default function SeminarAnmeldung() {
                       <Button
                         type="submit"
                         disabled={isSubmitting}
-                        className={`w-full font-semibold py-3 text-white transition-colors relative z-[40] ${!isSubmitting ? "bg-cta hover:bg-cta/90" : "bg-gray-400 cursor-not-allowed"}`}
+                        className={`w-full font-semibold py-3 text-white transition-colors relative z-[40] ${!isSubmitting ? "bg-[#4CAF50] hover:bg-[#43A047]" : "bg-gray-400 cursor-not-allowed"}`}
                       >
                         {isEN ? "Register for Seminar" : "Seminar-Anmeldung absenden"}
                       </Button>

@@ -144,7 +144,7 @@ export default function BlogPost() {
               </Button>
             </Link>
             <Link to={getPath("contact", language, country)}>
-              <Button className="bg-cta hover:bg-cta/90 text-white gap-2">
+              <Button className="bg-[#4CAF50] hover:bg-[#43A047] text-white gap-2">
                 {isDE ? "Kostenloses Erstgespräch" : "Free Discovery Call"}
               </Button>
             </Link>
