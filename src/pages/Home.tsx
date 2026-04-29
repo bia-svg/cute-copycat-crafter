@@ -372,34 +372,43 @@ export default function Home() {
         )}
       </section>
 
-      {/* ═══════════════════ AKTIV-HYPNOSE METHOD — flat premium banner ═══════════════════ */}
-      <section className="pt-1.5 pb-2 md:pt-2 md:pb-3 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[1040px] bg-card rounded-xl border border-primary/15 py-3 md:py-3 px-4 md:px-6 shadow-sm">
-          <div className="grid md:grid-cols-[1fr_170px] gap-4 md:gap-6 md:items-center">
-            {/* LEFT – text + bullets, centered */}
-            <div className="flex flex-col text-center md:text-left items-center md:items-start">
-              <h2 className="text-base md:text-lg font-bold text-foreground leading-tight">
+      {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
+      <section className="pt-1 pb-1.5 md:pt-2 md:pb-3 bg-primary/15" style={deferredSectionStyle}>
+        <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border border-primary/15 py-2 md:py-3 px-3 md:px-6 shadow-sm">
+          <div className="grid md:grid-cols-[1fr_170px] gap-2 md:gap-6 md:items-center">
+            {/* LEFT – text + bullets, centered on both */}
+            <div className="flex flex-col items-center text-center md:items-center md:text-center">
+              <h2 className="text-[15px] md:text-lg font-bold text-foreground leading-tight">
                 {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
-              <p className="text-xs md:text-[13px] text-foreground/80 leading-snug mt-1 max-w-[640px]">
+              <p className="text-[11.5px] md:text-[13px] text-foreground/80 leading-snug mt-0.5 md:mt-1 max-w-[640px]">
                 {isEN
                   ? "David J. Woods combines psychological expertise, physiological depth, and modern coaching techniques into a clear, efficient, and solution-oriented method."
                   : "David J. Woods verbindet psychologisches Fachwissen, physiologische Tiefe und moderne Coaching-Techniken zu einer klaren, effizienten und lösungsorientierten Methode."}
               </p>
 
-              {/* Bullets — same on mobile & desktop, compact 2-col on desktop */}
-              <ul className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-0.5 text-[12.5px] md:text-[13px] text-foreground/80 text-left mx-auto md:mx-0 w-fit">
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
+              {/* Bullets — compact, 2-col on desktop */}
+              <ul className="mt-1 md:mt-2 grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-0 md:gap-y-0.5 text-[11.5px] md:text-[13px] text-foreground/80 text-left mx-auto w-fit">
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-cta shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
               </ul>
             </div>
 
-            {/* RIGHT – EMR badge + link, compact, centered */}
-            <div className="flex flex-col items-center justify-center gap-1.5 mt-2 md:mt-0">
-              <div className="flex flex-col items-center gap-1 bg-secondary rounded-lg px-3 py-1.5 w-full max-w-[170px]">
+            {/* RIGHT – EMR badge + link. Slim horizontal pill on mobile, vertical on desktop */}
+            <div className="flex flex-col items-center justify-center gap-1 md:gap-1.5 mt-1.5 md:mt-0">
+              {/* Mobile: slim horizontal pill */}
+              <div className="flex md:hidden items-center gap-2 bg-secondary rounded-full px-2.5 py-1 w-fit">
+                <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-5 w-auto object-contain" width={60} height={20} loading="lazy" decoding="async" />
+                <div className="flex items-baseline gap-1.5 leading-none">
+                  <span className="font-semibold text-[10px] text-foreground">EMR Konform</span>
+                  <span className="text-[9px] text-muted-foreground">ZSR P609264</span>
+                </div>
+              </div>
+              {/* Desktop: vertical badge */}
+              <div className="hidden md:flex flex-col items-center gap-1 bg-secondary rounded-lg px-3 py-1.5 w-full max-w-[170px]">
                 <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-10 w-auto object-contain" width={120} height={40} loading="lazy" decoding="async" />
                 <div className="text-center">
                   <div className="font-semibold text-[10.5px] text-foreground leading-tight">EMR Krankenkasse Konform</div>
