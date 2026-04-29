@@ -251,21 +251,21 @@ export default function SeminarAnmeldung() {
       ]} />
 
       <section className="bg-white border-b border-border">
-        <div className="container-main py-4 lg:py-6">
+        <div className="container-main py-3 lg:py-4">
           <div className="max-w-3xl mx-auto">
-            {/* Header */}
-            <div className="text-center mb-4">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#2E7D32] bg-[#E8F5E9] px-3 py-1 rounded-full mb-4">
-                <GraduationCap className="w-3.5 h-3.5" />
+            {/* Header — compact */}
+            <div className="text-center mb-3">
+              <div className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#2E7D32] bg-[#E8F5E9] px-2.5 py-0.5 rounded-full mb-2">
+                <GraduationCap className="w-3 h-3" />
                 {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
               </div>
-              <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] mb-3 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+              <h1 className="text-xl sm:text-2xl font-light text-[#1B3A5C] mb-1.5 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN ? "Register for Seminar" : "Seminar-Anmeldung"}
               </h1>
-              <p className="text-muted-foreground max-w-lg mx-auto">
+              <p className="text-sm text-muted-foreground max-w-lg mx-auto leading-snug">
                 {isEN
-                  ? "Choose your preferred seminar location and date, then fill in your details. We'll confirm your spot within 24 hours."
-                  : "Wählen Sie Ihren gewünschten Seminarort und Termin, dann füllen Sie Ihre Daten aus. Wir bestätigen Ihren Platz innerhalb von 24 Stunden."}
+                  ? "Choose country & date, then fill in your details — confirmation within 24 h."
+                  : "Land & Termin wählen, dann Daten eintragen — Bestätigung innerhalb von 24 h."}
               </p>
             </div>
 
