@@ -298,10 +298,12 @@ export default function Home() {
                   </span>
                   <span className="h-px w-8 lg:w-10 bg-primary/25" aria-hidden="true" />
                 </div>
-                <p className="mt-4 text-foreground/75 text-[14px] lg:text-[15px] font-normal tracking-wide">
-                  {isEN
-                    ? "Psychology · Hypnosis · Deep Transformation"
-                    : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
+                <p className="mt-4 text-foreground/85 text-[13.5px] lg:text-[14.5px] font-normal uppercase tracking-[0.22em] flex items-center justify-center lg:justify-start gap-2.5">
+                  <span>{isEN ? "Psychology" : "Psychologie"}</span>
+                  <span className="text-primary/60" aria-hidden="true">·</span>
+                  <span>{isEN ? "Hypnosis" : "Hypnose"}</span>
+                  <span className="text-primary/60" aria-hidden="true">·</span>
+                  <span>Transformation</span>
                 </p>
               </div>
               <div className="mt-auto pt-2">
@@ -326,10 +328,12 @@ export default function Home() {
               </span>
               <span className="h-px w-6 bg-primary/25" aria-hidden="true" />
             </div>
-            <p className="mt-3 text-[14.5px] text-foreground/75 font-normal tracking-wide">
-              {isEN
-                ? "Psychology · Hypnosis · Deep Transformation"
-                : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
+            <p className="mt-3 text-[12px] text-foreground/85 font-normal uppercase tracking-[0.22em] flex items-center justify-center gap-2">
+              <span>{isEN ? "Psychology" : "Psychologie"}</span>
+              <span className="text-primary/60" aria-hidden="true">·</span>
+              <span>{isEN ? "Hypnosis" : "Hypnose"}</span>
+              <span className="text-primary/60" aria-hidden="true">·</span>
+              <span>Transformation</span>
             </p>
             <div className="mt-6 relative aspect-[4/3] max-h-[320px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "240px" }}>
               {Object.entries(loadedMobile).map(([idx, src]) => (
