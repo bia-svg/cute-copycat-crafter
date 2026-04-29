@@ -502,11 +502,12 @@ export default function Home() {
               ))}
             </div>
             <div className="text-center mt-5 md:mt-6">
-              <Link to={getPath("corporate", language, country)}>
-                <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary/5 hover:text-primary font-medium tracking-wide rounded-full px-6">
-                  {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
-                  <ArrowRight className="w-4 h-4 ml-1.5" />
-                </Button>
+              <Link
+                to={getPath("corporate", language, country)}
+                className="inline-flex items-center gap-1.5 text-sm font-light tracking-wide text-primary/80 hover:text-primary border-b border-primary/25 hover:border-primary/60 pb-0.5 transition-colors"
+              >
+                {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
+                <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           </div>
