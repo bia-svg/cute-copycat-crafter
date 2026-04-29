@@ -140,7 +140,7 @@
     transition: background-color 0.2s ease;
   }
   .hover\:bg-cta\/90:hover {
-    background-color: hsl(123 41% 43%) !important; /* ~#43A047, ca. 12% dunkler als #4CAF50 */
+    background-color: hsl(123 38% 66%) !important; /* etwas dunklerer Mintgrün-Hover, abgestimmt auf #a5d6a7 */
   }
 }
 
