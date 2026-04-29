@@ -333,7 +333,7 @@ export default function Home() {
                 ? "Psychology · Hypnosis · Deep Transformation"
                 : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
             </p>
-            <div className="mt-6 relative aspect-[4/3] max-h-[360px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "260px" }}>
+            <div className="mt-6 relative aspect-[4/3] max-h-[460px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "340px" }}>
               {Object.entries(loadedMobile).map(([idx, src]) => (
                 <img
                   key={idx}
