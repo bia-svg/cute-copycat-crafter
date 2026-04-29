@@ -285,22 +285,22 @@ export default function Home() {
 
             <div className="flex flex-col justify-between text-center min-w-0 py-1">
               <div className="flex flex-col items-center justify-center flex-1">
-                <p className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground font-medium">
+                <p className="text-[12.5px] lg:text-[13px] uppercase tracking-[0.22em] text-muted-foreground font-medium">
                   {isEN
                     ? "Germany · Switzerland · International"
                     : "Deutschland · Schweiz · International"}
                 </p>
-                <h1 className="mt-3 text-[1.4rem] lg:text-[1.7rem] font-light text-foreground leading-[1.2] tracking-tight">
+                <h1 className="mt-3 text-[1.6rem] lg:text-[1.95rem] font-light text-foreground leading-[1.2] tracking-tight">
                   Lic. Psych. <span className="font-medium">David J. Woods</span>
                 </h1>
                 <div className="mt-5 inline-flex items-center gap-4 select-none" aria-hidden="false">
                   <span className="h-px w-8 lg:w-10 bg-primary/25" aria-hidden="true" />
-                  <span className="italic font-light text-primary/85 text-[14px] lg:text-[16px] tracking-[0.06em]" style={{ fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif" }}>
+                  <span className="italic font-light text-primary/90 text-[16px] lg:text-[18px] tracking-[0.06em]" style={{ fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif" }}>
                     {isEN ? "Freedom Begins in the Mind" : "Freiheit beginnt im Kopf"}
                   </span>
                   <span className="h-px w-8 lg:w-10 bg-primary/25" aria-hidden="true" />
                 </div>
-                <p className="mt-4 text-foreground/65 text-[13px] lg:text-sm font-normal tracking-wide">
+                <p className="mt-4 text-foreground/75 text-[14px] lg:text-[15px] font-normal tracking-wide">
                   {isEN
                     ? "Psychology · Hypnosis · Deep Transformation"
                     : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
@@ -313,22 +313,22 @@ export default function Home() {
           </div>
         ) : (
           <div className="container-main py-3 text-center flex flex-col items-center">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-medium">
+            <p className="text-[11.5px] uppercase tracking-[0.2em] text-muted-foreground font-medium">
               {isEN
                 ? "Germany · Switzerland · International"
                 : "Deutschland · Schweiz · International"}
             </p>
-            <h1 className="mt-2 text-[1.2rem] font-light text-foreground leading-[1.2] tracking-tight">
+            <h1 className="mt-2 text-[1.45rem] font-light text-foreground leading-[1.2] tracking-tight">
               Lic. Psych. <span className="font-medium">David J. Woods</span>
             </h1>
             <div className="mt-3 inline-flex items-center gap-3 select-none">
               <span className="h-px w-6 bg-primary/25" aria-hidden="true" />
-              <span className="italic font-light text-primary/85 text-[14px] tracking-[0.06em]" style={{ fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif" }}>
+              <span className="italic font-light text-primary/90 text-[16.5px] tracking-[0.06em]" style={{ fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif" }}>
                 {isEN ? "Freedom Begins in the Mind" : "Freiheit beginnt im Kopf"}
               </span>
               <span className="h-px w-6 bg-primary/25" aria-hidden="true" />
             </div>
-            <p className="mt-2.5 text-[13px] text-foreground/65 font-normal tracking-wide">
+            <p className="mt-3 text-[14.5px] text-foreground/75 font-normal tracking-wide">
               {isEN
                 ? "Psychology · Hypnosis · Deep Transformation"
                 : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
