@@ -343,7 +343,7 @@ export default function SeminarAnmeldung() {
                           key={i}
                           type="button"
                           onClick={() => setSelectedDate(d.date)}
-                          className={`w-full border p-4 text-left transition-all ${
+                          className={`w-full border rounded-lg p-2.5 text-left transition-all ${
                             selectedDate === d.date
                               ? seminarCountry === "de"
                                 ? "border-[#1B3A5C]/60 bg-[#E6EEF7] ring-1 ring-[#1B3A5C]/30"
