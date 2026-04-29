@@ -21,7 +21,7 @@ import corporateNonsmokerImg from "@/assets/corporate-nonsmoker.jpg";
 import davidOfficePortrait from "@/assets/david-office-portrait.webp";
 import davidOfficePortraitMobile from "@/assets/david-office-portrait-mobile.webp";
 
-// Hero slider order (5 images): Flipchart → Active work → Therapeutic session → Conversation at table → Desk with cup
+// Hero slider order (5 images): Flipchart (start) → others
 const heroDesktop = [
   hero1,
   () => import("@/assets/hero-5.webp").then(m => m.default),
@@ -249,8 +249,8 @@ export default function Home() {
       <SEO {...pageSEO.home} pageKey="home" />
       <section className="bg-secondary">
         {!isMobile ? (
-          <div className="grid md:grid-cols-[360px_1fr] container-main py-4 gap-6 items-center">
-            <div className="relative w-[360px] aspect-[4/5] rounded-2xl overflow-hidden mx-auto group">
+          <div className="grid md:grid-cols-[340px_1fr] container-main py-4 gap-8 items-stretch">
+            <div className="relative w-[340px] aspect-[4/3] rounded-2xl overflow-hidden mx-auto group self-center">
               {Object.entries(loadedSlides).map(([idx, src]) => (
                 <img
                   key={idx}
@@ -283,24 +283,26 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-center space-y-3 text-center min-w-0">
-              <h1 className="text-[1.65rem] lg:text-[2rem] font-bold text-foreground leading-tight tracking-tight">
-                Lic. Psych. David J. Woods
-              </h1>
-              <p className="text-sm font-semibold tracking-wide text-foreground/70">
-                {isEN
-                  ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
-                  : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
-              </p>
-              <p className="text-xl lg:text-2xl italic font-semibold text-cta">
-                {isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}
-              </p>
-              <p className="text-foreground/80 text-base font-medium">
-                {isEN
-                  ? "Psychology · Hypnosis · Deep Transformation"
-                  : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
-              </p>
-              <div>
+            <div className="flex flex-col justify-between space-y-5 text-center min-w-0 py-2">
+              <div className="space-y-4">
+                <h1 className="text-[1.65rem] lg:text-[2rem] font-bold text-foreground leading-tight tracking-tight">
+                  Lic. Psych. David J. Woods
+                </h1>
+                <p className="text-sm font-semibold tracking-wide text-foreground/70">
+                  {isEN
+                    ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
+                    : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
+                </p>
+                <p className="text-xl lg:text-2xl italic font-semibold text-cta">
+                  {isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}
+                </p>
+                <p className="text-foreground/80 text-base font-medium">
+                  {isEN
+                    ? "Psychology · Hypnosis · Deep Transformation"
+                    : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
+                </p>
+              </div>
+              <div className="mt-auto pt-2">
                 <p className="text-xs text-muted-foreground mb-2">{isEN ? "As Seen On" : "Bekannt aus"}</p>
                 {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
               </div>
@@ -365,8 +367,8 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD ═══════════════════ */}
-      <section className="py-6 md:py-10 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-2xl border border-primary/15 py-4 md:py-6 shadow-sm">
+      <section className="py-3 md:py-5 bg-primary/15" style={deferredSectionStyle}>
+        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-2xl border border-primary/15 py-3 md:py-4 shadow-sm">
         <div className="container-main">
           {/* Desktop: side-by-side | Mobile: text only, no photo */}
           <div className="grid md:grid-cols-[1fr_auto] gap-3 md:gap-6 items-center">
