@@ -241,7 +241,7 @@ export default function Shop() {
                   <div className="flex items-center justify-between pt-4 border-t border-border">
                     <span className="text-2xl font-bold text-[#1B3A5C]">{isInternational && product.priceCHF ? `${product.price} / ${product.priceCHF}` : isSwiss && product.priceCHF ? product.priceCHF : product.price}</span>
                     <Link to={getPath("contact", language, country)}>
-                      <Button className="bg-[#a5d6a7] hover:bg-[#8bc78e] text-[#1B3D1F] font-semibold">
+                      <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-semibold">
                         {isDE ? "Jetzt bestellen" : "Order Now"}
                       </Button>
                     </Link>
@@ -277,7 +277,7 @@ export default function Shop() {
                   <div className="flex items-center justify-between pt-3 border-t border-border">
                     <span className="text-lg font-bold text-[#1B3A5C]">{isInternational && product.priceCHF ? `${product.price} / ${product.priceCHF}` : isSwiss && product.priceCHF ? product.priceCHF : product.price}</span>
                     <Link to={getPath("contact", language, country)}>
-                      <Button variant="outline" size="sm" className="text-[#1B3D1F] border-[#a5d6a7] hover:bg-[#a5d6a7] hover:text-[#1B3D1F]">
+                      <Button variant="outline" size="sm" className="text-[#1B3A1F] border-[#c8e6c9] hover:bg-[#c8e6c9] hover:text-[#1B3A1F]">
                         {isDE ? "Bestellen" : "Order"}
                       </Button>
                     </Link>
@@ -328,7 +328,7 @@ export default function Shop() {
             <span className="text-white/90 text-sm ml-2"><span className="text-white/90 text-sm ml-2">5.0 — 266 Google {isDE ? "Bewertungen" : "Reviews"}</span></span>
           </div>
           <Link to={getPath("contact", language, country)}>
-            <Button className="bg-[#a5d6a7] hover:bg-[#8bc78e] text-[#1B3D1F] font-semibold px-8 py-3 text-base">
+            <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-semibold px-8 py-3 text-base">
               {isDE ? "Kontakt aufnehmen" : "Get in Touch"}
             </Button>
           </Link>
