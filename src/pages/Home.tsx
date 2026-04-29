@@ -328,10 +328,12 @@ export default function Home() {
               </span>
               <span className="h-px w-6 bg-primary/25" aria-hidden="true" />
             </div>
-            <p className="mt-3 text-[14.5px] text-foreground/75 font-normal tracking-wide">
-              {isEN
-                ? "Psychology · Hypnosis · Deep Transformation"
-                : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
+            <p className="mt-3 text-[12px] text-foreground/85 font-normal uppercase tracking-[0.22em] flex items-center justify-center gap-2">
+              <span>{isEN ? "Psychology" : "Psychologie"}</span>
+              <span className="text-primary/60" aria-hidden="true">·</span>
+              <span>{isEN ? "Hypnosis" : "Hypnose"}</span>
+              <span className="text-primary/60" aria-hidden="true">·</span>
+              <span>Transformation</span>
             </p>
             <div className="mt-6 relative aspect-[4/3] max-h-[320px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "240px" }}>
               {Object.entries(loadedMobile).map(([idx, src]) => (
