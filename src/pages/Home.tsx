@@ -312,17 +312,23 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div className="container-main py-3 space-y-2 text-center">
-            <h1 className="text-xl font-bold text-foreground leading-tight tracking-tight">
-              Lic. Psych. David J. Woods
-            </h1>
-            <p className="text-xs font-semibold tracking-wide text-foreground/70">
+          <div className="container-main py-3 space-y-2 text-center flex flex-col items-center">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-medium">
               {isEN
-                ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
-                : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
+                ? "Germany · Switzerland · International"
+                : "Deutschland · Schweiz · International"}
             </p>
-            <p className="italic font-semibold text-cta text-base">{isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}</p>
-            <p className="text-sm text-foreground/80 font-medium">
+            <h1 className="text-xl font-medium text-foreground leading-[1.15] tracking-tight">
+              Lic. Psych. <span className="font-semibold">David J. Woods</span>
+            </h1>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cta/30 bg-cta/5">
+              <span className="h-px w-4 bg-cta/40" aria-hidden="true" />
+              <span className="italic font-semibold text-cta text-sm tracking-wide">
+                {isEN ? "Freedom Begins in the Mind" : "Freiheit beginnt im Kopf"}
+              </span>
+              <span className="h-px w-4 bg-cta/40" aria-hidden="true" />
+            </div>
+            <p className="text-sm text-foreground/75 font-normal tracking-wide">
               {isEN
                 ? "Psychology · Hypnosis · Deep Transformation"
                 : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
