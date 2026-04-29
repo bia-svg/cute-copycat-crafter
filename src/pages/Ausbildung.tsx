@@ -341,7 +341,7 @@ export default function Ausbildung() {
               </div>
               <div className="flex flex-wrap gap-2 md:gap-3">
                 <a href="#dates">
-                  <Button className="bg-[#4CAF50] hover:bg-[#43A047] text-white font-semibold px-5 py-2 md:px-6 md:py-2.5 text-sm">
+                  <Button className="bg-cta hover:bg-cta/90 text-white font-semibold px-5 py-2 md:px-6 md:py-2.5 text-sm">
                     {isEN ? "View Dates & Register" : "Termine & Anmeldung"}
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
@@ -760,7 +760,7 @@ export default function Ausbildung() {
                 : "In 6 Tagen gewinnen Sie das Wissen, die Sicherheit und das Diplom, um Menschen professionell zu begleiten. Sind Sie bereit?"}
             </p>
             <Link to={`${getPath("seminarRegistration", language, country)}?country=de`}>
-              <Button className="bg-[#4CAF50] hover:bg-[#43A047] text-white font-semibold px-6 py-2.5 md:px-8 md:py-3 text-sm md:text-base rounded-full shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] transition-all">
+              <Button className="bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-2.5 md:px-8 md:py-3 text-sm md:text-base rounded-full shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] transition-all">
                 {isEN ? "Register for Seminar" : "Zum Seminar anmelden"}
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
