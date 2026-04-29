@@ -308,7 +308,7 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div className="container-main py-4 space-y-3 text-center">
+          <div className="container-main py-3 space-y-2 text-center">
             <h1 className="text-xl font-bold text-foreground leading-tight tracking-tight">
               Lic. Psych. David J. Woods
             </h1>
@@ -317,13 +317,12 @@ export default function Home() {
                 ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
                 : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
             </p>
-            <p className="italic font-semibold text-cta text-sm">{isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}</p>
-            <div className="text-sm text-foreground/80 leading-snug">
-              <p className="mb-2">
-                {isEN
-                  ? "Psychology · Hypnosis · Deep Transformation"
-                  : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
-              </p>
+            <p className="italic font-semibold text-cta text-base">{isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}</p>
+            <p className="text-sm text-foreground/80 font-medium">
+              {isEN
+                ? "Psychology · Hypnosis · Deep Transformation"
+                : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
+            </p>
               <ul className="space-y-0.5 text-xs inline-block text-left">
                 <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
                 <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
