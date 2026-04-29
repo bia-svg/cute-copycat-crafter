@@ -393,11 +393,11 @@ export default function Home() {
 
               {/* Bullets — compact, 2-col on desktop */}
               <ul className="mt-1 md:mt-2 grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-0 md:gap-y-0.5 text-[11.5px] md:text-[13px] text-foreground/80 text-left mx-auto w-fit">
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-cta shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#2E7D32] shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#2E7D32] shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#2E7D32] shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#2E7D32] shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#2E7D32] shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
               </ul>
             </div>
 
@@ -576,7 +576,7 @@ export default function Home() {
               <div className="flex flex-col items-center gap-1.5">
                 <div className="flex items-center justify-center gap-3">
                   <div className="inline-flex items-center gap-1.5 bg-[hsl(160,30%,95%)] border border-[hsl(160,25%,82%)] rounded-lg px-3 py-1.5 md:px-4 md:py-2">
-                    <CheckCircle className="w-3.5 h-3.5 text-cta flex-shrink-0" />
+                    <CheckCircle className="w-3.5 h-3.5 text-[#2E7D32] flex-shrink-0" />
                     <span className="text-[10px] md:text-xs font-semibold text-foreground/85 tracking-wide">EMR Krankenkasse Konform</span>
                   </div>
                   <span className="text-xs md:text-sm font-semibold text-primary flex items-center gap-1">

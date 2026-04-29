@@ -38,7 +38,7 @@ export default function ServiceCard({ title, description, href, icon, image }: S
                 <h3 className="font-semibold text-foreground text-[0.95rem] leading-tight">{title}</h3>
               </div>
               <p className="text-sm text-muted-foreground line-clamp-2 mb-1.5">{description}</p>
-              <span className="inline-flex items-center gap-1 text-sm font-semibold text-cta group-hover:gap-2 transition-all">
+              <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#2E7D32] group-hover:gap-2 transition-all">
                 Details <ArrowRight className="w-4 h-4" />
               </span>
             </div>
