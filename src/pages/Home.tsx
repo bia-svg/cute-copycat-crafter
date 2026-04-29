@@ -382,7 +382,7 @@ export default function Home() {
           <div className="grid md:grid-cols-[1fr_170px] gap-2 md:gap-6 md:items-center">
             {/* LEFT – text + bullets, centered on both */}
             <div className="flex flex-col items-center text-center md:items-center md:text-center">
-              <h2 className="text-[15px] md:text-lg font-bold text-foreground leading-tight">
+              <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 leading-tight">
                 {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
               <p className="text-[11.5px] md:text-[13px] text-foreground/80 leading-snug mt-0.5 md:mt-1 max-w-[640px]">
