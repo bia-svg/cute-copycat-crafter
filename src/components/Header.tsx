@@ -128,7 +128,7 @@ export default function Header() {
     <div className="border-b border-border">
       <button onClick={() => setMobileAccordion(mobileAccordion === id ? null : id)} className="flex items-center w-full px-8 py-4 text-left font-medium text-foreground gap-3">
         <span className="flex-1">{title}</span>
-        <ChevronDown className={`w-5 h-5 text-cta transition-transform ${mobileAccordion === id ? "rotate-180" : ""}`} strokeWidth={2.5} />
+        <ChevronDown className={`w-5 h-5 text-[#2E7D32] transition-transform ${mobileAccordion === id ? "rotate-180" : ""}`} strokeWidth={2.5} />
       </button>
       {mobileAccordion === id && (
         <div className="px-8 pb-3 space-y-1">
@@ -263,11 +263,11 @@ export default function Header() {
           </div>
           <SidebarCard>
             <div className="flex items-center gap-2">
-              <Award className="w-4 h-4 text-cta" />
+              <Award className="w-4 h-4 text-[#2E7D32]" />
               <span className="font-semibold text-sm text-foreground">NGH International Trainer</span>
             </div>
             <div className="flex items-center gap-2">
-              <Award className="w-4 h-4 text-cta" />
+              <Award className="w-4 h-4 text-[#2E7D32]" />
               <span className="font-semibold text-sm text-foreground">EMR-Krankenkasse Konform</span>
             </div>
             <div className="pt-2">
@@ -343,7 +343,7 @@ export default function Header() {
           <div className="border-b border-border">
             <button onClick={() => setMobileAccordion(mobileAccordion === "sessions" ? null : "sessions")} className="flex items-center w-full px-8 py-4 text-left font-medium text-foreground gap-3">
               <span className="flex-1">{t("nav.sessions")}</span>
-              <ChevronDown className={`w-5 h-5 text-cta transition-transform ${mobileAccordion === "sessions" ? "rotate-180" : ""}`} strokeWidth={2.5} />
+              <ChevronDown className={`w-5 h-5 text-[#2E7D32] transition-transform ${mobileAccordion === "sessions" ? "rotate-180" : ""}`} strokeWidth={2.5} />
             </button>
             {mobileAccordion === "sessions" && (
               <div className="px-8 pb-3 space-y-1">

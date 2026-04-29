@@ -76,7 +76,7 @@ export default function Unsubscribe() {
 
         {status === "success" && (
           <>
-            <CheckCircle2 className="w-14 h-14 text-cta mx-auto mb-4" />
+            <CheckCircle2 className="w-14 h-14 text-[#2E7D32] mx-auto mb-4" />
             <h1 className="text-2xl font-light text-foreground mb-2 tracking-tight">Erfolgreich abgemeldet</h1>
             <p className="text-muted-foreground">
               Sie erhalten keine weiteren E-Mails von uns.
