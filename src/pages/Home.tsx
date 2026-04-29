@@ -377,8 +377,8 @@ export default function Home() {
               <p className="text-xs font-semibold text-cta uppercase tracking-wider">
                 {isEN ? "Aktiv-Hypnose© Method" : "Aktiv-Hypnose© Methode"}
               </p>
-              <h2 className="text-lg md:text-xl font-bold text-foreground leading-tight mt-1">
-                {isEN ? "Psychology and Hypnotherapy for Lasting Change" : "Psychologie und Hypnotherapie für nachhaltige Veränderung"}
+              <h2 className="text-lg md:text-xl font-bold text-foreground leading-tight mt-1 whitespace-nowrap">
+                {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
               <p className="text-xs md:text-sm text-foreground/80 leading-snug mt-1.5">
                 {isEN
@@ -386,8 +386,8 @@ export default function Home() {
                   : "David J. Woods vereint psychologisches Fachwissen, physiologische Tiefe und moderne Coaching-Techniken zu einer Methode, die wirkt: klar, effizient und lösungsorientiert."}
               </p>
 
-              {/* MOBILE: all 5 points stacked, centered */}
-              <ul className="md:hidden flex flex-col items-start gap-1 text-xs text-foreground/80 text-left mt-3 mx-auto w-fit">
+              {/* MOBILE: all 5 points stacked, vertically centered */}
+              <ul className="md:hidden flex flex-col items-start justify-center gap-1 text-xs text-foreground/80 text-left my-auto py-3 mx-auto w-fit">
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
@@ -395,8 +395,8 @@ export default function Home() {
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
               </ul>
 
-              {/* DESKTOP: single column of all 5 bullets */}
-              <ul className="hidden md:flex flex-col gap-1.5 text-sm text-foreground/80 mt-2.5">
+              {/* DESKTOP: single column of all 5 bullets, vertically centered */}
+              <ul className="hidden md:flex flex-col justify-center gap-1.5 text-sm text-foreground/80 my-auto py-2">
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
