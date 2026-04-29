@@ -524,10 +524,10 @@ export default function Home() {
                 <Award className="w-3 h-3" />
                 {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
               </span>
-              <h2 className="text-lg md:text-[1.75rem] font-bold text-foreground leading-tight">
+              <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 leading-tight">
                 {isEN ? "Intensive Training" : "Intensiv-Ausbildungen"}
               </h2>
-              <p className="text-base md:text-xl font-bold text-foreground/90 mt-1 md:mt-2">
+              <p className="text-base md:text-lg font-light tracking-[0.01em] text-foreground/85 mt-1 md:mt-2">
                 Aktiv-Hypnose© {isEN ? "Therapist Diploma" : "Therapeuten-Diplom"}
               </p>
             </div>
