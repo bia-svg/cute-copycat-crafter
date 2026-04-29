@@ -34,7 +34,7 @@ export default function Blog() {
           <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">
             {isDE ? "Wissen & Einblicke" : "Knowledge & Insights"}
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h1 className="text-3xl md:text-4xl font-light text-foreground mb-4 tracking-tight">
             {isDE ? "Blog — Hypnose verstehen" : "Blog — Understanding Hypnosis"}
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -71,7 +71,7 @@ export default function Blog() {
                     <span>{Math.ceil((post.contentText?.length || 500) / 250)} min {isDE ? "Lesezeit" : "read"}</span>
                   </div>
                   <Link to={`/${language}/${country}/blog/${post.slug}`}>
-                    <h2 className="text-lg font-bold text-[#1B3A5C] mb-2 group-hover:text-[#2E7D32] transition-colors line-clamp-2">
+                    <h2 className="text-lg font-light text-[#1B3A5C] mb-2 group-hover:text-[#2E7D32] transition-colors line-clamp-2 tracking-tight">
                       {post.title}
                     </h2>
                   </Link>
@@ -97,7 +97,7 @@ export default function Blog() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full tracking-wide uppercase">
               {isDE ? "Nächster Schritt" : "Next Step"}
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4" style={{ fontFamily: "Georgia, serif" }}>
+            <h2 className="text-2xl md:text-3xl font-light text-foreground mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isDE ? "Haben Sie Fragen zur Hypnose?" : "Have questions about hypnosis?"}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto mb-6">

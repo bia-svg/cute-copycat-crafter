@@ -259,7 +259,7 @@ export default function SeminarAnmeldung() {
                 <GraduationCap className="w-3.5 h-3.5" />
                 {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
               </div>
-              <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] mb-3" style={{ fontFamily: "Georgia, serif" }}>
+              <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] mb-3 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN ? "Register for Seminar" : "Seminar-Anmeldung"}
               </h1>
               <p className="text-muted-foreground max-w-lg mx-auto">
@@ -272,7 +272,7 @@ export default function SeminarAnmeldung() {
             {submitted ? (
               <div className="text-center py-16 border border-border bg-[#f4f3ef] rounded-lg">
                 <CheckCircle className="w-14 h-14 text-[#2E7D32] mx-auto mb-4" />
-                <h2 className="text-xl font-bold text-[#1B3A5C] mb-2">{isEN ? "Registration Received!" : "Anmeldung eingegangen!"}</h2>
+                <h2 className="text-xl font-light text-[#1B3A5C] mb-2 tracking-tight">{isEN ? "Registration Received!" : "Anmeldung eingegangen!"}</h2>
                 {registrationNumber && (
                   <p className="text-lg font-semibold text-[#2E7D32] mb-3">
                     {isEN ? "Registration No." : "Anmelde-Nr."}: {registrationNumber}
@@ -292,7 +292,7 @@ export default function SeminarAnmeldung() {
                 <div className="mb-6 rounded-2xl bg-[#FAF8F4] border border-[#EDE8DF] p-4 sm:p-5">
                 {/* STEP 1 — Country */}
                 <div className="mb-5">
-                  <h2 className="text-sm font-semibold text-[#1B3A5C] mb-3 flex items-center gap-2">
+                  <h2 className="text-sm font-light text-[#1B3A5C] mb-3 flex items-center gap-2 tracking-tight">
                     <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center">1</span>
                     {isEN ? "Choose Country" : "Land wählen"}
                   </h2>
@@ -329,7 +329,7 @@ export default function SeminarAnmeldung() {
                 {/* STEP 2 — Date */}
                 {seminarCountry && (
                   <div>
-                    <h2 className="text-sm font-semibold text-[#1B3A5C] mb-3 flex items-center gap-2">
+                    <h2 className="text-sm font-light text-[#1B3A5C] mb-3 flex items-center gap-2 tracking-tight">
                       <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center">2</span>
                       {isEN ? "Select Date" : "Termin wählen"}
                     </h2>
@@ -427,7 +427,7 @@ export default function SeminarAnmeldung() {
                 {/* STEP 3 — Form */}
                 {selectedDate && (
                    <div className={`border p-3 sm:p-4 ${seminarCountry === "de" ? "border-[#1B3A5C]/20 bg-[#EEF4FB]" : "border-[#2E7D32]/20 bg-[#EEF6EF]"}`}>
-                    <h2 className="text-sm font-semibold text-[#1B3A5C] mb-2.5 flex items-center gap-2">
+                    <h2 className="text-sm font-light text-[#1B3A5C] mb-2.5 flex items-center gap-2 tracking-tight">
                       <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center">3</span>
                       {isEN ? "Your Details" : "Ihre Daten"}
                     </h2>

@@ -55,7 +55,7 @@ export default function Standorte() {
       {/* Hero */}
       <section className="bg-primary text-primary-foreground py-16 md:py-24">
         <div className="container-main text-center">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4" style={{ fontFamily: "Georgia, serif" }}>
+          <h1 className="text-3xl md:text-5xl font-light mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Our Locations" : "Unsere Standorte"}
           </h1>
           <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
@@ -77,7 +77,7 @@ export default function Standorte() {
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-bold text-foreground">{loc.city}</h2>
+                    <h2 className="text-xl font-light text-foreground tracking-tight">{loc.city}</h2>
                     <p className="text-sm text-muted-foreground">{loc.subtitle}</p>
                   </div>
                 </div>

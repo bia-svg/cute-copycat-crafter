@@ -66,7 +66,7 @@ export default function ResilienzVerstaerken() {
           <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm grid md:grid-cols-[1fr_280px] lg:grid-cols-[1fr_340px] gap-5 md:gap-7 md:items-stretch">
             <div>
             <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight mb-4">
+            <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] leading-tight mb-4 tracking-tight">
               {isEN ? "Resilience Coaching by David J. Woods" : "Resilienz Coaching by David J. Woods"}
             </h1>
 
@@ -94,7 +94,7 @@ export default function ResilienzVerstaerken() {
       <section className="bg-[#F8FAFC]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-bold text-[#1B3A5C] mb-5">
+            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
               {isEN ? "The 7 Pillars of Resilience" : "Die 7 Säulen der Resilienz"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
@@ -102,7 +102,7 @@ export default function ResilienzVerstaerken() {
                 <div key={i} className="bg-white border border-[#E8EDF3] rounded-2xl p-4 shadow-[0_1px_2px_rgba(27,58,92,0.04)]">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center font-bold">{i + 1}</span>
-                    <h3 className="font-semibold text-sm text-[#1B3A5C]">{p.title}</h3>
+                    <h3 className="font-light text-sm text-[#1B3A5C] tracking-tight">{p.title}</h3>
                   </div>
                   <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
                 </div>
@@ -118,7 +118,7 @@ export default function ResilienzVerstaerken() {
           <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div>
-                <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">{isEN ? "Resilience Coaching Benefits:" : "Resilienz Coaching für innere Stärke:"}</h2>
+                <h2 className="text-lg font-light text-[#1B3A5C] mb-4 tracking-tight">{isEN ? "Resilience Coaching Benefits:" : "Resilienz Coaching für innere Stärke:"}</h2>
                 <div className="space-y-2">
                   {coachingBenefits.map((item) => (
                     <div key={item} className="flex items-center gap-2 text-sm">
@@ -129,7 +129,7 @@ export default function ResilienzVerstaerken() {
                 </div>
               </div>
               <div>
-                <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">{isEN ? "Concrete Steps:" : "Konkrete Schritte im Resilienz Coaching:"}</h2>
+                <h2 className="text-lg font-light text-[#1B3A5C] mb-4 tracking-tight">{isEN ? "Concrete Steps:" : "Konkrete Schritte im Resilienz Coaching:"}</h2>
                 <div className="space-y-2">
                   {steps.map((item) => (
                     <div key={item} className="flex items-center gap-2 text-sm">
@@ -150,7 +150,7 @@ export default function ResilienzVerstaerken() {
             <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full whitespace-nowrap">
               {isEN ? "Next Step" : "N\u00e4chster Schritt"}
             </span>
-            <h2 className="text-xl font-bold text-primary mb-2 mt-2">
+            <h2 className="text-xl font-light text-primary mb-2 mt-2 tracking-tight">
               {isEN ? "Start Your Resilience Coaching Now" : "Starten Sie jetzt mit dem Resilienz Coaching"}
             </h2>
             <p className="text-sm text-muted-foreground mb-4">

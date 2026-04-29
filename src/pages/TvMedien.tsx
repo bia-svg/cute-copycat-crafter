@@ -148,7 +148,7 @@ export default function TvMedien() {
         <div className="container-main py-8 lg:py-12">
           <div className="flex items-center gap-3 mb-2">
             <Tv className="w-7 h-7 text-primary" />
-            <h1 className="text-2xl sm:text-3xl font-bold text-primary">
+            <h1 className="text-2xl sm:text-3xl font-light text-primary tracking-tight">
               {isEN ? "David J. Woods in TV, Radio and Print" : "David J. Woods in TV, Radio und Print"}
             </h1>
           </div>
@@ -172,7 +172,7 @@ export default function TvMedien() {
                   />
                 </div>
                 <div className="p-4">
-                  <h3 className="font-semibold text-foreground mb-1">
+                  <h3 className="font-light text-foreground mb-1 tracking-tight">
                     {isEN ? video.titleEN : video.titleDE}
                   </h3>
                   <p className="text-sm text-muted-foreground">
@@ -191,7 +191,7 @@ export default function TvMedien() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full tracking-wide uppercase">
               {isEN ? "Media" : "Medien"}
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4" style={{ fontFamily: "Georgia, serif" }}>
+            <h2 className="text-2xl md:text-3xl font-light text-foreground mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Press Inquiries" : "Presseanfragen"}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto mb-6">

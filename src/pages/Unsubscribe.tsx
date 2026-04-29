@@ -64,7 +64,7 @@ export default function Unsubscribe() {
 
         {status === "valid" && (
           <>
-            <h1 className="text-2xl font-bold text-foreground mb-4">E-Mail-Abmeldung</h1>
+            <h1 className="text-2xl font-light text-foreground mb-4 tracking-tight">E-Mail-Abmeldung</h1>
             <p className="text-muted-foreground mb-6">
               Möchten Sie sich wirklich von unseren E-Mails abmelden?
             </p>
@@ -77,7 +77,7 @@ export default function Unsubscribe() {
         {status === "success" && (
           <>
             <CheckCircle2 className="w-14 h-14 text-cta mx-auto mb-4" />
-            <h1 className="text-2xl font-bold text-foreground mb-2">Erfolgreich abgemeldet</h1>
+            <h1 className="text-2xl font-light text-foreground mb-2 tracking-tight">Erfolgreich abgemeldet</h1>
             <p className="text-muted-foreground">
               Sie erhalten keine weiteren E-Mails von uns.
             </p>
@@ -87,7 +87,7 @@ export default function Unsubscribe() {
         {status === "already" && (
           <>
             <CheckCircle2 className="w-14 h-14 text-muted-foreground mx-auto mb-4" />
-            <h1 className="text-2xl font-bold text-foreground mb-2">Bereits abgemeldet</h1>
+            <h1 className="text-2xl font-light text-foreground mb-2 tracking-tight">Bereits abgemeldet</h1>
             <p className="text-muted-foreground">
               Sie haben sich bereits von unseren E-Mails abgemeldet.
             </p>
@@ -97,7 +97,7 @@ export default function Unsubscribe() {
         {status === "invalid" && (
           <>
             <XCircle className="w-14 h-14 text-destructive mx-auto mb-4" />
-            <h1 className="text-2xl font-bold text-foreground mb-2">Ungültiger Link</h1>
+            <h1 className="text-2xl font-light text-foreground mb-2 tracking-tight">Ungültiger Link</h1>
             <p className="text-muted-foreground">
               Dieser Abmeldelink ist ungültig oder abgelaufen.
             </p>
@@ -107,7 +107,7 @@ export default function Unsubscribe() {
         {status === "error" && (
           <>
             <XCircle className="w-14 h-14 text-destructive mx-auto mb-4" />
-            <h1 className="text-2xl font-bold text-foreground mb-2">Fehler</h1>
+            <h1 className="text-2xl font-light text-foreground mb-2 tracking-tight">Fehler</h1>
             <p className="text-muted-foreground">
               Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.
             </p>

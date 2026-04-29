@@ -204,7 +204,7 @@ export default function Dashboard() {
           <div className="max-w-[1400px] mx-auto px-4 py-3 flex items-center justify-between">
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-lg font-semibold text-gray-900">Analytics Dashboard</h1>
+                <h1 className="text-lg font-light text-gray-900 tracking-tight">Analytics Dashboard</h1>
                 {(gaLive || adsLive) ? (
                   <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">● Live</Badge>
                 ) : (

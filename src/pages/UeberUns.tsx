@@ -48,7 +48,7 @@ export default function UeberUns() {
                 <p className="text-xs font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
                   {isEN ? "About" : "Über"}
                 </p>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1B3A5C] leading-tight mb-2">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#1B3A5C] leading-tight mb-2 tracking-tight">
                   David J. Woods
                 </h1>
                 <p className="text-sm md:text-base text-foreground/80 leading-snug mb-3">
@@ -70,7 +70,7 @@ export default function UeberUns() {
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
             <div className="grid grid-cols-1 lg:grid-cols-[1.55fr_1fr] gap-6 lg:gap-8 items-stretch">
               <div>
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B3A5C] mb-3">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-3 tracking-tight">
                   {isEN ? "Psychology, Depth & Modern Coaching" : "Psychologie, Tiefe & modernes Coaching"}
                 </h2>
                 <p className="text-sm md:text-base text-foreground leading-relaxed mb-3">
@@ -137,7 +137,7 @@ export default function UeberUns() {
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
             <div className="text-center mb-4">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-1 tracking-tight">
                 {isEN ? "Diplomas & Certifications" : "Diplome & Zertifizierungen"}
               </h2>
               <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
@@ -150,31 +150,31 @@ export default function UeberUns() {
             <div className="grid grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3 mb-5">
               <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center">
                 <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat" className="h-9 md:h-12 mx-auto mb-1.5" loading="lazy" />
-                <h3 className="font-semibold text-[10px] md:text-xs text-[#1B3A5C] leading-tight">NGH International Trainer</h3>
+                <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">NGH International Trainer</h3>
               </div>
               <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center">
                 <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge" className="h-9 md:h-12 mx-auto mb-1.5" loading="lazy" />
-                <h3 className="font-semibold text-[10px] md:text-xs text-[#1B3A5C] leading-tight">EMR Konform</h3>
+                <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">EMR Konform</h3>
               </div>
               <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center">
                 <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-10 md:h-12 w-10 md:w-12 object-contain mx-auto mb-1.5" loading="lazy" width={512} height={512} />
-                <h3 className="font-semibold text-[10px] md:text-xs text-[#1B3A5C] leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
+                <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
               </div>
               <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center">
                 <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-7 md:h-10 mx-auto mb-1.5" loading="lazy" />
-                <h3 className="font-semibold text-[10px] md:text-xs text-[#1B3A5C] leading-tight">{isEN ? "Aktiv-Hypnose© Developer" : "Entwickler Aktiv-Hypnose©"}</h3>
+                <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">{isEN ? "Aktiv-Hypnose© Developer" : "Entwickler Aktiv-Hypnose©"}</h3>
               </div>
               <Link to={getPath("book", language, country)} className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center hover:shadow-md transition-shadow group">
                 <div className="w-9 h-9 md:w-12 md:h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mx-auto mb-1.5">
                   <BookOpen className="w-4 h-4 md:w-6 md:h-6 text-white" />
                 </div>
-                <h3 className="font-semibold text-[10px] md:text-xs text-[#1B3A5C] leading-tight group-hover:text-[#2E7D32] transition-colors">{isEN ? "Author & Specialist" : "Autor & Fachautor"}</h3>
+                <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight group-hover:text-[#2E7D32] transition-colors tracking-tight">{isEN ? "Author & Specialist" : "Autor & Fachautor"}</h3>
               </Link>
               <Link to={getPath("media", language, country)} className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center hover:shadow-md transition-shadow group">
                 <div className="w-9 h-9 md:w-12 md:h-12 bg-[#1B3A5C] rounded-lg flex items-center justify-center mx-auto mb-1.5">
                   <Tv className="w-4 h-4 md:w-6 md:h-6 text-white" />
                 </div>
-                <h3 className="font-semibold text-[10px] md:text-xs text-[#1B3A5C] leading-tight group-hover:text-[#2E7D32] transition-colors">{isEN ? "TV Expert & Media" : "TV-Experte & Medien"}</h3>
+                <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight group-hover:text-[#2E7D32] transition-colors tracking-tight">{isEN ? "TV Expert & Media" : "TV-Experte & Medien"}</h3>
               </Link>
             </div>
 
@@ -204,7 +204,7 @@ export default function UeberUns() {
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
             <div className="text-center mb-5">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-1 tracking-tight">
                 {isEN ? "A Brief Overview of David J. Woods" : "Ein kurzer Überblick zu David J. Woods"}
               </h2>
               <p className="text-sm text-muted-foreground max-w-3xl mx-auto">
@@ -221,7 +221,7 @@ export default function UeberUns() {
                   <div className="w-8 h-8 rounded-lg bg-[#1B3A5C]/10 flex items-center justify-center">
                     <Globe className="w-4 h-4 text-[#1B3A5C]" />
                   </div>
-                  <h3 className="text-sm font-bold text-[#1B3A5C] leading-tight">
+                  <h3 className="text-sm font-light text-[#1B3A5C] leading-tight tracking-tight">
                     {isEN ? "International Background" : "Internationaler Werdegang"}
                   </h3>
                 </div>
@@ -238,7 +238,7 @@ export default function UeberUns() {
                   <div className="w-8 h-8 rounded-lg bg-[#2E7D32]/10 flex items-center justify-center">
                     <Sparkles className="w-4 h-4 text-[#2E7D32]" />
                   </div>
-                  <h3 className="text-sm font-bold text-[#1B3A5C] leading-tight">
+                  <h3 className="text-sm font-light text-[#1B3A5C] leading-tight tracking-tight">
                     {isEN ? "Early Interest in Hypnosis" : "Frühes Interesse für Hypnose"}
                   </h3>
                 </div>
@@ -255,7 +255,7 @@ export default function UeberUns() {
                   <div className="w-8 h-8 rounded-lg bg-[#1B3A5C]/10 flex items-center justify-center">
                     <GraduationCap className="w-4 h-4 text-[#1B3A5C]" />
                   </div>
-                  <h3 className="text-sm font-bold text-[#1B3A5C] leading-tight">
+                  <h3 className="text-sm font-light text-[#1B3A5C] leading-tight tracking-tight">
                     {isEN ? "Training in 3 Continents" : "Ausbildung auf 3 Kontinenten"}
                   </h3>
                 </div>
@@ -272,7 +272,7 @@ export default function UeberUns() {
                   <div className="w-8 h-8 rounded-lg bg-[#2E7D32]/10 flex items-center justify-center">
                     <Award className="w-4 h-4 text-[#2E7D32]" />
                   </div>
-                  <h3 className="text-sm font-bold text-[#1B3A5C] leading-tight">
+                  <h3 className="text-sm font-light text-[#1B3A5C] leading-tight tracking-tight">
                     {isEN ? "NGH Certified Trainer" : "Zertifizierter NGH-Ausbilder"}
                   </h3>
                 </div>
@@ -294,7 +294,7 @@ export default function UeberUns() {
             <p className="text-xs font-semibold uppercase tracking-wider text-[#2E7D32] mb-1.5">
               {isEN ? "The Goal:" : "Das Ziel:"}
             </p>
-            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B3A5C] mb-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-4 tracking-tight">
               {isEN ? "A Happy, Conscious and Free Life" : "Ein glückliches, bewusstes und freies Leben"}
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_240px] gap-5 lg:gap-7 items-start">
@@ -329,7 +329,7 @@ export default function UeberUns() {
                     loading="lazy"
                   />
                   <div className="p-3 bg-[#F1F4F7]">
-                    <h3 className="font-bold text-[#1B3A5C] text-sm">Kathryn</h3>
+                    <h3 className="font-light text-[#1B3A5C] text-sm tracking-tight">Kathryn</h3>
                     <p className="text-xs text-muted-foreground">
                       {isEN ? "Psychological Counselor" : "Psychologische Beraterin"}
                     </p>
@@ -340,7 +340,7 @@ export default function UeberUns() {
                 </div>
               </div>
               <div>
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#1B3A5C] mb-1">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-1 tracking-tight">
                   Kathryn
                 </h2>
                 <p className="text-xs md:text-sm font-medium text-[#2E7D32] mb-3">
@@ -397,7 +397,7 @@ export default function UeberUns() {
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-6 md:py-8">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-6">
-            <h2 className="text-base sm:text-lg md:text-xl font-bold text-[#1B3A5C] mb-3">
+            <h2 className="text-base sm:text-lg md:text-xl font-light text-[#1B3A5C] mb-3 tracking-tight">
               {isEN ? "Scientific Foundation & Methodology" : "Wissenschaftliche Grundlage & Methodik"}
             </h2>
             <div className="space-y-2.5 text-sm text-foreground leading-relaxed">
@@ -446,7 +446,7 @@ export default function UeberUns() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#1B3A5C] text-white text-xs font-semibold px-4 py-1 rounded-full tracking-wide uppercase">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
-            <h2 className="text-xl md:text-2xl font-bold text-[#1B3A5C] mb-3">
+            <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] mb-3 tracking-tight">
               {isEN ? "Ready for Lasting Change?" : "Bereit für nachhaltige Veränderung?"}
             </h2>
             <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto mb-5">

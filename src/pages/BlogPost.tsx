@@ -107,11 +107,11 @@ export default function BlogPost() {
             {post.content.map((block, i) => {
               switch (block.tag) {
                 case "h1":
-                  return <h1 key={i} className="text-3xl md:text-4xl font-bold text-[#1B3A5C] mb-6">{block.text}</h1>;
+                  return <h1 key={i} className="text-3xl md:text-4xl font-light text-[#1B3A5C] mb-6 tracking-tight">{block.text}</h1>;
                 case "h2":
-                  return <h2 key={i} className="text-2xl font-bold text-[#1B3A5C] mt-10 mb-4">{block.text}</h2>;
+                  return <h2 key={i} className="text-2xl font-light text-[#1B3A5C] mt-10 mb-4 tracking-tight">{block.text}</h2>;
                 case "h3":
-                  return <h3 key={i} className="text-xl font-bold text-[#1B3A5C] mt-8 mb-3">{block.text}</h3>;
+                  return <h3 key={i} className="text-xl font-light text-[#1B3A5C] mt-8 mb-3 tracking-tight">{block.text}</h3>;
                 case "h4":
                   return <h4 key={i} className="text-lg font-bold text-[#1B3A5C] mt-6 mb-2">{block.text}</h4>;
                 case "li":
@@ -155,7 +155,7 @@ export default function BlogPost() {
       {/* Related Posts */}
       <section className="py-12 bg-[#f4f3ef] border-t border-border">
         <div className="container-main">
-          <h2 className="text-2xl font-bold text-[#1B3A5C] mb-8">
+          <h2 className="text-2xl font-light text-[#1B3A5C] mb-8 tracking-tight">
             {isDE ? "Weitere Artikel" : "More Articles"}
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -165,7 +165,7 @@ export default function BlogPost() {
               .map((related) => (
                 <Link key={related.slug} to={`/${language}/${country}/blog/${related.slug}`}>
                   <div className="bg-white border border-border p-4 hover:shadow-md transition-shadow">
-                    <h3 className="font-bold text-[#1B3A5C] text-sm mb-2 line-clamp-2">{related.title}</h3>
+                    <h3 className="font-light text-[#1B3A5C] text-sm mb-2 line-clamp-2 tracking-tight">{related.title}</h3>
                     <p className="text-xs text-muted-foreground line-clamp-2">{related.metaDescription}</p>
                   </div>
                 </Link>
