@@ -288,15 +288,15 @@ export default function SeminarAnmeldung() {
               </div>
             ) : (
               <>
-                {/* STEPS 1 + 2 wrapper — soft silver-grey backdrop */}
-                <div className="mb-6 rounded-2xl bg-[#FAF8F4] border border-[#EDE8DF] p-4 sm:p-5">
+                {/* STEPS 1 + 2 wrapper — soft silver-grey backdrop, compact */}
+                <div className="mb-4 rounded-2xl bg-[#FAF8F4] border border-[#EDE8DF] p-3 sm:p-4">
                 {/* STEP 1 — Country */}
-                <div className="mb-5">
-                  <h2 className="text-sm font-light text-[#1B3A5C] mb-3 flex items-center gap-2 tracking-tight">
-                    <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center">1</span>
+                <div className="mb-3.5">
+                  <h2 className="text-sm font-light text-[#1B3A5C] mb-2 flex items-center gap-2 tracking-tight">
+                    <span className="w-5 h-5 rounded-full bg-[#1B3A5C] text-white text-[11px] flex items-center justify-center">1</span>
                     {isEN ? "Choose Country" : "Land wählen"}
                   </h2>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-2.5">
                     {([
                       { key: "de" as const, flag: "🇩🇪", label: isEN ? "Germany" : "Deutschland" },
                       { key: "ch" as const, flag: "🇨🇭", label: isEN ? "Switzerland" : "Schweiz" },
@@ -313,11 +313,11 @@ export default function SeminarAnmeldung() {
                           key={c.key}
                           type="button"
                           onClick={() => { setSeminarCountry(c.key); setSelectedDate(""); }}
-                          className={`border rounded-xl px-3 py-2 text-left transition-all flex items-center gap-2.5 ${
+                          className={`border rounded-xl px-3 py-1.5 text-left transition-all flex items-center gap-2.5 ${
                             isActive ? activeClasses : `border-[#E2E8EE] bg-white ${hoverClasses}`
                           }`}
                         >
-                          <span className="text-xl leading-none">{c.flag}</span>
+                          <span className="text-lg leading-none">{c.flag}</span>
                           <p className="font-semibold text-sm text-[#1B3A5C] leading-tight">{c.label}</p>
                         </button>
                       );
@@ -328,11 +328,11 @@ export default function SeminarAnmeldung() {
                 {/* STEP 2 — Date */}
                 {seminarCountry && (
                   <div>
-                    <h2 className="text-sm font-light text-[#1B3A5C] mb-3 flex items-center gap-2 tracking-tight">
-                      <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center">2</span>
+                    <h2 className="text-sm font-light text-[#1B3A5C] mb-2 flex items-center gap-2 tracking-tight">
+                      <span className="w-5 h-5 rounded-full bg-[#1B3A5C] text-white text-[11px] flex items-center justify-center">2</span>
                       {isEN ? "Select Date" : "Termin wählen"}
                     </h2>
-                    <div className="space-y-2">
+                    <div className="space-y-1.5">
                     {visibleDates.map((d, i) => {
                         const isEarlyBird = (d as any).forceEarlyBird || (seminarCountry && hasEarlyBirdForDate(seminarCountry as "ch" | "de", d.date));
                         const regularPrice = seminarCountry === "ch" ? "CHF 2.990.-" : "€2.790,-";
