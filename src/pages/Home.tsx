@@ -371,7 +371,6 @@ export default function Home() {
               {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
             </div>
           </div>
-          </div>
         )}
       </section>
 
