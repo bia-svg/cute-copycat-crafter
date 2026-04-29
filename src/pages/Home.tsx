@@ -430,7 +430,7 @@ export default function Home() {
       {/* ═══════════════════ SERVICES ═══════════════════ */}
       <section id="sessions" className="py-4 md:py-4 bg-secondary mx-3 md:mx-auto md:max-w-[1200px] border border-primary/15 rounded-2xl" style={deferredSectionStyle}>
         <div className="container-main">
-          <h2 className="text-xl md:text-2xl font-medium tracking-tight text-foreground text-center mb-0.5 md:mb-0">{t("section.services")}</h2>
+          <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 text-center mb-0.5 md:mb-0">{t("section.services")}</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-2 md:mb-2 md:text-sm">
             {isEN
               ? "Topics can also be combined during the session."
@@ -478,10 +478,10 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
-        <section className="py-6 md:py-9 bg-muted/50" style={deferredSectionStyle}>
+        <section className="py-7 md:py-10 bg-muted/50" style={deferredSectionStyle}>
         <div className="container-main">
-          <div className="max-w-[1080px] mx-auto bg-card border border-border rounded-2xl shadow-sm px-4 py-5 md:px-7 md:py-6">
-            <h2 className="text-xl md:text-2xl font-medium tracking-tight text-center mb-4 md:mb-5 text-foreground">
+          <div className="max-w-[940px] mx-auto bg-card border border-border/70 rounded-2xl shadow-sm px-4 py-5 md:px-7 md:py-6">
+            <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-center mb-4 md:mb-5 text-foreground/90">
               {isEN ? "Corporate Coaching" : "Firmencoaching"}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
@@ -502,11 +502,12 @@ export default function Home() {
               ))}
             </div>
             <div className="text-center mt-5 md:mt-6">
-              <Link to={getPath("corporate", language, country)}>
-                <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary/5 hover:text-primary font-medium tracking-wide rounded-full px-6">
-                  {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
-                  <ArrowRight className="w-4 h-4 ml-1.5" />
-                </Button>
+              <Link
+                to={getPath("corporate", language, country)}
+                className="inline-flex items-center gap-1.5 text-sm font-light tracking-wide text-primary/80 hover:text-primary border-b border-primary/25 hover:border-primary/60 pb-0.5 transition-colors"
+              >
+                {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
+                <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           </div>
