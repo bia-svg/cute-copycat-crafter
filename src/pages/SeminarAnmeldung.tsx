@@ -386,10 +386,10 @@ export default function SeminarAnmeldung() {
                                     )}
                                   </div>
                                 </div>
-                                <p className="text-[10px] text-muted-foreground mt-1.5 italic">
+                                <p className="text-[10px] text-muted-foreground mt-1 italic leading-tight">
                                   {isEN
                                     ? "Early Bird pricing is available for a limited time or until the current intake is fully booked!"
-                                    : "Der Frühbucher-Preis gilt nur für begrenzte Zeit oder bis der aktuelle Kurs ausgebucht ist!"}
+                                    : "Frühbucher-Preis nur für begrenzte Zeit oder bis der Kurs ausgebucht ist."}
                                 </p>
                               </div>
                             ) : (
