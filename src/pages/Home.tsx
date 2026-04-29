@@ -249,16 +249,16 @@ export default function Home() {
       <SEO {...pageSEO.home} pageKey="home" />
       <section className="bg-secondary">
         {!isMobile ? (
-          <div className="grid md:grid-cols-2 container-main py-8 gap-6 items-stretch">
-            <div className="relative w-full max-w-[460px] rounded-2xl overflow-hidden mx-auto group min-h-[340px]">
+          <div className="grid md:grid-cols-[auto_1fr] container-main py-4 gap-6 items-center">
+            <div className="relative w-full max-w-[360px] rounded-2xl overflow-hidden mx-auto group min-h-[260px]">
               {Object.entries(loadedSlides).map(([idx, src]) => (
                 <img
                   key={idx}
                   src={src}
                   alt={`David J. Woods – Hypnotherapeut und Psychologe, Foto ${Number(idx) + 1}`}
-                  width={400}
-                  height={500}
-                  sizes="(min-width: 768px) 460px, 100vw"
+                  width={360}
+                  height={420}
+                  sizes="(min-width: 768px) 360px, 100vw"
                   loading={idx === "0" ? "eager" : "lazy"}
                   fetchPriority={idx === "0" ? "high" : "auto"}
                   decoding={idx === "0" ? "sync" : "async"}
@@ -283,8 +283,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="space-y-4 text-center">
-              <h1 className="text-[1.5rem] lg:text-[1.85rem] font-semibold text-foreground leading-tight tracking-tight">
+            <div className="space-y-3 text-center">
+              <h1 className="text-[1.65rem] lg:text-[2rem] font-bold text-foreground leading-tight tracking-tight">
                 Lic. Psych. David J. Woods
               </h1>
               <p className="text-sm font-semibold tracking-wide text-foreground/70">
@@ -292,24 +292,14 @@ export default function Home() {
                   ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
                   : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
               </p>
-              <p className="text-lg italic font-semibold text-cta">
+              <p className="text-xl lg:text-2xl italic font-semibold text-cta">
                 {isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}
               </p>
-              <div className="text-foreground/80 leading-relaxed text-[0.95rem] flex flex-col items-center">
-                <p className="mb-3 text-center">
-                  {isEN
-                    ? "Psychology · Hypnosis · Deep Transformation"
-                    : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
-                </p>
-                <ul className="space-y-1.5 text-sm text-left inline-block">
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
-                </ul>
-              </div>
-
+              <p className="text-foreground/80 text-[1rem] font-medium">
+                {isEN
+                  ? "Psychology · Hypnosis · Deep Transformation"
+                  : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
+              </p>
 
               <div>
                 <p className="text-xs text-muted-foreground mb-2">{isEN ? "As Seen On" : "Bekannt aus"}</p>
@@ -318,7 +308,7 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div className="container-main py-4 space-y-3 text-center">
+          <div className="container-main py-3 space-y-2 text-center">
             <h1 className="text-xl font-bold text-foreground leading-tight tracking-tight">
               Lic. Psych. David J. Woods
             </h1>
@@ -327,21 +317,12 @@ export default function Home() {
                 ? "Germany 🇩🇪 · Switzerland 🇨🇭 · International 🌍"
                 : "Deutschland 🇩🇪 · Schweiz 🇨🇭 · International 🌍"}
             </p>
-            <p className="italic font-semibold text-cta text-sm">{isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}</p>
-            <div className="text-sm text-foreground/80 leading-snug">
-              <p className="mb-2">
-                {isEN
-                  ? "Psychology · Hypnosis · Deep Transformation"
-                  : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
-              </p>
-              <ul className="space-y-0.5 text-xs inline-block text-left">
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
-              </ul>
-            </div>
+            <p className="italic font-semibold text-cta text-base">{isEN ? '"Freedom Begins in the Mind"' : '„Freiheit beginnt im Kopf"'}</p>
+            <p className="text-sm text-foreground/80 font-medium">
+              {isEN
+                ? "Psychology · Hypnosis · Deep Transformation"
+                : "Psychologie · Hypnose · Tiefgreifende Veränderung"}
+            </p>
             <div className="relative aspect-[4/3] max-h-[240px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "180px" }}>
               {Object.entries(loadedMobile).map(([idx, src]) => (
                 <img
@@ -402,19 +383,21 @@ export default function Home() {
                   ? "David J. Woods combines psychological expertise, physiological depth, and modern coaching techniques into a method that works: clear, efficient, and solution-oriented."
                   : "David J. Woods vereint psychologisches Fachwissen, physiologische Tiefe und moderne Coaching-Techniken zu einer Methode, die wirkt: klar, effizient und lösungsorientiert."}
               </p>
-              <p className="text-xs md:text-sm text-foreground/70 leading-snug hidden md:block">
-                {isEN
-                  ? "Even if many are initially unsure — the process leads to a state of focused clarity where transformation becomes possible."
-                  : "Auch wenn viele anfangs unsicher sind – der Prozess führt in einen Zustand fokussierter Klarheit, in dem Transformation möglich wird."}
-              </p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1 text-xs md:text-sm text-foreground/80 text-left mt-2">
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-cta shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
+              </ul>
             </div>
             {/* Photo – desktop only */}
-            <div className="hidden md:block rounded-lg overflow-hidden w-[280px] shrink-0">
-              <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-auto object-cover object-top rounded-lg" loading="lazy" decoding="async" width={1200} height={800} sizes="280px" />
+            <div className="hidden md:block rounded-lg overflow-hidden w-[260px] shrink-0">
+              <img src={davidSessionImg} alt={isEN ? "David J. Woods – Licensed Psychologist and Hypnotherapist" : "David J. Woods – Lic. Psych. und Hypnosetherapeut"} className="w-full h-auto object-cover object-top rounded-lg" loading="lazy" decoding="async" width={1200} height={800} sizes="260px" />
             </div>
           </div>
           {/* EMR + Button below on all screens */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-2 md:mt-3">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-3 md:mt-4">
             <div className="flex items-center gap-2 bg-secondary rounded-md p-2">
               <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-9 md:h-10" width={64} height={40} loading="lazy" decoding="async" />
               <div>
@@ -422,10 +405,8 @@ export default function Home() {
                 <div className="text-[11px] text-muted-foreground">ZSR P609264</div>
               </div>
             </div>
-            <Link to={getPath("about", language, country)}>
-              <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                {isEN ? "More About Our Method" : "Mehr über unsere Methode"}
-              </Button>
+            <Link to={getPath("about", language, country)} className="text-sm text-foreground/70 hover:text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors">
+              {isEN ? "More about David J. Woods & Team" : "Mehr über David J. Woods & Team"}
             </Link>
           </div>
         </div>
