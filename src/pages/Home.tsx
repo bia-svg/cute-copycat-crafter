@@ -379,9 +379,59 @@ export default function Home() {
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
       <section className="pt-5 pb-5 md:pt-8 md:pb-8 bg-primary/15" style={deferredSectionStyle}>
         <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-xl border border-primary/15 py-2 md:py-3 px-3 md:px-7 shadow-sm">
-          <div className="grid md:grid-cols-[1fr_300px] gap-2 md:gap-6 md:items-center">
-            {/* LEFT – text + bullets, centered on both */}
-            <div className="flex flex-col items-center text-center md:items-center md:text-center">
+          <div className="grid md:grid-cols-[300px_1fr] gap-2 md:gap-7 md:items-center">
+            {/* LEFT (desktop) – credential badges 2x2 + link */}
+            <div className="order-2 md:order-1 flex flex-col items-center justify-center gap-2 mt-1.5 md:mt-0">
+              {/* Mobile: slim horizontal pill (EMR only) */}
+              <div className="flex md:hidden items-center gap-2 bg-secondary rounded-full px-2.5 py-1 w-fit">
+                <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-5 w-auto object-contain" width={60} height={20} loading="lazy" decoding="async" />
+                <div className="flex items-baseline gap-1.5 leading-none">
+                  <span className="font-semibold text-[10px] text-foreground">EMR Konform</span>
+                  <span className="text-[9px] text-muted-foreground">ZSR P609264</span>
+                </div>
+              </div>
+              {/* Desktop: 2x2 grid – 4 badges, equal height + weight */}
+              <div className="hidden md:grid grid-cols-2 gap-2 w-full">
+                {/* Entwickler der Aktiv-Hypnose */}
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px]">
+                  <Award className="h-12 w-12 text-[#1B3A5C]" strokeWidth={1.4} aria-hidden="true" />
+                  <div className="text-center">
+                    <div className="font-semibold text-[11px] text-foreground leading-tight">{isEN ? "Developer of Aktiv-Hypnose®" : "Entwickler der Aktiv-Hypnose®"}</div>
+                    <div className="text-[10px] text-muted-foreground">David J. Woods</div>
+                  </div>
+                </div>
+                {/* NGH International Trainer */}
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px]">
+                  <img src={CDN.nghBadge} alt="NGH International Trainer – National Guild of Hypnotists" className="h-12 w-auto object-contain" width={120} height={48} loading="lazy" decoding="async" />
+                  <div className="text-center">
+                    <div className="font-semibold text-[11px] text-foreground leading-tight">NGH International Trainer</div>
+                    <div className="text-[10px] text-muted-foreground">Nat. Guild of Hypnotists</div>
+                  </div>
+                </div>
+                {/* EMR */}
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px]">
+                  <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12 w-auto object-contain" width={144} height={48} loading="lazy" decoding="async" />
+                  <div className="text-center">
+                    <div className="font-semibold text-[11px] text-foreground leading-tight">EMR Krankenkasse Konform</div>
+                    <div className="text-[10px] text-muted-foreground">ZSR P609264</div>
+                  </div>
+                </div>
+                {/* Licensed Psychologist */}
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px]">
+                  <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-12 w-12 object-contain" width={512} height={512} loading="lazy" decoding="async" />
+                  <div className="text-center">
+                    <div className="font-semibold text-[11px] text-foreground leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</div>
+                    <div className="text-[10px] text-muted-foreground">UNAM</div>
+                  </div>
+                </div>
+              </div>
+              <Link to={getPath("about", language, country)} className="mt-3 md:mt-4 mb-1 md:mb-0 text-[11px] md:text-[11.5px] text-[#2E7D32] hover:text-[#1B5E20] font-medium underline underline-offset-4 decoration-[#2E7D32]/50 hover:decoration-[#1B5E20] transition-colors text-center leading-snug">
+                {isEN ? "More about David J. Woods & Team" : "Mehr über David J. Woods & Team"}
+              </Link>
+            </div>
+
+            {/* RIGHT (desktop) / TOP (mobile) – text + bullets, centered */}
+            <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-4">
               <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 leading-tight">
                 {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
@@ -392,7 +442,7 @@ export default function Home() {
               </p>
 
               {/* Bullets — 2-col on desktop, 6 items */}
-              <ul className="mt-2 md:mt-2.5 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1 md:gap-y-1.5 text-[11.5px] md:text-[13px] text-foreground/80 text-left mx-auto md:mx-0 w-fit md:justify-items-start leading-snug">
+              <ul className="mt-2 md:mt-2.5 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1 md:gap-y-1.5 text-[11.5px] md:text-[13px] text-foreground/80 text-left mx-auto w-fit md:justify-items-start leading-snug">
                 <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</span></li>
                 <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</span></li>
                 <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</span></li>
@@ -422,40 +472,6 @@ export default function Home() {
               >
                 {isEN ? "Get free information now" : "Sofort unverbindlich informieren"}
               </button>
-            </div>
-
-            {/* RIGHT – credential badges + link */}
-            <div className="flex flex-col items-center justify-center gap-1 md:gap-1.5 mt-1.5 md:mt-0">
-              {/* Mobile: slim horizontal pill (EMR only) */}
-              <div className="flex md:hidden items-center gap-2 bg-secondary rounded-full px-2.5 py-1 w-fit">
-                <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-5 w-auto object-contain" width={60} height={20} loading="lazy" decoding="async" />
-                <div className="flex items-baseline gap-1.5 leading-none">
-                  <span className="font-semibold text-[10px] text-foreground">EMR Konform</span>
-                  <span className="text-[9px] text-muted-foreground">ZSR P609264</span>
-                </div>
-              </div>
-              {/* Desktop: 2 badges side-by-side, equal height + weight */}
-              <div className="hidden md:grid grid-cols-2 gap-2 w-full">
-                {/* EMR */}
-                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px]">
-                  <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12 w-auto object-contain" width={144} height={48} loading="lazy" decoding="async" />
-                  <div className="text-center">
-                    <div className="font-semibold text-[11px] text-foreground leading-tight">EMR Krankenkasse Konform</div>
-                    <div className="text-[10px] text-muted-foreground">ZSR P609264</div>
-                  </div>
-                </div>
-                {/* Licensed Psychologist */}
-                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px]">
-                  <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-12 w-12 object-contain" width={512} height={512} loading="lazy" decoding="async" />
-                  <div className="text-center">
-                    <div className="font-semibold text-[11px] text-foreground leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</div>
-                    <div className="text-[10px] text-muted-foreground">UNAM</div>
-                  </div>
-                </div>
-              </div>
-              <Link to={getPath("about", language, country)} className="mt-5 md:mt-7 mb-1 md:mb-0 text-[11px] md:text-[11.5px] text-[#2E7D32] hover:text-[#1B5E20] font-medium underline underline-offset-4 decoration-[#2E7D32]/50 hover:decoration-[#1B5E20] transition-colors text-center leading-snug">
-                {isEN ? "More about David J. Woods & Team" : "Mehr über David J. Woods & Team"}
-              </Link>
             </div>
           </div>
         </div>
