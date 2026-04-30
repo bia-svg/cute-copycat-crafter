@@ -420,14 +420,13 @@ export default function Header() {
           </div>
 
           {/* Seminare-Ausbildungen */}
-          <MobileSection id="training" title={t("nav.training")} items={trainingItems} />
-
+          {renderMobileSection("training", t("nav.training"), trainingItems)}
 
           {/* Firmen-Coaching */}
-          <MobileSection id="corporate" title={isDE ? "Firmen-Coaching" : "Business Coaching"} items={corporateItems} />
+          {renderMobileSection("corporate", isDE ? "Firmen-Coaching" : "Business Coaching", corporateItems)}
 
           {/* Über uns */}
-          <MobileSection id="about" title={t("nav.about")} items={aboutItems} />
+          {renderMobileSection("about", t("nav.about"), aboutItems)}
 
         </div>
       )}
