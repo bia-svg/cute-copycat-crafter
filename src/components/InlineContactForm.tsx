@@ -140,7 +140,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
             {isEN ? "We'll be in touch within 24 hours." : "Wir melden uns innerhalb von 24 Stunden."}
           </p>
         </div>
-        <Button disabled className="w-full bg-gray-400 text-white font-semibold py-3 cursor-not-allowed">
+        <Button disabled className="w-full bg-gray-400 text-white font-medium py-3 cursor-not-allowed">
           {isEN ? "Sent ✓" : "Gesendet ✓"}
         </Button>
       </div>

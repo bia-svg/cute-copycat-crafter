@@ -198,7 +198,7 @@ export default function TvMedien() {
               {isEN ? "For media inquiries, please contact us directly." : "Für Medienanfragen kontaktieren Sie uns bitte direkt."}
             </p>
             <Link to={`/${language}/${country}/erstgespraech`}>
-              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold px-8 py-3 text-base">
+              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-medium px-8 py-3 text-base">
                 {isEN ? "Contact Us" : "Kontakt aufnehmen"}
               </Button>
             </Link>
