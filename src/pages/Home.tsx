@@ -624,10 +624,10 @@ export default function Home() {
             <div className="text-center mt-5 md:mt-6">
               <Link
                 to={getPath("corporate", language, country)}
-                className="inline-flex items-center gap-1.5 text-sm font-light tracking-wide text-primary/80 hover:text-primary border-b border-primary/25 hover:border-primary/60 pb-0.5 transition-colors"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-medium tracking-wide px-5 py-2.5 rounded-lg shadow-sm transition-colors"
               >
                 {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
