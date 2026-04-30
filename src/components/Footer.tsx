@@ -110,7 +110,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="font-semibold mb-3 text-sm">{isEN ? "Quick Links" : "Schnellzugriffe"}</h4>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-4 text-[13px] opacity-90 leading-tight">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-5 gap-y-3 text-[13px] opacity-90 leading-tight">
               {/* About Us */}
               <div>
                 <h5 className="text-white/70 text-[10px] uppercase tracking-wider font-semibold mb-1.5 pb-1 border-b border-white/15">{isEN ? "About Us" : "Über uns"}</h5>
