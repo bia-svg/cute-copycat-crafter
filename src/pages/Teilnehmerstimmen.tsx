@@ -78,11 +78,10 @@ export default function Teilnehmerstimmen() {
   return (
     <>
       <SEO
-        title={isEN ? "Participant Voices – Aktiv-Hypnose® Training" : "Teilnehmerstimmen – Aktiv-Hypnose® Ausbildung"}
-        description={isEN
-          ? "Authentic video testimonials from participants of the Aktiv-Hypnose® training and seminars with David J. Woods."
-          : "Echte Video-Erfahrungsberichte unserer Seminar- und Ausbildungsteilnehmer der Aktiv-Hypnose® Ausbildung mit David J. Woods."}
-        pageKey="successStories"
+        titleDE="Teilnehmerstimmen – Aktiv-Hypnose® Ausbildung"
+        titleEN="Participant Voices – Aktiv-Hypnose® Training"
+        descriptionDE="Echte Video-Erfahrungsberichte unserer Seminar- und Ausbildungsteilnehmer der Aktiv-Hypnose® Ausbildung mit David J. Woods."
+        descriptionEN="Authentic video testimonials from participants of the Aktiv-Hypnose® training and seminars with David J. Woods."
         breadcrumbs={[
           { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
           { name: isEN ? "Participant Voices" : "Teilnehmerstimmen", path: `/${language}/${country}/teilnehmerstimmen` },

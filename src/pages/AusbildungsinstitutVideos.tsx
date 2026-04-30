@@ -48,10 +48,10 @@ export default function AusbildungsinstitutVideos() {
   return (
     <>
       <SEO
-        title={isEN ? "Training Institute Videos – Insights" : "Ausbildungsinstitut Videos – Einblicke"}
-        description={isEN
-          ? "Exclusive video insights into the Aktiv-Hypnose® training institute by David J. Woods."
-          : "Exklusive Video-Einblicke in das Aktiv-Hypnose® Ausbildungsinstitut von David J. Woods."}
+        titleDE="Ausbildungsinstitut Videos – Einblicke"
+        titleEN="Training Institute Videos – Insights"
+        descriptionDE="Exklusive Video-Einblicke in das Aktiv-Hypnose® Ausbildungsinstitut von David J. Woods."
+        descriptionEN="Exclusive video insights into the Aktiv-Hypnose® training institute by David J. Woods."
         breadcrumbs={[
           { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
           { name: isEN ? "Training Institute Videos" : "Ausbildungsinstitut Videos", path: `/${language}/${country}/ausbildungsinstitut-videos` },
