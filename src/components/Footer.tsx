@@ -160,7 +160,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/20 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs opacity-85">
+        <div className="border-t border-white/20 mt-6 md:mt-5 pt-5 md:pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs opacity-85">
           <div>© {new Date().getFullYear()} David J. Woods. {t("footer.rights")}</div>
           <div className="flex items-center gap-4">
             <Link to={getPath("impressum", language, country)} className="hover:underline">{t("footer.impressum")}</Link>
