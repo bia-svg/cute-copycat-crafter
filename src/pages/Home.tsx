@@ -392,14 +392,14 @@ export default function Home() {
               </p>
 
               {/* Bullets — 2-col on desktop, 6 items */}
-              <ul className="mt-2 md:mt-2.5 grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-0.5 md:gap-y-1 text-[11.5px] md:text-[13px] text-foreground/80 text-left mx-auto w-fit">
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
-                <li className="flex items-center gap-1.5">
-                  <CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0" />
+              <ul className="mt-2 md:mt-2.5 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1 md:gap-y-1.5 text-[11.5px] md:text-[13px] text-foreground/80 text-left mx-auto md:mx-0 w-fit md:justify-items-start leading-snug">
+                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</span></li>
+                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</span></li>
+                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</span></li>
+                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</span></li>
+                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</span></li>
+                <li className="flex items-center gap-2 leading-snug">
+                  <CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" />
                   <span>266 <span className="text-[#F5B301]">★</span> {isEN ? "5.0 on Google" : "5.0 bei Google"}</span>
                 </li>
               </ul>
@@ -435,14 +435,14 @@ export default function Home() {
                 </div>
               </div>
               {/* Desktop: vertical badge */}
-              <div className="hidden md:flex flex-col items-center gap-1 bg-secondary rounded-lg px-3 py-1.5 w-full max-w-[170px]">
-                <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-10 w-auto object-contain" width={120} height={40} loading="lazy" decoding="async" />
+              <div className="hidden md:flex flex-col items-center gap-1.5 bg-secondary rounded-lg px-4 py-3 w-full max-w-[185px]">
+                <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12 w-auto object-contain" width={144} height={48} loading="lazy" decoding="async" />
                 <div className="text-center">
-                  <div className="font-semibold text-[10.5px] text-foreground leading-tight">EMR Krankenkasse Konform</div>
-                  <div className="text-[9.5px] text-muted-foreground">ZSR P609264</div>
+                  <div className="font-semibold text-[11px] text-foreground leading-tight">EMR Krankenkasse Konform</div>
+                  <div className="text-[10px] text-muted-foreground">ZSR P609264</div>
                 </div>
               </div>
-              <Link to={getPath("about", language, country)} className="mt-2 md:mt-3 text-[10.5px] md:text-[11px] text-[#2E7D32] hover:text-[#1B5E20] underline underline-offset-4 decoration-[#2E7D32]/40 hover:decoration-[#1B5E20] transition-colors text-center leading-snug">
+              <Link to={getPath("about", language, country)} className="mt-4 md:mt-5 mb-1 md:mb-0 text-[11px] md:text-[11.5px] text-[#2E7D32] hover:text-[#1B5E20] font-medium underline underline-offset-4 decoration-[#2E7D32]/50 hover:decoration-[#1B5E20] transition-colors text-center leading-snug">
                 {isEN ? "More about David J. Woods & Team" : "Mehr über David J. Woods & Team"}
               </Link>
             </div>
