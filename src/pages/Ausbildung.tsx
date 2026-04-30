@@ -748,7 +748,7 @@ export default function Ausbildung() {
         <div className="container-main">
           <div className="relative max-w-2xl mx-auto bg-gradient-to-br from-white via-[#F1F4F7] to-[#E8ECEF] border border-[#1B3A5C]/18 rounded-3xl px-5 py-5 md:px-9 md:py-7 text-center shadow-[0_6px_24px_rgba(27,58,92,0.10)]">
             {/* Decorative top accent */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-[#1B3A5C] text-[10px] md:text-[11px] font-medium px-3.5 py-1 rounded-full tracking-wide uppercase border border-[#1B3A5C]/25">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-[10px] md:text-[11px] font-medium px-3.5 py-1 rounded-full tracking-wide uppercase border border-[#1B3A5C]/25">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
             <h2 className="text-lg md:text-2xl font-light text-foreground mb-1.5 md:mb-2.5 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
