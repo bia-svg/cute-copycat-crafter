@@ -379,7 +379,7 @@ export default function Home() {
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
       <section className="pt-5 pb-5 md:pt-8 md:pb-8 bg-primary/15" style={deferredSectionStyle}>
         <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-xl border border-primary/15 py-2 md:py-3 px-3 md:px-7 shadow-sm">
-          <div className="grid md:grid-cols-[300px_1fr] gap-2 md:gap-7 md:items-center">
+          <div className="grid md:grid-cols-[300px_1fr] gap-2 md:gap-7 md:items-stretch">
             {/* LEFT (desktop) – credential badges 2x2 + link */}
             <div className="order-2 md:order-1 flex flex-col items-center justify-center gap-2 mt-1.5 md:mt-0">
               {/* Mobile: slim horizontal pill (EMR only) */}
