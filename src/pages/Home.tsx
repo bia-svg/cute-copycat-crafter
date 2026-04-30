@@ -393,7 +393,7 @@ export default function Home() {
               {/* Desktop: 2x2 grid – 4 badges, equal height + weight */}
               <div className="hidden md:grid grid-cols-2 gap-2 w-full">
                 {/* Entwickler der Aktiv-Hypnose */}
-                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] transition-all duration-300 md:hover:scale-[1.08] md:hover:shadow-lg md:hover:z-10">
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.18] md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
                   <Award className="h-12 w-12 text-[#1B3A5C]" strokeWidth={1.4} aria-hidden="true" />
                   <div className="text-center">
                     <div className="font-semibold text-[11px] text-foreground leading-tight">{isEN ? "Developer of Aktiv-Hypnose®" : "Entwickler der Aktiv-Hypnose®"}</div>
@@ -401,7 +401,7 @@ export default function Home() {
                   </div>
                 </div>
                 {/* NGH International Trainer */}
-                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] transition-all duration-300 md:hover:scale-[1.08] md:hover:shadow-lg md:hover:z-10">
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.18] md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
                   <img src={CDN.nghBadge} alt="NGH International Trainer – National Guild of Hypnotists" className="h-12 w-auto object-contain" width={120} height={48} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11px] text-foreground leading-tight">NGH International Trainer</div>
@@ -409,7 +409,7 @@ export default function Home() {
                   </div>
                 </div>
                 {/* EMR */}
-                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] transition-all duration-300 md:hover:scale-[1.08] md:hover:shadow-lg md:hover:z-10">
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.18] md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
                   <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12 w-auto object-contain" width={144} height={48} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11px] text-foreground leading-tight">EMR Krankenkasse Konform</div>
@@ -417,7 +417,7 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Licensed Psychologist */}
-                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] transition-all duration-300 md:hover:scale-[1.08] md:hover:shadow-lg md:hover:z-10">
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.18] md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
                   <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-12 w-12 object-contain" width={512} height={512} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11px] text-foreground leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</div>
