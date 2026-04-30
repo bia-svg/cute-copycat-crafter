@@ -421,18 +421,18 @@ export default function Header() {
 
           {/* Intensiv-Ausbildung — title clickable + chevron toggles dropdown */}
           <div className="border-b border-border">
-            <div className="flex items-center w-full pr-4 font-medium text-foreground">
+            <div className="flex items-center w-full font-medium text-foreground gap-3">
               <Link
                 to={getPath("training", language, country)}
                 onClick={() => setMobileOpen(false)}
-                className="flex-1 px-8 py-4 text-foreground"
+                className="flex-1 pl-8 py-4 text-foreground"
               >
                 {t("nav.training")}
               </Link>
               <button
                 onClick={() => setMobileAccordion(mobileAccordion === "training" ? null : "training")}
                 aria-label="Toggle training submenu"
-                className="p-2"
+                className="py-4 pr-8 pl-2 flex items-center"
               >
                 <ChevronDown className={`w-5 h-5 text-[#2E7D32] transition-transform ${mobileAccordion === "training" ? "rotate-180" : ""}`} strokeWidth={2.5} />
               </button>
