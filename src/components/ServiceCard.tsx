@@ -57,13 +57,13 @@ export default function ServiceCard({ title, description, href, icon, image }: S
                 decoding="async"
               />
             </div>
-            <div className="px-4 py-2.5">
+            <div className="px-4 py-2 md:py-1.5">
               <div className="flex items-center gap-2 text-primary mb-0.5">
                 {icon}
                 <h3 className="font-semibold text-foreground text-sm line-clamp-1">{title}</h3>
               </div>
               <p className="text-xs text-muted-foreground line-clamp-2 leading-snug">{description}</p>
-              <span className="inline-flex items-center gap-1 text-xs text-primary font-medium mt-1.5 group-hover:gap-2 transition-all">
+              <span className="inline-flex items-center gap-1 text-xs text-primary font-medium mt-1 group-hover:gap-2 transition-all">
                 Details <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </div>
