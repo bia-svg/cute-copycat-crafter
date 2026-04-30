@@ -424,9 +424,9 @@ export default function Home() {
               </button>
             </div>
 
-            {/* RIGHT – EMR badge + link. Slim horizontal pill on mobile, vertical on desktop */}
+            {/* RIGHT – credential badges + link */}
             <div className="flex flex-col items-center justify-center gap-1 md:gap-1.5 mt-1.5 md:mt-0">
-              {/* Mobile: slim horizontal pill */}
+              {/* Mobile: slim horizontal pill (EMR only) */}
               <div className="flex md:hidden items-center gap-2 bg-secondary rounded-full px-2.5 py-1 w-fit">
                 <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-5 w-auto object-contain" width={60} height={20} loading="lazy" decoding="async" />
                 <div className="flex items-baseline gap-1.5 leading-none">
@@ -434,15 +434,26 @@ export default function Home() {
                   <span className="text-[9px] text-muted-foreground">ZSR P609264</span>
                 </div>
               </div>
-              {/* Desktop: vertical badge */}
-              <div className="hidden md:flex flex-col items-center gap-1.5 bg-secondary rounded-lg px-4 py-3 w-full max-w-[185px]">
-                <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12 w-auto object-contain" width={144} height={48} loading="lazy" decoding="async" />
-                <div className="text-center">
-                  <div className="font-semibold text-[11px] text-foreground leading-tight">EMR Krankenkasse Konform</div>
-                  <div className="text-[10px] text-muted-foreground">ZSR P609264</div>
+              {/* Desktop: 2 badges side-by-side, equal height + weight */}
+              <div className="hidden md:grid grid-cols-2 gap-2 w-full">
+                {/* EMR */}
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px]">
+                  <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12 w-auto object-contain" width={144} height={48} loading="lazy" decoding="async" />
+                  <div className="text-center">
+                    <div className="font-semibold text-[11px] text-foreground leading-tight">EMR Krankenkasse Konform</div>
+                    <div className="text-[10px] text-muted-foreground">ZSR P609264</div>
+                  </div>
+                </div>
+                {/* Licensed Psychologist */}
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px]">
+                  <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-12 w-12 object-contain" width={512} height={512} loading="lazy" decoding="async" />
+                  <div className="text-center">
+                    <div className="font-semibold text-[11px] text-foreground leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</div>
+                    <div className="text-[10px] text-muted-foreground">UNAM</div>
+                  </div>
                 </div>
               </div>
-              <Link to={getPath("about", language, country)} className="mt-4 md:mt-5 mb-1 md:mb-0 text-[11px] md:text-[11.5px] text-[#2E7D32] hover:text-[#1B5E20] font-medium underline underline-offset-4 decoration-[#2E7D32]/50 hover:decoration-[#1B5E20] transition-colors text-center leading-snug">
+              <Link to={getPath("about", language, country)} className="mt-5 md:mt-7 mb-1 md:mb-0 text-[11px] md:text-[11.5px] text-[#2E7D32] hover:text-[#1B5E20] font-medium underline underline-offset-4 decoration-[#2E7D32]/50 hover:decoration-[#1B5E20] transition-colors text-center leading-snug">
                 {isEN ? "More about David J. Woods & Team" : "Mehr über David J. Woods & Team"}
               </Link>
             </div>
