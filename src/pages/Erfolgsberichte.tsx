@@ -186,7 +186,7 @@ export default function Erfolgsberichte() {
                 : "Vereinbaren Sie Ihr kostenloses Erstgespräch und machen Sie den ersten Schritt zu positiver Veränderung."}
             </p>
             <Link to={getPath("contact", language, country)}>
-              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold px-8 py-3 text-base">
+              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-medium px-8 py-3 text-base">
                 <MessageSquare className="w-4 h-4 mr-2" />
                 {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
               </Button>

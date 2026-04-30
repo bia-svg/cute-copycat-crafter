@@ -383,7 +383,7 @@ export default function UeberUns() {
                   ))}
                 </div>
                 <Link to={`${getPath("contact", language, country)}?concern=children`}>
-                  <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-semibold px-5 py-2.5">
+                  <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-5 py-2.5">
                     {isEN ? "Book Session for Children & Teens" : "Sitzung für Kinder & Jugendliche buchen"}
                   </Button>
                 </Link>
@@ -455,7 +455,7 @@ export default function UeberUns() {
                 : "Vereinbaren Sie eine unverbindliche telefonische Erstberatung. Wir nehmen uns Zeit für Ihr Anliegen und beraten Sie individuell."}
             </p>
             <Link to={getPath("contact", language, country)}>
-              <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-semibold px-7 py-3">
+              <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-7 py-3">
                 {isEN ? "Request Consultation" : "Beratung anfragen"}
               </Button>
             </Link>

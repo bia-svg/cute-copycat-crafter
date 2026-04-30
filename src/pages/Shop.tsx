@@ -241,7 +241,7 @@ export default function Shop() {
                   <div className="flex items-center justify-between pt-4 border-t border-border">
                     <span className="text-2xl font-bold text-[#1B3A5C]">{isInternational && product.priceCHF ? `${product.price} / ${product.priceCHF}` : isSwiss && product.priceCHF ? product.priceCHF : product.price}</span>
                     <Link to={getPath("contact", language, country)}>
-                      <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-semibold">
+                      <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium">
                         {isDE ? "Jetzt bestellen" : "Order Now"}
                       </Button>
                     </Link>
@@ -304,7 +304,7 @@ export default function Shop() {
               </p>
             </div>
             <Link to={getPath("training", language, country)}>
-              <Button className="bg-[#1B3A5C] hover:bg-[#0F2A4A] text-white font-semibold px-8 whitespace-nowrap">
+              <Button className="bg-[#1B3A5C] hover:bg-[#0F2A4A] text-white font-medium px-8 whitespace-nowrap">
                 {isDE ? "Zur Ausbildung" : "View Training"} <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
@@ -328,7 +328,7 @@ export default function Shop() {
             <span className="text-white/90 text-sm ml-2"><span className="text-white/90 text-sm ml-2">5.0 — 266 Google {isDE ? "Bewertungen" : "Reviews"}</span></span>
           </div>
           <Link to={getPath("contact", language, country)}>
-            <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-semibold px-8 py-3 text-base">
+            <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-8 py-3 text-base">
               {isDE ? "Kontakt aufnehmen" : "Get in Touch"}
             </Button>
           </Link>

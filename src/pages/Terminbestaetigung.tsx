@@ -187,7 +187,7 @@ export default function Terminbestaetigung() {
                 : "Vielen Dank für Ihre Terminbestätigung. Wir freuen uns auf Sie!"}
             </p>
             <Link to={getPath("home", language, country)}>
-              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold">
+              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-medium">
                 {isEN ? "Back to Home" : "Zurück zur Startseite"}
               </Button>
             </Link>

@@ -106,7 +106,7 @@ export default function Blog() {
                 : "Book a free discovery call and learn how Aktiv-Hypnose© can help you."}
             </p>
             <Link to={getPath("contact", language, country)}>
-              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-semibold px-8 py-3 text-base">
+              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-medium px-8 py-3 text-base">
                 {isDE ? "Kostenloses Erstgespräch" : "Free Discovery Call"}
               </Button>
             </Link>

@@ -140,7 +140,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
             {isEN ? "We'll be in touch within 24 hours." : "Wir melden uns innerhalb von 24 Stunden."}
           </p>
         </div>
-        <Button disabled className="w-full bg-gray-400 text-white font-semibold py-3 cursor-not-allowed">
+        <Button disabled className="w-full bg-gray-400 text-white font-medium py-3 cursor-not-allowed">
           {isEN ? "Sent ✓" : "Gesendet ✓"}
         </Button>
       </div>
@@ -223,7 +223,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-semibold py-2.5 mt-1 rounded-lg"
+        className="w-full bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium py-2.5 mt-1 rounded-lg"
       >
         {isSubmitting
           ? (isEN ? "Sending..." : "Wird gesendet...")
