@@ -124,8 +124,8 @@ export default function Header() {
     );
   };
 
-  const MobileSection = ({ id, title, items }: { id: string; title: string; items: typeof therapyGoals }) => (
-    <div className="border-b border-border">
+  const renderMobileSection = (id: string, title: string, items: typeof therapyGoals) => (
+    <div className="border-b border-border" key={id}>
       <button onClick={() => setMobileAccordion(mobileAccordion === id ? null : id)} className="flex items-center w-full px-8 py-4 text-left font-medium text-foreground gap-3">
         <span className="flex-1">{title}</span>
         <ChevronDown className={`w-5 h-5 text-[#2E7D32] transition-transform ${mobileAccordion === id ? "rotate-180" : ""}`} strokeWidth={2.5} />
