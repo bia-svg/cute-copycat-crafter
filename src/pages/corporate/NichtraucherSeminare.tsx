@@ -150,8 +150,8 @@ export default function NichtraucherSeminare() {
 
       <section className="bg-[#E8EDF3]">
         <div className="container-main py-8 md:py-10 flex justify-center">
-          <div className="relative bg-[#1B3A5C]/[0.04] border border-[#1B3A5C]/12 rounded-2xl px-8 py-8 text-center max-w-2xl w-full">
-            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#1B3A5C]/70 text-white text-xs font-medium px-4 py-1 rounded-full whitespace-nowrap">
+          <div className="relative bg-footer/[0.07] border border-footer/20 rounded-2xl px-8 py-8 text-center max-w-2xl w-full">
+            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-footer text-footer-foreground text-xs font-medium px-4 py-1 rounded-full whitespace-nowrap">
               {isEN ? "Next Step" : "N\u00e4chster Schritt"}
             </span>
             <h2 className="text-xl font-light text-primary mb-2 mt-2 tracking-tight">
@@ -161,7 +161,7 @@ export default function NichtraucherSeminare() {
               {isEN ? "Take the next step for your team." : "Gehen Sie den n\u00e4chsten Schritt f\u00fcr Ihr Team."}
             </p>
             <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
-              <Button className="bg-[#1B3A5C]/75 hover:bg-[#1B3A5C]/90 text-white font-medium px-8 py-3 text-base border border-[#1B3A5C]/25 shadow-none">
+              <Button className="bg-footer hover:bg-footer/90 text-footer-foreground font-medium px-8 py-3 text-base border border-footer/40 shadow-none">
                 {isEN ? "Register Now!" : "Jetzt anmelden!"}
               </Button>
             </Link>
