@@ -412,7 +412,6 @@ export default function Home() {
                   <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-12 w-12 object-contain" style={{ filter: "brightness(1.18) contrast(1.15) saturate(1.12)" }} width={512} height={512} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11.5px] text-foreground/95 leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</div>
-                    <div className="text-[10px] text-muted-foreground">UNAM</div>
                   </div>
                 </div>
               </div>
