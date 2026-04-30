@@ -94,7 +94,7 @@ export default function Header() {
   /* ── Shared Components ── */
 
   const MenuItemLink = ({ icon, label, desc, href }: { icon: React.ReactNode; label: string; desc: string; href: string }) => (
-    <Link to={href} onClick={() => setActiveMenu(null)} className="flex items-start gap-3 p-3 rounded-md hover:bg-secondary transition-colors">
+    <Link to={href} onClick={() => setActiveMenu(null)} className="flex items-start gap-2.5 p-2 rounded-md hover:bg-secondary transition-colors">
       <span className="text-primary mt-0.5">{icon}</span>
       <div>
         <div className="font-medium text-sm text-foreground">{label}</div>
