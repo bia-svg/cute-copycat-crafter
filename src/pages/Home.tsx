@@ -378,7 +378,7 @@ export default function Home() {
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
       <section className="pt-2.5 pb-2.5 md:pt-2 md:pb-2 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-xl border border-primary/15 py-1.5 md:py-1 px-3 md:px-7 shadow-sm">
+        <div className="mx-3 md:mx-auto md:max-w-[1120px] bg-card rounded-xl border border-primary/15 py-1.5 md:py-1 px-3 md:px-7 shadow-sm">
           <div className="grid md:grid-cols-[300px_1fr] gap-2 md:gap-7 md:items-stretch">
             {/* LEFT (desktop) – credential badges 2x2 + link */}
             <div className="order-2 md:order-1 flex flex-col items-center justify-center gap-1.5 mt-3 md:mt-0">
@@ -598,10 +598,10 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
-        <section className="py-7 md:py-8 bg-muted/50" style={deferredSectionStyle}>
+        <section className="py-5 md:py-4 bg-muted/50" style={deferredSectionStyle}>
         <div className="container-main">
-          <div className="max-w-[1320px] mx-auto bg-card border border-border/70 rounded-2xl shadow-sm px-4 py-5 md:px-8 md:py-6">
-            <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-center mb-4 md:mb-5 text-foreground/90">
+          <div className="max-w-[1320px] mx-auto bg-card border border-border/70 rounded-2xl shadow-sm px-4 py-4 md:px-8 md:py-4">
+            <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-center mb-3 md:mb-3 text-foreground/90">
               {isEN ? "Corporate Coaching" : "Firmencoaching"}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
@@ -621,7 +621,7 @@ export default function Home() {
                 />
               ))}
             </div>
-            <div className="text-center mt-5 md:mt-6">
+            <div className="text-center mt-3 md:mt-4">
               <Link
                 to={getPath("corporate", language, country)}
                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-medium tracking-wide px-5 py-2.5 rounded-lg shadow-sm transition-colors"
@@ -635,7 +635,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ INLINE CONTACT FORM ═══════════════════ */}
-      <section id="contact" className="py-8 md:py-10 bg-[#F8FAFC] border-y border-[#E8EDF3]" style={deferredSectionStyle}>
+      <section id="contact" className="py-6 md:py-6 bg-[#F8FAFC] border-y border-[#E8EDF3]" style={deferredSectionStyle}>
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 mb-3 text-center">
