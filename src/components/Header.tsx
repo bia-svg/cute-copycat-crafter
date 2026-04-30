@@ -313,6 +313,46 @@ export default function Header() {
       </MegaMenuPanel>
 
 
+      {/* ── Mega Menu: Intensiv-Ausbildung ── */}
+      <MegaMenuPanel id="training">
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="md:col-span-2">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+              {isDE ? "Intensiv-Ausbildung" : "Intensive Training"}
+            </h4>
+            <Link
+              to={getPath("training", language, country)}
+              onClick={() => setActiveMenu(null)}
+              className="flex items-start gap-2.5 p-2 rounded-md hover:bg-secondary transition-colors"
+            >
+              <span className="text-primary mt-0.5"><GraduationCap className="w-5 h-5" /></span>
+              <div>
+                <div className="font-medium text-sm text-foreground">Aktiv-Hypnose® Therapeut</div>
+                <div className="text-xs text-muted-foreground">{isDE ? "6-Tage Intensiv-Ausbildung" : "6-Day Intensive Training"}</div>
+              </div>
+            </Link>
+          </div>
+          <SidebarCard>
+            <div className="flex items-center gap-2">
+              <Award className="w-4 h-4 text-[#2E7D32] shrink-0" />
+              <p className="font-semibold text-sm text-foreground">{isDE ? "Therapeuten-Diplom" : "Therapist Diploma"}</p>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              {isDE
+                ? "Nach Abschluss des 6-tägigen Seminars erhalten Teilnehmer ihre offizielle Zertifizierung als Therapeut / Therapeutin in Aktiv-Hypnose®."
+                : "After completing the 6-day seminar, participants receive their official certification as a therapist in Aktiv-Hypnose®."}
+            </p>
+            <div className="pt-2">
+              <Link to={getPath("training", language, country)} onClick={() => setActiveMenu(null)}>
+                <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs">
+                  {isDE ? "Mehr erfahren" : "Learn More"}
+                </Button>
+              </Link>
+            </div>
+          </SidebarCard>
+        </div>
+      </MegaMenuPanel>
+
       <MegaMenuPanel id="about">
         <div className="grid md:grid-cols-3 gap-6">
            <div className="md:col-span-2">
