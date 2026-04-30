@@ -628,7 +628,6 @@ export default function Home() {
                 {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
                 <ArrowRight className="w-4 h-4" />
               </Link>
-            </div>
           </div>
         </div>
       </section>
