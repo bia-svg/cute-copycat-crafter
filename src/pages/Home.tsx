@@ -378,14 +378,14 @@ export default function Home() {
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
       <section className="pt-5 pb-5 md:pt-8 md:pb-8 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border border-primary/15 py-2 md:py-3 px-3 md:px-6 shadow-sm">
+        <div className="mx-3 md:mx-auto md:max-w-[1100px] bg-card rounded-xl border border-primary/15 py-2 md:py-3 px-3 md:px-7 shadow-sm">
           <div className="grid md:grid-cols-[1fr_170px] gap-2 md:gap-6 md:items-center">
             {/* LEFT – text + bullets, centered on both */}
             <div className="flex flex-col items-center text-center md:items-center md:text-center">
               <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 leading-tight">
                 {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
-              <p className="text-[12px] md:text-[13.5px] text-foreground/70 leading-snug mt-1 max-w-[640px] italic">
+              <p className="text-[12px] md:text-[13.5px] text-foreground/70 leading-snug mt-1 max-w-[640px]">
                 {isEN
                   ? "Individual intensive sessions for sustainable change."
                   : "Individuelle Intensiv-Sitzungen für nachhaltige Veränderung."}
@@ -398,14 +398,17 @@ export default function Home() {
                 <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
                 <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
                 <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
-                <li className="flex items-center gap-1.5"><Star className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#F5B301] fill-[#F5B301] shrink-0" />{isEN ? "266 ★ 5.0 on Google" : "266 ★ 5.0 bei Google"}</li>
+                <li className="flex items-center gap-1.5">
+                  <CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0" />
+                  <span>266 <span className="text-[#F5B301]">★</span> {isEN ? "5.0 on Google" : "5.0 bei Google"}</span>
+                </li>
               </ul>
 
               {/* Topics row */}
-              <p className="mt-2 md:mt-2.5 text-[11px] md:text-[12.5px] text-foreground/70 leading-snug max-w-[640px]">
+              <p className="mt-2.5 md:mt-3 text-[11.5px] md:text-[13px] text-foreground/85 font-medium tracking-wide leading-snug max-w-[720px]">
                 {isEN
-                  ? "Smoke-free · Weight loss · Anxiety · Stress · Trauma · Children's hypnosis · Trainings"
-                  : "Rauchfrei · Abnehmen · Ängste · Stress · Trauma · Kinderhypnose · Ausbildungen"}
+                  ? "Smoke-free  ·  Weight loss  ·  Anxiety  ·  Stress  ·  Trauma  ·  Children's hypnosis  ·  Trainings"
+                  : "Rauchfrei  ·  Abnehmen  ·  Ängste  ·  Stress  ·  Trauma  ·  Kinderhypnose  ·  Ausbildungen"}
               </p>
 
               {/* CTA */}
@@ -439,7 +442,7 @@ export default function Home() {
                   <div className="text-[9.5px] text-muted-foreground">ZSR P609264</div>
                 </div>
               </div>
-              <Link to={getPath("about", language, country)} className="text-[10.5px] md:text-[11px] text-foreground/70 hover:text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground transition-colors text-center leading-snug">
+              <Link to={getPath("about", language, country)} className="mt-2 md:mt-3 text-[10.5px] md:text-[11px] text-[#2E7D32] hover:text-[#1B5E20] underline underline-offset-4 decoration-[#2E7D32]/40 hover:decoration-[#1B5E20] transition-colors text-center leading-snug">
                 {isEN ? "More about David J. Woods & Team" : "Mehr über David J. Woods & Team"}
               </Link>
             </div>
