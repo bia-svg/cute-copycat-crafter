@@ -146,8 +146,8 @@ export default function ResilienzVerstaerken() {
 
       <section className="bg-[#F8FAFC]">
         <div className="container-main py-8 md:py-10 flex justify-center">
-          <div className="relative bg-primary/10 border border-primary/25 rounded-2xl px-8 py-8 text-center max-w-2xl w-full">
-            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full whitespace-nowrap">
+          <div className="relative bg-[#1B3A5C]/[0.06] border border-[#1B3A5C]/20 rounded-2xl px-8 py-8 text-center max-w-2xl w-full">
+            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#1B3A5C]/85 text-white text-xs font-medium px-4 py-1 rounded-full whitespace-nowrap">
               {isEN ? "Next Step" : "N\u00e4chster Schritt"}
             </span>
             <h2 className="text-xl font-light text-primary mb-2 mt-2 tracking-tight">
