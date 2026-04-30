@@ -492,7 +492,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <Link to={getPath("about", language, country)} className="md:hidden mt-3 text-[11px] text-[#2E7D32] hover:text-[#1B5E20] font-medium underline underline-offset-4 decoration-[#2E7D32]/50 hover:decoration-[#1B5E20] transition-colors text-center leading-snug">
+              <Link to={getPath("about", language, country)} className="md:hidden mt-2 text-[11px] text-[#2E7D32] hover:text-[#1B5E20] font-medium underline underline-offset-4 decoration-[#2E7D32]/50 hover:decoration-[#1B5E20] transition-colors text-center leading-snug">
                 {isEN ? "More about David J. Woods & Team" : "Mehr über David J. Woods & Team"}
               </Link>
             </div>
