@@ -431,44 +431,44 @@ export default function Home() {
             </div>
 
             {/* RIGHT (desktop) / TOP (mobile) – text + bullets, centered */}
-            <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-4 md:self-start md:-mt-1">
-              <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 leading-tight">
+            <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-4 md:h-full md:py-2">
+              <h2 className="text-lg md:text-[22px] font-light tracking-[0.01em] text-foreground/90 leading-tight md:mt-3">
                 {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
-              <p className="text-[12px] md:text-[13.5px] text-foreground/70 leading-snug mt-1 max-w-[640px]">
+              <p className="text-[12px] md:text-[14.5px] text-foreground/70 leading-snug mt-1 md:mt-1.5 max-w-[640px]">
                 {isEN
                   ? "Individual intensive sessions for sustainable change."
                   : "Individuelle Intensiv-Sitzungen für nachhaltige Veränderung."}
               </p>
 
               {/* Bullets — 2-col on desktop, 6 items */}
-              <ul className="mt-2 md:mt-5 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1 md:gap-y-1.5 text-[11.5px] md:text-[13px] text-foreground/80 text-left mx-auto w-fit md:justify-items-start leading-snug">
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</span></li>
+              <ul className="mt-2 md:mt-6 grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-1 md:gap-y-2 text-[11.5px] md:text-[14px] text-foreground/80 text-left mx-auto w-fit md:justify-items-start leading-snug">
+                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</span></li>
+                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</span></li>
+                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</span></li>
+                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</span></li>
+                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</span></li>
                 <li className="flex items-center gap-2 leading-snug">
-                  <CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" />
+                  <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" />
                   <span>266 <span className="text-[#F5B301]">★</span> {isEN ? "5.0 on Google" : "5.0 bei Google"}</span>
                 </li>
               </ul>
 
               {/* Topics row */}
-              <p className="mt-2.5 md:mt-5 text-[11.5px] md:text-[13px] text-foreground/85 font-medium tracking-wide leading-snug max-w-[720px]">
+              <p className="mt-2.5 md:mt-7 text-[11.5px] md:text-[13.5px] text-foreground/85 font-medium tracking-wide leading-snug max-w-[720px]">
                 {isEN
                   ? "Smoke-free  ·  Weight loss  ·  Anxiety  ·  Stress  ·  Trauma  ·  Children's hypnosis  ·  Trainings"
                   : "Rauchfrei  ·  Abnehmen  ·  Ängste  ·  Stress  ·  Trauma  ·  Kinderhypnose  ·  Ausbildungen"}
               </p>
 
-              {/* CTA */}
+              {/* CTA – pushed to bottom on desktop */}
               <button
                 type="button"
                 onClick={() => {
                   const el = document.getElementById("contact");
                   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="mt-3 md:mt-3.5 inline-flex items-center justify-center bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A5C] font-medium text-[12px] md:text-[13px] px-4 py-2 rounded-lg shadow-sm transition-all"
+                className="mt-3 md:mt-auto md:pt-5 inline-flex items-center justify-center bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A5C] font-medium text-[12px] md:text-[13.5px] px-4 md:px-5 py-2 md:py-2.5 rounded-lg shadow-sm transition-all"
               >
                 {isEN ? "Get free information now" : "Sofort unverbindlich informieren"}
               </button>
