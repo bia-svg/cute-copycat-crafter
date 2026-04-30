@@ -379,7 +379,7 @@ export default function Home() {
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
       <section className="pt-5 pb-5 md:pt-8 md:pb-8 bg-primary/15" style={deferredSectionStyle}>
         <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-xl border border-primary/15 py-2 md:py-3 px-3 md:px-7 shadow-sm">
-          <div className="grid md:grid-cols-[300px_1fr] gap-2 md:gap-7 md:items-center">
+          <div className="grid md:grid-cols-[300px_1fr] gap-2 md:gap-7 md:items-stretch">
             {/* LEFT (desktop) – credential badges 2x2 + link */}
             <div className="order-2 md:order-1 flex flex-col items-center justify-center gap-2 mt-1.5 md:mt-0">
               {/* Mobile: slim horizontal pill (EMR only) */}
@@ -393,7 +393,7 @@ export default function Home() {
               {/* Desktop: 2x2 grid – 4 badges, equal height + weight */}
               <div className="hidden md:grid grid-cols-2 gap-2 w-full">
                 {/* Entwickler der Aktiv-Hypnose */}
-                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] transition-all duration-300 md:hover:scale-[1.08] md:hover:shadow-lg md:hover:z-10">
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.18] md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
                   <Award className="h-12 w-12 text-[#1B3A5C]" strokeWidth={1.4} aria-hidden="true" />
                   <div className="text-center">
                     <div className="font-semibold text-[11px] text-foreground leading-tight">{isEN ? "Developer of Aktiv-Hypnose®" : "Entwickler der Aktiv-Hypnose®"}</div>
@@ -401,7 +401,7 @@ export default function Home() {
                   </div>
                 </div>
                 {/* NGH International Trainer */}
-                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] transition-all duration-300 md:hover:scale-[1.08] md:hover:shadow-lg md:hover:z-10">
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.18] md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
                   <img src={CDN.nghBadge} alt="NGH International Trainer – National Guild of Hypnotists" className="h-12 w-auto object-contain" width={120} height={48} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11px] text-foreground leading-tight">NGH International Trainer</div>
@@ -409,7 +409,7 @@ export default function Home() {
                   </div>
                 </div>
                 {/* EMR */}
-                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] transition-all duration-300 md:hover:scale-[1.08] md:hover:shadow-lg md:hover:z-10">
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.18] md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
                   <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12 w-auto object-contain" width={144} height={48} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11px] text-foreground leading-tight">EMR Krankenkasse Konform</div>
@@ -417,7 +417,7 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Licensed Psychologist */}
-                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] transition-all duration-300 md:hover:scale-[1.08] md:hover:shadow-lg md:hover:z-10">
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.18] md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
                   <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-12 w-12 object-contain" width={512} height={512} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11px] text-foreground leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</div>
@@ -431,44 +431,44 @@ export default function Home() {
             </div>
 
             {/* RIGHT (desktop) / TOP (mobile) – text + bullets, centered */}
-            <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-4 md:self-start md:-mt-1">
-              <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 leading-tight">
+            <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-4 md:h-full md:py-2">
+              <h2 className="text-lg md:text-[22px] font-light tracking-[0.01em] text-foreground/90 leading-tight md:mt-3">
                 {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
-              <p className="text-[12px] md:text-[13.5px] text-foreground/70 leading-snug mt-1 max-w-[640px]">
+              <p className="text-[12px] md:text-[14.5px] text-foreground/70 leading-snug mt-1 md:mt-1.5 max-w-[640px]">
                 {isEN
                   ? "Individual intensive sessions for sustainable change."
                   : "Individuelle Intensiv-Sitzungen für nachhaltige Veränderung."}
               </p>
 
               {/* Bullets — 2-col on desktop, 6 items */}
-              <ul className="mt-2 md:mt-5 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1 md:gap-y-1.5 text-[11.5px] md:text-[13px] text-foreground/80 text-left mx-auto w-fit md:justify-items-start leading-snug">
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</span></li>
+              <ul className="mt-2 md:mt-6 grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-1 md:gap-y-2 text-[11.5px] md:text-[14px] text-foreground/80 text-left mx-auto w-fit md:justify-items-start leading-snug">
+                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</span></li>
+                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</span></li>
+                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</span></li>
+                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</span></li>
+                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</span></li>
                 <li className="flex items-center gap-2 leading-snug">
-                  <CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" />
+                  <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" />
                   <span>266 <span className="text-[#F5B301]">★</span> {isEN ? "5.0 on Google" : "5.0 bei Google"}</span>
                 </li>
               </ul>
 
               {/* Topics row */}
-              <p className="mt-2.5 md:mt-5 text-[11.5px] md:text-[13px] text-foreground/85 font-medium tracking-wide leading-snug max-w-[720px]">
+              <p className="mt-2.5 md:mt-7 text-[11.5px] md:text-[13.5px] text-foreground/85 font-medium tracking-wide leading-snug max-w-[720px]">
                 {isEN
                   ? "Smoke-free  ·  Weight loss  ·  Anxiety  ·  Stress  ·  Trauma  ·  Children's hypnosis  ·  Trainings"
                   : "Rauchfrei  ·  Abnehmen  ·  Ängste  ·  Stress  ·  Trauma  ·  Kinderhypnose  ·  Ausbildungen"}
               </p>
 
-              {/* CTA */}
+              {/* CTA – pushed to bottom on desktop */}
               <button
                 type="button"
                 onClick={() => {
                   const el = document.getElementById("contact");
                   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="mt-3 md:mt-3.5 inline-flex items-center justify-center bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A5C] font-medium text-[12px] md:text-[13px] px-4 py-2 rounded-lg shadow-sm transition-all"
+                className="mt-3 md:mt-auto md:pt-5 inline-flex items-center justify-center bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A5C] font-medium text-[12px] md:text-[13.5px] px-4 md:px-5 py-2 md:py-2.5 rounded-lg shadow-sm transition-all"
               >
                 {isEN ? "Get free information now" : "Sofort unverbindlich informieren"}
               </button>
