@@ -92,6 +92,45 @@ function ServiceTestimonialCard({ t, isEN }: { t: ReturnType<typeof getTestimoni
   );
 }
 
+function ServiceTestimonialsMobileCarousel({ testimonials, isEN }: { testimonials: ReturnType<typeof getTestimonialsForService>; isEN: boolean }) {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+    const onSelect = () => setCurrent(api.selectedScrollSnap());
+    api.on("select", onSelect);
+    return () => { api.off("select", onSelect); };
+  }, [api]);
+
+  return (
+    <div className="relative">
+      <Carousel setApi={setApi} opts={{ loop: true, align: "start" }}>
+        <CarouselContent>
+          {testimonials.map((t, i) => (
+            <CarouselItem key={i}>
+              <ServiceTestimonialCard t={t} isEN={isEN} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+      <div className="flex justify-center gap-2 mt-3">
+        {testimonials.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => api?.scrollTo(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className={`h-1.5 rounded-full transition-all ${
+              current === i ? "w-5 bg-[#1B3A5C]" : "w-1.5 bg-muted-foreground/40"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function ServicePage({ data }: { data: ServicePageData }) {
   const { language, country, t, isSwiss, showCH } = useLanguage();
   const isEN = language === "en";
