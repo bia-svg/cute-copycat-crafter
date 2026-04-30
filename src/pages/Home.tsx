@@ -422,10 +422,10 @@ export default function Home() {
 
             {/* RIGHT (desktop) / TOP (mobile) – text + bullets, centered */}
             <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-4 md:h-full md:pt-0 md:pb-1.5">
-              <h2 className="text-lg md:text-[22px] font-light tracking-[0.01em] text-foreground/90 leading-tight md:mt-2">
+              <h2 className="text-lg md:text-[22px] font-medium tracking-[0.01em] text-[#0B1F33] leading-tight md:mt-2">
                 {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
-              <p className="text-[12px] md:text-[14.5px] text-foreground/70 leading-snug mt-1 md:mt-1.5 max-w-[640px]">
+              <p className="text-[12px] md:text-[14.5px] text-[#1B3A5C] font-medium leading-snug mt-1 md:mt-1.5 max-w-[640px]">
                 {isEN
                   ? "Individual intensive sessions for sustainable change."
                   : "Individuelle Intensiv-Sitzungen für nachhaltige Veränderung."}
