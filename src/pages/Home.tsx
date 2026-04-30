@@ -385,20 +385,40 @@ export default function Home() {
               <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 leading-tight">
                 {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
-              <p className="text-[11.5px] md:text-[13px] text-foreground/80 leading-snug mt-0.5 md:mt-1 max-w-[640px]">
+              <p className="text-[12px] md:text-[13.5px] text-foreground/70 leading-snug mt-1 max-w-[640px] italic">
                 {isEN
-                  ? "David J. Woods combines psychological expertise, physiological depth, and modern coaching techniques into a clear, efficient, and solution-oriented method."
-                  : "David J. Woods verbindet psychologisches Fachwissen, physiologische Tiefe und moderne Coaching-Techniken zu einer klaren, effizienten und lösungsorientierten Methode."}
+                  ? "Individual intensive sessions for sustainable change."
+                  : "Individuelle Intensiv-Sitzungen für nachhaltige Veränderung."}
               </p>
 
-              {/* Bullets — compact, 2-col on desktop */}
-              <ul className="mt-1 md:mt-2 grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-0 md:gap-y-0.5 text-[11.5px] md:text-[13px] text-foreground/80 text-left mx-auto w-fit">
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#2E7D32] shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#2E7D32] shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#2E7D32] shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#2E7D32] shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
-                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#2E7D32] shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
+              {/* Bullets — 2-col on desktop, 6 items */}
+              <ul className="mt-2 md:mt-2.5 grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-0.5 md:gap-y-1 text-[11.5px] md:text-[13px] text-foreground/80 text-left mx-auto w-fit">
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0" />{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0" />{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0" />{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0" />{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</li>
+                <li className="flex items-center gap-1.5"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0" />{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</li>
+                <li className="flex items-center gap-1.5"><Star className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#F5B301] fill-[#F5B301] shrink-0" />{isEN ? "266 ★ 5.0 on Google" : "266 ★ 5.0 bei Google"}</li>
               </ul>
+
+              {/* Topics row */}
+              <p className="mt-2 md:mt-2.5 text-[11px] md:text-[12.5px] text-foreground/70 leading-snug max-w-[640px]">
+                {isEN
+                  ? "Smoke-free · Weight loss · Anxiety · Stress · Trauma · Children's hypnosis · Trainings"
+                  : "Rauchfrei · Abnehmen · Ängste · Stress · Trauma · Kinderhypnose · Ausbildungen"}
+              </p>
+
+              {/* CTA */}
+              <button
+                type="button"
+                onClick={() => {
+                  const el = document.getElementById("contact");
+                  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                className="mt-3 md:mt-3.5 inline-flex items-center justify-center bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A5C] font-medium text-[12px] md:text-[13px] px-4 py-2 rounded-lg shadow-sm transition-all"
+              >
+                {isEN ? "Get free information now" : "Sofort unverbindlich informieren"}
+              </button>
             </div>
 
             {/* RIGHT – EMR badge + link. Slim horizontal pill on mobile, vertical on desktop */}
@@ -596,7 +616,7 @@ export default function Home() {
 
 
       {/* ═══════════════════ INLINE CONTACT FORM ═══════════════════ */}
-      <section className="py-10 md:py-16 bg-[#F8FAFC] border-y border-[#E8EDF3]" style={deferredSectionStyle}>
+      <section id="contact" className="py-10 md:py-16 bg-[#F8FAFC] border-y border-[#E8EDF3]" style={deferredSectionStyle}>
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 mb-3 text-center">
