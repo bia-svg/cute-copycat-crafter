@@ -391,36 +391,36 @@ export default function Home() {
                 </div>
               </div>
               {/* Desktop: 2x2 grid – 4 badges, equal height + weight */}
-              <div className="hidden md:grid grid-cols-2 gap-2 w-full">
+              <div className="hidden md:grid grid-cols-2 gap-2.5 w-full">
                 {/* Entwickler der Aktiv-Hypnose */}
-                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.18] md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[118px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.22] md:hover:-translate-y-1.5 md:hover:shadow-[0_18px_40px_-10px_rgba(27,58,92,0.35)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/30 md:hover:z-20">
                   <Award className="h-12 w-12 text-[#1B3A5C]" strokeWidth={1.4} aria-hidden="true" />
                   <div className="text-center">
-                    <div className="font-semibold text-[11px] text-foreground leading-tight">{isEN ? "Developer of Aktiv-Hypnose®" : "Entwickler der Aktiv-Hypnose®"}</div>
+                    <div className="font-semibold text-[11.5px] text-foreground/95 leading-tight">{isEN ? "Developer of Aktiv-Hypnose®" : "Entwickler der Aktiv-Hypnose®"}</div>
                     <div className="text-[10px] text-muted-foreground">David J. Woods</div>
                   </div>
                 </div>
                 {/* NGH International Trainer */}
-                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.18] md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
-                  <img src={CDN.nghBadge} alt="NGH International Trainer – National Guild of Hypnotists" className="h-12 w-auto object-contain" width={120} height={48} loading="lazy" decoding="async" />
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[118px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.22] md:hover:-translate-y-1.5 md:hover:shadow-[0_18px_40px_-10px_rgba(27,58,92,0.35)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/30 md:hover:z-20">
+                  <img src={CDN.nghBadge} alt="NGH International Trainer – National Guild of Hypnotists" className="h-14 w-auto object-contain" style={{ filter: "brightness(1.1) contrast(1.12) saturate(1.1)" }} width={140} height={56} loading="lazy" decoding="async" />
                   <div className="text-center">
-                    <div className="font-semibold text-[11px] text-foreground leading-tight">NGH International Trainer</div>
+                    <div className="font-semibold text-[11.5px] text-foreground/95 leading-tight">NGH International Trainer</div>
                     <div className="text-[10px] text-muted-foreground">Nat. Guild of Hypnotists</div>
                   </div>
                 </div>
                 {/* EMR */}
-                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.18] md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[118px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.22] md:hover:-translate-y-1.5 md:hover:shadow-[0_18px_40px_-10px_rgba(27,58,92,0.35)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/30 md:hover:z-20">
                   <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12 w-auto object-contain" width={144} height={48} loading="lazy" decoding="async" />
                   <div className="text-center">
-                    <div className="font-semibold text-[11px] text-foreground leading-tight">EMR Krankenkasse Konform</div>
+                    <div className="font-semibold text-[11.5px] text-foreground/95 leading-tight">EMR Krankenkasse Konform</div>
                     <div className="text-[10px] text-muted-foreground">ZSR P609264</div>
                   </div>
                 </div>
                 {/* Licensed Psychologist */}
-                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.18] md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
-                  <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-12 w-12 object-contain" style={{ filter: "brightness(1.12) contrast(1.1) saturate(1.08)" }} width={512} height={512} loading="lazy" decoding="async" />
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[118px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.22] md:hover:-translate-y-1.5 md:hover:shadow-[0_18px_40px_-10px_rgba(27,58,92,0.35)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/30 md:hover:z-20">
+                  <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-14 w-14 object-contain" style={{ filter: "brightness(1.18) contrast(1.15) saturate(1.12)" }} width={512} height={512} loading="lazy" decoding="async" />
                   <div className="text-center">
-                    <div className="font-semibold text-[11px] text-foreground leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</div>
+                    <div className="font-semibold text-[11.5px] text-foreground/95 leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</div>
                     <div className="text-[10px] text-muted-foreground">UNAM</div>
                   </div>
                 </div>
