@@ -377,7 +377,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
-      <section className="pt-2.5 pb-2.5 md:pt-2 md:pb-2 bg-primary/15" style={deferredSectionStyle}>
+      <section className="pt-6 pb-6 md:pt-7 md:pb-7 bg-primary/15" style={deferredSectionStyle}>
         <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border-2 border-[#D1D5DB] py-1.5 md:py-1 px-3 md:px-5 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
           <div className="grid md:grid-cols-[290px_1fr] gap-2 md:gap-4 md:items-stretch">
             {/* LEFT (desktop) – credential badges 2x2 + link */}
@@ -518,7 +518,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ TRAINING ═══════════════════ */}
-      <section className="py-5 md:py-3 bg-primary/15" style={deferredSectionStyle}>
+      <section className="py-10 md:py-9 bg-primary/15" style={deferredSectionStyle}>
         <div className="mx-6 md:mx-auto md:max-w-[1200px]">
           <Link to={getPath("training", language, country)} className="block max-w-sm md:max-w-5xl mx-auto relative bg-white rounded-2xl overflow-hidden shadow-[0_16px_48px_-8px_rgba(0,0,0,0.3),0_4px_12px_-2px_rgba(0,0,0,0.15)] transition-transform duration-200 hover:scale-[1.01] hover:shadow-[0_20px_56px_-8px_rgba(0,0,0,0.35),0_6px_16px_-2px_rgba(0,0,0,0.18)] cursor-pointer">
             {/* Label + Title */}
