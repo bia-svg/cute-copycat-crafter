@@ -86,12 +86,6 @@ export default function Kundenmeinungen() {
               <TestimonialCard key={i} t={t} index={i} />
             ))}
           </div>
-
-          <div className="mt-8 text-center">
-            <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:text-primary/80 underline transition-colors">
-              {isEN ? "Read All Google Reviews →" : "Alle Google-Bewertungen lesen →"}
-            </a>
-          </div>
         </div>
       </section>
 
