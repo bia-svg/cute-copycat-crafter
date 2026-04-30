@@ -335,24 +335,48 @@ export default function Header() {
       </MegaMenuPanel>
 
 
-      {/* ── Mega Menu: Intensiv-Ausbildung ── */}
+      {/* ── Mega Menu: Seminare & Ausbildungen ── */}
       <MegaMenuPanel id="training">
         <div className="grid md:grid-cols-3 gap-6">
           <div className="md:col-span-2">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-              {isDE ? "Intensiv-Ausbildung" : "Intensive Training"}
+              {isDE ? "Seminare & Ausbildungen" : "Seminars & Trainings"}
             </h4>
-            <Link
-              to={getPath("training", language, country)}
-              onClick={() => setActiveMenu(null)}
-              className="flex items-start gap-2.5 p-2 rounded-md hover:bg-secondary transition-colors"
-            >
-              <span className="text-primary mt-0.5"><GraduationCap className="w-5 h-5" /></span>
-              <div>
-                <div className="font-medium text-sm text-foreground">Aktiv-Hypnose® Therapeut</div>
-                <div className="text-xs text-muted-foreground">{isDE ? "6-Tage Intensiv-Ausbildung" : "6-Day Intensive Training"}</div>
-              </div>
-            </Link>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+              {trainingItems.map((item) =>
+                item.disabled ? (
+                  <div
+                    key={item.label}
+                    className="flex items-start gap-2.5 p-2 rounded-md opacity-60 cursor-not-allowed"
+                    title={isDE ? "Seite in Vorbereitung" : "Page coming soon"}
+                  >
+                    <span className="text-primary mt-0.5">{item.icon}</span>
+                    <div>
+                      <div className="font-medium text-sm text-foreground flex items-center gap-2">
+                        {item.label}
+                        <span className="text-[10px] uppercase tracking-wider bg-secondary text-muted-foreground px-1.5 py-0.5 rounded">
+                          {isDE ? "Bald" : "Soon"}
+                        </span>
+                      </div>
+                      <div className="text-xs text-muted-foreground">{item.desc}</div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.label}
+                    to={item.href}
+                    onClick={() => setActiveMenu(null)}
+                    className="flex items-start gap-2.5 p-2 rounded-md hover:bg-secondary transition-colors"
+                  >
+                    <span className="text-primary mt-0.5">{item.icon}</span>
+                    <div>
+                      <div className="font-medium text-sm text-foreground">{item.label}</div>
+                      <div className="text-xs text-muted-foreground">{item.desc}</div>
+                    </div>
+                  </Link>
+                )
+              )}
+            </div>
           </div>
           <SidebarCard>
             <div className="flex items-center gap-2">
@@ -361,8 +385,8 @@ export default function Header() {
             </div>
             <p className="text-xs text-muted-foreground">
               {isDE
-                ? "Finden Sie die passende Ausbildung oder das passende Seminar – persönlich, praxisnah und direkt mit David J. Woods."
-                : "Find the right training or seminar – personal, practice-oriented and directly with David J. Woods."}
+                ? "Finden Sie die passende Ausbildung, ein Tagesseminar, echte Teilnehmerstimmen und exklusive Einblicke in das Ausbildungsinstitut – persönlich, praxisnah und direkt mit David J. Woods."
+                : "Find the right training, a day seminar, authentic participant voices and exclusive insights into the training institute – personal, practice-oriented and directly with David J. Woods."}
             </p>
             <div className="pt-2">
               <Link to={getPath("contact", language, country)} onClick={() => setActiveMenu(null)}>
@@ -375,7 +399,6 @@ export default function Header() {
         </div>
       </MegaMenuPanel>
 
-      <MegaMenuPanel id="about">
         <div className="grid md:grid-cols-3 gap-6">
            <div className="md:col-span-2">
             <div className="grid grid-cols-2 gap-x-4 gap-y-1">
