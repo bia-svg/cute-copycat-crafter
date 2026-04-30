@@ -476,7 +476,6 @@ export default function Home() {
                   <img src={CDN.nghBadge} alt="NGH International Trainer – National Guild of Hypnotists" className="h-10 w-auto object-contain" style={{ filter: "brightness(1.1) contrast(1.12) saturate(1.1)" }} width={120} height={40} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[10.5px] text-foreground/95 leading-tight">NGH International Trainer</div>
-                    <div className="text-[9px] text-muted-foreground">Nat. Guild of Hypnotists</div>
                   </div>
                 </div>
                 <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-2 py-2 h-[96px]">
