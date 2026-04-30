@@ -20,6 +20,8 @@ const CityAugsburg = lazy(() => import("@/pages/CityAugsburg"));
 const Standorte = lazy(() => import("@/pages/Standorte"));
 const TvMedien = lazy(() => import("@/pages/TvMedien"));
 const Erfolgsberichte = lazy(() => import("@/pages/Erfolgsberichte"));
+const Teilnehmerstimmen = lazy(() => import("@/pages/Teilnehmerstimmen"));
+const AusbildungsinstitutVideos = lazy(() => import("@/pages/AusbildungsinstitutVideos"));
 const Terminbestaetigung = lazy(() => import("@/pages/Terminbestaetigung"));
 const SeminarAnmeldung = lazy(() => import("@/pages/SeminarAnmeldung"));
 const FirmenCoaching = lazy(() => import("@/pages/FirmenCoaching"));
@@ -147,6 +149,10 @@ function AppRoutes() {
             <Route path="/:lang/:country/firmen-coaching/nichtraucher-seminare" element={<NichtraucherSeminare />} />
 
             <Route path="/:lang/:country/training" element={<Ausbildung />} />
+            <Route path="/:lang/:country/teilnehmerstimmen" element={<Teilnehmerstimmen />} />
+            <Route path="/:lang/:country/participant-voices" element={<Teilnehmerstimmen />} />
+            <Route path="/:lang/:country/ausbildungsinstitut-videos" element={<AusbildungsinstitutVideos />} />
+            <Route path="/:lang/:country/training-institute-videos" element={<AusbildungsinstitutVideos />} />
             <Route path="/:lang/:country/seminar-schedule" element={<Navigate to={`/${window.location.pathname.split('/')[1]}/${window.location.pathname.split('/')[2]}/training#curriculum`} replace />} />
             <Route path="/:lang/:country/business-coaching" element={<FirmenCoaching />} />
             <Route path="/:lang/:country/business-coaching/success-training" element={<ErfolgsTraining />} />
