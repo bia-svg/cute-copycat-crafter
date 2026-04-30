@@ -212,9 +212,9 @@ export default function Header() {
             </button>
           </div>
           <div className="relative" onMouseEnter={() => handleMouseEnter("training")} onMouseLeave={handleMouseLeave}>
-            <Link to={getPath("training", language, country)} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary flex items-center gap-1">
+            <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary flex items-center gap-1">
               {t("nav.training")} <ChevronDown className="w-3.5 h-3.5" />
-            </Link>
+            </button>
           </div>
           <div className="relative" onMouseEnter={() => handleMouseEnter("corporate")} onMouseLeave={handleMouseLeave}>
             <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary flex items-center gap-1">
@@ -419,38 +419,8 @@ export default function Header() {
             )}
           </div>
 
-          {/* Intensiv-Ausbildung — title clickable + chevron toggles dropdown */}
-          <div className="border-b border-border">
-            <div className="flex items-center w-full font-medium text-foreground gap-3">
-              <Link
-                to={getPath("training", language, country)}
-                onClick={() => setMobileOpen(false)}
-                className="flex-1 pl-8 py-4 text-foreground"
-              >
-                {t("nav.training")}
-              </Link>
-              <button
-                onClick={() => setMobileAccordion(mobileAccordion === "training" ? null : "training")}
-                aria-label="Toggle training submenu"
-                className="py-4 pr-8 pl-2 flex items-center"
-              >
-                <ChevronDown className={`w-5 h-5 text-[#2E7D32] transition-transform ${mobileAccordion === "training" ? "rotate-180" : ""}`} strokeWidth={2.5} />
-              </button>
-            </div>
-            {mobileAccordion === "training" && (
-              <div className="px-8 pb-3 space-y-1">
-                {trainingItems.map((item) => (
-                  <Link key={item.label} to={item.href} onClick={() => setMobileOpen(false)} className="flex items-start gap-3 p-2 rounded-md hover:bg-secondary">
-                    <span className="text-primary mt-0.5">{item.icon}</span>
-                    <div>
-                      <div className="text-sm font-medium text-foreground">{item.label}</div>
-                      <div className="text-xs text-muted-foreground">{item.desc}</div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+          {/* Seminare-Ausbildungen */}
+          <MobileSection id="training" title={t("nav.training")} items={trainingItems} />
 
 
           {/* Firmen-Coaching */}
