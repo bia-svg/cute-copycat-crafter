@@ -127,7 +127,11 @@ export default function Header() {
     );
   };
 
-  const renderMobileSection = (id: string, title: string, items: typeof therapyGoals) => (
+  const renderMobileSection = (
+    id: string,
+    title: string,
+    items: Array<{ icon: React.ReactNode; label: string; desc: string; href: string; disabled?: boolean }>,
+  ) => (
     <div className="border-b border-border" key={id}>
       <button onClick={() => setMobileAccordion(mobileAccordion === id ? null : id)} className="flex items-center w-full px-8 py-4 text-left font-medium text-foreground gap-3">
         <span className="flex-1">{title}</span>
@@ -135,15 +139,30 @@ export default function Header() {
       </button>
       {mobileAccordion === id && (
         <div className="px-8 pb-3 space-y-1">
-          {items.map((item) => (
-            <Link key={item.label} to={item.href} onClick={() => setMobileOpen(false)} className="flex items-start gap-3 p-2 rounded-md hover:bg-secondary">
-              <span className="text-primary mt-0.5">{item.icon}</span>
-              <div>
-                <div className="text-sm font-medium text-foreground">{item.label}</div>
-                <div className="text-xs text-muted-foreground">{item.desc}</div>
+          {items.map((item) =>
+            item.disabled ? (
+              <div key={item.label} className="flex items-start gap-3 p-2 rounded-md opacity-60 cursor-not-allowed">
+                <span className="text-primary mt-0.5">{item.icon}</span>
+                <div>
+                  <div className="text-sm font-medium text-foreground flex items-center gap-2">
+                    {item.label}
+                    <span className="text-[10px] uppercase tracking-wider bg-secondary text-muted-foreground px-1.5 py-0.5 rounded">
+                      {isDE ? "Bald" : "Soon"}
+                    </span>
+                  </div>
+                  <div className="text-xs text-muted-foreground">{item.desc}</div>
+                </div>
               </div>
-            </Link>
-          ))}
+            ) : (
+              <Link key={item.label} to={item.href} onClick={() => setMobileOpen(false)} className="flex items-start gap-3 p-2 rounded-md hover:bg-secondary">
+                <span className="text-primary mt-0.5">{item.icon}</span>
+                <div>
+                  <div className="text-sm font-medium text-foreground">{item.label}</div>
+                  <div className="text-xs text-muted-foreground">{item.desc}</div>
+                </div>
+              </Link>
+            )
+          )}
         </div>
       )}
     </div>
