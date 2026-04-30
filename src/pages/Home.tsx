@@ -444,11 +444,11 @@ export default function Home() {
                 </li>
               </ul>
 
-              {/* Topics row */}
-              <p className="mt-2.5 md:mt-5 text-[11.5px] md:text-[13.5px] text-foreground/85 font-medium tracking-wide leading-snug max-w-[720px]">
+              {/* Topics row — Hero-style block label */}
+              <p className="mt-3 md:mt-6 text-[11px] md:text-[13px] text-[#1B3A5C] font-semibold uppercase tracking-[0.18em] leading-snug max-w-[760px]">
                 {isEN
-                  ? "Smoke-free  ·  Weight loss  ·  Anxiety  ·  Stress  ·  Trauma  ·  Children's hypnosis  ·  Trainings"
-                  : "Rauchfrei  ·  Abnehmen  ·  Ängste  ·  Stress  ·  Trauma  ·  Kinderhypnose  ·  Ausbildungen"}
+                  ? "SMOKE-FREE  ·  WEIGHT LOSS  ·  ANXIETY  ·  STRESS  ·  TRAUMA  ·  CHILDREN'S HYPNOSIS  ·  TRAININGS"
+                  : "RAUCHFREI  ·  ABNEHMEN  ·  ÄNGSTE  ·  STRESS  ·  TRAUMA  ·  KINDERHYPNOSE  ·  AUSBILDUNGEN"}
               </p>
 
               {/* CTA – pushed to bottom on desktop */}
@@ -458,7 +458,7 @@ export default function Home() {
                   const el = document.getElementById("contact");
                   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="mt-3 md:mt-auto inline-flex items-center justify-center bg-[#c8e6c9] hover:bg-[#a5d6a7] text-black font-medium text-[12px] md:text-[13.5px] px-4 md:px-5 py-1.5 rounded-lg shadow-sm transition-all"
+                className="mt-4 md:mt-auto md:mb-1 inline-flex items-center justify-center bg-[#c8e6c9] hover:bg-[#a5d6a7] text-black font-medium text-[12px] md:text-[13.5px] px-4 md:px-5 py-1.5 rounded-lg shadow-sm transition-all"
               >
                 {isEN ? "Get free information now" : "Sofort unverbindlich informieren"}
               </button>
