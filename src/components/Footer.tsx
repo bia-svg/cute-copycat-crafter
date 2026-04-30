@@ -28,10 +28,10 @@ export default function Footer() {
 
   return (
     <footer className="bg-footer text-footer-foreground">
-      <div className="container-main py-12">
-        <div className="grid md:grid-cols-[1fr_2fr] gap-8">
+      <div className="container-main py-8 md:py-7">
+        <div className="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-6">
           {/* Logo & Info + Institutes (stacked on desktop) */}
-          <div className="space-y-6">
+          <div className="space-y-6 md:space-y-4">
             {/* Logo */}
             <div>
               <img src={CDN.logo} alt="David J. Woods – Hypnose und Psychologie Logo" className="h-11 w-auto mb-4 brightness-0 invert" width={180} height={44} loading="lazy" />
@@ -110,7 +110,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="font-semibold mb-3 text-sm">{isEN ? "Quick Links" : "Schnellzugriffe"}</h4>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-4 text-[13px] opacity-90 leading-tight">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-5 gap-y-3 text-[13px] opacity-90 leading-tight">
               {/* About Us */}
               <div>
                 <h5 className="text-white/70 text-[10px] uppercase tracking-wider font-semibold mb-1.5 pb-1 border-b border-white/15">{isEN ? "About Us" : "Über uns"}</h5>
@@ -160,7 +160,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/20 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs opacity-85">
+        <div className="border-t border-white/20 mt-6 md:mt-5 pt-5 md:pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs opacity-85">
           <div>© {new Date().getFullYear()} David J. Woods. {t("footer.rights")}</div>
           <div className="flex items-center gap-4">
             <Link to={getPath("impressum", language, country)} className="hover:underline">{t("footer.impressum")}</Link>
@@ -180,7 +180,7 @@ export default function Footer() {
         </div>
 
         {/* Medical Disclaimer */}
-        <div className="border-t border-white/20 mt-6 pt-4 text-xs text-center opacity-75 max-w-3xl mx-auto">
+        <div className="border-t border-white/20 mt-5 md:mt-4 pt-3 md:pt-3 text-xs text-center opacity-75 max-w-3xl mx-auto">
           {isEN
             ? "We expressly point out that our services do NOT replace the work of a medical doctor, psychiatrist, or licensed healthcare practitioner. We do not treat illnesses and we do not provide medical diagnoses."
             : "Wir weisen ausdrücklich darauf hin, dass unsere Tätigkeit NICHT die Tätigkeit eines Arztes, Psychiaters oder Heilpraktikers ersetzt. Wir behandeln weder Krankheiten noch stellen wir medizinische Diagnosen."}

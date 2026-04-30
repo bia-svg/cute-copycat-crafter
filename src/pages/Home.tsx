@@ -522,15 +522,15 @@ export default function Home() {
         <div className="mx-6 md:mx-auto md:max-w-[1200px]">
           <Link to={getPath("training", language, country)} className="block max-w-sm md:max-w-5xl mx-auto relative bg-white rounded-2xl overflow-hidden shadow-[0_16px_48px_-8px_rgba(0,0,0,0.3),0_4px_12px_-2px_rgba(0,0,0,0.15)] transition-transform duration-200 hover:scale-[1.01] hover:shadow-[0_20px_56px_-8px_rgba(0,0,0,0.35),0_6px_16px_-2px_rgba(0,0,0,0.18)] cursor-pointer">
             {/* Label + Title */}
-            <div className="text-center pt-5 pb-2 md:pt-3.5 md:pb-2 px-5 md:px-10">
-              <span className="inline-flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] text-[hsl(213,10%,35%)] border border-[hsl(213,12%,78%)] rounded-full px-4 py-1 md:px-5 md:py-1.5 bg-gradient-to-r from-[hsl(213,10%,91%)] to-[hsl(213,10%,95%)] mb-3 md:mb-2.5 shadow-sm">
-                <Award className="w-3 h-3" />
+            <div className="text-center pt-5 pb-2 md:pt-3 md:pb-1.5 px-5 md:px-10">
+              <span className="inline-flex items-center gap-1.5 text-[9px] md:text-[10px] font-semibold uppercase tracking-[0.16em] text-[hsl(213,10%,40%)] border border-[hsl(213,12%,80%)] rounded-full px-3 py-0.5 md:px-3.5 md:py-1 bg-gradient-to-r from-[hsl(213,10%,93%)] to-[hsl(213,10%,96%)] mb-2 md:mb-2 shadow-sm">
+                <Award className="w-2.5 h-2.5" />
                 {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
               </span>
-              <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 leading-tight">
+              <h2 className="text-sm md:text-[15px] font-light tracking-[0.01em] text-foreground/70 leading-tight">
                 {isEN ? "Intensive Training" : "Intensiv-Ausbildungen"}
               </h2>
-              <p className="text-base md:text-[17px] font-light tracking-[0.01em] text-foreground/85 mt-1 md:mt-1">
+              <p className="text-lg md:text-[22px] font-medium tracking-[0.01em] text-foreground mt-0.5 md:mt-1">
                 Aktiv-Hypnose© {isEN ? "Therapist Diploma" : "Therapeuten-Diplom"}
               </p>
             </div>
@@ -541,11 +541,11 @@ export default function Home() {
                 <img
                   src={CDN.trainingSeminar}
                   alt={isEN ? "Professional hypnotherapy training seminar" : "Professionelles Hypnosetherapie-Ausbildungsseminar"}
-                  className="w-full h-44 md:h-52 object-cover"
+                  className="w-full h-52 md:h-72 object-cover object-top"
                   loading="lazy"
                   decoding="async"
                   width={1200}
-                  height={500}
+                  height={600}
                   sizes="(min-width: 768px) 1120px, 100vw"
                 />
               </div>
@@ -560,7 +560,7 @@ export default function Home() {
               </p>
 
               {/* Stats — compact grid */}
-              <div className="grid grid-cols-5 gap-1 md:gap-2 mb-3 md:mb-3">
+              <div className="grid grid-cols-5 gap-1 md:gap-2 mb-2.5 md:mb-2.5">
                 {[
                   { num: "350+", label: isEN ? "Pages Manual" : "Seiten Mappe" },
                   { num: "150+", label: isEN ? "Example Texts" : "Beispieltexte" },
@@ -568,8 +568,8 @@ export default function Home() {
                   { num: "50+", label: isEN ? "Audio" : "Audio" },
                   { num: "✓", label: isEN ? "Diploma" : "Diplom" },
                 ].map(item => (
-                  <div key={item.label} className="text-center bg-gradient-to-b from-[hsl(213,10%,95%)] to-[hsl(213,10%,92%)] border border-[hsl(213,12%,82%)] rounded-lg py-1.5 md:py-2 px-0.5 md:px-1">
-                    <div className="text-xs md:text-lg font-bold text-primary leading-tight">{item.num}</div>
+                  <div key={item.label} className="text-center bg-gradient-to-b from-[hsl(213,10%,95%)] to-[hsl(213,10%,92%)] border border-[hsl(213,12%,82%)] rounded-lg py-1 md:py-1.5 px-0.5 md:px-1">
+                    <div className="text-xs md:text-base font-bold text-primary leading-tight">{item.num}</div>
                     <div className="text-[6px] md:text-[10px] text-muted-foreground leading-tight font-medium mt-0.5">{item.label}</div>
                   </div>
                 ))}
