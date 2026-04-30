@@ -189,8 +189,8 @@ export default function FirmenCoaching() {
 
       <section className="bg-[#E8EDF3] py-8 lg:py-12">
         <div className="container-main">
-          <div className="relative max-w-2xl mx-auto bg-footer/[0.07] border border-footer/20 rounded-2xl px-6 py-10 md:px-10 md:py-12 text-center shadow-sm">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-footer text-footer-foreground text-xs font-medium px-4 py-1 rounded-full tracking-wide uppercase">
+          <div className="relative max-w-2xl mx-auto bg-[#EAF1F8] border border-[#1B3A5C]/15 rounded-2xl px-6 py-10 md:px-10 md:py-12 text-center shadow-sm">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#DCE8F5] text-[#1B3A5C] text-xs font-medium border border-[#1B3A5C]/20 px-4 py-1 rounded-full tracking-wide uppercase">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
             <h2 className="text-2xl md:text-3xl font-light text-foreground mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
@@ -202,7 +202,7 @@ export default function FirmenCoaching() {
                 : "Erfahren Sie, wie unsere Firmenprogramme die Leistung, Resilienz und das Wohlbefinden Ihres Teams stärken können."}
             </p>
             <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
-              <Button className="bg-footer hover:bg-footer/90 text-footer-foreground font-medium px-8 py-3 text-base border border-footer/40 shadow-none">
+              <Button className="bg-[#DCE8F5] hover:bg-[#C8DCEF] text-[#1B3A5C] font-medium px-8 py-3 text-base border border-[#1B3A5C]/25 shadow-none">
                 {isEN ? "Request a Consultation" : "Beratung anfragen"}
               </Button>
             </Link>
