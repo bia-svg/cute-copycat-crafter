@@ -551,16 +551,16 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="px-5 pb-5 md:px-10 md:pb-6">
+            <div className="px-5 pb-5 md:px-10 md:pb-4">
               {/* Compact intro */}
-              <p className="text-foreground/75 text-[11px] md:text-sm mb-3 md:mb-5 text-center max-w-lg mx-auto leading-snug md:leading-relaxed">
+              <p className="text-foreground/75 text-[11px] md:text-[13px] mb-3 md:mb-3 text-center max-w-lg mx-auto leading-snug md:leading-snug">
                 {isEN
                   ? "Training for people who want to create real change – practical, effective, in small strictly limited groups."
                   : "Ausbildung für Menschen, die echte Veränderung bewirken wollen – praxisnah, wirksam, in kleinen strikt begrenzten Gruppen."}
               </p>
 
               {/* Stats — compact grid */}
-              <div className="grid grid-cols-5 gap-1 md:gap-3 mb-3 md:mb-5">
+              <div className="grid grid-cols-5 gap-1 md:gap-2 mb-3 md:mb-3">
                 {[
                   { num: "350+", label: isEN ? "Pages Manual" : "Seiten Mappe" },
                   { num: "150+", label: isEN ? "Example Texts" : "Beispieltexte" },
@@ -568,8 +568,8 @@ export default function Home() {
                   { num: "50+", label: isEN ? "Audio" : "Audio" },
                   { num: "✓", label: isEN ? "Diploma" : "Diplom" },
                 ].map(item => (
-                  <div key={item.label} className="text-center bg-gradient-to-b from-[hsl(213,10%,95%)] to-[hsl(213,10%,92%)] border border-[hsl(213,12%,82%)] rounded-lg py-1.5 md:py-3 px-0.5 md:px-1">
-                    <div className="text-xs md:text-xl font-bold text-primary">{item.num}</div>
+                  <div key={item.label} className="text-center bg-gradient-to-b from-[hsl(213,10%,95%)] to-[hsl(213,10%,92%)] border border-[hsl(213,12%,82%)] rounded-lg py-1.5 md:py-2 px-0.5 md:px-1">
+                    <div className="text-xs md:text-lg font-bold text-primary leading-tight">{item.num}</div>
                     <div className="text-[6px] md:text-[10px] text-muted-foreground leading-tight font-medium mt-0.5">{item.label}</div>
                   </div>
                 ))}
