@@ -78,8 +78,11 @@ export default function Header() {
     { icon: <Cigarette className="w-5 h-5" />, label: isDE ? "Nichtraucher-Seminare" : "Non-Smoker Seminars", desc: isDE ? "Rauchfrei in 3 Stunden" : "Smoke-free in 3 hours", href: getPath("corporateNichtraucher", language, country) },
   ];
 
-  const trainingItems = [
+  const trainingItems: Array<{ icon: React.ReactNode; label: string; desc: string; href: string; disabled?: boolean }> = [
     { icon: <GraduationCap className="w-5 h-5" />, label: "Aktiv-Hypnose® Therapeut", desc: isDE ? "6-Tage Intensiv-Ausbildung" : "6-Day Intensive Training", href: getPath("training", language, country) },
+    { icon: <Calendar className="w-5 h-5" />, label: isDE ? "Tagesseminar" : "Day Seminar", desc: isDE ? "Kennenlernseminar (in Vorbereitung)" : "Introductory seminar (coming soon)", href: "#", disabled: true },
+    { icon: <MessageSquare className="w-5 h-5" />, label: isDE ? "Teilnehmerstimmen" : "Participant Voices", desc: isDE ? "Erfahrungen unserer Seminarteilnehmer" : "Experiences of our seminar participants", href: `/${language}/${country}/${language === "en" ? "participant-voices" : "teilnehmerstimmen"}` },
+    { icon: <PlayCircle className="w-5 h-5" />, label: isDE ? "Ausbildungsinstitut Videos" : "Training Institute Videos", desc: isDE ? "Einblicke in die Ausbildung" : "Insights into the training", href: `/${language}/${country}/${language === "en" ? "training-institute-videos" : "ausbildungsinstitut-videos"}` },
   ];
 
   const aboutItems = [
