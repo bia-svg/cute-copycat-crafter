@@ -377,8 +377,8 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
-      <section className="pt-4 pb-4 md:pt-3 md:pb-3 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-xl border border-primary/15 py-2 md:py-1.5 px-3 md:px-7 shadow-sm">
+      <section className="pt-2.5 pb-2.5 md:pt-2 md:pb-2 bg-primary/15" style={deferredSectionStyle}>
+        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-xl border border-primary/15 py-1.5 md:py-1 px-3 md:px-7 shadow-sm">
           <div className="grid md:grid-cols-[300px_1fr] gap-2 md:gap-7 md:items-stretch">
             {/* LEFT (desktop) – credential badges 2x2 + link */}
             <div className="order-2 md:order-1 flex flex-col items-center justify-center gap-1.5 mt-3 md:mt-0">
@@ -421,8 +421,8 @@ export default function Home() {
             </div>
 
             {/* RIGHT (desktop) / TOP (mobile) – text + bullets, centered */}
-            <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-4 md:h-full md:pt-0 md:pb-1.5">
-              <h2 className="text-lg md:text-[22px] font-medium tracking-[0.01em] text-[#0B1F33] leading-tight md:mt-3">
+            <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-4 md:h-full md:pt-0 md:pb-1">
+              <h2 className="text-lg md:text-[22px] font-medium tracking-[0.01em] text-[#0B1F33] leading-tight mt-1 md:mt-4">
                 {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
               <p className="text-[12px] md:text-[14.5px] text-[#1B3A5C] font-medium leading-snug mt-1 md:mt-1.5 max-w-[640px]">
@@ -432,7 +432,7 @@ export default function Home() {
               </p>
 
               {/* Bullets — 2-col on desktop, 6 items */}
-              <ul className="mt-2 md:mt-5 grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-1 md:gap-y-1.5 text-[11.5px] md:text-[14px] text-foreground/80 text-left mx-auto w-fit md:justify-items-start leading-snug">
+              <ul className="mt-2 md:mt-3.5 grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-1 md:gap-y-1 text-[11.5px] md:text-[14px] text-foreground/80 text-left mx-auto w-fit md:justify-items-start leading-snug">
                 <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</span></li>
                 <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</span></li>
                 <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</span></li>
@@ -445,7 +445,7 @@ export default function Home() {
               </ul>
 
               {/* Topics row — Hero-style block label */}
-              <p className="mt-3 md:mt-6 text-[11px] md:text-[13px] text-[#1B3A5C] font-semibold uppercase tracking-[0.18em] leading-snug max-w-[760px]">
+              <p className="mt-2.5 md:mt-4 text-[11px] md:text-[13px] text-[#1B3A5C] font-semibold uppercase tracking-[0.18em] leading-snug max-w-[760px]">
                 {isEN
                   ? "SMOKE-FREE  ·  WEIGHT LOSS  ·  ANXIETY  ·  STRESS  ·  TRAUMA  ·  CHILDREN'S HYPNOSIS  ·  TRAININGS"
                   : "RAUCHFREI  ·  ABNEHMEN  ·  ÄNGSTE  ·  STRESS  ·  TRAUMA  ·  KINDERHYPNOSE  ·  AUSBILDUNGEN"}
@@ -458,13 +458,13 @@ export default function Home() {
                   const el = document.getElementById("contact");
                   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="mt-4 md:mt-7 md:mb-2 inline-flex items-center justify-center bg-[#c8e6c9] hover:bg-[#a5d6a7] text-black font-medium text-[12px] md:text-[13.5px] px-4 md:px-5 py-1.5 rounded-lg shadow-sm transition-all"
+                className="mt-3 md:mt-4 md:mb-1 inline-flex items-center justify-center bg-[#c8e6c9] hover:bg-[#a5d6a7] text-black font-medium text-[12px] md:text-[13.5px] px-5 md:px-7 py-1.5 md:py-2 rounded-lg shadow-sm transition-all"
               >
                 {isEN ? "Get free information now" : "Sofort unverbindlich informieren"}
               </button>
 
               {/* Mobile: 2x2 badges grid below CTA */}
-              <div className="grid md:hidden grid-cols-2 gap-2 w-full mt-4 select-none">
+              <div className="grid md:hidden grid-cols-2 gap-2 w-full mt-3 select-none">
                 <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-2 py-2 h-[96px]">
                   <Award className="h-9 w-9 text-[#1B3A5C]" strokeWidth={1.4} aria-hidden="true" />
                   <div className="text-center">
@@ -492,7 +492,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <Link to={getPath("about", language, country)} className="md:hidden mt-3 text-[11px] text-[#2E7D32] hover:text-[#1B5E20] font-medium underline underline-offset-4 decoration-[#2E7D32]/50 hover:decoration-[#1B5E20] transition-colors text-center leading-snug">
+              <Link to={getPath("about", language, country)} className="md:hidden mt-2 text-[11px] text-[#2E7D32] hover:text-[#1B5E20] font-medium underline underline-offset-4 decoration-[#2E7D32]/50 hover:decoration-[#1B5E20] transition-colors text-center leading-snug">
                 {isEN ? "More about David J. Woods & Team" : "Mehr über David J. Woods & Team"}
               </Link>
             </div>
