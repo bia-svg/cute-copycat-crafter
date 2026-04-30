@@ -488,22 +488,22 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 max-w-[1100px] mx-auto">
             {/* 1 – Licensed Psychologist */}
             <div className="text-center p-2 md:p-4 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-10 md:h-14 w-10 md:w-14 object-contain mx-auto mb-1 md:mb-1.5" loading="lazy" decoding="async" width={512} height={512} sizes="(min-width: 768px) 56px, 40px" />
+              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-10 md:h-16 w-10 md:w-16 object-contain mx-auto mb-1 md:mb-2" loading="lazy" decoding="async" width={512} height={512} sizes="(min-width: 768px) 56px, 40px" />
               <h3 className="font-semibold text-[11px] md:text-[13px] text-foreground leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
             </div>
             {/* 2 – Aktiv-Hypnose© */}
             <div className="text-center p-2 md:p-4 bg-card border border-border rounded-lg shadow-sm flex flex-col items-center justify-center transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-6 md:h-10 w-auto object-contain shrink-0 mx-auto mb-1 md:mb-1.5" loading="lazy" decoding="async" width={160} height={64} />
+              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-6 md:h-12 w-auto object-contain shrink-0 mx-auto mb-1 md:mb-2" loading="lazy" decoding="async" width={160} height={64} />
               <h3 className="font-semibold text-[11px] md:text-[13px] text-foreground leading-tight">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
             </div>
             {/* 3 – NGH */}
             <div className="text-center p-2 md:p-4 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-8 md:h-12 w-8 md:w-12 object-contain mx-auto mb-1 md:mb-1.5" loading="lazy" decoding="async" width={160} height={160} />
+              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-8 md:h-14 w-8 md:w-14 object-contain mx-auto mb-1 md:mb-2" loading="lazy" decoding="async" width={160} height={160} />
               <h3 className="font-semibold text-[11px] md:text-[13px] text-foreground leading-tight">NGH International Trainer</h3>
             </div>
             {/* 4 – EMR */}
             <div className="text-center p-2 md:p-4 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-8 md:h-12 object-contain mx-auto mb-1 md:mb-1.5" loading="lazy" decoding="async" width={160} height={80} />
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-8 md:h-14 object-contain mx-auto mb-1 md:mb-2" loading="lazy" decoding="async" width={160} height={80} />
               <h3 className="font-semibold text-[11px] md:text-[13px] text-foreground leading-tight">{isEN ? "EMR Approved" : "EMR Krankenkasse Konform"}</h3>
               <p className="text-[9px] md:text-[10px] text-muted-foreground">ZSR P609264</p>
             </div>
