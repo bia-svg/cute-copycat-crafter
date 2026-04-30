@@ -161,7 +161,7 @@ export default function NichtraucherSeminare() {
               {isEN ? "Take the next step for your team." : "Gehen Sie den n\u00e4chsten Schritt f\u00fcr Ihr Team."}
             </p>
             <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8 py-3 text-base">
+              <Button className="bg-[#1B3A5C]/90 hover:bg-[#1B3A5C] text-white font-medium px-8 py-3 text-base border border-[#1B3A5C]/40 shadow-sm">
                 {isEN ? "Register Now!" : "Jetzt anmelden!"}
               </Button>
             </Link>
