@@ -421,8 +421,8 @@ export default function Home() {
             </div>
 
             {/* RIGHT (desktop) / TOP (mobile) – text + bullets, centered */}
-            <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-4 md:h-full md:pt-0 md:pb-1.5">
-              <h2 className="text-lg md:text-[22px] font-medium tracking-[0.01em] text-[#0B1F33] leading-tight md:mt-3">
+            <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-4 md:h-full md:pt-0 md:pb-1">
+              <h2 className="text-lg md:text-[22px] font-medium tracking-[0.01em] text-[#0B1F33] leading-tight mt-1 md:mt-4">
                 {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
               <p className="text-[12px] md:text-[14.5px] text-[#1B3A5C] font-medium leading-snug mt-1 md:mt-1.5 max-w-[640px]">
