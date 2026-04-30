@@ -65,19 +65,17 @@ export default function AusbildungsinstitutVideos() {
         { name: isEN ? "Training Institute Videos" : "Ausbildungsinstitut Videos", path: `/${language}/${country}/ausbildungsinstitut-videos` },
       ]} />
 
-      {/* Hero */}
-      <section className="bg-primary/15 py-12 md:py-16">
-        <div className="container-main">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl font-light text-foreground mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
-              {isEN ? "The Hypnosis Institute" : "Das Hypnose Institut"}
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {isEN
-                ? "Exclusive insights into the Aktiv-Hypnose® training institute – atmosphere, methodology and behind the scenes."
-                : "Exklusive Einblicke in das Aktiv-Hypnose® Ausbildungsinstitut – Atmosphäre, Methodik und Eindrücke hinter den Kulissen."}
-            </p>
-          </div>
+      {/* Compact Intro */}
+      <section className="bg-background pt-6 pb-4 md:pt-8 md:pb-5 border-b border-border/60">
+        <div className="container-main max-w-3xl text-center">
+          <h1 className="text-2xl md:text-3xl font-light text-foreground tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+            {isEN ? "The Hypnosis Institute" : "Das Hypnose Institut"}
+          </h1>
+          <p className="mt-2 text-sm md:text-base text-muted-foreground">
+            {isEN
+              ? "Exclusive insights into the Aktiv-Hypnose® training institute – atmosphere, methodology and behind the scenes."
+              : "Exklusive Einblicke in das Aktiv-Hypnose® Ausbildungsinstitut – Atmosphäre, Methodik und Eindrücke hinter den Kulissen."}
+          </p>
         </div>
       </section>
 

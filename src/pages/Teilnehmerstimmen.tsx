@@ -92,27 +92,25 @@ export default function Teilnehmerstimmen() {
         { name: isEN ? "Participant Voices" : "Teilnehmerstimmen", path: `/${language}/${country}/teilnehmerstimmen` },
       ]} />
 
-      {/* Hero */}
-      <section className="bg-primary/15 py-12 md:py-16">
-        <div className="container-main">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl font-light text-foreground mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
-              {isEN ? "Voices of Our Seminar Participants" : "Stimmen unserer Seminarteilnehmer"}
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              {isEN
-                ? "Authentic video testimonials from participants of the Aktiv-Hypnose® training – their experiences, learnings and personal impact."
-                : "Echte Video-Erfahrungsberichte von Teilnehmern der Aktiv-Hypnose® Ausbildung – ihre Erlebnisse, Erkenntnisse und persönlichen Veränderungen."}
-            </p>
-            <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-              <div className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <span className="font-semibold text-foreground">5.0</span>
-              <span>— 266 Google {isEN ? "Reviews" : "Bewertungen"}</span>
+      {/* Compact Intro */}
+      <section className="bg-background pt-6 pb-4 md:pt-8 md:pb-5 border-b border-border/60">
+        <div className="container-main max-w-3xl text-center">
+          <h1 className="text-2xl md:text-3xl font-light text-foreground tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+            {isEN ? "Voices of Our Seminar Participants" : "Stimmen unserer Seminarteilnehmer"}
+          </h1>
+          <p className="mt-2 text-sm md:text-base text-muted-foreground">
+            {isEN
+              ? "Authentic video testimonials from participants of the Aktiv-Hypnose® training."
+              : "Echte Video-Erfahrungsberichte von Teilnehmern der Aktiv-Hypnose® Ausbildung."}
+          </p>
+          <div className="mt-3 inline-flex items-center gap-2 text-xs text-muted-foreground">
+            <div className="flex items-center gap-0.5">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+              ))}
             </div>
+            <span className="font-semibold text-foreground">5.0</span>
+            <span>— 266 Google {isEN ? "Reviews" : "Bewertungen"}</span>
           </div>
         </div>
       </section>
