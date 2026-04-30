@@ -480,12 +480,12 @@ export default function Home() {
 
       {/* ═══════════════════ QUALIFICATIONS — slim trust banner ═══════════════════ */}
       <section className="pt-5 pb-5 md:pt-8 md:pb-8 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border border-primary/15 py-3 md:py-4 px-3 md:px-6 shadow-sm">
-          <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 text-center leading-tight mb-2 md:mb-3">
+        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-xl border border-primary/15 py-3 md:py-5 px-3 md:px-7 shadow-sm">
+          <h2 className="text-lg md:text-2xl font-light tracking-[0.01em] text-foreground/90 text-center leading-tight mb-2 md:mb-4">
             {isEN ? "Qualifications & Certifications" : "Qualifikationen & Zertifizierungen"}
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 max-w-[1100px] mx-auto">
             {/* 1 – Licensed Psychologist */}
             <div className="text-center p-2 md:p-3 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
               <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-10 md:h-14 w-10 md:w-14 object-contain mx-auto mb-1 md:mb-1.5" loading="lazy" decoding="async" width={512} height={512} sizes="(min-width: 768px) 56px, 40px" />
