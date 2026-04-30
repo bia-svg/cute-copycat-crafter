@@ -494,76 +494,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════ QUALIFICATIONS — slim trust banner ═══════════════════ */}
-      <section className="pt-5 pb-5 md:pt-8 md:pb-8 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-xl border border-primary/15 py-3 md:py-5 px-3 md:px-7 shadow-sm">
-          <h2 className="text-lg md:text-2xl font-light tracking-[0.01em] text-foreground/90 text-center leading-tight mb-2 md:mb-4">
-            {isEN ? "Qualifications & Certifications" : "Qualifikationen & Zertifizierungen"}
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 max-w-[1100px] mx-auto">
-            {/* 1 – Licensed Psychologist */}
-            <div className="text-center p-2 md:p-4 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-10 md:h-16 w-10 md:w-16 object-contain mx-auto mb-1 md:mb-2" loading="lazy" decoding="async" width={512} height={512} sizes="(min-width: 768px) 56px, 40px" />
-              <h3 className="font-semibold text-[11px] md:text-[13px] text-foreground leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
-            </div>
-            {/* 2 – Aktiv-Hypnose© */}
-            <div className="text-center p-2 md:p-4 bg-card border border-border rounded-lg shadow-sm flex flex-col items-center justify-center transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-6 md:h-12 w-auto object-contain shrink-0 mx-auto mb-1 md:mb-2" loading="lazy" decoding="async" width={160} height={64} />
-              <h3 className="font-semibold text-[11px] md:text-[13px] text-foreground leading-tight">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
-            </div>
-            {/* 3 – NGH */}
-            <div className="text-center p-2 md:p-4 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-8 md:h-14 w-8 md:w-14 object-contain mx-auto mb-1 md:mb-2" loading="lazy" decoding="async" width={160} height={160} />
-              <h3 className="font-semibold text-[11px] md:text-[13px] text-foreground leading-tight">NGH International Trainer</h3>
-            </div>
-            {/* 4 – EMR */}
-            <div className="text-center p-2 md:p-4 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-8 md:h-14 object-contain mx-auto mb-1 md:mb-2" loading="lazy" decoding="async" width={160} height={80} />
-              <h3 className="font-semibold text-[11px] md:text-[13px] text-foreground leading-tight">{isEN ? "EMR Approved" : "EMR Krankenkasse Konform"}</h3>
-              <p className="text-[9px] md:text-[10px] text-muted-foreground">ZSR P609264</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
-        <section className="py-7 md:py-10 bg-muted/50" style={deferredSectionStyle}>
-        <div className="container-main">
-          <div className="max-w-[1200px] mx-auto bg-card border border-border/70 rounded-2xl shadow-sm px-4 py-5 md:px-7 md:py-6">
-            <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-center mb-4 md:mb-5 text-foreground/90">
-              {isEN ? "Corporate Coaching" : "Firmencoaching"}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-              {[
-                { icon: <Trophy className="w-6 h-6" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Success is ultimately decided in the mind." : "Letztendlich entscheidet sich Erfolg im Kopf.", href: getPath("corporateErfolg", language, country), image: corporateSuccessImg },
-                { icon: <Shield className="w-6 h-6" />, title: isEN ? "Resilience Building" : "Resilienz-Verstärken", desc: isEN ? "Build inner strength for challenging times." : "Innere Stärke aufbauen für schwere Zeiten.", href: getPath("corporateResilienz", language, country), image: corporateResilienceImg },
-                { icon: <Clock className="w-6 h-6" />, title: isEN ? "Stress Prevention" : "Stress-Prävention", desc: isEN ? "Burnout prevention for leaders and teams." : "Burnout-Prävention für Führungskräfte und Teams.", href: getPath("corporateStress", language, country), image: corporateStressImg },
-                { icon: <Cigarette className="w-6 h-6" />, title: isEN ? "Non-Smoker Seminars" : "Nichtraucher-Seminare", desc: isEN ? "'Non-smoker in 3 hours' — corporate wellness." : "'Nichtraucher in 3 Stunden' — Firmen-Wellness.", href: getPath("corporateNichtraucher", language, country), image: corporateNonsmokerImg },
-              ].map((item) => (
-                <ServiceCard
-                  key={item.title}
-                  title={item.title}
-                  description={item.desc}
-                  href={item.href}
-                  icon={item.icon}
-                  image={item.image}
-                />
-              ))}
-            </div>
-            <div className="text-center mt-5 md:mt-6">
-              <Link
-                to={getPath("corporate", language, country)}
-                className="inline-flex items-center gap-1.5 text-sm font-light tracking-wide text-primary/80 hover:text-primary border-b border-primary/25 hover:border-primary/60 pb-0.5 transition-colors"
-              >
-                {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════ TRAINING ═══════════════════ */}
       <section className="py-5 md:py-5 bg-primary/15" style={deferredSectionStyle}>
         <div className="mx-6 md:mx-auto md:max-w-[1200px]">
@@ -644,6 +574,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
+        <section className="py-7 md:py-10 bg-muted/50" style={deferredSectionStyle}>
+        <div className="container-main">
+          <div className="max-w-[1200px] mx-auto bg-card border border-border/70 rounded-2xl shadow-sm px-4 py-5 md:px-7 md:py-6">
+            <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-center mb-4 md:mb-5 text-foreground/90">
+              {isEN ? "Corporate Coaching" : "Firmencoaching"}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+              {[
+                { icon: <Trophy className="w-6 h-6" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Success is ultimately decided in the mind." : "Letztendlich entscheidet sich Erfolg im Kopf.", href: getPath("corporateErfolg", language, country), image: corporateSuccessImg },
+                { icon: <Shield className="w-6 h-6" />, title: isEN ? "Resilience Building" : "Resilienz-Verstärken", desc: isEN ? "Build inner strength for challenging times." : "Innere Stärke aufbauen für schwere Zeiten.", href: getPath("corporateResilienz", language, country), image: corporateResilienceImg },
+                { icon: <Clock className="w-6 h-6" />, title: isEN ? "Stress Prevention" : "Stress-Prävention", desc: isEN ? "Burnout prevention for leaders and teams." : "Burnout-Prävention für Führungskräfte und Teams.", href: getPath("corporateStress", language, country), image: corporateStressImg },
+                { icon: <Cigarette className="w-6 h-6" />, title: isEN ? "Non-Smoker Seminars" : "Nichtraucher-Seminare", desc: isEN ? "'Non-smoker in 3 hours' — corporate wellness." : "'Nichtraucher in 3 Stunden' — Firmen-Wellness.", href: getPath("corporateNichtraucher", language, country), image: corporateNonsmokerImg },
+              ].map((item) => (
+                <ServiceCard
+                  key={item.title}
+                  title={item.title}
+                  description={item.desc}
+                  href={item.href}
+                  icon={item.icon}
+                  image={item.image}
+                />
+              ))}
+            </div>
+            <div className="text-center mt-5 md:mt-6">
+              <Link
+                to={getPath("corporate", language, country)}
+                className="inline-flex items-center gap-1.5 text-sm font-light tracking-wide text-primary/80 hover:text-primary border-b border-primary/25 hover:border-primary/60 pb-0.5 transition-colors"
+              >
+                {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ═══════════════════ INLINE CONTACT FORM ═══════════════════ */}
       <section id="contact" className="py-10 md:py-16 bg-[#F8FAFC] border-y border-[#E8EDF3]" style={deferredSectionStyle}>
