@@ -70,7 +70,7 @@ export default function AusbildungsinstitutVideos() {
         <div className="container-main">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl font-light text-foreground mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
-              {isEN ? "Training Institute Videos" : "Ausbildungsinstitut Videos"}
+              {isEN ? "The Hypnosis Institute" : "Das Hypnose Institut"}
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               {isEN
