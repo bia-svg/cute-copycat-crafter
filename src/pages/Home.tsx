@@ -432,7 +432,7 @@ export default function Home() {
               </p>
 
               {/* Bullets — 2-col on desktop, 6 items */}
-              <ul className="mt-2 md:mt-5 grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-1 md:gap-y-1.5 text-[11.5px] md:text-[14px] text-foreground/80 text-left mx-auto w-fit md:justify-items-start leading-snug">
+              <ul className="mt-2 md:mt-3.5 grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-1 md:gap-y-1 text-[11.5px] md:text-[14px] text-foreground/80 text-left mx-auto w-fit md:justify-items-start leading-snug">
                 <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</span></li>
                 <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</span></li>
                 <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</span></li>
