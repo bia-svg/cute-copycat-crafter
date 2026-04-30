@@ -397,7 +397,6 @@ export default function Home() {
                   <img src={CDN.nghBadge} alt="NGH International Trainer – National Guild of Hypnotists" className="h-12 w-auto object-contain" style={{ filter: "brightness(1.1) contrast(1.12) saturate(1.1)" }} width={140} height={48} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11.5px] text-foreground/95 leading-tight">NGH International Trainer</div>
-                    <div className="text-[10px] text-muted-foreground">Nat. Guild of Hypnotists</div>
                   </div>
                 </div>
                 {/* EMR */}
@@ -413,7 +412,6 @@ export default function Home() {
                   <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-12 w-12 object-contain" style={{ filter: "brightness(1.18) contrast(1.15) saturate(1.12)" }} width={512} height={512} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11.5px] text-foreground/95 leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</div>
-                    <div className="text-[10px] text-muted-foreground">UNAM</div>
                   </div>
                 </div>
               </div>
@@ -446,11 +444,11 @@ export default function Home() {
                 </li>
               </ul>
 
-              {/* Topics row */}
-              <p className="mt-2.5 md:mt-5 text-[11.5px] md:text-[13.5px] text-foreground/85 font-medium tracking-wide leading-snug max-w-[720px]">
+              {/* Topics row — Hero-style block label */}
+              <p className="mt-3 md:mt-6 text-[11px] md:text-[13px] text-[#1B3A5C] font-semibold uppercase tracking-[0.18em] leading-snug max-w-[760px]">
                 {isEN
-                  ? "Smoke-free  ·  Weight loss  ·  Anxiety  ·  Stress  ·  Trauma  ·  Children's hypnosis  ·  Trainings"
-                  : "Rauchfrei  ·  Abnehmen  ·  Ängste  ·  Stress  ·  Trauma  ·  Kinderhypnose  ·  Ausbildungen"}
+                  ? "SMOKE-FREE  ·  WEIGHT LOSS  ·  ANXIETY  ·  STRESS  ·  TRAUMA  ·  CHILDREN'S HYPNOSIS  ·  TRAININGS"
+                  : "RAUCHFREI  ·  ABNEHMEN  ·  ÄNGSTE  ·  STRESS  ·  TRAUMA  ·  KINDERHYPNOSE  ·  AUSBILDUNGEN"}
               </p>
 
               {/* CTA – pushed to bottom on desktop */}
@@ -460,7 +458,7 @@ export default function Home() {
                   const el = document.getElementById("contact");
                   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="mt-3 md:mt-auto inline-flex items-center justify-center bg-[#c8e6c9] hover:bg-[#a5d6a7] text-black font-medium text-[12px] md:text-[13.5px] px-4 md:px-5 py-1.5 rounded-lg shadow-sm transition-all"
+                className="mt-4 md:mt-auto md:mb-1 inline-flex items-center justify-center bg-[#c8e6c9] hover:bg-[#a5d6a7] text-black font-medium text-[12px] md:text-[13.5px] px-4 md:px-5 py-1.5 rounded-lg shadow-sm transition-all"
               >
                 {isEN ? "Get free information now" : "Sofort unverbindlich informieren"}
               </button>
@@ -478,7 +476,6 @@ export default function Home() {
                   <img src={CDN.nghBadge} alt="NGH International Trainer – National Guild of Hypnotists" className="h-10 w-auto object-contain" style={{ filter: "brightness(1.1) contrast(1.12) saturate(1.1)" }} width={120} height={40} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[10.5px] text-foreground/95 leading-tight">NGH International Trainer</div>
-                    <div className="text-[9px] text-muted-foreground">Nat. Guild of Hypnotists</div>
                   </div>
                 </div>
                 <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-2 py-2 h-[96px]">
@@ -492,7 +489,6 @@ export default function Home() {
                   <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-10 w-10 object-contain" style={{ filter: "brightness(1.18) contrast(1.15) saturate(1.12)" }} width={512} height={512} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[10.5px] text-foreground/95 leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</div>
-                    <div className="text-[9px] text-muted-foreground">UNAM</div>
                   </div>
                 </div>
               </div>
@@ -602,9 +598,9 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
-        <section className="py-7 md:py-10 bg-muted/50" style={deferredSectionStyle}>
+        <section className="py-7 md:py-8 bg-muted/50" style={deferredSectionStyle}>
         <div className="container-main">
-          <div className="max-w-[1200px] mx-auto bg-card border border-border/70 rounded-2xl shadow-sm px-4 py-5 md:px-7 md:py-6">
+          <div className="max-w-[1320px] mx-auto bg-card border border-border/70 rounded-2xl shadow-sm px-4 py-5 md:px-8 md:py-6">
             <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-center mb-4 md:mb-5 text-foreground/90">
               {isEN ? "Corporate Coaching" : "Firmencoaching"}
             </h2>
@@ -628,10 +624,10 @@ export default function Home() {
             <div className="text-center mt-5 md:mt-6">
               <Link
                 to={getPath("corporate", language, country)}
-                className="inline-flex items-center gap-1.5 text-sm font-light tracking-wide text-primary/80 hover:text-primary border-b border-primary/25 hover:border-primary/60 pb-0.5 transition-colors"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-medium tracking-wide px-5 py-2.5 rounded-lg shadow-sm transition-colors"
               >
                 {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -639,7 +635,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ INLINE CONTACT FORM ═══════════════════ */}
-      <section id="contact" className="py-10 md:py-16 bg-[#F8FAFC] border-y border-[#E8EDF3]" style={deferredSectionStyle}>
+      <section id="contact" className="py-8 md:py-10 bg-[#F8FAFC] border-y border-[#E8EDF3]" style={deferredSectionStyle}>
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 mb-3 text-center">
