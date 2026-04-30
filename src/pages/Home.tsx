@@ -378,8 +378,8 @@ export default function Home() {
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
       <section className="pt-2.5 pb-2.5 md:pt-2 md:pb-2 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[1120px] bg-card rounded-xl border border-primary/15 py-1.5 md:py-1 px-3 md:px-7 shadow-sm">
-          <div className="grid md:grid-cols-[300px_1fr] gap-2 md:gap-7 md:items-stretch">
+        <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border border-primary/15 py-1.5 md:py-1 px-3 md:px-5 shadow-sm">
+          <div className="grid md:grid-cols-[290px_1fr] gap-2 md:gap-4 md:items-stretch">
             {/* LEFT (desktop) – credential badges 2x2 + link */}
             <div className="order-2 md:order-1 flex flex-col items-center justify-center gap-1.5 mt-3 md:mt-0">
               {/* Desktop: 2x2 grid – 4 badges, equal height + weight */}
@@ -421,7 +421,7 @@ export default function Home() {
             </div>
 
             {/* RIGHT (desktop) / TOP (mobile) – text + bullets, centered */}
-            <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-4 md:h-full md:pt-0 md:pb-1">
+            <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-1 md:h-full md:pt-0 md:pb-1">
               <h2 className="text-lg md:text-[22px] font-medium tracking-[0.01em] text-[#0B1F33] leading-tight mt-1 md:mt-4">
                 {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
@@ -518,30 +518,30 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ TRAINING ═══════════════════ */}
-      <section className="py-5 md:py-5 bg-primary/15" style={deferredSectionStyle}>
+      <section className="py-5 md:py-3 bg-primary/15" style={deferredSectionStyle}>
         <div className="mx-6 md:mx-auto md:max-w-[1200px]">
           <Link to={getPath("training", language, country)} className="block max-w-sm md:max-w-5xl mx-auto relative bg-white rounded-2xl overflow-hidden shadow-[0_16px_48px_-8px_rgba(0,0,0,0.3),0_4px_12px_-2px_rgba(0,0,0,0.15)] transition-transform duration-200 hover:scale-[1.01] hover:shadow-[0_20px_56px_-8px_rgba(0,0,0,0.35),0_6px_16px_-2px_rgba(0,0,0,0.18)] cursor-pointer">
             {/* Label + Title */}
-            <div className="text-center pt-5 pb-2 md:pt-6 md:pb-3 px-5 md:px-10">
-              <span className="inline-flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] text-[hsl(213,10%,35%)] border border-[hsl(213,12%,78%)] rounded-full px-4 py-1 md:px-5 md:py-1.5 bg-gradient-to-r from-[hsl(213,10%,91%)] to-[hsl(213,10%,95%)] mb-3 md:mb-4 shadow-sm">
+            <div className="text-center pt-5 pb-2 md:pt-3.5 md:pb-2 px-5 md:px-10">
+              <span className="inline-flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] text-[hsl(213,10%,35%)] border border-[hsl(213,12%,78%)] rounded-full px-4 py-1 md:px-5 md:py-1.5 bg-gradient-to-r from-[hsl(213,10%,91%)] to-[hsl(213,10%,95%)] mb-3 md:mb-2.5 shadow-sm">
                 <Award className="w-3 h-3" />
                 {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
               </span>
               <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 leading-tight">
                 {isEN ? "Intensive Training" : "Intensiv-Ausbildungen"}
               </h2>
-              <p className="text-base md:text-lg font-light tracking-[0.01em] text-foreground/85 mt-1 md:mt-2">
+              <p className="text-base md:text-[17px] font-light tracking-[0.01em] text-foreground/85 mt-1 md:mt-1">
                 Aktiv-Hypnose© {isEN ? "Therapist Diploma" : "Therapeuten-Diplom"}
               </p>
             </div>
 
             {/* Seminar room photo */}
-            <div className="px-5 md:px-10 pb-3 md:pb-3">
+            <div className="px-5 md:px-10 pb-3 md:pb-2.5">
               <div className="rounded-xl overflow-hidden">
                 <img
                   src={CDN.trainingSeminar}
                   alt={isEN ? "Professional hypnotherapy training seminar" : "Professionelles Hypnosetherapie-Ausbildungsseminar"}
-                  className="w-full h-44 md:h-72 object-cover"
+                  className="w-full h-44 md:h-52 object-cover"
                   loading="lazy"
                   decoding="async"
                   width={1200}
@@ -551,16 +551,16 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="px-5 pb-5 md:px-10 md:pb-6">
+            <div className="px-5 pb-5 md:px-10 md:pb-4">
               {/* Compact intro */}
-              <p className="text-foreground/75 text-[11px] md:text-sm mb-3 md:mb-5 text-center max-w-lg mx-auto leading-snug md:leading-relaxed">
+              <p className="text-foreground/75 text-[11px] md:text-[13px] mb-3 md:mb-3 text-center max-w-lg mx-auto leading-snug md:leading-snug">
                 {isEN
                   ? "Training for people who want to create real change – practical, effective, in small strictly limited groups."
                   : "Ausbildung für Menschen, die echte Veränderung bewirken wollen – praxisnah, wirksam, in kleinen strikt begrenzten Gruppen."}
               </p>
 
               {/* Stats — compact grid */}
-              <div className="grid grid-cols-5 gap-1 md:gap-3 mb-3 md:mb-5">
+              <div className="grid grid-cols-5 gap-1 md:gap-2 mb-3 md:mb-3">
                 {[
                   { num: "350+", label: isEN ? "Pages Manual" : "Seiten Mappe" },
                   { num: "150+", label: isEN ? "Example Texts" : "Beispieltexte" },
@@ -568,17 +568,17 @@ export default function Home() {
                   { num: "50+", label: isEN ? "Audio" : "Audio" },
                   { num: "✓", label: isEN ? "Diploma" : "Diplom" },
                 ].map(item => (
-                  <div key={item.label} className="text-center bg-gradient-to-b from-[hsl(213,10%,95%)] to-[hsl(213,10%,92%)] border border-[hsl(213,12%,82%)] rounded-lg py-1.5 md:py-3 px-0.5 md:px-1">
-                    <div className="text-xs md:text-xl font-bold text-primary">{item.num}</div>
+                  <div key={item.label} className="text-center bg-gradient-to-b from-[hsl(213,10%,95%)] to-[hsl(213,10%,92%)] border border-[hsl(213,12%,82%)] rounded-lg py-1.5 md:py-2 px-0.5 md:px-1">
+                    <div className="text-xs md:text-lg font-bold text-primary leading-tight">{item.num}</div>
                     <div className="text-[6px] md:text-[10px] text-muted-foreground leading-tight font-medium mt-0.5">{item.label}</div>
                   </div>
                 ))}
               </div>
 
               {/* EMR badge + arrow hint */}
-              <div className="flex flex-col items-center gap-1.5">
+              <div className="flex flex-col items-center gap-1">
                 <div className="flex items-center justify-center gap-3">
-                  <div className="inline-flex items-center gap-1.5 bg-[hsl(160,30%,95%)] border border-[hsl(160,25%,82%)] rounded-lg px-3 py-1.5 md:px-4 md:py-2">
+                  <div className="inline-flex items-center gap-1.5 bg-[hsl(160,30%,95%)] border border-[hsl(160,25%,82%)] rounded-lg px-3 py-1 md:px-3.5 md:py-1.5">
                     <CheckCircle className="w-3.5 h-3.5 text-[#2E7D32] flex-shrink-0" />
                     <span className="text-[10px] md:text-xs font-semibold text-foreground/85 tracking-wide">EMR Krankenkasse Konform</span>
                   </div>
@@ -586,7 +586,7 @@ export default function Home() {
                     {isEN ? "View Details" : "Details ansehen"} →
                   </span>
                 </div>
-                <p className="text-[9px] md:text-[11px] text-muted-foreground/80 text-center max-w-xs md:max-w-sm leading-snug">
+                <p className="text-[9px] md:text-[10.5px] text-muted-foreground/80 text-center max-w-xs md:max-w-md leading-snug">
                   {isEN
                     ? "EMR-compliant structure. Participants receive an optional hours and course content certificate for possible submission."
                     : "EMR-konform aufgebaut. Auf Wunsch erhalten Teilnehmer einen Stunden- und Inhaltsnachweis zur möglichen Einreichung."}
