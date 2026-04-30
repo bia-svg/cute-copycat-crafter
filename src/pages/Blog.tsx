@@ -28,19 +28,16 @@ export default function Blog() {
         { name: "Home", path: basePath },
         { name: "Blog", path: getPath("blog", language, country) },
       ]} />
-      {/* Hero */}
-      <section className="bg-primary/15 py-16">
-        <div className="container-main text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">
-            {isDE ? "Wissen & Einblicke" : "Knowledge & Insights"}
-          </p>
-          <h1 className="text-3xl md:text-4xl font-light text-foreground mb-4 tracking-tight">
+      {/* Compact Intro */}
+      <section className="bg-background pt-6 pb-4 md:pt-8 md:pb-5 border-b border-border/60">
+        <div className="container-main max-w-3xl text-center">
+          <h1 className="text-2xl md:text-3xl font-light text-foreground tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
             {isDE ? "Blog — Hypnose verstehen" : "Blog — Understanding Hypnosis"}
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-2 text-sm md:text-base text-muted-foreground">
             {isDE
-              ? "Fachartikel, Erfahrungsberichte und wissenschaftliche Hintergründe rund um Hypnose, Aktiv-Hypnose© und persönliche Veränderung."
-              : "Expert articles, case studies and scientific background on hypnosis, Aktiv-Hypnose© and personal transformation."}
+              ? "Fachartikel, Erfahrungsberichte und wissenschaftliche Hintergründe rund um Hypnose und Aktiv-Hypnose©."
+              : "Expert articles, case studies and scientific background on hypnosis and Aktiv-Hypnose©."}
           </p>
         </div>
       </section>

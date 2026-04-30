@@ -85,27 +85,25 @@ export default function Erfolgsberichte() {
         { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
         { name: isEN ? "Success Stories" : "Erfolgsberichte", path: getPath("successStories", language, country) },
       ]} />
-      {/* Hero */}
-      <section className="bg-primary/15 py-12 md:py-16">
-        <div className="container-main">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl font-light text-foreground mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
-              {isEN ? "Success Stories from Our Satisfied Clients" : "Erfolgsberichte unserer zufriedenen Kunden"}
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              {isEN
-                ? "Discover how our hypnosis sessions and success coaching have sustainably changed the lives of our clients and helped them achieve new successes."
-                : "Erfahren Sie, wie unsere Hypnosesitzungen und Erfolgscoachings das Leben unserer Klienten nachhaltig verändert und ihnen zu neuen Erfolgen verholfen haben."}
-            </p>
-            <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-              <div className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <span className="font-semibold text-foreground">5.0</span>
-              <span><span>— 266 Google {isEN ? "Reviews" : "Bewertungen"}</span></span>
+      {/* Compact Intro */}
+      <section className="bg-background pt-6 pb-4 md:pt-8 md:pb-5 border-b border-border/60">
+        <div className="container-main max-w-3xl text-center">
+          <h1 className="text-2xl md:text-3xl font-light text-foreground tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+            {isEN ? "Success Stories from Our Satisfied Clients" : "Erfolgsberichte unserer zufriedenen Kunden"}
+          </h1>
+          <p className="mt-2 text-sm md:text-base text-muted-foreground">
+            {isEN
+              ? "How our hypnosis sessions and success coaching have sustainably changed our clients' lives."
+              : "Wie unsere Hypnosesitzungen und Erfolgscoachings das Leben unserer Klienten nachhaltig verändert haben."}
+          </p>
+          <div className="mt-3 inline-flex items-center gap-2 text-xs text-muted-foreground">
+            <div className="flex items-center gap-0.5">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+              ))}
             </div>
+            <span className="font-semibold text-foreground">5.0</span>
+            <span>— 266 Google {isEN ? "Reviews" : "Bewertungen"}</span>
           </div>
         </div>
       </section>
