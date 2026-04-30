@@ -378,8 +378,8 @@ export default function Home() {
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
       <section className="pt-5 pb-5 md:pt-8 md:pb-8 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[1100px] bg-card rounded-xl border border-primary/15 py-2 md:py-3 px-3 md:px-7 shadow-sm">
-          <div className="grid md:grid-cols-[1fr_170px] gap-2 md:gap-6 md:items-center">
+        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-xl border border-primary/15 py-2 md:py-3 px-3 md:px-7 shadow-sm">
+          <div className="grid md:grid-cols-[1fr_300px] gap-2 md:gap-6 md:items-center">
             {/* LEFT – text + bullets, centered on both */}
             <div className="flex flex-col items-center text-center md:items-center md:text-center">
               <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 leading-tight">
@@ -424,9 +424,9 @@ export default function Home() {
               </button>
             </div>
 
-            {/* RIGHT – EMR badge + link. Slim horizontal pill on mobile, vertical on desktop */}
+            {/* RIGHT – credential badges + link */}
             <div className="flex flex-col items-center justify-center gap-1 md:gap-1.5 mt-1.5 md:mt-0">
-              {/* Mobile: slim horizontal pill */}
+              {/* Mobile: slim horizontal pill (EMR only) */}
               <div className="flex md:hidden items-center gap-2 bg-secondary rounded-full px-2.5 py-1 w-fit">
                 <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-5 w-auto object-contain" width={60} height={20} loading="lazy" decoding="async" />
                 <div className="flex items-baseline gap-1.5 leading-none">
@@ -434,15 +434,26 @@ export default function Home() {
                   <span className="text-[9px] text-muted-foreground">ZSR P609264</span>
                 </div>
               </div>
-              {/* Desktop: vertical badge */}
-              <div className="hidden md:flex flex-col items-center gap-1.5 bg-secondary rounded-lg px-4 py-3 w-full max-w-[185px]">
-                <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12 w-auto object-contain" width={144} height={48} loading="lazy" decoding="async" />
-                <div className="text-center">
-                  <div className="font-semibold text-[11px] text-foreground leading-tight">EMR Krankenkasse Konform</div>
-                  <div className="text-[10px] text-muted-foreground">ZSR P609264</div>
+              {/* Desktop: 2 badges side-by-side, equal height + weight */}
+              <div className="hidden md:grid grid-cols-2 gap-2 w-full">
+                {/* EMR */}
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px]">
+                  <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-12 w-auto object-contain" width={144} height={48} loading="lazy" decoding="async" />
+                  <div className="text-center">
+                    <div className="font-semibold text-[11px] text-foreground leading-tight">EMR Krankenkasse Konform</div>
+                    <div className="text-[10px] text-muted-foreground">ZSR P609264</div>
+                  </div>
+                </div>
+                {/* Licensed Psychologist */}
+                <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px]">
+                  <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-12 w-12 object-contain" width={512} height={512} loading="lazy" decoding="async" />
+                  <div className="text-center">
+                    <div className="font-semibold text-[11px] text-foreground leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</div>
+                    <div className="text-[10px] text-muted-foreground">UNAM</div>
+                  </div>
                 </div>
               </div>
-              <Link to={getPath("about", language, country)} className="mt-4 md:mt-5 mb-1 md:mb-0 text-[11px] md:text-[11.5px] text-[#2E7D32] hover:text-[#1B5E20] font-medium underline underline-offset-4 decoration-[#2E7D32]/50 hover:decoration-[#1B5E20] transition-colors text-center leading-snug">
+              <Link to={getPath("about", language, country)} className="mt-5 md:mt-7 mb-1 md:mb-0 text-[11px] md:text-[11.5px] text-[#2E7D32] hover:text-[#1B5E20] font-medium underline underline-offset-4 decoration-[#2E7D32]/50 hover:decoration-[#1B5E20] transition-colors text-center leading-snug">
                 {isEN ? "More about David J. Woods & Team" : "Mehr über David J. Woods & Team"}
               </Link>
             </div>
@@ -469,31 +480,31 @@ export default function Home() {
 
       {/* ═══════════════════ QUALIFICATIONS — slim trust banner ═══════════════════ */}
       <section className="pt-5 pb-5 md:pt-8 md:pb-8 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border border-primary/15 py-3 md:py-4 px-3 md:px-6 shadow-sm">
-          <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 text-center leading-tight mb-2 md:mb-3">
+        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-xl border border-primary/15 py-3 md:py-5 px-3 md:px-7 shadow-sm">
+          <h2 className="text-lg md:text-2xl font-light tracking-[0.01em] text-foreground/90 text-center leading-tight mb-2 md:mb-4">
             {isEN ? "Qualifications & Certifications" : "Qualifikationen & Zertifizierungen"}
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 max-w-[1100px] mx-auto">
             {/* 1 – Licensed Psychologist */}
-            <div className="text-center p-2 md:p-3 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-10 md:h-14 w-10 md:w-14 object-contain mx-auto mb-1 md:mb-1.5" loading="lazy" decoding="async" width={512} height={512} sizes="(min-width: 768px) 56px, 40px" />
-              <h3 className="font-semibold text-[11px] md:text-xs text-foreground leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
+            <div className="text-center p-2 md:p-4 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
+              <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-10 md:h-16 w-10 md:w-16 object-contain mx-auto mb-1 md:mb-2" loading="lazy" decoding="async" width={512} height={512} sizes="(min-width: 768px) 56px, 40px" />
+              <h3 className="font-semibold text-[11px] md:text-[13px] text-foreground leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
             </div>
             {/* 2 – Aktiv-Hypnose© */}
-            <div className="text-center p-2 md:p-3 bg-card border border-border rounded-lg shadow-sm flex flex-col items-center justify-center transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-6 md:h-10 w-auto object-contain shrink-0 mx-auto mb-1 md:mb-1.5" loading="lazy" decoding="async" width={160} height={64} />
-              <h3 className="font-semibold text-[11px] md:text-xs text-foreground leading-tight">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
+            <div className="text-center p-2 md:p-4 bg-card border border-border rounded-lg shadow-sm flex flex-col items-center justify-center transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
+              <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-6 md:h-12 w-auto object-contain shrink-0 mx-auto mb-1 md:mb-2" loading="lazy" decoding="async" width={160} height={64} />
+              <h3 className="font-semibold text-[11px] md:text-[13px] text-foreground leading-tight">{isEN ? "Developer of Aktiv-Hypnose©" : "Entwickler der Aktiv-Hypnose©"}</h3>
             </div>
             {/* 3 – NGH */}
-            <div className="text-center p-2 md:p-3 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-8 md:h-12 w-8 md:w-12 object-contain mx-auto mb-1 md:mb-1.5" loading="lazy" decoding="async" width={160} height={160} />
-              <h3 className="font-semibold text-[11px] md:text-xs text-foreground leading-tight">NGH International Trainer</h3>
+            <div className="text-center p-2 md:p-4 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
+              <img src={CDN.nghBadge} alt="NGH International Trainer" className="h-8 md:h-14 w-8 md:w-14 object-contain mx-auto mb-1 md:mb-2" loading="lazy" decoding="async" width={160} height={160} />
+              <h3 className="font-semibold text-[11px] md:text-[13px] text-foreground leading-tight">NGH International Trainer</h3>
             </div>
             {/* 4 – EMR */}
-            <div className="text-center p-2 md:p-3 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
-              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-8 md:h-12 object-contain mx-auto mb-1 md:mb-1.5" loading="lazy" decoding="async" width={160} height={80} />
-              <h3 className="font-semibold text-[11px] md:text-xs text-foreground leading-tight">{isEN ? "EMR Approved" : "EMR Krankenkasse Konform"}</h3>
+            <div className="text-center p-2 md:p-4 bg-card border border-border rounded-lg shadow-sm transition-all duration-300 md:hover:scale-[1.35] md:hover:shadow-xl md:hover:z-10">
+              <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – ZSR P609264" className="h-8 md:h-14 object-contain mx-auto mb-1 md:mb-2" loading="lazy" decoding="async" width={160} height={80} />
+              <h3 className="font-semibold text-[11px] md:text-[13px] text-foreground leading-tight">{isEN ? "EMR Approved" : "EMR Krankenkasse Konform"}</h3>
               <p className="text-[9px] md:text-[10px] text-muted-foreground">ZSR P609264</p>
             </div>
           </div>
@@ -503,7 +514,7 @@ export default function Home() {
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
         <section className="py-7 md:py-10 bg-muted/50" style={deferredSectionStyle}>
         <div className="container-main">
-          <div className="max-w-[940px] mx-auto bg-card border border-border/70 rounded-2xl shadow-sm px-4 py-5 md:px-7 md:py-6">
+          <div className="max-w-[1200px] mx-auto bg-card border border-border/70 rounded-2xl shadow-sm px-4 py-5 md:px-7 md:py-6">
             <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-center mb-4 md:mb-5 text-foreground/90">
               {isEN ? "Corporate Coaching" : "Firmencoaching"}
             </h2>
