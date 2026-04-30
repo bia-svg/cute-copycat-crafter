@@ -223,7 +223,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-semibold py-2.5 mt-1 rounded-lg"
+        className="w-full bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium py-2.5 mt-1 rounded-lg"
       >
         {isSubmitting
           ? (isEN ? "Sending..." : "Wird gesendet...")
