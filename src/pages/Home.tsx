@@ -431,7 +431,7 @@ export default function Home() {
             </div>
 
             {/* RIGHT (desktop) / TOP (mobile) – text + bullets, centered */}
-            <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-4">
+            <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-4 md:self-start md:-mt-1">
               <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 leading-tight">
                 {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
@@ -442,7 +442,7 @@ export default function Home() {
               </p>
 
               {/* Bullets — 2-col on desktop, 6 items */}
-              <ul className="mt-2 md:mt-2.5 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1 md:gap-y-1.5 text-[11.5px] md:text-[13px] text-foreground/80 text-left mx-auto w-fit md:justify-items-start leading-snug">
+              <ul className="mt-2 md:mt-5 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1 md:gap-y-1.5 text-[11.5px] md:text-[13px] text-foreground/80 text-left mx-auto w-fit md:justify-items-start leading-snug">
                 <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</span></li>
                 <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</span></li>
                 <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</span></li>
@@ -455,7 +455,7 @@ export default function Home() {
               </ul>
 
               {/* Topics row */}
-              <p className="mt-2.5 md:mt-3 text-[11.5px] md:text-[13px] text-foreground/85 font-medium tracking-wide leading-snug max-w-[720px]">
+              <p className="mt-2.5 md:mt-5 text-[11.5px] md:text-[13px] text-foreground/85 font-medium tracking-wide leading-snug max-w-[720px]">
                 {isEN
                   ? "Smoke-free  ·  Weight loss  ·  Anxiety  ·  Stress  ·  Trauma  ·  Children's hypnosis  ·  Trainings"
                   : "Rauchfrei  ·  Abnehmen  ·  Ängste  ·  Stress  ·  Trauma  ·  Kinderhypnose  ·  Ausbildungen"}
