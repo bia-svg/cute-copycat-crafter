@@ -397,7 +397,6 @@ export default function Home() {
                   <img src={CDN.nghBadge} alt="NGH International Trainer – National Guild of Hypnotists" className="h-12 w-auto object-contain" style={{ filter: "brightness(1.1) contrast(1.12) saturate(1.1)" }} width={140} height={48} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11.5px] text-foreground/95 leading-tight">NGH International Trainer</div>
-                    <div className="text-[10px] text-muted-foreground">Nat. Guild of Hypnotists</div>
                   </div>
                 </div>
                 {/* EMR */}
