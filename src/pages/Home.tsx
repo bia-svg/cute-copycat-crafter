@@ -377,8 +377,8 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
-      <section className="pt-4 pb-4 md:pt-5 md:pb-5 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-xl border border-primary/15 py-2 md:py-2 px-3 md:px-7 shadow-sm">
+      <section className="pt-4 pb-4 md:pt-3 md:pb-3 bg-primary/15" style={deferredSectionStyle}>
+        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-xl border border-primary/15 py-2 md:py-1.5 px-3 md:px-7 shadow-sm">
           <div className="grid md:grid-cols-[300px_1fr] gap-2 md:gap-7 md:items-stretch">
             {/* LEFT (desktop) – credential badges 2x2 + link */}
             <div className="order-2 md:order-1 flex flex-col items-center justify-center gap-1.5 mt-3 md:mt-0">
@@ -422,7 +422,7 @@ export default function Home() {
 
             {/* RIGHT (desktop) / TOP (mobile) – text + bullets, centered */}
             <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-4 md:h-full md:pt-0 md:pb-1.5">
-              <h2 className="text-lg md:text-[22px] font-medium tracking-[0.01em] text-[#0B1F33] leading-tight md:mt-2">
+              <h2 className="text-lg md:text-[22px] font-medium tracking-[0.01em] text-[#0B1F33] leading-tight md:mt-3">
                 {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
               </h2>
               <p className="text-[12px] md:text-[14.5px] text-[#1B3A5C] font-medium leading-snug mt-1 md:mt-1.5 max-w-[640px]">
@@ -472,8 +472,8 @@ export default function Home() {
                     <div className="text-[9px] text-muted-foreground">David J. Woods</div>
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-2 py-2 h-[96px]">
-                  <img src={CDN.nghBadge} alt="NGH International Trainer – National Guild of Hypnotists" className="h-10 w-auto object-contain pointer-events-none select-none" style={{ filter: "brightness(1.1) contrast(1.12) saturate(1.1)", WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }} width={120} height={40} loading="lazy" decoding="async" draggable={false} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
+                <div className="flex flex-col items-center justify-end gap-1.5 bg-secondary rounded-lg px-2 pt-3 pb-2 h-[96px]">
+                  <img src={CDN.nghBadge} alt="NGH International Trainer – National Guild of Hypnotists" className="h-[52px] w-auto object-contain pointer-events-none select-none" style={{ filter: "brightness(1.1) contrast(1.12) saturate(1.1)", WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }} width={160} height={52} loading="lazy" decoding="async" draggable={false} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
                   <div className="text-center">
                     <div className="font-semibold text-[10.5px] text-foreground/95 leading-tight">NGH International Trainer</div>
                   </div>
@@ -485,8 +485,8 @@ export default function Home() {
                     <div className="text-[9px] text-muted-foreground">ZSR P609264</div>
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-2 py-2 h-[96px]">
-                  <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-10 w-10 object-contain pointer-events-none select-none" style={{ filter: "brightness(1.18) contrast(1.15) saturate(1.12)", WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }} width={512} height={512} loading="lazy" decoding="async" draggable={false} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
+                <div className="flex flex-col items-center justify-end gap-1.5 bg-secondary rounded-lg px-2 pt-3 pb-2 h-[96px]">
+                  <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-[52px] w-[52px] object-contain pointer-events-none select-none" style={{ filter: "brightness(1.18) contrast(1.15) saturate(1.12)", WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }} width={512} height={512} loading="lazy" decoding="async" draggable={false} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
                   <div className="text-center">
                     <div className="font-semibold text-[10.5px] text-foreground/95 leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</div>
                   </div>
