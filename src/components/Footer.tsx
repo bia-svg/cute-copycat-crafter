@@ -28,10 +28,10 @@ export default function Footer() {
 
   return (
     <footer className="bg-footer text-footer-foreground">
-      <div className="container-main py-12">
-        <div className="grid md:grid-cols-[1fr_2fr] gap-8">
+      <div className="container-main py-8 md:py-7">
+        <div className="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-6">
           {/* Logo & Info + Institutes (stacked on desktop) */}
-          <div className="space-y-6">
+          <div className="space-y-6 md:space-y-4">
             {/* Logo */}
             <div>
               <img src={CDN.logo} alt="David J. Woods – Hypnose und Psychologie Logo" className="h-11 w-auto mb-4 brightness-0 invert" width={180} height={44} loading="lazy" />
