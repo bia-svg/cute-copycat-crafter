@@ -378,7 +378,7 @@ export default function Home() {
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
       <section className="pt-2.5 pb-2.5 md:pt-2 md:pb-2 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border border-primary/15 py-1.5 md:py-1 px-3 md:px-5 shadow-sm">
+        <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border-2 border-[#D1D5DB] py-1.5 md:py-1 px-3 md:px-5 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
           <div className="grid md:grid-cols-[290px_1fr] gap-2 md:gap-4 md:items-stretch">
             {/* LEFT (desktop) – credential badges 2x2 + link */}
             <div className="order-2 md:order-1 flex flex-col items-center justify-center gap-1.5 mt-3 md:mt-0">
@@ -600,7 +600,7 @@ export default function Home() {
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
         <section className="py-5 md:py-4 bg-muted/50" style={deferredSectionStyle}>
         <div className="container-main">
-          <div className="max-w-[1320px] mx-auto bg-card border border-border/70 rounded-2xl shadow-sm px-4 py-4 md:px-8 md:py-4">
+          <div className="max-w-[1320px] mx-auto bg-card border-2 border-[#D1D5DB] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.06)] px-4 py-4 md:px-8 md:py-4">
             <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-center mb-3 md:mb-3 text-foreground/90">
               {isEN ? "Corporate Coaching" : "Firmencoaching"}
             </h2>
