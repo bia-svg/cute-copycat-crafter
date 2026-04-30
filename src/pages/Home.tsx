@@ -418,7 +418,7 @@ export default function Home() {
                 </div>
                 {/* Licensed Psychologist */}
                 <div className="flex flex-col items-center justify-between gap-1.5 bg-secondary rounded-lg px-3 py-3 h-[110px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.18] md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
-                  <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-12 w-12 object-contain" width={512} height={512} loading="lazy" decoding="async" />
+                  <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-12 w-12 object-contain" style={{ filter: "brightness(1.12) contrast(1.1) saturate(1.08)" }} width={512} height={512} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11px] text-foreground leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</div>
                     <div className="text-[10px] text-muted-foreground">UNAM</div>
