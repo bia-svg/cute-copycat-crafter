@@ -118,22 +118,22 @@ export default function AusbildungsinstitutVideos() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-background py-10 lg:py-14">
+      <section className="bg-[#E8EDF3] py-8 lg:py-10">
         <div className="container-main">
-          <div className="relative max-w-2xl mx-auto bg-primary/10 border border-primary/25 rounded-2xl px-6 py-10 md:px-10 md:py-12 text-center shadow-sm">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1 rounded-full tracking-wide uppercase">
+          <div className="relative max-w-2xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl px-6 py-7 md:px-10 md:py-8 text-center shadow-sm">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-[11px] font-medium border border-[#1B3A5C]/25 px-3 py-0.5 rounded-full tracking-wide uppercase">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
-            <h2 className="text-2xl md:text-3xl font-light text-foreground mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+            <h2 className="text-xl md:text-2xl font-light text-foreground mb-2 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Interested in the Training?" : "Interesse an der Ausbildung?"}
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto mb-6">
+            <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto mb-4">
               {isEN
                 ? "Book your free discovery call and learn more about the Aktiv-Hypnose® training."
                 : "Vereinbaren Sie Ihr kostenloses Erstgespräch und erfahren Sie mehr über die Aktiv-Hypnose® Ausbildung."}
             </p>
             <Link to={getPath("contact", language, country)}>
-              <Button className="bg-cta hover:bg-cta/90 text-cta-foreground font-medium px-8 py-3 text-base">
+              <Button className="bg-[#ECEEF1] hover:bg-[#E2E5E9] text-[#1B3A5C] font-medium px-6 py-2.5 text-sm md:text-base border border-[#1B3A5C]/25 shadow-none">
                 <MessageSquare className="w-4 h-4 mr-2" />
                 {isEN ? "Free Discovery Call" : "Kostenloses Erstgespräch"}
               </Button>
