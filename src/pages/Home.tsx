@@ -600,7 +600,7 @@ export default function Home() {
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
         <section className="py-5 md:py-4 bg-muted/50" style={deferredSectionStyle}>
         <div className="container-main">
-          <div className="max-w-[1320px] mx-auto bg-card border border-border/70 rounded-2xl shadow-sm px-4 py-4 md:px-8 md:py-4">
+          <div className="max-w-[1320px] mx-auto bg-card border-2 border-[#D1D5DB] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.06)] px-4 py-4 md:px-8 md:py-4">
             <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-center mb-3 md:mb-3 text-foreground/90">
               {isEN ? "Corporate Coaching" : "Firmencoaching"}
             </h2>
