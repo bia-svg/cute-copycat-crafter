@@ -22,10 +22,11 @@ const videos: Array<{
   embedUrl?: string;
 }> = [
   {
-    titleDE: "Video 1 – folgt in Kürze",
-    titleEN: "Video 1 – coming soon",
-    descDE: "Einblick in das Ausbildungsinstitut – Video wird in Kürze ergänzt.",
-    descEN: "Insight into the training institute – video will be added shortly.",
+    titleDE: "Einblick ins Ausbildungsinstitut",
+    titleEN: "Insight into the Training Institute",
+    descDE: "Persönlicher Einblick in das Aktiv-Hypnose® Ausbildungsinstitut von David J. Woods – Atmosphäre, Methodik und Eindrücke.",
+    descEN: "A personal insight into David J. Woods' Aktiv-Hypnose® training institute – atmosphere, methodology and impressions.",
+    embedUrl: "https://player.vimeo.com/video/419881622?h=0&badge=0&autopause=0&player_id=0&app_id=58479",
   },
   {
     titleDE: "Video 2 – folgt in Kürze",
