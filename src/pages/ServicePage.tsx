@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { CheckCircle, ChevronRight, Star, ExternalLink } from "lucide-react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import FAQSection from "@/components/FAQSection";
 import { getTestimonialsForService } from "@/data/serviceTestimonials";
 import { consultationFaqEN, consultationFaqDE } from "@/data/consultationFAQ";
@@ -86,6 +87,45 @@ function ServiceTestimonialCard({ t, isEN }: { t: ReturnType<typeof getTestimoni
         <a href={t.link} target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
           Google <ExternalLink className="w-3 h-3" />
         </a>
+      </div>
+    </div>
+  );
+}
+
+function ServiceTestimonialsMobileCarousel({ testimonials, isEN }: { testimonials: ReturnType<typeof getTestimonialsForService>; isEN: boolean }) {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+    const onSelect = () => setCurrent(api.selectedScrollSnap());
+    api.on("select", onSelect);
+    return () => { api.off("select", onSelect); };
+  }, [api]);
+
+  return (
+    <div className="relative">
+      <Carousel setApi={setApi} opts={{ loop: true, align: "start" }}>
+        <CarouselContent>
+          {testimonials.map((t, i) => (
+            <CarouselItem key={i}>
+              <ServiceTestimonialCard t={t} isEN={isEN} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+      <div className="flex justify-center gap-2 mt-3">
+        {testimonials.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => api?.scrollTo(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className={`h-1.5 rounded-full transition-all ${
+              current === i ? "w-5 bg-[#1B3A5C]" : "w-1.5 bg-muted-foreground/40"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );
@@ -318,10 +358,15 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                 <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-4 text-center tracking-tight">
                   {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {/* Desktop: 3-column grid */}
+                <div className="hidden md:grid grid-cols-3 gap-4">
                   {testimonials.map((t, i) => (
                     <ServiceTestimonialCard key={i} t={t} isEN={isEN} />
                   ))}
+                </div>
+                {/* Mobile: swipeable carousel */}
+                <div className="md:hidden">
+                  <ServiceTestimonialsMobileCarousel testimonials={testimonials} isEN={isEN} />
                 </div>
               </div>
             </div>
