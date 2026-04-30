@@ -464,7 +464,7 @@ export default function Home() {
               </button>
 
               {/* Mobile: 2x2 badges grid below CTA */}
-              <div className="grid md:hidden grid-cols-2 gap-2 w-full mt-4 select-none">
+              <div className="grid md:hidden grid-cols-2 gap-2 w-full mt-3 select-none">
                 <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-2 py-2 h-[96px]">
                   <Award className="h-9 w-9 text-[#1B3A5C]" strokeWidth={1.4} aria-hidden="true" />
                   <div className="text-center">
