@@ -445,7 +445,7 @@ export default function Home() {
               </ul>
 
               {/* Topics row — Hero-style block label */}
-              <p className="mt-3 md:mt-6 text-[11px] md:text-[13px] text-[#1B3A5C] font-semibold uppercase tracking-[0.18em] leading-snug max-w-[760px]">
+              <p className="mt-2.5 md:mt-4 text-[11px] md:text-[13px] text-[#1B3A5C] font-semibold uppercase tracking-[0.18em] leading-snug max-w-[760px]">
                 {isEN
                   ? "SMOKE-FREE  ·  WEIGHT LOSS  ·  ANXIETY  ·  STRESS  ·  TRAUMA  ·  CHILDREN'S HYPNOSIS  ·  TRAININGS"
                   : "RAUCHFREI  ·  ABNEHMEN  ·  ÄNGSTE  ·  STRESS  ·  TRAUMA  ·  KINDERHYPNOSE  ·  AUSBILDUNGEN"}
