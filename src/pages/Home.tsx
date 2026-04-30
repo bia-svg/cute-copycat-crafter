@@ -377,8 +377,8 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
-      <section className="pt-4 pb-4 md:pt-3 md:pb-3 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-xl border border-primary/15 py-2 md:py-1.5 px-3 md:px-7 shadow-sm">
+      <section className="pt-2.5 pb-2.5 md:pt-2 md:pb-2 bg-primary/15" style={deferredSectionStyle}>
+        <div className="mx-3 md:mx-auto md:max-w-[1200px] bg-card rounded-xl border border-primary/15 py-1.5 md:py-1 px-3 md:px-7 shadow-sm">
           <div className="grid md:grid-cols-[300px_1fr] gap-2 md:gap-7 md:items-stretch">
             {/* LEFT (desktop) – credential badges 2x2 + link */}
             <div className="order-2 md:order-1 flex flex-col items-center justify-center gap-1.5 mt-3 md:mt-0">
