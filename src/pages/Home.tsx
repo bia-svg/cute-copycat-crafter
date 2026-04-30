@@ -472,8 +472,8 @@ export default function Home() {
                     <div className="text-[9px] text-muted-foreground">David J. Woods</div>
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-2 py-2 h-[96px]">
-                  <img src={CDN.nghBadge} alt="NGH International Trainer – National Guild of Hypnotists" className="h-10 w-auto object-contain pointer-events-none select-none" style={{ filter: "brightness(1.1) contrast(1.12) saturate(1.1)", WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }} width={120} height={40} loading="lazy" decoding="async" draggable={false} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
+                <div className="flex flex-col items-center justify-end gap-1.5 bg-secondary rounded-lg px-2 pt-3 pb-2 h-[96px]">
+                  <img src={CDN.nghBadge} alt="NGH International Trainer – National Guild of Hypnotists" className="h-[52px] w-auto object-contain pointer-events-none select-none" style={{ filter: "brightness(1.1) contrast(1.12) saturate(1.1)", WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }} width={160} height={52} loading="lazy" decoding="async" draggable={false} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
                   <div className="text-center">
                     <div className="font-semibold text-[10.5px] text-foreground/95 leading-tight">NGH International Trainer</div>
                   </div>
