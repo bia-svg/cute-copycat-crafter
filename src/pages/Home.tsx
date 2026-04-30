@@ -458,7 +458,7 @@ export default function Home() {
                   const el = document.getElementById("contact");
                   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="mt-4 md:mt-7 md:mb-2 inline-flex items-center justify-center bg-[#c8e6c9] hover:bg-[#a5d6a7] text-black font-medium text-[12px] md:text-[13.5px] px-4 md:px-5 py-1.5 rounded-lg shadow-sm transition-all"
+                className="mt-3 md:mt-4 md:mb-1 inline-flex items-center justify-center bg-[#c8e6c9] hover:bg-[#a5d6a7] text-black font-medium text-[12px] md:text-[13.5px] px-5 md:px-7 py-1.5 md:py-2 rounded-lg shadow-sm transition-all"
               >
                 {isEN ? "Get free information now" : "Sofort unverbindlich informieren"}
               </button>
