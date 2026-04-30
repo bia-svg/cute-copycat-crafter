@@ -319,10 +319,15 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                 <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-4 text-center tracking-tight">
                   {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {/* Desktop: 3-column grid */}
+                <div className="hidden md:grid grid-cols-3 gap-4">
                   {testimonials.map((t, i) => (
                     <ServiceTestimonialCard key={i} t={t} isEN={isEN} />
                   ))}
+                </div>
+                {/* Mobile: swipeable carousel */}
+                <div className="md:hidden">
+                  <ServiceTestimonialsMobileCarousel testimonials={testimonials} isEN={isEN} />
                 </div>
               </div>
             </div>
