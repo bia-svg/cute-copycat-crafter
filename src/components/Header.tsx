@@ -334,16 +334,16 @@ export default function Header() {
           </div>
           <SidebarCard>
             <div className="flex items-center gap-2">
-              <Award className="w-4 h-4 text-[#2E7D32] shrink-0" />
-              <p className="font-semibold text-sm text-foreground">{isDE ? "Therapeuten-Diplom" : "Therapist Diploma"}</p>
+              <BookOpen className="w-4 h-4 text-[#2E7D32] shrink-0" />
+              <p className="font-semibold text-sm text-foreground">{isDE ? "Seminare & Ausbildungen" : "Seminars & Trainings"}</p>
             </div>
             <p className="text-xs text-muted-foreground">
               {isDE
-                ? "Nach Abschluss des 6-tägigen Seminars erhalten Teilnehmer ihre offizielle Zertifizierung als Therapeut / Therapeutin in Aktiv-Hypnose®."
-                : "After completing the 6-day seminar, participants receive their official certification as a therapist in Aktiv-Hypnose®."}
+                ? "Finden Sie die passende Ausbildung oder das passende Seminar – persönlich, praxisnah und direkt mit David J. Woods."
+                : "Find the right training or seminar – personal, practice-oriented and directly with David J. Woods."}
             </p>
             <div className="pt-2">
-              <Link to={getPath("training", language, country)} onClick={() => setActiveMenu(null)}>
+              <Link to={getPath("contact", language, country)} onClick={() => setActiveMenu(null)}>
                 <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs">
                   {isDE ? "Mehr erfahren" : "Learn More"}
                 </Button>
