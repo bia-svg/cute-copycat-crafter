@@ -635,7 +635,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ INLINE CONTACT FORM ═══════════════════ */}
-      <section id="contact" className="py-8 md:py-10 bg-[#F8FAFC] border-y border-[#E8EDF3]" style={deferredSectionStyle}>
+      <section id="contact" className="py-6 md:py-6 bg-[#F8FAFC] border-y border-[#E8EDF3]" style={deferredSectionStyle}>
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 mb-3 text-center">
