@@ -541,7 +541,7 @@ export default function Home() {
                 <img
                   src={CDN.trainingSeminar}
                   alt={isEN ? "Professional hypnotherapy training seminar" : "Professionelles Hypnosetherapie-Ausbildungsseminar"}
-                  className="w-full h-44 md:h-72 object-cover [object-position:50%_52%]"
+                  className="w-full h-40 md:h-72 object-cover [object-position:50%_52%]"
                   loading="lazy"
                   decoding="async"
                   width={1200}
