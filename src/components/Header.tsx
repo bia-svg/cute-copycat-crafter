@@ -115,7 +115,7 @@ export default function Header() {
       <div className="absolute left-0 right-0 top-full z-50">
         <div className="bg-card border-b border-border shadow-lg">
           <div onMouseEnter={() => handleMouseEnter(id)} onMouseLeave={handleMouseLeave}>
-            <div className="container-main py-6">
+            <div className="container-main py-4">
               {children}
             </div>
           </div>
