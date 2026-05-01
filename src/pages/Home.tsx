@@ -428,7 +428,7 @@ export default function Home() {
               <p className="text-[12px] md:text-[14.5px] text-[#1B3A5C] font-medium leading-snug mt-1 md:mt-1.5 max-w-[640px]">
                 {isEN
                   ? "Individual intensive sessions for sustainable change."
-                  : "Individuelle Intensiv-Sitzungen für nachhaltige Veränderung."}
+                  : "Individuelle Hypnose-Sitzungen für echte Veränderung – direkt an der Ursache."}
               </p>
 
               {/* Bullets — 2-col on desktop, 6 items */}
