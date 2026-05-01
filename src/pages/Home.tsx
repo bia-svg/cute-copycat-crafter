@@ -546,17 +546,17 @@ export default function Home() {
             </div>
 
             {/* Seminar room photo */}
-            <div className="px-5 md:px-10 pb-3 md:pb-2.5">
+            <div className="px-5 md:px-12 pb-3 md:pb-2">
               <div className="rounded-xl overflow-hidden">
                 <img
                   src={CDN.trainingSeminar}
                   alt={isEN ? "Professional hypnotherapy training seminar" : "Professionelles Hypnosetherapie-Ausbildungsseminar"}
-                  className="w-full h-[7.5rem] md:h-72 object-cover [object-position:50%_52%]"
+                  className="w-full h-[7.5rem] md:h-80 object-cover [object-position:50%_52%]"
                   loading="lazy"
                   decoding="async"
-                  width={1200}
-                  height={600}
-                  sizes="(min-width: 768px) 1120px, 100vw"
+                  width={1280}
+                  height={640}
+                  sizes="(min-width: 768px) 1240px, 100vw"
                 />
               </div>
             </div>
