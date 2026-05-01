@@ -11,7 +11,7 @@ interface ServiceCardProps {
   imagePosition?: string;
 }
 
-export default function ServiceCard({ title, description, href, icon, image, imagePosition = "center 60%" }: ServiceCardProps) {
+export default function ServiceCard({ title, description, href, icon, image, imagePosition = "center 45%" }: ServiceCardProps) {
   return (
     <Link
       to={href}

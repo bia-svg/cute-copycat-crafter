@@ -193,6 +193,7 @@ export default function Home() {
       href: getPath("anxiety", language, country),
       icon: <Brain className="w-5 h-5" />,
       image: CDN.anxietyRelief,
+      imagePosition: "center 40%",
     },
     {
       title: isEN ? t("service.weight") : "Abnehmen & Essverhalten",
@@ -202,6 +203,7 @@ export default function Home() {
       href: getPath("weight", language, country),
       icon: <Scale className="w-5 h-5" />,
       image: CDN.weightLoss,
+      imagePosition: "center 35%",
     },
     {
       title: isEN ? t("service.stress") : "Stress bewältigen",
