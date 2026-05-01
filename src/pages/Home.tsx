@@ -646,9 +646,14 @@ export default function Home() {
       <section id="contact" className="py-6 md:py-6 bg-[#F8FAFC] border-y border-[#E8EDF3]" style={deferredSectionStyle}>
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 mb-3 text-center">
+            <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 mb-1 text-center">
               {language === "en" ? "Request a free consultation" : "Unverbindlich beraten lassen"}
             </h2>
+            <p className="text-sm text-[#2E7D32] mb-3 text-center font-normal">
+              {language === "en"
+                ? "I'll personally get back to you within 24 hours – often faster via WhatsApp."
+                : "Ich melde mich persönlich innerhalb von 24 Stunden – per WhatsApp oft schneller."}
+            </p>
             <div className="bg-white rounded-lg border-2 border-[#D1D5DB] p-4 sm:p-6 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
               <InlineContactForm />
             </div>

@@ -229,12 +229,6 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
           ? (isEN ? "Sending..." : "Wird gesendet...")
           : (isEN ? "Send request" : "Anfrage senden")}
       </Button>
-
-      <p className="text-[10px] text-muted-foreground text-center pt-0.5">
-        {isEN
-          ? "Reply within 24 hours. Often faster via WhatsApp."
-          : "Antwort innerhalb von 24 Stunden. Per WhatsApp oft schneller."}
-      </p>
     </form>
   );
 }

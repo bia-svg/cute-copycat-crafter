@@ -26,9 +26,14 @@ export default function Erstgespraech() {
       <section className="py-8 md:py-12 bg-[#F8FAFC] border-y border-[#E8EDF3]">
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-2xl sm:text-3xl font-light text-primary mb-4 text-center tracking-tight">
+            <h1 className="text-2xl sm:text-3xl font-light text-primary mb-1 text-center tracking-tight">
               {isEN ? "Request a free consultation" : "Unverbindlich beraten lassen"}
             </h1>
+            <p className="text-sm text-[#2E7D32] mb-4 text-center font-normal">
+              {isEN
+                ? "I'll personally get back to you within 24 hours – often faster via WhatsApp."
+                : "Ich melde mich persönlich innerhalb von 24 Stunden – per WhatsApp oft schneller."}
+            </p>
             <div className="bg-white rounded-2xl border-2 border-[#D1D5DB] p-4 sm:p-6 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
               <InlineContactForm />
             </div>

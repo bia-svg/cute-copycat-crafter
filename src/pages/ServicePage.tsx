@@ -437,9 +437,14 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       <section className="py-10 md:py-16 bg-[#F8FAFC]">
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-lg sm:text-xl font-light text-primary mb-3 text-center tracking-tight">
+            <h2 className="text-lg sm:text-xl font-light text-primary mb-1 text-center tracking-tight">
               {isEN ? "Request a free consultation" : "Unverbindlich beraten lassen"}
             </h2>
+            <p className="text-sm text-[#2E7D32] mb-3 text-center font-normal">
+              {isEN
+                ? "I'll personally get back to you within 24 hours – often faster via WhatsApp."
+                : "Ich melde mich persönlich innerhalb von 24 Stunden – per WhatsApp oft schneller."}
+            </p>
             <div className="bg-white rounded-2xl border-2 border-[#D1D5DB] p-4 sm:p-6 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
               <InlineContactForm />
             </div>
