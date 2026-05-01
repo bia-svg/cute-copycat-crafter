@@ -626,7 +626,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
-      <section className="py-4 md:py-4 mt-6 md:mt-8 mb-6 md:mb-8 bg-secondary mx-3 md:mx-auto md:max-w-[1200px] border border-primary/15 rounded-2xl" style={deferredSectionStyle}>
+      <section className="pt-4 md:pt-4 pb-6 md:pb-8 mt-6 md:mt-8 mb-6 md:mb-8 bg-secondary mx-3 md:mx-auto md:max-w-[1200px] border border-primary/15 rounded-2xl" style={deferredSectionStyle}>
         <div className="container-main">
           <h2 className="text-lg md:text-[22px] font-medium tracking-[0.01em] text-[#0B1F33] text-center mb-1 leading-tight">
             {isEN ? "Corporate Coaching & Success Programs" : "Firmencoaching & Erfolgsprogramme"}
@@ -661,11 +661,6 @@ export default function Home() {
                 {isEN ? "View All Corporate Programs" : "Alle Firmenprogramme ansehen"}
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <p className="text-xs text-[#4CAF50] mt-2">
-                {isEN
-                  ? "Tailored programs for your company – non-binding inquiry possible."
-                  : "Individuelle Programme für Ihr Unternehmen – unverbindliche Anfrage möglich."}
-              </p>
           </div>
         </div>
       </section>
