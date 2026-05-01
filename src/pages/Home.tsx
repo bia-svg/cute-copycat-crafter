@@ -628,15 +628,20 @@ export default function Home() {
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
       <section className="py-4 md:py-4 bg-secondary mx-3 md:mx-auto md:max-w-[1200px] border border-primary/15 rounded-2xl" style={deferredSectionStyle}>
         <div className="container-main">
-          <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-center mb-3 md:mb-3 text-foreground/90">
-            {isEN ? "Corporate Coaching" : "Firmencoaching"}
+          <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-center mb-1 text-foreground/90">
+            {isEN ? "Corporate Coaching & Success Programs" : "Firmencoaching & Erfolgsprogramme"}
           </h2>
+          <p className="text-xs md:text-sm text-foreground/60 text-center mb-3 md:mb-4 max-w-2xl mx-auto">
+            {isEN
+              ? "For companies, executives and teams – measurable results through targeted mental work."
+              : "Für Unternehmen, Führungskräfte und Teams – messbare Ergebnisse durch gezielte mentale Arbeit."}
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               {[
-                { icon: <Trophy className="w-6 h-6" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Success is ultimately decided in the mind." : "Letztendlich entscheidet sich Erfolg im Kopf.", href: getPath("corporateErfolg", language, country), image: corporateSuccessImg },
-                { icon: <Shield className="w-6 h-6" />, title: isEN ? "Resilience Building" : "Resilienz-Verstärken", desc: isEN ? "Build inner strength for challenging times." : "Innere Stärke aufbauen für schwere Zeiten.", href: getPath("corporateResilienz", language, country), image: corporateResilienceImg },
-                { icon: <Clock className="w-6 h-6" />, title: isEN ? "Stress Prevention" : "Stress-Prävention", desc: isEN ? "Burnout prevention for leaders and teams." : "Burnout-Prävention für Führungskräfte und Teams.", href: getPath("corporateStress", language, country), image: corporateStressImg },
-                { icon: <Cigarette className="w-6 h-6" />, title: isEN ? "Non-Smoker Seminars" : "Nichtraucher-Seminare", desc: isEN ? "'Non-smoker in 3 hours' — corporate wellness." : "'Nichtraucher in 3 Stunden' — Firmen-Wellness.", href: getPath("corporateNichtraucher", language, country), image: corporateNonsmokerImg },
+                { icon: <Trophy className="w-6 h-6" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Mental strength, focus and performance for executives and teams." : "Mentale Stärke, Fokus und Leistungssteigerung für Führungskräfte und Teams.", href: getPath("corporateErfolg", language, country), image: corporateSuccessImg },
+                { icon: <Shield className="w-6 h-6" />, title: isEN ? "Build Resilience" : "Resilienz stärken", desc: isEN ? "Build stress resistance, handle pressure better and stay sustainably stable." : "Stressresistenz aufbauen, Druck besser bewältigen und nachhaltig stabil bleiben.", href: getPath("corporateResilienz", language, country), image: corporateResilienceImg },
+                { icon: <Clock className="w-6 h-6" />, title: isEN ? "Stress Prevention" : "Stress-Prävention", desc: isEN ? "Reduce stress, prevent burnout and secure clear performance in everyday work." : "Stress reduzieren, Burnout vorbeugen und klare Leistungsfähigkeit im Alltag sichern.", href: getPath("corporateStress", language, country), image: corporateStressImg },
+                { icon: <Cigarette className="w-6 h-6" />, title: isEN ? "Non-Smoker Seminars" : "Nichtraucher-Seminare", desc: isEN ? "'Non-smoker in 3 hours' – effective health promotion for companies and employees." : "'Nichtraucher in 3 Stunden' – effektive Gesundheitsförderung für Unternehmen und Mitarbeiter.", href: getPath("corporateNichtraucher", language, country), image: corporateNonsmokerImg },
               ].map((item) => (
                 <ServiceCard
                   key={item.title}
@@ -653,9 +658,14 @@ export default function Home() {
                 to={getPath("corporate", language, country)}
                 className="inline-flex items-center gap-2 bg-[#ECEEF1] hover:bg-[#E2E5E9] text-[#1B3A5C] text-sm font-medium tracking-wide px-5 py-2.5 rounded-lg border border-[#1B3A5C]/25 shadow-none transition-colors"
               >
-                {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
+                {isEN ? "View All Corporate Programs" : "Alle Firmenprogramme ansehen"}
                 <ArrowRight className="w-4 h-4" />
               </Link>
+              <p className="text-xs text-foreground/55 mt-2">
+                {isEN
+                  ? "Tailored programs for your company – non-binding inquiry possible."
+                  : "Individuelle Programme für Ihr Unternehmen – unverbindliche Anfrage möglich."}
+              </p>
           </div>
         </div>
       </section>
