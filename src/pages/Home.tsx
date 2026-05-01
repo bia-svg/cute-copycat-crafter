@@ -563,25 +563,25 @@ export default function Home() {
 
             <div className="px-5 pb-5 md:px-10 md:pb-4">
               {/* Compact intro */}
-              <p className="text-foreground/75 text-[11px] md:text-[13px] mb-2 text-center max-w-lg md:max-w-3xl mx-auto leading-snug md:leading-snug">
+              <p className="text-foreground/75 text-[11px] md:text-[13px] mb-2 text-center max-w-lg md:max-w-[56rem] mx-auto leading-snug md:leading-snug">
                 {isEN
                   ? "Intensive seminar in Aktiv-Hypnose®: practical, immediately applicable and intentionally held in small, exclusive groups. Learn effective hypnosis techniques for your profession, self-employment and personal development."
                   : "Intensiv-Seminar in Aktiv-Hypnose®: praxisnah, direkt anwendbar und bewusst in kleinen, exklusiven Gruppen durchgeführt. Erlernen Sie wirkungsvolle Hypnose-Techniken für Beruf, Selbstständigkeit und persönliche Weiterentwicklung."}
               </p>
-              <p className="text-[#4CAF50] text-[10.5px] md:text-[12px] mb-3 text-center max-w-lg md:max-w-3xl mx-auto leading-snug italic">
+              <p className="text-[#4CAF50] text-[10.5px] md:text-[12px] mb-3 text-center max-w-lg md:max-w-[56rem] mx-auto leading-snug italic">
                 {isEN
                   ? "In 6 days you receive a compact, intensive training format with directly applicable methods."
                   : "In 6 Tagen erhalten Sie ein kompaktes, intensives Ausbildungsformat mit direkt umsetzbaren Methoden."}
               </p>
 
               {/* Stats — compact grid (short, scannable, equal-height) */}
-              <div className="grid grid-cols-5 gap-1.5 md:gap-2.5 mb-4 md:mb-5">
+              <div className="grid grid-cols-5 gap-1.5 md:gap-2.5 mb-4 md:mb-5 mt-3 md:mt-4 pt-1 md:pt-1.5">
                 {[
-                  { num: "350+", label: isEN ? "Manual" : "Mappe", hint: undefined as string | undefined, isDiploma: false },
-                  { num: "150+", label: isEN ? "Templates" : "Vorlagen", hint: isEN ? "for many areas of application" : "für viele Anwendungsbereiche", isDiploma: false },
-                  { num: "50+", label: isEN ? "Videos" : "Videos", hint: isEN ? "real seminar excerpts" : "echte Seminar-Ausschnitte", isDiploma: false },
-                  { num: "50+", label: isEN ? "Audios" : "Audios", hint: isEN ? "from real sessions" : "aus realen Sitzungen", isDiploma: false },
-                  { num: "", label: isEN ? "Diploma Therapist" : "Diplom Therapeut", hint: undefined, isDiploma: true },
+                  { num: "350+", label: isEN ? "pages Manual" : "Seiten Ausbildungsmappe", line2: undefined as string | undefined, hint: undefined as string | undefined, isDiploma: false },
+                  { num: "150+", label: isEN ? "Therapy Templates" : "Therapie-Vorlagen", line2: undefined, hint: isEN ? "for many areas of application" : "für viele Anwendungsbereiche", isDiploma: false },
+                  { num: "50+", label: isEN ? "Video Trainings" : "Video-Trainings", line2: undefined, hint: isEN ? "real seminar excerpts" : "echte Seminar-Ausschnitte", isDiploma: false },
+                  { num: "50+", label: isEN ? "Audio Hypnoses" : "Audio-Hypnosen", line2: undefined, hint: isEN ? "from real sessions" : "aus realen Sitzungen", isDiploma: false },
+                  { num: "", label: isEN ? "Diploma Therapist" : "Diplom Therapeut", line2: isEN ? "in Aktiv-Hypnose®" : "in Aktiv-Hypnose®", hint: undefined, isDiploma: true },
                 ].map(item => (
                   <div
                     key={item.label}
@@ -595,7 +595,10 @@ export default function Home() {
                     ) : (
                       <div className="text-[13px] md:text-lg font-bold text-[#0B1F33] leading-tight tracking-tight">{item.num}</div>
                     )}
-                    <div className="text-[7.5px] md:text-[10.5px] text-foreground/55 leading-tight font-medium mt-0.5 line-clamp-2">{item.label}</div>
+                    <div className="text-[7.5px] md:text-[10.5px] text-foreground/55 leading-tight font-medium mt-0.5">
+                      <div className="line-clamp-2">{item.label}</div>
+                      {item.line2 && <div className="line-clamp-1">{item.line2}</div>}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -611,10 +614,10 @@ export default function Home() {
                     {isEN ? "Learn more" : "Mehr erfahren"} →
                   </span>
                 </div>
-                <p className="text-[9px] md:text-[10.5px] text-muted-foreground/80 text-center max-w-xs md:max-w-md leading-snug">
+                <p className="text-[9px] md:text-[10.5px] text-foreground/70 text-center max-w-xs md:max-w-md leading-snug font-medium">
                   {isEN
-                    ? "EMR-compliant structure – participation certificate available for possible submission."
-                    : "EMR-konform aufgebaut – Teilnahmebestätigung für mögliche Einreichung erhältlich."}
+                    ? "EMR-compliant structure – participation certificate available for submission."
+                    : "EMR-konform aufgebaut – Teilnahmebestätigung zur Einreichung möglich."}
                 </p>
               </div>
             </div>
