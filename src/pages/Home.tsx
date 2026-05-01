@@ -204,6 +204,7 @@ export default function Home() {
       icon: <Scale className="w-5 h-5" />,
       image: CDN.weightLoss,
       imagePosition: "center 30%",
+      mobileImagePosition: "70% center",
     },
     {
       title: isEN ? t("service.stress") : "Stress bewältigen",
