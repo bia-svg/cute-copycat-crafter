@@ -597,14 +597,14 @@ export default function Home() {
                     <CheckCircle className="w-3.5 h-3.5 text-[#2E7D32] flex-shrink-0" />
                     <span className="text-[10px] md:text-xs font-semibold text-foreground/85 tracking-wide">EMR Krankenkasse Konform</span>
                   </div>
-                  <span className="text-xs md:text-sm font-semibold text-primary flex items-center gap-1">
-                    {isEN ? "View Details" : "Details ansehen"} →
+                  <span className="text-xs md:text-sm font-semibold text-[#2E7D32] hover:text-[#1B5E20] flex items-center gap-1">
+                    {isEN ? "Learn more" : "Mehr erfahren"} →
                   </span>
                 </div>
                 <p className="text-[9px] md:text-[10.5px] text-muted-foreground/80 text-center max-w-xs md:max-w-md leading-snug">
                   {isEN
-                    ? "EMR-compliant structure. Participants receive an optional hours and course content certificate for possible submission."
-                    : "EMR-konform aufgebaut. Auf Wunsch erhalten Teilnehmer einen Stunden- und Inhaltsnachweis zur möglichen Einreichung."}
+                    ? "EMR-compliant structure – participation certificate available for possible submission."
+                    : "EMR-konform aufgebaut – Teilnahmebestätigung für mögliche Einreichung erhältlich."}
                 </p>
               </div>
             </div>
