@@ -38,8 +38,8 @@ export default function ServiceCard({ title, description, href, icon, image }: S
                 <h3 className="font-semibold text-foreground text-[0.95rem] leading-tight">{title}</h3>
               </div>
               <p className="text-sm text-muted-foreground line-clamp-2 mb-1.5">{description}</p>
-              <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#2E7D32] group-hover:gap-2 transition-all">
-                Details <ArrowRight className="w-4 h-4" />
+              <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#2E7D32] group-hover:text-[#1B5E20] group-hover:gap-2 transition-all">
+                Mehr erfahren <ArrowRight className="w-4 h-4" />
               </span>
             </div>
           </div>
@@ -63,8 +63,8 @@ export default function ServiceCard({ title, description, href, icon, image }: S
                 <h3 className="font-semibold text-foreground text-sm line-clamp-1">{title}</h3>
               </div>
               <p className="text-xs text-muted-foreground line-clamp-2 leading-snug">{description}</p>
-              <span className="inline-flex items-center gap-1 text-xs text-primary font-medium mt-1 group-hover:gap-2 transition-all">
-                Details <ArrowRight className="w-3.5 h-3.5" />
+              <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#2E7D32] group-hover:text-[#1B5E20] mt-1 group-hover:gap-2 transition-all">
+                Mehr erfahren <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </div>
           </div>
@@ -77,8 +77,8 @@ export default function ServiceCard({ title, description, href, icon, image }: S
             <h3 className="font-semibold text-foreground">{title}</h3>
           </div>
           <p className="text-sm text-muted-foreground line-clamp-3">{description}</p>
-          <span className="inline-flex items-center gap-1 text-sm text-primary font-medium mt-3 group-hover:gap-2 transition-all">
-            Details <ArrowRight className="w-4 h-4" />
+          <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#2E7D32] hover:text-[#1B5E20] mt-3 group-hover:gap-2 transition-all">
+            Mehr erfahren <ArrowRight className="w-4 h-4" />
           </span>
         </div>
       )}
