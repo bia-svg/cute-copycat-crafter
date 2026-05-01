@@ -35,9 +35,9 @@ export default function ServiceCard({ title, description, href, icon, image }: S
             <div className="flex flex-col justify-center p-3 min-w-0">
               <div className="flex items-center gap-2 text-primary mb-1">
                 {icon}
-                <h3 className="font-semibold text-foreground text-[0.95rem] leading-tight">{title}</h3>
+                <h3 className="font-semibold text-foreground text-[0.95rem] leading-snug">{title}</h3>
               </div>
-              <p className="text-sm text-muted-foreground line-clamp-2 mb-1.5">{description}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-1.5">{description}</p>
               <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#2E7D32] group-hover:text-[#1B5E20] group-hover:gap-2 transition-all">
                 Mehr erfahren <ArrowRight className="w-4 h-4" />
               </span>
