@@ -563,20 +563,25 @@ export default function Home() {
 
             <div className="px-5 pb-5 md:px-10 md:pb-4">
               {/* Compact intro */}
-              <p className="text-foreground/75 text-[11px] md:text-[13px] mb-3 md:mb-3 text-center max-w-lg mx-auto leading-snug md:leading-snug">
+              <p className="text-foreground/75 text-[11px] md:text-[13px] mb-2 text-center max-w-lg mx-auto leading-snug md:leading-snug">
                 {isEN
-                  ? "Training for people who want to create real change – practical, effective, in small strictly limited groups."
-                  : "Ausbildung für Menschen, die echte Veränderung bewirken wollen – praxisnah, wirksam, in kleinen strikt begrenzten Gruppen."}
+                  ? "Intensive seminar in Aktiv-Hypnose: practical, immediately applicable and intentionally held in small, exclusive groups. Learn effective hypnosis techniques for your profession, self-employment or personal development."
+                  : "Intensiv-Seminar in Aktiv-Hypnose: praxisnah, direkt anwendbar und bewusst in kleinen, exklusiven Gruppen durchgeführt. Erlernen Sie wirkungsvolle Hypnose-Techniken für Beruf, Selbstständigkeit oder persönliche Weiterentwicklung."}
+              </p>
+              <p className="text-foreground/65 text-[10.5px] md:text-[12px] mb-3 text-center max-w-lg mx-auto leading-snug italic">
+                {isEN
+                  ? "In 6 days you receive a compact, intensive training format with directly applicable methods."
+                  : "In 6 Tagen erhalten Sie ein kompaktes, intensives Ausbildungsformat mit direkt umsetzbaren Methoden."}
               </p>
 
               {/* Stats — compact grid */}
               <div className="grid grid-cols-5 gap-1 md:gap-2 mb-2.5 md:mb-2.5">
                 {[
-                  { num: "350+", label: isEN ? "Pages Manual" : "Seiten Mappe" },
-                  { num: "150+", label: isEN ? "Example Texts" : "Beispieltexte" },
-                  { num: "50+", label: isEN ? "Videos" : "Videos" },
-                  { num: "50+", label: isEN ? "Audio" : "Audio" },
-                  { num: "✓", label: isEN ? "Diploma" : "Diplom" },
+                  { num: "350+", label: isEN ? "Pages Manual" : "Seiten Ausbildungsunterlagen" },
+                  { num: "150+", label: isEN ? "Practice Texts" : "Praxis- & Beispieltexte" },
+                  { num: "50+", label: isEN ? "Video Lessons" : "Video-Lektionen" },
+                  { num: "50+", label: isEN ? "Audio Programs" : "Audio-Programme" },
+                  { num: "✓", label: isEN ? "Diploma" : "Diplom Therapeut Aktiv-Hypnose" },
                 ].map(item => (
                   <div key={item.label} className="text-center bg-gradient-to-b from-[hsl(213,10%,95%)] to-[hsl(213,10%,92%)] border border-[hsl(213,12%,82%)] rounded-lg py-1 md:py-1.5 px-0.5 md:px-1">
                     <div className="text-xs md:text-base font-bold text-primary leading-tight">{item.num}</div>
@@ -592,14 +597,14 @@ export default function Home() {
                     <CheckCircle className="w-3.5 h-3.5 text-[#2E7D32] flex-shrink-0" />
                     <span className="text-[10px] md:text-xs font-semibold text-foreground/85 tracking-wide">EMR Krankenkasse Konform</span>
                   </div>
-                  <span className="text-xs md:text-sm font-semibold text-primary flex items-center gap-1">
-                    {isEN ? "View Details" : "Details ansehen"} →
+                  <span className="text-xs md:text-sm font-semibold text-[#2E7D32] hover:text-[#1B5E20] flex items-center gap-1">
+                    {isEN ? "Learn more" : "Mehr erfahren"} →
                   </span>
                 </div>
                 <p className="text-[9px] md:text-[10.5px] text-muted-foreground/80 text-center max-w-xs md:max-w-md leading-snug">
                   {isEN
-                    ? "EMR-compliant structure. Participants receive an optional hours and course content certificate for possible submission."
-                    : "EMR-konform aufgebaut. Auf Wunsch erhalten Teilnehmer einen Stunden- und Inhaltsnachweis zur möglichen Einreichung."}
+                    ? "EMR-compliant structure – participation certificate available for possible submission."
+                    : "EMR-konform aufgebaut – Teilnahmebestätigung für mögliche Einreichung erhältlich."}
                 </p>
               </div>
             </div>
