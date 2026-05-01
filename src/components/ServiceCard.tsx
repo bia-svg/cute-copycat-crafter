@@ -22,16 +22,15 @@ export default function ServiceCard({ title, description, href, icon, image, ima
       {image && (
         <>
           {/* Mobile: horizontal card with small thumbnail */}
-           <div className="flex md:hidden">
-            <div className="w-24 min-h-[5.5rem] shrink-0 overflow-hidden">
+           <div className={`w-24 shrink-0 overflow-hidden ${isMobileContain ? "min-h-[5rem] bg-[#f5f5f5] flex items-center justify-center" : "min-h-[5.5rem]"}`}>
               <img
                 src={image}
                 alt={title}
                 width={96}
-                height={88}
+                height={isMobileContain ? 80 : 88}
                 sizes="96px"
-                style={{ objectPosition: imagePosition }}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                style={{ objectPosition: isMobileContain ? "center" : imagePosition }}
+                className={`w-full h-full ${isMobileContain ? "object-contain" : "object-cover"} group-hover:scale-105 transition-transform duration-500`}
                 loading="lazy"
                 decoding="async"
               />
