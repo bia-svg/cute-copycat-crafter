@@ -180,7 +180,7 @@ export default function Home() {
       title: t("service.smoking"),
       description: isEN
         ? "Many people want to quit smoking and try again and again. Smoking is an unpleasant addiction that can cause massive damage not only to you but also to those around you."
-        : "Viele Menschen wollen aufhören zu rauchen und versuchen es daher immer wieder. Denn Rauchen ist eine unangenehme Sucht, die nicht nur Ihnen, sondern auch Ihrem Umfeld massiven Schaden zufügen kann.",
+        : "Rauchfrei werden, Raucherentwöhnung & Rauchstopp – dauerhaft und ohne Druck.",
       href: getPath("smoking", language, country),
       icon: <Cigarette className="w-5 h-5" />,
       image: CDN.stopSmoking,
