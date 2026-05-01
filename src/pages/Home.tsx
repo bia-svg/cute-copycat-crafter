@@ -207,7 +207,7 @@ export default function Home() {
       title: t("service.stress"),
       description: isEN
         ? "Stress reduction and burnout prevention are incredibly important topics in today's world."
-        : "Die Stressreduktion sowie die Burnout-Prävention sind gerade in der heutigen Zeit ein unglaublich wichtiges Thema.",
+        : "Stress reduzieren, Burnout vorbeugen und innere Ruhe wiederfinden.",
       href: getPath("stress", language, country),
       icon: <Flame className="w-5 h-5" />,
       image: CDN.stressBurnout,
