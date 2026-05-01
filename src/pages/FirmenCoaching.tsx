@@ -26,6 +26,7 @@ export default function FirmenCoaching() {
         : "Im Erfolgscoaching lernen die Teilnehmer, dass harte Arbeit und häufiges Training allein noch lange keine Garantie für Erfolg sind. Denn letztendlich entscheidet sich Erfolg im Kopf.",
       href: getPath("corporateErfolg", language, country),
       image: corporateSuccessImg,
+      imagePosition: "center 45%",
     },
     {
       icon: <Shield className="w-6 h-6" />,
@@ -35,6 +36,7 @@ export default function FirmenCoaching() {
         : "Durch das Resilienz Coaching arbeiten die Teilnehmer vor allem an der inneren Stärke. Diese ist vor allem in schweren Zeiten und bei aufkommendem Druck sowie Ärger, Stress oder Problemen wichtig.",
       href: getPath("corporateResilienz", language, country),
       image: corporateResilienceImg,
+      imagePosition: "center 40%",
     },
     {
       icon: <Clock className="w-6 h-6" />,
@@ -44,6 +46,7 @@ export default function FirmenCoaching() {
         : "Mit der Burnout-Prävention unterstützen David J. Woods und sein Team seit mehr als 20 Jahren Menschen aus Wirtschaft, Leistungssport und vielen weiteren Tätigkeitsfeldern.",
       href: getPath("corporateStress", language, country),
       image: corporateStressImg,
+      imagePosition: "center 45%",
     },
     {
       icon: <Cigarette className="w-6 h-6" />,
@@ -53,6 +56,7 @@ export default function FirmenCoaching() {
         : "Das Programm \u201eNichtraucher in 3 Stunden\u201c ist mehr als eine einfache Rauchentwöhnung. Denn durch dieses Business Coaching steigern Ihre Mitarbeiter dauerhaft ihre Leistungsfähigkeit.",
       href: getPath("corporateNichtraucher", language, country),
       image: corporateNonsmokerImg,
+      imagePosition: "center 45%",
     },
   ];
 
