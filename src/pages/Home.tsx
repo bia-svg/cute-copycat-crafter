@@ -640,10 +640,10 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               {[
-                { icon: <Trophy className="w-6 h-6" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Mental strength, focus and performance for executives and teams." : "Mentale Stärke, Fokus und Leistungssteigerung für Führungskräfte und Teams.", href: getPath("corporateErfolg", language, country), image: corporateSuccessImg },
-                { icon: <Shield className="w-6 h-6" />, title: isEN ? "Build Resilience" : "Resilienz stärken", desc: isEN ? "Build stress resistance, handle pressure better and stay sustainably stable." : "Stressresistenz aufbauen, Druck besser bewältigen und nachhaltig stabil bleiben.", href: getPath("corporateResilienz", language, country), image: corporateResilienceImg },
-                { icon: <Clock className="w-6 h-6" />, title: isEN ? "Stress Prevention" : "Stress-Prävention", desc: isEN ? "Reduce stress, prevent burnout and secure clear performance in everyday work." : "Stress reduzieren, Burnout vorbeugen und klare Leistungsfähigkeit im Alltag sichern.", href: getPath("corporateStress", language, country), image: corporateStressImg },
-                { icon: <Cigarette className="w-6 h-6" />, title: isEN ? "Non-Smoker Seminars" : "Nichtraucher-Seminare", desc: isEN ? "'Non-smoker in 3 hours' – effective health promotion for companies and employees." : "'Nichtraucher in 3 Stunden' – effektive Gesundheitsförderung für Unternehmen und Mitarbeiter.", href: getPath("corporateNichtraucher", language, country), image: corporateNonsmokerImg },
+                { icon: <Trophy className="w-6 h-6" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Mental strength, focus and performance for executives and teams." : "Mentale Stärke, Fokus und Leistungssteigerung für Führungskräfte und Teams.", href: getPath("corporateErfolg", language, country), image: corporateSuccessImg, imagePosition: "center 45%" },
+                { icon: <Shield className="w-6 h-6" />, title: isEN ? "Build Resilience" : "Resilienz stärken", desc: isEN ? "Build stress resistance, handle pressure better and stay sustainably stable." : "Stressresistenz aufbauen, Druck besser bewältigen und nachhaltig stabil bleiben.", href: getPath("corporateResilienz", language, country), image: corporateResilienceImg, imagePosition: "center 40%" },
+                { icon: <Clock className="w-6 h-6" />, title: isEN ? "Stress Prevention" : "Stress-Prävention", desc: isEN ? "Reduce stress, prevent burnout and secure clear performance in everyday work." : "Stress reduzieren, Burnout vorbeugen und klare Leistungsfähigkeit im Alltag sichern.", href: getPath("corporateStress", language, country), image: corporateStressImg, imagePosition: "center 45%" },
+                { icon: <Cigarette className="w-6 h-6" />, title: isEN ? "Non-Smoker Seminars" : "Nichtraucher-Seminare", desc: isEN ? "'Non-smoker in 3 hours' – effective health promotion for companies and employees." : "'Nichtraucher in 3 Stunden' – effektive Gesundheitsförderung für Unternehmen und Mitarbeiter.", href: getPath("corporateNichtraucher", language, country), image: corporateNonsmokerImg, imagePosition: "center 45%" },
               ].map((item) => (
                 <ServiceCard
                   key={item.title}
@@ -652,7 +652,7 @@ export default function Home() {
                   href={item.href}
                   icon={item.icon}
                   image={item.image}
-                  imagePosition="center 68%"
+                  imagePosition={item.imagePosition}
                 />
               ))}
             </div>
