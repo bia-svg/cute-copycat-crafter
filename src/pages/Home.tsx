@@ -658,9 +658,14 @@ export default function Home() {
                 to={getPath("corporate", language, country)}
                 className="inline-flex items-center gap-2 bg-[#ECEEF1] hover:bg-[#E2E5E9] text-[#1B3A5C] text-sm font-medium tracking-wide px-5 py-2.5 rounded-lg border border-[#1B3A5C]/25 shadow-none transition-colors"
               >
-                {isEN ? "All Corporate Programs" : "Alle Firmen-Programme"}
+                {isEN ? "View All Corporate Programs" : "Alle Firmenprogramme ansehen"}
                 <ArrowRight className="w-4 h-4" />
               </Link>
+              <p className="text-xs text-foreground/55 mt-2">
+                {isEN
+                  ? "Tailored programs for your company – non-binding inquiry possible."
+                  : "Individuelle Programme für Ihr Unternehmen – unverbindliche Anfrage möglich."}
+              </p>
           </div>
         </div>
       </section>
