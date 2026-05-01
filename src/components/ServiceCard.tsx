@@ -9,9 +9,11 @@ interface ServiceCardProps {
   icon: ReactNode;
   image?: string;
   imagePosition?: string;
+  mobileImagePosition?: string;
 }
 
-export default function ServiceCard({ title, description, href, icon, image, imagePosition = "center 45%" }: ServiceCardProps) {
+export default function ServiceCard({ title, description, href, icon, image, imagePosition = "center 45%", mobileImagePosition }: ServiceCardProps) {
+  const mobilePos = mobileImagePosition ?? imagePosition;
   return (
     <Link
       to={href}
@@ -28,7 +30,7 @@ export default function ServiceCard({ title, description, href, icon, image, ima
                 width={96}
                 height={88}
                 sizes="96px"
-                style={{ objectPosition: imagePosition }}
+                style={{ objectPosition: mobilePos }}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
                 decoding="async"
