@@ -198,7 +198,7 @@ export default function Home() {
       title: t("service.weight"),
       description: isEN
         ? "Losing weight is not always easy, yet every year countless people try one curious diet after another."
-        : "Abnehmen ist nicht immer leicht und doch testen jedes Jahr unzählige Menschen eine kuriose Diät nach der anderen.",
+        : "Abnehmen, Gewichtsreduktion und Essverhalten nachhaltig verändern.",
       href: getPath("weight", language, country),
       icon: <Scale className="w-5 h-5" />,
       image: CDN.weightLoss,
