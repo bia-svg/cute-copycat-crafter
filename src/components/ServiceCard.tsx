@@ -9,9 +9,11 @@ interface ServiceCardProps {
   icon: ReactNode;
   image?: string;
   imagePosition?: string;
+  mobileImageFit?: "cover" | "contain";
 }
 
-export default function ServiceCard({ title, description, href, icon, image, imagePosition = "center 45%" }: ServiceCardProps) {
+export default function ServiceCard({ title, description, href, icon, image, imagePosition = "center 45%", mobileImageFit = "cover" }: ServiceCardProps) {
+  const isMobileContain = mobileImageFit === "contain";
   return (
     <Link
       to={href}
