@@ -186,7 +186,7 @@ export default function Home() {
       image: CDN.stopSmoking,
     },
     {
-      title: t("service.anxiety"),
+      title: isEN ? t("service.anxiety") : "Ängste, Panik & Phobien",
       description: isEN
         ? "Overcoming anxieties and phobias is not always easy. Insecurities are a natural protective mechanism that everyone possesses."
         : "Ängste bewältigen, Phobien lösen und belastende Gedanken in den Griff bekommen.",
@@ -195,7 +195,7 @@ export default function Home() {
       image: CDN.anxietyRelief,
     },
     {
-      title: t("service.weight"),
+      title: isEN ? t("service.weight") : "Abnehmen & Essverhalten",
       description: isEN
         ? "Losing weight is not always easy, yet every year countless people try one curious diet after another."
         : "Abnehmen, Gewichtsreduktion und Essverhalten nachhaltig verändern.",
@@ -204,7 +204,7 @@ export default function Home() {
       image: CDN.weightLoss,
     },
     {
-      title: t("service.stress"),
+      title: isEN ? t("service.stress") : "Stress bewältigen",
       description: isEN
         ? "Stress reduction and burnout prevention are incredibly important topics in today's world."
         : "Stress reduzieren, Burnout vorbeugen und innere Ruhe wiederfinden.",
@@ -213,7 +213,7 @@ export default function Home() {
       image: CDN.stressBurnout,
     },
     {
-      title: t("service.children"),
+      title: isEN ? t("service.children") : "Kinder & Jugendliche stärken",
       description: isEN
         ? "With hypnosis for children and teenagers, not only problems but also fears can be overcome."
         : "Konzentration stärken, Selbstbewusstsein aufbauen und Ängste lösen.",
@@ -222,7 +222,7 @@ export default function Home() {
       image: CDN.childrenTeens,
     },
     {
-      title: t("service.depression"),
+      title: isEN ? t("service.depression") : "Depression & Trauma lösen",
       description: isEN
         ? "Hypnosis for depression and trauma helps you discover new perspectives and regain your joy of life."
         : "Depressionen lösen, Trauma verarbeiten und wieder Lebensfreude spüren.",
