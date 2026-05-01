@@ -111,6 +111,7 @@ export default function FirmenCoaching() {
                   href={item.href}
                   icon={item.icon}
                   image={item.image}
+                  imagePosition="center 68%"
                 />
               ))}
             </div>
