@@ -614,10 +614,10 @@ export default function Home() {
                     {isEN ? "Learn more" : "Mehr erfahren"} →
                   </span>
                 </div>
-                <p className="text-[9px] md:text-[10.5px] text-muted-foreground/80 text-center max-w-xs md:max-w-md leading-snug">
+                <p className="text-[9px] md:text-[10.5px] text-foreground/70 text-center max-w-xs md:max-w-md leading-snug font-medium">
                   {isEN
-                    ? "EMR-compliant structure – participation certificate available for possible submission."
-                    : "EMR-konform aufgebaut – Teilnahmebestätigung für mögliche Einreichung erhältlich."}
+                    ? "EMR-compliant structure – participation certificate available for submission."
+                    : "EMR-konform aufgebaut – Teilnahmebestätigung zur Einreichung möglich."}
                 </p>
               </div>
             </div>
