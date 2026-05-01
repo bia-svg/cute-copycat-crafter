@@ -180,7 +180,7 @@ export default function Home() {
       title: t("service.smoking"),
       description: isEN
         ? "Many people want to quit smoking and try again and again. Smoking is an unpleasant addiction that can cause massive damage not only to you but also to those around you."
-        : "Rauchfrei werden, Raucherentwöhnung & Rauchstopp – dauerhaft und ohne Druck.",
+        : "Rauchfrei werden – Raucherentwöhnung & Rauchstopp dauerhaft und ohne Druck.",
       href: getPath("smoking", language, country),
       icon: <Cigarette className="w-5 h-5" />,
       image: CDN.stopSmoking,
@@ -189,7 +189,7 @@ export default function Home() {
       title: t("service.anxiety"),
       description: isEN
         ? "Overcoming anxieties and phobias is not always easy. Insecurities are a natural protective mechanism that everyone possesses."
-        : "Ängste bewältigen, Phobien lösen und Zwangsgedanken in den Griff bekommen.",
+        : "Ängste bewältigen, Phobien lösen und belastende Gedanken in den Griff bekommen.",
       href: getPath("anxiety", language, country),
       icon: <Brain className="w-5 h-5" />,
       image: CDN.anxietyRelief,
