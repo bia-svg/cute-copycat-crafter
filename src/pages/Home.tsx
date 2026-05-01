@@ -529,10 +529,10 @@ export default function Home() {
 
       {/* ═══════════════════ TRAINING ═══════════════════ */}
       <section className="pt-7 pb-7 md:py-9 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-6 md:mx-auto md:max-w-[1340px]">
-          <Link to={getPath("training", language, country)} className="block max-w-sm md:max-w-[1280px] mx-auto relative bg-white rounded-2xl overflow-hidden shadow-[0_16px_48px_-8px_rgba(0,0,0,0.3),0_4px_12px_-2px_rgba(0,0,0,0.15)] transition-transform duration-200 hover:scale-[1.01] hover:shadow-[0_20px_56px_-8px_rgba(0,0,0,0.35),0_6px_16px_-2px_rgba(0,0,0,0.18)] cursor-pointer">
+        <div className="mx-6 md:mx-auto md:max-w-[1200px]">
+          <Link to={getPath("training", language, country)} className="block max-w-sm md:max-w-5xl mx-auto relative bg-white rounded-2xl overflow-hidden shadow-[0_16px_48px_-8px_rgba(0,0,0,0.3),0_4px_12px_-2px_rgba(0,0,0,0.15)] transition-transform duration-200 hover:scale-[1.01] hover:shadow-[0_20px_56px_-8px_rgba(0,0,0,0.35),0_6px_16px_-2px_rgba(0,0,0,0.18)] cursor-pointer">
             {/* Label + Title */}
-            <div className="text-center pt-5 pb-2 md:pt-3 md:pb-1.5 px-5 md:px-12">
+            <div className="text-center pt-5 pb-2 md:pt-3 md:pb-1.5 px-5 md:px-10">
               <span className="inline-flex items-center gap-1.5 text-[9px] md:text-[10px] font-semibold uppercase tracking-[0.16em] text-[hsl(213,10%,40%)] border border-[hsl(213,12%,80%)] rounded-full px-3 py-0.5 md:px-3.5 md:py-1 bg-gradient-to-r from-[hsl(213,10%,93%)] to-[hsl(213,10%,96%)] mb-2 md:mb-2 shadow-sm">
                 <Award className="w-2.5 h-2.5" />
                 {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
@@ -546,56 +546,56 @@ export default function Home() {
             </div>
 
             {/* Seminar room photo */}
-            <div className="px-5 md:px-12 pb-3 md:pb-2">
+            <div className="px-5 md:px-10 pb-3 md:pb-2.5">
               <div className="rounded-xl overflow-hidden">
                 <img
                   src={CDN.trainingSeminar}
                   alt={isEN ? "Professional hypnotherapy training seminar" : "Professionelles Hypnosetherapie-Ausbildungsseminar"}
-                  className="w-full h-[7.5rem] md:h-80 object-cover [object-position:50%_52%]"
+                  className="w-full h-[7.5rem] md:h-72 object-cover [object-position:50%_52%]"
                   loading="lazy"
                   decoding="async"
-                  width={1280}
-                  height={640}
-                  sizes="(min-width: 768px) 1240px, 100vw"
+                  width={1200}
+                  height={600}
+                  sizes="(min-width: 768px) 1120px, 100vw"
                 />
               </div>
             </div>
 
-            <div className="px-5 pb-5 md:px-12 md:pb-4">
+            <div className="px-5 pb-5 md:px-10 md:pb-4">
               {/* Compact intro */}
-              <p className="text-foreground/75 text-[11px] md:text-[13.5px] mb-2 md:mb-1.5 text-center max-w-2xl mx-auto leading-snug md:leading-snug">
+              <p className="text-foreground/75 text-[11px] md:text-[13px] mb-2 text-center max-w-lg mx-auto leading-snug md:leading-snug">
                 {isEN
                   ? "Intensive seminar in Aktiv-Hypnose®: practical, immediately applicable and intentionally held in small, exclusive groups. Learn effective hypnosis techniques for your profession, self-employment and personal development."
                   : "Intensiv-Seminar in Aktiv-Hypnose®: praxisnah, direkt anwendbar und bewusst in kleinen, exklusiven Gruppen durchgeführt. Erlernen Sie wirkungsvolle Hypnose-Techniken für Beruf, Selbstständigkeit und persönliche Weiterentwicklung."}
               </p>
-              <p className="text-foreground/65 text-[10.5px] md:text-[12px] mb-3 md:mb-3 text-center max-w-2xl mx-auto leading-snug italic">
+              <p className="text-foreground/65 text-[10.5px] md:text-[12px] mb-3 text-center max-w-lg mx-auto leading-snug italic">
                 {isEN
                   ? "In 6 days you receive a compact, intensive training format with directly applicable methods."
                   : "In 6 Tagen erhalten Sie ein kompaktes, intensives Ausbildungsformat mit direkt umsetzbaren Methoden."}
               </p>
 
               {/* Stats — compact grid (short, scannable, equal-height) */}
-              <div className="grid grid-cols-5 gap-1.5 md:gap-5 mb-4 md:mb-5">
+              <div className="grid grid-cols-5 gap-1.5 md:gap-2.5 mb-4 md:mb-5">
                 {[
-                  { num: "350+", label: isEN ? "Training Manual" : "Ausbildungsmappe", hint: undefined as string | undefined, isDiploma: false },
-                  { num: "150+", label: isEN ? "Therapy Templates" : "Therapie-Vorlagen", hint: isEN ? "for many areas of application" : "für viele Anwendungsbereiche", isDiploma: false },
-                  { num: "50+", label: isEN ? "Video Training" : "Video-Training", hint: isEN ? "real seminar excerpts" : "echte Seminar-Ausschnitte", isDiploma: false },
-                  { num: "50+", label: isEN ? "Audio Hypnoses" : "Audio-Hypnosen", hint: isEN ? "from real sessions" : "aus realen Sitzungen", isDiploma: false },
-                  { num: "", label: isEN ? "Diploma Therapist in Aktiv-Hypnose®" : "Diplom Therapeut in Aktiv-Hypnose®", hint: undefined, isDiploma: true },
+                  { num: "350+", label: isEN ? "Manual" : "Mappe", hint: undefined as string | undefined, isDiploma: false },
+                  { num: "150+", label: isEN ? "Templates" : "Vorlagen", hint: isEN ? "for many areas of application" : "für viele Anwendungsbereiche", isDiploma: false },
+                  { num: "50+", label: isEN ? "Videos" : "Videos", hint: isEN ? "real seminar excerpts" : "echte Seminar-Ausschnitte", isDiploma: false },
+                  { num: "50+", label: isEN ? "Audios" : "Audios", hint: isEN ? "from real sessions" : "aus realen Sitzungen", isDiploma: false },
+                  { num: "", label: isEN ? "Diploma Therapist" : "Diplom Therapeut", hint: undefined, isDiploma: true },
                 ].map(item => (
                   <div
                     key={item.label}
                     title={item.hint}
-                    className="relative text-center bg-white border border-[#E2E8EE] rounded-xl py-2.5 md:py-4 px-1 md:px-2 flex flex-col items-center justify-center min-h-[58px] md:min-h-[88px] overflow-hidden shadow-[0_2px_6px_-2px_rgba(15,23,42,0.08),0_1px_2px_-1px_rgba(15,23,42,0.05)]"
+                    className="relative text-center bg-white border border-[#E2E8EE] rounded-xl py-2 md:py-3 px-1 md:px-1.5 flex flex-col items-center justify-center min-h-[58px] md:min-h-[78px] overflow-hidden"
                   >
                     {/* subtle green accent bar at top */}
-                    <span className="absolute top-0 left-1/2 -translate-x-1/2 w-7 md:w-10 h-[2px] rounded-b bg-[#2E7D32]/70" />
+                    <span className="absolute top-0 left-1/2 -translate-x-1/2 w-6 md:w-8 h-[2px] rounded-b bg-[#2E7D32]/60" />
                     {item.isDiploma ? (
-                      <BadgeCheck className="w-[18px] h-[18px] md:w-[22px] md:h-[22px] text-[#1B3A5C] mb-0.5" strokeWidth={1.75} />
+                      <BadgeCheck className="w-4 h-4 md:w-5 md:h-5 text-[#1B3A5C] mb-0.5" strokeWidth={1.75} />
                     ) : (
-                      <div className="text-[14px] md:text-[20px] font-bold text-[#0B1F33] leading-tight tracking-tight">{item.num}</div>
+                      <div className="text-[13px] md:text-lg font-bold text-[#0B1F33] leading-tight tracking-tight">{item.num}</div>
                     )}
-                    <div className="text-[7.5px] md:text-[11px] text-foreground/60 leading-tight font-medium mt-0.5 line-clamp-2">{item.label}</div>
+                    <div className="text-[7.5px] md:text-[10.5px] text-foreground/55 leading-tight font-medium mt-0.5 line-clamp-2">{item.label}</div>
                   </div>
                 ))}
               </div>
