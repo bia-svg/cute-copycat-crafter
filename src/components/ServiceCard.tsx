@@ -9,12 +9,9 @@ interface ServiceCardProps {
   icon: ReactNode;
   image?: string;
   imagePosition?: string;
-  imageFit?: "cover" | "contain";
 }
 
-export default function ServiceCard({ title, description, href, icon, image, imagePosition = "center 45%", imageFit = "cover" }: ServiceCardProps) {
-  const fitClass = imageFit === "contain" ? "object-contain" : "object-cover";
-  const bgClass = imageFit === "contain" ? "bg-[#F1F4F7]" : "";
+export default function ServiceCard({ title, description, href, icon, image, imagePosition = "center 45%" }: ServiceCardProps) {
   return (
     <Link
       to={href}
@@ -24,7 +21,7 @@ export default function ServiceCard({ title, description, href, icon, image, ima
         <>
           {/* Mobile: horizontal card with small thumbnail */}
            <div className="flex md:hidden">
-            <div className={`w-24 min-h-[5.5rem] shrink-0 overflow-hidden ${bgClass}`}>
+            <div className="w-24 min-h-[5.5rem] shrink-0 overflow-hidden">
               <img
                 src={image}
                 alt={title}
@@ -32,7 +29,7 @@ export default function ServiceCard({ title, description, href, icon, image, ima
                 height={88}
                 sizes="96px"
                 style={{ objectPosition: imagePosition }}
-                className={`w-full h-full ${fitClass} group-hover:scale-105 transition-transform duration-500`}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
                 decoding="async"
               />
@@ -50,7 +47,7 @@ export default function ServiceCard({ title, description, href, icon, image, ima
           </div>
           {/* Desktop: vertical card */}
           <div className="hidden md:block">
-            <div className={`aspect-[16/9] overflow-hidden ${bgClass}`}>
+            <div className="aspect-[16/9] overflow-hidden">
               <img
                 src={image}
                 alt={title}
@@ -58,7 +55,7 @@ export default function ServiceCard({ title, description, href, icon, image, ima
                 height={360}
                 sizes="(min-width: 1024px) 380px, (min-width: 768px) 50vw, 100vw"
                 style={{ objectPosition: imagePosition }}
-                className={`w-full h-full ${fitClass} group-hover:scale-105 transition-transform duration-500`}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
                 decoding="async"
               />

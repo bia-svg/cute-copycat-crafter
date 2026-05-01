@@ -203,8 +203,7 @@ export default function Home() {
       href: getPath("weight", language, country),
       icon: <Scale className="w-5 h-5" />,
       image: CDN.weightLoss,
-      imagePosition: "center",
-      imageFit: "contain" as const,
+      imagePosition: "center 30%",
     },
     {
       title: isEN ? t("service.stress") : "Stress bewältigen",
