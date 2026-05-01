@@ -216,7 +216,7 @@ export default function Home() {
       title: t("service.children"),
       description: isEN
         ? "With hypnosis for children and teenagers, not only problems but also fears can be overcome."
-        : "Mit der Hypnose für Kinder sowie der Hypnose für Jugendliche können nicht nur Probleme, sondern auch Ängste bewältigt werden.",
+        : "Konzentration stärken, Selbstbewusstsein aufbauen und Ängste lösen.",
       href: getPath("children", language, country),
       icon: <Users className="w-5 h-5" />,
       image: CDN.childrenTeens,
