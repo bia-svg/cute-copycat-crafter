@@ -574,18 +574,28 @@ export default function Home() {
                   : "In 6 Tagen erhalten Sie ein kompaktes, intensives Ausbildungsformat mit direkt umsetzbaren Methoden."}
               </p>
 
-              {/* Stats — compact grid */}
-              <div className="grid grid-cols-5 gap-1 md:gap-2 mb-2.5 md:mb-2.5">
+              {/* Stats — compact grid (short, scannable, equal-height) */}
+              <div className="grid grid-cols-5 gap-1.5 md:gap-2.5 mb-4 md:mb-5">
                 {[
-                  { num: "350+", label: isEN ? "Pages Manual" : "Seiten Ausbildungsunterlagen" },
-                  { num: "150+", label: isEN ? "Practice Texts" : "Praxis- & Beispieltexte" },
-                  { num: "50+", label: isEN ? "Video Lessons" : "Video-Lektionen" },
-                  { num: "50+", label: isEN ? "Audio Programs" : "Audio-Programme" },
-                  { num: "✓", label: isEN ? "Diploma" : "Diplom Therapeut Aktiv-Hypnose" },
+                  { num: "350+", label: isEN ? "Pages Manual" : "Seiten Mappe", hint: undefined as string | undefined, isDiploma: false },
+                  { num: "150+", label: isEN ? "Therapy Templates" : "Therapie-Vorlagen", hint: isEN ? "for many areas of application" : "für viele Anwendungsbereiche", isDiploma: false },
+                  { num: "50+", label: isEN ? "Video Training" : "Video-Training", hint: isEN ? "real seminar excerpts" : "echte Seminar-Ausschnitte", isDiploma: false },
+                  { num: "50+", label: isEN ? "Audio Hypnoses" : "Audio-Hypnosen", hint: isEN ? "from real sessions" : "aus realen Sitzungen", isDiploma: false },
+                  { num: "", label: isEN ? "Diploma Therapist" : "Diplom Therapeut", hint: undefined, isDiploma: true },
                 ].map(item => (
-                  <div key={item.label} className="text-center bg-gradient-to-b from-[hsl(213,10%,95%)] to-[hsl(213,10%,92%)] border border-[hsl(213,12%,82%)] rounded-lg py-1 md:py-1.5 px-0.5 md:px-1">
-                    <div className="text-xs md:text-base font-bold text-primary leading-tight">{item.num}</div>
-                    <div className="text-[6px] md:text-[10px] text-muted-foreground leading-tight font-medium mt-0.5">{item.label}</div>
+                  <div
+                    key={item.label}
+                    title={item.hint}
+                    className="relative text-center bg-white border border-[#E2E8EE] rounded-xl py-2 md:py-3 px-1 md:px-1.5 flex flex-col items-center justify-center min-h-[58px] md:min-h-[78px] overflow-hidden"
+                  >
+                    {/* subtle green accent bar at top */}
+                    <span className="absolute top-0 left-1/2 -translate-x-1/2 w-6 md:w-8 h-[2px] rounded-b bg-[#2E7D32]/60" />
+                    {item.isDiploma ? (
+                      <Award className="w-4 h-4 md:w-5 md:h-5 text-[#1B3A5C] mb-0.5" strokeWidth={1.75} />
+                    ) : (
+                      <div className="text-[13px] md:text-lg font-bold text-[#0B1F33] leading-tight tracking-tight">{item.num}</div>
+                    )}
+                    <div className="text-[7.5px] md:text-[10.5px] text-foreground/55 leading-tight font-medium mt-0.5 line-clamp-2">{item.label}</div>
                   </div>
                 ))}
               </div>
