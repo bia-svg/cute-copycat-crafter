@@ -180,7 +180,7 @@ export default function Home() {
       title: t("service.smoking"),
       description: isEN
         ? "Many people want to quit smoking and try again and again. Smoking is an unpleasant addiction that can cause massive damage not only to you but also to those around you."
-        : "Viele Menschen wollen aufhören zu rauchen und versuchen es daher immer wieder. Denn Rauchen ist eine unangenehme Sucht, die nicht nur Ihnen, sondern auch Ihrem Umfeld massiven Schaden zufügen kann.",
+        : "Rauchfrei werden, Raucherentwöhnung & Rauchstopp – dauerhaft und ohne Druck.",
       href: getPath("smoking", language, country),
       icon: <Cigarette className="w-5 h-5" />,
       image: CDN.stopSmoking,
@@ -189,7 +189,7 @@ export default function Home() {
       title: t("service.anxiety"),
       description: isEN
         ? "Overcoming anxieties and phobias is not always easy. Insecurities are a natural protective mechanism that everyone possesses."
-        : "Wer Ängste loswerden und Phobien überwinden möchte, hat es nicht immer leicht. Denn Unsicherheiten sind ein natürlicher Schutzmechanismus.",
+        : "Ängste bewältigen, Phobien lösen und Zwangsgedanken in den Griff bekommen.",
       href: getPath("anxiety", language, country),
       icon: <Brain className="w-5 h-5" />,
       image: CDN.anxietyRelief,
@@ -198,7 +198,7 @@ export default function Home() {
       title: t("service.weight"),
       description: isEN
         ? "Losing weight is not always easy, yet every year countless people try one curious diet after another."
-        : "Abnehmen ist nicht immer leicht und doch testen jedes Jahr unzählige Menschen eine kuriose Diät nach der anderen.",
+        : "Abnehmen, Gewichtsreduktion und Essverhalten nachhaltig verändern.",
       href: getPath("weight", language, country),
       icon: <Scale className="w-5 h-5" />,
       image: CDN.weightLoss,
@@ -207,7 +207,7 @@ export default function Home() {
       title: t("service.stress"),
       description: isEN
         ? "Stress reduction and burnout prevention are incredibly important topics in today's world."
-        : "Die Stressreduktion sowie die Burnout-Prävention sind gerade in der heutigen Zeit ein unglaublich wichtiges Thema.",
+        : "Stress reduzieren, Burnout vorbeugen und innere Ruhe wiederfinden.",
       href: getPath("stress", language, country),
       icon: <Flame className="w-5 h-5" />,
       image: CDN.stressBurnout,
@@ -216,7 +216,7 @@ export default function Home() {
       title: t("service.children"),
       description: isEN
         ? "With hypnosis for children and teenagers, not only problems but also fears can be overcome."
-        : "Mit der Hypnose für Kinder sowie der Hypnose für Jugendliche können nicht nur Probleme, sondern auch Ängste bewältigt werden.",
+        : "Konzentration stärken, Selbstbewusstsein aufbauen und Ängste lösen.",
       href: getPath("children", language, country),
       icon: <Users className="w-5 h-5" />,
       image: CDN.childrenTeens,
@@ -225,7 +225,7 @@ export default function Home() {
       title: t("service.depression"),
       description: isEN
         ? "Hypnosis for depression and trauma helps you discover new perspectives and regain your joy of life."
-        : "Die hypnotische Begleitung hilft Ihnen dabei, neue Perspektiven zu entdecken und Ihre Lebensfreude wiederzugewinnen.",
+        : "Depressionen lösen, Trauma verarbeiten und wieder Lebensfreude spüren.",
       href: getPath("depression", language, country),
       icon: <HeartPulse className="w-5 h-5" />,
       image: CDN.depressionTrauma,
