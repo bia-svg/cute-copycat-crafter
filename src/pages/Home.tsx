@@ -650,6 +650,7 @@ export default function Home() {
                   href={item.href}
                   icon={item.icon}
                   image={item.image}
+                  imagePosition="center 68%"
                 />
               ))}
             </div>
