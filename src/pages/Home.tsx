@@ -189,7 +189,7 @@ export default function Home() {
       title: t("service.anxiety"),
       description: isEN
         ? "Overcoming anxieties and phobias is not always easy. Insecurities are a natural protective mechanism that everyone possesses."
-        : "Wer Ängste loswerden und Phobien überwinden möchte, hat es nicht immer leicht. Denn Unsicherheiten sind ein natürlicher Schutzmechanismus.",
+        : "Ängste bewältigen, Phobien lösen und Zwangsgedanken in den Griff bekommen.",
       href: getPath("anxiety", language, country),
       icon: <Brain className="w-5 h-5" />,
       image: CDN.anxietyRelief,
