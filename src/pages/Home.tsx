@@ -661,11 +661,6 @@ export default function Home() {
                 {isEN ? "View All Corporate Programs" : "Alle Firmenprogramme ansehen"}
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <p className="text-xs text-[#4CAF50] mt-2">
-                {isEN
-                  ? "Tailored programs for your company – non-binding inquiry possible."
-                  : "Individuelle Programme für Ihr Unternehmen – unverbindliche Anfrage möglich."}
-              </p>
           </div>
         </div>
       </section>
