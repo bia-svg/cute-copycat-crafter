@@ -628,9 +628,14 @@ export default function Home() {
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
       <section className="py-4 md:py-4 bg-secondary mx-3 md:mx-auto md:max-w-[1200px] border border-primary/15 rounded-2xl" style={deferredSectionStyle}>
         <div className="container-main">
-          <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-center mb-3 md:mb-3 text-foreground/90">
-            {isEN ? "Corporate Coaching" : "Firmencoaching"}
+          <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-center mb-1 text-foreground/90">
+            {isEN ? "Corporate Coaching & Success Programs" : "Firmencoaching & Erfolgsprogramme"}
           </h2>
+          <p className="text-xs md:text-sm text-foreground/60 text-center mb-3 md:mb-4 max-w-2xl mx-auto">
+            {isEN
+              ? "For companies, executives and teams – measurable results through targeted mental work."
+              : "Für Unternehmen, Führungskräfte und Teams – messbare Ergebnisse durch gezielte mentale Arbeit."}
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               {[
                 { icon: <Trophy className="w-6 h-6" />, title: isEN ? "Success Training" : "Erfolgs-Training", desc: isEN ? "Success is ultimately decided in the mind." : "Letztendlich entscheidet sich Erfolg im Kopf.", href: getPath("corporateErfolg", language, country), image: corporateSuccessImg },
