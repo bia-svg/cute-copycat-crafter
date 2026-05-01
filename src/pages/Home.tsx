@@ -537,7 +537,7 @@ export default function Home() {
                 <Award className="w-2.5 h-2.5" />
                 {isEN ? "Professional Therapist Training" : "Professionelle Therapeuten-Ausbildung"}
               </span>
-              <h2 className="text-sm md:text-[15px] font-light tracking-[0.01em] text-foreground/70 leading-tight">
+              <h2 className="text-sm md:text-[15px] font-light tracking-[0.01em] text-[#4CAF50] leading-tight">
                 {isEN ? "Intensive Training" : "Intensiv-Ausbildungen"}
               </h2>
               <p className="text-lg md:text-[22px] font-medium tracking-[0.01em] text-foreground mt-0.5 md:mt-1">
@@ -563,12 +563,12 @@ export default function Home() {
 
             <div className="px-5 pb-5 md:px-10 md:pb-4">
               {/* Compact intro */}
-              <p className="text-foreground/75 text-[11px] md:text-[13px] mb-2 text-center max-w-lg mx-auto leading-snug md:leading-snug">
+              <p className="text-foreground/75 text-[11px] md:text-[13px] mb-2 text-center max-w-lg md:max-w-3xl mx-auto leading-snug md:leading-snug">
                 {isEN
                   ? "Intensive seminar in Aktiv-Hypnose®: practical, immediately applicable and intentionally held in small, exclusive groups. Learn effective hypnosis techniques for your profession, self-employment and personal development."
                   : "Intensiv-Seminar in Aktiv-Hypnose®: praxisnah, direkt anwendbar und bewusst in kleinen, exklusiven Gruppen durchgeführt. Erlernen Sie wirkungsvolle Hypnose-Techniken für Beruf, Selbstständigkeit und persönliche Weiterentwicklung."}
               </p>
-              <p className="text-foreground/65 text-[10.5px] md:text-[12px] mb-3 text-center max-w-lg mx-auto leading-snug italic">
+              <p className="text-[#4CAF50] text-[10.5px] md:text-[12px] mb-3 text-center max-w-lg md:max-w-3xl mx-auto leading-snug italic">
                 {isEN
                   ? "In 6 days you receive a compact, intensive training format with directly applicable methods."
                   : "In 6 Tagen erhalten Sie ein kompaktes, intensives Ausbildungsformat mit direkt umsetzbaren Methoden."}
