@@ -511,7 +511,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ SERVICES ═══════════════════ */}
-      <section id="sessions" className="py-4 md:py-4 bg-secondary mx-3 md:mx-auto md:max-w-[1200px] border border-primary/15 rounded-2xl" style={deferredSectionStyle}>
+      <section id="sessions" className="py-4 md:py-4 mb-10 md:mb-14 bg-secondary mx-3 md:mx-auto md:max-w-[1200px] border border-primary/15 rounded-2xl" style={deferredSectionStyle}>
         <div className="container-main">
           <h2 className="text-lg md:text-[22px] font-medium tracking-[0.01em] text-[#0B1F33] text-center mb-0.5 md:mb-0 leading-tight">{t("section.services")}</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-2 md:mb-2 md:text-sm">
@@ -626,12 +626,12 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CORPORATE COACHING ═══════════════════ */}
-      <section className="py-4 md:py-4 bg-secondary mx-3 md:mx-auto md:max-w-[1200px] border border-primary/15 rounded-2xl" style={deferredSectionStyle}>
+      <section className="py-4 md:py-4 mt-10 md:mt-14 mb-10 md:mb-14 bg-secondary mx-3 md:mx-auto md:max-w-[1200px] border border-primary/15 rounded-2xl" style={deferredSectionStyle}>
         <div className="container-main">
-          <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-center mb-1 text-foreground/90">
+          <h2 className="text-lg md:text-[22px] font-medium tracking-[0.01em] text-[#0B1F33] text-center mb-1 leading-tight">
             {isEN ? "Corporate Coaching & Success Programs" : "Firmencoaching & Erfolgsprogramme"}
           </h2>
-          <p className="text-xs md:text-sm text-foreground/60 text-center mb-3 md:mb-4 max-w-2xl mx-auto">
+          <p className="text-xs md:text-sm text-[#4CAF50] text-center mb-3 md:mb-4 max-w-2xl mx-auto">
             {isEN
               ? "For companies, executives and teams – measurable results through targeted mental work."
               : "Für Unternehmen, Führungskräfte und Teams – messbare Ergebnisse durch gezielte mentale Arbeit."}
@@ -661,7 +661,7 @@ export default function Home() {
                 {isEN ? "View All Corporate Programs" : "Alle Firmenprogramme ansehen"}
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <p className="text-xs text-foreground/55 mt-2">
+              <p className="text-xs text-[#4CAF50] mt-2">
                 {isEN
                   ? "Tailored programs for your company – non-binding inquiry possible."
                   : "Individuelle Programme für Ihr Unternehmen – unverbindliche Anfrage möglich."}
