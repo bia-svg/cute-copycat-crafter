@@ -8,9 +8,10 @@ interface ServiceCardProps {
   href: string;
   icon: ReactNode;
   image?: string;
+  imagePosition?: string;
 }
 
-export default function ServiceCard({ title, description, href, icon, image }: ServiceCardProps) {
+export default function ServiceCard({ title, description, href, icon, image, imagePosition = "center 60%" }: ServiceCardProps) {
   return (
     <Link
       to={href}
@@ -27,6 +28,7 @@ export default function ServiceCard({ title, description, href, icon, image }: S
                 width={96}
                 height={88}
                 sizes="96px"
+                style={{ objectPosition: imagePosition }}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
                 decoding="async"
@@ -52,7 +54,8 @@ export default function ServiceCard({ title, description, href, icon, image }: S
                 width={640}
                 height={360}
                 sizes="(min-width: 1024px) 380px, (min-width: 768px) 50vw, 100vw"
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                style={{ objectPosition: imagePosition }}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
                 decoding="async"
               />
