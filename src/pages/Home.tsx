@@ -561,41 +561,41 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="px-5 pb-5 md:px-12 md:pb-4">
+            <div className="px-5 pb-5 md:px-10 md:pb-4">
               {/* Compact intro */}
-              <p className="text-foreground/75 text-[11px] md:text-[13.5px] mb-2 md:mb-1.5 text-center max-w-2xl mx-auto leading-snug md:leading-snug">
+              <p className="text-foreground/75 text-[11px] md:text-[13px] mb-2 text-center max-w-lg mx-auto leading-snug md:leading-snug">
                 {isEN
                   ? "Intensive seminar in Aktiv-Hypnose®: practical, immediately applicable and intentionally held in small, exclusive groups. Learn effective hypnosis techniques for your profession, self-employment and personal development."
                   : "Intensiv-Seminar in Aktiv-Hypnose®: praxisnah, direkt anwendbar und bewusst in kleinen, exklusiven Gruppen durchgeführt. Erlernen Sie wirkungsvolle Hypnose-Techniken für Beruf, Selbstständigkeit und persönliche Weiterentwicklung."}
               </p>
-              <p className="text-foreground/65 text-[10.5px] md:text-[12px] mb-3 md:mb-3 text-center max-w-2xl mx-auto leading-snug italic">
+              <p className="text-foreground/65 text-[10.5px] md:text-[12px] mb-3 text-center max-w-lg mx-auto leading-snug italic">
                 {isEN
                   ? "In 6 days you receive a compact, intensive training format with directly applicable methods."
                   : "In 6 Tagen erhalten Sie ein kompaktes, intensives Ausbildungsformat mit direkt umsetzbaren Methoden."}
               </p>
 
               {/* Stats — compact grid (short, scannable, equal-height) */}
-              <div className="grid grid-cols-5 gap-1.5 md:gap-5 mb-4 md:mb-5">
+              <div className="grid grid-cols-5 gap-1.5 md:gap-2.5 mb-4 md:mb-5">
                 {[
-                  { num: "350+", label: isEN ? "Training Manual" : "Ausbildungsmappe", hint: undefined as string | undefined, isDiploma: false },
-                  { num: "150+", label: isEN ? "Therapy Templates" : "Therapie-Vorlagen", hint: isEN ? "for many areas of application" : "für viele Anwendungsbereiche", isDiploma: false },
-                  { num: "50+", label: isEN ? "Video Training" : "Video-Training", hint: isEN ? "real seminar excerpts" : "echte Seminar-Ausschnitte", isDiploma: false },
-                  { num: "50+", label: isEN ? "Audio Hypnoses" : "Audio-Hypnosen", hint: isEN ? "from real sessions" : "aus realen Sitzungen", isDiploma: false },
-                  { num: "", label: isEN ? "Diploma Therapist in Aktiv-Hypnose®" : "Diplom Therapeut in Aktiv-Hypnose®", hint: undefined, isDiploma: true },
+                  { num: "350+", label: isEN ? "Manual" : "Mappe", hint: undefined as string | undefined, isDiploma: false },
+                  { num: "150+", label: isEN ? "Templates" : "Vorlagen", hint: isEN ? "for many areas of application" : "für viele Anwendungsbereiche", isDiploma: false },
+                  { num: "50+", label: isEN ? "Videos" : "Videos", hint: isEN ? "real seminar excerpts" : "echte Seminar-Ausschnitte", isDiploma: false },
+                  { num: "50+", label: isEN ? "Audios" : "Audios", hint: isEN ? "from real sessions" : "aus realen Sitzungen", isDiploma: false },
+                  { num: "", label: isEN ? "Diploma Therapist" : "Diplom Therapeut", hint: undefined, isDiploma: true },
                 ].map(item => (
                   <div
                     key={item.label}
                     title={item.hint}
-                    className="relative text-center bg-white border border-[#E2E8EE] rounded-xl py-2.5 md:py-4 px-1 md:px-2 flex flex-col items-center justify-center min-h-[58px] md:min-h-[88px] overflow-hidden shadow-[0_2px_6px_-2px_rgba(15,23,42,0.08),0_1px_2px_-1px_rgba(15,23,42,0.05)]"
+                    className="relative text-center bg-white border border-[#E2E8EE] rounded-xl py-2 md:py-3 px-1 md:px-1.5 flex flex-col items-center justify-center min-h-[58px] md:min-h-[78px] overflow-hidden"
                   >
                     {/* subtle green accent bar at top */}
-                    <span className="absolute top-0 left-1/2 -translate-x-1/2 w-7 md:w-10 h-[2px] rounded-b bg-[#2E7D32]/70" />
+                    <span className="absolute top-0 left-1/2 -translate-x-1/2 w-6 md:w-8 h-[2px] rounded-b bg-[#2E7D32]/60" />
                     {item.isDiploma ? (
-                      <BadgeCheck className="w-[18px] h-[18px] md:w-[22px] md:h-[22px] text-[#1B3A5C] mb-0.5" strokeWidth={1.75} />
+                      <BadgeCheck className="w-4 h-4 md:w-5 md:h-5 text-[#1B3A5C] mb-0.5" strokeWidth={1.75} />
                     ) : (
-                      <div className="text-[14px] md:text-[20px] font-bold text-[#0B1F33] leading-tight tracking-tight">{item.num}</div>
+                      <div className="text-[13px] md:text-lg font-bold text-[#0B1F33] leading-tight tracking-tight">{item.num}</div>
                     )}
-                    <div className="text-[7.5px] md:text-[11px] text-foreground/60 leading-tight font-medium mt-0.5 line-clamp-2">{item.label}</div>
+                    <div className="text-[7.5px] md:text-[10.5px] text-foreground/55 leading-tight font-medium mt-0.5 line-clamp-2">{item.label}</div>
                   </div>
                 ))}
               </div>
