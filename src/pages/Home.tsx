@@ -305,6 +305,11 @@ export default function Home() {
                   <span className="text-primary/60" aria-hidden="true">·</span>
                   <span>Transformation</span>
                 </p>
+                <p className="mt-1.5 text-foreground/70 text-[13px] lg:text-[14px] font-light tracking-[0.01em] text-center lg:text-left">
+                  {isEN
+                    ? "Individual hypnosis sessions & training"
+                    : "Individuelle Hypnose-Sitzungen & Ausbildungen"}
+                </p>
               </div>
               <div className="mt-auto pt-2">
                 {showMediaLogos ? <TVLogoCarousel /> : <div className="h-12" aria-hidden="true" />}
@@ -334,6 +339,11 @@ export default function Home() {
               <span>{isEN ? "Hypnosis" : "Hypnose"}</span>
               <span className="text-primary/60" aria-hidden="true">·</span>
               <span>Transformation</span>
+            </p>
+            <p className="mt-1.5 text-foreground/70 text-[12px] font-light tracking-[0.01em] px-3">
+              {isEN
+                ? "Individual hypnosis sessions & training"
+                : "Individuelle Hypnose-Sitzungen & Ausbildungen"}
             </p>
             <div className="mt-6 relative aspect-[4/3] max-h-[320px] rounded-2xl overflow-hidden mx-auto group" style={{ minHeight: "240px" }}>
               {Object.entries(loadedMobile).map(([idx, src]) => (
@@ -507,7 +517,7 @@ export default function Home() {
           <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-2 md:mb-2 md:text-sm">
             {isEN
               ? "Topics can also be combined during the session."
-              : "Dabei können Themen im Zuge der Sitzung auch kombiniert werden."}
+              : "Mehrere Themen können gezielt in einer Sitzung gelöst werden."}
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-2.5">
             {services.map((s) => (
