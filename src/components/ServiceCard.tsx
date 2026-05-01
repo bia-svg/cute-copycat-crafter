@@ -35,9 +35,9 @@ export default function ServiceCard({ title, description, href, icon, image }: S
             <div className="flex flex-col justify-center p-3 min-w-0">
               <div className="flex items-center gap-2 text-primary mb-1">
                 {icon}
-                <h3 className="font-semibold text-foreground text-[0.95rem] leading-tight">{title}</h3>
+                <h3 className="font-semibold text-foreground text-[0.95rem] leading-snug">{title}</h3>
               </div>
-              <p className="text-sm text-muted-foreground line-clamp-2 mb-1.5">{description}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-1.5">{description}</p>
               <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#2E7D32] group-hover:text-[#1B5E20] group-hover:gap-2 transition-all">
                 Mehr erfahren <ArrowRight className="w-4 h-4" />
               </span>
@@ -57,13 +57,13 @@ export default function ServiceCard({ title, description, href, icon, image }: S
                 decoding="async"
               />
             </div>
-            <div className="px-4 py-2 md:py-1.5">
+            <div className="px-4 pt-2 pb-3.5">
               <div className="flex items-center gap-2 text-primary mb-0.5">
                 {icon}
-                <h3 className="font-semibold text-foreground text-sm line-clamp-1">{title}</h3>
+                <h3 className="font-semibold text-foreground text-sm leading-snug">{title}</h3>
               </div>
-              <p className="text-xs text-muted-foreground line-clamp-2 leading-snug">{description}</p>
-              <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#2E7D32] group-hover:text-[#1B5E20] mt-1 group-hover:gap-2 transition-all">
+              <p className="text-xs text-muted-foreground leading-relaxed">{description}</p>
+              <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#2E7D32] group-hover:text-[#1B5E20] mt-1.5 group-hover:gap-2 transition-all">
                 Mehr erfahren <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </div>
