@@ -115,16 +115,33 @@ export default function FirmenCoaching() {
         <div className="container-main py-3.5 md:py-5 lg:py-6">
           <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl px-5 py-4 md:px-7 md:py-5 shadow-sm text-center">
             <p className="text-[11px] md:text-xs font-medium text-[#2E7D32] uppercase tracking-wider mb-1.5 md:mb-2">
-              {isEN ? "For Companies & Organizations" : "Für Firmen & Organisationen"}
+              {isEN ? "Business Coaching" : "Business Coaching"}
             </p>
             <h1 className="text-xl sm:text-2xl md:text-[1.7rem] font-light text-[#1B3A5C] leading-snug md:leading-[1.2] mb-2 md:mb-2.5 tracking-tight">
-              {isEN ? "Leadership & Performance Coaching for Companies" : "Leadership & Performance Coaching für Unternehmen"}
+              {isEN ? "Success Training for Companies" : "Erfolgs-Training für Unternehmen"}
             </h1>
-            <p className="text-[13.5px] md:text-[14.5px] text-foreground/80 leading-snug md:leading-[1.55] max-w-2xl mx-auto">
+            <p className="text-[13.5px] md:text-[14.5px] text-foreground/80 leading-snug md:leading-[1.55] max-w-2xl mx-auto mb-2 md:mb-2.5 font-medium">
               {isEN
-                ? "Professional Leadership & Performance Coaching supports companies in strategically developing executives and employees, unlocking potential, and sustainably improving collaboration. Through individually tailored coaching impulses, leadership skills, personal responsibility, motivation and team dynamics are strengthened."
-                : "Professionelles Leadership & Performance Coaching unterstützt Unternehmen dabei, Führungskräfte und Mitarbeiter gezielt weiterzuentwickeln, Potenziale freizusetzen und die Zusammenarbeit nachhaltig zu verbessern. Durch individuell abgestimmte Coaching-Impulse werden Führungskompetenz, Eigenverantwortung, Motivation und Teamdynamik gestärkt."}
+                ? "Sustainably increase the performance of your executives and employees — through targeted mental and performance coaching."
+                : "Steigern Sie nachhaltig die Leistungsfähigkeit Ihrer Führungskräfte und Mitarbeiter – durch gezieltes Mental- und Performance Coaching."}
             </p>
+            <div className="text-[13px] md:text-[14px] text-foreground/75 leading-snug md:leading-[1.55] max-w-2xl mx-auto space-y-1.5 md:space-y-2 text-left md:text-center">
+              <p>
+                {isEN
+                  ? "David J. Woods works with companies, executives and high-performance teams that have to deliver results consistently under pressure. The focus is on clarity, execution power, mental stability and sustainable performance growth."
+                  : "David J. Woods arbeitet mit Unternehmen, Führungskräften und High-Performance-Teams, die unter Druck konstant Ergebnisse liefern müssen. Im Fokus stehen Klarheit, Umsetzungskraft, mentale Stabilität und nachhaltige Leistungssteigerung."}
+              </p>
+              <p>
+                {isEN
+                  ? "Because the problem is rarely a lack of knowledge — but blockages, stress, pressure and unconscious behavioural patterns. This is exactly where the success training begins."
+                  : "Denn nicht fehlendes Wissen ist das Problem – sondern Blockaden, Stress, Druck und unbewusste Verhaltensmuster. Genau hier setzt das Erfolgs-Training an."}
+              </p>
+              <p>
+                {isEN
+                  ? "Implementation takes place individually inside your company or in intensive one-to-one sessions — in Germany, Austria or Switzerland."
+                  : "Die Umsetzung erfolgt individuell in Ihrem Unternehmen oder in intensiven Einzelsessions – in Deutschland, Österreich oder der Schweiz."}
+              </p>
+            </div>
           </div>
         </div>
       </section>
