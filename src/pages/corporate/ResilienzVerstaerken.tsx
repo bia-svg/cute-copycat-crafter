@@ -92,23 +92,23 @@ export default function ResilienzVerstaerken() {
 
       {/* Hero */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-8 md:py-10">
-          <Link to={getPath("corporate", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-3">
+        <div className="container-main py-5 md:py-7">
+          <Link to={getPath("corporate", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-2">
             <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
           </Link>
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-8 shadow-sm grid md:grid-cols-[1.35fr_1fr] gap-5 md:gap-8 md:items-center">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-6 shadow-sm grid md:grid-cols-[1.35fr_1fr] gap-4 md:gap-6 md:items-center">
             <div>
-              <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
-              <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] leading-tight mb-3 tracking-tight">
+              <p className="text-xs font-medium text-[#2E7D32] uppercase tracking-wider mb-1.5">Business Coaching</p>
+              <h1 className="text-xl sm:text-2xl md:text-[1.6rem] font-light text-[#1B3A5C] leading-tight mb-2 tracking-tight">
                 {isEN ? "Resilience Coaching for Companies" : "Resilienz Coaching für Unternehmen"}
               </h1>
-              <p className="text-sm md:text-base text-foreground/90 leading-relaxed mb-4">
+              <p className="text-sm text-foreground/90 leading-snug mb-2.5">
                 {isEN
                   ? "Specifically strengthen the mental resilience of your leaders and employees – for stable performance under pressure, in change and in demanding situations."
                   : "Stärken Sie gezielt die mentale Widerstandskraft Ihrer Führungskräfte und Mitarbeiter – für stabile Leistung auch unter Druck, in Veränderung und in anspruchsvollen Situationen."}
               </p>
 
-              <div className="prose prose-sm max-w-none text-foreground/85 space-y-2.5">
+              <div className="prose prose-sm max-w-none text-foreground/85 space-y-1.5 text-sm leading-snug">
                 <p>
                   {isEN
                     ? "Resilience is a decisive success factor in business today. Stress, pressure, rapid change and high expectations are part of daily work."
@@ -131,7 +131,7 @@ export default function ResilienzVerstaerken() {
                 </p>
               </div>
 
-              <div className="mt-5">
+              <div className="mt-3.5">
                 <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
                   <Button className="bg-[#ECEEF1] hover:bg-[#E2E5E9] text-[#1B3A5C] font-medium px-6 py-2.5 border border-[#1B3A5C]/25 shadow-none">
                     {isEN ? "Request Consultation" : "Beratung anfragen"}
@@ -143,7 +143,7 @@ export default function ResilienzVerstaerken() {
               <img
                 src={corporateResilienceImg}
                 alt={isEN ? "Resilience Coaching" : "Resilienz Coaching"}
-                className="w-full h-44 md:h-full md:max-h-[360px] object-cover rounded-2xl border border-[#E2E8EE]"
+                className="w-full h-40 md:h-full md:max-h-[300px] object-cover rounded-2xl border border-[#E2E8EE]"
                 loading="eager"
               />
             </div>
@@ -164,10 +164,9 @@ export default function ResilienzVerstaerken() {
                   key={i}
                   className="bg-white border border-[#E8EDF3] rounded-2xl p-5 md:p-6 shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
                 >
-                  <div className="flex items-center gap-2.5 mb-2.5">
-                    <span className="w-8 h-8 rounded-full bg-[#1B3A5C] text-white text-sm flex items-center justify-center font-medium">{i + 1}</span>
-                    <h3 className="font-medium text-[15px] text-[#1B3A5C] tracking-tight">{p.title}</h3>
-                  </div>
+                  <h3 className="font-medium text-[15px] text-[#1B3A5C] tracking-tight mb-2">
+                    {i + 1}. {p.title}
+                  </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                 </div>
               ))}
