@@ -88,6 +88,14 @@ export default function ErfolgsTraining() {
                   : "Harte Arbeit allein garantiert noch keinen Erfolg: Unser Unterbewusstsein steuert Emotionen, Verhaltensweisen und Denkmuster. Genau dort setzen wir an — und passen jede Session individuell an Sie und Ihr Team an, auf Wunsch direkt bei Ihnen im Unternehmen, in Deutschland, Österreich oder der Schweiz."}
               </p>
             </div>
+
+            <div className="mt-5">
+              <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
+                <Button className="bg-[#1B3A5C] hover:bg-[#16304D] text-white font-medium px-6 py-2.5 text-sm rounded-xl">
+                  {isEN ? "Request Consultation" : "Beratung anfragen"}
+                </Button>
+              </Link>
+            </div>
             </div>
             <div className="md:order-last">
               <img
