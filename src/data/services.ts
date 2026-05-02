@@ -832,93 +832,105 @@ export const childrenData: ServicePageData = {
   metaDescCH: "Sanfte Hypnose für Kinder & Jugendliche ab 8 Jahren in Zürich — Ängste, Bettnässen, Schul- und Konzentrationsthemen, Selbstwert. Mit Kathryn, in der Praxis von Lic. Psych. David J. Woods. ★ 5.0 (266 Bewertungen).",
   metaDescDE: "Sanfte Hypnose für Kinder & Jugendliche ab 8 Jahren in Augsburg — Ängste, Bettnässen, Schul- und Konzentrationsthemen, Selbstwert. Mit Kathryn, in der Praxis von Lic. Psych. David J. Woods. ★ 5.0 (266 Bewertungen).",
   metaDescEN: "Gentle hypnotherapy for children & teens from age 8 — anxiety, bedwetting, school and focus issues, self-confidence. With Kathryn, at Lic. Psych. David J. Woods' practice in Zurich & Augsburg.",
-  h1CH: "Hypnose-Therapie für Kinder & Jugendliche",
-  h1DE: "Hypnose-Therapie für Kinder & Jugendliche",
-  h1EN: "Hypnotherapy for Children & Teens",
-  benefitsCH: ["Besser konzentrieren können", "Alltagsängste bewältigen", "Zukunftsfokussiert sein", "Lernfähigkeit verbessern"],
-  benefitsEN: ["Better concentration", "Overcome everyday fears", "Future-focused mindset", "Improve learning ability"],
+  h1CH: "Kinderhypnose – Unterstützung für Kinder & Jugendliche",
+  h1DE: "Kinderhypnose – Unterstützung für Kinder & Jugendliche",
+  h1EN: "Children's Hypnosis – Support for Children & Teens",
+  benefitsCH: [
+    "Konzentration und Lernfähigkeit verbessern",
+    "Ängste und Unsicherheiten bewältigen",
+    "Selbstvertrauen und innere Stabilität stärken",
+    "Ruhiger, ausgeglichener und fokussierter werden"
+  ],
+  benefitsEN: [
+    "Improve concentration and learning ability",
+    "Overcome fears and insecurities",
+    "Strengthen self-confidence and inner stability",
+    "Become calmer, more balanced and focused"
+  ],
   introCH: [
-    "Hypnose-Therapie für Kinder & Jugendliche: Neue Wege zu innerem Gleichgewicht und Wohlbefinden.",
-    "Mit Kathryn – einfühlsam, professionell, wirkungsvoll.",
-    "Weil Kinder keine kleinen Erwachsenen sind – sondern grosse Persönlichkeiten in Entwicklung.",
-    "Verhaltensveränderungen, Ängste, Wutausbrüche, Rückzug oder Leistungsabfall in der Schule – wenn Kinder oder Jugendliche aus dem Gleichgewicht geraten, stehen Eltern oft vor einem Rätsel. Die Ursachen sind vielfältig: schulischer Druck, familiäre Belastungen, soziale Ängste, Mobbing oder emotionale Krisen.",
-    "In diesen Momenten brauchen junge Menschen jemanden, der sie versteht – auf Augenhöhe, mit Feingefühl und Fachwissen."
+    "Viele Kinder und Jugendliche erleben Phasen mit Ängsten, innerer Unruhe, schulischem Druck oder emotionalen Herausforderungen. Häufig zeigen sich diese Themen durch Rückzug, Konzentrationsprobleme, Unsicherheit oder Verhaltensveränderungen.\n\nKinderhypnose setzt genau hier an – nicht nur an den sichtbaren Symptomen, sondern an den zugrunde liegenden emotionalen Mustern. Ziel ist es, das Kind wieder in seine innere Balance zu bringen und nachhaltig zu stärken.",
+    "Wenn Kinder aus dem Gleichgewicht geraten, stehen Eltern oft vor der Frage, was wirklich dahinter steckt. Viele Themen entstehen nicht bewusst, sondern aus inneren Erfahrungen, Ängsten oder Überforderungen, die das Kind noch nicht richtig einordnen kann.",
+    "Mit Kinderhypnose können diese inneren Prozesse behutsam und altersgerecht unterstützt werden. Dabei geht es nicht um Druck oder Veränderung von außen, sondern darum, dem Kind zu helfen, eigene Stärke, Sicherheit und Vertrauen wieder aufzubauen."
   ],
   introDE: [
-    "Hypnose-Therapie für Kinder & Jugendliche: Neue Wege zu innerem Gleichgewicht und Wohlbefinden. Mit Kathryn – einfühlsam, professionell, wirkungsvoll.",
-    "Verhaltensveränderungen, Ängste, Wutausbrüche, Rückzug oder Leistungsabfall in der Schule – wenn Kinder oder Jugendliche aus dem Gleichgewicht geraten, stehen Eltern oft vor einem Rätsel."
+    "Viele Kinder und Jugendliche erleben Phasen mit Ängsten, innerer Unruhe, schulischem Druck oder emotionalen Herausforderungen. Häufig zeigen sich diese Themen durch Rückzug, Konzentrationsprobleme, Unsicherheit oder Verhaltensveränderungen.\n\nKinderhypnose setzt genau hier an – nicht nur an den sichtbaren Symptomen, sondern an den zugrunde liegenden emotionalen Mustern. Ziel ist es, das Kind wieder in seine innere Balance zu bringen und nachhaltig zu stärken.",
+    "Wenn Kinder aus dem Gleichgewicht geraten, stehen Eltern oft vor der Frage, was wirklich dahinter steckt. Viele Themen entstehen nicht bewusst, sondern aus inneren Erfahrungen, Ängsten oder Überforderungen, die das Kind noch nicht richtig einordnen kann.",
+    "Mit Kinderhypnose können diese inneren Prozesse behutsam und altersgerecht unterstützt werden. Dabei geht es nicht um Druck oder Veränderung von außen, sondern darum, dem Kind zu helfen, eigene Stärke, Sicherheit und Vertrauen wieder aufzubauen."
   ],
   introEN: [
-    "Hypnotherapy for children and teenagers: New paths to inner balance and well-being. With Kathryn – empathetic, professional, effective.",
-    "Because children are not small adults – they are great personalities in development. Behavioral changes, fears, outbursts of anger, withdrawal, or declining school performance – when children or teenagers lose their balance, parents are often at a loss."
+    "Many children and teenagers go through phases of anxiety, inner restlessness, school pressure or emotional challenges. These issues often show up through withdrawal, concentration problems, insecurity or behavioural changes.\n\nChildren's hypnosis works exactly here – not only on the visible symptoms, but on the underlying emotional patterns. The goal is to help the child return to inner balance and to strengthen them sustainably.",
+    "When children lose their balance, parents often wonder what is really behind it. Many issues do not arise consciously, but from inner experiences, fears or feelings of being overwhelmed that the child cannot yet properly process.",
+    "With children's hypnosis, these inner processes can be supported gently and in an age-appropriate way. It is not about pressure or change imposed from outside, but about helping the child rebuild their own strength, security and confidence."
   ],
   sectionsCH: [
     {
-      h2: "Kathryn – Psychologische Beraterin und Zertifizierte Hypnotiseurin",
+      h2: "Kathryn – Kinderhypnose & psychologische Begleitung",
       paragraphs: [
-        "Kathryn, erfahrene psychologische Beraterin und zertifizierte Hypnotiseurin, begleitet Kinder und Jugendliche genau in solchen Lebensphasen – mit Herz, Struktur und tiefem Verständnis.",
-        "Wertschätzend. Lösungsorientiert. Ganz individuell.",
-        "Kathryn schafft einen geschützten Raum, in dem junge Menschen sich öffnen können. Sie begegnet ihnen mit Respekt und Empathie, erkennt verborgene Ursachen und gibt praktische Hilfestellung für den Alltag. Ihre Kombination aus psychologischer Beratung und sanfter Hypnose ermöglicht es Kindern, ihre innere Balance zurückzugewinnen."
+        "Kathryn begleitet Kinder und Jugendliche einfühlsam in herausfordernden Lebensphasen. Ihre Arbeit verbindet psychologische Beratung mit speziell angepasster Kinderhypnose, um emotionale Stabilität, Selbstvertrauen und innere Balance gezielt zu fördern.",
+        "Durch ihre ruhige, strukturierte und klare Art entsteht schnell Vertrauen – eine wichtige Grundlage, damit Kinder sich öffnen und Veränderungen möglich werden.",
+        "Die Sitzungen sind individuell auf das Alter und die Persönlichkeit des Kindes abgestimmt und erfolgen stets in einer geschützten, vertrauensvollen Atmosphäre."
       ],
       bullets: [
-        "Emotionale Belastungen und Ängste",
-        "Schlafprobleme und Konzentrationsstörungen",
-        "Selbstwertprobleme, Rückzug oder Aggression",
-        "Schulischer Druck und Leistungsabfall",
-        "Familiäre Veränderungen und Trennungssituationen",
-        "Mobbing und soziale Unsicherheiten"
+        "Ängste und emotionale Belastungen",
+        "Konzentrationsprobleme und schulischer Druck",
+        "Rückzug, Unsicherheit oder geringes Selbstwertgefühl",
+        "Schlafprobleme und innere Unruhe"
       ]
     },
     {
-      h2: "So läuft die Hypnose für Kinder & Jugendliche ab",
+      h2: "So läuft Kinderhypnose ab",
       paragraphs: [
-        "Die Sitzungen sind altersgerecht gestaltet und finden in einer vertrauensvollen, entspannten Atmosphäre statt. Kathryn arbeitet mit kindgerechten Methoden, die spielerisch und gleichzeitig tiefgreifend wirken.",
-        "Eltern werden in den Prozess einbezogen und erhalten praktische Tipps für den Alltag. Das Ziel ist immer, die innere Stärke des Kindes zu fördern und nachhaltige Veränderungen zu ermöglichen."
+        "Die Hypnose für Kinder und Jugendliche wird altersgerecht, sanft und individuell gestaltet. Jede Sitzung erfolgt in einer ruhigen und vertrauensvollen Atmosphäre, in der sich das Kind sicher fühlen kann.",
+        "Je nach Situation werden Eltern in den Prozess einbezogen und erhalten auf Wunsch auch Impulse für den Alltag. Ziel ist es, nicht nur kurzfristig zu entlasten, sondern dem Kind langfristig mehr Stabilität, Selbstvertrauen und innere Sicherheit zu geben.",
+        "Kinderhypnose arbeitet dabei nicht über Druck, sondern über die natürlichen Fähigkeiten des Kindes – Fantasie, Vorstellungskraft und innere Verarbeitung."
       ]
     }
   ],
   sectionsDE: [
     {
-      h2: "Kathryn – Psychologische Beraterin und Zertifizierte Hypnotiseurin",
+      h2: "Kathryn – Kinderhypnose & psychologische Begleitung",
       paragraphs: [
-        "Kathryn begleitet Kinder und Jugendliche in schwierigen Lebensphasen – mit Herz, Struktur und tiefem Verständnis. Ihre Kombination aus psychologischer Beratung und sanfter Hypnose ermöglicht es Kindern, ihre innere Balance zurückzugewinnen."
+        "Kathryn begleitet Kinder und Jugendliche einfühlsam in herausfordernden Lebensphasen. Ihre Arbeit verbindet psychologische Beratung mit speziell angepasster Kinderhypnose, um emotionale Stabilität, Selbstvertrauen und innere Balance gezielt zu fördern.",
+        "Durch ihre ruhige, strukturierte und klare Art entsteht schnell Vertrauen – eine wichtige Grundlage, damit Kinder sich öffnen und Veränderungen möglich werden.",
+        "Die Sitzungen sind individuell auf das Alter und die Persönlichkeit des Kindes abgestimmt und erfolgen stets in einer geschützten, vertrauensvollen Atmosphäre."
       ],
       bullets: [
-        "Emotionale Belastungen und Ängste",
-        "Schlafprobleme und Konzentrationsstörungen",
-        "Selbstwertprobleme, Rückzug oder Aggression",
-        "Schulischer Druck und Leistungsabfall"
+        "Ängste und emotionale Belastungen",
+        "Konzentrationsprobleme und schulischer Druck",
+        "Rückzug, Unsicherheit oder geringes Selbstwertgefühl",
+        "Schlafprobleme und innere Unruhe"
       ]
     },
     {
-      h2: "So läuft die Hypnose für Kinder & Jugendliche ab",
+      h2: "So läuft Kinderhypnose ab",
       paragraphs: [
-        "Die Sitzungen sind altersgerecht gestaltet und finden in einer vertrauensvollen Atmosphäre statt. Eltern werden einbezogen und erhalten praktische Tipps für den Alltag."
+        "Die Hypnose für Kinder und Jugendliche wird altersgerecht, sanft und individuell gestaltet. Jede Sitzung erfolgt in einer ruhigen und vertrauensvollen Atmosphäre, in der sich das Kind sicher fühlen kann.",
+        "Je nach Situation werden Eltern in den Prozess einbezogen und erhalten auf Wunsch auch Impulse für den Alltag. Ziel ist es, nicht nur kurzfristig zu entlasten, sondern dem Kind langfristig mehr Stabilität, Selbstvertrauen und innere Sicherheit zu geben.",
+        "Kinderhypnose arbeitet dabei nicht über Druck, sondern über die natürlichen Fähigkeiten des Kindes – Fantasie, Vorstellungskraft und innere Verarbeitung."
       ]
     }
   ],
   sectionsEN: [
     {
-      h2: "Kathryn – Psychological Counselor and Certified Hypnotist",
+      h2: "Kathryn – Children's Hypnosis & Psychological Support",
       paragraphs: [
-        "Kathryn, an experienced psychological counselor and certified hypnotist, accompanies children and teenagers through exactly these life phases – with heart, structure, and deep understanding.",
-        "Appreciative. Solution-oriented. Completely individual.",
-        "Kathryn creates a protected space where young people can open up. She meets them with respect and empathy, recognizes hidden causes, and provides practical help for everyday life."
+        "Kathryn empathetically supports children and teenagers through challenging phases of life. Her work combines psychological counselling with specially adapted children's hypnosis to foster emotional stability, self-confidence and inner balance.",
+        "Through her calm, structured and clear approach, trust is built quickly – an important foundation for children to open up and for change to become possible.",
+        "Sessions are individually tailored to the child's age and personality and always take place in a protected, trusting atmosphere."
       ],
       bullets: [
-        "Emotional burdens and fears",
-        "Sleep problems and concentration disorders",
-        "Self-esteem issues, withdrawal or aggression",
-        "School pressure and declining performance",
-        "Family changes and separation situations",
-        "Bullying and social insecurities"
+        "Fears and emotional burdens",
+        "Concentration problems and school pressure",
+        "Withdrawal, insecurity or low self-esteem",
+        "Sleep problems and inner restlessness"
       ]
     },
     {
-      h2: "How Hypnosis for Children & Teens Works",
+      h2: "How Children's Hypnosis Works",
       paragraphs: [
-        "The sessions are designed to be age-appropriate and take place in a trusting, relaxed atmosphere. Kathryn works with child-friendly methods that are playful and at the same time profoundly effective.",
-        "Parents are involved in the process and receive practical tips for everyday life. The goal is always to promote the child's inner strength and enable lasting changes."
+        "Hypnosis for children and teenagers is designed to be age-appropriate, gentle and individual. Every session takes place in a calm and trusting atmosphere in which the child can feel safe.",
+        "Depending on the situation, parents are involved in the process and, if desired, also receive impulses for everyday life. The goal is not only short-term relief, but to give the child lasting stability, self-confidence and inner security.",
+        "Children's hypnosis does not work through pressure, but through the child's natural abilities – imagination, visualisation and inner processing."
       ]
     }
   ],
