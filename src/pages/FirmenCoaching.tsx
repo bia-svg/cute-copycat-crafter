@@ -264,6 +264,34 @@ export default function FirmenCoaching() {
         ]}
       />
 
+      {/* Audience — Banner */}
+      <section className="bg-[#F8FAFC]">
+        <div className="container-main py-3.5 md:py-5">
+          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
+            <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 tracking-tight text-center">
+              {isEN ? "Who is this training for?" : "Für wen ist dieses Training geeignet?"}
+            </h2>
+            <div className="space-y-1.5 md:space-y-2 text-[12.5px] md:text-[13.5px] text-foreground/80 leading-snug md:leading-[1.55] text-center max-w-2xl mx-auto">
+              <p>
+                {isEN
+                  ? "For companies that expect more than classical workshops."
+                  : "Für Unternehmen, die mehr erwarten als klassische Workshops."}
+              </p>
+              <p>
+                {isEN
+                  ? "For executives who carry responsibility and have to perform under pressure."
+                  : "Für Führungskräfte, die Verantwortung tragen und unter Druck funktionieren müssen."}
+              </p>
+              <p>
+                {isEN
+                  ? "For teams that should unlock their full potential — not just in theory, but in everyday work."
+                  : "Für Teams, die ihr volles Potenzial ausschöpfen sollen – nicht nur theoretisch, sondern im Alltag."}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#E8EDF3] py-3 md:py-3.5 lg:py-4">
         <div className="container-main">
           <div className="relative max-w-xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl px-5 py-3.5 md:px-8 md:py-4 text-center shadow-sm">
