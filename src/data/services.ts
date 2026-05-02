@@ -534,7 +534,7 @@ export const depressionData: ServicePageData = {
   metaDescEN: "Support for depressive phases and trauma with hypnotherapy in Zurich & Augsburg — re-evaluate old imprints, regain joy. Lic. Psych. David J. Woods, 35+ years, ★ 5.0 (266 reviews). Free discovery call.",
   h1CH: "Depressionen & Traumata lösen – innere Stabilität gewinnen",
   h1DE: "Depressionen & Traumata lösen – innere Stabilität gewinnen",
-  h1EN: "Depression and Trauma – regain stability and quality of life",
+  h1EN: "Resolve Depression & Trauma – regain inner stability",
   benefitsCH: [
     "Innere Schwere und Antriebslosigkeit gezielt lösen",
     "Emotionale Blockaden und belastende Erinnerungen verarbeiten",
