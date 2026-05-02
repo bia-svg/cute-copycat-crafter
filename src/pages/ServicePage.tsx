@@ -438,7 +438,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-lg sm:text-xl font-light text-primary mb-1 text-center tracking-tight">
-              {isEN ? "Request a free consultation" : "Unverbindlich beraten lassen"}
+              {isEN ? "Request a free consultation" : "Jetzt Kontakt aufnehmen"}
             </h2>
             <p className="text-sm text-[#2E7D32] mb-3 text-center font-normal">
               {isEN

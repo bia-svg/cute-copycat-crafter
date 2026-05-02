@@ -674,7 +674,7 @@ export default function Home() {
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-lg md:text-xl font-light tracking-[0.01em] text-foreground/90 mb-1 text-center">
-              {language === "en" ? "Request a free consultation" : "Unverbindlich beraten lassen"}
+              {language === "en" ? "Request a free consultation" : "Jetzt Kontakt aufnehmen"}
             </h2>
             <p className="text-sm text-[#2E7D32] mb-3 text-center font-normal">
               {language === "en"
