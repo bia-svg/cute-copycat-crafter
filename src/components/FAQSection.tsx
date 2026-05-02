@@ -43,7 +43,7 @@ export default function FAQSection({ title, items, sectionClassName }: FAQSectio
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="group border border-[#E5DFD2] bg-white rounded-2xl px-4 md:px-6 shadow-[0_1px_2px_rgba(27,58,92,0.04)] hover:border-[#2E7D32]/40 hover:shadow-[0_2px_6px_rgba(46,125,50,0.06)] transition-all data-[state=open]:bg-[#F4F9F4] data-[state=open]:border-[#2E7D32]/40 data-[state=open]:shadow-[0_2px_8px_rgba(46,125,50,0.08)]"
+                className="group border-[1.5px] border-[#C5CCD6] bg-white rounded-2xl px-4 md:px-6 shadow-[0_1px_3px_rgba(27,58,92,0.06)] hover:border-[#2E7D32]/60 hover:bg-[#FAFBFC] hover:shadow-[0_2px_6px_rgba(0,0,0,0.05)] transition-all data-[state=open]:bg-[#F4F9F4] data-[state=open]:border-[#2E7D32]/50 data-[state=open]:shadow-[0_2px_8px_rgba(46,125,50,0.08)]"
               >
                 <AccordionTrigger
                   className="text-[14px] md:text-base font-semibold text-primary hover:no-underline py-3 md:py-4 text-left gap-3 md:gap-4 [&>svg]:hidden"
@@ -51,9 +51,9 @@ export default function FAQSection({ title, items, sectionClassName }: FAQSectio
                   <span className="flex-1">{item.q}</span>
                   <span
                     aria-hidden="true"
-                    className="flex-shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#2E7D32]/10 text-[#2E7D32] transition-all group-data-[state=open]:rotate-45 group-data-[state=open]:bg-[#2E7D32] group-data-[state=open]:text-white"
+                    className="flex-shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#2F3A4A]/10 text-[#2F3A4A] transition-all group-data-[state=open]:rotate-45 group-data-[state=open]:bg-[#2E7D32] group-data-[state=open]:text-white"
                   >
-                    <Plus className="h-4 w-4" strokeWidth={2.5} />
+                    <Plus className="h-4 w-4" strokeWidth={3} />
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="text-[13px] md:text-sm text-foreground/75 leading-relaxed pb-4 md:pb-5 pt-0 pr-10">
