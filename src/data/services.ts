@@ -18,7 +18,7 @@ export const smokingData: ServicePageData = {
   metaDescEN: "Stop smoking with hypnosis in Zurich & Augsburg — often smoke-free in one intensive session, without constant struggle. Lic. Psych. David J. Woods, 35+ years, ★ 5.0 (266 reviews). Free discovery call.",
   h1CH: "Rauchfrei mit Hypnose – ohne ständigen inneren Kampf",
   h1DE: "Rauchfrei mit Hypnose – ohne ständigen inneren Kampf",
-  h1EN: "Effective Quit Smoking with Hypnosis",
+  h1EN: "Smoke-Free with Hypnosis – Without the Constant Inner Struggle",
   benefitsCH: ["Rauchfrei ohne ständigen inneren Kampf", "Mehr Freiheit, Energie und Lebensqualität", "Unterstützung auf dem Weg in ein rauchfreies Leben", "Nachhaltige Begleitung statt ständigem Rückfall"],
   benefitsEN: ["Smoke-free without constant inner struggle", "More freedom, energy and quality of life", "Finally become a non-smoker", "Lasting change instead of constant relapse"],
   introCH: [
