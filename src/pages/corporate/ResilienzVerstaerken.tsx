@@ -11,44 +11,77 @@ export default function ResilienzVerstaerken() {
   const isEN = language === "en";
 
   const pillars = [
-    { title: isEN ? "Optimism" : "Optimismus", desc: isEN ? "Stay positive even in difficult times and focus on the light at the end of the tunnel." : "Gerade in schweren Zeiten ist es wichtiger denn je, sich nicht unterkriegen zu lassen und den Fokus auf das Positive zu richten." },
-    { title: isEN ? "Acceptance" : "Akzeptanz", desc: isEN ? "Accept the facts to gain strength for action instead of wasting energy on denial." : "Die Tatsachen akzeptieren, um Kraft für Handlungen zu gewinnen, anstatt Energie in Ablehnung zu verschwenden." },
-    { title: isEN ? "Solution Orientation" : "Lösungsorientierung", desc: isEN ? "Focus on solutions rather than problems. Move from victim to creator." : "Fokus auf Lösungen statt auf Probleme. Aus der Opfer-Rolle in die Gestalter-Position wechseln." },
-    { title: isEN ? "Leaving the Victim Role" : "Verlassen der Opfer-Rolle", desc: isEN ? "Move into the creator role with optimistic, solution-oriented thinking." : "In die Gestalter-Rolle wechseln mit optimistischem, lösungsorientiertem Denken." },
-    { title: isEN ? "Taking Responsibility" : "Verantwortungsübernahme", desc: isEN ? "Take responsibility as the creator of your own life." : "Verantwortung übernehmen als Gestalter des eigenen Lebens." },
-    { title: isEN ? "Network Building" : "Netzwerk-Aufbau", desc: isEN ? "Build strong relationships that provide support in difficult times." : "Starke Beziehungen aufbauen, die in schweren Zeiten Halt geben." },
-    { title: isEN ? "Future Planning" : "Zukunftsplanung", desc: isEN ? "Think ahead and plan solutions for possible crises in good times." : "Vorausblickendes Denken und Handeln, auch in guten Zeiten über Lösungen nachdenken." },
+    {
+      title: isEN ? "Optimism" : "Optimismus",
+      desc: isEN
+        ? "Focus on solutions instead of problems – stay capable of acting even under pressure."
+        : "Fokus auf Lösungen statt Probleme – auch unter Druck handlungsfähig bleiben.",
+    },
+    {
+      title: isEN ? "Acceptance" : "Akzeptanz",
+      desc: isEN
+        ? "Recognise situations clearly and direct energy purposefully towards solutions."
+        : "Situationen klar erkennen und Energie gezielt für Lösungen einsetzen.",
+    },
+    {
+      title: isEN ? "Solution Orientation" : "Lösungsorientierung",
+      desc: isEN
+        ? "Move from problem-thinking to action – concrete steps instead of standstill."
+        : "Vom Problemdenken ins Handeln wechseln – konkrete Schritte statt Stillstand.",
+    },
+    {
+      title: isEN ? "Personal Responsibility" : "Eigenverantwortung",
+      desc: isEN
+        ? "Take responsibility and actively shape outcomes instead of reacting."
+        : "Verantwortung übernehmen und aktiv gestalten statt reagieren.",
+    },
+    {
+      title: isEN ? "Self-Efficacy" : "Selbstwirksamkeit",
+      desc: isEN
+        ? "Trust in your own ability to master challenges successfully."
+        : "Vertrauen in die eigene Fähigkeit, Herausforderungen erfolgreich zu meistern.",
+    },
+    {
+      title: isEN ? "Network & Support" : "Netzwerk & Unterstützung",
+      desc: isEN
+        ? "Strong relationships create stability – especially in demanding phases."
+        : "Starke Beziehungen schaffen Stabilität – besonders in anspruchsvollen Phasen.",
+    },
+    {
+      title: isEN ? "Future Orientation" : "Zukunftsorientierung",
+      desc: isEN
+        ? "A clear view forward – define goals and pursue them consistently."
+        : "Klarer Blick nach vorne – Ziele definieren und konsequent umsetzen.",
+    },
   ];
 
   const coachingBenefits = [
-    isEN ? "Develop mental stability" : "Entwicklung geistiger Stabilität",
-    isEN ? "Use challenges as growth opportunities" : "Nutzen von Herausforderungen als Wachstumschancen",
-    isEN ? "Withstand pressure & stress without harm" : "Problemloses Aushalten von Druck & Stress ohne Schaden",
-    isEN ? "Train crisis-proof skills" : "Training von krisenfesten Fähigkeiten",
-    isEN ? "Quick balance after setbacks" : "Schnelles Gleichgewicht nach Tiefschlägen",
-    isEN ? "Further development in all life situations" : "Weiterentwicklung in allen Lebenssituationen",
-    isEN ? "Examine own values & beliefs" : "Auseinandersetzung mit eigenen Werten & Glaubenssätzen",
-    isEN ? "Strengthen decision-making courage" : "Stärkung von Entscheidungsmut und Vertrauen in das Leben",
+    isEN ? "Mental stability under pressure" : "Mentale Stabilität unter Druck",
+    isEN ? "Confident handling of stress & strain" : "Souveräner Umgang mit Stress & Belastung",
+    isEN ? "Faster recovery after setbacks" : "Schnelleres Gleichgewicht nach Rückschlägen",
+    isEN ? "Clearer decisions in difficult situations" : "Klarere Entscheidungen in schwierigen Situationen",
+    isEN ? "More focus and inner calm in daily work" : "Mehr Fokus und innere Ruhe im Arbeitsalltag",
+    isEN ? "Stronger leadership competence" : "Stärkere Führungskompetenz",
+    isEN ? "Sustainable personal development" : "Nachhaltige persönliche Entwicklung",
   ];
 
   const steps = [
-    isEN ? "Analysis of your own resilience profile" : "Analyse des eigenen Resilienz-Profils",
-    isEN ? "Resilience toolkit for office life" : "Resilienz-Baukasten für den Büroalltag",
-    isEN ? "Review basic patterns, attitudes & evaluations" : "Grundmuster, Einstellungen & Bewertungen überprüfen",
-    isEN ? "Learn and use mindfulness" : "Achtsamkeit kennenlernen und nutzen",
-    isEN ? "Recognize scope for action more clearly" : "Handlungsspielräume klarer erkennen",
-    isEN ? "Define concrete plans and strengthen commitment" : "Konkrete Vorhaben festlegen und Commitment stärken",
-    isEN ? "Reflection & transfer using personal case studies" : "Reflexion & Transfer anhand persönlicher Fallbeispiele",
+    isEN ? "Analysis of the current stress and strain situation" : "Analyse der aktuellen Stress- und Belastungssituation",
+    isEN ? "Identification of limiting thought and behaviour patterns" : "Identifikation limitierender Denk- und Verhaltensmuster",
+    isEN ? "Development of concrete strategies for daily work" : "Entwicklung konkreter Strategien für den Arbeitsalltag",
+    isEN ? "Training of focus, clarity and decision-making ability" : "Training von Fokus, Klarheit und Entscheidungsfähigkeit",
+    isEN ? "Practical implementation directly in the company" : "Praktische Umsetzung direkt im Unternehmen",
+    isEN ? "Integration into existing leadership and team structures" : "Integration in bestehende Führungs- und Teamstrukturen",
+    isEN ? "Sustainable anchoring of the new strategies" : "Nachhaltige Verankerung der neuen Strategien",
   ];
 
   return (
     <>
-      {/* SEO: title/desc + BreadcrumbList JSON-LD */}
       <SEO
         titleDE="Resilienz Coaching für Unternehmen — David J. Woods"
         titleEN="Resilience Coaching for Companies — David J. Woods"
-        descriptionDE="Resilienz Coaching für innere Stärke. Die 7 Säulen der Resilienz. Meistern Sie Herausforderungen durch innere Stärke."
-        descriptionEN="Resilience coaching for inner strength. The 7 pillars of resilience. Master challenges through inner strength."
+        descriptionDE="Resilienz Coaching für Unternehmen. Mentale Widerstandskraft für Führungskräfte und Teams – stabile Leistung unter Druck."
+        descriptionEN="Resilience coaching for companies. Mental strength for leaders and teams – stable performance under pressure."
         pageKey="corporateResilienz"
         breadcrumbs={[
           { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
@@ -59,30 +92,58 @@ export default function ResilienzVerstaerken() {
 
       {/* Hero */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-6 md:py-8 lg:py-10">
+        <div className="container-main py-8 md:py-10">
           <Link to={getPath("corporate", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-3">
             <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
           </Link>
-          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm grid md:grid-cols-[1fr_280px] lg:grid-cols-[1fr_340px] gap-5 md:gap-7 md:items-stretch">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-8 shadow-sm grid md:grid-cols-[1.35fr_1fr] gap-5 md:gap-8 md:items-center">
             <div>
-            <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
-            <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] leading-tight mb-4 tracking-tight">
-              {isEN ? "Resilience Coaching by David J. Woods" : "Resilienz Coaching by David J. Woods"}
-            </h1>
-
-            <div className="prose prose-sm max-w-none text-foreground/85 space-y-3">
-              <p>
+              <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
+              <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] leading-tight mb-3 tracking-tight">
+                {isEN ? "Resilience Coaching for Companies" : "Resilienz Coaching für Unternehmen"}
+              </h1>
+              <p className="text-sm md:text-base text-foreground/90 leading-relaxed mb-4">
                 {isEN
-                  ? "A resilience coaching for inner strength is a great opportunity not only in difficult times. In today's world, performance pressure at work, conflicts with colleagues, or personal setbacks affect more and more people. The key is how we deal with negative experiences. Inner strength enables us to better handle challenges instead of seeing them as insurmountable hurdles."
-                  : "Ein Resilienz Coaching für innere Stärke ist nicht nur in schweren Zeiten eine großartige Möglichkeit. Denn gerade in der heutigen Zeit setzen Leistungsdruck im Beruf, Ärger mit Kollegen oder persönliche Schicksalsschläge vielen Menschen immer stärker zu. Doch wir alle erleben immer wieder negative Erfahrungen im Laufe unseres Lebens, weshalb es entscheidend ist, wie wir mit diesen umgehen. Innere Stärke ermöglicht es uns, besser mit negativen Erfahrungen umzugehen und Herausforderungen anzunehmen."}
+                  ? "Specifically strengthen the mental resilience of your leaders and employees – for stable performance under pressure, in change and in demanding situations."
+                  : "Stärken Sie gezielt die mentale Widerstandskraft Ihrer Führungskräfte und Mitarbeiter – für stabile Leistung auch unter Druck, in Veränderung und in anspruchsvollen Situationen."}
               </p>
-            </div>
+
+              <div className="prose prose-sm max-w-none text-foreground/85 space-y-2.5">
+                <p>
+                  {isEN
+                    ? "Resilience is a decisive success factor in business today. Stress, pressure, rapid change and high expectations are part of daily work."
+                    : "Resilienz ist heute ein entscheidender Erfolgsfaktor im Unternehmen. Stress, Druck, schnelle Veränderungen und hohe Erwartungen gehören zum Alltag."}
+                </p>
+                <p>
+                  {isEN
+                    ? "Resilience Coaching with David J. Woods is not about theory – but about concrete, measurable results: clear decisions, stable performance and confident handling of challenges."
+                    : "Im Resilienz Coaching mit David J. Woods geht es nicht um Theorie – sondern um konkrete, messbare Ergebnisse: klare Entscheidungen, stabile Leistung und souveräner Umgang mit Herausforderungen."}
+                </p>
+                <p>
+                  {isEN
+                    ? "The focus is on sustainably changing thought and behaviour patterns – exactly where stress arises and performance is lost."
+                    : "Der Fokus liegt auf der nachhaltigen Veränderung von Denk- und Verhaltensmustern – genau dort, wo Stress entsteht und Leistung verloren geht."}
+                </p>
+                <p>
+                  {isEN
+                    ? "Delivered directly on-site or in intensive one-to-one coaching – in Germany, Austria and Switzerland."
+                    : "Umsetzung direkt im Unternehmen oder in intensiven Einzelcoachings – in Deutschland, Österreich und der Schweiz."}
+                </p>
+              </div>
+
+              <div className="mt-5">
+                <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
+                  <Button className="bg-[#ECEEF1] hover:bg-[#E2E5E9] text-[#1B3A5C] font-medium px-6 py-2.5 border border-[#1B3A5C]/25 shadow-none">
+                    {isEN ? "Request Consultation" : "Beratung anfragen"}
+                  </Button>
+                </Link>
+              </div>
             </div>
             <div className="md:order-last">
               <img
                 src={corporateResilienceImg}
                 alt={isEN ? "Resilience Coaching" : "Resilienz Coaching"}
-                className="w-full h-48 md:h-full md:min-h-[260px] object-cover rounded-2xl border border-[#E2E8EE]"
+                className="w-full h-44 md:h-full md:max-h-[360px] object-cover rounded-2xl border border-[#E2E8EE]"
                 loading="eager"
               />
             </div>
@@ -90,21 +151,24 @@ export default function ResilienzVerstaerken() {
         </div>
       </section>
 
-      {/* 7 Pillars — Banner */}
+      {/* 7 Pillars */}
       <section className="bg-[#F8FAFC]">
-        <div className="container-main py-6 md:py-9">
-          <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
+        <div className="container-main py-8 md:py-10">
+          <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-8 shadow-sm">
+            <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] mb-6 tracking-tight text-center">
               {isEN ? "The 7 Pillars of Resilience" : "Die 7 Säulen der Resilienz"}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
               {pillars.map((p, i) => (
-                <div key={i} className="bg-white border border-[#E8EDF3] rounded-2xl p-4 shadow-[0_1px_2px_rgba(27,58,92,0.04)]">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center font-bold">{i + 1}</span>
-                    <h3 className="font-light text-sm text-[#1B3A5C] tracking-tight">{p.title}</h3>
+                <div
+                  key={i}
+                  className="bg-white border border-[#E8EDF3] rounded-2xl p-5 md:p-6 shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
+                >
+                  <div className="flex items-center gap-2.5 mb-2.5">
+                    <span className="w-8 h-8 rounded-full bg-[#1B3A5C] text-white text-sm flex items-center justify-center font-medium">{i + 1}</span>
+                    <h3 className="font-medium text-[15px] text-[#1B3A5C] tracking-tight">{p.title}</h3>
                   </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -112,28 +176,32 @@ export default function ResilienzVerstaerken() {
         </div>
       </section>
 
-      {/* Benefits + Steps — Banner */}
+      {/* Benefits + Steps */}
       <section className="bg-[#E8EDF3]">
-        <div className="container-main py-6 md:py-9">
-          <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="container-main py-8 md:py-10">
+          <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-8 shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10">
               <div>
-                <h2 className="text-lg font-light text-[#1B3A5C] mb-4 tracking-tight">{isEN ? "Resilience Coaching Benefits:" : "Resilienz Coaching für innere Stärke:"}</h2>
-                <div className="space-y-2">
+                <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
+                  {isEN ? "Resilience Coaching for Your Company:" : "Resilienz Coaching für Ihr Unternehmen:"}
+                </h2>
+                <div className="space-y-3.5">
                   {coachingBenefits.map((item) => (
-                    <div key={item} className="flex items-center gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
+                    <div key={item} className="flex items-start gap-2.5 text-[15px]">
+                      <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0 mt-1" />
                       <span>{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
               <div>
-                <h2 className="text-lg font-light text-[#1B3A5C] mb-4 tracking-tight">{isEN ? "Concrete Steps:" : "Konkrete Schritte im Resilienz Coaching:"}</h2>
-                <div className="space-y-2">
+                <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
+                  {isEN ? "How Resilience is Trained Concretely:" : "So wird Resilienz konkret trainiert:"}
+                </h2>
+                <div className="space-y-3.5">
                   {steps.map((item) => (
-                    <div key={item} className="flex items-center gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
+                    <div key={item} className="flex items-start gap-2.5 text-[15px]">
+                      <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0 mt-1" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -144,17 +212,20 @@ export default function ResilienzVerstaerken() {
         </div>
       </section>
 
+      {/* CTA */}
       <section className="bg-[#F8FAFC]">
-        <div className="container-main py-8 md:py-10 flex justify-center">
+        <div className="container-main py-10 md:py-12 flex justify-center">
           <div className="relative bg-white border border-[#1B3A5C]/15 rounded-2xl px-8 py-8 text-center max-w-2xl w-full">
             <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-xs font-medium border border-[#1B3A5C]/25 px-4 py-1 rounded-full whitespace-nowrap">
-              {isEN ? "Next Step" : "N\u00e4chster Schritt"}
+              {isEN ? "Next Step" : "Nächster Schritt"}
             </span>
-            <h2 className="text-xl font-light text-primary mb-2 mt-2 tracking-tight">
-              {isEN ? "Start Your Resilience Coaching Now" : "Starten Sie jetzt mit dem Resilienz Coaching"}
+            <h2 className="text-xl md:text-2xl font-light text-primary mb-2 mt-2 tracking-tight">
+              {isEN ? "Start Resilience Coaching Now" : "Starten Sie jetzt mit Resilienz Coaching"}
             </h2>
-            <p className="text-sm text-muted-foreground mb-4">
-              {isEN ? "Take the next step for your team." : "Gehen Sie den n\u00e4chsten Schritt f\u00fcr Ihr Team."}
+            <p className="text-sm md:text-base text-muted-foreground mb-5">
+              {isEN
+                ? "Strengthen your team sustainably – for more stability, focus and performance in daily work."
+                : "Stärken Sie Ihr Team nachhaltig – für mehr Stabilität, Fokus und Leistung im Alltag."}
             </p>
             <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
               <Button className="bg-[#ECEEF1] hover:bg-[#E2E5E9] text-[#1B3A5C] font-medium px-8 py-3 text-base border border-[#1B3A5C]/25 shadow-none">
