@@ -146,8 +146,32 @@ export default function FirmenCoaching() {
         </div>
       </section>
 
-      {/* Topics — Banner */}
+      {/* Challenges — Banner */}
       <section className="bg-[#F8FAFC]">
+        <div className="container-main py-3.5 md:py-5">
+          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
+            <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 tracking-tight text-center">
+              {isEN ? "Typical Challenges in Companies" : "Typische Herausforderungen in Unternehmen"}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-1 md:gap-y-1.5">
+              {challenges.map((item) => (
+                <div key={item} className="flex items-start gap-2 text-[12.5px] md:text-[13.5px] leading-snug">
+                  <span className="text-[#2E7D32] mt-0.5">•</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-[12.5px] md:text-[13.5px] text-muted-foreground mt-2.5 md:mt-3 max-w-2xl mx-auto leading-snug md:leading-[1.5] text-center">
+              {isEN
+                ? "These topics are not knowledge problems — but mental and structural blockages."
+                : "Diese Themen sind keine Wissensprobleme – sondern mentale und strukturelle Blockaden."}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Topics — Banner */}
+      <section className="bg-[#E8EDF3]">
         <div className="container-main py-3.5 md:py-5">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
             <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 text-center tracking-tight">
