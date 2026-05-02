@@ -16,26 +16,41 @@ export const smokingData: ServicePageData = {
   metaDescCH: "Raucherentwöhnung mit Hypnose in Zürich — meist in 1 Intensivsitzung rauchfrei, ohne ständigen Kampf. Lic. Psych. David J. Woods, 35+ Jahre, EMR-anerkannt (ZSR P609264), ★ 5.0 (266 Bewertungen). Kostenloses Erstgespräch.",
   metaDescDE: "Raucherentwöhnung mit Hypnose in Augsburg — meist in 1 Intensivsitzung rauchfrei, ohne ständigen Kampf. Lic. Psych. David J. Woods, 35+ Jahre Erfahrung, ★ 5.0 (266 Google-Bewertungen). Kostenloses Erstgespräch.",
   metaDescEN: "Stop smoking with hypnosis in Zurich & Augsburg — often smoke-free in one intensive session, without constant struggle. Lic. Psych. David J. Woods, 35+ years, ★ 5.0 (266 reviews). Free discovery call.",
+  eyebrowCH: "Hypnose-Sitzungen – Raucherentwöhnung",
+  eyebrowDE: "Hypnose-Sitzungen – Raucherentwöhnung",
+  eyebrowEN: "Hypnosis Sessions – Stop Smoking",
+  ctaCH: "Termin unverbindlich anfragen",
+  ctaDE: "Termin unverbindlich anfragen",
+  ctaEN: "Request an appointment",
   h1CH: "Rauchfrei mit Hypnose – ohne ständigen inneren Kampf",
   h1DE: "Rauchfrei mit Hypnose – ohne ständigen inneren Kampf",
   h1EN: "Smoke-Free with Hypnosis – Without the Constant Inner Struggle",
-  benefitsCH: ["Rauchfrei ohne ständigen inneren Kampf", "Mehr Freiheit, Energie und Lebensqualität", "Unterstützung auf dem Weg in ein rauchfreies Leben", "Nachhaltige Begleitung statt ständigem Rückfall"],
-  benefitsEN: ["Smoke-free without constant inner struggle", "More freedom, energy and quality of life", "Finally become a non-smoker", "Lasting change instead of constant relapse"],
+  benefitsCH: [
+    "Rauchfrei ohne ständigen inneren Kampf",
+    "Mehr Energie, Freiheit und Lebensqualität",
+    "Klare Unterstützung auf dem Weg zum Nichtraucher",
+    "Nachhaltige Veränderung statt Rückfall"
+  ],
+  benefitsEN: [
+    "Smoke-free without constant inner struggle",
+    "More energy, freedom and quality of life",
+    "Clear support on your way to becoming a non-smoker",
+    "Lasting change instead of relapse"
+  ],
   introCH: [
-    "Viele Menschen möchten mit dem Rauchen aufhören, schaffen es aber trotz guter Vorsätze immer wieder nicht dauerhaft. Der Grund liegt oft nicht im fehlenden Willen, sondern in tief verankerten Gewohnheiten, emotionalen Auslösern und unbewussten Verknüpfungen im Unterbewusstsein.",
-    "Rauchen ist häufig mehr als nur eine Gewohnheit. Für viele Menschen ist es unbewusst mit Stressabbau, Entspannung, Belohnung, Sicherheit oder bestimmten Alltagssituationen verbunden. Genau deshalb reicht reine Disziplin oft nicht aus, um langfristig rauchfrei zu bleiben.",
-    "Mit professioneller Hypnose können diese inneren Auslöser gezielt auf tiefer Ebene verändert werden. So kann das Verlangen nach Zigaretten deutlich nachlassen, alte Rauchmuster können aufgelöst werden und der innere Druck kann spürbar geringer werden.",
-    "Das Ziel ist nicht nur, mit dem Rauchen aufzuhören, sondern sich innerlich wirklich als Nichtraucher zu fühlen – mit mehr Freiheit, besserem Körpergefühl und einem dauerhaft gesünderen Leben."
+    "Viele Menschen möchten mit dem Rauchen aufhören, schaffen es aber trotz guter Vorsätze nicht dauerhaft. Der Grund liegt meist nicht im fehlenden Willen, sondern in tief verankerten Gewohnheiten, emotionalen Auslösern und unbewussten Verknüpfungen im Unterbewusstsein. Genau hier setzt die Hypnose an: Diese inneren Muster können gezielt verändert werden, sodass ein rauchfreies Leben ohne ständigen inneren Kampf möglich wird.",
+    "Rauchen ist häufig mehr als nur eine Gewohnheit. Für viele Menschen ist es unbewusst mit Stressabbau, Entspannung, Belohnung, Sicherheit oder bestimmten Alltagssituationen verbunden.",
+    "Mit professioneller Hypnose können diese inneren Auslöser gezielt auf tiefer Ebene verändert werden. Das Ziel ist nicht nur, mit dem Rauchen aufzuhören, sondern sich innerlich wirklich als Nichtraucher zu fühlen."
   ],
   introDE: [
-    "Viele Menschen möchten mit dem Rauchen aufhören, schaffen es aber trotz guter Vorsätze immer wieder nicht dauerhaft. Der Grund liegt oft nicht im fehlenden Willen, sondern in tief verankerten Gewohnheiten, emotionalen Auslösern und unbewussten Verknüpfungen im Unterbewusstsein.",
+    "Viele Menschen möchten mit dem Rauchen aufhören, schaffen es aber trotz guter Vorsätze nicht dauerhaft. Der Grund liegt meist nicht im fehlenden Willen, sondern in tief verankerten Gewohnheiten, emotionalen Auslösern und unbewussten Verknüpfungen im Unterbewusstsein. Genau hier setzt die Hypnose an: Diese inneren Muster können gezielt verändert werden, sodass ein rauchfreies Leben ohne ständigen inneren Kampf möglich wird.",
     "Rauchen ist häufig mehr als nur eine Gewohnheit. Für viele Menschen ist es unbewusst mit Stressabbau, Entspannung, Belohnung, Sicherheit oder bestimmten Alltagssituationen verbunden.",
-    "Mit professioneller Hypnose in unserer Praxis in Augsburg können diese inneren Auslöser gezielt auf tiefer Ebene verändert werden. Das Ziel ist nicht nur, mit dem Rauchen aufzuhören, sondern sich innerlich wirklich als Nichtraucher zu fühlen."
+    "Mit professioneller Hypnose können diese inneren Auslöser gezielt auf tiefer Ebene verändert werden. Das Ziel ist nicht nur, mit dem Rauchen aufzuhören, sondern sich innerlich wirklich als Nichtraucher zu fühlen."
   ],
   introEN: [
-    "Many people want to quit smoking but repeatedly fail to do so permanently despite good intentions. The reason often lies not in a lack of willpower, but in deeply ingrained habits, emotional triggers, and unconscious associations in the subconscious mind.",
-    "Smoking is often more than just a habit. For many people, it is unconsciously linked to stress relief, relaxation, reward, security, or specific everyday situations. That is precisely why pure discipline is often not enough to stay smoke-free in the long term.",
-    "With professional hypnosis, these inner triggers can be specifically altered at a deeper level. The goal is not just to stop smoking, but to truly feel like a non-smoker from within – with more freedom, a better body feeling, and a permanently healthier life."
+    "Many people want to quit smoking but, despite good intentions, do not manage to do so permanently. The reason usually does not lie in a lack of willpower, but in deeply ingrained habits, emotional triggers, and unconscious associations in the subconscious mind. This is exactly where hypnosis comes in: these inner patterns can be specifically transformed, so that a smoke-free life without a constant inner struggle becomes possible.",
+    "Smoking is often more than just a habit. For many people, it is unconsciously linked to stress relief, relaxation, reward, security, or specific everyday situations.",
+    "With professional hypnosis, these inner triggers can be specifically altered at a deeper level. The goal is not just to stop smoking, but to truly feel like a non-smoker from within."
   ],
   sectionsCH: [
     {

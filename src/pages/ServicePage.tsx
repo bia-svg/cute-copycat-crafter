@@ -41,6 +41,12 @@ export interface ServicePageData {
   h1CH: string;
   h1DE: string;
   h1EN: string;
+  eyebrowCH?: string;
+  eyebrowDE?: string;
+  eyebrowEN?: string;
+  ctaCH?: string;
+  ctaDE?: string;
+  ctaEN?: string;
   benefitsCH: string[];
   benefitsEN: string[];
   introDE: string[];
@@ -145,6 +151,8 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
   const intro = isEN ? data.introEN : (isSwiss ? data.introCH : data.introDE);
   const sections = isEN ? data.sectionsEN : (isSwiss ? data.sectionsCH : data.sectionsDE);
   const faq = isEN ? data.faqEN : data.faqCH;
+  const eyebrow = isEN ? data.eyebrowEN : (isSwiss ? data.eyebrowCH : data.eyebrowDE);
+  const ctaLabel = isEN ? data.ctaEN : (isSwiss ? data.ctaCH : data.ctaDE);
 
   const slug = isEN ? data.slugEN : (isSwiss ? data.slugCH : data.slugDE);
   const pagePath = `/${language}/${country}/${slug}`;
@@ -267,7 +275,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
               <div>
                 <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
-                  Lic.Psych. David J. Woods
+                  {eyebrow ?? "Lic.Psych. David J. Woods"}
                 </p>
                 <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] leading-tight mb-3 tracking-tight">
                   {h1}
@@ -286,7 +294,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                 </p>
                 <Link to={getPath("contact", language, country)} onClick={handleCtaClick}>
                   <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-6 py-2.5">
-                    {t("nav.cta")}
+                    {ctaLabel ?? t("nav.cta")}
                   </Button>
                 </Link>
               </div>
