@@ -290,15 +290,6 @@ export const anxietyData: ServicePageData = {
         "According to research at Stanford University (Spiegel, 2013), functional MRI scans show that hypnosis activates specific neural networks in the brain associated with anxiety regulation and emotional processing. This explains why hypnosis can achieve deeper and more lasting results than purely cognitive approaches.",
         "Sources: Kirsch, Montgomery & Sapirstein, Journal of Consulting and Clinical Psychology, 63(2), 1995; Spiegel, American Journal of Clinical Hypnosis, 56(1), 2013."
       ]
-    },
-    {
-      h2: "Wissenschaftliche Evidenz: Hypnose bei Ängsten und Angststörungen",
-      paragraphs: [
-        "Studien zeigen, dass Hypnose eine wirksame Methode zur Reduktion von Ängsten und stressbedingten Reaktionen sein kann. Durch die gezielte Arbeit mit dem Unterbewusstsein können emotionale Auslöser, innere Anspannungen und automatische Angstreaktionen nachhaltig verändert werden.",
-        "In wissenschaftlichen Untersuchungen wurde festgestellt, dass Hypnose insbesondere bei Angststörungen, Phobien und stressbedingten Symptomen positive Effekte erzielen kann. Dabei geht es nicht nur um kurzfristige Entspannung, sondern um eine tiefgreifende Veränderung innerer Reaktionsmuster.",
-        "Viele Klienten berichten, dass sie sich nach der Hypnose ruhiger, stabiler und emotional ausgeglichener fühlen und besser mit angstauslösenden Situationen umgehen können.",
-        "Quellen: Hammond, D. C. (2010). Hypnosis in the treatment of anxiety disorders. Kirsch, I. (1996). Hypnosis and cognitive-behavioral therapies. Alladin, A. (2016). Cognitive hypnotherapy for emotional disorders."
-      ]
     }
   ],
   image: `${CDN}/anxiety_relief_hypnose_c7aa85df.jpg`,
