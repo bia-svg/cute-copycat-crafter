@@ -133,7 +133,7 @@ export default function ResilienzVerstaerken() {
 
               <div className="mt-3.5">
                 <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
-                  <Button className="bg-[#ECEEF1] hover:bg-[#E2E5E9] text-[#1B3A5C] font-medium px-6 py-2.5 border border-[#1B3A5C]/25 shadow-none">
+                  <Button className="bg-[#1B3A5C] hover:bg-[#16304D] text-white font-medium px-6 py-2.5 text-sm rounded-xl">
                     {isEN ? "Request Consultation" : "Beratung anfragen"}
                   </Button>
                 </Link>
@@ -241,7 +241,7 @@ export default function ResilienzVerstaerken() {
                 : "Stärken Sie Ihr Team nachhaltig – für mehr Stabilität, Fokus und Leistung im Alltag."}
             </p>
             <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
-              <Button className="bg-[#ECEEF1] hover:bg-[#E2E5E9] text-[#1B3A5C] font-medium px-8 py-3 text-base border border-[#1B3A5C]/25 shadow-none">
+              <Button className="bg-[#1B3A5C] hover:bg-[#16304D] text-white font-medium px-8 py-3 text-base rounded-xl">
                 {isEN ? "Request Consultation" : "Beratung anfragen"}
               </Button>
             </Link>
