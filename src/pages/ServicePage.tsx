@@ -151,6 +151,8 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
   const intro = isEN ? data.introEN : (isSwiss ? data.introCH : data.introDE);
   const sections = isEN ? data.sectionsEN : (isSwiss ? data.sectionsCH : data.sectionsDE);
   const faq = isEN ? data.faqEN : data.faqCH;
+  const eyebrow = isEN ? data.eyebrowEN : (isSwiss ? data.eyebrowCH : data.eyebrowDE);
+  const ctaLabel = isEN ? data.ctaEN : (isSwiss ? data.ctaCH : data.ctaDE);
 
   const slug = isEN ? data.slugEN : (isSwiss ? data.slugCH : data.slugDE);
   const pagePath = `/${language}/${country}/${slug}`;
