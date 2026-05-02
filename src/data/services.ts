@@ -54,19 +54,19 @@ export const smokingData: ServicePageData = {
   ],
   sectionsCH: [
     {
-      h2: "Rauchfrei mit Hypnose — Psychologische Gründe fürs Rauchen lösen",
+      h2: "Rauchfrei mit Hypnose – Ursachen statt Symptome lösen",
       paragraphs: [
-        "Aufhören zu rauchen gelingt nachhaltig, wenn die psychologischen Gründe fürs Rauchen gezielt gelöst werden. Die meisten Raucher greifen nicht nur aus Gewohnheit zur Zigarette, sondern weil das Rauchen unbewusst mit bestimmten emotionalen Zuständen verknüpft ist."
+        "Nachhaltig mit dem Rauchen aufhören gelingt dann, wenn die zugrunde liegenden emotionalen und unbewussten Ursachen gezielt verändert werden."
       ],
       bullets: [
-        "Stress & Frust",
-        "Auszeit von Belastungen",
-        "Depressionen & Trauer",
-        "Unsicherheiten & Verlustängste",
-        "Angst vorm Alleinsein",
-        "Dazuzugehören wollen",
-        "Gewohnheiten bekämpfen",
-        "Emotionales Rauchen bewältigen"
+        "Stress und innere Anspannung",
+        "Auszeiten und Entlastung im Alltag",
+        "Emotionale Belastungen wie Trauer oder Frust",
+        "Unsicherheiten und Verlustängste",
+        "Angst vor dem Alleinsein",
+        "Dazugehören und soziale Gewohnheiten",
+        "Automatisierte Verhaltensmuster",
+        "Emotionales Rauchen in bestimmten Situationen"
       ]
     },
     {
