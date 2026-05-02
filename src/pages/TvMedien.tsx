@@ -185,16 +185,16 @@ export default function TvMedien() {
         </div>
       </section>
 
-      <section className="bg-[#E8EDF3] py-8 lg:py-10">
+      <section className="bg-[#E8EDF3] py-5 lg:py-7">
         <div className="container-main">
-          <div className="relative max-w-2xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl px-6 py-7 md:px-10 md:py-8 text-center shadow-sm">
+          <div className="relative max-w-2xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl px-6 py-5 md:px-10 md:py-6 text-center shadow-sm">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-[11px] font-medium border border-[#1B3A5C]/25 px-3 py-0.5 rounded-full tracking-wide uppercase">
               {isEN ? "Media" : "Medien"}
             </div>
-            <h2 className="text-xl md:text-2xl font-light text-foreground mb-2 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+            <h2 className="text-xl md:text-2xl font-light text-foreground mb-1.5 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Press Inquiries" : "Presseanfragen"}
             </h2>
-            <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto mb-4">
+            <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto mb-3">
               {isEN ? "For media inquiries, please contact us directly." : "Für Medienanfragen kontaktieren Sie uns bitte direkt."}
             </p>
             <Link to={`/${language}/${country}/erstgespraech`}>
