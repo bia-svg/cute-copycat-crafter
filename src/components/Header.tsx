@@ -67,9 +67,6 @@ export default function Header() {
     { icon: <Users className="w-5 h-5" />, label: isDE ? "Kinder & Jugendliche" : "Children & Teens", desc: isDE ? "Sanfte Therapie mit Kathryn" : "Gentle therapy with Kathryn", href: getPath("children", language, country) },
   ];
 
-  const audiences = [
-    { icon: <User className="w-5 h-5" />, label: isDE ? "Erwachsene" : "Adult Individual", desc: isDE ? "Persönliche 1:1 Sitzungen mit David" : "Personal 1:1 sessions with David", href: getPath("adults", language, country) },
-  ];
 
   const corporateItems = [
     { icon: <Trophy className="w-5 h-5" />, label: isDE ? "Erfolgs-Training" : "Success Training", desc: isDE ? "Leistungspotenzial maximieren" : "Maximize performance potential", href: getPath("corporateErfolg", language, country) },
@@ -269,20 +266,12 @@ export default function Header() {
       {/* ── Mega Menu: Hypnosetherapie ── */}
       <MegaMenuPanel id="sessions">
         <div className="grid md:grid-cols-12 gap-5">
-          <div className="md:col-span-6">
+          <div className="md:col-span-9">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-              {isDE ? "Therapieziele" : "Therapy Goals"}
+              {isDE ? "Hypnose-Sitzungen" : "Hypnosis Sessions"}
             </h4>
             <div className="grid grid-cols-2 gap-x-2 gap-y-0.5">
               {therapyGoals.map(item => <MenuItemLink key={item.label} {...item} />)}
-            </div>
-          </div>
-          <div className="md:col-span-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-              {isDE ? "Zielgruppen" : "Audiences"}
-            </h4>
-            <div className="space-y-0.5">
-              {audiences.map(item => <MenuItemLink key={item.label} {...item} />)}
             </div>
           </div>
           <div className="md:col-span-3">
@@ -438,21 +427,9 @@ export default function Header() {
             {mobileAccordion === "sessions" && (
               <div className="px-8 pb-3 space-y-1">
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-1 pb-1">
-                  {isDE ? "Therapieziele" : "Therapy Goals"}
+                  {isDE ? "Hypnose-Sitzungen" : "Hypnosis Sessions"}
                 </p>
                 {therapyGoals.map((item) => (
-                  <Link key={item.label} to={item.href} onClick={() => setMobileOpen(false)} className="flex items-start gap-3 p-2 rounded-md hover:bg-secondary">
-                    <span className="text-primary mt-0.5">{item.icon}</span>
-                    <div>
-                      <div className="text-sm font-medium text-foreground">{item.label}</div>
-                      <div className="text-xs text-muted-foreground">{item.desc}</div>
-                    </div>
-                  </Link>
-                ))}
-                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-3 pb-1">
-                  {isDE ? "Zielgruppen" : "Audiences"}
-                </p>
-                {audiences.map((item) => (
                   <Link key={item.label} to={item.href} onClick={() => setMobileOpen(false)} className="flex items-start gap-3 p-2 rounded-md hover:bg-secondary">
                     <span className="text-primary mt-0.5">{item.icon}</span>
                     <div>
