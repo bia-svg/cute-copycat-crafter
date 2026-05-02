@@ -532,8 +532,8 @@ export const depressionData: ServicePageData = {
   metaDescCH: "Begleitung bei depressiven Phasen und Traumata mit Hypnose in Zürich — alte Prägungen neu bewerten, Lebensfreude zurückgewinnen. Lic. Psych. David J. Woods, 35+ Jahre, EMR-anerkannt, ★ 5.0 (266 Bewertungen).",
   metaDescDE: "Begleitung bei depressiven Phasen und Traumata mit Hypnose in Augsburg — alte Prägungen neu bewerten, Lebensfreude zurückgewinnen. Lic. Psych. David J. Woods, 35+ Jahre Erfahrung, ★ 5.0 (266 Bewertungen).",
   metaDescEN: "Support for depressive phases and trauma with hypnotherapy in Zurich & Augsburg — re-evaluate old imprints, regain joy. Lic. Psych. David J. Woods, 35+ years, ★ 5.0 (266 reviews). Free discovery call.",
-  h1CH: "Depressionen und Traumata lösen – neue Stabilität und Lebensqualität gewinnen",
-  h1DE: "Depressionen und Traumata lösen – neue Stabilität und Lebensqualität gewinnen",
+  h1CH: "Depressionen & Traumata lösen – innere Stabilität gewinnen",
+  h1DE: "Depressionen & Traumata lösen – innere Stabilität gewinnen",
   h1EN: "Depression and Trauma – regain stability and quality of life",
   benefitsCH: [
     "Innere Schwere und Antriebslosigkeit gezielt lösen",
