@@ -64,11 +64,11 @@ export default function Header() {
     { icon: <Scale className="w-5 h-5" />, label: isDE ? "Abnehmen" : "Weight Loss", desc: isDE ? "Essverhalten nachhaltig verändern" : "Change eating habits sustainably", href: getPath("weight", language, country) },
     { icon: <Flame className="w-5 h-5" />, label: isDE ? "Stress & Burnout" : "Stress & Burnout", desc: isDE ? "Stressreduktion & Prävention" : "Stress reduction & prevention", href: getPath("stress", language, country) },
     { icon: <HeartPulse className="w-5 h-5" />, label: isDE ? "Depressionen & Traumata" : "Depression & Trauma", desc: isDE ? "Neue Perspektiven entdecken" : "Discover new perspectives", href: getPath("depression", language, country) },
+    { icon: <Users className="w-5 h-5" />, label: isDE ? "Kinder & Jugendliche" : "Children & Teens", desc: isDE ? "Sanfte Therapie mit Kathryn" : "Gentle therapy with Kathryn", href: getPath("children", language, country) },
   ];
 
   const audiences = [
     { icon: <User className="w-5 h-5" />, label: isDE ? "Erwachsene" : "Adult Individual", desc: isDE ? "Persönliche 1:1 Sitzungen mit David" : "Personal 1:1 sessions with David", href: getPath("adults", language, country) },
-    { icon: <Users className="w-5 h-5" />, label: isDE ? "Kinder & Jugendliche" : "Children & Teens", desc: isDE ? "Sanfte Therapie mit Kathryn" : "Gentle therapy with Kathryn", href: getPath("children", language, country) },
   ];
 
   const corporateItems = [
