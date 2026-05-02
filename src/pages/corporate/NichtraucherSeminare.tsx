@@ -3,45 +3,108 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { getPath } from "@/lib/routes";
-import { CheckCircle, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import corporateNonsmokerImg from "@/assets/corporate-nonsmoker.jpg";
 
 export default function NichtraucherSeminare() {
   const { language, country } = useLanguage();
   const isEN = language === "en";
 
-  const risks = [
-    isEN ? "Many sick days & long absences" : "Viele Krankheitstage & lange Fehlzeiten",
-    isEN ? "High costs for employers due to illness" : "Hohe Kosten für Arbeitgeber durch Krankheit",
-    isEN ? "Lack of concentration & missing focus" : "Mangelnde Konzentration & fehlender Fokus",
-    isEN ? "No full utilization of performance potential" : "Keine Ausschöpfung des Leistungspotenzials",
-    isEN ? "Stagnating or absent performance" : "Stagnierende bzw. ausbleibende Leistung",
-    isEN ? "Missing role model function & bad image" : "Fehlende Vorbildfunktion & schlechtes Image",
-  ];
+  const reasonsLeft = isEN
+    ? [
+        "High costs from sick leave",
+        "Productivity loss in daily work",
+        "Concentration issues among employees",
+        "Additional breaks and downtime",
+      ]
+    : [
+        "Hohe Kosten durch Krankheitsausfälle",
+        "Produktivitätsverlust im Arbeitsalltag",
+        "Konzentrationsprobleme bei Mitarbeitern",
+        "Zusätzliche Pausen und Ausfallzeiten",
+      ];
 
-  const results = [
-    isEN ? "Smoking cessation in just 3 hours" : "Rauchentwöhnung in nur 3 Stunden",
-    isEN ? "Fewer sick days for your employees" : "Weniger Krankheitstage Ihrer Mitarbeiter",
-    isEN ? "Increased concentration at work" : "Gesteigerte Konzentration an der Arbeit",
-    isEN ? "Better performance & discipline" : "Bessere Leistungsfähigkeit & Disziplin",
-    isEN ? "Balance & real vitality" : "Ausgeglichenheit & echte Vitalität",
-  ];
+  const reasonsRight = isEN
+    ? [
+        "Lower team performance",
+        "Negative impact on company image",
+        "Lack of role-model leadership",
+        "Long-term health risks",
+      ]
+    : [
+        "Geringere Leistungsfähigkeit im Team",
+        "Negativer Einfluss auf das Unternehmensimage",
+        "Fehlende Vorbildfunktion von Führungskräften",
+        "Langfristige Gesundheitsrisiken",
+      ];
 
-  const phases = [
-    { title: isEN ? "Phase 1: Information" : "Phase 1: Informationsvermittlung", desc: isEN ? "We begin with a comprehensive information phase of approximately 45 minutes. This is followed by a 15-minute smoking break where participants can consciously smoke." : "Wir beginnen mit einer umfangreichen Informationsphase von ungefähr 45 Minuten. Im Anschluss daran folgt eine 15-minütige Raucherpause, in welcher die Teilnehmer ganz bewusst rauchen können." },
-    { title: isEN ? "Phase 2: Causes & Reasons" : "Phase 2: Ursachen & Gründe", desc: isEN ? "In the second phase, we work together to find the causes of participants' smoking and identify reasons that speak for quitting." : "Dabei finden wir gemeinsam die Ursachen für das Rauchen der Teilnehmer und arbeiten Gründe heraus, die dafürsprechen mit dem Rauchen aufzuhören." },
-    { title: isEN ? "Phase 3: Excessive Smoking Break" : "Phase 3: Exzessive Raucherpause", desc: isEN ? "After the second phase, participants have twice as much time for a break and are tasked with smoking as much as possible in this short time." : "Nach Abschluss der zweiten Phase folgt erneut eine Raucherpause, für welche die Teilnehmer doppelt so viel Zeit haben. Dabei bekommen sie den Auftrag, so viel zu rauchen, wie es für sie in dieser kurzen Zeit möglich erscheint." },
-    { title: isEN ? "Phase 4: Finally Smoke-Free!" : "Phase 4: Endlich Rauchfrei!", desc: isEN ? "In the final phase, we ask the crucial question 'Do you really want to quit smoking?' followed by the decisive smoking cessation and a farewell round." : "In der letzten Phase stellen wir die entscheidende Frage 'Wollt ihr wirklich aufhören zu rauchen?'. Anschließend folgt die maßgebliche Rauchentwöhnung sowie eine Abschiedsrunde." },
-  ];
+  const benefits = isEN
+    ? [
+        { title: "Immediate Effect", desc: "Participants are non-smokers right after the seminar." },
+        { title: "Fewer Absences", desc: "Reduced sick days within the company." },
+        { title: "Higher Productivity", desc: "More focus, energy and performance." },
+        { title: "Better Team Dynamics", desc: "Fewer interruptions, more stability." },
+        { title: "Sustainable Change", desc: "Long-term success instead of short-term motivation." },
+      ]
+    : [
+        { title: "Sofortige Wirkung", desc: "Teilnehmer sind direkt nach dem Seminar Nichtraucher." },
+        { title: "Weniger Fehlzeiten", desc: "Reduzierte Krankheitsausfälle im Unternehmen." },
+        { title: "Höhere Produktivität", desc: "Mehr Fokus, Energie und Leistungsfähigkeit." },
+        { title: "Bessere Teamdynamik", desc: "Weniger Unterbrechungen und mehr Stabilität." },
+        { title: "Nachhaltige Veränderung", desc: "Langfristiger Erfolg statt kurzfristiger Motivation." },
+      ];
+
+  const phases = isEN
+    ? [
+        { title: "Phase 1 — Clarity & Preparation", desc: "Understanding habits and mental patterns." },
+        { title: "Phase 2 — Identifying Causes", desc: "Recognizing individual triggers for smoking." },
+        { title: "Phase 3 — Mental Shift", desc: "Targeted change at the subconscious level." },
+        { title: "Phase 4 — Smoke-Free", desc: "A sustainable solution without withdrawal stress." },
+      ]
+    : [
+        { title: "Phase 1 — Klarheit & Vorbereitung", desc: "Verstehen der Gewohnheiten und mentalen Muster." },
+        { title: "Phase 2 — Ursachen erkennen", desc: "Individuelle Auslöser für das Rauchen identifizieren." },
+        { title: "Phase 3 — Mentale Umstellung", desc: "Gezielte Veränderung im Unterbewusstsein." },
+        { title: "Phase 4 — Rauchfrei", desc: "Nachhaltige Lösung ohne Entzugsstress." },
+      ];
+
+  const results = isEN
+    ? [
+        "Employees become non-smokers in a short time",
+        "Fewer sick days",
+        "Significantly higher concentration at work",
+        "More energy and performance",
+        "Long-term relief for the company",
+      ]
+    : [
+        "Mitarbeiter werden in kurzer Zeit Nichtraucher",
+        "Weniger Krankheitsausfälle",
+        "Deutlich höhere Konzentration im Arbeitsalltag",
+        "Mehr Energie und Leistungsfähigkeit",
+        "Langfristige Entlastung für das Unternehmen",
+      ];
+
+  const suitable = isEN
+    ? [
+        "Companies with a large workforce",
+        "Firms focused on health & performance",
+        "Teams with high workload and stress levels",
+        "Organizations aiming to reduce long-term costs",
+      ]
+    : [
+        "Unternehmen mit hoher Mitarbeiteranzahl",
+        "Firmen mit Fokus auf Gesundheit & Performance",
+        "Teams mit hoher Belastung und Stresslevel",
+        "Organisationen, die Kosten langfristig senken wollen",
+      ];
 
   return (
     <>
-      {/* SEO: title/desc + BreadcrumbList JSON-LD */}
       <SEO
-        titleDE="Rauchfrei in 3 Stunden — Nichtraucher-Seminare für Unternehmen"
-        titleEN="Smoke-Free in 3 Hours — Non-Smoker Seminars for Companies"
-        descriptionDE="Das 'Rauchfrei in 3 Stunden'-Programm von David J. Woods. Effektive Rauchentwöhnung für Mitarbeiter und Führungskräfte direkt in Ihrem Unternehmen."
-        descriptionEN="The 'Smoke-Free in 3 Hours' program by David J. Woods. Effective smoking cessation for employees and executives directly at your company."
+        titleDE="Nichtraucher-Seminar für Unternehmen — Rauchfrei in 3 Stunden"
+        titleEN="Non-Smoker Seminar for Companies — Smoke-Free in 3 Hours"
+        descriptionDE="Rauchfrei in 3 Stunden — das Nichtraucher-Seminar für Unternehmen von David J. Woods. Schnell, nachhaltig und direkt bei Ihnen im Unternehmen."
+        descriptionEN="Smoke-free in 3 hours — the non-smoker seminar for companies by David J. Woods. Fast, sustainable and delivered on-site."
         pageKey="corporateNichtraucher"
         breadcrumbs={[
           { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
@@ -52,38 +115,56 @@ export default function NichtraucherSeminare() {
 
       {/* Hero */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-6 md:py-8 lg:py-10">
+        <div className="container-main py-6 md:py-8">
           <Link to={getPath("corporate", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-3">
             <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
           </Link>
-          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm grid md:grid-cols-[1fr_280px] lg:grid-cols-[1fr_340px] gap-5 md:gap-7 md:items-stretch">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-6 shadow-sm grid md:grid-cols-[1.35fr_1fr] gap-4 md:gap-6 md:items-center">
             <div>
-            <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
-            <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] leading-tight mb-4 tracking-tight">
-              {isEN ? "Smoke-Free in 3 Hours — Seminar by David J. Woods" : "Rauchfrei in 3 Stunden — Seminar by David J. Woods"}
-            </h1>
-
-            <div className="prose prose-sm max-w-none text-foreground/85 space-y-3">
-              <p>
+              <p className="text-xs font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
+              <h1 className="text-2xl md:text-3xl font-light text-[#1B3A5C] leading-tight mb-3 tracking-tight">
+                {isEN ? "Non-Smoker Seminar for Companies" : "Nichtraucher-Seminar für Unternehmen"}
+              </h1>
+              <p className="text-sm md:text-base text-[#1B3A5C]/80 mb-3 leading-snug">
                 {isEN
-                  ? "The 'Smoke-Free in 3 Hours' program delivers exactly what it promises. In just 3 hours, David J. Woods turns participants into non-smokers. What makes it special, besides the short time, is the permanence of this smoking cessation. David J. Woods works entirely without pressure, using exclusively his specially developed method."
-                  : "Das \u201eRauchfrei in 3 Stunden\u201c-Programm hält genau das, was es spricht. Denn in gerade 3 Stunden macht David J. Woods die Teilnehmer der Rauchentwöhnung zu Nichtrauchern. Das Besondere dabei ist neben der kurzen Zeit auch die Dauerhaftigkeit dieser Rauchentwöhnung. Dabei arbeitet David J. Woods ganz ohne Druck, sondern ausschließlich mit seiner speziell entwickelten Methode."}
+                  ? "Smoke-free in just 3 hours — boost health, performance and productivity in your team."
+                  : "Rauchfrei in nur 3 Stunden – steigern Sie Gesundheit, Leistungsfähigkeit und Produktivität in Ihrem Team."}
               </p>
-              <p className="font-semibold text-[#1B3A5C]">
-                {isEN ? "Directly at your company!" : "Direkt bei Ihnen im Unternehmen!"}
-              </p>
-              <p>
-                {isEN
-                  ? "For this special business coaching, we are happy to come directly to your company and offer you a unique group smoking cessation. All you need is a room with enough space, comfortable seating, a flip chart, and an audio system with microphone."
-                  : "Für dieses spezielle Business Coaching kommen wir gerne auch direkt in Ihre Firma und bieten Ihnen eine einzigartige Rauchentwöhnung in der Gruppe an. Alles, was Sie dazu brauchen, ist ein Raum mit ausreichend Platz, eine bequeme Bestuhlung, ein Flip Chart sowie eine Audio-Anlage mit Mikrofon."}
-              </p>
-            </div>
+              <div className="text-sm text-foreground/85 space-y-2 leading-snug">
+                <p>
+                  {isEN
+                    ? "Smoking costs companies money, energy and performance every day. Sick leave, lack of concentration and reduced resilience are the direct consequences."
+                    : "Rauchen kostet Unternehmen täglich Geld, Energie und Leistungsfähigkeit. Fehlzeiten, Konzentrationsprobleme und reduzierte Belastbarkeit sind direkte Folgen."}
+                </p>
+                <p>
+                  {isEN
+                    ? "With the \u201eSmoke-Free in 3 Hours\u201c seminar, David J. Woods delivers a fast, effective and sustainable solution for companies."
+                    : "Mit dem \u201eRauchfrei in 3 Stunden\u201c-Seminar bietet David J. Woods eine schnelle, effektive und nachhaltige Lösung für Unternehmen."}
+                </p>
+                <p>
+                  {isEN
+                    ? "In just a few hours, employees become non-smokers — without pressure, without withdrawal stress, through targeted change at the subconscious level."
+                    : "In nur wenigen Stunden werden Mitarbeiter zu Nichtrauchern – ohne Druck, ohne Entzugsstress, sondern durch gezielte Veränderung im Unterbewusstsein."}
+                </p>
+                <p>
+                  {isEN
+                    ? "The seminar takes place directly at your company and is ideally suited for groups and teams."
+                    : "Das Seminar findet direkt bei Ihnen im Unternehmen statt und eignet sich ideal für Gruppen und Teams."}
+                </p>
+              </div>
+              <div className="mt-4">
+                <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
+                  <Button className="bg-[#1B3A5C] hover:bg-[#16304D] text-white font-medium px-6 py-2.5 text-sm rounded-xl">
+                    {isEN ? "Request Consultation" : "Beratung anfragen"}
+                  </Button>
+                </Link>
+              </div>
             </div>
             <div className="md:order-last">
               <img
                 src={corporateNonsmokerImg}
                 alt={isEN ? "Non-Smoker Seminar" : "Nichtraucher-Seminar"}
-                className="w-full h-48 md:h-full md:min-h-[260px] object-cover rounded-2xl border border-[#E2E8EE]"
+                className="w-full h-44 md:h-full md:max-h-[320px] object-cover rounded-2xl border border-[#E2E8EE]"
                 loading="eager"
               />
             </div>
@@ -91,37 +172,79 @@ export default function NichtraucherSeminare() {
         </div>
       </section>
 
-      {/* Risks — Banner */}
+      {/* Why companies should act — 2 columns */}
       <section className="bg-[#F8FAFC]">
-        <div className="container-main py-6 md:py-9">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
-              {isEN ? "Disadvantages & risks of smoking:" : "Folgende Nachteile & Risiken des Rauchens:"}
+        <div className="container-main py-6 md:py-8">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-8 shadow-sm">
+            <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] mb-5 md:mb-6 tracking-tight text-center">
+              {isEN ? "Why Companies Should Act" : "Warum Unternehmen handeln sollten"}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {risks.map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm">
-                  <span className="text-red-500">✕</span>
-                  <span>{item}</span>
-                </div>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+              <ul className="space-y-2.5">
+                {reasonsLeft.map((c) => (
+                  <li key={c} className="flex items-start gap-2.5 text-[15px] text-foreground/85">
+                    <span className="text-[#2E7D32] mt-1">•</span>
+                    <span>{c}</span>
+                  </li>
+                ))}
+              </ul>
+              <ul className="space-y-2.5">
+                {reasonsRight.map((c) => (
+                  <li key={c} className="flex items-start gap-2.5 text-[15px] text-foreground/85">
+                    <span className="text-[#2E7D32] mt-1">•</span>
+                    <span>{c}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Phases — Banner */}
+      {/* 5 Benefits */}
+      <section className="bg-[#F1F4F7]">
+        <div className="container-main py-6 md:py-8">
+          <div className="max-w-5xl mx-auto bg-[#E8EDF3] border border-[#D8E0EA] rounded-2xl shadow-[0_10px_40px_-25px_rgba(27,58,92,0.18)] overflow-hidden">
+            <div className="px-5 md:px-8 pt-5 md:pt-6 pb-3 md:pb-4 text-center border-b border-[#D8E0EA]">
+              <p className="text-[10px] font-medium text-[#2E7D32] uppercase tracking-[0.2em] mb-1.5">Benefits</p>
+              <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight">
+                {isEN ? "The Benefits of the Non-Smoker Seminar" : "Die Vorteile des Nichtraucher-Seminars"}
+              </h2>
+            </div>
+            <div className="px-5 md:px-8 py-5 md:py-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+                {benefits.map((el, i) => (
+                  <div key={i} className="bg-white border border-[#E2E8EE] rounded-2xl p-4 md:p-5 shadow-[0_1px_2px_rgba(27,58,92,0.04)] hover:shadow-[0_8px_24px_-12px_rgba(27,58,92,0.18)] transition-shadow">
+                    <span className="inline-flex w-8 h-8 rounded-full bg-[#1B3A5C] text-white text-sm font-medium items-center justify-center tabular-nums mb-3">
+                      {i + 1}
+                    </span>
+                    <h3 className="text-[15px] font-medium text-[#1B3A5C] tracking-tight mb-1">{el.title}</h3>
+                    <p className="text-[13px] text-muted-foreground leading-snug">{el.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Phases */}
       <section className="bg-[#E8EDF3]">
-        <div className="container-main py-6 md:py-9">
-          <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
-              {isEN ? "The 4 Phases of the Program" : "Der Ablauf der Rauchfrei von David J. Woods"}
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+        <div className="container-main py-6 md:py-8">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+            <div className="text-center mb-5 md:mb-6">
+              <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] tracking-tight">
+                {isEN ? "How the Seminar Works" : "So läuft das Seminar ab"}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               {phases.map((p, i) => (
-                <div key={i} className="bg-white border border-[#E8EDF3] rounded-2xl p-4 shadow-[0_1px_2px_rgba(27,58,92,0.04)]">
-                  <h3 className="font-light text-sm text-[#1B3A5C] mb-2 tracking-tight">{p.title}</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
+                <div key={i} className="bg-white border border-[#E2E8EE] rounded-2xl p-4 shadow-[0_1px_2px_rgba(27,58,92,0.04)] hover:shadow-[0_8px_24px_-12px_rgba(27,58,92,0.18)] transition-shadow">
+                  <span className="inline-flex w-8 h-8 rounded-full bg-[#1B3A5C] text-white text-sm font-medium items-center justify-center tabular-nums mb-3">
+                    {i + 1}
+                  </span>
+                  <h3 className="text-[14px] font-medium text-[#1B3A5C] tracking-tight mb-1 leading-tight">{p.title}</h3>
+                  <p className="text-[13px] text-muted-foreground leading-snug">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -129,40 +252,62 @@ export default function NichtraucherSeminare() {
         </div>
       </section>
 
-      {/* Results — Banner */}
+      {/* Results */}
+      <section className="bg-[#F1F4F7]">
+        <div className="container-main py-6 md:py-8">
+          <div className="max-w-4xl mx-auto bg-white border border-[#E2E8EE] rounded-3xl p-5 md:p-8 shadow-sm">
+            <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] tracking-tight text-center mb-5 md:mb-6">
+              {isEN ? "Results Companies Achieve" : "Diese Ergebnisse erzielen Unternehmen"}
+            </h2>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2.5">
+              {results.map((r) => (
+                <li key={r} className="flex items-start gap-2.5 text-[15px] text-foreground/85">
+                  <span className="text-[#2E7D32] mt-1">•</span>
+                  <span>{r}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Suitable for */}
       <section className="bg-[#F8FAFC]">
-        <div className="container-main py-6 md:py-9">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
-              {isEN ? "Results of the program:" : "Die Ergebnisse des Programms:"}
+        <div className="container-main py-6 md:py-8">
+          <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-8 shadow-sm">
+            <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] tracking-tight text-center mb-5 md:mb-6">
+              {isEN ? "Which Companies Is This For?" : "Für welche Unternehmen ist das geeignet?"}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {results.map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
-                  <span>{item}</span>
-                </div>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2.5">
+              {suitable.map((r) => (
+                <li key={r} className="flex items-start gap-2.5 text-[15px] text-foreground/85">
+                  <span className="text-[#2E7D32] mt-1">•</span>
+                  <span>{r}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </section>
 
+      {/* CTA */}
       <section className="bg-[#E8EDF3]">
-        <div className="container-main py-8 md:py-10 flex justify-center">
-          <div className="relative bg-white border border-[#1B3A5C]/15 rounded-2xl px-8 py-8 text-center max-w-2xl w-full">
+        <div className="container-main py-7 md:py-9 flex justify-center">
+          <div className="relative bg-white border border-[#1B3A5C]/15 rounded-2xl px-8 py-7 text-center max-w-2xl w-full">
             <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-xs font-medium border border-[#1B3A5C]/25 px-4 py-1 rounded-full whitespace-nowrap">
-              {isEN ? "Next Step" : "N\u00e4chster Schritt"}
+              {isEN ? "Next Step" : "Nächster Schritt"}
             </span>
-            <h2 className="text-xl font-light text-primary mb-2 mt-2 tracking-tight">
-              {isEN ? "Book the Smoke-Free Seminar" : "Rauchfrei-Seminar buchen"}
+            <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] mb-2 mt-2 tracking-tight">
+              {isEN ? "Secure the Non-Smoker Seminar for Your Team" : "Jetzt Nichtraucher-Seminar für Ihr Team sichern"}
             </h2>
-            <p className="text-sm text-muted-foreground mb-4">
-              {isEN ? "Take the next step for your team." : "Gehen Sie den n\u00e4chsten Schritt f\u00fcr Ihr Team."}
+            <p className="text-sm md:text-[15px] text-muted-foreground mb-4 leading-snug">
+              {isEN
+                ? "Boost health and performance in your company."
+                : "Steigern Sie Gesundheit und Leistungsfähigkeit in Ihrem Unternehmen."}
             </p>
             <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
-              <Button className="bg-[#ECEEF1] hover:bg-[#E2E5E9] text-[#1B3A5C] font-medium px-8 py-3 text-base border border-[#1B3A5C]/25 shadow-none">
-                {isEN ? "Register Now!" : "Jetzt anmelden!"}
+              <Button className="bg-[#1B3A5C] hover:bg-[#16304D] text-white font-medium px-8 py-3 text-base rounded-xl">
+                {isEN ? "Request Consultation" : "Beratung anfragen"}
               </Button>
             </Link>
           </div>
