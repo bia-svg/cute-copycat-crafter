@@ -457,7 +457,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       })()}
 
       {/* Consultation CTA Row with Inline Form */}
-      <section className="py-10 md:py-16 bg-[#F8FAFC]">
+      <section id="contact" className="py-6 md:py-6 bg-[#F8FAFC] border-y border-[#E8EDF3]">
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-lg sm:text-xl font-light text-primary mb-1 text-center tracking-tight">
