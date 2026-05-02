@@ -297,8 +297,45 @@ export default function FirmenCoaching() {
         </div>
       </section>
 
-      {/* Evidence — Banner */}
+      {/* Implementation — Banner */}
       <section className="bg-[#E8EDF3]">
+        <div className="container-main py-3.5 md:py-5">
+          <div className="max-w-[640px] mx-auto bg-white/85 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-5 shadow-sm">
+            <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2 md:mb-2.5 tracking-tight text-center">
+              {isEN ? "How the Success Training is implemented" : "Wie das Erfolgs-Training umgesetzt wird"}
+            </h2>
+            <p className="text-[13px] md:text-[13.5px] text-foreground/80 leading-snug md:leading-[1.55] mb-2.5 md:mb-3 text-center">
+              {isEN
+                ? "The training is individually tailored to your company."
+                : "Das Training wird individuell auf Ihr Unternehmen abgestimmt."}
+            </p>
+            <p className="text-[12.5px] md:text-[13px] text-foreground/75 leading-snug mb-2 md:mb-2.5">
+              {isEN ? "Possible formats:" : "Mögliche Formate:"}
+            </p>
+            <div className="space-y-1 md:space-y-1.5">
+              {formats.map((item) => (
+                <div key={item} className="flex items-start gap-2 text-[12.5px] md:text-[13.5px] leading-snug">
+                  <span className="text-[#2E7D32] mt-0.5">•</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-[12.5px] md:text-[13.5px] text-foreground/75 mt-3 md:mt-3.5 leading-snug md:leading-[1.55]">
+              {isEN
+                ? "Implementation takes place directly inside your company or in intensive one-to-one sessions."
+                : "Die Umsetzung erfolgt direkt bei Ihnen im Unternehmen oder in intensiven Einzelsessions."}
+            </p>
+            <p className="text-[12.5px] md:text-[13.5px] text-muted-foreground mt-2 md:mt-2.5 leading-snug md:leading-[1.5] text-center italic">
+              {isEN
+                ? "The goal is always: fast, noticeable and sustainable results."
+                : "Ziel ist immer: schnelle, spürbare und nachhaltige Ergebnisse."}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Evidence — Banner */}
+      <section className="bg-[#F8FAFC]">
         <div className="container-main py-3.5 md:py-5">
           <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-4 shadow-sm">
             <h2 className="text-base md:text-lg font-light text-primary mb-2 md:mb-2.5 tracking-tight text-center">
