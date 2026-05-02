@@ -154,9 +154,9 @@ export default function ResilienzVerstaerken() {
       {/* 7 Pillars — dark editorial timeline */}
       <section className="bg-[#F1F4F7]">
         <div className="container-main py-10 md:py-14">
-          <div className="max-w-4xl mx-auto bg-[#1B3A5C] rounded-3xl shadow-[0_20px_60px_-30px_rgba(27,58,92,0.45)] overflow-hidden">
+          <div className="max-w-4xl mx-auto bg-[#2A2F36] rounded-3xl shadow-[0_20px_60px_-30px_rgba(20,24,30,0.45)] overflow-hidden">
             <div className="px-6 md:px-12 pt-9 md:pt-12 pb-6 md:pb-8 text-center border-b border-white/10">
-              <p className="text-[11px] font-medium text-[#7FB47E] uppercase tracking-[0.22em] mb-2.5">
+              <p className="text-[11px] font-medium text-white/55 uppercase tracking-[0.22em] mb-2.5">
                 {isEN ? "Framework" : "Framework"}
               </p>
               <h2 className="text-2xl md:text-[1.8rem] font-light text-white tracking-tight">
@@ -165,14 +165,13 @@ export default function ResilienzVerstaerken() {
             </div>
 
             <div className="relative px-6 md:px-12 py-8 md:py-10">
-              {/* vertical guide line */}
               <div className="absolute left-[42px] md:left-[64px] top-8 bottom-8 w-px bg-white/10" aria-hidden />
 
               <ol className="space-y-5 md:space-y-6">
                 {pillars.map((p, i) => (
                   <li key={i} className="relative grid grid-cols-[44px_1fr] md:grid-cols-[64px_1fr] gap-4 md:gap-6 items-start">
                     <div className="relative flex items-center justify-center">
-                      <span className="relative z-10 w-9 h-9 md:w-11 md:h-11 rounded-full bg-white text-[#1B3A5C] text-sm md:text-base font-medium flex items-center justify-center tabular-nums ring-4 ring-[#1B3A5C]">
+                      <span className="relative z-10 w-9 h-9 md:w-11 md:h-11 rounded-full bg-white/[0.06] text-white text-sm md:text-base font-medium flex items-center justify-center tabular-nums ring-1 ring-white/15 ring-offset-4 ring-offset-[#2A2F36]">
                         {i + 1}
                       </span>
                     </div>
@@ -180,7 +179,7 @@ export default function ResilienzVerstaerken() {
                       <h3 className="text-[15px] md:text-base font-medium text-white tracking-tight mb-1">
                         {p.title}
                       </h3>
-                      <p className="text-sm text-white/70 leading-snug">{p.desc}</p>
+                      <p className="text-sm text-white/65 leading-snug">{p.desc}</p>
                     </div>
                   </li>
                 ))}
