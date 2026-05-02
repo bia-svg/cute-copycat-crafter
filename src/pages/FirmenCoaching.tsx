@@ -205,16 +205,16 @@ export default function FirmenCoaching() {
         ]}
       />
 
-      <section className="bg-[#E8EDF3] py-3.5 md:py-4 lg:py-5">
+      <section className="bg-[#E8EDF3] py-3 md:py-3.5 lg:py-4">
         <div className="container-main">
-          <div className="relative max-w-2xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl px-5 py-4 md:px-10 md:py-5 text-center shadow-sm">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-xs font-medium border border-[#1B3A5C]/25 px-4 py-1 rounded-full tracking-wide uppercase">
+          <div className="relative max-w-xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl px-5 py-3.5 md:px-8 md:py-4 text-center shadow-sm">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-[10.5px] font-medium border border-[#1B3A5C]/25 px-3.5 py-0.5 rounded-full tracking-wide uppercase">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
-            <h2 className="text-xl md:text-2xl font-light text-foreground mb-1.5 md:mb-1.5 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+            <h2 className="text-lg md:text-xl font-light text-foreground mb-1 md:mb-1 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Take the Next Step for Your Team" : "Der nächste Schritt für Ihr Team"}
             </h2>
-            <p className="text-[13px] md:text-[15px] text-muted-foreground max-w-xl mx-auto mb-2.5 md:mb-3 leading-snug">
+            <p className="text-[12.5px] md:text-[14px] text-muted-foreground max-w-md mx-auto mb-2 md:mb-2.5 leading-snug">
               {isEN
                 ? "Discover how our corporate programs can strengthen your team's performance, resilience, and well-being."
                 : "Erfahren Sie, wie unsere Firmenprogramme die Leistung, Resilienz und das Wohlbefinden Ihres Teams stärken können."}
