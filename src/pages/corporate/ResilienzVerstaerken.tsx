@@ -153,34 +153,33 @@ export default function ResilienzVerstaerken() {
 
       {/* 7 Pillars — dark editorial timeline */}
       <section className="bg-[#F1F4F7]">
-        <div className="container-main py-10 md:py-14">
-          <div className="max-w-4xl mx-auto bg-[#E8EDF3] border border-[#D8E0EA] rounded-3xl shadow-[0_20px_60px_-30px_rgba(27,58,92,0.18)] overflow-hidden">
-            <div className="px-6 md:px-12 pt-9 md:pt-12 pb-6 md:pb-8 text-center border-b border-[#D8E0EA]">
-              <p className="text-[11px] font-medium text-[#2E7D32] uppercase tracking-[0.22em] mb-2.5">
+        <div className="container-main py-6 md:py-8">
+          <div className="max-w-3xl mx-auto bg-[#E8EDF3] border border-[#D8E0EA] rounded-2xl shadow-[0_10px_40px_-25px_rgba(27,58,92,0.18)] overflow-hidden">
+            <div className="px-5 md:px-8 pt-5 md:pt-6 pb-3 md:pb-4 text-center border-b border-[#D8E0EA]">
+              <p className="text-[10px] font-medium text-[#2E7D32] uppercase tracking-[0.2em] mb-1.5">
                 {isEN ? "Framework" : "Framework"}
               </p>
-              <h2 className="text-2xl md:text-[1.8rem] font-light text-[#1B3A5C] tracking-tight">
+              <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight">
                 {isEN ? "The 7 Pillars of Resilience" : "Die 7 Säulen der Resilienz"}
               </h2>
             </div>
 
-            <div className="relative px-6 md:px-12 py-8 md:py-10">
-              {/* vertical guide line */}
-              <div className="absolute left-[42px] md:left-[64px] top-8 bottom-8 w-px bg-[#1B3A5C]/10" aria-hidden />
+            <div className="relative px-5 md:px-8 py-5 md:py-6">
+              <div className="absolute left-[34px] md:left-[44px] top-6 bottom-6 w-px bg-[#1B3A5C]/10" aria-hidden />
 
-              <ol className="space-y-5 md:space-y-6">
+              <ol className="space-y-3 md:space-y-3.5">
                 {pillars.map((p, i) => (
-                  <li key={i} className="relative grid grid-cols-[44px_1fr] md:grid-cols-[64px_1fr] gap-4 md:gap-6 items-start">
+                  <li key={i} className="relative grid grid-cols-[36px_1fr] md:grid-cols-[44px_1fr] gap-3 md:gap-4 items-start">
                     <div className="relative flex items-center justify-center">
-                      <span className="relative z-10 w-9 h-9 md:w-11 md:h-11 rounded-full bg-[#1B3A5C] text-white text-sm md:text-base font-medium flex items-center justify-center tabular-nums ring-4 ring-[#E8EDF3]">
+                      <span className="relative z-10 w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#1B3A5C] text-white text-xs md:text-sm font-medium flex items-center justify-center tabular-nums ring-4 ring-[#E8EDF3]">
                         {i + 1}
                       </span>
                     </div>
-                    <div className="min-w-0 pt-1.5 md:pt-2">
-                      <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] tracking-tight mb-1">
+                    <div className="min-w-0 pt-0.5 md:pt-1">
+                      <h3 className="text-sm md:text-[15px] font-medium text-[#1B3A5C] tracking-tight mb-0.5">
                         {p.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground leading-snug">{p.desc}</p>
+                      <p className="text-[13px] md:text-sm text-muted-foreground leading-snug">{p.desc}</p>
                     </div>
                   </li>
                 ))}
