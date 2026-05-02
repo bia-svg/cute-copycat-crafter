@@ -47,6 +47,9 @@ export interface ServicePageData {
   ctaCH?: string;
   ctaDE?: string;
   ctaEN?: string;
+  heroAsideCH?: string;
+  heroAsideDE?: string;
+  heroAsideEN?: string;
   benefitsCH: string[];
   benefitsEN: string[];
   introDE: string[];
