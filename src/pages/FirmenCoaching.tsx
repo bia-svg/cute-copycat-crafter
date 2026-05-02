@@ -414,16 +414,19 @@ export default function FirmenCoaching() {
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
             <h2 className="text-lg md:text-xl font-light text-foreground mb-1 md:mb-1 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
-              {isEN ? "Take the Next Step for Your Team" : "Der nächste Schritt für Ihr Team"}
+              {isEN ? "The next step for your team" : "Der nächste Schritt für Ihr Team"}
             </h2>
-            <p className="text-[12.5px] md:text-[14px] text-muted-foreground max-w-md mx-auto mb-2 md:mb-2.5 leading-snug">
+            <p className="text-[12.5px] md:text-[14px] text-foreground/80 max-w-md mx-auto mb-1 md:mb-1.5 leading-snug">
               {isEN
-                ? "Discover how our corporate programs can strengthen your team's performance, resilience, and well-being."
-                : "Erfahren Sie, wie unsere Firmenprogramme die Leistung, Resilienz und das Wohlbefinden Ihres Teams stärken können."}
+                ? "Find out how your company can specifically increase performance, focus and stability."
+                : "Erfahren Sie, wie Ihr Unternehmen Leistung, Fokus und Stabilität gezielt steigern kann."}
+            </p>
+            <p className="text-[12px] md:text-[13px] text-[#2E7D32] font-medium max-w-md mx-auto mb-2 md:mb-2.5 leading-snug">
+              {isEN ? "Request a free initial consultation" : "Kostenlose Erstberatung anfragen"}
             </p>
             <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
               <Button className="bg-[#ECEEF1] hover:bg-[#E2E5E9] text-[#1B3A5C] font-medium px-8 py-3 text-base border border-[#1B3A5C]/25 shadow-none">
-                {isEN ? "Request a Consultation" : "Beratung anfragen"}
+                {isEN ? "Get in touch now" : "Jetzt Kontakt aufnehmen"}
               </Button>
             </Link>
           </div>
