@@ -304,6 +304,13 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                     <p className="text-xs font-semibold text-[#2E7D32]">EMR Krankenkasse Konform · ZSR Nr. P609264</p>
                   </div>
                 </div>
+                {heroAside && (
+                  <div className="space-y-2">
+                    {heroAside.split("\n\n").map((p, i) => (
+                      <p key={i} className="text-sm md:text-base text-foreground leading-relaxed">{p}</p>
+                    ))}
+                  </div>
+                )}
                 <Link to={getPath("contact", language, country)} onClick={handleCtaClick} className="self-start">
                   <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-6 py-2.5">
                     {ctaLabel ?? t("nav.cta")}
