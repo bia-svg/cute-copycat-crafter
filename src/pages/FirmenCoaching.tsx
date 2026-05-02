@@ -82,15 +82,15 @@ export default function FirmenCoaching() {
 
       {/* Hero — Premium silver-grey */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-4 md:py-8 lg:py-10">
-          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-7 shadow-sm">
+        <div className="container-main py-4 md:py-6 lg:py-8">
+          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-6 shadow-sm">
             <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-1.5 md:mb-2">
               {isEN ? "For Companies & Organizations" : "Für Firmen & Organisationen"}
             </p>
-            <h1 className="text-xl sm:text-3xl font-light text-[#1B3A5C] leading-snug md:leading-tight mb-2 md:mb-3 tracking-tight">
+            <h1 className="text-xl sm:text-3xl font-light text-[#1B3A5C] leading-snug md:leading-[1.2] mb-2 md:mb-2.5 tracking-tight">
               {isEN ? "Leadership & Performance Coaching for Companies" : "Leadership & Performance Coaching für Unternehmen"}
             </h1>
-            <p className="text-sm md:text-base text-foreground/80 leading-snug md:leading-relaxed max-w-3xl">
+            <p className="text-sm md:text-base text-foreground/80 leading-snug md:leading-[1.55] max-w-3xl md:max-w-2xl">
               {isEN
                 ? "Professional Leadership & Performance Coaching supports companies in strategically developing executives and employees, unlocking potential, and sustainably improving collaboration. Through individually tailored coaching impulses, leadership skills, personal responsibility, motivation and team dynamics are strengthened."
                 : "Professionelles Leadership & Performance Coaching unterstützt Unternehmen dabei, Führungskräfte und Mitarbeiter gezielt weiterzuentwickeln, Potenziale freizusetzen und die Zusammenarbeit nachhaltig zu verbessern. Durch individuell abgestimmte Coaching-Impulse werden Führungskompetenz, Eigenverantwortung, Motivation und Teamdynamik gestärkt."}
