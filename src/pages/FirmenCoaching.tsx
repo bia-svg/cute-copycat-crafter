@@ -60,44 +60,52 @@ export default function FirmenCoaching() {
     },
   ];
 
-  const challenges = [
-    isEN
-      ? "Top performers operate under constant pressure and lose focus"
-      : "Leistungsträger arbeiten unter konstantem Druck und verlieren Fokus",
-    isEN
-      ? "Executives make decisions hesitantly or too late"
-      : "Führungskräfte treffen Entscheidungen unsicher oder zu spät",
-    isEN
-      ? "Teams perform below their potential despite high competence"
-      : "Teams arbeiten unter ihren Möglichkeiten trotz hoher Kompetenz",
-    isEN
-      ? "Stress, overload and internal friction slow down results"
-      : "Stress, Überlastung und interne Reibung bremsen die Ergebnisse",
-    isEN
-      ? "Goals are set, but not consistently achieved"
-      : "Ziele werden gesetzt, aber nicht konsequent erreicht",
+
+
+  const heroHighlights = [
+    isEN ? "Clearer decisions" : "Klarere Entscheidungen",
+    isEN ? "More focus and execution power" : "Mehr Fokus und Umsetzungskraft",
+    isEN ? "Less stress and friction" : "Weniger Stress und Reibung",
+    isEN ? "Significantly higher productivity" : "Deutlich höhere Produktivität",
+  ];
+
+  const investReasons = [
+    isEN ? "Decisions are delayed" : "Entscheidungen werden verzögert",
+    isEN ? "Pressure leads to mistakes" : "Druck führt zu Fehlern",
+    isEN ? "Teams perform below their potential" : "Teams arbeiten unter ihrem Potenzial",
+    isEN ? "Performance fluctuates strongly" : "Leistung schwankt stark",
   ];
 
   const benefits = [
     isEN
-      ? "Clearer decisions and stronger leadership presence"
-      : "Klarere Entscheidungen und stärkere Führungspräsenz",
+      ? "Clearer and faster decisions at leadership level"
+      : "Klarere und schnellere Entscheidungen auf Führungsebene",
     isEN
-      ? "Higher execution speed across the entire team"
-      : "Höhere Umsetzungsgeschwindigkeit im gesamten Team",
+      ? "Significantly higher execution speed in the team"
+      : "Deutlich höhere Umsetzungsgeschwindigkeit im Team",
     isEN
-      ? "More focus, less distraction and better prioritisation"
-      : "Mehr Fokus, weniger Ablenkung und bessere Priorisierung",
+      ? "More focus and less distraction in everyday work"
+      : "Mehr Fokus und weniger Ablenkung im Arbeitsalltag",
     isEN
-      ? "Significantly increased productivity and performance"
-      : "Deutlich gesteigerte Produktivität und Leistungsfähigkeit",
+      ? "Reduction of stress and mental overload"
+      : "Reduktion von Stress und mentaler Überlastung",
     isEN
-      ? "More stable teams with less stress and friction"
-      : "Stabilere Teams mit weniger Stress und Reibung",
+      ? "Stable performance even under pressure"
+      : "Stabilere Leistung auch unter Druck",
     isEN
-      ? "Noticeable progress in a short time"
-      : "Messbare Fortschritte in kurzer Zeit",
+      ? "Better collaboration and less internal friction"
+      : "Bessere Zusammenarbeit und weniger interne Reibung",
+    isEN
+      ? "Measurable increase in productivity and results"
+      : "Messbare Steigerung von Produktivität und Ergebnissen",
   ];
+
+  const formats = [
+    isEN ? "Intensive workshops for teams" : "Intensiv-Workshops für Teams",
+    isEN ? "One-to-one coaching for executives" : "Einzel-Coaching für Führungskräfte",
+    isEN ? "Combination of both approaches" : "Kombination aus beiden Ansätzen",
+  ];
+
 
   return (
     <>
@@ -146,25 +154,79 @@ export default function FirmenCoaching() {
         </div>
       </section>
 
-      {/* Challenges — Banner */}
+      {/* Hero — Narrower, premium, content-rich */}
+      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
+        <div className="container-main py-3.5 md:py-5 lg:py-6">
+          <div className="max-w-[640px] mx-auto bg-white/85 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl px-5 py-4 md:px-7 md:py-5 shadow-sm text-center">
+            <p className="text-[11px] md:text-xs font-medium text-[#2E7D32] uppercase tracking-wider mb-1.5 md:mb-2">
+              {isEN ? "Business Coaching" : "Business Coaching"}
+            </p>
+            <h1 className="text-xl sm:text-2xl md:text-[1.7rem] font-light text-[#1B3A5C] leading-snug md:leading-[1.2] mb-2 md:mb-2.5 tracking-tight">
+              {isEN ? "Success Training for Companies" : "Erfolgs-Training für Unternehmen"}
+            </h1>
+            <p className="text-[13.5px] md:text-[14.5px] text-foreground/85 leading-snug md:leading-[1.5] mb-2 md:mb-2.5 font-medium">
+              {isEN
+                ? "Measurably increase the performance of your executives and employees."
+                : "Steigern Sie messbar die Leistungsfähigkeit Ihrer Führungskräfte und Mitarbeiter."}
+            </p>
+            <div className="text-[13px] md:text-[13.5px] text-foreground/75 leading-snug md:leading-[1.55] space-y-1.5 md:space-y-2 text-left">
+              <p>
+                {isEN
+                  ? "Success Training is not about motivation or theory — but about clear results in everyday work: better decisions, higher execution speed and stable performance under pressure."
+                  : "Im Erfolgs-Training geht es nicht um Motivation oder Theorie – sondern um klare Ergebnisse im Alltag: bessere Entscheidungen, höhere Umsetzungsgeschwindigkeit und stabile Leistung unter Druck."}
+              </p>
+              <p>
+                {isEN
+                  ? "David J. Woods works with executives and teams that have to perform consistently. Through targeted mental and performance coaching, blockages are released and performance potential is unlocked."
+                  : "David J. Woods arbeitet mit Führungskräften und Teams, die konstant funktionieren müssen. Durch gezieltes Mental- und Performance Coaching werden Blockaden gelöst und Leistungspotenziale freigesetzt."}
+              </p>
+            </div>
+            <div className="mt-3 md:mt-3.5 pt-3 md:pt-3.5 border-t border-[#E8EDF3]">
+              <p className="text-[11.5px] md:text-xs font-semibold text-[#1B3A5C] uppercase tracking-wider mb-1.5 md:mb-2">
+                {isEN ? "Typical results:" : "Typische Ergebnisse:"}
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 md:gap-y-1.5 text-left">
+                {heroHighlights.map((item) => (
+                  <div key={item} className="flex items-start gap-2 text-[12.5px] md:text-[13.5px] leading-snug">
+                    <span className="text-[#2E7D32] mt-0.5">•</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Companies Invest — Banner */}
       <section className="bg-[#F8FAFC]">
         <div className="container-main py-3.5 md:py-5">
-          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
-            <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 tracking-tight text-center">
-              {isEN ? "Typical Challenges in Companies" : "Typische Herausforderungen in Unternehmen"}
+          <div className="max-w-[640px] mx-auto bg-white/85 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-5 shadow-sm">
+            <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2 md:mb-2.5 tracking-tight text-center">
+              {isEN ? "Why companies invest here" : "Warum Unternehmen hier investieren"}
             </h2>
+            <p className="text-[13px] md:text-[13.5px] text-foreground/80 leading-snug md:leading-[1.55] mb-2.5 md:mb-3 text-center">
+              {isEN
+                ? "Many companies don't have a knowledge problem — but an execution problem."
+                : "Viele Unternehmen haben kein Wissensproblem – sondern ein Umsetzungsproblem."}
+            </p>
+            <p className="text-[12.5px] md:text-[13px] text-foreground/75 leading-snug mb-2 md:mb-2.5">
+              {isEN
+                ? "Strategies are in place, goals are clear, but:"
+                : "Strategien sind vorhanden, Ziele sind klar, aber:"}
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-1 md:gap-y-1.5">
-              {challenges.map((item) => (
+              {investReasons.map((item) => (
                 <div key={item} className="flex items-start gap-2 text-[12.5px] md:text-[13.5px] leading-snug">
                   <span className="text-[#2E7D32] mt-0.5">•</span>
                   <span>{item}</span>
                 </div>
               ))}
             </div>
-            <p className="text-[12.5px] md:text-[13.5px] text-muted-foreground mt-2.5 md:mt-3 max-w-2xl mx-auto leading-snug md:leading-[1.5] text-center">
+            <p className="text-[12.5px] md:text-[13.5px] text-muted-foreground mt-3 md:mt-3.5 leading-snug md:leading-[1.5] text-center">
               {isEN
-                ? "These topics are not knowledge problems — but mental and structural blockages."
-                : "Diese Themen sind keine Wissensprobleme – sondern mentale und strukturelle Blockaden."}
+                ? "This is exactly where the success training begins."
+                : "Genau hier setzt das Erfolgs-Training an."}
             </p>
           </div>
         </div>
@@ -219,8 +281,45 @@ export default function FirmenCoaching() {
         </div>
       </section>
 
-      {/* Evidence — Banner */}
+      {/* Implementation — Banner */}
       <section className="bg-[#E8EDF3]">
+        <div className="container-main py-3.5 md:py-5">
+          <div className="max-w-[640px] mx-auto bg-white/85 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-5 shadow-sm">
+            <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2 md:mb-2.5 tracking-tight text-center">
+              {isEN ? "How the Success Training is implemented" : "Wie das Erfolgs-Training umgesetzt wird"}
+            </h2>
+            <p className="text-[13px] md:text-[13.5px] text-foreground/80 leading-snug md:leading-[1.55] mb-2.5 md:mb-3 text-center">
+              {isEN
+                ? "The training is individually tailored to your company."
+                : "Das Training wird individuell auf Ihr Unternehmen abgestimmt."}
+            </p>
+            <p className="text-[12.5px] md:text-[13px] text-foreground/75 leading-snug mb-2 md:mb-2.5">
+              {isEN ? "Possible formats:" : "Mögliche Formate:"}
+            </p>
+            <div className="space-y-1 md:space-y-1.5">
+              {formats.map((item) => (
+                <div key={item} className="flex items-start gap-2 text-[12.5px] md:text-[13.5px] leading-snug">
+                  <span className="text-[#2E7D32] mt-0.5">•</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-[12.5px] md:text-[13.5px] text-foreground/75 mt-3 md:mt-3.5 leading-snug md:leading-[1.55]">
+              {isEN
+                ? "Implementation takes place directly inside your company or in intensive one-to-one sessions."
+                : "Die Umsetzung erfolgt direkt bei Ihnen im Unternehmen oder in intensiven Einzelsessions."}
+            </p>
+            <p className="text-[12.5px] md:text-[13.5px] text-muted-foreground mt-2 md:mt-2.5 leading-snug md:leading-[1.5] text-center italic">
+              {isEN
+                ? "The goal is always: fast, noticeable and sustainable results."
+                : "Ziel ist immer: schnelle, spürbare und nachhaltige Ergebnisse."}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Evidence — Banner */}
+      <section className="bg-[#F8FAFC]">
         <div className="container-main py-3.5 md:py-5">
           <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-4 shadow-sm">
             <h2 className="text-base md:text-lg font-light text-primary mb-2 md:mb-2.5 tracking-tight text-center">
@@ -299,16 +398,19 @@ export default function FirmenCoaching() {
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
             <h2 className="text-lg md:text-xl font-light text-foreground mb-1 md:mb-1 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
-              {isEN ? "Take the Next Step for Your Team" : "Der nächste Schritt für Ihr Team"}
+              {isEN ? "The next step for your team" : "Der nächste Schritt für Ihr Team"}
             </h2>
-            <p className="text-[12.5px] md:text-[14px] text-muted-foreground max-w-md mx-auto mb-2 md:mb-2.5 leading-snug">
+            <p className="text-[12.5px] md:text-[14px] text-foreground/80 max-w-md mx-auto mb-1 md:mb-1.5 leading-snug">
               {isEN
-                ? "Discover how our corporate programs can strengthen your team's performance, resilience, and well-being."
-                : "Erfahren Sie, wie unsere Firmenprogramme die Leistung, Resilienz und das Wohlbefinden Ihres Teams stärken können."}
+                ? "Find out how your company can specifically increase performance, focus and stability."
+                : "Erfahren Sie, wie Ihr Unternehmen Leistung, Fokus und Stabilität gezielt steigern kann."}
+            </p>
+            <p className="text-[12px] md:text-[13px] text-[#2E7D32] font-medium max-w-md mx-auto mb-2 md:mb-2.5 leading-snug">
+              {isEN ? "Request a free initial consultation" : "Kostenlose Erstberatung anfragen"}
             </p>
             <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
               <Button className="bg-[#ECEEF1] hover:bg-[#E2E5E9] text-[#1B3A5C] font-medium px-8 py-3 text-base border border-[#1B3A5C]/25 shadow-none">
-                {isEN ? "Request a Consultation" : "Beratung anfragen"}
+                {isEN ? "Get in touch now" : "Jetzt Kontakt aufnehmen"}
               </Button>
             </Link>
           </div>
