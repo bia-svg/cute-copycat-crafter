@@ -186,7 +186,6 @@ export default function ResilienzVerstaerken() {
               </ol>
             </div>
           </div>
-
             <div className="relative px-6 md:px-12 py-8 md:py-10">
               {/* vertical guide line */}
               <div className="absolute left-[42px] md:left-[64px] top-8 bottom-8 w-px bg-white/10" aria-hidden />
