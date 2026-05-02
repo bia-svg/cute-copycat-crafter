@@ -170,6 +170,9 @@ export const smokingData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const anxietyData: ServicePageData = {
   slugCH: "aengste-phobien", slugDE: "aengste-phobien", slugEN: "anxiety-phobias",
+  ctaCH: "Termin unverbindlich anfragen",
+  ctaDE: "Termin unverbindlich anfragen",
+  ctaEN: "Request an appointment",
   titleCH: "Hypnose bei Ängsten & Phobien Zürich · EMR · ★ 5.0 | David J. Woods",
   titleDE: "Hypnose bei Ängsten & Phobien Augsburg · ★ 5.0 | David J. Woods",
   titleEN: "Hypnotherapy for Anxiety & Phobias · Zurich & Augsburg · ★ 5.0 | David J. Woods",
@@ -293,6 +296,9 @@ export const anxietyData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const weightData: ServicePageData = {
   slugCH: "abnehmen", slugDE: "abnehmen", slugEN: "weight-loss",
+  ctaCH: "Termin unverbindlich anfragen",
+  ctaDE: "Termin unverbindlich anfragen",
+  ctaEN: "Request an appointment",
   titleCH: "Abnehmen mit Hypnose Zürich · Ohne Diät · EMR · ★ 5.0 | David J. Woods",
   titleDE: "Abnehmen mit Hypnose Augsburg · Ohne Diät · ★ 5.0 | David J. Woods",
   titleEN: "Weight Loss Hypnotherapy · Zurich & Augsburg · No Dieting · ★ 5.0 | David J. Woods",
@@ -382,6 +388,9 @@ export const weightData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const stressData: ServicePageData = {
   slugCH: "stress-burnout", slugDE: "stress-burnout", slugEN: "stress-burnout",
+  ctaCH: "Termin unverbindlich anfragen",
+  ctaDE: "Termin unverbindlich anfragen",
+  ctaEN: "Request an appointment",
   titleCH: "Hypnose bei Stress & Burnout Zürich · EMR · ★ 5.0 | David J. Woods",
   titleDE: "Hypnose bei Stress & Burnout Augsburg · ★ 5.0 | David J. Woods",
   titleEN: "Hypnotherapy for Stress & Burnout · Zurich & Augsburg · ★ 5.0 | David J. Woods",
@@ -476,6 +485,9 @@ export const stressData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const depressionData: ServicePageData = {
   slugCH: "depressionen-traumata", slugDE: "depressionen-traumata", slugEN: "depression-trauma",
+  ctaCH: "Termin unverbindlich anfragen",
+  ctaDE: "Termin unverbindlich anfragen",
+  ctaEN: "Request an appointment",
   titleCH: "Hypnose bei Depression & Trauma Zürich · EMR · ★ 5.0 | David J. Woods",
   titleDE: "Hypnose bei Depression & Trauma Augsburg · ★ 5.0 | David J. Woods",
   titleEN: "Hypnotherapy for Depression & Trauma · Zurich & Augsburg · ★ 5.0 | David J. Woods",
@@ -570,6 +582,9 @@ export const depressionData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const adultsData: ServicePageData = {
   slugCH: "erwachsene", slugDE: "erwachsene", slugEN: "adults",
+  ctaCH: "Termin unverbindlich anfragen",
+  ctaDE: "Termin unverbindlich anfragen",
+  ctaEN: "Request an appointment",
   titleCH: "Hypnose für Erwachsene Zürich · 1:1 Sitzungen · ★ 5.0 | David J. Woods",
   titleDE: "Hypnose für Erwachsene Augsburg · 1:1 Sitzungen · ★ 5.0 | David J. Woods",
   titleEN: "Hypnotherapy for Adults · 1:1 Sessions · Zurich & Augsburg | David J. Woods",
@@ -701,6 +716,9 @@ export const adultsData: ServicePageData = {
 
 export const childrenData: ServicePageData = {
   slugCH: "kinder-jugendliche", slugDE: "kinder-jugendliche", slugEN: "children-teens",
+  ctaCH: "Termin unverbindlich anfragen",
+  ctaDE: "Termin unverbindlich anfragen",
+  ctaEN: "Request an appointment",
   titleCH: "Hypnose für Kinder & Jugendliche Zürich · Sanft · Ab 8 J. | David J. Woods",
   titleDE: "Hypnose für Kinder & Jugendliche Augsburg · Sanft · Ab 8 J. | David J. Woods",
   titleEN: "Hypnotherapy for Children & Teens · Zurich & Augsburg · Gentle | David J. Woods",
