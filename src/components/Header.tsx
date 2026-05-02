@@ -446,7 +446,19 @@ export default function Header() {
           {renderMobileSection("training", t("nav.training"), trainingItems)}
 
           {/* Firmen-Coaching */}
-          {renderMobileSection("corporate", isDE ? "Firmen-Coaching" : "Business Coaching", corporateItems)}
+          {renderMobileSection(
+            "corporate",
+            isDE ? "Firmen-Coaching" : "Business Coaching",
+            [
+              {
+                icon: <Building2 className="w-5 h-5" />,
+                label: isDE ? "Alle Programme ansehen" : "View All Programs",
+                desc: isDE ? "Übersicht Firmen-Coaching" : "Business coaching overview",
+                href: getPath("corporate", language, country),
+              },
+              ...corporateItems,
+            ],
+          )}
 
           {/* Über uns */}
           {renderMobileSection("about", t("nav.about"), aboutItems)}
