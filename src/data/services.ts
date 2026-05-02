@@ -70,10 +70,10 @@ export const smokingData: ServicePageData = {
       ]
     },
     {
-      h2: "Aufhören zu rauchen ohne ständigen Kampf",
+      h2: "Aufhören zu rauchen ohne ständigen inneren Kampf",
       paragraphs: [
-        "Durch die gezielte Arbeit mit dem Unterbewusstsein können diese inneren Verknüpfungen aufgelöst und durch gesündere Muster ersetzt werden. So wird das Aufhören nicht zum ständigen Kampf gegen sich selbst, sondern zu einer natürlichen Veränderung von innen heraus.",
-        "Die meisten Klienten berichten bereits nach der ersten Sitzung von einem deutlich reduzierten Verlangen nach Zigaretten. Viele schaffen es, nach nur 1-3 Intensivsitzungen den Wunsch nach Zigaretten deutlich zu reduzieren."
+        "Durch die gezielte Arbeit mit dem Unterbewusstsein können diese inneren Verknüpfungen nachhaltig verändert werden. Statt ständig gegen sich selbst anzukämpfen, entstehen neue, stabilere Muster.",
+        "So wird das Aufhören nicht mehr als Verzicht erlebt, sondern als echte innere Veränderung – hin zu einem rauchfreien Leben mit mehr Freiheit und Kontrolle."
       ]
     },
     {
@@ -104,9 +104,10 @@ export const smokingData: ServicePageData = {
       ]
     },
     {
-      h2: "Aufhören zu rauchen ohne ständigen Kampf",
+      h2: "Aufhören zu rauchen ohne ständigen inneren Kampf",
       paragraphs: [
-        "Durch die gezielte Arbeit mit dem Unterbewusstsein können diese inneren Verknüpfungen aufgelöst und durch gesündere Muster ersetzt werden. So wird das Aufhören nicht zum ständigen Kampf gegen sich selbst."
+        "Durch die gezielte Arbeit mit dem Unterbewusstsein können diese inneren Verknüpfungen nachhaltig verändert werden. Statt ständig gegen sich selbst anzukämpfen, entstehen neue, stabilere Muster.",
+        "So wird das Aufhören nicht mehr als Verzicht erlebt, sondern als echte innere Veränderung – hin zu einem rauchfreien Leben mit mehr Freiheit und Kontrolle."
       ]
     },
     {
@@ -135,10 +136,10 @@ export const smokingData: ServicePageData = {
       ]
     },
     {
-      h2: "Quit Smoking Without Constant Struggle",
+      h2: "Quitting Smoking Without a Constant Inner Struggle",
       paragraphs: [
-        "Through targeted work with the subconscious, these inner connections can be dissolved and replaced with healthier patterns. This way, quitting doesn't become a constant fight against yourself, but a natural change from within.",
-        "Most clients report a significantly reduced craving for cigarettes after the very first session. Many manage to stay permanently smoke-free after just 1-3 intensive sessions."
+        "Through targeted work with the subconscious, these inner associations can be transformed in a lasting way. Instead of constantly fighting against yourself, new and more stable patterns can develop.",
+        "Quitting is then no longer experienced as deprivation, but as a genuine inner change – towards a smoke-free life with more freedom and control."
       ]
     },
     {
