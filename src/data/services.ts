@@ -485,6 +485,9 @@ export const stressData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const depressionData: ServicePageData = {
   slugCH: "depressionen-traumata", slugDE: "depressionen-traumata", slugEN: "depression-trauma",
+  ctaCH: "Termin unverbindlich anfragen",
+  ctaDE: "Termin unverbindlich anfragen",
+  ctaEN: "Request an appointment",
   titleCH: "Hypnose bei Depression & Trauma Zürich · EMR · ★ 5.0 | David J. Woods",
   titleDE: "Hypnose bei Depression & Trauma Augsburg · ★ 5.0 | David J. Woods",
   titleEN: "Hypnotherapy for Depression & Trauma · Zurich & Augsburg · ★ 5.0 | David J. Woods",
