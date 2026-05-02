@@ -582,6 +582,9 @@ export const depressionData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const adultsData: ServicePageData = {
   slugCH: "erwachsene", slugDE: "erwachsene", slugEN: "adults",
+  ctaCH: "Termin unverbindlich anfragen",
+  ctaDE: "Termin unverbindlich anfragen",
+  ctaEN: "Request an appointment",
   titleCH: "Hypnose für Erwachsene Zürich · 1:1 Sitzungen · ★ 5.0 | David J. Woods",
   titleDE: "Hypnose für Erwachsene Augsburg · 1:1 Sitzungen · ★ 5.0 | David J. Woods",
   titleEN: "Hypnotherapy for Adults · 1:1 Sessions · Zurich & Augsburg | David J. Woods",
