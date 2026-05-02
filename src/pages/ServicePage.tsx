@@ -74,26 +74,26 @@ function ServiceTestimonialCard({ t, isEN }: { t: ReturnType<typeof getTestimoni
     : text.slice(0, TESTIMONIAL_PREVIEW_CHAR_LIMIT).replace(/\s+\S*$/, "") + "…";
 
   return (
-    <div className="border border-border bg-card p-5 flex flex-col">
-      <div className="flex gap-0.5 mb-3">
+    <div className="border border-border bg-card p-3.5 flex flex-col">
+      <div className="flex gap-0.5 mb-2">
         {Array.from({ length: t.rating }).map((_, j) => (
           <Star key={j} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
         ))}
       </div>
-      <p className="text-sm text-foreground leading-relaxed mb-1 flex-1">
+      <p className="text-[13px] text-foreground leading-snug mb-1 flex-1">
         &bdquo;{displayText}&ldquo;
       </p>
       {needsTruncation && (
         <button
           onClick={() => setExpanded(!expanded)}
-          className="text-xs text-primary hover:text-primary/80 font-medium self-start mb-3 transition-colors"
+          className="text-[11px] text-primary hover:text-primary/80 font-medium self-start mb-2 transition-colors"
         >
           {expanded ? (isEN ? "SHOW LESS ▲" : "WENIGER ▲") : (isEN ? "READ MORE »" : "WEITERLESEN »")}
         </button>
       )}
-      <div className="flex items-center justify-between mt-auto pt-2 border-t border-border/50">
-        <p className="text-xs font-semibold text-primary">{t.name}</p>
-        <a href={t.link} target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+      <div className="flex items-center justify-between mt-auto pt-1.5 border-t border-border/50">
+        <p className="text-[11px] font-semibold text-primary">{t.name}</p>
+        <a href={t.link} target="_blank" rel="noopener noreferrer" className="text-[11px] text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
           Google <ExternalLink className="w-3 h-3" />
         </a>
       </div>
@@ -455,9 +455,9 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         if (testimonials.length === 0) return null;
         return (
           <section className="bg-[#ECEFF3] border-b border-[#DDE2E8]">
-            <div className="container-main py-4 md:py-6">
-              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-4 md:p-5">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-2.5 text-center tracking-tight">
+            <div className="container-main py-3 md:py-4">
+              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-3 md:p-4">
+                <h2 className="text-base sm:text-lg md:text-xl font-light text-[#1B3A5C] mb-2 text-center tracking-tight">
                   {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
                 </h2>
                 {/* Desktop: 3-column grid */}
