@@ -716,6 +716,9 @@ export const adultsData: ServicePageData = {
 
 export const childrenData: ServicePageData = {
   slugCH: "kinder-jugendliche", slugDE: "kinder-jugendliche", slugEN: "children-teens",
+  ctaCH: "Termin unverbindlich anfragen",
+  ctaDE: "Termin unverbindlich anfragen",
+  ctaEN: "Request an appointment",
   titleCH: "Hypnose für Kinder & Jugendliche Zürich · Sanft · Ab 8 J. | David J. Woods",
   titleDE: "Hypnose für Kinder & Jugendliche Augsburg · Sanft · Ab 8 J. | David J. Woods",
   titleEN: "Hypnotherapy for Children & Teens · Zurich & Augsburg · Gentle | David J. Woods",
