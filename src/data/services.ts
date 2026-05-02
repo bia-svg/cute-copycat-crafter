@@ -143,12 +143,11 @@ export const smokingData: ServicePageData = {
       ]
     },
     {
-      h2: "Scientific Evidence: Hypnosis for Smoking Cessation",
+      h2: "Scientific Insights: Hypnosis for Smoking Cessation",
       paragraphs: [
-        "A meta-analysis by Hasan et al. (2014), published in the Journal of Public Health, analyzed 14 controlled studies and found that hypnotherapy is significantly more effective for smoking cessation than willpower alone, with success rates of up to 64% after 6 months.",
-        "The Cochrane Database of Systematic Reviews (Barnes et al., 2019) confirms that hypnosis as an adjunct to behavioral approaches improves long-term abstinence rates. The World Health Organization (WHO) lists hypnotherapy as a recognized therapeutic approach.",
-        "A landmark study from the University of Iowa (Viswesvaran & Schmidt, 1992), published in the Journal of Applied Psychology, compared 633 studies on various smoking cessation methods. The result: hypnosis was the single most effective method — three times more effective than nicotine replacement therapy and 15 times more effective than attempting to quit through willpower alone.",
-        "Sources: Hasan et al., Journal of Public Health, 22(6), 2014; Barnes et al., Cochrane Database of Systematic Reviews, 2019; Viswesvaran & Schmidt, Journal of Applied Psychology, 77(4), 1992."
+        "Studies show that hypnosis can be an effective support for smoking cessation – especially when, in addition to behavior, emotional and unconscious patterns are also specifically transformed.",
+        "The focus is not only on giving something up, but on a lasting inner change that can lead to more stable results in the long term.",
+        "Sources: Viswesvaran & Schmidt, Journal of Applied Psychology, 77(4), 1992; Hasan et al., Journal of Public Health, 22(6), 2014."
       ]
     }
   ],
