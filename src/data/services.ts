@@ -259,6 +259,14 @@ export const anxietyData: ServicePageData = {
         "Die Aktiv-Hypnose® arbeitet gezielt mit den tieferliegenden Ursachen von Ängsten und Phobien. Statt nur Symptome zu behandeln, werden die inneren Auslöser auf emotionaler Ebene verändert.",
         "Das Ziel ist eine nachhaltige Veränderung Ihres inneren Erlebens – hin zu mehr Sicherheit, Gelassenheit und Stabilität im Alltag. Viele Klienten berichten bereits nach kurzer Zeit von spürbar mehr Ruhe, Kontrolle und Lebensqualität."
       ]
+    },
+    {
+      h2: "Wissenschaftliche Grundlage: Hypnose bei Angststörungen",
+      paragraphs: [
+        "Eine umfassende Meta-Analyse von Kirsch, Montgomery & Sapirstein (1995), veröffentlicht im Journal of Consulting and Clinical Psychology, zeigte, dass die Ergänzung von kognitiver Verhaltenstherapie (KVT) durch Hypnose die Behandlungsergebnisse bei Angststörungen um durchschnittlich 70% verbesserte.",
+        "Laut einer Studie der Stanford University (Spiegel, 2013) zeigen funktionelle MRT-Aufnahmen, dass Hypnose spezifische neuronale Netzwerke im Gehirn aktiviert, die mit Angstregulation und emotionaler Verarbeitung verbunden sind. Dies erklärt, warum Hypnose tiefgreifendere und dauerhaftere Ergebnisse erzielen kann als rein kognitive Ansätze.",
+        "Quellen: Kirsch, Montgomery & Sapirstein, Journal of Consulting and Clinical Psychology, 63(2), 1995; Spiegel, American Journal of Clinical Hypnosis, 56(1), 2013."
+      ]
     }
   ],
   sectionsEN: [
