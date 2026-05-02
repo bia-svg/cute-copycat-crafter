@@ -339,7 +339,12 @@ export const weightData: ServicePageData = {
     "Wohlfühlgewicht erreichen ohne ständigen Verzicht oder Druck",
     "Mehr Selbstkontrolle, Leichtigkeit und Lebensqualität gewinnen"
   ],
-  benefitsEN: ["Sustainably change eating behavior", "Resolve cravings and emotional triggers", "Feel-good weight without constant deprivation", "Gain more self-control and quality of life"],
+  benefitsEN: [
+    "Sustainably change eating behavior instead of short-term diets",
+    "Specifically resolve cravings, emotional eating and inner triggers",
+    "Reach a feel-good weight without constant deprivation or pressure",
+    "Gain more self-control, lightness and quality of life"
+  ],
   introCH: [
     "Viele Menschen kämpfen seit Jahren mit Diäten, Heißhungerattacken und dem bekannten Jo-Jo-Effekt. Trotz Disziplin bleibt der langfristige Erfolg oft aus, weil die eigentlichen Ursachen meist in tief verankerten Gewohnheiten, emotionalen Auslösern und unbewussten Mustern liegen. Genau hier setzt Hypnose an: Das Essverhalten wird auf tiefer Ebene verändert – ohne ständigen inneren Kampf oder Verzicht.",
     "Abnehmen ist häufig mehr als nur eine Frage der Ernährung. Für viele Menschen ist Essen unbewusst mit Stressabbau, Belohnung, Gewohnheit oder emotionalem Ausgleich verbunden.",
@@ -351,9 +356,9 @@ export const weightData: ServicePageData = {
     "Mit professioneller Hypnose können diese inneren Auslöser gezielt auf tiefer Ebene verändert werden. Ziel ist nicht nur Gewichtsverlust, sondern ein neues, natürliches Essverhalten – bei dem Sie sich dauerhaft wohlfühlen."
   ],
   introEN: [
-    "Many people have been struggling for years with recurring diets, binge eating, and the well-known yo-yo effect. Despite discipline and numerous attempts, long-term success often fails because the actual causes lie not on the conscious, but on the subconscious level.",
-    "This is exactly where hypnosis comes in. With professional hypnosis, eating behavior can be specifically changed at a deeper level. Unfavorable habits, emotional connections with food, stress eating, or unconscious self-sabotage can be recognized and sustainably reprogrammed.",
-    "The goal is not just weight reduction, but a lasting change of the inner program – for more self-control, stronger self-confidence, and a healthier relationship with your own body. Because sustainable weight loss doesn't just start on the plate – it starts in the mind."
+    "Many people have been struggling for years with diets, cravings and the well-known yo-yo effect. Despite discipline, long-term success often fails to appear, because the actual causes usually lie in deeply anchored habits, emotional triggers and unconscious patterns. This is exactly where hypnosis comes in: eating behavior is changed on a deeper level – without constant inner struggle or deprivation.",
+    "Losing weight is often more than just a question of nutrition. For many people, eating is unconsciously linked to stress relief, reward, habit or emotional balance.",
+    "With professional hypnosis, these inner triggers can be specifically changed on a deeper level. The goal is not just weight loss, but a new, natural eating behavior – one in which you feel comfortable in the long term."
   ],
   sectionsCH: [
     {
