@@ -196,11 +196,11 @@ export default function FirmenCoaching() {
       </section>
 
       {/* Benefits — Banner */}
-      <section className="bg-[#E8EDF3]">
+      <section className="bg-[#F8FAFC]">
         <div className="container-main py-3.5 md:py-5">
           <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
             <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 tracking-tight text-center">
-              {isEN ? "Why Leadership & Performance Coaching is decisive:" : "Warum Leadership & Performance Coaching entscheidend ist:"}
+              {isEN ? "Results you can expect:" : "Diese Resultate können Sie erwarten:"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-1 md:gap-y-1.5">
               {benefits.map((item) => (
@@ -212,8 +212,8 @@ export default function FirmenCoaching() {
             </div>
             <p className="text-[12.5px] md:text-[13.5px] text-muted-foreground mt-2.5 md:mt-3 max-w-2xl mx-auto leading-snug md:leading-[1.5] text-center">
               {isEN
-                ? "Leadership & Performance Coaching creates the foundation for sustainable results — because real performance gains begin in the thinking and behaviour of the people."
-                : "Leadership & Performance Coaching schafft die Grundlage für nachhaltige Ergebnisse – denn echte Leistungssteigerung beginnt im Denken und Verhalten der Menschen."}
+                ? "The aim is not motivation — but lasting change in behaviour and thinking."
+                : "Ziel ist nicht Motivation – sondern nachhaltige Veränderung im Verhalten und Denken."}
             </p>
           </div>
         </div>
