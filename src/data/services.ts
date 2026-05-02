@@ -534,14 +534,19 @@ export const depressionData: ServicePageData = {
   metaDescEN: "Support for depressive phases and trauma with hypnotherapy in Zurich & Augsburg — re-evaluate old imprints, regain joy. Lic. Psych. David J. Woods, 35+ years, ★ 5.0 (266 reviews). Free discovery call.",
   h1CH: "Depressionen und Traumata lösen – neue Stabilität und Lebensqualität gewinnen",
   h1DE: "Depressionen und Traumata lösen – neue Stabilität und Lebensqualität gewinnen",
-  h1EN: "Hypnotherapy for Depression & Trauma",
+  h1EN: "Depression and Trauma – regain stability and quality of life",
   benefitsCH: [
     "Innere Schwere und Antriebslosigkeit gezielt lösen",
     "Emotionale Blockaden und belastende Erinnerungen verarbeiten",
     "Mehr Stabilität, Ruhe und innere Klarheit gewinnen",
     "Schritt für Schritt zurück zu Lebensfreude und Energie"
   ],
-  benefitsEN: ["Gain more quality of life", "Overcome blocks", "Live happily again", "Sleep more peacefully"],
+  benefitsEN: [
+    "Release emotional heaviness and lack of drive",
+    "Process emotional blockages and past experiences",
+    "Regain inner stability, calmness and clarity",
+    "Step by step back to energy, motivation and quality of life"
+  ],
   introCH: [
     "Viele Menschen erleben Phasen von Depression, emotionaler Erschöpfung oder innerer Leere. Häufig entstehen diese durch belastende Erlebnisse, anhaltenden Stress oder unverarbeitete emotionale Erfahrungen.\n\nTrotz bewusster Bemühungen fällt es oft schwer, diese Zustände nachhaltig zu verändern, da die eigentlichen Ursachen tief im Unterbewusstsein verankert sind. Genau hier setzt Hypnose an: Die zugrunde liegenden emotionalen Muster, Denkweisen und inneren Reaktionen werden gezielt aufgelöst und neu ausgerichtet.\n\nDas Ziel ist nicht nur eine kurzfristige Entlastung, sondern eine spürbare, stabile Veränderung – hin zu mehr innerer Ruhe, Klarheit und Lebensqualität.",
     "Depressionen und traumatische Erfahrungen sind häufig mehr als nur vorübergehende Zustände. Für viele Betroffene sind sie eng mit tiefen emotionalen Prägungen, wiederkehrenden Gedankenmustern und körperlichen Reaktionen verbunden, die sich nicht einfach „wegdenken\" lassen.\n\nGenau deshalb ist es entscheidend, nicht nur an der Oberfläche zu arbeiten, sondern die Ursachen dort zu verändern, wo sie entstanden sind – im Unterbewusstsein."
@@ -551,8 +556,8 @@ export const depressionData: ServicePageData = {
     "Depressionen und traumatische Erfahrungen sind häufig mehr als nur vorübergehende Zustände. Für viele Betroffene sind sie eng mit tiefen emotionalen Prägungen, wiederkehrenden Gedankenmustern und körperlichen Reaktionen verbunden, die sich nicht einfach „wegdenken\" lassen.\n\nGenau deshalb ist es entscheidend, nicht nur an der Oberfläche zu arbeiten, sondern die Ursachen dort zu verändern, wo sie entstanden sind – im Unterbewusstsein."
   ],
   introEN: [
-    "Hypnosis for depression and trauma helps you discover new perspectives and regain your joy of life.",
-    "Many people suffer through phases in life where they are very sad. These can be triggered by personal or professional setbacks and start a downward spiral in the lives of those affected. If you have experienced something like this and have difficulty leaving this negative phase of life on your own, you should definitely try hypnosis for depression or trauma."
+    "Many people experience phases of depression, emotional exhaustion or inner emptiness. These are often caused by stressful life events, ongoing pressure or unresolved emotional experiences.\n\nDespite conscious efforts, it is often difficult to create lasting change, as the underlying causes are deeply rooted in the subconscious mind. This is exactly where hypnosis works: the emotional patterns, thought processes and inner reactions behind these states are addressed and restructured at their core.\n\nThe goal is not just short-term relief, but a stable and noticeable change – towards more inner calm, clarity and overall quality of life.",
+    "Depression and traumatic experiences are often more than temporary conditions. For many people, they are closely linked to deep emotional imprints, recurring thought patterns and physical reactions that cannot simply be \"overcome by willpower.\"\n\nThis is why it is essential not only to work on the surface, but to address the root causes where they were formed – within the subconscious mind."
   ],
   sectionsCH: [
     {
@@ -594,18 +599,20 @@ export const depressionData: ServicePageData = {
   ],
   sectionsEN: [
     {
-      h2: "What Should You Do About Depression or Severe Trauma?",
+      h2: "What should you do in case of depression or trauma?",
       paragraphs: [
-        "In most cases, the causes of depression are relatively obvious. For example, the loss of a job or a loved one triggers deep sadness or strong anxiety. Painful separations or financial difficulties are also common triggers of depression.",
-        "However, deep sadness can also develop gradually and seemingly without external cause. This deep sadness essentially feeds itself, causing those affected to slide further and further into a downward spiral of discouragement. They then feel unable to change their situation on their own.",
-        "This is exactly where hypnosis comes in. Through work with the subconscious, the deeper causes of depression can be recognized and processed. New perspectives and positive thought patterns can be established."
+        "In many cases, depression or trauma seem to have clear causes, such as loss, overwhelming stress or difficult life events. However, even when the trigger is known, the emotional burden often remains.",
+        "These states can also develop gradually and are often accompanied by symptoms such as lack of motivation, withdrawal, sleep problems or emotional numbness.",
+        "The important point is: you do not have to stay in this condition. Alongside medical or therapeutic support, hypnosis can be an effective method to work directly with the underlying emotional patterns.",
+        "Especially in deeper cases, it is important to address both the current situation and the subconscious causes behind it."
       ]
     },
     {
-      h2: "Overcome Sad Phases of Life with Hypnosis",
+      h2: "Overcoming difficult emotional phases with hypnosis",
       paragraphs: [
-        "David J. Woods' Aktiv-Hypnose© works specifically with the subconscious patterns that maintain depression and trauma. Through depth-psychologically founded work, distressing experiences can be processed and new, positive life perspectives can be developed.",
-        "Important note: For severe depression, we always recommend working with a specialist doctor or psychotherapist as well. Hypnosis can be a valuable complement to classical therapy."
+        "Active Hypnosis® works directly with the internal processes that maintain depression and trauma. Subconscious associations, emotional blockages and stored experiences are carefully processed and reorganised.",
+        "Many clients report feeling lighter, clearer and emotionally relieved after the session. Thoughts become calmer, emotional stability increases and new perspectives become accessible again.",
+        "Important note: In cases of severe depression or trauma, we always recommend working alongside a qualified medical professional. Hypnosis can be a highly effective complementary approach."
       ]
     }
   ],
