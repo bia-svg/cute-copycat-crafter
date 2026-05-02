@@ -136,10 +136,10 @@ export const smokingData: ServicePageData = {
       ]
     },
     {
-      h2: "Quit Smoking Without Constant Struggle",
+      h2: "Quitting Smoking Without a Constant Inner Struggle",
       paragraphs: [
-        "Through targeted work with the subconscious, these inner connections can be dissolved and replaced with healthier patterns. This way, quitting doesn't become a constant fight against yourself, but a natural change from within.",
-        "Most clients report a significantly reduced craving for cigarettes after the very first session. Many manage to stay permanently smoke-free after just 1-3 intensive sessions."
+        "Through targeted work with the subconscious, these inner associations can be transformed in a lasting way. Instead of constantly fighting against yourself, new and more stable patterns can develop.",
+        "Quitting is then no longer experienced as deprivation, but as a genuine inner change – towards a smoke-free life with more freedom and control."
       ]
     },
     {
