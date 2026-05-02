@@ -10,14 +10,39 @@ export default function ErfolgsTraining() {
   const { language, country } = useLanguage();
   const isEN = language === "en";
 
+  const audienceTopics = [
+    isEN ? "Uncertainty in decision-making" : "Unsicherheit in Entscheidungen",
+    isEN ? "Blockages in critical moments" : "Blockaden in wichtigen Momenten",
+    isEN ? "Performance pressure and high expectations" : "Leistungsdruck und Erwartungshaltung",
+    isEN ? "Stage fright in presentations or appearances" : "Lampenfieber bei Präsentationen oder Auftritten",
+    isEN ? "Lack of clarity and focus in everyday work" : "Fehlende Klarheit und Fokus im Alltag",
+    isEN ? "Mental overload and stress" : "Mentale Überlastung und Stress",
+    isEN ? "Difficulties in communication and team dynamics" : "Schwierigkeiten in Kommunikation und Teamdynamik",
+  ];
+
+  const applicationAreas = [
+    isEN ? "Leadership development and decision strength" : "Führungskräfte-Entwicklung und Entscheidungsstärke",
+    isEN ? "Sales teams (closing strength, self-confidence)" : "Vertriebsteams (Abschlussstärke, Selbstsicherheit)",
+    isEN ? "Presentations and stage appearances" : "Präsentationen und Bühnenauftritte",
+    isEN ? "Handling pressure, stress and high responsibility" : "Umgang mit Druck, Stress und hoher Verantwortung",
+    isEN ? "Team dynamics and collaboration" : "Teamdynamik und Zusammenarbeit",
+    isEN ? "Performance increase in day-to-day business" : "Leistungssteigerung im Tagesgeschäft",
+  ];
+
   const results = [
-    isEN ? "Real teamwork & better results" : "Echtes Teamwork & bessere Ergebnisse",
-    isEN ? "Maximizing performance potential" : "Ausschöpfung des Leistungspotenzials",
-    isEN ? "Maximum implementation strength" : "Maximale Umsetzungsstärke jedes einzelnen",
-    isEN ? "Increased focus & productivity" : "Steigerung von Fokus & Produktivität",
-    isEN ? "Greater employee satisfaction" : "Größere Zufriedenheit der Mitarbeiter",
-    isEN ? "Achievement of set goals" : "Erreichung der gesteckten Ziele",
-    isEN ? "Simply more success in the company" : "Einfach mehr Erfolg im Unternehmen",
+    isEN ? "Clearer decisions and more leadership confidence" : "Klarere Entscheidungen und mehr Führungssicherheit",
+    isEN ? "Significantly higher execution speed" : "Deutlich höhere Umsetzungsgeschwindigkeit",
+    isEN ? "More focus and mental stability" : "Mehr Fokus und mentale Stabilität",
+    isEN ? "Reduction of stress and inner pressure" : "Reduktion von Stress und innerem Druck",
+    isEN ? "Better communication within the team" : "Bessere Kommunikation im Team",
+    isEN ? "Stronger presence in meetings and presentations" : "Stärkere Präsenz bei Meetings und Präsentationen",
+    isEN ? "Measurable increase in performance and productivity" : "Messbare Steigerung von Leistung und Produktivität",
+  ];
+
+  const trainingFormats = [
+    isEN ? "Intensive Session" : "Intensiv-Session",
+    isEN ? "Workshop" : "Workshop",
+    isEN ? "Or accompanying coaching" : "Oder begleitendes Coaching",
   ];
 
   return (
