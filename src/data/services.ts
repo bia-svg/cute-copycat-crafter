@@ -185,37 +185,48 @@ export const anxietyData: ServicePageData = {
   h1CH: "Ängste lösen. Phobien überwinden. Wieder frei leben.",
   h1DE: "Ängste lösen. Phobien überwinden. Wieder frei leben.",
   h1EN: "Release Anxiety. Overcome Phobias. Live Free Again.",
-  benefitsCH: ["Mehr Lebensqualität erlangen", "Selbstbewusster leben", "Alltägliches Leben geniessen", "Überwinden von Blockaden"],
-  benefitsEN: ["Gain more quality of life", "Live more confidently", "Enjoy everyday life", "Overcome inner blocks"],
+  benefitsCH: [
+    "Mehr innere Ruhe und Sicherheit gewinnen",
+    "Ängste und Panik gezielt reduzieren",
+    "Sich im Alltag wieder frei und selbstbewusst fühlen",
+    "Blockaden lösen und Lebensqualität zurückgewinnen"
+  ],
+  benefitsEN: ["Gain more inner calm and security", "Reduce anxiety and panic specifically", "Feel free and confident in everyday life again", "Release blocks and regain quality of life"],
   introCH: [
-    "Ängste, Phobien und innere Unsicherheiten können den Alltag stark einschränken. Ob Panikattacken, soziale Ängste, Platzangst oder dauerhafte Anspannung – mit meiner individuell angepassten Aktiv-Hypnose© unterstütze ich Sie dabei, innere Blockaden gezielt zu lösen und wieder mehr Sicherheit, Ruhe und Lebensqualität zu gewinnen."
+    "Ängste, Phobien und innere Unsicherheiten können den Alltag stark einschränken. Ob Panikattacken, soziale Ängste, Platzangst oder dauerhafte innere Anspannung – oft liegen die Ursachen in tief verankerten emotionalen Mustern und unbewussten Verknüpfungen.\n\nMit Hypnose setzen wir genau dort an: Die inneren Auslöser werden auf einer tieferen Ebene gezielt verändert. Ziel ist nicht nur, Ängste kurzfristig zu reduzieren, sondern dauerhaft mehr innere Ruhe, Sicherheit und Freiheit im Alltag zu gewinnen.",
+    "Ängste sind häufig mehr als nur eine momentane Reaktion. Für viele Menschen sind sie unbewusst mit bestimmten Situationen, Erfahrungen oder Gedanken verknüpft und lösen automatisch Stress, Unsicherheit oder Vermeidungsverhalten aus.",
+    "Mit professioneller Hypnose können diese inneren Verknüpfungen gezielt verändert werden. Ziel ist nicht nur die Reduktion von Angst, sondern ein stabiles Gefühl von Sicherheit, Kontrolle und innerer Ruhe."
   ],
   introDE: [
-    "Ängste, Phobien und innere Unsicherheiten können den Alltag stark einschränken. Ob Panikattacken, soziale Ängste, Platzangst oder dauerhafte Anspannung – mit meiner individuell angepassten Aktiv-Hypnose© unterstütze ich Sie dabei, innere Blockaden gezielt zu lösen und wieder mehr Sicherheit, Ruhe und Lebensqualität zu gewinnen."
+    "Ängste, Phobien und innere Unsicherheiten können den Alltag stark einschränken. Ob Panikattacken, soziale Ängste, Platzangst oder dauerhafte innere Anspannung – oft liegen die Ursachen in tief verankerten emotionalen Mustern und unbewussten Verknüpfungen.\n\nMit Hypnose setzen wir genau dort an: Die inneren Auslöser werden auf einer tieferen Ebene gezielt verändert. Ziel ist nicht nur, Ängste kurzfristig zu reduzieren, sondern dauerhaft mehr innere Ruhe, Sicherheit und Freiheit im Alltag zu gewinnen.",
+    "Ängste sind häufig mehr als nur eine momentane Reaktion. Für viele Menschen sind sie unbewusst mit bestimmten Situationen, Erfahrungen oder Gedanken verknüpft und lösen automatisch Stress, Unsicherheit oder Vermeidungsverhalten aus.",
+    "Mit professioneller Hypnose können diese inneren Verknüpfungen gezielt verändert werden. Ziel ist nicht nur die Reduktion von Angst, sondern ein stabiles Gefühl von Sicherheit, Kontrolle und innerer Ruhe."
   ],
   introEN: [
-    "Anxieties, phobias, and inner insecurities can severely restrict everyday life. Whether it's panic attacks, social anxiety, claustrophobia, or constant tension – with my individually adapted Aktiv-Hypnose©, I support you in specifically releasing inner blocks and regaining more security, calm, and quality of life."
+    "Anxieties, phobias, and inner insecurities can severely restrict everyday life. Whether panic attacks, social anxiety, claustrophobia, or constant inner tension – the causes often lie in deeply anchored emotional patterns and unconscious associations.\n\nWith hypnosis we work exactly there: the inner triggers are specifically changed at a deeper level. The goal is not just to reduce anxiety in the short term, but to gain lasting inner calm, security, and freedom in everyday life.",
+    "Anxieties are often more than just a momentary reaction. For many people they are unconsciously linked to specific situations, experiences, or thoughts and automatically trigger stress, insecurity, or avoidance behavior.",
+    "With professional hypnosis these inner associations can be specifically changed. The goal is not just the reduction of anxiety, but a stable feeling of security, control, and inner calm."
   ],
   sectionsCH: [
     {
       h2: "Wenn Ängste das Leben bestimmen",
       paragraphs: [
-        "Ängste sind grundsätzlich ein natürlicher Schutzmechanismus. Problematisch wird es dann, wenn sie dauerhaft präsent sind, sich verselbstständigen oder bereits in alltäglichen Situationen starke körperliche und emotionale Reaktionen auslösen.",
-        "Viele Menschen erleben dann Unsicherheit, innere Unruhe, Vermeidungsverhalten oder wiederkehrende Panik. Genau hier setzt die Hypnose an – nicht nur an den Symptomen, sondern an den tieferliegenden Auslösern."
+        "Ängste sind grundsätzlich ein natürlicher Schutzmechanismus. Problematisch wird es, wenn sie dauerhaft präsent sind, sich verselbstständigen oder bereits in alltäglichen Situationen starke körperliche und emotionale Reaktionen auslösen.",
+        "Viele Menschen erleben dann innere Unruhe, Anspannung, Vermeidungsverhalten oder wiederkehrende Panik. Das Gefühl, die Kontrolle zu verlieren, verstärkt die Angst zusätzlich und schränkt die Lebensqualität zunehmend ein."
       ]
     },
     {
-      h2: "Mit Hypnose den belastenden Teufelskreis aus Ängsten und Phobien durchbrechen",
+      h2: "Mit Hypnose den belastenden Teufelskreis durchbrechen",
       paragraphs: [
-        "Anstatt Schutz zu geben, werden Ängste und Unsicherheiten für viele Betroffene selbst zur Belastung. Körperliche Reaktionen wie innere Unruhe, Zittern, Engegefühl oder Kontrollverlust verstärken den inneren Druck zusätzlich.",
-        "Oft entsteht dadurch ein belastender Kreislauf: Die Angst vor der nächsten Reaktion führt zu noch mehr Anspannung, Vermeidung und Unsicherheit. Genau hier setzt meine individuell angepasste Aktiv-Hypnose© an – um diesen inneren Teufelskreis zu durchbrechen."
+        "Anstatt Schutz zu geben, werden Ängste und Unsicherheiten für viele Betroffene selbst zur Belastung. Körperliche Reaktionen wie Herzklopfen, Engegefühl, Zittern oder Kontrollverlust verstärken den inneren Druck und halten den Kreislauf aufrecht.",
+        "Genau hier setzt Hypnose an: Die zugrunde liegenden emotionalen Muster und unbewussten Verknüpfungen werden gezielt aufgelöst und neu strukturiert. So kann der innere Teufelskreis nachhaltig durchbrochen werden."
       ]
     },
     {
-      h2: "Mit Aktiv-Hypnose© Ängste lösen und innere Sicherheit zurückgewinnen",
+      h2: "Aktiv-Hypnose® für innere Sicherheit",
       paragraphs: [
-        "Meine Aktiv-Hypnose© arbeitet gezielt mit den tieferliegenden Ursachen von Ängsten und Phobien. Durch die Arbeit auf der unterbewussten Ebene können belastende Muster erkannt, verarbeitet und nachhaltig verändert werden.",
-        "Das Ziel ist nicht nur die Reduktion von Symptomen, sondern eine tiefgreifende Veränderung des inneren Erlebens – für mehr Sicherheit, Gelassenheit und Lebensqualität im Alltag."
+        "Die Aktiv-Hypnose® arbeitet gezielt mit den tieferliegenden Ursachen von Ängsten und Phobien. Statt nur Symptome zu behandeln, werden die inneren Auslöser auf emotionaler Ebene verändert.",
+        "Das Ziel ist eine nachhaltige Veränderung Ihres inneren Erlebens – hin zu mehr Sicherheit, Gelassenheit und Stabilität im Alltag. Viele Klienten berichten bereits nach kurzer Zeit von spürbar mehr Ruhe, Kontrolle und Lebensqualität."
       ]
     },
     {
@@ -231,21 +242,22 @@ export const anxietyData: ServicePageData = {
     {
       h2: "Wenn Ängste das Leben bestimmen",
       paragraphs: [
-        "Ängste sind grundsätzlich ein natürlicher Schutzmechanismus. Problematisch wird es dann, wenn sie dauerhaft präsent sind, sich verselbstständigen oder bereits in alltäglichen Situationen starke körperliche und emotionale Reaktionen auslösen.",
-        "Viele Menschen erleben dann Unsicherheit, innere Unruhe, Vermeidungsverhalten oder wiederkehrende Panik."
+        "Ängste sind grundsätzlich ein natürlicher Schutzmechanismus. Problematisch wird es, wenn sie dauerhaft präsent sind, sich verselbstständigen oder bereits in alltäglichen Situationen starke körperliche und emotionale Reaktionen auslösen.",
+        "Viele Menschen erleben dann innere Unruhe, Anspannung, Vermeidungsverhalten oder wiederkehrende Panik. Das Gefühl, die Kontrolle zu verlieren, verstärkt die Angst zusätzlich und schränkt die Lebensqualität zunehmend ein."
       ]
     },
     {
       h2: "Mit Hypnose den belastenden Teufelskreis durchbrechen",
       paragraphs: [
-        "Anstatt Schutz zu geben, werden Ängste und Unsicherheiten für viele Betroffene selbst zur Belastung. Körperliche Reaktionen wie innere Unruhe, Zittern, Engegefühl oder Kontrollverlust verstärken den inneren Druck zusätzlich.",
-        "Genau hier setzt meine individuell angepasste Aktiv-Hypnose© an – um diesen inneren Teufelskreis zu durchbrechen."
+        "Anstatt Schutz zu geben, werden Ängste und Unsicherheiten für viele Betroffene selbst zur Belastung. Körperliche Reaktionen wie Herzklopfen, Engegefühl, Zittern oder Kontrollverlust verstärken den inneren Druck und halten den Kreislauf aufrecht.",
+        "Genau hier setzt Hypnose an: Die zugrunde liegenden emotionalen Muster und unbewussten Verknüpfungen werden gezielt aufgelöst und neu strukturiert. So kann der innere Teufelskreis nachhaltig durchbrochen werden."
       ]
     },
     {
-      h2: "Aktiv-Hypnose© für innere Sicherheit",
+      h2: "Aktiv-Hypnose® für innere Sicherheit",
       paragraphs: [
-        "Meine Aktiv-Hypnose© arbeitet gezielt mit den tieferliegenden Ursachen von Ängsten und Phobien. Das Ziel ist eine tiefgreifende Veränderung des inneren Erlebens – für mehr Sicherheit, Gelassenheit und Lebensqualität."
+        "Die Aktiv-Hypnose® arbeitet gezielt mit den tieferliegenden Ursachen von Ängsten und Phobien. Statt nur Symptome zu behandeln, werden die inneren Auslöser auf emotionaler Ebene verändert.",
+        "Das Ziel ist eine nachhaltige Veränderung Ihres inneren Erlebens – hin zu mehr Sicherheit, Gelassenheit und Stabilität im Alltag. Viele Klienten berichten bereits nach kurzer Zeit von spürbar mehr Ruhe, Kontrolle und Lebensqualität."
       ]
     }
   ],
