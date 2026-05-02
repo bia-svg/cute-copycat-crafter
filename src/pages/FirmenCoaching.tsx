@@ -92,17 +92,17 @@ export default function FirmenCoaching() {
         { name: isEN ? "Business Coaching" : "Firmen-Coaching", path: getPath("corporate", language, country) },
       ]} />
 
-      {/* Hero — Premium silver-grey */}
+      {/* Hero — Premium silver-grey, centered */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-4 md:py-6 lg:py-8">
-          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-6 shadow-sm">
-            <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-1.5 md:mb-2">
+        <div className="container-main py-3.5 md:py-5 lg:py-6">
+          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl px-5 py-4 md:px-7 md:py-5 shadow-sm text-center">
+            <p className="text-[11px] md:text-xs font-medium text-[#2E7D32] uppercase tracking-wider mb-1.5 md:mb-2">
               {isEN ? "For Companies & Organizations" : "Für Firmen & Organisationen"}
             </p>
-            <h1 className="text-xl sm:text-3xl font-light text-[#1B3A5C] leading-snug md:leading-[1.2] mb-2 md:mb-2.5 tracking-tight">
+            <h1 className="text-xl sm:text-2xl md:text-[1.7rem] font-light text-[#1B3A5C] leading-snug md:leading-[1.2] mb-2 md:mb-2.5 tracking-tight">
               {isEN ? "Leadership & Performance Coaching for Companies" : "Leadership & Performance Coaching für Unternehmen"}
             </h1>
-            <p className="text-sm md:text-base text-foreground/80 leading-snug md:leading-[1.55] max-w-3xl md:max-w-2xl">
+            <p className="text-[13.5px] md:text-[14.5px] text-foreground/80 leading-snug md:leading-[1.55] max-w-2xl mx-auto">
               {isEN
                 ? "Professional Leadership & Performance Coaching supports companies in strategically developing executives and employees, unlocking potential, and sustainably improving collaboration. Through individually tailored coaching impulses, leadership skills, personal responsibility, motivation and team dynamics are strengthened."
                 : "Professionelles Leadership & Performance Coaching unterstützt Unternehmen dabei, Führungskräfte und Mitarbeiter gezielt weiterzuentwickeln, Potenziale freizusetzen und die Zusammenarbeit nachhaltig zu verbessern. Durch individuell abgestimmte Coaching-Impulse werden Führungskompetenz, Eigenverantwortung, Motivation und Teamdynamik gestärkt."}
@@ -113,22 +113,23 @@ export default function FirmenCoaching() {
 
       {/* Topics — Banner */}
       <section className="bg-[#F8FAFC]">
-        <div className="container-main py-4 md:py-7">
-          <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-6 shadow-sm">
-            <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] mb-3 md:mb-4 text-center tracking-tight">
+        <div className="container-main py-3.5 md:py-5">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
+            <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 text-center tracking-tight">
               {isEN ? "Topics for Your Company" : "Themen für Ihr Unternehmen"}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
               {topics.map((item) => (
-                <ServiceCard
-                  key={item.title}
-                  title={item.title}
-                  description={item.desc}
-                  href={item.href}
-                  icon={item.icon}
-                  image={item.image}
-                  imagePosition={item.imagePosition}
-                />
+                <div key={item.title} className="topics-compact">
+                  <ServiceCard
+                    title={item.title}
+                    description={item.desc}
+                    href={item.href}
+                    icon={item.icon}
+                    image={item.image}
+                    imagePosition={item.imagePosition}
+                  />
+                </div>
               ))}
             </div>
           </div>
@@ -137,20 +138,20 @@ export default function FirmenCoaching() {
 
       {/* Benefits — Banner */}
       <section className="bg-[#E8EDF3]">
-        <div className="container-main py-4 md:py-7">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-5 shadow-sm">
-            <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] mb-3 md:mb-4 tracking-tight">
+        <div className="container-main py-3.5 md:py-5">
+          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
+            <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 tracking-tight text-center">
               {isEN ? "Why Leadership & Performance Coaching is decisive:" : "Warum Leadership & Performance Coaching entscheidend ist:"}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-1.5 md:gap-y-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-1 md:gap-y-1.5">
               {benefits.map((item) => (
-                <div key={item} className="flex items-start gap-2 text-[13px] md:text-sm leading-snug">
+                <div key={item} className="flex items-start gap-2 text-[12.5px] md:text-[13.5px] leading-snug">
                   <span className="text-[#2E7D32] mt-0.5">•</span>
                   <span>{item}</span>
                 </div>
               ))}
             </div>
-            <p className="text-[13px] md:text-sm text-muted-foreground mt-3 md:mt-3.5 max-w-3xl leading-snug md:leading-[1.5]">
+            <p className="text-[12.5px] md:text-[13.5px] text-muted-foreground mt-2.5 md:mt-3 max-w-2xl mx-auto leading-snug md:leading-[1.5] text-center">
               {isEN
                 ? "Leadership & Performance Coaching creates the foundation for sustainable results — because real performance gains begin in the thinking and behaviour of the people."
                 : "Leadership & Performance Coaching schafft die Grundlage für nachhaltige Ergebnisse – denn echte Leistungssteigerung beginnt im Denken und Verhalten der Menschen."}
@@ -161,12 +162,12 @@ export default function FirmenCoaching() {
 
       {/* Evidence — Banner */}
       <section className="bg-[#F8FAFC]">
-        <div className="container-main py-4 md:py-7">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-5 shadow-sm">
-            <h2 className="text-lg md:text-xl font-light text-primary mb-2.5 md:mb-3 tracking-tight">
+        <div className="container-main py-3.5 md:py-5">
+          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-4 shadow-sm">
+            <h2 className="text-base md:text-lg font-light text-primary mb-2 md:mb-2.5 tracking-tight text-center">
               {isEN ? "Science-Backed Approach" : "Wissenschaftlich fundierter Ansatz"}
             </h2>
-            <div className="space-y-2 md:space-y-2.5 max-w-3xl text-[13px] md:text-sm text-foreground/80 leading-snug md:leading-[1.5]">
+            <div className="space-y-1.5 md:space-y-2 text-[12.5px] md:text-[13.5px] text-foreground/80 leading-snug md:leading-[1.5]">
               <p>
                 {isEN
                   ? "Studies show that hypnosis-based methods significantly improve performance and stress resilience — with effect sizes that can surpass classical coaching approaches."
@@ -177,7 +178,7 @@ export default function FirmenCoaching() {
                   ? "Companies benefit measurably: fewer absences, higher productivity and more stable teams."
                   : "Unternehmen profitieren messbar: weniger Ausfälle, höhere Produktivität und stabilere Teams."}
               </p>
-              <p className="text-[10px] md:text-[11px] text-muted-foreground/70 italic leading-snug pt-0.5">
+              <p className="text-[9.5px] md:text-[10.5px] text-muted-foreground/60 italic leading-snug pt-1">
                 {isEN
                   ? "Sources: International Journal of Clinical and Experimental Hypnosis; American Psychological Association (APA)."
                   : "Quellen: International Journal of Clinical and Experimental Hypnosis; American Psychological Association (APA)."}
