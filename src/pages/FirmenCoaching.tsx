@@ -192,16 +192,16 @@ export default function FirmenCoaching() {
         ]}
       />
 
-      <section className="bg-[#E8EDF3] py-8 lg:py-12">
+      <section className="bg-[#E8EDF3] py-5 lg:py-7">
         <div className="container-main">
-          <div className="relative max-w-2xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl px-6 py-10 md:px-10 md:py-12 text-center shadow-sm">
+          <div className="relative max-w-2xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl px-6 py-6 md:px-10 md:py-7 text-center shadow-sm">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-xs font-medium border border-[#1B3A5C]/25 px-4 py-1 rounded-full tracking-wide uppercase">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
-            <h2 className="text-2xl md:text-3xl font-light text-foreground mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+            <h2 className="text-2xl md:text-3xl font-light text-foreground mb-2.5 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Take the Next Step for Your Team" : "Der nächste Schritt für Ihr Team"}
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto mb-6">
+            <p className="text-muted-foreground max-w-xl mx-auto mb-4">
               {isEN
                 ? "Discover how our corporate programs can strengthen your team's performance, resilience, and well-being."
                 : "Erfahren Sie, wie unsere Firmenprogramme die Leistung, Resilienz und das Wohlbefinden Ihres Teams stärken können."}
