@@ -78,26 +78,50 @@ export default function FirmenCoaching() {
       : "Ziele werden gesetzt, aber nicht konsequent erreicht",
   ];
 
+  const heroHighlights = [
+    isEN ? "Clearer decisions" : "Klarere Entscheidungen",
+    isEN ? "More focus and execution power" : "Mehr Fokus und Umsetzungskraft",
+    isEN ? "Less stress and friction" : "Weniger Stress und Reibung",
+    isEN ? "Significantly higher productivity" : "Deutlich höhere Produktivität",
+  ];
+
+  const investReasons = [
+    isEN ? "Decisions are delayed" : "Entscheidungen werden verzögert",
+    isEN ? "Pressure leads to mistakes" : "Druck führt zu Fehlern",
+    isEN ? "Teams perform below their potential" : "Teams arbeiten unter ihrem Potenzial",
+    isEN ? "Performance fluctuates strongly" : "Leistung schwankt stark",
+  ];
+
   const benefits = [
     isEN
-      ? "Clearer decisions and stronger leadership presence"
-      : "Klarere Entscheidungen und stärkere Führungspräsenz",
+      ? "Clearer and faster decisions at leadership level"
+      : "Klarere und schnellere Entscheidungen auf Führungsebene",
     isEN
-      ? "Higher execution speed across the entire team"
-      : "Höhere Umsetzungsgeschwindigkeit im gesamten Team",
+      ? "Significantly higher execution speed in the team"
+      : "Deutlich höhere Umsetzungsgeschwindigkeit im Team",
     isEN
-      ? "More focus, less distraction and better prioritisation"
-      : "Mehr Fokus, weniger Ablenkung und bessere Priorisierung",
+      ? "More focus and less distraction in everyday work"
+      : "Mehr Fokus und weniger Ablenkung im Arbeitsalltag",
     isEN
-      ? "Significantly increased productivity and performance"
-      : "Deutlich gesteigerte Produktivität und Leistungsfähigkeit",
+      ? "Reduction of stress and mental overload"
+      : "Reduktion von Stress und mentaler Überlastung",
     isEN
-      ? "More stable teams with less stress and friction"
-      : "Stabilere Teams mit weniger Stress und Reibung",
+      ? "Stable performance even under pressure"
+      : "Stabilere Leistung auch unter Druck",
     isEN
-      ? "Noticeable progress in a short time"
-      : "Messbare Fortschritte in kurzer Zeit",
+      ? "Better collaboration and less internal friction"
+      : "Bessere Zusammenarbeit und weniger interne Reibung",
+    isEN
+      ? "Measurable increase in productivity and results"
+      : "Messbare Steigerung von Produktivität und Ergebnissen",
   ];
+
+  const formats = [
+    isEN ? "Intensive workshops for teams" : "Intensiv-Workshops für Teams",
+    isEN ? "One-to-one coaching for executives" : "Einzel-Coaching für Führungskräfte",
+    isEN ? "Combination of both approaches" : "Kombination aus beiden Ansätzen",
+  ];
+
 
   return (
     <>
