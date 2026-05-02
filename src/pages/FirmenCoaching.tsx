@@ -60,25 +60,43 @@ export default function FirmenCoaching() {
     },
   ];
 
+  const challenges = [
+    isEN
+      ? "Top performers operate under constant pressure and lose focus"
+      : "Leistungsträger arbeiten unter konstantem Druck und verlieren Fokus",
+    isEN
+      ? "Executives make decisions hesitantly or too late"
+      : "Führungskräfte treffen Entscheidungen unsicher oder zu spät",
+    isEN
+      ? "Teams perform below their potential despite high competence"
+      : "Teams arbeiten unter ihren Möglichkeiten trotz hoher Kompetenz",
+    isEN
+      ? "Stress, overload and internal friction slow down results"
+      : "Stress, Überlastung und interne Reibung bremsen die Ergebnisse",
+    isEN
+      ? "Goals are set, but not consistently achieved"
+      : "Ziele werden gesetzt, aber nicht konsequent erreicht",
+  ];
+
   const benefits = [
     isEN
-      ? "Executives gain clarity, make better decisions and act with greater confidence"
-      : "Führungskräfte gewinnen Klarheit, treffen bessere Entscheidungen und handeln souveräner",
+      ? "Clearer decisions and stronger leadership presence"
+      : "Klarere Entscheidungen und stärkere Führungspräsenz",
     isEN
-      ? "Employees develop more personal responsibility, motivation and focus"
-      : "Mitarbeiter entwickeln mehr Eigenverantwortung, Motivation und Fokus",
+      ? "Higher execution speed across the entire team"
+      : "Höhere Umsetzungsgeschwindigkeit im gesamten Team",
     isEN
-      ? "Teams work more efficiently, with less friction and clearer communication"
-      : "Teams arbeiten effizienter, mit weniger Reibung und klarer Kommunikation",
+      ? "More focus, less distraction and better prioritisation"
+      : "Mehr Fokus, weniger Ablenkung und bessere Priorisierung",
     isEN
-      ? "Productivity rises measurably through mental stability and clear goal orientation"
-      : "Produktivität steigt messbar durch mentale Stabilität und klare Zielausrichtung",
+      ? "Significantly increased productivity and performance"
+      : "Deutlich gesteigerte Produktivität und Leistungsfähigkeit",
     isEN
-      ? "Absences and stress are reduced, performance stays consistently high"
-      : "Fehlzeiten und Stress werden reduziert, Leistungsfähigkeit bleibt konstant hoch",
+      ? "More stable teams with less stress and friction"
+      : "Stabilere Teams mit weniger Stress und Reibung",
     isEN
-      ? "Company culture becomes more stable, solution-oriented and resilient"
-      : "Unternehmenskultur wird stabiler, lösungsorientierter und resilienter",
+      ? "Noticeable progress in a short time"
+      : "Messbare Fortschritte in kurzer Zeit",
   ];
 
   return (
@@ -97,22 +115,63 @@ export default function FirmenCoaching() {
         <div className="container-main py-3.5 md:py-5 lg:py-6">
           <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl px-5 py-4 md:px-7 md:py-5 shadow-sm text-center">
             <p className="text-[11px] md:text-xs font-medium text-[#2E7D32] uppercase tracking-wider mb-1.5 md:mb-2">
-              {isEN ? "For Companies & Organizations" : "Für Firmen & Organisationen"}
+              {isEN ? "Business Coaching" : "Business Coaching"}
             </p>
             <h1 className="text-xl sm:text-2xl md:text-[1.7rem] font-light text-[#1B3A5C] leading-snug md:leading-[1.2] mb-2 md:mb-2.5 tracking-tight">
-              {isEN ? "Leadership & Performance Coaching for Companies" : "Leadership & Performance Coaching für Unternehmen"}
+              {isEN ? "Success Training for Companies" : "Erfolgs-Training für Unternehmen"}
             </h1>
-            <p className="text-[13.5px] md:text-[14.5px] text-foreground/80 leading-snug md:leading-[1.55] max-w-2xl mx-auto">
+            <p className="text-[13.5px] md:text-[14.5px] text-foreground/80 leading-snug md:leading-[1.55] max-w-2xl mx-auto mb-2 md:mb-2.5 font-medium">
               {isEN
-                ? "Professional Leadership & Performance Coaching supports companies in strategically developing executives and employees, unlocking potential, and sustainably improving collaboration. Through individually tailored coaching impulses, leadership skills, personal responsibility, motivation and team dynamics are strengthened."
-                : "Professionelles Leadership & Performance Coaching unterstützt Unternehmen dabei, Führungskräfte und Mitarbeiter gezielt weiterzuentwickeln, Potenziale freizusetzen und die Zusammenarbeit nachhaltig zu verbessern. Durch individuell abgestimmte Coaching-Impulse werden Führungskompetenz, Eigenverantwortung, Motivation und Teamdynamik gestärkt."}
+                ? "Sustainably increase the performance of your executives and employees — through targeted mental and performance coaching."
+                : "Steigern Sie nachhaltig die Leistungsfähigkeit Ihrer Führungskräfte und Mitarbeiter – durch gezieltes Mental- und Performance Coaching."}
+            </p>
+            <div className="text-[13px] md:text-[14px] text-foreground/75 leading-snug md:leading-[1.55] max-w-2xl mx-auto space-y-1.5 md:space-y-2 text-left md:text-center">
+              <p>
+                {isEN
+                  ? "David J. Woods works with companies, executives and high-performance teams that have to deliver results consistently under pressure. The focus is on clarity, execution power, mental stability and sustainable performance growth."
+                  : "David J. Woods arbeitet mit Unternehmen, Führungskräften und High-Performance-Teams, die unter Druck konstant Ergebnisse liefern müssen. Im Fokus stehen Klarheit, Umsetzungskraft, mentale Stabilität und nachhaltige Leistungssteigerung."}
+              </p>
+              <p>
+                {isEN
+                  ? "Because the problem is rarely a lack of knowledge — but blockages, stress, pressure and unconscious behavioural patterns. This is exactly where the success training begins."
+                  : "Denn nicht fehlendes Wissen ist das Problem – sondern Blockaden, Stress, Druck und unbewusste Verhaltensmuster. Genau hier setzt das Erfolgs-Training an."}
+              </p>
+              <p>
+                {isEN
+                  ? "Implementation takes place individually inside your company or in intensive one-to-one sessions — in Germany, Austria or Switzerland."
+                  : "Die Umsetzung erfolgt individuell in Ihrem Unternehmen oder in intensiven Einzelsessions – in Deutschland, Österreich oder der Schweiz."}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Challenges — Banner */}
+      <section className="bg-[#F8FAFC]">
+        <div className="container-main py-3.5 md:py-5">
+          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
+            <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 tracking-tight text-center">
+              {isEN ? "Typical Challenges in Companies" : "Typische Herausforderungen in Unternehmen"}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-1 md:gap-y-1.5">
+              {challenges.map((item) => (
+                <div key={item} className="flex items-start gap-2 text-[12.5px] md:text-[13.5px] leading-snug">
+                  <span className="text-[#2E7D32] mt-0.5">•</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-[12.5px] md:text-[13.5px] text-muted-foreground mt-2.5 md:mt-3 max-w-2xl mx-auto leading-snug md:leading-[1.5] text-center">
+              {isEN
+                ? "These topics are not knowledge problems — but mental and structural blockages."
+                : "Diese Themen sind keine Wissensprobleme – sondern mentale und strukturelle Blockaden."}
             </p>
           </div>
         </div>
       </section>
 
       {/* Topics — Banner */}
-      <section className="bg-[#F8FAFC]">
+      <section className="bg-[#E8EDF3]">
         <div className="container-main py-3.5 md:py-5">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
             <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 text-center tracking-tight">
@@ -137,11 +196,11 @@ export default function FirmenCoaching() {
       </section>
 
       {/* Benefits — Banner */}
-      <section className="bg-[#E8EDF3]">
+      <section className="bg-[#F8FAFC]">
         <div className="container-main py-3.5 md:py-5">
           <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
             <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 tracking-tight text-center">
-              {isEN ? "Why Leadership & Performance Coaching is decisive:" : "Warum Leadership & Performance Coaching entscheidend ist:"}
+              {isEN ? "Results you can expect:" : "Diese Resultate können Sie erwarten:"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-1 md:gap-y-1.5">
               {benefits.map((item) => (
@@ -153,15 +212,15 @@ export default function FirmenCoaching() {
             </div>
             <p className="text-[12.5px] md:text-[13.5px] text-muted-foreground mt-2.5 md:mt-3 max-w-2xl mx-auto leading-snug md:leading-[1.5] text-center">
               {isEN
-                ? "Leadership & Performance Coaching creates the foundation for sustainable results — because real performance gains begin in the thinking and behaviour of the people."
-                : "Leadership & Performance Coaching schafft die Grundlage für nachhaltige Ergebnisse – denn echte Leistungssteigerung beginnt im Denken und Verhalten der Menschen."}
+                ? "The aim is not motivation — but lasting change in behaviour and thinking."
+                : "Ziel ist nicht Motivation – sondern nachhaltige Veränderung im Verhalten und Denken."}
             </p>
           </div>
         </div>
       </section>
 
       {/* Evidence — Banner */}
-      <section className="bg-[#F8FAFC]">
+      <section className="bg-[#E8EDF3]">
         <div className="container-main py-3.5 md:py-5">
           <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-4 shadow-sm">
             <h2 className="text-base md:text-lg font-light text-primary mb-2 md:mb-2.5 tracking-tight text-center">
@@ -204,6 +263,34 @@ export default function FirmenCoaching() {
           { q: "Können Sitzungen auf Englisch durchgeführt werden?", a: "Ja, alle Programme sind auch vollständig auf Englisch möglich." },
         ]}
       />
+
+      {/* Audience — Banner */}
+      <section className="bg-[#F8FAFC]">
+        <div className="container-main py-3.5 md:py-5">
+          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
+            <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 tracking-tight text-center">
+              {isEN ? "Who is this training for?" : "Für wen ist dieses Training geeignet?"}
+            </h2>
+            <div className="space-y-1.5 md:space-y-2 text-[12.5px] md:text-[13.5px] text-foreground/80 leading-snug md:leading-[1.55] text-center max-w-2xl mx-auto">
+              <p>
+                {isEN
+                  ? "For companies that expect more than classical workshops."
+                  : "Für Unternehmen, die mehr erwarten als klassische Workshops."}
+              </p>
+              <p>
+                {isEN
+                  ? "For executives who carry responsibility and have to perform under pressure."
+                  : "Für Führungskräfte, die Verantwortung tragen und unter Druck funktionieren müssen."}
+              </p>
+              <p>
+                {isEN
+                  ? "For teams that should unlock their full potential — not just in theory, but in everyday work."
+                  : "Für Teams, die ihr volles Potenzial ausschöpfen sollen – nicht nur theoretisch, sondern im Alltag."}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-[#E8EDF3] py-3 md:py-3.5 lg:py-4">
         <div className="container-main">
