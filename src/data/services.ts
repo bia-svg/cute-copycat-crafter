@@ -532,19 +532,23 @@ export const depressionData: ServicePageData = {
   metaDescCH: "Begleitung bei depressiven Phasen und Traumata mit Hypnose in Zürich — alte Prägungen neu bewerten, Lebensfreude zurückgewinnen. Lic. Psych. David J. Woods, 35+ Jahre, EMR-anerkannt, ★ 5.0 (266 Bewertungen).",
   metaDescDE: "Begleitung bei depressiven Phasen und Traumata mit Hypnose in Augsburg — alte Prägungen neu bewerten, Lebensfreude zurückgewinnen. Lic. Psych. David J. Woods, 35+ Jahre Erfahrung, ★ 5.0 (266 Bewertungen).",
   metaDescEN: "Support for depressive phases and trauma with hypnotherapy in Zurich & Augsburg — re-evaluate old imprints, regain joy. Lic. Psych. David J. Woods, 35+ years, ★ 5.0 (266 reviews). Free discovery call.",
-  h1CH: "Hypnotische Begleitung bei depressiven Verstimmungen & Traumata",
-  h1DE: "Hypnotische Begleitung bei depressiven Verstimmungen & Traumata",
+  h1CH: "Depressionen und Traumata lösen – neue Stabilität und Lebensqualität gewinnen",
+  h1DE: "Depressionen und Traumata lösen – neue Stabilität und Lebensqualität gewinnen",
   h1EN: "Hypnotherapy for Depression & Trauma",
-  benefitsCH: ["Mehr Lebensqualität bekommen", "Überwinden von Blockaden", "Fröhlich leben können", "Ruhiger schlafen können"],
+  benefitsCH: [
+    "Innere Schwere und Antriebslosigkeit gezielt lösen",
+    "Emotionale Blockaden und belastende Erinnerungen verarbeiten",
+    "Mehr Stabilität, Ruhe und innere Klarheit gewinnen",
+    "Schritt für Schritt zurück zu Lebensfreude und Energie"
+  ],
   benefitsEN: ["Gain more quality of life", "Overcome blocks", "Live happily again", "Sleep more peacefully"],
   introCH: [
-    "Traurige Lebensphasen überwinden mit hypnotischer Begleitung bei depressiven Verstimmungen & Traumata.",
-    "Die hypnotische Begleitung hilft Ihnen dabei, neue Perspektiven zu entdecken und Ihre Lebensfreude wiederzugewinnen. Denn viele Menschen leiden an Phasen im Leben, in denen sie sehr traurig sind. Diese können durch persönliche oder berufliche Schicksalsschläge eingeleitet werden und starten eine Abwärtsspirale im Leben der Betroffenen.",
-    "Wenn auch Sie so etwas erlebt haben und Schwierigkeiten haben, diese negative Lebensphase eigenständig zu verlassen, sollten Sie es unbedingt mit hypnotischer Begleitung bei depressiven Verstimmungen bzw. bei Traumata probieren!"
+    "Viele Menschen erleben Phasen von Depression, emotionaler Erschöpfung oder innerer Leere. Häufig entstehen diese durch belastende Erlebnisse, anhaltenden Stress oder unverarbeitete emotionale Erfahrungen.\n\nTrotz bewusster Bemühungen fällt es oft schwer, diese Zustände nachhaltig zu verändern, da die eigentlichen Ursachen tief im Unterbewusstsein verankert sind. Genau hier setzt Hypnose an: Die zugrunde liegenden emotionalen Muster, Denkweisen und inneren Reaktionen werden gezielt aufgelöst und neu ausgerichtet.\n\nDas Ziel ist nicht nur eine kurzfristige Entlastung, sondern eine spürbare, stabile Veränderung – hin zu mehr innerer Ruhe, Klarheit und Lebensqualität.",
+    "Depressionen und traumatische Erfahrungen sind häufig mehr als nur vorübergehende Zustände. Für viele Betroffene sind sie eng mit tiefen emotionalen Prägungen, wiederkehrenden Gedankenmustern und körperlichen Reaktionen verbunden, die sich nicht einfach „wegdenken" lassen.\n\nGenau deshalb ist es entscheidend, nicht nur an der Oberfläche zu arbeiten, sondern die Ursachen dort zu verändern, wo sie entstanden sind – im Unterbewusstsein."
   ],
   introDE: [
-    "Die hypnotische Begleitung hilft Ihnen dabei, neue Perspektiven zu entdecken und Ihre Lebensfreude wiederzugewinnen.",
-    "Viele Menschen leiden an Phasen im Leben, in denen sie sehr traurig sind. Diese können durch persönliche oder berufliche Schicksalsschläge eingeleitet werden und starten eine Abwärtsspirale im Leben der Betroffenen."
+    "Viele Menschen erleben Phasen von Depression, emotionaler Erschöpfung oder innerer Leere. Häufig entstehen diese durch belastende Erlebnisse, anhaltenden Stress oder unverarbeitete emotionale Erfahrungen.\n\nTrotz bewusster Bemühungen fällt es oft schwer, diese Zustände nachhaltig zu verändern, da die eigentlichen Ursachen tief im Unterbewusstsein verankert sind. Genau hier setzt Hypnose an: Die zugrunde liegenden emotionalen Muster, Denkweisen und inneren Reaktionen werden gezielt aufgelöst und neu ausgerichtet.\n\nDas Ziel ist nicht nur eine kurzfristige Entlastung, sondern eine spürbare, stabile Veränderung – hin zu mehr innerer Ruhe, Klarheit und Lebensqualität.",
+    "Depressionen und traumatische Erfahrungen sind häufig mehr als nur vorübergehende Zustände. Für viele Betroffene sind sie eng mit tiefen emotionalen Prägungen, wiederkehrenden Gedankenmustern und körperlichen Reaktionen verbunden, die sich nicht einfach „wegdenken" lassen.\n\nGenau deshalb ist es entscheidend, nicht nur an der Oberfläche zu arbeiten, sondern die Ursachen dort zu verändern, wo sie entstanden sind – im Unterbewusstsein."
   ],
   introEN: [
     "Hypnosis for depression and trauma helps you discover new perspectives and regain your joy of life.",
@@ -554,16 +558,18 @@ export const depressionData: ServicePageData = {
     {
       h2: "Was sollten Sie bei Depressionen oder schweren Traumata tun?",
       paragraphs: [
-        "In den meisten Fällen sind die Ursachen für Depressionen relativ offensichtlich. Beispielsweise löst der Verlust des Arbeitsplatzes oder eines geliebten Menschen eine tiefe Traurigkeit oder starke Angst aus. Auch eine schmerzhafte Trennung oder finanzielle Schwierigkeiten sind häufige Auslöser von Depressionen.",
-        "Eine tiefe Traurigkeit kann sich aber auch schleichend und scheinbar ohne äusseren Anlass entwickeln. Dabei füttert sich diese tiefe Traurigkeit quasi selbst, sodass die Betroffenen immer weiter in eine Abwärtsspirale der Mutlosigkeit hineinrutschen. Sie haben dann das Gefühl, ihre Lage selbst nicht verändern zu können.",
-        "Genau hier setzt die Hypnose an. Durch die Arbeit mit dem Unterbewusstsein können die tieferliegenden Ursachen der Depression erkannt und bearbeitet werden. Neue Perspektiven und positive Denkmuster können etabliert werden."
+        "In vielen Fällen wirken Depressionen oder traumatische Belastungen zunächst klar erklärbar – etwa durch Verlust, Überforderung oder einschneidende Erlebnisse. Doch selbst wenn die Auslöser bekannt sind, bleibt die emotionale Belastung oft bestehen.",
+        "Eine anhaltende innere Schwere kann sich auch schleichend entwickeln und wird dann häufig von Symptomen wie Antriebslosigkeit, Rückzug, Schlafproblemen oder innerer Leere begleitet.",
+        "Wichtig ist: Sie müssen diesen Zustand nicht dauerhaft akzeptieren. Neben medizinischer oder therapeutischer Begleitung kann Hypnose eine wirkungsvolle Unterstützung sein, um die zugrunde liegenden emotionalen Muster gezielt zu verändern.",
+        "Gerade bei tieferliegenden Belastungen ist es sinnvoll, sowohl die aktuelle Situation als auch die unbewussten Ursachen in die Arbeit einzubeziehen."
       ]
     },
     {
       h2: "Überwinden Sie traurige Lebensphasen mit Hypnose",
       paragraphs: [
-        "Die Aktiv-Hypnose© von David J. Woods arbeitet gezielt mit den unterbewussten Mustern, die Depressionen und Traumata aufrechterhalten. Durch die tiefenpsychologisch fundierte Arbeit können belastende Erlebnisse verarbeitet und neue, positive Lebensperspektiven entwickelt werden.",
-        "Wichtiger Hinweis: Bei schweren Depressionen empfehlen wir immer auch die Zusammenarbeit mit einem Facharzt oder Psychotherapeuten. Die Hypnose kann eine wertvolle Ergänzung zur klassischen Therapie sein."
+        "Aktiv-Hypnose® setzt gezielt an den inneren Prozessen an, die depressive Verstimmungen und traumatische Reaktionen aufrechterhalten. Dabei werden unbewusste Verknüpfungen, emotionale Blockaden und belastende Erinnerungsmuster Schritt für Schritt neu verarbeitet und stabilisiert.",
+        "Viele Klienten berichten, dass sie sich nach der Sitzung innerlich leichter, klarer und emotional entlastet fühlen. Gedanken werden ruhiger, das emotionale Gleichgewicht stabilisiert sich und neue Perspektiven werden wieder zugänglich.",
+        "Wichtiger Hinweis: Bei schweren Depressionen oder diagnostizierten Traumafolgestörungen empfehlen wir immer auch die begleitende Zusammenarbeit mit einem Facharzt oder Therapeuten. Hypnose kann hier eine sehr effektive ergänzende Methode sein."
       ]
     }
   ],
@@ -571,15 +577,18 @@ export const depressionData: ServicePageData = {
     {
       h2: "Was sollten Sie bei Depressionen oder schweren Traumata tun?",
       paragraphs: [
-        "In den meisten Fällen sind die Ursachen für Depressionen relativ offensichtlich. Beispielsweise löst der Verlust des Arbeitsplatzes oder eines geliebten Menschen eine tiefe Traurigkeit aus.",
-        "Eine tiefe Traurigkeit kann sich aber auch schleichend entwickeln. Genau hier setzt die Hypnose an."
+        "In vielen Fällen wirken Depressionen oder traumatische Belastungen zunächst klar erklärbar – etwa durch Verlust, Überforderung oder einschneidende Erlebnisse. Doch selbst wenn die Auslöser bekannt sind, bleibt die emotionale Belastung oft bestehen.",
+        "Eine anhaltende innere Schwere kann sich auch schleichend entwickeln und wird dann häufig von Symptomen wie Antriebslosigkeit, Rückzug, Schlafproblemen oder innerer Leere begleitet.",
+        "Wichtig ist: Sie müssen diesen Zustand nicht dauerhaft akzeptieren. Neben medizinischer oder therapeutischer Begleitung kann Hypnose eine wirkungsvolle Unterstützung sein, um die zugrunde liegenden emotionalen Muster gezielt zu verändern.",
+        "Gerade bei tieferliegenden Belastungen ist es sinnvoll, sowohl die aktuelle Situation als auch die unbewussten Ursachen in die Arbeit einzubeziehen."
       ]
     },
     {
       h2: "Überwinden Sie traurige Lebensphasen mit Hypnose",
       paragraphs: [
-        "Die Aktiv-Hypnose© arbeitet gezielt mit den unterbewussten Mustern, die Depressionen und Traumata aufrechterhalten.",
-        "Wichtiger Hinweis: Bei schweren Depressionen empfehlen wir immer auch die Zusammenarbeit mit einem Facharzt."
+        "Aktiv-Hypnose® setzt gezielt an den inneren Prozessen an, die depressive Verstimmungen und traumatische Reaktionen aufrechterhalten. Dabei werden unbewusste Verknüpfungen, emotionale Blockaden und belastende Erinnerungsmuster Schritt für Schritt neu verarbeitet und stabilisiert.",
+        "Viele Klienten berichten, dass sie sich nach der Sitzung innerlich leichter, klarer und emotional entlastet fühlen. Gedanken werden ruhiger, das emotionale Gleichgewicht stabilisiert sich und neue Perspektiven werden wieder zugänglich.",
+        "Wichtiger Hinweis: Bei schweren Depressionen oder diagnostizierten Traumafolgestörungen empfehlen wir immer auch die begleitende Zusammenarbeit mit einem Facharzt oder Therapeuten. Hypnose kann hier eine sehr effektive ergänzende Methode sein."
       ]
     }
   ],
