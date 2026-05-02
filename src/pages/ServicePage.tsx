@@ -455,9 +455,9 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         if (testimonials.length === 0) return null;
         return (
           <section className="bg-[#ECEFF3] border-b border-[#DDE2E8]">
-            <div className="container-main py-4 md:py-6">
-              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-4 md:p-5">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-2.5 text-center tracking-tight">
+            <div className="container-main py-3 md:py-4">
+              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-3 md:p-4">
+                <h2 className="text-base sm:text-lg md:text-xl font-light text-[#1B3A5C] mb-2 text-center tracking-tight">
                   {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
                 </h2>
                 {/* Desktop: 3-column grid */}
