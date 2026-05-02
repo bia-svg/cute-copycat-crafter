@@ -140,7 +140,7 @@ export default function FirmenCoaching() {
         <div className="container-main py-4 md:py-7">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-5 shadow-sm">
             <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] mb-3 md:mb-4 tracking-tight">
-              {isEN ? "Why Leadership & Performance Coaching is valuable:" : "Warum Leadership & Performance Coaching wertvoll ist:"}
+              {isEN ? "Why Leadership & Performance Coaching is decisive:" : "Warum Leadership & Performance Coaching entscheidend ist:"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-1.5 md:gap-y-2">
               {benefits.map((item) => (
@@ -152,8 +152,8 @@ export default function FirmenCoaching() {
             </div>
             <p className="text-[13px] md:text-sm text-muted-foreground mt-3 md:mt-3.5 max-w-3xl leading-snug md:leading-[1.5]">
               {isEN
-                ? "Leadership & Performance Coaching creates the foundation for growth, clarity and sustainable development — because real business success starts with the people who shape it every day."
-                : "Leadership & Performance Coaching schafft die Grundlage für Wachstum, Klarheit und nachhaltige Entwicklung — denn echter Unternehmenserfolg beginnt bei den Menschen, die ihn täglich gestalten."}
+                ? "Leadership & Performance Coaching creates the foundation for sustainable results — because real performance gains begin in the thinking and behaviour of the people."
+                : "Leadership & Performance Coaching schafft die Grundlage für nachhaltige Ergebnisse – denn echte Leistungssteigerung beginnt im Denken und Verhalten der Menschen."}
             </p>
           </div>
         </div>
