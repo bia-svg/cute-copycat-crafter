@@ -170,25 +170,79 @@ export default function FirmenCoaching() {
         </div>
       </section>
 
-      {/* Challenges — Banner */}
+      {/* Hero — Narrower, premium, content-rich */}
+      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
+        <div className="container-main py-3.5 md:py-5 lg:py-6">
+          <div className="max-w-[640px] mx-auto bg-white/85 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl px-5 py-4 md:px-7 md:py-5 shadow-sm text-center">
+            <p className="text-[11px] md:text-xs font-medium text-[#2E7D32] uppercase tracking-wider mb-1.5 md:mb-2">
+              {isEN ? "Business Coaching" : "Business Coaching"}
+            </p>
+            <h1 className="text-xl sm:text-2xl md:text-[1.7rem] font-light text-[#1B3A5C] leading-snug md:leading-[1.2] mb-2 md:mb-2.5 tracking-tight">
+              {isEN ? "Success Training for Companies" : "Erfolgs-Training für Unternehmen"}
+            </h1>
+            <p className="text-[13.5px] md:text-[14.5px] text-foreground/85 leading-snug md:leading-[1.5] mb-2 md:mb-2.5 font-medium">
+              {isEN
+                ? "Measurably increase the performance of your executives and employees."
+                : "Steigern Sie messbar die Leistungsfähigkeit Ihrer Führungskräfte und Mitarbeiter."}
+            </p>
+            <div className="text-[13px] md:text-[13.5px] text-foreground/75 leading-snug md:leading-[1.55] space-y-1.5 md:space-y-2 text-left">
+              <p>
+                {isEN
+                  ? "Success Training is not about motivation or theory — but about clear results in everyday work: better decisions, higher execution speed and stable performance under pressure."
+                  : "Im Erfolgs-Training geht es nicht um Motivation oder Theorie – sondern um klare Ergebnisse im Alltag: bessere Entscheidungen, höhere Umsetzungsgeschwindigkeit und stabile Leistung unter Druck."}
+              </p>
+              <p>
+                {isEN
+                  ? "David J. Woods works with executives and teams that have to perform consistently. Through targeted mental and performance coaching, blockages are released and performance potential is unlocked."
+                  : "David J. Woods arbeitet mit Führungskräften und Teams, die konstant funktionieren müssen. Durch gezieltes Mental- und Performance Coaching werden Blockaden gelöst und Leistungspotenziale freigesetzt."}
+              </p>
+            </div>
+            <div className="mt-3 md:mt-3.5 pt-3 md:pt-3.5 border-t border-[#E8EDF3]">
+              <p className="text-[11.5px] md:text-xs font-semibold text-[#1B3A5C] uppercase tracking-wider mb-1.5 md:mb-2">
+                {isEN ? "Typical results:" : "Typische Ergebnisse:"}
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 md:gap-y-1.5 text-left">
+                {heroHighlights.map((item) => (
+                  <div key={item} className="flex items-start gap-2 text-[12.5px] md:text-[13.5px] leading-snug">
+                    <span className="text-[#2E7D32] mt-0.5">•</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Companies Invest — Banner */}
       <section className="bg-[#F8FAFC]">
         <div className="container-main py-3.5 md:py-5">
-          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
-            <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 tracking-tight text-center">
-              {isEN ? "Typical Challenges in Companies" : "Typische Herausforderungen in Unternehmen"}
+          <div className="max-w-[640px] mx-auto bg-white/85 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-5 shadow-sm">
+            <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2 md:mb-2.5 tracking-tight text-center">
+              {isEN ? "Why companies invest here" : "Warum Unternehmen hier investieren"}
             </h2>
+            <p className="text-[13px] md:text-[13.5px] text-foreground/80 leading-snug md:leading-[1.55] mb-2.5 md:mb-3 text-center">
+              {isEN
+                ? "Many companies don't have a knowledge problem — but an execution problem."
+                : "Viele Unternehmen haben kein Wissensproblem – sondern ein Umsetzungsproblem."}
+            </p>
+            <p className="text-[12.5px] md:text-[13px] text-foreground/75 leading-snug mb-2 md:mb-2.5">
+              {isEN
+                ? "Strategies are in place, goals are clear, but:"
+                : "Strategien sind vorhanden, Ziele sind klar, aber:"}
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-1 md:gap-y-1.5">
-              {challenges.map((item) => (
+              {investReasons.map((item) => (
                 <div key={item} className="flex items-start gap-2 text-[12.5px] md:text-[13.5px] leading-snug">
                   <span className="text-[#2E7D32] mt-0.5">•</span>
                   <span>{item}</span>
                 </div>
               ))}
             </div>
-            <p className="text-[12.5px] md:text-[13.5px] text-muted-foreground mt-2.5 md:mt-3 max-w-2xl mx-auto leading-snug md:leading-[1.5] text-center">
+            <p className="text-[12.5px] md:text-[13.5px] text-muted-foreground mt-3 md:mt-3.5 leading-snug md:leading-[1.5] text-center">
               {isEN
-                ? "These topics are not knowledge problems — but mental and structural blockages."
-                : "Diese Themen sind keine Wissensprobleme – sondern mentale und strukturelle Blockaden."}
+                ? "This is exactly where the success training begins."
+                : "Genau hier setzt das Erfolgs-Training an."}
             </p>
           </div>
         </div>
