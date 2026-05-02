@@ -332,31 +332,33 @@ export const weightData: ServicePageData = {
   ],
   sectionsCH: [
     {
-      h2: "Abnehmen geht auch ohne spezielle Diät",
+      h2: "Abnehmen ohne Diät – nachhaltig statt kurzfristiger Verzicht",
       paragraphs: [
-        "Die Ergebnisse beim Abnehmen können nachhaltig sein – ohne den typischen Jo-Jo-Effekt. Durch die Arbeit mit dem Unterbewusstsein werden die Ursachen für ungesundes Essverhalten direkt an der Wurzel behandelt.",
-        "Statt sich mit strengen Diätplänen zu quälen, lernt Ihr Unterbewusstsein, gesündere Entscheidungen ganz natürlich zu treffen. Das Sättigungsgefühl wird besser wahrgenommen, emotionales Essen nimmt ab, und der Wunsch nach übermässigem Essen lässt spürbar nach."
+        "Nachhaltiges Abnehmen entsteht nicht durch strenge Diäten, sondern durch eine Veränderung der inneren Muster. Klassische Diäten setzen am Verhalten an – Hypnose geht einen Schritt weiter und arbeitet direkt an den Ursachen.",
+        "Durch die gezielte Arbeit mit dem Unterbewusstsein werden unbewusste Essmuster, emotionale Auslöser und automatische Reaktionen verändert. So entsteht ein natürliches Essverhalten, das langfristig stabil bleibt – ohne Jo-Jo-Effekt."
       ]
     },
     {
-      h2: "So funktioniert effektives Abnehmen mit Hypnose",
+      h2: "So funktioniert Abnehmen mit Hypnose auf tiefer Ebene",
       paragraphs: [
-        "In der Hypnose-Sitzung arbeiten wir gezielt an den unterbewussten Mustern, die Ihr Essverhalten steuern. Dabei werden emotionale Auslöser identifiziert und durch gesündere Reaktionsmuster ersetzt.",
-        "Die Hypnose unterstützt Sie dabei, ein neues, gesundes Verhältnis zum Essen zu entwickeln – ohne Verzicht, ohne Kampf, und mit dauerhaftem Erfolg."
+        "In der Hypnose-Sitzung arbeiten wir gezielt an den unbewussten Mustern, die Ihr Essverhalten steuern. Dazu gehören unter anderem emotionales Essen, Heißhunger, Gewohnheiten und automatische Reaktionen auf Stress oder bestimmte Situationen.",
+        "Diese inneren Verknüpfungen werden bewusst gemacht und aufgelöst. Gleichzeitig werden neue, gesündere Reaktionsmuster im Unterbewusstsein verankert. Dadurch fällt es deutlich leichter, weniger zu essen, bewusster zu wählen und langfristig Gewicht zu reduzieren – ohne ständigen Kampf oder Verzicht."
       ]
     }
   ],
   sectionsDE: [
     {
-      h2: "Abnehmen geht auch ohne spezielle Diät",
+      h2: "Abnehmen ohne Diät – nachhaltig statt kurzfristiger Verzicht",
       paragraphs: [
-        "Die Ergebnisse beim Abnehmen können nachhaltig sein – ohne den typischen Jo-Jo-Effekt. Durch die Arbeit mit dem Unterbewusstsein werden die Ursachen für ungesundes Essverhalten direkt an der Wurzel behandelt."
+        "Nachhaltiges Abnehmen entsteht nicht durch strenge Diäten, sondern durch eine Veränderung der inneren Muster. Klassische Diäten setzen am Verhalten an – Hypnose geht einen Schritt weiter und arbeitet direkt an den Ursachen.",
+        "Durch die gezielte Arbeit mit dem Unterbewusstsein werden unbewusste Essmuster, emotionale Auslöser und automatische Reaktionen verändert. So entsteht ein natürliches Essverhalten, das langfristig stabil bleibt – ohne Jo-Jo-Effekt."
       ]
     },
     {
-      h2: "So funktioniert effektives Abnehmen mit Hypnose",
+      h2: "So funktioniert Abnehmen mit Hypnose auf tiefer Ebene",
       paragraphs: [
-        "In der Hypnose-Sitzung arbeiten wir gezielt an den unterbewussten Mustern, die Ihr Essverhalten steuern. Dabei werden emotionale Auslöser identifiziert und durch gesündere Reaktionsmuster ersetzt."
+        "In der Hypnose-Sitzung arbeiten wir gezielt an den unbewussten Mustern, die Ihr Essverhalten steuern. Dazu gehören unter anderem emotionales Essen, Heißhunger, Gewohnheiten und automatische Reaktionen auf Stress oder bestimmte Situationen.",
+        "Diese inneren Verknüpfungen werden bewusst gemacht und aufgelöst. Gleichzeitig werden neue, gesündere Reaktionsmuster im Unterbewusstsein verankert. Dadurch fällt es deutlich leichter, weniger zu essen, bewusster zu wählen und langfristig Gewicht zu reduzieren – ohne ständigen Kampf oder Verzicht."
       ]
     }
   ],
