@@ -60,23 +60,7 @@ export default function FirmenCoaching() {
     },
   ];
 
-  const challenges = [
-    isEN
-      ? "Top performers operate under constant pressure and lose focus"
-      : "Leistungsträger arbeiten unter konstantem Druck und verlieren Fokus",
-    isEN
-      ? "Executives make decisions hesitantly or too late"
-      : "Führungskräfte treffen Entscheidungen unsicher oder zu spät",
-    isEN
-      ? "Teams perform below their potential despite high competence"
-      : "Teams arbeiten unter ihren Möglichkeiten trotz hoher Kompetenz",
-    isEN
-      ? "Stress, overload and internal friction slow down results"
-      : "Stress, Überlastung und interne Reibung bremsen die Ergebnisse",
-    isEN
-      ? "Goals are set, but not consistently achieved"
-      : "Ziele werden gesetzt, aber nicht konsequent erreicht",
-  ];
+
 
   const heroHighlights = [
     isEN ? "Clearer decisions" : "Klarere Entscheidungen",
