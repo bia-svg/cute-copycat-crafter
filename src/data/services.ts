@@ -447,20 +447,23 @@ export const stressData: ServicePageData = {
     "Regain mental clarity, calm and new energy",
     "Strengthen resilience, focus and quality of life long term"
   ],
+  heroAsideCH: "Bleibt dieser Zustand bestehen, kann sich daraus ein Burnout entwickeln. Die Ursachen liegen häufig in tief verankerten Stressmustern und unbewussten Reaktionen.\n\nGenau hier setzt Hypnose an: Diese Muster werden gezielt auf unterbewusster Ebene verändert, sodass wieder mehr Ruhe, Stabilität und Energie entstehen kann.",
+  heroAsideDE: "Bleibt dieser Zustand bestehen, kann sich daraus ein Burnout entwickeln. Die Ursachen liegen häufig in tief verankerten Stressmustern und unbewussten Reaktionen.\n\nGenau hier setzt Hypnose an: Diese Muster werden gezielt auf unterbewusster Ebene verändert, sodass wieder mehr Ruhe, Stabilität und Energie entstehen kann.",
+  heroAsideEN: "If this state continues, burnout can develop. The causes often lie in deeply anchored stress patterns and unconscious reactions.\n\nThis is exactly where hypnosis comes in: these patterns are specifically changed on a subconscious level, so that calm, stability and energy can return.",
   introCH: [
-    "Viele Menschen stehen dauerhaft unter Stress – im Beruf, im Alltag oder durch persönliche Belastungen. Häufig entsteht eine innere Anspannung, die sich nicht mehr einfach durch Erholung ausgleichen lässt. Erste Warnsignale wie Erschöpfung, Schlafprobleme oder Reizbarkeit werden oft lange ignoriert.\n\nBleibt dieser Zustand bestehen, kann sich daraus ein Burnout entwickeln. Die Ursachen liegen dabei häufig in tief verankerten Stressmustern und unbewussten Reaktionen. Genau hier setzt Hypnose an: Diese Muster werden gezielt auf tiefer Ebene verändert, sodass wieder mehr Ruhe, Stabilität und Energie entstehen kann.",
-    "Stress ist häufig mehr als nur äußere Belastung. Für viele Menschen ist er eng verbunden mit innerem Druck, Perfektionismus oder dem Gefühl, ständig funktionieren zu müssen.",
-    "Mit Hypnose können diese inneren Stressmuster gezielt auf unterbewusster Ebene verändert werden. Ziel ist nicht nur Entlastung, sondern ein nachhaltiger Zustand von Ruhe, Klarheit und neuer Energie im Alltag."
+    "Viele Menschen stehen dauerhaft unter Stress – im Beruf, im Alltag oder durch persönliche Belastungen. Häufig entsteht eine innere Anspannung, die sich nicht mehr einfach durch Erholung ausgleichen lässt.\n\nErste Warnsignale wie Erschöpfung, Schlafprobleme oder Reizbarkeit werden oft lange ignoriert.",
+    "Stress ist oft mehr als äußere Belastung. Für viele Menschen ist er eng verbunden mit innerem Druck, Perfektionismus oder dem Gefühl, ständig funktionieren zu müssen.",
+    "Hypnose hilft, diese inneren Stressmuster gezielt zu verändern. Ziel ist ein stabiler Zustand von Ruhe, Klarheit und neuer Energie im Alltag."
   ],
   introDE: [
-    "Viele Menschen stehen dauerhaft unter Stress – im Beruf, im Alltag oder durch persönliche Belastungen. Häufig entsteht eine innere Anspannung, die sich nicht mehr einfach durch Erholung ausgleichen lässt. Erste Warnsignale wie Erschöpfung, Schlafprobleme oder Reizbarkeit werden oft lange ignoriert.\n\nBleibt dieser Zustand bestehen, kann sich daraus ein Burnout entwickeln. Die Ursachen liegen dabei häufig in tief verankerten Stressmustern und unbewussten Reaktionen. Genau hier setzt Hypnose an: Diese Muster werden gezielt auf tiefer Ebene verändert, sodass wieder mehr Ruhe, Stabilität und Energie entstehen kann.",
-    "Stress ist häufig mehr als nur äußere Belastung. Für viele Menschen ist er eng verbunden mit innerem Druck, Perfektionismus oder dem Gefühl, ständig funktionieren zu müssen.",
-    "Mit Hypnose können diese inneren Stressmuster gezielt auf unterbewusster Ebene verändert werden. Ziel ist nicht nur Entlastung, sondern ein nachhaltiger Zustand von Ruhe, Klarheit und neuer Energie im Alltag."
+    "Viele Menschen stehen dauerhaft unter Stress – im Beruf, im Alltag oder durch persönliche Belastungen. Häufig entsteht eine innere Anspannung, die sich nicht mehr einfach durch Erholung ausgleichen lässt.\n\nErste Warnsignale wie Erschöpfung, Schlafprobleme oder Reizbarkeit werden oft lange ignoriert.",
+    "Stress ist oft mehr als äußere Belastung. Für viele Menschen ist er eng verbunden mit innerem Druck, Perfektionismus oder dem Gefühl, ständig funktionieren zu müssen.",
+    "Hypnose hilft, diese inneren Stressmuster gezielt zu verändern. Ziel ist ein stabiler Zustand von Ruhe, Klarheit und neuer Energie im Alltag."
   ],
   introEN: [
-    "Many people are under constant stress – at work, in everyday life or through personal challenges. This often leads to an inner tension that can no longer simply be balanced by rest. Early warning signs such as exhaustion, sleep problems or irritability are often ignored for a long time.\n\nIf this state continues, burnout can develop. The causes often lie in deeply anchored stress patterns and unconscious reactions. This is exactly where hypnosis comes in: these patterns are specifically changed on a deeper level, so that calm, stability and energy can return.",
+    "Many people are under constant stress – at work, in everyday life or through personal challenges. This often leads to an inner tension that can no longer simply be balanced by rest.\n\nEarly warning signs such as exhaustion, sleep problems or irritability are often ignored for a long time.",
     "Stress is often more than just external strain. For many people it is closely connected with inner pressure, perfectionism or the feeling of constantly having to function.",
-    "With hypnosis, these inner stress patterns can be specifically changed on a subconscious level. The goal is not just relief, but a lasting state of calm, clarity and new energy in everyday life."
+    "Hypnosis helps to specifically change these inner stress patterns. The goal is a stable state of calm, clarity and new energy in everyday life."
   ],
   sectionsCH: [
     {
