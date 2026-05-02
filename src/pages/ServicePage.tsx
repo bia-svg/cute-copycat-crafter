@@ -272,7 +272,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-6 md:py-8 lg:py-10">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
               <div>
                 <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
                   {eyebrow ?? "Lic.Psych. David J. Woods"}
@@ -289,20 +289,22 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                   ))}
                 </div>
                 {/* Compact intro: only first paragraph in hero */}
-                <p className="text-sm md:text-base text-foreground leading-relaxed mb-4">
+                <p className="text-sm md:text-base text-foreground leading-relaxed">
                   {intro[0]}
                 </p>
-                <Link to={getPath("contact", language, country)} onClick={handleCtaClick}>
+              </div>
+              <div className="flex flex-col gap-4">
+                <div className="border border-[#E8EDF3] rounded-2xl overflow-hidden">
+                  <img src={data.image} alt={h1} className="w-full h-auto" loading="eager" />
+                  <div className="bg-[#E8F5E9] border-t border-[#81C784] p-2.5">
+                    <p className="text-xs font-semibold text-[#2E7D32]">EMR Krankenkasse Konform · ZSR Nr. P609264</p>
+                  </div>
+                </div>
+                <Link to={getPath("contact", language, country)} onClick={handleCtaClick} className="self-start">
                   <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-6 py-2.5">
                     {ctaLabel ?? t("nav.cta")}
                   </Button>
                 </Link>
-              </div>
-              <div className="border border-[#E8EDF3] rounded-2xl overflow-hidden">
-                <img src={data.image} alt={h1} className="w-full h-auto" loading="eager" />
-                <div className="bg-[#E8F5E9] border-t border-[#81C784] p-2.5">
-                  <p className="text-xs font-semibold text-[#2E7D32]">EMR Krankenkasse Konform · ZSR Nr. P609264</p>
-                </div>
               </div>
             </div>
             {/* Remaining intro paragraphs below hero grid for full content preservation */}
