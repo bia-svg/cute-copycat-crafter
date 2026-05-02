@@ -307,7 +307,7 @@ export const weightData: ServicePageData = {
   metaDescEN: "Lose weight with hypnosis in Zurich & Augsburg — sustainably change eating habits, no restrictions, no yo-yo. Lic. Psych. David J. Woods, 35+ years, ★ 5.0 (266 reviews). Free discovery call.",
   h1CH: "Abnehmen mit Hypnose – ohne Diät & Jo-Jo-Effekt",
   h1DE: "Abnehmen mit Hypnose – ohne Diät & Jo-Jo-Effekt",
-  h1EN: "Weight Loss with Hypnotherapy – Live Lighter, Permanently",
+  h1EN: "Weight Loss with Hypnotherapy – No Diet & No Yo-Yo Effect",
   benefitsCH: [
     "Essverhalten nachhaltig verändern statt kurzfristiger Diäten",
     "Heißhunger, emotionales Essen und innere Auslöser gezielt lösen",
