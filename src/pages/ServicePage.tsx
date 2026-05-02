@@ -450,6 +450,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         const allFaq = [...faq, ...consultItems];
         return (
           <FAQSection
+            sectionClassName="bg-[#DDE1E4] border-y border-border"
             title={isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
             items={allFaq}
           />
