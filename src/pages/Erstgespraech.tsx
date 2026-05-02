@@ -27,7 +27,7 @@ export default function Erstgespraech() {
         <div className="container-main">
           <div className="max-w-2xl mx-auto">
             <h1 className="text-2xl sm:text-3xl font-light text-primary mb-1 text-center tracking-tight">
-              {isEN ? "Request a free consultation" : "Unverbindlich beraten lassen"}
+              {isEN ? "Request a free consultation" : "Jetzt Kontakt aufnehmen"}
             </h1>
             <p className="text-sm text-[#2E7D32] mb-4 text-center font-normal">
               {isEN
