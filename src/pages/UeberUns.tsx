@@ -421,26 +421,9 @@ export default function UeberUns() {
         </div>
       </section>
 
-      <FAQSection
-        sectionClassName="bg-[#F8FAFC] border-y border-[#E8EDF3]"
-        title={isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
-        items={isEN ? [
-          { q: "What qualifications does David J. Woods have?", a: "David J. Woods holds a Lic.Psych. (Licensed Psychologist) degree and is an NGH International Trainer — one of the highest certifications awarded by the National Guild of Hypnotists (USA). He is EMR-recognized in Switzerland (ZSR P609264) and has developed the Aktiv-Hypnose© method." },
-          { q: "How much experience does David J. Woods have?", a: "With over 35+ years of clinical experience and more than 30,000 documented sessions, David J. Woods is one of the most experienced hypnotherapists in the DACH region (Germany, Austria, Switzerland)." },
-          { q: "Is hypnotherapy scientifically recognized?", a: "Yes. The World Health Organization (WHO) recognizes hypnotherapy as a valid therapeutic approach. In Germany, the Scientific Advisory Council on Psychotherapy confirmed the scientific evidence for clinical hypnosis in 2006. Meta-analyses show that hypnosis enhances CBT outcomes by an average of 70% (Kirsch et al., 1995)." },
-          { q: "What is the Aktiv-Hypnose© method?", a: "Aktiv-Hypnose© is a proprietary method developed by David J. Woods that combines classical hypnosis with modern psychological techniques, NLP, and coaching principles. It focuses on active client participation rather than passive suggestion." },
-          { q: "Does David J. Woods also offer training for therapists?", a: "Yes. David J. Woods offers 6-day intensive training seminars where participants learn his proprietary Aktiv-Hypnose© method and receive an Aktiv-Hypnose© Therapist Diploma upon completion. David is also an NGH International Trainer, one of the highest certifications from the National Guild of Hypnotists (USA)." },
-        ] : [
-          { q: "Welche Qualifikationen hat David J. Woods?", a: "David J. Woods hat einen Lic.Psych.-Abschluss (lizenzierter Psychologe) und ist NGH International Trainer — eine der höchsten Zertifizierungen der National Guild of Hypnotists (USA). Er ist EMR-anerkannt in der Schweiz (ZSR P609264) und hat die Aktiv-Hypnose© Methode entwickelt." },
-          { q: "Wie viel Erfahrung hat David J. Woods?", a: "Mit über 35+ Jahren klinischer Erfahrung und mehr als 30.000 dokumentierten Sitzungen gehört David J. Woods zu den erfahrensten Hypnotherapeuten im DACH-Raum (Deutschland, Österreich, Schweiz)." },
-          { q: "Ist Hypnotherapie wissenschaftlich anerkannt?", a: "Ja. Die Weltgesundheitsorganisation (WHO) erkennt Hypnotherapie als validen therapeutischen Ansatz an. In Deutschland bestätigte der Wissenschaftliche Beirat Psychotherapie 2006 die wissenschaftliche Evidenz für klinische Hypnose. Meta-Analysen zeigen, dass Hypnose KVT-Ergebnisse um durchschnittlich 70% verbessert (Kirsch et al., 1995)." },
-          { q: "Was ist die Aktiv-Hypnose© Methode?", a: "Aktiv-Hypnose© ist eine von David J. Woods entwickelte Methode, die klassische Hypnose mit modernen psychologischen Techniken, NLP und Coaching-Prinzipien kombiniert. Der Fokus liegt auf aktiver Klientenbeteiligung statt passiver Suggestion." },
-          { q: "Bietet David J. Woods auch Ausbildungen an?", a: "Ja. David J. Woods bietet 6-tägige Intensiv-Ausbildungsseminare an, in denen die Teilnehmer seine eigene Aktiv-Hypnose© Methode erlernen und nach Abschluss ein Aktiv-Hypnose© Therapeuten-Diplom erhalten. David ist zudem NGH International Trainer — eine der höchsten Zertifizierungen der National Guild of Hypnotists (USA)." },
-        ]}
-      />
 
       {/* CTA — Next Step */}
-      <section className="bg-[#E8EDF3] py-8 md:py-12">
+      <section className="bg-[#E8EDF3] py-6 md:py-9">
         <div className="container-main">
           <div className="relative max-w-2xl mx-auto bg-white border border-[#E8EDF3] rounded-2xl px-6 py-8 md:px-10 md:py-10 text-center shadow-[0_4px_20px_rgba(27,58,92,0.06)]">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#1B3A5C] text-white text-xs font-semibold px-4 py-1 rounded-full tracking-wide uppercase">
