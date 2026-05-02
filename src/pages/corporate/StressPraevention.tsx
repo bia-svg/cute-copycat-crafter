@@ -10,13 +10,51 @@ export default function StressPraevention() {
   const { language, country } = useLanguage();
   const isEN = language === "en";
 
+  const coreElements = isEN
+    ? [
+        { title: "Mental Clarity", desc: "Structure thoughts and reduce overwhelm." },
+        { title: "Handling Pressure", desc: "Stay composed — even under high load." },
+        { title: "Emotional Stability", desc: "Respond calmly instead of reacting impulsively." },
+        { title: "Focus & Prioritization", desc: "Less distraction — more execution." },
+        { title: "Boundaries & Energy", desc: "Set clear limits and steer energy deliberately." },
+        { title: "Sustainable Routines", desc: "Build structures that relieve long-term." },
+      ]
+    : [
+        { title: "Mentale Klarheit", desc: "Gedanken strukturieren und Überforderung reduzieren." },
+        { title: "Umgang mit Druck", desc: "Souverän bleiben – auch unter hoher Belastung." },
+        { title: "Emotionale Stabilität", desc: "Gelassen reagieren statt impulsiv handeln." },
+        { title: "Fokus & Priorisierung", desc: "Weniger Ablenkung – mehr Umsetzung." },
+        { title: "Abgrenzung & Energie", desc: "Klare Grenzen setzen und Energie gezielt steuern." },
+        { title: "Nachhaltige Routinen", desc: "Strukturen schaffen, die dauerhaft entlasten." },
+      ];
+
   const outerCauses = isEN
-    ? ["High workload", "Stress & pressure", "Lack of resources (personnel, finances)", "Missing or little positive feedback", "Constant confrontation with problems", "No clear boundary between work and private life", "Unclear or too-high expectations", "Poor work organization & structures", "Bad teamwork, many conflicts", "Overwhelm from overly complex tasks"]
-    : ["Hohe Arbeitsbelastung", "Stress & Druck", "Mangelnde Ressourcen (Personal, Finanzmittel)", "Fehlendes oder wenig positives Feedback", "Ständige Konfrontation mit Problemen", "Keine klare Abgrenzung zwischen Beruf und Privatleben", "Unklare oder zu hohe Erwartungen und Zielvorgaben", "Mangelhafte Arbeitsorganisation, Strukturen und Rahmenbedingungen", "Schlechte Teamarbeit, viele Konflikte", "Überforderung durch zu komplexe oder sich ständig ändernde Aufgaben"];
+    ? ["High workload and time pressure", "Unclear structures and processes", "Lack of prioritization", "Constant availability", "Conflicts within the team", "Lack of resources"]
+    : ["Hohe Arbeitsbelastung und Zeitdruck", "Unklare Strukturen und Prozesse", "Fehlende Priorisierung", "Permanente Erreichbarkeit", "Konflikte im Team", "Mangel an Ressourcen"];
 
   const innerCauses = isEN
-    ? ["High ideals / ambition", "Perfectionism", "Inability to say no", "Fear of rejection", "Fear of not meeting others' expectations", "Fear of failure", "Fear of criticism", "Desire to be the best", "Desire for recognition & appreciation", "Desire for material security"]
-    : ["Hohe Ideale / Ehrgeiz", "Perfektionismus", "Unfähigkeit, \"Nein\" zu sagen", "Angst vor Ablehnung", "Angst, den Erwartungen anderer nicht zu entsprechen", "Angst vor Versagen", "Angst vor Kritik", "Wunsch, gut, der/die Beste zu sein", "Wunsch nach Anerkennung, Wertschätzung", "Wunsch nach materieller Sicherheit"];
+    ? ["Perfectionism and high standards", "Difficulty setting boundaries", "Fear of mistakes or criticism", "Inner performance pressure", "Lack of mental recovery", "Excessive self-demand"]
+    : ["Perfektionismus und hoher Anspruch", "Schwierigkeit, Grenzen zu setzen", "Angst vor Fehlern oder Kritik", "Innerer Leistungsdruck", "Fehlende mentale Erholung", "Überhöhte Selbstanforderung"];
+
+  const results = isEN
+    ? [
+        "Significantly fewer stress-related absences",
+        "More stable performance under pressure",
+        "Higher day-to-day productivity",
+        "Fewer conflicts within the team",
+        "Clearer decisions at leadership level",
+        "More focus and execution power",
+        "Sustainable relief for employees",
+      ]
+    : [
+        "Deutlich weniger stressbedingte Ausfälle",
+        "Stabilere Leistung unter Druck",
+        "Höhere Produktivität im Alltag",
+        "Weniger Konflikte im Team",
+        "Klarere Entscheidungen auf Führungsebene",
+        "Mehr Fokus und Umsetzungskraft",
+        "Nachhaltige Entlastung der Mitarbeiter",
+      ];
 
   const phases = [
     { phase: "1", title: isEN ? "Urge to prove oneself" : "Zwang, sich zu beweisen", quote: isEN ? "I want to achieve something!" : "Ich will etwas schaffen!" },
@@ -35,12 +73,11 @@ export default function StressPraevention() {
 
   return (
     <>
-      {/* SEO: title/desc + BreadcrumbList JSON-LD */}
       <SEO
-        titleDE="Stress-Prävention & Burnout-Vorbeugung — David J. Woods"
-        titleEN="Stress Prevention & Burnout Prevention — David J. Woods"
-        descriptionDE="Stress-Prävention und Burnout-Vorbeugung für Unternehmen. Erfolgs-Training und Resilienz Coaching mit David J. Woods."
-        descriptionEN="Stress prevention and burnout prevention for companies. Success training and resilience coaching with David J. Woods."
+        titleDE="Stress-Prävention für Unternehmen — David J. Woods"
+        titleEN="Stress Prevention for Companies — David J. Woods"
+        descriptionDE="Stress-Prävention und Burnout-Vorbeugung für Unternehmen. Nachhaltige Reduktion von Stress, stabile Leistung und klare Ergebnisse im Alltag."
+        descriptionEN="Stress prevention and burnout prevention for companies. Sustainable stress reduction, stable performance and clear day-to-day results."
         pageKey="corporateStress"
         breadcrumbs={[
           { name: isEN ? "Home" : "Startseite", path: getPath("home", language, country) },
@@ -51,35 +88,61 @@ export default function StressPraevention() {
 
       {/* Hero */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-6 md:py-8 lg:py-10">
+        <div className="container-main py-6 md:py-8">
           <Link to={getPath("corporate", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-3">
             <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
           </Link>
-          <div className="bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm grid md:grid-cols-[1fr_280px] lg:grid-cols-[1fr_340px] gap-5 md:gap-7 md:items-stretch">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-6 shadow-sm grid md:grid-cols-[1.35fr_1fr] gap-4 md:gap-6 md:items-center">
             <div>
-            <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
-            <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] leading-tight mb-4 tracking-tight">
-              {isEN ? "Stress Prevention by David J. Woods" : "Stress-Prävention by David J. Woods"}
-            </h1>
-
-            <div className="prose prose-sm max-w-none text-foreground/85 space-y-3">
-              <p>
+              <p className="text-xs font-medium text-[#2E7D32] uppercase tracking-wider mb-2">Business Coaching</p>
+              <h1 className="text-2xl md:text-3xl font-light text-[#1B3A5C] leading-tight mb-3 tracking-tight">
+                {isEN ? "Stress Prevention for Companies" : "Stress-Prävention für Unternehmen"}
+              </h1>
+              <p className="text-sm md:text-base text-[#1B3A5C]/80 mb-3 leading-snug">
                 {isEN
-                  ? "Stress prevention is one of the central topics for long-term health and performance – both in personal and professional contexts. For over 20 years, David J. Woods has been supporting people from various fields – from business to professional sports to the music and creative industries – with one goal: sustainable mental strength, inner stability and healthy performance."
-                  : "Stressprävention zählt heute zu den zentralen Themen für langfristige Gesundheit und Leistungsfähigkeit – sowohl im persönlichen als auch im beruflichen Kontext. Seit über 20 Jahren begleitet David J. Woods Menschen aus unterschiedlichsten Bereichen – von der Wirtschaft über den Profisport bis hin zur Musik- und Kreativbranche – mit einem Ziel: nachhaltige mentale Stärke, innere Stabilität und gesunde Leistungsbereitschaft."}
+                  ? "Reduce stress, stabilize your team's performance and prevent burnout — sustainably and measurably."
+                  : "Reduzieren Sie Stress, stabilisieren Sie die Leistungsfähigkeit Ihres Teams und verhindern Sie Burnout – nachhaltig und messbar."}
               </p>
-              <p>
-                {isEN
-                  ? "Unlike conventional approaches, David J. Woods doesn't focus on short-term stress management, but on forward-looking, profound change. In his success trainings and resilience coachings, stress is not treated in isolation – it is prevented where it originates: in thinking, feeling and acting."
-                  : "Anders als klassische Ansätze setzt David J. Woods nicht auf kurzfristige Stressbewältigung, sondern auf vorausschauende, tiefgreifende Veränderung. In seinen Erfolgstrainings und Resilienz-Coachings wird Stress nicht isoliert betrachtet – er wird dort verhindert, wo er entsteht: im Denken, Fühlen und Handeln."}
-              </p>
-            </div>
+              <div className="text-sm text-foreground/85 space-y-2 leading-snug">
+                <p>
+                  {isEN
+                    ? "Stress is one of the biggest performance blockers in companies. High pressure, constant availability and rising expectations push employees and leaders to their limits over time."
+                    : "Stress ist einer der größten Leistungsblocker in Unternehmen. Hoher Druck, permanente Erreichbarkeit und steigende Erwartungen führen dazu, dass Mitarbeiter und Führungskräfte langfristig an ihre Grenzen kommen."}
+                </p>
+                <p>
+                  {isEN
+                    ? "The problem is not the load itself — it is how we deal with it."
+                    : "Das Problem ist nicht die Belastung selbst – sondern der Umgang damit."}
+                </p>
+                <p>
+                  {isEN
+                    ? "In David J. Woods' stress prevention program, the decisive thinking and behavior patterns that lead to overload, inner pressure and performance drops are changed."
+                    : "Im Stress-Präventions-Programm von David J. Woods werden die entscheidenden Denk- und Verhaltensmuster verändert, die zu Überlastung, innerem Druck und Leistungsabfall führen."}
+                </p>
+                <p>
+                  {isEN
+                    ? "The focus is on clear results in everyday work: more calm, better decisions and stable performance even in demanding situations."
+                    : "Der Fokus liegt auf klaren Ergebnissen im Alltag: mehr Ruhe, bessere Entscheidungen und stabile Leistung auch in anspruchsvollen Situationen."}
+                </p>
+                <p>
+                  {isEN
+                    ? "Delivered on-site at the company or in intensive one-on-one coachings — in Germany, Austria and Switzerland."
+                    : "Umsetzung direkt im Unternehmen oder in intensiven Einzelcoachings – in Deutschland, Österreich und der Schweiz."}
+                </p>
+              </div>
+              <div className="mt-4">
+                <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
+                  <Button className="bg-[#1B3A5C] hover:bg-[#16304D] text-white font-medium px-6 py-2.5 text-sm rounded-xl">
+                    {isEN ? "Request Consultation" : "Beratung anfragen"}
+                  </Button>
+                </Link>
+              </div>
             </div>
             <div className="md:order-last">
               <img
                 src={corporateStressImg}
                 alt={isEN ? "Stress Prevention" : "Stress-Prävention"}
-                className="w-full h-48 md:h-full md:min-h-[260px] object-cover rounded-2xl border border-[#E2E8EE]"
+                className="w-full h-44 md:h-full md:max-h-[320px] object-cover rounded-2xl border border-[#E2E8EE]"
                 loading="eager"
               />
             </div>
@@ -87,32 +150,62 @@ export default function StressPraevention() {
         </div>
       </section>
 
-      {/* Causes — Banner */}
+      {/* 6 Core Elements */}
+      <section className="bg-[#F1F4F7]">
+        <div className="container-main py-6 md:py-8">
+          <div className="max-w-5xl mx-auto bg-[#E8EDF3] border border-[#D8E0EA] rounded-2xl shadow-[0_10px_40px_-25px_rgba(27,58,92,0.18)] overflow-hidden">
+            <div className="px-5 md:px-8 pt-5 md:pt-6 pb-3 md:pb-4 text-center border-b border-[#D8E0EA]">
+              <p className="text-[10px] font-medium text-[#2E7D32] uppercase tracking-[0.2em] mb-1.5">Framework</p>
+              <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight">
+                {isEN ? "The 6 Core Elements of Effective Stress Prevention" : "Die 6 Kernelemente effektiver Stress-Prävention"}
+              </h2>
+            </div>
+            <div className="px-5 md:px-8 py-5 md:py-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+                {coreElements.map((el, i) => (
+                  <div key={i} className="bg-white border border-[#E2E8EE] rounded-2xl p-4 md:p-5 shadow-[0_1px_2px_rgba(27,58,92,0.04)] hover:shadow-[0_8px_24px_-12px_rgba(27,58,92,0.18)] transition-shadow">
+                    <span className="inline-flex w-8 h-8 rounded-full bg-[#1B3A5C] text-white text-sm font-medium items-center justify-center tabular-nums mb-3">
+                      {i + 1}
+                    </span>
+                    <h3 className="text-[15px] font-medium text-[#1B3A5C] tracking-tight mb-1">{el.title}</h3>
+                    <p className="text-[13px] text-muted-foreground leading-snug">{el.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Causes — 2 columns, business focused */}
       <section className="bg-[#F8FAFC]">
-        <div className="container-main py-6 md:py-9">
-          <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="container-main py-6 md:py-8">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-8 shadow-sm">
+            <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] mb-5 md:mb-6 tracking-tight text-center">
+              {isEN ? "Why Stress Arises in Companies" : "Warum Stress im Unternehmen entsteht"}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
               <div>
-                <h2 className="text-lg font-light text-[#1B3A5C] mb-4 tracking-tight">
-                  {isEN ? "External Causes of Burnout:" : "Äußere Umstände als Ursache für Burnout:"}
-                </h2>
-                <ul className="space-y-2">
+                <h3 className="text-base md:text-lg font-medium text-[#1B3A5C] mb-3 tracking-tight">
+                  {isEN ? "External Factors" : "Äußere Faktoren"}
+                </h3>
+                <ul className="space-y-2.5">
                   {outerCauses.map((c) => (
-                    <li key={c} className="flex items-start gap-2 text-sm">
-                      <span className="text-[#1B3A5C] mt-1">•</span>
+                    <li key={c} className="flex items-start gap-2.5 text-[15px] text-foreground/85">
+                      <span className="text-[#2E7D32] mt-1">•</span>
                       <span>{c}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h2 className="text-lg font-light text-[#1B3A5C] mb-4 tracking-tight">
-                  {isEN ? "Internal Causes of Burnout:" : "Innere Umstände als Ursache für Burnout:"}
-                </h2>
-                <ul className="space-y-2">
+                <h3 className="text-base md:text-lg font-medium text-[#1B3A5C] mb-3 tracking-tight">
+                  {isEN ? "Internal Factors" : "Innere Faktoren"}
+                </h3>
+                <ul className="space-y-2.5">
                   {innerCauses.map((c) => (
-                    <li key={c} className="flex items-start gap-2 text-sm">
-                      <span className="text-[#1B3A5C] mt-1">•</span>
+                    <li key={c} className="flex items-start gap-2.5 text-[15px] text-foreground/85">
+                      <span className="text-[#2E7D32] mt-1">•</span>
                       <span>{c}</span>
                     </li>
                   ))}
@@ -123,21 +216,33 @@ export default function StressPraevention() {
         </div>
       </section>
 
-      {/* Phases — Banner */}
+      {/* Burnout Phases */}
       <section className="bg-[#E8EDF3]">
-        <div className="container-main py-6 md:py-9">
+        <div className="container-main py-6 md:py-8">
           <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
-              {isEN ? "The 12 Phases of Burnout Development" : "Die 12 Phasen der Burnout-Entwicklung"}
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div className="text-center mb-5 md:mb-6">
+              <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] tracking-tight mb-2">
+                {isEN ? "The 12 Phases of Burnout Development" : "Die 12 Phasen der Burnout-Entwicklung"}
+              </h2>
+              <p className="text-sm md:text-[15px] text-muted-foreground max-w-2xl mx-auto leading-snug">
+                {isEN
+                  ? "Burnout doesn't happen suddenly — it develops step by step. Recognizing it early is decisive."
+                  : "Burnout entsteht nicht plötzlich – sondern entwickelt sich schrittweise. Frühzeitiges Erkennen ist entscheidend."}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
               {phases.map((p) => (
-                <div key={p.phase} className="bg-white border border-[#E8EDF3] rounded-2xl p-3 shadow-[0_1px_2px_rgba(27,58,92,0.04)]">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center font-bold">{p.phase}</span>
-                    <h3 className="font-light text-xs text-[#1B3A5C] tracking-tight">{p.title}</h3>
+                <div
+                  key={p.phase}
+                  className="bg-white border border-[#E2E8EE] rounded-2xl p-3.5 shadow-[0_1px_2px_rgba(27,58,92,0.04)] hover:shadow-[0_8px_24px_-12px_rgba(27,58,92,0.18)] transition-shadow"
+                >
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="w-6 h-6 rounded-full bg-[#1B3A5C] text-white text-xs flex items-center justify-center font-medium tabular-nums">
+                      {p.phase}
+                    </span>
+                    <h3 className="font-medium text-[13px] text-[#1B3A5C] tracking-tight leading-tight">{p.title}</h3>
                   </div>
-                  <p className="text-xs text-muted-foreground italic">&bdquo;{p.quote}&ldquo;</p>
+                  <p className="text-[12px] text-muted-foreground italic leading-snug">&bdquo;{p.quote}&ldquo;</p>
                 </div>
               ))}
             </div>
@@ -145,20 +250,42 @@ export default function StressPraevention() {
         </div>
       </section>
 
-      <section className="bg-[#F8FAFC]">
-        <div className="container-main py-8 md:py-10 flex justify-center">
-          <div className="relative bg-white border border-[#1B3A5C]/15 rounded-2xl px-8 py-8 text-center max-w-2xl w-full">
-            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-xs font-medium border border-[#1B3A5C]/25 px-4 py-1 rounded-full whitespace-nowrap">
-              {isEN ? "Next Step" : "N\u00e4chster Schritt"}
-            </span>
-            <h2 className="text-xl font-light text-primary mb-2 mt-2 tracking-tight">
-              {isEN ? "Prevent Burnout \u2014 Get in Touch Now" : "Burnout vorbeugen \u2014 Jetzt Kontakt aufnehmen"}
+      {/* Results for Companies */}
+      <section className="bg-[#F1F4F7]">
+        <div className="container-main py-6 md:py-8">
+          <div className="max-w-4xl mx-auto bg-white border border-[#E2E8EE] rounded-3xl p-5 md:p-8 shadow-sm">
+            <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] tracking-tight text-center mb-5 md:mb-6">
+              {isEN ? "Results Companies Achieve" : "Diese Ergebnisse erzielen Unternehmen"}
             </h2>
-            <p className="text-sm text-muted-foreground mb-4">
-              {isEN ? "Take the next step for your team." : "Gehen Sie den n\u00e4chsten Schritt f\u00fcr Ihr Team."}
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2.5">
+              {results.map((r) => (
+                <li key={r} className="flex items-start gap-2.5 text-[15px] text-foreground/85">
+                  <span className="text-[#2E7D32] mt-1">•</span>
+                  <span>{r}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-[#F8FAFC]">
+        <div className="container-main py-7 md:py-9 flex justify-center">
+          <div className="relative bg-white border border-[#1B3A5C]/15 rounded-2xl px-8 py-7 text-center max-w-2xl w-full">
+            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-xs font-medium border border-[#1B3A5C]/25 px-4 py-1 rounded-full whitespace-nowrap">
+              {isEN ? "Next Step" : "Nächster Schritt"}
+            </span>
+            <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] mb-2 mt-2 tracking-tight">
+              {isEN ? "Reduce Stress. Secure Performance." : "Stress reduzieren. Leistung sichern."}
+            </h2>
+            <p className="text-sm md:text-[15px] text-muted-foreground mb-4 leading-snug">
+              {isEN
+                ? "Strengthen your team sustainably and prevent long-term absences."
+                : "Stärken Sie Ihr Team nachhaltig und verhindern Sie langfristige Ausfälle."}
             </p>
             <Link to={`${getPath("contact", language, country)}?concern=corporate`}>
-              <Button className="bg-[#ECEEF1] hover:bg-[#E2E5E9] text-[#1B3A5C] font-medium px-8 py-3 text-base border border-[#1B3A5C]/25 shadow-none">
+              <Button className="bg-[#1B3A5C] hover:bg-[#16304D] text-white font-medium px-8 py-3 text-base rounded-xl">
                 {isEN ? "Request Consultation" : "Beratung anfragen"}
               </Button>
             </Link>
