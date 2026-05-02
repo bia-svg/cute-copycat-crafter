@@ -432,36 +432,36 @@ export const stressData: ServicePageData = {
   metaDescCH: "Stress, Erschöpfung & Burnout dauerhaft bewältigen — innere Ruhe finden, wieder ruhig schlafen. Hypnose in Zürich mit Lic. Psych. David J. Woods, 35+ Jahre, EMR-anerkannt, ★ 5.0 (266 Bewertungen). Erstgespräch kostenlos.",
   metaDescDE: "Stress, Erschöpfung & Burnout dauerhaft bewältigen — innere Ruhe finden, wieder ruhig schlafen. Hypnose in Augsburg mit Lic. Psych. David J. Woods, 35+ Jahre, ★ 5.0 (266 Google-Bewertungen). Erstgespräch kostenlos.",
   metaDescEN: "Lasting relief from stress, exhaustion & burnout — find inner calm, sleep peacefully again. Hypnotherapy with Lic. Psych. David J. Woods, 35+ years, ★ 5.0 (266 reviews). Free discovery call in Zurich or Augsburg.",
-  h1CH: "Stress reduzieren – Burnout vorbeugen",
-  h1DE: "Stress reduzieren – Burnout vorbeugen",
-  h1EN: "Reduce stress – prevent burnout",
+  h1CH: "Stress reduzieren & Burnout vorbeugen",
+  h1DE: "Stress reduzieren & Burnout vorbeugen",
+  h1EN: "Reduce stress & prevent burnout",
   benefitsCH: [
-    "Dauerstress nachhaltig reduzieren statt nur kurzfristig abschalten",
-    "Innere Anspannung, Überforderung und Erschöpfung gezielt lösen",
-    "Mentale Klarheit, Ruhe und neue Energie zurückgewinnen",
-    "Belastbarkeit, Fokus und Lebensqualität langfristig stärken"
+    "Dauerstress nachhaltig reduzieren",
+    "Innere Anspannung und Erschöpfung gezielt lösen",
+    "Mentale Klarheit und neue Energie gewinnen",
+    "Fokus und Belastbarkeit langfristig stärken"
   ],
   benefitsEN: [
-    "Reduce chronic stress sustainably instead of only switching off briefly",
-    "Release inner tension, overwhelm and exhaustion at the root",
-    "Regain mental clarity, calm and new energy",
-    "Strengthen resilience, focus and quality of life long term"
+    "Reduce chronic stress sustainably",
+    "Release inner tension and exhaustion at the root",
+    "Regain mental clarity and new energy",
+    "Strengthen focus and resilience long term"
   ],
   heroAsideCH: "Bleibt dieser Zustand bestehen, kann sich daraus ein Burnout entwickeln. Die Ursachen liegen häufig in tief verankerten Stressmustern und unbewussten Reaktionen.\n\nGenau hier setzt Hypnose an: Diese Muster werden gezielt auf unterbewusster Ebene verändert, sodass wieder mehr Ruhe, Stabilität und Energie entstehen kann.",
   heroAsideDE: "Bleibt dieser Zustand bestehen, kann sich daraus ein Burnout entwickeln. Die Ursachen liegen häufig in tief verankerten Stressmustern und unbewussten Reaktionen.\n\nGenau hier setzt Hypnose an: Diese Muster werden gezielt auf unterbewusster Ebene verändert, sodass wieder mehr Ruhe, Stabilität und Energie entstehen kann.",
   heroAsideEN: "If this state continues, burnout can develop. The causes often lie in deeply anchored stress patterns and unconscious reactions.\n\nThis is exactly where hypnosis comes in: these patterns are specifically changed on a subconscious level, so that calm, stability and energy can return.",
   introCH: [
-    "Viele Menschen stehen dauerhaft unter Stress – im Beruf, im Alltag oder durch persönliche Belastungen. Häufig entsteht eine innere Anspannung, die sich nicht mehr einfach durch Erholung ausgleichen lässt.\n\nErste Warnsignale wie Erschöpfung, Schlafprobleme oder Reizbarkeit werden oft lange ignoriert.",
+    "Viele Menschen stehen dauerhaft unter Stress – im Beruf, im Alltag oder durch persönliche Belastungen.\n\nHäufig entsteht eine innere Anspannung, die sich nicht mehr richtig ausgleichen lässt. Erste Warnsignale wie Erschöpfung, Schlafprobleme oder Reizbarkeit werden oft lange ignoriert.",
     "Stress ist oft mehr als äußere Belastung. Für viele Menschen ist er eng verbunden mit innerem Druck, Perfektionismus oder dem Gefühl, ständig funktionieren zu müssen.",
     "Hypnose hilft, diese inneren Stressmuster gezielt zu verändern. Ziel ist ein stabiler Zustand von Ruhe, Klarheit und neuer Energie im Alltag."
   ],
   introDE: [
-    "Viele Menschen stehen dauerhaft unter Stress – im Beruf, im Alltag oder durch persönliche Belastungen. Häufig entsteht eine innere Anspannung, die sich nicht mehr einfach durch Erholung ausgleichen lässt.\n\nErste Warnsignale wie Erschöpfung, Schlafprobleme oder Reizbarkeit werden oft lange ignoriert.",
+    "Viele Menschen stehen dauerhaft unter Stress – im Beruf, im Alltag oder durch persönliche Belastungen.\n\nHäufig entsteht eine innere Anspannung, die sich nicht mehr richtig ausgleichen lässt. Erste Warnsignale wie Erschöpfung, Schlafprobleme oder Reizbarkeit werden oft lange ignoriert.",
     "Stress ist oft mehr als äußere Belastung. Für viele Menschen ist er eng verbunden mit innerem Druck, Perfektionismus oder dem Gefühl, ständig funktionieren zu müssen.",
     "Hypnose hilft, diese inneren Stressmuster gezielt zu verändern. Ziel ist ein stabiler Zustand von Ruhe, Klarheit und neuer Energie im Alltag."
   ],
   introEN: [
-    "Many people are under constant stress – at work, in everyday life or through personal challenges. This often leads to an inner tension that can no longer simply be balanced by rest.\n\nEarly warning signs such as exhaustion, sleep problems or irritability are often ignored for a long time.",
+    "Many people are under constant stress – at work, in everyday life or through personal challenges.\n\nThis often leads to an inner tension that can no longer be properly balanced. Early warning signs such as exhaustion, sleep problems or irritability are often ignored for a long time.",
     "Stress is often more than just external strain. For many people it is closely connected with inner pressure, perfectionism or the feeling of constantly having to function.",
     "Hypnosis helps to specifically change these inner stress patterns. The goal is a stable state of calm, clarity and new energy in everyday life."
   ],

@@ -293,9 +293,11 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                   ))}
                 </div>
                 {/* Compact intro: only first paragraph in hero */}
-                <p className="text-sm md:text-base text-foreground leading-relaxed">
-                  {intro[0]}
-                </p>
+                <div className="space-y-2">
+                  {intro[0].split("\n\n").map((p, i) => (
+                    <p key={i} className="text-sm md:text-base text-foreground leading-relaxed">{p}</p>
+                  ))}
+                </div>
               </div>
               <div className="flex flex-col gap-4">
                 <div className="border border-[#E8EDF3] rounded-2xl overflow-hidden">
