@@ -77,12 +77,11 @@ export const smokingData: ServicePageData = {
       ]
     },
     {
-      h2: "Wissenschaftliche Evidenz: Hypnose bei Raucherentwöhnung",
+      h2: "Wissenschaftliche Erkenntnisse: Hypnose bei Raucherentwöhnung",
       paragraphs: [
-        "Eine Meta-Analyse von Hasan et al. (2014), veröffentlicht im Journal of Public Health, analysierte 14 kontrollierte Studien und stellte fest, dass Hypnotherapie bei der Raucherentwöhnung signifikant wirksamer ist als Willenskraft allein, mit einer Erfolgsrate von bis zu 64% nach 6 Monaten.",
-        "Die Cochrane Database of Systematic Reviews (Barnes et al., 2019) bestätigt, dass Hypnose als Ergänzung zu verhaltenstherapeutischen Ansätzen die Langzeit-Abstinenzraten verbessert. Die Weltgesundheitsorganisation (WHO) listet Hypnotherapie als anerkannten therapeutischen Ansatz.",
-        "Eine Studie der University of Iowa (Viswesvaran & Schmidt, 1992), veröffentlicht im Journal of Applied Psychology, verglich 633 Studien zu verschiedenen Raucherentwöhnungsmethoden. Das Ergebnis: Hypnose war die effektivste einzelne Methode — dreimal wirksamer als Nikotinersatztherapie und 15-mal wirksamer als der Versuch, allein durch Willenskraft aufzuhören.",
-        "Quellen: Hasan et al., Journal of Public Health, 22(6), 2014; Barnes et al., Cochrane Database of Systematic Reviews, 2019; Viswesvaran & Schmidt, Journal of Applied Psychology, 77(4), 1992."
+        "Studien zeigen, dass Hypnose eine wirksame Unterstützung bei der Raucherentwöhnung sein kann – insbesondere dann, wenn neben dem Verhalten auch emotionale und unbewusste Muster gezielt verändert werden.",
+        "Der Fokus liegt dabei nicht nur auf dem Verzicht, sondern auf einer nachhaltigen inneren Veränderung, die langfristig zu stabileren Ergebnissen führen kann.",
+        "Quellen: Viswesvaran & Schmidt, Journal of Applied Psychology, 77(4), 1992; Hasan et al., Journal of Public Health, 22(6), 2014."
       ]
     }
   ],
@@ -111,9 +110,10 @@ export const smokingData: ServicePageData = {
       ]
     },
     {
-      h2: "Wissenschaftliche Evidenz: Hypnose bei Raucherentwöhnung",
+      h2: "Wissenschaftliche Erkenntnisse: Hypnose bei Raucherentwöhnung",
       paragraphs: [
-        "Eine Meta-Analyse der University of Iowa (Viswesvaran & Schmidt, 1992) verglich 633 Studien und fand, dass Hypnose die effektivste Einzelmethode zur Raucherentwöhnung ist — dreimal wirksamer als Nikotinersatz und 15-mal wirksamer als Willenskraft allein.",
+        "Studien zeigen, dass Hypnose eine wirksame Unterstützung bei der Raucherentwöhnung sein kann – insbesondere dann, wenn neben dem Verhalten auch emotionale und unbewusste Muster gezielt verändert werden.",
+        "Der Fokus liegt dabei nicht nur auf dem Verzicht, sondern auf einer nachhaltigen inneren Veränderung, die langfristig zu stabileren Ergebnissen führen kann.",
         "Quellen: Viswesvaran & Schmidt, Journal of Applied Psychology, 77(4), 1992; Hasan et al., Journal of Public Health, 22(6), 2014."
       ]
     }
@@ -143,12 +143,11 @@ export const smokingData: ServicePageData = {
       ]
     },
     {
-      h2: "Scientific Evidence: Hypnosis for Smoking Cessation",
+      h2: "Scientific Insights: Hypnosis for Smoking Cessation",
       paragraphs: [
-        "A meta-analysis by Hasan et al. (2014), published in the Journal of Public Health, analyzed 14 controlled studies and found that hypnotherapy is significantly more effective for smoking cessation than willpower alone, with success rates of up to 64% after 6 months.",
-        "The Cochrane Database of Systematic Reviews (Barnes et al., 2019) confirms that hypnosis as an adjunct to behavioral approaches improves long-term abstinence rates. The World Health Organization (WHO) lists hypnotherapy as a recognized therapeutic approach.",
-        "A landmark study from the University of Iowa (Viswesvaran & Schmidt, 1992), published in the Journal of Applied Psychology, compared 633 studies on various smoking cessation methods. The result: hypnosis was the single most effective method — three times more effective than nicotine replacement therapy and 15 times more effective than attempting to quit through willpower alone.",
-        "Sources: Hasan et al., Journal of Public Health, 22(6), 2014; Barnes et al., Cochrane Database of Systematic Reviews, 2019; Viswesvaran & Schmidt, Journal of Applied Psychology, 77(4), 1992."
+        "Studies show that hypnosis can be an effective support for smoking cessation – especially when, in addition to behavior, emotional and unconscious patterns are also specifically transformed.",
+        "The focus is not only on giving something up, but on a lasting inner change that can lead to more stable results in the long term.",
+        "Sources: Viswesvaran & Schmidt, Journal of Applied Psychology, 77(4), 1992; Hasan et al., Journal of Public Health, 22(6), 2014."
       ]
     }
   ],
