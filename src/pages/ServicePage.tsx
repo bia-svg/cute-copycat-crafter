@@ -41,6 +41,12 @@ export interface ServicePageData {
   h1CH: string;
   h1DE: string;
   h1EN: string;
+  eyebrowCH?: string;
+  eyebrowDE?: string;
+  eyebrowEN?: string;
+  ctaCH?: string;
+  ctaDE?: string;
+  ctaEN?: string;
   benefitsCH: string[];
   benefitsEN: string[];
   introDE: string[];
