@@ -275,7 +275,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
               <div>
                 <p className="text-xs md:text-sm font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
-                  Lic.Psych. David J. Woods
+                  {eyebrow ?? "Lic.Psych. David J. Woods"}
                 </p>
                 <h1 className="text-2xl sm:text-3xl font-light text-[#1B3A5C] leading-tight mb-3 tracking-tight">
                   {h1}
