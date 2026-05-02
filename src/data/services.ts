@@ -394,17 +394,17 @@ export const weightData: ServicePageData = {
   ],
   sectionsEN: [
     {
-      h2: "Weight Loss Without Special Diets",
+      h2: "Weight Loss Without Dieting – Sustainable Instead of Short-Term Deprivation",
       paragraphs: [
-        "The results of weight loss can be sustainable – without the typical yo-yo effect. By working with the subconscious, the causes of unhealthy eating behavior are treated directly at the root.",
-        "Instead of torturing yourself with strict diet plans, your subconscious learns to make healthier decisions naturally. The feeling of satiety is better perceived, emotional eating decreases, and the desire for excessive eating noticeably subsides."
+        "Sustainable weight loss does not happen through strict diets, but through a change of the inner patterns. Classic diets work on behavior – hypnosis goes one step further and works directly on the causes.",
+        "Through targeted work with the subconscious, unconscious eating patterns, emotional triggers and automatic reactions are changed. This creates a natural eating behavior that remains stable in the long term – without a yo-yo effect."
       ]
     },
     {
-      h2: "How Effective Weight Loss with Hypnosis Works",
+      h2: "How Weight Loss with Hypnosis Works on a Deeper Level",
       paragraphs: [
-        "In the hypnosis session, we work specifically on the subconscious patterns that control your eating behavior. Emotional triggers are identified and replaced with healthier reaction patterns.",
-        "Hypnosis supports you in developing a new, healthy relationship with food – without deprivation, without struggle, and with lasting success."
+        "In the hypnosis session, we work specifically on the unconscious patterns that control your eating behavior. These include, among other things, emotional eating, cravings, habits and automatic reactions to stress or certain situations.",
+        "These inner connections are made conscious and dissolved. At the same time, new, healthier reaction patterns are anchored in the subconscious. This makes it significantly easier to eat less, choose more consciously and reduce weight in the long term – without constant struggle or deprivation."
       ]
     }
   ],
