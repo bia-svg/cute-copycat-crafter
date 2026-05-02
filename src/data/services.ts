@@ -321,7 +321,7 @@ export const weightData: ServicePageData = {
     "Mit professioneller Hypnose können diese inneren Auslöser gezielt auf tiefer Ebene verändert werden. Ziel ist nicht nur Gewichtsverlust, sondern ein neues, natürliches Essverhalten – bei dem Sie sich dauerhaft wohlfühlen."
   ],
   introDE: [
-    "Viele Menschen kämpfen seit Jahren mit Diäten, Heißhungerattacken und dem bekannten Jo-Jo-Effekt. Trotz Disziplin und zahlreicher Versuche bleibt der langfristige Erfolg oft aus. Der Grund liegt meist nicht im fehlenden Willen, sondern in tief verankerten Gewohnheiten, emotionalen Auslösern und unbewussten Mustern, die das Essverhalten steuern.\n\nGenau hier setzt Hypnose an: Statt nur Symptome zu bekämpfen, werden die Ursachen auf der unterbewussten Ebene gezielt verändert. So entsteht eine nachhaltige Veränderung – ohne ständigen inneren Kampf oder Verzicht.",
+    "Viele Menschen kämpfen seit Jahren mit Diäten, Heißhungerattacken und dem bekannten Jo-Jo-Effekt. Trotz Disziplin bleibt der langfristige Erfolg oft aus, weil die eigentlichen Ursachen meist in tief verankerten Gewohnheiten, emotionalen Auslösern und unbewussten Mustern liegen. Genau hier setzt Hypnose an: Das Essverhalten wird auf tiefer Ebene verändert – ohne ständigen inneren Kampf oder Verzicht.",
     "Abnehmen ist häufig mehr als nur eine Frage der Ernährung. Für viele Menschen ist Essen unbewusst mit Stressabbau, Belohnung, Gewohnheit oder emotionalem Ausgleich verbunden.",
     "Mit professioneller Hypnose können diese inneren Auslöser gezielt auf tiefer Ebene verändert werden. Ziel ist nicht nur Gewichtsverlust, sondern ein neues, natürliches Essverhalten – bei dem Sie sich dauerhaft wohlfühlen."
   ],
