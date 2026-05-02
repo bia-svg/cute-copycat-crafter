@@ -61,12 +61,24 @@ export default function FirmenCoaching() {
   ];
 
   const benefits = [
-    isEN ? "Strengthen executives: More confidence, better decisions" : "Führungskräfte stärken: Mehr Souveränität, bessere Entscheidungen",
-    isEN ? "Develop employees: More self-confidence & motivation" : "Mitarbeiter entwickeln: Mehr Selbstvertrauen und Motivation",
-    isEN ? "Improve teams: Better collaboration, less friction" : "Teams verbessern: Bessere Zusammenarbeit, weniger Reibung",
-    isEN ? "Increase productivity: Motivated teams work more efficiently" : "Produktivität steigern: Motivierte Teams arbeiten effizienter",
-    isEN ? "Increase retention: Satisfied employees stay more loyal" : "Mitarbeiterbindung erhöhen: Zufriedene Mitarbeiter bleiben loyaler",
-    isEN ? "Strengthen company culture: More stability & solution orientation" : "Unternehmenskultur stärken: Mehr Stabilität und Lösungsorientierung",
+    isEN
+      ? "Executives gain clarity, make better decisions and act with greater confidence"
+      : "Führungskräfte gewinnen Klarheit, treffen bessere Entscheidungen und handeln souveräner",
+    isEN
+      ? "Employees develop more personal responsibility, motivation and focus"
+      : "Mitarbeiter entwickeln mehr Eigenverantwortung, Motivation und Fokus",
+    isEN
+      ? "Teams work more efficiently, with less friction and clearer communication"
+      : "Teams arbeiten effizienter, mit weniger Reibung und klarer Kommunikation",
+    isEN
+      ? "Productivity rises measurably through mental stability and clear goal orientation"
+      : "Produktivität steigt messbar durch mentale Stabilität und klare Zielausrichtung",
+    isEN
+      ? "Absences and stress are reduced, performance stays consistently high"
+      : "Fehlzeiten und Stress werden reduziert, Leistungsfähigkeit bleibt konstant hoch",
+    isEN
+      ? "Company culture becomes more stable, solution-oriented and resilient"
+      : "Unternehmenskultur wird stabiler, lösungsorientierter und resilienter",
   ];
 
   return (
