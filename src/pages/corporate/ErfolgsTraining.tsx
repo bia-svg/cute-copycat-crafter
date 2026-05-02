@@ -101,31 +101,6 @@ export default function ErfolgsTraining() {
         </div>
       </section>
 
-      {/* Results — Banner */}
-      <section className="bg-[#F8FAFC]">
-        <div className="container-main py-6 md:py-9">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
-              {isEN ? "Results you can expect:" : "Diese Resultate können Sie erwarten:"}
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {results.map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="w-4 h-4 text-[#2E7D32] shrink-0" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#E8EDF3]">
-        <div className="container-main py-8 md:py-10 flex justify-center">
-          <div className="relative bg-white border border-[#1B3A5C]/15 rounded-2xl px-8 py-8 text-center max-w-2xl w-full">
-            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-xs font-medium border border-[#1B3A5C]/25 px-4 py-1 rounded-full whitespace-nowrap">
-              {isEN ? "Next Step" : "N\u00e4chster Schritt"}
-            </span>
       {/* Target Audience */}
       <section className="bg-[#F8FAFC]">
         <div className="container-main py-6 md:py-9">
