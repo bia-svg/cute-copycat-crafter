@@ -151,26 +151,28 @@ export default function ResilienzVerstaerken() {
         </div>
       </section>
 
-      {/* 7 Pillars */}
+      {/* 7 Pillars — vertical list banner */}
       <section className="bg-[#F8FAFC]">
-        <div className="container-main py-8 md:py-10">
-          <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-8 shadow-sm">
-            <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] mb-6 tracking-tight text-center">
+        <div className="container-main py-7 md:py-9">
+          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
+            <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] mb-5 tracking-tight text-center">
               {isEN ? "The 7 Pillars of Resilience" : "Die 7 Säulen der Resilienz"}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+            <ol className="divide-y divide-[#E8EDF3]">
               {pillars.map((p, i) => (
-                <div
-                  key={i}
-                  className="bg-white border border-[#E8EDF3] rounded-2xl p-5 md:p-6 shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
-                >
-                  <h3 className="font-medium text-[15px] text-[#1B3A5C] tracking-tight mb-2">
-                    {i + 1}. {p.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
-                </div>
+                <li key={i} className="flex gap-4 py-3.5 first:pt-0 last:pb-0">
+                  <span className="text-[#1B3A5C]/40 font-light text-lg leading-none w-6 shrink-0 pt-0.5 tabular-nums">
+                    {i + 1}.
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="font-medium text-[15px] text-[#1B3A5C] tracking-tight mb-0.5">
+                      {p.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-snug">{p.desc}</p>
+                  </div>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
         </div>
       </section>
