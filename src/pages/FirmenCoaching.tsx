@@ -61,12 +61,24 @@ export default function FirmenCoaching() {
   ];
 
   const benefits = [
-    isEN ? "Strengthen executives: More confidence, better decisions" : "Führungskräfte stärken: Mehr Souveränität, bessere Entscheidungen",
-    isEN ? "Develop employees: More self-confidence & motivation" : "Mitarbeiter entwickeln: Mehr Selbstvertrauen und Motivation",
-    isEN ? "Improve teams: Better collaboration, less friction" : "Teams verbessern: Bessere Zusammenarbeit, weniger Reibung",
-    isEN ? "Increase productivity: Motivated teams work more efficiently" : "Produktivität steigern: Motivierte Teams arbeiten effizienter",
-    isEN ? "Increase retention: Satisfied employees stay more loyal" : "Mitarbeiterbindung erhöhen: Zufriedene Mitarbeiter bleiben loyaler",
-    isEN ? "Strengthen company culture: More stability & solution orientation" : "Unternehmenskultur stärken: Mehr Stabilität und Lösungsorientierung",
+    isEN
+      ? "Executives gain clarity, make better decisions and act with greater confidence"
+      : "Führungskräfte gewinnen Klarheit, treffen bessere Entscheidungen und handeln souveräner",
+    isEN
+      ? "Employees develop more personal responsibility, motivation and focus"
+      : "Mitarbeiter entwickeln mehr Eigenverantwortung, Motivation und Fokus",
+    isEN
+      ? "Teams work more efficiently, with less friction and clearer communication"
+      : "Teams arbeiten effizienter, mit weniger Reibung und klarer Kommunikation",
+    isEN
+      ? "Productivity rises measurably through mental stability and clear goal orientation"
+      : "Produktivität steigt messbar durch mentale Stabilität und klare Zielausrichtung",
+    isEN
+      ? "Absences and stress are reduced, performance stays consistently high"
+      : "Fehlzeiten und Stress werden reduziert, Leistungsfähigkeit bleibt konstant hoch",
+    isEN
+      ? "Company culture becomes more stable, solution-oriented and resilient"
+      : "Unternehmenskultur wird stabiler, lösungsorientierter und resilienter",
   ];
 
   return (
@@ -128,7 +140,7 @@ export default function FirmenCoaching() {
         <div className="container-main py-4 md:py-7">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-5 shadow-sm">
             <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] mb-3 md:mb-4 tracking-tight">
-              {isEN ? "Why Leadership & Performance Coaching is valuable:" : "Warum Leadership & Performance Coaching wertvoll ist:"}
+              {isEN ? "Why Leadership & Performance Coaching is decisive:" : "Warum Leadership & Performance Coaching entscheidend ist:"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-1.5 md:gap-y-2">
               {benefits.map((item) => (
@@ -140,8 +152,8 @@ export default function FirmenCoaching() {
             </div>
             <p className="text-[13px] md:text-sm text-muted-foreground mt-3 md:mt-3.5 max-w-3xl leading-snug md:leading-[1.5]">
               {isEN
-                ? "Leadership & Performance Coaching creates the foundation for growth, clarity and sustainable development — because real business success starts with the people who shape it every day."
-                : "Leadership & Performance Coaching schafft die Grundlage für Wachstum, Klarheit und nachhaltige Entwicklung — denn echter Unternehmenserfolg beginnt bei den Menschen, die ihn täglich gestalten."}
+                ? "Leadership & Performance Coaching creates the foundation for sustainable results — because real performance gains begin in the thinking and behaviour of the people."
+                : "Leadership & Performance Coaching schafft die Grundlage für nachhaltige Ergebnisse – denn echte Leistungssteigerung beginnt im Denken und Verhalten der Menschen."}
             </p>
           </div>
         </div>
@@ -157,18 +169,18 @@ export default function FirmenCoaching() {
             <div className="space-y-2 md:space-y-2.5 max-w-3xl text-[13px] md:text-sm text-foreground/80 leading-snug md:leading-[1.5]">
               <p>
                 {isEN
-                  ? "A meta-analysis published in the International Journal of Clinical and Experimental Hypnosis (2019) found that hypnosis-based interventions significantly improve workplace performance and stress resilience, with effect sizes comparable to or exceeding traditional coaching methods (d = 0.82)."
-                  : "Eine Meta-Analyse im International Journal of Clinical and Experimental Hypnosis (2019) zeigt, dass hypnosebasierte Interventionen die Arbeitsleistung und Stressresilienz signifikant verbessern — mit Effektstärken vergleichbar oder höher als traditionelle Coaching-Methoden (d = 0,82)."}
+                  ? "Studies show that hypnosis-based methods significantly improve performance and stress resilience — with effect sizes that can surpass classical coaching approaches."
+                  : "Studien zeigen, dass hypnosebasierte Methoden die Leistungsfähigkeit und Stressresilienz signifikant verbessern – mit Effektstärken, die klassischen Coaching-Ansätzen überlegen sein können."}
               </p>
               <p>
                 {isEN
-                  ? "According to a study by the American Psychological Association (APA, 2020), organizations that invest in mental health and coaching programs see a return of $4 for every $1 invested, through reduced absenteeism and increased productivity."
-                  : "Laut einer Studie der American Psychological Association (APA, 2020) erzielen Unternehmen, die in Mental-Health- und Coaching-Programme investieren, einen Return von 4 $ pro investiertem Dollar — durch weniger Fehlzeiten und höhere Produktivität."}
+                  ? "Companies benefit measurably: fewer absences, higher productivity and more stable teams."
+                  : "Unternehmen profitieren messbar: weniger Ausfälle, höhere Produktivität und stabilere Teams."}
               </p>
               <p className="text-[10px] md:text-[11px] text-muted-foreground/70 italic leading-snug pt-0.5">
                 {isEN
-                  ? "Sources: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."
-                  : "Quellen: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."}
+                  ? "Sources: International Journal of Clinical and Experimental Hypnosis; American Psychological Association (APA)."
+                  : "Quellen: International Journal of Clinical and Experimental Hypnosis; American Psychological Association (APA)."}
               </p>
             </div>
           </div>
@@ -178,17 +190,17 @@ export default function FirmenCoaching() {
       <FAQSection
         title={isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
         items={isEN ? [
-          { q: "How does corporate coaching with hypnosis work?", a: "Our corporate coaching combines proven psychological methods with hypnosis techniques to achieve deep, lasting behavioral change. Sessions can be conducted individually or in groups, either at your premises or in our practice." },
-          { q: "How long does a corporate coaching program take?", a: "Programs are individually tailored. A typical engagement includes an initial consultation, 4-8 coaching sessions, and a follow-up assessment. Intensive workshops like 'Non-Smoker in 3 Hours' are single-day events." },
-          { q: "Is corporate coaching scientifically proven?", a: "Yes. Multiple meta-analyses show that hypnosis-based coaching achieves higher effect sizes than traditional coaching alone. The International Journal of Clinical and Experimental Hypnosis reports effect sizes of d=0.82 for workplace performance improvement." },
-          { q: "What ROI can we expect from coaching investments?", a: "The American Psychological Association reports a $4 return for every $1 invested in employee mental health programs, through reduced absenteeism, higher productivity, and improved retention." },
-          { q: "Can sessions be conducted in English?", a: "Yes. David J. Woods conducts all sessions in both German and English. International teams and English-speaking executives are welcome." },
+          { q: "How does corporate coaching work in practice?", a: "Programs are individually tailored to your company. Typical elements are analysis, targeted coaching impulses and direct application in everyday work." },
+          { q: "How quickly are first results visible?", a: "In many cases, first changes appear after just a few sessions — especially in leadership, communication and stress behaviour." },
+          { q: "Is the effect sustainable?", a: "Yes. The aim is not short-term motivation, but a lasting change of thinking and behavioural patterns." },
+          { q: "Which companies is this suitable for?", a: "For companies of any size — particularly valuable in contexts of high responsibility, performance pressure or change processes." },
+          { q: "Can sessions be conducted in English?", a: "Yes, all programs are also fully available in English." },
         ] : [
-          { q: "Wie funktioniert Firmen-Coaching mit Hypnose?", a: "Unser Firmen-Coaching kombiniert bewährte psychologische Methoden mit Hypnosetechniken, um tiefgreifende, dauerhafte Verhaltensveränderungen zu erreichen. Sitzungen können einzeln oder in Gruppen durchgeführt werden." },
-          { q: "Wie lange dauert ein Coaching-Programm?", a: "Programme werden individuell zugeschnitten. Ein typisches Engagement umfasst ein Erstgespräch, 4-8 Coaching-Sitzungen und eine Nachbewertung. Intensiv-Workshops wie 'Nichtraucher in 3 Stunden' sind Eintagesveranstaltungen." },
-          { q: "Ist Firmen-Coaching wissenschaftlich belegt?", a: "Ja. Mehrere Meta-Analysen zeigen, dass hypnosebasiertes Coaching höhere Effektstärken erzielt als traditionelles Coaching allein. Das International Journal of Clinical and Experimental Hypnosis berichtet Effektstärken von d=0,82 für Verbesserung der Arbeitsleistung." },
-          { q: "Welchen ROI können wir von Coaching-Investitionen erwarten?", a: "Die American Psychological Association berichtet von 4 $ Rendite pro investiertem Dollar in Mitarbeiter-Mental-Health-Programme — durch weniger Fehlzeiten, höhere Produktivität und bessere Mitarbeiterbindung." },
-          { q: "Können Sitzungen auf Englisch durchgeführt werden?", a: "Ja. David J. Woods führt alle Sitzungen auf Deutsch und Englisch durch. Internationale Teams und englischsprachige Führungskräfte sind willkommen." },
+          { q: "Wie läuft ein Firmen-Coaching konkret ab?", a: "Die Programme werden individuell auf Ihr Unternehmen abgestimmt. Typisch sind Analyse, gezielte Coaching-Impulse und die direkte Umsetzung im Arbeitsalltag." },
+          { q: "Wie schnell sind erste Ergebnisse sichtbar?", a: "In vielen Fällen zeigen sich erste Veränderungen bereits nach wenigen Sitzungen – insbesondere in Führung, Kommunikation und Stressverhalten." },
+          { q: "Ist der Effekt nachhaltig?", a: "Ja. Ziel ist nicht kurzfristige Motivation, sondern eine dauerhafte Veränderung von Denk- und Verhaltensmustern." },
+          { q: "Für welche Unternehmen ist das geeignet?", a: "Für Unternehmen jeder Größe – besonders sinnvoll bei hoher Verantwortung, Leistungsdruck oder Veränderungsprozessen." },
+          { q: "Können Sitzungen auf Englisch durchgeführt werden?", a: "Ja, alle Programme sind auch vollständig auf Englisch möglich." },
         ]}
       />
 
