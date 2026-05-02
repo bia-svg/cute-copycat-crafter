@@ -149,12 +149,12 @@ export default function FirmenCoaching() {
 
       {/* Evidence — Banner */}
       <section className="bg-[#F8FAFC]">
-        <div className="container-main py-6 md:py-9">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-light text-primary mb-4 tracking-tight">
+        <div className="container-main py-4 md:py-9">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-7 shadow-sm">
+            <h2 className="text-lg md:text-xl font-light text-primary mb-2.5 md:mb-4 tracking-tight">
               {isEN ? "Science-Backed Approach" : "Wissenschaftlich fundierter Ansatz"}
             </h2>
-            <div className="space-y-3 max-w-3xl text-sm text-foreground/80 leading-relaxed">
+            <div className="space-y-2 md:space-y-3 max-w-3xl text-[13px] md:text-sm text-foreground/80 leading-snug md:leading-relaxed">
               <p>
                 {isEN
                   ? "A meta-analysis published in the International Journal of Clinical and Experimental Hypnosis (2019) found that hypnosis-based interventions significantly improve workplace performance and stress resilience, with effect sizes comparable to or exceeding traditional coaching methods (d = 0.82)."
@@ -165,7 +165,7 @@ export default function FirmenCoaching() {
                   ? "According to a study by the American Psychological Association (APA, 2020), organizations that invest in mental health and coaching programs see a return of $4 for every $1 invested, through reduced absenteeism and increased productivity."
                   : "Laut einer Studie der American Psychological Association (APA, 2020) erzielen Unternehmen, die in Mental-Health- und Coaching-Programme investieren, einen Return von 4 $ pro investiertem Dollar — durch weniger Fehlzeiten und höhere Produktivität."}
               </p>
-              <p className="text-xs text-muted-foreground italic">
+              <p className="text-[10px] md:text-xs text-muted-foreground/80 italic leading-snug">
                 {isEN
                   ? "Sources: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."
                   : "Quellen: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."}
