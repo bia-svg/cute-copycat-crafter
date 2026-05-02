@@ -49,12 +49,12 @@ export default function ServiceCard({ title, description, href, icon, image, ima
           </div>
           {/* Desktop: vertical card */}
           <div className="hidden md:block">
-            <div className="aspect-[21/9] overflow-hidden">
+            <div className="aspect-[16/9] overflow-hidden service-card-image">
               <img
                 src={image}
                 alt={title}
                 width={640}
-                height={274}
+                height={360}
                 sizes="(min-width: 1024px) 380px, (min-width: 768px) 50vw, 100vw"
                 style={{ objectPosition: imagePosition }}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -62,13 +62,13 @@ export default function ServiceCard({ title, description, href, icon, image, ima
                 decoding="async"
               />
             </div>
-            <div className="px-3.5 pt-1.5 pb-2">
+            <div className="px-4 pt-1.5 pb-2.5 service-card-body">
               <div className="flex items-center gap-2 text-primary mb-0.5">
                 {icon}
-                <h3 className="font-semibold text-foreground text-[13px] leading-snug">{title}</h3>
+                <h3 className="font-semibold text-foreground text-sm leading-snug">{title}</h3>
               </div>
-              <p className="text-[12px] text-muted-foreground leading-[1.45]">{description}</p>
-              <span className="inline-flex items-center gap-1 text-[11.5px] font-semibold text-[#2E7D32] group-hover:text-[#1B5E20] mt-0.5 group-hover:gap-2 transition-all">
+              <p className="text-xs text-muted-foreground leading-[1.45]">{description}</p>
+              <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#2E7D32] group-hover:text-[#1B5E20] mt-1 group-hover:gap-2 transition-all">
                 Mehr erfahren <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </div>
