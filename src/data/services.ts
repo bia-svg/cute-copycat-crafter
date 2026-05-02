@@ -305,20 +305,25 @@ export const weightData: ServicePageData = {
   metaDescCH: "Abnehmen mit Hypnose in Zürich — Essverhalten nachhaltig verändern, ohne Verbot, ohne Jo-Jo. Lic. Psych. David J. Woods, 35+ Jahre, EMR-anerkannt, ★ 5.0 (266 Bewertungen). Kostenloses Erstgespräch.",
   metaDescDE: "Abnehmen mit Hypnose in Augsburg — Essverhalten nachhaltig verändern, ohne Verbot, ohne Jo-Jo. Lic. Psych. David J. Woods, 35+ Jahre, ★ 5.0 (266 Google-Bewertungen). Kostenloses Erstgespräch.",
   metaDescEN: "Lose weight with hypnosis in Zurich & Augsburg — sustainably change eating habits, no restrictions, no yo-yo. Lic. Psych. David J. Woods, 35+ years, ★ 5.0 (266 reviews). Free discovery call.",
-  h1CH: "Abnehmen mit Hypnose – dauerhaft leichter leben",
-  h1DE: "Abnehmen mit Hypnose – dauerhaft leichter leben",
+  h1CH: "Abnehmen mit Hypnose – nachhaltig abnehmen ohne Diät und Jo-Jo-Effekt",
+  h1DE: "Abnehmen mit Hypnose – nachhaltig abnehmen ohne Diät und Jo-Jo-Effekt",
   h1EN: "Weight Loss with Hypnotherapy – Live Lighter, Permanently",
-  benefitsCH: ["Essverhalten nachhaltig verändern", "Heisshunger und emotionale Auslöser lösen", "Wohlfühlgewicht ohne ständigen Verzicht", "Mehr Selbstkontrolle und Lebensqualität gewinnen"],
+  benefitsCH: [
+    "Essverhalten nachhaltig verändern statt kurzfristiger Diäten",
+    "Heißhunger, emotionales Essen und innere Auslöser gezielt lösen",
+    "Wohlfühlgewicht erreichen ohne ständigen Verzicht oder Druck",
+    "Mehr Selbstkontrolle, Leichtigkeit und Lebensqualität gewinnen"
+  ],
   benefitsEN: ["Sustainably change eating behavior", "Resolve cravings and emotional triggers", "Feel-good weight without constant deprivation", "Gain more self-control and quality of life"],
   introCH: [
-    "Viele Menschen kämpfen seit Jahren mit wiederkehrenden Diäten, Heisshungerattacken und dem bekannten Jo-Jo-Effekt. Trotz Disziplin und zahlreicher Versuche bleibt der langfristige Erfolg oft aus, weil die eigentlichen Ursachen nicht auf der bewussten, sondern auf der unterbewussten Ebene liegen.",
-    "Genau hier setzt Hypnose an. Mit professioneller Hypnose kann das Essverhalten gezielt auf tiefer Ebene verändert werden. Ungünstige Gewohnheiten, emotionale Verknüpfungen mit Essen, Stressessen oder unbewusste Selbstsabotage können erkannt und nachhaltig neu programmiert werden.",
-    "Abnehmen mit Hypnose bedeutet nicht, sich zu quälen oder ständig gegen sich selbst kämpfen zu müssen. Vielmehr wird das innere Verhalten so verändert, dass gesündere Entscheidungen leichter fallen, das Sättigungsgefühl besser wahrgenommen wird und der Wunsch nach übermässigem Essen spürbar nachlassen kann.",
-    "Ziel ist nicht nur Gewichtsreduktion, sondern eine dauerhafte Veränderung des inneren Programms – für mehr Selbstkontrolle, ein stärkeres Selbstbewusstsein und ein gesünderes Verhältnis zum eigenen Körper. Denn nachhaltiges Abnehmen beginnt nicht nur auf dem Teller – sondern im Kopf."
+    "Viele Menschen kämpfen seit Jahren mit Diäten, Heißhungerattacken und dem bekannten Jo-Jo-Effekt. Trotz Disziplin und zahlreicher Versuche bleibt der langfristige Erfolg oft aus. Der Grund liegt meist nicht im fehlenden Willen, sondern in tief verankerten Gewohnheiten, emotionalen Auslösern und unbewussten Mustern, die das Essverhalten steuern.\n\nGenau hier setzt Hypnose an: Statt nur Symptome zu bekämpfen, werden die Ursachen auf der unterbewussten Ebene gezielt verändert. So entsteht eine nachhaltige Veränderung – ohne ständigen inneren Kampf oder Verzicht.",
+    "Abnehmen ist häufig mehr als nur eine Frage der Ernährung. Für viele Menschen ist Essen unbewusst mit Stressabbau, Belohnung, Gewohnheit oder emotionalem Ausgleich verbunden.",
+    "Mit professioneller Hypnose können diese inneren Auslöser gezielt auf tiefer Ebene verändert werden. Ziel ist nicht nur Gewichtsverlust, sondern ein neues, natürliches Essverhalten – bei dem Sie sich dauerhaft wohlfühlen."
   ],
   introDE: [
-    "Viele Menschen kämpfen seit Jahren mit wiederkehrenden Diäten, Heisshungerattacken und dem bekannten Jo-Jo-Effekt. Trotz Disziplin und zahlreicher Versuche bleibt der langfristige Erfolg oft aus, weil die eigentlichen Ursachen auf der unterbewussten Ebene liegen.",
-    "Genau hier setzt Hypnose an. Abnehmen mit Hypnose bedeutet nicht, sich zu quälen oder ständig gegen sich selbst kämpfen zu müssen. Denn nachhaltiges Abnehmen beginnt nicht nur auf dem Teller – sondern im Kopf."
+    "Viele Menschen kämpfen seit Jahren mit Diäten, Heißhungerattacken und dem bekannten Jo-Jo-Effekt. Trotz Disziplin und zahlreicher Versuche bleibt der langfristige Erfolg oft aus. Der Grund liegt meist nicht im fehlenden Willen, sondern in tief verankerten Gewohnheiten, emotionalen Auslösern und unbewussten Mustern, die das Essverhalten steuern.\n\nGenau hier setzt Hypnose an: Statt nur Symptome zu bekämpfen, werden die Ursachen auf der unterbewussten Ebene gezielt verändert. So entsteht eine nachhaltige Veränderung – ohne ständigen inneren Kampf oder Verzicht.",
+    "Abnehmen ist häufig mehr als nur eine Frage der Ernährung. Für viele Menschen ist Essen unbewusst mit Stressabbau, Belohnung, Gewohnheit oder emotionalem Ausgleich verbunden.",
+    "Mit professioneller Hypnose können diese inneren Auslöser gezielt auf tiefer Ebene verändert werden. Ziel ist nicht nur Gewichtsverlust, sondern ein neues, natürliches Essverhalten – bei dem Sie sich dauerhaft wohlfühlen."
   ],
   introEN: [
     "Many people have been struggling for years with recurring diets, binge eating, and the well-known yo-yo effect. Despite discipline and numerous attempts, long-term success often fails because the actual causes lie not on the conscious, but on the subconscious level.",
@@ -327,31 +332,33 @@ export const weightData: ServicePageData = {
   ],
   sectionsCH: [
     {
-      h2: "Abnehmen geht auch ohne spezielle Diät",
+      h2: "Abnehmen ohne Diät – nachhaltig statt kurzfristiger Verzicht",
       paragraphs: [
-        "Die Ergebnisse beim Abnehmen können nachhaltig sein – ohne den typischen Jo-Jo-Effekt. Durch die Arbeit mit dem Unterbewusstsein werden die Ursachen für ungesundes Essverhalten direkt an der Wurzel behandelt.",
-        "Statt sich mit strengen Diätplänen zu quälen, lernt Ihr Unterbewusstsein, gesündere Entscheidungen ganz natürlich zu treffen. Das Sättigungsgefühl wird besser wahrgenommen, emotionales Essen nimmt ab, und der Wunsch nach übermässigem Essen lässt spürbar nach."
+        "Nachhaltiges Abnehmen entsteht nicht durch strenge Diäten, sondern durch eine Veränderung der inneren Muster. Klassische Diäten setzen am Verhalten an – Hypnose geht einen Schritt weiter und arbeitet direkt an den Ursachen.",
+        "Durch die gezielte Arbeit mit dem Unterbewusstsein werden unbewusste Essmuster, emotionale Auslöser und automatische Reaktionen verändert. So entsteht ein natürliches Essverhalten, das langfristig stabil bleibt – ohne Jo-Jo-Effekt."
       ]
     },
     {
-      h2: "So funktioniert effektives Abnehmen mit Hypnose",
+      h2: "So funktioniert Abnehmen mit Hypnose auf tiefer Ebene",
       paragraphs: [
-        "In der Hypnose-Sitzung arbeiten wir gezielt an den unterbewussten Mustern, die Ihr Essverhalten steuern. Dabei werden emotionale Auslöser identifiziert und durch gesündere Reaktionsmuster ersetzt.",
-        "Die Hypnose unterstützt Sie dabei, ein neues, gesundes Verhältnis zum Essen zu entwickeln – ohne Verzicht, ohne Kampf, und mit dauerhaftem Erfolg."
+        "In der Hypnose-Sitzung arbeiten wir gezielt an den unbewussten Mustern, die Ihr Essverhalten steuern. Dazu gehören unter anderem emotionales Essen, Heißhunger, Gewohnheiten und automatische Reaktionen auf Stress oder bestimmte Situationen.",
+        "Diese inneren Verknüpfungen werden bewusst gemacht und aufgelöst. Gleichzeitig werden neue, gesündere Reaktionsmuster im Unterbewusstsein verankert. Dadurch fällt es deutlich leichter, weniger zu essen, bewusster zu wählen und langfristig Gewicht zu reduzieren – ohne ständigen Kampf oder Verzicht."
       ]
     }
   ],
   sectionsDE: [
     {
-      h2: "Abnehmen geht auch ohne spezielle Diät",
+      h2: "Abnehmen ohne Diät – nachhaltig statt kurzfristiger Verzicht",
       paragraphs: [
-        "Die Ergebnisse beim Abnehmen können nachhaltig sein – ohne den typischen Jo-Jo-Effekt. Durch die Arbeit mit dem Unterbewusstsein werden die Ursachen für ungesundes Essverhalten direkt an der Wurzel behandelt."
+        "Nachhaltiges Abnehmen entsteht nicht durch strenge Diäten, sondern durch eine Veränderung der inneren Muster. Klassische Diäten setzen am Verhalten an – Hypnose geht einen Schritt weiter und arbeitet direkt an den Ursachen.",
+        "Durch die gezielte Arbeit mit dem Unterbewusstsein werden unbewusste Essmuster, emotionale Auslöser und automatische Reaktionen verändert. So entsteht ein natürliches Essverhalten, das langfristig stabil bleibt – ohne Jo-Jo-Effekt."
       ]
     },
     {
-      h2: "So funktioniert effektives Abnehmen mit Hypnose",
+      h2: "So funktioniert Abnehmen mit Hypnose auf tiefer Ebene",
       paragraphs: [
-        "In der Hypnose-Sitzung arbeiten wir gezielt an den unterbewussten Mustern, die Ihr Essverhalten steuern. Dabei werden emotionale Auslöser identifiziert und durch gesündere Reaktionsmuster ersetzt."
+        "In der Hypnose-Sitzung arbeiten wir gezielt an den unbewussten Mustern, die Ihr Essverhalten steuern. Dazu gehören unter anderem emotionales Essen, Heißhunger, Gewohnheiten und automatische Reaktionen auf Stress oder bestimmte Situationen.",
+        "Diese inneren Verknüpfungen werden bewusst gemacht und aufgelöst. Gleichzeitig werden neue, gesündere Reaktionsmuster im Unterbewusstsein verankert. Dadurch fällt es deutlich leichter, weniger zu essen, bewusster zu wählen und langfristig Gewicht zu reduzieren – ohne ständigen Kampf oder Verzicht."
       ]
     }
   ],
