@@ -60,25 +60,43 @@ export default function FirmenCoaching() {
     },
   ];
 
+  const challenges = [
+    isEN
+      ? "Top performers operate under constant pressure and lose focus"
+      : "Leistungsträger arbeiten unter konstantem Druck und verlieren Fokus",
+    isEN
+      ? "Executives make decisions hesitantly or too late"
+      : "Führungskräfte treffen Entscheidungen unsicher oder zu spät",
+    isEN
+      ? "Teams perform below their potential despite high competence"
+      : "Teams arbeiten unter ihren Möglichkeiten trotz hoher Kompetenz",
+    isEN
+      ? "Stress, overload and internal friction slow down results"
+      : "Stress, Überlastung und interne Reibung bremsen die Ergebnisse",
+    isEN
+      ? "Goals are set, but not consistently achieved"
+      : "Ziele werden gesetzt, aber nicht konsequent erreicht",
+  ];
+
   const benefits = [
     isEN
-      ? "Executives gain clarity, make better decisions and act with greater confidence"
-      : "Führungskräfte gewinnen Klarheit, treffen bessere Entscheidungen und handeln souveräner",
+      ? "Clearer decisions and stronger leadership presence"
+      : "Klarere Entscheidungen und stärkere Führungspräsenz",
     isEN
-      ? "Employees develop more personal responsibility, motivation and focus"
-      : "Mitarbeiter entwickeln mehr Eigenverantwortung, Motivation und Fokus",
+      ? "Higher execution speed across the entire team"
+      : "Höhere Umsetzungsgeschwindigkeit im gesamten Team",
     isEN
-      ? "Teams work more efficiently, with less friction and clearer communication"
-      : "Teams arbeiten effizienter, mit weniger Reibung und klarer Kommunikation",
+      ? "More focus, less distraction and better prioritisation"
+      : "Mehr Fokus, weniger Ablenkung und bessere Priorisierung",
     isEN
-      ? "Productivity rises measurably through mental stability and clear goal orientation"
-      : "Produktivität steigt messbar durch mentale Stabilität und klare Zielausrichtung",
+      ? "Significantly increased productivity and performance"
+      : "Deutlich gesteigerte Produktivität und Leistungsfähigkeit",
     isEN
-      ? "Absences and stress are reduced, performance stays consistently high"
-      : "Fehlzeiten und Stress werden reduziert, Leistungsfähigkeit bleibt konstant hoch",
+      ? "More stable teams with less stress and friction"
+      : "Stabilere Teams mit weniger Stress und Reibung",
     isEN
-      ? "Company culture becomes more stable, solution-oriented and resilient"
-      : "Unternehmenskultur wird stabiler, lösungsorientierter und resilienter",
+      ? "Noticeable progress in a short time"
+      : "Messbare Fortschritte in kurzer Zeit",
   ];
 
   return (
