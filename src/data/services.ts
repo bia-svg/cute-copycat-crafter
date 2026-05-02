@@ -432,39 +432,58 @@ export const stressData: ServicePageData = {
   metaDescCH: "Stress, Erschöpfung & Burnout dauerhaft bewältigen — innere Ruhe finden, wieder ruhig schlafen. Hypnose in Zürich mit Lic. Psych. David J. Woods, 35+ Jahre, EMR-anerkannt, ★ 5.0 (266 Bewertungen). Erstgespräch kostenlos.",
   metaDescDE: "Stress, Erschöpfung & Burnout dauerhaft bewältigen — innere Ruhe finden, wieder ruhig schlafen. Hypnose in Augsburg mit Lic. Psych. David J. Woods, 35+ Jahre, ★ 5.0 (266 Google-Bewertungen). Erstgespräch kostenlos.",
   metaDescEN: "Lasting relief from stress, exhaustion & burnout — find inner calm, sleep peacefully again. Hypnotherapy with Lic. Psych. David J. Woods, 35+ years, ★ 5.0 (266 reviews). Free discovery call in Zurich or Augsburg.",
-  h1CH: "Dauerhafte Stressreduktion & effektive Burnout-Prävention",
-  h1DE: "Dauerhafte Stressreduktion & effektive Burnout-Prävention",
-  h1EN: "Lasting Stress Reduction & Effective Burnout Prevention",
-  benefitsCH: ["Wieder ruhig schlafen können", "Innerliche Blockaden lösen", "Klarer denken können", "Besser konzentrieren können"],
-  benefitsEN: ["Sleep peacefully again", "Release inner blocks", "Think more clearly", "Concentrate better"],
+  h1CH: "Stress reduzieren – Burnout vorbeugen und neue Energie gewinnen",
+  h1DE: "Stress reduzieren – Burnout vorbeugen und neue Energie gewinnen",
+  h1EN: "Reduce stress – prevent burnout and regain new energy",
+  benefitsCH: [
+    "Dauerstress nachhaltig reduzieren statt nur kurzfristig abschalten",
+    "Innere Anspannung, Überforderung und Erschöpfung gezielt lösen",
+    "Mentale Klarheit, Ruhe und neue Energie zurückgewinnen",
+    "Belastbarkeit, Fokus und Lebensqualität langfristig stärken"
+  ],
+  benefitsEN: [
+    "Reduce chronic stress sustainably instead of only switching off briefly",
+    "Release inner tension, overwhelm and exhaustion at the root",
+    "Regain mental clarity, calm and new energy",
+    "Strengthen resilience, focus and quality of life long term"
+  ],
   introCH: [
-    "Die Stressreduktion sowie die Burnout-Prävention sind gerade in der heutigen Zeit ein unglaublich wichtiges Thema. Denn Stress ist heute für viele Menschen schon normal geworden und auch ein Burnout ist für die meisten nicht mehr ungewöhnlich. So gibt es kaum jemanden, der von sich behaupten würde, nicht gestresst zu sein.",
-    "Das Ganze geht sogar so weit, dass in manchen Branchen oder Bereichen Stress eine Art Synonym für Produktivität und Erfolgsdenken geworden ist. In der Realität ist jedoch genau das Gegenteil der Fall; gerade langfristig gesehen.",
-    "Denn länger andauernder Stress führt nicht nur zu dauerhaften Problemen, sondern auch zu ernsthaften Erkrankungen. Diese können neben Bluthochdruck und Herzinfarkten auch Burnout sein. Um solche Erkrankungen von Beginn an zu vermeiden, empfiehlt sich nicht nur eine Burnout-Prävention durch Hypnose, sondern auch eine gezielte Stressreduktion durch Hypnose."
+    "Viele Menschen stehen heute dauerhaft unter Stress – im Beruf, im Alltag oder durch persönliche Belastungen. Häufig entsteht daraus eine anhaltende innere Anspannung, die sich nicht mehr einfach durch Erholung oder Urlaub ausgleichen lässt. Erste Warnsignale wie Schlafprobleme, Erschöpfung, Reizbarkeit oder Konzentrationsschwierigkeiten werden oft lange ignoriert.\n\nBleibt dieser Zustand bestehen, kann sich daraus schleichend ein Burnout entwickeln. Die Ursachen liegen dabei selten nur in äußeren Umständen, sondern häufig in tief verankerten Stressmustern, innerem Druck, hohen Erwartungen an sich selbst und unbewussten Reaktionsmechanismen. Genau hier setzt Hypnose an: Statt nur die Symptome zu behandeln, werden die zugrunde liegenden Muster auf tiefer Ebene gezielt verändert.\n\nZiel ist nicht nur kurzfristige Entlastung, sondern eine nachhaltige Veränderung hin zu mehr innerer Ruhe, Stabilität, Energie und einem gesunden Umgang mit Stress.",
+    "Stress ist häufig mehr als nur eine hohe Belastung im Alltag. Für viele Menschen ist er eng verbunden mit innerem Druck, Perfektionismus, Verantwortung oder dem Gefühl, ständig funktionieren zu müssen.",
+    "Mit professioneller Hypnose können diese inneren Auslöser gezielt auf unterbewusster Ebene verändert werden. Ziel ist es, nicht nur Stress zu reduzieren, sondern wieder einen natürlichen Zustand von Ruhe, Klarheit und Energie zu erreichen."
   ],
   introDE: [
-    "Die Stressreduktion sowie die Burnout-Prävention sind gerade in der heutigen Zeit ein unglaublich wichtiges Thema. Denn Stress ist heute für viele Menschen schon normal geworden und auch ein Burnout ist für die meisten nicht mehr ungewöhnlich.",
-    "Länger andauernder Stress führt nicht nur zu dauerhaften Problemen, sondern auch zu ernsthaften Erkrankungen wie Bluthochdruck, Herzinfarkten und Burnout."
+    "Viele Menschen stehen heute dauerhaft unter Stress – im Beruf, im Alltag oder durch persönliche Belastungen. Häufig entsteht daraus eine anhaltende innere Anspannung, die sich nicht mehr einfach durch Erholung oder Urlaub ausgleichen lässt. Erste Warnsignale wie Schlafprobleme, Erschöpfung, Reizbarkeit oder Konzentrationsschwierigkeiten werden oft lange ignoriert.\n\nBleibt dieser Zustand bestehen, kann sich daraus schleichend ein Burnout entwickeln. Die Ursachen liegen dabei selten nur in äußeren Umständen, sondern häufig in tief verankerten Stressmustern, innerem Druck, hohen Erwartungen an sich selbst und unbewussten Reaktionsmechanismen. Genau hier setzt Hypnose an: Statt nur die Symptome zu behandeln, werden die zugrunde liegenden Muster auf tiefer Ebene gezielt verändert.\n\nZiel ist nicht nur kurzfristige Entlastung, sondern eine nachhaltige Veränderung hin zu mehr innerer Ruhe, Stabilität, Energie und einem gesunden Umgang mit Stress.",
+    "Stress ist häufig mehr als nur eine hohe Belastung im Alltag. Für viele Menschen ist er eng verbunden mit innerem Druck, Perfektionismus, Verantwortung oder dem Gefühl, ständig funktionieren zu müssen.",
+    "Mit professioneller Hypnose können diese inneren Auslöser gezielt auf unterbewusster Ebene verändert werden. Ziel ist es, nicht nur Stress zu reduzieren, sondern wieder einen natürlichen Zustand von Ruhe, Klarheit und Energie zu erreichen."
   ],
   introEN: [
-    "Stress reduction and burnout prevention are incredibly important topics in today's world. Stress has become normal for many people, and burnout is no longer unusual. There is hardly anyone who would claim not to be stressed.",
-    "It has even gone so far that in some industries, stress has become a synonym for productivity and success thinking. In reality, however, the opposite is true – especially in the long term. Prolonged stress leads not only to lasting problems but also to serious health conditions including high blood pressure, heart attacks, and burnout."
+    "Many people today are under constant stress – at work, in everyday life or through personal challenges. This often leads to a persistent inner tension that can no longer simply be balanced by rest or vacation. Early warning signs such as sleep problems, exhaustion, irritability or difficulty concentrating are often ignored for a long time.\n\nIf this state continues, burnout can gradually develop. The causes rarely lie in external circumstances alone, but often in deeply anchored stress patterns, inner pressure, high self-expectations and unconscious reaction mechanisms. This is exactly where hypnosis comes in: instead of only treating symptoms, the underlying patterns are specifically changed on a deeper level.\n\nThe goal is not only short-term relief, but a lasting change towards more inner calm, stability, energy and a healthy way of dealing with stress.",
+    "Stress is often more than just a heavy burden in everyday life. For many people it is closely connected with inner pressure, perfectionism, responsibility or the feeling of constantly having to function.",
+    "With professional hypnosis, these inner triggers can be specifically changed on a subconscious level. The goal is not only to reduce stress, but to return to a natural state of calm, clarity and energy."
   ],
   sectionsCH: [
     {
       h2: "So entwickelt sich aus dauerhaftem Stress ein Burnout",
       paragraphs: [
-        "Hintergrund der Stressreaktionen ist der sogenannte 'Kampf- oder Fluchtmechanismus' des Körpers. Dieser ist einer der Gründe, warum die Spezies Mensch bis heute überlebt hat. Denn in der Steinzeit war der 'Kampf- oder Fluchtmechanismus' massgeblich für das tägliche Überleben verantwortlich.",
-        "Wenn ein Steinzeitmensch beispielsweise einem Säbelzahntiger begegnete, musste er innerhalb von Sekundenbruchteilen entscheiden, ob er kämpft oder flieht. Für diese Entscheidung schüttete der Körper Stresshormone aus, die den Menschen in höchste Alarmbereitschaft versetzten.",
-        "Heute begegnen wir zwar keinen Säbelzahntigern mehr, doch unser Körper reagiert auf modernen Stress – wie Arbeitsdruck, Konflikte oder finanzielle Sorgen – mit denselben Mechanismen. Das Problem: Der Stress wird oft nicht mehr durch körperliche Aktivität abgebaut, sondern staut sich auf.",
-        "Wenn dieser Zustand über Wochen und Monate anhält, kann sich daraus ein Burnout entwickeln – ein Zustand totaler Erschöpfung, Antriebslosigkeit und innerer Leere."
+        "Hintergrund von Stressreaktionen ist der natürliche „Kampf- oder Fluchtmechanismus“ des Körpers. Dieser ist ursprünglich dafür gedacht, uns in Gefahrensituationen schnell reagieren zu lassen. Heute wird dieser Mechanismus jedoch dauerhaft durch beruflichen Druck, ständige Erreichbarkeit oder innere Anspannung aktiviert.",
+        "Wenn dieser Zustand über Wochen oder Monate anhält, fehlt dem Körper die notwendige Regeneration. Die Folge kann ein Burnout sein – ein Zustand tiefer körperlicher und emotionaler Erschöpfung, oft verbunden mit Antriebslosigkeit, innerer Leere und dem Gefühl, nicht mehr belastbar zu sein.",
+        "Viele Betroffene merken erst spät, dass sie sich bereits in einem solchen Prozess befinden, da Stress über lange Zeit als „normal“ empfunden wird."
       ]
     },
     {
       h2: "Burnout überwinden oder wirksam vorbeugen",
       paragraphs: [
-        "Mit gezielter Hypnose können die inneren Stressmuster erkannt und nachhaltig verändert werden. Die Aktiv-Hypnose© arbeitet direkt mit dem Unterbewusstsein, um die automatischen Stressreaktionen zu unterbrechen und durch gesündere Muster zu ersetzen.",
-        "Das Ergebnis: Sie können wieder ruhiger schlafen, klarer denken, sich besser konzentrieren und insgesamt gelassener durch den Alltag gehen. Viele Klienten berichten bereits nach wenigen Sitzungen von einer deutlichen Verbesserung ihrer Lebensqualität."
+        "Mit gezielter Hypnose können die inneren Stressmuster erkannt und nachhaltig verändert werden. Die Aktiv-Hypnose® arbeitet direkt mit dem Unterbewusstsein, wo automatische Reaktionen, emotionale Verknüpfungen und innere Antreiber gespeichert sind.",
+        "Typische Muster wie ständiger Leistungsdruck, innere Unruhe, Grübeln oder das Gefühl, nicht abschalten zu können, werden auf dieser Ebene gezielt bearbeitet und neu ausgerichtet. Dadurch entsteht Schritt für Schritt mehr innere Stabilität, Gelassenheit und Kontrolle im Umgang mit Belastungen.",
+        "Ziel ist es, nicht nur einen bestehenden Burnout-Zustand zu verbessern, sondern langfristig vorzubeugen und wieder einen gesunden Zugang zu Energie, Leistungsfähigkeit und Lebensqualität zu entwickeln."
+      ]
+    },
+    {
+      h2: "Nachhaltige Stressbewältigung beginnt im Unterbewusstsein",
+      paragraphs: [
+        "Viele Methoden zur Stressbewältigung setzen auf bewusste Strategien wie Entspannungstechniken, Zeitmanagement oder Verhaltensänderungen. Diese können hilfreich sein, greifen jedoch oft zu kurz, wenn die eigentlichen Ursachen im Unterbewusstsein liegen.",
+        "Hypnose setzt genau dort an: bei den automatischen Reaktionen, inneren Bewertungen und emotionalen Mustern, die Stress immer wieder auslösen. Durch diese tiefere Arbeit können Veränderungen nicht nur verstanden, sondern auch wirklich erlebt und nachhaltig im Alltag umgesetzt werden."
       ]
     }
   ],
@@ -472,32 +491,49 @@ export const stressData: ServicePageData = {
     {
       h2: "So entwickelt sich aus dauerhaftem Stress ein Burnout",
       paragraphs: [
-        "Hintergrund der Stressreaktionen ist der sogenannte 'Kampf- oder Fluchtmechanismus' des Körpers. Heute begegnen wir zwar keinen Säbelzahntigern mehr, doch unser Körper reagiert auf modernen Stress mit denselben Mechanismen.",
-        "Wenn dieser Zustand über Wochen und Monate anhält, kann sich daraus ein Burnout entwickeln – ein Zustand totaler Erschöpfung, Antriebslosigkeit und innerer Leere."
+        "Hintergrund von Stressreaktionen ist der natürliche „Kampf- oder Fluchtmechanismus“ des Körpers. Dieser ist ursprünglich dafür gedacht, uns in Gefahrensituationen schnell reagieren zu lassen. Heute wird dieser Mechanismus jedoch dauerhaft durch beruflichen Druck, ständige Erreichbarkeit oder innere Anspannung aktiviert.",
+        "Wenn dieser Zustand über Wochen oder Monate anhält, fehlt dem Körper die notwendige Regeneration. Die Folge kann ein Burnout sein – ein Zustand tiefer körperlicher und emotionaler Erschöpfung, oft verbunden mit Antriebslosigkeit, innerer Leere und dem Gefühl, nicht mehr belastbar zu sein.",
+        "Viele Betroffene merken erst spät, dass sie sich bereits in einem solchen Prozess befinden, da Stress über lange Zeit als „normal“ empfunden wird."
       ]
     },
     {
       h2: "Burnout überwinden oder wirksam vorbeugen",
       paragraphs: [
-        "Mit gezielter Hypnose können die inneren Stressmuster erkannt und nachhaltig verändert werden. Die Aktiv-Hypnose© arbeitet direkt mit dem Unterbewusstsein, um die automatischen Stressreaktionen zu unterbrechen."
+        "Mit gezielter Hypnose können die inneren Stressmuster erkannt und nachhaltig verändert werden. Die Aktiv-Hypnose® arbeitet direkt mit dem Unterbewusstsein, wo automatische Reaktionen, emotionale Verknüpfungen und innere Antreiber gespeichert sind.",
+        "Typische Muster wie ständiger Leistungsdruck, innere Unruhe, Grübeln oder das Gefühl, nicht abschalten zu können, werden auf dieser Ebene gezielt bearbeitet und neu ausgerichtet. Dadurch entsteht Schritt für Schritt mehr innere Stabilität, Gelassenheit und Kontrolle im Umgang mit Belastungen.",
+        "Ziel ist es, nicht nur einen bestehenden Burnout-Zustand zu verbessern, sondern langfristig vorzubeugen und wieder einen gesunden Zugang zu Energie, Leistungsfähigkeit und Lebensqualität zu entwickeln."
+      ]
+    },
+    {
+      h2: "Nachhaltige Stressbewältigung beginnt im Unterbewusstsein",
+      paragraphs: [
+        "Viele Methoden zur Stressbewältigung setzen auf bewusste Strategien wie Entspannungstechniken, Zeitmanagement oder Verhaltensänderungen. Diese können hilfreich sein, greifen jedoch oft zu kurz, wenn die eigentlichen Ursachen im Unterbewusstsein liegen.",
+        "Hypnose setzt genau dort an: bei den automatischen Reaktionen, inneren Bewertungen und emotionalen Mustern, die Stress immer wieder auslösen. Durch diese tiefere Arbeit können Veränderungen nicht nur verstanden, sondern auch wirklich erlebt und nachhaltig im Alltag umgesetzt werden."
       ]
     }
   ],
   sectionsEN: [
     {
-      h2: "How Chronic Stress Develops into Burnout",
+      h2: "How chronic stress develops into burnout",
       paragraphs: [
-        "Behind stress reactions is the body's so-called 'fight or flight mechanism.' This is one of the reasons why the human species has survived to this day. In the Stone Age, this mechanism was crucial for daily survival.",
-        "When a Stone Age human encountered a saber-toothed tiger, they had to decide within fractions of a second whether to fight or flee. For this decision, the body released stress hormones that put the person on highest alert.",
-        "Today we no longer encounter saber-toothed tigers, but our body reacts to modern stress – such as work pressure, conflicts, or financial worries – with the same mechanisms. The problem: stress is often no longer reduced through physical activity, but accumulates.",
-        "When this state persists for weeks and months, it can develop into burnout – a state of total exhaustion, listlessness, and inner emptiness."
+        "Behind stress reactions is the body's natural \"fight or flight mechanism.\" It is originally designed to let us react quickly in dangerous situations. Today, however, this mechanism is permanently activated by work pressure, constant availability or inner tension.",
+        "If this state continues for weeks or months, the body lacks the regeneration it needs. The result can be burnout – a state of deep physical and emotional exhaustion, often combined with listlessness, inner emptiness and the feeling of no longer being able to cope.",
+        "Many affected people only realize late that they are already in such a process, because stress is perceived as \"normal\" over a long period of time."
       ]
     },
     {
-      h2: "Overcoming Burnout or Effectively Preventing It",
+      h2: "Overcoming burnout or effectively preventing it",
       paragraphs: [
-        "With targeted hypnosis, inner stress patterns can be recognized and sustainably changed. Aktiv-Hypnose© works directly with the subconscious to interrupt automatic stress reactions and replace them with healthier patterns.",
-        "The result: you can sleep more peacefully again, think more clearly, concentrate better, and generally go through everyday life more calmly. Many clients report a significant improvement in their quality of life after just a few sessions."
+        "With targeted hypnosis, inner stress patterns can be recognized and sustainably changed. Aktiv-Hypnose® works directly with the subconscious, where automatic reactions, emotional connections and inner drivers are stored.",
+        "Typical patterns such as constant performance pressure, inner restlessness, rumination or the feeling of not being able to switch off are specifically addressed and realigned on this level. Step by step, this creates more inner stability, composure and control when dealing with strain.",
+        "The goal is not only to improve an existing burnout state, but to prevent it long term and to regain a healthy access to energy, performance and quality of life."
+      ]
+    },
+    {
+      h2: "Lasting stress management begins in the subconscious",
+      paragraphs: [
+        "Many methods of stress management rely on conscious strategies such as relaxation techniques, time management or behavioral changes. These can be helpful, but often fall short when the actual causes lie in the subconscious.",
+        "Hypnosis works exactly there: with the automatic reactions, inner evaluations and emotional patterns that repeatedly trigger stress. Through this deeper work, changes can not only be understood, but truly experienced and sustainably implemented in everyday life."
       ]
     }
   ],
