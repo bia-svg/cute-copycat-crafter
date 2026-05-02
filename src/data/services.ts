@@ -296,6 +296,9 @@ export const anxietyData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const weightData: ServicePageData = {
   slugCH: "abnehmen", slugDE: "abnehmen", slugEN: "weight-loss",
+  ctaCH: "Termin unverbindlich anfragen",
+  ctaDE: "Termin unverbindlich anfragen",
+  ctaEN: "Request an appointment",
   titleCH: "Abnehmen mit Hypnose Zürich · Ohne Diät · EMR · ★ 5.0 | David J. Woods",
   titleDE: "Abnehmen mit Hypnose Augsburg · Ohne Diät · ★ 5.0 | David J. Woods",
   titleEN: "Weight Loss Hypnotherapy · Zurich & Augsburg · No Dieting · ★ 5.0 | David J. Woods",
