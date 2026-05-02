@@ -388,6 +388,9 @@ export const weightData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const stressData: ServicePageData = {
   slugCH: "stress-burnout", slugDE: "stress-burnout", slugEN: "stress-burnout",
+  ctaCH: "Termin unverbindlich anfragen",
+  ctaDE: "Termin unverbindlich anfragen",
+  ctaEN: "Request an appointment",
   titleCH: "Hypnose bei Stress & Burnout Zürich · EMR · ★ 5.0 | David J. Woods",
   titleDE: "Hypnose bei Stress & Burnout Augsburg · ★ 5.0 | David J. Woods",
   titleEN: "Hypnotherapy for Stress & Burnout · Zurich & Augsburg · ★ 5.0 | David J. Woods",
