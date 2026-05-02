@@ -81,7 +81,7 @@ export default function FirmenCoaching() {
               {isEN ? "Business Coaching" : "Business Coaching"}
             </p>
             <h1 className="text-xl sm:text-2xl md:text-[1.7rem] font-light text-[#1B3A5C] leading-snug md:leading-[1.2] mb-2 md:mb-2.5 tracking-tight">
-              {isEN ? "Success Training for Companies" : "Erfolgs-Training für Unternehmen"}
+              {isEN ? "Leadership & Performance Programs for Companies" : "Leadership & Performance Programme für Unternehmen"}
             </h1>
             <p className="text-[13.5px] md:text-[14.5px] text-foreground/80 leading-snug md:leading-[1.55] max-w-2xl mx-auto mb-2 md:mb-2.5 font-medium">
               {isEN
