@@ -169,18 +169,18 @@ export default function FirmenCoaching() {
             <div className="space-y-2 md:space-y-2.5 max-w-3xl text-[13px] md:text-sm text-foreground/80 leading-snug md:leading-[1.5]">
               <p>
                 {isEN
-                  ? "A meta-analysis published in the International Journal of Clinical and Experimental Hypnosis (2019) found that hypnosis-based interventions significantly improve workplace performance and stress resilience, with effect sizes comparable to or exceeding traditional coaching methods (d = 0.82)."
-                  : "Eine Meta-Analyse im International Journal of Clinical and Experimental Hypnosis (2019) zeigt, dass hypnosebasierte Interventionen die Arbeitsleistung und Stressresilienz signifikant verbessern — mit Effektstärken vergleichbar oder höher als traditionelle Coaching-Methoden (d = 0,82)."}
+                  ? "Studies show that hypnosis-based methods significantly improve performance and stress resilience — with effect sizes that can surpass classical coaching approaches."
+                  : "Studien zeigen, dass hypnosebasierte Methoden die Leistungsfähigkeit und Stressresilienz signifikant verbessern – mit Effektstärken, die klassischen Coaching-Ansätzen überlegen sein können."}
               </p>
               <p>
                 {isEN
-                  ? "According to a study by the American Psychological Association (APA, 2020), organizations that invest in mental health and coaching programs see a return of $4 for every $1 invested, through reduced absenteeism and increased productivity."
-                  : "Laut einer Studie der American Psychological Association (APA, 2020) erzielen Unternehmen, die in Mental-Health- und Coaching-Programme investieren, einen Return von 4 $ pro investiertem Dollar — durch weniger Fehlzeiten und höhere Produktivität."}
+                  ? "Companies benefit measurably: fewer absences, higher productivity and more stable teams."
+                  : "Unternehmen profitieren messbar: weniger Ausfälle, höhere Produktivität und stabilere Teams."}
               </p>
               <p className="text-[10px] md:text-[11px] text-muted-foreground/70 italic leading-snug pt-0.5">
                 {isEN
-                  ? "Sources: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."
-                  : "Quellen: Int. Journal of Clinical and Experimental Hypnosis, Vol. 67(3), 2019; APA Center for Organizational Excellence, 2020."}
+                  ? "Sources: International Journal of Clinical and Experimental Hypnosis; American Psychological Association (APA)."
+                  : "Quellen: International Journal of Clinical and Experimental Hypnosis; American Psychological Association (APA)."}
               </p>
             </div>
           </div>
