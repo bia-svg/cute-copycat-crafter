@@ -104,9 +104,10 @@ export const smokingData: ServicePageData = {
       ]
     },
     {
-      h2: "Aufhören zu rauchen ohne ständigen Kampf",
+      h2: "Aufhören zu rauchen ohne ständigen inneren Kampf",
       paragraphs: [
-        "Durch die gezielte Arbeit mit dem Unterbewusstsein können diese inneren Verknüpfungen aufgelöst und durch gesündere Muster ersetzt werden. So wird das Aufhören nicht zum ständigen Kampf gegen sich selbst."
+        "Durch die gezielte Arbeit mit dem Unterbewusstsein können diese inneren Verknüpfungen nachhaltig verändert werden. Statt ständig gegen sich selbst anzukämpfen, entstehen neue, stabilere Muster.",
+        "So wird das Aufhören nicht mehr als Verzicht erlebt, sondern als echte innere Veränderung – hin zu einem rauchfreien Leben mit mehr Freiheit und Kontrolle."
       ]
     },
     {
