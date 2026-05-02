@@ -101,12 +101,12 @@ export default function FirmenCoaching() {
 
       {/* Topics — Banner */}
       <section className="bg-[#F8FAFC]">
-        <div className="container-main py-6 md:py-9">
-          <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 text-center tracking-tight">
+        <div className="container-main py-4 md:py-9">
+          <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-7 shadow-sm">
+            <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] mb-3 md:mb-5 text-center tracking-tight">
               {isEN ? "Topics for Your Company" : "Themen für Ihr Unternehmen"}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-5">
               {topics.map((item) => (
                 <ServiceCard
                   key={item.title}
@@ -125,20 +125,20 @@ export default function FirmenCoaching() {
 
       {/* Benefits — Banner */}
       <section className="bg-[#E8EDF3]">
-        <div className="container-main py-6 md:py-9">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl font-light text-[#1B3A5C] mb-5 tracking-tight">
+        <div className="container-main py-4 md:py-9">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-4 md:p-7 shadow-sm">
+            <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] mb-3 md:mb-5 tracking-tight">
               {isEN ? "Why Leadership & Performance Coaching is valuable:" : "Warum Leadership & Performance Coaching wertvoll ist:"}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 md:gap-3">
               {benefits.map((item) => (
-                <div key={item} className="flex items-start gap-2 text-sm">
+                <div key={item} className="flex items-start gap-2 text-[13px] md:text-sm leading-snug">
                   <span className="text-[#2E7D32] mt-0.5">•</span>
                   <span>{item}</span>
                 </div>
               ))}
             </div>
-            <p className="text-sm text-muted-foreground mt-5 max-w-3xl">
+            <p className="text-[13px] md:text-sm text-muted-foreground mt-3 md:mt-5 max-w-3xl leading-snug">
               {isEN
                 ? "Leadership & Performance Coaching creates the foundation for growth, clarity and sustainable development — because real business success starts with the people who shape it every day."
                 : "Leadership & Performance Coaching schafft die Grundlage für Wachstum, Klarheit und nachhaltige Entwicklung — denn echter Unternehmenserfolg beginnt bei den Menschen, die ihn täglich gestalten."}
