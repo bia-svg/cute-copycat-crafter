@@ -440,7 +440,13 @@ export const stressData: ServicePageData = {
     "Innere Anspannung, Überforderung und Erschöpfung gezielt lösen",
     "Mentale Klarheit, Ruhe und neue Energie zurückgewinnen",
     "Belastbarkeit, Fokus und Lebensqualität langfristig stärken"
-  ].slice(0,4) as any,
+  ],
+  benefitsEN: [
+    "Reduce chronic stress sustainably instead of only switching off briefly",
+    "Release inner tension, overwhelm and exhaustion at the root",
+    "Regain mental clarity, calm and new energy",
+    "Strengthen resilience, focus and quality of life long term"
+  ],
   introCH: [
     "Viele Menschen stehen dauerhaft unter Stress – im Beruf, im Alltag oder durch persönliche Belastungen. Häufig entsteht eine innere Anspannung, die sich nicht mehr einfach durch Erholung ausgleichen lässt. Erste Warnsignale wie Erschöpfung, Schlafprobleme oder Reizbarkeit werden oft lange ignoriert.\n\nBleibt dieser Zustand bestehen, kann sich daraus ein Burnout entwickeln. Die Ursachen liegen dabei häufig in tief verankerten Stressmustern und unbewussten Reaktionen. Genau hier setzt Hypnose an: Diese Muster werden gezielt auf tiefer Ebene verändert, sodass wieder mehr Ruhe, Stabilität und Energie entstehen kann.",
     "Stress ist häufig mehr als nur äußere Belastung. Für viele Menschen ist er eng verbunden mit innerem Druck, Perfektionismus oder dem Gefühl, ständig funktionieren zu müssen.",
