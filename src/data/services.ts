@@ -848,27 +848,27 @@ export const childrenData: ServicePageData = {
     "Become calmer, more balanced and focused"
   ],
   introCH: [
-    "Viele Kinder und Jugendliche erleben Phasen mit Ängsten, innerer Unruhe, schulischem Druck oder emotionalen Herausforderungen. Häufig zeigen sich diese Themen durch Rückzug, Konzentrationsprobleme, Unsicherheit oder Verhaltensveränderungen.\n\nKinderhypnose setzt genau hier an – nicht nur an den sichtbaren Symptomen, sondern an den zugrunde liegenden emotionalen Mustern. Ziel ist es, das Kind wieder in seine innere Balance zu bringen und nachhaltig zu stärken.",
-    "Wenn Kinder aus dem Gleichgewicht geraten, stehen Eltern oft vor der Frage, was wirklich dahinter steckt. Viele Themen entstehen nicht bewusst, sondern aus inneren Erfahrungen, Ängsten oder Überforderungen, die das Kind noch nicht richtig einordnen kann.",
-    "Mit Kinderhypnose können diese inneren Prozesse behutsam und altersgerecht unterstützt werden. Dabei geht es nicht um Druck oder Veränderung von außen, sondern darum, dem Kind zu helfen, eigene Stärke, Sicherheit und Vertrauen wieder aufzubauen."
+    "Viele Kinder und Jugendliche erleben Ängste, Unsicherheit, schulischen Druck oder innere Unruhe. Häufig zeigen sich diese Themen durch Rückzug, Konzentrationsprobleme oder Verhaltensveränderungen.\n\nKinderhypnose unterstützt dabei, diese inneren Prozesse besser zu verarbeiten und wieder mehr Stabilität, Sicherheit und Vertrauen zu entwickeln.",
+    "Wenn Kinder aus dem Gleichgewicht geraten, ist es für Eltern oft schwer zu erkennen, was genau dahinter steckt. Viele Themen entstehen aus innerer Überforderung oder emotionalen Erfahrungen.",
+    "Kinderhypnose setzt genau dort an und hilft, diese Muster altersgerecht zu unterstützen – mit dem Ziel, das Kind nachhaltig zu stärken und im Alltag zu stabilisieren."
   ],
   introDE: [
-    "Viele Kinder und Jugendliche erleben Phasen mit Ängsten, innerer Unruhe, schulischem Druck oder emotionalen Herausforderungen. Häufig zeigen sich diese Themen durch Rückzug, Konzentrationsprobleme, Unsicherheit oder Verhaltensveränderungen.\n\nKinderhypnose setzt genau hier an – nicht nur an den sichtbaren Symptomen, sondern an den zugrunde liegenden emotionalen Mustern. Ziel ist es, das Kind wieder in seine innere Balance zu bringen und nachhaltig zu stärken.",
-    "Wenn Kinder aus dem Gleichgewicht geraten, stehen Eltern oft vor der Frage, was wirklich dahinter steckt. Viele Themen entstehen nicht bewusst, sondern aus inneren Erfahrungen, Ängsten oder Überforderungen, die das Kind noch nicht richtig einordnen kann.",
-    "Mit Kinderhypnose können diese inneren Prozesse behutsam und altersgerecht unterstützt werden. Dabei geht es nicht um Druck oder Veränderung von außen, sondern darum, dem Kind zu helfen, eigene Stärke, Sicherheit und Vertrauen wieder aufzubauen."
+    "Viele Kinder und Jugendliche erleben Ängste, Unsicherheit, schulischen Druck oder innere Unruhe. Häufig zeigen sich diese Themen durch Rückzug, Konzentrationsprobleme oder Verhaltensveränderungen.\n\nKinderhypnose unterstützt dabei, diese inneren Prozesse besser zu verarbeiten und wieder mehr Stabilität, Sicherheit und Vertrauen zu entwickeln.",
+    "Wenn Kinder aus dem Gleichgewicht geraten, ist es für Eltern oft schwer zu erkennen, was genau dahinter steckt. Viele Themen entstehen aus innerer Überforderung oder emotionalen Erfahrungen.",
+    "Kinderhypnose setzt genau dort an und hilft, diese Muster altersgerecht zu unterstützen – mit dem Ziel, das Kind nachhaltig zu stärken und im Alltag zu stabilisieren."
   ],
   introEN: [
-    "Many children and teenagers go through phases of anxiety, inner restlessness, school pressure or emotional challenges. These issues often show up through withdrawal, concentration problems, insecurity or behavioural changes.\n\nChildren's hypnosis works exactly here – not only on the visible symptoms, but on the underlying emotional patterns. The goal is to help the child return to inner balance and to strengthen them sustainably.",
-    "When children lose their balance, parents often wonder what is really behind it. Many issues do not arise consciously, but from inner experiences, fears or feelings of being overwhelmed that the child cannot yet properly process.",
-    "With children's hypnosis, these inner processes can be supported gently and in an age-appropriate way. It is not about pressure or change imposed from outside, but about helping the child rebuild their own strength, security and confidence."
+    "Many children and teenagers experience anxiety, insecurity, school pressure or inner restlessness. These issues often show up through withdrawal, concentration problems or behavioural changes.\n\nChildren's hypnosis helps to process these inner experiences and to rebuild more stability, security and confidence.",
+    "When children lose their balance, it is often hard for parents to recognise what is really behind it. Many issues arise from inner overwhelm or emotional experiences.",
+    "Children's hypnosis works exactly there and helps to support these patterns in an age-appropriate way – with the goal of strengthening the child sustainably and stabilising them in everyday life."
   ],
   sectionsCH: [
     {
-      h2: "Kathryn – Kinderhypnose & psychologische Begleitung",
+      h2: "Kathryn – Kinderhypnose & psychologische Begleitung für Kinder und Jugendliche",
       paragraphs: [
         "Kathryn begleitet Kinder und Jugendliche einfühlsam in herausfordernden Lebensphasen. Ihre Arbeit verbindet psychologische Beratung mit speziell angepasster Kinderhypnose, um emotionale Stabilität, Selbstvertrauen und innere Balance gezielt zu fördern.",
-        "Durch ihre ruhige, strukturierte und klare Art entsteht schnell Vertrauen – eine wichtige Grundlage, damit Kinder sich öffnen und Veränderungen möglich werden.",
-        "Die Sitzungen sind individuell auf das Alter und die Persönlichkeit des Kindes abgestimmt und erfolgen stets in einer geschützten, vertrauensvollen Atmosphäre."
+        "Durch ihre ruhige, strukturierte und klare Art entsteht schnell Vertrauen – eine wichtige Grundlage, damit sich Kinder öffnen und Veränderungen möglich werden.",
+        "Über viele Jahre hat sie sich intensiv mit Persönlichkeitsentwicklung und der Arbeit mit Kindern beschäftigt. Ihre Sitzungen sind individuell auf Alter, Situation und Persönlichkeit abgestimmt und finden in einer geschützten, vertrauensvollen Atmosphäre statt."
       ],
       bullets: [
         "Ängste und emotionale Belastungen",
@@ -878,21 +878,22 @@ export const childrenData: ServicePageData = {
       ]
     },
     {
-      h2: "So läuft Kinderhypnose ab",
+      h2: "So läuft die Hypnose für Kinder & Jugendliche ab",
       paragraphs: [
-        "Die Hypnose für Kinder und Jugendliche wird altersgerecht, sanft und individuell gestaltet. Jede Sitzung erfolgt in einer ruhigen und vertrauensvollen Atmosphäre, in der sich das Kind sicher fühlen kann.",
-        "Je nach Situation werden Eltern in den Prozess einbezogen und erhalten auf Wunsch auch Impulse für den Alltag. Ziel ist es, nicht nur kurzfristig zu entlasten, sondern dem Kind langfristig mehr Stabilität, Selbstvertrauen und innere Sicherheit zu geben.",
-        "Kinderhypnose arbeitet dabei nicht über Druck, sondern über die natürlichen Fähigkeiten des Kindes – Fantasie, Vorstellungskraft und innere Verarbeitung."
+        "Die Kinderhypnose wird altersgerecht, behutsam und individuell gestaltet. Jede Sitzung findet in einer ruhigen und vertrauensvollen Atmosphäre statt, in der sich das Kind sicher fühlen kann.",
+        "Je nach Situation werden Eltern einbezogen und erhalten auf Wunsch auch praktische Impulse für den Alltag. Ziel ist es, das Kind nicht nur kurzfristig zu entlasten, sondern langfristig zu stärken – emotional, mental und im Verhalten.",
+        "Kinderhypnose nutzt dabei die natürliche Vorstellungskraft von Kindern, um positive Veränderungen auf einer tieferen Ebene zu unterstützen und neue Stabilität im Alltag zu ermöglichen.",
+        "Ziel der Kinderhypnose ist es, Kinder und Jugendliche in ihrer eigenen Entwicklung zu unterstützen – ohne Druck, sondern mit Verständnis, Struktur und einem klaren Fokus auf ihre individuellen Stärken. So können sie Schritt für Schritt wieder mehr Sicherheit, Vertrauen und innere Balance im Alltag gewinnen."
       ]
     }
   ],
   sectionsDE: [
     {
-      h2: "Kathryn – Kinderhypnose & psychologische Begleitung",
+      h2: "Kathryn – Kinderhypnose & psychologische Begleitung für Kinder und Jugendliche",
       paragraphs: [
         "Kathryn begleitet Kinder und Jugendliche einfühlsam in herausfordernden Lebensphasen. Ihre Arbeit verbindet psychologische Beratung mit speziell angepasster Kinderhypnose, um emotionale Stabilität, Selbstvertrauen und innere Balance gezielt zu fördern.",
-        "Durch ihre ruhige, strukturierte und klare Art entsteht schnell Vertrauen – eine wichtige Grundlage, damit Kinder sich öffnen und Veränderungen möglich werden.",
-        "Die Sitzungen sind individuell auf das Alter und die Persönlichkeit des Kindes abgestimmt und erfolgen stets in einer geschützten, vertrauensvollen Atmosphäre."
+        "Durch ihre ruhige, strukturierte und klare Art entsteht schnell Vertrauen – eine wichtige Grundlage, damit sich Kinder öffnen und Veränderungen möglich werden.",
+        "Über viele Jahre hat sie sich intensiv mit Persönlichkeitsentwicklung und der Arbeit mit Kindern beschäftigt. Ihre Sitzungen sind individuell auf Alter, Situation und Persönlichkeit abgestimmt und finden in einer geschützten, vertrauensvollen Atmosphäre statt."
       ],
       bullets: [
         "Ängste und emotionale Belastungen",
@@ -902,21 +903,22 @@ export const childrenData: ServicePageData = {
       ]
     },
     {
-      h2: "So läuft Kinderhypnose ab",
+      h2: "So läuft die Hypnose für Kinder & Jugendliche ab",
       paragraphs: [
-        "Die Hypnose für Kinder und Jugendliche wird altersgerecht, sanft und individuell gestaltet. Jede Sitzung erfolgt in einer ruhigen und vertrauensvollen Atmosphäre, in der sich das Kind sicher fühlen kann.",
-        "Je nach Situation werden Eltern in den Prozess einbezogen und erhalten auf Wunsch auch Impulse für den Alltag. Ziel ist es, nicht nur kurzfristig zu entlasten, sondern dem Kind langfristig mehr Stabilität, Selbstvertrauen und innere Sicherheit zu geben.",
-        "Kinderhypnose arbeitet dabei nicht über Druck, sondern über die natürlichen Fähigkeiten des Kindes – Fantasie, Vorstellungskraft und innere Verarbeitung."
+        "Die Kinderhypnose wird altersgerecht, behutsam und individuell gestaltet. Jede Sitzung findet in einer ruhigen und vertrauensvollen Atmosphäre statt, in der sich das Kind sicher fühlen kann.",
+        "Je nach Situation werden Eltern einbezogen und erhalten auf Wunsch auch praktische Impulse für den Alltag. Ziel ist es, das Kind nicht nur kurzfristig zu entlasten, sondern langfristig zu stärken – emotional, mental und im Verhalten.",
+        "Kinderhypnose nutzt dabei die natürliche Vorstellungskraft von Kindern, um positive Veränderungen auf einer tieferen Ebene zu unterstützen und neue Stabilität im Alltag zu ermöglichen.",
+        "Ziel der Kinderhypnose ist es, Kinder und Jugendliche in ihrer eigenen Entwicklung zu unterstützen – ohne Druck, sondern mit Verständnis, Struktur und einem klaren Fokus auf ihre individuellen Stärken. So können sie Schritt für Schritt wieder mehr Sicherheit, Vertrauen und innere Balance im Alltag gewinnen."
       ]
     }
   ],
   sectionsEN: [
     {
-      h2: "Kathryn – Children's Hypnosis & Psychological Support",
+      h2: "Kathryn – Children's Hypnosis & Psychological Support for Children and Teenagers",
       paragraphs: [
         "Kathryn empathetically supports children and teenagers through challenging phases of life. Her work combines psychological counselling with specially adapted children's hypnosis to foster emotional stability, self-confidence and inner balance.",
         "Through her calm, structured and clear approach, trust is built quickly – an important foundation for children to open up and for change to become possible.",
-        "Sessions are individually tailored to the child's age and personality and always take place in a protected, trusting atmosphere."
+        "Over many years she has intensively worked with personality development and with children. Her sessions are individually tailored to age, situation and personality and always take place in a protected, trusting atmosphere."
       ],
       bullets: [
         "Fears and emotional burdens",
@@ -926,11 +928,12 @@ export const childrenData: ServicePageData = {
       ]
     },
     {
-      h2: "How Children's Hypnosis Works",
+      h2: "How Hypnosis for Children & Teenagers Works",
       paragraphs: [
-        "Hypnosis for children and teenagers is designed to be age-appropriate, gentle and individual. Every session takes place in a calm and trusting atmosphere in which the child can feel safe.",
-        "Depending on the situation, parents are involved in the process and, if desired, also receive impulses for everyday life. The goal is not only short-term relief, but to give the child lasting stability, self-confidence and inner security.",
-        "Children's hypnosis does not work through pressure, but through the child's natural abilities – imagination, visualisation and inner processing."
+        "Children's hypnosis is designed to be age-appropriate, gentle and individual. Every session takes place in a calm and trusting atmosphere in which the child can feel safe.",
+        "Depending on the situation, parents are involved and, if desired, also receive practical impulses for everyday life. The goal is not only short-term relief but to strengthen the child in the long term – emotionally, mentally and behaviourally.",
+        "Children's hypnosis uses the child's natural imagination to support positive changes on a deeper level and to enable new stability in everyday life.",
+        "The goal of children's hypnosis is to support children and teenagers in their own development – without pressure, but with understanding, structure and a clear focus on their individual strengths. Step by step they can regain more security, confidence and inner balance in everyday life."
       ]
     }
   ],
