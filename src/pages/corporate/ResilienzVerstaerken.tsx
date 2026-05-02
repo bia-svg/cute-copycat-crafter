@@ -151,28 +151,40 @@ export default function ResilienzVerstaerken() {
         </div>
       </section>
 
-      {/* 7 Pillars — vertical list banner */}
-      <section className="bg-[#F8FAFC]">
-        <div className="container-main py-7 md:py-9">
-          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-5 md:p-7 shadow-sm">
-            <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] mb-5 tracking-tight text-center">
-              {isEN ? "The 7 Pillars of Resilience" : "Die 7 Säulen der Resilienz"}
-            </h2>
-            <ol className="divide-y divide-[#E8EDF3]">
-              {pillars.map((p, i) => (
-                <li key={i} className="flex gap-4 py-3.5 first:pt-0 last:pb-0">
-                  <span className="text-[#1B3A5C]/40 font-light text-lg leading-none w-6 shrink-0 pt-0.5 tabular-nums">
-                    {i + 1}.
-                  </span>
-                  <div className="min-w-0">
-                    <h3 className="font-medium text-[15px] text-[#1B3A5C] tracking-tight mb-0.5">
-                      {p.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-snug">{p.desc}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+      {/* 7 Pillars — premium vertical banner */}
+      <section className="bg-[#F1F4F7]">
+        <div className="container-main py-9 md:py-12">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-7">
+              <p className="text-[11px] font-medium text-[#2E7D32] uppercase tracking-[0.18em] mb-2">
+                {isEN ? "Framework" : "Framework"}
+              </p>
+              <h2 className="text-2xl md:text-[1.7rem] font-light text-[#1B3A5C] tracking-tight">
+                {isEN ? "The 7 Pillars of Resilience" : "Die 7 Säulen der Resilienz"}
+              </h2>
+              <div className="mx-auto mt-3 h-px w-10 bg-[#1B3A5C]/25" />
+            </div>
+
+            <div className="bg-white border border-[#E2E8EE] rounded-2xl shadow-[0_1px_2px_rgba(27,58,92,0.04)] overflow-hidden">
+              <ol>
+                {pillars.map((p, i) => (
+                  <li
+                    key={i}
+                    className="group grid grid-cols-[64px_1fr] md:grid-cols-[88px_1fr] items-baseline gap-4 md:gap-6 px-5 md:px-8 py-4 md:py-5 border-b border-[#EEF1F5] last:border-b-0 transition-colors hover:bg-[#F7F9FC]"
+                  >
+                    <span className="font-serif font-light text-3xl md:text-4xl text-[#1B3A5C]/30 tabular-nums leading-none text-right pr-2 md:pr-4 border-r border-[#EEF1F5] self-stretch flex items-center justify-end">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div className="min-w-0 py-0.5">
+                      <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] tracking-tight mb-1">
+                        {p.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-snug">{p.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </div>
       </section>
