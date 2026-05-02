@@ -423,16 +423,16 @@ export default function UeberUns() {
 
 
       {/* CTA — Next Step */}
-      <section className="bg-[#E8EDF3] py-6 md:py-9">
+      <section className="bg-[#E8EDF3] py-4 md:py-6">
         <div className="container-main">
-          <div className="relative max-w-2xl mx-auto bg-white border border-[#E8EDF3] rounded-2xl px-6 py-8 md:px-10 md:py-10 text-center shadow-[0_4px_20px_rgba(27,58,92,0.06)]">
+          <div className="relative max-w-2xl mx-auto bg-white border border-[#E8EDF3] rounded-2xl px-6 py-5 md:px-10 md:py-6 text-center shadow-[0_4px_20px_rgba(27,58,92,0.06)]">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#1B3A5C] text-white text-xs font-semibold px-4 py-1 rounded-full tracking-wide uppercase">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
-            <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] mb-3 tracking-tight">
+            <h2 className="text-xl md:text-2xl font-light text-[#1B3A5C] mb-2 tracking-tight">
               {isEN ? "Ready for Lasting Change?" : "Bereit für nachhaltige Veränderung?"}
             </h2>
-            <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto mb-5">
+            <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto mb-3">
               {isEN
                 ? "Arrange a non-binding telephone consultation. We take time for your concern and advise you individually."
                 : "Vereinbaren Sie eine unverbindliche telefonische Erstberatung. Wir nehmen uns Zeit für Ihr Anliegen und beraten Sie individuell."}
