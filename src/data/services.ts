@@ -305,8 +305,8 @@ export const weightData: ServicePageData = {
   metaDescCH: "Abnehmen mit Hypnose in Zürich — Essverhalten nachhaltig verändern, ohne Verbot, ohne Jo-Jo. Lic. Psych. David J. Woods, 35+ Jahre, EMR-anerkannt, ★ 5.0 (266 Bewertungen). Kostenloses Erstgespräch.",
   metaDescDE: "Abnehmen mit Hypnose in Augsburg — Essverhalten nachhaltig verändern, ohne Verbot, ohne Jo-Jo. Lic. Psych. David J. Woods, 35+ Jahre, ★ 5.0 (266 Google-Bewertungen). Kostenloses Erstgespräch.",
   metaDescEN: "Lose weight with hypnosis in Zurich & Augsburg — sustainably change eating habits, no restrictions, no yo-yo. Lic. Psych. David J. Woods, 35+ years, ★ 5.0 (266 reviews). Free discovery call.",
-  h1CH: "Abnehmen mit Hypnose – nachhaltig abnehmen ohne Diät und Jo-Jo-Effekt",
-  h1DE: "Abnehmen mit Hypnose – nachhaltig abnehmen ohne Diät und Jo-Jo-Effekt",
+  h1CH: "Abnehmen mit Hypnose – ohne Diät & Jo-Jo-Effekt",
+  h1DE: "Abnehmen mit Hypnose – ohne Diät & Jo-Jo-Effekt",
   h1EN: "Weight Loss with Hypnotherapy – Live Lighter, Permanently",
   benefitsCH: [
     "Essverhalten nachhaltig verändern statt kurzfristiger Diäten",
