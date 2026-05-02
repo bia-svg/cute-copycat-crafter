@@ -186,29 +186,6 @@ export default function ResilienzVerstaerken() {
               </ol>
             </div>
           </div>
-            <div className="relative px-6 md:px-12 py-8 md:py-10">
-              {/* vertical guide line */}
-              <div className="absolute left-[42px] md:left-[64px] top-8 bottom-8 w-px bg-white/10" aria-hidden />
-
-              <ol className="space-y-5 md:space-y-6">
-                {pillars.map((p, i) => (
-                  <li key={i} className="relative grid grid-cols-[44px_1fr] md:grid-cols-[64px_1fr] gap-4 md:gap-6 items-start">
-                    <div className="relative flex items-center justify-center">
-                      <span className="relative z-10 w-9 h-9 md:w-11 md:h-11 rounded-full bg-white text-[#1B3A5C] text-sm md:text-base font-medium flex items-center justify-center tabular-nums ring-4 ring-[#1B3A5C]">
-                        {i + 1}
-                      </span>
-                    </div>
-                    <div className="min-w-0 pt-1.5 md:pt-2">
-                      <h3 className="text-[15px] md:text-base font-medium text-white tracking-tight mb-1">
-                        {p.title}
-                      </h3>
-                      <p className="text-sm text-white/70 leading-snug">{p.desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
         </div>
       </section>
 
