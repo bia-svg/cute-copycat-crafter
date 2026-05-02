@@ -28,8 +28,8 @@ export default function FAQSection({ title, items, sectionClassName }: FAQSectio
 
   return (
     <section className={sectionClassName ?? "bg-[#DDE1E4] border-y border-border"}>
-      <div className="container-main py-2.5 md:py-4">
-        <h2 className="text-lg md:text-xl font-light tracking-tight text-foreground/90 leading-tight mb-1.5 md:mb-3 text-center">
+      <div className="container-main py-2.5 md:py-3.5">
+        <h2 className="text-base md:text-lg font-light tracking-tight text-foreground/80 leading-tight mb-1.5 md:mb-2.5 text-center">
           {title}
         </h2>
 

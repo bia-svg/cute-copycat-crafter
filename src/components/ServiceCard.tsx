@@ -49,7 +49,7 @@ export default function ServiceCard({ title, description, href, icon, image, ima
           </div>
           {/* Desktop: vertical card */}
           <div className="hidden md:block">
-            <div className="aspect-[16/9] overflow-hidden">
+            <div className="aspect-[16/9] overflow-hidden service-card-image">
               <img
                 src={image}
                 alt={title}
@@ -62,7 +62,7 @@ export default function ServiceCard({ title, description, href, icon, image, ima
                 decoding="async"
               />
             </div>
-            <div className="px-4 pt-1.5 pb-2.5">
+            <div className="px-4 pt-1.5 pb-2.5 service-card-body">
               <div className="flex items-center gap-2 text-primary mb-0.5">
                 {icon}
                 <h3 className="font-semibold text-foreground text-sm leading-snug">{title}</h3>
