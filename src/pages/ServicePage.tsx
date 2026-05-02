@@ -435,33 +435,6 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         </section>
       )}
 
-      {/* Testimonials from Google Reviews — unified premium banner */}
-      {(() => {
-        const testimonials = getTestimonialsForService(data.slugEN);
-        if (testimonials.length === 0) return null;
-        return (
-          <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
-            <div className="container-main py-6 md:py-9">
-              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-4 text-center tracking-tight">
-                  {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
-                </h2>
-                {/* Desktop: 3-column grid */}
-                <div className="hidden md:grid grid-cols-3 gap-4">
-                  {testimonials.map((t, i) => (
-                    <ServiceTestimonialCard key={i} t={t} isEN={isEN} />
-                  ))}
-                </div>
-                {/* Mobile: swipeable carousel */}
-                <div className="md:hidden">
-                  <ServiceTestimonialsMobileCarousel testimonials={testimonials} isEN={isEN} />
-                </div>
-              </div>
-            </div>
-          </section>
-        );
-      })()}
-
       {/* Unified FAQ — uses shared FAQSection (centered, green plus, green open state) */}
       {(() => {
         const consultItems = (isEN ? consultationFaqEN : consultationFaqDE)
@@ -473,6 +446,33 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
             title={isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
             items={allFaq}
           />
+        );
+      })()}
+
+      {/* Testimonials from Google Reviews — placed after FAQ, before contact form. Distinct subtle grey to separate from contact section. */}
+      {(() => {
+        const testimonials = getTestimonialsForService(data.slugEN);
+        if (testimonials.length === 0) return null;
+        return (
+          <section className="bg-[#ECEFF3] border-b border-[#DDE2E8]">
+            <div className="container-main py-4 md:py-6">
+              <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-4 md:p-5">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-2.5 text-center tracking-tight">
+                  {isEN ? "What Our Clients Say" : "Was unsere Klienten sagen"}
+                </h2>
+                {/* Desktop: 3-column grid */}
+                <div className="hidden md:grid grid-cols-3 gap-3">
+                  {testimonials.map((t, i) => (
+                    <ServiceTestimonialCard key={i} t={t} isEN={isEN} />
+                  ))}
+                </div>
+                {/* Mobile: swipeable carousel — slider logic unchanged */}
+                <div className="md:hidden">
+                  <ServiceTestimonialsMobileCarousel testimonials={testimonials} isEN={isEN} />
+                </div>
+              </div>
+            </div>
+          </section>
         );
       })()}
 
