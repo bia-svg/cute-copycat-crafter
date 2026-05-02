@@ -171,7 +171,7 @@ export default function FirmenCoaching() {
       </section>
 
       {/* Topics — Banner */}
-      <section className="bg-[#F8FAFC]">
+      <section className="bg-[#E8EDF3]">
         <div className="container-main py-3.5 md:py-5">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
             <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 text-center tracking-tight">
