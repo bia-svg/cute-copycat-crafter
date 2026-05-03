@@ -158,7 +158,7 @@ export default function UeberUns() {
               </div>
               <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center">
                 <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-10 md:h-12 w-10 md:w-12 object-contain mx-auto mb-1.5" loading="lazy" width={512} height={512} />
-                <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</h3>
+                <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">Lic. Psych. UNAM</h3>
               </div>
               <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center">
                 <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-7 md:h-10 mx-auto mb-1.5" loading="lazy" />
