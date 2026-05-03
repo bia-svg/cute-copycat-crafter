@@ -501,7 +501,7 @@ export default function Home() {
                 <div className="flex flex-col items-center justify-end gap-1.5 bg-secondary rounded-lg px-2 pt-3 pb-2 h-[96px]">
                   <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-[52px] w-[52px] object-contain pointer-events-none select-none" style={{ filter: "brightness(1.18) contrast(1.15) saturate(1.12)", WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }} width={512} height={512} loading="lazy" decoding="async" draggable={false} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
                   <div className="text-center">
-                    <div className="font-semibold text-[10.5px] text-foreground/95 leading-tight">{isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</div>
+                    <div className="font-semibold text-[10.5px] text-foreground/95 leading-tight">Lic. Psych. UNAM</div>
                   </div>
                 </div>
               </div>
