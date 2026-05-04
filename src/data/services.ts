@@ -238,19 +238,19 @@ export const anxietyData: ServicePageData = {
   ],
   benefitsEN: ["Gain more inner calm and security", "Reduce anxiety and panic specifically", "Feel free and confident in everyday life again", "Release blocks and regain quality of life"],
   introCH: [
-    "Ängste und Panikattacken entstehen häufig durch erlernte Reaktionen, unbewusste Verknüpfungen und körperliche Stressmuster.",
-    "Ob innere Unruhe, Kontrollverlust, Herzklopfen oder plötzlich auftretende Panik – der Körper speichert solche Erfahrungen und reagiert in ähnlichen Situationen automatisch.",
-    "Mit Hypnose setzen wir genau an diesen Ursachen an. Ziel ist eine nachhaltige Veränderung hin zu mehr Ruhe, Sicherheit und Kontrolle im Alltag."
+    "Ängste und Panikattacken entstehen häufig durch erlernte Reaktionen, unbewusste Verknüpfungen und körperliche Stressmuster.\n\nOb innere Unruhe, Kontrollverlust, Herzklopfen oder plötzlich auftretende Panik – der Körper speichert solche Erfahrungen und reagiert in ähnlichen Situationen automatisch.\n\nMit Hypnose setzen wir genau an diesen Ursachen an. Ziel ist eine nachhaltige Veränderung hin zu mehr Ruhe, Sicherheit und Kontrolle im Alltag.",
+    "Ängste, Panikattacken und innere Unsicherheit können den Alltag stark einschränken. Häufig liegen die Ursachen nicht im bewussten Denken, sondern in tiefer verankerten emotionalen Mustern und automatischen Reaktionen des Körpers.\n\nMit Hypnose werden diese inneren Verknüpfungen gezielt verändert. So entsteht nicht nur kurzfristige Entlastung, sondern eine stabile innere Sicherheit im Alltag.",
+    "Viele Reaktionen wie Angst, Anspannung oder Panik sind erlernte Muster. Sie entstehen durch Erfahrungen, Stress oder prägende Situationen und laufen später automatisch ab.\n\nDurch Hypnose können diese Muster direkt an der Ursache verändert werden. Das Ergebnis ist mehr Kontrolle, innere Ruhe und ein deutlich entspannterer Umgang mit belastenden Situationen."
   ],
   introDE: [
-    "Ängste und Panikattacken entstehen häufig durch erlernte Reaktionen, unbewusste Verknüpfungen und körperliche Stressmuster.",
-    "Ob innere Unruhe, Kontrollverlust, Herzklopfen oder plötzlich auftretende Panik – der Körper speichert solche Erfahrungen und reagiert in ähnlichen Situationen automatisch.",
-    "Mit Hypnose setzen wir genau an diesen Ursachen an. Ziel ist eine nachhaltige Veränderung hin zu mehr Ruhe, Sicherheit und Kontrolle im Alltag."
+    "Ängste und Panikattacken entstehen häufig durch erlernte Reaktionen, unbewusste Verknüpfungen und körperliche Stressmuster.\n\nOb innere Unruhe, Kontrollverlust, Herzklopfen oder plötzlich auftretende Panik – der Körper speichert solche Erfahrungen und reagiert in ähnlichen Situationen automatisch.\n\nMit Hypnose setzen wir genau an diesen Ursachen an. Ziel ist eine nachhaltige Veränderung hin zu mehr Ruhe, Sicherheit und Kontrolle im Alltag.",
+    "Ängste, Panikattacken und innere Unsicherheit können den Alltag stark einschränken. Häufig liegen die Ursachen nicht im bewussten Denken, sondern in tiefer verankerten emotionalen Mustern und automatischen Reaktionen des Körpers.\n\nMit Hypnose werden diese inneren Verknüpfungen gezielt verändert. So entsteht nicht nur kurzfristige Entlastung, sondern eine stabile innere Sicherheit im Alltag.",
+    "Viele Reaktionen wie Angst, Anspannung oder Panik sind erlernte Muster. Sie entstehen durch Erfahrungen, Stress oder prägende Situationen und laufen später automatisch ab.\n\nDurch Hypnose können diese Muster direkt an der Ursache verändert werden. Das Ergebnis ist mehr Kontrolle, innere Ruhe und ein deutlich entspannterer Umgang mit belastenden Situationen."
   ],
   introEN: [
-    "Anxiety and panic attacks often arise from learned reactions, unconscious associations, and physical stress patterns.",
-    "Whether inner restlessness, loss of control, a racing heart, or sudden panic – the body stores such experiences and reacts automatically in similar situations.",
-    "With hypnosis we work directly with these underlying causes. The goal is lasting change toward more calm, security, and control in everyday life."
+    "Anxiety and panic attacks often arise from learned reactions, unconscious associations, and physical stress patterns.\n\nWhether inner restlessness, loss of control, a racing heart, or sudden panic – the body stores such experiences and reacts automatically in similar situations.\n\nWith hypnosis we work directly with these underlying causes. The goal is lasting change toward more calm, security, and control in everyday life.",
+    "Anxiety, panic attacks, and inner insecurity can heavily restrict everyday life. The causes often lie not in conscious thinking, but in more deeply anchored emotional patterns and automatic bodily reactions.\n\nWith hypnosis these inner associations are specifically changed. The result is not just short-term relief, but stable inner security in everyday life.",
+    "Many reactions such as anxiety, tension, or panic are learned patterns. They develop through experiences, stress, or formative situations and later run automatically.\n\nThrough hypnosis these patterns can be changed directly at the root. The outcome is more control, inner calm, and a noticeably more relaxed way of dealing with stressful situations."
   ],
   sectionsCH: [
     {
