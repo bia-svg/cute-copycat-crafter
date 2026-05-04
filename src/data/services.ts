@@ -99,7 +99,9 @@ export const smokingData: ServicePageData = {
         "Stärkeres Gefühl von Kontrolle und Selbstbestimmung",
         "Stabil als Nichtraucher leben – ohne Rückfall"
       ],
-      footer: "Ziel ist nicht nur, mit dem Rauchen aufzuhören, sondern dauerhaft rauchfrei zu bleiben und sich innerlich frei zu fühlen."
+      paragraphsAfter: [
+        "Ziel ist nicht nur, mit dem Rauchen aufzuhören, sondern dauerhaft rauchfrei zu bleiben und sich innerlich frei zu fühlen."
+      ]
     }
   ],
   sectionsDE: [
