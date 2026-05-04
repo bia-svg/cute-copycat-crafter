@@ -17,6 +17,8 @@ import { CheckCircle, ChevronRight, Star, ExternalLink } from "lucide-react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import FAQSection from "@/components/FAQSection";
+import AEOSection from "@/components/AEOSection";
+import { getAEOForService } from "@/data/aeoAnswers";
 import { getTestimonialsForService } from "@/data/serviceTestimonials";
 import { consultationFaqEN, consultationFaqDE } from "@/data/consultationFAQ";
 import { trackPageView, trackCtaClick } from "@/lib/ctaTracking";
@@ -502,6 +504,12 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           </div>
         </div>
       </section>
+
+      {/* AEO row — concise authoritative Q&A for AI assistants (ChatGPT, Perplexity, Google AI Overview) */}
+      <AEOSection
+        title={isEN ? "Quick answers" : "Kurz erklärt"}
+        items={getAEOForService(data.slugEN, isEN)}
+      />
     </>
   );
 }
