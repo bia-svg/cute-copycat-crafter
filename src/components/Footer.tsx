@@ -28,7 +28,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-footer text-footer-foreground">
-      <div className="container-main pt-8 md:pt-7 pb-16 md:pb-10">
+      <div className="container-main pt-8 md:pt-7 pb-24 md:pb-12">
         <div className="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-6">
           {/* Logo & Info + Institutes (stacked on desktop) */}
           <div className="space-y-6 md:space-y-4">
@@ -180,7 +180,7 @@ export default function Footer() {
         </div>
 
         {/* Medical Disclaimer */}
-        <div className="border-t border-white/20 mt-5 md:mt-4 pt-3 md:pt-3 text-xs text-center opacity-75 max-w-3xl mx-auto">
+        <div className="border-t border-white/20 mt-5 md:mt-4 pt-3 md:pt-3 text-xs text-center opacity-75 max-w-3xl mx-auto leading-[1.55]">
           {isEN
             ? "We expressly point out that our services do NOT replace the work of a medical doctor, psychiatrist, or licensed healthcare practitioner. We do not treat illnesses and we do not provide medical diagnoses."
             : "Wir weisen ausdrücklich darauf hin, dass unsere Tätigkeit NICHT die Tätigkeit eines Arztes, Psychiaters oder Heilpraktikers ersetzt. Wir behandeln weder Krankheiten noch stellen wir medizinische Diagnosen."}
