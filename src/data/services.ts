@@ -86,11 +86,21 @@ export const smokingData: ServicePageData = {
       ]
     },
     {
-      h2: "Wissenschaftliche Erkenntnisse: Hypnose bei Raucherentwöhnung",
+      h2: "Ergebnisse der Raucherentwöhnung mit Hypnose",
       paragraphs: [
-        "Studien zeigen, dass Hypnose eine wirksame Unterstützung bei der Raucherentwöhnung sein kann – insbesondere dann, wenn neben dem Verhalten auch emotionale und unbewusste Muster gezielt verändert werden.",
-        "Der Fokus liegt dabei nicht nur auf dem Verzicht, sondern auf einer nachhaltigen inneren Veränderung, die langfristig zu stabileren Ergebnissen führen kann.",
-        "Quellen: Viswesvaran & Schmidt, Journal of Applied Psychology, 77(4), 1992; Hasan et al., Journal of Public Health, 22(6), 2014."
+        "Viele Klienten berichten bereits nach kurzer Zeit von deutlichen Veränderungen im Alltag.",
+        "Typische Ergebnisse der Raucherentwöhnung mit Hypnose:"
+      ],
+      bullets: [
+        "Kein oder deutlich reduziertes Verlangen nach Zigaretten",
+        "Rauchfrei werden ohne ständigen inneren Kampf",
+        "Mehr Energie, bessere Atmung und körperliches Wohlbefinden",
+        "Weniger Stress durch Wegfall der Gewohnheit",
+        "Stärkeres Gefühl von Kontrolle und Selbstbestimmung",
+        "Stabil als Nichtraucher leben – ohne Rückfall"
+      ],
+      paragraphsAfter: [
+        "Ziel ist nicht nur, mit dem Rauchen aufzuhören, sondern dauerhaft rauchfrei zu bleiben und sich innerlich frei zu fühlen."
       ]
     }
   ],
@@ -122,11 +132,21 @@ export const smokingData: ServicePageData = {
       ]
     },
     {
-      h2: "Wissenschaftliche Erkenntnisse: Hypnose bei Raucherentwöhnung",
+      h2: "Ergebnisse der Raucherentwöhnung mit Hypnose",
       paragraphs: [
-        "Studien zeigen, dass Hypnose eine wirksame Unterstützung bei der Raucherentwöhnung sein kann – insbesondere dann, wenn neben dem Verhalten auch emotionale und unbewusste Muster gezielt verändert werden.",
-        "Der Fokus liegt dabei nicht nur auf dem Verzicht, sondern auf einer nachhaltigen inneren Veränderung, die langfristig zu stabileren Ergebnissen führen kann.",
-        "Quellen: Viswesvaran & Schmidt, Journal of Applied Psychology, 77(4), 1992; Hasan et al., Journal of Public Health, 22(6), 2014."
+        "Viele Klienten berichten bereits nach kurzer Zeit von deutlichen Veränderungen im Alltag.",
+        "Typische Ergebnisse der Raucherentwöhnung mit Hypnose:"
+      ],
+      bullets: [
+        "Kein oder deutlich reduziertes Verlangen nach Zigaretten",
+        "Rauchfrei werden ohne ständigen inneren Kampf",
+        "Mehr Energie, bessere Atmung und körperliches Wohlbefinden",
+        "Weniger Stress durch Wegfall der Gewohnheit",
+        "Stärkeres Gefühl von Kontrolle und Selbstbestimmung",
+        "Stabil als Nichtraucher leben – ohne Rückfall"
+      ],
+      paragraphsAfter: [
+        "Ziel ist nicht nur, mit dem Rauchen aufzuhören, sondern dauerhaft rauchfrei zu bleiben und sich innerlich frei zu fühlen."
       ]
     }
   ],
@@ -158,11 +178,21 @@ export const smokingData: ServicePageData = {
       ]
     },
     {
-      h2: "Scientific Insights: Hypnosis for Smoking Cessation",
+      h2: "Results of Smoking Cessation with Hypnosis",
       paragraphs: [
-        "Studies show that hypnosis can be an effective support for smoking cessation – especially when, in addition to behavior, emotional and unconscious patterns are also specifically transformed.",
-        "The focus is not only on giving something up, but on a lasting inner change that can lead to more stable results in the long term.",
-        "Sources: Viswesvaran & Schmidt, Journal of Applied Psychology, 77(4), 1992; Hasan et al., Journal of Public Health, 22(6), 2014."
+        "Many clients report noticeable changes in their everyday life after only a short time.",
+        "Typical results of smoking cessation with hypnosis:"
+      ],
+      bullets: [
+        "No or significantly reduced cravings for cigarettes",
+        "Becoming smoke-free without a constant inner struggle",
+        "More energy, better breathing and physical well-being",
+        "Less stress as the habit falls away",
+        "A stronger sense of control and self-determination",
+        "Living stably as a non-smoker – without relapse"
+      ],
+      paragraphsAfter: [
+        "The goal is not only to stop smoking, but to remain permanently smoke-free and to feel inwardly free."
       ]
     }
   ],

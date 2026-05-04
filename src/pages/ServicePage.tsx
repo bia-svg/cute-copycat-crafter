@@ -25,6 +25,7 @@ export interface ContentSection {
   h2: string;
   paragraphs: string[];
   bullets?: string[];
+  paragraphsAfter?: string[];
   image?: string;
 }
 
@@ -356,6 +357,13 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                           </li>
                         ))}
                       </ul>
+                    )}
+                    {section.paragraphsAfter && section.paragraphsAfter.length > 0 && (
+                      <div className="mt-4 space-y-3">
+                        {section.paragraphsAfter.map((p, pi) => (
+                          <p key={pi} className="text-sm md:text-base text-foreground leading-relaxed">{p}</p>
+                        ))}
+                      </div>
                     )}
                   </div>
                   {section.image && (
