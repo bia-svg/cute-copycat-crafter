@@ -86,12 +86,20 @@ export const smokingData: ServicePageData = {
       ]
     },
     {
-      h2: "Wissenschaftliche Erkenntnisse: Hypnose bei Raucherentwöhnung",
+      h2: "Ergebnisse der Raucherentwöhnung mit Hypnose",
       paragraphs: [
-        "Studien zeigen, dass Hypnose eine wirksame Unterstützung bei der Raucherentwöhnung sein kann – insbesondere dann, wenn neben dem Verhalten auch emotionale und unbewusste Muster gezielt verändert werden.",
-        "Der Fokus liegt dabei nicht nur auf dem Verzicht, sondern auf einer nachhaltigen inneren Veränderung, die langfristig zu stabileren Ergebnissen führen kann.",
-        "Quellen: Viswesvaran & Schmidt, Journal of Applied Psychology, 77(4), 1992; Hasan et al., Journal of Public Health, 22(6), 2014."
-      ]
+        "Viele Klienten berichten bereits nach kurzer Zeit von deutlichen Veränderungen im Alltag.",
+        "Typische Ergebnisse der Raucherentwöhnung mit Hypnose:"
+      ],
+      bullets: [
+        "Kein oder deutlich reduziertes Verlangen nach Zigaretten",
+        "Rauchfrei werden ohne ständigen inneren Kampf",
+        "Mehr Energie, bessere Atmung und körperliches Wohlbefinden",
+        "Weniger Stress durch Wegfall der Gewohnheit",
+        "Stärkeres Gefühl von Kontrolle und Selbstbestimmung",
+        "Stabil als Nichtraucher leben – ohne Rückfall"
+      ],
+      footer: "Ziel ist nicht nur, mit dem Rauchen aufzuhören, sondern dauerhaft rauchfrei zu bleiben und sich innerlich frei zu fühlen."
     }
   ],
   sectionsDE: [
