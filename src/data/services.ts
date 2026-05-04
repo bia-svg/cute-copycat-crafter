@@ -364,8 +364,9 @@ export const weightData: ServicePageData = {
     {
       h2: "Abnehmen ohne Diät – nachhaltig statt kurzfristiger Verzicht",
       paragraphs: [
-        "Nachhaltiges Abnehmen entsteht nicht durch strenge Diäten, sondern durch eine Veränderung der inneren Muster. Klassische Diäten setzen am Verhalten an – Hypnose geht einen Schritt weiter und arbeitet direkt an den Ursachen.",
-        "Durch die gezielte Arbeit mit dem Unterbewusstsein werden unbewusste Essmuster, emotionale Auslöser und automatische Reaktionen verändert. So entsteht ein natürliches Essverhalten, das langfristig stabil bleibt – ohne Jo-Jo-Effekt."
+        "Nachhaltiges Abnehmen entsteht nicht durch strenge Diäten, sondern durch eine gezielte Veränderung der inneren Muster. Klassische Ansätze führen oft nur zu kurzfristigem Gewichtsverlust und enden im Jojo-Effekt.",
+        "Mit Hypnose wird direkt an den Ursachen gearbeitet: unbewusste Essmuster, emotionales Essen und automatische Gewohnheiten werden gezielt verändert. Dadurch entsteht ein natürliches Essverhalten, das langfristig stabil bleibt.",
+        "Der Fokus liegt nicht nur auf Gewichtsverlust, sondern auf nachhaltiger Gewichtsreduktion und einem gesunden Umgang mit Ernährung – ohne ständigen Verzicht."
       ]
     },
     {
@@ -380,8 +381,9 @@ export const weightData: ServicePageData = {
     {
       h2: "Abnehmen ohne Diät – nachhaltig statt kurzfristiger Verzicht",
       paragraphs: [
-        "Nachhaltiges Abnehmen entsteht nicht durch strenge Diäten, sondern durch eine Veränderung der inneren Muster. Klassische Diäten setzen am Verhalten an – Hypnose geht einen Schritt weiter und arbeitet direkt an den Ursachen.",
-        "Durch die gezielte Arbeit mit dem Unterbewusstsein werden unbewusste Essmuster, emotionale Auslöser und automatische Reaktionen verändert. So entsteht ein natürliches Essverhalten, das langfristig stabil bleibt – ohne Jo-Jo-Effekt."
+        "Nachhaltiges Abnehmen entsteht nicht durch strenge Diäten, sondern durch eine gezielte Veränderung der inneren Muster. Klassische Ansätze führen oft nur zu kurzfristigem Gewichtsverlust und enden im Jojo-Effekt.",
+        "Mit Hypnose wird direkt an den Ursachen gearbeitet: unbewusste Essmuster, emotionales Essen und automatische Gewohnheiten werden gezielt verändert. Dadurch entsteht ein natürliches Essverhalten, das langfristig stabil bleibt.",
+        "Der Fokus liegt nicht nur auf Gewichtsverlust, sondern auf nachhaltiger Gewichtsreduktion und einem gesunden Umgang mit Ernährung – ohne ständigen Verzicht."
       ]
     },
     {
@@ -396,8 +398,9 @@ export const weightData: ServicePageData = {
     {
       h2: "Weight Loss Without Dieting – Sustainable Instead of Short-Term Deprivation",
       paragraphs: [
-        "Sustainable weight loss does not happen through strict diets, but through a change of the inner patterns. Classic diets work on behavior – hypnosis goes one step further and works directly on the causes.",
-        "Through targeted work with the subconscious, unconscious eating patterns, emotional triggers and automatic reactions are changed. This creates a natural eating behavior that remains stable in the long term – without a yo-yo effect."
+        "Sustainable weight loss is not achieved through strict diets, but through a targeted change of inner patterns. Conventional approaches often lead only to short-term weight loss and end in the yo-yo effect.",
+        "With hypnosis, we work directly on the root causes: unconscious eating patterns, emotional eating and automatic habits are specifically transformed. This creates a natural eating behavior that remains stable in the long term.",
+        "The focus is not only on weight loss, but on sustainable weight reduction and a healthy relationship with food – without constant deprivation."
       ]
     },
     {
