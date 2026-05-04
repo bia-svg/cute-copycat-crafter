@@ -180,7 +180,7 @@ export default function Footer() {
         </div>
 
         {/* Medical Disclaimer */}
-        <div className="border-t border-white/20 mt-5 md:mt-4 pt-3 md:pt-3 text-xs text-center opacity-75 max-w-3xl mx-auto">
+        <div className="border-t border-white/20 mt-5 md:mt-4 pt-3 md:pt-3 text-xs text-center opacity-75 max-w-3xl mx-auto leading-[1.55]">
           {isEN
             ? "We expressly point out that our services do NOT replace the work of a medical doctor, psychiatrist, or licensed healthcare practitioner. We do not treat illnesses and we do not provide medical diagnoses."
             : "Wir weisen ausdrücklich darauf hin, dass unsere Tätigkeit NICHT die Tätigkeit eines Arztes, Psychiaters oder Heilpraktikers ersetzt. Wir behandeln weder Krankheiten noch stellen wir medizinische Diagnosen."}
