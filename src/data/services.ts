@@ -238,19 +238,19 @@ export const anxietyData: ServicePageData = {
   ],
   benefitsEN: ["Gain more inner calm and security", "Reduce anxiety and panic specifically", "Feel free and confident in everyday life again", "Release blocks and regain quality of life"],
   introCH: [
-    "Ängste, Phobien und innere Unsicherheiten können den Alltag stark einschränken. Ob Panikattacken, soziale Ängste, Platzangst oder dauerhafte innere Anspannung – oft liegen die Ursachen in tief verankerten emotionalen Mustern und unbewussten Verknüpfungen.\n\nMit Hypnose setzen wir genau dort an: Die inneren Auslöser werden auf einer tieferen Ebene gezielt verändert. Ziel ist nicht nur, Ängste kurzfristig zu reduzieren, sondern dauerhaft mehr innere Ruhe, Sicherheit und Freiheit im Alltag zu gewinnen.",
-    "Ängste sind häufig mehr als nur eine momentane Reaktion. Für viele Menschen sind sie unbewusst mit bestimmten Situationen, Erfahrungen oder Gedanken verknüpft und lösen automatisch Stress, Unsicherheit oder Vermeidungsverhalten aus.",
-    "Mit professioneller Hypnose können diese inneren Verknüpfungen gezielt verändert werden. Ziel ist nicht nur die Reduktion von Angst, sondern ein stabiles Gefühl von Sicherheit, Kontrolle und innerer Ruhe."
+    "Ängste und Panikattacken entstehen häufig durch erlernte Reaktionen, unbewusste Verknüpfungen und körperliche Stressmuster.",
+    "Ob innere Unruhe, Kontrollverlust, Herzklopfen oder plötzlich auftretende Panik – der Körper speichert solche Erfahrungen und reagiert in ähnlichen Situationen automatisch.",
+    "Mit Hypnose setzen wir genau an diesen Ursachen an. Ziel ist eine nachhaltige Veränderung hin zu mehr Ruhe, Sicherheit und Kontrolle im Alltag."
   ],
   introDE: [
-    "Ängste, Phobien und innere Unsicherheiten können den Alltag stark einschränken. Ob Panikattacken, soziale Ängste, Platzangst oder dauerhafte innere Anspannung – oft liegen die Ursachen in tief verankerten emotionalen Mustern und unbewussten Verknüpfungen.\n\nMit Hypnose setzen wir genau dort an: Die inneren Auslöser werden auf einer tieferen Ebene gezielt verändert. Ziel ist nicht nur, Ängste kurzfristig zu reduzieren, sondern dauerhaft mehr innere Ruhe, Sicherheit und Freiheit im Alltag zu gewinnen.",
-    "Ängste sind häufig mehr als nur eine momentane Reaktion. Für viele Menschen sind sie unbewusst mit bestimmten Situationen, Erfahrungen oder Gedanken verknüpft und lösen automatisch Stress, Unsicherheit oder Vermeidungsverhalten aus.",
-    "Mit professioneller Hypnose können diese inneren Verknüpfungen gezielt verändert werden. Ziel ist nicht nur die Reduktion von Angst, sondern ein stabiles Gefühl von Sicherheit, Kontrolle und innerer Ruhe."
+    "Ängste und Panikattacken entstehen häufig durch erlernte Reaktionen, unbewusste Verknüpfungen und körperliche Stressmuster.",
+    "Ob innere Unruhe, Kontrollverlust, Herzklopfen oder plötzlich auftretende Panik – der Körper speichert solche Erfahrungen und reagiert in ähnlichen Situationen automatisch.",
+    "Mit Hypnose setzen wir genau an diesen Ursachen an. Ziel ist eine nachhaltige Veränderung hin zu mehr Ruhe, Sicherheit und Kontrolle im Alltag."
   ],
   introEN: [
-    "Anxieties, phobias, and inner insecurities can severely restrict everyday life. Whether panic attacks, social anxiety, claustrophobia, or constant inner tension – the causes often lie in deeply anchored emotional patterns and unconscious associations.\n\nWith hypnosis we work exactly there: the inner triggers are specifically changed at a deeper level. The goal is not just to reduce anxiety in the short term, but to gain lasting inner calm, security, and freedom in everyday life.",
-    "Anxieties are often more than just a momentary reaction. For many people they are unconsciously linked to specific situations, experiences, or thoughts and automatically trigger stress, insecurity, or avoidance behavior.",
-    "With professional hypnosis these inner associations can be specifically changed. The goal is not just the reduction of anxiety, but a stable feeling of security, control, and inner calm."
+    "Anxiety and panic attacks often arise from learned reactions, unconscious associations, and physical stress patterns.",
+    "Whether inner restlessness, loss of control, a racing heart, or sudden panic – the body stores such experiences and reacts automatically in similar situations.",
+    "With hypnosis we work directly with these underlying causes. The goal is lasting change toward more calm, security, and control in everyday life."
   ],
   sectionsCH: [
     {
