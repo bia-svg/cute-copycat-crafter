@@ -1,4 +1,45 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+
+function BadgeCard({ children, label, info }: { children: ReactNode; label: ReactNode; info: string }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!open) return;
+    const onDoc = (e: MouseEvent | TouchEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", onDoc);
+    document.addEventListener("touchstart", onDoc);
+    return () => {
+      document.removeEventListener("mousedown", onDoc);
+      document.removeEventListener("touchstart", onDoc);
+    };
+  }, [open]);
+  return (
+    <div
+      ref={ref}
+      onClick={() => setOpen((o) => !o)}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      className="group relative bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center hover:shadow-md hover:border-[#D0DAE6] transition-all duration-300 flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px] select-none cursor-default"
+    >
+      <div className="flex-1 flex items-center justify-center w-full">{children}</div>
+      <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight select-none">{label}</h3>
+      <div
+        role="tooltip"
+        className={`pointer-events-none absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[200px] md:w-[220px] z-20 transition-all duration-200 ease-out ${
+          open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"
+        }`}
+      >
+        <div className="bg-[#1B3A5C] text-white text-[11px] md:text-[11.5px] leading-snug font-light px-3 py-2 rounded-lg shadow-lg select-none">
+          {info}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
 import Breadcrumbs from "@/components/Breadcrumbs";
