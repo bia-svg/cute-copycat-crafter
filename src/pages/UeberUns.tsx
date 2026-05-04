@@ -148,33 +148,45 @@ export default function UeberUns() {
             </div>
 
             <div className="grid grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3 mb-5">
-              <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center">
-                <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat" className="h-9 md:h-12 mx-auto mb-1.5" loading="lazy" />
-                <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">NGH International Trainer</h3>
-              </div>
-              <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center">
-                <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge" className="h-9 md:h-12 mx-auto mb-1.5" loading="lazy" />
-                <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">EMR Konform</h3>
-              </div>
-              <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center">
-                <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-11 md:h-[53px] w-11 md:w-[53px] object-contain mx-auto mb-2.5" style={{ filter: "brightness(1.28) contrast(1.22) saturate(1.17)" }} loading="lazy" width={512} height={512} />
-                <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-[1.35] tracking-tight text-center">Lic. Psych.<br /><span className="text-[9px] md:text-[11px] tracking-[0.04em]">UNAM</span></h3>
-              </div>
-              <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center">
-                <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-7 md:h-10 mx-auto mb-1.5" loading="lazy" />
-                <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">{isEN ? "Aktiv-Hypnose© Developer" : "Entwickler Aktiv-Hypnose©"}</h3>
-              </div>
-              <Link to={getPath("book", language, country)} className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center hover:shadow-md transition-shadow group">
-                <div className="w-9 h-9 md:w-12 md:h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mx-auto mb-1.5">
-                  <BookOpen className="w-4 h-4 md:w-6 md:h-6 text-white" />
+              <div className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
+                <div className="flex-1 flex items-center justify-center w-full">
+                  <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat" className="h-9 md:h-12 mx-auto" loading="lazy" />
                 </div>
-                <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight group-hover:text-[#2E7D32] transition-colors tracking-tight">{isEN ? "Author & Specialist" : "Autor & Fachautor"}</h3>
+                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">NGH International Trainer</h3>
+              </div>
+              <div className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
+                <div className="flex-1 flex items-center justify-center w-full">
+                  <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge" className="h-9 md:h-12 mx-auto" loading="lazy" />
+                </div>
+                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">EMR Konform</h3>
+              </div>
+              <div className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
+                <div className="flex-1 flex items-center justify-center w-full">
+                  <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-11 md:h-[53px] w-11 md:w-[53px] object-contain mx-auto" style={{ filter: "brightness(1.28) contrast(1.22) saturate(1.17)" }} loading="lazy" width={512} height={512} />
+                </div>
+                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-[1.35] tracking-tight text-center">Lic. Psych.<br /><span className="text-[9px] md:text-[11px] tracking-[0.04em]">UNAM</span></h3>
+              </div>
+              <div className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
+                <div className="flex-1 flex items-center justify-center w-full">
+                  <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-7 md:h-10 mx-auto" loading="lazy" />
+                </div>
+                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">{isEN ? "Aktiv-Hypnose© Developer" : "Entwickler Aktiv-Hypnose©"}</h3>
+              </div>
+              <Link to={getPath("book", language, country)} className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center hover:shadow-md transition-shadow group flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
+                <div className="flex-1 flex items-center justify-center w-full">
+                  <div className="w-9 h-9 md:w-12 md:h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mx-auto">
+                    <BookOpen className="w-4 h-4 md:w-6 md:h-6 text-white" />
+                  </div>
+                </div>
+                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight group-hover:text-[#2E7D32] transition-colors tracking-tight">{isEN ? "Author & Specialist" : "Autor & Fachautor"}</h3>
               </Link>
-              <Link to={getPath("media", language, country)} className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center hover:shadow-md transition-shadow group">
-                <div className="w-9 h-9 md:w-12 md:h-12 bg-[#1B3A5C] rounded-lg flex items-center justify-center mx-auto mb-1.5">
-                  <Tv className="w-4 h-4 md:w-6 md:h-6 text-white" />
+              <Link to={getPath("media", language, country)} className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center hover:shadow-md transition-shadow group flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
+                <div className="flex-1 flex items-center justify-center w-full">
+                  <div className="w-9 h-9 md:w-12 md:h-12 bg-[#1B3A5C] rounded-lg flex items-center justify-center mx-auto">
+                    <Tv className="w-4 h-4 md:w-6 md:h-6 text-white" />
+                  </div>
                 </div>
-                <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight group-hover:text-[#2E7D32] transition-colors tracking-tight">{isEN ? "TV Expert & Media" : "TV-Experte & Medien"}</h3>
+                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight group-hover:text-[#2E7D32] transition-colors tracking-tight">{isEN ? "TV Expert & Media" : "TV-Experte & Medien"}</h3>
               </Link>
             </div>
 
