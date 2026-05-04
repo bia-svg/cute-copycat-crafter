@@ -457,36 +457,37 @@ export default function Home() {
                 </li>
               </ul>
 
-              {/* Topics row — Hero-style block label, each item linked */}
-              <p className="mt-2.5 md:mt-4 text-[11px] md:text-[13px] text-[#1B3A5C] font-semibold uppercase tracking-[0.18em] leading-snug max-w-[760px]">
+              {/* Topics row — premium clickable pill buttons */}
+              <div className="mt-2.5 md:mt-4 flex flex-wrap justify-center gap-1.5 md:gap-2 max-w-[760px]">
                 {(isEN
                   ? [
-                      { label: "BECOME SMOKE-FREE", page: "smoking" as const },
-                      { label: "WEIGHT LOSS", page: "weight" as const },
-                      { label: "ANXIETY & PANIC", page: "anxiety" as const },
-                      { label: "STRESS & BURNOUT", page: "stress" as const },
-                      { label: "DEPRESSION & TRAUMA", page: "depression" as const },
-                      { label: "CHILDREN & TEENS", page: "children" as const },
-                      { label: "TRAINING", page: "training" as const },
+                      { label: "Become smoke-free", page: "smoking" as const },
+                      { label: "Weight loss", page: "weight" as const },
+                      { label: "Anxiety & panic", page: "anxiety" as const },
+                      { label: "Stress & burnout", page: "stress" as const },
+                      { label: "Depression & trauma", page: "depression" as const },
+                      { label: "Children & teens", page: "children" as const },
+                      { label: "Training", page: "training" as const },
                     ]
                   : [
-                      { label: "RAUCHFREI WERDEN", page: "smoking" as const },
-                      { label: "ABNEHMEN", page: "weight" as const },
-                      { label: "ÄNGSTE & PANIK", page: "anxiety" as const },
-                      { label: "STRESS & BURNOUT", page: "stress" as const },
-                      { label: "DEPRESSION & TRAUMA", page: "depression" as const },
-                      { label: "KINDER & JUGENDLICHE", page: "children" as const },
-                      { label: "AUSBILDUNG", page: "training" as const },
+                      { label: "Rauchfrei werden", page: "smoking" as const },
+                      { label: "Abnehmen", page: "weight" as const },
+                      { label: "Ängste & Panik", page: "anxiety" as const },
+                      { label: "Stress & Burnout", page: "stress" as const },
+                      { label: "Depression & Trauma", page: "depression" as const },
+                      { label: "Kinder & Jugendliche", page: "children" as const },
+                      { label: "Ausbildung", page: "training" as const },
                     ]
-                ).map((item, i, arr) => (
-                  <span key={item.page}>
-                    <Link to={getPath(item.page, language, country)} className="hover:text-[#0B1F33] transition-colors">
-                      {item.label}
-                    </Link>
-                    {i < arr.length - 1 && <span className="mx-1.5">·</span>}
-                  </span>
+                ).map((item) => (
+                  <Link
+                    key={item.page}
+                    to={getPath(item.page, language, country)}
+                    className="inline-flex items-center px-3 md:px-3.5 py-1 md:py-1.5 rounded-full bg-white border border-[#1B3A5C]/20 text-[11px] md:text-[12.5px] font-medium text-[#1B3A5C] tracking-[0.01em] shadow-sm hover:bg-[#1B3A5C] hover:text-white hover:border-[#1B3A5C] hover:shadow-md transition-all duration-200"
+                  >
+                    {item.label}
+                  </Link>
                 ))}
-              </p>
+              </div>
 
               {/* CTA – pushed to bottom on desktop */}
               <button
