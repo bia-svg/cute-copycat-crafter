@@ -218,18 +218,18 @@ export const anxietyData: ServicePageData = {
   ctaCH: "Termin unverbindlich anfragen",
   ctaDE: "Termin unverbindlich anfragen",
   ctaEN: "Request an appointment",
-  eyebrowCH: "Hypnose-Sitzungen – Ängste & Phobien",
-  eyebrowDE: "Hypnose-Sitzungen – Ängste & Phobien",
-  eyebrowEN: "Hypnosis Sessions – Anxiety & Phobias",
-  titleCH: "Hypnose bei Ängsten & Phobien Zürich · EMR · ★ 5.0 | David J. Woods",
-  titleDE: "Hypnose bei Ängsten & Phobien Augsburg · ★ 5.0 | David J. Woods",
-  titleEN: "Hypnotherapy for Anxiety & Phobias · Zurich & Augsburg · ★ 5.0 | David J. Woods",
-  metaDescCH: "Ängste, Phobien & Panikattacken nachhaltig lösen — Flugangst, Höhenangst, Platzangst, soziale Ängste. Hypnose in Zürich mit Lic. Psych. David J. Woods, 35+ Jahre, EMR-anerkannt. ★ 5.0 (266 Bewertungen). Erstgespräch kostenlos.",
-  metaDescDE: "Ängste, Phobien & Panikattacken nachhaltig lösen — Flugangst, Höhenangst, Platzangst, soziale Ängste. Hypnose in Augsburg mit Lic. Psych. David J. Woods, 35+ Jahre. ★ 5.0 (266 Google-Bewertungen). Erstgespräch kostenlos.",
-  metaDescEN: "Resolve anxiety, phobias & panic attacks — fear of flying, heights, claustrophobia, social anxiety. Hypnotherapy with Lic. Psych. David J. Woods, 35+ years, ★ 5.0 (266 reviews). Free discovery call in Zurich or Augsburg.",
-  h1CH: "Ängste lösen. Phobien überwinden. Wieder frei leben.",
-  h1DE: "Ängste lösen. Phobien überwinden. Wieder frei leben.",
-  h1EN: "Release Anxiety. Overcome Phobias. Live Free Again.",
+  eyebrowCH: "Hypnose-Sitzungen – Ängste & Panikattacken",
+  eyebrowDE: "Hypnose-Sitzungen – Ängste & Panikattacken",
+  eyebrowEN: "Hypnosis Sessions – Anxiety & Panic Attacks",
+  titleCH: "Hypnose bei Ängsten & Panikattacken Zürich · EMR · ★ 5.0 | David J. Woods",
+  titleDE: "Hypnose bei Ängsten & Panikattacken Augsburg · ★ 5.0 | David J. Woods",
+  titleEN: "Hypnotherapy for Anxiety & Panic Attacks · Zurich & Augsburg · ★ 5.0 | David J. Woods",
+  metaDescCH: "Ängste & Panikattacken nachhaltig lösen — innere Unruhe, Kontrollverlust, Herzklopfen, soziale Ängste. Hypnose in Zürich mit Lic. Psych. David J. Woods, 35+ Jahre, EMR-anerkannt. ★ 5.0 (266 Bewertungen). Erstgespräch kostenlos.",
+  metaDescDE: "Ängste & Panikattacken nachhaltig lösen — innere Unruhe, Kontrollverlust, Herzklopfen, soziale Ängste. Hypnose in Augsburg mit Lic. Psych. David J. Woods, 35+ Jahre. ★ 5.0 (266 Google-Bewertungen). Erstgespräch kostenlos.",
+  metaDescEN: "Resolve anxiety & panic attacks — inner restlessness, loss of control, racing heart, social anxiety. Hypnotherapy with Lic. Psych. David J. Woods, 35+ years, ★ 5.0 (266 reviews). Free discovery call in Zurich or Augsburg.",
+  h1CH: "Ängste lösen. Panik überwinden. Wieder frei leben.",
+  h1DE: "Ängste lösen. Panik überwinden. Wieder frei leben.",
+  h1EN: "Release Anxiety. Overcome Panic. Live Free Again.",
   benefitsCH: [
     "Mehr innere Ruhe und Sicherheit gewinnen",
     "Ängste und Panik gezielt reduzieren",
@@ -238,48 +238,61 @@ export const anxietyData: ServicePageData = {
   ],
   benefitsEN: ["Gain more inner calm and security", "Reduce anxiety and panic specifically", "Feel free and confident in everyday life again", "Release blocks and regain quality of life"],
   introCH: [
-    "Ängste, Phobien und innere Unsicherheiten können den Alltag stark einschränken. Ob Panikattacken, soziale Ängste, Platzangst oder dauerhafte innere Anspannung – oft liegen die Ursachen in tief verankerten emotionalen Mustern und unbewussten Verknüpfungen.\n\nMit Hypnose setzen wir genau dort an: Die inneren Auslöser werden auf einer tieferen Ebene gezielt verändert. Ziel ist nicht nur, Ängste kurzfristig zu reduzieren, sondern dauerhaft mehr innere Ruhe, Sicherheit und Freiheit im Alltag zu gewinnen.",
-    "Ängste sind häufig mehr als nur eine momentane Reaktion. Für viele Menschen sind sie unbewusst mit bestimmten Situationen, Erfahrungen oder Gedanken verknüpft und lösen automatisch Stress, Unsicherheit oder Vermeidungsverhalten aus.",
-    "Mit professioneller Hypnose können diese inneren Verknüpfungen gezielt verändert werden. Ziel ist nicht nur die Reduktion von Angst, sondern ein stabiles Gefühl von Sicherheit, Kontrolle und innerer Ruhe."
+    "Ängste und Panikattacken entstehen häufig durch erlernte Reaktionen, unbewusste Verknüpfungen und körperliche Stressmuster.\n\nOb innere Unruhe, Kontrollverlust, Herzklopfen oder plötzlich auftretende Panik – der Körper speichert solche Erfahrungen und reagiert in ähnlichen Situationen automatisch.\n\nMit Hypnose setzen wir genau an diesen Ursachen an. Ziel ist eine nachhaltige Veränderung hin zu mehr Ruhe, Sicherheit und Kontrolle im Alltag.",
+    "Ängste, Panikattacken und innere Unsicherheit können den Alltag stark einschränken. Häufig liegen die Ursachen nicht im bewussten Denken, sondern in tiefer verankerten emotionalen Mustern und automatischen Reaktionen des Körpers.\n\nMit Hypnose werden diese inneren Verknüpfungen gezielt verändert. So entsteht nicht nur kurzfristige Entlastung, sondern eine stabile innere Sicherheit im Alltag.",
+    "Viele Reaktionen wie Angst, Anspannung oder Panik sind erlernte Muster. Sie entstehen durch Erfahrungen, Stress oder prägende Situationen und laufen später automatisch ab.\n\nDurch Hypnose können diese Muster direkt an der Ursache verändert werden. Das Ergebnis ist mehr Kontrolle, innere Ruhe und ein deutlich entspannterer Umgang mit belastenden Situationen."
   ],
   introDE: [
-    "Ängste, Phobien und innere Unsicherheiten können den Alltag stark einschränken. Ob Panikattacken, soziale Ängste, Platzangst oder dauerhafte innere Anspannung – oft liegen die Ursachen in tief verankerten emotionalen Mustern und unbewussten Verknüpfungen.\n\nMit Hypnose setzen wir genau dort an: Die inneren Auslöser werden auf einer tieferen Ebene gezielt verändert. Ziel ist nicht nur, Ängste kurzfristig zu reduzieren, sondern dauerhaft mehr innere Ruhe, Sicherheit und Freiheit im Alltag zu gewinnen.",
-    "Ängste sind häufig mehr als nur eine momentane Reaktion. Für viele Menschen sind sie unbewusst mit bestimmten Situationen, Erfahrungen oder Gedanken verknüpft und lösen automatisch Stress, Unsicherheit oder Vermeidungsverhalten aus.",
-    "Mit professioneller Hypnose können diese inneren Verknüpfungen gezielt verändert werden. Ziel ist nicht nur die Reduktion von Angst, sondern ein stabiles Gefühl von Sicherheit, Kontrolle und innerer Ruhe."
+    "Ängste und Panikattacken entstehen häufig durch erlernte Reaktionen, unbewusste Verknüpfungen und körperliche Stressmuster.\n\nOb innere Unruhe, Kontrollverlust, Herzklopfen oder plötzlich auftretende Panik – der Körper speichert solche Erfahrungen und reagiert in ähnlichen Situationen automatisch.\n\nMit Hypnose setzen wir genau an diesen Ursachen an. Ziel ist eine nachhaltige Veränderung hin zu mehr Ruhe, Sicherheit und Kontrolle im Alltag.",
+    "Ängste, Panikattacken und innere Unsicherheit können den Alltag stark einschränken. Häufig liegen die Ursachen nicht im bewussten Denken, sondern in tiefer verankerten emotionalen Mustern und automatischen Reaktionen des Körpers.\n\nMit Hypnose werden diese inneren Verknüpfungen gezielt verändert. So entsteht nicht nur kurzfristige Entlastung, sondern eine stabile innere Sicherheit im Alltag.",
+    "Viele Reaktionen wie Angst, Anspannung oder Panik sind erlernte Muster. Sie entstehen durch Erfahrungen, Stress oder prägende Situationen und laufen später automatisch ab.\n\nDurch Hypnose können diese Muster direkt an der Ursache verändert werden. Das Ergebnis ist mehr Kontrolle, innere Ruhe und ein deutlich entspannterer Umgang mit belastenden Situationen."
   ],
   introEN: [
-    "Anxieties, phobias, and inner insecurities can severely restrict everyday life. Whether panic attacks, social anxiety, claustrophobia, or constant inner tension – the causes often lie in deeply anchored emotional patterns and unconscious associations.\n\nWith hypnosis we work exactly there: the inner triggers are specifically changed at a deeper level. The goal is not just to reduce anxiety in the short term, but to gain lasting inner calm, security, and freedom in everyday life.",
-    "Anxieties are often more than just a momentary reaction. For many people they are unconsciously linked to specific situations, experiences, or thoughts and automatically trigger stress, insecurity, or avoidance behavior.",
-    "With professional hypnosis these inner associations can be specifically changed. The goal is not just the reduction of anxiety, but a stable feeling of security, control, and inner calm."
+    "Anxiety and panic attacks often arise from learned reactions, unconscious associations, and physical stress patterns.\n\nWhether inner restlessness, loss of control, a racing heart, or sudden panic – the body stores such experiences and reacts automatically in similar situations.\n\nWith hypnosis we work directly with these underlying causes. The goal is lasting change toward more calm, security, and control in everyday life.",
+    "Anxiety, panic attacks, and inner insecurity can heavily restrict everyday life. The causes often lie not in conscious thinking, but in more deeply anchored emotional patterns and automatic bodily reactions.\n\nWith hypnosis these inner associations are specifically changed. The result is not just short-term relief, but stable inner security in everyday life.",
+    "Many reactions such as anxiety, tension, or panic are learned patterns. They develop through experiences, stress, or formative situations and later run automatically.\n\nThrough hypnosis these patterns can be changed directly at the root. The outcome is more control, inner calm, and a noticeably more relaxed way of dealing with stressful situations."
   ],
   sectionsCH: [
     {
       h2: "Wenn Ängste das Leben bestimmen",
       paragraphs: [
-        "Ängste sind grundsätzlich ein natürlicher Schutzmechanismus. Problematisch wird es, wenn sie dauerhaft präsent sind, sich verselbstständigen oder bereits in alltäglichen Situationen starke körperliche und emotionale Reaktionen auslösen.",
-        "Viele Menschen erleben dann innere Unruhe, Anspannung, Vermeidungsverhalten oder wiederkehrende Panik. Das Gefühl, die Kontrolle zu verlieren, verstärkt die Angst zusätzlich und schränkt die Lebensqualität zunehmend ein."
+        "Ängste sind ein natürlicher Schutzmechanismus. Problematisch wird es, wenn sie dauerhaft präsent sind oder sich verselbstständigen.",
+        "Viele Menschen erleben dann innere Unruhe, Vermeidungsverhalten oder wiederkehrende Panikattacken. Das Gefühl von Kontrollverlust verstärkt die Situation zusätzlich und schränkt die Lebensqualität ein."
       ]
     },
     {
       h2: "Mit Hypnose den belastenden Teufelskreis durchbrechen",
       paragraphs: [
-        "Anstatt Schutz zu geben, werden Ängste und Unsicherheiten für viele Betroffene selbst zur Belastung. Körperliche Reaktionen wie Herzklopfen, Engegefühl, Zittern oder Kontrollverlust verstärken den inneren Druck und halten den Kreislauf aufrecht.",
-        "Genau hier setzt Hypnose an: Die zugrunde liegenden emotionalen Muster und unbewussten Verknüpfungen werden gezielt aufgelöst und neu strukturiert. So kann der innere Teufelskreis nachhaltig durchbrochen werden."
+        "Ängste und Panikreaktionen verstärken sich oft selbst. Körperliche Symptome wie Herzklopfen, Engegefühl oder Zittern führen zu noch mehr Anspannung.",
+        "Hypnose setzt genau hier an: Die zugrunde liegenden Muster werden aufgelöst und neu strukturiert. So kann der innere Kreislauf nachhaltig durchbrochen werden."
       ]
     },
     {
       h2: "Aktiv-Hypnose® für innere Sicherheit",
       paragraphs: [
-        "Die Aktiv-Hypnose® arbeitet gezielt mit den tieferliegenden Ursachen von Ängsten und Phobien. Statt nur Symptome zu behandeln, werden die inneren Auslöser auf emotionaler Ebene verändert.",
-        "Das Ziel ist eine nachhaltige Veränderung Ihres inneren Erlebens – hin zu mehr Sicherheit, Gelassenheit und Stabilität im Alltag. Viele Klienten berichten bereits nach kurzer Zeit von spürbar mehr Ruhe, Kontrolle und Lebensqualität."
+        "Die Aktiv-Hypnose® arbeitet direkt mit den zugrunde liegenden Ursachen von Ängsten und Panikreaktionen.",
+        "Ziel ist eine nachhaltige Veränderung hin zu mehr innerer Ruhe, Stabilität und Sicherheit im Alltag."
       ]
     },
     {
-      h2: "Wissenschaftliche Grundlage: Hypnose bei Angststörungen",
+      h2: "Warum Hypnose bei Ängsten und Panikreaktionen wirkt",
       paragraphs: [
-        "Eine umfassende Meta-Analyse von Kirsch, Montgomery & Sapirstein (1995), veröffentlicht im Journal of Consulting and Clinical Psychology, zeigte, dass die Ergänzung von kognitiver Verhaltenstherapie (KVT) durch Hypnose die Behandlungsergebnisse bei Angststörungen um durchschnittlich 70% verbesserte.",
-        "Laut einer Studie der Stanford University (Spiegel, 2013) zeigen funktionelle MRT-Aufnahmen, dass Hypnose spezifische neuronale Netzwerke im Gehirn aktiviert, die mit Angstregulation und emotionaler Verarbeitung verbunden sind. Dies erklärt, warum Hypnose tiefgreifendere und dauerhaftere Ergebnisse erzielen kann als rein kognitive Ansätze.",
-        "Quellen: Kirsch, Montgomery & Sapirstein, Journal of Consulting and Clinical Psychology, 63(2), 1995; Spiegel, American Journal of Clinical Hypnosis, 56(1), 2013."
+        "Studien zeigen, dass Hypnose ergänzend zur kognitiven Verhaltenstherapie die Behandlungsergebnisse bei Angstreaktionen deutlich verbessern kann (Kirsch, Montgomery & Sapirstein, 1995).",
+        "Bildgebende Untersuchungen (Spiegel, Stanford 2013) belegen, dass Hypnose neuronale Netzwerke aktiviert, die mit Emotionsregulation und innerer Beruhigung verbunden sind."
+      ]
+    },
+    {
+      h2: "Ergebnisse der Hypnose bei Ängsten & Panikattacken",
+      paragraphs: [
+        "Viele Klienten berichten bereits nach kurzer Zeit von spürbaren Veränderungen:"
+      ],
+      bullets: [
+        "weniger Angst und innere Anspannung",
+        "deutlich reduzierte oder keine Panikattacken",
+        "mehr Ruhe und Kontrolle im Alltag",
+        "sicherer Umgang mit belastenden Situationen",
+        "mehr Selbstvertrauen und innere Stabilität",
+        "wieder mehr Lebensqualität"
       ]
     }
   ],
@@ -287,30 +300,43 @@ export const anxietyData: ServicePageData = {
     {
       h2: "Wenn Ängste das Leben bestimmen",
       paragraphs: [
-        "Ängste sind grundsätzlich ein natürlicher Schutzmechanismus. Problematisch wird es, wenn sie dauerhaft präsent sind, sich verselbstständigen oder bereits in alltäglichen Situationen starke körperliche und emotionale Reaktionen auslösen.",
-        "Viele Menschen erleben dann innere Unruhe, Anspannung, Vermeidungsverhalten oder wiederkehrende Panik. Das Gefühl, die Kontrolle zu verlieren, verstärkt die Angst zusätzlich und schränkt die Lebensqualität zunehmend ein."
+        "Ängste sind ein natürlicher Schutzmechanismus. Problematisch wird es, wenn sie dauerhaft präsent sind oder sich verselbstständigen.",
+        "Viele Menschen erleben dann innere Unruhe, Vermeidungsverhalten oder wiederkehrende Panikattacken. Das Gefühl von Kontrollverlust verstärkt die Situation zusätzlich und schränkt die Lebensqualität ein."
       ]
     },
     {
       h2: "Mit Hypnose den belastenden Teufelskreis durchbrechen",
       paragraphs: [
-        "Anstatt Schutz zu geben, werden Ängste und Unsicherheiten für viele Betroffene selbst zur Belastung. Körperliche Reaktionen wie Herzklopfen, Engegefühl, Zittern oder Kontrollverlust verstärken den inneren Druck und halten den Kreislauf aufrecht.",
-        "Genau hier setzt Hypnose an: Die zugrunde liegenden emotionalen Muster und unbewussten Verknüpfungen werden gezielt aufgelöst und neu strukturiert. So kann der innere Teufelskreis nachhaltig durchbrochen werden."
+        "Ängste und Panikreaktionen verstärken sich oft selbst. Körperliche Symptome wie Herzklopfen, Engegefühl oder Zittern führen zu noch mehr Anspannung.",
+        "Hypnose setzt genau hier an: Die zugrunde liegenden Muster werden aufgelöst und neu strukturiert. So kann der innere Kreislauf nachhaltig durchbrochen werden."
       ]
     },
     {
       h2: "Aktiv-Hypnose® für innere Sicherheit",
       paragraphs: [
-        "Die Aktiv-Hypnose® arbeitet gezielt mit den tieferliegenden Ursachen von Ängsten und Phobien. Statt nur Symptome zu behandeln, werden die inneren Auslöser auf emotionaler Ebene verändert.",
-        "Das Ziel ist eine nachhaltige Veränderung Ihres inneren Erlebens – hin zu mehr Sicherheit, Gelassenheit und Stabilität im Alltag. Viele Klienten berichten bereits nach kurzer Zeit von spürbar mehr Ruhe, Kontrolle und Lebensqualität."
+        "Die Aktiv-Hypnose® arbeitet direkt mit den zugrunde liegenden Ursachen von Ängsten und Panikreaktionen.",
+        "Ziel ist eine nachhaltige Veränderung hin zu mehr innerer Ruhe, Stabilität und Sicherheit im Alltag."
       ]
     },
     {
-      h2: "Wissenschaftliche Grundlage: Hypnose bei Angststörungen",
+      h2: "Warum Hypnose bei Ängsten und Panikreaktionen wirkt",
       paragraphs: [
-        "Eine umfassende Meta-Analyse von Kirsch, Montgomery & Sapirstein (1995), veröffentlicht im Journal of Consulting and Clinical Psychology, zeigte, dass die Ergänzung von kognitiver Verhaltenstherapie (KVT) durch Hypnose die Behandlungsergebnisse bei Angststörungen um durchschnittlich 70% verbesserte.",
-        "Laut einer Studie der Stanford University (Spiegel, 2013) zeigen funktionelle MRT-Aufnahmen, dass Hypnose spezifische neuronale Netzwerke im Gehirn aktiviert, die mit Angstregulation und emotionaler Verarbeitung verbunden sind. Dies erklärt, warum Hypnose tiefgreifendere und dauerhaftere Ergebnisse erzielen kann als rein kognitive Ansätze.",
-        "Quellen: Kirsch, Montgomery & Sapirstein, Journal of Consulting and Clinical Psychology, 63(2), 1995; Spiegel, American Journal of Clinical Hypnosis, 56(1), 2013."
+        "Studien zeigen, dass Hypnose ergänzend zur kognitiven Verhaltenstherapie die Behandlungsergebnisse bei Angstreaktionen deutlich verbessern kann (Kirsch, Montgomery & Sapirstein, 1995).",
+        "Bildgebende Untersuchungen (Spiegel, Stanford 2013) belegen, dass Hypnose neuronale Netzwerke aktiviert, die mit Emotionsregulation und innerer Beruhigung verbunden sind."
+      ]
+    },
+    {
+      h2: "Ergebnisse der Hypnose bei Ängsten & Panikattacken",
+      paragraphs: [
+        "Viele Klienten berichten bereits nach kurzer Zeit von spürbaren Veränderungen:"
+      ],
+      bullets: [
+        "weniger Angst und innere Anspannung",
+        "deutlich reduzierte oder keine Panikattacken",
+        "mehr Ruhe und Kontrolle im Alltag",
+        "sicherer Umgang mit belastenden Situationen",
+        "mehr Selbstvertrauen und innere Stabilität",
+        "wieder mehr Lebensqualität"
       ]
     }
   ],
@@ -318,42 +344,54 @@ export const anxietyData: ServicePageData = {
     {
       h2: "When Anxiety Controls Your Life",
       paragraphs: [
-        "Fears are fundamentally a natural protective mechanism. It becomes problematic when they are permanently present, take on a life of their own, or trigger strong physical and emotional reactions in everyday situations.",
-        "Many people then experience insecurity, inner restlessness, avoidance behavior, or recurring panic. This is exactly where hypnosis comes in – not just at the symptoms, but at the deeper triggers."
+        "Anxiety is a natural protective mechanism. It becomes problematic when it is permanently present or takes on a life of its own.",
+        "Many people then experience inner restlessness, avoidance behavior, or recurring panic attacks. The feeling of losing control intensifies the situation and reduces quality of life."
       ]
     },
     {
-      h2: "Breaking the Distressing Cycle of Anxiety and Phobias with Hypnosis",
+      h2: "Breaking the Distressing Cycle with Hypnosis",
       paragraphs: [
-        "Instead of providing protection, anxieties and insecurities become a burden for many sufferers. Physical reactions such as inner restlessness, trembling, tightness, or loss of control further increase the inner pressure.",
-        "This often creates a distressing cycle: the fear of the next reaction leads to even more tension, avoidance, and insecurity. This is exactly where my individually adapted Aktiv-Hypnose© comes in – to break this inner vicious cycle."
+        "Anxiety and panic reactions often reinforce themselves. Physical symptoms such as a racing heart, tightness, or trembling lead to even more tension.",
+        "This is exactly where hypnosis comes in: the underlying patterns are dissolved and restructured. In this way the inner cycle can be sustainably broken."
       ]
     },
     {
-      h2: "Regaining Inner Security with Aktiv-Hypnose©",
+      h2: "Aktiv-Hypnose® for Inner Security",
       paragraphs: [
-        "My Aktiv-Hypnose© works specifically with the deeper causes of anxiety and phobias. Through work at the subconscious level, distressing patterns can be recognized, processed, and sustainably changed.",
-        "The goal is not just the reduction of symptoms, but a profound change in inner experience – for more security, serenity, and quality of life in everyday life."
+        "Aktiv-Hypnose® works directly with the underlying causes of anxiety and panic reactions.",
+        "The goal is lasting change toward more inner calm, stability, and security in everyday life."
       ]
     },
     {
-      h2: "Scientific Evidence: Hypnosis for Anxiety Disorders",
+      h2: "Why Hypnosis Works for Anxiety and Panic Reactions",
       paragraphs: [
-        "A comprehensive meta-analysis by Kirsch, Montgomery & Sapirstein (1995), published in the Journal of Consulting and Clinical Psychology, showed that adding hypnosis to cognitive-behavioral therapy (CBT) improved treatment outcomes for anxiety disorders by an average of 70%.",
-        "According to research at Stanford University (Spiegel, 2013), functional MRI scans show that hypnosis activates specific neural networks in the brain associated with anxiety regulation and emotional processing. This explains why hypnosis can achieve deeper and more lasting results than purely cognitive approaches.",
-        "Sources: Kirsch, Montgomery & Sapirstein, Journal of Consulting and Clinical Psychology, 63(2), 1995; Spiegel, American Journal of Clinical Hypnosis, 56(1), 2013."
+        "Studies show that hypnosis as a complement to cognitive-behavioral therapy can significantly improve treatment outcomes for anxiety reactions (Kirsch, Montgomery & Sapirstein, 1995).",
+        "Imaging research (Spiegel, Stanford 2013) demonstrates that hypnosis activates neural networks linked to emotion regulation and inner calming."
+      ]
+    },
+    {
+      h2: "Results of Hypnosis for Anxiety & Panic Attacks",
+      paragraphs: [
+        "Many clients report noticeable changes after only a short time:"
+      ],
+      bullets: [
+        "less anxiety and inner tension",
+        "significantly reduced or no panic attacks",
+        "more calm and control in everyday life",
+        "more confidence in dealing with stressful situations",
+        "more self-confidence and inner stability",
+        "more quality of life again"
       ]
     }
   ],
   image: `${CDN}/anxiety_relief_hypnose_c7aa85df.jpg`,
   faqCH: [
-    { q: "Kann Hypnose bei allen Arten von Ängsten helfen?", a: "Ja – Hypnose kann bei vielen Formen von Ängsten und Phobien sehr wirksam unterstützen, zum Beispiel bei Flugangst, sozialen Ängsten, Platzangst, Panikattacken oder anderen situativen Ängsten.\n\nEntscheidend ist dabei nicht nur, welche Angst vorliegt, sondern vor allem, wie sie entstanden ist. Ängste entwickeln sich häufig durch eigene belastende Erfahrungen, manchmal aber auch durch übernommene Prägungen, Bewertungen oder unbewusste Lernprozesse.\n\nIm Vorgespräch wird gezielt herausgearbeitet, wann und wodurch der Körper gelernt hat, bestimmte Situationen als Gefahr zu bewerten. In der Hypnose werden diese unbewussten Bewertungs- und Reaktionsmuster direkt an der Ursache bearbeitet und mit der heutigen Realität neu verknüpft.\n\nSo wird nicht nur über die Angst gesprochen, sondern die automatische körperliche Alarmreaktion auf tiefer Ebene verändert. Genau das macht Hypnose bei Ängsten und Phobien zu einem besonders direkten und nachhaltigen Ansatz." },
-    { q: "Wie viele Sitzungen sind nötig?", a: "Die Anzahl der Sitzungen hängt immer von der Art, Tiefe und Entstehung der Angst ab. Ängste können sehr unterschiedliche Ursachen haben – zum Beispiel belastende Erlebnisse, autoritäre Prägungen, Mobbing, Verlusterfahrungen, Überlebensängste oder tief verankerte emotionale Reaktionsmuster. Deshalb muss jeder Mensch individuell betrachtet werden. In vielen Fällen kann bereits eine intensive Sitzung sehr viel in Bewegung bringen und oft mehr bewirken, als Betroffene zuvor über lange Zeit mit reinem Reden erreicht haben. Gleichzeitig wäre es unseriös, pauschal eine feste Anzahl zu versprechen, bevor die Hintergründe wirklich verstanden und die erste Hypnose durchgeführt wurden. Erst nach dem Vorgespräch, der ersten intensiven Sitzung und den Reaktionen in den darauffolgenden Tagen zeigt sich, ob eine weitere Aufbausitzung sinnvoll oder überhaupt notwendig ist." },
+    { q: "Kann Hypnose bei allen Arten von Ängsten helfen?", a: "Hypnose kann bei vielen Formen von Ängsten, innerer Unruhe und Panikreaktionen unterstützend eingesetzt werden.\n\nDazu zählen unter anderem klassische Ängste, soziale Unsicherheiten, Versagensängste, Stressreaktionen oder wiederkehrende Panikattacken.\n\nEntscheidend ist nicht nur, welche Angst vorhanden ist, sondern wodurch sie entstanden ist. Häufig spielen unbewusste Muster, emotionale Erfahrungen und körperliche Reaktionen eine zentrale Rolle.\n\nGenau hier setzt Hypnose an: Die zugrunde liegenden Verknüpfungen werden gezielt verändert, sodass sich neue, stabilere Reaktionen entwickeln können." },
+    { q: "Wie viele Sitzungen sind nötig?", a: "In vielen Fällen kann bereits eine gezielte Hypnose-Sitzung spürbare Veränderungen bei Ängsten, innerer Unruhe oder Panikattacken bewirken.\n\nZiel ist nicht die Anzahl der Sitzungen, sondern die Veränderung der zugrunde liegenden Muster.\n\nJe nach individueller Situation – insbesondere wenn Ängste stark mit Stress, emotionalen Belastungen oder tieferliegenden Themen verbunden sind – kann eine weitere Sitzung sinnvoll sein.\n\nEntscheidend ist, dass nicht nur Symptome kurzfristig reduziert werden, sondern eine stabile innere Veränderung entsteht." },
   ],
   faqEN: [
-    { q: "Can hypnosis help with all types of anxiety?", a: "Yes — hypnosis can very effectively support many forms of anxiety and phobias, for example fear of flying, social anxiety, claustrophobia, panic reactions, or other situational fears. What matters is not just which anxiety is present, but above all how it developed. Anxieties frequently develop through one's own distressing experiences, but sometimes also through adopted experiences, conditioning, or evaluations from one's environment. In the detailed preliminary conversation, it is therefore carefully identified when and through what the body learned to evaluate a certain situation as a threat. In hypnosis, these unconscious evaluation and reaction patterns can be specifically addressed at the root and re-evaluated in light of today's reality. This way, the anxiety is not just talked about — the automatic physical alarm reaction is changed at a deep level. This is precisely what makes hypnosis for anxiety and phobias often a particularly direct, profound, and effective approach." },
-    
-    { q: "How many sessions are needed?", a: "The number of sessions always depends on the type, depth, and origin of the anxiety. Anxieties can have very different causes — for example distressing experiences, authoritarian conditioning, bullying, experiences of loss, survival fears, or deeply anchored emotional reaction patterns. That is why every person must be assessed individually. In many cases, a single intensive session can already set a great deal in motion and often achieve more than those affected have managed over a long time through talking alone. At the same time, it would be unprofessional to promise a fixed number in advance before the background has truly been understood and the first hypnosis has been conducted. Only after the preliminary conversation, the first intensive session, and the reactions in the days that follow does it become clear whether a further follow-up session is beneficial or even necessary." },
+    { q: "Can hypnosis help with all types of anxiety?", a: "Hypnosis can supportively be used for many forms of anxiety, inner restlessness, and panic reactions.\n\nThis includes classic fears, social insecurities, fear of failure, stress reactions, or recurring panic attacks.\n\nWhat matters is not only which anxiety is present, but also how it developed. Unconscious patterns, emotional experiences, and physical reactions often play a central role.\n\nThis is exactly where hypnosis works: the underlying associations are specifically changed so that new, more stable reactions can develop." },
+    { q: "How many sessions are needed?", a: "In many cases, a single targeted hypnosis session can bring about noticeable changes in anxiety, inner restlessness, or panic attacks.\n\nThe goal is not the number of sessions, but the change of the underlying patterns.\n\nDepending on the individual situation – especially when anxiety is strongly linked to stress, emotional strain, or deeper-lying topics – a further session may be useful.\n\nWhat matters is that symptoms are not only reduced in the short term, but that a stable inner change takes place." },
   ],
 };
 
