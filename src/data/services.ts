@@ -39,27 +39,24 @@ export const smokingData: ServicePageData = {
   ],
   introCH: [
     "Viele Menschen möchten mit dem Rauchen aufhören, schaffen es aber trotz guter Vorsätze nicht dauerhaft. Der Grund liegt meist nicht im fehlenden Willen, sondern in tief verankerten Gewohnheiten, emotionalen Auslösern und unbewussten Verknüpfungen im Unterbewusstsein. Genau hier setzt die Hypnose an: Diese inneren Muster können gezielt verändert werden, sodass ein rauchfreies Leben ohne ständigen inneren Kampf möglich wird.",
-    "Rauchen ist selten nur eine Gewohnheit – es ist oft mit tief verankerten Mustern, Stress oder emotionalen Auslösern verbunden.",
-    "Die Raucherentwöhnung mit Hypnose setzt genau hier an: an den unbewussten Ursachen. Statt gegen das Rauchen anzukämpfen, werden die inneren Verknüpfungen gezielt verändert.",
-    "Dadurch wird es möglich, mit dem Rauchen aufzuhören und dauerhaft rauchfrei zu werden – ohne ständigen inneren Druck oder klassische Entzugsprobleme.",
-    "Viele Menschen entscheiden sich bewusst für diesen Weg, weil sie nicht mehr kämpfen möchten, sondern eine nachhaltige Lösung suchen, um das Rauchen aufhören zu können.",
-    "Ziel ist nicht nur, das Rauchen zu beenden, sondern sich stabil als Nichtraucher zu fühlen – langfristig und ohne Rückfall."
+    "Rauchen ist selten nur eine Gewohnheit – oft stecken Stress, emotionale Auslöser und tief verankerte Muster dahinter. Genau hier setzt die Raucherentwöhnung mit Hypnose an, indem die unbewussten Verknüpfungen gezielt verändert werden.",
+    "So wird es möglich, das Rauchen aufhören zu können und dauerhaft rauchfrei zu werden – ohne ständigen inneren Druck oder klassische Entzugserscheinungen.",
+    "Viele entscheiden sich bewusst für diesen Weg der Rauchentwöhnung, um Nichtraucher zu werden, ohne kämpfen zu müssen.",
+    "Ziel ist es, nicht nur mit dem Rauchen aufzuhören, sondern sich stabil als Nichtraucher zu fühlen – langfristig und ohne Rückfall."
   ],
   introDE: [
     "Viele Menschen möchten mit dem Rauchen aufhören, schaffen es aber trotz guter Vorsätze nicht dauerhaft. Der Grund liegt meist nicht im fehlenden Willen, sondern in tief verankerten Gewohnheiten, emotionalen Auslösern und unbewussten Verknüpfungen im Unterbewusstsein. Genau hier setzt die Hypnose an: Diese inneren Muster können gezielt verändert werden, sodass ein rauchfreies Leben ohne ständigen inneren Kampf möglich wird.",
-    "Rauchen ist selten nur eine Gewohnheit – es ist oft mit tief verankerten Mustern, Stress oder emotionalen Auslösern verbunden.",
-    "Die Raucherentwöhnung mit Hypnose setzt genau hier an: an den unbewussten Ursachen. Statt gegen das Rauchen anzukämpfen, werden die inneren Verknüpfungen gezielt verändert.",
-    "Dadurch wird es möglich, mit dem Rauchen aufzuhören und dauerhaft rauchfrei zu werden – ohne ständigen inneren Druck oder klassische Entzugsprobleme.",
-    "Viele Menschen entscheiden sich bewusst für diesen Weg, weil sie nicht mehr kämpfen möchten, sondern eine nachhaltige Lösung suchen, um das Rauchen aufhören zu können.",
-    "Ziel ist nicht nur, das Rauchen zu beenden, sondern sich stabil als Nichtraucher zu fühlen – langfristig und ohne Rückfall."
+    "Rauchen ist selten nur eine Gewohnheit – oft stecken Stress, emotionale Auslöser und tief verankerte Muster dahinter. Genau hier setzt die Raucherentwöhnung mit Hypnose an, indem die unbewussten Verknüpfungen gezielt verändert werden.",
+    "So wird es möglich, das Rauchen aufhören zu können und dauerhaft rauchfrei zu werden – ohne ständigen inneren Druck oder klassische Entzugserscheinungen.",
+    "Viele entscheiden sich bewusst für diesen Weg der Rauchentwöhnung, um Nichtraucher zu werden, ohne kämpfen zu müssen.",
+    "Ziel ist es, nicht nur mit dem Rauchen aufzuhören, sondern sich stabil als Nichtraucher zu fühlen – langfristig und ohne Rückfall."
   ],
   introEN: [
     "Many people want to quit smoking but, despite good intentions, do not manage to do so permanently. The reason usually does not lie in a lack of willpower, but in deeply ingrained habits, emotional triggers, and unconscious associations in the subconscious mind. This is exactly where hypnosis comes in: these inner patterns can be specifically transformed, so that a smoke-free life without a constant inner struggle becomes possible.",
-    "Smoking is rarely just a habit – it is often linked to deeply rooted patterns, stress or emotional triggers.",
-    "Smoking cessation with hypnosis works precisely here: at the unconscious causes. Instead of fighting against smoking, the inner associations are specifically transformed.",
-    "This makes it possible to quit smoking and become permanently smoke-free – without constant inner pressure or typical withdrawal problems.",
-    "Many people consciously choose this path because they no longer want to struggle, but are looking for a sustainable solution to finally stop smoking.",
-    "The goal is not only to end smoking, but to feel stable as a non-smoker – long-term and without relapse."
+    "Smoking is rarely just a habit – stress, emotional triggers and deeply rooted patterns are often behind it. This is precisely where smoking cessation with hypnosis comes in, by specifically transforming the unconscious associations.",
+    "This makes it possible to stop smoking and become permanently smoke-free – without constant inner pressure or typical withdrawal symptoms.",
+    "Many people consciously choose this path of smoking cessation in order to become a non-smoker without having to struggle.",
+    "The goal is not only to quit smoking, but to feel stable as a non-smoker – long-term and without relapse."
   ],
   sectionsCH: [
     {
