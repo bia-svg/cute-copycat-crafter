@@ -157,7 +157,7 @@ export default function UeberUns() {
                 <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">EMR Konform</h3>
               </div>
               <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center">
-                <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-10 md:h-12 w-10 md:w-12 object-contain mx-auto mb-1.5" loading="lazy" width={512} height={512} />
+                <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-11 md:h-[53px] w-11 md:w-[53px] object-contain mx-auto mb-2.5" style={{ filter: "brightness(1.28) contrast(1.22) saturate(1.17)" }} loading="lazy" width={512} height={512} />
                 <h3 className="font-light text-[10px] md:text-xs text-[#1B3A5C] leading-[1.35] tracking-tight text-center">Lic. Psych.<br /><span className="text-[9px] md:text-[11px] tracking-[0.04em]">UNAM</span></h3>
               </div>
               <div className="bg-white border border-[#E8EDF3] p-2.5 md:p-3 rounded-xl text-center">
