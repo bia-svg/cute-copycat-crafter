@@ -1,4 +1,45 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+
+function BadgeCard({ children, label, info }: { children: ReactNode; label: ReactNode; info: string }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!open) return;
+    const onDoc = (e: MouseEvent | TouchEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", onDoc);
+    document.addEventListener("touchstart", onDoc);
+    return () => {
+      document.removeEventListener("mousedown", onDoc);
+      document.removeEventListener("touchstart", onDoc);
+    };
+  }, [open]);
+  return (
+    <div
+      ref={ref}
+      onClick={() => setOpen((o) => !o)}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      className="group relative bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center hover:shadow-md hover:border-[#D0DAE6] transition-all duration-300 flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px] select-none cursor-default"
+    >
+      <div className="flex-1 flex items-center justify-center w-full">{children}</div>
+      <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight select-none">{label}</h3>
+      <div
+        role="tooltip"
+        className={`pointer-events-none absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[200px] md:w-[220px] z-20 transition-all duration-200 ease-out ${
+          open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"
+        }`}
+      >
+        <div className="bg-[#1B3A5C] text-white text-[11px] md:text-[11.5px] leading-snug font-light px-3 py-2 rounded-lg shadow-lg select-none">
+          {info}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 import SEO from "@/components/SEO";
 import { pageSEO } from "@/data/seo";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -148,48 +189,48 @@ export default function UeberUns() {
             </div>
 
             <div className="grid grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3 mb-5">
-              <div className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
-                <div className="flex-1 flex items-center justify-center w-full">
-                  <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat" className="h-9 md:h-12 mx-auto" loading="lazy" />
+              <BadgeCard
+                label="NGH International Trainer"
+                info={isEN ? "Certified trainer of the National Guild of Hypnotists (USA) — the world's largest hypnosis association." : "Zertifizierter Ausbilder der National Guild of Hypnotists (USA) — weltweit größter Hypnose-Berufsverband."}
+              >
+                <img src={CDN.nghBadge} alt="NGH International Trainer Zertifikat" className="h-9 md:h-12 mx-auto" loading="lazy" />
+              </BadgeCard>
+              <BadgeCard
+                label="EMR Konform"
+                info={isEN ? "Recognized by EMR (ZSR P609264) — eligible for reimbursement by Swiss complementary health insurance." : "Vom EMR anerkannt (ZSR P609264) — von Schweizer Zusatzversicherungen erstattungsfähig."}
+              >
+                <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge" className="h-9 md:h-12 mx-auto" loading="lazy" />
+              </BadgeCard>
+              <BadgeCard
+                label={<>Lic. Psych.<br /><span className="text-[9px] md:text-[11px] tracking-[0.04em]">UNAM</span></>}
+                info={isEN ? "Licensed Psychologist — UNAM, one of Latin America's most renowned universities." : "Lizenzierter Psychologe — UNAM, eine der renommiertesten Universitäten Lateinamerikas."}
+              >
+                <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-11 md:h-[53px] w-11 md:w-[53px] object-contain mx-auto" style={{ filter: "brightness(1.28) contrast(1.22) saturate(1.17)" }} loading="lazy" width={512} height={512} />
+              </BadgeCard>
+              <BadgeCard
+                label={isEN ? "Aktiv-Hypnose© Developer" : "Entwickler Aktiv-Hypnose©"}
+                info={isEN ? "Developer of the proprietary Aktiv-Hypnose© method — actively engaging body and emotions during the session." : "Entwickler der eigenständigen Methode Aktiv-Hypnose© — mit aktiver Einbindung von Körper und Emotionen."}
+              >
+                <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-7 md:h-10 mx-auto" loading="lazy" />
+              </BadgeCard>
+              <BadgeCard
+                label={isEN ? "Author & Specialist" : "Autor & Fachautor"}
+                info={isEN ? "Author of specialist books and articles on hypnosis, change work and behavior patterns." : "Autor von Fachbüchern und Beiträgen zu Hypnose, Veränderungsarbeit und Verhaltensmustern."}
+              >
+                <div className="w-9 h-9 md:w-12 md:h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mx-auto">
+                  <BookOpen className="w-4 h-4 md:w-6 md:h-6 text-white" />
                 </div>
-                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">NGH International Trainer</h3>
-              </div>
-              <div className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
-                <div className="flex-1 flex items-center justify-center w-full">
-                  <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform Badge" className="h-9 md:h-12 mx-auto" loading="lazy" />
+              </BadgeCard>
+              <BadgeCard
+                label={isEN ? "TV Expert & Media" : "TV-Experte & Medien"}
+                info={isEN ? "Regular media expert on hypnosis — featured in television, radio and print across DACH." : "Gefragter Medienexperte zum Thema Hypnose — vertreten in TV, Radio und Print im DACH-Raum."}
+              >
+                <div className="w-9 h-9 md:w-12 md:h-12 bg-[#1B3A5C] rounded-lg flex items-center justify-center mx-auto">
+                  <Tv className="w-4 h-4 md:w-6 md:h-6 text-white" />
                 </div>
-                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">EMR Konform</h3>
-              </div>
-              <div className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
-                <div className="flex-1 flex items-center justify-center w-full">
-                  <img src={licPsychSeal} alt="Lic. Psych. – Academic Seal" className="h-11 md:h-[53px] w-11 md:w-[53px] object-contain mx-auto" style={{ filter: "brightness(1.28) contrast(1.22) saturate(1.17)" }} loading="lazy" width={512} height={512} />
-                </div>
-                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-[1.35] tracking-tight text-center">Lic. Psych.<br /><span className="text-[9px] md:text-[11px] tracking-[0.04em]">UNAM</span></h3>
-              </div>
-              <div className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
-                <div className="flex-1 flex items-center justify-center w-full">
-                  <img src={CDN.logo} alt="Aktiv-Hypnose© Logo" className="h-7 md:h-10 mx-auto" loading="lazy" />
-                </div>
-                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">{isEN ? "Aktiv-Hypnose© Developer" : "Entwickler Aktiv-Hypnose©"}</h3>
-              </div>
-              <div className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center hover:shadow-md transition-shadow flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
-                <div className="flex-1 flex items-center justify-center w-full">
-                  <div className="w-9 h-9 md:w-12 md:h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mx-auto">
-                    <BookOpen className="w-4 h-4 md:w-6 md:h-6 text-white" />
-                  </div>
-                </div>
-                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">{isEN ? "Author & Specialist" : "Autor & Fachautor"}</h3>
-              </div>
-              <div className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center hover:shadow-md transition-shadow flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
-                <div className="flex-1 flex items-center justify-center w-full">
-                  <div className="w-9 h-9 md:w-12 md:h-12 bg-[#1B3A5C] rounded-lg flex items-center justify-center mx-auto">
-                    <Tv className="w-4 h-4 md:w-6 md:h-6 text-white" />
-                  </div>
-                </div>
-                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">{isEN ? "TV Expert & Media" : "TV-Experte & Medien"}</h3>
-              </div>
-
+              </BadgeCard>
             </div>
+
 
             {/* Bekannt aus — full color, more visible */}
             <div className="bg-white border border-[#E8EDF3] rounded-2xl p-4">
