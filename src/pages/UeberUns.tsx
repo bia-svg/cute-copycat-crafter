@@ -172,22 +172,23 @@ export default function UeberUns() {
                 </div>
                 <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">{isEN ? "Aktiv-Hypnose© Developer" : "Entwickler Aktiv-Hypnose©"}</h3>
               </div>
-              <Link to={getPath("book", language, country)} className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center hover:shadow-md transition-shadow group flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
+              <div className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center hover:shadow-md transition-shadow flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
                 <div className="flex-1 flex items-center justify-center w-full">
                   <div className="w-9 h-9 md:w-12 md:h-12 bg-[#2E7D32] rounded-lg flex items-center justify-center mx-auto">
                     <BookOpen className="w-4 h-4 md:w-6 md:h-6 text-white" />
                   </div>
                 </div>
-                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight group-hover:text-[#2E7D32] transition-colors tracking-tight">{isEN ? "Author & Specialist" : "Autor & Fachautor"}</h3>
-              </Link>
-              <Link to={getPath("media", language, country)} className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center hover:shadow-md transition-shadow group flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
+                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">{isEN ? "Author & Specialist" : "Autor & Fachautor"}</h3>
+              </div>
+              <div className="bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center hover:shadow-md transition-shadow flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px]">
                 <div className="flex-1 flex items-center justify-center w-full">
                   <div className="w-9 h-9 md:w-12 md:h-12 bg-[#1B3A5C] rounded-lg flex items-center justify-center mx-auto">
                     <Tv className="w-4 h-4 md:w-6 md:h-6 text-white" />
                   </div>
                 </div>
-                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight group-hover:text-[#2E7D32] transition-colors tracking-tight">{isEN ? "TV Expert & Media" : "TV-Experte & Medien"}</h3>
-              </Link>
+                <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight">{isEN ? "TV Expert & Media" : "TV-Experte & Medien"}</h3>
+              </div>
+
             </div>
 
             {/* Bekannt aus — full color, more visible */}
