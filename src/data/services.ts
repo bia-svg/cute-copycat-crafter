@@ -39,8 +39,11 @@ export const smokingData: ServicePageData = {
   ],
   introCH: [
     "Viele Menschen möchten mit dem Rauchen aufhören, schaffen es aber trotz guter Vorsätze nicht dauerhaft. Der Grund liegt meist nicht im fehlenden Willen, sondern in tief verankerten Gewohnheiten, emotionalen Auslösern und unbewussten Verknüpfungen im Unterbewusstsein. Genau hier setzt die Hypnose an: Diese inneren Muster können gezielt verändert werden, sodass ein rauchfreies Leben ohne ständigen inneren Kampf möglich wird.",
-    "Rauchen ist häufig mehr als nur eine Gewohnheit. Für viele Menschen ist es unbewusst mit Stressabbau, Entspannung, Belohnung, Sicherheit oder bestimmten Alltagssituationen verbunden.",
-    "Mit professioneller Hypnose können diese inneren Auslöser gezielt auf tiefer Ebene verändert werden. Das Ziel ist nicht nur, mit dem Rauchen aufzuhören, sondern sich innerlich wirklich als Nichtraucher zu fühlen."
+    "Rauchen ist selten nur eine Gewohnheit – es ist oft mit tief verankerten Mustern, Stress oder emotionalen Auslösern verbunden.",
+    "Die Raucherentwöhnung mit Hypnose setzt genau hier an: an den unbewussten Ursachen. Statt gegen das Rauchen anzukämpfen, werden die inneren Verknüpfungen gezielt verändert.",
+    "Dadurch wird es möglich, mit dem Rauchen aufzuhören und dauerhaft rauchfrei zu werden – ohne ständigen inneren Druck oder klassische Entzugsprobleme.",
+    "Viele Menschen entscheiden sich bewusst für diesen Weg, weil sie nicht mehr kämpfen möchten, sondern eine nachhaltige Lösung suchen, um das Rauchen aufhören zu können.",
+    "Ziel ist nicht nur, das Rauchen zu beenden, sondern sich stabil als Nichtraucher zu fühlen – langfristig und ohne Rückfall."
   ],
   introDE: [
     "Viele Menschen möchten mit dem Rauchen aufhören, schaffen es aber trotz guter Vorsätze nicht dauerhaft. Der Grund liegt meist nicht im fehlenden Willen, sondern in tief verankerten Gewohnheiten, emotionalen Auslösern und unbewussten Verknüpfungen im Unterbewusstsein. Genau hier setzt die Hypnose an: Diese inneren Muster können gezielt verändert werden, sodass ein rauchfreies Leben ohne ständigen inneren Kampf möglich wird.",
