@@ -254,31 +254,11 @@ export const anxietyData: ServicePageData = {
   ],
   sectionsCH: [
     {
-      h2: "Wenn Ängste das Leben bestimmen",
+      h2: "Wenn Ängste und Panik den Alltag bestimmen",
       paragraphs: [
-        "Ängste sind ein natürlicher Schutzmechanismus. Problematisch wird es, wenn sie dauerhaft präsent sind oder sich verselbstständigen.",
-        "Viele Menschen erleben dann innere Unruhe, Vermeidungsverhalten oder wiederkehrende Panikattacken. Das Gefühl von Kontrollverlust verstärkt die Situation zusätzlich und schränkt die Lebensqualität ein."
-      ]
-    },
-    {
-      h2: "Mit Hypnose den belastenden Teufelskreis durchbrechen",
-      paragraphs: [
-        "Ängste und Panikreaktionen verstärken sich oft selbst. Körperliche Symptome wie Herzklopfen, Engegefühl oder Zittern führen zu noch mehr Anspannung.",
-        "Hypnose setzt genau hier an: Die zugrunde liegenden Muster werden aufgelöst und neu strukturiert. So kann der innere Kreislauf nachhaltig durchbrochen werden."
-      ]
-    },
-    {
-      h2: "Aktiv-Hypnose® für innere Sicherheit",
-      paragraphs: [
-        "Die Aktiv-Hypnose® arbeitet direkt mit den zugrunde liegenden Ursachen von Ängsten und Panikreaktionen.",
-        "Ziel ist eine nachhaltige Veränderung hin zu mehr innerer Ruhe, Stabilität und Sicherheit im Alltag."
-      ]
-    },
-    {
-      h2: "Warum Hypnose bei Ängsten und Panikreaktionen wirkt",
-      paragraphs: [
-        "Studien zeigen, dass Hypnose ergänzend zur kognitiven Verhaltenstherapie die Behandlungsergebnisse bei Angstreaktionen deutlich verbessern kann (Kirsch, Montgomery & Sapirstein, 1995).",
-        "Bildgebende Untersuchungen (Spiegel, Stanford 2013) belegen, dass Hypnose neuronale Netzwerke aktiviert, die mit Emotionsregulation und innerer Beruhigung verbunden sind."
+        "Ängste, innere Unruhe oder wiederkehrende Panikattacken können den Alltag stark einschränken. Viele Betroffene entwickeln unbewusst Vermeidungsverhalten, Kontrollverlust oder anhaltende Anspannung.",
+        "Häufig liegen die Ursachen nicht im bewussten Denken, sondern in tiefer verankerten emotionalen Mustern und automatischen Reaktionen des Körpers.",
+        "Mit Hypnose werden diese inneren Verknüpfungen direkt an der Ursache verändert. So kann der belastende Kreislauf aus Angst, körperlicher Reaktion und erneuter Angst nachhaltig durchbrochen werden."
       ]
     },
     {
@@ -292,37 +272,17 @@ export const anxietyData: ServicePageData = {
         "mehr Ruhe und Kontrolle im Alltag",
         "sicherer Umgang mit belastenden Situationen",
         "mehr Selbstvertrauen und innere Stabilität",
-        "wieder mehr Lebensqualität"
+        "wieder mehr Lebensqualität und Freiheit"
       ]
     }
   ],
   sectionsDE: [
     {
-      h2: "Wenn Ängste das Leben bestimmen",
+      h2: "Wenn Ängste und Panik den Alltag bestimmen",
       paragraphs: [
-        "Ängste sind ein natürlicher Schutzmechanismus. Problematisch wird es, wenn sie dauerhaft präsent sind oder sich verselbstständigen.",
-        "Viele Menschen erleben dann innere Unruhe, Vermeidungsverhalten oder wiederkehrende Panikattacken. Das Gefühl von Kontrollverlust verstärkt die Situation zusätzlich und schränkt die Lebensqualität ein."
-      ]
-    },
-    {
-      h2: "Mit Hypnose den belastenden Teufelskreis durchbrechen",
-      paragraphs: [
-        "Ängste und Panikreaktionen verstärken sich oft selbst. Körperliche Symptome wie Herzklopfen, Engegefühl oder Zittern führen zu noch mehr Anspannung.",
-        "Hypnose setzt genau hier an: Die zugrunde liegenden Muster werden aufgelöst und neu strukturiert. So kann der innere Kreislauf nachhaltig durchbrochen werden."
-      ]
-    },
-    {
-      h2: "Aktiv-Hypnose® für innere Sicherheit",
-      paragraphs: [
-        "Die Aktiv-Hypnose® arbeitet direkt mit den zugrunde liegenden Ursachen von Ängsten und Panikreaktionen.",
-        "Ziel ist eine nachhaltige Veränderung hin zu mehr innerer Ruhe, Stabilität und Sicherheit im Alltag."
-      ]
-    },
-    {
-      h2: "Warum Hypnose bei Ängsten und Panikreaktionen wirkt",
-      paragraphs: [
-        "Studien zeigen, dass Hypnose ergänzend zur kognitiven Verhaltenstherapie die Behandlungsergebnisse bei Angstreaktionen deutlich verbessern kann (Kirsch, Montgomery & Sapirstein, 1995).",
-        "Bildgebende Untersuchungen (Spiegel, Stanford 2013) belegen, dass Hypnose neuronale Netzwerke aktiviert, die mit Emotionsregulation und innerer Beruhigung verbunden sind."
+        "Ängste, innere Unruhe oder wiederkehrende Panikattacken können den Alltag stark einschränken. Viele Betroffene entwickeln unbewusst Vermeidungsverhalten, Kontrollverlust oder anhaltende Anspannung.",
+        "Häufig liegen die Ursachen nicht im bewussten Denken, sondern in tiefer verankerten emotionalen Mustern und automatischen Reaktionen des Körpers.",
+        "Mit Hypnose werden diese inneren Verknüpfungen direkt an der Ursache verändert. So kann der belastende Kreislauf aus Angst, körperlicher Reaktion und erneuter Angst nachhaltig durchbrochen werden."
       ]
     },
     {
@@ -336,37 +296,17 @@ export const anxietyData: ServicePageData = {
         "mehr Ruhe und Kontrolle im Alltag",
         "sicherer Umgang mit belastenden Situationen",
         "mehr Selbstvertrauen und innere Stabilität",
-        "wieder mehr Lebensqualität"
+        "wieder mehr Lebensqualität und Freiheit"
       ]
     }
   ],
   sectionsEN: [
     {
-      h2: "When Anxiety Controls Your Life",
+      h2: "When Anxiety and Panic Take Over Daily Life",
       paragraphs: [
-        "Anxiety is a natural protective mechanism. It becomes problematic when it is permanently present or takes on a life of its own.",
-        "Many people then experience inner restlessness, avoidance behavior, or recurring panic attacks. The feeling of losing control intensifies the situation and reduces quality of life."
-      ]
-    },
-    {
-      h2: "Breaking the Distressing Cycle with Hypnosis",
-      paragraphs: [
-        "Anxiety and panic reactions often reinforce themselves. Physical symptoms such as a racing heart, tightness, or trembling lead to even more tension.",
-        "This is exactly where hypnosis comes in: the underlying patterns are dissolved and restructured. In this way the inner cycle can be sustainably broken."
-      ]
-    },
-    {
-      h2: "Aktiv-Hypnose® for Inner Security",
-      paragraphs: [
-        "Aktiv-Hypnose® works directly with the underlying causes of anxiety and panic reactions.",
-        "The goal is lasting change toward more inner calm, stability, and security in everyday life."
-      ]
-    },
-    {
-      h2: "Why Hypnosis Works for Anxiety and Panic Reactions",
-      paragraphs: [
-        "Studies show that hypnosis as a complement to cognitive-behavioral therapy can significantly improve treatment outcomes for anxiety reactions (Kirsch, Montgomery & Sapirstein, 1995).",
-        "Imaging research (Spiegel, Stanford 2013) demonstrates that hypnosis activates neural networks linked to emotion regulation and inner calming."
+        "Anxiety, inner restlessness, or recurring panic attacks can heavily restrict everyday life. Many people unconsciously develop avoidance behavior, loss of control, or persistent tension.",
+        "The causes often do not lie in conscious thinking, but in more deeply anchored emotional patterns and automatic bodily reactions.",
+        "With hypnosis these inner associations are changed directly at the root. In this way the distressing cycle of anxiety, physical reaction, and renewed anxiety can be sustainably broken."
       ]
     },
     {
@@ -380,7 +320,7 @@ export const anxietyData: ServicePageData = {
         "more calm and control in everyday life",
         "more confidence in dealing with stressful situations",
         "more self-confidence and inner stability",
-        "more quality of life again"
+        "more quality of life and freedom"
       ]
     }
   ],
