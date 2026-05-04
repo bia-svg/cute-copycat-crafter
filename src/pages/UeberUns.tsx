@@ -231,7 +231,6 @@ export default function UeberUns() {
               </BadgeCard>
             </div>
 
-            </div>
 
             {/* Bekannt aus — full color, more visible */}
             <div className="bg-white border border-[#E8EDF3] rounded-2xl p-4">
