@@ -457,11 +457,35 @@ export default function Home() {
                 </li>
               </ul>
 
-              {/* Topics row — Hero-style block label */}
+              {/* Topics row — Hero-style block label, each item linked */}
               <p className="mt-2.5 md:mt-4 text-[11px] md:text-[13px] text-[#1B3A5C] font-semibold uppercase tracking-[0.18em] leading-snug max-w-[760px]">
-                {isEN
-                  ? "SMOKE-FREE  ·  WEIGHT LOSS  ·  ANXIETY  ·  STRESS  ·  TRAUMA  ·  CHILDREN'S HYPNOSIS  ·  TRAININGS"
-                  : "RAUCHFREI  ·  ABNEHMEN  ·  ÄNGSTE  ·  STRESS  ·  TRAUMA  ·  KINDERHYPNOSE  ·  AUSBILDUNGEN"}
+                {(isEN
+                  ? [
+                      { label: "BECOME SMOKE-FREE", page: "smoking" as const },
+                      { label: "WEIGHT LOSS", page: "weight" as const },
+                      { label: "ANXIETY & PANIC", page: "anxiety" as const },
+                      { label: "STRESS & BURNOUT", page: "stress" as const },
+                      { label: "DEPRESSION & TRAUMA", page: "depression" as const },
+                      { label: "CHILDREN & TEENS", page: "children" as const },
+                      { label: "TRAINING", page: "training" as const },
+                    ]
+                  : [
+                      { label: "RAUCHFREI WERDEN", page: "smoking" as const },
+                      { label: "ABNEHMEN", page: "weight" as const },
+                      { label: "ÄNGSTE & PANIK", page: "anxiety" as const },
+                      { label: "STRESS & BURNOUT", page: "stress" as const },
+                      { label: "DEPRESSION & TRAUMA", page: "depression" as const },
+                      { label: "KINDER & JUGENDLICHE", page: "children" as const },
+                      { label: "AUSBILDUNG", page: "training" as const },
+                    ]
+                ).map((item, i, arr) => (
+                  <span key={item.page}>
+                    <Link to={getPath(item.page, language, country)} className="hover:text-[#0B1F33] transition-colors">
+                      {item.label}
+                    </Link>
+                    {i < arr.length - 1 && <span className="mx-1.5">·</span>}
+                  </span>
+                ))}
               </p>
 
               {/* CTA – pushed to bottom on desktop */}
@@ -473,7 +497,7 @@ export default function Home() {
                 }}
                 className="mt-3 md:mt-4 md:mb-1 inline-flex items-center justify-center bg-[#c8e6c9] hover:bg-[#a5d6a7] text-black font-medium text-[12px] md:text-[13.5px] px-5 md:px-7 py-1.5 md:py-2 rounded-lg shadow-sm transition-all border border-[#1B3A5C]/75"
               >
-                {isEN ? "Get free information now" : "Jetzt unverbindlich informieren"}
+                {isEN ? "Request a free consultation" : "Unverbindlich beraten lassen"}
               </button>
 
               {/* Mobile: 2x2 badges grid below CTA */}
