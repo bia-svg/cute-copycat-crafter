@@ -28,7 +28,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-footer text-footer-foreground">
-      <div className="container-main pt-8 md:pt-7 pb-16 md:pb-10">
+      <div className="container-main pt-8 md:pt-7 pb-24 md:pb-12">
         <div className="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-6">
           {/* Logo & Info + Institutes (stacked on desktop) */}
           <div className="space-y-6 md:space-y-4">
