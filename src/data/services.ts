@@ -62,7 +62,9 @@ export const smokingData: ServicePageData = {
     {
       h2: "Rauchfrei mit Hypnose – Ursachen statt Symptome lösen",
       paragraphs: [
-        "Nachhaltig mit dem Rauchen aufhören gelingt dann, wenn die zugrunde liegenden emotionalen und unbewussten Ursachen gezielt verändert werden."
+        "Nachhaltige Raucherentwöhnung gelingt dann, wenn die unbewussten Ursachen hinter dem Rauchen gezielt verändert werden.",
+        "Hypnose setzt genau hier an und unterstützt dabei, das Rauchen aufhören zu können, dauerhaft rauchfrei zu werden und sich stabil als Nichtraucher zu fühlen – ohne klassische Entzugserscheinungen.",
+        "Typische Auslöser für Rauchen:"
       ],
       bullets: [
         "Stress und innere Anspannung",
@@ -78,8 +80,9 @@ export const smokingData: ServicePageData = {
     {
       h2: "Aufhören zu rauchen ohne ständigen inneren Kampf",
       paragraphs: [
-        "Durch die gezielte Arbeit mit dem Unterbewusstsein können diese inneren Verknüpfungen nachhaltig verändert werden. Statt ständig gegen sich selbst anzukämpfen, entstehen neue, stabilere Muster.",
-        "So wird das Aufhören nicht mehr als Verzicht erlebt, sondern als echte innere Veränderung – hin zu einem rauchfreien Leben mit mehr Freiheit und Kontrolle."
+        "Durch die gezielte Arbeit mit dem Unterbewusstsein werden die inneren Verknüpfungen, die das Rauchen aufrechterhalten, nachhaltig verändert.",
+        "So wird es möglich, mit dem Rauchen aufzuhören, rauchfrei zu werden und Nichtraucher zu bleiben – ohne ständigen Druck oder klassische Entzugserscheinungen.",
+        "Statt Verzicht entsteht eine echte innere Veränderung. Der Wunsch zu rauchen lässt nach – und ein stabiles, rauchfreies Leben wird möglich."
       ]
     },
     {
@@ -95,7 +98,9 @@ export const smokingData: ServicePageData = {
     {
       h2: "Rauchfrei mit Hypnose – Ursachen statt Symptome lösen",
       paragraphs: [
-        "Nachhaltig mit dem Rauchen aufhören gelingt dann, wenn die zugrunde liegenden emotionalen und unbewussten Ursachen gezielt verändert werden."
+        "Nachhaltige Raucherentwöhnung gelingt dann, wenn die unbewussten Ursachen hinter dem Rauchen gezielt verändert werden.",
+        "Hypnose setzt genau hier an und unterstützt dabei, das Rauchen aufhören zu können, dauerhaft rauchfrei zu werden und sich stabil als Nichtraucher zu fühlen – ohne klassische Entzugserscheinungen.",
+        "Typische Auslöser für Rauchen:"
       ],
       bullets: [
         "Stress und innere Anspannung",
@@ -111,8 +116,9 @@ export const smokingData: ServicePageData = {
     {
       h2: "Aufhören zu rauchen ohne ständigen inneren Kampf",
       paragraphs: [
-        "Durch die gezielte Arbeit mit dem Unterbewusstsein können diese inneren Verknüpfungen nachhaltig verändert werden. Statt ständig gegen sich selbst anzukämpfen, entstehen neue, stabilere Muster.",
-        "So wird das Aufhören nicht mehr als Verzicht erlebt, sondern als echte innere Veränderung – hin zu einem rauchfreien Leben mit mehr Freiheit und Kontrolle."
+        "Durch die gezielte Arbeit mit dem Unterbewusstsein werden die inneren Verknüpfungen, die das Rauchen aufrechterhalten, nachhaltig verändert.",
+        "So wird es möglich, mit dem Rauchen aufzuhören, rauchfrei zu werden und Nichtraucher zu bleiben – ohne ständigen Druck oder klassische Entzugserscheinungen.",
+        "Statt Verzicht entsteht eine echte innere Veränderung. Der Wunsch zu rauchen lässt nach – und ein stabiles, rauchfreies Leben wird möglich."
       ]
     },
     {
@@ -128,7 +134,9 @@ export const smokingData: ServicePageData = {
     {
       h2: "Smoke-Free with Hypnosis – Resolving Causes Instead of Symptoms",
       paragraphs: [
-        "Quitting smoking permanently succeeds when the underlying emotional and unconscious causes are specifically transformed."
+        "Sustainable smoking cessation succeeds when the unconscious causes behind smoking are specifically transformed.",
+        "Hypnosis works precisely here and supports you in being able to stop smoking, becoming permanently smoke-free and feeling stable as a non-smoker – without typical withdrawal symptoms.",
+        "Typical triggers for smoking:"
       ],
       bullets: [
         "Stress and inner tension",
@@ -144,8 +152,9 @@ export const smokingData: ServicePageData = {
     {
       h2: "Quitting Smoking Without a Constant Inner Struggle",
       paragraphs: [
-        "Through targeted work with the subconscious, these inner associations can be transformed in a lasting way. Instead of constantly fighting against yourself, new and more stable patterns can develop.",
-        "Quitting is then no longer experienced as deprivation, but as a genuine inner change – towards a smoke-free life with more freedom and control."
+        "Through targeted work with the subconscious, the inner associations that keep smoking in place are transformed in a lasting way.",
+        "This makes it possible to stop smoking, become smoke-free and remain a non-smoker – without constant pressure or typical withdrawal symptoms.",
+        "Instead of deprivation, a genuine inner change emerges. The desire to smoke fades – and a stable, smoke-free life becomes possible."
       ]
     },
     {
