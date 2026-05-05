@@ -32,6 +32,7 @@ const Buch = lazy(() => import("@/pages/Buch"));
 const Dashboard = lazy(() => import("@/pages/Dashboard"));
 const WieFunktioniertHypnose = lazy(() => import("@/pages/WieFunktioniertHypnose"));
 const DashboardLogin = lazy(() => import("@/pages/DashboardLogin"));
+const DashboardResetPassword = lazy(() => import("@/pages/DashboardResetPassword"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const Unsubscribe = lazy(() => import("@/pages/Unsubscribe"));
 
