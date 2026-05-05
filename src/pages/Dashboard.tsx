@@ -1210,12 +1210,26 @@ export default function Dashboard() {
                   <TabsTrigger value="cta-success" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
                     <MousePointer className="w-3 h-3 mr-1" /> CTA Success
                   </TabsTrigger>
+                  <TabsTrigger value="ai-insights" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                    <Sparkles className="w-3 h-3 mr-1" /> Ask the Data
+                  </TabsTrigger>
                 </TabsList>
                 <TabsContent value="performance" className="mt-4">
                   <WebsitePerformanceTab startDate={dateRange.startDate} endDate={dateRange.endDate} />
                 </TabsContent>
                 <TabsContent value="cta-success" className="mt-4">
                   <CTASuccessTab />
+                </TabsContent>
+                <TabsContent value="ai-insights" className="mt-4">
+                  <AIChatTab dashboardState={{
+                    trafficByDay, topPages, campaigns, dailyAds, leads, whatsappClicks,
+                    gscQueries, gscTotals, gscPreviousTotals, gscPreviousPeriod,
+                    gscDailyMetrics, gscTopPages, gscByCountry, gscByDevice, gscDistribution,
+                    gscError, gscLive, seoSnapshots,
+                    campaignPages, campaignPageFlow,
+                    loading, gaError, adsError, gaLive, adsLive,
+                    dateRange, setDateRange,
+                  }} />
                 </TabsContent>
               </Tabs>
             </TabsContent>
