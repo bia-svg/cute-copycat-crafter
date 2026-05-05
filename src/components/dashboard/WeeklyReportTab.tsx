@@ -103,7 +103,9 @@ export default function WeeklyReportTab({ trafficByDay, dailyAds, leads, gscDail
       };
     });
 
-    return rows;
+    // Only show weeks starting from 2026-03-30 onwards
+    const MIN_WEEK_START = "2026-03-30";
+    return rows.filter(r => r.weekStart >= MIN_WEEK_START);
   }, [trafficByDay, dailyAds, leads, gscDailyMetrics, dateRange]);
 
   const totals = useMemo(() => {
