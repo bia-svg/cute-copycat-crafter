@@ -411,34 +411,34 @@ export default function Dashboard() {
                 </Card>
               </div>
 
-              {/* Leads Per Day Chart */}
+              {/* Leads Per Day Chart — Form Leads vs Terminbestätigung */}
               {leads.length > 0 && (() => {
-                const byDay: Record<string, { date: string; session: number; seminar: number; total: number }> = {};
+                const byDay: Record<string, { date: string; formLead: number; termin: number }> = {};
                 leads.forEach(l => {
                   const d = format(new Date(l.created_at), "yyyy-MM-dd");
-                  if (!byDay[d]) byDay[d] = { date: d, session: 0, seminar: 0, total: 0 };
-                  byDay[d].total++;
-                  if (l.form_type === "seminar") byDay[d].seminar++;
-                  else byDay[d].session++;
+                  if (!byDay[d]) byDay[d] = { date: d, formLead: 0, termin: 0 };
+                  if ((l.concern || "").toLowerCase().includes("terminbestätigung")) byDay[d].termin++;
+                  else byDay[d].formLead++;
                 });
                 const dailyLeads = Object.values(byDay).sort((a, b) => a.date.localeCompare(b.date));
                 return (
                   <Card className="bg-white border border-gray-200 shadow-sm">
                     <CardHeader className="pb-2">
-                      <CardTitle className="text-sm font-medium text-gray-700">Leads Per Day</CardTitle>
+                      <CardTitle className="text-sm font-medium text-gray-700">Leads Per Day — Form Leads vs Terminbestätigung</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <ChartContainer config={{
-                        session: { label: "Session", color: COLORS.organic },
-                        seminar: { label: "Seminar", color: COLORS.paid },
+                        formLead: { label: "Form Lead", color: "#2E7D32" },
+                        termin: { label: "Terminbestätigung", color: "#1B3A5C" },
                       }} className="h-[220px] w-full">
-                        <BarChart data={dailyLeads}>
+                        <BarChart data={dailyLeads} barGap={4}>
                           <CartesianGrid stroke="#f3f4f6" strokeDasharray="3 3" />
                           <XAxis dataKey="date" tick={{ fill: "#9ca3af", fontSize: 10 }} tickFormatter={v => format(parseISO(v), "dd/MM")} />
                           <YAxis tick={{ fill: "#9ca3af", fontSize: 10 }} allowDecimals={false} />
                           <ChartTooltip content={<ChartTooltipContent />} />
-                          <Bar dataKey="session" fill={COLORS.organic} stackId="a" radius={[0, 0, 0, 0]} name="Session" />
-                          <Bar dataKey="seminar" fill={COLORS.paid} stackId="a" radius={[3, 3, 0, 0]} name="Seminar" />
+                          <Legend />
+                          <Bar dataKey="formLead" fill="#2E7D32" radius={[3, 3, 0, 0]} name="Form Lead" />
+                          <Bar dataKey="termin" fill="#1B3A5C" radius={[3, 3, 0, 0]} name="Terminbestätigung" />
                         </BarChart>
                       </ChartContainer>
                     </CardContent>
