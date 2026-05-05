@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import WhatsAppButton from "./WhatsAppButton";
 import BackToTop from "./BackToTop";
+import CookieConsent from "./CookieConsent";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -12,6 +13,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <Footer />
       <WhatsAppButton />
       <BackToTop />
+      <CookieConsent />
     </div>
   );
 }
