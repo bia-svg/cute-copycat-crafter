@@ -350,23 +350,25 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
             </div>
             <div>
               <p className="text-xs font-semibold text-gray-600 mb-2">By Device</p>
-              <ChartContainer config={{}} className="h-[180px] w-full">
+              <ChartContainer config={{}} className="h-[200px] w-full">
                 <PieChart>
-                  <Pie data={waByDevice} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={65} label>
+                  <Pie data={waByDevice} dataKey="value" nameKey="name" cx="50%" cy="45%" outerRadius={60} label>
                     {waByDevice.map((_, i) => <Cell key={i} fill={COLORS[i]} />)}
                   </Pie>
                   <ChartTooltip content={<ChartTooltipContent />} />
+                  <Legend verticalAlign="bottom" height={24} iconSize={8} wrapperStyle={{ fontSize: 11 }} />
                 </PieChart>
               </ChartContainer>
             </div>
             <div>
               <p className="text-xs font-semibold text-gray-600 mb-2">By Language</p>
-              <ChartContainer config={{}} className="h-[180px] w-full">
+              <ChartContainer config={{}} className="h-[200px] w-full">
                 <PieChart>
-                  <Pie data={waByLang} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={65} label>
+                  <Pie data={waByLang} dataKey="value" nameKey="name" cx="50%" cy="45%" outerRadius={60} label>
                     {waByLang.map((_, i) => <Cell key={i} fill={COLORS[i + 1]} />)}
                   </Pie>
                   <ChartTooltip content={<ChartTooltipContent />} />
+                  <Legend verticalAlign="bottom" height={24} iconSize={8} wrapperStyle={{ fontSize: 11 }} />
                 </PieChart>
               </ChartContainer>
             </div>
