@@ -209,28 +209,31 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
     return [{ name: "DE", value: map.de }, { name: "EN", value: map.en }];
   }, [waClicks]);
 
-  // Form submissions — combine leads (language) + form_submissions_log (page_path)
+  // Form submissions — derived from form_submissions_log (page_path is source of truth)
   const formStats = useMemo(() => {
-    const total = leads.length;
-    const byLang = { de: 0, en: 0 };
-    leads.forEach(l => {
-      if (l.language?.toLowerCase().startsWith("en")) byLang.en++; else byLang.de++;
-    });
-
-    // Group successful submissions by page_path within the selected date range
     const startMs = parseISO(startDate).getTime();
     const endMs = parseISO(endDate).getTime() + 86400000;
+    const byLang = { de: 0, en: 0 };
     const byPageMap: Record<string, number> = {};
     const byTypeMap: Record<string, number> = {};
+    let total = 0;
     formLogs
       .filter(l => {
         const t = new Date(l.created_at).getTime();
         return t >= startMs && t <= endMs && l.status === "success";
       })
       .forEach(l => {
+        total++;
         const p = l.page_path || "(unknown)";
         byPageMap[p] = (byPageMap[p] || 0) + 1;
         byTypeMap[l.form_type] = (byTypeMap[l.form_type] || 0) + 1;
+        // Derive language from path: /en/* → EN, otherwise DE
+        try {
+          const pathOnly = p.startsWith("http") ? new URL(p).pathname : p;
+          if (/^\/en(\/|$)/i.test(pathOnly)) byLang.en++; else byLang.de++;
+        } catch {
+          byLang.de++;
+        }
       });
     return {
       total,
@@ -238,7 +241,7 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
       byPage: Object.entries(byPageMap).sort((a, b) => b[1] - a[1]).slice(0, 12),
       byType: Object.entries(byTypeMap).sort((a, b) => b[1] - a[1]),
     };
-  }, [leads, formLogs, startDate, endDate]);
+  }, [formLogs, startDate, endDate]);
 
   const sessChange = pctChange(m.sessions, m.prevSessions);
 
