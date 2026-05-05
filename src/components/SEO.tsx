@@ -69,7 +69,11 @@ export default function SEO({
   const title = isEN ? titleEN : titleDE;
   const description = isEN ? descriptionEN : descriptionDE;
   const fullTitle = `${title} | David J. Woods`;
-  const canonicalUrl = buildUrl(language, country, pageKey);
+  // SEO: Consolidate canonicals to a single master per language to avoid duplicate-content issues
+  // across country variants (de/ch, de/de, de/int, en/ch, en/de, en/int). Master: de-CH for German,
+  // en-CH for English. This stops "Duplicate without canonical" and "Crawled - not indexed" errors.
+  const canonicalCountry: Country = "ch";
+  const canonicalUrl = buildUrl(language, canonicalCountry, pageKey);
   const resolvedOgImage = ogImage || OG_IMAGE_DEFAULT;
 
   /* ── Default structured data ── */
