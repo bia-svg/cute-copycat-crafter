@@ -31,12 +31,16 @@ function updateConsent(granted: boolean) {
   } catch {}
   const state = granted ? "granted" : "denied";
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push("consent", "update", {
+  // Proper Consent Mode v2 signal (gtag arguments-style push)
+  window.dataLayer.push(["consent", "update", {
     ad_storage: state,
     ad_user_data: state,
     ad_personalization: state,
     analytics_storage: state,
-  });
+  }]);
+  if (granted) {
+    try { window.dispatchEvent(new Event("cookie-consent-granted")); } catch {}
+  }
 }
 
 export default function CookieConsent() {
