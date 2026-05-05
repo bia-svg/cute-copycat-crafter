@@ -77,9 +77,10 @@ serve(async (req) => {
         const origin = req.headers.get("origin") || "https://david-j-woods.com";
         const resetUrl = `${origin}/dashboard/reset-password?token=${token}&email=${encodeURIComponent(emailRaw)}`;
 
-        // Send email via send-transactional-email (verify_jwt=true → use anon/publishable key)
+        // Send email via send-transactional-email (verify_jwt=true → use anon key)
         try {
           const anonKey = Deno.env.get("SUPABASE_ANON_KEY") || Deno.env.get("SUPABASE_PUBLISHABLE_KEY") || "";
+          console.log("anonKey length:", anonKey.length, "starts:", anonKey.slice(0, 8));
           const sendRes = await fetch(`${supabaseUrl}/functions/v1/send-transactional-email`, {
             method: "POST",
             headers: {
@@ -97,6 +98,8 @@ serve(async (req) => {
           if (!sendRes.ok) {
             const txt = await sendRes.text();
             console.error("Reset email send failed:", sendRes.status, txt);
+          } else {
+            console.log("Reset email enqueued OK");
           }
         } catch (mailErr) {
           console.error("Reset email send error:", mailErr);
