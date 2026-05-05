@@ -79,7 +79,7 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
         const prevEnd = format(subDays(start, 1), "yyyy-MM-dd");
         const prevStart = format(subDays(start, days), "yyyy-MM-dd");
 
-        const [gaRes, gaPrevRes, waRes, leadsRes] = await Promise.all([
+        const [gaRes, gaPrevRes, waRes, leadsRes, formLogsRes] = await Promise.all([
           supabase.functions.invoke("google-analytics", { body: { startDate, endDate } }),
           supabase.functions.invoke("google-analytics", { body: { startDate: prevStart, endDate: prevEnd } }),
           sd?.token && sd?.email
@@ -88,12 +88,16 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
           sd?.token && sd?.email
             ? supabase.functions.invoke("fetch-leads", { body: { startDate, endDate, token: sd.token, email: sd.email } })
             : Promise.resolve({ data: { leads: [] } } as any),
+          sd?.token && sd?.email
+            ? supabase.functions.invoke("fetch-form-logs", { body: { token: sd.token, email: sd.email } })
+            : Promise.resolve({ data: { logs: [] } } as any),
         ]);
 
         if (gaRes.data && !gaRes.data.error) setData(gaRes.data as GAData);
         if (gaPrevRes.data && !gaPrevRes.data.error) setPrevData(gaPrevRes.data as GAData);
         setWaClicks(((waRes as any).data?.clicks) || []);
         setLeads(((leadsRes as any).data?.leads) || []);
+        setFormLogs(((formLogsRes as any).data?.logs) || []);
       } catch (e) {
         console.error("Website performance load error:", e);
       } finally {
