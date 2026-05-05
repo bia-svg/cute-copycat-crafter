@@ -3,12 +3,13 @@ import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, PieChart, Pie, Cell,
 } from "recharts";
 import {
   Users, Eye, Clock, TrendingDown, MessageCircle, FileText,
-  Smartphone, Globe, MousePointer, Languages,
+  Smartphone, Globe, MousePointer, Languages, ArrowRight, ArrowLeft, Zap,
 } from "lucide-react";
 import { format, parseISO, subDays, startOfMonth, endOfMonth, subMonths } from "date-fns";
 
