@@ -1201,9 +1201,22 @@ export default function Dashboard() {
               </Card>
             </TabsContent>
 
-            {/* ═══════ CTA SUCCESS TAB ═══════ */}
-            <TabsContent value="cta-success" className="mt-4">
-              <CTASuccessTab />
+            {/* ═══════ WEBSITE PERFORMANCE TAB ═══════ */}
+            <TabsContent value="website-performance" className="mt-4">
+              <Tabs defaultValue="performance">
+                <TabsList className="bg-white border border-gray-200">
+                  <TabsTrigger value="performance" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Performance</TabsTrigger>
+                  <TabsTrigger value="cta-success" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                    <MousePointer className="w-3 h-3 mr-1" /> CTA Success
+                  </TabsTrigger>
+                </TabsList>
+                <TabsContent value="performance" className="mt-4">
+                  <WebsitePerformanceTab startDate={dateRange.startDate} endDate={dateRange.endDate} />
+                </TabsContent>
+                <TabsContent value="cta-success" className="mt-4">
+                  <CTASuccessTab />
+                </TabsContent>
+              </Tabs>
             </TabsContent>
 
             {/* ═══════ AI CHAT TAB ═══════ */}
