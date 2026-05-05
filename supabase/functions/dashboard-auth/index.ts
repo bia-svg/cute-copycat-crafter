@@ -6,13 +6,32 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
 };
 
-// Hash password using Web Crypto API (SHA-256)
-async function hashPassword(password: string): Promise<string> {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(password);
+async function sha256(s: string): Promise<string> {
+  const data = new TextEncoder().encode(s);
   const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+  return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+function getAllowedEmails(): string[] {
+  const list: string[] = [];
+  for (const k of ["DASHBOARD_LOGIN_EMAIL", "DASHBOARD_LOGIN_EMAIL_2", "DASHBOARD_LOGIN_EMAIL_3"]) {
+    const v = Deno.env.get(k);
+    if (v) list.push(v.toLowerCase().trim());
+  }
+  return list;
+}
+
+function getEnvPasswordFor(email: string): string | null {
+  const pairs: Array<[string, string]> = [
+    ["DASHBOARD_LOGIN_EMAIL", "DASHBOARD_LOGIN_PASSWORD"],
+    ["DASHBOARD_LOGIN_EMAIL_2", "DASHBOARD_LOGIN_PASSWORD_2"],
+    ["DASHBOARD_LOGIN_EMAIL_3", "DASHBOARD_LOGIN_PASSWORD_3"],
+  ];
+  for (const [ek, pk] of pairs) {
+    const e = Deno.env.get(ek);
+    if (e && e.toLowerCase().trim() === email) return Deno.env.get(pk) || null;
+  }
+  return null;
 }
 
 serve(async (req) => {
@@ -20,109 +39,159 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+  const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+  const sb = createClient(supabaseUrl, serviceKey);
+
   try {
     const body = await req.json();
     const { action } = body;
 
-    // Password reset request
+    // ---------- Request password reset ----------
     if (action === "request_reset") {
-      const { email } = body;
-      if (!email) {
+      const emailRaw = (body.email || "").toString().toLowerCase().trim();
+      if (!emailRaw) {
         return new Response(JSON.stringify({ error: "Missing email" }), {
-          status: 400,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
 
-      const usersJson = Deno.env.get("DASHBOARD_USERS");
-      if (!usersJson) throw new Error("DASHBOARD_USERS not configured");
-      const users: Array<{ email: string; hash: string }> = JSON.parse(usersJson);
-      const user = users.find(u => u.email.toLowerCase() === email.toLowerCase().trim());
+      const allowed = getAllowedEmails();
+      const isKnown = allowed.includes(emailRaw);
 
-      // Always return success to prevent email enumeration
-      if (!user) {
-        return new Response(JSON.stringify({ success: true }), {
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
+      // Always return success (no enumeration)
+      if (isKnown) {
+        // Generate token
+        const tokenBytes = new Uint8Array(32);
+        crypto.getRandomValues(tokenBytes);
+        const token = Array.from(tokenBytes).map(b => b.toString(16).padStart(2, "0")).join("");
+        const tokenHash = await sha256(token);
+        const expiresAt = new Date(Date.now() + 60 * 60 * 1000).toISOString(); // 1h
+
+        await sb.from("dashboard_password_resets").insert({
+          email: emailRaw,
+          token_hash: tokenHash,
+          expires_at: expiresAt,
         });
+
+        const origin = req.headers.get("origin") || "https://david-j-woods.com";
+        const resetUrl = `${origin}/dashboard/reset-password?token=${token}&email=${encodeURIComponent(emailRaw)}`;
+
+        // Send email via send-transactional-email
+        try {
+          await sb.functions.invoke("send-transactional-email", {
+            body: {
+              templateName: "dashboard-password-reset",
+              recipientEmail: emailRaw,
+              idempotencyKey: `dashboard-reset-${tokenHash.slice(0, 16)}`,
+              templateData: { resetUrl, email: emailRaw },
+            },
+          });
+        } catch (mailErr) {
+          console.error("Reset email send failed:", mailErr);
+        }
+      } else {
+        console.log(`Reset requested for unknown email: ${emailRaw}`);
       }
-
-      // Generate a temporary password (6 chars)
-      const tempPassword = Array.from(crypto.getRandomValues(new Uint8Array(3)))
-        .map(b => b.toString(16).padStart(2, "0")).join("").toUpperCase();
-
-      // Hash and update the user's password in-memory
-      // Note: For now, we'll send the temp password via response (to be emailed later when email infra is ready)
-      // The actual email sending will be added once email domain is configured
-      console.log(`Password reset requested for ${email}. Temp password would be: ${tempPassword}`);
 
       return new Response(JSON.stringify({
         success: true,
-        message: "If the email exists, a reset link has been sent.",
-      }), {
+        message: "If this email is registered, you will receive reset instructions.",
+      }), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    }
+
+    // ---------- Confirm reset (set new password) ----------
+    if (action === "confirm_reset") {
+      const emailRaw = (body.email || "").toString().toLowerCase().trim();
+      const token = (body.token || "").toString();
+      const newPassword = (body.newPassword || "").toString();
+
+      if (!emailRaw || !token || !newPassword) {
+        return new Response(JSON.stringify({ error: "Missing fields" }), {
+          status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+      if (newPassword.length < 8) {
+        return new Response(JSON.stringify({ error: "Password must be at least 8 characters." }), {
+          status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+
+      const tokenHash = await sha256(token);
+      const { data: resetRow } = await sb
+        .from("dashboard_password_resets")
+        .select("id, email, expires_at, used_at")
+        .eq("token_hash", tokenHash)
+        .maybeSingle();
+
+      if (!resetRow || resetRow.email !== emailRaw || resetRow.used_at || new Date(resetRow.expires_at) < new Date()) {
+        return new Response(JSON.stringify({ error: "Invalid or expired reset link." }), {
+          status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+
+      const passwordHash = await sha256(newPassword);
+      await sb.from("dashboard_password_overrides").upsert({
+        email: emailRaw, password_hash: passwordHash, updated_at: new Date().toISOString(),
+      });
+      await sb.from("dashboard_password_resets")
+        .update({ used_at: new Date().toISOString() })
+        .eq("id", resetRow.id);
+
+      return new Response(JSON.stringify({ success: true }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
-    // Default: login
+    // ---------- Default: login ----------
     const { email, password } = body;
     if (!email || !password) {
       return new Response(JSON.stringify({ error: "Missing email or password" }), {
-        status: 400,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
+        status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
-    // Build list of allowed users from env vars
-    const users = [];
-    const e1 = Deno.env.get("DASHBOARD_LOGIN_EMAIL");
-    const p1 = Deno.env.get("DASHBOARD_LOGIN_PASSWORD");
-    if (e1 && p1) users.push({ email: e1, password: p1 });
+    const inputEmail = email.toString().toLowerCase().trim();
+    const allowed = getAllowedEmails();
+    let matched = false;
 
-    const e2 = Deno.env.get("DASHBOARD_LOGIN_EMAIL_2");
-    const p2 = Deno.env.get("DASHBOARD_LOGIN_PASSWORD_2");
-    if (e2 && p2) users.push({ email: e2, password: p2 });
+    if (allowed.includes(inputEmail)) {
+      // Check override (newest password)
+      const { data: override } = await sb
+        .from("dashboard_password_overrides")
+        .select("password_hash")
+        .eq("email", inputEmail)
+        .maybeSingle();
 
-    const e3 = Deno.env.get("DASHBOARD_LOGIN_EMAIL_3");
-    const p3 = Deno.env.get("DASHBOARD_LOGIN_PASSWORD_3");
-    if (e3 && p3) users.push({ email: e3, password: p3 });
-
-    if (users.length === 0) {
-      throw new Error("Login credentials not configured");
+      if (override) {
+        const inputHash = await sha256(password);
+        matched = override.password_hash === inputHash;
+      } else {
+        const envPwd = getEnvPasswordFor(inputEmail);
+        matched = !!envPwd && envPwd === password;
+      }
     }
 
-    const inputEmail = email.toLowerCase().trim();
-    const matched = users.find(u => u.email.toLowerCase().trim() === inputEmail && u.password === password);
-
-    // Log the attempt to database
+    // Log attempt
     const userAgent = req.headers.get("user-agent") || null;
     const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || req.headers.get("cf-connecting-ip") || null;
     try {
-      const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-      const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-      const sb = createClient(supabaseUrl, serviceKey);
       await sb.from("dashboard_login_logs").insert({
-        email: inputEmail,
-        success: !!matched,
-        ip_address: ip,
-        user_agent: userAgent,
+        email: inputEmail, success: matched, ip_address: ip, user_agent: userAgent,
       });
-    } catch (logErr) {
-      console.error("Failed to log login attempt:", logErr);
-    }
+    } catch (e) { console.error("login log fail", e); }
 
     if (matched) {
       const tokenData = new TextEncoder().encode(`${inputEmail}:${Date.now()}:${crypto.randomUUID()}`);
       const tokenHash = await crypto.subtle.digest("SHA-256", tokenData);
       const token = Array.from(new Uint8Array(tokenHash)).map(b => b.toString(16).padStart(2, "0")).join("");
-
-      return new Response(JSON.stringify({ success: true, email: matched.email, token }), {
+      return new Response(JSON.stringify({ success: true, email: inputEmail, token }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
     return new Response(JSON.stringify({ error: "Invalid credentials" }), {
-      status: 401,
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
+      status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (error) {
     console.error("Dashboard auth error:", error);
