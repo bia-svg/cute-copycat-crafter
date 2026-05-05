@@ -1231,18 +1231,6 @@ export default function Dashboard() {
               </Tabs>
             </TabsContent>
 
-            {/* ═══════ AI CHAT TAB ═══════ */}
-            <TabsContent value="ai-chat" className="mt-4">
-              <AIChatTab dashboardState={{
-                trafficByDay, topPages, campaigns, dailyAds, leads, whatsappClicks,
-                gscQueries, gscTotals, gscPreviousTotals, gscPreviousPeriod,
-                gscDailyMetrics, gscTopPages, gscByCountry, gscByDevice, gscDistribution,
-                gscError, gscLive, seoSnapshots,
-                campaignPages, campaignPageFlow,
-                loading, gaError, adsError, gaLive, adsLive,
-                dateRange, setDateRange,
-              }} />
-            </TabsContent>
           </Tabs>
         </div>
       </div>
