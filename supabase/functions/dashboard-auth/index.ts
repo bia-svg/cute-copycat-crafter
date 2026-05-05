@@ -79,8 +79,9 @@ serve(async (req) => {
 
         // Send email via send-transactional-email (verify_jwt=true → use anon key)
         try {
-          const anonKey = Deno.env.get("SUPABASE_ANON_KEY") || Deno.env.get("SUPABASE_PUBLISHABLE_KEY") || "";
-          console.log("anonKey length:", anonKey.length, "starts:", anonKey.slice(0, 8));
+          // Use the legacy publishable JWT (gateway requires JWT format, sb_publishable_ format is not accepted here)
+          const anonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlwcXphd3Jyd3Boa2hzdmhzYmx2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQzNjg2NDAsImV4cCI6MjA4OTk0NDY0MH0.jghGYQ5Oq0yTQWScm8jgJ5SeZOsjyh8u_i7hIh3jABA";
+          console.log("anonKey length:", anonKey.length);
           const sendRes = await fetch(`${supabaseUrl}/functions/v1/send-transactional-email`, {
             method: "POST",
             headers: {
