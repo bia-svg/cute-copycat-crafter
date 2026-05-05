@@ -356,7 +356,36 @@ serve(async (req) => {
       }
     } catch (e) { console.error("New vs returning error:", e); }
 
-    return new Response(JSON.stringify({ dailyData, topPages, channelBreakdown, campaignPages, campaignPageFlow, deviceBreakdown, browserBreakdown, languageBreakdown, newVsReturning }), {
+    // Report 10: Daily new vs returning users
+    let dailyNewReturning: { date: string; new: number; returning: number }[] = [];
+    try {
+      const dnRes = await fetch(apiBase, {
+        method: "POST",
+        headers: authHeaders,
+        body: JSON.stringify({
+          dateRanges: [{ startDate, endDate }],
+          dimensions: [{ name: "date" }, { name: "newVsReturning" }],
+          metrics: [{ name: "activeUsers" }],
+          orderBys: [{ dimension: { dimensionName: "date" } }],
+        }),
+      });
+      const dnData = await dnRes.json();
+      if (dnRes.ok && dnData.rows) {
+        const map: Record<string, { new: number; returning: number }> = {};
+        for (const row of dnData.rows) {
+          const d = row.dimensionValues[0].value;
+          const k = row.dimensionValues[1].value;
+          const v = parseInt(row.metricValues[0].value, 10);
+          const date = `${d.slice(0,4)}-${d.slice(4,6)}-${d.slice(6,8)}`;
+          if (!map[date]) map[date] = { new: 0, returning: 0 };
+          if (k === "new") map[date].new = v;
+          else if (k === "returning") map[date].returning = v;
+        }
+        dailyNewReturning = Object.entries(map).map(([date, v]) => ({ date, ...v }));
+      }
+    } catch (e) { console.error("Daily new/returning error:", e); }
+
+    return new Response(JSON.stringify({ dailyData, topPages, channelBreakdown, campaignPages, campaignPageFlow, deviceBreakdown, browserBreakdown, languageBreakdown, newVsReturning, dailyNewReturning }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (error: unknown) {

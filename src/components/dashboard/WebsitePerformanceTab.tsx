@@ -5,7 +5,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, PieChart, Pie, Cell,
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, PieChart, Pie, Cell, LineChart, Line,
 } from "recharts";
 import {
   Users, Eye, Clock, TrendingDown, MessageCircle, FileText,
@@ -23,6 +23,7 @@ interface GAData {
   browserBreakdown: { browser: string; sessions: number }[];
   languageBreakdown: { language: string; sessions: number; avgSessionDuration: number }[];
   newVsReturning: { new: number; returning: number };
+  dailyNewReturning?: { date: string; new: number; returning: number }[];
 }
 
 function pageName(path: string): string {
@@ -270,7 +271,32 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
         </CardContent></Card>
       </div>
 
-      {/* Language split + Device + Browser */}
+      {/* Daily New vs Returning */}
+      <Card className="bg-white border-gray-200">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-sm font-semibold text-gray-700 flex items-center gap-1">
+            <Users className="w-4 h-4"/> Daily New vs Returning Users
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          {(!data?.dailyNewReturning || data.dailyNewReturning.length === 0) ? (
+            <p className="text-sm text-gray-400 py-4">No data.</p>
+          ) : (
+            <ChartContainer config={{}} className="h-[260px] w-full">
+              <LineChart data={data.dailyNewReturning}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="date" tick={{ fontSize: 11 }} tickFormatter={(d) => format(parseISO(d), "MMM d")} />
+                <YAxis tick={{ fontSize: 11 }} />
+                <ChartTooltip content={<ChartTooltipContent />} />
+                <Legend />
+                <Line type="monotone" dataKey="new" name="New" stroke="#2E7D32" strokeWidth={2} dot={false} />
+                <Line type="monotone" dataKey="returning" name="Returning" stroke="#1B3A5C" strokeWidth={2} dot={false} />
+              </LineChart>
+            </ChartContainer>
+          )}
+        </CardContent>
+      </Card>
+
       <div className="grid lg:grid-cols-3 gap-4">
         <Card className="bg-white border-gray-200">
           <CardHeader className="pb-2"><CardTitle className="text-sm font-semibold text-gray-700 flex items-center gap-1"><Languages className="w-4 h-4"/> Language Split</CardTitle></CardHeader>
