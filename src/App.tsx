@@ -5,6 +5,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { getLegacyRedirect } from "@/lib/legacyRedirects";
 import Layout from "@/components/Layout";
 import { Toaster } from "@/components/ui/sonner";
+import { captureAttribution } from "@/lib/attribution";
 
 // Eager-loaded: most-visited pages (no loading flash)
 import Home from "@/pages/Home";
@@ -77,6 +78,9 @@ function GeoRedirect() {
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
   useEffect(() => {
+    // Capture UTM/gclid on every route change so first-touch (and last-touch paid hits)
+    // survive in-site navigation and reach the lead form.
+    captureAttribution();
     // Store previous page for referrer tracking on forms
     const prevPage = sessionStorage.getItem("dw_current_page");
     if (prevPage) sessionStorage.setItem("dw_prev_page", prevPage);

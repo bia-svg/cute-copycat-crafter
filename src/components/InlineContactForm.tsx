@@ -9,6 +9,7 @@ import { getPath } from "@/lib/routes";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import { toast } from "sonner";
+import { getAttribution, classifySource } from "@/lib/attribution";
 
 interface InlineContactFormProps {
   defaultConcern?: string;
@@ -53,12 +54,15 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
 
     setIsSubmitting(true);
 
-    const utmSource = searchParams.get("utm_source") || null;
-    const utmMedium = searchParams.get("utm_medium") || null;
-    const utmCampaign = searchParams.get("utm_campaign") || null;
-    const utmContent = searchParams.get("utm_content") || null;
-    const utmTerm = searchParams.get("utm_term") || null;
-    const source = utmMedium === "cpc" || utmSource === "google" ? "paid" : utmSource ? "referral" : "organic";
+    // Use persisted attribution (URL params + sessionStorage/localStorage) so paid clicks
+    // that landed on a different page than the form still get classified as "paid".
+    const attribution = getAttribution();
+    const utmSource = attribution.utm_source;
+    const utmMedium = attribution.utm_medium;
+    const utmCampaign = attribution.utm_campaign;
+    const utmContent = attribution.utm_content;
+    const utmTerm = attribution.utm_term;
+    const source = classifySource(attribution);
 
     const referrerPage = document.referrer ? new URL(document.referrer).pathname : sessionStorage.getItem("dw_prev_page") || null;
 
