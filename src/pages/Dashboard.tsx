@@ -325,18 +325,8 @@ export default function Dashboard() {
               <TabsTrigger value="sessions" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
                 <CalendarCheck className="w-3 h-3 mr-1" /> Hypnose Sessions
               </TabsTrigger>
-              <TabsTrigger value="form-submissions" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
-                Form Submissions
-              </TabsTrigger>
-              <TabsTrigger value="data" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Data Export</TabsTrigger>
               <TabsTrigger value="seo" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
                 <Search className="w-3 h-3 mr-1" /> SEO
-              </TabsTrigger>
-              <TabsTrigger value="competition" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
-                <Target className="w-3 h-3 mr-1" /> Competition
-              </TabsTrigger>
-              <TabsTrigger value="weekly-report" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
-                <FileText className="w-3 h-3 mr-1" /> Weekly Report
               </TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
               <TabsTrigger value="cta-success" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
