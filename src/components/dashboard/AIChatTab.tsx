@@ -162,6 +162,7 @@ export default function AIChatTab({ dashboardState }: { dashboardState: Dashboar
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [formLogs, setFormLogs] = useState<Array<{ created_at: string; form_type: string; status: string; page_path: string | null }>>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -170,6 +171,21 @@ export default function AIChatTab({ dashboardState }: { dashboardState: Dashboar
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages]);
+
+  // Fetch form submission logs once
+  useEffect(() => {
+    (async () => {
+      try {
+        const sdRaw = sessionStorage.getItem("dashboard_session");
+        if (!sdRaw) return;
+        const sd = JSON.parse(sdRaw);
+        const { data } = await supabase.functions.invoke("fetch-form-logs", {
+          body: { token: sd.token, email: sd.email },
+        });
+        setFormLogs((data as any)?.logs || []);
+      } catch (e) { console.error("AIChat formLogs error", e); }
+    })();
+  }, []);
 
   const sendMessage = useCallback(async (text: string) => {
     if (!text.trim() || isLoading) return;
@@ -180,7 +196,7 @@ export default function AIChatTab({ dashboardState }: { dashboardState: Dashboar
     setIsLoading(true);
 
     const allMessages = [...messages, userMsg];
-    const dashboardContext = buildDashboardContext(dashboardState);
+    const dashboardContext = buildDashboardContext(dashboardState, { formLogs });
 
     let assistantSoFar = "";
 
