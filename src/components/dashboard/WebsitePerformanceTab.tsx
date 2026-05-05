@@ -385,19 +385,26 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid md:grid-cols-2 gap-4 text-xs">
+          <div className="grid md:grid-cols-3 gap-4 text-xs">
             <div>
               <p className="font-semibold text-gray-600 mb-2">By Language</p>
               <div className="flex justify-between border-b py-1"><span>DE</span><span className="font-semibold">{formStats.byLang.de}</span></div>
               <div className="flex justify-between border-b py-1"><span>EN</span><span className="font-semibold">{formStats.byLang.en}</span></div>
             </div>
             <div>
-              <p className="font-semibold text-gray-600 mb-2">Top Origin Pages</p>
-              {formStats.byPage.length === 0 ? <p className="text-gray-400">No submissions.</p> : formStats.byPage.map(([p, c]) => (
-                <div key={p} className="flex justify-between border-b py-1"><span className="truncate pr-2">{p}</span><span className="font-semibold">{c}</span></div>
+              <p className="font-semibold text-gray-600 mb-2">By Form Type</p>
+              {formStats.byType.length === 0 ? <p className="text-gray-400">No submissions.</p> : formStats.byType.map(([t, c]) => (
+                <div key={t} className="flex justify-between border-b py-1"><span className="capitalize">{t}</span><span className="font-semibold">{c}</span></div>
+              ))}
+            </div>
+            <div>
+              <p className="font-semibold text-gray-600 mb-2">Origin Page (where submitted)</p>
+              {formStats.byPage.length === 0 ? <p className="text-gray-400">No page data yet.</p> : formStats.byPage.map(([p, c]) => (
+                <div key={p} className="flex justify-between border-b py-1"><span className="truncate pr-2" title={p}>{pageName(p)}</span><span className="font-semibold">{c}</span></div>
               ))}
             </div>
           </div>
+          <p className="text-[11px] text-gray-400 mt-3">"Origin page" = path the visitor was on when they submitted (footer form, dedicated /erstgespraech, service pages, etc.).</p>
         </CardContent>
       </Card>
 
