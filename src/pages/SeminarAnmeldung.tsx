@@ -138,12 +138,13 @@ export default function SeminarAnmeldung() {
     const dobStr = dobDay && dobMonth && dobYear ? `${dobDay}.${dobMonth}.${dobYear}` : "";
     const fullAddress = [street, `${postalCode} ${cityField}`.trim(), countryField].filter(Boolean).join(", ");
 
-    const utmSource = searchParams.get("utm_source") || null;
-    const utmMedium = searchParams.get("utm_medium") || null;
-    const utmCampaign = searchParams.get("utm_campaign") || null;
-    const utmContent = searchParams.get("utm_content") || null;
-    const utmTerm = searchParams.get("utm_term") || null;
-    const source = utmMedium === "cpc" || utmSource === "google" ? "paid" : utmSource ? "referral" : "organic";
+    const attribution = getAttribution();
+    const utmSource = attribution.utm_source;
+    const utmMedium = attribution.utm_medium;
+    const utmCampaign = attribution.utm_campaign;
+    const utmContent = attribution.utm_content;
+    const utmTerm = attribution.utm_term;
+    const source = classifySource(attribution);
 
     const referrerPage = document.referrer ? new URL(document.referrer).pathname : sessionStorage.getItem("dw_prev_page") || null;
 
