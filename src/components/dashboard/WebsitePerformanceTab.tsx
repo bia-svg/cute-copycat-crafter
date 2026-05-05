@@ -62,6 +62,7 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
   const [prevData, setPrevData] = useState<GAData | null>(null);
   const [waClicks, setWaClicks] = useState<{ clicked_at: string; page_path: string | null; user_agent: string | null }[]>([]);
   const [leads, setLeads] = useState<{ created_at: string; form_type: string; language: string | null; utm_content: string | null }[]>([]);
+  const [formLogs, setFormLogs] = useState<{ created_at: string; form_type: string; status: string; page_path: string | null }[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -78,7 +79,7 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
         const prevEnd = format(subDays(start, 1), "yyyy-MM-dd");
         const prevStart = format(subDays(start, days), "yyyy-MM-dd");
 
-        const [gaRes, gaPrevRes, waRes, leadsRes] = await Promise.all([
+        const [gaRes, gaPrevRes, waRes, leadsRes, formLogsRes] = await Promise.all([
           supabase.functions.invoke("google-analytics", { body: { startDate, endDate } }),
           supabase.functions.invoke("google-analytics", { body: { startDate: prevStart, endDate: prevEnd } }),
           sd?.token && sd?.email
@@ -87,12 +88,16 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
           sd?.token && sd?.email
             ? supabase.functions.invoke("fetch-leads", { body: { startDate, endDate, token: sd.token, email: sd.email } })
             : Promise.resolve({ data: { leads: [] } } as any),
+          sd?.token && sd?.email
+            ? supabase.functions.invoke("fetch-form-logs", { body: { token: sd.token, email: sd.email } })
+            : Promise.resolve({ data: { logs: [] } } as any),
         ]);
 
         if (gaRes.data && !gaRes.data.error) setData(gaRes.data as GAData);
         if (gaPrevRes.data && !gaPrevRes.data.error) setPrevData(gaPrevRes.data as GAData);
         setWaClicks(((waRes as any).data?.clicks) || []);
         setLeads(((leadsRes as any).data?.leads) || []);
+        setFormLogs(((formLogsRes as any).data?.logs) || []);
       } catch (e) {
         console.error("Website performance load error:", e);
       } finally {
@@ -177,18 +182,36 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
     return [{ name: "DE", value: map.de }, { name: "EN", value: map.en }];
   }, [waClicks]);
 
-  // Form submissions
+  // Form submissions — combine leads (language) + form_submissions_log (page_path)
   const formStats = useMemo(() => {
     const total = leads.length;
     const byLang = { de: 0, en: 0 };
-    const byPage: Record<string, number> = {};
     leads.forEach(l => {
       if (l.language?.toLowerCase().startsWith("en")) byLang.en++; else byLang.de++;
-      const src = l.utm_content || "(unknown)";
-      byPage[src] = (byPage[src] || 0) + 1;
     });
-    return { total, byLang, byPage: Object.entries(byPage).sort((a, b) => b[1] - a[1]).slice(0, 10) };
-  }, [leads]);
+
+    // Group successful submissions by page_path within the selected date range
+    const startMs = parseISO(startDate).getTime();
+    const endMs = parseISO(endDate).getTime() + 86400000;
+    const byPageMap: Record<string, number> = {};
+    const byTypeMap: Record<string, number> = {};
+    formLogs
+      .filter(l => {
+        const t = new Date(l.created_at).getTime();
+        return t >= startMs && t <= endMs && l.status === "success";
+      })
+      .forEach(l => {
+        const p = l.page_path || "(unknown)";
+        byPageMap[p] = (byPageMap[p] || 0) + 1;
+        byTypeMap[l.form_type] = (byTypeMap[l.form_type] || 0) + 1;
+      });
+    return {
+      total,
+      byLang,
+      byPage: Object.entries(byPageMap).sort((a, b) => b[1] - a[1]).slice(0, 12),
+      byType: Object.entries(byTypeMap).sort((a, b) => b[1] - a[1]),
+    };
+  }, [leads, formLogs, startDate, endDate]);
 
   const sessChange = pctChange(m.sessions, m.prevSessions);
 
@@ -327,23 +350,25 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
             </div>
             <div>
               <p className="text-xs font-semibold text-gray-600 mb-2">By Device</p>
-              <ChartContainer config={{}} className="h-[180px] w-full">
+              <ChartContainer config={{}} className="h-[200px] w-full">
                 <PieChart>
-                  <Pie data={waByDevice} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={65} label>
+                  <Pie data={waByDevice} dataKey="value" nameKey="name" cx="50%" cy="45%" outerRadius={60} label>
                     {waByDevice.map((_, i) => <Cell key={i} fill={COLORS[i]} />)}
                   </Pie>
                   <ChartTooltip content={<ChartTooltipContent />} />
+                  <Legend verticalAlign="bottom" height={24} iconSize={8} wrapperStyle={{ fontSize: 11 }} />
                 </PieChart>
               </ChartContainer>
             </div>
             <div>
               <p className="text-xs font-semibold text-gray-600 mb-2">By Language</p>
-              <ChartContainer config={{}} className="h-[180px] w-full">
+              <ChartContainer config={{}} className="h-[200px] w-full">
                 <PieChart>
-                  <Pie data={waByLang} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={65} label>
+                  <Pie data={waByLang} dataKey="value" nameKey="name" cx="50%" cy="45%" outerRadius={60} label>
                     {waByLang.map((_, i) => <Cell key={i} fill={COLORS[i + 1]} />)}
                   </Pie>
                   <ChartTooltip content={<ChartTooltipContent />} />
+                  <Legend verticalAlign="bottom" height={24} iconSize={8} wrapperStyle={{ fontSize: 11 }} />
                 </PieChart>
               </ChartContainer>
             </div>
@@ -360,19 +385,26 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid md:grid-cols-2 gap-4 text-xs">
+          <div className="grid md:grid-cols-3 gap-4 text-xs">
             <div>
               <p className="font-semibold text-gray-600 mb-2">By Language</p>
               <div className="flex justify-between border-b py-1"><span>DE</span><span className="font-semibold">{formStats.byLang.de}</span></div>
               <div className="flex justify-between border-b py-1"><span>EN</span><span className="font-semibold">{formStats.byLang.en}</span></div>
             </div>
             <div>
-              <p className="font-semibold text-gray-600 mb-2">Top Origin Pages</p>
-              {formStats.byPage.length === 0 ? <p className="text-gray-400">No submissions.</p> : formStats.byPage.map(([p, c]) => (
-                <div key={p} className="flex justify-between border-b py-1"><span className="truncate pr-2">{p}</span><span className="font-semibold">{c}</span></div>
+              <p className="font-semibold text-gray-600 mb-2">By Form Type</p>
+              {formStats.byType.length === 0 ? <p className="text-gray-400">No submissions.</p> : formStats.byType.map(([t, c]) => (
+                <div key={t} className="flex justify-between border-b py-1"><span className="capitalize">{t}</span><span className="font-semibold">{c}</span></div>
+              ))}
+            </div>
+            <div>
+              <p className="font-semibold text-gray-600 mb-2">Origin Page (where submitted)</p>
+              {formStats.byPage.length === 0 ? <p className="text-gray-400">No page data yet.</p> : formStats.byPage.map(([p, c]) => (
+                <div key={p} className="flex justify-between border-b py-1"><span className="truncate pr-2" title={p}>{pageName(p)}</span><span className="font-semibold">{c}</span></div>
               ))}
             </div>
           </div>
+          <p className="text-[11px] text-gray-400 mt-3">"Origin page" = path the visitor was on when they submitted (footer form, dedicated /erstgespraech, service pages, etc.).</p>
         </CardContent>
       </Card>
 
