@@ -65,6 +65,51 @@ export type Database = {
         }
         Relationships: []
       }
+      dashboard_password_overrides: {
+        Row: {
+          email: string
+          password_hash: string
+          updated_at: string
+        }
+        Insert: {
+          email: string
+          password_hash: string
+          updated_at?: string
+        }
+        Update: {
+          email?: string
+          password_hash?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      dashboard_password_resets: {
+        Row: {
+          created_at: string
+          email: string
+          expires_at: string
+          id: string
+          token_hash: string
+          used_at: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          expires_at: string
+          id?: string
+          token_hash: string
+          used_at?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          expires_at?: string
+          id?: string
+          token_hash?: string
+          used_at?: string | null
+        }
+        Relationships: []
+      }
       email_send_log: {
         Row: {
           created_at: string
