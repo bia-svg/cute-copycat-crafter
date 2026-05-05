@@ -2,13 +2,27 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getPath } from "@/lib/routes";
+import { supabase } from "@/integrations/supabase/client";
 
 const STORAGE_KEY = "cookie_consent_v1";
+const CONSENT_VERSION = "v1";
 
 declare global {
   interface Window {
     dataLayer?: any[];
   }
+}
+
+async function logConsent(choice: "granted" | "denied", language: string) {
+  try {
+    await supabase.from("consent_logs").insert({
+      choice,
+      consent_version: CONSENT_VERSION,
+      language,
+      page_path: typeof window !== "undefined" ? window.location.pathname : null,
+      user_agent: typeof navigator !== "undefined" ? navigator.userAgent.slice(0, 500) : null,
+    });
+  } catch {}
 }
 
 function updateConsent(granted: boolean) {
