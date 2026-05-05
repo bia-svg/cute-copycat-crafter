@@ -43,7 +43,12 @@ function pageName(path: string): string {
   return map[p] || p;
 }
 
-const PRIORITY = ["raucher", "smoking", "abnehmen", "weight", "angst", "anxiet"];
+// Only canonical priority pages get the star — not regional duplicates like /de/de/...
+const PRIORITY_PATHS = new Set([
+  "/raucherentwoehnung", "/stop-smoking",
+  "/abnehmen", "/weight-loss",
+  "/aengste-phobien", "/anxiety-phobias",
+]);
 
 function pctChange(curr: number, prev: number): { val: string; up: boolean } {
   if (!prev) return { val: "—", up: true };
