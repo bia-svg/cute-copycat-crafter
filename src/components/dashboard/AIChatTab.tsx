@@ -2,9 +2,9 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Send, Bot, User, Sparkles, Loader2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import { supabase } from "@/integrations/supabase/client";
 import type { DashboardState } from "@/hooks/useDashboardData";
 
 type Msg = { role: "user" | "assistant"; content: string };
@@ -13,65 +13,112 @@ const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/dashboard-ai
 
 const QUICK_PROMPTS = [
   "Give me a full performance summary for this period",
-  "Which channel has the best ROI?",
-  "What are the top 3 things I should improve?",
-  "Analyze my paid campaigns efficiency",
-  "Compare organic vs paid lead quality",
-  "What content should I create next based on SEO data?",
+  "Which pages drive the most WhatsApp clicks?",
+  "Where do visitors submit the most forms?",
+  "What's my Cost per Terminbestätigung this period?",
+  "Compare DE vs EN traffic and conversions",
+  "What are the top 3 things I should improve right now?",
 ];
 
-function buildDashboardContext(state: DashboardState): string {
-  const { trafficByDay, topPages, campaigns, dailyAds, leads, whatsappClicks, gscQueries, gscTotals, gscDailyMetrics, campaignPages, dateRange } = state;
+function topN(map: Record<string, number>, n = 10): [string, number][] {
+  return Object.entries(map).sort((a, b) => b[1] - a[1]).slice(0, n);
+}
 
-  const totalSessions = trafficByDay.reduce((s, d) => s + d.total, 0);
-  const totalOrganic = trafficByDay.reduce((s, d) => s + d.organic, 0);
-  const totalPaid = trafficByDay.reduce((s, d) => s + d.paid, 0);
-  const totalDirect = trafficByDay.reduce((s, d) => s + d.direct, 0);
-  const totalPageViews = trafficByDay.reduce((s, d) => s + d.pageViews, 0);
-  const avgBounce = trafficByDay.length > 0 ? (trafficByDay.reduce((s, d) => s + d.bounceRate, 0) / trafficByDay.length).toFixed(1) : "N/A";
+function buildDashboardContext(
+  state: DashboardState,
+  extras: { formLogs: Array<{ page_path: string | null; form_type: string; status: string; created_at: string }> },
+): string {
+  const { trafficByDay, topPages, campaigns, leads, whatsappClicks, gscQueries, gscTotals, gscTopPages, gscByCountry, gscByDevice, dateRange } = state as any;
 
-  const adSpend = campaigns.reduce((s, c) => s + c.spend, 0);
-  const adClicks = campaigns.reduce((s, c) => s + c.clicks, 0);
-  const adImpressions = campaigns.reduce((s, c) => s + c.impressions, 0);
-  const adConversions = campaigns.reduce((s, c) => s + c.conversions, 0);
-  const currency = campaigns.find(c => c.currencyCode)?.currencyCode || "CHF";
+  const totalSessions = trafficByDay.reduce((s: number, d: any) => s + d.total, 0);
+  const totalOrganic = trafficByDay.reduce((s: number, d: any) => s + d.organic, 0);
+  const totalPaid = trafficByDay.reduce((s: number, d: any) => s + d.paid, 0);
+  const totalDirect = trafficByDay.reduce((s: number, d: any) => s + d.direct, 0);
+  const totalPageViews = trafficByDay.reduce((s: number, d: any) => s + (d.pageViews || 0), 0);
+  const avgBounce = trafficByDay.length > 0 ? (trafficByDay.reduce((s: number, d: any) => s + (d.bounceRate || 0), 0) / trafficByDay.length).toFixed(1) : "N/A";
 
-  const sessionLeads = leads.filter(l => l.form_type === "session").length;
-  const seminarLeads = leads.filter(l => l.form_type === "seminar").length;
-  const paidLeads = leads.filter(l => l.utm_medium === "cpc" || l.utm_medium === "ppc" || l.utm_source === "google" || l.source === "paid").length;
+  const adSpend = campaigns.reduce((s: number, c: any) => s + c.spend, 0);
+  const adClicks = campaigns.reduce((s: number, c: any) => s + c.clicks, 0);
+  const adImpressions = campaigns.reduce((s: number, c: any) => s + c.impressions, 0);
+  const adConversions = campaigns.reduce((s: number, c: any) => s + c.conversions, 0);
+  const currency = campaigns.find((c: any) => c.currencyCode)?.currencyCode || "CHF";
+
+  const sessionLeads = leads.filter((l: any) => l.form_type === "session").length;
+  const seminarLeads = leads.filter((l: any) => l.form_type === "seminar").length;
+  const paidLeads = leads.filter((l: any) => l.utm_medium === "cpc" || l.utm_medium === "ppc" || l.utm_source === "google" || l.source === "paid").length;
+  const terminCount = leads.filter((l: any) => (l.concern || "").toLowerCase().includes("terminbestätigung")).length;
+  const formLeadCount = leads.length - terminCount;
+
+  // Filter form logs to date range
+  const startMs = new Date(dateRange.startDate).getTime();
+  const endMs = new Date(dateRange.endDate).getTime() + 86400000;
+  const formLogsInRange = extras.formLogs.filter(l => {
+    const t = new Date(l.created_at).getTime();
+    return t >= startMs && t <= endMs && l.status === "success";
+  });
+  const formByPage: Record<string, number> = {};
+  const formByType: Record<string, number> = {};
+  const formByLang = { de: 0, en: 0 };
+  formLogsInRange.forEach(l => {
+    const p = l.page_path || "(unknown)";
+    formByPage[p] = (formByPage[p] || 0) + 1;
+    formByType[l.form_type] = (formByType[l.form_type] || 0) + 1;
+    if (/^\/en(\/|$)/i.test(p)) formByLang.en++; else formByLang.de++;
+  });
+
+  // WhatsApp aggregations
+  const waByPage: Record<string, number> = {};
+  const waByLang = { de: 0, en: 0 };
+  whatsappClicks.forEach((c: any) => {
+    const p = c.page_path || "(unknown)";
+    waByPage[p] = (waByPage[p] || 0) + 1;
+    if (/^\/en(\/|$)/i.test(p)) waByLang.en++; else waByLang.de++;
+  });
 
   let ctx = `DATE RANGE: ${dateRange.startDate} to ${dateRange.endDate}
 
-TRAFFIC OVERVIEW:
+TRAFFIC OVERVIEW (GA4):
 - Total Sessions: ${totalSessions}
 - Organic: ${totalOrganic} | Paid: ${totalPaid} | Direct: ${totalDirect}
 - Page Views: ${totalPageViews}
 - Avg Bounce Rate: ${avgBounce}%
 
-LEADS (${leads.length} total):
-- Session requests: ${sessionLeads}
-- Seminar registrations: ${seminarLeads}
-- From paid campaigns: ${paidLeads}
-- WhatsApp clicks: ${whatsappClicks.length}
+LEADS (${leads.length} total in DB):
+- Form Leads (lead-form submissions): ${formLeadCount}
+- Terminbestätigung (paid sessions confirmed): ${terminCount}
+- form_type=session: ${sessionLeads} | form_type=seminar: ${seminarLeads}
+- From paid campaigns (utm): ${paidLeads}
+
+WHATSAPP CLICKS (${whatsappClicks.length} total):
+- DE pages: ${waByLang.de} | EN pages: ${waByLang.en}
+- Top pages by WhatsApp click:
+${topN(waByPage, 12).map(([p, c]) => `  • ${p}: ${c}`).join("\n") || "  (none)"}
+
+FORM SUBMISSIONS LOG (${formLogsInRange.length} successful in range):
+- DE: ${formByLang.de} | EN: ${formByLang.en}
+- By form type: ${topN(formByType, 10).map(([t, c]) => `${t}=${c}`).join(", ") || "(none)"}
+- Top origin pages (where visitor submitted from):
+${topN(formByPage, 12).map(([p, c]) => `  • ${p}: ${c}`).join("\n") || "  (none)"}
 
 GOOGLE ADS:
 - Total Spend: ${currency} ${adSpend.toFixed(0)}
 - Clicks: ${adClicks} | Impressions: ${adImpressions}
-- Conversions: ${adConversions}
+- Conversions (Ads): ${adConversions}
 - Cost per Click: ${adClicks > 0 ? `${currency} ${(adSpend / adClicks).toFixed(2)}` : "N/A"}
-- Cost per Lead: ${paidLeads > 0 ? `${currency} ${(adSpend / paidLeads).toFixed(0)}` : "N/A"}
+- Cost per Form Lead (CPL): ${formLeadCount > 0 ? `${currency} ${(adSpend / formLeadCount).toFixed(0)}` : "N/A"}
+- Cost per Terminbestätigung (CPA): ${terminCount > 0 ? `${currency} ${(adSpend / terminCount).toFixed(0)}` : "N/A"}
 `;
 
   if (campaigns.length > 0) {
     ctx += `\nCAMPAIGNS:\n`;
-    campaigns.forEach(c => {
-      ctx += `- ${c.name} (${c.status}): ${c.clicks} clicks, ${currency} ${c.spend.toFixed(0)} spend, ${c.conversions} conversions\n`;
+    campaigns.forEach((c: any) => {
+      ctx += `- ${c.name} (${c.status}): ${c.clicks} clicks, ${currency} ${c.spend.toFixed(0)} spend, ${c.conversions} conv\n`;
     });
   }
 
   if (topPages.length > 0) {
-    ctx += `\nTOP PAGES:\n`;
-    topPages.slice(0, 15).forEach(p => {
+    ctx += `\nTOP PAGES (GA4):\n`;
+    topPages.slice(0, 20).forEach((p: any) => {
       ctx += `- ${p.label} (${p.path}): ${p.views} views, avg ${Math.floor(p.avgTimeSeconds / 60)}:${String(p.avgTimeSeconds % 60).padStart(2, "0")} time\n`;
     });
   }
@@ -82,8 +129,29 @@ GOOGLE ADS:
 
   if (gscQueries.length > 0) {
     ctx += `\nTOP SEARCH QUERIES:\n`;
-    gscQueries.slice(0, 20).forEach(q => {
+    gscQueries.slice(0, 25).forEach((q: any) => {
       ctx += `- "${q.query}": ${q.clicks} clicks, ${q.impressions} impr, pos ${q.position.toFixed(1)}\n`;
+    });
+  }
+
+  if (gscTopPages?.length) {
+    ctx += `\nGSC TOP PAGES:\n`;
+    gscTopPages.slice(0, 15).forEach((p: any) => {
+      ctx += `- ${p.page}: ${p.clicks} clicks, ${p.impressions} impr, pos ${(p.position || 0).toFixed(1)}\n`;
+    });
+  }
+
+  if (gscByCountry?.length) {
+    ctx += `\nGSC BY COUNTRY:\n`;
+    gscByCountry.slice(0, 10).forEach((c: any) => {
+      ctx += `- ${c.country}: ${c.clicks} clicks, ${c.impressions} impr\n`;
+    });
+  }
+
+  if (gscByDevice?.length) {
+    ctx += `\nGSC BY DEVICE:\n`;
+    gscByDevice.forEach((d: any) => {
+      ctx += `- ${d.device}: ${d.clicks} clicks, ${d.impressions} impr\n`;
     });
   }
 
@@ -94,6 +162,7 @@ export default function AIChatTab({ dashboardState }: { dashboardState: Dashboar
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [formLogs, setFormLogs] = useState<Array<{ created_at: string; form_type: string; status: string; page_path: string | null }>>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -102,6 +171,21 @@ export default function AIChatTab({ dashboardState }: { dashboardState: Dashboar
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages]);
+
+  // Fetch form submission logs once
+  useEffect(() => {
+    (async () => {
+      try {
+        const sdRaw = sessionStorage.getItem("dashboard_session");
+        if (!sdRaw) return;
+        const sd = JSON.parse(sdRaw);
+        const { data } = await supabase.functions.invoke("fetch-form-logs", {
+          body: { token: sd.token, email: sd.email },
+        });
+        setFormLogs((data as any)?.logs || []);
+      } catch (e) { console.error("AIChat formLogs error", e); }
+    })();
+  }, []);
 
   const sendMessage = useCallback(async (text: string) => {
     if (!text.trim() || isLoading) return;
@@ -112,7 +196,7 @@ export default function AIChatTab({ dashboardState }: { dashboardState: Dashboar
     setIsLoading(true);
 
     const allMessages = [...messages, userMsg];
-    const dashboardContext = buildDashboardContext(dashboardState);
+    const dashboardContext = buildDashboardContext(dashboardState, { formLogs });
 
     let assistantSoFar = "";
 
@@ -207,7 +291,7 @@ export default function AIChatTab({ dashboardState }: { dashboardState: Dashboar
     } finally {
       setIsLoading(false);
     }
-  }, [messages, dashboardState, isLoading]);
+  }, [messages, dashboardState, isLoading, formLogs]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
