@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      consent_logs: {
+        Row: {
+          choice: string
+          consent_version: string
+          created_at: string
+          id: string
+          ip_hash: string | null
+          language: string | null
+          page_path: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          choice: string
+          consent_version?: string
+          created_at?: string
+          id?: string
+          ip_hash?: string | null
+          language?: string | null
+          page_path?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          choice?: string
+          consent_version?: string
+          created_at?: string
+          id?: string
+          ip_hash?: string | null
+          language?: string | null
+          page_path?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       cta_clicks: {
         Row: {
           clicked_at: string
