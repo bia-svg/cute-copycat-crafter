@@ -182,18 +182,36 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
     return [{ name: "DE", value: map.de }, { name: "EN", value: map.en }];
   }, [waClicks]);
 
-  // Form submissions
+  // Form submissions — combine leads (language) + form_submissions_log (page_path)
   const formStats = useMemo(() => {
     const total = leads.length;
     const byLang = { de: 0, en: 0 };
-    const byPage: Record<string, number> = {};
     leads.forEach(l => {
       if (l.language?.toLowerCase().startsWith("en")) byLang.en++; else byLang.de++;
-      const src = l.utm_content || "(unknown)";
-      byPage[src] = (byPage[src] || 0) + 1;
     });
-    return { total, byLang, byPage: Object.entries(byPage).sort((a, b) => b[1] - a[1]).slice(0, 10) };
-  }, [leads]);
+
+    // Group successful submissions by page_path within the selected date range
+    const startMs = parseISO(startDate).getTime();
+    const endMs = parseISO(endDate).getTime() + 86400000;
+    const byPageMap: Record<string, number> = {};
+    const byTypeMap: Record<string, number> = {};
+    formLogs
+      .filter(l => {
+        const t = new Date(l.created_at).getTime();
+        return t >= startMs && t <= endMs && l.status === "success";
+      })
+      .forEach(l => {
+        const p = l.page_path || "(unknown)";
+        byPageMap[p] = (byPageMap[p] || 0) + 1;
+        byTypeMap[l.form_type] = (byTypeMap[l.form_type] || 0) + 1;
+      });
+    return {
+      total,
+      byLang,
+      byPage: Object.entries(byPageMap).sort((a, b) => b[1] - a[1]).slice(0, 12),
+      byType: Object.entries(byTypeMap).sort((a, b) => b[1] - a[1]),
+    };
+  }, [leads, formLogs, startDate, endDate]);
 
   const sessChange = pctChange(m.sessions, m.prevSessions);
 
