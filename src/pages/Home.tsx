@@ -467,7 +467,7 @@ export default function Home() {
                       { label: "Stress & burnout", page: "stress" as const },
                       { label: "Depression & trauma", page: "depression" as const },
                       { label: "Children & teens", page: "children" as const },
-                      { label: "Training", page: "training" as const },
+                      { label: "Seminars", page: "training" as const },
                     ]
                   : [
                       { label: "Rauchfrei werden", page: "smoking" as const },
