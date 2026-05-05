@@ -325,18 +325,8 @@ export default function Dashboard() {
               <TabsTrigger value="sessions" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
                 <CalendarCheck className="w-3 h-3 mr-1" /> Hypnose Sessions
               </TabsTrigger>
-              <TabsTrigger value="form-submissions" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
-                Form Submissions
-              </TabsTrigger>
-              <TabsTrigger value="data" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Data Export</TabsTrigger>
               <TabsTrigger value="seo" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
                 <Search className="w-3 h-3 mr-1" /> SEO
-              </TabsTrigger>
-              <TabsTrigger value="competition" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
-                <Target className="w-3 h-3 mr-1" /> Competition
-              </TabsTrigger>
-              <TabsTrigger value="weekly-report" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
-                <FileText className="w-3 h-3 mr-1" /> Weekly Report
               </TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
               <TabsTrigger value="cta-success" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
@@ -762,307 +752,250 @@ export default function Dashboard() {
               />
             </TabsContent>
 
-            {/* ═══════ RESULTS TAB ═══════ */}
+            {/* ═══════ RESULTS TAB (with nested: Results | Data Export | Weekly Report) ═══════ */}
             <TabsContent value="results" className="space-y-5 mt-4">
-              <ResultsTab leads={leads} />
+              <Tabs defaultValue="results-main">
+                <TabsList className="bg-gray-100 border border-gray-200">
+                  <TabsTrigger value="results-main" className="data-[state=active]:bg-white data-[state=active]:text-gray-900 text-gray-500 text-xs">
+                    Results
+                  </TabsTrigger>
+                  <TabsTrigger value="data-export" className="data-[state=active]:bg-white data-[state=active]:text-gray-900 text-gray-500 text-xs">
+                    Data Export
+                  </TabsTrigger>
+                  <TabsTrigger value="weekly" className="data-[state=active]:bg-white data-[state=active]:text-gray-900 text-gray-500 text-xs">
+                    <FileText className="w-3 h-3 mr-1" /> Weekly Report
+                  </TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="results-main" className="space-y-5 mt-4">
+                  <ResultsTab leads={leads} />
+                </TabsContent>
+
+                <TabsContent value="data-export" className="mt-4">
+                  {(() => {
+                    const allDates = new Set<string>();
+                    trafficByDay.forEach(d => allDates.add(d.date));
+                    dailyAds.forEach(d => allDates.add(d.date));
+                    leads.forEach(l => { if (l.created_at) allDates.add(format(new Date(l.created_at), "yyyy-MM-dd")); });
+                    whatsappClicks.forEach(w => allDates.add(format(new Date(w.clicked_at), "yyyy-MM-dd")));
+
+                    const leadsByDay: Record<string, number> = {};
+                    leads.forEach(l => {
+                      if (!l.created_at) return;
+                      const d = format(new Date(l.created_at), "yyyy-MM-dd");
+                      leadsByDay[d] = (leadsByDay[d] || 0) + 1;
+                    });
+
+                    const waByDay: Record<string, number> = {};
+                    whatsappClicks.forEach(w => {
+                      const d = format(new Date(w.clicked_at), "yyyy-MM-dd");
+                      waByDay[d] = (waByDay[d] || 0) + 1;
+                    });
+
+                    const trafficMap: Record<string, DailyTraffic> = {};
+                    trafficByDay.forEach(d => { trafficMap[d.date] = d; });
+
+                    const adsMap: Record<string, typeof dailyAds[0]> = {};
+                    dailyAds.forEach(d => { adsMap[d.date] = d; });
+
+                    const sortedDates = Array.from(allDates).sort((a, b) => b.localeCompare(a));
+
+                    const rows = sortedDates.map(date => {
+                      const t = trafficMap[date];
+                      const a = adsMap[date];
+                      return {
+                        date,
+                        visitors: t?.total || 0,
+                        organic: t?.organic || 0,
+                        paid: t?.paid || 0,
+                        direct: t?.direct || 0,
+                        referral: t?.referral || 0,
+                        social: t?.social || 0,
+                        sessions: t?.sessions || 0,
+                        pageViews: t?.pageViews || 0,
+                        bounceRate: t?.bounceRate || 0,
+                        avgDuration: t?.avgSessionDuration || 0,
+                        adsImpressions: a?.impressions || 0,
+                        adsClicks: a?.clicks || 0,
+                        adsSpend: a?.spend || 0,
+                        adsConversions: a?.conversions || 0,
+                        leads: leadsByDay[date] || 0,
+                        whatsapp: waByDay[date] || 0,
+                      };
+                    });
+
+                    const exportCSV = () => {
+                      const headers = ["Date","Visitors","Organic","Paid","Direct","Referral","Social","Sessions","PageViews","BounceRate","AvgDuration(s)","Ads Impressions","Ads Clicks","Ads Spend","Ads Conversions","Leads","WhatsApp Clicks"];
+                      const csvRows = [headers.join(",")];
+                      rows.forEach(r => {
+                        csvRows.push([
+                          r.date, r.visitors, r.organic, r.paid, r.direct, r.referral, r.social,
+                          r.sessions, r.pageViews, r.bounceRate.toFixed(1), r.avgDuration.toFixed(0),
+                          r.adsImpressions, r.adsClicks, r.adsSpend.toFixed(2), r.adsConversions,
+                          r.leads, r.whatsapp
+                        ].join(","));
+                      });
+                      const blob = new Blob([csvRows.join("\n")], { type: "text/csv" });
+                      const url = URL.createObjectURL(blob);
+                      const link = document.createElement("a");
+                      link.href = url;
+                      link.download = `dashboard-export-${dateRange.startDate}-${dateRange.endDate}.csv`;
+                      link.click();
+                      URL.revokeObjectURL(url);
+                    };
+
+                    return (
+                      <Card className="bg-white border border-gray-200 shadow-sm">
+                        <CardHeader className="pb-2">
+                          <div className="flex items-center justify-between">
+                            <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                              <FileText className="w-4 h-4" /> Complete Daily Data ({rows.length} days)
+                            </CardTitle>
+                            <Button size="sm" variant="outline" onClick={exportCSV} className="text-xs">
+                              Export CSV
+                            </Button>
+                          </div>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="overflow-x-auto max-h-[600px] overflow-y-auto">
+                            <Table>
+                              <TableHeader>
+                                <TableRow className="border-gray-100">
+                                  <TableHead className="text-gray-500 text-xs sticky left-0 bg-white z-10">Date</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">Visitors</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">Organic</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">Paid</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">Direct</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">Referral</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">Social</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">Sessions</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">Views</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">Bounce%</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">Avg Dur.</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">Ad Impr.</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">Ad Clicks</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">Ad Spend</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">Ad Conv.</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">Leads</TableHead>
+                                  <TableHead className="text-gray-500 text-xs text-right">WA Clicks</TableHead>
+                                </TableRow>
+                              </TableHeader>
+                              <TableBody>
+                                {rows.map(r => (
+                                  <TableRow key={r.date} className="border-gray-100 hover:bg-gray-50">
+                                    <TableCell className="text-gray-900 text-xs font-medium whitespace-nowrap sticky left-0 bg-white">{format(parseISO(r.date), "dd/MM/yy")}</TableCell>
+                                    <TableCell className="text-right text-gray-900 text-xs font-medium">{r.visitors}</TableCell>
+                                    <TableCell className="text-right text-gray-700 text-xs">{r.organic}</TableCell>
+                                    <TableCell className="text-right text-gray-700 text-xs">{r.paid}</TableCell>
+                                    <TableCell className="text-right text-gray-700 text-xs">{r.direct}</TableCell>
+                                    <TableCell className="text-right text-gray-700 text-xs">{r.referral}</TableCell>
+                                    <TableCell className="text-right text-gray-700 text-xs">{r.social}</TableCell>
+                                    <TableCell className="text-right text-gray-700 text-xs">{r.sessions}</TableCell>
+                                    <TableCell className="text-right text-gray-700 text-xs">{r.pageViews}</TableCell>
+                                    <TableCell className="text-right text-gray-700 text-xs">{r.bounceRate.toFixed(1)}%</TableCell>
+                                    <TableCell className="text-right text-gray-700 text-xs">{formatTime(Math.round(r.avgDuration))}</TableCell>
+                                    <TableCell className="text-right text-gray-700 text-xs">{r.adsImpressions}</TableCell>
+                                    <TableCell className="text-right text-gray-700 text-xs">{r.adsClicks}</TableCell>
+                                    <TableCell className="text-right text-gray-700 text-xs">{r.adsSpend.toFixed(0)}</TableCell>
+                                    <TableCell className="text-right text-gray-700 text-xs">{r.adsConversions}</TableCell>
+                                    <TableCell className="text-right text-gray-900 text-xs font-medium">{r.leads || ""}</TableCell>
+                                    <TableCell className="text-right text-gray-900 text-xs font-medium">{r.whatsapp || ""}</TableCell>
+                                  </TableRow>
+                                ))}
+                              </TableBody>
+                            </Table>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    );
+                  })()}
+                </TabsContent>
+
+                <TabsContent value="weekly" className="space-y-5 mt-4">
+                  <WeeklyReportTab
+                    trafficByDay={trafficByDay}
+                    dailyAds={dailyAds}
+                    leads={leads}
+                    gscDailyMetrics={gscDailyMetrics}
+                    dateRange={dateRange}
+                  />
+                </TabsContent>
+              </Tabs>
             </TabsContent>
 
-            {/* ═══════ HYPNOSE SESSIONS TAB ═══════ */}
+            {/* ═══════ HYPNOSE SESSIONS TAB (with nested: Sessions | Form Submissions) ═══════ */}
             <TabsContent value="sessions" className="space-y-5 mt-4">
-              <SessionsTab leads={leads} />
-            </TabsContent>
+              <Tabs defaultValue="sessions-main">
+                <TabsList className="bg-gray-100 border border-gray-200">
+                  <TabsTrigger value="sessions-main" className="data-[state=active]:bg-white data-[state=active]:text-gray-900 text-gray-500 text-xs">
+                    Sessions
+                  </TabsTrigger>
+                  <TabsTrigger value="form-submissions" className="data-[state=active]:bg-white data-[state=active]:text-gray-900 text-gray-500 text-xs">
+                    Form Submissions
+                  </TabsTrigger>
+                </TabsList>
 
-            {/* ═══════ FORM SUBMISSIONS TAB ═══════ */}
-            <TabsContent value="form-submissions" className="space-y-5 mt-4">
-              <>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-5 h-5 text-emerald-600" />
-                    <span className="text-sm font-medium text-emerald-700">Full access</span>
+                <TabsContent value="sessions-main" className="space-y-5 mt-4">
+                  <SessionsTab leads={leads} />
+                </TabsContent>
+
+                <TabsContent value="form-submissions" className="space-y-5 mt-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <ShieldCheck className="w-5 h-5 text-emerald-600" />
+                      <span className="text-sm font-medium text-emerald-700">Full access</span>
+                    </div>
+                    <Badge className="bg-red-50 text-red-700 border border-red-200 text-xs">
+                      Contains personal data — handle with care
+                    </Badge>
                   </div>
-                  <Badge className="bg-red-50 text-red-700 border border-red-200 text-xs">
-                    Contains personal data — handle with care
-                  </Badge>
-                </div>
 
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-                  <MetricCard title="Total Submissions" value={leads.length} icon={Users} />
-                  <MetricCard title="Session" value={leads.filter(l => l.form_type === "session").length} icon={FileText} color="text-emerald-600" />
-                  <MetricCard title="Seminar" value={leads.filter(l => l.form_type === "seminar").length} icon={FileText} color="text-blue-600" />
-                  <MetricCard title="Corporate" value={leads.filter(l => l.form_type === "corporate").length} icon={FileText} color="text-purple-600" />
-                </div>
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                    <MetricCard title="Total Submissions" value={leads.length} icon={Users} />
+                    <MetricCard title="Session" value={leads.filter(l => l.form_type === "session").length} icon={FileText} color="text-emerald-600" />
+                    <MetricCard title="Seminar" value={leads.filter(l => l.form_type === "seminar").length} icon={FileText} color="text-blue-600" />
+                    <MetricCard title="Corporate" value={leads.filter(l => l.form_type === "corporate").length} icon={FileText} color="text-purple-600" />
+                  </div>
 
-                <Card className="bg-white border border-gray-200 shadow-sm">
-                  <CardHeader className="pb-2">
-                    <div className="flex items-center justify-between">
-                      <CardTitle className="text-sm font-medium text-gray-700">All Form Submissions ({leads.length})</CardTitle>
-                      <Button size="sm" variant="outline" className="text-xs" onClick={() => {
-                        const headers = ["Date","Name","Email","Phone","Concern","Type","Source","City","Postal Code","Country","Language","Referrer Page","UTM Source","UTM Medium","UTM Campaign","UTM Content","UTM Term","Notes","Converted"];
-                        const csvRows = [headers.join(",")];
-                        leads.forEach(l => {
-                          csvRows.push([
-                            l.created_at ? formatCET(l.created_at) : "",
-                            `"${(l.name || "").replace(/"/g, '""')}"`,
-                            `"${(l.email || "").replace(/"/g, '""')}"`,
-                            `"${(l.phone || "").replace(/"/g, '""')}"`,
-                            `"${(l.concern || "").replace(/"/g, '""')}"`,
-                            l.form_type || "",
-                            l.source || "",
-                            `"${(l.city || "").replace(/"/g, '""')}"`,
-                            l.postal_code || "",
-                             l.country || "",
-                             (l as any).language || "",
-                             `"${(l.tracking_code || "").replace(/"/g, '""')}"`,
-                            l.utm_source || "",
-                            l.utm_medium || "",
-                            l.utm_campaign || "",
-                            l.utm_content || "",
-                            l.utm_term || "",
-                            `"${(l.notes || "").replace(/"/g, '""')}"`,
-                            l.converted ? "Yes" : "No",
-                          ].join(","));
-                        });
-                        const blob = new Blob([csvRows.join("\n")], { type: "text/csv" });
-                        const url = URL.createObjectURL(blob);
-                        const a = document.createElement("a");
-                        a.href = url;
-                        a.download = `form-submissions-${format(new Date(), "yyyy-MM-dd")}.csv`;
-                        a.click();
-                        URL.revokeObjectURL(url);
-                      }}>
-                        Export Full CSV
-                      </Button>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="overflow-x-auto max-h-[600px] overflow-y-auto">
-                       <Table>
-                        <TableHeader>
-                          <TableRow className="border-gray-100">
-                             <TableHead className="text-gray-500 text-xs sticky left-0 bg-white z-10">Date (CET)</TableHead>
-                            <TableHead className="text-gray-500 text-xs">Name</TableHead>
-                            <TableHead className="text-gray-500 text-xs">Email</TableHead>
-                            <TableHead className="text-gray-500 text-xs">Phone</TableHead>
-                            <TableHead className="text-gray-500 text-xs">Concern</TableHead>
-                            <TableHead className="text-gray-500 text-xs">Type</TableHead>
-                            <TableHead className="text-gray-500 text-xs">Source</TableHead>
-                            <TableHead className="text-gray-500 text-xs">City</TableHead>
-                            <TableHead className="text-gray-500 text-xs">PLZ</TableHead>
-                             <TableHead className="text-gray-500 text-xs">Country</TableHead>
-                             <TableHead className="text-gray-500 text-xs">Lang</TableHead>
-                             <TableHead className="text-gray-500 text-xs">Referrer Page</TableHead>
-                            <TableHead className="text-gray-500 text-xs">UTM Source</TableHead>
-                            <TableHead className="text-gray-500 text-xs">UTM Medium</TableHead>
-                            <TableHead className="text-gray-500 text-xs">UTM Campaign</TableHead>
-                            <TableHead className="text-gray-500 text-xs">UTM Content</TableHead>
-                            <TableHead className="text-gray-500 text-xs">UTM Term</TableHead>
-                            <TableHead className="text-gray-500 text-xs">Notes</TableHead>
-                            <TableHead className="text-gray-500 text-xs">Device</TableHead>
-                            <TableHead className="text-gray-500 text-xs text-center">Conv.</TableHead>
-                            <TableHead className="text-gray-500 text-xs text-center">Share</TableHead>
-                           </TableRow>
-                         </TableHeader>
-                         <TableBody>
-                           {leads.map(l => {
-                             const copyLeadData = () => {
-                               const lines = [
-                                 `📋 Lead — ${l.name || "—"}`,
-                                 `Date (CET): ${l.created_at ? formatCET(l.created_at) : "—"}`,
-                                 `Name: ${l.name || "—"}`,
-                                 `Email: ${l.email || "—"}`,
-                                 `Phone: ${l.phone || "—"}`,
-                                 `Concern: ${l.concern || "—"}`,
-                                 `Type: ${l.form_type || "—"}`,
-                                 `Source: ${l.source || "direct"}`,
-                                 `City: ${l.city || "—"}`,
-                                 `PLZ: ${l.postal_code || "—"}`,
-                                 `Country: ${l.country || "—"}`,
-                                 `Language: ${(l as any).language || "—"}`,
-                                 l.notes ? `Notes: ${l.notes}` : null,
-                                 l.utm_campaign ? `Campaign: ${l.utm_campaign}` : null,
-                               ].filter(Boolean).join("\n");
-                               navigator.clipboard.writeText(lines);
-                               toast.success("Lead data copied to clipboard");
-                             };
-                             return (
-                             <TableRow key={l.id} className="border-gray-100 hover:bg-gray-50">
-                               <TableCell className="text-gray-900 text-xs font-medium whitespace-nowrap sticky left-0 bg-white">
-                                 {l.created_at ? formatCET(l.created_at) : "—"}
-                               </TableCell>
-                               <TableCell className="text-gray-900 text-xs font-medium whitespace-nowrap">{l.name || "—"}</TableCell>
-                               <TableCell className="text-blue-700 text-xs">
-                                 <a href={`mailto:${l.email}`} className="hover:underline">{l.email}</a>
-                               </TableCell>
-                              <TableCell className="text-gray-900 text-xs whitespace-nowrap">
-                                {l.phone ? <a href={`tel:${l.phone}`} className="text-blue-700 hover:underline">{l.phone}</a> : "—"}
-                              </TableCell>
-                              <TableCell className="text-gray-700 text-xs max-w-[200px] truncate">{l.concern || "—"}</TableCell>
-                              <TableCell>
-                                <Badge variant="outline" className={`text-xs ${
-                                  l.form_type === "session" ? "text-emerald-700 border-emerald-200" :
-                                  l.form_type === "seminar" ? "text-blue-700 border-blue-200" :
-                                  "text-purple-700 border-purple-200"
-                                }`}>
-                                  {l.form_type}
-                                </Badge>
-                              </TableCell>
-                              <TableCell>
-                                <Badge variant="outline" className={`text-xs ${
-                                  l.source === "organic" ? "text-emerald-700" :
-                                  l.source === "paid" ? "text-blue-700" : "text-gray-500"
-                                }`}>
-                                  {l.source || "direct"}
-                                </Badge>
-                              </TableCell>
-                              <TableCell className="text-gray-700 text-xs">{l.city || "—"}</TableCell>
-                              <TableCell className="text-gray-700 text-xs font-mono">{l.postal_code || "—"}</TableCell>
-                               <TableCell className="text-gray-700 text-xs">{l.country || "—"}</TableCell>
-                               <TableCell className="text-gray-700 text-xs uppercase">{(l as any).language || "—"}</TableCell>
-                               <TableCell className="text-gray-600 text-xs max-w-[150px] truncate" title={l.tracking_code || ""}>{l.tracking_code || "—"}</TableCell>
-                              <TableCell className="text-gray-600 text-xs">{l.utm_source || "—"}</TableCell>
-                              <TableCell className="text-gray-600 text-xs">{l.utm_medium || "—"}</TableCell>
-                              <TableCell className="text-gray-600 text-xs max-w-[120px] truncate" title={l.utm_campaign || ""}>{l.utm_campaign || "—"}</TableCell>
-                              <TableCell className="text-gray-600 text-xs max-w-[100px] truncate" title={l.utm_content || ""}>{l.utm_content || "—"}</TableCell>
-                              <TableCell className="text-gray-600 text-xs max-w-[100px] truncate" title={l.utm_term || ""}>{l.utm_term || "—"}</TableCell>
-                              <TableCell className="text-gray-600 text-xs max-w-[150px] truncate" title={l.notes || ""}>{l.notes || "—"}</TableCell>
-                              <TableCell className="text-gray-600 text-xs whitespace-nowrap">
-                                {(() => {
-                                  const ua = (l as any).user_agent || "";
-                                  if (!ua) return "—";
-                                  if (/Mobi|Android.*Mobile|iPhone/i.test(ua)) return "📱 Mobile";
-                                  if (/iPad|Tablet|Android(?!.*Mobile)/i.test(ua)) return "📱 Tablet";
-                                  return "💻 Desktop";
-                                })()}
-                              </TableCell>
-                              <TableCell className="text-center">
-                                {l.converted ? (
-                                  <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">✓</Badge>
-                                ) : (
-                                  <span className="text-gray-300">—</span>
-                                )}
-                              </TableCell>
-                              <TableCell className="text-center">
-                                <Button size="sm" variant="ghost" className="h-7 w-7 p-0" onClick={copyLeadData} title="Copy lead data">
-                                  <Copy className="w-3.5 h-3.5 text-gray-400 hover:text-gray-700" />
-                                </Button>
-                              </TableCell>
-                            </TableRow>
-                            );
-                          })}
-                        </TableBody>
-                      </Table>
-                    </div>
-                  </CardContent>
-                </Card>
-              </>
-            </TabsContent>
-
-            {/* ═══════ SEO TAB ═══════ */}
-            <TabsContent value="seo" className="space-y-5 mt-4">
-              <SEOTab
-                gscQueries={gscQueries}
-                gscTotals={gscTotals}
-                gscPreviousTotals={gscPreviousTotals}
-                gscPreviousPeriod={gscPreviousPeriod}
-                gscDailyMetrics={gscDailyMetrics}
-                gscTopPages={gscTopPages}
-                gscByCountry={gscByCountry}
-                gscByDevice={gscByDevice}
-                gscDistribution={gscDistribution}
-                seoSnapshots={seoSnapshots}
-                gscError={gscError}
-                gscLive={gscLive}
-              />
-            </TabsContent>
-
-            {/* ═══════ COMPETITION TAB ═══════ */}
-            <TabsContent value="competition" className="space-y-5 mt-4">
-              <CompetitionTab gscQueries={gscQueries} />
-            </TabsContent>
-
-            {/* ═══════ DATA EXPORT TAB ═══════ */}
-            <TabsContent value="data" className="mt-4">
-              {(() => {
-                const allDates = new Set<string>();
-                trafficByDay.forEach(d => allDates.add(d.date));
-                dailyAds.forEach(d => allDates.add(d.date));
-                leads.forEach(l => { if (l.created_at) allDates.add(format(new Date(l.created_at), "yyyy-MM-dd")); });
-                whatsappClicks.forEach(w => allDates.add(format(new Date(w.clicked_at), "yyyy-MM-dd")));
-
-                const leadsByDay: Record<string, number> = {};
-                leads.forEach(l => {
-                  if (!l.created_at) return;
-                  const d = format(new Date(l.created_at), "yyyy-MM-dd");
-                  leadsByDay[d] = (leadsByDay[d] || 0) + 1;
-                });
-
-                const waByDay: Record<string, number> = {};
-                whatsappClicks.forEach(w => {
-                  const d = format(new Date(w.clicked_at), "yyyy-MM-dd");
-                  waByDay[d] = (waByDay[d] || 0) + 1;
-                });
-
-                const trafficMap: Record<string, DailyTraffic> = {};
-                trafficByDay.forEach(d => { trafficMap[d.date] = d; });
-
-                const adsMap: Record<string, typeof dailyAds[0]> = {};
-                dailyAds.forEach(d => { adsMap[d.date] = d; });
-
-                const sortedDates = Array.from(allDates).sort((a, b) => b.localeCompare(a));
-
-                const rows = sortedDates.map(date => {
-                  const t = trafficMap[date];
-                  const a = adsMap[date];
-                  return {
-                    date,
-                    visitors: t?.total || 0,
-                    organic: t?.organic || 0,
-                    paid: t?.paid || 0,
-                    direct: t?.direct || 0,
-                    referral: t?.referral || 0,
-                    social: t?.social || 0,
-                    sessions: t?.sessions || 0,
-                    pageViews: t?.pageViews || 0,
-                    bounceRate: t?.bounceRate || 0,
-                    avgDuration: t?.avgSessionDuration || 0,
-                    adsImpressions: a?.impressions || 0,
-                    adsClicks: a?.clicks || 0,
-                    adsSpend: a?.spend || 0,
-                    adsConversions: a?.conversions || 0,
-                    leads: leadsByDay[date] || 0,
-                    whatsapp: waByDay[date] || 0,
-                  };
-                });
-
-                const exportCSV = () => {
-                  const headers = ["Date","Visitors","Organic","Paid","Direct","Referral","Social","Sessions","PageViews","BounceRate","AvgDuration(s)","Ads Impressions","Ads Clicks","Ads Spend","Ads Conversions","Leads","WhatsApp Clicks"];
-                  const csvRows = [headers.join(",")];
-                  rows.forEach(r => {
-                    csvRows.push([
-                      r.date, r.visitors, r.organic, r.paid, r.direct, r.referral, r.social,
-                      r.sessions, r.pageViews, r.bounceRate.toFixed(1), r.avgDuration.toFixed(0),
-                      r.adsImpressions, r.adsClicks, r.adsSpend.toFixed(2), r.adsConversions,
-                      r.leads, r.whatsapp
-                    ].join(","));
-                  });
-                  const blob = new Blob([csvRows.join("\n")], { type: "text/csv" });
-                  const url = URL.createObjectURL(blob);
-                  const link = document.createElement("a");
-                  link.href = url;
-                  link.download = `dashboard-export-${dateRange.startDate}-${dateRange.endDate}.csv`;
-                  link.click();
-                  URL.revokeObjectURL(url);
-                };
-
-                return (
                   <Card className="bg-white border border-gray-200 shadow-sm">
                     <CardHeader className="pb-2">
                       <div className="flex items-center justify-between">
-                        <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
-                          <FileText className="w-4 h-4" /> Complete Daily Data ({rows.length} days)
-                        </CardTitle>
-                        <Button size="sm" variant="outline" onClick={exportCSV} className="text-xs">
-                          Export CSV
+                        <CardTitle className="text-sm font-medium text-gray-700">All Form Submissions ({leads.length})</CardTitle>
+                        <Button size="sm" variant="outline" className="text-xs" onClick={() => {
+                          const headers = ["Date","Name","Email","Phone","Concern","Type","Source","City","Postal Code","Country","Language","Referrer Page","UTM Source","UTM Medium","UTM Campaign","UTM Content","UTM Term","Notes","Converted"];
+                          const csvRows = [headers.join(",")];
+                          leads.forEach(l => {
+                            csvRows.push([
+                              l.created_at ? formatCET(l.created_at) : "",
+                              `"${(l.name || "").replace(/"/g, '""')}"`,
+                              `"${(l.email || "").replace(/"/g, '""')}"`,
+                              `"${(l.phone || "").replace(/"/g, '""')}"`,
+                              `"${(l.concern || "").replace(/"/g, '""')}"`,
+                              l.form_type || "",
+                              l.source || "",
+                              `"${(l.city || "").replace(/"/g, '""')}"`,
+                              l.postal_code || "",
+                              l.country || "",
+                              (l as any).language || "",
+                              `"${(l.tracking_code || "").replace(/"/g, '""')}"`,
+                              l.utm_source || "",
+                              l.utm_medium || "",
+                              l.utm_campaign || "",
+                              l.utm_content || "",
+                              l.utm_term || "",
+                              `"${(l.notes || "").replace(/"/g, '""')}"`,
+                              l.converted ? "Yes" : "No",
+                            ].join(","));
+                          });
+                          const blob = new Blob([csvRows.join("\n")], { type: "text/csv" });
+                          const url = URL.createObjectURL(blob);
+                          const a = document.createElement("a");
+                          a.href = url;
+                          a.download = `form-submissions-${format(new Date(), "yyyy-MM-dd")}.csv`;
+                          a.click();
+                          URL.revokeObjectURL(url);
+                        }}>
+                          Export Full CSV
                         </Button>
                       </div>
                     </CardHeader>
@@ -1071,65 +1004,158 @@ export default function Dashboard() {
                         <Table>
                           <TableHeader>
                             <TableRow className="border-gray-100">
-                              <TableHead className="text-gray-500 text-xs sticky left-0 bg-white z-10">Date</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">Visitors</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">Organic</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">Paid</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">Direct</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">Referral</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">Social</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">Sessions</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">Views</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">Bounce%</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">Avg Dur.</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">Ad Impr.</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">Ad Clicks</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">Ad Spend</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">Ad Conv.</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">Leads</TableHead>
-                              <TableHead className="text-gray-500 text-xs text-right">WA Clicks</TableHead>
+                              <TableHead className="text-gray-500 text-xs sticky left-0 bg-white z-10">Date (CET)</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Name</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Email</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Phone</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Concern</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Type</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Source</TableHead>
+                              <TableHead className="text-gray-500 text-xs">City</TableHead>
+                              <TableHead className="text-gray-500 text-xs">PLZ</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Country</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Lang</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Referrer Page</TableHead>
+                              <TableHead className="text-gray-500 text-xs">UTM Source</TableHead>
+                              <TableHead className="text-gray-500 text-xs">UTM Medium</TableHead>
+                              <TableHead className="text-gray-500 text-xs">UTM Campaign</TableHead>
+                              <TableHead className="text-gray-500 text-xs">UTM Content</TableHead>
+                              <TableHead className="text-gray-500 text-xs">UTM Term</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Notes</TableHead>
+                              <TableHead className="text-gray-500 text-xs">Device</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-center">Conv.</TableHead>
+                              <TableHead className="text-gray-500 text-xs text-center">Share</TableHead>
                             </TableRow>
                           </TableHeader>
                           <TableBody>
-                            {rows.map(r => (
-                              <TableRow key={r.date} className="border-gray-100 hover:bg-gray-50">
-                                <TableCell className="text-gray-900 text-xs font-medium whitespace-nowrap sticky left-0 bg-white">{format(parseISO(r.date), "dd/MM/yy")}</TableCell>
-                                <TableCell className="text-right text-gray-900 text-xs font-medium">{r.visitors}</TableCell>
-                                <TableCell className="text-right text-gray-700 text-xs">{r.organic}</TableCell>
-                                <TableCell className="text-right text-gray-700 text-xs">{r.paid}</TableCell>
-                                <TableCell className="text-right text-gray-700 text-xs">{r.direct}</TableCell>
-                                <TableCell className="text-right text-gray-700 text-xs">{r.referral}</TableCell>
-                                <TableCell className="text-right text-gray-700 text-xs">{r.social}</TableCell>
-                                <TableCell className="text-right text-gray-700 text-xs">{r.sessions}</TableCell>
-                                <TableCell className="text-right text-gray-700 text-xs">{r.pageViews}</TableCell>
-                                <TableCell className="text-right text-gray-700 text-xs">{r.bounceRate.toFixed(1)}%</TableCell>
-                                <TableCell className="text-right text-gray-700 text-xs">{formatTime(Math.round(r.avgDuration))}</TableCell>
-                                <TableCell className="text-right text-gray-700 text-xs">{r.adsImpressions}</TableCell>
-                                <TableCell className="text-right text-gray-700 text-xs">{r.adsClicks}</TableCell>
-                                <TableCell className="text-right text-gray-700 text-xs">{r.adsSpend.toFixed(0)}</TableCell>
-                                <TableCell className="text-right text-gray-700 text-xs">{r.adsConversions}</TableCell>
-                                <TableCell className="text-right text-gray-900 text-xs font-medium">{r.leads || ""}</TableCell>
-                                <TableCell className="text-right text-gray-900 text-xs font-medium">{r.whatsapp || ""}</TableCell>
+                            {leads.map(l => {
+                              const copyLeadData = () => {
+                                const lines = [
+                                  `📋 Lead — ${l.name || "—"}`,
+                                  `Date (CET): ${l.created_at ? formatCET(l.created_at) : "—"}`,
+                                  `Name: ${l.name || "—"}`,
+                                  `Email: ${l.email || "—"}`,
+                                  `Phone: ${l.phone || "—"}`,
+                                  `Concern: ${l.concern || "—"}`,
+                                  `Type: ${l.form_type || "—"}`,
+                                  `Source: ${l.source || "direct"}`,
+                                  `City: ${l.city || "—"}`,
+                                  `PLZ: ${l.postal_code || "—"}`,
+                                  `Country: ${l.country || "—"}`,
+                                  `Language: ${(l as any).language || "—"}`,
+                                  l.notes ? `Notes: ${l.notes}` : null,
+                                  l.utm_campaign ? `Campaign: ${l.utm_campaign}` : null,
+                                ].filter(Boolean).join("\n");
+                                navigator.clipboard.writeText(lines);
+                                toast.success("Lead data copied to clipboard");
+                              };
+                              return (
+                              <TableRow key={l.id} className="border-gray-100 hover:bg-gray-50">
+                                <TableCell className="text-gray-900 text-xs font-medium whitespace-nowrap sticky left-0 bg-white">
+                                  {l.created_at ? formatCET(l.created_at) : "—"}
+                                </TableCell>
+                                <TableCell className="text-gray-900 text-xs font-medium whitespace-nowrap">{l.name || "—"}</TableCell>
+                                <TableCell className="text-blue-700 text-xs">
+                                  <a href={`mailto:${l.email}`} className="hover:underline">{l.email}</a>
+                                </TableCell>
+                                <TableCell className="text-gray-900 text-xs whitespace-nowrap">
+                                  {l.phone ? <a href={`tel:${l.phone}`} className="text-blue-700 hover:underline">{l.phone}</a> : "—"}
+                                </TableCell>
+                                <TableCell className="text-gray-700 text-xs max-w-[200px] truncate">{l.concern || "—"}</TableCell>
+                                <TableCell>
+                                  <Badge variant="outline" className={`text-xs ${
+                                    l.form_type === "session" ? "text-emerald-700 border-emerald-200" :
+                                    l.form_type === "seminar" ? "text-blue-700 border-blue-200" :
+                                    "text-purple-700 border-purple-200"
+                                  }`}>
+                                    {l.form_type}
+                                  </Badge>
+                                </TableCell>
+                                <TableCell>
+                                  <Badge variant="outline" className={`text-xs ${
+                                    l.source === "organic" ? "text-emerald-700" :
+                                    l.source === "paid" ? "text-blue-700" : "text-gray-500"
+                                  }`}>
+                                    {l.source || "direct"}
+                                  </Badge>
+                                </TableCell>
+                                <TableCell className="text-gray-700 text-xs">{l.city || "—"}</TableCell>
+                                <TableCell className="text-gray-700 text-xs font-mono">{l.postal_code || "—"}</TableCell>
+                                <TableCell className="text-gray-700 text-xs">{l.country || "—"}</TableCell>
+                                <TableCell className="text-gray-700 text-xs uppercase">{(l as any).language || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs max-w-[150px] truncate" title={l.tracking_code || ""}>{l.tracking_code || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs">{l.utm_source || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs">{l.utm_medium || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs max-w-[120px] truncate" title={l.utm_campaign || ""}>{l.utm_campaign || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs max-w-[100px] truncate" title={l.utm_content || ""}>{l.utm_content || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs max-w-[100px] truncate" title={l.utm_term || ""}>{l.utm_term || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs max-w-[150px] truncate" title={l.notes || ""}>{l.notes || "—"}</TableCell>
+                                <TableCell className="text-gray-600 text-xs whitespace-nowrap">
+                                  {(() => {
+                                    const ua = (l as any).user_agent || "";
+                                    if (!ua) return "—";
+                                    if (/Mobi|Android.*Mobile|iPhone/i.test(ua)) return "📱 Mobile";
+                                    if (/iPad|Tablet|Android(?!.*Mobile)/i.test(ua)) return "📱 Tablet";
+                                    return "💻 Desktop";
+                                  })()}
+                                </TableCell>
+                                <TableCell className="text-center">
+                                  {l.converted ? (
+                                    <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">✓</Badge>
+                                  ) : (
+                                    <span className="text-gray-300">—</span>
+                                  )}
+                                </TableCell>
+                                <TableCell className="text-center">
+                                  <Button size="sm" variant="ghost" className="h-7 w-7 p-0" onClick={copyLeadData} title="Copy lead data">
+                                    <Copy className="w-3.5 h-3.5 text-gray-400 hover:text-gray-700" />
+                                  </Button>
+                                </TableCell>
                               </TableRow>
-                            ))}
+                              );
+                            })}
                           </TableBody>
                         </Table>
                       </div>
                     </CardContent>
                   </Card>
-                );
-              })()}
+                </TabsContent>
+              </Tabs>
             </TabsContent>
 
-            {/* ═══════ WEEKLY REPORT TAB ═══════ */}
-            <TabsContent value="weekly-report" className="space-y-5 mt-4">
-              <WeeklyReportTab
-                trafficByDay={trafficByDay}
-                dailyAds={dailyAds}
-                leads={leads}
-                gscDailyMetrics={gscDailyMetrics}
-                dateRange={dateRange}
-              />
+            {/* ═══════ SEO TAB (with nested: SEO | Competition) ═══════ */}
+            <TabsContent value="seo" className="space-y-5 mt-4">
+              <Tabs defaultValue="seo-main">
+                <TabsList className="bg-gray-100 border border-gray-200">
+                  <TabsTrigger value="seo-main" className="data-[state=active]:bg-white data-[state=active]:text-gray-900 text-gray-500 text-xs">
+                    <Search className="w-3 h-3 mr-1" /> SEO
+                  </TabsTrigger>
+                  <TabsTrigger value="competition" className="data-[state=active]:bg-white data-[state=active]:text-gray-900 text-gray-500 text-xs">
+                    <Target className="w-3 h-3 mr-1" /> Competition
+                  </TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="seo-main" className="space-y-5 mt-4">
+                  <SEOTab
+                    gscQueries={gscQueries}
+                    gscTotals={gscTotals}
+                    gscPreviousTotals={gscPreviousTotals}
+                    gscPreviousPeriod={gscPreviousPeriod}
+                    gscDailyMetrics={gscDailyMetrics}
+                    gscTopPages={gscTopPages}
+                    gscByCountry={gscByCountry}
+                    gscByDevice={gscByDevice}
+                    gscDistribution={gscDistribution}
+                    seoSnapshots={seoSnapshots}
+                    gscError={gscError}
+                    gscLive={gscLive}
+                  />
+                </TabsContent>
+
+                <TabsContent value="competition" className="space-y-5 mt-4">
+                  <CompetitionTab gscQueries={gscQueries} />
+                </TabsContent>
+              </Tabs>
             </TabsContent>
 
             {/* ═══════ LOGS TAB ═══════ */}
