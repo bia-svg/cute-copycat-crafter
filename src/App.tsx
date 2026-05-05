@@ -208,6 +208,7 @@ function AppRoutes() {
 
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/dashboard/login" element={<DashboardLogin />} />
+            <Route path="/dashboard/reset-password" element={<DashboardResetPassword />} />
             <Route path="/unsubscribe" element={<Unsubscribe />} />
 
             <Route path="*" element={<NotFound />} />
