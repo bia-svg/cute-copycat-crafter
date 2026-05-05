@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { FileText, TrendingUp, Loader2, Download } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { format, parseISO, startOfWeek, endOfWeek, eachWeekOfInterval } from "date-fns";
+import { format, parseISO, endOfWeek, eachWeekOfInterval } from "date-fns";
 import type { DailyTraffic, DailyAds, LeadRecord, GSCDailyMetric } from "@/data/dashboardMockData";
 import { exportWeeklyReport } from "@/lib/exportPdf";
 
@@ -17,13 +17,21 @@ interface WeeklyReportTabProps {
   dateRange: { startDate: string; endDate: string };
 }
 
+const CONFIRMATION_CONCERN = "Terminbestätigung / Sitzung";
+const SESSION_PRICE_CH = 750;
+const SESSION_PRICE_DE = 650;
+// Blended average for projection (weighted by typical mix)
+const SESSION_PRICE_AVG = 700;
+
 interface WeeklyRow {
   weekLabel: string;
   weekStart: string;
   sessions: number;
   spend: number;
-  leads: number;
-  cpl: number;
+  confirmations: number;  // Terminbestätigung count
+  revenue: number;        // projected
+  cpa: number;            // cost per Terminbestätigung
+  roas: number;           // revenue / spend
   avgPosition: number;
 }
 
@@ -39,22 +47,25 @@ export default function WeeklyReportTab({ trafficByDay, dailyAds, leads, gscDail
     const end = parseISO(dateRange.endDate);
     const weeks = eachWeekOfInterval({ start, end }, { weekStartsOn: 1 });
 
-    // Index ads by date
     const adsMap: Record<string, DailyAds> = {};
     dailyAds.forEach(d => { adsMap[d.date] = d; });
 
-    // Index GSC by date
     const gscMap: Record<string, GSCDailyMetric> = {};
     gscDailyMetrics.forEach(d => { gscMap[d.date] = d; });
 
-    // Index leads by date
-    const leadsByDate: Record<string, number> = {};
-    leads.forEach(l => {
-      const d = l.created_at ? format(parseISO(l.created_at), "yyyy-MM-dd") : null;
-      if (d) leadsByDate[d] = (leadsByDate[d] || 0) + 1;
-    });
+    // Index Terminbestätigung confirmations by date with revenue
+    const confirmsByDate: Record<string, { count: number; revenue: number }> = {};
+    leads
+      .filter(l => l.form_type === "session" && l.concern === CONFIRMATION_CONCERN)
+      .forEach(l => {
+        const d = l.created_at ? format(parseISO(l.created_at), "yyyy-MM-dd") : null;
+        if (!d) return;
+        if (!confirmsByDate[d]) confirmsByDate[d] = { count: 0, revenue: 0 };
+        confirmsByDate[d].count++;
+        const price = l.country === "CH" ? SESSION_PRICE_CH : l.country === "DE" ? SESSION_PRICE_DE : SESSION_PRICE_AVG;
+        confirmsByDate[d].revenue += price;
+      });
 
-    // Index sessions by date
     const sessionsByDate: Record<string, number> = {};
     trafficByDay.forEach(d => { sessionsByDate[d.date] = d.sessions || d.total; });
 
@@ -63,16 +74,16 @@ export default function WeeklyReportTab({ trafficByDay, dailyAds, leads, gscDail
       const clampedEnd = wEnd > end ? end : wEnd;
       const label = `${format(weekStart, "dd/MM")} – ${format(clampedEnd, "dd/MM")}`;
 
-      let sessions = 0, spend = 0, leadCount = 0;
+      let sessions = 0, spend = 0, confirmations = 0, revenue = 0;
       const positions: number[] = [];
 
-      // Iterate days in week
       let cursor = new Date(weekStart);
       while (cursor <= clampedEnd) {
         const key = format(cursor, "yyyy-MM-dd");
         sessions += sessionsByDate[key] || 0;
         spend += adsMap[key]?.spend || 0;
-        leadCount += leadsByDate[key] || 0;
+        confirmations += confirmsByDate[key]?.count || 0;
+        revenue += confirmsByDate[key]?.revenue || 0;
         if (gscMap[key]?.position) positions.push(gscMap[key].position);
         cursor.setDate(cursor.getDate() + 1);
       }
@@ -84,8 +95,10 @@ export default function WeeklyReportTab({ trafficByDay, dailyAds, leads, gscDail
         weekStart: format(weekStart, "yyyy-MM-dd"),
         sessions,
         spend: Math.round(spend * 100) / 100,
-        leads: leadCount,
-        cpl: leadCount > 0 ? Math.round((spend / leadCount) * 100) / 100 : 0,
+        confirmations,
+        revenue: Math.round(revenue),
+        cpa: confirmations > 0 ? Math.round((spend / confirmations) * 100) / 100 : 0,
+        roas: spend > 0 ? Math.round((revenue / spend) * 100) / 100 : 0,
         avgPosition: Math.round(avgPos * 10) / 10,
       };
     });
@@ -93,17 +106,18 @@ export default function WeeklyReportTab({ trafficByDay, dailyAds, leads, gscDail
     return rows;
   }, [trafficByDay, dailyAds, leads, gscDailyMetrics, dateRange]);
 
-  // Totals
   const totals = useMemo(() => {
     const t = weeklyData.reduce((acc, w) => ({
       sessions: acc.sessions + w.sessions,
       spend: acc.spend + w.spend,
-      leads: acc.leads + w.leads,
-    }), { sessions: 0, spend: 0, leads: 0 });
+      confirmations: acc.confirmations + w.confirmations,
+      revenue: acc.revenue + w.revenue,
+    }), { sessions: 0, spend: 0, confirmations: 0, revenue: 0 });
     const positions = weeklyData.filter(w => w.avgPosition > 0).map(w => w.avgPosition);
     return {
       ...t,
-      cpl: t.leads > 0 ? Math.round((t.spend / t.leads) * 100) / 100 : 0,
+      cpa: t.confirmations > 0 ? Math.round((t.spend / t.confirmations) * 100) / 100 : 0,
+      roas: t.spend > 0 ? Math.round((t.revenue / t.spend) * 100) / 100 : 0,
       avgPosition: positions.length > 0 ? Math.round((positions.reduce((a, b) => a + b, 0) / positions.length) * 10) / 10 : 0,
     };
   }, [weeklyData]);
@@ -114,20 +128,20 @@ export default function WeeklyReportTab({ trafficByDay, dailyAds, leads, gscDail
     try {
       const prompt = `You are a digital marketing analyst for David J. Woods, a hypnotherapy practice in Switzerland (Zurich/Eschenbach) and Germany (Augsburg).
 
-Analyze this weekly performance data and provide a concise executive summary in English for the client report.
+Analyze this weekly performance data and provide a concise executive summary in English.
 
 Weekly data (${dateRange.startDate} to ${dateRange.endDate}):
 ${JSON.stringify(weeklyData, null, 2)}
 
-Totals: Sessions=${totals.sessions}, Spend=EUR  ${totals.spend}, Leads=${totals.leads}, CPL=EUR  ${totals.cpl}, Avg Position=${totals.avgPosition}
+Totals: Sessions=${totals.sessions}, Spend=EUR ${totals.spend}, Confirmed Sessions (Terminbestätigung)=${totals.confirmations}, Projected Revenue=EUR ${totals.revenue}, CPA=EUR ${totals.cpa}, ROAS=${totals.roas}x, Avg Position=${totals.avgPosition}
 
 Provide:
 1. **Performance Summary** (2-3 sentences on overall trends)
-2. **Key Highlights** (bullet points of what went well)
-3. **Areas of Concern** (bullet points of what needs attention)
+2. **Key Highlights** (bullets)
+3. **Areas of Concern** (bullets)
 4. **Recommendations** (2-3 actionable next steps)
 
-Keep it professional, data-driven, and under 300 words.`;
+Keep it professional, data-driven, under 300 words.`;
 
       const { data, error } = await supabase.functions.invoke("seo-report", {
         body: { customPrompt: prompt },
@@ -147,12 +161,11 @@ Keep it professional, data-driven, and under 300 words.`;
   };
 
   const handleExport = () => {
-    exportWeeklyReport(weeklyData, totals, aiAnalysis, dateRange);
+    exportWeeklyReport(weeklyData as any, totals as any, aiAnalysis, dateRange);
   };
 
   return (
     <div className="space-y-5">
-      {/* Weekly Metrics Table */}
       <Card className="bg-white border border-gray-200 shadow-sm">
         <CardHeader className="pb-2 flex flex-row items-center justify-between">
           <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
@@ -164,15 +177,20 @@ Keep it professional, data-driven, and under 300 words.`;
           </Button>
         </CardHeader>
         <CardContent>
+          <p className="text-xs text-gray-400 mb-2">
+            Confirmations = Terminbestätigung only (paid sessions). CPA & ROAS use confirmed sessions; revenue is projected at CHF 750 / €650.
+          </p>
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="border-gray-100">
                   <TableHead className="text-gray-500">Week</TableHead>
                   <TableHead className="text-gray-500 text-right">Sessions</TableHead>
-                  <TableHead className="text-gray-500 text-right">Investment (EUR)</TableHead>
-                  <TableHead className="text-gray-500 text-right">Leads</TableHead>
-                  <TableHead className="text-gray-500 text-right">CPL (EUR)</TableHead>
+                  <TableHead className="text-gray-500 text-right">Ad Spend</TableHead>
+                  <TableHead className="text-gray-500 text-right">Confirmations</TableHead>
+                  <TableHead className="text-gray-500 text-right">CPA</TableHead>
+                  <TableHead className="text-gray-500 text-right">Proj. Revenue</TableHead>
+                  <TableHead className="text-gray-500 text-right">ROAS</TableHead>
                   <TableHead className="text-gray-500 text-right">Avg Position</TableHead>
                 </TableRow>
               </TableHeader>
@@ -183,14 +201,24 @@ Keep it professional, data-driven, and under 300 words.`;
                     <TableCell className="text-right text-gray-900">{w.sessions}</TableCell>
                     <TableCell className="text-right text-gray-900">{w.spend > 0 ? `€ ${w.spend.toLocaleString()}` : "—"}</TableCell>
                     <TableCell className="text-right">
-                      {w.leads > 0 ? (
-                        <span className="text-emerald-700 font-medium">{w.leads}</span>
+                      {w.confirmations > 0 ? (
+                        <span className="text-emerald-700 font-medium">{w.confirmations}</span>
                       ) : (
                         <span className="text-gray-400">0</span>
                       )}
                     </TableCell>
-                    <TableCell className="text-right text-gray-700">
-                      {w.cpl > 0 ? `€ ${w.cpl.toLocaleString()}` : "—"}
+                    <TableCell className="text-right text-gray-700">{w.cpa > 0 ? `€ ${w.cpa.toLocaleString()}` : "—"}</TableCell>
+                    <TableCell className="text-right text-gray-900 font-medium">{w.revenue > 0 ? `€ ${w.revenue.toLocaleString()}` : "—"}</TableCell>
+                    <TableCell className="text-right">
+                      {w.roas > 0 ? (
+                        <Badge variant="outline" className={
+                          w.roas >= 3 ? "border-emerald-200 text-emerald-700" :
+                          w.roas >= 1 ? "border-amber-200 text-amber-700" :
+                          "border-red-200 text-red-600"
+                        }>
+                          {w.roas}x
+                        </Badge>
+                      ) : "—"}
                     </TableCell>
                     <TableCell className="text-right">
                       {w.avgPosition > 0 ? (
@@ -205,20 +233,15 @@ Keep it professional, data-driven, and under 300 words.`;
                     </TableCell>
                   </TableRow>
                 ))}
-                {/* Totals row */}
                 <TableRow className="border-gray-100 bg-gray-50 font-bold">
                   <TableCell className="text-gray-900 font-bold">Total / Average</TableCell>
                   <TableCell className="text-right text-gray-900 font-bold">{totals.sessions}</TableCell>
-                  <TableCell className="text-right text-gray-900 font-bold">
-                    {totals.spend > 0 ? `€ ${totals.spend.toLocaleString()}` : "—"}
-                  </TableCell>
-                  <TableCell className="text-right text-emerald-700 font-bold">{totals.leads}</TableCell>
-                  <TableCell className="text-right text-gray-900 font-bold">
-                    {totals.cpl > 0 ? `€ ${totals.cpl.toLocaleString()}` : "—"}
-                  </TableCell>
-                  <TableCell className="text-right font-bold">
-                    {totals.avgPosition > 0 ? totals.avgPosition : "—"}
-                  </TableCell>
+                  <TableCell className="text-right text-gray-900 font-bold">{totals.spend > 0 ? `€ ${totals.spend.toLocaleString()}` : "—"}</TableCell>
+                  <TableCell className="text-right text-emerald-700 font-bold">{totals.confirmations}</TableCell>
+                  <TableCell className="text-right text-gray-900 font-bold">{totals.cpa > 0 ? `€ ${totals.cpa.toLocaleString()}` : "—"}</TableCell>
+                  <TableCell className="text-right text-gray-900 font-bold">{totals.revenue > 0 ? `€ ${totals.revenue.toLocaleString()}` : "—"}</TableCell>
+                  <TableCell className="text-right font-bold">{totals.roas > 0 ? `${totals.roas}x` : "—"}</TableCell>
+                  <TableCell className="text-right font-bold">{totals.avgPosition > 0 ? totals.avgPosition : "—"}</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
@@ -226,7 +249,6 @@ Keep it professional, data-driven, and under 300 words.`;
         </CardContent>
       </Card>
 
-      {/* AI Analysis */}
       <Card className="bg-white border border-gray-200 shadow-sm">
         <CardHeader className="pb-2 flex flex-row items-center justify-between">
           <div>
