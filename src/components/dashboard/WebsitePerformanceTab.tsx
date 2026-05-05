@@ -62,6 +62,7 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
   const [prevData, setPrevData] = useState<GAData | null>(null);
   const [waClicks, setWaClicks] = useState<{ clicked_at: string; page_path: string | null; user_agent: string | null }[]>([]);
   const [leads, setLeads] = useState<{ created_at: string; form_type: string; language: string | null; utm_content: string | null }[]>([]);
+  const [formLogs, setFormLogs] = useState<{ created_at: string; form_type: string; status: string; page_path: string | null }[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
