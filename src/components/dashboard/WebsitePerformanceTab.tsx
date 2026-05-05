@@ -5,7 +5,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, PieChart, Pie, Cell,
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, PieChart, Pie, Cell, LineChart, Line,
 } from "recharts";
 import {
   Users, Eye, Clock, TrendingDown, MessageCircle, FileText,
