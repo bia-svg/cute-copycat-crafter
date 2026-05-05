@@ -156,7 +156,7 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
     return (data?.topPages || []).slice(0, 15).map((p: any) => ({
       ...p,
       label: pageName(p.path),
-      priority: PRIORITY.some(k => p.path.toLowerCase().includes(k)),
+      priority: PRIORITY_PATHS.has(p.path),
     }));
   }, [data]);
 
