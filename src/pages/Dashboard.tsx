@@ -628,6 +628,52 @@ export default function Dashboard() {
                 <MetricCard title="Paid CVR" value={paidCVR !== "—" ? `${paidCVR}%` : "—"} icon={TrendingUp} subtitle={`${paidLeads.length} leads / ${totals.paid} paid sessions`} />
               </div>
 
+              {/* ═══════ Google Ads ↔ Dashboard reconciliation ═══════ */}
+              {(() => {
+                const adsConv = dailyAds.reduce((s, d) => s + (d.conversions || 0), 0);
+                const dashPaid = paidLeads.length;
+                const gap = Math.max(0, Math.round(adsConv) - dashPaid);
+                const estimatedPaidTotal = Math.max(dashPaid, Math.round(adsConv));
+                if (adsConv === 0 && dashPaid === 0) return null;
+                return (
+                  <Card className="bg-amber-50/40 border border-amber-200 shadow-sm">
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-sm font-medium text-amber-900 flex items-center gap-2">
+                        <TrendingUp className="w-4 h-4 text-amber-700" />
+                        Paid attribution reconciliation
+                      </CardTitle>
+                      <p className="text-xs text-amber-800/70">
+                        Compares Google Ads conversions (source of truth) with leads classified as “paid” in this dashboard. Historic gaps reflect leads where the gclid/UTM was lost during in-site navigation before submitting (now fixed for new leads).
+                      </p>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div className="bg-white border border-amber-200 rounded-lg p-3">
+                          <div className="text-[10px] uppercase tracking-wide text-gray-500">Google Ads conversions</div>
+                          <div className="text-2xl font-bold text-amber-700">{adsConv.toFixed(0)}</div>
+                          <div className="text-[10px] text-gray-400">Reported by Google Ads</div>
+                        </div>
+                        <div className="bg-white border border-amber-200 rounded-lg p-3">
+                          <div className="text-[10px] uppercase tracking-wide text-gray-500">Dashboard paid leads</div>
+                          <div className="text-2xl font-bold text-blue-700">{dashPaid}</div>
+                          <div className="text-[10px] text-gray-400">Classified via gclid / UTM</div>
+                        </div>
+                        <div className="bg-white border border-amber-200 rounded-lg p-3">
+                          <div className="text-[10px] uppercase tracking-wide text-gray-500">Attribution gap</div>
+                          <div className="text-2xl font-bold text-rose-600">{gap}</div>
+                          <div className="text-[10px] text-gray-400">Likely paid, mis-classified as organic</div>
+                        </div>
+                        <div className="bg-white border border-amber-200 rounded-lg p-3">
+                          <div className="text-[10px] uppercase tracking-wide text-gray-500">Paid (estimated)</div>
+                          <div className="text-2xl font-bold text-emerald-700">{estimatedPaidTotal}</div>
+                          <div className="text-[10px] text-gray-400">max(Ads, Dashboard)</div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })()}
+
               {dailyAds.length > 0 && (
                 <Card className="bg-white border border-gray-200 shadow-sm">
                   <CardHeader className="pb-2">
