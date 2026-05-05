@@ -2,9 +2,9 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Send, Bot, User, Sparkles, Loader2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import { supabase } from "@/integrations/supabase/client";
 import type { DashboardState } from "@/hooks/useDashboardData";
 
 type Msg = { role: "user" | "assistant"; content: string };
@@ -13,11 +13,11 @@ const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/dashboard-ai
 
 const QUICK_PROMPTS = [
   "Give me a full performance summary for this period",
-  "Which channel has the best ROI?",
-  "What are the top 3 things I should improve?",
-  "Analyze my paid campaigns efficiency",
-  "Compare organic vs paid lead quality",
-  "What content should I create next based on SEO data?",
+  "Which pages drive the most WhatsApp clicks?",
+  "Where do visitors submit the most forms?",
+  "What's my Cost per Terminbestätigung this period?",
+  "Compare DE vs EN traffic and conversions",
+  "What are the top 3 things I should improve right now?",
 ];
 
 function buildDashboardContext(state: DashboardState): string {
