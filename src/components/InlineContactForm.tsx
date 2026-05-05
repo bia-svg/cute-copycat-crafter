@@ -9,6 +9,7 @@ import { getPath } from "@/lib/routes";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import { toast } from "sonner";
+import { getAttribution, classifySource } from "@/lib/attribution";
 
 interface InlineContactFormProps {
   defaultConcern?: string;
