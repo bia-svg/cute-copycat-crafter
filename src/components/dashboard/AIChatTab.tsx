@@ -291,7 +291,7 @@ export default function AIChatTab({ dashboardState }: { dashboardState: Dashboar
     } finally {
       setIsLoading(false);
     }
-  }, [messages, dashboardState, isLoading]);
+  }, [messages, dashboardState, isLoading, formLogs]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
