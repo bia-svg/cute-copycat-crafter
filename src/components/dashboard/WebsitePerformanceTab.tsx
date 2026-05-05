@@ -70,6 +70,27 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
   const [leads, setLeads] = useState<{ created_at: string; form_type: string; language: string | null; utm_content: string | null }[]>([]);
   const [formLogs, setFormLogs] = useState<{ created_at: string; form_type: string; status: string; page_path: string | null }[]>([]);
   const [loading, setLoading] = useState(true);
+  const [flowPath, setFlowPath] = useState<string | null>(null);
+  const [flowData, setFlowData] = useState<any | null>(null);
+  const [flowLoading, setFlowLoading] = useState(false);
+
+  async function openFlow(path: string) {
+    setFlowPath(path);
+    setFlowData(null);
+    setFlowLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("ga-page-flow", {
+        body: { pagePath: path, startDate, endDate },
+      });
+      if (error) throw error;
+      setFlowData(data);
+    } catch (e) {
+      console.error("Flow load error:", e);
+      setFlowData({ error: (e as Error).message });
+    } finally {
+      setFlowLoading(false);
+    }
+  }
 
   useEffect(() => {
     async function load() {
