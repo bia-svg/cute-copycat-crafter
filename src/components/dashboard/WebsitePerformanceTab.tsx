@@ -23,6 +23,7 @@ interface GAData {
   browserBreakdown: { browser: string; sessions: number }[];
   languageBreakdown: { language: string; sessions: number; avgSessionDuration: number }[];
   newVsReturning: { new: number; returning: number };
+  dailyNewReturning?: { date: string; new: number; returning: number }[];
 }
 
 function pageName(path: string): string {
