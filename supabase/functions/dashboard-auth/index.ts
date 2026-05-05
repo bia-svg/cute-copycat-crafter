@@ -77,14 +77,15 @@ serve(async (req) => {
         const origin = req.headers.get("origin") || "https://david-j-woods.com";
         const resetUrl = `${origin}/dashboard/reset-password?token=${token}&email=${encodeURIComponent(emailRaw)}`;
 
-        // Send email via send-transactional-email (needs Authorization header — verify_jwt=true)
+        // Send email via send-transactional-email (verify_jwt=true → use anon/publishable key)
         try {
+          const anonKey = Deno.env.get("SUPABASE_ANON_KEY") || Deno.env.get("SUPABASE_PUBLISHABLE_KEY") || "";
           const sendRes = await fetch(`${supabaseUrl}/functions/v1/send-transactional-email`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "Authorization": `Bearer ${serviceKey}`,
-              "apikey": serviceKey,
+              "Authorization": `Bearer ${anonKey}`,
+              "apikey": anonKey,
             },
             body: JSON.stringify({
               templateName: "dashboard-password-reset",
