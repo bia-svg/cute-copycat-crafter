@@ -77,18 +77,33 @@ serve(async (req) => {
         const origin = req.headers.get("origin") || "https://david-j-woods.com";
         const resetUrl = `${origin}/dashboard/reset-password?token=${token}&email=${encodeURIComponent(emailRaw)}`;
 
-        // Send email via send-transactional-email
+        // Send email via send-transactional-email (verify_jwt=true → use anon key)
         try {
-          await sb.functions.invoke("send-transactional-email", {
-            body: {
+          // Use the legacy publishable JWT (gateway requires JWT format, sb_publishable_ format is not accepted here)
+          const anonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlwcXphd3Jyd3Boa2hzdmhzYmx2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQzNjg2NDAsImV4cCI6MjA4OTk0NDY0MH0.jghGYQ5Oq0yTQWScm8jgJ5SeZOsjyh8u_i7hIh3jABA";
+          console.log("anonKey length:", anonKey.length);
+          const sendRes = await fetch(`${supabaseUrl}/functions/v1/send-transactional-email`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${anonKey}`,
+              "apikey": anonKey,
+            },
+            body: JSON.stringify({
               templateName: "dashboard-password-reset",
               recipientEmail: emailRaw,
               idempotencyKey: `dashboard-reset-${tokenHash.slice(0, 16)}`,
               templateData: { resetUrl, email: emailRaw },
-            },
+            }),
           });
+          if (!sendRes.ok) {
+            const txt = await sendRes.text();
+            console.error("Reset email send failed:", sendRes.status, txt);
+          } else {
+            console.log("Reset email enqueued OK");
+          }
         } catch (mailErr) {
-          console.error("Reset email send failed:", mailErr);
+          console.error("Reset email send error:", mailErr);
         }
       } else {
         console.log(`Reset requested for unknown email: ${emailRaw}`);
