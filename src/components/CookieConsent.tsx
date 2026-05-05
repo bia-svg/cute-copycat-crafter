@@ -62,10 +62,12 @@ export default function CookieConsent() {
   const handleAccept = () => {
     updateConsent(true);
     setVisible(false);
+    void logConsent("granted", language);
   };
   const handleReject = () => {
     updateConsent(false);
     setVisible(false);
+    void logConsent("denied", language);
   };
 
   const privacyPath = getPath("privacy", language, country);
