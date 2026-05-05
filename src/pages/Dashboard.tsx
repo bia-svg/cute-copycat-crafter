@@ -36,6 +36,7 @@ import CompetitionTab from "@/components/dashboard/CompetitionTab";
 import WeeklyReportTab from "@/components/dashboard/WeeklyReportTab";
 import CampaignIntelligence from "@/components/dashboard/CampaignIntelligence";
 import CTASuccessTab from "@/components/dashboard/CTASuccessTab";
+import WebsitePerformanceTab from "@/components/dashboard/WebsitePerformanceTab";
 import EmailLogsTab from "@/components/dashboard/EmailLogsTab";
 import AIChatTab from "@/components/dashboard/AIChatTab";
 import { format, parseISO, startOfMonth } from "date-fns";
