@@ -264,7 +264,99 @@ serve(async (req) => {
       console.error("Campaign page flow report error:", e);
     }
 
-    return new Response(JSON.stringify({ dailyData, topPages, channelBreakdown, campaignPages, campaignPageFlow }), {
+    // Report 6: Device category breakdown
+    let deviceBreakdown: any[] = [];
+    try {
+      const dRes = await fetch(apiBase, {
+        method: "POST",
+        headers: authHeaders,
+        body: JSON.stringify({
+          dateRanges: [{ startDate, endDate }],
+          dimensions: [{ name: "deviceCategory" }],
+          metrics: [{ name: "sessions" }, { name: "activeUsers" }],
+        }),
+      });
+      const dData = await dRes.json();
+      if (dRes.ok && dData.rows) {
+        deviceBreakdown = dData.rows.map((row: any) => ({
+          device: row.dimensionValues[0].value,
+          sessions: parseInt(row.metricValues[0].value, 10),
+          users: parseInt(row.metricValues[1].value, 10),
+        }));
+      }
+    } catch (e) { console.error("Device report error:", e); }
+
+    // Report 7: Browser breakdown
+    let browserBreakdown: any[] = [];
+    try {
+      const bRes = await fetch(apiBase, {
+        method: "POST",
+        headers: authHeaders,
+        body: JSON.stringify({
+          dateRanges: [{ startDate, endDate }],
+          dimensions: [{ name: "browser" }],
+          metrics: [{ name: "sessions" }],
+          orderBys: [{ metric: { metricName: "sessions" }, desc: true }],
+          limit: 10,
+        }),
+      });
+      const bData = await bRes.json();
+      if (bRes.ok && bData.rows) {
+        browserBreakdown = bData.rows.map((row: any) => ({
+          browser: row.dimensionValues[0].value,
+          sessions: parseInt(row.metricValues[0].value, 10),
+        }));
+      }
+    } catch (e) { console.error("Browser report error:", e); }
+
+    // Report 8: Language / locale breakdown
+    let languageBreakdown: any[] = [];
+    try {
+      const lRes = await fetch(apiBase, {
+        method: "POST",
+        headers: authHeaders,
+        body: JSON.stringify({
+          dateRanges: [{ startDate, endDate }],
+          dimensions: [{ name: "language" }],
+          metrics: [{ name: "sessions" }, { name: "averageSessionDuration" }],
+          orderBys: [{ metric: { metricName: "sessions" }, desc: true }],
+          limit: 20,
+        }),
+      });
+      const lData = await lRes.json();
+      if (lRes.ok && lData.rows) {
+        languageBreakdown = lData.rows.map((row: any) => ({
+          language: row.dimensionValues[0].value,
+          sessions: parseInt(row.metricValues[0].value, 10),
+          avgSessionDuration: parseFloat(row.metricValues[1].value),
+        }));
+      }
+    } catch (e) { console.error("Language report error:", e); }
+
+    // Report 9: New vs returning users
+    let newVsReturning = { new: 0, returning: 0 };
+    try {
+      const nRes = await fetch(apiBase, {
+        method: "POST",
+        headers: authHeaders,
+        body: JSON.stringify({
+          dateRanges: [{ startDate, endDate }],
+          dimensions: [{ name: "newVsReturning" }],
+          metrics: [{ name: "activeUsers" }],
+        }),
+      });
+      const nData = await nRes.json();
+      if (nRes.ok && nData.rows) {
+        for (const row of nData.rows) {
+          const k = row.dimensionValues[0].value;
+          const v = parseInt(row.metricValues[0].value, 10);
+          if (k === "new") newVsReturning.new = v;
+          else if (k === "returning") newVsReturning.returning = v;
+        }
+      }
+    } catch (e) { console.error("New vs returning error:", e); }
+
+    return new Response(JSON.stringify({ dailyData, topPages, channelBreakdown, campaignPages, campaignPageFlow, deviceBreakdown, browserBreakdown, languageBreakdown, newVsReturning }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (error: unknown) {
