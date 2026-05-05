@@ -77,18 +77,28 @@ serve(async (req) => {
         const origin = req.headers.get("origin") || "https://david-j-woods.com";
         const resetUrl = `${origin}/dashboard/reset-password?token=${token}&email=${encodeURIComponent(emailRaw)}`;
 
-        // Send email via send-transactional-email
+        // Send email via send-transactional-email (needs Authorization header — verify_jwt=true)
         try {
-          await sb.functions.invoke("send-transactional-email", {
-            body: {
+          const sendRes = await fetch(`${supabaseUrl}/functions/v1/send-transactional-email`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${serviceKey}`,
+              "apikey": serviceKey,
+            },
+            body: JSON.stringify({
               templateName: "dashboard-password-reset",
               recipientEmail: emailRaw,
               idempotencyKey: `dashboard-reset-${tokenHash.slice(0, 16)}`,
               templateData: { resetUrl, email: emailRaw },
-            },
+            }),
           });
+          if (!sendRes.ok) {
+            const txt = await sendRes.text();
+            console.error("Reset email send failed:", sendRes.status, txt);
+          }
         } catch (mailErr) {
-          console.error("Reset email send failed:", mailErr);
+          console.error("Reset email send error:", mailErr);
         }
       } else {
         console.log(`Reset requested for unknown email: ${emailRaw}`);
