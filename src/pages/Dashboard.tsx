@@ -333,9 +333,6 @@ export default function Dashboard() {
               <TabsTrigger value="website-performance" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
                 <Globe className="w-3 h-3 mr-1" /> Website Performance
               </TabsTrigger>
-              <TabsTrigger value="ai-chat" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
-                <Sparkles className="w-3 h-3 mr-1" /> AI Chat
-              </TabsTrigger>
             </TabsList>
 
             {/* ═══════ OVERVIEW TAB ═══════ */}
