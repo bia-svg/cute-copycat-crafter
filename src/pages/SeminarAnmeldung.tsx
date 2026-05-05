@@ -11,6 +11,7 @@ import { useSearchParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Calendar, MapPin, Shield, Users, Star, GraduationCap } from "lucide-react";
 import { toast } from "sonner";
+import { getAttribution, classifySource } from "@/lib/attribution";
 
 
 /* ── Seminar dates ── */
