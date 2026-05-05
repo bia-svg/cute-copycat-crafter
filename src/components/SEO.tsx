@@ -69,7 +69,11 @@ export default function SEO({
   const title = isEN ? titleEN : titleDE;
   const description = isEN ? descriptionEN : descriptionDE;
   const fullTitle = `${title} | David J. Woods`;
-  const canonicalUrl = buildUrl(language, country, pageKey);
+  // SEO: Consolidate canonicals to a single master per language to avoid duplicate-content issues
+  // across country variants (de/ch, de/de, de/int, en/ch, en/de, en/int). Master: de-CH for German,
+  // en-CH for English. This stops "Duplicate without canonical" and "Crawled - not indexed" errors.
+  const canonicalCountry: Country = "ch";
+  const canonicalUrl = buildUrl(language, canonicalCountry, pageKey);
   const resolvedOgImage = ogImage || OG_IMAGE_DEFAULT;
 
   /* ── Default structured data ── */
@@ -174,12 +178,15 @@ export default function SEO({
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
 
-      {/* hreflang — properly localized slugs */}
+      {/* hreflang — every language/country variant declared, x-default → de-CH (master) */}
       {pageKey && (
         <>
           <link rel="alternate" hrefLang="de-CH" href={buildUrl("de", "ch", pageKey)} />
           <link rel="alternate" hrefLang="de-DE" href={buildUrl("de", "de", pageKey)} />
-          <link rel="alternate" hrefLang="en" href={buildUrl("en", "ch", pageKey)} />
+          <link rel="alternate" hrefLang="de" href={buildUrl("de", "int", pageKey)} />
+          <link rel="alternate" hrefLang="en-CH" href={buildUrl("en", "ch", pageKey)} />
+          <link rel="alternate" hrefLang="en-DE" href={buildUrl("en", "de", pageKey)} />
+          <link rel="alternate" hrefLang="en" href={buildUrl("en", "int", pageKey)} />
           <link rel="alternate" hrefLang="x-default" href={buildUrl("de", "ch", pageKey)} />
         </>
       )}
