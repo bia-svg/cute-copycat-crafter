@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <Footer />
       <WhatsAppButton />
       <BackToTop />
-      <CookieConsent />
+      {/* <CookieConsent /> temporariamente oculto */}
     </div>
   );
 }
