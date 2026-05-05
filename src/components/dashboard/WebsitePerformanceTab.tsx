@@ -352,9 +352,112 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
               </TableBody>
             </Table>
           )}
-          <p className="text-xs text-gray-400 mt-2">★ Priority services: Stop Smoking · Weight Loss · Anxiety</p>
+          <p className="text-xs text-gray-400 mt-2">★ Priority services: Stop Smoking · Weight Loss · Anxiety. <span className="text-blue-600">Click any row to see navigation flow.</span></p>
         </CardContent>
       </Card>
+
+      {/* Page Flow Modal */}
+      <Dialog open={!!flowPath} onOpenChange={(o) => { if (!o) { setFlowPath(null); setFlowData(null); } }}>
+        <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2 text-base">
+              <ArrowRight className="w-4 h-4" /> Navigation Flow
+            </DialogTitle>
+            <DialogDescription className="text-xs">
+              <code className="bg-gray-100 px-1.5 py-0.5 rounded">{flowPath}</code> · {startDate} → {endDate}
+            </DialogDescription>
+          </DialogHeader>
+
+          {flowLoading && <div className="py-8 text-center text-sm text-gray-500">Loading flow data…</div>}
+          {flowData?.error && <div className="py-4 text-sm text-red-600">{flowData.error}</div>}
+
+          {flowData && !flowData.error && (
+            <div className="space-y-4">
+              {/* Summary */}
+              {flowData.summary && (
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <p className="text-[10px] uppercase text-gray-500">Page Views</p>
+                    <p className="text-lg font-bold">{flowData.summary.pageViews}</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <p className="text-[10px] uppercase text-gray-500">Sessions</p>
+                    <p className="text-lg font-bold">{flowData.summary.sessions}</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <p className="text-[10px] uppercase text-gray-500">Entrances</p>
+                    <p className="text-lg font-bold">{flowData.summary.entrances}</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <p className="text-[10px] uppercase text-gray-500">Bounce Rate</p>
+                    <p className="text-lg font-bold">{(flowData.summary.bounceRate * 100).toFixed(1)}%</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Where they go next */}
+              <div>
+                <h4 className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-1">
+                  <ArrowRight className="w-3.5 h-3.5" /> Where they go NEXT
+                </h4>
+                {(!flowData.nextPages || flowData.nextPages.length === 0) ? (
+                  <p className="text-xs text-gray-400">No next-page data (most users either bounced or this page wasn't a referrer).</p>
+                ) : (
+                  <div className="space-y-1 text-xs max-h-60 overflow-y-auto">
+                    {flowData.nextPages.map((n: any) => (
+                      <div key={n.path} className="flex justify-between items-center border-b border-gray-100 py-1.5">
+                        <span className="truncate pr-2">
+                          <span className="font-medium">{pageName(n.path)}</span>
+                          <span className="block text-[10px] text-gray-400">{n.path}</span>
+                        </span>
+                        <span className="font-semibold text-emerald-700 whitespace-nowrap">{n.views} views</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Where they came from */}
+              <div>
+                <h4 className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-1">
+                  <ArrowLeft className="w-3.5 h-3.5" /> Where they came FROM
+                </h4>
+                {(!flowData.fromSources || flowData.fromSources.length === 0) ? (
+                  <p className="text-xs text-gray-400">No referrer data.</p>
+                ) : (
+                  <div className="space-y-1 text-xs max-h-48 overflow-y-auto">
+                    {flowData.fromSources.map((s: any, i: number) => (
+                      <div key={i} className="flex justify-between border-b border-gray-100 py-1.5">
+                        <span className="truncate pr-2 text-gray-700">{s.referrer}</span>
+                        <span className="font-semibold whitespace-nowrap">{s.views}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Events on this page */}
+              <div>
+                <h4 className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-1">
+                  <Zap className="w-3.5 h-3.5" /> Events on this page
+                </h4>
+                {(!flowData.events || flowData.events.length === 0) ? (
+                  <p className="text-xs text-gray-400">No event data.</p>
+                ) : (
+                  <div className="grid grid-cols-2 gap-1 text-xs">
+                    {flowData.events.map((e: any) => (
+                      <div key={e.name} className="flex justify-between border-b border-gray-100 py-1">
+                        <span className="text-gray-700">{e.name}</span>
+                        <span className="font-semibold">{e.count}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
 
       {/* WhatsApp section */}
       <Card className="bg-white border-emerald-200 border-2">
