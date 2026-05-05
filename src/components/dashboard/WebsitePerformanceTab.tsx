@@ -335,7 +335,11 @@ export default function WebsitePerformanceTab({ startDate, endDate }: Props) {
               </TableRow></TableHeader>
               <TableBody>
                 {topPages.map((p: any) => (
-                  <TableRow key={p.path} className={p.priority ? "bg-amber-50" : ""}>
+                  <TableRow
+                    key={p.path}
+                    onClick={() => openFlow(p.path)}
+                    className={`cursor-pointer hover:bg-blue-50 transition-colors ${p.priority ? "bg-amber-50" : ""}`}
+                  >
                     <TableCell className="font-medium text-sm">
                       {p.priority && <span className="inline-block mr-2 text-amber-600">★</span>}
                       {p.label}
