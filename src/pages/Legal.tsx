@@ -78,9 +78,18 @@ export function Impressum() {
 }
 
 export function Datenschutz() {
-  const { language, country, } = useLanguage();
+  const { language, country } = useLanguage();
   const isEN = language === "en";
   const basePath = getPath("home", language, country);
+
+  const revokeConsent = () => {
+    try {
+      localStorage.removeItem("cookie_consent_v1");
+      window.dispatchEvent(new Event("cookie-consent-revoked"));
+      window.location.reload();
+    } catch {}
+  };
+
   return (
     <>
       <SEO {...pageSEO.privacy} pageKey="privacy" />
@@ -90,15 +99,104 @@ export function Datenschutz() {
       ]} />
       <section className="bg-white">
         <div className="container-main py-8 lg:py-12 max-w-3xl">
-          <h1 className="text-2xl font-light text-[#1B3A5C] mb-6 tracking-tight">{isEN ? "Privacy Policy" : "Datenschutzerklärung"}</h1>
-          <div className="space-y-4 text-sm text-foreground leading-relaxed">
-            <p>{isEN ? "We take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with the statutory data protection regulations and this privacy policy." : "Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung."}</p>
-            <h2 className="font-light text-[#1B3A5C] tracking-tight">{isEN ? "Data Collection on Our Website" : "Datenerfassung auf unserer Website"}</h2>
-            <p>{isEN ? "The data processing on this website is carried out by the website operator. You can find the contact details of the website operator in the legal notice of this website." : "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen."}</p>
-            <h2 className="font-light text-[#1B3A5C] tracking-tight">{isEN ? "Contact Form" : "Kontaktformular"}</h2>
-            <p>{isEN ? "If you send us inquiries via the contact form, your details from the inquiry form, including the contact details you provided there, will be stored by us for the purpose of processing the inquiry and in case of follow-up questions." : "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert."}</p>
-            <h2 className="font-light text-[#1B3A5C] tracking-tight">{isEN ? "Cookies" : "Cookies"}</h2>
-            <p>{isEN ? "This website uses cookies. These are small text files that your web browser stores on your device. Cookies help us make our website more user-friendly, effective, and secure." : "Diese Website verwendet Cookies. Dabei handelt es sich um kleine Textdateien, die Ihr Webbrowser auf Ihrem Endgerät speichert. Cookies helfen uns dabei, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen."}</p>
+          <h1 className="text-2xl font-light text-[#1B3A5C] mb-6 tracking-tight">
+            {isEN ? "Privacy Policy" : "Datenschutzerklärung"}
+          </h1>
+          <div className="space-y-5 text-sm text-foreground leading-relaxed">
+
+            <p className="text-muted-foreground">
+              {isEN
+                ? "Last updated: 5 May 2026. This policy describes how we process personal data on this website in accordance with the EU General Data Protection Regulation (GDPR), the German Federal Data Protection Act (BDSG) and the Telecommunications-Telemedia Data Protection Act (TTDSG)."
+                : "Stand: 5. Mai 2026. Diese Erklärung beschreibt die Verarbeitung personenbezogener Daten auf dieser Website gemäß DSGVO, BDSG und TTDSG."}
+            </p>
+
+            <div>
+              <h2 className="font-semibold text-[#1B3A5C] mb-1">
+                {isEN ? "1. Controller" : "1. Verantwortlicher"}
+              </h2>
+              <p>Life Coaching Schweiz GmbH</p>
+              <p>David J. Woods (Lic.Psych.)</p>
+              <p>Usteristrasse 23, 8001 Zürich (CH) · Viktoriastrasse 3, 86150 Augsburg (DE)</p>
+              <p>+41 79 131 88 78 · +49 171 953 99 22</p>
+            </div>
+
+            <div>
+              <h2 className="font-semibold text-[#1B3A5C] mb-1">
+                {isEN ? "2. Data we process" : "2. Verarbeitete Daten"}
+              </h2>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>{isEN ? "Server log data: IP address, browser, time of request (Art. 6(1)(f) GDPR — secure operation)." : "Server-Logs: IP-Adresse, Browser, Zeitstempel (Art. 6 Abs. 1 lit. f DSGVO — sicherer Betrieb)."}</li>
+                <li>{isEN ? "Form data: name, email, phone, postal code, city, message (Art. 6(1)(b) GDPR — pre-contractual contact)." : "Formulardaten: Name, E-Mail, Telefon, PLZ, Ort, Nachricht (Art. 6 Abs. 1 lit. b DSGVO — Vertragsanbahnung)."}</li>
+                <li>{isEN ? "Analytics & ads cookies: only with your consent (Art. 6(1)(a) GDPR, § 25(1) TTDSG)." : "Analyse- & Werbe-Cookies: nur mit Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TTDSG)."}</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="font-semibold text-[#1B3A5C] mb-1">
+                {isEN ? "3. Cookies & tracking" : "3. Cookies & Tracking"}
+              </h2>
+              <p>
+                {isEN
+                  ? "Tracking tools (Google Analytics 4, Google Ads, Microsoft Clarity, Meta Pixel via Google Tag Manager) only run after you click \"Accept\". Without consent only technically necessary cookies are used."
+                  : "Tracking-Tools (Google Analytics 4, Google Ads, Microsoft Clarity, Meta Pixel via Google Tag Manager) werden erst nach Ihrer Einwilligung („Akzeptieren\") aktiviert. Ohne Einwilligung werden ausschließlich technisch notwendige Cookies eingesetzt."}
+              </p>
+              <ul className="list-disc pl-5 space-y-1 mt-2">
+                <li><strong>Google Analytics 4 / Google Ads</strong> — Google Ireland Ltd. (EU) / Google LLC (USA, EU-US DPF). IP-Anonymisierung & Consent Mode v2 aktiv.</li>
+                <li><strong>Microsoft Clarity</strong> — Microsoft Ireland Ltd. Session-Replay; Eingabefelder werden maskiert.</li>
+                <li><strong>Google Tag Manager</strong> — Tag-Verwaltung; setzt selbst keine Tracking-Cookies.</li>
+              </ul>
+              <button
+                type="button"
+                onClick={revokeConsent}
+                className="mt-3 inline-flex items-center px-4 py-1.5 rounded-full bg-[#1B3A5C] text-white text-xs font-semibold hover:bg-[#15304b] transition-colors"
+              >
+                {isEN ? "Revoke / change cookie settings" : "Cookie-Einstellungen widerrufen / ändern"}
+              </button>
+            </div>
+
+            <div>
+              <h2 className="font-semibold text-[#1B3A5C] mb-1">
+                {isEN ? "4. Data hosting & processors" : "4. Hosting & Auftragsverarbeiter"}
+              </h2>
+              <p>
+                {isEN
+                  ? "Website infrastructure and database (Lovable Cloud / Supabase) — EU region. Transactional emails via Resend. All processors are bound by Art. 28 GDPR data processing agreements."
+                  : "Website-Infrastruktur und Datenbank (Lovable Cloud / Supabase) — EU-Region. Transaktions-E-Mails über Resend. Alle Auftragsverarbeiter sind durch AVV nach Art. 28 DSGVO gebunden."}
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-semibold text-[#1B3A5C] mb-1">
+                {isEN ? "5. Retention" : "5. Speicherdauer"}
+              </h2>
+              <p>{isEN ? "Form data: until purpose ends, max. 3 years. Server logs: 7 days. Consent records: 3 years (proof obligation). Tax-relevant documents: 10 years (§ 147 AO)." : "Formulardaten: bis zur Zweckerreichung, max. 3 Jahre. Server-Logs: 7 Tage. Einwilligungs-Nachweise: 3 Jahre. Steuerlich relevante Unterlagen: 10 Jahre (§ 147 AO)."}</p>
+            </div>
+
+            <div>
+              <h2 className="font-semibold text-[#1B3A5C] mb-1">
+                {isEN ? "6. Your rights (Art. 15–22 GDPR)" : "6. Ihre Rechte (Art. 15–22 DSGVO)"}
+              </h2>
+              <p>
+                {isEN
+                  ? "You have the right to access, rectification, erasure, restriction, data portability, and to object to processing. You may withdraw consent at any time without affecting prior lawful processing. Contact: info@david-j-woods.com."
+                  : "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Eine erteilte Einwilligung können Sie jederzeit widerrufen, ohne dass dies die Rechtmäßigkeit der bisherigen Verarbeitung berührt. Kontakt: info@david-j-woods.com."}
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-semibold text-[#1B3A5C] mb-1">
+                {isEN ? "7. Right to lodge a complaint" : "7. Beschwerderecht"}
+              </h2>
+              <p>{isEN ? "You may lodge a complaint with a supervisory authority — e.g. the Bavarian State Office for Data Protection Supervision (BayLDA) or your local DPA." : "Sie können sich bei einer Aufsichtsbehörde beschweren — z. B. Bayerisches Landesamt für Datenschutzaufsicht (BayLDA) oder Ihrer zuständigen Landesdatenschutzbehörde."}</p>
+            </div>
+
+            <div>
+              <h2 className="font-semibold text-[#1B3A5C] mb-1">
+                {isEN ? "8. SSL/TLS encryption" : "8. SSL/TLS-Verschlüsselung"}
+              </h2>
+              <p>{isEN ? "All data transmission is encrypted via TLS (HTTPS)." : "Die gesamte Datenübertragung erfolgt verschlüsselt über TLS (HTTPS)."}</p>
+            </div>
+
           </div>
         </div>
       </section>
