@@ -329,8 +329,8 @@ export default function Dashboard() {
                 <Search className="w-3 h-3 mr-1" /> SEO
               </TabsTrigger>
               <TabsTrigger value="logs" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">Logs</TabsTrigger>
-              <TabsTrigger value="cta-success" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
-                <MousePointer className="w-3 h-3 mr-1" /> CTA Success
+              <TabsTrigger value="website-performance" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
+                <Globe className="w-3 h-3 mr-1" /> Website Performance
               </TabsTrigger>
               <TabsTrigger value="ai-chat" className="data-[state=active]:bg-gray-900 data-[state=active]:text-white text-gray-500">
                 <Sparkles className="w-3 h-3 mr-1" /> AI Chat
