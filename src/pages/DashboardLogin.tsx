@@ -47,7 +47,7 @@ export default function DashboardLogin() {
       await supabase.functions.invoke("dashboard-auth", {
         body: { action: "request_reset", email },
       });
-      setInfo("If this email is registered, you will receive reset instructions. Please contact your administrator.");
+      setInfo("If this email is registered, you'll receive an email with a reset link (valid 1 hour).");
     } catch {
       setError("Connection error. Try again.");
     } finally {
