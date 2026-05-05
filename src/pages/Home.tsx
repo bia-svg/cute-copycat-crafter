@@ -482,7 +482,7 @@ export default function Home() {
                   <Link
                     key={item.page}
                     to={getPath(item.page, language, country)}
-                    className="inline-flex items-center px-3 md:px-3.5 py-1 md:py-1.5 rounded-full bg-white border border-[#1B3A5C]/20 text-[11px] md:text-[12.5px] font-medium text-[#1B3A5C] tracking-[0.01em] shadow-sm hover:bg-[#1B3A5C] hover:text-white hover:border-[#1B3A5C] hover:shadow-md transition-all duration-200"
+                    className="inline-flex items-center px-3.5 md:px-3.5 py-1.5 md:py-1.5 rounded-full bg-white border border-[#1B3A5C]/40 md:border-[#1B3A5C]/20 text-[11.5px] md:text-[12.5px] font-medium text-[#1B3A5C] tracking-[0.01em] shadow-[0_1.5px_0_0_rgba(27,58,92,0.18),0_2px_4px_-1px_rgba(27,58,92,0.12)] md:shadow-sm hover:bg-[#1B3A5C] hover:text-white hover:border-[#1B3A5C] hover:shadow-md active:translate-y-px active:shadow-[0_0_0_1px_rgba(27,58,92,0.25)] transition-all duration-200"
                   >
                     {item.label}
                   </Link>
