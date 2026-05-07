@@ -164,6 +164,7 @@ export default function TrainingTestimonialsCarousel() {
             {current + 1} / {trainingTestimonials.length}
           </div>
         </div>
+        </div>
       </div>
     </section>
   );
