@@ -400,8 +400,9 @@ export default function Ausbildung() {
                 </div>
               </div>
               <div className="order-2 lg:hidden">
-                <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-4 pt-2 pb-2.5 md:px-5 md:pt-2.5 md:pb-3 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_18px_44px_-26px_rgba(27,58,92,0.18)]">
-                  <div className="relative bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06),0_10px_24px_-12px_rgba(27,58,92,0.18)] mx-auto max-w-[280px] md:max-w-[310px] select-none">
+                <figure className="relative overflow-hidden bg-gradient-to-br from-[#FBF8F1] via-[#FAF6EC] to-[#F3ECDC] border border-[#C9B98A]/30 rounded-2xl px-5 pt-4 pb-3 md:px-6 md:pt-5 md:pb-3.5 shadow-[0_1px_1px_rgba(27,58,92,0.025),0_10px_28px_-18px_rgba(120,90,40,0.22)] ring-1 ring-white/60">
+                  <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.05] bg-[radial-gradient(circle_at_20%_15%,#C9B98A_0,transparent_55%),radial-gradient(circle_at_85%_90%,#1B3A5C_0,transparent_60%)]" />
+                  <div className="relative bg-white border border-[#C9B98A]/35 rounded-[3px] overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_20px_-10px_rgba(120,90,40,0.20),0_18px_40px_-22px_rgba(27,58,92,0.18)] mx-auto max-w-[280px] md:max-w-[310px] select-none -translate-y-1">
                     <img
                       src={diplomAktivHypnose}
                       alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"}
