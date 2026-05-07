@@ -344,7 +344,7 @@ export default function Ausbildung() {
                 <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-4 md:mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "Aktiv-Hypnose© Therapist" : "Aktiv-Hypnose© Therapeut"}
                 </h1>
-                <ul className="space-y-1 md:space-y-1 mb-2 md:mb-3">
+                <ul className="space-y-1 md:space-y-1 lg:space-y-1.5 mb-2 md:mb-3 lg:mb-4">
                   {(isEN ? [
                     "Developed from 35+ years of therapeutic experience",
                     "Effective methods for real change work",
@@ -367,7 +367,7 @@ export default function Ausbildung() {
                   ))}
                 </ul>
                 {/* EMR trust signal — "EMR-konform" prominent, restlicher Text dezent */}
-                <div className="flex items-start gap-2 mt-2 mb-2.5 px-2.5 py-1.5 bg-[#2E7D32]/8 border border-[#2E7D32]/25 rounded-md">
+                <div className="flex items-start gap-2 mt-2 mb-2.5 lg:mt-3.5 lg:mb-4 px-2.5 py-1.5 bg-[#2E7D32]/8 border border-[#2E7D32]/25 rounded-md">
                   <Shield className="w-3.5 h-3.5 text-[#2E7D32] mt-0.5 flex-shrink-0" strokeWidth={2} />
                   <span className="leading-snug">
                     <span className="text-[12px] md:text-[12.5px] text-[#1B3A5C] font-semibold">
@@ -436,8 +436,8 @@ export default function Ausbildung() {
                 </a>
               </div>
             </div>
-            <div className="hidden lg:block lg:pt-1">
-              <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-6 pt-2.5 pb-3 xl:px-7 xl:pt-3 xl:pb-3.5 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_22px_52px_-28px_rgba(27,58,92,0.20)]">
+            <div className="hidden lg:block">
+              <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-6 pt-1.5 pb-3 xl:px-7 xl:pt-2 xl:pb-3.5 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_22px_52px_-28px_rgba(27,58,92,0.20)]">
                 <div className="relative bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.07),0_18px_36px_-16px_rgba(27,58,92,0.22)] mx-auto max-w-[360px] xl:max-w-[400px] select-none">
                   <img
                     src={diplomAktivHypnose}
