@@ -483,11 +483,6 @@ export default function Ausbildung() {
           <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1.5 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
           </h2>
-          <p className="text-[12px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-xl mx-auto leading-snug">
-            {isEN
-              ? "Choose your preferred country and seminar date, then fill in your details. We'll confirm your place within 24 hours."
-              : "Wählen Sie Ihr bevorzugtes Land und Seminar-Datum, dann füllen Sie Ihre Daten aus. Wir bestätigen Ihren Platz innerhalb von 24 Stunden."}
-          </p>
 
           {/* Country Tabs */}
           <div className="flex justify-center gap-2 md:gap-3 mb-4 md:mb-6 max-w-md mx-auto">
