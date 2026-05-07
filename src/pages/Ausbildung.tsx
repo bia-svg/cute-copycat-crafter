@@ -335,7 +335,7 @@ export default function Ausbildung() {
           <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[60%] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
         </div>
         <div className="container-main py-3 md:py-5 lg:py-7 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-3 md:gap-4 lg:gap-6 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-3 md:gap-4 lg:gap-6 lg:items-start items-center">
             <div className="contents lg:block lg:pl-6 xl:pl-10">
               <div className="order-1 lg:order-none">
                 <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-1">
