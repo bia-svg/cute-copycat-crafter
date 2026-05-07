@@ -545,8 +545,8 @@ export default function Ausbildung() {
                         )}
                       </div>
                       <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=ch&date=${encodeURIComponent(d.date)}`}>
-                        <Button size="sm" className="bg-cta hover:bg-cta/90 text-cta-foreground text-xs whitespace-nowrap">
-                          {isEN ? "Secure Your Place →" : "Platz sichern →"}
+                        <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-xs whitespace-nowrap rounded-lg font-semibold">
+                          {isEN ? "More Info →" : "Mehr Info →"}
                         </Button>
                       </Link>
                     </div>
@@ -589,8 +589,8 @@ export default function Ausbildung() {
                         )}
                       </div>
                       <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de&date=${encodeURIComponent(d.date)}`}>
-                        <Button size="sm" className="bg-cta hover:bg-cta/90 text-cta-foreground text-xs whitespace-nowrap">
-                          {isEN ? "Secure Your Place →" : "Platz sichern →"}
+                        <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-xs whitespace-nowrap rounded-lg font-semibold">
+                          {isEN ? "More Info →" : "Mehr Info →"}
                         </Button>
                       </Link>
                     </div>
