@@ -36,6 +36,16 @@ export default function Ausbildung() {
   const INITIAL_DATES_VISIBLE = 2;
   const isEN = language === "en";
 
+  const [curriculumApi, setCurriculumApi] = useState<CarouselApi>();
+  const [curriculumIndex, setCurriculumIndex] = useState(0);
+  useEffect(() => {
+    if (!curriculumApi) return;
+    setCurriculumIndex(curriculumApi.selectedScrollSnap());
+    const onSelect = () => setCurriculumIndex(curriculumApi.selectedScrollSnap());
+    curriculumApi.on("select", onSelect);
+    return () => { curriculumApi.off("select", onSelect); };
+  }, [curriculumApi]);
+
   const [seminarCounts, setSeminarCounts] = useState<Record<string, number>>({});
   useEffect(() => {
     supabase.functions.invoke("seminar-counts").then(({ data }) => {
