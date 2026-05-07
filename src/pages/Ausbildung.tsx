@@ -351,12 +351,14 @@ export default function Ausbildung() {
                     "Modern hypnosis combined with psychological expertise",
                     "Deep work, EMDR & transformation techniques",
                     "Small groups & personal guidance",
+                    "Continued support after the seminar",
                   ] : [
                     "Entwickelt aus 35+ Jahren therapeutischer Erfahrung",
                     "Effektive Methoden für echte Veränderungsarbeit",
                     "Moderne Hypnose kombiniert mit psychologischem Fachwissen",
                     "Tiefenarbeit, EMDR & Transformationstechniken",
                     "Kleine Gruppen & persönliche Begleitung",
+                    "Begleitung auch nach dem Seminar",
                   ]).map((item) => (
                     <li key={item} className="flex items-start gap-2 text-[12px] md:text-[13px] lg:text-sm text-[#55504f] leading-snug">
                       <CheckCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#2E7D32] mt-0.5 flex-shrink-0" />
@@ -365,9 +367,9 @@ export default function Ausbildung() {
                   ))}
                 </ul>
                 {/* EMR trust signal — subtle, integrated into hero text flow */}
-                <div className="flex items-start gap-1.5 mt-1.5 mb-2">
-                  <Shield className="w-3 h-3 text-[#2E7D32] mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                  <span className="text-[10.5px] md:text-[11px] text-muted-foreground/80 leading-snug">
+                <div className="flex items-start gap-2 mt-2 mb-2.5 px-2.5 py-1.5 bg-[#2E7D32]/8 border border-[#2E7D32]/25 rounded-md">
+                  <Shield className="w-3.5 h-3.5 text-[#2E7D32] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                  <span className="text-[11.5px] md:text-[12px] text-[#1B3A5C] font-medium leading-snug">
                     {isEN
                       ? "EMR-recognized structure. Certificate of hours & content available on request."
                       : "EMR-konform. Auf Wunsch: Stunden- und Inhaltsnachweis zur Einreichung."}
