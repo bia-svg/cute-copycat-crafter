@@ -359,8 +359,17 @@ export default function Ausbildung() {
                     </li>
                   ))}
                 </ul>
+                {/* EMR trust signal — subtle, integrated into hero text flow */}
+                <div className="flex items-start gap-1.5 mt-1.5 mb-2">
+                  <Shield className="w-3 h-3 text-[#2E7D32] mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                  <span className="text-[10.5px] md:text-[11px] text-muted-foreground/80 leading-snug">
+                    {isEN
+                      ? "EMR-recognized structure. Certificate of hours & content available on request."
+                      : "EMR-konform. Auf Wunsch: Stunden- und Inhaltsnachweis zur Einreichung."}
+                  </span>
+                </div>
                 {/* Desktop-only CTA */}
-                <div className="hidden lg:flex mt-2">
+                <div className="hidden lg:flex">
                   <a href="#curriculum" className="inline-flex group" aria-label={isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}>
                     <Button
                       className="bg-white text-[#1B3A5C] hover:bg-[#EEF3F9] active:bg-[#E1EAF3] border border-[#1B3A5C] hover:border-[#16314D] font-semibold px-5 py-1.5 h-8 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_1px_2px_rgba(27,58,92,0.10),0_2px_6px_rgba(27,58,92,0.08)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.12),0_6px_14px_rgba(27,58,92,0.14)] transition-all duration-200 hover:-translate-y-[1px] active:translate-y-[1px] active:shadow-[0_1px_2px_rgba(27,58,92,0.10)]"
@@ -427,19 +436,6 @@ export default function Ausbildung() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* EMR Badge */}
-          <div className="mt-2 md:mt-3 flex flex-col items-center text-center">
-            <div className="inline-flex items-center gap-1.5 bg-[#e8f5e9]/60 border border-[#c8e6c9]/70 rounded-full px-2.5 py-0.5 md:px-3 md:py-1">
-              <img src={CDN.emrBadge} alt="EMR Badge" className="w-3.5 h-3.5 md:w-4 md:h-4 object-contain" />
-              <span className="text-[10.5px] md:text-[11px] font-semibold text-[#2E7D32] tracking-wide">EMR Krankenkasse konform</span>
-            </div>
-            <p className="mt-1 md:mt-1.5 text-[10px] md:text-[10.5px] text-muted-foreground/90 max-w-md leading-snug">
-              {isEN
-                ? "EMR-compliant structure. Upon request, participants receive an hours and course content certificate for possible submission."
-                : "EMR-konform aufgebaut. Auf Wunsch erhalten Teilnehmer einen Stunden- und Inhaltsnachweis zur möglichen Einreichung."}
-            </p>
           </div>
 
           {/* ── Subtle divider ── */}
