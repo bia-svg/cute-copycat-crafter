@@ -76,6 +76,11 @@ function GeoRedirect() {
   return <Navigate to={target} replace />;
 }
 
+// Disable browser's automatic scroll restoration so refresh/back always starts at top
+if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
+  try { window.history.scrollRestoration = "manual"; } catch {}
+}
+
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
   useEffect(() => {
