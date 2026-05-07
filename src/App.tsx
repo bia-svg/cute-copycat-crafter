@@ -83,17 +83,25 @@ if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
+  const isFirstLoad = (typeof window !== "undefined") && !(window as any).__dwScrollInit;
+
   useEffect(() => {
-    // Capture UTM/gclid on every route change so first-touch (and last-touch paid hits)
-    // survive in-site navigation and reach the lead form.
     captureAttribution();
-    // Store previous page for referrer tracking on forms
     const prevPage = sessionStorage.getItem("dw_current_page");
     if (prevPage) sessionStorage.setItem("dw_prev_page", prevPage);
     sessionStorage.setItem("dw_current_page", pathname);
 
-    if (hash) {
-      // Defer to allow target section to render, then offset by sticky header height
+    // On initial load (refresh / direct visit / back-navigation reload):
+    // always start at the top and strip any hash from the URL.
+    if (isFirstLoad) {
+      (window as any).__dwScrollInit = true;
+      if (window.location.hash) {
+        try {
+          window.history.replaceState(null, "", window.location.pathname + window.location.search);
+        } catch {}
+      }
+      window.scrollTo(0, 0);
+    } else if (hash) {
       const scrollToHash = (attempt = 0) => {
         const el = document.querySelector(hash) as HTMLElement | null;
         if (!el) {
