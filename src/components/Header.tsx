@@ -463,6 +463,15 @@ export default function Header() {
           {/* Über uns */}
           {renderMobileSection("about", t("nav.about"), aboutItems)}
 
+          {/* Mobile Contact CTA */}
+          <div className="px-8 py-4 border-t border-border">
+            <Link to={getPath("contact", language, country)} onClick={() => setMobileOpen(false)}>
+              <Button className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-sm h-11 font-medium">
+                {t("nav.cta")}
+              </Button>
+            </Link>
+          </div>
+
         </div>
       )}
     </header>
