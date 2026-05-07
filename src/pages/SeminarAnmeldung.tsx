@@ -351,9 +351,9 @@ export default function SeminarAnmeldung() {
                     </h2>
                     <div className="space-y-1.5">
                     {visibleDates.map((d, i) => {
-                        const isEarlyBird = (d as any).forceEarlyBird || (seminarCountry && hasEarlyBirdForDate(seminarCountry as "ch" | "de", d.date));
+                        const isLimited = d.status === "limited";
                         const regularPrice = seminarCountry === "ch" ? "CHF 2.990.-" : "€2.790,-";
-                        const earlyBirdPrice = seminarCountry === "ch" ? "CHF 2.690.-" : "€2.490,-";
+                        const discountPrice = seminarCountry === "ch" ? "CHF 2.690.-" : "€2.490,-";
                         const savings = seminarCountry === "ch" ? "CHF 300" : "€300";
                         return (
                         <button
@@ -385,35 +385,26 @@ export default function SeminarAnmeldung() {
                           </div>
                           {/* Price display */}
                           <div className="mt-2 pt-2 border-t border-border/50">
-                            {isEarlyBird ? (
-                              <div>
-                                <div className="flex items-center justify-between">
-                                  <div className="flex items-center gap-2">
-                                    <span className="text-xs text-muted-foreground line-through">{regularPrice}</span>
-                                    <span className="text-base font-bold text-[#2E7D32]">{earlyBirdPrice}</span>
-                                  </div>
-                                  <div className="flex items-center gap-1.5">
-                                    <span className="text-[10px] font-bold text-white bg-[#2E7D32] px-2 py-0.5 rounded-full animate-pulse">
-                                      {isEN ? `Save ${savings}` : `${savings} sparen`}
-                                    </span>
-                                    {d.status === "limited" && (
-                                      <span className="text-[10px] font-semibold text-[#E65100] bg-[#FFF3E0] px-2 py-0.5 rounded-full">
-                                        {isEN ? "Limited seats!" : "Letzte Plätze!"}
-                                      </span>
-                                    )}
-                                  </div>
+                            {isLimited ? (
+                              <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-2">
+                                  <span className="text-xs text-muted-foreground line-through">{regularPrice}</span>
+                                  <span className="text-base font-bold text-[#2E7D32]">{discountPrice}</span>
                                 </div>
-                                <p className="text-[10px] text-muted-foreground mt-1 italic leading-tight">
-                                  {isEN
-                                    ? "Early Bird pricing is available for a limited time or until the current intake is fully booked!"
-                                    : "Frühbucher-Preis nur für begrenzte Zeit oder bis der Kurs ausgebucht ist."}
-                                </p>
+                                <div className="flex items-center gap-1.5">
+                                  <span className="text-[10px] font-bold text-white bg-[#2E7D32] px-2 py-0.5 rounded-full">
+                                    {isEN ? `Save ${savings}` : `${savings} sparen`}
+                                  </span>
+                                  <span className="text-[10px] font-semibold text-[#E65100] bg-[#FFF3E0] px-2 py-0.5 rounded-full">
+                                    {isEN ? "Limited seats!" : "Letzte Plätze!"}
+                                  </span>
+                                </div>
                               </div>
                             ) : (
                               <div className="flex items-center justify-between">
                                 <span className="text-base font-bold text-[#1B3A5C]">{regularPrice}</span>
-                                <span className={`text-xs font-semibold px-2 py-1 rounded ${d.status === "limited" ? "bg-[#FFF3E0] text-[#E65100]" : "bg-[#E8F5E9] text-[#2E7D32]"}`}>
-                                  {d.status === "limited" ? (isEN ? "Limited" : "Letzte Plätze") : (isEN ? "Available" : "Verfügbar")}
+                                <span className="text-xs font-semibold px-2 py-1 rounded bg-[#E8F5E9] text-[#2E7D32]">
+                                  {isEN ? "Available" : "Verfügbar"}
                                 </span>
                               </div>
                             )}
