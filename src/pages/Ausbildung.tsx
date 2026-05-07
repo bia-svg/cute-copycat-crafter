@@ -367,11 +367,11 @@ export default function Ausbildung() {
                   ))}
                 </ul>
                 {/* EMR trust signal — clean, premium inline indicator */}
-                <div className="flex items-center gap-1.5 mb-4">
+                <div className="flex items-center gap-2 mb-4">
                   <img
                     src={CDN.emrBadge}
                     alt="EMR"
-                    className="h-3.5 md:h-4 w-auto opacity-90 flex-shrink-0"
+                    className="h-4 md:h-5 w-auto opacity-95 flex-shrink-0"
                     loading="lazy"
                   />
                   <span className="text-[11px] md:text-[11.5px] leading-snug">
