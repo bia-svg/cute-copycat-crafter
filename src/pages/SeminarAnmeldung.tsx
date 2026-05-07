@@ -347,8 +347,6 @@ export default function SeminarAnmeldung() {
                     <div className="space-y-1.5">
                     {visibleDates.map((d, i) => {
                         const isLimited = d.status === "limited";
-                        const regularPrice = seminarCountry === "ch" ? "CHF 2.790.-" : "€2.790,-";
-                        const discountPrice = seminarCountry === "ch" ? "CHF 2.490.-" : "€2.490,-";
                         const savings = seminarCountry === "ch" ? "CHF 300" : "€300";
                         return (
                         <button
@@ -379,26 +377,35 @@ export default function SeminarAnmeldung() {
                             </div>
                           </div>
                           {/* Price display */}
-                          <div className="mt-2 pt-2 border-t border-border/50">
+                          <div className="mt-1.5 pt-1.5 border-t border-border/40">
                             {isLimited ? (
                               <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-2">
-                                  <span className="text-xs text-muted-foreground line-through">{regularPrice}</span>
-                                  <span className="text-base font-bold text-[#2E7D32]">{discountPrice}</span>
+                                <div className="flex items-baseline gap-2">
+                                  <span className="inline-flex items-baseline gap-0.5 text-xs text-muted-foreground line-through">
+                                    <span className="text-[10px] font-normal">{seminarCountry === "ch" ? "CHF" : "€"}</span>
+                                    <span>{seminarCountry === "ch" ? "2.790.–" : "2.790,–"}</span>
+                                  </span>
+                                  <span className="inline-flex items-baseline gap-0.5 text-[#2E7D32]">
+                                    <span className="text-[10px] font-medium tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
+                                    <span className="text-[15px] font-semibold tracking-tight">{seminarCountry === "ch" ? "2.490.–" : "2.490,–"}</span>
+                                  </span>
                                 </div>
-                                <div className="flex items-center gap-1.5">
-                                  <span className="text-[10px] font-bold text-white bg-[#2E7D32] px-2 py-0.5 rounded-full">
+                                <div className="flex items-center gap-1">
+                                  <span className="text-[9px] font-medium text-[#2E7D32] bg-[#E8F5E9] px-1.5 py-[3px] rounded-full border border-[#2E7D32]/10">
                                     {isEN ? `Save ${savings}` : `${savings} sparen`}
                                   </span>
-                                  <span className="text-[10px] font-semibold text-[#E65100] bg-[#FFF3E0] px-2 py-0.5 rounded-full">
+                                  <span className="text-[9px] font-medium text-[#E65100] bg-[#FFF3E0] px-1.5 py-[3px] rounded-full border border-[#E65100]/10">
                                     {isEN ? "Limited seats!" : "Letzte Plätze!"}
                                   </span>
                                 </div>
                               </div>
                             ) : (
                               <div className="flex items-center justify-between">
-                                <span className="text-base font-bold text-[#1B3A5C]">{regularPrice}</span>
-                                <span className="text-xs font-semibold px-2 py-1 rounded bg-[#E8F5E9] text-[#2E7D32]">
+                                <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]">
+                                  <span className="text-[10px] font-medium tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
+                                  <span className="text-[15px] font-semibold tracking-tight">{seminarCountry === "ch" ? "2.790.–" : "2.790,–"}</span>
+                                </span>
+                                <span className="text-[10px] font-medium px-1.5 py-[3px] rounded-full bg-[#E8F5E9] text-[#2E7D32] border border-[#2E7D32]/10">
                                   {isEN ? "Available" : "Verfügbar"}
                                 </span>
                               </div>
