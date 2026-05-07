@@ -366,13 +366,18 @@ export default function Ausbildung() {
                     </li>
                   ))}
                 </ul>
-                {/* EMR trust signal — subtle, integrated into hero text flow */}
+                {/* EMR trust signal — "EMR-konform" prominent, restlicher Text dezent */}
                 <div className="flex items-start gap-2 mt-2 mb-2.5 px-2.5 py-1.5 bg-[#2E7D32]/8 border border-[#2E7D32]/25 rounded-md">
                   <Shield className="w-3.5 h-3.5 text-[#2E7D32] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                  <span className="text-[11.5px] md:text-[12px] text-[#1B3A5C] font-medium leading-snug">
-                    {isEN
-                      ? "EMR-recognized structure. Certificate of hours & content available on request."
-                      : "EMR-konform. Auf Wunsch: Stunden- und Inhaltsnachweis zur Einreichung."}
+                  <span className="leading-snug">
+                    <span className="text-[12px] md:text-[12.5px] text-[#1B3A5C] font-semibold">
+                      {isEN ? "EMR-compliant." : "EMR-konform."}
+                    </span>
+                    <span className="text-[10.5px] md:text-[11px] text-[#55504f] font-normal ml-1">
+                      {isEN
+                        ? "On request: certificate of hours & content for submission."
+                        : "Auf Wunsch: Stunden- & Inhaltsnachweis zur Einreichung."}
+                    </span>
                   </span>
                 </div>
                 {/* Desktop-only CTA */}
