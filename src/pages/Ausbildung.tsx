@@ -225,7 +225,7 @@ export default function Ausbildung() {
         courseMode: "onsite",
         location: { "@type": "Place", name: d.location, address: { "@type": "PostalAddress", addressCountry: "CH" } },
         inLanguage: "de",
-        offers: { "@type": "Offer", price: "2990", priceCurrency: "CHF", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/ch/ausbildung" },
+        offers: { "@type": "Offer", price: "2790", priceCurrency: "CHF", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/ch/ausbildung" },
       })),
       ...datesDE.map((d) => ({
         "@type": "CourseInstance",
@@ -307,7 +307,7 @@ export default function Ausbildung() {
     };
   };
   const eventJsonLd = [
-    ...datesCH.map(d => buildEvent(d, "CH", "2990", "CHF", "https://david-j-woods.com/de/ch/ausbildung")),
+    ...datesCH.map(d => buildEvent(d, "CH", "2790", "CHF", "https://david-j-woods.com/de/ch/ausbildung")),
     ...datesDE.map(d => buildEvent(d, "DE", "2790", "EUR", "https://david-j-woods.com/de/de/ausbildung")),
   ].filter(Boolean) as Record<string, unknown>[];
 
@@ -688,7 +688,7 @@ export default function Ausbildung() {
                                 {isEN ? "Limited seats" : "Letzte Plätze"}
                               </span>
                               <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
-                                {isEN ? "CHF 300 off" : "300 CHF Rabatt"}
+                                {isEN ? "Save CHF 300" : "300 CHF sparen"}
                               </span>
                             </>
                           )}
@@ -733,7 +733,7 @@ export default function Ausbildung() {
                                 {isEN ? "Limited seats" : "Letzte Plätze"}
                               </span>
                               <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
-                                {isEN ? "€300 off" : "300 € Rabatt"}
+                                {isEN ? "Save €300" : "300 € sparen"}
                               </span>
                             </>
                           ) : (

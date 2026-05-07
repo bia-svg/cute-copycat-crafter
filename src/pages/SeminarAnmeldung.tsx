@@ -206,9 +206,9 @@ export default function SeminarAnmeldung() {
       // Determine pricing at time of booking
       const isDiscountAtBooking = selectedDateObj?.status === "limited";
       const isCH = seminarCountry === "ch";
-      const bookedPrice = isDiscountAtBooking ? (isCH ? "CHF 2.690.-" : "€2.490,-") : (isCH ? "CHF 2.990.-" : "€2.790,-");
+      const bookedPrice = isDiscountAtBooking ? (isCH ? "CHF 2.490.-" : "€2.490,-") : (isCH ? "CHF 2.790.-" : "€2.790,-");
       const priceType = isDiscountAtBooking ? "Rabattpreis" : "Regulärer Preis";
-      const regularPrice = isCH ? "CHF 2.990.-" : "€2.790,-";
+      const regularPrice = isCH ? "CHF 2.790.-" : "€2.790,-";
       const savingsAmount = isDiscountAtBooking ? (isCH ? "CHF 300" : "€300") : undefined;
 
       sendLeadEmails({
@@ -347,8 +347,8 @@ export default function SeminarAnmeldung() {
                     <div className="space-y-1.5">
                     {visibleDates.map((d, i) => {
                         const isLimited = d.status === "limited";
-                        const regularPrice = seminarCountry === "ch" ? "CHF 2.990.-" : "€2.790,-";
-                        const discountPrice = seminarCountry === "ch" ? "CHF 2.690.-" : "€2.490,-";
+                        const regularPrice = seminarCountry === "ch" ? "CHF 2.790.-" : "€2.790,-";
+                        const discountPrice = seminarCountry === "ch" ? "CHF 2.490.-" : "€2.490,-";
                         const savings = seminarCountry === "ch" ? "CHF 300" : "€300";
                         return (
                         <button
