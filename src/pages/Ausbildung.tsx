@@ -777,6 +777,11 @@ export default function Ausbildung() {
         ]}
       />
 
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION — Training Participant Video Testimonials
+          ═══════════════════════════════════════════════════════════ */}
+      <TrainingTestimonialsCarousel />
+
       <section className="bg-[#DDE1E4] py-4 md:py-7">
         <div className="container-main">
           <div className="relative max-w-2xl mx-auto bg-gradient-to-br from-white via-[#F1F4F7] to-[#E8ECEF] border border-[#1B3A5C]/18 rounded-3xl px-5 py-5 md:px-9 md:py-7 text-center shadow-[0_6px_24px_rgba(27,58,92,0.10)]">
