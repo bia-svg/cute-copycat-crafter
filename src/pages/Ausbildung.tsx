@@ -18,6 +18,7 @@ import diplomNGH from "@/assets/diplom-ngh-instructor.webp";
 import ImageLightbox from "@/components/ImageLightbox";
 import TrainingTestimonialsCarousel from "@/components/TrainingTestimonialsCarousel";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
 import {
   CheckCircle, Calendar, MapPin, Users, ArrowRight,
