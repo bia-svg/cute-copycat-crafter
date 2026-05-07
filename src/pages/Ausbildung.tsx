@@ -393,20 +393,20 @@ export default function Ausbildung() {
                 </div>
               </div>
               <div className="order-2 lg:hidden">
-                <figure className="bg-gradient-to-b from-white via-white to-[#faf8f4] border border-[#1B3A5C]/10 rounded-2xl px-4 pt-4 pb-6 md:px-5 md:pt-5 md:pb-7 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_18px_40px_-22px_rgba(27,58,92,0.22)] ring-1 ring-white">
-                  <figcaption className="text-center mb-4 md:mb-5">
-                    <h2 className="text-[15px] md:text-base font-light text-[#1B3A5C] tracking-tight mb-1.5" style={{ fontFamily: "Georgia, serif" }}>
-                      {isEN ? "Your Diploma" : "Ihr Diplom"}
-                    </h2>
+                <figure className="bg-gradient-to-b from-white via-white to-[#faf8f4] border border-[#1B3A5C]/10 rounded-2xl px-4 pt-4 pb-5 md:px-5 md:pt-5 md:pb-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_18px_40px_-22px_rgba(27,58,92,0.22)] ring-1 ring-white">
+                  <h2 className="text-center text-xl md:text-2xl font-light text-[#1B3A5C] tracking-tight mb-4 md:mb-5" style={{ fontFamily: "Georgia, serif" }}>
+                    {isEN ? "Your Diploma" : "Ihr Diplom"}
+                  </h2>
+                  <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06),0_10px_24px_-12px_rgba(27,58,92,0.18)] mx-auto max-w-[252px]">
+                    <img src={diplomAktivHypnose} alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"} className="w-full h-auto" loading="eager" />
+                  </div>
+                  <figcaption className="mt-4 md:mt-5 text-center">
                     <p className="text-[11.5px] md:text-[12px] text-[#3a3735] leading-snug max-w-[42ch] mx-auto">
                       {isEN
                         ? "This certification is awarded upon completion of the 6-day seminar as a Therapist in Aktiv-Hypnose®."
                         : "Diese Zertifizierung erhalten Sie nach Abschluss des 6-tägigen Seminars als Therapeut/in in Aktiv-Hypnose®."}
                     </p>
                   </figcaption>
-                  <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06),0_10px_24px_-12px_rgba(27,58,92,0.18)] mx-auto max-w-[252px]">
-                    <img src={diplomAktivHypnose} alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"} className="w-full h-auto" loading="eager" />
-                  </div>
                 </figure>
               </div>
               {/* Mobile-only CTA (below image) */}
@@ -423,20 +423,20 @@ export default function Ausbildung() {
               </div>
             </div>
             <div className="hidden lg:block">
-              <figure className="bg-gradient-to-b from-white via-white to-[#faf8f4] border border-[#1B3A5C]/10 rounded-2xl px-6 pt-6 pb-8 xl:px-7 xl:pt-7 xl:pb-9 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_24px_48px_-26px_rgba(27,58,92,0.24)] ring-1 ring-white">
-                <figcaption className="text-center mb-5 xl:mb-6">
-                  <h2 className="text-lg xl:text-xl font-light text-[#1B3A5C] tracking-tight mb-2" style={{ fontFamily: "Georgia, serif" }}>
-                    {isEN ? "Your Diploma" : "Ihr Diplom"}
-                  </h2>
+              <figure className="bg-gradient-to-b from-white via-white to-[#faf8f4] border border-[#1B3A5C]/10 rounded-2xl px-6 pt-6 pb-7 xl:px-7 xl:pt-7 xl:pb-8 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_24px_48px_-26px_rgba(27,58,92,0.24)] ring-1 ring-white">
+                <h2 className="text-center text-2xl xl:text-[1.65rem] font-light text-[#1B3A5C] tracking-tight mb-5 xl:mb-6" style={{ fontFamily: "Georgia, serif" }}>
+                  {isEN ? "Your Diploma" : "Ihr Diplom"}
+                </h2>
+                <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.07),0_18px_36px_-16px_rgba(27,58,92,0.22)] mx-auto max-w-[324px] xl:max-w-[360px]">
+                  <img src={diplomAktivHypnose} alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"} className="w-full h-auto" loading="eager" />
+                </div>
+                <figcaption className="mt-5 xl:mt-6 text-center">
                   <p className="text-[12.5px] xl:text-[13px] text-[#3a3735] leading-snug max-w-[44ch] mx-auto">
                     {isEN
                       ? "This certification is awarded upon completion of the 6-day seminar as a Therapist in Aktiv-Hypnose®."
                       : "Diese Zertifizierung erhalten Sie nach Abschluss des 6-tägigen Seminars als Therapeut/in in Aktiv-Hypnose®."}
                   </p>
                 </figcaption>
-                <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.07),0_18px_36px_-16px_rgba(27,58,92,0.22)] mx-auto max-w-[324px] xl:max-w-[360px]">
-                  <img src={diplomAktivHypnose} alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"} className="w-full h-auto" loading="eager" />
-                </div>
               </figure>
             </div>
           </div>
