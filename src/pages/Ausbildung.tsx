@@ -320,16 +320,16 @@ export default function Ausbildung() {
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#f4f3ef] border-b border-border">
         <div className="container-main py-3 md:py-5 lg:py-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-4 lg:gap-8 items-center">
             <div className="contents lg:block">
               <div className="order-1 lg:order-none">
                 <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-1">
                   {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
                 </p>
-                <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-5 md:mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+                <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-4 md:mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "Aktiv-Hypnose© Therapist" : "Aktiv-Hypnose© Therapeut"}
                 </h1>
-                <ul className="space-y-1 md:space-y-1 mb-3 md:mb-3">
+                <ul className="space-y-1 md:space-y-1 mb-2 md:mb-3">
                   {(isEN ? [
                     "Developed from 35+ years of therapeutic experience",
                     "Effective methods for real change work",
@@ -356,13 +356,12 @@ export default function Ausbildung() {
                   ))}
                 </ul>
                 {/* Desktop-only CTA */}
-                <div className="hidden lg:flex">
-                  <a href="#curriculum" className="inline-flex">
+                <div className="hidden lg:flex mt-1">
+                  <a href="#curriculum" className="inline-flex group">
                     <Button
-                      variant="outline"
-                      className="border-[#1B3A5C]/25 bg-white text-[#1B3A5C] hover:bg-[#1B3A5C] hover:text-white hover:border-[#1B3A5C] font-medium px-7 py-3 h-auto text-sm rounded-xl shadow-[0_2px_10px_rgba(27,58,92,0.08)] hover:shadow-[0_4px_14px_rgba(27,58,92,0.18)] transition-all"
+                      className="bg-[#1B3A5C] text-white hover:bg-[#16314D] active:bg-[#11263C] border border-[#1B3A5C] font-medium px-7 py-3 h-auto text-sm rounded-xl shadow-[0_4px_14px_rgba(27,58,92,0.18)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.28)] transition-all duration-200 hover:-translate-y-[1px]"
                     >
-                      <BookOpen className="w-4 h-4 mr-2" />
+                      <BookOpen className="w-4 h-4 mr-2 transition-transform duration-200 group-hover:scale-110" />
                       {isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}
                     </Button>
                   </a>
@@ -372,13 +371,12 @@ export default function Ausbildung() {
                 <img src={`${CDN_BASE}/training_seminar_979f1a53.jpg`} alt={isEN ? "Hypnotherapy Training Seminar" : "Hypnose Ausbildung Seminar"} className="w-full h-auto" />
               </div>
               {/* Mobile-only CTA (below image) */}
-              <div className="order-3 lg:hidden flex justify-center mt-4">
-                <a href="#curriculum" className="w-full">
+              <div className="order-3 lg:hidden flex justify-center mt-2">
+                <a href="#curriculum" className="w-full group">
                   <Button
-                    variant="outline"
-                    className="w-full justify-center text-center border-[#1B3A5C]/25 bg-white text-[#1B3A5C] hover:bg-[#1B3A5C] hover:text-white hover:border-[#1B3A5C] font-medium px-5 py-3 h-auto text-[13px] rounded-xl shadow-[0_2px_10px_rgba(27,58,92,0.08)] hover:shadow-[0_4px_14px_rgba(27,58,92,0.18)] transition-all"
+                    className="w-full justify-center text-center bg-[#1B3A5C] text-white hover:bg-[#16314D] active:bg-[#11263C] border border-[#1B3A5C] font-medium px-5 py-3.5 h-auto text-[13px] rounded-xl shadow-[0_4px_14px_rgba(27,58,92,0.2)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.28)] transition-all duration-200"
                   >
-                    <BookOpen className="w-4 h-4 mr-2 flex-shrink-0" />
+                    <BookOpen className="w-4 h-4 mr-2 flex-shrink-0 transition-transform duration-200 group-hover:scale-110" />
                     <span className="truncate-none whitespace-normal">{isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}</span>
                   </Button>
                 </a>
