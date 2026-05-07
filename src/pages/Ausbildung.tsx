@@ -409,25 +409,25 @@ export default function Ausbildung() {
           SECTION 2 — What makes this different
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#DDE1E4] border-b border-border">
-        <div className="container-main py-5 md:py-10 lg:py-14">
-          <div className="max-w-5xl mx-auto bg-gradient-to-b from-white to-[#FAFBFC] border border-[#1B3A5C]/[0.08] rounded-2xl md:rounded-3xl px-4 py-5 md:px-9 md:py-9 shadow-[0_1px_2px_rgba(27,58,92,0.05),0_18px_44px_-22px_rgba(27,58,92,0.22)] ring-1 ring-white/70">
+        <div className="container-main py-3 md:py-6 lg:py-8">
+          <div className="max-w-5xl mx-auto bg-white border border-[#2E7D32]/15 rounded-2xl md:rounded-3xl px-4 py-4 md:px-9 md:py-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "What Makes This Training Different" : "Was diese Ausbildung besonders macht"}
             </h2>
-            <p className="text-[11px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-2xl mx-auto leading-snug">
+            <p className="text-[11px] md:text-sm text-muted-foreground text-center mb-2.5 md:mb-4 max-w-2xl mx-auto leading-snug">
               {isEN
                 ? "Not a mass-market course. Not a certificate mill. A serious premium training with real depth, built on 30,000+ clinical sessions."
                 : "Kein Massenkurs. Keine Zertifikatsfabrik. Eine seriöse Premium-Ausbildung mit echter Tiefe, aufgebaut auf 30.000+ klinischen Sitzungen."}
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-1.5 md:gap-2.5">
               {[
                 { icon: <Shield className="w-[14px] h-[14px] md:w-4 md:h-4 text-[#1B3A5C]" strokeWidth={1.5} />, titleDE: "35+ Jahre klinische Praxis", titleEN: "35+ Years of Clinical Practice", textDE: "Jede Technik in Tausenden realer Sitzungen verfeinert — methodenbasierte Expertenausbildung.", textEN: "Every technique refined across thousands of real sessions — method-based expert training." },
                 { icon: <Users className="w-[14px] h-[14px] md:w-4 md:h-4 text-[#1B3A5C]" strokeWidth={1.5} />, titleDE: "Kleingruppen-Format", titleEN: "Small Group Format", textDE: "Begrenzte Teilnehmerzahl für persönliche Betreuung und maximale Lernintensität.", textEN: "Limited group size for personal attention and maximum learning intensity." },
                 { icon: <Zap className="w-[14px] h-[14px] md:w-4 md:h-4 text-[#1B3A5C]" strokeWidth={1.5} />, titleDE: "Praxis ab Tag 1", titleEN: "Hands-On from Day 1", textDE: "Sie hypnotisieren selbst — Theorie verbunden mit sofortiger praktischer Anwendung.", textEN: "You hypnotize yourself — theory paired with immediate practical application." },
               ].map((c, i) => (
-                <div key={i} className="group relative bg-white border border-[#1B3A5C]/[0.12] rounded-xl md:rounded-2xl px-3 py-2.5 md:px-4 md:py-3 text-left shadow-[0_1px_2px_rgba(27,58,92,0.04),0_6px_16px_-10px_rgba(27,58,92,0.12)] md:hover:shadow-[0_2px_4px_rgba(27,58,92,0.05),0_12px_24px_-12px_rgba(27,58,92,0.18)] md:hover:border-[#1B3A5C]/25 md:hover:-translate-y-px transition-all duration-300">
+                <div key={i} className="group relative bg-white border border-[#2E7D32]/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-4 md:py-2.5 text-left shadow-[0_1px_2px_rgba(27,58,92,0.03)] md:hover:shadow-[0_4px_14px_-8px_rgba(46,125,50,0.18)] md:hover:border-[#2E7D32]/35 transition-all duration-300">
                   <div className="flex items-start gap-2 md:gap-2.5">
-                    <span className="inline-flex items-center justify-center w-6 h-6 md:w-7 md:h-7 rounded-md bg-gradient-to-br from-[#1B3A5C]/[0.07] to-[#1B3A5C]/[0.03] ring-1 ring-[#1B3A5C]/15 shrink-0 mt-px">
+                    <span className="inline-flex items-center justify-center w-6 h-6 md:w-7 md:h-7 rounded-md bg-[#2E7D32]/[0.06] ring-1 ring-[#2E7D32]/15 shrink-0 mt-px">
                       {c.icon}
                     </span>
                     <div className="min-w-0">
@@ -440,12 +440,12 @@ export default function Ausbildung() {
             </div>
 
             {/* ── Inline divider with compact label ── */}
-            <div className="mt-5 md:mt-7 mb-3 md:mb-4 flex items-center gap-3">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#1B3A5C]/20" />
+            <div className="mt-3.5 md:mt-5 mb-2.5 md:mb-3.5 flex items-center gap-3">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#2E7D32]/25" />
               <span className="text-[10.5px] md:text-[11.5px] uppercase tracking-[0.16em] text-[#1B3A5C]/75 font-medium whitespace-nowrap">
                 {isEN ? "Included in Your Package" : "Im Ausbildungspaket enthalten"}
               </span>
-              <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#1B3A5C]/20" />
+              <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#2E7D32]/25" />
             </div>
 
             {/* ── Compact stat badges ── */}
@@ -460,7 +460,7 @@ export default function Ausbildung() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="bg-white border border-[#1B3A5C]/[0.10] rounded-md md:rounded-lg px-1.5 py-1.5 md:px-2.5 md:py-2 flex items-baseline gap-1.5 justify-center shadow-[0_1px_1px_rgba(27,58,92,0.03)] md:hover:border-[#1B3A5C]/22 md:hover:shadow-[0_2px_6px_rgba(27,58,92,0.08)] transition-all"
+                  className="bg-white border border-[#2E7D32]/18 rounded-md md:rounded-lg px-1.5 py-1 md:px-2.5 md:py-1.5 flex items-baseline gap-1.5 justify-center shadow-[0_1px_1px_rgba(27,58,92,0.02)] md:hover:border-[#2E7D32]/35 md:hover:shadow-[0_2px_6px_rgba(46,125,50,0.10)] transition-all"
                 >
                   <span className="text-[12.5px] md:text-[15px] font-semibold text-[#1B3A5C] leading-none tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                     {item.n}
