@@ -400,8 +400,9 @@ export default function Ausbildung() {
                 </div>
               </div>
               <div className="order-2 lg:hidden">
-                <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-4 pt-2 pb-2.5 md:px-5 md:pt-2.5 md:pb-3 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_18px_44px_-26px_rgba(27,58,92,0.18)]">
-                  <div className="relative bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06),0_10px_24px_-12px_rgba(27,58,92,0.18)] mx-auto max-w-[280px] md:max-w-[310px] select-none">
+                <figure className="relative overflow-hidden bg-gradient-to-br from-[#FBF8F1] via-[#FAF6EC] to-[#F3ECDC] border border-[#C9B98A]/30 rounded-2xl px-5 pt-4 pb-3 md:px-6 md:pt-5 md:pb-3.5 shadow-[0_1px_1px_rgba(27,58,92,0.025),0_10px_28px_-18px_rgba(120,90,40,0.22)] ring-1 ring-white/60">
+                  <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.05] bg-[radial-gradient(circle_at_20%_15%,#C9B98A_0,transparent_55%),radial-gradient(circle_at_85%_90%,#1B3A5C_0,transparent_60%)]" />
+                  <div className="relative bg-white border border-[#C9B98A]/35 rounded-[3px] overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_20px_-10px_rgba(120,90,40,0.20),0_18px_40px_-22px_rgba(27,58,92,0.18)] mx-auto max-w-[280px] md:max-w-[310px] select-none -translate-y-1">
                     <img
                       src={diplomAktivHypnose}
                       alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"}
@@ -420,7 +421,7 @@ export default function Ausbildung() {
                       onDragStart={(e) => e.preventDefault()}
                     />
                   </div>
-                  <figcaption className="mt-2 md:mt-2.5 text-center">
+                  <figcaption className="relative mt-1.5 md:mt-2 text-center">
                     <p className="text-[11px] md:text-[11.5px] text-[#3a3735] leading-snug max-w-[42ch] mx-auto">
                       {isEN
                         ? "This certification is awarded upon completion of the 6-day seminar as a Therapist in Aktiv-Hypnose®."
@@ -443,8 +444,11 @@ export default function Ausbildung() {
               </div>
             </div>
             <div className="hidden lg:block">
-              <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-6 pt-1.5 pb-3 xl:px-7 xl:pt-2 xl:pb-3.5 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_22px_52px_-28px_rgba(27,58,92,0.20)]">
-                <div className="relative bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.07),0_18px_36px_-16px_rgba(27,58,92,0.22)] mx-auto max-w-[360px] xl:max-w-[400px] select-none">
+              <figure className="relative overflow-hidden bg-gradient-to-br from-[#FBF8F1] via-[#FAF6EC] to-[#F1E9D6] border border-[#C9B98A]/30 rounded-2xl px-7 pt-5 pb-4 xl:px-8 xl:pt-6 xl:pb-5 shadow-[0_1px_1px_rgba(27,58,92,0.025),0_14px_36px_-22px_rgba(120,90,40,0.22),0_28px_60px_-30px_rgba(27,58,92,0.18)] ring-1 ring-white/60">
+                <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.05] bg-[radial-gradient(circle_at_18%_12%,#C9B98A_0,transparent_55%),radial-gradient(circle_at_88%_92%,#1B3A5C_0,transparent_60%)]" />
+                <div aria-hidden className="pointer-events-none absolute inset-x-6 top-3 h-px bg-gradient-to-r from-transparent via-[#C9B98A]/40 to-transparent" />
+                <div aria-hidden className="pointer-events-none absolute inset-x-6 bottom-3 h-px bg-gradient-to-r from-transparent via-[#C9B98A]/30 to-transparent" />
+                <div className="relative bg-white border border-[#C9B98A]/35 rounded-[3px] overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.04),0_10px_24px_-12px_rgba(120,90,40,0.22),0_24px_50px_-24px_rgba(27,58,92,0.22)] mx-auto max-w-[360px] xl:max-w-[400px] select-none -translate-y-1.5">
                   <img
                     src={diplomAktivHypnose}
                     alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"}
@@ -463,7 +467,7 @@ export default function Ausbildung() {
                     onDragStart={(e) => e.preventDefault()}
                   />
                 </div>
-                <figcaption className="mt-2.5 xl:mt-3 text-center">
+                <figcaption className="relative mt-2 xl:mt-2.5 text-center">
                   <p className="text-[11.5px] xl:text-[12px] text-[#3a3735] leading-snug max-w-[44ch] mx-auto">
                     {isEN
                       ? "This certification is awarded upon completion of the 6-day seminar as a Therapist in Aktiv-Hypnose®."
