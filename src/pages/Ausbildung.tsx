@@ -355,7 +355,7 @@ export default function Ausbildung() {
                   ] : [
                     "Entwickelt aus 35+ Jahren therapeutischer Erfahrung",
                     "Effektive Methoden für echte Veränderungsarbeit",
-                    "Moderne Hypnose kombiniert mit psychologischem Fachwissen",
+                    "Moderne Hypnose & psychologisches Fachwissen",
                     "Tiefenarbeit, EMDR & Transformationstechniken",
                     "Kleine Gruppen & persönliche Begleitung",
                     "Begleitung auch nach dem Seminar",
