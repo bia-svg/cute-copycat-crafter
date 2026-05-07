@@ -361,12 +361,13 @@ export default function Ausbildung() {
                 </ul>
                 {/* Desktop-only CTA */}
                 <div className="hidden lg:flex mt-2">
-                  <a href="#curriculum" className="inline-flex group">
+                  <a href="#curriculum" className="inline-flex group" aria-label={isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}>
                     <Button
-                      className="bg-[#1B3A5C] text-white hover:bg-[#16314D] active:bg-[#11263C] border border-[#1B3A5C] font-medium px-6 py-2 h-auto text-[13px] rounded-lg shadow-[0_3px_10px_rgba(27,58,92,0.16)] hover:shadow-[0_6px_16px_rgba(27,58,92,0.24)] transition-all duration-200 hover:-translate-y-[1px]"
+                      className="relative overflow-hidden bg-gradient-to-b from-[#264C75] to-[#15324F] text-white hover:from-[#2A5380] hover:to-[#11283F] active:from-[#11263C] active:to-[#0B1E30] border border-[#0E2741] font-semibold px-6 py-2 h-9 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_1px_0_rgba(255,255,255,0.18)_inset,0_-1px_0_rgba(0,0,0,0.18)_inset,0_4px_12px_rgba(27,58,92,0.28),0_1px_2px_rgba(0,0,0,0.12)] hover:shadow-[0_1px_0_rgba(255,255,255,0.22)_inset,0_-1px_0_rgba(0,0,0,0.20)_inset,0_8px_20px_rgba(27,58,92,0.36),0_2px_4px_rgba(0,0,0,0.14)] active:shadow-[0_1px_2px_rgba(0,0,0,0.18)_inset,0_1px_2px_rgba(27,58,92,0.20)] transition-all duration-200 hover:-translate-y-[1px] active:translate-y-[1px]"
                     >
                       <BookOpen className="w-3.5 h-3.5 mr-2 transition-transform duration-200 group-hover:scale-110" />
-                      {isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}
+                      <span>{isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}</span>
+                      <ArrowRight className="w-3.5 h-3.5 ml-2 transition-transform duration-200 group-hover:translate-x-0.5" />
                     </Button>
                   </a>
                 </div>
@@ -375,13 +376,14 @@ export default function Ausbildung() {
                 <img src={`${CDN_BASE}/training_seminar_979f1a53.jpg`} alt={isEN ? "Hypnotherapy Training Seminar" : "Hypnose Ausbildung Seminar"} className="w-full h-auto" />
               </div>
               {/* Mobile-only CTA (below image) */}
-              <div className="order-3 lg:hidden flex justify-center mt-2">
-                <a href="#curriculum" className="w-full group">
+              <div className="order-3 lg:hidden flex justify-center mt-3">
+                <a href="#curriculum" className="w-full group" aria-label={isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}>
                   <Button
-                    className="w-full justify-center text-center bg-[#1B3A5C] text-white hover:bg-[#16314D] active:bg-[#11263C] border border-[#1B3A5C] font-medium px-5 py-2.5 h-auto text-[13px] rounded-lg shadow-[0_3px_10px_rgba(27,58,92,0.18)] hover:shadow-[0_6px_16px_rgba(27,58,92,0.26)] transition-all duration-200"
+                    className="relative overflow-hidden w-full justify-center text-center bg-gradient-to-b from-[#264C75] to-[#15324F] text-white hover:from-[#2A5380] hover:to-[#11283F] active:from-[#11263C] active:to-[#0B1E30] border border-[#0E2741] font-semibold px-5 py-2.5 h-11 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_1px_0_rgba(255,255,255,0.18)_inset,0_-1px_0_rgba(0,0,0,0.18)_inset,0_4px_14px_rgba(27,58,92,0.30),0_1px_2px_rgba(0,0,0,0.12)] hover:shadow-[0_1px_0_rgba(255,255,255,0.22)_inset,0_-1px_0_rgba(0,0,0,0.20)_inset,0_8px_22px_rgba(27,58,92,0.36)] active:shadow-[0_1px_2px_rgba(0,0,0,0.18)_inset,0_1px_2px_rgba(27,58,92,0.20)] transition-all duration-200 active:translate-y-[1px]"
                   >
                     <BookOpen className="w-3.5 h-3.5 mr-2 flex-shrink-0 transition-transform duration-200 group-hover:scale-110" />
                     <span className="truncate-none whitespace-normal">{isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}</span>
+                    <ArrowRight className="w-3.5 h-3.5 ml-2 flex-shrink-0 transition-transform duration-200 group-hover:translate-x-0.5" />
                   </Button>
                 </a>
               </div>
