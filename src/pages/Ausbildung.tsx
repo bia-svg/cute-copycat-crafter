@@ -400,9 +400,9 @@ export default function Ausbildung() {
                 </div>
               </div>
               <div className="order-2 lg:hidden">
-                <figure className="relative overflow-hidden bg-gradient-to-br from-[#FBF8F1] via-[#FAF6EC] to-[#F3ECDC] border border-[#C9B98A]/30 rounded-2xl px-5 pt-4 pb-3 md:px-6 md:pt-5 md:pb-3.5 shadow-[0_1px_1px_rgba(27,58,92,0.025),0_10px_28px_-18px_rgba(120,90,40,0.22)] ring-1 ring-white/60">
-                  <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.05] bg-[radial-gradient(circle_at_20%_15%,#C9B98A_0,transparent_55%),radial-gradient(circle_at_85%_90%,#1B3A5C_0,transparent_60%)]" />
-                  <div className="relative bg-white border border-[#C9B98A]/35 rounded-[3px] overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_20px_-10px_rgba(120,90,40,0.20),0_18px_40px_-22px_rgba(27,58,92,0.18)] mx-auto max-w-[280px] md:max-w-[310px] select-none -translate-y-1">
+                <figure className="relative overflow-hidden bg-gradient-to-br from-white via-[#FBFBFA] to-[#F2F2EF] border border-[#E5E4DF] rounded-2xl px-5 pt-4 pb-3 md:px-6 md:pt-5 md:pb-3.5 shadow-[0_1px_1px_rgba(27,58,92,0.02),0_10px_28px_-20px_rgba(27,58,92,0.14)] ring-1 ring-white/70">
+                  <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.04] bg-[radial-gradient(circle_at_20%_15%,#1B3A5C_0,transparent_55%),radial-gradient(circle_at_85%_90%,#1B3A5C_0,transparent_60%)]" />
+                  <div className="relative bg-white border border-[#E0DFD9] rounded-[3px] overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.035),0_8px_20px_-12px_rgba(27,58,92,0.16),0_18px_40px_-24px_rgba(27,58,92,0.16)] mx-auto max-w-[280px] md:max-w-[310px] select-none -translate-y-1">
                     <img
                       src={diplomAktivHypnose}
                       alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"}
@@ -444,11 +444,11 @@ export default function Ausbildung() {
               </div>
             </div>
             <div className="hidden lg:block">
-              <figure className="relative overflow-hidden bg-gradient-to-br from-[#FBF8F1] via-[#FAF6EC] to-[#F1E9D6] border border-[#C9B98A]/30 rounded-2xl px-7 pt-5 pb-4 xl:px-8 xl:pt-6 xl:pb-5 shadow-[0_1px_1px_rgba(27,58,92,0.025),0_14px_36px_-22px_rgba(120,90,40,0.22),0_28px_60px_-30px_rgba(27,58,92,0.18)] ring-1 ring-white/60">
-                <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.05] bg-[radial-gradient(circle_at_18%_12%,#C9B98A_0,transparent_55%),radial-gradient(circle_at_88%_92%,#1B3A5C_0,transparent_60%)]" />
-                <div aria-hidden className="pointer-events-none absolute inset-x-6 top-3 h-px bg-gradient-to-r from-transparent via-[#C9B98A]/40 to-transparent" />
-                <div aria-hidden className="pointer-events-none absolute inset-x-6 bottom-3 h-px bg-gradient-to-r from-transparent via-[#C9B98A]/30 to-transparent" />
-                <div className="relative bg-white border border-[#C9B98A]/35 rounded-[3px] overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.04),0_10px_24px_-12px_rgba(120,90,40,0.22),0_24px_50px_-24px_rgba(27,58,92,0.22)] mx-auto max-w-[360px] xl:max-w-[400px] select-none -translate-y-1.5">
+              <figure className="relative overflow-hidden bg-gradient-to-br from-white via-[#FBFBFA] to-[#EFEFEC] border border-[#E5E4DF] rounded-2xl px-7 pt-5 pb-4 xl:px-8 xl:pt-6 xl:pb-5 shadow-[0_1px_1px_rgba(27,58,92,0.02),0_14px_36px_-24px_rgba(27,58,92,0.16),0_28px_60px_-32px_rgba(27,58,92,0.14)] ring-1 ring-white/70">
+                <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.04] bg-[radial-gradient(circle_at_18%_12%,#1B3A5C_0,transparent_55%),radial-gradient(circle_at_88%_92%,#1B3A5C_0,transparent_60%)]" />
+                <div aria-hidden className="pointer-events-none absolute inset-x-6 top-3 h-px bg-gradient-to-r from-transparent via-[#D8D7D2] to-transparent" />
+                <div aria-hidden className="pointer-events-none absolute inset-x-6 bottom-3 h-px bg-gradient-to-r from-transparent via-[#D8D7D2] to-transparent" />
+                <div className="relative bg-white border border-[#E0DFD9] rounded-[3px] overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.035),0_10px_24px_-14px_rgba(27,58,92,0.18),0_24px_50px_-26px_rgba(27,58,92,0.18)] mx-auto max-w-[360px] xl:max-w-[400px] select-none -translate-y-1.5">
                   <img
                     src={diplomAktivHypnose}
                     alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"}
