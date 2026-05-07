@@ -335,7 +335,7 @@ export default function Ausbildung() {
           <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[60%] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
         </div>
         <div className="container-main py-3 md:py-5 lg:py-7 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-3 md:gap-4 lg:gap-6 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-3 md:gap-4 lg:gap-6 lg:items-start items-center">
             <div className="contents lg:block lg:pl-6 xl:pl-10">
               <div className="order-1 lg:order-none">
                 <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-1">
@@ -348,14 +348,14 @@ export default function Ausbildung() {
                   {(isEN ? [
                     "Developed from 35+ years of therapeutic experience",
                     "Effective methods for real change work",
-                    "Modern hypnosis combined with psychological expertise",
+                    "Modern hypnosis & psychological expertise",
                     "Deep work, EMDR & transformation techniques",
                     "Small groups & personal guidance",
                     "Continued support after the seminar",
                   ] : [
                     "Entwickelt aus 35+ Jahren therapeutischer Erfahrung",
                     "Effektive Methoden für echte Veränderungsarbeit",
-                    "Moderne Hypnose kombiniert mit psychologischem Fachwissen",
+                    "Moderne Hypnose & psychologisches Fachwissen",
                     "Tiefenarbeit, EMDR & Transformationstechniken",
                     "Kleine Gruppen & persönliche Begleitung",
                     "Begleitung auch nach dem Seminar",
@@ -366,13 +366,18 @@ export default function Ausbildung() {
                     </li>
                   ))}
                 </ul>
-                {/* EMR trust signal — subtle, integrated into hero text flow */}
+                {/* EMR trust signal — "EMR-konform" prominent, restlicher Text dezent */}
                 <div className="flex items-start gap-2 mt-2 mb-2.5 px-2.5 py-1.5 bg-[#2E7D32]/8 border border-[#2E7D32]/25 rounded-md">
                   <Shield className="w-3.5 h-3.5 text-[#2E7D32] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                  <span className="text-[11.5px] md:text-[12px] text-[#1B3A5C] font-medium leading-snug">
-                    {isEN
-                      ? "EMR-recognized structure. Certificate of hours & content available on request."
-                      : "EMR-konform. Auf Wunsch: Stunden- und Inhaltsnachweis zur Einreichung."}
+                  <span className="leading-snug">
+                    <span className="text-[12px] md:text-[12.5px] text-[#1B3A5C] font-semibold">
+                      {isEN ? "EMR-compliant." : "EMR-konform."}
+                    </span>
+                    <span className="text-[10.5px] md:text-[11px] text-[#55504f] font-normal ml-1">
+                      {isEN
+                        ? "On request: certificate of hours & content for submission."
+                        : "Auf Wunsch: Stunden- & Inhaltsnachweis zur Einreichung."}
+                    </span>
                   </span>
                 </div>
                 {/* Desktop-only CTA */}
@@ -389,12 +394,28 @@ export default function Ausbildung() {
                 </div>
               </div>
               <div className="order-2 lg:hidden">
-                <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-4 pt-2.5 pb-3 md:px-5 md:pt-3 md:pb-3.5 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_18px_44px_-26px_rgba(27,58,92,0.18)]">
-                  <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06),0_10px_24px_-12px_rgba(27,58,92,0.18)] mx-auto max-w-[300px] md:max-w-[330px]">
-                    <img src={diplomAktivHypnose} alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"} className="w-full h-auto" loading="eager" />
+                <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-4 pt-2 pb-2.5 md:px-5 md:pt-2.5 md:pb-3 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_18px_44px_-26px_rgba(27,58,92,0.18)]">
+                  <div className="relative bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06),0_10px_24px_-12px_rgba(27,58,92,0.18)] mx-auto max-w-[280px] md:max-w-[310px] select-none">
+                    <img
+                      src={diplomAktivHypnose}
+                      alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"}
+                      className="w-full h-auto pointer-events-none select-none"
+                      loading="eager"
+                      draggable={false}
+                      onContextMenu={(e) => e.preventDefault()}
+                      onDragStart={(e) => e.preventDefault()}
+                      style={{ WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }}
+                    />
+                    <div
+                      aria-hidden
+                      className="absolute inset-0"
+                      style={{ WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }}
+                      onContextMenu={(e) => e.preventDefault()}
+                      onDragStart={(e) => e.preventDefault()}
+                    />
                   </div>
-                  <figcaption className="mt-2.5 md:mt-3 text-center">
-                    <p className="text-[11.5px] md:text-[12px] text-[#3a3735] leading-snug max-w-[42ch] mx-auto">
+                  <figcaption className="mt-2 md:mt-2.5 text-center">
+                    <p className="text-[11px] md:text-[11.5px] text-[#3a3735] leading-snug max-w-[42ch] mx-auto">
                       {isEN
                         ? "This certification is awarded upon completion of the 6-day seminar as a Therapist in Aktiv-Hypnose®."
                         : "Diese Zertifizierung erhalten Sie nach Abschluss des 6-tägigen Seminars als Therapeut/in in Aktiv-Hypnose®."}
@@ -415,13 +436,29 @@ export default function Ausbildung() {
                 </a>
               </div>
             </div>
-            <div className="hidden lg:block">
-              <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-6 pt-3 pb-3.5 xl:px-7 xl:pt-4 xl:pb-4 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_22px_52px_-28px_rgba(27,58,92,0.20)]">
-                <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.07),0_18px_36px_-16px_rgba(27,58,92,0.22)] mx-auto max-w-[380px] xl:max-w-[420px]">
-                  <img src={diplomAktivHypnose} alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"} className="w-full h-auto" loading="eager" />
+            <div className="hidden lg:block lg:pt-1">
+              <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-6 pt-2.5 pb-3 xl:px-7 xl:pt-3 xl:pb-3.5 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_22px_52px_-28px_rgba(27,58,92,0.20)]">
+                <div className="relative bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.07),0_18px_36px_-16px_rgba(27,58,92,0.22)] mx-auto max-w-[360px] xl:max-w-[400px] select-none">
+                  <img
+                    src={diplomAktivHypnose}
+                    alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"}
+                    className="w-full h-auto pointer-events-none select-none"
+                    loading="eager"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
+                    onDragStart={(e) => e.preventDefault()}
+                    style={{ WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }}
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute inset-0"
+                    style={{ WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }}
+                    onContextMenu={(e) => e.preventDefault()}
+                    onDragStart={(e) => e.preventDefault()}
+                  />
                 </div>
-                <figcaption className="mt-3 xl:mt-3.5 text-center">
-                  <p className="text-[12px] xl:text-[12.5px] text-[#3a3735] leading-snug max-w-[44ch] mx-auto">
+                <figcaption className="mt-2.5 xl:mt-3 text-center">
+                  <p className="text-[11.5px] xl:text-[12px] text-[#3a3735] leading-snug max-w-[44ch] mx-auto">
                     {isEN
                       ? "This certification is awarded upon completion of the 6-day seminar as a Therapist in Aktiv-Hypnose®."
                       : "Diese Zertifizierung erhalten Sie nach Abschluss des 6-tägigen Seminars als Therapeut/in in Aktiv-Hypnose®."}
