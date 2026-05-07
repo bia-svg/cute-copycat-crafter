@@ -388,7 +388,20 @@ export default function Ausbildung() {
                 </div>
                 {/* Desktop-only CTA */}
                 <div className="hidden md:flex md:mt-3">
-                  <a href="#curriculum" className="inline-flex group" aria-label={isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}>
+                  <a
+                    href="#curriculum"
+                    className="inline-flex group"
+                    aria-label={isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el = document.getElementById("curriculum");
+                      if (!el) return;
+                      const header = document.querySelector("header") as HTMLElement | null;
+                      const headerH = header ? header.getBoundingClientRect().height : 0;
+                      const top = el.getBoundingClientRect().top + window.scrollY - headerH + 152;
+                      window.scrollTo({ top, behavior: "smooth" });
+                    }}
+                  >
                     <Button
                       className="bg-white text-[#1B3A5C] hover:bg-[#EEF3F9] active:bg-[#D6E3F0] border-[1.5px] border-[#1B3A5C] hover:border-[#16314D] font-semibold px-5 py-1.5 h-9 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_2px_4px_rgba(27,58,92,0.14),0_6px_14px_rgba(27,58,92,0.14)] hover:shadow-[0_4px_8px_rgba(27,58,92,0.18),0_12px_24px_rgba(27,58,92,0.20)] transition-all duration-200 hover:-translate-y-[1.5px] active:translate-y-[1px] active:shadow-[0_1px_2px_rgba(27,58,92,0.12)]"
                     >
@@ -432,7 +445,20 @@ export default function Ausbildung() {
               </div>
               {/* Mobile-only CTA (below image) */}
               <div className="order-3 md:hidden flex justify-center mt-3">
-                <a href="#curriculum" className="w-full group" aria-label={isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}>
+                <a
+                  href="#curriculum"
+                  className="w-full group"
+                  aria-label={isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById("curriculum");
+                    if (!el) return;
+                    const header = document.querySelector("header") as HTMLElement | null;
+                    const headerH = header ? header.getBoundingClientRect().height : 0;
+                    const top = el.getBoundingClientRect().top + window.scrollY - headerH + 152;
+                    window.scrollTo({ top, behavior: "smooth" });
+                  }}
+                >
                   <Button
                     className="w-full justify-center text-center bg-white text-[#1B3A5C] hover:bg-[#EEF3F9] active:bg-[#D6E3F0] border-[1.5px] border-[#1B3A5C] hover:border-[#16314D] font-semibold px-4 py-2 h-11 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_2px_5px_rgba(27,58,92,0.14),0_6px_16px_rgba(27,58,92,0.16)] hover:shadow-[0_4px_10px_rgba(27,58,92,0.18),0_12px_24px_rgba(27,58,92,0.22)] transition-all duration-200 hover:-translate-y-[1.5px] active:translate-y-[1px]"
                   >
