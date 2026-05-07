@@ -349,20 +349,14 @@ export default function Ausbildung() {
                     "Developed from 35+ years of therapeutic experience",
                     "Effective methods for real change work",
                     "Modern hypnosis combined with psychological expertise",
-                    "Directly applicable techniques for practice and everyday life",
                     "Deep work, EMDR & transformation techniques",
-                    "Learn through direct application and real demonstrations",
                     "Small groups & personal guidance",
-                    "Support even after the seminar",
                   ] : [
                     "Entwickelt aus 35+ Jahren therapeutischer Erfahrung",
                     "Effektive Methoden für echte Veränderungsarbeit",
                     "Moderne Hypnose kombiniert mit psychologischem Fachwissen",
-                    "Direkt anwendbare Techniken für Praxis und Alltag",
                     "Tiefenarbeit, EMDR & Transformationstechniken",
-                    "Lernen durch direkte Anwendung und echte Demonstrationen",
                     "Kleine Gruppen & persönliche Begleitung",
-                    "Begleitung auch nach dem Seminar",
                   ]).map((item) => (
                     <li key={item} className="flex items-start gap-2 text-[12px] md:text-[13px] lg:text-sm text-[#55504f] leading-snug">
                       <CheckCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#2E7D32] mt-0.5 flex-shrink-0" />
@@ -383,7 +377,7 @@ export default function Ausbildung() {
                 <div className="hidden lg:flex">
                   <a href="#curriculum" className="inline-flex group" aria-label={isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}>
                     <Button
-                      className="bg-white text-[#1B3A5C] hover:bg-[#EEF3F9] active:bg-[#E1EAF3] border border-[#1B3A5C] hover:border-[#16314D] font-semibold px-5 py-1.5 h-8 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_1px_2px_rgba(27,58,92,0.10),0_2px_6px_rgba(27,58,92,0.08)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.12),0_6px_14px_rgba(27,58,92,0.14)] transition-all duration-200 hover:-translate-y-[1px] active:translate-y-[1px] active:shadow-[0_1px_2px_rgba(27,58,92,0.10)]"
+                      className="bg-white text-[#1B3A5C] hover:bg-[#EEF3F9] active:bg-[#D6E3F0] border-[1.5px] border-[#1B3A5C] hover:border-[#16314D] font-semibold px-5 py-1.5 h-9 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_2px_4px_rgba(27,58,92,0.14),0_6px_14px_rgba(27,58,92,0.14)] hover:shadow-[0_4px_8px_rgba(27,58,92,0.18),0_12px_24px_rgba(27,58,92,0.20)] transition-all duration-200 hover:-translate-y-[1.5px] active:translate-y-[1px] active:shadow-[0_1px_2px_rgba(27,58,92,0.12)]"
                     >
                       <BookOpen className="w-3.5 h-3.5 mr-2 text-[#1B3A5C] transition-transform duration-200 group-hover:scale-110" />
                       <span>{isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}</span>
@@ -393,11 +387,8 @@ export default function Ausbildung() {
                 </div>
               </div>
               <div className="order-2 lg:hidden">
-                <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-4 pt-3 pb-3.5 md:px-5 md:pt-3.5 md:pb-4 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_18px_44px_-26px_rgba(27,58,92,0.18)]">
-                  <h2 className="text-center text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight mb-2.5 md:mb-3" style={{ fontFamily: "Georgia, serif" }}>
-                    {isEN ? "Your Diploma" : "Ihr Diplom"}
-                  </h2>
-                  <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06),0_10px_24px_-12px_rgba(27,58,92,0.18)] mx-auto max-w-[242px] md:max-w-[264px]">
+                <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-4 pt-2.5 pb-3 md:px-5 md:pt-3 md:pb-3.5 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_18px_44px_-26px_rgba(27,58,92,0.18)]">
+                  <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06),0_10px_24px_-12px_rgba(27,58,92,0.18)] mx-auto max-w-[300px] md:max-w-[330px]">
                     <img src={diplomAktivHypnose} alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"} className="w-full h-auto" loading="eager" />
                   </div>
                   <figcaption className="mt-2.5 md:mt-3 text-center">
@@ -413,7 +404,7 @@ export default function Ausbildung() {
               <div className="order-3 lg:hidden flex justify-center mt-3">
                 <a href="#curriculum" className="w-full group" aria-label={isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}>
                   <Button
-                    className="w-full justify-center text-center bg-white text-[#1B3A5C] hover:bg-[#EEF3F9] active:bg-[#E1EAF3] border border-[#1B3A5C] hover:border-[#16314D] font-semibold px-4 py-2 h-10 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_1px_2px_rgba(27,58,92,0.10),0_2px_8px_rgba(27,58,92,0.10)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.12),0_6px_16px_rgba(27,58,92,0.16)] transition-all duration-200 active:translate-y-[1px]"
+                    className="w-full justify-center text-center bg-white text-[#1B3A5C] hover:bg-[#EEF3F9] active:bg-[#D6E3F0] border-[1.5px] border-[#1B3A5C] hover:border-[#16314D] font-semibold px-4 py-2 h-11 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_2px_5px_rgba(27,58,92,0.14),0_6px_16px_rgba(27,58,92,0.16)] hover:shadow-[0_4px_10px_rgba(27,58,92,0.18),0_12px_24px_rgba(27,58,92,0.22)] transition-all duration-200 hover:-translate-y-[1.5px] active:translate-y-[1px]"
                   >
                     <BookOpen className="w-3.5 h-3.5 mr-2 flex-shrink-0 text-[#1B3A5C] transition-transform duration-200 group-hover:scale-110" />
                     <span className="truncate-none whitespace-normal">{isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}</span>
@@ -423,11 +414,8 @@ export default function Ausbildung() {
               </div>
             </div>
             <div className="hidden lg:block">
-              <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-6 pt-4 pb-4 xl:px-7 xl:pt-5 xl:pb-5 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_22px_52px_-28px_rgba(27,58,92,0.20)]">
-                <h2 className="text-center text-xl xl:text-[1.4rem] font-light text-[#1B3A5C] tracking-tight mb-3 xl:mb-3.5" style={{ fontFamily: "Georgia, serif" }}>
-                  {isEN ? "Your Diploma" : "Ihr Diplom"}
-                </h2>
-                <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.07),0_18px_36px_-16px_rgba(27,58,92,0.22)] mx-auto max-w-[308px] xl:max-w-[340px]">
+              <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-6 pt-3 pb-3.5 xl:px-7 xl:pt-4 xl:pb-4 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_22px_52px_-28px_rgba(27,58,92,0.20)]">
+                <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.07),0_18px_36px_-16px_rgba(27,58,92,0.22)] mx-auto max-w-[380px] xl:max-w-[420px]">
                   <img src={diplomAktivHypnose} alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"} className="w-full h-auto" loading="eager" />
                 </div>
                 <figcaption className="mt-3 xl:mt-3.5 text-center">
