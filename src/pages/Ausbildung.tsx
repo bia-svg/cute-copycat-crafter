@@ -323,58 +323,76 @@ export default function Ausbildung() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6 items-center">
             <div className="contents lg:block">
               <div className="order-1 lg:order-none">
-              <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-1">
-                {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
-              </p>
-              <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-1.5 md:mb-2 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
-                {isEN
-                  ? "Aktiv-Hypnose© Therapist"
-                  : "Aktiv-Hypnose© Therapeut"}
-              </h1>
-              <ul className="space-y-1 md:space-y-1 mb-3 md:mb-3">
-                {(isEN ? [
-                  "Developed from 35+ years of therapeutic experience",
-                  "Effective methods for real change work",
-                  "Modern hypnosis combined with psychological expertise",
-                  "Directly applicable techniques for practice and everyday life",
-                  "Deep work, EMDR & transformation techniques",
-                  "Learn through direct application and real demonstrations",
-                  "Small groups & personal guidance",
-                  "Support even after the seminar",
-                ] : [
-                  "Entwickelt aus 35+ Jahren therapeutischer Erfahrung",
-                  "Effektive Methoden für echte Veränderungsarbeit",
-                  "Moderne Hypnose kombiniert mit psychologischem Fachwissen",
-                  "Direkt anwendbare Techniken für Praxis und Alltag",
-                  "Tiefenarbeit, EMDR & Transformationstechniken",
-                  "Lernen durch direkte Anwendung und echte Demonstrationen",
-                  "Kleine Gruppen & persönliche Begleitung",
-                  "Begleitung auch nach dem Seminar",
-                ]).map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-[12px] md:text-[13px] lg:text-sm text-[#55504f] leading-snug">
-                    <CheckCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#2E7D32] mt-0.5 flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-wrap gap-2 md:gap-3">
+                <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-1">
+                  {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
+                </p>
+                <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-1.5 md:mb-2 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+                  {isEN ? "Aktiv-Hypnose© Therapist" : "Aktiv-Hypnose© Therapeut"}
+                </h1>
+                <ul className="space-y-1 md:space-y-1 mb-3 md:mb-3">
+                  {(isEN ? [
+                    "Developed from 35+ years of therapeutic experience",
+                    "Effective methods for real change work",
+                    "Modern hypnosis combined with psychological expertise",
+                    "Directly applicable techniques for practice and everyday life",
+                    "Deep work, EMDR & transformation techniques",
+                    "Learn through direct application and real demonstrations",
+                    "Small groups & personal guidance",
+                    "Support even after the seminar",
+                  ] : [
+                    "Entwickelt aus 35+ Jahren therapeutischer Erfahrung",
+                    "Effektive Methoden für echte Veränderungsarbeit",
+                    "Moderne Hypnose kombiniert mit psychologischem Fachwissen",
+                    "Direkt anwendbare Techniken für Praxis und Alltag",
+                    "Tiefenarbeit, EMDR & Transformationstechniken",
+                    "Lernen durch direkte Anwendung und echte Demonstrationen",
+                    "Kleine Gruppen & persönliche Begleitung",
+                    "Begleitung auch nach dem Seminar",
+                  ]).map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-[12px] md:text-[13px] lg:text-sm text-[#55504f] leading-snug">
+                      <CheckCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#2E7D32] mt-0.5 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                {/* Desktop-only buttons (kept in original position) */}
+                <div className="hidden lg:flex flex-wrap gap-2 md:gap-3">
+                  <a href="#dates">
+                    <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-5 py-2 md:px-6 md:py-2.5 text-sm">
+                      {isEN ? "View Dates & Register" : "Termine & Anmeldung"}
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </a>
+                  <a href="#curriculum">
+                    <Button variant="outline" className="border-[#55504f] text-[#55504f] font-medium px-5 py-2 md:px-6 md:py-2.5 text-sm">
+                      {isEN ? "What You'll Learn" : "Was lernen Sie"}
+                    </Button>
+                  </a>
+                </div>
+              </div>
+              <div className="order-2 lg:hidden border border-[#1B3A5C]/12 rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(27,58,92,0.08)]">
+                <img src={`${CDN_BASE}/training_seminar_979f1a53.jpg`} alt={isEN ? "Hypnotherapy Training Seminar" : "Hypnose Ausbildung Seminar"} className="w-full h-auto" />
+              </div>
+              {/* Mobile-only buttons (below image) */}
+              <div className="order-3 lg:hidden flex flex-wrap gap-2.5 mt-1">
                 <a href="#dates">
-                  <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-5 py-2 md:px-6 md:py-2.5 text-sm">
+                  <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-5 py-2 text-sm">
                     {isEN ? "View Dates & Register" : "Termine & Anmeldung"}
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </a>
                 <a href="#curriculum">
-                  <Button variant="outline" className="border-[#55504f] text-[#55504f] font-medium px-5 py-2 md:px-6 md:py-2.5 text-sm">
-                    {isEN ? "See Full Curriculum" : "Gesamtes Curriculum"}
+                  <Button variant="outline" className="border-[#55504f] text-[#55504f] font-medium px-5 py-2 text-sm">
+                    {isEN ? "What You'll Learn" : "Was lernen Sie"}
                   </Button>
                 </a>
               </div>
             </div>
-            <div className="border border-[#1B3A5C]/12 rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(27,58,92,0.08)]">
+            <div className="hidden lg:block border border-[#1B3A5C]/12 rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(27,58,92,0.08)]">
               <img src={`${CDN_BASE}/training_seminar_979f1a53.jpg`} alt={isEN ? "Hypnotherapy Training Seminar" : "Hypnose Ausbildung Seminar"} className="w-full h-auto" />
             </div>
           </div>
+
         </div>
       </section>
 
