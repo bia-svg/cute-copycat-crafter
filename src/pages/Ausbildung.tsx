@@ -467,7 +467,7 @@ export default function Ausbildung() {
                     onDragStart={(e) => e.preventDefault()}
                   />
                 </div>
-                <figcaption className="mt-2.5 xl:mt-3 text-center">
+                <figcaption className="relative mt-2 xl:mt-2.5 text-center">
                   <p className="text-[11.5px] xl:text-[12px] text-[#3a3735] leading-snug max-w-[44ch] mx-auto">
                     {isEN
                       ? "This certification is awarded upon completion of the 6-day seminar as a Therapist in Aktiv-Hypnose®."
