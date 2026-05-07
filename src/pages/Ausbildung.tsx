@@ -414,11 +414,8 @@ export default function Ausbildung() {
               </div>
             </div>
             <div className="hidden lg:block">
-              <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-6 pt-4 pb-4 xl:px-7 xl:pt-5 xl:pb-5 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_22px_52px_-28px_rgba(27,58,92,0.20)]">
-                <h2 className="text-center text-xl xl:text-[1.4rem] font-light text-[#1B3A5C] tracking-tight mb-3 xl:mb-3.5" style={{ fontFamily: "Georgia, serif" }}>
-                  {isEN ? "Your Diploma" : "Ihr Diplom"}
-                </h2>
-                <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.07),0_18px_36px_-16px_rgba(27,58,92,0.22)] mx-auto max-w-[308px] xl:max-w-[340px]">
+              <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-6 pt-3 pb-3.5 xl:px-7 xl:pt-4 xl:pb-4 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_22px_52px_-28px_rgba(27,58,92,0.20)]">
+                <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.07),0_18px_36px_-16px_rgba(27,58,92,0.22)] mx-auto max-w-[380px] xl:max-w-[420px]">
                   <img src={diplomAktivHypnose} alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"} className="w-full h-auto" loading="eager" />
                 </div>
                 <figcaption className="mt-3 xl:mt-3.5 text-center">
