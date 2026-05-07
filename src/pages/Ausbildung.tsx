@@ -330,11 +330,32 @@ export default function Ausbildung() {
                   ? "Aktiv-Hypnose© Therapist"
                   : "Aktiv-Hypnose© Therapeut"}
               </h1>
-              <p className="text-[13px] md:text-sm lg:text-base text-[#55504f] leading-snug md:leading-relaxed mb-2.5 md:mb-4">
-                {isEN
-                  ? "In just 6 days, you'll learn a proven, hands-on method for real change work. Not a superficial weekend certification, but a high-quality intensive training with a clear system, direct application, and professional guidance. Ideal for anyone who wants to support people safely and effectively."
-                  : "In nur 6 Tagen lernen Sie eine fundierte, praxisnahe Methode für echte Veränderungsarbeit. Keine oberflächliche Wochenend-Zertifizierung, sondern eine hochwertige Intensiv-Ausbildung mit klarem System, direkter Anwendung und professioneller Begleitung. Ideal für alle, die Menschen sicher und wirksam begleiten möchten."}
-              </p>
+              <ul className="space-y-1 md:space-y-1.5 mb-2.5 md:mb-4">
+                {(isEN ? [
+                  "Developed from 35+ years of therapeutic experience",
+                  "Effective methods for real change work",
+                  "Modern hypnosis combined with psychological expertise",
+                  "Directly applicable techniques for practice and everyday life",
+                  "Deep work, EMDR & transformation techniques",
+                  "Learn through direct application and real demonstrations",
+                  "Small groups & personal guidance",
+                  "Support even after the seminar",
+                ] : [
+                  "Entwickelt aus 35+ Jahren therapeutischer Erfahrung",
+                  "Effektive Methoden für echte Veränderungsarbeit",
+                  "Moderne Hypnose kombiniert mit psychologischem Fachwissen",
+                  "Direkt anwendbare Techniken für Praxis und Alltag",
+                  "Tiefenarbeit, EMDR & Transformationstechniken",
+                  "Lernen durch direkte Anwendung und echte Demonstrationen",
+                  "Kleine Gruppen & persönliche Begleitung",
+                  "Begleitung auch nach dem Seminar",
+                ]).map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-[12px] md:text-[13px] lg:text-sm text-[#55504f] leading-snug">
+                    <CheckCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#2E7D32] mt-0.5 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
               <div className="flex flex-wrap gap-x-3 gap-y-1 text-[12px] md:text-sm text-[#55504f] mb-2.5 md:mb-4">
                 <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#2E7D32]" /> {isEN ? "6-Day Intensive Training" : "6 Tage Intensiv-Ausbildung"}</span>
                 <span className="flex items-center gap-1.5"><GraduationCap className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#2E7D32]" /> {isEN ? "Specialist Practitioner Diploma" : "Therapeuten-Diplom"}</span>
