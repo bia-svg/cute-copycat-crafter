@@ -335,8 +335,8 @@ export default function Ausbildung() {
           <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[60%] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
         </div>
         <div className="container-main py-3 md:py-5 lg:py-7 relative">
-          <div className="grid grid-cols-1 md:grid-cols-[1.05fr_1fr] gap-3 md:gap-4 lg:gap-6 md:items-start items-center">
-            <div className="contents md:block md:pl-4 lg:pl-6 xl:pl-10">
+          <div className="grid grid-cols-1 md:grid-cols-[1.15fr_0.9fr] gap-3 md:gap-3 lg:gap-4 md:items-start items-center">
+            <div className="contents md:block md:pl-2 lg:pl-4 xl:pl-5">
               <div className="order-1 md:order-none">
                 <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-2 md:mb-2.5">
                   {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
@@ -443,7 +443,7 @@ export default function Ausbildung() {
                 </a>
               </div>
             </div>
-            <div className="hidden md:block">
+            <div className="hidden md:block md:pr-2 lg:pr-4 xl:pr-5">
               <figure className="relative overflow-hidden bg-gradient-to-br from-white via-[#FBFBFA] to-[#EFEFEC] border border-[#E5E4DF] rounded-2xl px-5 pt-4 pb-3 lg:px-7 lg:pt-5 lg:pb-4 xl:px-8 xl:pt-6 xl:pb-5 shadow-[0_1px_1px_rgba(27,58,92,0.02),0_14px_36px_-24px_rgba(27,58,92,0.16),0_28px_60px_-32px_rgba(27,58,92,0.14)] ring-1 ring-white/70">
                 <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.04] bg-[radial-gradient(circle_at_18%_12%,#1B3A5C_0,transparent_55%),radial-gradient(circle_at_88%_92%,#1B3A5C_0,transparent_60%)]" />
                 <div aria-hidden className="pointer-events-none absolute inset-x-6 top-3 h-px bg-gradient-to-r from-transparent via-[#D8D7D2] to-transparent" />
