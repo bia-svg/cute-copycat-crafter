@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { trackFormConversion } from "@/components/WhatsAppButton";
 import { supabase } from "@/integrations/supabase/client";
 import { sendLeadEmails } from "@/lib/leadEmails";
@@ -82,8 +82,13 @@ export default function SeminarAnmeldung() {
     }
   }, [selectedDate, seminarCountry]);
 
-  // Smooth-scroll Step 3 / form into view after a date is selected
+  // Smooth-scroll Step 3 / form into view after a date is selected (skip on initial mount / URL preselect)
+  const didMountRef = useRef(false);
   useEffect(() => {
+    if (!didMountRef.current) {
+      didMountRef.current = true;
+      return;
+    }
     if (!selectedDate) return;
     const t = setTimeout(() => {
       const el = document.getElementById("seminar-step-3");

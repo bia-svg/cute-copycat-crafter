@@ -488,24 +488,24 @@ export default function Ausbildung() {
           <div className="flex justify-center gap-2 md:gap-3 mb-4 md:mb-6 max-w-md mx-auto">
             <button
               onClick={() => { setActiveTab("de"); setShowAllDates(false); }}
-              className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border font-semibold text-sm transition-all ${
+              className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-4 rounded-lg border font-semibold text-sm transition-all ${
                 activeTab === "de"
                   ? "border-[#C5CCD4] bg-[#EAEEF2] text-[#1B3A5C] shadow-[0_1px_3px_rgba(27,58,92,0.06)]"
                   : "border-[#E2E8EE] bg-white text-[#1B3A5C]/70 hover:border-[#C5CCD4] hover:text-[#1B3A5C]"
               }`}
             >
-              <span className="text-lg">🇩🇪</span>
+              <span className="text-base">🇩🇪</span>
               {isEN ? "Germany" : "Deutschland"}
             </button>
             <button
               onClick={() => { setActiveTab("ch"); setShowAllDates(false); }}
-              className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border font-semibold text-sm transition-all ${
+              className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-4 rounded-lg border font-semibold text-sm transition-all ${
                 activeTab === "ch"
                   ? "border-[#C5CCD4] bg-[#EAEEF2] text-[#1B3A5C] shadow-[0_1px_3px_rgba(27,58,92,0.06)]"
                   : "border-[#E2E8EE] bg-white text-[#1B3A5C]/70 hover:border-[#C5CCD4] hover:text-[#1B3A5C]"
               }`}
             >
-              🇨🇭 {isEN ? "Switzerland" : "Schweiz"}
+              <span className="text-base">🇨🇭</span> {isEN ? "Switzerland" : "Schweiz"}
             </button>
           </div>
 
@@ -513,23 +513,6 @@ export default function Ausbildung() {
             {/* CH Content */}
             {activeTab === "ch" && (
               <>
-                <div className="flex items-baseline justify-center gap-x-3 gap-y-1 flex-wrap pb-2 mb-1 border-b border-[#1B3A5C]/10">
-                  <span className="text-[13px] text-[#1B3A5C]/70">
-                    {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
-                  </span>
-                  <span className="text-[#1B3A5C]/25">·</span>
-                  {hasEarlyBirdForCountry("ch", datesCH) ? (
-                    <>
-                      <span className="text-xs text-muted-foreground/60 line-through">CHF 2.990.-</span>
-                      <span className="text-lg font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>CHF 2.690.-</span>
-                      <span className="text-[12px] text-[#2E7D32]">
-                        {isEN ? "Early Bird" : "Frühbucher"}
-                      </span>
-                    </>
-                  ) : (
-                    <span className="text-lg font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>CHF 2.990.-</span>
-                  )}
-                </div>
                 {(showAllDates ? datesCH : datesCH.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
                   <div key={`ch-${i}`} className="border border-[#1B3A5C]/12 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
@@ -545,14 +528,21 @@ export default function Ausbildung() {
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                       <div className="flex flex-wrap items-center gap-1.5">
-                        {(seminarCounts[`ch::${d.date}`] || 0) < EARLY_BIRD_THRESHOLD && (
+                        {d.status === "limited" && (
+                          <>
+                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FFF3E0] text-[#E65100]">
+                              {isEN ? "Limited seats" : "Letzte Plätze"}
+                            </span>
+                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
+                              {isEN ? "CHF 300 off" : "300 CHF Rabatt"}
+                            </span>
+                          </>
+                        )}
+                        {d.status !== "limited" && (
                           <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
-                            {isEN ? "Early Bird" : "Frühbucher"}
+                            {isEN ? "Available" : "Verfügbar"}
                           </span>
                         )}
-                        <span className={`text-[11px] font-semibold px-2 py-0.5 rounded ${d.status === "limited" ? "bg-[#FFF3E0] text-[#E65100]" : "bg-[#E8F5E9] text-[#2E7D32]"}`}>
-                          {d.status === "limited" ? (isEN ? "Limited seats" : "Letzte Plätze") : (isEN ? "Available" : "Verfügbar")}
-                        </span>
                       </div>
                       <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=ch&date=${encodeURIComponent(d.date)}`}>
                         <Button size="sm" className="bg-cta hover:bg-cta/90 text-cta-foreground text-xs whitespace-nowrap">
@@ -568,23 +558,6 @@ export default function Ausbildung() {
             {/* DE Content */}
             {activeTab === "de" && (
               <>
-                <div className="flex items-baseline justify-center gap-x-3 gap-y-1 flex-wrap pb-2 mb-1 border-b border-[#1B3A5C]/10">
-                  <span className="text-[13px] text-[#1B3A5C]/70">
-                    {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
-                  </span>
-                  <span className="text-[#1B3A5C]/25">·</span>
-                  {hasEarlyBirdForCountry("de", datesDE) ? (
-                    <>
-                      <span className="text-xs text-muted-foreground/60 line-through">€2.790,-</span>
-                      <span className="text-lg font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>€2.490,-</span>
-                      <span className="text-[12px] text-[#1565C0]">
-                        {isEN ? "Early Bird" : "Frühbucher"}
-                      </span>
-                    </>
-                  ) : (
-                    <span className="text-lg font-semibold text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>€2.790,-</span>
-                  )}
-                </div>
                 {(showAllDates ? datesDE : datesDE.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
                   <div key={`de-${i}`} className="border border-[#1B3A5C]/12 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
@@ -600,14 +573,20 @@ export default function Ausbildung() {
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                       <div className="flex flex-wrap items-center gap-1.5">
-                        {((seminarCounts[`de::${d.date}`] || 0) < EARLY_BIRD_THRESHOLD || (d as any).forceEarlyBird) && (
-                          <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E3F2FD] text-[#1565C0]">
-                            {isEN ? "Early Bird" : "Frühbucher"}
+                        {d.status === "limited" ? (
+                          <>
+                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FFF3E0] text-[#E65100]">
+                              {isEN ? "Limited seats" : "Letzte Plätze"}
+                            </span>
+                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
+                              {isEN ? "€300 off" : "300 € Rabatt"}
+                            </span>
+                          </>
+                        ) : (
+                          <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
+                            {isEN ? "Available" : "Verfügbar"}
                           </span>
                         )}
-                        <span className={`text-[11px] font-semibold px-2 py-0.5 rounded ${d.status === "limited" ? "bg-[#FFF3E0] text-[#E65100]" : "bg-[#E8F5E9] text-[#2E7D32]"}`}>
-                          {d.status === "limited" ? (isEN ? "Limited seats" : "Letzte Plätze") : (isEN ? "Available" : "Verfügbar")}
-                        </span>
                       </div>
                       <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de&date=${encodeURIComponent(d.date)}`}>
                         <Button size="sm" className="bg-cta hover:bg-cta/90 text-cta-foreground text-xs whitespace-nowrap">
@@ -637,11 +616,6 @@ export default function Ausbildung() {
               </div>
             );
           })()}
-          <p className="text-[12px] md:text-[15px] text-[#1B3A5C]/85 text-center mt-4 md:mt-6 max-w-2xl mx-auto font-medium leading-snug">
-            {isEN
-              ? "Early Bird pricing available for a limited time or until the current intake is full."
-              : "Frühbucher-Preis verfügbar für begrenzte Zeit oder bis die aktuelle Gruppe voll ist."}
-          </p>
         </div>
       </section>
 
