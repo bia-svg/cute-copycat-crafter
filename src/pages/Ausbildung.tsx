@@ -491,7 +491,7 @@ export default function Ausbildung() {
           ═══════════════════════════════════════════════════════════ */}
       <section id="dates" className="bg-[#f4f3ef] border-b border-border scroll-mt-20">
         <div className="container-main py-3 md:py-6 lg:py-8">
-          <div className="max-w-5xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl md:rounded-3xl px-4 py-4 md:px-9 md:py-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
+          <div className="max-w-4xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl md:rounded-3xl px-4 py-4 md:px-9 md:py-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
             </h2>
@@ -521,12 +521,12 @@ export default function Ausbildung() {
               </button>
             </div>
 
-            <div className="space-y-2.5 md:space-y-4 max-w-2xl mx-auto">
+            <div className="space-y-2.5 md:space-y-4">
               {/* CH Content */}
               {activeTab === "ch" && (
                 <>
                   {(showAllDates ? datesCH : datesCH.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
-                    <div key={`ch-${i}`} className="border border-[#1B3A5C]/12 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <div key={`ch-${i}`} className="border border-[#2E7D32]/30 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_8px_rgba(46,125,50,0.08)] hover:shadow-[0_6px_16px_rgba(46,125,50,0.14)] hover:border-[#2E7D32]/50 transition-all ring-1 ring-[#2E7D32]/5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                       <div>
                         <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
                           <Calendar className="w-4 h-4" /> {d.date}
@@ -571,7 +571,7 @@ export default function Ausbildung() {
               {activeTab === "de" && (
                 <>
                   {(showAllDates ? datesDE : datesDE.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
-                    <div key={`de-${i}`} className="border border-[#1B3A5C]/12 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <div key={`de-${i}`} className="border border-[#2E7D32]/30 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_8px_rgba(46,125,50,0.08)] hover:shadow-[0_6px_16px_rgba(46,125,50,0.14)] hover:border-[#2E7D32]/50 transition-all ring-1 ring-[#2E7D32]/5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                       <div>
                         <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
                           <Calendar className="w-4 h-4" /> {d.date}
