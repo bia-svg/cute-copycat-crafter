@@ -367,7 +367,7 @@ export default function Ausbildung() {
                   ))}
                 </ul>
                 {/* EMR trust signal — clean, premium inline indicator */}
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2 mb-4 lg:mt-3 lg:mb-6">
                   <img
                     src={CDN.emrBadge}
                     alt="EMR"
@@ -387,7 +387,7 @@ export default function Ausbildung() {
                   </span>
                 </div>
                 {/* Desktop-only CTA */}
-                <div className="hidden lg:flex">
+                <div className="hidden lg:flex lg:mt-3">
                   <a href="#curriculum" className="inline-flex group" aria-label={isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}>
                     <Button
                       className="bg-white text-[#1B3A5C] hover:bg-[#EEF3F9] active:bg-[#D6E3F0] border-[1.5px] border-[#1B3A5C] hover:border-[#16314D] font-semibold px-5 py-1.5 h-9 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_2px_4px_rgba(27,58,92,0.14),0_6px_14px_rgba(27,58,92,0.14)] hover:shadow-[0_4px_8px_rgba(27,58,92,0.18),0_12px_24px_rgba(27,58,92,0.20)] transition-all duration-200 hover:-translate-y-[1.5px] active:translate-y-[1px] active:shadow-[0_1px_2px_rgba(27,58,92,0.12)]"
