@@ -404,7 +404,7 @@ export default function Ausbildung() {
               <div className="order-3 lg:hidden flex justify-center mt-3">
                 <a href="#curriculum" className="w-full group" aria-label={isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}>
                   <Button
-                    className="w-full justify-center text-center bg-white text-[#1B3A5C] hover:bg-[#EEF3F9] active:bg-[#E1EAF3] border border-[#1B3A5C] hover:border-[#16314D] font-semibold px-4 py-2 h-10 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_1px_2px_rgba(27,58,92,0.10),0_2px_8px_rgba(27,58,92,0.10)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.12),0_6px_16px_rgba(27,58,92,0.16)] transition-all duration-200 active:translate-y-[1px]"
+                    className="w-full justify-center text-center bg-white text-[#1B3A5C] hover:bg-[#EEF3F9] active:bg-[#D6E3F0] border-[1.5px] border-[#1B3A5C] hover:border-[#16314D] font-semibold px-4 py-2 h-11 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_2px_5px_rgba(27,58,92,0.14),0_6px_16px_rgba(27,58,92,0.16)] hover:shadow-[0_4px_10px_rgba(27,58,92,0.18),0_12px_24px_rgba(27,58,92,0.22)] transition-all duration-200 hover:-translate-y-[1.5px] active:translate-y-[1px]"
                   >
                     <BookOpen className="w-3.5 h-3.5 mr-2 flex-shrink-0 text-[#1B3A5C] transition-transform duration-200 group-hover:scale-110" />
                     <span className="truncate-none whitespace-normal">{isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}</span>
