@@ -408,9 +408,9 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION 2 — What makes this different
           ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-gradient-to-b from-[#EEF2F6] via-[#F1F4F7] to-[#E9EEF3] border-b border-border">
+      <section className="bg-[#DDE1E4] border-b border-border">
         <div className="container-main py-5 md:py-10 lg:py-14">
-          <div className="max-w-5xl mx-auto bg-gradient-to-b from-white to-[#FBFCFD] border border-[#1B3A5C]/[0.09] rounded-2xl md:rounded-3xl px-4 py-5 md:px-9 md:py-9 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_12px_32px_-16px_rgba(27,58,92,0.18)]">
+          <div className="max-w-5xl mx-auto bg-gradient-to-b from-white to-[#FAFBFC] border border-[#1B3A5C]/[0.08] rounded-2xl md:rounded-3xl px-4 py-5 md:px-9 md:py-9 shadow-[0_1px_2px_rgba(27,58,92,0.05),0_18px_44px_-22px_rgba(27,58,92,0.22)] ring-1 ring-white/70">
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "What Makes This Training Different" : "Was diese Ausbildung besonders macht"}
             </h2>
