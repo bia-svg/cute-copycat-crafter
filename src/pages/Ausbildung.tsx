@@ -367,7 +367,7 @@ export default function Ausbildung() {
                   ))}
                 </ul>
                 {/* EMR trust signal — "EMR-konform" prominent, restlicher Text dezent */}
-                <div className="flex items-start gap-2 mt-2 mb-2.5 lg:mt-3.5 lg:mb-4 px-2.5 py-1.5 bg-[#2E7D32]/8 border border-[#2E7D32]/25 rounded-md">
+                <div className="flex items-start gap-2 mb-2.5 lg:mb-4 px-2.5 py-1.5 bg-[#2E7D32]/8 border border-[#2E7D32]/25 rounded-md">
                   <Shield className="w-3.5 h-3.5 text-[#2E7D32] mt-0.5 flex-shrink-0" strokeWidth={2} />
                   <span className="leading-snug">
                     <span className="text-[12px] md:text-[12.5px] text-[#1B3A5C] font-semibold">
