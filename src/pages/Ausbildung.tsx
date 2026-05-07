@@ -489,7 +489,7 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION — Day-by-Day Curriculum (premium framed carousel)
           ═══════════════════════════════════════════════════════════ */}
-      <section id="curriculum" className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
+      <section id="curriculum" className="bg-[#f4f3ef] border-b border-border scroll-mt-20">
         <div className="container-main py-2.5 md:py-4 lg:py-6">
           <div className="max-w-5xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl md:rounded-3xl px-3 py-3 md:px-9 md:py-5 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
@@ -566,7 +566,7 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION — Upcoming Dates with Country Tabs (premium framed)
           ═══════════════════════════════════════════════════════════ */}
-      <section id="dates" className="bg-[#f4f3ef] border-b border-border scroll-mt-20">
+      <section id="dates" className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
         <div className="container-main py-3 md:py-6 lg:py-8">
           <div className="max-w-4xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl md:rounded-3xl px-4 py-4 md:px-9 md:py-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
