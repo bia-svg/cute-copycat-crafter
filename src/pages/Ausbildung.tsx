@@ -441,6 +441,45 @@ export default function Ausbildung() {
                 : "EMR-konform aufgebaut. Auf Wunsch erhalten Teilnehmer einen Stunden- und Inhaltsnachweis zur möglichen Einreichung."}
             </p>
           </div>
+
+          {/* ── Subtle divider ── */}
+          <div className="mt-4 md:mt-6 max-w-5xl mx-auto">
+            <div className="h-px bg-gradient-to-r from-transparent via-[#1B3A5C]/15 to-transparent" />
+          </div>
+
+          {/* ── Sub-section: Im Ausbildungspaket enthalten ── */}
+          <div className="mt-4 md:mt-6 max-w-5xl mx-auto">
+            <h3 className="text-base md:text-xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "Included in Your Training Package" : "Im Ausbildungspaket enthalten"}
+            </h3>
+            <p className="text-[11px] md:text-[13px] text-muted-foreground text-center mb-2.5 md:mb-4 max-w-2xl mx-auto leading-snug">
+              {isEN
+                ? "A complete package of materials, certification and ongoing support."
+                : "Ein vollständiges Paket aus Materialien, Zertifizierung und laufender Begleitung."}
+            </p>
+            <div className="grid grid-cols-3 lg:grid-cols-6 gap-1.5 md:gap-2">
+              {[
+                { n: "350+", l: isEN ? "Pages of training manual" : "Seiten Ausbildungsmappe" },
+                { n: "150+", l: isEN ? "Pages of sample texts" : "Seiten Beispieltexte" },
+                { n: "50+", l: isEN ? "Short videos" : "Kurzvideos" },
+                { n: "50+", l: isEN ? "Audio recordings" : "Audioaufnahmen" },
+                { n: "1", l: isEN ? "Aktiv-Hypnose® Diploma" : "Aktiv-Hypnose® Diplom" },
+                { n: "∞", l: isEN ? "Ongoing support" : "Laufende Unterstützung" },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white/70 border border-[#1B3A5C]/10 rounded-lg md:rounded-xl px-2 py-2 md:px-2.5 md:py-2.5 text-center flex flex-col items-center justify-center md:hover:border-[#1B3A5C]/20 md:hover:bg-white transition-colors"
+                >
+                  <div className="text-base md:text-xl lg:text-2xl font-normal text-[#1B3A5C] leading-none mb-0.5 md:mb-1" style={{ fontFamily: "Georgia, serif" }}>
+                    {item.n}
+                  </div>
+                  <div className="text-[10px] md:text-[11.5px] text-muted-foreground leading-tight">
+                    {item.l}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
