@@ -279,11 +279,6 @@ export default function SeminarAnmeldung() {
               <h1 className="text-xl sm:text-2xl font-light text-[#1B3A5C] mb-1.5 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN ? "Register for Seminar" : "Seminar-Anmeldung"}
               </h1>
-              <p className="text-sm text-muted-foreground max-w-lg mx-auto leading-snug">
-                {isEN
-                  ? "Choose country & date, then fill in your details — confirmation within 24 h."
-                  : "Land & Termin wählen, dann Daten eintragen — Bestätigung innerhalb von 24 h."}
-              </p>
             </div>
 
             {submitted ? (
