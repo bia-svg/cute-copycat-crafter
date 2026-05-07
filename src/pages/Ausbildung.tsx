@@ -416,14 +416,14 @@ export default function Ausbildung() {
             </h2>
             <p className="text-[11px] md:text-sm text-muted-foreground text-center mb-2.5 md:mb-4 max-w-2xl mx-auto leading-snug">
               {isEN
-                ? "Not a mass-market course. Not a certificate mill. A serious premium training with real depth, built on 30,000+ clinical sessions."
-                : "Kein Massenkurs. Keine Zertifikatsfabrik. Eine seriöse Premium-Ausbildung mit echter Tiefe, aufgebaut auf 30.000+ klinischen Sitzungen."}
+                ? "Intensive premium training with real depth, built on 30,000+ clinical sessions."
+                : "Intensive Premium-Ausbildung mit echter Tiefe, aufgebaut auf 30.000+ klinischen Sitzungen."}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-1.5 md:gap-2.5">
               {[
-                { icon: <Shield className="w-[14px] h-[14px] md:w-4 md:h-4 text-[#1B3A5C]" strokeWidth={1.5} />, titleDE: "35+ Jahre klinische Praxis", titleEN: "35+ Years of Clinical Practice", textDE: "Jede Technik in Tausenden realer Sitzungen verfeinert — methodenbasierte Expertenausbildung.", textEN: "Every technique refined across thousands of real sessions — method-based expert training." },
-                { icon: <Users className="w-[14px] h-[14px] md:w-4 md:h-4 text-[#1B3A5C]" strokeWidth={1.5} />, titleDE: "Kleingruppen-Format", titleEN: "Small Group Format", textDE: "Begrenzte Teilnehmerzahl für persönliche Betreuung und maximale Lernintensität.", textEN: "Limited group size for personal attention and maximum learning intensity." },
-                { icon: <Zap className="w-[14px] h-[14px] md:w-4 md:h-4 text-[#1B3A5C]" strokeWidth={1.5} />, titleDE: "Praxis ab Tag 1", titleEN: "Hands-On from Day 1", textDE: "Sie hypnotisieren selbst — Theorie verbunden mit sofortiger praktischer Anwendung.", textEN: "You hypnotize yourself — theory paired with immediate practical application." },
+                { icon: <Shield className="w-[14px] h-[14px] md:w-4 md:h-4 text-[#2E7D32]" strokeWidth={1.75} />, titleDE: "35+ Jahre klinische Praxis", titleEN: "35+ Years of Clinical Practice", textDE: "Jede Technik in Tausenden realer Sitzungen verfeinert — methodenbasierte Expertenausbildung.", textEN: "Every technique refined across thousands of real sessions — method-based expert training." },
+                { icon: <Users className="w-[14px] h-[14px] md:w-4 md:h-4 text-[#2E7D32]" strokeWidth={1.75} />, titleDE: "Kleingruppen-Format", titleEN: "Small Group Format", textDE: "Begrenzte Teilnehmerzahl für persönliche Betreuung und maximale Lernintensität.", textEN: "Limited group size for personal attention and maximum learning intensity." },
+                { icon: <Zap className="w-[14px] h-[14px] md:w-4 md:h-4 text-[#2E7D32]" strokeWidth={1.75} />, titleDE: "Praxis ab Tag 1", titleEN: "Hands-On from Day 1", textDE: "Sie hypnotisieren selbst — Theorie verbunden mit sofortiger praktischer Anwendung.", textEN: "You hypnotize yourself — theory paired with immediate practical application." },
               ].map((c, i) => (
                 <div key={i} className="group relative bg-white border border-[#2E7D32]/20 rounded-xl md:rounded-2xl px-3 py-2 md:px-4 md:py-2.5 text-left shadow-[0_1px_2px_rgba(27,58,92,0.03)] md:hover:shadow-[0_4px_14px_-8px_rgba(46,125,50,0.18)] md:hover:border-[#2E7D32]/35 transition-all duration-300">
                   <div className="flex items-start gap-2 md:gap-2.5">
@@ -460,7 +460,7 @@ export default function Ausbildung() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="bg-white border border-[#2E7D32]/18 rounded-md md:rounded-lg px-1.5 py-1 md:px-2.5 md:py-1.5 flex items-baseline gap-1.5 justify-center shadow-[0_1px_1px_rgba(27,58,92,0.02)] md:hover:border-[#2E7D32]/35 md:hover:shadow-[0_2px_6px_rgba(46,125,50,0.10)] transition-all"
+                  className="bg-white border border-[#2E7D32]/35 rounded-md md:rounded-lg px-1.5 py-1 md:px-2.5 md:py-1.5 flex items-baseline gap-1.5 justify-center shadow-[0_1px_1px_rgba(27,58,92,0.02)] md:hover:border-[#2E7D32]/55 md:hover:shadow-[0_2px_6px_rgba(46,125,50,0.12)] transition-all"
                 >
                   <span className="text-[12.5px] md:text-[15px] font-semibold text-[#1B3A5C] leading-none tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                     {item.n}
