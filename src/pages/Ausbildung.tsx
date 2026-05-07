@@ -688,7 +688,7 @@ export default function Ausbildung() {
                                 {isEN ? "Limited seats" : "Letzte Plätze"}
                               </span>
                               <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
-                                {isEN ? "CHF 300 off" : "300 CHF Rabatt"}
+                                {isEN ? "Save CHF 300" : "300 CHF sparen"}
                               </span>
                             </>
                           )}
@@ -733,7 +733,7 @@ export default function Ausbildung() {
                                 {isEN ? "Limited seats" : "Letzte Plätze"}
                               </span>
                               <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
-                                {isEN ? "€300 off" : "300 € Rabatt"}
+                                {isEN ? "Save €300" : "300 € sparen"}
                               </span>
                             </>
                           ) : (
