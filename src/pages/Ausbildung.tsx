@@ -634,12 +634,12 @@ export default function Ausbildung() {
           SECTION — Day-by-Day Curriculum (premium framed carousel)
           ═══════════════════════════════════════════════════════════ */}
       <section id="curriculum" className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
-        <div className="container-main py-3 md:py-6 lg:py-8">
-          <div className="max-w-5xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl md:rounded-3xl px-3 py-4 md:px-9 md:py-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
+        <div className="container-main py-2.5 md:py-4 lg:py-6">
+          <div className="max-w-5xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl md:rounded-3xl px-3 py-3 md:px-9 md:py-5 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Your 6-Day Journey" : "Ihre 6-Tage-Reise"}
             </h2>
-            <p className="text-[11px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-2xl mx-auto leading-snug">
+            <p className="text-[11px] md:text-sm text-muted-foreground text-center mb-2.5 md:mb-4 max-w-2xl mx-auto leading-snug">
               {isEN
                 ? "Each day builds on the previous, taking you from fundamentals to advanced clinical techniques."
                 : "Jeder Tag baut auf dem vorherigen auf und führt Sie von den Grundlagen zu fortgeschrittenen klinischen Techniken."}
@@ -653,9 +653,9 @@ export default function Ausbildung() {
                     <CarouselContent className="-ml-2 md:-ml-3">
                       {days.map((day) => (
                         <CarouselItem key={day.day} className="pl-2 md:pl-3 basis-full md:basis-1/3">
-                          <div className="h-full bg-white border border-[#1B3A5C]/22 rounded-xl md:rounded-2xl p-3 md:p-4 shadow-[0_4px_12px_rgba(27,58,92,0.08)]">
-                            <div className="flex items-center gap-2 mb-2">
-                              <div className="p-1.5 rounded-lg bg-[#1B3A5C]/10 ring-1 ring-[#1B3A5C]/20 text-[#1B3A5C] shrink-0">
+                          <div className="h-full bg-white border border-[#2E7D32]/35 rounded-xl md:rounded-2xl p-2.5 md:p-3.5 shadow-[0_2px_8px_rgba(46,125,50,0.08)] ring-1 ring-[#2E7D32]/10">
+                            <div className="flex items-center gap-2 mb-1.5">
+                              <div className="p-1.5 rounded-lg bg-[#2E7D32]/10 ring-1 ring-[#2E7D32]/25 text-[#1B3A5C] shrink-0">
                                 {day.icon}
                               </div>
                               <div className="min-w-0">
