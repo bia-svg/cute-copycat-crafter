@@ -371,7 +371,7 @@ export default function Ausbildung() {
                   <img
                     src={CDN.emrBadge}
                     alt="EMR"
-                    className="h-6 md:h-7 w-auto opacity-95 flex-shrink-0"
+                    className="h-7 md:h-8 w-auto opacity-95 flex-shrink-0"
                     loading="lazy"
                   />
                   <span className="text-[11px] md:text-[11.5px] leading-snug">
