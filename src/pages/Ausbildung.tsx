@@ -806,25 +806,25 @@ export default function Ausbildung() {
           ═══════════════════════════════════════════════════════════ */}
       <TrainingTestimonialsCarousel />
 
-      <section className="bg-[#DDE1E4] py-4 md:py-7">
+      <section className="bg-[#DDE1E4] py-3 md:py-5">
         <div className="container-main">
-          <div className="relative max-w-2xl mx-auto bg-gradient-to-br from-white via-[#F1F4F7] to-[#E8ECEF] border border-[#1B3A5C]/18 rounded-3xl px-5 py-5 md:px-9 md:py-7 text-center shadow-[0_6px_24px_rgba(27,58,92,0.10)]">
+          <div className="relative max-w-xl mx-auto bg-gradient-to-br from-white via-[#F1F4F7] to-[#E8ECEF] border border-[#1B3A5C]/18 rounded-2xl px-4 py-3.5 md:px-6 md:py-4 text-center shadow-[0_4px_18px_rgba(27,58,92,0.08)]">
             {/* Decorative top accent */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-[10px] md:text-[11px] font-medium px-3.5 py-1 rounded-full tracking-wide uppercase border border-[#1B3A5C]/25">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-[9px] md:text-[10px] font-medium px-3 py-0.5 rounded-full tracking-wide uppercase border border-[#1B3A5C]/25">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
-            <h2 className="text-lg md:text-2xl font-light text-foreground mb-1.5 md:mb-2.5 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+            <h2 className="text-base md:text-lg font-light text-foreground mb-1 md:mb-1.5 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Your Journey Starts Here" : "Ihre Reise beginnt hier"}
             </h2>
-            <p className="text-[13px] md:text-base text-muted-foreground max-w-xl mx-auto mb-3 md:mb-5 leading-snug md:leading-relaxed">
+            <p className="text-[12px] md:text-sm text-muted-foreground max-w-md mx-auto mb-2 md:mb-3 leading-snug">
               {isEN
                 ? "In 6 days, you'll gain the knowledge, the confidence, and the diploma to support people professionally. Are you ready?"
                 : "In 6 Tagen gewinnen Sie das Wissen, die Sicherheit und das Diplom, um Menschen professionell zu begleiten. Sind Sie bereit?"}
             </p>
             <Link to={`${getPath("seminarRegistration", language, country)}?country=de`}>
-              <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-6 py-2.5 md:px-8 md:py-3 text-sm md:text-base rounded-full shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] transition-all">
+              <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-5 py-2 md:px-6 md:py-2.5 text-[13px] md:text-sm rounded-full shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] transition-all">
                 {isEN ? "Register for Seminar" : "Zum Seminar anmelden"}
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
               </Button>
             </Link>
             <div className="flex items-center justify-center gap-3 mt-2.5 md:mt-4 text-muted-foreground text-[11px] md:text-sm">
