@@ -441,6 +441,45 @@ export default function Ausbildung() {
                 : "EMR-konform aufgebaut. Auf Wunsch erhalten Teilnehmer einen Stunden- und Inhaltsnachweis zur möglichen Einreichung."}
             </p>
           </div>
+
+          {/* ── Subtle divider ── */}
+          <div className="mt-4 md:mt-6 max-w-5xl mx-auto">
+            <div className="h-px bg-gradient-to-r from-transparent via-[#1B3A5C]/15 to-transparent" />
+          </div>
+
+          {/* ── Sub-section: Im Ausbildungspaket enthalten ── */}
+          <div className="mt-4 md:mt-6 max-w-5xl mx-auto">
+            <h3 className="text-base md:text-xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "Included in Your Training Package" : "Im Ausbildungspaket enthalten"}
+            </h3>
+            <p className="text-[11px] md:text-[13px] text-muted-foreground text-center mb-2.5 md:mb-4 max-w-2xl mx-auto leading-snug">
+              {isEN
+                ? "A complete package of materials, certification and ongoing support."
+                : "Ein vollständiges Paket aus Materialien, Zertifizierung und laufender Begleitung."}
+            </p>
+            <div className="grid grid-cols-3 lg:grid-cols-6 gap-1.5 md:gap-2">
+              {[
+                { n: "350+", l: isEN ? "Pages of training manual" : "Seiten Ausbildungsmappe" },
+                { n: "150+", l: isEN ? "Pages of sample texts" : "Seiten Beispieltexte" },
+                { n: "50+", l: isEN ? "Short videos" : "Kurzvideos" },
+                { n: "50+", l: isEN ? "Audio recordings" : "Audioaufnahmen" },
+                { n: "1", l: isEN ? "Aktiv-Hypnose® Diploma" : "Aktiv-Hypnose® Diplom" },
+                { n: "∞", l: isEN ? "Ongoing support" : "Laufende Unterstützung" },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white/70 border border-[#1B3A5C]/10 rounded-lg md:rounded-xl px-2 py-2 md:px-2.5 md:py-2.5 text-center flex flex-col items-center justify-center md:hover:border-[#1B3A5C]/20 md:hover:bg-white transition-colors"
+                >
+                  <div className="text-base md:text-xl lg:text-2xl font-normal text-[#1B3A5C] leading-none mb-0.5 md:mb-1" style={{ fontFamily: "Georgia, serif" }}>
+                    {item.n}
+                  </div>
+                  <div className="text-[10px] md:text-[11.5px] text-muted-foreground leading-tight">
+                    {item.l}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -712,51 +751,7 @@ export default function Ausbildung() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          INCLUDED — Alles, was Sie erhalten
-          ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#DDE1E4] border-b border-border">
-        <div className="container-main py-4 md:py-7 lg:py-10">
-          <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
-            {isEN ? "Everything You Receive" : "Alles, was Sie erhalten"}
-          </h2>
-          <p className="text-[12px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-2xl mx-auto leading-snug">
-            {isEN
-              ? "A complete package of materials, certification and ongoing support."
-              : "Ein vollständiges Paket aus Materialien, Zertifizierung und laufender Begleitung."}
-          </p>
-
-          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3 max-w-5xl mx-auto">
-            {[
-              { n: "350+", l: isEN ? "Pages of training manual" : "Seiten Ausbildungsmappe" },
-              { n: "150+", l: isEN ? "Pages of sample texts" : "Seiten Beispieltexte" },
-              { n: "50+", l: isEN ? "Short videos" : "Kurzvideos" },
-              { n: "50+", l: isEN ? "Audio recordings" : "Audioaufnahmen" },
-              { n: "1", l: isEN ? "Aktiv-Hypnose® Diploma" : "Aktiv-Hypnose® Diplom" },
-              { n: "∞", l: isEN ? "Ongoing support" : "Laufende Unterstützung" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-white border border-[#1B3A5C]/22 rounded-xl md:rounded-2xl p-2.5 md:p-4 text-center flex flex-col items-center justify-center min-h-[78px] md:min-h-[100px] shadow-[0_4px_12px_rgba(27,58,92,0.07)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.12)] hover:border-[#1B3A5C]/40 transition-all"
-              >
-                <div className="text-lg md:text-2xl lg:text-3xl font-bold text-[#1B3A5C] leading-none mb-1" style={{ fontFamily: "Georgia, serif" }}>
-                  {item.n}
-                </div>
-                <div className="text-[10px] md:text-[12px] lg:text-[13px] text-muted-foreground leading-tight">
-                  {item.l}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Educational hypnosis video moved to dedicated page /wie-funktioniert-hypnose */}
-
-      {/* ═══════════════════════════════════════════════════════════
-          SECTION — Training Participant Video Testimonials
-          ═══════════════════════════════════════════════════════════ */}
-      <TrainingTestimonialsCarousel />
 
       {/* ═══════════════════════════════════════════════════════════
           SECTION 6 — FAQ + Final CTA
@@ -781,6 +776,11 @@ export default function Ausbildung() {
           { q: "Was ist die wissenschaftliche Grundlage der Hypnotherapie?", a: "Hypnotherapie ist von der Weltgesundheitsorganisation (WHO) anerkannt und durch zahlreiche Meta-Analysen validiert. Eine Landmark-Studie von Kirsch et al. (1995) zeigte, dass die Ergänzung von KVT durch Hypnose die Ergebnisse um 70% verbessert. Der Wissenschaftliche Beirat Psychotherapie bestätigte 2006 die Evidenz für klinische Hypnose." },
         ]}
       />
+
+      {/* ═══════════════════════════════════════════════════════════
+          SECTION — Training Participant Video Testimonials
+          ═══════════════════════════════════════════════════════════ */}
+      <TrainingTestimonialsCarousel />
 
       <section className="bg-[#DDE1E4] py-4 md:py-7">
         <div className="container-main">
