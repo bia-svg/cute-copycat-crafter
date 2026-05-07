@@ -432,7 +432,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                   <div className="pt-2">
                     <Link to={getPath("contact", language, country)}>
                       <Button className="bg-cta text-cta-foreground hover:bg-cta/90">
-                        {isEN ? "Book a Session with Kathryn" : "Sitzung mit Kathryn buchen"}
+                        {isEN ? "Request a session for children & teenagers" : "Sitzung für Kinder und Jugendliche anfragen"}
                       </Button>
                     </Link>
                   </div>
