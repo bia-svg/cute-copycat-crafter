@@ -460,7 +460,7 @@ export default function Ausbildung() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="bg-white border border-[#2E7D32]/18 rounded-md md:rounded-lg px-1.5 py-1 md:px-2.5 md:py-1.5 flex items-baseline gap-1.5 justify-center shadow-[0_1px_1px_rgba(27,58,92,0.02)] md:hover:border-[#2E7D32]/35 md:hover:shadow-[0_2px_6px_rgba(46,125,50,0.10)] transition-all"
+                  className="bg-white border border-[#2E7D32]/35 rounded-md md:rounded-lg px-1.5 py-1 md:px-2.5 md:py-1.5 flex items-baseline gap-1.5 justify-center shadow-[0_1px_1px_rgba(27,58,92,0.02)] md:hover:border-[#2E7D32]/55 md:hover:shadow-[0_2px_6px_rgba(46,125,50,0.12)] transition-all"
                 >
                   <span className="text-[12.5px] md:text-[15px] font-semibold text-[#1B3A5C] leading-none tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                     {item.n}
