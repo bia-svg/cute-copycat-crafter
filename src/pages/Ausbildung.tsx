@@ -588,7 +588,7 @@ export default function Ausbildung() {
                           </span>
                         )}
                       </div>
-                      <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de&date=${encodeURIComponent(d.date)}`}>
+                      <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de`}>
                         <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-xs whitespace-nowrap rounded-lg font-semibold">
                           {isEN ? "More Info →" : "Mehr Info →"}
                         </Button>
