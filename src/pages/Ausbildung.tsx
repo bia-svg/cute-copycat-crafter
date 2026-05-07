@@ -377,7 +377,7 @@ export default function Ausbildung() {
                 <div className="hidden lg:flex">
                   <a href="#curriculum" className="inline-flex group" aria-label={isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}>
                     <Button
-                      className="bg-white text-[#1B3A5C] hover:bg-[#EEF3F9] active:bg-[#E1EAF3] border border-[#1B3A5C] hover:border-[#16314D] font-semibold px-5 py-1.5 h-8 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_1px_2px_rgba(27,58,92,0.10),0_2px_6px_rgba(27,58,92,0.08)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.12),0_6px_14px_rgba(27,58,92,0.14)] transition-all duration-200 hover:-translate-y-[1px] active:translate-y-[1px] active:shadow-[0_1px_2px_rgba(27,58,92,0.10)]"
+                      className="bg-white text-[#1B3A5C] hover:bg-[#EEF3F9] active:bg-[#D6E3F0] border-[1.5px] border-[#1B3A5C] hover:border-[#16314D] font-semibold px-5 py-1.5 h-9 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_2px_4px_rgba(27,58,92,0.14),0_6px_14px_rgba(27,58,92,0.14)] hover:shadow-[0_4px_8px_rgba(27,58,92,0.18),0_12px_24px_rgba(27,58,92,0.20)] transition-all duration-200 hover:-translate-y-[1.5px] active:translate-y-[1px] active:shadow-[0_1px_2px_rgba(27,58,92,0.12)]"
                     >
                       <BookOpen className="w-3.5 h-3.5 mr-2 text-[#1B3A5C] transition-transform duration-200 group-hover:scale-110" />
                       <span>{isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}</span>
