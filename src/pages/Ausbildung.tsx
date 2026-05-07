@@ -460,12 +460,12 @@ export default function Ausbildung() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="bg-white border border-[#2E7D32]/35 rounded-md md:rounded-lg px-1.5 py-1.5 md:px-2.5 md:py-2.5 flex items-center gap-1.5 justify-center shadow-[0_1px_1px_rgba(27,58,92,0.02)] md:hover:border-[#2E7D32]/55 md:hover:shadow-[0_2px_6px_rgba(46,125,50,0.12)] transition-all"
+                  className="bg-white border border-[#2E7D32]/35 rounded-md md:rounded-lg px-1.5 py-2.5 md:px-2 md:py-3.5 min-h-[68px] md:min-h-[84px] flex flex-col items-center justify-center text-center gap-1 md:gap-1.5 shadow-[0_1px_1px_rgba(27,58,92,0.02)] md:hover:border-[#2E7D32]/55 md:hover:shadow-[0_2px_6px_rgba(46,125,50,0.12)] transition-all"
                 >
-                  <span className="text-[12.5px] md:text-[15px] font-semibold text-[#1B3A5C] leading-none tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+                  <span className="text-[16px] md:text-[20px] font-semibold text-[#1B3A5C] leading-none tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                     {item.n}
                   </span>
-                  <span className="text-[9.5px] md:text-[11px] text-[#1B3A5C]/70 leading-tight font-medium">
+                  <span className="text-[10px] md:text-[11.5px] text-[#1B3A5C]/70 leading-tight font-medium px-0.5">
                     {item.l}
                   </span>
                 </div>
