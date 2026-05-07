@@ -621,47 +621,87 @@ export default function Ausbildung() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          SECTION — Day-by-Day Curriculum
+          SECTION — Day-by-Day Curriculum (premium framed carousel)
           ═══════════════════════════════════════════════════════════ */}
       <section id="curriculum" className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
-        <div className="container-main py-3.5 md:py-6 lg:py-9">
-          <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
-            {isEN ? "Your 6-Day Journey" : "Ihre 6-Tage Reise"}
-          </h2>
-          <p className="text-[11px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-2xl mx-auto leading-snug">
-            {isEN
-              ? "Each day builds on the previous, taking you from fundamentals to advanced clinical techniques."
-              : "Jeder Tag baut auf dem vorherigen auf und führt Sie von den Grundlagen zu fortgeschrittenen klinischen Techniken."}
-          </p>
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-2.5 md:gap-3">
-            {days.map((day) => (
-              <div key={day.day} className="bg-white border border-[#1B3A5C]/22 rounded-xl md:rounded-2xl p-3 md:p-4 shadow-[0_4px_12px_rgba(27,58,92,0.08)] md:shadow-[0_6px_18px_rgba(27,58,92,0.10)] md:hover:shadow-[0_12px_26px_rgba(27,58,92,0.14)] md:hover:border-[#1B3A5C]/40 md:hover:-translate-y-0.5 transition-all duration-300">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="p-1.5 rounded-lg bg-[#1B3A5C]/10 ring-1 ring-[#1B3A5C]/20 text-[#1B3A5C] shrink-0">
-                    {day.icon}
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-[10px] font-semibold uppercase tracking-wider text-[#2E7D32] leading-tight">
-                      {isEN ? `Day ${day.day}` : `Tag ${day.day}`}
-                    </p>
-                    <h3 className="text-sm md:text-[15px] font-light text-[#1B3A5C] leading-tight tracking-tight">
-                      {isEN ? day.titleEN : day.titleDE}
-                    </h3>
+        <div className="container-main py-3 md:py-6 lg:py-8">
+          <div className="max-w-5xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl md:rounded-3xl px-3 py-4 md:px-9 md:py-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
+            <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "Your 6-Day Journey" : "Ihre 6-Tage-Reise"}
+            </h2>
+            <p className="text-[11px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-2xl mx-auto leading-snug">
+              {isEN
+                ? "Each day builds on the previous, taking you from fundamentals to advanced clinical techniques."
+                : "Jeder Tag baut auf dem vorherigen auf und führt Sie von den Grundlagen zu fortgeschrittenen klinischen Techniken."}
+            </p>
+            {(() => {
+              const [api, setApi] = [curriculumApi, setCurriculumApi];
+              return (
+                <div className="relative px-1 md:px-10">
+                  <Carousel
+                    setApi={setCurriculumApi}
+                    opts={{ align: "start", loop: false, slidesToScroll: 1 }}
+                    className="relative"
+                  >
+                    <CarouselContent className="-ml-2 md:-ml-3">
+                      {days.map((day) => (
+                        <CarouselItem key={day.day} className="pl-2 md:pl-3 basis-full md:basis-1/3">
+                          <div className="h-full bg-white border border-[#1B3A5C]/22 rounded-xl md:rounded-2xl p-3 md:p-4 shadow-[0_4px_12px_rgba(27,58,92,0.08)]">
+                            <div className="flex items-center gap-2 mb-2">
+                              <div className="p-1.5 rounded-lg bg-[#1B3A5C]/10 ring-1 ring-[#1B3A5C]/20 text-[#1B3A5C] shrink-0">
+                                {day.icon}
+                              </div>
+                              <div className="min-w-0">
+                                <p className="text-[10px] font-semibold uppercase tracking-wider text-[#2E7D32] leading-tight">
+                                  {isEN ? `Day ${day.day}` : `Tag ${day.day}`}
+                                </p>
+                                <h3 className="text-sm md:text-[15px] font-light text-[#1B3A5C] leading-tight tracking-tight">
+                                  {isEN ? day.titleEN : day.titleDE}
+                                </h3>
+                              </div>
+                            </div>
+                            <ul className="space-y-1">
+                              {(isEN ? day.topicsEN : day.topicsDE).map((topic, i) => (
+                                <li key={i} className="flex items-start gap-1.5 text-[11px] md:text-xs text-[#55504f] leading-snug">
+                                  <CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#2E7D32] mt-0.5 shrink-0" />
+                                  {topic}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious
+                      aria-label={isEN ? "Previous days" : "Vorherige Tage"}
+                      className="hidden md:flex h-9 w-9 -left-2 lg:-left-4 bg-white border-[#1B3A5C]/25 text-[#1B3A5C] hover:bg-[#1B3A5C] hover:text-white hover:border-[#1B3A5C] shadow-sm"
+                    />
+                    <CarouselNext
+                      aria-label={isEN ? "Next days" : "Nächste Tage"}
+                      className="hidden md:flex h-9 w-9 -right-2 lg:-right-4 bg-white border-[#1B3A5C]/25 text-[#1B3A5C] hover:bg-[#1B3A5C] hover:text-white hover:border-[#1B3A5C] shadow-sm"
+                    />
+                  </Carousel>
+                  {/* Mobile dots */}
+                  <div className="md:hidden flex justify-center gap-1.5 mt-3">
+                    {days.map((_, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => curriculumApi?.scrollTo(i)}
+                        aria-label={`${isEN ? "Day" : "Tag"} ${i + 1}`}
+                        className={`h-1.5 rounded-full transition-all ${
+                          curriculumIndex === i ? "w-5 bg-[#1B3A5C]" : "w-1.5 bg-[#1B3A5C]/25"
+                        }`}
+                      />
+                    ))}
                   </div>
                 </div>
-                <ul className="space-y-1">
-                  {(isEN ? day.topicsEN : day.topicsDE).map((topic, i) => (
-                    <li key={i} className="flex items-start gap-1.5 text-[11px] md:text-xs text-[#55504f] leading-snug">
-                      <CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-[#2E7D32] mt-0.5 shrink-0" />
-                      {topic}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              );
+            })()}
           </div>
         </div>
       </section>
+
 
       {/* ═══════════════════════════════════════════════════════════
           DIPLOMAS — Visual proof of certification (Ihr Abschluss)
