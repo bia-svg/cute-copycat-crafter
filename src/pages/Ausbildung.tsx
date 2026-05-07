@@ -738,56 +738,6 @@ export default function Ausbildung() {
       </section>
 
 
-      {/* ═══════════════════════════════════════════════════════════
-          DIPLOMAS — Visual proof of certification (Ihr Abschluss)
-          ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-4 md:py-7 lg:py-9">
-          <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
-            {isEN ? "Your Certification" : "Ihr Abschluss"}
-          </h2>
-          <p className="text-[12px] md:text-sm text-muted-foreground text-center mb-3 md:mb-5 max-w-2xl mx-auto leading-snug">
-            {isEN
-              ? "Upon completion, you receive internationally recognized diplomas."
-              : "Nach Abschluss erhalten Sie international anerkannte Diplome."}
-          </p>
-          <div className="grid sm:grid-cols-2 gap-3 md:gap-5 max-w-3xl mx-auto">
-            <div className="flex flex-col items-center text-center bg-white border border-[#1B3A5C]/12 rounded-2xl p-3.5 md:p-5 shadow-[0_3px_14px_rgba(27,58,92,0.06)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all">
-              <div className="border border-[#1B3A5C]/10 rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06)] mb-2 md:mb-3 max-w-[150px] md:max-w-[230px] bg-white">
-                <ImageLightbox src={diplomNGH} alt="NGH Certified Instructor — David Woods" className="w-full h-auto" />
-              </div>
-              <div className="flex items-center gap-1.5 mb-1">
-                <Shield className="w-4 h-4 text-blue-600" />
-                <h3 className="font-light text-sm text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
-                  {isEN ? "NGH Certified Instructor" : "NGH-zertifizierter Instructor"}
-                </h3>
-              </div>
-              <p className="text-[11px] md:text-xs text-muted-foreground max-w-sm leading-snug md:leading-relaxed">
-                {isEN
-                  ? "This certificate proves that David J. Woods is a certified hypnosis instructor accredited by the National Guild of Hypnotists (NGH) — the world's largest and most respected hypnosis organization."
-                  : "Dieses Zertifikat belegt, dass David J. Woods ein zertifizierter Hypnose-Instructor ist, akkreditiert durch die National Guild of Hypnotists (NGH) — die weltweit grösste und angesehenste Hypnose-Organisation."}
-              </p>
-            </div>
-            <div className="flex flex-col items-center text-center bg-white border border-[#1B3A5C]/12 rounded-2xl p-3.5 md:p-5 shadow-[0_3px_14px_rgba(27,58,92,0.06)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all">
-              <div className="border border-[#1B3A5C]/10 rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06)] mb-2 md:mb-3 max-w-[150px] md:max-w-[230px] bg-white">
-                <ImageLightbox src={diplomAktivHypnose} alt="Diplom — Therapeut in Aktiv-Hypnose" className="w-full h-auto" />
-              </div>
-              <div className="flex items-center gap-1.5 mb-1">
-                <GraduationCap className="w-4 h-4 text-amber-600" />
-                <h3 className="font-light text-sm text-[#1B3A5C] tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
-                  {isEN ? "Your Diploma" : "Ihr Diplom"}
-                </h3>
-              </div>
-              <p className="text-[11px] md:text-xs text-muted-foreground max-w-sm leading-snug md:leading-relaxed">
-                {isEN
-                  ? "This is the diploma you receive upon completing the 6-day seminar — your official certification as a Therapist in Aktiv-Hypnose®."
-                  : "Dieses Diplom erhalten Sie nach Abschluss des 6-tägigen Seminars — Ihre offizielle Zertifizierung als Therapeut/in in Aktiv-Hypnose®."}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Educational hypnosis video moved to dedicated page /wie-funktioniert-hypnose */}
 
       {/* ═══════════════════════════════════════════════════════════
