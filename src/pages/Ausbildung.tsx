@@ -488,24 +488,24 @@ export default function Ausbildung() {
           <div className="flex justify-center gap-2 md:gap-3 mb-4 md:mb-6 max-w-md mx-auto">
             <button
               onClick={() => { setActiveTab("de"); setShowAllDates(false); }}
-              className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border font-semibold text-sm transition-all ${
+              className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-4 rounded-lg border font-semibold text-sm transition-all ${
                 activeTab === "de"
                   ? "border-[#C5CCD4] bg-[#EAEEF2] text-[#1B3A5C] shadow-[0_1px_3px_rgba(27,58,92,0.06)]"
                   : "border-[#E2E8EE] bg-white text-[#1B3A5C]/70 hover:border-[#C5CCD4] hover:text-[#1B3A5C]"
               }`}
             >
-              <span className="text-lg">🇩🇪</span>
+              <span className="text-base">🇩🇪</span>
               {isEN ? "Germany" : "Deutschland"}
             </button>
             <button
               onClick={() => { setActiveTab("ch"); setShowAllDates(false); }}
-              className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border font-semibold text-sm transition-all ${
+              className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-4 rounded-lg border font-semibold text-sm transition-all ${
                 activeTab === "ch"
                   ? "border-[#C5CCD4] bg-[#EAEEF2] text-[#1B3A5C] shadow-[0_1px_3px_rgba(27,58,92,0.06)]"
                   : "border-[#E2E8EE] bg-white text-[#1B3A5C]/70 hover:border-[#C5CCD4] hover:text-[#1B3A5C]"
               }`}
             >
-              🇨🇭 {isEN ? "Switzerland" : "Schweiz"}
+              <span className="text-base">🇨🇭</span> {isEN ? "Switzerland" : "Schweiz"}
             </button>
           </div>
 
