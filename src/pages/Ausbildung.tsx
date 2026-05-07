@@ -725,8 +725,8 @@ export default function Ausbildung() {
                           <Clock className="w-3.5 h-3.5" /> {isEN ? "Mon–Fri 10:00–17:00 · Sat 10:00–15:00" : "Mo–Fr 10:00–17:00 · Sa 10:00–15:00"}
                         </p>
                       </div>
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                        <div className="flex flex-wrap items-center gap-1.5">
+                      <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
+                        <div className="flex flex-wrap items-center justify-center gap-1.5">
                           {d.status === "limited" ? (
                             <>
                               <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FFF3E0] text-[#E65100]">
@@ -743,7 +743,7 @@ export default function Ausbildung() {
                           )}
                         </div>
                         <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de`}>
-                          <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-xs whitespace-nowrap rounded-lg font-semibold">
+                          <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-2.5 sm:h-9 sm:px-3">
                             {isEN ? "More Info →" : "Mehr Info →"}
                           </Button>
                         </Link>
