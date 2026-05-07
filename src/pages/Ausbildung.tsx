@@ -436,8 +436,8 @@ export default function Ausbildung() {
                 </a>
               </div>
             </div>
-            <div className="hidden lg:block lg:pt-1">
-              <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-6 pt-2.5 pb-3 xl:px-7 xl:pt-3 xl:pb-3.5 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_22px_52px_-28px_rgba(27,58,92,0.20)]">
+            <div className="hidden lg:block">
+              <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-6 pt-1.5 pb-3 xl:px-7 xl:pt-2 xl:pb-3.5 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_22px_52px_-28px_rgba(27,58,92,0.20)]">
                 <div className="relative bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.07),0_18px_36px_-16px_rgba(27,58,92,0.22)] mx-auto max-w-[360px] xl:max-w-[400px] select-none">
                   <img
                     src={diplomAktivHypnose}
