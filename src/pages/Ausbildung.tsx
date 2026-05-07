@@ -336,8 +336,8 @@ export default function Ausbildung() {
         </div>
         <div className="container-main py-3 md:py-5 lg:py-7 relative">
           <div className="grid grid-cols-1 md:grid-cols-[1.05fr_1fr] gap-3 md:gap-4 lg:gap-6 md:items-start items-center">
-            <div className="contents lg:block lg:pl-6 xl:pl-10">
-              <div className="order-1 lg:order-none">
+            <div className="contents md:block md:pl-4 lg:pl-6 xl:pl-10">
+              <div className="order-1 md:order-none">
                 <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-2 md:mb-2.5">
                   {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
                 </p>
@@ -387,7 +387,7 @@ export default function Ausbildung() {
                   </span>
                 </div>
                 {/* Desktop-only CTA */}
-                <div className="hidden lg:flex lg:mt-3">
+                <div className="hidden md:flex md:mt-3">
                   <a href="#curriculum" className="inline-flex group" aria-label={isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}>
                     <Button
                       className="bg-white text-[#1B3A5C] hover:bg-[#EEF3F9] active:bg-[#D6E3F0] border-[1.5px] border-[#1B3A5C] hover:border-[#16314D] font-semibold px-5 py-1.5 h-9 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_2px_4px_rgba(27,58,92,0.14),0_6px_14px_rgba(27,58,92,0.14)] hover:shadow-[0_4px_8px_rgba(27,58,92,0.18),0_12px_24px_rgba(27,58,92,0.20)] transition-all duration-200 hover:-translate-y-[1.5px] active:translate-y-[1px] active:shadow-[0_1px_2px_rgba(27,58,92,0.12)]"
@@ -399,7 +399,7 @@ export default function Ausbildung() {
                   </a>
                 </div>
               </div>
-              <div className="order-2 lg:hidden">
+              <div className="order-2 md:hidden">
                 <figure className="relative overflow-hidden bg-gradient-to-br from-white via-[#FBFBFA] to-[#F2F2EF] border border-[#E5E4DF] rounded-2xl px-5 pt-4 pb-3 md:px-6 md:pt-5 md:pb-3.5 shadow-[0_1px_1px_rgba(27,58,92,0.02),0_10px_28px_-20px_rgba(27,58,92,0.14)] ring-1 ring-white/70">
                   <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.04] bg-[radial-gradient(circle_at_20%_15%,#1B3A5C_0,transparent_55%),radial-gradient(circle_at_85%_90%,#1B3A5C_0,transparent_60%)]" />
                   <div className="relative bg-white border border-[#E0DFD9] rounded-[3px] overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.035),0_8px_20px_-12px_rgba(27,58,92,0.16),0_18px_40px_-24px_rgba(27,58,92,0.16)] mx-auto max-w-[280px] md:max-w-[310px] select-none -translate-y-1">
@@ -431,7 +431,7 @@ export default function Ausbildung() {
                 </figure>
               </div>
               {/* Mobile-only CTA (below image) */}
-              <div className="order-3 lg:hidden flex justify-center mt-3">
+              <div className="order-3 md:hidden flex justify-center mt-3">
                 <a href="#curriculum" className="w-full group" aria-label={isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}>
                   <Button
                     className="w-full justify-center text-center bg-white text-[#1B3A5C] hover:bg-[#EEF3F9] active:bg-[#D6E3F0] border-[1.5px] border-[#1B3A5C] hover:border-[#16314D] font-semibold px-4 py-2 h-11 text-[13px] tracking-[0.01em] rounded-lg shadow-[0_2px_5px_rgba(27,58,92,0.14),0_6px_16px_rgba(27,58,92,0.16)] hover:shadow-[0_4px_10px_rgba(27,58,92,0.18),0_12px_24px_rgba(27,58,92,0.22)] transition-all duration-200 hover:-translate-y-[1.5px] active:translate-y-[1px]"
@@ -443,12 +443,12 @@ export default function Ausbildung() {
                 </a>
               </div>
             </div>
-            <div className="hidden lg:block">
-              <figure className="relative overflow-hidden bg-gradient-to-br from-white via-[#FBFBFA] to-[#EFEFEC] border border-[#E5E4DF] rounded-2xl px-7 pt-5 pb-4 xl:px-8 xl:pt-6 xl:pb-5 shadow-[0_1px_1px_rgba(27,58,92,0.02),0_14px_36px_-24px_rgba(27,58,92,0.16),0_28px_60px_-32px_rgba(27,58,92,0.14)] ring-1 ring-white/70">
+            <div className="hidden md:block">
+              <figure className="relative overflow-hidden bg-gradient-to-br from-white via-[#FBFBFA] to-[#EFEFEC] border border-[#E5E4DF] rounded-2xl px-5 pt-4 pb-3 lg:px-7 lg:pt-5 lg:pb-4 xl:px-8 xl:pt-6 xl:pb-5 shadow-[0_1px_1px_rgba(27,58,92,0.02),0_14px_36px_-24px_rgba(27,58,92,0.16),0_28px_60px_-32px_rgba(27,58,92,0.14)] ring-1 ring-white/70">
                 <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.04] bg-[radial-gradient(circle_at_18%_12%,#1B3A5C_0,transparent_55%),radial-gradient(circle_at_88%_92%,#1B3A5C_0,transparent_60%)]" />
                 <div aria-hidden className="pointer-events-none absolute inset-x-6 top-3 h-px bg-gradient-to-r from-transparent via-[#D8D7D2] to-transparent" />
                 <div aria-hidden className="pointer-events-none absolute inset-x-6 bottom-3 h-px bg-gradient-to-r from-transparent via-[#D8D7D2] to-transparent" />
-                <div className="relative bg-white border border-[#E0DFD9] rounded-[3px] overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.035),0_10px_24px_-14px_rgba(27,58,92,0.18),0_24px_50px_-26px_rgba(27,58,92,0.18)] mx-auto max-w-[360px] xl:max-w-[400px] select-none -translate-y-1.5">
+                <div className="relative bg-white border border-[#E0DFD9] rounded-[3px] overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.035),0_10px_24px_-14px_rgba(27,58,92,0.18),0_24px_50px_-26px_rgba(27,58,92,0.18)] mx-auto max-w-[280px] lg:max-w-[360px] xl:max-w-[400px] select-none -translate-y-1.5">
                   <img
                     src={diplomAktivHypnose}
                     alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"}
