@@ -326,7 +326,7 @@ export default function Ausbildung() {
                 <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-1">
                   {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
                 </p>
-                <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-3 md:mb-2 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+                <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-5 md:mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "Aktiv-Hypnose© Therapist" : "Aktiv-Hypnose© Therapeut"}
                 </h1>
                 <ul className="space-y-1 md:space-y-1 mb-3 md:mb-3">
@@ -355,21 +355,15 @@ export default function Ausbildung() {
                     </li>
                   ))}
                 </ul>
-                {/* Desktop-only buttons (kept in original position) */}
-                <div className="hidden lg:flex flex-wrap gap-2 md:gap-3">
-                  <a href="#dates">
-                    <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-5 py-2 md:px-6 md:py-2.5 text-sm">
-                      {isEN ? "View Dates & Register" : "Termine & Anmeldung"}
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </a>
-                  <a href="#curriculum">
+                {/* Desktop-only CTA */}
+                <div className="hidden lg:flex">
+                  <a href="#curriculum" className="inline-flex">
                     <Button
                       variant="outline"
-                      className="border-[#1B3A5C]/25 bg-white text-[#1B3A5C] hover:bg-[#1B3A5C] hover:text-white hover:border-[#1B3A5C] font-medium px-6 py-2.5 md:px-7 md:py-3 text-sm rounded-xl shadow-[0_2px_10px_rgba(27,58,92,0.08)] hover:shadow-[0_4px_14px_rgba(27,58,92,0.18)] transition-all"
+                      className="border-[#1B3A5C]/25 bg-white text-[#1B3A5C] hover:bg-[#1B3A5C] hover:text-white hover:border-[#1B3A5C] font-medium px-7 py-3 h-auto text-sm rounded-xl shadow-[0_2px_10px_rgba(27,58,92,0.08)] hover:shadow-[0_4px_14px_rgba(27,58,92,0.18)] transition-all"
                     >
                       <BookOpen className="w-4 h-4 mr-2" />
-                      {isEN ? "Discover the 6-Day Intensive Curriculum" : "Entdecken Sie die Inhalte der 6-Tage-Intensivausbildung"}
+                      {isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}
                     </Button>
                   </a>
                 </div>
@@ -377,15 +371,15 @@ export default function Ausbildung() {
               <div className="order-2 lg:hidden border border-[#1B3A5C]/12 rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(27,58,92,0.08)]">
                 <img src={`${CDN_BASE}/training_seminar_979f1a53.jpg`} alt={isEN ? "Hypnotherapy Training Seminar" : "Hypnose Ausbildung Seminar"} className="w-full h-auto" />
               </div>
-              {/* Mobile-only button (below image) */}
-              <div className="order-3 lg:hidden flex mt-3">
+              {/* Mobile-only CTA (below image) */}
+              <div className="order-3 lg:hidden flex justify-center mt-4">
                 <a href="#curriculum" className="w-full">
                   <Button
                     variant="outline"
-                    className="w-full border-[#1B3A5C]/25 bg-white text-[#1B3A5C] hover:bg-[#1B3A5C] hover:text-white hover:border-[#1B3A5C] font-medium px-5 py-3 text-sm rounded-xl shadow-[0_2px_10px_rgba(27,58,92,0.08)] hover:shadow-[0_4px_14px_rgba(27,58,92,0.18)] transition-all"
+                    className="w-full justify-center text-center border-[#1B3A5C]/25 bg-white text-[#1B3A5C] hover:bg-[#1B3A5C] hover:text-white hover:border-[#1B3A5C] font-medium px-5 py-3 h-auto text-[13px] rounded-xl shadow-[0_2px_10px_rgba(27,58,92,0.08)] hover:shadow-[0_4px_14px_rgba(27,58,92,0.18)] transition-all"
                   >
-                    <BookOpen className="w-4 h-4 mr-2" />
-                    {isEN ? "Discover the 6-Day Intensive Curriculum" : "Entdecken Sie die Inhalte der 6-Tage-Intensivausbildung"}
+                    <BookOpen className="w-4 h-4 mr-2 flex-shrink-0" />
+                    <span className="truncate-none whitespace-normal">{isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}</span>
                   </Button>
                 </a>
               </div>
