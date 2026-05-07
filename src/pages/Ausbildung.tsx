@@ -338,7 +338,7 @@ export default function Ausbildung() {
           <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-3 md:gap-4 lg:gap-6 lg:items-start items-center">
             <div className="contents lg:block lg:pl-6 xl:pl-10">
               <div className="order-1 lg:order-none">
-                <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-1">
+                <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-2 md:mb-2.5">
                   {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
                 </p>
                 <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-4 md:mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
