@@ -327,8 +327,8 @@ export default function Ausbildung() {
               </p>
               <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-2 md:mb-3 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN
-                  ? "Become a Certified Aktiv-Hypnose© Therapist"
-                  : "Werden Sie zertifizierter Aktiv-Hypnose© Therapeut"}
+                  ? "Aktiv-Hypnose© Therapist"
+                  : "Aktiv-Hypnose© Therapeut"}
               </h1>
               <p className="text-[13px] md:text-sm lg:text-base text-[#55504f] leading-snug md:leading-relaxed mb-2.5 md:mb-4">
                 {isEN
