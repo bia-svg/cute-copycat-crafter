@@ -347,7 +347,7 @@ export default function SeminarAnmeldung() {
                     <div className="space-y-1.5">
                     {visibleDates.map((d, i) => {
                         const isLimited = d.status === "limited";
-                        const savings = seminarCountry === "ch" ? "CHF 300" : "€300";
+                        const savings = seminarCountry === "ch" ? "300.–" : "300,-";
                         return (
                         <button
                           key={i}
