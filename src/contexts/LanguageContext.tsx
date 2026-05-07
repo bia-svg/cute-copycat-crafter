@@ -31,7 +31,7 @@ const translations: Record<string, Record<Language, string>> = {
   "nav.training": { de: "Seminare-Ausbildungen", en: "Seminars & Trainings" },
   "nav.locations": { de: "Standorte", en: "Locations" },
   "nav.about": { de: "Über uns", en: "About Us" },
-  "nav.cta": { de: "Mehr Erfahren", en: "Learn More" },
+  "nav.cta": { de: "Kontakt", en: "Contact" },
   "nav.contact": { de: "Kontakt", en: "Contact" },
 
   "service.smoking": { de: "Raucherentwöhnung", en: "Stop Smoking" },
