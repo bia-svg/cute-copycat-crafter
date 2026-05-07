@@ -546,7 +546,7 @@ export default function Ausbildung() {
                       </div>
                       <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=ch&date=${encodeURIComponent(d.date)}`}>
                         <Button size="sm" className="bg-cta hover:bg-cta/90 text-cta-foreground text-xs whitespace-nowrap">
-                          {isEN ? "Secure Your Place →" : "Platz sichern →"}
+                          {isEN ? "View details & register →" : "Mehr Infos & Anmeldung →"}
                         </Button>
                       </Link>
                     </div>
@@ -590,7 +590,7 @@ export default function Ausbildung() {
                       </div>
                       <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de&date=${encodeURIComponent(d.date)}`}>
                         <Button size="sm" className="bg-cta hover:bg-cta/90 text-cta-foreground text-xs whitespace-nowrap">
-                          {isEN ? "Secure Your Place →" : "Platz sichern →"}
+                          {isEN ? "View details & register →" : "Mehr Infos & Anmeldung →"}
                         </Button>
                       </Link>
                     </div>
