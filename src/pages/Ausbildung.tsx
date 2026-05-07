@@ -701,10 +701,8 @@ export default function Ausbildung() {
                         }`}
                       />
                     ))}
-                  </div>
                 </div>
-              );
-            })()}
+            </div>
           </div>
         </div>
       </section>
