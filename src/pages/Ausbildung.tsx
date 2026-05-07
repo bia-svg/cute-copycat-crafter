@@ -344,7 +344,7 @@ export default function Ausbildung() {
                 <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-4 md:mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "Aktiv-Hypnose© Therapist" : "Aktiv-Hypnose© Therapeut"}
                 </h1>
-                <ul className="space-y-1.5 md:space-y-1.5 lg:space-y-2 mb-2 md:mb-3 lg:mb-4">
+                <ul className="space-y-1.5 md:space-y-1.5 lg:space-y-2 mb-4 md:mb-4">
                   {(isEN ? [
                     "Developed from 35+ years of therapeutic experience",
                     "Effective methods for real change work",
@@ -367,7 +367,7 @@ export default function Ausbildung() {
                   ))}
                 </ul>
                 {/* EMR trust signal — "EMR-konform" prominent, restlicher Text dezent */}
-                <div className="flex items-start gap-2 mt-2 mb-2.5 lg:mt-3.5 lg:mb-4 px-2.5 py-1.5 bg-[#2E7D32]/8 border border-[#2E7D32]/25 rounded-md">
+                <div className="flex items-start gap-2 mb-2.5 lg:mb-4 px-2.5 py-1.5 bg-[#2E7D32]/8 border border-[#2E7D32]/25 rounded-md">
                   <Shield className="w-3.5 h-3.5 text-[#2E7D32] mt-0.5 flex-shrink-0" strokeWidth={2} />
                   <span className="leading-snug">
                     <span className="text-[12px] md:text-[12.5px] text-[#1B3A5C] font-semibold">
