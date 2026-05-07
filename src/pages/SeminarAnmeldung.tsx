@@ -579,17 +579,17 @@ export default function SeminarAnmeldung() {
                         </div>
                       </div>
 
-                      <div className="pb-20 md:pb-0">
-                      <Button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className={`w-full font-medium py-3 transition-colors relative z-[40] ${!isSubmitting ? "bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F]" : "bg-gray-400 text-white cursor-not-allowed"}`}
-                      >
-                        {isEN ? "Register for Seminar" : "Seminar-Anmeldung absenden"}
-                      </Button>
+                      <div className="pb-3 md:pb-0">
+                        <Button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className={`w-full font-medium py-3 transition-colors relative z-[40] ${!isSubmitting ? "bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F]" : "bg-gray-400 text-white cursor-not-allowed"}`}
+                        >
+                          {isEN ? "Register for Seminar" : "Seminar-Anmeldung absenden"}
+                        </Button>
                       </div>
 
-                      <p className="text-[10px] text-muted-foreground text-center">
+                      <p className="text-xs text-slate-600 text-center leading-relaxed mt-1">
                         {isEN
                           ? "By registering you will receive a written invoice. Your data will only be used to process your registration."
                           : "Mit Ihrer Anmeldung erhalten Sie eine schriftliche Rechnung. Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anmeldung verwendet."}
