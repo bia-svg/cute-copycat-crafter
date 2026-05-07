@@ -644,10 +644,7 @@ export default function Ausbildung() {
                 ? "Each day builds on the previous, taking you from fundamentals to advanced clinical techniques."
                 : "Jeder Tag baut auf dem vorherigen auf und führt Sie von den Grundlagen zu fortgeschrittenen klinischen Techniken."}
             </p>
-            {(() => {
-              const [api, setApi] = [curriculumApi, setCurriculumApi];
-              return (
-                <div className="relative px-1 md:px-10">
+            <div className="relative px-1 md:px-10">
                   <Carousel
                     setApi={setCurriculumApi}
                     opts={{ align: "start", loop: false, slidesToScroll: 1 }}
