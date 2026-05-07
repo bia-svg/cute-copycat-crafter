@@ -487,146 +487,148 @@ export default function Ausbildung() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          SECTION — Upcoming Dates with Country Tabs (moved up)
+          SECTION — Upcoming Dates with Country Tabs (premium framed)
           ═══════════════════════════════════════════════════════════ */}
-      <section id="dates" className="bg-[#f4f3ef] border-b border-border scroll-mt-20">
-        <div className="container-main py-5 md:py-8 lg:py-12">
-          <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1.5 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
-            {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
-          </h2>
+      <section id="dates" className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
+        <div className="container-main py-3 md:py-6 lg:py-8">
+          <div className="max-w-5xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl md:rounded-3xl px-4 py-4 md:px-9 md:py-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
+            <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+              {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
+            </h2>
 
-          {/* Country Tabs */}
-          <div className="flex justify-center gap-2 md:gap-3 mb-4 md:mb-6 max-w-md mx-auto">
-            <button
-              onClick={() => { setActiveTab("de"); setShowAllDates(false); }}
-              className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-4 rounded-lg border font-semibold text-sm transition-all ${
-                activeTab === "de"
-                  ? "border-[#C5CCD4] bg-[#EAEEF2] text-[#1B3A5C] shadow-[0_1px_3px_rgba(27,58,92,0.06)]"
-                  : "border-[#E2E8EE] bg-white text-[#1B3A5C]/70 hover:border-[#C5CCD4] hover:text-[#1B3A5C]"
-              }`}
-            >
-              <span className="text-base">🇩🇪</span>
-              {isEN ? "Germany" : "Deutschland"}
-            </button>
-            <button
-              onClick={() => { setActiveTab("ch"); setShowAllDates(false); }}
-              className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-4 rounded-lg border font-semibold text-sm transition-all ${
-                activeTab === "ch"
-                  ? "border-[#C5CCD4] bg-[#EAEEF2] text-[#1B3A5C] shadow-[0_1px_3px_rgba(27,58,92,0.06)]"
-                  : "border-[#E2E8EE] bg-white text-[#1B3A5C]/70 hover:border-[#C5CCD4] hover:text-[#1B3A5C]"
-              }`}
-            >
-              <span className="text-base">🇨🇭</span> {isEN ? "Switzerland" : "Schweiz"}
-            </button>
-          </div>
+            {/* Country Tabs */}
+            <div className="flex justify-center gap-2 md:gap-3 mb-4 md:mb-6 max-w-md mx-auto">
+              <button
+                onClick={() => { setActiveTab("de"); setShowAllDates(false); }}
+                className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-4 rounded-lg border font-semibold text-sm transition-all ${
+                  activeTab === "de"
+                    ? "border-[#C5CCD4] bg-[#EAEEF2] text-[#1B3A5C] shadow-[0_1px_3px_rgba(27,58,92,0.06)]"
+                    : "border-[#E2E8EE] bg-white text-[#1B3A5C]/70 hover:border-[#C5CCD4] hover:text-[#1B3A5C]"
+                }`}
+              >
+                <span className="text-base">🇩🇪</span>
+                {isEN ? "Germany" : "Deutschland"}
+              </button>
+              <button
+                onClick={() => { setActiveTab("ch"); setShowAllDates(false); }}
+                className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-4 rounded-lg border font-semibold text-sm transition-all ${
+                  activeTab === "ch"
+                    ? "border-[#C5CCD4] bg-[#EAEEF2] text-[#1B3A5C] shadow-[0_1px_3px_rgba(27,58,92,0.06)]"
+                    : "border-[#E2E8EE] bg-white text-[#1B3A5C]/70 hover:border-[#C5CCD4] hover:text-[#1B3A5C]"
+                }`}
+              >
+                <span className="text-base">🇨🇭</span> {isEN ? "Switzerland" : "Schweiz"}
+              </button>
+            </div>
 
-          <div className="space-y-2.5 md:space-y-4 max-w-2xl mx-auto">
-            {/* CH Content */}
-            {activeTab === "ch" && (
-              <>
-                {(showAllDates ? datesCH : datesCH.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
-                  <div key={`ch-${i}`} className="border border-[#1B3A5C]/12 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                    <div>
-                      <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
-                        <Calendar className="w-4 h-4" /> {d.date}
-                      </p>
-                      <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
-                        <MapPin className="w-3.5 h-3.5" /> {d.location}
-                      </p>
-                      <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
-                        <Clock className="w-3.5 h-3.5" /> {isEN ? "Mon–Fri 10:00–17:00 · Sat 10:00–15:00" : "Mo–Fr 10:00–17:00 · Sa 10:00–15:00"}
-                      </p>
-                    </div>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                      <div className="flex flex-wrap items-center gap-1.5">
-                        {d.status === "limited" && (
-                          <>
-                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FFF3E0] text-[#E65100]">
-                              {isEN ? "Limited seats" : "Letzte Plätze"}
-                            </span>
-                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
-                              {isEN ? "CHF 300 off" : "300 CHF Rabatt"}
-                            </span>
-                          </>
-                        )}
-                        {d.status !== "limited" && (
-                          <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
-                            {isEN ? "Available" : "Verfügbar"}
-                          </span>
-                        )}
+            <div className="space-y-2.5 md:space-y-4 max-w-2xl mx-auto">
+              {/* CH Content */}
+              {activeTab === "ch" && (
+                <>
+                  {(showAllDates ? datesCH : datesCH.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
+                    <div key={`ch-${i}`} className="border border-[#1B3A5C]/12 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                      <div>
+                        <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
+                          <Calendar className="w-4 h-4" /> {d.date}
+                        </p>
+                        <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
+                          <MapPin className="w-3.5 h-3.5" /> {d.location}
+                        </p>
+                        <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
+                          <Clock className="w-3.5 h-3.5" /> {isEN ? "Mon–Fri 10:00–17:00 · Sat 10:00–15:00" : "Mo–Fr 10:00–17:00 · Sa 10:00–15:00"}
+                        </p>
                       </div>
-                      <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=ch`}>
-                        <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-xs whitespace-nowrap rounded-lg font-semibold">
-                          {isEN ? "More Info →" : "Mehr Info →"}
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-              </>
-            )}
-
-            {/* DE Content */}
-            {activeTab === "de" && (
-              <>
-                {(showAllDates ? datesDE : datesDE.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
-                  <div key={`de-${i}`} className="border border-[#1B3A5C]/12 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                    <div>
-                      <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
-                        <Calendar className="w-4 h-4" /> {d.date}
-                      </p>
-                      <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
-                        <MapPin className="w-3.5 h-3.5" /> {d.location}
-                      </p>
-                      <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
-                        <Clock className="w-3.5 h-3.5" /> {isEN ? "Mon–Fri 10:00–17:00 · Sat 10:00–15:00" : "Mo–Fr 10:00–17:00 · Sa 10:00–15:00"}
-                      </p>
-                    </div>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                      <div className="flex flex-wrap items-center gap-1.5">
-                        {d.status === "limited" ? (
-                          <>
-                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FFF3E0] text-[#E65100]">
-                              {isEN ? "Limited seats" : "Letzte Plätze"}
-                            </span>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <div className="flex flex-wrap items-center gap-1.5">
+                          {d.status === "limited" && (
+                            <>
+                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FFF3E0] text-[#E65100]">
+                                {isEN ? "Limited seats" : "Letzte Plätze"}
+                              </span>
+                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
+                                {isEN ? "CHF 300 off" : "300 CHF Rabatt"}
+                              </span>
+                            </>
+                          )}
+                          {d.status !== "limited" && (
                             <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
-                              {isEN ? "€300 off" : "300 € Rabatt"}
+                              {isEN ? "Available" : "Verfügbar"}
                             </span>
-                          </>
-                        ) : (
-                          <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
-                            {isEN ? "Available" : "Verfügbar"}
-                          </span>
-                        )}
+                          )}
+                        </div>
+                        <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=ch`}>
+                          <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-xs whitespace-nowrap rounded-lg font-semibold">
+                            {isEN ? "More Info →" : "Mehr Info →"}
+                          </Button>
+                        </Link>
                       </div>
-                      <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de`}>
-                        <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-xs whitespace-nowrap rounded-lg font-semibold">
-                          {isEN ? "More Info →" : "Mehr Info →"}
-                        </Button>
-                      </Link>
                     </div>
-                  </div>
-                ))}
-              </>
-            )}
+                  ))}
+                </>
+              )}
+
+              {/* DE Content */}
+              {activeTab === "de" && (
+                <>
+                  {(showAllDates ? datesDE : datesDE.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
+                    <div key={`de-${i}`} className="border border-[#1B3A5C]/12 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_10px_rgba(27,58,92,0.05)] hover:shadow-[0_6px_18px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/25 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                      <div>
+                        <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
+                          <Calendar className="w-4 h-4" /> {d.date}
+                        </p>
+                        <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
+                          <MapPin className="w-3.5 h-3.5" /> {d.location}
+                        </p>
+                        <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
+                          <Clock className="w-3.5 h-3.5" /> {isEN ? "Mon–Fri 10:00–17:00 · Sat 10:00–15:00" : "Mo–Fr 10:00–17:00 · Sa 10:00–15:00"}
+                        </p>
+                      </div>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <div className="flex flex-wrap items-center gap-1.5">
+                          {d.status === "limited" ? (
+                            <>
+                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FFF3E0] text-[#E65100]">
+                                {isEN ? "Limited seats" : "Letzte Plätze"}
+                              </span>
+                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
+                                {isEN ? "€300 off" : "300 € Rabatt"}
+                              </span>
+                            </>
+                          ) : (
+                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
+                              {isEN ? "Available" : "Verfügbar"}
+                            </span>
+                          )}
+                        </div>
+                        <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de`}>
+                          <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-xs whitespace-nowrap rounded-lg font-semibold">
+                            {isEN ? "More Info →" : "Mehr Info →"}
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+                  ))}
+                </>
+              )}
+            </div>
+            {(() => {
+              const totalForTab = activeTab === "ch" ? datesCH.length : datesDE.length;
+              const hidden = totalForTab - INITIAL_DATES_VISIBLE;
+              if (hidden <= 0) return null;
+              return (
+                <div className="text-center mt-5">
+                  <button
+                    onClick={() => setShowAllDates((v) => !v)}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#1B3A5C] border border-[#1B3A5C]/25 hover:border-[#1B3A5C]/50 hover:bg-white rounded-full px-5 py-2 transition-all"
+                  >
+                    {showAllDates
+                      ? (isEN ? "Show fewer dates" : "Weniger Termine anzeigen")
+                      : (isEN ? `Show all dates (+${hidden})` : `Weitere Termine anzeigen (+${hidden})`)}
+                  </button>
+                </div>
+              );
+            })()}
           </div>
-          {(() => {
-            const totalForTab = activeTab === "ch" ? datesCH.length : datesDE.length;
-            const hidden = totalForTab - INITIAL_DATES_VISIBLE;
-            if (hidden <= 0) return null;
-            return (
-              <div className="text-center mt-5">
-                <button
-                  onClick={() => setShowAllDates((v) => !v)}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#1B3A5C] border border-[#1B3A5C]/25 hover:border-[#1B3A5C]/50 hover:bg-white rounded-full px-5 py-2 transition-all"
-                >
-                  {showAllDates
-                    ? (isEN ? "Show fewer dates" : "Weniger Termine anzeigen")
-                    : (isEN ? `Show all dates (+${hidden})` : `Weitere Termine anzeigen (+${hidden})`)}
-                </button>
-              </div>
-            );
-          })()}
         </div>
       </section>
 
