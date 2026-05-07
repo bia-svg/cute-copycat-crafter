@@ -397,7 +397,7 @@ export default function Ausbildung() {
                   <h2 className="text-center text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight mb-2.5 md:mb-3" style={{ fontFamily: "Georgia, serif" }}>
                     {isEN ? "Your Diploma" : "Ihr Diplom"}
                   </h2>
-                  <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06),0_10px_24px_-12px_rgba(27,58,92,0.18)] mx-auto max-w-[220px] md:max-w-[240px]">
+                  <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06),0_10px_24px_-12px_rgba(27,58,92,0.18)] mx-auto max-w-[242px] md:max-w-[264px]">
                     <img src={diplomAktivHypnose} alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"} className="w-full h-auto" loading="eager" />
                   </div>
                   <figcaption className="mt-2.5 md:mt-3 text-center">
