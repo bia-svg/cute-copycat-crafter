@@ -409,31 +409,33 @@ export default function Ausbildung() {
               ? "Not a mass-market course. Not a certificate mill. A serious premium training with real depth, built on 30,000+ clinical sessions."
               : "Kein Massenkurs. Keine Zertifikatsfabrik. Eine seriöse Premium-Ausbildung mit echter Tiefe, aufgebaut auf 30.000+ klinischen Sitzungen."}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-1.5 md:gap-2.5 max-w-5xl mx-auto">
             {[
-              { icon: <Shield className="w-4 h-4 md:w-5 md:h-5 text-[#1B3A5C]" />, titleDE: "35+ Jahre klinische Praxis", titleEN: "35+ Years of Clinical Practice", textDE: "Jede gelehrte Technik wurde in Tausenden realer klinischer Sitzungen getestet und verfeinert. Eine methodenbasierte Expertenausbildung.", textEN: "Every technique taught has been tested and refined in thousands of real clinical sessions. This is method-based expert training." },
-              { icon: <Users className="w-4 h-4 md:w-5 md:h-5 text-[#1B3A5C]" />, titleDE: "Kleingruppen-Format", titleEN: "Small Group Format", textDE: "Strikt begrenzte Teilnehmerzahl garantiert persönliche Betreuung, individuelles Feedback und maximale Lernintensität. Ein selektives Lernerlebnis.", textEN: "Strictly limited participants ensure personal attention, individual feedback, and maximum learning intensity. A selective learning experience." },
-              { icon: <Zap className="w-4 h-4 md:w-5 md:h-5 text-[#1B3A5C]" />, titleDE: "Praxis ab Tag 1", titleEN: "Hands-On from Day 1", textDE: "Sie schauen nicht nur zu — Sie hypnotisieren. Jeder Tag verbindet Theorie mit sofortiger praktischer Anwendung. Eine transformative Praxisausbildung.", textEN: "You won't just watch — you'll hypnotize. Every day combines theory with immediate application. A transformational practical training." },
+              { icon: <Shield className="w-[14px] h-[14px] md:w-4 md:h-4 text-[#1B3A5C]" strokeWidth={1.5} />, titleDE: "35+ Jahre klinische Praxis", titleEN: "35+ Years of Clinical Practice", textDE: "Jede Technik in Tausenden realer Sitzungen verfeinert — methodenbasierte Expertenausbildung.", textEN: "Every technique refined across thousands of real sessions — method-based expert training." },
+              { icon: <Users className="w-[14px] h-[14px] md:w-4 md:h-4 text-[#1B3A5C]" strokeWidth={1.5} />, titleDE: "Kleingruppen-Format", titleEN: "Small Group Format", textDE: "Begrenzte Teilnehmerzahl für persönliche Betreuung und maximale Lernintensität.", textEN: "Limited group size for personal attention and maximum learning intensity." },
+              { icon: <Zap className="w-[14px] h-[14px] md:w-4 md:h-4 text-[#1B3A5C]" strokeWidth={1.5} />, titleDE: "Praxis ab Tag 1", titleEN: "Hands-On from Day 1", textDE: "Sie hypnotisieren selbst — Theorie verbunden mit sofortiger praktischer Anwendung.", textEN: "You hypnotize yourself — theory paired with immediate practical application." },
             ].map((c, i) => (
-              <div key={i} className="group relative bg-white border border-[#1B3A5C]/30 rounded-xl md:rounded-2xl p-3 md:p-4 text-left shadow-[0_4px_12px_rgba(27,58,92,0.08)] md:shadow-[0_6px_18px_rgba(27,58,92,0.10)] md:hover:shadow-[0_12px_28px_rgba(27,58,92,0.16)] md:hover:border-[#1B3A5C]/55 md:hover:-translate-y-0.5 transition-all duration-300">
-                <div className="flex items-center gap-2 mb-1.5">
-                  <span className="inline-flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#1B3A5C]/10 ring-1 ring-[#1B3A5C]/20 shrink-0">
+              <div key={i} className="group relative bg-white/80 border border-[#1B3A5C]/10 rounded-lg md:rounded-xl px-3 py-2 md:px-3.5 md:py-2.5 text-left shadow-[0_1px_2px_rgba(27,58,92,0.04)] md:hover:shadow-[0_4px_12px_rgba(27,58,92,0.08)] md:hover:border-[#1B3A5C]/25 transition-all duration-300">
+                <div className="flex items-start gap-2 md:gap-2.5">
+                  <span className="inline-flex items-center justify-center w-6 h-6 md:w-7 md:h-7 rounded-md bg-[#1B3A5C]/[0.04] ring-1 ring-[#1B3A5C]/10 shrink-0 mt-px">
                     {c.icon}
                   </span>
-                  <h3 className="font-light text-sm md:text-base text-[#1B3A5C] leading-tight tracking-tight">{isEN ? c.titleEN : c.titleDE}</h3>
+                  <div className="min-w-0">
+                    <h3 className="font-medium text-[13px] md:text-[13.5px] text-[#1B3A5C] leading-snug tracking-tight mb-0.5">{isEN ? c.titleEN : c.titleDE}</h3>
+                    <p className="text-[11px] md:text-[11.5px] text-muted-foreground leading-snug max-w-[42ch]">{isEN ? c.textEN : c.textDE}</p>
+                  </div>
                 </div>
-                <p className="text-[11px] md:text-xs text-muted-foreground leading-snug md:leading-relaxed">{isEN ? c.textEN : c.textDE}</p>
               </div>
             ))}
           </div>
 
           {/* EMR Badge */}
-          <div className="mt-2.5 md:mt-4 flex flex-col items-center text-center">
-            <div className="inline-flex items-center gap-2 bg-[#e8f5e9] border border-[#c8e6c9] rounded-full px-3 py-1 md:px-4 md:py-1.5">
-              <img src={CDN.emrBadge} alt="EMR Badge" className="w-4 h-4 md:w-5 md:h-5 object-contain" />
-              <span className="text-[11px] md:text-xs font-semibold text-[#2E7D32] tracking-wide">EMR Krankenkasse konform</span>
+          <div className="mt-2 md:mt-3 flex flex-col items-center text-center">
+            <div className="inline-flex items-center gap-1.5 bg-[#e8f5e9]/60 border border-[#c8e6c9]/70 rounded-full px-2.5 py-0.5 md:px-3 md:py-1">
+              <img src={CDN.emrBadge} alt="EMR Badge" className="w-3.5 h-3.5 md:w-4 md:h-4 object-contain" />
+              <span className="text-[10.5px] md:text-[11px] font-semibold text-[#2E7D32] tracking-wide">EMR Krankenkasse konform</span>
             </div>
-            <p className="mt-1.5 md:mt-2 text-[10px] md:text-[11px] text-muted-foreground max-w-md leading-snug md:leading-relaxed">
+            <p className="mt-1 md:mt-1.5 text-[10px] md:text-[10.5px] text-muted-foreground/90 max-w-md leading-snug">
               {isEN
                 ? "EMR-compliant structure. Upon request, participants receive an hours and course content certificate for possible submission."
                 : "EMR-konform aufgebaut. Auf Wunsch erhalten Teilnehmer einen Stunden- und Inhaltsnachweis zur möglichen Einreichung."}
