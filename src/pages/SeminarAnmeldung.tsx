@@ -381,31 +381,31 @@ export default function SeminarAnmeldung() {
                             {isLimited ? (
                               <div className="flex items-center justify-between">
                                 <div className="flex items-baseline gap-2">
-                                  <span className="inline-flex items-baseline gap-0.5 text-xs text-muted-foreground line-through">
+                                  <span className="inline-flex items-baseline gap-0.5 text-xs text-muted-foreground/80 line-through">
                                     <span className="text-[10px] font-normal">{seminarCountry === "ch" ? "CHF" : "€"}</span>
-                                    <span>{seminarCountry === "ch" ? "2.790.–" : "2.790,–"}</span>
+                                    <span className="font-normal">{seminarCountry === "ch" ? "2.790.–" : "2.790,–"}</span>
                                   </span>
-                                  <span className="inline-flex items-baseline gap-0.5 text-[#2E7D32]">
-                                    <span className="text-[10px] font-medium tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
-                                    <span className="text-[15px] font-semibold tracking-tight">{seminarCountry === "ch" ? "2.490.–" : "2.490,–"}</span>
+                                  <span className="inline-flex items-baseline gap-0.5 text-[#2E7D32]/90">
+                                    <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
+                                    <span className="text-[15px] font-medium tracking-tight">{seminarCountry === "ch" ? "2.490.–" : "2.490,–"}</span>
                                   </span>
                                 </div>
                                 <div className="flex items-center gap-1">
-                                  <span className="text-[9px] font-medium text-[#2E7D32] bg-[#E8F5E9] px-1.5 py-[3px] rounded-full border border-[#2E7D32]/10">
+                                  <span className="text-[9px] font-normal text-[#2E7D32] bg-[#E8F5E9]/70 px-1.5 py-[3px] rounded-full border border-[#2E7D32]/8">
                                     {isEN ? `Save ${savings}` : `${savings} sparen`}
                                   </span>
-                                  <span className="text-[9px] font-medium text-[#E65100] bg-[#FFF3E0] px-1.5 py-[3px] rounded-full border border-[#E65100]/10">
+                                  <span className="text-[9px] font-normal text-[#E65100] bg-[#FFF3E0]/70 px-1.5 py-[3px] rounded-full border border-[#E65100]/8">
                                     {isEN ? "Limited seats!" : "Letzte Plätze!"}
                                   </span>
                                 </div>
                               </div>
                             ) : (
                               <div className="flex items-center justify-between">
-                                <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]">
-                                  <span className="text-[10px] font-medium tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
-                                  <span className="text-[15px] font-semibold tracking-tight">{seminarCountry === "ch" ? "2.790.–" : "2.790,–"}</span>
+                                <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]/80">
+                                  <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
+                                  <span className="text-[15px] font-medium tracking-tight">{seminarCountry === "ch" ? "2.790.–" : "2.790,–"}</span>
                                 </span>
-                                <span className="text-[10px] font-medium px-1.5 py-[3px] rounded-full bg-[#E8F5E9] text-[#2E7D32] border border-[#2E7D32]/10">
+                                <span className="text-[10px] font-normal px-1.5 py-[3px] rounded-full bg-[#E8F5E9]/70 text-[#2E7D32] border border-[#2E7D32]/8">
                                   {isEN ? "Available" : "Verfügbar"}
                                 </span>
                               </div>
