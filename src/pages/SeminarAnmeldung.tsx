@@ -204,12 +204,12 @@ export default function SeminarAnmeldung() {
       // Fire notifications in background
       supabase.functions.invoke("notify-lead", { body: { lead: leadData } }).catch(err => console.error("Slack error:", err));
       // Determine pricing at time of booking
-      const isEarlyBirdAtBooking = selectedDateObj && ((selectedDateObj as any).forceEarlyBird || hasEarlyBirdForDate(seminarCountry as "ch" | "de", selectedDate));
+      const isDiscountAtBooking = selectedDateObj?.status === "limited";
       const isCH = seminarCountry === "ch";
-      const bookedPrice = isEarlyBirdAtBooking ? (isCH ? "CHF 2.690.-" : "€2.490,-") : (isCH ? "CHF 2.990.-" : "€2.790,-");
-      const priceType = isEarlyBirdAtBooking ? "Frühbucherpreis" : "Regulärer Preis";
+      const bookedPrice = isDiscountAtBooking ? (isCH ? "CHF 2.690.-" : "€2.490,-") : (isCH ? "CHF 2.990.-" : "€2.790,-");
+      const priceType = isDiscountAtBooking ? "Rabattpreis" : "Regulärer Preis";
       const regularPrice = isCH ? "CHF 2.990.-" : "€2.790,-";
-      const savingsAmount = isEarlyBirdAtBooking ? (isCH ? "CHF 300" : "€300") : undefined;
+      const savingsAmount = isDiscountAtBooking ? (isCH ? "CHF 300" : "€300") : undefined;
 
       sendLeadEmails({
         name: leadData.name,
