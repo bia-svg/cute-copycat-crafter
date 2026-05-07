@@ -393,7 +393,7 @@ export default function Ausbildung() {
                 </div>
               </div>
               <div className="order-2 lg:hidden">
-                <figure className="bg-gradient-to-b from-white via-white to-[#faf8f4] border border-[#1B3A5C]/10 rounded-2xl px-4 pt-4 pb-5 md:px-5 md:pt-5 md:pb-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_18px_40px_-22px_rgba(27,58,92,0.22)] ring-1 ring-white">
+                <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-4 pt-4 pb-5 md:px-5 md:pt-5 md:pb-6 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_18px_44px_-26px_rgba(27,58,92,0.18)]">
                   <h2 className="text-center text-xl md:text-2xl font-light text-[#1B3A5C] tracking-tight mb-4 md:mb-5" style={{ fontFamily: "Georgia, serif" }}>
                     {isEN ? "Your Diploma" : "Ihr Diplom"}
                   </h2>
@@ -423,7 +423,7 @@ export default function Ausbildung() {
               </div>
             </div>
             <div className="hidden lg:block">
-              <figure className="bg-gradient-to-b from-white via-white to-[#faf8f4] border border-[#1B3A5C]/10 rounded-2xl px-6 pt-6 pb-7 xl:px-7 xl:pt-7 xl:pb-8 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_24px_48px_-26px_rgba(27,58,92,0.24)] ring-1 ring-white">
+              <figure className="bg-gradient-to-b from-[#f4f3ef] via-[#f7f5f0] to-[#efece5] border border-[#1B3A5C]/8 rounded-2xl px-6 pt-6 pb-7 xl:px-7 xl:pt-7 xl:pb-8 shadow-[0_1px_2px_rgba(27,58,92,0.03),0_22px_52px_-28px_rgba(27,58,92,0.20)]">
                 <h2 className="text-center text-2xl xl:text-[1.65rem] font-light text-[#1B3A5C] tracking-tight mb-5 xl:mb-6" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "Your Diploma" : "Ihr Diplom"}
                 </h2>
