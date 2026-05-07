@@ -344,7 +344,7 @@ export default function Ausbildung() {
                 <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-4 md:mb-4 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "Aktiv-Hypnose© Therapist" : "Aktiv-Hypnose© Therapeut"}
                 </h1>
-                <ul className="space-y-1 md:space-y-1 lg:space-y-1.5 mb-2 md:mb-3 lg:mb-4">
+                <ul className="space-y-1.5 md:space-y-1.5 lg:space-y-2 mb-2 md:mb-3 lg:mb-4">
                   {(isEN ? [
                     "Developed from 35+ years of therapeutic experience",
                     "Effective methods for real change work",
