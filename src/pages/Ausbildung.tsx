@@ -745,7 +745,7 @@ export default function Ausbildung() {
           ═══════════════════════════════════════════════════════════ */}
 
       <FAQSection
-        sectionClassName="bg-[#DDE1E4] border-y border-border"
+        sectionClassName="bg-[#f4f3ef] border-y border-border"
         title={isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
         items={isEN ? [
           { q: "What certification do I receive after the training?", a: "You receive the Aktiv-Hypnose Therapist Diploma, based on the method developed by David J. Woods over more than 35 years of clinical practice. David himself is a respected international trainer with many years of training experience. The training is structured to be EMR-compliant. Upon request, participants receive a detailed certificate of hours and content, which may be submitted depending on the country, specialization, and individual requirements. Recognition is always at the discretion of the relevant authority." },
