@@ -319,18 +319,18 @@ export default function Ausbildung() {
           SECTION 1 — HERO: Why this training exists
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-4 md:py-6 lg:py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8 items-center">
+        <div className="container-main py-3 md:py-5 lg:py-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-center">
             <div>
-              <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-1.5">
+              <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-1">
                 {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
               </p>
-              <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-2 md:mb-3 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+              <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-1.5 md:mb-2 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN
                   ? "Aktiv-Hypnose© Therapist"
                   : "Aktiv-Hypnose© Therapeut"}
               </h1>
-              <ul className="space-y-1 md:space-y-1.5 mb-2.5 md:mb-4">
+              <ul className="space-y-0.5 md:space-y-1 mb-2 md:mb-3">
                 {(isEN ? [
                   "Developed from 35+ years of therapeutic experience",
                   "Effective methods for real change work",
@@ -356,10 +356,6 @@ export default function Ausbildung() {
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-wrap gap-x-3 gap-y-1 text-[12px] md:text-sm text-[#55504f] mb-2.5 md:mb-4">
-                <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#2E7D32]" /> {isEN ? "6-Day Intensive Training" : "6 Tage Intensiv-Ausbildung"}</span>
-                <span className="flex items-center gap-1.5"><GraduationCap className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#2E7D32]" /> {isEN ? "Specialist Practitioner Diploma" : "Therapeuten-Diplom"}</span>
-              </div>
               <div className="flex flex-wrap gap-2 md:gap-3">
                 <a href="#dates">
                   <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-5 py-2 md:px-6 md:py-2.5 text-sm">
