@@ -315,7 +315,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                   </div>
                 )}
                 <Link to={getPath("contact", language, country)} onClick={handleCtaClick} className="self-start">
-                  <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-6 py-2.5">
+                  <Button className="bg-[#d8ebd4] hover:bg-[#c8e6c9] text-[#1a3a2e] font-normal text-[11.5px] md:text-[12.5px] px-4 md:px-5 py-1 md:py-1.5 rounded-lg shadow-[0_1px_2px_rgba(0,0,0,0.04)] border border-[#1B3A5C]/25">
                     {ctaLabel ?? t("nav.cta")}
                   </Button>
                 </Link>

@@ -19,9 +19,9 @@ export const smokingData: ServicePageData = {
   eyebrowCH: "Hypnose-Sitzungen – Raucherentwöhnung",
   eyebrowDE: "Hypnose-Sitzungen – Raucherentwöhnung",
   eyebrowEN: "Hypnosis Sessions – Stop Smoking",
-  ctaCH: "Termin unverbindlich anfragen",
-  ctaDE: "Termin unverbindlich anfragen",
-  ctaEN: "Request an appointment",
+  ctaCH: "Kurze Frage stellen",
+  ctaDE: "Kurze Frage stellen",
+  ctaEN: "Ask a quick question",
   h1CH: "Rauchfrei mit Hypnose – ohne ständigen inneren Kampf",
   h1DE: "Rauchfrei mit Hypnose – ohne ständigen inneren Kampf",
   h1EN: "Smoke-Free with Hypnosis – Without the Constant Inner Struggle",
@@ -215,9 +215,9 @@ export const smokingData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const anxietyData: ServicePageData = {
   slugCH: "aengste-phobien", slugDE: "aengste-phobien", slugEN: "anxiety-phobias",
-  ctaCH: "Termin unverbindlich anfragen",
-  ctaDE: "Termin unverbindlich anfragen",
-  ctaEN: "Request an appointment",
+  ctaCH: "Kurze Frage stellen",
+  ctaDE: "Kurze Frage stellen",
+  ctaEN: "Ask a quick question",
   eyebrowCH: "Hypnose-Sitzungen – Ängste & Panikattacken",
   eyebrowDE: "Hypnose-Sitzungen – Ängste & Panikattacken",
   eyebrowEN: "Hypnosis Sessions – Anxiety & Panic Attacks",
@@ -341,9 +341,9 @@ export const anxietyData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const weightData: ServicePageData = {
   slugCH: "abnehmen", slugDE: "abnehmen", slugEN: "weight-loss",
-  ctaCH: "Termin unverbindlich anfragen",
-  ctaDE: "Termin unverbindlich anfragen",
-  ctaEN: "Request an appointment",
+  ctaCH: "Kurze Frage stellen",
+  ctaDE: "Kurze Frage stellen",
+  ctaEN: "Ask a quick question",
   eyebrowCH: "Hypnose-Sitzungen – Abnehmen",
   eyebrowDE: "Hypnose-Sitzungen – Abnehmen",
   eyebrowEN: "Hypnosis Sessions – Weight Loss",
@@ -451,9 +451,9 @@ export const weightData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const stressData: ServicePageData = {
   slugCH: "stress-burnout", slugDE: "stress-burnout", slugEN: "stress-burnout",
-  ctaCH: "Termin unverbindlich anfragen",
-  ctaDE: "Termin unverbindlich anfragen",
-  ctaEN: "Request an appointment",
+  ctaCH: "Kurze Frage stellen",
+  ctaDE: "Kurze Frage stellen",
+  ctaEN: "Ask a quick question",
   eyebrowCH: "Hypnose-Sitzungen – Stress & Burnout",
   eyebrowDE: "Hypnose-Sitzungen – Stress & Burnout",
   eyebrowEN: "Hypnosis Sessions – Stress & Burnout",
@@ -590,9 +590,9 @@ export const stressData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const depressionData: ServicePageData = {
   slugCH: "depressionen-traumata", slugDE: "depressionen-traumata", slugEN: "depression-trauma",
-  ctaCH: "Termin unverbindlich anfragen",
-  ctaDE: "Termin unverbindlich anfragen",
-  ctaEN: "Request an appointment",
+  ctaCH: "Kurze Frage stellen",
+  ctaDE: "Kurze Frage stellen",
+  ctaEN: "Ask a quick question",
   eyebrowCH: "Hypnose-Sitzungen – Depression & Trauma",
   eyebrowDE: "Hypnose-Sitzungen – Depression & Trauma",
   eyebrowEN: "Hypnosis Sessions – Depression & Trauma",
@@ -709,9 +709,9 @@ export const depressionData: ServicePageData = {
    ═══════════════════════════════════════════════════════════════ */
 export const adultsData: ServicePageData = {
   slugCH: "erwachsene", slugDE: "erwachsene", slugEN: "adults",
-  ctaCH: "Termin unverbindlich anfragen",
-  ctaDE: "Termin unverbindlich anfragen",
-  ctaEN: "Request an appointment",
+  ctaCH: "Kurze Frage stellen",
+  ctaDE: "Kurze Frage stellen",
+  ctaEN: "Ask a quick question",
   eyebrowCH: "Hypnose-Sitzungen – Erwachsene",
   eyebrowDE: "Hypnose-Sitzungen – Erwachsene",
   eyebrowEN: "Hypnosis Sessions – Adults",
@@ -846,9 +846,9 @@ export const adultsData: ServicePageData = {
 
 export const childrenData: ServicePageData = {
   slugCH: "kinder-jugendliche", slugDE: "kinder-jugendliche", slugEN: "children-teens",
-  ctaCH: "Termin unverbindlich anfragen",
-  ctaDE: "Termin unverbindlich anfragen",
-  ctaEN: "Request an appointment",
+  ctaCH: "Kurze Frage stellen",
+  ctaDE: "Kurze Frage stellen",
+  ctaEN: "Ask a quick question",
   eyebrowCH: "Hypnose-Sitzungen – Kinder & Jugendliche",
   eyebrowDE: "Hypnose-Sitzungen – Kinder & Jugendliche",
   eyebrowEN: "Hypnosis Sessions – Children & Teens",
