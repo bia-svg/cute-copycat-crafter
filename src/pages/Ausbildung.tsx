@@ -600,9 +600,9 @@ export default function Ausbildung() {
                     <CarouselContent className="-ml-2 md:-ml-3">
                       {days.map((day) => (
                         <CarouselItem key={day.day} className="pl-2 md:pl-3 basis-full md:basis-1/3">
-                          <div className="h-full bg-white border border-[#2E7D32]/35 rounded-xl md:rounded-2xl p-2.5 md:p-3.5 shadow-[0_2px_8px_rgba(46,125,50,0.08)] ring-1 ring-[#2E7D32]/10">
+                          <div className="h-full bg-gradient-to-b from-white to-[#F8FAF8] border border-[#2E7D32]/45 rounded-xl md:rounded-2xl p-2.5 md:p-3.5 shadow-[0_4px_20px_rgba(27,58,92,0.07),0_1px_3px_rgba(46,125,50,0.06),0_8px_28px_-6px_rgba(46,125,50,0.10)] ring-1 ring-[#2E7D32]/15 hover:shadow-[0_8px_30px_rgba(27,58,92,0.10),0_2px_5px_rgba(46,125,50,0.08),0_12px_36px_-8px_rgba(46,125,50,0.14)] hover:border-[#2E7D32]/60 transition-shadow duration-300">
                             <div className="flex items-center gap-2 mb-1.5">
-                              <div className="p-1.5 rounded-lg bg-[#2E7D32]/10 ring-1 ring-[#2E7D32]/25 text-[#1B3A5C] shrink-0">
+                              <div className="p-2 rounded-xl bg-[#2E7D32]/10 ring-1 ring-[#2E7D32]/35 text-[#1B3A5C] shrink-0 shadow-[0_2px_6px_rgba(46,125,50,0.12)]">
                                 {day.icon}
                               </div>
                               <div className="min-w-0">
