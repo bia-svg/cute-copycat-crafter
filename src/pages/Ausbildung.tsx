@@ -348,7 +348,7 @@ export default function Ausbildung() {
                   {(isEN ? [
                     "Developed from 35+ years of therapeutic experience",
                     "Effective methods for real change work",
-                    "Modern hypnosis combined with psychological expertise",
+                    "Modern hypnosis & psychological expertise",
                     "Deep work, EMDR & transformation techniques",
                     "Small groups & personal guidance",
                     "Continued support after the seminar",
