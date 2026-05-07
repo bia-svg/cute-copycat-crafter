@@ -326,7 +326,7 @@ export default function Ausbildung() {
                 <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-1">
                   {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
                 </p>
-                <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-1.5 md:mb-2 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+                <h1 className="text-[1.4rem] sm:text-3xl lg:text-[2.25rem] leading-tight font-light text-[#1B3A5C] mb-3 md:mb-2 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "Aktiv-Hypnose© Therapist" : "Aktiv-Hypnose© Therapeut"}
                 </h1>
                 <ul className="space-y-1 md:space-y-1 mb-3 md:mb-3">
