@@ -64,20 +64,20 @@ export default function TrainingTestimonialsCarousel() {
 
   return (
     <section className="bg-[#DDE1E4] border-b border-border">
-      <div className="container-main py-3 md:py-6 lg:py-8">
-        <div className="max-w-5xl mx-auto bg-white border border-[#2E7D32]/15 rounded-2xl md:rounded-3xl px-4 py-5 md:px-9 md:py-8 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
-        <div className="max-w-3xl mx-auto text-center mb-3 md:mb-6">
-          <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+      <div className="container-main py-3 md:py-5 lg:py-6">
+        <div className="max-w-3xl mx-auto bg-white border border-[#2E7D32]/15 rounded-2xl md:rounded-3xl px-4 py-4 md:px-7 md:py-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
+        <div className="max-w-2xl mx-auto text-center mb-2.5 md:mb-4">
+          <h2 className="text-base md:text-xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "What Our Seminar Participants Say" : "Das sagen unsere Seminarteilnehmer"}
           </h2>
-          <p className="text-[11px] md:text-sm text-muted-foreground text-center max-w-2xl mx-auto leading-snug">
+          <p className="text-[11px] md:text-[13px] text-muted-foreground text-center max-w-xl mx-auto leading-snug">
             {isEN
               ? "Real video testimonials from participants of the Aktiv-Hypnose® Training"
               : "Echte Video-Erfahrungsberichte von Teilnehmern der Aktiv-Hypnose® Ausbildung"}
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto relative">
+        <div className="max-w-xl mx-auto relative">
           <Carousel setApi={setApi} opts={{ loop: true, align: "start", startIndex: 0 }} className="relative">
             <CarouselContent>
               {trainingTestimonials.map((t, i) => (
