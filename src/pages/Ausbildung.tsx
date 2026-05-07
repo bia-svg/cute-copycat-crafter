@@ -397,7 +397,7 @@ export default function Ausbildung() {
                   <h2 className="text-center text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight mb-2.5 md:mb-3" style={{ fontFamily: "Georgia, serif" }}>
                     {isEN ? "Your Diploma" : "Ihr Diplom"}
                   </h2>
-                  <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06),0_10px_24px_-12px_rgba(27,58,92,0.18)] mx-auto max-w-[220px] md:max-w-[240px]">
+                  <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06),0_10px_24px_-12px_rgba(27,58,92,0.18)] mx-auto max-w-[242px] md:max-w-[264px]">
                     <img src={diplomAktivHypnose} alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"} className="w-full h-auto" loading="eager" />
                   </div>
                   <figcaption className="mt-2.5 md:mt-3 text-center">
@@ -427,7 +427,7 @@ export default function Ausbildung() {
                 <h2 className="text-center text-xl xl:text-[1.4rem] font-light text-[#1B3A5C] tracking-tight mb-3 xl:mb-3.5" style={{ fontFamily: "Georgia, serif" }}>
                   {isEN ? "Your Diploma" : "Ihr Diplom"}
                 </h2>
-                <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.07),0_18px_36px_-16px_rgba(27,58,92,0.22)] mx-auto max-w-[280px] xl:max-w-[310px]">
+                <div className="bg-white border border-[#1B3A5C]/10 rounded-md overflow-hidden shadow-[0_3px_12px_rgba(0,0,0,0.07),0_18px_36px_-16px_rgba(27,58,92,0.22)] mx-auto max-w-[308px] xl:max-w-[340px]">
                   <img src={diplomAktivHypnose} alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"} className="w-full h-auto" loading="eager" />
                 </div>
                 <figcaption className="mt-3 xl:mt-3.5 text-center">
