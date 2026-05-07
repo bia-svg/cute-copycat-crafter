@@ -318,10 +318,14 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION 1 — HERO: Why this training exists
           ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-3 md:py-5 lg:py-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-4 lg:gap-8 items-center">
-            <div className="contents lg:block">
+      <section className="bg-[#f4f3ef] border-b border-border relative overflow-hidden">
+        {/* Subtle premium connecting glow between text & image (desktop only) */}
+        <div aria-hidden className="hidden lg:block pointer-events-none absolute inset-0">
+          <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[60%] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+        </div>
+        <div className="container-main py-3 md:py-5 lg:py-7 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-3 md:gap-4 lg:gap-6 items-center">
+            <div className="contents lg:block lg:pl-6 xl:pl-10">
               <div className="order-1 lg:order-none">
                 <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-[#2E7D32] mb-1">
                   {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
@@ -356,12 +360,12 @@ export default function Ausbildung() {
                   ))}
                 </ul>
                 {/* Desktop-only CTA */}
-                <div className="hidden lg:flex mt-1">
+                <div className="hidden lg:flex mt-2">
                   <a href="#curriculum" className="inline-flex group">
                     <Button
-                      className="bg-[#1B3A5C] text-white hover:bg-[#16314D] active:bg-[#11263C] border border-[#1B3A5C] font-medium px-7 py-3 h-auto text-sm rounded-xl shadow-[0_4px_14px_rgba(27,58,92,0.18)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.28)] transition-all duration-200 hover:-translate-y-[1px]"
+                      className="bg-[#1B3A5C] text-white hover:bg-[#16314D] active:bg-[#11263C] border border-[#1B3A5C] font-medium px-6 py-2 h-auto text-[13px] rounded-lg shadow-[0_3px_10px_rgba(27,58,92,0.16)] hover:shadow-[0_6px_16px_rgba(27,58,92,0.24)] transition-all duration-200 hover:-translate-y-[1px]"
                     >
-                      <BookOpen className="w-4 h-4 mr-2 transition-transform duration-200 group-hover:scale-110" />
+                      <BookOpen className="w-3.5 h-3.5 mr-2 transition-transform duration-200 group-hover:scale-110" />
                       {isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}
                     </Button>
                   </a>
@@ -374,9 +378,9 @@ export default function Ausbildung() {
               <div className="order-3 lg:hidden flex justify-center mt-2">
                 <a href="#curriculum" className="w-full group">
                   <Button
-                    className="w-full justify-center text-center bg-[#1B3A5C] text-white hover:bg-[#16314D] active:bg-[#11263C] border border-[#1B3A5C] font-medium px-5 py-3.5 h-auto text-[13px] rounded-xl shadow-[0_4px_14px_rgba(27,58,92,0.2)] hover:shadow-[0_8px_22px_rgba(27,58,92,0.28)] transition-all duration-200"
+                    className="w-full justify-center text-center bg-[#1B3A5C] text-white hover:bg-[#16314D] active:bg-[#11263C] border border-[#1B3A5C] font-medium px-5 py-2.5 h-auto text-[13px] rounded-lg shadow-[0_3px_10px_rgba(27,58,92,0.18)] hover:shadow-[0_6px_16px_rgba(27,58,92,0.26)] transition-all duration-200"
                   >
-                    <BookOpen className="w-4 h-4 mr-2 flex-shrink-0 transition-transform duration-200 group-hover:scale-110" />
+                    <BookOpen className="w-3.5 h-3.5 mr-2 flex-shrink-0 transition-transform duration-200 group-hover:scale-110" />
                     <span className="truncate-none whitespace-normal">{isEN ? "What you'll directly learn" : "Was Sie direkt lernen werden"}</span>
                   </Button>
                 </a>
