@@ -349,20 +349,14 @@ export default function Ausbildung() {
                     "Developed from 35+ years of therapeutic experience",
                     "Effective methods for real change work",
                     "Modern hypnosis combined with psychological expertise",
-                    "Directly applicable techniques for practice and everyday life",
                     "Deep work, EMDR & transformation techniques",
-                    "Learn through direct application and real demonstrations",
                     "Small groups & personal guidance",
-                    "Support even after the seminar",
                   ] : [
                     "Entwickelt aus 35+ Jahren therapeutischer Erfahrung",
                     "Effektive Methoden für echte Veränderungsarbeit",
                     "Moderne Hypnose kombiniert mit psychologischem Fachwissen",
-                    "Direkt anwendbare Techniken für Praxis und Alltag",
                     "Tiefenarbeit, EMDR & Transformationstechniken",
-                    "Lernen durch direkte Anwendung und echte Demonstrationen",
                     "Kleine Gruppen & persönliche Begleitung",
-                    "Begleitung auch nach dem Seminar",
                   ]).map((item) => (
                     <li key={item} className="flex items-start gap-2 text-[12px] md:text-[13px] lg:text-sm text-[#55504f] leading-snug">
                       <CheckCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#2E7D32] mt-0.5 flex-shrink-0" />
