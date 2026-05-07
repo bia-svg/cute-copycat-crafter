@@ -420,8 +420,20 @@ export default function Ausbildung() {
                 </a>
               </div>
             </div>
-            <div className="hidden lg:block border border-[#1B3A5C]/12 rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(27,58,92,0.08)]">
-              <img src={`${CDN_BASE}/training_seminar_979f1a53.jpg`} alt={isEN ? "Hypnotherapy Training Seminar" : "Hypnose Ausbildung Seminar"} className="w-full h-auto" />
+            <div className="hidden lg:block">
+              <figure className="bg-gradient-to-b from-white to-[#f7f5f0] border border-[#1B3A5C]/15 rounded-2xl p-5 xl:p-6 shadow-[0_10px_32px_rgba(27,58,92,0.12)]">
+                <div className="bg-white border border-[#1B3A5C]/10 rounded-lg overflow-hidden shadow-[0_4px_14px_rgba(0,0,0,0.08)] mx-auto max-w-[360px] xl:max-w-[400px]">
+                  <img src={diplomAktivHypnose} alt={isEN ? "Aktiv-Hypnose® Therapist Diploma" : "Aktiv-Hypnose® Therapeuten-Diplom"} className="w-full h-auto" loading="eager" />
+                </div>
+                <figcaption className="mt-4 text-center">
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-[#2E7D32] font-medium mb-1.5">{isEN ? "Your Diploma" : "Ihr Diplom"}</p>
+                  <p className="text-[12.5px] text-[#55504f] leading-snug max-w-[44ch] mx-auto">
+                    {isEN
+                      ? "This certification is awarded upon completion of the 6-day seminar as a Therapist in Aktiv-Hypnose®."
+                      : "Diese Zertifizierung erhalten Sie nach Abschluss des 6-tägigen Seminars als Therapeut/in in Aktiv-Hypnose®."}
+                  </p>
+                </figcaption>
+              </figure>
             </div>
           </div>
 
