@@ -438,7 +438,7 @@ export default function UeberUns() {
                 </div>
                 <Link to={`${getPath("contact", language, country)}?concern=children`}>
                   <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-5 py-2.5">
-                    {isEN ? "Book Session for Children & Teens" : "Sitzung für Kinder & Jugendliche buchen"}
+                    {isEN ? "Consult with Kathryn" : "Von Kathryn beraten lassen"}
                   </Button>
                 </Link>
               </div>
