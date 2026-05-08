@@ -403,7 +403,7 @@ export default function SeminarAnmeldung() {
                                 </div>
                               </div>
                             ) : (
-                              <div className="flex items-center justify-between">
+                              <div className="flex items-center justify-between sm:justify-start sm:gap-3">
                                 <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]/70">
                                   <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
                                   <span className="text-[15px] font-normal tracking-tight">{seminarCountry === "ch" ? "2.790.–" : "2.790,–"}</span>
