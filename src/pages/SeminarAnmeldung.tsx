@@ -343,10 +343,14 @@ export default function SeminarAnmeldung() {
                 {/* STEP 2 — Date */}
                 {seminarCountry && (
                   <div>
-                    <h2 className="text-sm font-light text-[#1B3A5C] mb-2 flex items-center gap-2 tracking-tight">
+                    <h2 className="text-sm font-light text-[#1B3A5C] mb-1.5 flex items-center gap-2 tracking-tight">
                       <span className="w-5 h-5 rounded-full bg-[#1B3A5C] text-white text-[11px] flex items-center justify-center">2</span>
                       {isEN ? "Select Date" : "Termin wählen"}
                     </h2>
+                    <div className="mb-2 inline-flex items-center gap-1.5 text-[11px] font-medium text-[#2E7D32] bg-white px-2.5 py-1 rounded-full border border-[#2E7D32]/20 shadow-sm">
+                      <GraduationCap className="w-3 h-3" />
+                      {isEN ? "Therapist in Aktiv-Hypnose®" : "Therapeut in Aktiv-Hypnose®"}
+                    </div>
                     <div className="space-y-1.5">
                     {visibleDates.map((d, i) => {
                         const isLimited = d.status === "limited";
