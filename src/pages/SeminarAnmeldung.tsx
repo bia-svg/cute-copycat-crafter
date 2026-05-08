@@ -276,10 +276,10 @@ export default function SeminarAnmeldung() {
                 <GraduationCap className="w-3 h-3" />
                 {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
               </div>
-              <h1 className="text-xl sm:text-2xl font-light text-[#1B3A5C] mb-1.5 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+              <h1 className="text-xl sm:text-2xl font-light text-[#1B3A5C] mb-2 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN ? "Register for Seminar" : "Seminar-Anmeldung"}
               </h1>
-              <p className="text-[12.5px] sm:text-[13.5px] font-light text-[#2E7D32]/80 tracking-wide">
+              <p className="text-[11.5px] sm:text-[12.5px] font-light text-[#2E7D32]/60 tracking-wide mt-1.5">
                 {isEN ? "Learn more than standard hypnotherapy." : "Mehr als nur Standard-Hypnose lernen."}
               </p>
             </div>
@@ -382,7 +382,7 @@ export default function SeminarAnmeldung() {
                           {/* Price display */}
                           <div className="mt-2 pt-2 border-t border-border/30">
                             {isLimited ? (
-                              <div className="flex items-center justify-between">
+                              <div className="flex items-center justify-between sm:justify-start sm:gap-3">
                                 <div className="flex items-baseline gap-2">
                                   <span className="inline-flex items-baseline gap-0.5 text-xs text-muted-foreground/70 line-through">
                                     <span className="text-[10px] font-normal">{seminarCountry === "ch" ? "CHF" : "€"}</span>
@@ -403,7 +403,7 @@ export default function SeminarAnmeldung() {
                                 </div>
                               </div>
                             ) : (
-                              <div className="flex items-center justify-between">
+                              <div className="flex items-center justify-between sm:justify-start sm:gap-3">
                                 <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]/70">
                                   <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
                                   <span className="text-[15px] font-normal tracking-tight">{seminarCountry === "ch" ? "2.790.–" : "2.790,–"}</span>
