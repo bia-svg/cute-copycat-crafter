@@ -382,7 +382,7 @@ export default function SeminarAnmeldung() {
                           {/* Price display */}
                           <div className="mt-2 pt-2 border-t border-border/30">
                             {isLimited ? (
-                              <div className="flex items-center justify-between">
+                              <div className="flex items-center justify-between sm:justify-start sm:gap-3">
                                 <div className="flex items-baseline gap-2">
                                   <span className="inline-flex items-baseline gap-0.5 text-xs text-muted-foreground/70 line-through">
                                     <span className="text-[10px] font-normal">{seminarCountry === "ch" ? "CHF" : "€"}</span>
