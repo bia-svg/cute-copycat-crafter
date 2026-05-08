@@ -279,6 +279,9 @@ export default function SeminarAnmeldung() {
               <h1 className="text-xl sm:text-2xl font-light text-[#1B3A5C] mb-1.5 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN ? "Register for Seminar" : "Seminar-Anmeldung"}
               </h1>
+              <p className="text-[12.5px] sm:text-[13.5px] font-light text-[#2E7D32]/80 tracking-wide">
+                {isEN ? "Learn more than standard hypnotherapy." : "Mehr als nur Standard-Hypnose lernen."}
+              </p>
             </div>
 
             {submitted ? (
