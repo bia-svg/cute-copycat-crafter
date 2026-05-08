@@ -276,10 +276,10 @@ export default function SeminarAnmeldung() {
                 <GraduationCap className="w-3 h-3" />
                 {isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung"}
               </div>
-              <h1 className="text-xl sm:text-2xl font-light text-[#1B3A5C] mb-1.5 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+              <h1 className="text-xl sm:text-2xl font-light text-[#1B3A5C] mb-2 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
                 {isEN ? "Register for Seminar" : "Seminar-Anmeldung"}
               </h1>
-              <p className="text-[12.5px] sm:text-[13.5px] font-light text-[#2E7D32]/80 tracking-wide">
+              <p className="text-[11.5px] sm:text-[12.5px] font-light text-[#2E7D32]/60 tracking-wide mt-1.5">
                 {isEN ? "Learn more than standard hypnotherapy." : "Mehr als nur Standard-Hypnose lernen."}
               </p>
             </div>
