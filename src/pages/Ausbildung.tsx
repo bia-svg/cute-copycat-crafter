@@ -849,7 +849,7 @@ export default function Ausbildung() {
             </p>
             <Link to={`${getPath("seminarRegistration", language, country)}?country=de`}>
               <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-5 py-2 md:px-6 md:py-2.5 text-[13px] md:text-sm rounded-full shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] transition-all">
-                {isEN ? "Register for Seminar" : "Zum Seminar anmelden"}
+                {isEN ? "View Next Step" : "Nächsten Schritt ansehen"}
                 <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
               </Button>
             </Link>
