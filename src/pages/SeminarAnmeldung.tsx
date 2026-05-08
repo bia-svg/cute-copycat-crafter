@@ -380,35 +380,35 @@ export default function SeminarAnmeldung() {
                             </div>
                           </div>
                           {/* Price display */}
-                          <div className="mt-1.5 pt-1.5 border-t border-border/40">
+                          <div className="mt-2 pt-2 border-t border-border/30">
                             {isLimited ? (
                               <div className="flex items-center justify-between">
                                 <div className="flex items-baseline gap-2">
-                                  <span className="inline-flex items-baseline gap-0.5 text-xs text-muted-foreground/80 line-through">
+                                  <span className="inline-flex items-baseline gap-0.5 text-xs text-muted-foreground/70 line-through">
                                     <span className="text-[10px] font-normal">{seminarCountry === "ch" ? "CHF" : "€"}</span>
                                     <span className="font-normal">{seminarCountry === "ch" ? "2.790.–" : "2.790,–"}</span>
                                   </span>
-                                  <span className="inline-flex items-baseline gap-0.5 text-[#2E7D32]/90">
+                                  <span className="inline-flex items-baseline gap-0.5 text-[#2E7D32]/80">
                                     <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
-                                    <span className="text-[15px] font-medium tracking-tight">{seminarCountry === "ch" ? "2.490.–" : "2.490,–"}</span>
+                                    <span className="text-[15px] font-normal tracking-tight">{seminarCountry === "ch" ? "2.490.–" : "2.490,–"}</span>
                                   </span>
                                 </div>
                                 <div className="flex items-center gap-1">
-                                  <span className="text-[9px] font-normal text-[#2E7D32] bg-[#E8F5E9]/70 px-1.5 py-[3px] rounded-full border border-[#2E7D32]/8">
+                                  <span className="text-[9px] font-normal text-[#2E7D32] bg-[#E8F5E9]/60 px-1.5 py-[3px] rounded-full border border-[#2E7D32]/8">
                                     {isEN ? `Save ${savings}` : `${savings} sparen`}
                                   </span>
-                                  <span className="text-[9px] font-normal text-[#E65100] bg-[#FFF3E0]/70 px-1.5 py-[3px] rounded-full border border-[#E65100]/8">
+                                  <span className="text-[9px] font-normal text-[#E65100] bg-[#FFF3E0]/60 px-1.5 py-[3px] rounded-full border border-[#E65100]/8">
                                     {isEN ? "Limited seats!" : "Letzte Plätze!"}
                                   </span>
                                 </div>
                               </div>
                             ) : (
                               <div className="flex items-center justify-between">
-                                <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]/80">
+                                <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]/70">
                                   <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
-                                  <span className="text-[15px] font-medium tracking-tight">{seminarCountry === "ch" ? "2.790.–" : "2.790,–"}</span>
+                                  <span className="text-[15px] font-normal tracking-tight">{seminarCountry === "ch" ? "2.790.–" : "2.790,–"}</span>
                                 </span>
-                                <span className="text-[10px] font-normal px-1.5 py-[3px] rounded-full bg-[#E8F5E9]/70 text-[#2E7D32] border border-[#2E7D32]/8">
+                                <span className="text-[10px] font-normal px-1.5 py-[3px] rounded-full bg-[#E8F5E9]/60 text-[#2E7D32] border border-[#2E7D32]/8">
                                   {isEN ? "Available" : "Verfügbar"}
                                 </span>
                               </div>
