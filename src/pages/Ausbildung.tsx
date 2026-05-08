@@ -663,9 +663,12 @@ export default function Ausbildung() {
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
             </h2>
-            <p className="text-center text-[11.5px] sm:text-[12.5px] font-light text-[#2E7D32]/70 tracking-wide mt-1 mb-1">
-              {isEN ? "Therapist in Aktiv-Hypnose®" : "Therapeut in Aktiv-Hypnose®"}
-            </p>
+            <div className="flex justify-center mb-3">
+              <div className="inline-flex items-center gap-2 text-[13px] sm:text-sm font-medium text-[#2E7D32] bg-[#E8F5E9]/80 px-4 py-2 rounded-full border border-[#2E7D32]/20 shadow-sm">
+                <GraduationCap className="w-4 h-4" />
+                {isEN ? "Therapist in Aktiv-Hypnose®" : "Therapeut in Aktiv-Hypnose®"}
+              </div>
+            </div>
 
             {/* Country Tabs */}
             <div className="flex justify-center gap-2 md:gap-3 mb-4 md:mb-6 max-w-md mx-auto">
