@@ -490,16 +490,24 @@ export default function Home() {
               </div>
 
               {/* CTA – pushed to bottom on desktop */}
-              <button
-                type="button"
-                onClick={() => {
-                  const el = document.getElementById("contact");
-                  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
-                className="mt-3 md:mt-4 md:mb-1 inline-flex items-center justify-center bg-[#d8ebd4] hover:bg-[#c8e6c9] text-[#1a3a2e] font-normal text-[11.5px] md:text-[12.5px] px-4 md:px-5 py-1 md:py-1.5 rounded-lg shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all border border-[#1B3A5C]/25"
-              >
-                {isEN ? "Ask a quick question" : "Kurze Frage stellen"}
-              </button>
+              <div className="mt-3 md:mt-4 md:mb-1 flex flex-wrap items-center justify-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    const el = document.getElementById("contact");
+                    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
+                  className="inline-flex items-center justify-center bg-[#d8ebd4] hover:bg-[#c8e6c9] text-[#1a3a2e] font-normal text-[11.5px] md:text-[12.5px] px-4 md:px-5 py-1 md:py-1.5 rounded-lg shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all border border-[#1B3A5C]/25"
+                >
+                  {isEN ? "Ask a quick question" : "Kurze Frage stellen"}
+                </button>
+                <Link
+                  to={getPath("onlineBeratung", language, country)}
+                  className="inline-flex items-center justify-center bg-white hover:bg-[#F4F7FA] text-[#1B3A5C] font-medium text-[11.5px] md:text-[12.5px] px-4 md:px-5 py-1 md:py-1.5 rounded-lg shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all border border-[#1B3A5C]/35"
+                >
+                  {isEN ? "Online Consultation" : "Online-Beratung"}
+                </Link>
+              </div>
 
               {/* Mobile: 2x2 badges grid below CTA */}
               <div className="grid md:hidden grid-cols-2 gap-2 w-full mt-3 select-none">
