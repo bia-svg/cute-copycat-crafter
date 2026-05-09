@@ -105,7 +105,7 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
       )}
       <div
         ref={containerRef}
-        className="calendly-inline-widget mx-auto w-full overflow-hidden rounded-lg bg-white h-[1180px] sm:h-[1080px] md:h-[1040px]"
+        className="calendly-inline-widget mx-auto w-full overflow-hidden rounded-lg bg-white h-[1020px] sm:h-[1080px] md:h-[1040px]"
         data-url={CALENDLY_EMBED_URL}
         style={{ minWidth: "320px", overscrollBehavior: "contain" }}
       />
@@ -209,11 +209,11 @@ export default function OnlineBeratung() {
           <div className="max-w-5xl mx-auto bg-white/85 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
             <div className="max-w-2xl mx-auto text-center">
               <div className="flex items-center justify-center gap-3 mb-3">
-                <span className="h-px w-8 bg-[#1B3A5C]/25" />
-                <p className="text-[10px] md:text-[11px] uppercase tracking-[0.26em] text-[#1B3A5C]/70 font-medium">
+                <span className="h-px w-8 bg-[#2E7D32]/20" />
+                <p className="text-[11px] md:text-[12.5px] uppercase tracking-[0.22em] text-[#1B3A5C]/90 font-semibold">
                   Lic. Psych. David J. Woods
                 </p>
-                <span className="h-px w-8 bg-[#1B3A5C]/25" />
+                <span className="h-px w-8 bg-[#2E7D32]/20" />
               </div>
               <h1 className="text-[22px] md:text-[30px] font-light tracking-tight text-[#1B3A5C] leading-[1.15]">
                 {title}
@@ -269,7 +269,7 @@ export default function OnlineBeratung() {
               ].map((label) => (
                 <span
                   key={label}
-                  className="inline-flex items-center rounded-full border border-[#E2E8EE] bg-white px-2.5 py-1 text-[11px] md:text-[11.5px] text-[#1B3A5C]/85 tracking-tight shadow-[0_1px_2px_rgba(27,58,92,0.04)]"
+                  className="inline-flex items-center rounded-full border border-[#2E7D32]/18 bg-gradient-to-b from-[#F8FBF9] to-white px-2.5 py-1 text-[11px] md:text-[11.5px] text-[#1B3A5C]/85 tracking-tight shadow-[0_1px_2px_rgba(27,58,92,0.04)]"
                 >
                   {label}
                 </span>
