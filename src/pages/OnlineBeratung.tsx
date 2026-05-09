@@ -239,9 +239,21 @@ export default function OnlineBeratung() {
             </div>
 
             {calendarOpen ? (
-              <CalendlyInlineEmbed
-                loadingLabel={isEN ? "Loading calendar …" : "Kalender wird geladen …"}
-              />
+              <>
+                <CalendlyInlineEmbed
+                  loadingLabel={isEN ? "Loading calendar …" : "Kalender wird geladen …"}
+                />
+                <div className="mt-4 flex justify-center">
+                  <button
+                    type="button"
+                    onClick={handleCloseCalendar}
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-white hover:bg-[#f4f3ef] text-[#1B3A5C] font-medium px-6 py-2.5 text-[13px] md:text-[13.5px] tracking-tight border-[1.5px] border-border shadow-[0_2px_8px_rgba(27,58,92,0.06)] hover:shadow-[0_4px_12px_rgba(27,58,92,0.10)] whitespace-nowrap"
+                  >
+                    <X className="w-4 h-4" strokeWidth={2} />
+                    {isEN ? "Close calendar" : "Kalender schließen"}
+                  </button>
+                </div>
+              </>
             ) : (
               <div className="rounded-2xl border-[1.5px] border-border bg-[#f4f3ef] px-5 py-5 md:px-6 md:py-6 shadow-[0_4px_14px_rgba(27,58,92,0.06),inset_0_1px_0_rgba(255,255,255,0.6)]">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -257,8 +269,8 @@ export default function OnlineBeratung() {
                   </div>
                   <button
                     type="button"
-                    onClick={() => setCalendarOpen(true)}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-6 py-2.5 text-[13px] md:text-[13.5px] tracking-tight shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] transition-all whitespace-nowrap"
+                    onClick={handleOpenCalendar}
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-6 py-2.5 text-[13px] md:text-[13.5px] tracking-tight shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] whitespace-nowrap"
                   >
                     <CalendarClock className="w-4 h-4" strokeWidth={2} />
                     {isEN ? "Open calendar" : "Kalender öffnen"}
