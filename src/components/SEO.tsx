@@ -52,6 +52,7 @@ const slugMapEN: Record<string, string> = {
   cityZurich: "hypnosis-zurich", cityAugsburg: "hypnosis-augsburg",
   blog: "blog", book: "book-go-inside",
   impressum: "imprint", privacy: "privacy-policy", terms: "terms",
+  onlineBeratung: "online-psychological-consultation",
 };
 
 function buildUrl(lang: Language, country: Country, pageKey?: string): string {
