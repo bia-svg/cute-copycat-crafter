@@ -93,19 +93,19 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
   }, []);
 
   return (
-    <div className="relative rounded-2xl border border-[#E6E1D6] bg-[#FBF8F2] p-1.5 md:p-2 shadow-[0_2px_14px_rgba(27,58,92,0.05)]">
+    <div className="relative rounded-xl border border-[#E2E8EE] bg-white p-1 md:p-1.5 shadow-[0_2px_10px_rgba(27,58,92,0.04)]">
       {!loaded && (
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 rounded-2xl bg-[#FBF8F2]/95">
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2.5 rounded-xl bg-white/95">
           <span
-            className="inline-block h-6 w-6 rounded-full border-2 border-[#D7DEE6] border-t-[#1B3A5C] animate-spin"
+            className="inline-block h-5 w-5 rounded-full border-2 border-[#D7DEE6] border-t-[#1B3A5C] animate-spin"
             aria-hidden="true"
           />
-          <p className="text-[13px] text-[#1B3A5C]/70 tracking-tight">{loadingLabel}</p>
+          <p className="text-[12.5px] text-[#1B3A5C]/70 tracking-tight">{loadingLabel}</p>
         </div>
       )}
       <div
         ref={containerRef}
-        className="calendly-inline-widget mx-auto w-full overflow-hidden rounded-xl bg-[#FBF8F2] h-[980px] sm:h-[820px] md:h-[720px]"
+        className="calendly-inline-widget mx-auto w-full overflow-hidden rounded-lg bg-white h-[940px] sm:h-[780px] md:h-[700px]"
         data-url={CALENDLY_EMBED_URL}
         style={{ minWidth: "320px" }}
       />
