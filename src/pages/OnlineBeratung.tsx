@@ -53,7 +53,7 @@ export default function OnlineBeratung() {
         },
         {
           q: "How is payment made?",
-          a: "After booking you receive the payment details by email, SMS or WhatsApp. The appointment is firmly reserved as soon as the payment has been received.",
+          a: "After booking you receive the payment details by email, SMS or WhatsApp.\nThe appointment is firmly reserved as soon as the payment has been received or proof of payment has been provided.",
         },
         {
           q: "Is the consultation confidential?",
@@ -75,7 +75,7 @@ export default function OnlineBeratung() {
         },
         {
           q: "Wie erfolgt die Zahlung?",
-          a: "Nach der Buchung erhalten Sie die Zahlungsinformationen per E-Mail, SMS oder WhatsApp. Der Termin wird verbindlich reserviert, sobald die Zahlung eingegangen ist.",
+          a: "Nach der Buchung erhalten Sie die Zahlungsinformationen per E-Mail, SMS oder WhatsApp.\nDer Termin wird verbindlich reserviert, sobald die Zahlung eingegangen ist oder ein Zahlungsnachweis übermittelt wurde.",
         },
         {
           q: "Ist die Beratung vertraulich?",
