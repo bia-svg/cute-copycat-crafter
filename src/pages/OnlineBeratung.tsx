@@ -26,24 +26,51 @@ declare global {
 
 function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const widgetRef = useRef<HTMLDivElement | null>(null);
   const [loaded, setLoaded] = useState(false);
+  const [dynamicHeight, setDynamicHeight] = useState<number | null>(null);
 
   useEffect(() => {
     let cancelled = false;
 
-    const initWidget = () => {
-      if (cancelled || !containerRef.current || !window.Calendly?.initInlineWidget) return;
+    const isCalendlyEvent = (e: MessageEvent) =>
+      typeof e.data === "object" &&
+      e.data !== null &&
+      typeof (e.data as { event?: string }).event === "string" &&
+      (e.data as { event: string }).event.indexOf("calendly.") === 0;
 
-      containerRef.current.innerHTML = "";
+    const handleMessage = (e: MessageEvent) => {
+      if (!isCalendlyEvent(e)) return;
+      const data = e.data as { event: string; payload?: { height?: number } };
+
+      // Dynamic height: Calendly posts page_height as content changes
+      if (data.event === "calendly.page_height" && data.payload?.height) {
+        setDynamicHeight(data.payload.height);
+      }
+
+      // Mobile: when a date is selected and times appear, scroll to bring times into view
+      if (data.event === "calendly.date_and_time_selected" || data.event === "calendly.event_type_viewed") {
+        if (window.matchMedia("(max-width: 767px)").matches && widgetRef.current) {
+          requestAnimationFrame(() => {
+            widgetRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        }
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+
+    const initWidget = () => {
+      if (cancelled || !widgetRef.current || !window.Calendly?.initInlineWidget) return;
+
+      widgetRef.current.innerHTML = "";
       window.Calendly.initInlineWidget({
         url: CALENDLY_EMBED_URL,
-        parentElement: containerRef.current,
+        parentElement: widgetRef.current,
       });
-      // Calendly injects an iframe; mark loaded once it appears
-      const iframe = containerRef.current.querySelector("iframe");
+      const iframe = widgetRef.current.querySelector("iframe");
       if (iframe) {
         iframe.addEventListener("load", () => !cancelled && setLoaded(true), { once: true });
-        // Fallback in case load event already fired
         setTimeout(() => !cancelled && setLoaded(true), 1500);
       } else {
         setTimeout(() => !cancelled && setLoaded(true), 1500);
