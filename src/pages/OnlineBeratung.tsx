@@ -330,7 +330,7 @@ export default function OnlineBeratung() {
                         "Kurzfristige psychologische Unterstützung",
                       ];
                   const TopicItem = ({ topic }: { topic: string }) => (
-                    <li className="group flex items-center gap-2 rounded-xl border border-[#CFD8E3] bg-gradient-to-b from-white to-[#F4F8FB] px-3 py-2 text-[12.5px] md:text-[13px] text-[#0B1F33]/85 leading-snug shadow-[0_1px_3px_rgba(27,58,92,0.06),inset_0_-1px_0_rgba(27,58,92,0.03)] hover:border-[#2E7D32]/40 hover:bg-gradient-to-b hover:from-white hover:to-[#F0F7F3] hover:shadow-[0_3px_10px_rgba(46,125,50,0.08)] transition-all">
+                    <li className="group flex items-center gap-2 rounded-xl border border-[#E2DBCB] bg-gradient-to-b from-[#FBF9F3] to-[#F4EFE3] px-3 py-2 text-[12.5px] md:text-[13px] text-[#0B1F33]/85 leading-snug shadow-[0_1px_3px_rgba(75,55,25,0.07),inset_0_-1px_0_rgba(75,55,25,0.04)] hover:border-[#2E7D32]/40 hover:bg-gradient-to-b hover:from-[#FBFBF5] hover:to-[#EFF6EC] hover:shadow-[0_3px_10px_rgba(46,125,50,0.10)] transition-all">
                       <span className="shrink-0 inline-block w-1.5 h-1.5 rounded-full bg-[#2E7D32]/65 group-hover:bg-[#2E7D32]" />
                       <span>{topic}</span>
                     </li>
