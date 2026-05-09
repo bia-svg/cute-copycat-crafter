@@ -137,16 +137,16 @@ export default function OnlineBeratung() {
 
   const title = isEN ? "Confidential Online Psychological Consultation" : "Vertrauliche Online Psychologische Beratung";
   const subtitle = isEN
-    ? "Professional psychological support for emotional strain, anxiety, stress, inner conflicts or personal processes of change — flexibly by phone or online."
-    : "Professionelle psychologische Unterstützung bei emotionalen Belastungen, Ängsten, Stress, inneren Konflikten oder persönlichen Veränderungsprozessen — flexibel telefonisch oder online.";
+    ? "Professional online psychological consultation for emotional strain, anxiety, stress, inner conflicts or personal processes of change — flexibly by phone or online."
+    : "Professionelle Online Psychologische Beratung bei emotionalen Belastungen, Ängsten, Stress, inneren Konflikten oder persönlichen Veränderungsprozessen — flexibel telefonisch oder online.";
 
   return (
     <>
       <SEO
-        titleDE="Online Psychologische Beratung – Lic. Psych. David J. Woods"
-        titleEN="Online Psychological Consultation – Lic. Psych. David J. Woods"
-        descriptionDE="Vertrauliche psychologische Online-Beratung mit Lic. Psych. David J. Woods – flexibel telefonisch oder online. 35+ Jahre Erfahrung."
-        descriptionEN="Confidential online psychological consultation with Lic. Psych. David J. Woods – flexibly by phone or online. 35+ years of experience."
+        titleDE="Online Psychologische Beratung | David J. Woods"
+        titleEN="Online Psychological Consultation | David J. Woods"
+        descriptionDE="Professionelle Online Psychologische Beratung bei emotionalen Belastungen, Stress, Ängsten, inneren Konflikten und persönlichen Veränderungsprozessen. Kurzfristige Termine telefonisch oder online möglich."
+        descriptionEN="Professional online psychological consultation for emotional strain, stress, anxiety, inner conflicts and personal processes of change. Short-notice appointments available by phone or online."
         pageKey="contact"
       />
       <Breadcrumbs
