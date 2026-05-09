@@ -239,24 +239,25 @@ export default function OnlineBeratung() {
 
       {/* INFO / SEO — premium private-practice context */}
       <section className="bg-[#F1F4F7] border-t border-[#E2E8EE]">
-        <div className="container-main py-7 md:py-10">
-          <div className="max-w-4xl mx-auto bg-white border border-[#CFD8E3] rounded-3xl shadow-[0_14px_44px_-12px_rgba(27,58,92,0.14),0_4px_14px_-4px_rgba(27,58,92,0.06)] p-6 md:p-9">
-            <div className="max-w-3xl mx-auto">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
-                <p className="text-[10.5px] md:text-[11.5px] uppercase tracking-[0.22em] text-[#1B3A5C]/80 font-semibold">
-                  {isEN ? "Psychological orientation" : "Psychologische Orientierung"}
-                </p>
-                <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#2E7D32]/35" />
-              </div>
+        <div className="container-main py-6 md:py-9">
+          <div className="max-w-5xl mx-auto bg-white border border-[#CFD8E3] rounded-3xl shadow-[0_18px_50px_-14px_rgba(27,58,92,0.18),0_4px_14px_-4px_rgba(27,58,92,0.07)] p-5 md:p-8">
+            <div className="flex items-center justify-center gap-3 mb-3.5 md:mb-4">
+              <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
+              <p className="text-[10.5px] md:text-[11.5px] uppercase tracking-[0.22em] text-[#1B3A5C]/80 font-semibold">
+                {isEN ? "Psychological orientation" : "Psychologische Orientierung"}
+              </p>
+              <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#2E7D32]/35" />
+            </div>
 
-              <h2 className="text-[19px] md:text-[24px] font-light tracking-tight text-[#1B3A5C] leading-[1.2] text-center">
-                {isEN
-                  ? "Psychological support for emotional strain and personal processes of change"
-                  : "Psychologische Unterstützung bei emotionalen Belastungen und persönlichen Veränderungsprozessen"}
-              </h2>
+            <h2 className="text-[19px] md:text-[24px] font-light tracking-tight text-[#1B3A5C] leading-[1.2] text-center max-w-3xl mx-auto">
+              {isEN
+                ? "Psychological support for emotional strain and personal processes of change"
+                : "Psychologische Unterstützung bei emotionalen Belastungen und persönlichen Veränderungsprozessen"}
+            </h2>
 
-              <div className="mt-5 md:mt-6 space-y-3.5 text-[13.5px] md:text-[14.5px] text-[#0B1F33]/80 leading-relaxed">
+            {/* Two-column desktop layout: text + topic grid */}
+            <div className="mt-5 md:mt-7 grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 items-start">
+              <div className="md:col-span-6 space-y-3 text-[13px] md:text-[14px] text-[#0B1F33]/80 leading-relaxed">
                 <p>
                   {isEN
                     ? "Not everyone is immediately looking for long-term therapy. Often there is simply the wish for professional psychological orientation, understanding, a confidential conversation or a clear perspective on a stressful situation."
@@ -274,59 +275,78 @@ export default function OnlineBeratung() {
                 </p>
               </div>
 
-              {/* Themenfelder */}
-              <ul className="mt-6 md:mt-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-2.5">
-                {(isEN
-                  ? [
-                      "Stress & emotional overload",
-                      "Anxiety & inner uncertainty",
-                      "Inner blocks & self-doubt",
-                      "Mental exhaustion",
-                      "Personal processes of change",
-                      "Professional pressure & emotional strain",
-                      "Relationship topics & inner conflicts",
-                      "Emotional processing of past experiences",
-                      "Motivation & mental strength",
-                      "Self-worth & inner stability",
-                      "Conversations in difficult life situations",
-                      "Short-notice psychological support",
-                    ]
-                  : [
-                      "Stress & emotionale Überlastung",
-                      "Ängste & innere Unsicherheit",
-                      "Innere Blockaden & Selbstzweifel",
-                      "Mentale Erschöpfung",
-                      "Persönliche Veränderungsprozesse",
-                      "Beruflicher Druck & emotionale Belastung",
-                      "Beziehungsthemen & innere Konflikte",
-                      "Emotionale Verarbeitung vergangener Erfahrungen",
-                      "Motivation & mentale Stärke",
-                      "Selbstwert & innere Stabilität",
-                      "Gespräche in schwierigen Lebenssituationen",
-                      "Kurzfristige psychologische Unterstützung",
-                    ]
-                ).map((topic) => (
-                  <li
-                    key={topic}
-                    className="group flex items-center gap-2.5 rounded-2xl border border-[#E2E8EE] bg-gradient-to-b from-white to-[#F8FAFC] px-3.5 py-2.5 text-[12.5px] md:text-[13px] text-[#0B1F33]/80 leading-snug shadow-[0_1px_2px_rgba(27,58,92,0.04)] hover:border-[#2E7D32]/30 hover:shadow-[0_2px_8px_rgba(27,58,92,0.06)] transition-all"
-                  >
-                    <span className="shrink-0 inline-block w-1.5 h-1.5 rounded-full bg-[#2E7D32]/60 group-hover:bg-[#2E7D32]" />
-                    <span>{topic}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Latin closing */}
-              <div className="mt-8 md:mt-10 pt-5 border-t border-[#E2E8EE] text-center">
-                <p className="text-[12.5px] md:text-[13.5px] italic text-[#1B3A5C]/75 tracking-tight">
-                  Mens sana in corpore sano.
-                </p>
-                <p className="mt-1 text-[11px] md:text-[11.5px] text-[#0B1F33]/55">
-                  {isEN
-                    ? "A healthy mind in a healthy body."
-                    : "Ein gesunder Geist in einem gesunden Körper."}
-                </p>
+              {/* Themenfelder — desktop grid, mobile collapsible */}
+              <div className="md:col-span-6">
+                {(() => {
+                  const topics = isEN
+                    ? [
+                        "Stress & emotional overload",
+                        "Anxiety & inner uncertainty",
+                        "Inner blocks & self-doubt",
+                        "Mental exhaustion",
+                        "Personal processes of change",
+                        "Professional pressure & emotional strain",
+                        "Relationship topics & inner conflicts",
+                        "Emotional processing of past experiences",
+                        "Motivation & mental strength",
+                        "Self-worth & inner stability",
+                        "Conversations in difficult life situations",
+                        "Short-notice psychological support",
+                      ]
+                    : [
+                        "Stress & emotionale Überlastung",
+                        "Ängste & innere Unsicherheit",
+                        "Innere Blockaden & Selbstzweifel",
+                        "Mentale Erschöpfung",
+                        "Persönliche Veränderungsprozesse",
+                        "Beruflicher Druck & emotionale Belastung",
+                        "Beziehungsthemen & innere Konflikte",
+                        "Emotionale Verarbeitung vergangener Erfahrungen",
+                        "Motivation & mentale Stärke",
+                        "Selbstwert & innere Stabilität",
+                        "Gespräche in schwierigen Lebenssituationen",
+                        "Kurzfristige psychologische Unterstützung",
+                      ];
+                  const TopicItem = ({ topic }: { topic: string }) => (
+                    <li className="group flex items-center gap-2 rounded-xl border border-[#CFD8E3] bg-gradient-to-b from-white to-[#F4F8FB] px-3 py-2 text-[12.5px] md:text-[13px] text-[#0B1F33]/85 leading-snug shadow-[0_1px_3px_rgba(27,58,92,0.06),inset_0_-1px_0_rgba(27,58,92,0.03)] hover:border-[#2E7D32]/40 hover:bg-gradient-to-b hover:from-white hover:to-[#F0F7F3] hover:shadow-[0_3px_10px_rgba(46,125,50,0.08)] transition-all">
+                      <span className="shrink-0 inline-block w-1.5 h-1.5 rounded-full bg-[#2E7D32]/65 group-hover:bg-[#2E7D32]" />
+                      <span>{topic}</span>
+                    </li>
+                  );
+                  return (
+                    <>
+                      {/* Desktop: compact 2-col grid */}
+                      <ul className="hidden md:grid grid-cols-2 gap-1.5">
+                        {topics.map((t) => <TopicItem key={t} topic={t} />)}
+                      </ul>
+                      {/* Mobile: collapsible */}
+                      <details className="md:hidden group rounded-2xl border border-[#CFD8E3] bg-gradient-to-b from-white to-[#F4F8FB] shadow-[0_1px_3px_rgba(27,58,92,0.06)] open:shadow-[0_4px_14px_rgba(27,58,92,0.08)] transition-shadow">
+                        <summary className="list-none cursor-pointer flex items-center justify-between px-4 py-3 text-[13px] font-medium text-[#1B3A5C] [&::-webkit-details-marker]:hidden">
+                          <span>{isEN ? "Topics we address" : "Themen, die wir begleiten"}</span>
+                          <span aria-hidden="true" className="ml-2 inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#2F3A4A]/10 text-[#1B3A5C] transition-transform group-open:rotate-45">
+                            <span className="block w-3 h-px bg-current relative before:content-[''] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-px before:h-3 before:bg-current" />
+                          </span>
+                        </summary>
+                        <ul className="px-3 pb-3 pt-1 grid grid-cols-1 gap-1.5">
+                          {topics.map((t) => <TopicItem key={t} topic={t} />)}
+                        </ul>
+                      </details>
+                    </>
+                  );
+                })()}
               </div>
+            </div>
+
+            {/* Latin closing */}
+            <div className="mt-6 md:mt-8 pt-4 md:pt-5 border-t border-[#E2E8EE] text-center">
+              <p className="text-[12.5px] md:text-[13.5px] italic text-[#1B3A5C]/75 tracking-tight">
+                Mens sana in corpore sano.
+              </p>
+              <p className="mt-1 text-[11px] md:text-[11.5px] text-[#0B1F33]/55">
+                {isEN
+                  ? "A healthy mind in a healthy body."
+                  : "Ein gesunder Geist in einem gesunden Körper."}
+              </p>
             </div>
           </div>
         </div>
