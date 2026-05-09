@@ -93,7 +93,7 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
   }, []);
 
   return (
-    <div className="relative rounded-2xl border border-[#E6E1D6] bg-[#FBF8F2] p-2 md:p-3 shadow-[0_2px_14px_rgba(27,58,92,0.05)]">
+    <div className="relative rounded-2xl border border-[#E6E1D6] bg-[#FBF8F2] p-1.5 md:p-2 shadow-[0_2px_14px_rgba(27,58,92,0.05)]">
       {!loaded && (
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 rounded-2xl bg-[#FBF8F2]/95">
           <span
@@ -105,9 +105,9 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
       )}
       <div
         ref={containerRef}
-        className="calendly-inline-widget mx-auto w-full overflow-hidden rounded-xl bg-[#FBF8F2]"
+        className="calendly-inline-widget mx-auto w-full overflow-hidden rounded-xl bg-[#FBF8F2] h-[680px] md:h-[720px]"
         data-url={CALENDLY_EMBED_URL}
-        style={{ minWidth: "320px", height: "1040px" }}
+        style={{ minWidth: "320px" }}
       />
     </div>
   );
@@ -278,7 +278,7 @@ export default function OnlineBeratung() {
 
       {/* CALENDLY — soft beige section */}
       <section className="bg-[#F6F3EC] border-b border-[#E6E1D6]">
-        <div className="container-main pt-10 md:pt-12 pb-6 md:pb-8">
+        <div className="container-main pt-8 md:pt-10 pb-3 md:pb-4">
           <div className="max-w-[1100px] mx-auto">
             <div className="text-center mb-6 md:mb-7">
               <h2 className="text-xl md:text-2xl font-light text-[#0B1F33] tracking-tight mb-2">
