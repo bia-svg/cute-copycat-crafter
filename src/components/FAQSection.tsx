@@ -33,20 +33,20 @@ export default function FAQSection({ title, items, sectionClassName }: FAQSectio
           {title}
         </h2>
 
-        <div className="max-w-2xl md:max-w-4xl lg:max-w-5xl mx-auto bg-white/70 backdrop-blur-sm border border-[#C5CCD6] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-1.5 md:p-3 lg:p-3.5">
+        <div className="max-w-2xl md:max-w-4xl lg:max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border-2 border-[#BDC5CF] rounded-3xl shadow-[0_8px_30px_rgba(27,58,92,0.07)] p-2 md:p-3.5 lg:p-4">
           <Accordion
             type="single"
             collapsible
-            className="space-y-0.5 md:space-y-1"
+            className="space-y-1 md:space-y-1.5"
           >
             {items.map((item, i) => (
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="group border-2 border-[#B5BDC9] bg-white rounded-2xl px-3.5 md:px-5 shadow-[0_1px_3px_rgba(27,58,92,0.08)] hover:border-[#2E7D32]/70 hover:bg-[#FAFBFC] hover:shadow-[0_2px_6px_rgba(0,0,0,0.06)] transition-all data-[state=open]:bg-[#F4F9F4] data-[state=open]:border-[#2E7D32]/60 data-[state=open]:shadow-[0_2px_8px_rgba(46,125,50,0.08)]"
+                className="group border-2 border-[#B5BDC9] bg-white rounded-2xl px-4 md:px-6 shadow-[0_1px_4px_rgba(27,58,92,0.09)] hover:border-[#2E7D32]/65 hover:bg-[#FAFBFC] hover:shadow-[0_2px_8px_rgba(0,0,0,0.07)] transition-all data-[state=open]:bg-[#F0F7F2] data-[state=open]:border-[#2E7D32]/70 data-[state=open]:shadow-[0_4px_14px_rgba(46,125,50,0.1)]"
               >
                 <AccordionTrigger
-                  className="text-[13px] md:text-[14.5px] font-normal text-foreground/80 hover:no-underline py-1.5 md:py-1.5 text-left gap-3 md:gap-4 [&>svg]:hidden"
+                  className="text-[13px] md:text-[14.5px] font-normal text-foreground/80 hover:no-underline py-2 md:py-2.5 text-left gap-3 md:gap-4 [&>svg]:hidden"
                 >
                   <span className="flex-1">{item.q}</span>
                   <span
@@ -56,7 +56,7 @@ export default function FAQSection({ title, items, sectionClassName }: FAQSectio
                     <Plus className="h-4 w-4" strokeWidth={3.5} />
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="text-[12.5px] md:text-[13.5px] text-foreground/75 leading-snug md:leading-[1.5] pb-2.5 md:pb-3 pt-0 pr-10">
+                <AccordionContent className="text-[12.5px] md:text-[13.5px] text-foreground/80 leading-snug md:leading-[1.55] pb-3.5 md:pb-4 pt-1 md:pt-1.5 pr-10">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>
