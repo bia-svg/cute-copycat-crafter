@@ -105,9 +105,9 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
       )}
       <div
         ref={containerRef}
-        className="calendly-inline-widget mx-auto w-full overflow-hidden rounded-lg bg-white h-[940px] sm:h-[780px] md:h-[700px]"
+        className="calendly-inline-widget mx-auto w-full overflow-hidden rounded-lg bg-white h-[1180px] sm:h-[1080px] md:h-[1040px]"
         data-url={CALENDLY_EMBED_URL}
-        style={{ minWidth: "320px" }}
+        style={{ minWidth: "320px", overscrollBehavior: "contain" }}
       />
     </div>
   );
@@ -232,8 +232,8 @@ export default function OnlineBeratung() {
             <ul className="mt-5 md:mt-6 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 border-t border-[#E2E8EE] pt-4">
               {bullets.map(({ icon: Icon, text }) => (
                 <li key={text} className="flex items-start gap-2.5 text-[12.5px] md:text-[13.5px] text-[#0B1F33]/80 leading-snug">
-                  <span className="mt-0.5 shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#EEF3F8] text-[#1B3A5C] border border-[#1B3A5C]/10">
-                    <Icon className="w-3 h-3" strokeWidth={1.8} />
+                  <span className="mt-0.5 shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-br from-[#E8F5EE] to-[#F0F7F3] text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_0_0_3px_rgba(46,125,50,0.04)]">
+                    <Icon className="w-3 h-3" strokeWidth={2} />
                   </span>
                   <span>{text}</span>
                 </li>
@@ -256,6 +256,24 @@ export default function OnlineBeratung() {
                   ? "Choose a time that suits you – directly in the calendar below."
                   : "Wählen Sie direkt im Kalender unten einen passenden Termin."}
               </p>
+            </div>
+
+            {/* Premium info badges — always-visible price & duration transparency */}
+            <div className="mb-4 md:mb-5 flex flex-wrap items-center justify-center gap-1.5 md:gap-2">
+              {[
+                isEN ? "60 min online consultation" : "60 Min. Online-Beratung",
+                isEN ? "Germany & Austria: €179" : "Deutschland & Österreich: 179 €",
+                isEN ? "Switzerland: CHF 179" : "Schweiz: 179 CHF",
+                isEN ? "By phone or video" : "Telefonisch oder per Video",
+                isEN ? "Creditable toward intensive session" : "Auf Intensivsitzung anrechenbar",
+              ].map((label) => (
+                <span
+                  key={label}
+                  className="inline-flex items-center rounded-full border border-[#E2E8EE] bg-white px-2.5 py-1 text-[11px] md:text-[11.5px] text-[#1B3A5C]/85 tracking-tight shadow-[0_1px_2px_rgba(27,58,92,0.04)]"
+                >
+                  {label}
+                </span>
+              ))}
             </div>
 
             <CalendlyInlineEmbed
