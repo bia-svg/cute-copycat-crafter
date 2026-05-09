@@ -41,7 +41,7 @@ const slugMapDE: Record<PageKey, string> = {
   blog: "blog",
   book: "buch-go-inside",
   howHypnosisWorks: "wie-funktioniert-hypnose",
-  onlineBeratung: "online-beratung",
+  onlineBeratung: "online-psychologische-beratung",
 };
 
 const slugMapEN: Record<PageKey, string> = {
