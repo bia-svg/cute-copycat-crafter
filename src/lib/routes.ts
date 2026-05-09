@@ -6,6 +6,7 @@ type PageKey =
   | "corporateErfolg" | "corporateResilienz" | "corporateStress" | "corporateNichtraucher"
   | "about" | "testimonials" | "successStories" | "media"
   | "contact" | "appointmentConfirmation" | "seminarRegistration" | "cityZurich" | "cityAugsburg" | "locations"
+  | "onlineBeratung"
   | "impressum" | "privacy" | "terms" | "blog" | "book" | "howHypnosisWorks";
 
 const slugMapDE: Record<PageKey, string> = {
