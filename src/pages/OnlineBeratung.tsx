@@ -93,7 +93,7 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
   }, []);
 
   return (
-    <div className="relative rounded-xl border border-[#E2E8EE] bg-white p-1 md:p-1.5 shadow-[0_2px_10px_rgba(27,58,92,0.04)]">
+    <div className="relative rounded-xl border-2 border-[#D8E0EA] bg-white p-1 md:p-1.5 shadow-[0_4px_16px_rgba(27,58,92,0.06)]">
       {!loaded && (
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2.5 rounded-xl bg-white/95">
           <span
@@ -206,7 +206,7 @@ export default function OnlineBeratung() {
       {/* HERO — unified premium container system (matches Service pages) */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-6 md:py-8">
-          <div className="max-w-5xl mx-auto bg-white/85 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+          <div className="max-w-5xl mx-auto bg-white/85 backdrop-blur-sm border-2 border-[#D8E0EA] rounded-3xl shadow-[0_8px_30px_rgba(27,58,92,0.07)] p-5 md:p-7">
             <div className="max-w-2xl mx-auto text-center">
               <div className="flex items-center justify-center gap-3 mb-3">
                 <span className="h-px w-8 bg-[#2E7D32]/20" />
@@ -246,7 +246,7 @@ export default function OnlineBeratung() {
       {/* CALENDLY — unified container system (white card on silver) */}
       <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
         <div className="container-main py-6 md:py-8">
-          <div className="max-w-3xl mx-auto bg-white/85 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-4 md:p-5">
+          <div className="max-w-3xl mx-auto bg-white/85 backdrop-blur-sm border-2 border-[#D8E0EA] rounded-3xl shadow-[0_8px_30px_rgba(27,58,92,0.07)] p-4 md:p-5">
             <div className="text-center mb-3 md:mb-4">
               <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight mb-1">
                 {isEN ? "Book your appointment" : "Termin buchen"}
