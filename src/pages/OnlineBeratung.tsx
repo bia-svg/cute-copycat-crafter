@@ -260,18 +260,18 @@ export default function OnlineBeratung() {
               <div className="md:col-span-6 space-y-3 text-[13px] md:text-[14px] text-[#0B1F33]/80 leading-relaxed">
                 <p>
                   {isEN
-                    ? "Not everyone is immediately looking for long-term therapy. Often there is simply the wish for professional psychological orientation, understanding, a confidential conversation or a clear perspective on a stressful situation."
-                    : "Nicht jeder Mensch sucht sofort eine langfristige Therapie. Oft besteht zunächst einfach der Wunsch nach professioneller psychologischer Orientierung, Verständnis, einem vertraulichen Gespräch oder einem klaren Blick auf belastende Situationen."}
+                    ? "Not everyone is immediately looking for long-term therapy. Often there is simply the wish for professional online psychological consultation, understanding, a confidential conversation or a clear perspective on a stressful situation."
+                    : "Nicht jeder Mensch sucht sofort eine langfristige Therapie. Oft besteht zunächst einfach der Wunsch nach professioneller psychologischer Beratung, Verständnis, einem vertraulichen Gespräch oder einem klaren Blick auf belastende Situationen."}
                 </p>
                 <p>
                   {isEN
-                    ? "The online consultation is aimed at people who feel emotionally burdened, are under stress, experience inner conflicts or find themselves in personal processes of change. Many clients are looking for short-notice professional support, clear psychological orientation and concrete new perspectives."
-                    : "Die Online-Beratung richtet sich an Menschen, die sich emotional belastet fühlen, unter Stress stehen, innere Konflikte erleben oder sich in persönlichen Veränderungsprozessen befinden. Viele Klientinnen und Klienten wünschen sich kurzfristige professionelle Unterstützung, verständliche psychologische Einordnung und konkrete neue Perspektiven."}
+                    ? "Online psychological consultation is aimed at people who feel emotionally burdened, are under stress, experience inner conflicts or find themselves in personal processes of change. Many clients are looking for short-notice professional psychological support, clear orientation and concrete new perspectives."
+                    : "Die Online Psychologische Beratung richtet sich an Menschen, die sich emotional belastet fühlen, unter Stress stehen, innere Konflikte erleben oder sich in persönlichen Veränderungsprozessen befinden. Viele Klientinnen und Klienten wünschen sich kurzfristige professionelle psychologische Unterstützung, verständliche Einordnung und konkrete neue Perspektiven."}
                 </p>
                 <p>
                   {isEN
-                    ? "With more than 35 years of practical experience in psychology, hypnosis and counselling, David J. Woods accompanies people individually, discreetly and in a solution-oriented way."
-                    : "Mit über 35 Jahren praktischer Erfahrung in Psychologie, Hypnose und Gesprächsführung begleitet David J. Woods Menschen individuell, diskret und lösungsorientiert."}
+                    ? "With more than 35 years of practical experience in psychology, hypnosis and counselling, David J. Woods provides psychological consultation individually, discreetly and in a solution-oriented way."
+                    : "Mit über 35 Jahren praktischer Erfahrung in Psychologie, Hypnose und Gesprächsführung begleitet David J. Woods seine Klientinnen und Klienten in der psychologischen Beratung individuell, diskret und lösungsorientiert."}
                 </p>
               </div>
 
