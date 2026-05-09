@@ -3,7 +3,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { getPath } from "@/lib/routes";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import FAQSection from "@/components/FAQSection";
 import {
   CalendarClock,
   PhoneCall,
