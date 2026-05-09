@@ -58,7 +58,7 @@ export default function OnlineBeratung() {
         },
         {
           q: "Is the consultation confidential?",
-          a: "Absolutely. As a licensed psychologist (Lic. Psych.), David J. Woods is bound by professional confidentiality. All conversations and content are treated strictly confidentially.",
+          a: "Yes. The consultation takes place in a confidential and discreet setting.\n\nDavid J. Woods is an academically trained psychologist with decades of practical experience in psychology, hypnosis and counselling.\n\nPersonal information and the content of the consultation are of course treated confidentially.",
         },
       ]
     : [
@@ -80,14 +80,14 @@ export default function OnlineBeratung() {
         },
         {
           q: "Ist die Beratung vertraulich?",
-          a: "Selbstverständlich. Als lizenzierter Psychologe (Lic. Psych.) unterliegt David J. Woods der beruflichen Schweigepflicht. Alle Gespräche und Inhalte werden streng vertraulich behandelt.",
+          a: "Ja. Die Beratung findet in einem vertraulichen und diskreten Rahmen statt.\n\nDavid J. Woods ist akademisch ausgebildeter Psychologe mit jahrzehntelanger praktischer Erfahrung im Bereich Psychologie, Hypnose und Gesprächsführung.\n\nPersönliche Informationen und Inhalte der Beratung werden selbstverständlich vertraulich behandelt.",
         },
       ];
 
   const title = isEN ? "Online Psychological Consultation" : "Online Psychologische Beratung";
   const subtitle = isEN
-    ? "Confidential online psychological consultation with Lic. Psych. David J. Woods"
-    : "Vertrauliche psychologische Online-Beratung mit Lic. Psych. David J. Woods";
+    ? "Confidential psychological consultation by phone or online video"
+    : "Vertrauliche Online- und Telefonberatung";
 
   return (
     <>

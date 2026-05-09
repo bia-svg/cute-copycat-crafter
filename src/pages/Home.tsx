@@ -503,7 +503,7 @@ export default function Home() {
                 </button>
                 <Link
                   to={getPath("onlineBeratung", language, country)}
-                  className="inline-flex items-center justify-center bg-white hover:bg-[#F4F7FA] text-[#1B3A5C] font-medium text-[11.5px] md:text-[12.5px] px-4 md:px-5 py-1 md:py-1.5 rounded-lg shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all border border-[#1B3A5C]/35"
+                  className="inline-flex items-center justify-center bg-[#E8F4FD] hover:bg-[#D6EBFA] text-[#1B3A5C] font-semibold text-[11.5px] md:text-[12.5px] px-4 md:px-5 py-1 md:py-1.5 rounded-lg shadow-[0_2px_8px_rgba(27,58,92,0.08),0_0_12px_rgba(59,130,246,0.06)] hover:shadow-[0_4px_12px_rgba(27,58,92,0.12),0_0_20px_rgba(59,130,246,0.1)] transition-all border border-[#1B3A5C]/20 hover:border-[#1B3A5C]/40 hover:-translate-y-0.5"
                 >
                   {isEN ? "Online Consultation" : "Online-Beratung"}
                 </Link>
