@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { getPath } from "@/lib/routes";
@@ -19,7 +18,6 @@ export default function OnlineBeratung() {
   const { language, country } = useLanguage();
   const isEN = language === "en";
   const basePath = getPath("home", language, country);
-  const calendlyRef = useRef<HTMLDivElement>(null);
 
   const bullets = isEN
     ? [
@@ -89,17 +87,6 @@ export default function OnlineBeratung() {
   const subtitle = isEN
     ? "Confidential online psychological consultation with Lic. Psych. David J. Woods"
     : "Vertrauliche psychologische Online-Beratung mit Lic. Psych. David J. Woods";
-
-  useEffect(() => {
-    if (!calendlyRef.current) return;
-    const existing = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
-    if (!existing) {
-      const script = document.createElement("script");
-      script.src = "https://assets.calendly.com/assets/external/widget.js";
-      script.async = true;
-      document.body.appendChild(script);
-    }
-  }, []);
 
   return (
     <>
@@ -198,12 +185,15 @@ export default function OnlineBeratung() {
                 ? "Choose a time that suits you – directly in the calendar below."
                 : "Wählen Sie direkt im Kalender unten einen passenden Termin."}
             </p>
-            <div
-              ref={calendlyRef}
-              className="calendly-inline-widget bg-white border border-[#E2E8EE] rounded-2xl shadow-[0_8px_30px_rgba(27,58,92,0.08)] min-h-[900px] md:min-h-[1000px]"
-              data-url={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=ffffff&text_color=0B1F33&primary_color=2E7D32`}
-              style={{ minWidth: 320 }}
-            />
+            <div className="w-full max-w-[1200px] mx-auto overflow-visible">
+              <iframe
+                title={isEN ? "Calendly appointment booking" : "Calendly Terminbuchung"}
+                src={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=ffffff&text_color=0B1F33&primary_color=2E7D32`}
+                className="block w-full min-h-[1100px] h-[1100px] border-0 overflow-visible bg-transparent"
+                loading="lazy"
+                scrolling="no"
+              />
+            </div>
 
             <p className="mt-8 md:mt-10 text-[12.5px] md:text-[13.5px] text-foreground/70 text-center leading-relaxed max-w-2xl mx-auto">
               {isEN
