@@ -147,7 +147,7 @@ export default function OnlineBeratung() {
         titleEN="Online Psychological Consultation | David J. Woods"
         descriptionDE="Professionelle Online Psychologische Beratung bei emotionalen Belastungen, Stress, Ängsten, inneren Konflikten und persönlichen Veränderungsprozessen. Kurzfristige Termine telefonisch oder online möglich."
         descriptionEN="Professional online psychological consultation for emotional strain, stress, anxiety, inner conflicts and personal processes of change. Short-notice appointments available by phone or online."
-        pageKey="contact"
+        pageKey="onlineBeratung"
       />
       <Breadcrumbs
         items={[
