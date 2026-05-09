@@ -208,3 +208,31 @@ export default function OnlineBeratung() {
     </>
   );
 }
+
+function CalendlyInlineWidget({ url }: { url: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const SCRIPT_SRC = "https://assets.calendly.com/assets/external/widget.js";
+    let script = document.querySelector<HTMLScriptElement>(
+      `script[src="${SCRIPT_SRC}"]`
+    );
+    if (!script) {
+      script = document.createElement("script");
+      script.src = SCRIPT_SRC;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
+  const dataUrl = `${url}?hide_gdpr_banner=1&hide_landing_page_details=0&background_color=ffffff&text_color=0B1F33&primary_color=2E7D32`;
+
+  return (
+    <div
+      ref={ref}
+      className="calendly-inline-widget block w-full bg-transparent"
+      data-url={dataUrl}
+      style={{ minWidth: 320, height: 1100 }}
+    />
+  );
+}
