@@ -24,8 +24,9 @@ declare global {
   }
 }
 
-function CalendlyInlineEmbed() {
+function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -38,6 +39,15 @@ function CalendlyInlineEmbed() {
         url: CALENDLY_EMBED_URL,
         parentElement: containerRef.current,
       });
+      // Calendly injects an iframe; mark loaded once it appears
+      const iframe = containerRef.current.querySelector("iframe");
+      if (iframe) {
+        iframe.addEventListener("load", () => !cancelled && setLoaded(true), { once: true });
+        // Fallback in case load event already fired
+        setTimeout(() => !cancelled && setLoaded(true), 1500);
+      } else {
+        setTimeout(() => !cancelled && setLoaded(true), 1500);
+      }
     };
 
     const existingStyle = document.querySelector<HTMLLinkElement>(
