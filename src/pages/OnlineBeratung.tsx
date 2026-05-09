@@ -273,25 +273,6 @@ export default function OnlineBeratung() {
               </p>
             </div>
           </div>
-
-          {/* Calendly embed */}
-          <div className="max-w-[1120px] mx-auto mt-10 md:mt-12">
-            <h2 className="text-xl md:text-2xl font-light text-[#0B1F33] text-center tracking-tight mb-2">
-              {isEN ? "Book your appointment" : "Termin buchen"}
-            </h2>
-            <p className="text-[13px] md:text-sm text-muted-foreground text-center mb-6 md:mb-7">
-              {isEN
-                ? "Choose a time that suits you – directly in the calendar below."
-                : "Wählen Sie direkt im Kalender unten einen passenden Termin."}
-            </p>
-            <CalendlyInlineEmbed />
-
-            <p className="mt-6 md:mt-7 text-[12.5px] md:text-[13.5px] text-foreground/70 text-center leading-relaxed max-w-2xl mx-auto">
-              {isEN
-                ? "After booking you will receive the payment information by email, SMS or WhatsApp. The appointment is firmly reserved once the payment has been received."
-                : "Nach der Buchung erhalten Sie die Zahlungsinformationen per E-Mail, SMS oder WhatsApp. Der Termin wird nach Zahlungseingang verbindlich reserviert."}
-            </p>
-          </div>
         </div>
       </section>
 
