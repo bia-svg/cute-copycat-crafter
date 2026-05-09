@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { getPath } from "@/lib/routes";
@@ -186,13 +187,7 @@ export default function OnlineBeratung() {
                 : "Wählen Sie direkt im Kalender unten einen passenden Termin."}
             </p>
             <div className="w-full max-w-[1200px] mx-auto overflow-visible">
-              <iframe
-                title={isEN ? "Calendly appointment booking" : "Calendly Terminbuchung"}
-                src={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=ffffff&text_color=0B1F33&primary_color=2E7D32`}
-                className="block w-full min-h-[1100px] h-[1100px] border-0 overflow-visible bg-transparent"
-                loading="lazy"
-                scrolling="no"
-              />
+              <CalendlyInlineWidget url={CALENDLY_URL} />
             </div>
 
             <p className="mt-8 md:mt-10 text-[12.5px] md:text-[13.5px] text-foreground/70 text-center leading-relaxed max-w-2xl mx-auto">
@@ -211,5 +206,33 @@ export default function OnlineBeratung() {
         sectionClassName="bg-[#F1F4F7] border-t border-[#E2E8EE]"
       />
     </>
+  );
+}
+
+function CalendlyInlineWidget({ url }: { url: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const SCRIPT_SRC = "https://assets.calendly.com/assets/external/widget.js";
+    let script = document.querySelector<HTMLScriptElement>(
+      `script[src="${SCRIPT_SRC}"]`
+    );
+    if (!script) {
+      script = document.createElement("script");
+      script.src = SCRIPT_SRC;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
+  const dataUrl = `${url}?hide_gdpr_banner=1&hide_landing_page_details=0&background_color=ffffff&text_color=0B1F33&primary_color=2E7D32`;
+
+  return (
+    <div
+      ref={ref}
+      className="calendly-inline-widget block w-full bg-transparent"
+      data-url={dataUrl}
+      style={{ minWidth: 320, height: 1100 }}
+    />
   );
 }
