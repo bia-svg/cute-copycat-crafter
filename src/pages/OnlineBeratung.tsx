@@ -260,9 +260,9 @@ export default function OnlineBeratung() {
       </section>
 
       {/* INFO / SEO — premium private-practice context */}
-      <section className="bg-[#F1F4F7] border-t border-[#E2E8EE]">
+      <section className="bg-[#ECE7DC] border-t border-[#E0D9CB]">
         <div className="container-main py-6 md:py-9">
-          <div className="max-w-5xl mx-auto bg-white border border-[#CFD8E3] rounded-3xl shadow-[0_18px_50px_-14px_rgba(27,58,92,0.18),0_4px_14px_-4px_rgba(27,58,92,0.07)] p-5 md:p-8">
+          <div className="max-w-5xl mx-auto bg-[#FBF9F3] border-[1.5px] border-[#E2DBCB] rounded-3xl shadow-[0_24px_64px_-18px_rgba(75,55,25,0.22),0_6px_18px_-6px_rgba(75,55,25,0.10)] p-5 md:p-8">
             <div className="flex items-center justify-center gap-3 mb-3.5 md:mb-4">
               <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
               <p className="text-[10.5px] md:text-[11.5px] uppercase tracking-[0.22em] text-[#1B3A5C]/80 font-semibold">
