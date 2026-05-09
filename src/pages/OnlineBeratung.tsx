@@ -236,6 +236,101 @@ export default function OnlineBeratung() {
           </div>
         </div>
       </section>
+
+      {/* INFO / SEO — premium private-practice context */}
+      <section className="bg-[#F1F4F7] border-t border-[#E2E8EE]">
+        <div className="container-main py-7 md:py-10">
+          <div className="max-w-4xl mx-auto bg-white border border-[#CFD8E3] rounded-3xl shadow-[0_14px_44px_-12px_rgba(27,58,92,0.14),0_4px_14px_-4px_rgba(27,58,92,0.06)] p-6 md:p-9">
+            <div className="max-w-3xl mx-auto">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
+                <p className="text-[10.5px] md:text-[11.5px] uppercase tracking-[0.22em] text-[#1B3A5C]/80 font-semibold">
+                  {isEN ? "Psychological orientation" : "Psychologische Orientierung"}
+                </p>
+                <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#2E7D32]/35" />
+              </div>
+
+              <h2 className="text-[19px] md:text-[24px] font-light tracking-tight text-[#1B3A5C] leading-[1.2] text-center">
+                {isEN
+                  ? "Psychological support for emotional strain and personal processes of change"
+                  : "Psychologische Unterstützung bei emotionalen Belastungen und persönlichen Veränderungsprozessen"}
+              </h2>
+
+              <div className="mt-5 md:mt-6 space-y-3.5 text-[13.5px] md:text-[14.5px] text-[#0B1F33]/80 leading-relaxed">
+                <p>
+                  {isEN
+                    ? "Not everyone is immediately looking for long-term therapy. Often there is simply the wish for professional psychological orientation, understanding, a confidential conversation or a clear perspective on a stressful situation."
+                    : "Nicht jeder Mensch sucht sofort eine langfristige Therapie. Oft besteht zunächst einfach der Wunsch nach professioneller psychologischer Orientierung, Verständnis, einem vertraulichen Gespräch oder einem klaren Blick auf belastende Situationen."}
+                </p>
+                <p>
+                  {isEN
+                    ? "The online consultation is aimed at people who feel emotionally burdened, are under stress, experience inner conflicts or find themselves in personal processes of change. Many clients are looking for short-notice professional support, clear psychological orientation and concrete new perspectives."
+                    : "Die Online-Beratung richtet sich an Menschen, die sich emotional belastet fühlen, unter Stress stehen, innere Konflikte erleben oder sich in persönlichen Veränderungsprozessen befinden. Viele Klientinnen und Klienten wünschen sich kurzfristige professionelle Unterstützung, verständliche psychologische Einordnung und konkrete neue Perspektiven."}
+                </p>
+                <p>
+                  {isEN
+                    ? "With more than 35 years of practical experience in psychology, hypnosis and counselling, David J. Woods accompanies people individually, discreetly and in a solution-oriented way."
+                    : "Mit über 35 Jahren praktischer Erfahrung in Psychologie, Hypnose und Gesprächsführung begleitet David J. Woods Menschen individuell, diskret und lösungsorientiert."}
+                </p>
+              </div>
+
+              {/* Themenfelder */}
+              <ul className="mt-6 md:mt-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-2.5">
+                {(isEN
+                  ? [
+                      "Stress & emotional overload",
+                      "Anxiety & inner uncertainty",
+                      "Inner blocks & self-doubt",
+                      "Mental exhaustion",
+                      "Personal processes of change",
+                      "Professional pressure & emotional strain",
+                      "Relationship topics & inner conflicts",
+                      "Emotional processing of past experiences",
+                      "Motivation & mental strength",
+                      "Self-worth & inner stability",
+                      "Conversations in difficult life situations",
+                      "Short-notice psychological support",
+                    ]
+                  : [
+                      "Stress & emotionale Überlastung",
+                      "Ängste & innere Unsicherheit",
+                      "Innere Blockaden & Selbstzweifel",
+                      "Mentale Erschöpfung",
+                      "Persönliche Veränderungsprozesse",
+                      "Beruflicher Druck & emotionale Belastung",
+                      "Beziehungsthemen & innere Konflikte",
+                      "Emotionale Verarbeitung vergangener Erfahrungen",
+                      "Motivation & mentale Stärke",
+                      "Selbstwert & innere Stabilität",
+                      "Gespräche in schwierigen Lebenssituationen",
+                      "Kurzfristige psychologische Unterstützung",
+                    ]
+                ).map((topic) => (
+                  <li
+                    key={topic}
+                    className="group flex items-center gap-2.5 rounded-2xl border border-[#E2E8EE] bg-gradient-to-b from-white to-[#F8FAFC] px-3.5 py-2.5 text-[12.5px] md:text-[13px] text-[#0B1F33]/80 leading-snug shadow-[0_1px_2px_rgba(27,58,92,0.04)] hover:border-[#2E7D32]/30 hover:shadow-[0_2px_8px_rgba(27,58,92,0.06)] transition-all"
+                  >
+                    <span className="shrink-0 inline-block w-1.5 h-1.5 rounded-full bg-[#2E7D32]/60 group-hover:bg-[#2E7D32]" />
+                    <span>{topic}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Latin closing */}
+              <div className="mt-8 md:mt-10 pt-5 border-t border-[#E2E8EE] text-center">
+                <p className="text-[12.5px] md:text-[13.5px] italic text-[#1B3A5C]/75 tracking-tight">
+                  Mens sana in corpore sano.
+                </p>
+                <p className="mt-1 text-[11px] md:text-[11.5px] text-[#0B1F33]/55">
+                  {isEN
+                    ? "A healthy mind in a healthy body."
+                    : "Ein gesunder Geist in einem gesunden Körper."}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
