@@ -192,18 +192,18 @@ export default function OnlineBeratung() {
         </div>
       </section>
 
-      {/* CALENDLY — unified container system (warm cream card) */}
-      <section className="bg-[#EFEBE2] border-b border-[#E0D9CB]">
+      {/* CALENDLY — alternating cool grey, white card */}
+      <section className="bg-[#DDE1E4] border-b border-border">
         <div className="container-main py-6 md:py-8">
-          <div className="max-w-3xl mx-auto bg-[#FBF9F3] border-[1.5px] border-[#E2DBCB] rounded-3xl shadow-[0_22px_60px_-18px_rgba(75,55,25,0.20),0_6px_18px_-6px_rgba(75,55,25,0.09)] p-4 md:p-5">
+          <div className="max-w-3xl mx-auto bg-white border border-border rounded-3xl shadow-[0_18px_44px_-18px_rgba(27,58,92,0.18),0_4px_14px_-6px_rgba(27,58,92,0.08)] p-4 md:p-5">
             <div className="text-center mb-3 md:mb-4">
               <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight mb-1">
                 {isEN ? "Book your appointment" : "Termin buchen"}
               </h2>
               <p className="text-[12.5px] md:text-[13px] text-[#1B3A5C]/70">
                 {isEN
-                  ? "Choose a time that suits you – directly in the calendar below."
-                  : "Wählen Sie direkt im Kalender unten einen passenden Termin."}
+                  ? "Choose a time that suits you – open the calendar to start."
+                  : "Wählen Sie einen passenden Termin – öffnen Sie dazu den Kalender."}
               </p>
             </div>
 
@@ -218,7 +218,7 @@ export default function OnlineBeratung() {
               ].map((label) => (
                 <span
                   key={label}
-                  className="inline-flex items-center rounded-full border border-[#2E7D32]/20 bg-gradient-to-b from-[#F8FBF9] to-[#FBF9F3] px-2.5 py-1 text-[11px] md:text-[11.5px] text-[#1B3A5C]/85 tracking-tight shadow-[0_1px_2px_rgba(75,55,25,0.05)]"
+                  className="inline-flex items-center rounded-full border border-[#2E7D32]/20 bg-[#E8F5E9]/40 px-2.5 py-1 text-[11px] md:text-[11.5px] text-[#1B3A5C]/85 tracking-tight shadow-[0_1px_2px_rgba(27,58,92,0.04)]"
                 >
                   {label}
                 </span>
@@ -230,23 +230,27 @@ export default function OnlineBeratung() {
                 loadingLabel={isEN ? "Loading calendar …" : "Kalender wird geladen …"}
               />
             ) : (
-              <div className="rounded-2xl border-[1.5px] border-dashed border-[#E2DBCB] bg-gradient-to-b from-[#FBF9F3] to-[#F5F1E8] p-7 md:p-10 text-center">
-                <div className="mx-auto mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-[#E8F5EE] to-[#F0F7F3] text-[#2E7D32] border border-[#2E7D32]/25 shadow-[0_2px_8px_rgba(46,125,50,0.10)]">
-                  <CalendarClock className="w-5 h-5" strokeWidth={1.8} />
+              <div className="rounded-2xl border border-border bg-[#f4f3ef] px-5 py-5 md:px-6 md:py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="flex items-center gap-3 text-center sm:text-left">
+                    <span className="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_2px_6px_rgba(46,125,50,0.10)]">
+                      <CalendarClock className="w-5 h-5" strokeWidth={1.8} />
+                    </span>
+                    <p className="text-[12.5px] md:text-[13.5px] text-[#1B3A5C]/85 leading-snug max-w-sm">
+                      {isEN
+                        ? "Open the calendar to choose a time that suits you."
+                        : "Öffnen Sie den Kalender, um einen passenden Termin zu wählen."}
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setCalendarOpen(true)}
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-6 py-2.5 text-[13px] md:text-[13.5px] tracking-tight shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] transition-all whitespace-nowrap"
+                  >
+                    <CalendarClock className="w-4 h-4" strokeWidth={2} />
+                    {isEN ? "Open calendar" : "Kalender öffnen"}
+                  </button>
                 </div>
-                <p className="text-[13px] md:text-[14px] text-[#1B3A5C]/80 max-w-md mx-auto leading-relaxed mb-5">
-                  {isEN
-                    ? "Open the calendar to choose a time that suits you. Loading on demand keeps this page fast."
-                    : "Öffnen Sie den Kalender, um einen passenden Termin zu wählen. So bleibt die Seite angenehm schnell."}
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setCalendarOpen(true)}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1B3A5C] hover:bg-[#15304E] text-white px-6 py-3 text-[13.5px] font-medium tracking-tight shadow-[0_8px_22px_-8px_rgba(27,58,92,0.45),0_2px_6px_-2px_rgba(27,58,92,0.25)] transition-colors"
-                >
-                  <CalendarClock className="w-4 h-4" strokeWidth={2} />
-                  {isEN ? "Open calendar" : "Kalender öffnen"}
-                </button>
               </div>
             )}
 
