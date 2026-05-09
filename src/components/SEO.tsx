@@ -35,6 +35,7 @@ const slugMapDE: Record<string, string> = {
   cityZurich: "hypnose-zuerich", cityAugsburg: "hypnose-augsburg",
   blog: "blog", book: "buch-go-inside",
   impressum: "impressum", privacy: "datenschutz", terms: "agb",
+  onlineBeratung: "online-psychologische-beratung",
 };
 
 const slugMapEN: Record<string, string> = {
