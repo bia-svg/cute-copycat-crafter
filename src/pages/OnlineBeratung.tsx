@@ -156,33 +156,28 @@ export default function OnlineBeratung() {
         ]}
       />
 
-      {/* HERO — unified premium container system (matches Service pages) */}
-      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-6 md:py-8">
-          <div className="max-w-5xl mx-auto bg-white/85 backdrop-blur-sm border-2 border-[#D8E0EA] rounded-3xl shadow-[0_8px_30px_rgba(27,58,92,0.07)] p-5 md:p-7">
+      {/* HERO — premium private-practice container */}
+      <section className="relative bg-gradient-to-b from-[#EDF1F6] via-[#E8EDF3] to-[#F1F4F7] border-b border-[#D8E0EA]">
+        <div className="container-main py-7 md:py-10">
+          <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-sm border border-[#CFD8E3] rounded-3xl shadow-[0_14px_44px_-12px_rgba(27,58,92,0.18),0_4px_14px_-4px_rgba(27,58,92,0.08)] p-6 md:p-9">
             <div className="max-w-2xl mx-auto text-center">
-              <div className="flex items-center justify-center gap-3 mb-3">
-                <span className="h-px w-8 bg-[#2E7D32]/20" />
+              <div className="flex items-center justify-center gap-3 mb-3.5">
+                <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
                 <p className="text-[11px] md:text-[12.5px] uppercase tracking-[0.22em] text-[#1B3A5C]/90 font-semibold">
                   Lic. Psych. David J. Woods
                 </p>
-                <span className="h-px w-8 bg-[#2E7D32]/20" />
+                <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#2E7D32]/35" />
               </div>
-              <h1 className="text-[22px] md:text-[30px] font-light tracking-tight text-[#1B3A5C] leading-[1.15]">
+              <h1 className="text-[23px] md:text-[32px] font-light tracking-tight text-[#1B3A5C] leading-[1.12]">
                 {title}
               </h1>
-              <p className="mt-2.5 text-[13.5px] md:text-[15px] text-[#1B3A5C]/85 font-normal leading-snug tracking-tight">
+              <p className="mt-3.5 text-[13.5px] md:text-[15px] text-[#0B1F33]/75 leading-relaxed max-w-xl mx-auto">
                 {subtitle}
-              </p>
-              <p className="mt-2 text-[12.5px] md:text-[13.5px] text-[#0B1F33]/65 leading-snug max-w-xl mx-auto">
-                {isEN
-                  ? "Personal support for emotional strain, mental challenges, anxiety, stress, inner conflicts or processes of change – flexibly by phone or online."
-                  : "Persönliche Unterstützung bei emotionalen Belastungen, mentalen Herausforderungen, Ängsten, Stress, inneren Konflikten oder Veränderungsprozessen – flexibel telefonisch oder online."}
               </p>
             </div>
 
             {/* Bullets — compact inner grid */}
-            <ul className="mt-5 md:mt-6 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 border-t border-[#E2E8EE] pt-4">
+            <ul className="mt-6 md:mt-7 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-7 gap-y-2.5 border-t border-[#E2E8EE] pt-5">
               {bullets.map(({ icon: Icon, text }) => (
                 <li key={text} className="flex items-start gap-2.5 text-[12.5px] md:text-[13.5px] text-[#0B1F33]/80 leading-snug">
                   <span className="mt-0.5 shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-br from-[#E8F5EE] to-[#F0F7F3] text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_0_0_3px_rgba(46,125,50,0.04)]">
@@ -197,9 +192,9 @@ export default function OnlineBeratung() {
       </section>
 
       {/* CALENDLY — unified container system (white card on silver) */}
-      <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
+      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
         <div className="container-main py-6 md:py-8">
-          <div className="max-w-3xl mx-auto bg-white/85 backdrop-blur-sm border-2 border-[#D8E0EA] rounded-3xl shadow-[0_8px_30px_rgba(27,58,92,0.07)] p-4 md:p-5">
+          <div className="max-w-3xl mx-auto bg-white border border-[#CFD8E3] rounded-3xl shadow-[0_14px_44px_-12px_rgba(27,58,92,0.16),0_4px_14px_-4px_rgba(27,58,92,0.07)] p-4 md:p-5">
             <div className="text-center mb-3 md:mb-4">
               <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight mb-1">
                 {isEN ? "Book your appointment" : "Termin buchen"}
@@ -210,25 +205,6 @@ export default function OnlineBeratung() {
                   : "Wählen Sie direkt im Kalender unten einen passenden Termin."}
               </p>
             </div>
-
-            {/* Premium info badges — always-visible price & duration transparency */}
-            <div className="mb-4 md:mb-5 flex flex-wrap items-center justify-center gap-1.5 md:gap-2">
-              {[
-                isEN ? "60 min online consultation" : "60 Min. Online-Beratung",
-                isEN ? "Germany & Austria: €179" : "Deutschland & Österreich: 179 €",
-                isEN ? "Switzerland: CHF 179" : "Schweiz: 179 CHF",
-                isEN ? "By phone or video" : "Telefonisch oder per Video",
-                isEN ? "Creditable toward intensive session" : "Auf Intensivsitzung anrechenbar",
-              ].map((label) => (
-                <span
-                  key={label}
-                  className="inline-flex items-center rounded-full border border-[#2E7D32]/18 bg-gradient-to-b from-[#F8FBF9] to-white px-2.5 py-1 text-[11px] md:text-[11.5px] text-[#1B3A5C]/85 tracking-tight shadow-[0_1px_2px_rgba(27,58,92,0.04)]"
-                >
-                  {label}
-                </span>
-              ))}
-            </div>
-
             <CalendlyInlineEmbed
               loadingLabel={isEN ? "Loading calendar …" : "Kalender wird geladen …"}
             />
