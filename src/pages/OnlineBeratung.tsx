@@ -178,7 +178,7 @@ export default function OnlineBeratung() {
             </div>
 
             {/* Bullets — compact inner grid */}
-            <ul className="mt-6 md:mt-7 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-7 gap-y-2.5 border-t border-[#E5DFD0] pt-5">
+            <ul className="mt-6 md:mt-7 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-7 gap-y-2.5 border-t border-border pt-5">
               {bullets.map(({ icon: Icon, text }) => (
                 <li key={text} className="flex items-start gap-2.5 text-[12.5px] md:text-[13.5px] text-[#0B1F33]/80 leading-snug">
                   <span className="mt-0.5 shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-br from-[#E8F5EE] to-[#F0F7F3] text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_0_0_3px_rgba(46,125,50,0.04)]">
