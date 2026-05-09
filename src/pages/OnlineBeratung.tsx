@@ -138,8 +138,8 @@ export default function OnlineBeratung() {
 
   const title = isEN ? "Confidential Online Psychological Consultation" : "Vertrauliche Online Psychologische Beratung";
   const subtitle = isEN
-    ? "Professional online psychological consultation for emotional strain, anxiety, stress, inner conflicts or personal processes of change — flexibly by phone or online."
-    : "Professionelle Online Psychologische Beratung bei emotionalen Belastungen, Ängsten, Stress, inneren Konflikten oder persönlichen Veränderungsprozessen — flexibel telefonisch oder online.";
+    ? "Professional psychological support for emotional strain, anxiety, stress, inner conflicts and personal processes of change — discreet, empathetic and solution-oriented."
+    : "Professionelle psychologische Unterstützung bei emotionalen Belastungen, Ängsten, Stress, inneren Konflikten und persönlichen Veränderungsprozessen — diskret, einfühlsam und lösungsorientiert.";
 
   return (
     <>
@@ -160,7 +160,7 @@ export default function OnlineBeratung() {
       {/* HERO — premium private-practice container */}
       <section className="relative bg-[#f4f3ef] border-b border-border">
         <div className="container-main py-7 md:py-10">
-          <div className="max-w-5xl mx-auto bg-white border border-border rounded-3xl shadow-[0_18px_44px_-18px_rgba(27,58,92,0.18),0_4px_14px_-6px_rgba(27,58,92,0.08)] p-6 md:p-9">
+          <div className="max-w-5xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_20px_50px_-16px_rgba(27,58,92,0.20),0_5px_16px_-6px_rgba(27,58,92,0.10)] p-6 md:p-9">
             <div className="max-w-2xl mx-auto text-center">
               <div className="flex items-center justify-center gap-3 mb-3.5">
                 <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
@@ -195,7 +195,7 @@ export default function OnlineBeratung() {
       {/* CALENDLY — alternating cool grey, white card */}
       <section className="bg-[#DDE1E4] border-b border-border">
         <div className="container-main py-6 md:py-8">
-          <div className="max-w-3xl mx-auto bg-white border border-border rounded-3xl shadow-[0_18px_44px_-18px_rgba(27,58,92,0.18),0_4px_14px_-6px_rgba(27,58,92,0.08)] p-4 md:p-5">
+          <div className="max-w-3xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_20px_50px_-16px_rgba(27,58,92,0.20),0_5px_16px_-6px_rgba(27,58,92,0.10)] p-4 md:p-5">
             <div className="text-center mb-3 md:mb-4">
               <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight mb-1">
                 {isEN ? "Book your appointment" : "Termin buchen"}
@@ -230,7 +230,7 @@ export default function OnlineBeratung() {
                 loadingLabel={isEN ? "Loading calendar …" : "Kalender wird geladen …"}
               />
             ) : (
-              <div className="rounded-2xl border border-border bg-[#f4f3ef] px-5 py-5 md:px-6 md:py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]">
+              <div className="rounded-2xl border-[1.5px] border-border bg-[#f4f3ef] px-5 py-5 md:px-6 md:py-6 shadow-[0_4px_14px_rgba(27,58,92,0.06),inset_0_1px_0_rgba(255,255,255,0.6)]">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-3 text-center sm:text-left">
                     <span className="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_2px_6px_rgba(46,125,50,0.10)]">
@@ -254,10 +254,10 @@ export default function OnlineBeratung() {
               </div>
             )}
 
-            <p className="mt-3 md:mt-4 text-[11.5px] md:text-[12.5px] text-foreground/65 text-center leading-snug max-w-2xl mx-auto">
+            <p className="mt-3 md:mt-4 text-[11px] md:text-[11.5px] text-foreground/50 text-center leading-snug max-w-2xl mx-auto">
               {isEN
-                ? "After booking you will receive the payment information by email, SMS or WhatsApp. The appointment is firmly reserved once the payment has been received."
-                : "Nach der Buchung erhalten Sie die Zahlungsinformationen per E-Mail, SMS oder WhatsApp. Der Termin wird nach Zahlungseingang verbindlich reserviert."}
+                ? "Payment details will be sent by email."
+                : "Die Zahlungsinformationen erhalten Sie per E-Mail."}
             </p>
           </div>
         </div>
@@ -266,7 +266,7 @@ export default function OnlineBeratung() {
       {/* INFO / SEO — premium private-practice context */}
       <section className="bg-[#f4f3ef] border-t border-border">
         <div className="container-main py-6 md:py-9">
-          <div className="max-w-5xl mx-auto bg-white border border-border rounded-3xl shadow-[0_18px_44px_-18px_rgba(27,58,92,0.18),0_4px_14px_-6px_rgba(27,58,92,0.08)] p-5 md:p-8">
+          <div className="max-w-5xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_20px_50px_-16px_rgba(27,58,92,0.20),0_5px_16px_-6px_rgba(27,58,92,0.10)] p-5 md:p-8">
             <div className="flex items-center justify-center gap-3 mb-3.5 md:mb-4">
               <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
               <p className="text-[10.5px] md:text-[11.5px] uppercase tracking-[0.22em] text-[#1B3A5C]/80 font-semibold">
