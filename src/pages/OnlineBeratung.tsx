@@ -187,13 +187,7 @@ export default function OnlineBeratung() {
                 : "Wählen Sie direkt im Kalender unten einen passenden Termin."}
             </p>
             <div className="w-full max-w-[1200px] mx-auto overflow-visible">
-              <iframe
-                title={isEN ? "Calendly appointment booking" : "Calendly Terminbuchung"}
-                src={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=ffffff&text_color=0B1F33&primary_color=2E7D32`}
-                className="block w-full min-h-[1100px] h-[1100px] border-0 overflow-visible bg-transparent"
-                loading="lazy"
-                scrolling="no"
-              />
+              <CalendlyInlineWidget url={CALENDLY_URL} />
             </div>
 
             <p className="mt-8 md:mt-10 text-[12.5px] md:text-[13.5px] text-foreground/70 text-center leading-relaxed max-w-2xl mx-auto">
