@@ -195,7 +195,7 @@ export default function OnlineBeratung() {
       {/* CALENDLY — alternating cool grey, white card */}
       <section className="bg-[#DDE1E4] border-b border-border">
         <div className="container-main py-6 md:py-8">
-          <div className="max-w-3xl mx-auto bg-white border border-border rounded-3xl shadow-[0_18px_44px_-18px_rgba(27,58,92,0.18),0_4px_14px_-6px_rgba(27,58,92,0.08)] p-4 md:p-5">
+          <div className="max-w-3xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_20px_50px_-16px_rgba(27,58,92,0.20),0_5px_16px_-6px_rgba(27,58,92,0.10)] p-4 md:p-5">
             <div className="text-center mb-3 md:mb-4">
               <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight mb-1">
                 {isEN ? "Book your appointment" : "Termin buchen"}
