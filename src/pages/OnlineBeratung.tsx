@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { getPath } from "@/lib/routes";
@@ -13,6 +14,85 @@ import {
 } from "lucide-react";
 
 const CALENDLY_URL = "https://calendly.com/info-cug/online-psychologische-beratung";
+const CALENDLY_EMBED_URL = `${CALENDLY_URL}?hide_gdpr_banner=1&background_color=ffffff&text_color=0B1F33&primary_color=2E7D32`;
+
+declare global {
+  interface Window {
+    Calendly?: {
+      initInlineWidget: (options: { url: string; parentElement: HTMLElement }) => void;
+    };
+  }
+}
+
+function CalendlyInlineEmbed() {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const initWidget = () => {
+      if (cancelled || !containerRef.current || !window.Calendly?.initInlineWidget) return;
+
+      containerRef.current.innerHTML = "";
+      window.Calendly.initInlineWidget({
+        url: CALENDLY_EMBED_URL,
+        parentElement: containerRef.current,
+      });
+    };
+
+    const existingStyle = document.querySelector<HTMLLinkElement>(
+      'link[href="https://assets.calendly.com/assets/external/widget.css"]',
+    );
+
+    if (!existingStyle) {
+      const style = document.createElement("link");
+      style.rel = "stylesheet";
+      style.href = "https://assets.calendly.com/assets/external/widget.css";
+      document.head.appendChild(style);
+    }
+
+    const existingScript = document.querySelector<HTMLScriptElement>(
+      'script[src="https://assets.calendly.com/assets/external/widget.js"]',
+    );
+
+    if (window.Calendly?.initInlineWidget) {
+      initWidget();
+    } else if (existingScript) {
+      existingScript.addEventListener("load", initWidget);
+    } else {
+      const script = document.createElement("script");
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      script.addEventListener("load", initWidget);
+      document.body.appendChild(script);
+    }
+
+    return () => {
+      cancelled = true;
+      existingScript?.removeEventListener("load", initWidget);
+
+      const appendedScript = document.querySelector<HTMLScriptElement>(
+        'script[src="https://assets.calendly.com/assets/external/widget.js"]',
+      );
+      appendedScript?.removeEventListener("load", initWidget);
+
+      if (containerRef.current) {
+        containerRef.current.innerHTML = "";
+      }
+    };
+  }, []);
+
+  return (
+    <div className="rounded-xl border border-[#D7DEE6] bg-white p-2 md:p-3 shadow-[0_3px_16px_rgba(27,58,92,0.06)]">
+      <div
+        ref={containerRef}
+        className="calendly-inline-widget mx-auto w-full overflow-hidden rounded-lg bg-white"
+        data-url={CALENDLY_EMBED_URL}
+        style={{ minWidth: "320px", height: "1080px" }}
+      />
+    </div>
+  );
+}
 
 export default function OnlineBeratung() {
   const { language, country } = useLanguage();
@@ -176,27 +256,18 @@ export default function OnlineBeratung() {
           </div>
 
           {/* Calendly embed */}
-          <div className="max-w-[1200px] mx-auto mt-12 md:mt-16 pt-2 md:pt-4">
+          <div className="max-w-[1120px] mx-auto mt-10 md:mt-12">
             <h2 className="text-xl md:text-2xl font-light text-[#0B1F33] text-center tracking-tight mb-2">
               {isEN ? "Book your appointment" : "Termin buchen"}
             </h2>
-            <p className="text-[13px] md:text-sm text-muted-foreground text-center mb-8 md:mb-10">
+            <p className="text-[13px] md:text-sm text-muted-foreground text-center mb-6 md:mb-7">
               {isEN
                 ? "Choose a time that suits you – directly in the calendar below."
                 : "Wählen Sie direkt im Kalender unten einen passenden Termin."}
             </p>
-            <div className="w-full overflow-visible">
-              <iframe
-                src={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=ffffff&text_color=0B1F33&primary_color=2E7D32`}
-                title={isEN ? "Online consultation booking calendar" : "Kalender Online-Beratung buchen"}
-                className="block w-full border-0 bg-white rounded-2xl"
-                style={{ minHeight: 1150, height: 1150 }}
-                loading="lazy"
-                allow="camera; microphone; autoplay; encrypted-media; fullscreen; payment"
-              />
-            </div>
+            <CalendlyInlineEmbed />
 
-            <p className="mt-8 md:mt-10 text-[12.5px] md:text-[13.5px] text-foreground/70 text-center leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-6 md:mt-7 text-[12.5px] md:text-[13.5px] text-foreground/70 text-center leading-relaxed max-w-2xl mx-auto">
               {isEN
                 ? "After booking you will receive the payment information by email, SMS or WhatsApp. The appointment is firmly reserved once the payment has been received."
                 : "Nach der Buchung erhalten Sie die Zahlungsinformationen per E-Mail, SMS oder WhatsApp. Der Termin wird nach Zahlungseingang verbindlich reserviert."}
