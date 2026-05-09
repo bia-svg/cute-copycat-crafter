@@ -295,6 +295,34 @@ export default function OnlineBeratung() {
         </div>
       </section>
 
+      {/* CALENDLY — soft beige section */}
+      <section className="bg-[#F6F3EC] border-b border-[#E6E1D6]">
+        <div className="container-main pt-10 md:pt-12 pb-6 md:pb-8">
+          <div className="max-w-[1100px] mx-auto">
+            <div className="text-center mb-6 md:mb-7">
+              <h2 className="text-xl md:text-2xl font-light text-[#0B1F33] tracking-tight mb-2">
+                {isEN ? "Book your appointment" : "Termin buchen"}
+              </h2>
+              <p className="text-[13px] md:text-sm text-[#1B3A5C]/70">
+                {isEN
+                  ? "Choose a time that suits you – directly in the calendar below."
+                  : "Wählen Sie direkt im Kalender unten einen passenden Termin."}
+              </p>
+            </div>
+
+            <CalendlyInlineEmbed
+              loadingLabel={isEN ? "Loading calendar …" : "Kalender wird geladen …"}
+            />
+
+            <p className="mt-5 md:mt-6 text-[12.5px] md:text-[13px] text-foreground/70 text-center leading-relaxed max-w-2xl mx-auto">
+              {isEN
+                ? "After booking you will receive the payment information by email, SMS or WhatsApp. The appointment is firmly reserved once the payment has been received."
+                : "Nach der Buchung erhalten Sie die Zahlungsinformationen per E-Mail, SMS oder WhatsApp. Der Termin wird nach Zahlungseingang verbindlich reserviert."}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <FAQSection
         title={isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
