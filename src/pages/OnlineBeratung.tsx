@@ -3,7 +3,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { getPath } from "@/lib/routes";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import FAQSection from "@/components/FAQSection";
 import {
   CalendarClock,
   PhoneCall,
@@ -120,72 +119,26 @@ export default function OnlineBeratung() {
 
   const bullets = isEN
     ? [
-        { icon: CalendarClock, text: "Flexible online appointments" },
-        { icon: PhoneCall, text: "Available by phone or online" },
+        { icon: CalendarClock, text: "Short-notice online appointments available" },
+        { icon: PhoneCall, text: "By phone or video" },
         { icon: ShieldCheck, text: "Confidential & individual" },
-        { icon: Award, text: "35+ years of experience" },
+        { icon: Award, text: "35+ years of practical experience" },
         { icon: Sparkles, text: "Intensive, solution-oriented approach" },
-        { icon: Repeat, text: "Can be credited toward a later intensive session" },
+        { icon: Repeat, text: "Creditable toward a later intensive session" },
       ]
     : [
-        { icon: CalendarClock, text: "Flexible Online-Termine" },
-        { icon: PhoneCall, text: "Telefonisch oder online möglich" },
+        { icon: CalendarClock, text: "Kurzfristige Online-Termine möglich" },
+        { icon: PhoneCall, text: "Telefonisch oder per Video" },
         { icon: ShieldCheck, text: "Vertraulich & individuell" },
-        { icon: Award, text: "35+ Jahre Erfahrung" },
+        { icon: Award, text: "35+ Jahre praktische Erfahrung" },
         { icon: Sparkles, text: "Intensiv- und lösungsorientierter Ansatz" },
-        { icon: Repeat, text: "Beratung kann auf spätere Intensivsitzung angerechnet werden" },
+        { icon: Repeat, text: "Auf spätere Intensivsitzung anrechenbar" },
       ];
 
-  const faq = isEN
-    ? [
-        {
-          q: "How does the online consultation work?",
-          a: "After booking, you receive a confirmation with the appointment details and payment information. The consultation lasts approximately 60 minutes and takes place by phone or video — whichever you prefer. Together we look at your situation, clarify your goal and define the next concrete step.",
-        },
-        {
-          q: "Is the consultation by phone or video?",
-          a: "Both are possible. Many clients prefer the phone because it is uncomplicated and discreet. Video calls via Zoom, Microsoft Teams or WhatsApp Video are also available on request.",
-        },
-        {
-          q: "Can the consultation be credited toward an intensive session?",
-          a: "Yes. If you decide to book a subsequent intensive session on site within a reasonable time frame, the cost of the online consultation is credited in full toward the price of the intensive session.",
-        },
-        {
-          q: "How is payment made?",
-          a: "After booking you receive the payment details by email, SMS or WhatsApp.\nThe appointment is firmly reserved as soon as the payment has been received or proof of payment has been provided.",
-        },
-        {
-          q: "Is the consultation confidential?",
-          a: "Yes. The consultation takes place in a confidential and discreet setting.\n\nDavid J. Woods is an academically trained psychologist with decades of practical experience in psychology, hypnosis and counselling.\n\nPersonal information and the content of the consultation are of course treated confidentially.",
-        },
-      ]
-    : [
-        {
-          q: "Wie läuft die Online-Beratung ab?",
-          a: "Nach der Buchung erhalten Sie eine Bestätigung mit den Termindetails und den Zahlungsinformationen. Die Beratung dauert ca. 60 Minuten und findet telefonisch oder per Video statt – ganz wie Sie es bevorzugen. Gemeinsam schauen wir auf Ihre Situation, klären Ihr Anliegen und definieren den nächsten konkreten Schritt.",
-        },
-        {
-          q: "Erfolgt die Beratung telefonisch oder per Video?",
-          a: "Beides ist möglich. Viele Klientinnen und Klienten bevorzugen das Telefon, da es unkompliziert und diskret ist. Auf Wunsch sind auch Video-Calls über Zoom, Microsoft Teams oder WhatsApp-Video möglich.",
-        },
-        {
-          q: "Kann die Beratung auf eine Intensivsitzung angerechnet werden?",
-          a: "Ja. Wenn Sie sich innerhalb eines angemessenen Zeitraums für eine anschließende Intensivsitzung vor Ort entscheiden, werden die Kosten der Online-Beratung vollständig auf den Preis der Intensivsitzung angerechnet.",
-        },
-        {
-          q: "Wie erfolgt die Zahlung?",
-          a: "Nach der Buchung erhalten Sie die Zahlungsinformationen per E-Mail, SMS oder WhatsApp.\nDer Termin wird verbindlich reserviert, sobald die Zahlung eingegangen ist oder ein Zahlungsnachweis übermittelt wurde.",
-        },
-        {
-          q: "Ist die Beratung vertraulich?",
-          a: "Ja. Die Beratung findet in einem vertraulichen und diskreten Rahmen statt.\n\nDavid J. Woods ist akademisch ausgebildeter Psychologe mit jahrzehntelanger praktischer Erfahrung im Bereich Psychologie, Hypnose und Gesprächsführung.\n\nPersönliche Informationen und Inhalte der Beratung werden selbstverständlich vertraulich behandelt.",
-        },
-      ];
-
-  const title = isEN ? "Online Psychological Consultation" : "Online Psychologische Beratung";
+  const title = isEN ? "Confidential Online Psychological Consultation" : "Vertrauliche Online Psychologische Beratung";
   const subtitle = isEN
-    ? "Confidential psychological consultation by phone or online video"
-    : "Vertrauliche Online- und Telefonberatung";
+    ? "Professional psychological support for emotional strain, anxiety, stress, inner conflicts or personal processes of change — flexibly by phone or online."
+    : "Professionelle psychologische Unterstützung bei emotionalen Belastungen, Ängsten, Stress, inneren Konflikten oder persönlichen Veränderungsprozessen — flexibel telefonisch oder online.";
 
   return (
     <>
@@ -203,33 +156,28 @@ export default function OnlineBeratung() {
         ]}
       />
 
-      {/* HERO — unified premium container system (matches Service pages) */}
-      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-6 md:py-8">
-          <div className="max-w-5xl mx-auto bg-white/85 backdrop-blur-sm border-2 border-[#D8E0EA] rounded-3xl shadow-[0_8px_30px_rgba(27,58,92,0.07)] p-5 md:p-7">
+      {/* HERO — premium private-practice container */}
+      <section className="relative bg-gradient-to-b from-[#EDF1F6] via-[#E8EDF3] to-[#F1F4F7] border-b border-[#D8E0EA]">
+        <div className="container-main py-7 md:py-10">
+          <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-sm border border-[#CFD8E3] rounded-3xl shadow-[0_14px_44px_-12px_rgba(27,58,92,0.18),0_4px_14px_-4px_rgba(27,58,92,0.08)] p-6 md:p-9">
             <div className="max-w-2xl mx-auto text-center">
-              <div className="flex items-center justify-center gap-3 mb-3">
-                <span className="h-px w-8 bg-[#2E7D32]/20" />
+              <div className="flex items-center justify-center gap-3 mb-3.5">
+                <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
                 <p className="text-[11px] md:text-[12.5px] uppercase tracking-[0.22em] text-[#1B3A5C]/90 font-semibold">
                   Lic. Psych. David J. Woods
                 </p>
-                <span className="h-px w-8 bg-[#2E7D32]/20" />
+                <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#2E7D32]/35" />
               </div>
-              <h1 className="text-[22px] md:text-[30px] font-light tracking-tight text-[#1B3A5C] leading-[1.15]">
+              <h1 className="text-[23px] md:text-[32px] font-light tracking-tight text-[#1B3A5C] leading-[1.12]">
                 {title}
               </h1>
-              <p className="mt-2.5 text-[13.5px] md:text-[15px] text-[#1B3A5C]/85 font-normal leading-snug tracking-tight">
+              <p className="mt-3.5 text-[13.5px] md:text-[15px] text-[#0B1F33]/75 leading-relaxed max-w-xl mx-auto">
                 {subtitle}
-              </p>
-              <p className="mt-2 text-[12.5px] md:text-[13.5px] text-[#0B1F33]/65 leading-snug max-w-xl mx-auto">
-                {isEN
-                  ? "Personal support for emotional strain, mental challenges, anxiety, stress, inner conflicts or processes of change – flexibly by phone or online."
-                  : "Persönliche Unterstützung bei emotionalen Belastungen, mentalen Herausforderungen, Ängsten, Stress, inneren Konflikten oder Veränderungsprozessen – flexibel telefonisch oder online."}
               </p>
             </div>
 
             {/* Bullets — compact inner grid */}
-            <ul className="mt-5 md:mt-6 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 border-t border-[#E2E8EE] pt-4">
+            <ul className="mt-6 md:mt-7 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-7 gap-y-2.5 border-t border-[#E2E8EE] pt-5">
               {bullets.map(({ icon: Icon, text }) => (
                 <li key={text} className="flex items-start gap-2.5 text-[12.5px] md:text-[13.5px] text-[#0B1F33]/80 leading-snug">
                   <span className="mt-0.5 shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-br from-[#E8F5EE] to-[#F0F7F3] text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_0_0_3px_rgba(46,125,50,0.04)]">
@@ -244,9 +192,9 @@ export default function OnlineBeratung() {
       </section>
 
       {/* CALENDLY — unified container system (white card on silver) */}
-      <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
+      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
         <div className="container-main py-6 md:py-8">
-          <div className="max-w-3xl mx-auto bg-white/85 backdrop-blur-sm border-2 border-[#D8E0EA] rounded-3xl shadow-[0_8px_30px_rgba(27,58,92,0.07)] p-4 md:p-5">
+          <div className="max-w-3xl mx-auto bg-white border border-[#CFD8E3] rounded-3xl shadow-[0_14px_44px_-12px_rgba(27,58,92,0.16),0_4px_14px_-4px_rgba(27,58,92,0.07)] p-4 md:p-5">
             <div className="text-center mb-3 md:mb-4">
               <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight mb-1">
                 {isEN ? "Book your appointment" : "Termin buchen"}
@@ -288,13 +236,6 @@ export default function OnlineBeratung() {
           </div>
         </div>
       </section>
-
-      {/* FAQ */}
-      <FAQSection
-        title={isEN ? "Frequently Asked Questions" : "Häufig gestellte Fragen"}
-        items={faq}
-        sectionClassName="bg-[#F1F4F7] border-t border-[#E2E8EE]"
-      />
     </>
   );
 }
