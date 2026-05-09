@@ -90,6 +90,17 @@ export default function OnlineBeratung() {
     ? "Confidential online psychological consultation with Lic. Psych. David J. Woods"
     : "Vertrauliche psychologische Online-Beratung mit Lic. Psych. David J. Woods";
 
+  useEffect(() => {
+    if (!calendlyRef.current) return;
+    const existing = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+    if (!existing) {
+      const script = document.createElement("script");
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
   return (
     <>
       <SEO
