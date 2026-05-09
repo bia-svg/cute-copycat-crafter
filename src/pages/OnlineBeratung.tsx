@@ -144,7 +144,7 @@ export default function OnlineBeratung() {
         },
         {
           q: "Is the consultation by phone or video?",
-          a: "Both are possible. Many clients prefer the phone because it is unobtrusive and discreet. Video calls (Zoom, Google Meet, WhatsApp Video) are also available on request.",
+          a: "Both are possible. Many clients prefer the phone because it is uncomplicated and discreet. Video calls via Zoom, Microsoft Teams or WhatsApp Video are also available on request.",
         },
         {
           q: "Can the consultation be credited toward an intensive session?",
@@ -166,7 +166,7 @@ export default function OnlineBeratung() {
         },
         {
           q: "Erfolgt die Beratung telefonisch oder per Video?",
-          a: "Beides ist möglich. Viele Klientinnen und Klienten bevorzugen das Telefon, da es unaufdringlich und diskret ist. Auf Wunsch sind auch Videocalls (Zoom, Google Meet, WhatsApp-Video) möglich.",
+          a: "Beides ist möglich. Viele Klientinnen und Klienten bevorzugen das Telefon, da es unkompliziert und diskret ist. Auf Wunsch sind auch Video-Calls über Zoom, Microsoft Teams oder WhatsApp-Video möglich.",
         },
         {
           q: "Kann die Beratung auf eine Intensivsitzung angerechnet werden?",
