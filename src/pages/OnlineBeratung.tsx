@@ -92,8 +92,10 @@ export default function OnlineBeratung() {
   return (
     <>
       <SEO
-        title={isEN ? "Online Psychological Consultation – Lic. Psych. David J. Woods" : "Online Psychologische Beratung – Lic. Psych. David J. Woods"}
-        description={subtitle}
+        titleDE="Online Psychologische Beratung – Lic. Psych. David J. Woods"
+        titleEN="Online Psychological Consultation – Lic. Psych. David J. Woods"
+        descriptionDE="Vertrauliche psychologische Online-Beratung mit Lic. Psych. David J. Woods – flexibel telefonisch oder online. 35+ Jahre Erfahrung."
+        descriptionEN="Confidential online psychological consultation with Lic. Psych. David J. Woods – flexibly by phone or online. 35+ years of experience."
         pageKey="contact"
       />
       <Breadcrumbs
