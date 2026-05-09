@@ -203,21 +203,40 @@ export default function OnlineBeratung() {
         ]}
       />
 
-      {/* HERO — soft offwhite atmosphere with depth, separated from beige Calendly section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#FAFAF7] to-[#F4F2EC] border-b border-[#E8E3D6]">
-        {/* Soft light accents for depth */}
+      {/* HERO — premium medical/clinic stage: warm white → soft grey → smoke-blue */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#F7F8FA] to-[#EDF1F5] border-b border-[#DCE3EB]">
+        {/* Soft light accents — smoke-blue depth, almost no beige */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(ellipse 70% 55% at 50% -10%, rgba(27,58,92,0.06), transparent 65%), radial-gradient(ellipse 50% 40% at 0% 100%, rgba(27,58,92,0.035), transparent 70%), radial-gradient(ellipse 50% 40% at 100% 100%, rgba(214,196,160,0.18), transparent 70%)",
+              "radial-gradient(ellipse 65% 50% at 50% -10%, rgba(27,58,92,0.07), transparent 70%), radial-gradient(ellipse 45% 40% at 0% 110%, rgba(27,58,92,0.05), transparent 70%), radial-gradient(ellipse 45% 40% at 100% 110%, rgba(27,58,92,0.04), transparent 70%)",
           }}
         />
-        {/* Soft bottom shadow / depth fade into next section */}
+        {/* Subtle diagonal line texture for graphic structure */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-b from-transparent to-[#F4F2EC]"
+          className="pointer-events-none absolute inset-0 opacity-[0.35]"
+          style={{
+            backgroundImage:
+              "linear-gradient(135deg, transparent 0, transparent 49.5%, rgba(27,58,92,0.04) 49.5%, rgba(27,58,92,0.04) 50%, transparent 50%, transparent 100%)",
+            backgroundSize: "26px 26px",
+          }}
+        />
+        {/* Fine top hairline */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#1B3A5C]/15 to-transparent"
+        />
+        {/* Soft separator shadow into next section */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-[#EDF1F5]"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-[#1B3A5C]/15 to-transparent"
         />
 
         <div className="relative container-main py-16 md:py-24">
@@ -245,7 +264,7 @@ export default function OnlineBeratung() {
 
           {/* Bullets — premium translucent card with finer hierarchy */}
           <div className="max-w-4xl mx-auto mt-12 md:mt-14">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3.5 bg-white/80 backdrop-blur-sm border border-[#E8E3D6] rounded-2xl p-6 md:p-7 shadow-[0_4px_24px_rgba(27,58,92,0.06),0_1px_2px_rgba(27,58,92,0.04),inset_0_1px_0_rgba(255,255,255,0.8)]">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3.5 bg-white/85 backdrop-blur-sm border border-[#DCE3EB] rounded-2xl p-6 md:p-7 shadow-[0_6px_28px_rgba(27,58,92,0.07),0_1px_2px_rgba(27,58,92,0.04),inset_0_1px_0_rgba(255,255,255,0.9)]">
               {bullets.map(({ icon: Icon, text }) => (
                 <li key={text} className="flex items-start gap-3 text-[13.5px] md:text-[14.5px] text-[#0B1F33]/80 leading-snug">
                   <span className="mt-0.5 shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#EEF3F8] text-[#1B3A5C] border border-[#1B3A5C]/10">
