@@ -203,75 +203,94 @@ export default function OnlineBeratung() {
         ]}
       />
 
-      {/* HERO */}
-      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
-        <div className="container-main py-10 md:py-14">
+      {/* HERO — soft warm gradient with subtle blue accent */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#FAF7F0] via-[#F6F3EC] to-[#F1EEE5] border-b border-[#EAE4D6]">
+        {/* Subtle decorative accents */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(27,58,92,0.05), transparent 70%), radial-gradient(ellipse 40% 30% at 100% 100%, rgba(27,58,92,0.03), transparent 70%)",
+          }}
+        />
+        <div className="relative container-main py-14 md:py-20">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-[11px] md:text-[12px] uppercase tracking-[0.18em] text-[#2E7D32] font-medium mb-3">
-              Lic. Psych. David J. Woods
-            </p>
-            <h1 className="text-3xl md:text-4xl font-light tracking-tight text-[#0B1F33] leading-tight">
+            {/* Fine separator line above eyebrow */}
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="h-px w-8 bg-[#1B3A5C]/30" />
+              <p className="text-[10.5px] md:text-[11.5px] uppercase tracking-[0.24em] text-[#1B3A5C]/75 font-medium">
+                Lic. Psych. David J. Woods
+              </p>
+              <span className="h-px w-8 bg-[#1B3A5C]/30" />
+            </div>
+            <h1 className="text-[28px] md:text-[40px] font-light tracking-tight text-[#0B1F33] leading-[1.15]">
               {title}
             </h1>
-            <p className="mt-4 text-sm md:text-[15px] text-[#1B3A5C] font-normal leading-relaxed">
+            <p className="mt-5 text-[14px] md:text-[16px] text-[#1B3A5C]/85 font-normal leading-relaxed tracking-tight">
               {subtitle}
             </p>
-            <p className="mt-5 text-[13.5px] md:text-[15px] text-foreground/75 leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-4 text-[13.5px] md:text-[15px] text-[#0B1F33]/65 leading-relaxed max-w-2xl mx-auto">
               {isEN
                 ? "Personal support for emotional strain, mental challenges, anxiety, stress, inner conflicts or processes of change – flexibly by phone or online."
                 : "Persönliche Unterstützung bei emotionalen Belastungen, mentalen Herausforderungen, Ängsten, Stress, inneren Konflikten oder Veränderungsprozessen – flexibel telefonisch oder online."}
             </p>
           </div>
 
-          {/* Bullets */}
-          <div className="max-w-4xl mx-auto mt-8 md:mt-10">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 shadow-[0_4px_20px_rgba(27,58,92,0.05)]">
-              {bullets.map(({ icon: Icon, text }) => (
-                <li key={text} className="flex items-start gap-3 text-[13.5px] md:text-[14.5px] text-foreground/85 leading-snug">
-                  <span className="mt-0.5 shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#E8F5E9] text-[#2E7D32]">
-                    <Icon className="w-4 h-4" strokeWidth={1.8} />
-                  </span>
-                  <span>{text}</span>
-                </li>
-              ))}
-            </ul>
+          {/* Bullets — warm ivory card, monochrome blue icons */}
+          <div className="max-w-4xl mx-auto mt-10 md:mt-12">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3.5 bg-gradient-to-b from-white to-[#FBF8F2] border border-[#EAE4D6] rounded-2xl p-6 md:p-7 shadow-[0_2px_14px_rgba(27,58,92,0.04),inset_0_1px_0_rgba(255,255,255,0.7)]">
+                {bullets.map(({ icon: Icon, text }) => (
+                  <li key={text} className="flex items-start gap-3 text-[13.5px] md:text-[14.5px] text-[#0B1F33]/80 leading-snug">
+                    <span className="mt-0.5 shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#EEF3F8] text-[#1B3A5C] border border-[#1B3A5C]/10">
+                      <Icon className="w-3.5 h-3.5" strokeWidth={1.7} />
+                    </span>
+                    <span>{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* PRICE + CALENDLY */}
-      <section className="bg-white border-b border-[#E2E8EE]">
-        <div className="container-main py-10 md:py-14">
-          {/* Price block */}
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-[#F8FAFC] border border-[#D7DEE6] rounded-2xl p-6 md:p-8 text-center shadow-[0_2px_10px_rgba(27,58,92,0.04)]">
-              <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-3">
-                {isEN ? "Investment" : "Honorar"}
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
-                <div className="bg-white border border-[#E2E8EE] rounded-xl px-4 py-4">
-                  <div className="text-[12px] text-muted-foreground mb-1">
-                    {isEN ? "Germany & Austria" : "Deutschland & Österreich"}
-                  </div>
-                  <div className="text-2xl md:text-[28px] font-light text-[#0B1F33] tracking-tight">
-                    179 €
-                  </div>
+      {/* PRICE — clean, premium, ruhig */}
+      <section className="bg-gradient-to-b from-[#F1EEE5] to-[#F6F3EC] border-b border-[#EAE4D6]">
+        <div className="container-main py-12 md:py-16">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-6 md:mb-7">
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <span className="h-px w-6 bg-[#1B3A5C]/25" />
+                <p className="text-[10.5px] uppercase tracking-[0.26em] text-[#1B3A5C]/65 font-medium">
+                  {isEN ? "Investment" : "Honorar"}
+                </p>
+                <span className="h-px w-6 bg-[#1B3A5C]/25" />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-white border border-[#EAE4D6] rounded-2xl px-6 py-7 text-center shadow-[0_1px_4px_rgba(27,58,92,0.03),inset_0_1px_0_rgba(255,255,255,0.8)]">
+                <div className="text-[11px] uppercase tracking-[0.18em] text-[#1B3A5C]/55 mb-2.5">
+                  {isEN ? "Germany & Austria" : "Deutschland & Österreich"}
                 </div>
-                <div className="bg-white border border-[#E2E8EE] rounded-xl px-4 py-4">
-                  <div className="text-[12px] text-muted-foreground mb-1">
-                    {isEN ? "Switzerland" : "Schweiz"}
-                  </div>
-                  <div className="text-2xl md:text-[28px] font-light text-[#0B1F33] tracking-tight">
-                    179 CHF
-                  </div>
+                <div className="text-[34px] md:text-[38px] font-extralight text-[#0B1F33] tracking-tight leading-none">
+                  179<span className="text-[20px] md:text-[22px] font-light text-[#1B3A5C]/70 ml-1">€</span>
                 </div>
               </div>
-              <p className="mt-5 text-[12.5px] md:text-[13px] text-[#2E7D32] leading-snug max-w-xl mx-auto">
-                {isEN
-                  ? "The cost of the online consultation can be credited toward a subsequent on-site intensive session."
-                  : "Die Kosten der Online-Beratung können bei anschließender Intensivsitzung vor Ort angerechnet werden."}
-              </p>
+              <div className="bg-white border border-[#EAE4D6] rounded-2xl px-6 py-7 text-center shadow-[0_1px_4px_rgba(27,58,92,0.03),inset_0_1px_0_rgba(255,255,255,0.8)]">
+                <div className="text-[11px] uppercase tracking-[0.18em] text-[#1B3A5C]/55 mb-2.5">
+                  {isEN ? "Switzerland" : "Schweiz"}
+                </div>
+                <div className="text-[34px] md:text-[38px] font-extralight text-[#0B1F33] tracking-tight leading-none">
+                  179<span className="text-[20px] md:text-[22px] font-light text-[#1B3A5C]/70 ml-1">CHF</span>
+                </div>
+              </div>
             </div>
+
+            <p className="mt-6 text-[12.5px] md:text-[13px] text-[#1B3A5C]/70 leading-relaxed text-center max-w-xl mx-auto">
+              {isEN
+                ? "The fee for the online consultation can be credited toward a subsequent on-site intensive session."
+                : "Das Honorar der Online-Beratung kann bei anschließender Intensivsitzung vor Ort angerechnet werden."}
+            </p>
           </div>
         </div>
       </section>
