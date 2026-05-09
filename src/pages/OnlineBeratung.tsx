@@ -93,19 +93,19 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
   }, []);
 
   return (
-    <div className="relative rounded-2xl border border-[#E6E1D6] bg-[#FBF8F2] p-1.5 md:p-2 shadow-[0_2px_14px_rgba(27,58,92,0.05)]">
+    <div className="relative rounded-xl border border-[#E2E8EE] bg-white p-1 md:p-1.5 shadow-[0_2px_10px_rgba(27,58,92,0.04)]">
       {!loaded && (
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 rounded-2xl bg-[#FBF8F2]/95">
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2.5 rounded-xl bg-white/95">
           <span
-            className="inline-block h-6 w-6 rounded-full border-2 border-[#D7DEE6] border-t-[#1B3A5C] animate-spin"
+            className="inline-block h-5 w-5 rounded-full border-2 border-[#D7DEE6] border-t-[#1B3A5C] animate-spin"
             aria-hidden="true"
           />
-          <p className="text-[13px] text-[#1B3A5C]/70 tracking-tight">{loadingLabel}</p>
+          <p className="text-[12.5px] text-[#1B3A5C]/70 tracking-tight">{loadingLabel}</p>
         </div>
       )}
       <div
         ref={containerRef}
-        className="calendly-inline-widget mx-auto w-full overflow-hidden rounded-xl bg-[#FBF8F2] h-[980px] sm:h-[820px] md:h-[720px]"
+        className="calendly-inline-widget mx-auto w-full overflow-hidden rounded-lg bg-white h-[940px] sm:h-[780px] md:h-[700px]"
         data-url={CALENDLY_EMBED_URL}
         style={{ minWidth: "320px" }}
       />
@@ -203,72 +203,37 @@ export default function OnlineBeratung() {
         ]}
       />
 
-      {/* HERO — premium medical/clinic stage: warm white → soft grey → smoke-blue */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#F7F8FA] to-[#EDF1F5] border-b border-[#DCE3EB]">
-        {/* Soft light accents — smoke-blue depth, almost no beige */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(ellipse 65% 50% at 50% -10%, rgba(27,58,92,0.07), transparent 70%), radial-gradient(ellipse 45% 40% at 0% 110%, rgba(27,58,92,0.05), transparent 70%), radial-gradient(ellipse 45% 40% at 100% 110%, rgba(27,58,92,0.04), transparent 70%)",
-          }}
-        />
-        {/* Subtle diagonal line texture for graphic structure */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.35]"
-          style={{
-            backgroundImage:
-              "linear-gradient(135deg, transparent 0, transparent 49.5%, rgba(27,58,92,0.04) 49.5%, rgba(27,58,92,0.04) 50%, transparent 50%, transparent 100%)",
-            backgroundSize: "26px 26px",
-          }}
-        />
-        {/* Fine top hairline */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#1B3A5C]/15 to-transparent"
-        />
-        {/* Soft separator shadow into next section */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-[#EDF1F5]"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-[#1B3A5C]/15 to-transparent"
-        />
-
-        <div className="relative container-main py-16 md:py-24">
-          <div className="max-w-2xl mx-auto text-center">
-            {/* Fine separator line above eyebrow */}
-            <div className="flex items-center justify-center gap-3 mb-5">
-              <span className="h-px w-10 bg-[#1B3A5C]/25" />
-              <p className="text-[10.5px] md:text-[11.5px] uppercase tracking-[0.28em] text-[#1B3A5C]/70 font-medium">
-                Lic. Psych. David J. Woods
+      {/* HERO — unified premium container system (matches Service pages) */}
+      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
+        <div className="container-main py-6 md:py-8">
+          <div className="max-w-5xl mx-auto bg-white/85 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+            <div className="max-w-2xl mx-auto text-center">
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <span className="h-px w-8 bg-[#1B3A5C]/25" />
+                <p className="text-[10px] md:text-[11px] uppercase tracking-[0.26em] text-[#1B3A5C]/70 font-medium">
+                  Lic. Psych. David J. Woods
+                </p>
+                <span className="h-px w-8 bg-[#1B3A5C]/25" />
+              </div>
+              <h1 className="text-[22px] md:text-[30px] font-light tracking-tight text-[#1B3A5C] leading-[1.15]">
+                {title}
+              </h1>
+              <p className="mt-2.5 text-[13.5px] md:text-[15px] text-[#1B3A5C]/85 font-normal leading-snug tracking-tight">
+                {subtitle}
               </p>
-              <span className="h-px w-10 bg-[#1B3A5C]/25" />
+              <p className="mt-2 text-[12.5px] md:text-[13.5px] text-[#0B1F33]/65 leading-snug max-w-xl mx-auto">
+                {isEN
+                  ? "Personal support for emotional strain, mental challenges, anxiety, stress, inner conflicts or processes of change – flexibly by phone or online."
+                  : "Persönliche Unterstützung bei emotionalen Belastungen, mentalen Herausforderungen, Ängsten, Stress, inneren Konflikten oder Veränderungsprozessen – flexibel telefonisch oder online."}
+              </p>
             </div>
-            <h1 className="text-[28px] md:text-[42px] font-light tracking-tight text-[#0B1F33] leading-[1.12]">
-              {title}
-            </h1>
-            <p className="mt-6 text-[14.5px] md:text-[16.5px] text-[#1B3A5C]/85 font-normal leading-relaxed tracking-tight">
-              {subtitle}
-            </p>
-            <p className="mt-4 text-[13.5px] md:text-[15px] text-[#0B1F33]/60 leading-relaxed max-w-xl mx-auto">
-              {isEN
-                ? "Personal support for emotional strain, mental challenges, anxiety, stress, inner conflicts or processes of change – flexibly by phone or online."
-                : "Persönliche Unterstützung bei emotionalen Belastungen, mentalen Herausforderungen, Ängsten, Stress, inneren Konflikten oder Veränderungsprozessen – flexibel telefonisch oder online."}
-            </p>
-          </div>
 
-          {/* Bullets — premium translucent card with finer hierarchy */}
-          <div className="max-w-4xl mx-auto mt-12 md:mt-14">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3.5 bg-white/85 backdrop-blur-sm border border-[#DCE3EB] rounded-2xl p-6 md:p-7 shadow-[0_6px_28px_rgba(27,58,92,0.07),0_1px_2px_rgba(27,58,92,0.04),inset_0_1px_0_rgba(255,255,255,0.9)]">
+            {/* Bullets — compact inner grid */}
+            <ul className="mt-5 md:mt-6 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 border-t border-[#E2E8EE] pt-4">
               {bullets.map(({ icon: Icon, text }) => (
-                <li key={text} className="flex items-start gap-3 text-[13.5px] md:text-[14.5px] text-[#0B1F33]/80 leading-snug">
-                  <span className="mt-0.5 shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#EEF3F8] text-[#1B3A5C] border border-[#1B3A5C]/10">
-                    <Icon className="w-3.5 h-3.5" strokeWidth={1.7} />
+                <li key={text} className="flex items-start gap-2.5 text-[12.5px] md:text-[13.5px] text-[#0B1F33]/80 leading-snug">
+                  <span className="mt-0.5 shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#EEF3F8] text-[#1B3A5C] border border-[#1B3A5C]/10">
+                    <Icon className="w-3 h-3" strokeWidth={1.8} />
                   </span>
                   <span>{text}</span>
                 </li>
@@ -278,15 +243,15 @@ export default function OnlineBeratung() {
         </div>
       </section>
 
-      {/* CALENDLY — soft beige section */}
-      <section className="bg-[#F6F3EC] border-b border-[#E6E1D6]">
-        <div className="container-main pt-8 md:pt-10 pb-3 md:pb-4">
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-center mb-6 md:mb-7">
-              <h2 className="text-xl md:text-2xl font-light text-[#0B1F33] tracking-tight mb-2">
+      {/* CALENDLY — unified container system (white card on silver) */}
+      <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
+        <div className="container-main py-6 md:py-8">
+          <div className="max-w-3xl mx-auto bg-white/85 backdrop-blur-sm border border-[#E2E8EE] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-4 md:p-5">
+            <div className="text-center mb-3 md:mb-4">
+              <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight mb-1">
                 {isEN ? "Book your appointment" : "Termin buchen"}
               </h2>
-              <p className="text-[13px] md:text-sm text-[#1B3A5C]/70">
+              <p className="text-[12.5px] md:text-[13px] text-[#1B3A5C]/70">
                 {isEN
                   ? "Choose a time that suits you – directly in the calendar below."
                   : "Wählen Sie direkt im Kalender unten einen passenden Termin."}
@@ -297,7 +262,7 @@ export default function OnlineBeratung() {
               loadingLabel={isEN ? "Loading calendar …" : "Kalender wird geladen …"}
             />
 
-            <p className="mt-5 md:mt-6 text-[12.5px] md:text-[13px] text-foreground/70 text-center leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-3 md:mt-4 text-[11.5px] md:text-[12.5px] text-foreground/65 text-center leading-snug max-w-2xl mx-auto">
               {isEN
                 ? "After booking you will receive the payment information by email, SMS or WhatsApp. The appointment is firmly reserved once the payment has been received."
                 : "Nach der Buchung erhalten Sie die Zahlungsinformationen per E-Mail, SMS oder WhatsApp. Der Termin wird nach Zahlungseingang verbindlich reserviert."}
