@@ -105,9 +105,8 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
       )}
       <div
         ref={containerRef}
-        className="calendly-inline-widget mx-auto w-full rounded-lg bg-white h-[1400px] sm:h-[1200px] md:h-[1080px]"
+        className="calendly-inline-widget mx-auto w-full rounded-lg bg-white h-[1750px] sm:h-[1500px] md:h-[1300px]"
         data-url={CALENDLY_EMBED_URL}
-        style={{ minWidth: "320px" }}
       />
     </div>
   );
