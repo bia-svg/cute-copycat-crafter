@@ -195,6 +195,8 @@ function AppRoutes() {
             <Route path="/:lang/:country/consultation" element={<Erstgespraech />} />
             <Route path="/:lang/:country/appointment-confirmation" element={<Terminbestaetigung />} />
             <Route path="/:lang/:country/seminar-registration" element={<SeminarAnmeldung />} />
+            <Route path="/:lang/:country/online-psychologische-beratung" element={<OnlineBeratung />} />
+            <Route path="/:lang/:country/online-psychological-consultation" element={<OnlineBeratung />} />
             <Route path="/:lang/:country/online-beratung" element={<OnlineBeratung />} />
             <Route path="/:lang/:country/online-consultation" element={<OnlineBeratung />} />
             <Route path="/:lang/:country/appointment-confirmation" element={<Terminbestaetigung />} />
