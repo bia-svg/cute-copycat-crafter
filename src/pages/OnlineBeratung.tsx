@@ -160,11 +160,11 @@ export default function OnlineBeratung() {
       {/* HERO — premium private-practice container */}
       <section className="relative bg-[#f4f3ef] border-b border-border">
         <div className="container-main py-7 md:py-10">
-          <div className="max-w-5xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_20px_50px_-16px_rgba(27,58,92,0.20),0_5px_16px_-6px_rgba(27,58,92,0.10)] p-6 md:p-9">
+          <div className="max-w-5xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_22px_56px_-16px_rgba(27,58,92,0.22),0_6px_18px_-6px_rgba(27,58,92,0.12)] p-6 md:p-9">
             <div className="max-w-2xl mx-auto text-center">
               <div className="flex items-center justify-center gap-3 mb-3.5">
                 <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
-                <p className="text-[11px] md:text-[12.5px] uppercase tracking-[0.22em] text-[#1B3A5C]/90 font-semibold">
+                <p className="text-[11px] md:text-[12.5px] uppercase tracking-[0.22em] text-[#2E7D32] font-semibold">
                   Lic. Psych. David J. Woods
                 </p>
                 <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#2E7D32]/35" />
@@ -195,7 +195,7 @@ export default function OnlineBeratung() {
       {/* CALENDLY — alternating cool grey, white card */}
       <section className="bg-[#DDE1E4] border-b border-border">
         <div className="container-main py-6 md:py-8">
-          <div className="max-w-3xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_20px_50px_-16px_rgba(27,58,92,0.20),0_5px_16px_-6px_rgba(27,58,92,0.10)] p-4 md:p-5">
+          <div className="max-w-3xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_22px_56px_-16px_rgba(27,58,92,0.22),0_6px_18px_-6px_rgba(27,58,92,0.12)] p-4 md:p-5">
             <div className="text-center mb-3 md:mb-4">
               <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight mb-1">
                 {isEN ? "Book your appointment" : "Termin buchen"}
@@ -266,10 +266,10 @@ export default function OnlineBeratung() {
       {/* INFO / SEO — premium private-practice context */}
       <section className="bg-[#f4f3ef] border-t border-border">
         <div className="container-main py-6 md:py-9">
-          <div className="max-w-5xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_20px_50px_-16px_rgba(27,58,92,0.20),0_5px_16px_-6px_rgba(27,58,92,0.10)] p-5 md:p-8">
+          <div className="max-w-5xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_22px_56px_-16px_rgba(27,58,92,0.22),0_6px_18px_-6px_rgba(27,58,92,0.12)] p-5 md:p-8">
             <div className="flex items-center justify-center gap-3 mb-3.5 md:mb-4">
               <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
-              <p className="text-[10.5px] md:text-[11.5px] uppercase tracking-[0.22em] text-[#1B3A5C]/80 font-semibold">
+              <p className="text-[10.5px] md:text-[11.5px] uppercase tracking-[0.22em] text-[#2E7D32] font-semibold">
                 {isEN ? "Psychological orientation" : "Psychologische Orientierung"}
               </p>
               <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#2E7D32]/35" />
@@ -346,11 +346,11 @@ export default function OnlineBeratung() {
                         {topics.map((t) => <TopicItem key={t} topic={t} />)}
                       </ul>
                       {/* Mobile: collapsible */}
-                      <details className="md:hidden group rounded-2xl border border-border bg-[#f4f3ef] shadow-[0_1px_3px_rgba(27,58,92,0.05)] open:shadow-[0_4px_14px_rgba(27,58,92,0.08)] transition-shadow">
-                        <summary className="list-none cursor-pointer flex items-center justify-between px-4 py-3 text-[13px] font-medium text-[#1B3A5C] [&::-webkit-details-marker]:hidden">
+                      <details className="md:hidden group rounded-2xl border border-[#2E7D32]/25 bg-[#f4f3ef] shadow-[0_1px_4px_rgba(27,58,92,0.06)] open:shadow-[0_6px_18px_rgba(27,58,92,0.10)] transition-shadow">
+                        <summary className="list-none cursor-pointer flex items-center justify-between px-4 py-3.5 text-[13px] font-medium text-[#1B3A5C] [&::-webkit-details-marker]:hidden active:scale-[0.98] transition-transform">
                           <span>{isEN ? "Topics we address" : "Themen, die wir begleiten"}</span>
-                          <span aria-hidden="true" className="ml-2 inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#2F3A4A]/10 text-[#1B3A5C] transition-transform group-open:rotate-45">
-                            <span className="block w-3 h-px bg-current relative before:content-[''] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-px before:h-3 before:bg-current" />
+                          <span aria-hidden="true" className="ml-2 inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#E8F5E9] border border-[#2E7D32]/30 text-[#2E7D32] shadow-[0_2px_6px_rgba(46,125,50,0.12)] transition-all group-open:rotate-45 group-open:bg-[#C8E6C9] group-open:border-[#2E7D32]/40">
+                            <span className="block w-3.5 h-px bg-current relative before:content-[''] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-px before:h-3.5 before:bg-current" />
                           </span>
                         </summary>
                         <ul className="px-3 pb-3 pt-1 grid grid-cols-1 gap-1.5">
