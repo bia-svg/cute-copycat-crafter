@@ -189,23 +189,23 @@ export default function OnlineBeratung() {
           </div>
 
           {/* Calendly embed */}
-          <div className="max-w-4xl mx-auto mt-10">
+          <div className="max-w-[1200px] mx-auto mt-12 md:mt-16 pt-2 md:pt-4">
             <h2 className="text-xl md:text-2xl font-light text-[#0B1F33] text-center tracking-tight mb-2">
               {isEN ? "Book your appointment" : "Termin buchen"}
             </h2>
-            <p className="text-[13px] md:text-sm text-muted-foreground text-center mb-5">
+            <p className="text-[13px] md:text-sm text-muted-foreground text-center mb-8 md:mb-10">
               {isEN
                 ? "Choose a time that suits you – directly in the calendar below."
                 : "Wählen Sie direkt im Kalender unten einen passenden Termin."}
             </p>
             <div
               ref={calendlyRef}
-              className="calendly-inline-widget bg-white border border-[#E2E8EE] rounded-2xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] overflow-hidden"
+              className="calendly-inline-widget bg-white border border-[#E2E8EE] rounded-2xl shadow-[0_8px_30px_rgba(27,58,92,0.08)] min-h-[900px] md:min-h-[1000px]"
               data-url={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=ffffff&text_color=0B1F33&primary_color=2E7D32`}
-              style={{ minWidth: 320, minHeight: 720 }}
+              style={{ minWidth: 320 }}
             />
 
-            <p className="mt-5 text-[12.5px] md:text-[13.5px] text-foreground/70 text-center leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-8 md:mt-10 text-[12.5px] md:text-[13.5px] text-foreground/70 text-center leading-relaxed max-w-2xl mx-auto">
               {isEN
                 ? "After booking you will receive the payment information by email, SMS or WhatsApp. The appointment is firmly reserved once the payment has been received."
                 : "Nach der Buchung erhalten Sie die Zahlungsinformationen per E-Mail, SMS oder WhatsApp. Der Termin wird nach Zahlungseingang verbindlich reserviert."}
