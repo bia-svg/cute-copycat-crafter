@@ -93,12 +93,21 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
   }, []);
 
   return (
-    <div className="rounded-xl border border-[#D7DEE6] bg-white p-2 md:p-3 shadow-[0_3px_16px_rgba(27,58,92,0.06)]">
+    <div className="relative rounded-2xl border border-[#E6E1D6] bg-[#FBF8F2] p-2 md:p-3 shadow-[0_2px_14px_rgba(27,58,92,0.05)]">
+      {!loaded && (
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 rounded-2xl bg-[#FBF8F2]/95">
+          <span
+            className="inline-block h-6 w-6 rounded-full border-2 border-[#D7DEE6] border-t-[#1B3A5C] animate-spin"
+            aria-hidden="true"
+          />
+          <p className="text-[13px] text-[#1B3A5C]/70 tracking-tight">{loadingLabel}</p>
+        </div>
+      )}
       <div
         ref={containerRef}
-        className="calendly-inline-widget mx-auto w-full overflow-hidden rounded-lg bg-white"
+        className="calendly-inline-widget mx-auto w-full overflow-hidden rounded-xl bg-[#FBF8F2]"
         data-url={CALENDLY_EMBED_URL}
-        style={{ minWidth: "320px", height: "1080px" }}
+        style={{ minWidth: "320px", height: "1040px" }}
       />
     </div>
   );
