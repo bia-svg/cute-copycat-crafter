@@ -26,51 +26,24 @@ declare global {
 
 function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const widgetRef = useRef<HTMLDivElement | null>(null);
   const [loaded, setLoaded] = useState(false);
-  const [dynamicHeight, setDynamicHeight] = useState<number | null>(null);
 
   useEffect(() => {
     let cancelled = false;
 
-    const isCalendlyEvent = (e: MessageEvent) =>
-      typeof e.data === "object" &&
-      e.data !== null &&
-      typeof (e.data as { event?: string }).event === "string" &&
-      (e.data as { event: string }).event.indexOf("calendly.") === 0;
-
-    const handleMessage = (e: MessageEvent) => {
-      if (!isCalendlyEvent(e)) return;
-      const data = e.data as { event: string; payload?: { height?: number } };
-
-      // Dynamic height: Calendly posts page_height as content changes
-      if (data.event === "calendly.page_height" && data.payload?.height) {
-        setDynamicHeight(data.payload.height);
-      }
-
-      // Mobile: when a date is selected and times appear, scroll to bring times into view
-      if (data.event === "calendly.date_and_time_selected" || data.event === "calendly.event_type_viewed") {
-        if (window.matchMedia("(max-width: 767px)").matches && widgetRef.current) {
-          requestAnimationFrame(() => {
-            widgetRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-          });
-        }
-      }
-    };
-
-    window.addEventListener("message", handleMessage);
-
     const initWidget = () => {
-      if (cancelled || !widgetRef.current || !window.Calendly?.initInlineWidget) return;
+      if (cancelled || !containerRef.current || !window.Calendly?.initInlineWidget) return;
 
-      widgetRef.current.innerHTML = "";
+      containerRef.current.innerHTML = "";
       window.Calendly.initInlineWidget({
         url: CALENDLY_EMBED_URL,
-        parentElement: widgetRef.current,
+        parentElement: containerRef.current,
       });
-      const iframe = widgetRef.current.querySelector("iframe");
+      // Calendly injects an iframe; mark loaded once it appears
+      const iframe = containerRef.current.querySelector("iframe");
       if (iframe) {
         iframe.addEventListener("load", () => !cancelled && setLoaded(true), { once: true });
+        // Fallback in case load event already fired
         setTimeout(() => !cancelled && setLoaded(true), 1500);
       } else {
         setTimeout(() => !cancelled && setLoaded(true), 1500);
@@ -106,7 +79,6 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
 
     return () => {
       cancelled = true;
-      window.removeEventListener("message", handleMessage);
       existingScript?.removeEventListener("load", initWidget);
 
       const appendedScript = document.querySelector<HTMLScriptElement>(
@@ -114,18 +86,14 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
       );
       appendedScript?.removeEventListener("load", initWidget);
 
-      if (widgetRef.current) {
-        widgetRef.current.innerHTML = "";
+      if (containerRef.current) {
+        containerRef.current.innerHTML = "";
       }
     };
   }, []);
 
-  // Fallback heights if Calendly hasn't reported page_height yet
-  const fallbackClass = "h-[1100px] sm:h-[1000px] md:h-[900px]";
-  const styleHeight = dynamicHeight ? { height: `${dynamicHeight}px` } : undefined;
-
   return (
-    <div ref={containerRef} className="relative rounded-xl border border-[#D8E0EA] bg-white p-0.5 shadow-[0_4px_16px_rgba(27,58,92,0.06)]">
+    <div className="relative rounded-xl border-2 border-[#D8E0EA] bg-white p-1 md:p-1.5 shadow-[0_4px_16px_rgba(27,58,92,0.06)]">
       {!loaded && (
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2.5 rounded-xl bg-white/95">
           <span
@@ -136,9 +104,8 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
         </div>
       )}
       <div
-        ref={widgetRef}
-        style={styleHeight}
-        className={`calendly-inline-widget mx-auto w-full rounded-lg bg-white overflow-hidden ${dynamicHeight ? "" : fallbackClass}`}
+        ref={containerRef}
+        className="calendly-inline-widget mx-auto w-full rounded-lg bg-white h-[1750px] sm:h-[1500px] md:h-[1300px]"
         data-url={CALENDLY_EMBED_URL}
       />
     </div>
