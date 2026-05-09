@@ -198,15 +198,12 @@ export default function OnlineBeratung() {
                 ? "Choose a time that suits you – directly in the calendar below."
                 : "Wählen Sie direkt im Kalender unten einen passenden Termin."}
             </p>
-            <div className="bg-white border border-[#E2E8EE] rounded-2xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] overflow-hidden">
-              <iframe
-                src={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=ffffff&text_color=0B1F33&primary_color=2E7D32`}
-                title={isEN ? "Book online consultation" : "Online-Beratung buchen"}
-                className="w-full"
-                style={{ minHeight: 720, border: 0 }}
-                loading="lazy"
-              />
-            </div>
+            <div
+              ref={calendlyRef}
+              className="calendly-inline-widget bg-white border border-[#E2E8EE] rounded-2xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] overflow-hidden"
+              data-url={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=ffffff&text_color=0B1F33&primary_color=2E7D32`}
+              style={{ minWidth: 320, minHeight: 720 }}
+            />
 
             <p className="mt-5 text-[12.5px] md:text-[13.5px] text-foreground/70 text-center leading-relaxed max-w-2xl mx-auto">
               {isEN
