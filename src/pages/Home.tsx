@@ -489,24 +489,17 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* CTA – pushed to bottom on desktop */}
-              <div className="mt-3 md:mt-4 md:mb-1 flex flex-wrap items-center justify-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => {
-                    const el = document.getElementById("contact");
-                    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }}
-                  className="inline-flex items-center justify-center bg-[#d8ebd4] hover:bg-[#c8e6c9] text-[#1a3a2e] font-normal text-[11.5px] md:text-[12.5px] px-4 md:px-5 py-1 md:py-1.5 rounded-lg shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all border border-[#1B3A5C]/25"
-                >
-                  {isEN ? "Ask a quick question" : "Kurze Frage stellen"}
-                </button>
+              {/* Primary CTA – Online consultation booking */}
+              <div className="mt-4 md:mt-5 md:mb-1 flex flex-col items-center justify-center">
                 <Link
                   to={getPath("onlineBeratung", language, country)}
-                  className="inline-flex items-center justify-center bg-[#E8F4FD] hover:bg-[#D6EBFA] text-[#1B3A5C] font-semibold text-[11.5px] md:text-[12.5px] px-4 md:px-5 py-1 md:py-1.5 rounded-lg shadow-[0_2px_8px_rgba(27,58,92,0.08),0_0_12px_rgba(59,130,246,0.06)] hover:shadow-[0_4px_12px_rgba(27,58,92,0.12),0_0_20px_rgba(59,130,246,0.1)] transition-all border border-[#1B3A5C]/20 hover:border-[#1B3A5C]/40 hover:-translate-y-0.5"
+                  className="group inline-flex items-center justify-center bg-gradient-to-b from-[#EAF4FD] to-[#CFE4F7] hover:from-[#DDEDFB] hover:to-[#BCD8F1] text-[#0B1F33] font-semibold text-[13px] md:text-[14.5px] tracking-tight px-7 md:px-10 py-2.5 md:py-3 rounded-xl shadow-[0_3px_10px_rgba(27,58,92,0.12),0_1px_2px_rgba(27,58,92,0.08),inset_0_1px_0_rgba(255,255,255,0.7)] hover:shadow-[0_6px_18px_rgba(27,58,92,0.18),0_2px_4px_rgba(27,58,92,0.1),inset_0_1px_0_rgba(255,255,255,0.8)] transition-all duration-200 border border-[#1B3A5C]/30 hover:border-[#1B3A5C]/55 hover:-translate-y-0.5"
                 >
-                  {isEN ? "Online Consultation" : "Online-Beratung"}
+                  {isEN ? "Book Online Psychological Consultation" : "Online-Psychologische Beratung buchen"}
                 </Link>
+                <p className="mt-1.5 text-[11px] md:text-[12px] text-[#1B3A5C]/70 tracking-tight">
+                  {isEN ? "Available by phone or video" : "Telefonisch oder per Video möglich"}
+                </p>
               </div>
 
               {/* Mobile: 2x2 badges grid below CTA */}
