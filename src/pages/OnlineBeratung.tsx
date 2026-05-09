@@ -19,6 +19,7 @@ export default function OnlineBeratung() {
   const { language, country } = useLanguage();
   const isEN = language === "en";
   const basePath = getPath("home", language, country);
+  const calendlyRef = useRef<HTMLDivElement>(null);
 
   const bullets = isEN
     ? [
