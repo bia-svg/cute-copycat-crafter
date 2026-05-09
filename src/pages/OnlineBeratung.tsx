@@ -192,10 +192,10 @@ export default function OnlineBeratung() {
         </div>
       </section>
 
-      {/* CALENDLY — unified container system (white card on silver) */}
-      <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
+      {/* CALENDLY — unified container system (warm cream card) */}
+      <section className="bg-[#EFEBE2] border-b border-[#E0D9CB]">
         <div className="container-main py-6 md:py-8">
-          <div className="max-w-3xl mx-auto bg-white border border-[#CFD8E3] rounded-3xl shadow-[0_14px_44px_-12px_rgba(27,58,92,0.16),0_4px_14px_-4px_rgba(27,58,92,0.07)] p-4 md:p-5">
+          <div className="max-w-3xl mx-auto bg-[#FBF9F3] border-[1.5px] border-[#E2DBCB] rounded-3xl shadow-[0_22px_60px_-18px_rgba(75,55,25,0.20),0_6px_18px_-6px_rgba(75,55,25,0.09)] p-4 md:p-5">
             <div className="text-center mb-3 md:mb-4">
               <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight mb-1">
                 {isEN ? "Book your appointment" : "Termin buchen"}
@@ -218,16 +218,37 @@ export default function OnlineBeratung() {
               ].map((label) => (
                 <span
                   key={label}
-                  className="inline-flex items-center rounded-full border border-[#2E7D32]/18 bg-gradient-to-b from-[#F8FBF9] to-white px-2.5 py-1 text-[11px] md:text-[11.5px] text-[#1B3A5C]/85 tracking-tight shadow-[0_1px_2px_rgba(27,58,92,0.04)]"
+                  className="inline-flex items-center rounded-full border border-[#2E7D32]/20 bg-gradient-to-b from-[#F8FBF9] to-[#FBF9F3] px-2.5 py-1 text-[11px] md:text-[11.5px] text-[#1B3A5C]/85 tracking-tight shadow-[0_1px_2px_rgba(75,55,25,0.05)]"
                 >
                   {label}
                 </span>
               ))}
             </div>
 
-            <CalendlyInlineEmbed
-              loadingLabel={isEN ? "Loading calendar …" : "Kalender wird geladen …"}
-            />
+            {calendarOpen ? (
+              <CalendlyInlineEmbed
+                loadingLabel={isEN ? "Loading calendar …" : "Kalender wird geladen …"}
+              />
+            ) : (
+              <div className="rounded-2xl border-[1.5px] border-dashed border-[#E2DBCB] bg-gradient-to-b from-[#FBF9F3] to-[#F5F1E8] p-7 md:p-10 text-center">
+                <div className="mx-auto mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-[#E8F5EE] to-[#F0F7F3] text-[#2E7D32] border border-[#2E7D32]/25 shadow-[0_2px_8px_rgba(46,125,50,0.10)]">
+                  <CalendarClock className="w-5 h-5" strokeWidth={1.8} />
+                </div>
+                <p className="text-[13px] md:text-[14px] text-[#1B3A5C]/80 max-w-md mx-auto leading-relaxed mb-5">
+                  {isEN
+                    ? "Open the calendar to choose a time that suits you. Loading on demand keeps this page fast."
+                    : "Öffnen Sie den Kalender, um einen passenden Termin zu wählen. So bleibt die Seite angenehm schnell."}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setCalendarOpen(true)}
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1B3A5C] hover:bg-[#15304E] text-white px-6 py-3 text-[13.5px] font-medium tracking-tight shadow-[0_8px_22px_-8px_rgba(27,58,92,0.45),0_2px_6px_-2px_rgba(27,58,92,0.25)] transition-colors"
+                >
+                  <CalendarClock className="w-4 h-4" strokeWidth={2} />
+                  {isEN ? "Open calendar" : "Kalender öffnen"}
+                </button>
+              </div>
+            )}
 
             <p className="mt-3 md:mt-4 text-[11.5px] md:text-[12.5px] text-foreground/65 text-center leading-snug max-w-2xl mx-auto">
               {isEN
