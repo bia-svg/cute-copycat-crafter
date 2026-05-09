@@ -278,7 +278,7 @@ export default function OnlineBeratung() {
 
       {/* CALENDLY — soft beige section */}
       <section className="bg-[#F6F3EC] border-b border-[#E6E1D6]">
-        <div className="container-main pt-10 md:pt-12 pb-6 md:pb-8">
+        <div className="container-main pt-8 md:pt-10 pb-3 md:pb-4">
           <div className="max-w-[1100px] mx-auto">
             <div className="text-center mb-6 md:mb-7">
               <h2 className="text-xl md:text-2xl font-light text-[#0B1F33] tracking-tight mb-2">
