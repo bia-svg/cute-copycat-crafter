@@ -76,7 +76,7 @@ const slugMapEN: Record<PageKey, string> = {
   blog: "blog",
   book: "book-go-inside",
   howHypnosisWorks: "how-hypnosis-works",
-  onlineBeratung: "online-consultation",
+  onlineBeratung: "online-psychological-consultation",
 };
 
 export function getPath(page: PageKey, language: Language, country: Country): string {
