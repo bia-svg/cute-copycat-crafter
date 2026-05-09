@@ -106,6 +106,7 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
 
     return () => {
       cancelled = true;
+      window.removeEventListener("message", handleMessage);
       existingScript?.removeEventListener("load", initWidget);
 
       const appendedScript = document.querySelector<HTMLScriptElement>(
@@ -113,14 +114,18 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
       );
       appendedScript?.removeEventListener("load", initWidget);
 
-      if (containerRef.current) {
-        containerRef.current.innerHTML = "";
+      if (widgetRef.current) {
+        widgetRef.current.innerHTML = "";
       }
     };
   }, []);
 
+  // Fallback heights if Calendly hasn't reported page_height yet
+  const fallbackClass = "h-[1100px] sm:h-[1000px] md:h-[900px]";
+  const styleHeight = dynamicHeight ? { height: `${dynamicHeight}px` } : undefined;
+
   return (
-    <div className="relative rounded-xl border-2 border-[#D8E0EA] bg-white p-1 md:p-1.5 shadow-[0_4px_16px_rgba(27,58,92,0.06)]">
+    <div ref={containerRef} className="relative rounded-xl border border-[#D8E0EA] bg-white p-0.5 shadow-[0_4px_16px_rgba(27,58,92,0.06)]">
       {!loaded && (
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2.5 rounded-xl bg-white/95">
           <span
@@ -131,8 +136,9 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
         </div>
       )}
       <div
-        ref={containerRef}
-        className="calendly-inline-widget mx-auto w-full rounded-lg bg-white h-[1750px] sm:h-[1500px] md:h-[1300px]"
+        ref={widgetRef}
+        style={styleHeight}
+        className={`calendly-inline-widget mx-auto w-full rounded-lg bg-white overflow-hidden ${dynamicHeight ? "" : fallbackClass}`}
         data-url={CALENDLY_EMBED_URL}
       />
     </div>
