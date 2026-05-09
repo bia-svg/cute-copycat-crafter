@@ -119,72 +119,26 @@ export default function OnlineBeratung() {
 
   const bullets = isEN
     ? [
-        { icon: CalendarClock, text: "Flexible online appointments" },
-        { icon: PhoneCall, text: "Available by phone or online" },
+        { icon: CalendarClock, text: "Short-notice online appointments available" },
+        { icon: PhoneCall, text: "By phone or video" },
         { icon: ShieldCheck, text: "Confidential & individual" },
-        { icon: Award, text: "35+ years of experience" },
+        { icon: Award, text: "35+ years of practical experience" },
         { icon: Sparkles, text: "Intensive, solution-oriented approach" },
-        { icon: Repeat, text: "Can be credited toward a later intensive session" },
+        { icon: Repeat, text: "Creditable toward a later intensive session" },
       ]
     : [
-        { icon: CalendarClock, text: "Flexible Online-Termine" },
-        { icon: PhoneCall, text: "Telefonisch oder online möglich" },
+        { icon: CalendarClock, text: "Kurzfristige Online-Termine möglich" },
+        { icon: PhoneCall, text: "Telefonisch oder per Video" },
         { icon: ShieldCheck, text: "Vertraulich & individuell" },
-        { icon: Award, text: "35+ Jahre Erfahrung" },
+        { icon: Award, text: "35+ Jahre praktische Erfahrung" },
         { icon: Sparkles, text: "Intensiv- und lösungsorientierter Ansatz" },
-        { icon: Repeat, text: "Beratung kann auf spätere Intensivsitzung angerechnet werden" },
+        { icon: Repeat, text: "Auf spätere Intensivsitzung anrechenbar" },
       ];
 
-  const faq = isEN
-    ? [
-        {
-          q: "How does the online consultation work?",
-          a: "After booking, you receive a confirmation with the appointment details and payment information. The consultation lasts approximately 60 minutes and takes place by phone or video — whichever you prefer. Together we look at your situation, clarify your goal and define the next concrete step.",
-        },
-        {
-          q: "Is the consultation by phone or video?",
-          a: "Both are possible. Many clients prefer the phone because it is uncomplicated and discreet. Video calls via Zoom, Microsoft Teams or WhatsApp Video are also available on request.",
-        },
-        {
-          q: "Can the consultation be credited toward an intensive session?",
-          a: "Yes. If you decide to book a subsequent intensive session on site within a reasonable time frame, the cost of the online consultation is credited in full toward the price of the intensive session.",
-        },
-        {
-          q: "How is payment made?",
-          a: "After booking you receive the payment details by email, SMS or WhatsApp.\nThe appointment is firmly reserved as soon as the payment has been received or proof of payment has been provided.",
-        },
-        {
-          q: "Is the consultation confidential?",
-          a: "Yes. The consultation takes place in a confidential and discreet setting.\n\nDavid J. Woods is an academically trained psychologist with decades of practical experience in psychology, hypnosis and counselling.\n\nPersonal information and the content of the consultation are of course treated confidentially.",
-        },
-      ]
-    : [
-        {
-          q: "Wie läuft die Online-Beratung ab?",
-          a: "Nach der Buchung erhalten Sie eine Bestätigung mit den Termindetails und den Zahlungsinformationen. Die Beratung dauert ca. 60 Minuten und findet telefonisch oder per Video statt – ganz wie Sie es bevorzugen. Gemeinsam schauen wir auf Ihre Situation, klären Ihr Anliegen und definieren den nächsten konkreten Schritt.",
-        },
-        {
-          q: "Erfolgt die Beratung telefonisch oder per Video?",
-          a: "Beides ist möglich. Viele Klientinnen und Klienten bevorzugen das Telefon, da es unkompliziert und diskret ist. Auf Wunsch sind auch Video-Calls über Zoom, Microsoft Teams oder WhatsApp-Video möglich.",
-        },
-        {
-          q: "Kann die Beratung auf eine Intensivsitzung angerechnet werden?",
-          a: "Ja. Wenn Sie sich innerhalb eines angemessenen Zeitraums für eine anschließende Intensivsitzung vor Ort entscheiden, werden die Kosten der Online-Beratung vollständig auf den Preis der Intensivsitzung angerechnet.",
-        },
-        {
-          q: "Wie erfolgt die Zahlung?",
-          a: "Nach der Buchung erhalten Sie die Zahlungsinformationen per E-Mail, SMS oder WhatsApp.\nDer Termin wird verbindlich reserviert, sobald die Zahlung eingegangen ist oder ein Zahlungsnachweis übermittelt wurde.",
-        },
-        {
-          q: "Ist die Beratung vertraulich?",
-          a: "Ja. Die Beratung findet in einem vertraulichen und diskreten Rahmen statt.\n\nDavid J. Woods ist akademisch ausgebildeter Psychologe mit jahrzehntelanger praktischer Erfahrung im Bereich Psychologie, Hypnose und Gesprächsführung.\n\nPersönliche Informationen und Inhalte der Beratung werden selbstverständlich vertraulich behandelt.",
-        },
-      ];
-
-  const title = isEN ? "Online Psychological Consultation" : "Online Psychologische Beratung";
+  const title = isEN ? "Confidential Online Psychological Consultation" : "Vertrauliche Online Psychologische Beratung";
   const subtitle = isEN
-    ? "Confidential psychological consultation by phone or online video"
-    : "Vertrauliche Online- und Telefonberatung";
+    ? "Professional psychological support for emotional strain, anxiety, stress, inner conflicts or personal processes of change — flexibly by phone or online."
+    : "Professionelle psychologische Unterstützung bei emotionalen Belastungen, Ängsten, Stress, inneren Konflikten oder persönlichen Veränderungsprozessen — flexibel telefonisch oder online.";
 
   return (
     <>
