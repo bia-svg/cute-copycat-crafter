@@ -258,6 +258,24 @@ export default function OnlineBeratung() {
               </p>
             </div>
 
+            {/* Premium info badges — always-visible price & duration transparency */}
+            <div className="mb-4 md:mb-5 flex flex-wrap items-center justify-center gap-1.5 md:gap-2">
+              {[
+                isEN ? "60 min online consultation" : "60 Min. Online-Beratung",
+                isEN ? "Germany & Austria: €179" : "Deutschland & Österreich: 179 €",
+                isEN ? "Switzerland: CHF 179" : "Schweiz: 179 CHF",
+                isEN ? "By phone or video" : "Telefonisch oder per Video",
+                isEN ? "Creditable toward intensive session" : "Auf Intensivsitzung anrechenbar",
+              ].map((label) => (
+                <span
+                  key={label}
+                  className="inline-flex items-center rounded-full border border-[#E2E8EE] bg-white px-2.5 py-1 text-[11px] md:text-[11.5px] text-[#1B3A5C]/85 tracking-tight shadow-[0_1px_2px_rgba(27,58,92,0.04)]"
+                >
+                  {label}
+                </span>
+              ))}
+            </div>
+
             <CalendlyInlineEmbed
               loadingLabel={isEN ? "Loading calendar …" : "Kalender wird geladen …"}
             />
