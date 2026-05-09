@@ -25,6 +25,7 @@ const Teilnehmerstimmen = lazy(() => import("@/pages/Teilnehmerstimmen"));
 const AusbildungsinstitutVideos = lazy(() => import("@/pages/AusbildungsinstitutVideos"));
 const Terminbestaetigung = lazy(() => import("@/pages/Terminbestaetigung"));
 const SeminarAnmeldung = lazy(() => import("@/pages/SeminarAnmeldung"));
+const OnlineBeratung = lazy(() => import("@/pages/OnlineBeratung"));
 const FirmenCoaching = lazy(() => import("@/pages/FirmenCoaching"));
 const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
@@ -194,6 +195,8 @@ function AppRoutes() {
             <Route path="/:lang/:country/consultation" element={<Erstgespraech />} />
             <Route path="/:lang/:country/appointment-confirmation" element={<Terminbestaetigung />} />
             <Route path="/:lang/:country/seminar-registration" element={<SeminarAnmeldung />} />
+            <Route path="/:lang/:country/online-beratung" element={<OnlineBeratung />} />
+            <Route path="/:lang/:country/online-consultation" element={<OnlineBeratung />} />
             <Route path="/:lang/:country/appointment-confirmation" element={<Terminbestaetigung />} />
 
              <Route path="/:lang/:country/standorte" element={<Navigate to="/de/de/erstgespraech" replace />} />
