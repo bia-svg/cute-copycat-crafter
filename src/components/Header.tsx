@@ -66,7 +66,7 @@ export default function Header() {
     { icon: <Flame className="w-5 h-5" />, label: isDE ? "Stress & Burnout" : "Stress & Burnout", desc: isDE ? "Stressreduktion & Prävention" : "Stress reduction & prevention", href: getPath("stress", language, country) },
     { icon: <HeartPulse className="w-5 h-5" />, label: isDE ? "Depressionen & Traumata" : "Depression & Trauma", desc: isDE ? "Neue Perspektiven entdecken" : "Discover new perspectives", href: getPath("depression", language, country) },
     { icon: <Users className="w-5 h-5" />, label: isDE ? "Kinder & Jugendliche" : "Children & Teens", desc: isDE ? "Sanfte Therapie mit Kathryn" : "Gentle therapy with Kathryn", href: getPath("children", language, country) },
-    { icon: <Video className="w-5 h-5" />, label: isDE ? "Online-Beratung" : "Online Consultation", desc: isDE ? "Telefonisch oder online · Lic. Psych." : "By phone or online · Lic. Psych.", href: getPath("onlineBeratung", language, country) },
+    { icon: <Video className="w-5 h-5" />, label: isDE ? "Online-Beratung" : "Online Consultation", desc: isDE ? "Vertrauliche Online- und Telefonberatung" : "Confidential online and phone consultation", href: getPath("onlineBeratung", language, country), highlight: true },
   ];
 
 
