@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { getPath } from "@/lib/routes";
@@ -24,8 +24,9 @@ declare global {
   }
 }
 
-function CalendlyInlineEmbed() {
+function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -38,6 +39,15 @@ function CalendlyInlineEmbed() {
         url: CALENDLY_EMBED_URL,
         parentElement: containerRef.current,
       });
+      // Calendly injects an iframe; mark loaded once it appears
+      const iframe = containerRef.current.querySelector("iframe");
+      if (iframe) {
+        iframe.addEventListener("load", () => !cancelled && setLoaded(true), { once: true });
+        // Fallback in case load event already fired
+        setTimeout(() => !cancelled && setLoaded(true), 1500);
+      } else {
+        setTimeout(() => !cancelled && setLoaded(true), 1500);
+      }
     };
 
     const existingStyle = document.querySelector<HTMLLinkElement>(
@@ -83,12 +93,21 @@ function CalendlyInlineEmbed() {
   }, []);
 
   return (
-    <div className="rounded-xl border border-[#D7DEE6] bg-white p-2 md:p-3 shadow-[0_3px_16px_rgba(27,58,92,0.06)]">
+    <div className="relative rounded-2xl border border-[#E6E1D6] bg-[#FBF8F2] p-2 md:p-3 shadow-[0_2px_14px_rgba(27,58,92,0.05)]">
+      {!loaded && (
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 rounded-2xl bg-[#FBF8F2]/95">
+          <span
+            className="inline-block h-6 w-6 rounded-full border-2 border-[#D7DEE6] border-t-[#1B3A5C] animate-spin"
+            aria-hidden="true"
+          />
+          <p className="text-[13px] text-[#1B3A5C]/70 tracking-tight">{loadingLabel}</p>
+        </div>
+      )}
       <div
         ref={containerRef}
-        className="calendly-inline-widget mx-auto w-full overflow-hidden rounded-lg bg-white"
+        className="calendly-inline-widget mx-auto w-full overflow-hidden rounded-xl bg-[#FBF8F2]"
         data-url={CALENDLY_EMBED_URL}
-        style={{ minWidth: "320px", height: "1080px" }}
+        style={{ minWidth: "320px", height: "1040px" }}
       />
     </div>
   );
@@ -254,20 +273,29 @@ export default function OnlineBeratung() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Calendly embed */}
-          <div className="max-w-[1120px] mx-auto mt-10 md:mt-12">
-            <h2 className="text-xl md:text-2xl font-light text-[#0B1F33] text-center tracking-tight mb-2">
-              {isEN ? "Book your appointment" : "Termin buchen"}
-            </h2>
-            <p className="text-[13px] md:text-sm text-muted-foreground text-center mb-6 md:mb-7">
-              {isEN
-                ? "Choose a time that suits you – directly in the calendar below."
-                : "Wählen Sie direkt im Kalender unten einen passenden Termin."}
-            </p>
-            <CalendlyInlineEmbed />
+      {/* CALENDLY — soft beige section */}
+      <section className="bg-[#F6F3EC] border-b border-[#E6E1D6]">
+        <div className="container-main pt-10 md:pt-12 pb-6 md:pb-8">
+          <div className="max-w-[1100px] mx-auto">
+            <div className="text-center mb-6 md:mb-7">
+              <h2 className="text-xl md:text-2xl font-light text-[#0B1F33] tracking-tight mb-2">
+                {isEN ? "Book your appointment" : "Termin buchen"}
+              </h2>
+              <p className="text-[13px] md:text-sm text-[#1B3A5C]/70">
+                {isEN
+                  ? "Choose a time that suits you – directly in the calendar below."
+                  : "Wählen Sie direkt im Kalender unten einen passenden Termin."}
+              </p>
+            </div>
 
-            <p className="mt-6 md:mt-7 text-[12.5px] md:text-[13.5px] text-foreground/70 text-center leading-relaxed max-w-2xl mx-auto">
+            <CalendlyInlineEmbed
+              loadingLabel={isEN ? "Loading calendar …" : "Kalender wird geladen …"}
+            />
+
+            <p className="mt-5 md:mt-6 text-[12.5px] md:text-[13px] text-foreground/70 text-center leading-relaxed max-w-2xl mx-auto">
               {isEN
                 ? "After booking you will receive the payment information by email, SMS or WhatsApp. The appointment is firmly reserved once the payment has been received."
                 : "Nach der Buchung erhalten Sie die Zahlungsinformationen per E-Mail, SMS oder WhatsApp. Der Termin wird nach Zahlungseingang verbindlich reserviert."}
