@@ -346,7 +346,7 @@ export default function OnlineBeratung() {
                         {topics.map((t) => <TopicItem key={t} topic={t} />)}
                       </ul>
                       {/* Mobile: collapsible */}
-                      <details className="md:hidden group rounded-2xl border border-[#E2DBCB] bg-gradient-to-b from-[#FBF9F3] to-[#F4EFE3] shadow-[0_1px_3px_rgba(75,55,25,0.07)] open:shadow-[0_4px_14px_rgba(75,55,25,0.10)] transition-shadow">
+                      <details className="md:hidden group rounded-2xl border border-border bg-[#f4f3ef] shadow-[0_1px_3px_rgba(27,58,92,0.05)] open:shadow-[0_4px_14px_rgba(27,58,92,0.08)] transition-shadow">
                         <summary className="list-none cursor-pointer flex items-center justify-between px-4 py-3 text-[13px] font-medium text-[#1B3A5C] [&::-webkit-details-marker]:hidden">
                           <span>{isEN ? "Topics we address" : "Themen, die wir begleiten"}</span>
                           <span aria-hidden="true" className="ml-2 inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#2F3A4A]/10 text-[#1B3A5C] transition-transform group-open:rotate-45">
