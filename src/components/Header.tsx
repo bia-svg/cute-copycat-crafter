@@ -273,7 +273,19 @@ export default function Header() {
               {isDE ? "Hypnose-Sitzungen" : "Hypnosis Sessions"}
             </h4>
             <div className="grid grid-cols-2 gap-x-2 gap-y-0.5">
-              {therapyGoals.map(item => <MenuItemLink key={item.label} {...item} />)}
+              {therapyGoals.map((item, index) =>
+                index === therapyGoals.length - 1 ? (
+                  <Link key={item.label} to={item.href} onClick={() => setActiveMenu(null)} className="flex items-start gap-2.5 p-2.5 rounded-lg bg-[#E8F4FD]/60 border border-[#1B3A5C]/10 hover:bg-[#E8F4FD] hover:border-[#1B3A5C]/25 shadow-[0_1px_4px_rgba(27,58,92,0.04)] transition-all">
+                    <span className="text-[#1B3A5C] mt-0.5">{item.icon}</span>
+                    <div>
+                      <div className="font-semibold text-sm text-[#1B3A5C]">{item.label}</div>
+                      <div className="text-xs text-[#1B3A5C]/70">{item.desc}</div>
+                    </div>
+                  </Link>
+                ) : (
+                  <MenuItemLink key={item.label} {...item} />
+                )
+              )}
             </div>
           </div>
           <div className="md:col-span-3">
