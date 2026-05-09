@@ -254,10 +254,10 @@ export default function OnlineBeratung() {
               </div>
             )}
 
-            <p className="mt-3 md:mt-4 text-[11.5px] md:text-[12.5px] text-foreground/65 text-center leading-snug max-w-2xl mx-auto">
+            <p className="mt-3 md:mt-4 text-[11px] md:text-[11.5px] text-foreground/50 text-center leading-snug max-w-2xl mx-auto">
               {isEN
-                ? "After booking you will receive the payment information by email, SMS or WhatsApp. The appointment is firmly reserved once the payment has been received."
-                : "Nach der Buchung erhalten Sie die Zahlungsinformationen per E-Mail, SMS oder WhatsApp. Der Termin wird nach Zahlungseingang verbindlich reserviert."}
+                ? "Payment details will be sent by email."
+                : "Die Zahlungsinformationen erhalten Sie per E-Mail."}
             </p>
           </div>
         </div>
