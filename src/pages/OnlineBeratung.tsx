@@ -138,8 +138,8 @@ export default function OnlineBeratung() {
 
   const title = isEN ? "Confidential Online Psychological Consultation" : "Vertrauliche Online Psychologische Beratung";
   const subtitle = isEN
-    ? "Professional online psychological consultation for emotional strain, anxiety, stress, inner conflicts or personal processes of change — flexibly by phone or online."
-    : "Professionelle Online Psychologische Beratung bei emotionalen Belastungen, Ängsten, Stress, inneren Konflikten oder persönlichen Veränderungsprozessen — flexibel telefonisch oder online.";
+    ? "Professional psychological support for emotional strain, anxiety, stress, inner conflicts and personal processes of change — discreet, empathetic and solution-oriented."
+    : "Professionelle psychologische Unterstützung bei emotionalen Belastungen, Ängsten, Stress, inneren Konflikten und persönlichen Veränderungsprozessen — diskret, einfühlsam und lösungsorientiert.";
 
   return (
     <>
