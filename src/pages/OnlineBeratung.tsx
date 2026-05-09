@@ -230,7 +230,7 @@ export default function OnlineBeratung() {
                 loadingLabel={isEN ? "Loading calendar …" : "Kalender wird geladen …"}
               />
             ) : (
-              <div className="rounded-2xl border border-border bg-[#f4f3ef] px-5 py-5 md:px-6 md:py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]">
+              <div className="rounded-2xl border-[1.5px] border-border bg-[#f4f3ef] px-5 py-5 md:px-6 md:py-6 shadow-[0_4px_14px_rgba(27,58,92,0.06),inset_0_1px_0_rgba(255,255,255,0.6)]">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-3 text-center sm:text-left">
                     <span className="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_2px_6px_rgba(46,125,50,0.10)]">
