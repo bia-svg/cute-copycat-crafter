@@ -206,7 +206,7 @@ export default function OnlineBeratung() {
       </section>
 
       {/* CALENDLY — alternating cool grey, white card */}
-      <section className="bg-[#DDE1E4] border-b border-border">
+      <section ref={calendarSectionRef} className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
         <div className="container-main py-6 md:py-8">
           <div className="max-w-3xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_22px_56px_-16px_rgba(27,58,92,0.22),0_6px_18px_-6px_rgba(27,58,92,0.12)] p-4 md:p-5">
             <div className="text-center mb-3 md:mb-4">
