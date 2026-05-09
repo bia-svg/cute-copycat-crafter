@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SEO from "@/components/SEO";
 import { getPath } from "@/lib/routes";
@@ -12,8 +13,7 @@ import {
   Repeat,
 } from "lucide-react";
 
-// Calendly inline-embed URL — replace with the final event link if different.
-const CALENDLY_URL = "https://calendly.com/davidjwoods/online-beratung";
+const CALENDLY_URL = "https://calendly.com/info-cug/online-psychologische-beratung";
 
 export default function OnlineBeratung() {
   const { language, country } = useLanguage();
