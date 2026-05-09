@@ -10,6 +10,7 @@ import {
   Award,
   Sparkles,
   Repeat,
+  X,
 } from "lucide-react";
 
 const CALENDLY_URL = "https://calendly.com/info-cug/online-psychologische-beratung";
