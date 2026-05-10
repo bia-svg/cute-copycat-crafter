@@ -444,21 +444,15 @@ export default function Home() {
                   : "Individuelle Hypnose-Sitzungen für echte Veränderung – direkt an der Ursache."}
               </p>
 
-              {/* Bullets — 2-col on desktop, 6 items */}
-              <ul className="mt-2 md:mt-3.5 grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-1 md:gap-y-1 text-[11.5px] md:text-[14px] text-foreground/80 text-left mx-auto w-fit md:justify-items-start leading-snug">
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</span></li>
-                <li className="flex items-center gap-2 leading-snug">
-                  <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" />
-                  <span>266 <span className="text-[#F5B301]">★</span> {isEN ? "5.0 on Google" : "5.0 bei Google"}</span>
-                </li>
-              </ul>
+              {/* Compact, elegant trust line — replaces former 6-bullet list */}
+              <p className="mt-1.5 md:mt-2 text-[11.5px] md:text-[12.5px] text-[#1B3A5C]/70 tracking-[0.01em]">
+                {isEN
+                  ? "35+ years of experience · 30,000+ sessions conducted"
+                  : "Über 35 Jahre Erfahrung · 30.000+ Sitzungen durchgeführt"}
+              </p>
 
-              {/* Topics row — premium clickable pill buttons */}
-              <div className="mt-2.5 md:mt-4 flex flex-wrap justify-center gap-1.5 md:gap-2 max-w-[760px]">
+              {/* Topics row — premium clickable pill buttons (more breathing room for clarity) */}
+              <div className="mt-5 md:mt-7 mb-1 md:mb-2 flex flex-wrap justify-center gap-2 md:gap-2.5 max-w-[760px]">
                 {(isEN
                   ? [
                       { label: "Become smoke-free", page: "smoking" as const },
