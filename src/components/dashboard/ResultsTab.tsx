@@ -367,7 +367,7 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
                       <TableCell className="text-gray-400">—</TableCell>
                       <TableCell className="text-right text-gray-900 font-medium">0</TableCell>
                       <TableCell className="text-right text-gray-700">
-                        <span className="text-gray-400 line-through text-xs mr-1">CHF 2.990.-</span> CHF 2.690.-
+                        CHF 2.490.-
                       </TableCell>
                       <TableCell className="text-right text-gray-400">CHF 0</TableCell>
                     </TableRow>
@@ -376,7 +376,7 @@ export default function ResultsTab({ leads }: ResultsTabProps) {
                       <TableCell className="text-gray-400">—</TableCell>
                       <TableCell className="text-right text-gray-900 font-medium">0</TableCell>
                       <TableCell className="text-right text-gray-700">
-                        <span className="text-gray-400 line-through text-xs mr-1">€2.790,-</span> €2.490,-
+                        €2.490,-
                       </TableCell>
                       <TableCell className="text-right text-gray-400">€0</TableCell>
                     </TableRow>
