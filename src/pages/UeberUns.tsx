@@ -76,12 +76,12 @@ export default function UeberUns() {
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_2px_4px_rgba(27,58,92,0.04),0_12px_32px_-8px_rgba(27,58,92,0.10)] p-4 md:p-6">
             <div className="grid grid-cols-1 md:grid-cols-[180px_1fr] lg:grid-cols-[200px_1fr_220px] gap-4 md:gap-5 lg:gap-6 items-stretch">
               {/* Portrait */}
-              <div className="mx-auto md:mx-0 w-40 md:w-full">
-                <div className="border border-[#E8EDF3] rounded-2xl overflow-hidden h-full">
+              <div className="mx-auto md:mx-0 w-60 sm:w-72 md:w-full">
+                <div className="border border-[#E8EDF3] rounded-2xl overflow-hidden h-full shadow-[0_2px_6px_rgba(27,58,92,0.06),0_10px_28px_-10px_rgba(27,58,92,0.18)]">
                   <img
                     src={davidPortrait}
                     alt="David J. Woods – Lic.Psych., Hypnotherapeut und NGH International Trainer"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover aspect-[4/5] md:aspect-auto"
                     loading="eager"
                   />
                 </div>
