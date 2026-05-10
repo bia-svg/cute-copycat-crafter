@@ -404,35 +404,6 @@ export default function UeberUns() {
         </div>
       </section>
 
-      {/* SCIENTIFIC FOUNDATION — compact silver banner */}
-      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-6 md:py-8">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_2px_4px_rgba(27,58,92,0.04),0_12px_32px_-8px_rgba(27,58,92,0.10)] p-5 md:p-6">
-            <h2 className="text-base sm:text-lg md:text-xl font-light text-[#1B3A5C] mb-3 tracking-tight">
-              {isEN ? "Scientific Foundation & Methodology" : "Wissenschaftliche Grundlage & Methodik"}
-            </h2>
-            <div className="space-y-2.5 text-sm text-foreground leading-relaxed">
-              <p>
-                {isEN
-                  ? "David J. Woods' Aktiv-Hypnose© method integrates clinical hypnotherapy with evidence-based psychological principles. A meta-analysis by Kirsch, Montgomery & Sapirstein (1995) in the Journal of Consulting and Clinical Psychology showed that adding hypnosis to CBT improved treatment outcomes by an average of 70%."
-                  : "David J. Woods' Aktiv-Hypnose© Methode integriert klinische Hypnotherapie mit evidenzbasierten psychologischen Prinzipien. Eine Meta-Analyse von Kirsch, Montgomery & Sapirstein (1995) im Journal of Consulting and Clinical Psychology zeigte, dass die Ergänzung von KVT durch Hypnose die Behandlungsergebnisse um durchschnittlich 70 % verbesserte."}
-              </p>
-              <p>
-                {isEN
-                  ? "The WHO recognizes hypnotherapy as a valid therapeutic approach. The German Scientific Advisory Council on Psychotherapy confirmed the scientific evidence for clinical hypnosis and hypnotherapy in 2006."
-                  : "Die WHO anerkennt Hypnotherapie als validen therapeutischen Ansatz. Der Wissenschaftliche Beirat Psychotherapie (WBP) bestätigte 2006 die wissenschaftliche Evidenz für klinische Hypnose und Hypnotherapie."}
-              </p>
-              <p className="text-xs text-muted-foreground italic">
-                {isEN
-                  ? "Sources: Kirsch, Montgomery & Sapirstein, Journal of Consulting and Clinical Psychology, 63(2), 1995; WHO ICD-11; Wissenschaftlicher Beirat Psychotherapie, Gutachten 2006."
-                  : "Quellen: Kirsch, Montgomery & Sapirstein, Journal of Consulting and Clinical Psychology, 63(2), 1995; WHO ICD-11; Wissenschaftlicher Beirat Psychotherapie, Gutachten 2006."}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
       {/* CTA — Next Step */}
       <section className="bg-[#E8EDF3] py-4 md:py-6">
         <div className="container-main">
