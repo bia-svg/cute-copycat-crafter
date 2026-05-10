@@ -22,7 +22,7 @@ function BadgeCard({ children, label, info }: { children: ReactNode; label: Reac
       onClick={() => setOpen((o) => !o)}
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
-      className="group relative bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center hover:shadow-md hover:border-[#D0DAE6] transition-all duration-300 flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px] select-none cursor-default"
+      className="group relative bg-white border border-[#E2E8EE] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center shadow-[0_1px_2px_rgba(27,58,92,0.04)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.05),0_10px_24px_-8px_rgba(27,58,92,0.12)] hover:border-[#C8D2E0] hover:-translate-y-0.5 transition-all duration-300 flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px] select-none cursor-default"
     >
       <div className="flex-1 flex items-center justify-center w-full">{children}</div>
       <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight select-none">{label}</h3>
@@ -73,7 +73,7 @@ export default function UeberUns() {
       {/* HERO — Compact premium executive profile (portrait + name + intro + stats unified) */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-5 md:py-7">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-4 md:p-6">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_2px_4px_rgba(27,58,92,0.04),0_12px_32px_-8px_rgba(27,58,92,0.10)] p-4 md:p-6">
             <div className="grid grid-cols-1 md:grid-cols-[180px_1fr] lg:grid-cols-[200px_1fr_220px] gap-4 md:gap-5 lg:gap-6 items-stretch">
               {/* Portrait */}
               <div className="mx-auto md:mx-0 w-40 md:w-full">
@@ -128,7 +128,7 @@ export default function UeberUns() {
                   { Icon: GraduationCap, val: isEN ? "2,500+" : "2.500+", label: isEN ? "Trained Hypnotists" : "ausgeb. Hypnotiseure" },
                   { Icon: Tv, val: "30+", label: isEN ? "TV & Media" : "TV & Medien" },
                 ].map(({ Icon, val, label }, i) => (
-                  <div key={i} className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-lg px-2.5 py-2 lg:py-2.5 text-center lg:text-left shadow-[0_1px_4px_rgba(27,58,92,0.04)] lg:flex lg:items-center lg:gap-2.5 lg:flex-1">
+                  <div key={i} className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-lg px-2.5 py-2 lg:py-2.5 text-center lg:text-left shadow-[0_1px_3px_rgba(27,58,92,0.05),0_4px_12px_-6px_rgba(27,58,92,0.08)] lg:flex lg:items-center lg:gap-2.5 lg:flex-1">
                     <Icon className="w-4 h-4 lg:w-5 lg:h-5 text-[#1B3A5C] mx-auto lg:mx-0 mb-0.5 lg:mb-0 flex-shrink-0" strokeWidth={1.6} />
                     <div>
                       <p className="text-base lg:text-lg font-semibold text-[#1B3A5C] leading-none">{val}</p>
@@ -145,7 +145,7 @@ export default function UeberUns() {
       {/* DIPLOMAS & CERTIFICATIONS — silver-grey banner */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-6 md:py-9">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_2px_4px_rgba(27,58,92,0.04),0_12px_32px_-8px_rgba(27,58,92,0.10)] p-5 md:p-7">
             <div className="text-center mb-5">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-2">
                 {isEN ? "Credentials" : "Qualifikationen"}
@@ -220,7 +220,7 @@ export default function UeberUns() {
             {/* Cards — 01 & 02 side-by-side, 03 full-width with NGH cert integrated */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 md:gap-4">
               {/* Card 01 */}
-              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-4 md:p-5 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
+              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-4 md:p-5 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04),0_4px_14px_-6px_rgba(27,58,92,0.08)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
                 <span className="absolute top-4 right-4 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">01</span>
                 <div className="flex items-center gap-3 mb-2.5 pr-8">
                   <div className="w-9 h-9 rounded-lg bg-[#EEF2F7] flex items-center justify-center flex-shrink-0">
@@ -240,7 +240,7 @@ export default function UeberUns() {
               </article>
 
               {/* Card 02 */}
-              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-4 md:p-5 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
+              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-4 md:p-5 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04),0_4px_14px_-6px_rgba(27,58,92,0.08)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
                 <span className="absolute top-4 right-4 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">02</span>
                 <div className="flex items-center gap-3 mb-2.5 pr-8">
                   <div className="w-9 h-9 rounded-lg bg-[#EEF2F7] flex items-center justify-center flex-shrink-0">
@@ -260,7 +260,7 @@ export default function UeberUns() {
               </article>
 
               {/* Card 03 — full width, NGH cert integrated */}
-              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-4 md:p-5 flex flex-col md:col-span-2 shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
+              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-4 md:p-5 flex flex-col md:col-span-2 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_4px_14px_-6px_rgba(27,58,92,0.08)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
                 <span className="absolute top-4 right-4 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">03</span>
                 <div className="grid grid-cols-1 md:grid-cols-[1fr_160px] gap-4 md:gap-5 items-center">
                   <div>
@@ -317,7 +317,7 @@ export default function UeberUns() {
                     key={i}
                     src={src}
                     alt={`David J. Woods – Presse & Medien Logo ${(i % CDN.bekanntAus.length) + 1}`}
-                    className="h-8 md:h-9 w-auto object-contain shrink-0 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                    className="h-8 md:h-9 w-auto object-contain shrink-0 [filter:saturate(0.55)_brightness(0.96)] opacity-80 hover:[filter:saturate(1)_brightness(1)] hover:opacity-100 hover:scale-[1.04] transition-all duration-500"
                     loading="lazy"
                   />
                 ))}
@@ -329,7 +329,7 @@ export default function UeberUns() {
 
       <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
         <div className="container-main py-6 md:py-9">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_2px_4px_rgba(27,58,92,0.04),0_12px_32px_-8px_rgba(27,58,92,0.10)] p-5 md:p-7">
             <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-5 md:gap-7 items-stretch">
               <div className="mx-auto md:mx-0 w-56 md:w-full">
                 <div className="border border-[#E8EDF3] rounded-2xl overflow-hidden h-full flex flex-col">
@@ -407,7 +407,7 @@ export default function UeberUns() {
       {/* SCIENTIFIC FOUNDATION — compact silver banner */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-6 md:py-8">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-6">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_2px_4px_rgba(27,58,92,0.04),0_12px_32px_-8px_rgba(27,58,92,0.10)] p-5 md:p-6">
             <h2 className="text-base sm:text-lg md:text-xl font-light text-[#1B3A5C] mb-3 tracking-tight">
               {isEN ? "Scientific Foundation & Methodology" : "Wissenschaftliche Grundlage & Methodik"}
             </h2>
