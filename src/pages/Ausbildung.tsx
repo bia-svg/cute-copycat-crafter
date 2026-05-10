@@ -65,7 +65,7 @@ export default function Ausbildung() {
   ];
   const datesDE: { date: string; location: string; status: "available" | "limited"; forceEarlyBird?: boolean }[] = [
     /* Archiviert: Mo-Sa, 11.-16. Mai 2026 — Hotel am Alten Park, Augsburg */
-    { date: "Mo-Sa, 06.-11. Juli 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
+    { date: "Mo-Sa, 06.-11. Juli 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "limited" as const },
     { date: "Mo-Sa, 14.-19. Sept. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
     { date: "Mo-Sa, 16.-21. Nov. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
   ];
