@@ -225,7 +225,7 @@ export default function Ausbildung() {
         courseMode: "onsite",
         location: { "@type": "Place", name: d.location, address: { "@type": "PostalAddress", addressCountry: "CH" } },
         inLanguage: "de",
-        offers: { "@type": "Offer", price: "2790", priceCurrency: "CHF", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/ch/ausbildung" },
+        offers: { "@type": "Offer", price: "2490", priceCurrency: "CHF", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/ch/ausbildung" },
       })),
       ...datesDE.map((d) => ({
         "@type": "CourseInstance",
@@ -233,7 +233,7 @@ export default function Ausbildung() {
         courseMode: "onsite",
         location: { "@type": "Place", name: d.location, address: { "@type": "PostalAddress", addressCountry: "DE" } },
         inLanguage: "de",
-        offers: { "@type": "Offer", price: "2790", priceCurrency: "EUR", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/de/ausbildung" },
+        offers: { "@type": "Offer", price: "2490", priceCurrency: "EUR", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/de/ausbildung" },
       })),
     ],
   };
@@ -307,8 +307,8 @@ export default function Ausbildung() {
     };
   };
   const eventJsonLd = [
-    ...datesCH.map(d => buildEvent(d, "CH", "2790", "CHF", "https://david-j-woods.com/de/ch/ausbildung")),
-    ...datesDE.map(d => buildEvent(d, "DE", "2790", "EUR", "https://david-j-woods.com/de/de/ausbildung")),
+    ...datesCH.map(d => buildEvent(d, "CH", "2490", "CHF", "https://david-j-woods.com/de/ch/ausbildung")),
+    ...datesDE.map(d => buildEvent(d, "DE", "2490", "EUR", "https://david-j-woods.com/de/de/ausbildung")),
   ].filter(Boolean) as Record<string, unknown>[];
 
   const allSchemaForPage = [courseJsonLd, ...eventJsonLd];
