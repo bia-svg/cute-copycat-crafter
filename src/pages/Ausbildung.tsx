@@ -755,14 +755,9 @@ export default function Ausbildung() {
                       <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
                         <div className="flex flex-wrap items-center justify-center gap-1.5">
                           {d.status === "limited" ? (
-                            <>
-                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FFF3E0] text-[#E65100]">
-                                {isEN ? "Limited seats" : "Letzte Plätze"}
-                              </span>
-                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
-                                {isEN ? "Save 300,-" : "300,- sparen"}
-                              </span>
-                            </>
+                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FFF3E0] text-[#E65100]">
+                              {isEN ? "Limited seats" : "Letzte Plätze"}
+                            </span>
                           ) : (
                             <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
                               {isEN ? "Available" : "Verfügbar"}
