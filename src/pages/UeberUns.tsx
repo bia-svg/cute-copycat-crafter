@@ -105,29 +105,31 @@ export default function UeberUns() {
         </div>
       </section>
 
-      {/* INTRO + STATS — text left, badges right, soft silver background */}
+      {/* INTRO + STATS — psychology-led, compact executive profile */}
       <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
             <div className="grid grid-cols-1 lg:grid-cols-[1.55fr_1fr] gap-6 lg:gap-8 items-stretch">
               <div>
-                <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-3 tracking-tight">
-                  {isEN ? "Psychology, Depth & Modern Coaching" : "Psychologie, Tiefe & modernes Coaching"}
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-2">
+                  {isEN ? "Profile" : "Profil"}
+                </p>
+                <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-3 tracking-tight leading-snug">
+                  {isEN ? "Psychology, Depth & Modern Hypnosis" : "Psychologie, Tiefe & moderne Hypnose"}
                 </h2>
                 <p className="text-sm md:text-base text-foreground leading-relaxed mb-3">
-                  {isEN
-                    ? "David J. Woods combines psychological expertise, physiological depth, and modern coaching techniques into a method that works: clear, efficient, and solution-oriented. Instead of superficial motivation, it's about real inner strength, mental stability, and conscious self-leadership."
-                    : "David J. Woods vereint psychologisches Fachwissen, physiologische Tiefe und moderne Coaching-Techniken zu einer Methode, die wirkt: klar, effizient und lösungsorientiert. Statt oberflächlicher Motivation geht es um echte innere Stärke, mentale Stabilität und bewusste Selbstführung."}
-                </p>
-                <p className="text-sm md:text-base text-foreground leading-relaxed mb-3">
-                  {isEN
-                    ? "With over 35+ years of experience and more than 30,000 sessions, he is among the most experienced hypnotherapists in the DACH region. As an NGH International Trainer and developer of the Aktiv-Hypnose© method, he has supported thousands of people in achieving lasting change."
-                    : "Mit über 35+ Jahren Erfahrung und mehr als 30.000 Sitzungen gehört er zu den erfahrensten Hypnotherapeuten im DACH-Raum. Als NGH International Trainer und Entwickler der Aktiv-Hypnose© Methode hat er Tausenden von Menschen geholfen, nachhaltige Veränderung zu erreichen."}
+                  {isEN ? (
+                    <><strong className="text-[#1B3A5C] font-semibold">David J. Woods</strong> is a psychologically trained hypnosis specialist. His work integrates <strong className="text-[#1B3A5C] font-semibold">psychology</strong>, <strong className="text-[#1B3A5C] font-semibold">depth psychology</strong>, <strong className="text-[#1B3A5C] font-semibold">neurology</strong> and <strong className="text-[#1B3A5C] font-semibold">physiology</strong> with proven, modern hypnosis methods — direct, structured, results-oriented.</>
+                  ) : (
+                    <><strong className="text-[#1B3A5C] font-semibold">David J. Woods</strong> ist psychologisch ausgebildeter Hypnose-Spezialist. Seine Arbeit verbindet <strong className="text-[#1B3A5C] font-semibold">Psychologie</strong>, <strong className="text-[#1B3A5C] font-semibold">Tiefenpsychologie</strong>, <strong className="text-[#1B3A5C] font-semibold">Neurologie</strong> und <strong className="text-[#1B3A5C] font-semibold">Physiologie</strong> mit bewährten, modernen Hypnosemethoden — direkt, strukturiert, ergebnisorientiert.</>
+                  )}
                 </p>
                 <p className="text-sm md:text-base text-foreground leading-relaxed">
-                  {isEN
-                    ? "His approach is based on the conviction that real change begins in the subconscious — whether stopping smoking, overcoming anxiety, weight management or stress reduction."
-                    : "Sein Ansatz basiert auf der Überzeugung, dass echte Veränderung im Unterbewusstsein beginnt – ob Raucherentwöhnung, Angstbewältigung, Gewichtsmanagement oder Stressreduktion."}
+                  {isEN ? (
+                    <>Über <strong className="text-[#1B3A5C] font-semibold">35+ years</strong> of clinical practice and more than <strong className="text-[#1B3A5C] font-semibold">30,000 sessions</strong> form the basis of his proprietary method <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong>. As an <strong className="text-[#1B3A5C] font-semibold">NGH International Trainer</strong>, he has trained over 2,500 hypnotists internationally. Hypnosis is used here as a precise tool within a psychologically grounded approach — not as show or stage hypnosis.</>
+                  ) : (
+                    <>Über <strong className="text-[#1B3A5C] font-semibold">35+ Jahre</strong> klinische Praxis und mehr als <strong className="text-[#1B3A5C] font-semibold">30.000 Sitzungen</strong> bilden die Grundlage seiner eigenständigen Methode <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong>. Als <strong className="text-[#1B3A5C] font-semibold">NGH International Trainer</strong> hat er über 2.500 Hypnotiseure international ausgebildet. Hypnose wird hier als präzises Werkzeug innerhalb eines psychologisch fundierten Ansatzes eingesetzt — nicht als Show- oder Bühnen-Hypnose.</>
+                  )}
                 </p>
                 {showCH && (
                   <div className="hidden md:block mt-4 bg-[#E8F5E9] border border-[#81C784] rounded-xl p-3">
@@ -177,15 +179,14 @@ export default function UeberUns() {
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-            <div className="text-center mb-4">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-1 tracking-tight">
+            <div className="text-center mb-5">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-2">
+                {isEN ? "Credentials" : "Qualifikationen"}
+              </p>
+              <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-2 tracking-tight">
                 {isEN ? "Diplomas & Certifications" : "Diplome & Zertifizierungen"}
               </h2>
-              <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
-                {isEN
-                  ? "Internationally recognized certifications and professional qualifications."
-                  : "International anerkannte Zertifizierungen und berufliche Qualifikationen."}
-              </p>
+              <div className="mx-auto h-px w-12 bg-[#1B3A5C]/25" />
             </div>
 
             <div className="grid grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3 mb-5">
@@ -253,24 +254,19 @@ export default function UeberUns() {
         </div>
       </section>
 
-      {/* OVERVIEW — premium executive profile */}
+      {/* OVERVIEW — premium executive profile, compact */}
       <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
-        <div className="container-main py-10 md:py-14">
+        <div className="container-main py-7 md:py-10">
           <div className="max-w-5xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-8 md:mb-10">
+            <div className="text-center mb-6 md:mb-7">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-2">
                 {isEN ? "Professional Profile" : "Professionelles Profil"}
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-[34px] font-light text-[#1B3A5C] tracking-tight leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-[28px] font-light text-[#1B3A5C] tracking-tight leading-tight">
                 {isEN ? "A Brief Overview of David J. Woods" : "Ein kurzer Überblick zu David J. Woods"}
               </h2>
-              <div className="mx-auto mt-4 h-px w-16 bg-[#1B3A5C]/25" />
-              <p className="mt-4 text-sm md:text-[15px] text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                {isEN
-                  ? "From early fascination in London to international training and certified expertise."
-                  : "Von früher Faszination in London bis zu internationaler Ausbildung und zertifizierter Expertise."}
-              </p>
+              <div className="mx-auto mt-3 h-px w-12 bg-[#1B3A5C]/25" />
             </div>
 
             {/* Cards */}
@@ -317,7 +313,7 @@ export default function UeberUns() {
                 return (
                   <article
                     key={i}
-                    className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-6 md:p-7 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]"
+                    className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]"
                   >
                     <span className="absolute top-5 right-5 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">
                       {card.num}
@@ -339,28 +335,41 @@ export default function UeberUns() {
         </div>
       </section>
 
-      {/* GOAL — A happy, conscious, free life — compacted */}
+      {/* GOAL — A happy, conscious, free life — concise */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#2E7D32] mb-1.5">
-              {isEN ? "The Goal:" : "Das Ziel:"}
-            </p>
-            <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-4 tracking-tight">
-              {isEN ? "A Happy, Conscious and Free Life" : "Ein glückliches, bewusstes und freies Leben"}
-            </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_240px] gap-5 lg:gap-7 items-start">
-              <p className="text-sm md:text-base text-foreground leading-relaxed">
-                {isEN
-                  ? "With his psychological and neuroscientific background, David Woods practices a very modern hypnosis approach and developed the 'Aktiv-Hypnose©'. He sees hypnosis as a simple but extremely effective tool to resolve problem situations and improve quality of life for his clients in the shortest time. His goal is to help people live more happily, consciously and freely. The successes are reported by television, newspapers and many clients on our website."
-                  : `Vor seinem psychologischen und neurowissenschaftlichen Hintergrund praktiziert David Woods einen sehr modernen Hypnose-Ansatz und entwickelte die „Aktiv-Hypnose©". Er betrachtet Hypnose als ein einfaches, aber extrem wirkungsvolles Werkzeug, um bei seinen Klienten in kürzester Zeit Problemsituationen aufzulösen und die Lebensqualität zu verbessern. Sein Ziel ist es, Menschen dabei zu helfen, ihr Leben glücklicher, bewusster und freier zu gestalten. Über die Erfolge berichten Fernsehsendungen, Zeitungen und viele Klienten auf unserer Website.`}
-              </p>
-              <div className="mx-auto lg:mx-0 w-52 lg:w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_220px] gap-6 lg:gap-8 items-center">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-2">
+                  {isEN ? "The Goal" : "Das Ziel"}
+                </p>
+                <h2 className="text-xl sm:text-2xl md:text-[26px] font-light text-[#1B3A5C] mb-3 tracking-tight leading-tight">
+                  {isEN ? "A Happy, Conscious and Free Life" : "Ein glückliches, bewusstes und freies Leben"}
+                </h2>
+                <p className="text-sm md:text-[15px] text-foreground leading-relaxed mb-4">
+                  {isEN ? (
+                    <>A psychologically and neuroscientifically grounded approach. <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong> as a precise tool to resolve patterns at their root — efficient, clear, lasting.</>
+                  ) : (
+                    <>Ein psychologisch und neurowissenschaftlich fundierter Ansatz. Die <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong> als präzises Werkzeug, um Muster an der Wurzel zu lösen — effizient, klar, nachhaltig.</>
+                  )}
+                </p>
+                <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-[13px] md:text-sm text-foreground/85">
+                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Clinical experience" : "Klinische Erfahrung"}</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Modern hypnosis methods" : "Moderne Hypnosemethoden"}</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Direct, proven approach" : "Direkter, bewährter Ansatz"}</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Lasting results" : "Nachhaltige Ergebnisse"}</li>
+                </ul>
+              </div>
+              <div className="mx-auto lg:mx-0 w-44 lg:w-full">
                 <ImageLightbox
                   src={diplomNGHCertified}
                   alt="NGH Certified Instructor — David Woods"
                   className="w-full h-auto border border-[#E8EDF3] rounded-xl"
                 />
+                <p className="mt-2 text-[11px] text-center text-muted-foreground tracking-wide">
+                  NGH Certified Instructor
+                </p>
               </div>
             </div>
           </div>
