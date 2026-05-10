@@ -218,17 +218,19 @@ export default function UeberUns() {
             </div>
 
             {/* Cards — 01 & 02 side-by-side, 03 full-width with NGH cert integrated */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 md:gap-4">
               {/* Card 01 */}
-              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
-                <span className="absolute top-5 right-5 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">01</span>
-                <div className="w-10 h-10 rounded-xl bg-[#EEF2F7] flex items-center justify-center mb-4">
-                  <Globe className="w-[18px] h-[18px] text-[#1B3A5C]" strokeWidth={1.5} />
+              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-4 md:p-5 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
+                <span className="absolute top-4 right-4 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">01</span>
+                <div className="flex items-center gap-3 mb-2.5 pr-8">
+                  <div className="w-9 h-9 rounded-lg bg-[#EEF2F7] flex items-center justify-center flex-shrink-0">
+                    <Globe className="w-[17px] h-[17px] text-[#1B3A5C]" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] leading-snug tracking-tight">
+                    {isEN ? "International Background" : "Internationaler Werdegang"}
+                  </h3>
                 </div>
-                <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] leading-snug tracking-tight mb-2">
-                  {isEN ? "International Background" : "Internationaler Werdegang"}
-                </h3>
-                <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.7]">
+                <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.6]">
                   {isEN ? (
                     <>Born in London. Studied psychology at <strong className="text-[#1B3A5C] font-semibold">UNAM</strong> (Mexico), in <strong className="text-[#1B3A5C] font-semibold">Boston</strong>, <strong className="text-[#1B3A5C] font-semibold">San Francisco</strong> and <strong className="text-[#1B3A5C] font-semibold">Cambridge</strong>. Today active in <strong className="text-[#1B3A5C] font-semibold">Germany</strong>, <strong className="text-[#1B3A5C] font-semibold">Switzerland</strong> and internationally — including <strong className="text-[#1B3A5C] font-semibold">Dubai</strong>.</>
                   ) : (
@@ -238,15 +240,17 @@ export default function UeberUns() {
               </article>
 
               {/* Card 02 */}
-              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
-                <span className="absolute top-5 right-5 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">02</span>
-                <div className="w-10 h-10 rounded-xl bg-[#EEF2F7] flex items-center justify-center mb-4">
-                  <GraduationCap className="w-[18px] h-[18px] text-[#1B3A5C]" strokeWidth={1.5} />
+              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-4 md:p-5 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
+                <span className="absolute top-4 right-4 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">02</span>
+                <div className="flex items-center gap-3 mb-2.5 pr-8">
+                  <div className="w-9 h-9 rounded-lg bg-[#EEF2F7] flex items-center justify-center flex-shrink-0">
+                    <GraduationCap className="w-[17px] h-[17px] text-[#1B3A5C]" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] leading-snug tracking-tight">
+                    {isEN ? "Training across 3 Continents" : "Ausbildung auf 3 Kontinenten"}
+                  </h3>
                 </div>
-                <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] leading-snug tracking-tight mb-2">
-                  {isEN ? "Training across 3 Continents" : "Ausbildung auf 3 Kontinenten"}
-                </h3>
-                <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.7]">
+                <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.6]">
                   {isEN ? (
                     <>Several years of practical training in hypnosis institutes across <strong className="text-[#1B3A5C] font-semibold">3 continents</strong> — South America, England and Germany. Fluent in German, English and Spanish.</>
                   ) : (
@@ -256,17 +260,19 @@ export default function UeberUns() {
               </article>
 
               {/* Card 03 — full width, NGH cert integrated */}
-              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 flex flex-col md:col-span-2 shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
-                <span className="absolute top-5 right-5 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">03</span>
-                <div className="grid grid-cols-1 md:grid-cols-[1fr_180px] gap-5 md:gap-6 items-center">
+              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-4 md:p-5 flex flex-col md:col-span-2 shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
+                <span className="absolute top-4 right-4 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">03</span>
+                <div className="grid grid-cols-1 md:grid-cols-[1fr_160px] gap-4 md:gap-5 items-center">
                   <div>
-                    <div className="w-10 h-10 rounded-xl bg-[#ECF3EE] flex items-center justify-center mb-4">
-                      <Award className="w-[18px] h-[18px] text-[#2E7D32]" strokeWidth={1.5} />
+                    <div className="flex items-center gap-3 mb-2.5 pr-8">
+                      <div className="w-9 h-9 rounded-lg bg-[#ECF3EE] flex items-center justify-center flex-shrink-0">
+                        <Award className="w-[17px] h-[17px] text-[#2E7D32]" strokeWidth={1.5} />
+                      </div>
+                      <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] leading-snug tracking-tight">
+                        {isEN ? "NGH Certified Trainer" : "Zertifizierter NGH-Ausbilder"}
+                      </h3>
                     </div>
-                    <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] leading-snug tracking-tight mb-2">
-                      {isEN ? "NGH Certified Trainer" : "Zertifizierter NGH-Ausbilder"}
-                    </h3>
-                    <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.7] mb-3">
+                    <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.6] mb-2.5">
                       {isEN ? (
                         <>Certified <strong className="text-[#1B3A5C] font-semibold">NGH-Trainer</strong> of the National Guild of Hypnotists — the world's largest hypnosis association. Trains "Therapists in Aktiv-Hypnose©" in Augsburg and near Zurich.</>
                       ) : (
@@ -280,18 +286,42 @@ export default function UeberUns() {
                       <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Psychologically grounded" : "Psychologisch fundiert"}</li>
                     </ul>
                   </div>
-                  <div className="mx-auto md:mx-0 w-40 md:w-full">
+                  <div className="mx-auto md:mx-0 w-36 md:w-full">
                     <ImageLightbox
                       src={diplomNGHCertified}
                       alt="NGH Certified Instructor — David Woods"
                       className="w-full h-auto border border-[#E8EDF3] rounded-xl"
                     />
-                    <p className="mt-2 text-[11px] text-center text-muted-foreground tracking-wide">
+                    <p className="mt-1.5 text-[10.5px] text-center text-muted-foreground tracking-wide">
                       NGH Certified Instructor
                     </p>
                   </div>
                 </div>
               </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRESS & MEDIA — separate calm horizontal logo strip */}
+      <section className="bg-white border-b border-[#E2E8EE]">
+        <div className="container-main py-6 md:py-8">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#1B3A5C]/70 mb-4 text-center">
+              {isEN ? "Press & Media" : "Presse & Medien"}
+            </p>
+            <div className="marquee-mask marquee-pause overflow-hidden">
+              <div className="marquee-track flex items-center gap-x-14 w-max">
+                {[...CDN.bekanntAus, ...CDN.bekanntAus].map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt={`David J. Woods – Presse & Medien Logo ${(i % CDN.bekanntAus.length) + 1}`}
+                    className="h-8 md:h-9 w-auto object-contain shrink-0 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                    loading="lazy"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
