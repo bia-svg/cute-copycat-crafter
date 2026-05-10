@@ -254,24 +254,19 @@ export default function UeberUns() {
         </div>
       </section>
 
-      {/* OVERVIEW — premium executive profile */}
+      {/* OVERVIEW — premium executive profile, compact */}
       <section className="bg-[#F1F4F7] border-b border-[#E2E8EE]">
-        <div className="container-main py-10 md:py-14">
+        <div className="container-main py-7 md:py-10">
           <div className="max-w-5xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-8 md:mb-10">
+            <div className="text-center mb-6 md:mb-7">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-2">
                 {isEN ? "Professional Profile" : "Professionelles Profil"}
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-[34px] font-light text-[#1B3A5C] tracking-tight leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-[28px] font-light text-[#1B3A5C] tracking-tight leading-tight">
                 {isEN ? "A Brief Overview of David J. Woods" : "Ein kurzer Überblick zu David J. Woods"}
               </h2>
-              <div className="mx-auto mt-4 h-px w-16 bg-[#1B3A5C]/25" />
-              <p className="mt-4 text-sm md:text-[15px] text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                {isEN
-                  ? "From early fascination in London to international training and certified expertise."
-                  : "Von früher Faszination in London bis zu internationaler Ausbildung und zertifizierter Expertise."}
-              </p>
+              <div className="mx-auto mt-3 h-px w-12 bg-[#1B3A5C]/25" />
             </div>
 
             {/* Cards */}
