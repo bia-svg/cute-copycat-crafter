@@ -208,25 +208,18 @@ export default function OnlineBeratung() {
       <section ref={calendarSectionRef} className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
         <div className="container-main py-6 md:py-8">
           <div className="max-w-3xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_22px_56px_-16px_rgba(27,58,92,0.22),0_6px_18px_-6px_rgba(27,58,92,0.12)] p-4 md:p-5">
-            <div className="text-center mb-3 md:mb-4">
-              <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight mb-1">
-                {isEN ? "Book your appointment" : "Termin buchen"}
+            <div className="text-center mb-3">
+              <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight">
+                {isEN ? "View available appointments" : "Verfügbare Termine anzeigen"}
               </h2>
-              <p className="text-[12.5px] md:text-[13px] text-[#1B3A5C]/70">
-                {isEN
-                  ? "Choose a time that suits you – open the calendar to start."
-                  : "Wählen Sie einen passenden Termin – öffnen Sie dazu den Kalender."}
-              </p>
             </div>
 
             {/* Premium info badges — always-visible price & duration transparency */}
-            <div className="mb-4 md:mb-5 flex flex-wrap items-center justify-center gap-1.5 md:gap-2">
+            <div className="mb-3 md:mb-4 flex flex-wrap items-center justify-center gap-1.5 md:gap-2">
               {[
-                isEN ? "60 min online consultation" : "60 Min. Online-Beratung",
-                isEN ? "Germany & Austria: €179" : "Deutschland & Österreich: 179 €",
-                isEN ? "Switzerland: CHF 179" : "Schweiz: 179 CHF",
-                isEN ? "By phone or video" : "Telefonisch oder per Video",
-                isEN ? "Creditable toward intensive session" : "Auf Intensivsitzung anrechenbar",
+                isEN ? "Online consultation" : "Online-Beratung",
+                isEN ? "Germany & Austria · €179" : "Deutschland & Österreich · 179 €",
+                isEN ? "Switzerland · CHF 179" : "Schweiz · 179 CHF",
               ].map((label) => (
                 <span
                   key={label}
