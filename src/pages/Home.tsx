@@ -495,7 +495,7 @@ export default function Home() {
                   to={getPath("onlineBeratung", language, country)}
                   className="group inline-flex items-center justify-center bg-gradient-to-b from-[#F0F6FC] to-[#DCEAF6] hover:from-[#E5F0F9] hover:to-[#CDDFEF] text-[#0B1F33] font-medium text-[12px] md:text-[13px] tracking-tight px-5 md:px-7 py-1.5 md:py-2 rounded-lg shadow-[0_1.5px_5px_rgba(27,58,92,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] hover:shadow-[0_3px_10px_rgba(27,58,92,0.12),inset_0_1px_0_rgba(255,255,255,0.7)] transition-all duration-200 border border-[#1B3A5C]/20 hover:border-[#1B3A5C]/40 hover:-translate-y-px"
                 >
-                  {isEN ? "Learn About Online Psychological Consultation" : "Online-Psychologische Beratung informieren"}
+                  {isEN ? "Online Psychological Consultation Info →" : "Infos zur Online-Psychologischen Beratung →"}
                 </Link>
                 <p className="mt-1 text-[10px] md:text-[10.5px] text-[#1B3A5C]/60 tracking-tight">
                   {isEN ? "Available by phone or video" : "Telefonisch oder per Video möglich"}
