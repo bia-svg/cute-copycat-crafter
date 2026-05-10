@@ -381,49 +381,62 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       {/* Kathryn Section — only on children/teens page, shown after hero/intro sections, before testimonials */}
       {(data.slugEN === "kinder-jugendliche" || data.slugCH === "kinder-jugendliche") && (
         <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-          <div className="container-main py-6 md:py-9">
-            <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-              <div className="grid md:grid-cols-[280px_1fr] gap-6 md:gap-8 items-start">
-                <div className="mx-auto md:mx-0 w-64 md:w-full">
-                  <div className="border border-[#E8EDF3] overflow-hidden rounded-2xl">
-                    <img src={CDN.kathrynPortrait} alt="Kathryn Woods – Kinder- und Jugendtherapeutin" className="w-full h-auto" loading="lazy" />
-                    <div className="p-3 bg-white">
+          <div className="container-main py-4 md:py-6">
+            <div className="max-w-5xl mx-auto bg-white border border-[#E2E8EE] rounded-2xl shadow-[0_2px_4px_rgba(27,58,92,0.04),0_12px_32px_-8px_rgba(27,58,92,0.10)] p-4 md:p-5">
+              <div className="grid md:grid-cols-[220px_1fr] gap-4 md:gap-6 items-start">
+                <div className="mx-auto md:mx-0 w-44 sm:w-48 md:w-full">
+                  <div className="border border-[#E2E8EE] overflow-hidden rounded-xl bg-white shadow-[0_2px_4px_rgba(27,58,92,0.04),0_10px_24px_-10px_rgba(27,58,92,0.12)]">
+                    <img
+                      src={CDN.kathrynPortrait}
+                      alt="Kathryn Woods – Kinder- und Jugendtherapeutin"
+                      className="w-full h-52 md:h-60 object-cover object-[center_20%]"
+                      loading="lazy"
+                    />
+                    <div className="px-3 py-2 bg-white border-t border-[#EEF2F6]">
                       <h3 className="font-light text-[#1B3A5C] text-sm tracking-tight">Kathryn</h3>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-[11px] text-muted-foreground">
                         {isEN ? "Psychological Counselor" : "Psychologische Beraterin"}
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="space-y-3">
-                  <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] tracking-tight">
+                <div className="space-y-2.5">
+                  <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight">
                     {isEN ? "Your Therapist: Kathryn" : "Ihre Therapeutin: Kathryn"}
                   </h2>
-                  <p className="text-sm md:text-base text-foreground leading-relaxed">
+                  <p className="text-sm text-foreground/80 leading-relaxed">
                     {isEN
-                      ? "Over many years, Kathryn has intensively studied the fields of psychology and personality development, with a particular focus on educational work with children and adolescents. She completed numerous training programs in modern communication techniques such as NLP and mental coaching, and was personally trained as a Master Hypnotist by David J. Woods."
-                      : "Über viele Jahre hinweg setzte sich Kathryn intensiv mit den Themen Psychologie und Persönlichkeitsentwicklung auseinander, insbesondere mit einem Schwerpunkt auf die pädagogische Arbeit mit Kindern und Jugendlichen. Sie absolvierte zahlreiche Ausbildungen in modernen Kommunikationstechniken wie NLP und Mental Coaching und wurde zudem von David J. Woods persönlich zur Master-Hypnotiseurin ausgebildet."}
+                      ? "Psychological counselor and certified hypnotist with a focus on children and adolescents. Personally trained as a Master Hypnotist by David J. Woods."
+                      : "Psychologische Beraterin und zertifizierte Hypnotiseurin mit Schwerpunkt auf Kinder und Jugendliche. Persönlich von David J. Woods zur Master-Hypnotiseurin ausgebildet."}
                   </p>
-                  <p className="text-sm md:text-base text-foreground leading-relaxed">
-                    {isEN
-                      ? "Through her empathetic, structured and clear approach, she quickly builds trust and ensures that even young people feel safe and understood during hypnosis."
-                      : "Durch ihre einfühlsame, strukturierte und klare Art schafft sie schnell Vertrauen und sorgt dafür, dass sich auch junge Menschen bei der Hypnose sicher und verstanden fühlen."}
+                  <ul className="grid sm:grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-foreground/85 mt-1">
+                    {[
+                      isEN ? "Psychological counselor" : "Psychologische Beraterin",
+                      isEN ? "Certified hypnotist" : "Zertifizierte Hypnotiseurin",
+                      isEN ? "Focus: children & teens" : "Schwerpunkt Kinder & Jugendliche",
+                      "Hypno-Birthing",
+                      isEN ? "NLP & Mental Coaching" : "NLP & Mental Coaching",
+                      isEN ? "Personally trained by David J. Woods" : "Persönlich ausgebildet durch David J. Woods",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1 w-1 rounded-full bg-[#1B3A5C]/50 shrink-0" />
+                        <span className="leading-snug">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-muted-foreground pt-1">
+                    {isEN ? "Speaks fluent Russian and German." : "Spricht fließend Russisch und Deutsch."}
                   </p>
-                  <p className="text-sm md:text-base text-foreground leading-relaxed">
-                    {isEN
-                      ? "Kathryn is multilingual, speaking fluent Russian and German as well as excellent English. In our practice, she is your competent contact for hypnosis sessions specifically for children and adolescents."
-                      : "Kathryn ist mehrsprachig aufgewachsen und spricht fließend Russisch und Deutsch sowie sehr gutes Englisch. In unserer Praxis ist sie Ihre kompetente Ansprechpartnerin für Hypnosesitzungen speziell bei Kindern und Jugendlichen."}
-                  </p>
-                  <div className="flex flex-wrap gap-2 pt-1">
+                  <div className="flex flex-wrap gap-1.5 pt-1">
                     {[
                       isEN ? "Children & Teens" : "Kinder & Jugendliche",
                       "Hypno-Birthing",
-                      isEN ? "Psychological Counseling" : "Psychologische Beratung",
+                      "NLP",
                       isEN ? "Master Hypnotist" : "Master-Hypnotiseurin",
                     ].map((label) => (
                       <span
                         key={label}
-                        className="inline-flex items-center rounded-full border border-[#D8E0EA] bg-[#F1F4F7] px-3 py-1 text-xs font-medium text-[#1B3A5C]"
+                        className="inline-flex items-center rounded-full border border-[#E2E8EE] bg-[#F5F7FA] px-2.5 py-0.5 text-[11px] font-medium text-[#1B3A5C]/80"
                       >
                         {label}
                       </span>
