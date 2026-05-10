@@ -250,7 +250,7 @@ export default function OnlineBeratung() {
                     >
                       {isEN ? "Open calendar" : "Kalender öffnen"}
                     </button>
-                    <p className="text-[11px] sm:text-[13.5px] text-[#1B3A5C]/50 sm:text-[#1B3A5C]/85 sm:font-medium tracking-tight sm:tracking-normal leading-snug">
+                    <p className="text-[11px] sm:text-[13.5px] text-[#1B3A5C]/50 sm:text-[#1B3A5C] sm:font-medium tracking-tight sm:tracking-normal leading-snug">
                       {isEN ? "To find your preferred appointment" : "Um Ihren gewünschten Termin zu finden"}
                     </p>
                   </div>
