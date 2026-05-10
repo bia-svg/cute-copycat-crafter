@@ -5,6 +5,7 @@ import { getPath } from "@/lib/routes";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import {
   CalendarClock,
+  CalendarDays,
   PhoneCall,
   ShieldCheck,
   Award,
@@ -208,25 +209,18 @@ export default function OnlineBeratung() {
       <section ref={calendarSectionRef} className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
         <div className="container-main py-6 md:py-8">
           <div className="max-w-3xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_22px_56px_-16px_rgba(27,58,92,0.22),0_6px_18px_-6px_rgba(27,58,92,0.12)] p-4 md:p-5">
-            <div className="text-center mb-3 md:mb-4">
-              <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight mb-1">
-                {isEN ? "Book your appointment" : "Termin buchen"}
+            <div className="text-center mb-3">
+              <h2 className="text-lg md:text-xl font-light text-[#1B3A5C] tracking-tight">
+                {isEN ? "View available appointments" : "Verfügbare Termine anzeigen"}
               </h2>
-              <p className="text-[12.5px] md:text-[13px] text-[#1B3A5C]/70">
-                {isEN
-                  ? "Choose a time that suits you – open the calendar to start."
-                  : "Wählen Sie einen passenden Termin – öffnen Sie dazu den Kalender."}
-              </p>
             </div>
 
             {/* Premium info badges — always-visible price & duration transparency */}
-            <div className="mb-4 md:mb-5 flex flex-wrap items-center justify-center gap-1.5 md:gap-2">
+            <div className="mb-3 md:mb-4 flex flex-wrap items-center justify-center gap-1.5 md:gap-2">
               {[
-                isEN ? "60 min online consultation" : "60 Min. Online-Beratung",
-                isEN ? "Germany & Austria: €179" : "Deutschland & Österreich: 179 €",
-                isEN ? "Switzerland: CHF 179" : "Schweiz: 179 CHF",
-                isEN ? "By phone or video" : "Telefonisch oder per Video",
-                isEN ? "Creditable toward intensive session" : "Auf Intensivsitzung anrechenbar",
+                isEN ? "Online consultation" : "Online-Beratung",
+                isEN ? "Germany & Austria · €179" : "Deutschland & Österreich · 179 €",
+                isEN ? "Switzerland · CHF 179" : "Schweiz · 179 CHF",
               ].map((label) => (
                 <span
                   key={label}
@@ -254,31 +248,31 @@ export default function OnlineBeratung() {
                 </div>
               </>
             ) : (
-              <div className="rounded-2xl border-[1.5px] border-border bg-[#f4f3ef] px-5 py-5 md:px-6 md:py-6 shadow-[0_4px_14px_rgba(27,58,92,0.06),inset_0_1px_0_rgba(255,255,255,0.6)]">
+              <div className="rounded-2xl border-2 border-[#D8E0EA] bg-[#f4f3ef] px-5 py-4 md:px-6 md:py-5 shadow-[0_8px_24px_-8px_rgba(27,58,92,0.15),0_2px_6px_rgba(27,58,92,0.06),inset_0_1px_0_rgba(255,255,255,0.7)]">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-3 text-center sm:text-left">
-                    <span className="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_2px_6px_rgba(46,125,50,0.10)]">
-                      <CalendarClock className="w-5 h-5" strokeWidth={1.8} />
+                    <span className="shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white text-[#2E7D32] border-[1.5px] border-[#2E7D32]/30 shadow-[0_3px_10px_rgba(46,125,50,0.18)]">
+                      <CalendarDays className="w-7 h-7" strokeWidth={2} />
                     </span>
                     <p className="text-[12.5px] md:text-[13.5px] text-[#1B3A5C]/85 leading-snug max-w-sm">
                       {isEN
-                        ? "Open the calendar to choose a time that suits you."
-                        : "Öffnen Sie den Kalender, um einen passenden Termin zu wählen."}
+                        ? "Open calendar to view appointments"
+                        : "Kalender öffnen und Termine ansehen"}
                     </p>
                   </div>
                   <button
                     type="button"
                     onClick={handleOpenCalendar}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-6 py-2.5 text-[13px] md:text-[13.5px] tracking-tight shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] whitespace-nowrap"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-6 py-2.5 text-[13px] md:text-[13.5px] tracking-tight shadow-[0_6px_18px_rgba(46,125,50,0.35),inset_0_1px_0_rgba(255,255,255,0.5)] hover:shadow-[0_8px_24px_rgba(46,125,50,0.45),inset_0_1px_0_rgba(255,255,255,0.6)] whitespace-nowrap transition-shadow"
                   >
-                    <CalendarClock className="w-4 h-4" strokeWidth={2} />
+                    <CalendarDays className="w-4 h-4" strokeWidth={2} />
                     {isEN ? "Open calendar" : "Kalender öffnen"}
                   </button>
                 </div>
               </div>
             )}
 
-            <p className="mt-3 md:mt-4 text-[11px] md:text-[11.5px] text-foreground/50 text-center leading-snug max-w-2xl mx-auto">
+            <p className="mt-2.5 md:mt-3 text-[10.5px] md:text-[11px] text-foreground/40 text-center leading-snug max-w-2xl mx-auto">
               {isEN
                 ? "Payment details will be sent by email."
                 : "Die Zahlungsinformationen erhalten Sie per E-Mail."}
