@@ -274,7 +274,7 @@ export default function UeberUns() {
             </div>
 
             {/* Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 auto-rows-fr">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 auto-rows-fr">
               {[
                 {
                   num: "01",
@@ -290,16 +290,6 @@ export default function UeberUns() {
                 },
                 {
                   num: "02",
-                  icon: Sparkles,
-                  accent: "#2E7D32",
-                  tint: "bg-[#ECF3EE]",
-                  title: isEN ? "Early Interest in Hypnosis" : "Frühes Interesse für Hypnose",
-                  body: isEN
-                    ? "Already fascinated by hypnosis and hypnotherapy in his childhood in England. As a teenager he gained his first experiences and later engaged intensively with depth psychology and various coaching methods."
-                    : "Bereits in seiner Kindheit in England war David J. Woods von Hypnose und Hypnosetherapie fasziniert. Als Jugendlicher sammelte er erste Erfahrungen und befasste sich später intensiv mit Tiefenpsychologie und verschiedenen Coaching-Methoden.",
-                },
-                {
-                  num: "03",
                   icon: GraduationCap,
                   accent: "#1B3A5C",
                   tint: "bg-[#EEF2F7]",
@@ -311,7 +301,7 @@ export default function UeberUns() {
                   ),
                 },
                 {
-                  num: "04",
+                  num: "03",
                   icon: Award,
                   accent: "#2E7D32",
                   tint: "bg-[#ECF3EE]",
