@@ -441,19 +441,12 @@ export default function Home() {
             {/* RIGHT (desktop) / TOP (mobile) – text + bullets, centered */}
             <div className="order-1 md:order-2 flex flex-col items-center text-center md:pl-1 md:h-full md:pt-0 md:pb-1">
               <h2 className="text-lg md:text-[22px] font-medium tracking-[0.01em] text-[#0B1F33] leading-tight mt-1 md:mt-4">
-                {isEN ? "Psychology and Hypnotherapy" : "Psychologie und Hypnotherapie"}
+                {isEN ? "Psychology, Hypnosis & Change" : "Psychologie, Hypnose & Veränderung"}
               </h2>
-              <p className="text-[12px] md:text-[14.5px] text-[#1B3A5C] font-medium leading-snug mt-1 md:mt-1.5 max-w-[640px]">
+              <p className="text-[12px] md:text-[14px] text-[#1B3A5C]/80 font-normal leading-snug mt-1 md:mt-1.5 max-w-[560px]">
                 {isEN
-                  ? "Individual intensive sessions for sustainable change."
-                  : "Individuelle Hypnose-Sitzungen für echte Veränderung – direkt an der Ursache."}
-              </p>
-
-              {/* Compact, elegant trust line — replaces former 6-bullet list */}
-              <p className="mt-1.5 md:mt-2 text-[11.5px] md:text-[12.5px] text-[#1B3A5C]/70 tracking-[0.01em]">
-                {isEN
-                  ? "35+ years of experience · 30,000+ sessions conducted"
-                  : "Über 35 Jahre Erfahrung · 30.000+ Sitzungen durchgeführt"}
+                  ? "Individual sessions, psychological consultation and hypnosis training."
+                  : "Individuelle Sitzungen, psychologische Beratung und Hypnose-Ausbildungen."}
               </p>
 
               {/* Topics row — premium clickable pill buttons (more breathing room for clarity) */}
@@ -466,7 +459,7 @@ export default function Home() {
                       { label: "Stress & burnout", page: "stress" as const },
                       { label: "Depression & trauma", page: "depression" as const },
                       { label: "Children & teens", page: "children" as const },
-                      { label: "Seminars", page: "training" as const },
+                      { label: "Training & Seminars", page: "training" as const },
                     ]
                   : [
                       { label: "Rauchfrei werden", page: "smoking" as const },
@@ -475,7 +468,7 @@ export default function Home() {
                       { label: "Stress & Burnout", page: "stress" as const },
                       { label: "Depression & Trauma", page: "depression" as const },
                       { label: "Kinder & Jugendliche", page: "children" as const },
-                      { label: "Ausbildung", page: "training" as const },
+                      { label: "Ausbildung & Seminare", page: "training" as const },
                     ]
                 ).map((item) => (
                   <Link
