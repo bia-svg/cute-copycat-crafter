@@ -237,7 +237,7 @@ export default function OnlineBeratung() {
                 </div>
               </>
             ) : (
-              <div className="rounded-2xl border border-[#E2E8EE] bg-[#f4f3ef] px-5 py-4 md:px-8 md:py-5 shadow-[0_2px_10px_-2px_rgba(27,58,92,0.06),inset_0_1px_0_rgba(255,255,255,0.5)]">
+              <div className="rounded-2xl border border-[#D4D0CA] bg-[#f4f3ef] px-5 py-4 md:px-8 md:py-5 shadow-[0_3px_14px_-3px_rgba(27,58,92,0.10),0_1px_4px_-1px_rgba(27,58,92,0.05),inset_0_1px_0_rgba(255,255,255,0.6)]">
                 <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:items-center sm:gap-4 md:gap-5">
                   <span className="shrink-0 inline-flex items-center justify-center w-10 h-10 sm:w-[52px] sm:h-[52px] rounded-xl bg-white text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_2px_6px_rgba(46,125,50,0.12)]">
                     <CalendarDays className="w-5 h-5 sm:w-7 sm:h-7" strokeWidth={2} />
