@@ -179,15 +179,14 @@ export default function UeberUns() {
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-            <div className="text-center mb-4">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-1 tracking-tight">
+            <div className="text-center mb-5">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-2">
+                {isEN ? "Credentials" : "Qualifikationen"}
+              </p>
+              <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-2 tracking-tight">
                 {isEN ? "Diplomas & Certifications" : "Diplome & Zertifizierungen"}
               </h2>
-              <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
-                {isEN
-                  ? "Internationally recognized certifications and professional qualifications."
-                  : "International anerkannte Zertifizierungen und berufliche Qualifikationen."}
-              </p>
+              <div className="mx-auto h-px w-12 bg-[#1B3A5C]/25" />
             </div>
 
             <div className="grid grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3 mb-5">
