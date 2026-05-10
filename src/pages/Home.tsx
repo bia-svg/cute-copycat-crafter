@@ -37,7 +37,7 @@ const heroMobile = [
 import {
   Cigarette, Brain, Scale, Flame, HeartPulse, Users,
   Trophy, Shield, Clock, BookOpen, ArrowRight, Star, Award, BadgeCheck,
-  ChevronLeft, ChevronRight, CheckCircle, Tv
+  ChevronLeft, ChevronRight, CheckCircle, Tv, Info
 } from "lucide-react";
 
 /* ══════════════════════════════════════════════════════════════
@@ -396,7 +396,11 @@ export default function Home() {
             {/* LEFT (desktop) – credential badges 2x2 + link */}
             <div className="order-2 md:order-1 flex flex-col items-center justify-center gap-1.5 mt-3 md:mt-0">
               {/* Desktop: 2x2 grid – 4 badges, equal height + weight */}
-              <div className="hidden md:grid grid-cols-2 gap-2 w-full">
+              <div className="hidden md:block w-full bg-gradient-to-b from-white to-[#F4F7FA] border border-[#1B3A5C]/12 rounded-xl p-2.5 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_8px_20px_-12px_rgba(27,58,92,0.10)]">
+                <div className="text-[9.5px] font-semibold uppercase tracking-[0.14em] text-[#1B3A5C]/55 text-center mb-2">
+                  {isEN ? "Qualification & Trust" : "Qualifikation & Vertrauen"}
+                </div>
+                <div className="grid grid-cols-2 gap-2 w-full">
                 {/* Entwickler der Aktiv-Hypnose */}
                 <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-3 py-2 h-[100px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.06] md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_20px_-8px_rgba(27,58,92,0.20)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
                   <Award className="h-10 w-10 text-[#1B3A5C]" strokeWidth={1.4} aria-hidden="true" />
@@ -426,6 +430,7 @@ export default function Home() {
                   <div className="text-center">
                     <div className="font-semibold text-[11.5px] text-foreground/95 leading-[1.35] text-center">Lic. Psych.<br /><span className="text-[10.5px] tracking-[0.04em]">UNAM</span></div>
                   </div>
+                </div>
                 </div>
               </div>
               <Link to={getPath("about", language, country)} className="hidden md:inline-block mt-1.5 mb-0 text-[11.5px] text-[#2E7D32] hover:text-[#1B5E20] font-medium underline underline-offset-4 decoration-[#2E7D32]/50 hover:decoration-[#1B5E20] transition-colors text-center leading-snug">
@@ -476,7 +481,7 @@ export default function Home() {
                   <Link
                     key={item.page}
                     to={getPath(item.page, language, country)}
-                    className="inline-flex items-center px-3.5 md:px-4 py-1.5 md:py-1.5 rounded-full bg-white md:bg-gradient-to-b md:from-white md:to-[#F4F7FA] border border-[#1B3A5C]/40 md:border-[#1B3A5C]/35 text-[11.5px] md:text-[12.5px] font-medium text-[#1B3A5C] tracking-[0.01em] shadow-[0_1.5px_0_0_rgba(27,58,92,0.18),0_2px_4px_-1px_rgba(27,58,92,0.12)] md:shadow-[0_1px_0_0_rgba(255,255,255,0.9)_inset,0_1.5px_0_0_rgba(27,58,92,0.22),0_2px_5px_-1px_rgba(27,58,92,0.18),0_4px_10px_-3px_rgba(27,58,92,0.12)] hover:bg-[#1B3A5C] hover:bg-none hover:text-white hover:border-[#1B3A5C] hover:shadow-md active:translate-y-px active:shadow-[0_0_0_1px_rgba(27,58,92,0.25)] transition-all duration-200"
+                    className="inline-flex items-center px-3.5 md:px-4 py-1.5 md:py-1.5 rounded-full bg-white md:bg-gradient-to-b md:from-white md:to-[#F4F7FA] border border-[#1B3A5C]/40 md:border-[#1B3A5C]/35 text-[11.5px] md:text-[12.5px] font-medium text-[#1B3A5C] tracking-[0.01em] shadow-[0_1.5px_0_0_rgba(27,58,92,0.18),0_2px_4px_-1px_rgba(27,58,92,0.12)] md:shadow-[0_1px_0_0_rgba(255,255,255,0.9)_inset,0_1.5px_0_0_rgba(27,58,92,0.22),0_2px_5px_-1px_rgba(27,58,92,0.18),0_4px_10px_-3px_rgba(27,58,92,0.12)] hover:bg-[#27486B] hover:bg-none hover:text-white hover:border-[#27486B] hover:shadow-[0_2px_6px_-1px_rgba(27,58,92,0.18),0_4px_12px_-3px_rgba(27,58,92,0.14)] active:translate-y-px active:shadow-[0_0_0_1px_rgba(27,58,92,0.25)] transition-all duration-300 ease-out"
                   >
                     {item.label}
                   </Link>
@@ -487,17 +492,28 @@ export default function Home() {
               <div className="mt-3 md:mt-4 md:mb-1 flex flex-col items-center justify-center">
                 <Link
                   to={getPath("onlineBeratung", language, country)}
-                  className="group inline-flex items-center justify-center bg-gradient-to-b from-[#F0F6FC] to-[#DCEAF6] hover:from-[#E5F0F9] hover:to-[#CDDFEF] text-[#0B1F33] font-medium text-[12px] md:text-[13px] tracking-tight px-5 md:px-7 py-1.5 md:py-2 rounded-lg shadow-[0_1.5px_5px_rgba(27,58,92,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] hover:shadow-[0_3px_10px_rgba(27,58,92,0.12),inset_0_1px_0_rgba(255,255,255,0.7)] transition-all duration-200 border border-[#1B3A5C]/20 hover:border-[#1B3A5C]/40 hover:-translate-y-px"
+                  className="group inline-flex items-center justify-center gap-2 bg-gradient-to-b from-[#F0F6FC] to-[#DCEAF6] hover:from-[#E5F0F9] hover:to-[#CDDFEF] text-[#0B1F33] font-medium text-[12px] md:text-[13px] tracking-tight px-5 md:px-7 py-1.5 md:py-2 rounded-lg shadow-[0_1.5px_5px_rgba(27,58,92,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] hover:shadow-[0_3px_10px_rgba(27,58,92,0.12),inset_0_1px_0_rgba(255,255,255,0.7)] transition-all duration-200 border border-[#1B3A5C]/20 hover:border-[#1B3A5C]/40 hover:-translate-y-px"
                 >
-                  {isEN ? "Online Psychological Consultation Info →" : "Infos zur Online-Psychologischen Beratung →"}
+                  <Info className="w-3.5 h-3.5 text-[#1B3A5C]/75" strokeWidth={1.8} aria-hidden="true" />
+                  {isEN ? "Online Psychological Consultation" : "Online-Psychologische Beratung ansehen"}
+                  <span aria-hidden="true" className="text-[#1B3A5C]/60 transition-transform group-hover:translate-x-0.5">→</span>
                 </Link>
                 <p className="mt-1 text-[10px] md:text-[10.5px] text-[#1B3A5C]/60 tracking-tight">
                   {isEN ? "Available by phone or video" : "Telefonisch oder per Video möglich"}
                 </p>
               </div>
 
+              {/* Mobile: elegant divider between topics/CTA and trust badges */}
+              <div className="md:hidden w-full mt-4 mb-1 flex items-center gap-3" aria-hidden="true">
+                <span className="h-px flex-1 bg-gradient-to-r from-transparent via-[#1B3A5C]/15 to-[#1B3A5C]/15" />
+                <span className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#1B3A5C]/50">
+                  {isEN ? "Qualification & Trust" : "Qualifikation & Vertrauen"}
+                </span>
+                <span className="h-px flex-1 bg-gradient-to-l from-transparent via-[#1B3A5C]/15 to-[#1B3A5C]/15" />
+              </div>
+
               {/* Mobile: 2x2 badges grid below CTA */}
-              <div className="grid md:hidden grid-cols-2 gap-2 w-full mt-3 select-none">
+              <div className="grid md:hidden grid-cols-2 gap-2 w-full mt-2 select-none">
                 <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-2 py-2 h-[96px]">
                   <Award className="h-9 w-9 text-[#1B3A5C]" strokeWidth={1.4} aria-hidden="true" />
                   <div className="text-center">
