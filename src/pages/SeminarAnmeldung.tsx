@@ -203,11 +203,15 @@ export default function SeminarAnmeldung() {
 
       // Fire notifications in background
       supabase.functions.invoke("notify-lead", { body: { lead: leadData } }).catch(err => console.error("Slack error:", err));
-      // Einheitlicher Preis 2.490 für alle Seminare
+      // Preislogik: regulär 2.490, mit 200.– Rabatt für nächste Termine (status === "limited")
       const isCH = seminarCountry === "ch";
-      const bookedPrice = isCH ? "CHF 2.490.-" : "€2.490,-";
-      const priceType = "Regulärer Preis";
+      const isDiscount = selectedDateObj?.status === "limited";
+      const bookedPrice = isDiscount
+        ? (isCH ? "CHF 2.290.-" : "€2.290,-")
+        : (isCH ? "CHF 2.490.-" : "€2.490,-");
+      const priceType = isDiscount ? "Rabattpreis" : "Regulärer Preis";
       const regularPrice = isCH ? "CHF 2.490.-" : "€2.490,-";
+      const savingsAmount = isDiscount ? (isCH ? "CHF 200" : "€200") : undefined;
 
       sendLeadEmails({
         name: leadData.name,
@@ -236,8 +240,8 @@ export default function SeminarAnmeldung() {
         registrationNumber: regNumber || undefined,
         bookedPrice,
         priceType,
-        regularPrice: undefined,
-        savingsAmount: undefined,
+        regularPrice: isDiscount ? regularPrice : undefined,
+        savingsAmount,
       }).catch(err => console.error("Email error:", err));
     } catch (err) {
       console.error("Lead save error:", err);
