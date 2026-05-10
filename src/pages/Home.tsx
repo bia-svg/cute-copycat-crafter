@@ -63,7 +63,7 @@ function TVLogoCarousel() {
      <div className="relative bg-muted/50 rounded-lg p-2">
       <div ref={scrollRef} className="flex gap-6 overflow-x-auto overflow-y-hidden scrollbar-hide py-1" style={{ scrollbarWidth: "none", msOverflowStyle: "none" } as React.CSSProperties}>
         {CDN.bekanntAus.map((src, i) => (
-          <img key={i} src={src} alt={`David J. Woods bekannt aus Medien – Logo ${i + 1}`} className="h-7 md:h-9 object-contain shrink-0 saturate-[0.55] opacity-80 hover:opacity-100 hover:saturate-100 transition-all mix-blend-multiply" width={80} height={40} loading="lazy" decoding="async" sizes="(min-width: 768px) 100px, 80px" />
+          <img key={i} src={src} alt={`David J. Woods bekannt aus Medien – Logo ${i + 1}`} className="h-7 md:h-9 w-auto object-contain shrink-0 [filter:saturate(0.55)_brightness(0.96)] opacity-80 hover:[filter:saturate(1)_brightness(1)] hover:opacity-100 hover:scale-[1.04] transition-all duration-500" width={80} height={40} loading="lazy" decoding="async" sizes="(min-width: 768px) 100px, 80px" />
         ))}
       </div>
     </div>
@@ -390,15 +390,15 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
-      <section className="pt-6 pb-6 md:pt-7 md:pb-7 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border-2 border-[#D1D5DB] py-1.5 md:py-1 px-3 md:px-5 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
+      <section className="pt-4 pb-4 md:pt-5 md:pb-5 bg-primary/15" style={deferredSectionStyle}>
+        <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border border-[#D1D5DB] py-1.5 md:py-1 px-3 md:px-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
           <div className="grid md:grid-cols-[290px_1fr] gap-2 md:gap-4 md:items-stretch">
             {/* LEFT (desktop) – credential badges 2x2 + link */}
             <div className="order-2 md:order-1 flex flex-col items-center justify-center gap-1.5 mt-3 md:mt-0">
               {/* Desktop: 2x2 grid – 4 badges, equal height + weight */}
               <div className="hidden md:grid grid-cols-2 gap-2 w-full">
                 {/* Entwickler der Aktiv-Hypnose */}
-                <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-3 py-2 h-[100px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.22] md:hover:-translate-y-1.5 md:hover:shadow-[0_18px_40px_-10px_rgba(27,58,92,0.35)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/30 md:hover:z-20">
+                <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-3 py-2 h-[100px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.06] md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_20px_-8px_rgba(27,58,92,0.20)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
                   <Award className="h-10 w-10 text-[#1B3A5C]" strokeWidth={1.4} aria-hidden="true" />
                   <div className="text-center">
                     <div className="font-semibold text-[11.5px] text-foreground/95 leading-tight">{isEN ? "Developer of Aktiv-Hypnose®" : "Entwickler der Aktiv-Hypnose®"}</div>
@@ -406,14 +406,14 @@ export default function Home() {
                   </div>
                 </div>
                 {/* NGH International Trainer */}
-                <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-3 py-2 h-[100px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.22] md:hover:-translate-y-1.5 md:hover:shadow-[0_18px_40px_-10px_rgba(27,58,92,0.35)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/30 md:hover:z-20">
+                <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-3 py-2 h-[100px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.06] md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_20px_-8px_rgba(27,58,92,0.20)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
                   <img src={CDN.nghBadge} alt="NGH International Trainer – National Guild of Hypnotists" className="h-12 w-auto object-contain" style={{ filter: "brightness(1.1) contrast(1.12) saturate(1.1)" }} width={140} height={48} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11.5px] text-foreground/95 leading-tight">NGH International Trainer</div>
                   </div>
                 </div>
                 {/* EMR */}
-                <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-3 py-2 h-[100px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.22] md:hover:-translate-y-1.5 md:hover:shadow-[0_18px_40px_-10px_rgba(27,58,92,0.35)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/30 md:hover:z-20">
+                <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-3 py-2 h-[100px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.06] md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_20px_-8px_rgba(27,58,92,0.20)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
                   <img src={CDN.emrBadge} alt="EMR Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt" className="h-10 w-auto object-contain" width={144} height={40} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11.5px] text-foreground/95 leading-tight">EMR Krankenkasse Konform</div>
@@ -421,7 +421,7 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Licensed Psychologist */}
-                <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-3 py-2 md:pb-3 h-[100px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.22] md:hover:-translate-y-1.5 md:hover:shadow-[0_18px_40px_-10px_rgba(27,58,92,0.35)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/30 md:hover:z-20">
+                <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-3 py-2 md:pb-3 h-[100px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.06] md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_20px_-8px_rgba(27,58,92,0.20)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
                   <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-[53px] w-[53px] object-contain mb-1" style={{ filter: "brightness(1.28) contrast(1.22) saturate(1.17)" }} width={512} height={512} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11.5px] text-foreground/95 leading-[1.35] text-center">Lic. Psych.<br /><span className="text-[10.5px] tracking-[0.04em]">UNAM</span></div>
@@ -444,21 +444,15 @@ export default function Home() {
                   : "Individuelle Hypnose-Sitzungen für echte Veränderung – direkt an der Ursache."}
               </p>
 
-              {/* Bullets — 2-col on desktop, 6 items */}
-              <ul className="mt-2 md:mt-3.5 grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-1 md:gap-y-1 text-[11.5px] md:text-[14px] text-foreground/80 text-left mx-auto w-fit md:justify-items-start leading-snug">
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "35+ years of experience" : "Über 35 Jahre Erfahrung"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "2,500+ therapists trained" : "2.500+ Therapeuten ausgebildet"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30+ international TV appearances" : "30+ internationale TV-Auftritte"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "30,000+ sessions conducted" : "30.000+ Sitzungen durchgeführt"}</span></li>
-                <li className="flex items-center gap-2 leading-snug"><CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" /><span>{isEN ? "Author of Go Inside & MP3 programs" : "Autor von Go Inside & MP3-Programmen"}</span></li>
-                <li className="flex items-center gap-2 leading-snug">
-                  <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0 relative top-px" />
-                  <span>266 <span className="text-[#F5B301]">★</span> {isEN ? "5.0 on Google" : "5.0 bei Google"}</span>
-                </li>
-              </ul>
+              {/* Compact, elegant trust line — replaces former 6-bullet list */}
+              <p className="mt-1.5 md:mt-2 text-[11.5px] md:text-[12.5px] text-[#1B3A5C]/70 tracking-[0.01em]">
+                {isEN
+                  ? "35+ years of experience · 30,000+ sessions conducted"
+                  : "Über 35 Jahre Erfahrung · 30.000+ Sitzungen durchgeführt"}
+              </p>
 
-              {/* Topics row — premium clickable pill buttons */}
-              <div className="mt-2.5 md:mt-4 flex flex-wrap justify-center gap-1.5 md:gap-2 max-w-[760px]">
+              {/* Topics row — premium clickable pill buttons (more breathing room for clarity) */}
+              <div className="mt-5 md:mt-7 mb-1 md:mb-2 flex flex-wrap justify-center gap-2 md:gap-2.5 max-w-[760px]">
                 {(isEN
                   ? [
                       { label: "Become smoke-free", page: "smoking" as const },
