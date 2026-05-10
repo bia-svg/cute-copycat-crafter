@@ -450,7 +450,7 @@ export default function Home() {
               </p>
 
               {/* Topics row — premium clickable pill buttons (more breathing room for clarity) */}
-              <div className="mt-5 md:mt-7 mb-1 md:mb-2 flex flex-wrap justify-center gap-2 md:gap-2.5 max-w-[760px]">
+              <div className="mt-5 md:mt-7 mb-1 md:mb-3.5 flex flex-wrap justify-center gap-2 md:gap-x-2.5 md:gap-y-3.5 max-w-[760px]">
                 {(isEN
                   ? [
                       { label: "Become smoke-free", page: "smoking" as const },
