@@ -2,8 +2,8 @@ export const pageSEO = {
   home: {
     titleDE: "Hypnose Zürich & Augsburg · 30.000+ Sitzungen · ★ 5.0",
     titleEN: "Hypnotherapy Zurich & Augsburg · 30,000+ Sessions · ★ 5.0",
-    descriptionDE: "Rauchfrei werden, Abnehmen, Ängste & Panik, Stress & Burnout, Depression & Trauma, Kinderhypnose, psychologische Beratung sowie Hypnose-Ausbildungen und Seminare.",
-    descriptionEN: "Quit smoking, weight loss, anxiety & panic, stress & burnout, depression & trauma, children's hypnotherapy, psychological counseling as well as hypnosis training and seminars.",
+    descriptionDE: "Rauchfrei, Abnehmen, Ängste, Panik, Stress, Depressionen & Trauer bewältigen, psychologische Beratung sowie Hypnose-Ausbildungen.",
+    descriptionEN: "Quit smoking, weight loss, anxiety, panic, stress, depression & grief, psychological counseling as well as hypnosis training.",
   },
   smoking: {
     titleDE: "Raucherentwöhnung Hypnose · Zürich & Augsburg · ★ 5.0",
