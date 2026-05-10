@@ -2,8 +2,8 @@ export const pageSEO = {
   home: {
     titleDE: "Hypnose Zürich & Augsburg · 30.000+ Sitzungen · ★ 5.0",
     titleEN: "Hypnotherapy Zurich & Augsburg · 30,000+ Sessions · ★ 5.0",
-    descriptionDE: "Rauchfrei, Abnehmen, Ängste & Panik, Stress & Burnout, psychologische Beratung sowie Hypnoseausbildungen mit David J. Woods.",
-    descriptionEN: "Quit smoking, weight loss, anxiety & panic, stress & burnout, psychological counseling and hypnotherapy training with David J. Woods.",
+    descriptionDE: "Rauchfrei werden, Abnehmen, Ängste & Panik, Stress & Burnout, Depression & Trauma, Kinderhypnose, psychologische Beratung sowie Hypnose-Ausbildungen und Seminare.",
+    descriptionEN: "Quit smoking, weight loss, anxiety & panic, stress & burnout, depression & trauma, children's hypnotherapy, psychological counseling as well as hypnosis training and seminars.",
   },
   smoking: {
     titleDE: "Raucherentwöhnung Hypnose · Zürich & Augsburg · ★ 5.0",
