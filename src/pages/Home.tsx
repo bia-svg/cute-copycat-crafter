@@ -411,7 +411,7 @@ export default function Home() {
                 </div>
                 {/* Licensed Psychologist */}
                 <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-3 py-2 md:pb-2 h-[100px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.06] md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_20px_-8px_rgba(27,58,92,0.20)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
-                  <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-[53px] w-[53px] object-contain mb-1" style={{ filter: "brightness(1.28) contrast(1.22) saturate(1.17)" }} width={512} height={512} loading="lazy" decoding="async" />
+                  <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-[58px] w-[58px] object-contain mb-1" style={{ filter: "brightness(1.28) contrast(1.22) saturate(1.17)" }} width={512} height={512} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11.5px] text-foreground/95 leading-[1.35] text-center">Lic. Psych.<br /><span className="text-[10.5px] tracking-[0.04em]">UNAM</span></div>
                   </div>
@@ -508,14 +508,14 @@ export default function Home() {
               {/* Mobile: 2x2 badges grid below CTA */}
               <div className="grid md:hidden grid-cols-2 gap-2 w-full mt-2 select-none">
                 <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-2 py-2 h-[96px]">
-                  <img src={CDN.emrBadge} alt={isEN ? "Insurance Compliant – Recognized by Swiss supplementary insurance" : "Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt"} className="h-9 w-auto object-contain pointer-events-none select-none" style={{ WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }} width={120} height={36} loading="lazy" decoding="async" draggable={false} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
+                  <img src={CDN.emrBadge} alt={isEN ? "Insurance Compliant – Recognized by Swiss supplementary insurance" : "Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt"} className="h-9 w-auto object-contain pointer-events-none select-none mt-1" style={{ WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }} width={120} height={36} loading="lazy" decoding="async" draggable={false} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
                   <div className="text-center">
                     <div className="font-semibold text-[10.5px] text-foreground/95 leading-tight">{isEN ? "Insurance Compliant" : "Krankenkasse Konform"}</div>
                     <div className="text-[9px] text-muted-foreground">ZSR P609264</div>
                   </div>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-1.5 bg-secondary rounded-lg px-2 pt-2.5 pb-2 h-[96px]">
-                  <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-[46px] w-[46px] object-contain pointer-events-none select-none" style={{ filter: "brightness(1.28) contrast(1.22) saturate(1.17)", WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }} width={512} height={512} loading="lazy" decoding="async" draggable={false} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
+                  <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-[52px] w-[52px] object-contain pointer-events-none select-none" style={{ filter: "brightness(1.28) contrast(1.22) saturate(1.17)", WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }} width={512} height={512} loading="lazy" decoding="async" draggable={false} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
                   <div className="text-center">
                     <div className="font-semibold text-[10.5px] text-foreground/95 leading-[1.35] text-center">Lic. Psych.<br /><span className="text-[9.5px] tracking-[0.04em]">UNAM</span></div>
                   </div>
