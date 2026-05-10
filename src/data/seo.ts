@@ -2,8 +2,8 @@ export const pageSEO = {
   home: {
     titleDE: "Hypnose Zürich & Augsburg · 30.000+ Sitzungen · ★ 5.0",
     titleEN: "Hypnotherapy Zurich & Augsburg · 30,000+ Sessions · ★ 5.0",
-    descriptionDE: "Hypnose mit Lic. Psych. David J. Woods — 35+ Jahre Erfahrung, 30.000+ Sitzungen, 266 Google-Bewertungen ★ 5.0. Raucherentwöhnung, Ängste, Abnehmen, Stress. Praxen in Zürich & Augsburg. Kostenloses Erstgespräch.",
-    descriptionEN: "Hypnotherapy with Lic. Psych. David J. Woods — 35+ years experience, 30,000+ sessions, 266 Google reviews ★ 5.0. Quit smoking, anxiety, weight loss, stress. Practices in Zurich & Augsburg. Free discovery call.",
+    descriptionDE: "Rauchfrei, Abnehmen, Ängste & Panik, Stress & Burnout, psychologische Beratung sowie Hypnoseausbildungen mit David J. Woods.",
+    descriptionEN: "Quit smoking, weight loss, anxiety & panic, stress & burnout, psychological counseling and hypnotherapy training with David J. Woods.",
   },
   smoking: {
     titleDE: "Raucherentwöhnung Hypnose · Zürich & Augsburg · ★ 5.0",
