@@ -70,105 +70,72 @@ export default function UeberUns() {
         { name: isEN ? "About Us" : "Über uns", path: getPath("about", language, country) },
       ]} />
 
-      {/* HERO — Premium silver-grey banner with portrait integrated */}
+      {/* HERO — Compact premium executive profile (portrait + name + intro + stats unified) */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-6 md:py-8 lg:py-10">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] lg:grid-cols-[240px_1fr] gap-5 md:gap-7 items-center">
-              <div className="mx-auto md:mx-0 w-44 md:w-full">
-                <div className="border border-[#E8EDF3] rounded-2xl overflow-hidden">
+        <div className="container-main py-5 md:py-7">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-4 md:p-6">
+            <div className="grid grid-cols-1 md:grid-cols-[180px_1fr] lg:grid-cols-[200px_1fr_220px] gap-4 md:gap-5 lg:gap-6 items-stretch">
+              {/* Portrait */}
+              <div className="mx-auto md:mx-0 w-40 md:w-full">
+                <div className="border border-[#E8EDF3] rounded-2xl overflow-hidden h-full">
                   <img
                     src={davidPortrait}
                     alt="David J. Woods – Lic.Psych., Hypnotherapeut und NGH International Trainer"
-                    className="w-full h-auto object-cover"
+                    className="w-full h-full object-cover"
                     loading="eager"
                   />
                 </div>
               </div>
-              <div className="text-center md:text-left">
-                <p className="text-xs font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
+
+              {/* Name + intro */}
+              <div className="text-center md:text-left flex flex-col justify-center">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-1.5">
                   {isEN ? "About" : "Über"}
                 </p>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#1B3A5C] leading-tight mb-2 tracking-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-[32px] font-light text-[#1B3A5C] leading-[1.1] mb-1.5 tracking-tight">
                   David J. Woods
                 </h1>
-                <p className="text-sm md:text-base text-foreground/80 leading-snug mb-3">
+                <p className="text-[13px] md:text-sm text-foreground/75 leading-snug mb-2">
                   Lic.&nbsp;Psych. · {isEN ? "Hypnotherapist" : "Hypnotherapeut"} · NGH International Trainer · {isEN ? "Developer of Aktiv-Hypnose®" : "Entwickler der Aktiv-Hypnose®"}
                 </p>
-                <div className="flex items-center justify-center md:justify-start gap-1 mb-4">
+                <div className="flex items-center justify-center md:justify-start gap-1 mb-3">
                   {[1,2,3,4,5].map(i => <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />)}
                   <span className="text-xs text-muted-foreground ml-1">5.0 (266) · Google</span>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* INTRO + STATS — psychology-led, compact executive profile */}
-      <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
-        <div className="container-main py-6 md:py-9">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-            <div className="grid grid-cols-1 lg:grid-cols-[1.55fr_1fr] gap-6 lg:gap-8 items-stretch">
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-2">
-                  {isEN ? "Profile" : "Profil"}
-                </p>
-                <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-3 tracking-tight leading-snug">
+                <div className="hidden md:block h-px w-12 bg-[#1B3A5C]/20 mb-3" />
+                <h2 className="text-base md:text-lg font-medium text-[#1B3A5C] mb-1.5 tracking-tight leading-snug">
                   {isEN ? "Psychology, Depth & Modern Hypnosis" : "Psychologie, Tiefe & moderne Hypnose"}
                 </h2>
-                <p className="text-sm md:text-base text-foreground leading-relaxed mb-3">
+                <p className="text-[13.5px] md:text-sm text-foreground/85 leading-relaxed">
                   {isEN ? (
-                    <><strong className="text-[#1B3A5C] font-semibold">David J. Woods</strong> is a psychologically trained hypnosis specialist. His work integrates <strong className="text-[#1B3A5C] font-semibold">psychology</strong>, <strong className="text-[#1B3A5C] font-semibold">depth psychology</strong>, <strong className="text-[#1B3A5C] font-semibold">neurology</strong> and <strong className="text-[#1B3A5C] font-semibold">physiology</strong> with proven, modern hypnosis methods — direct, structured, results-oriented.</>
+                    <><strong className="text-[#1B3A5C] font-semibold">David J. Woods</strong> integrates <strong className="text-[#1B3A5C] font-semibold">psychology</strong>, <strong className="text-[#1B3A5C] font-semibold">neurology</strong> and <strong className="text-[#1B3A5C] font-semibold">physiology</strong> with modern hypnosis — direct, structured, results-oriented. Over <strong className="text-[#1B3A5C] font-semibold">35+ years</strong> of clinical practice and <strong className="text-[#1B3A5C] font-semibold">30,000+ sessions</strong> form the basis of his proprietary method <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong>.</>
                   ) : (
-                    <><strong className="text-[#1B3A5C] font-semibold">David J. Woods</strong> ist psychologisch ausgebildeter Hypnose-Spezialist. Seine Arbeit verbindet <strong className="text-[#1B3A5C] font-semibold">Psychologie</strong>, <strong className="text-[#1B3A5C] font-semibold">Tiefenpsychologie</strong>, <strong className="text-[#1B3A5C] font-semibold">Neurologie</strong> und <strong className="text-[#1B3A5C] font-semibold">Physiologie</strong> mit bewährten, modernen Hypnosemethoden — direkt, strukturiert, ergebnisorientiert.</>
-                  )}
-                </p>
-                <p className="text-sm md:text-base text-foreground leading-relaxed">
-                  {isEN ? (
-                    <>Über <strong className="text-[#1B3A5C] font-semibold">35+ years</strong> of clinical practice and more than <strong className="text-[#1B3A5C] font-semibold">30,000 sessions</strong> form the basis of his proprietary method <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong>. As an <strong className="text-[#1B3A5C] font-semibold">NGH International Trainer</strong>, he has trained over 2,500 hypnotists internationally. Hypnosis is used here as a precise tool within a psychologically grounded approach — not as show or stage hypnosis.</>
-                  ) : (
-                    <>Über <strong className="text-[#1B3A5C] font-semibold">35+ Jahre</strong> klinische Praxis und mehr als <strong className="text-[#1B3A5C] font-semibold">30.000 Sitzungen</strong> bilden die Grundlage seiner eigenständigen Methode <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong>. Als <strong className="text-[#1B3A5C] font-semibold">NGH International Trainer</strong> hat er über 2.500 Hypnotiseure international ausgebildet. Hypnose wird hier als präzises Werkzeug innerhalb eines psychologisch fundierten Ansatzes eingesetzt — nicht als Show- oder Bühnen-Hypnose.</>
+                    <><strong className="text-[#1B3A5C] font-semibold">David J. Woods</strong> verbindet <strong className="text-[#1B3A5C] font-semibold">Psychologie</strong>, <strong className="text-[#1B3A5C] font-semibold">Neurologie</strong> und <strong className="text-[#1B3A5C] font-semibold">Physiologie</strong> mit moderner Hypnose — direkt, strukturiert, ergebnisorientiert. Über <strong className="text-[#1B3A5C] font-semibold">35+ Jahre</strong> klinische Praxis und <strong className="text-[#1B3A5C] font-semibold">30.000+ Sitzungen</strong> bilden die Grundlage seiner Methode <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong>.</>
                   )}
                 </p>
                 {showCH && (
-                  <div className="hidden md:block mt-4 bg-[#E8F5E9] border border-[#81C784] rounded-xl p-3">
-                    <p className="text-sm font-semibold text-[#2E7D32]">EMR Krankenkasse Konform · ZSR Nr. P609264</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">Viele Schweizer Zusatzversicherungen übernehmen einen Teil der Kosten.</p>
+                  <div className="hidden md:block mt-3 bg-[#E8F5E9] border border-[#81C784] rounded-lg px-3 py-2">
+                    <p className="text-[12.5px] font-semibold text-[#2E7D32]">EMR Krankenkasse Konform · ZSR Nr. P609264</p>
                   </div>
                 )}
               </div>
 
-              {/* Stats — 2x2 mobile, balanced 1-column on desktop to fully fill right side */}
-              <div className="grid grid-cols-2 lg:grid-cols-1 gap-2.5 md:gap-3 lg:h-full lg:content-stretch">
-                <div className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-xl p-3 lg:p-4 text-center lg:text-left shadow-[0_2px_8px_rgba(27,58,92,0.04)] lg:flex lg:items-center lg:gap-4 lg:flex-1">
-                  <Award className="w-5 h-5 lg:w-7 lg:h-7 text-[#1B3A5C] mx-auto lg:mx-0 mb-1 lg:mb-0 flex-shrink-0" />
-                  <div>
-                    <p className="text-lg md:text-xl lg:text-2xl font-bold text-[#1B3A5C] leading-none">35+</p>
-                    <p className="text-[0.7rem] md:text-xs lg:text-sm text-muted-foreground mt-1">{isEN ? "Years Experience" : "Jahre Erfahrung"}</p>
+              {/* Stats — compact column on desktop */}
+              <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-2 lg:h-full">
+                {[
+                  { Icon: Award, val: "35+", label: isEN ? "Years Experience" : "Jahre Erfahrung" },
+                  { Icon: Users, val: "30.000+", label: isEN ? "Sessions" : "Sitzungen" },
+                  { Icon: GraduationCap, val: isEN ? "2,500+" : "2.500+", label: isEN ? "Trained Hypnotists" : "ausgeb. Hypnotiseure" },
+                  { Icon: Tv, val: "30+", label: isEN ? "TV & Media" : "TV & Medien" },
+                ].map(({ Icon, val, label }, i) => (
+                  <div key={i} className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-lg px-2.5 py-2 lg:py-2.5 text-center lg:text-left shadow-[0_1px_4px_rgba(27,58,92,0.04)] lg:flex lg:items-center lg:gap-2.5 lg:flex-1">
+                    <Icon className="w-4 h-4 lg:w-5 lg:h-5 text-[#1B3A5C] mx-auto lg:mx-0 mb-0.5 lg:mb-0 flex-shrink-0" strokeWidth={1.6} />
+                    <div>
+                      <p className="text-base lg:text-lg font-semibold text-[#1B3A5C] leading-none">{val}</p>
+                      <p className="text-[10px] lg:text-[11px] text-muted-foreground mt-0.5 leading-tight">{label}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-xl p-3 lg:p-4 text-center lg:text-left shadow-[0_2px_8px_rgba(27,58,92,0.04)] lg:flex lg:items-center lg:gap-4 lg:flex-1">
-                  <Users className="w-5 h-5 lg:w-7 lg:h-7 text-[#1B3A5C] mx-auto lg:mx-0 mb-1 lg:mb-0 flex-shrink-0" />
-                  <div>
-                    <p className="text-lg md:text-xl lg:text-2xl font-bold text-[#1B3A5C] leading-none">30.000+</p>
-                    <p className="text-[0.7rem] md:text-xs lg:text-sm text-muted-foreground mt-1">{isEN ? "Sessions" : "Sitzungen"}</p>
-                  </div>
-                </div>
-                <div className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-xl p-3 lg:p-4 text-center lg:text-left shadow-[0_2px_8px_rgba(27,58,92,0.04)] lg:flex lg:items-center lg:gap-4 lg:flex-1">
-                  <GraduationCap className="w-5 h-5 lg:w-7 lg:h-7 text-[#1B3A5C] mx-auto lg:mx-0 mb-1 lg:mb-0 flex-shrink-0" />
-                  <div>
-                    <p className="text-lg md:text-xl lg:text-2xl font-bold text-[#1B3A5C] leading-none">{isEN ? "2,500+" : "2.500+"}</p>
-                    <p className="text-[0.7rem] md:text-xs lg:text-sm text-muted-foreground mt-1">{isEN ? "Trained Hypnotists" : "ausgebildete Hypnotiseure"}</p>
-                  </div>
-                </div>
-                <div className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-xl p-3 lg:p-4 text-center lg:text-left shadow-[0_2px_8px_rgba(27,58,92,0.04)] lg:flex lg:items-center lg:gap-4 lg:flex-1">
-                  <Tv className="w-5 h-5 lg:w-7 lg:h-7 text-[#1B3A5C] mx-auto lg:mx-0 mb-1 lg:mb-0 flex-shrink-0" />
-                  <div>
-                    <p className="text-lg md:text-xl lg:text-2xl font-bold text-[#1B3A5C] leading-none">30+</p>
-                    <p className="text-[0.7rem] md:text-xs lg:text-sm text-muted-foreground mt-1">{isEN ? "TV & Media" : "TV- & Medienauftritte"}</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
