@@ -22,7 +22,7 @@ function BadgeCard({ children, label, info }: { children: ReactNode; label: Reac
       onClick={() => setOpen((o) => !o)}
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
-      className="group relative bg-white border border-[#E8EDF3] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center hover:shadow-md hover:border-[#D0DAE6] transition-all duration-300 flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px] select-none cursor-default"
+      className="group relative bg-white border border-[#E2E8EE] py-3.5 md:py-4 px-2.5 md:px-3 rounded-xl text-center shadow-[0_1px_2px_rgba(27,58,92,0.04)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.05),0_10px_24px_-8px_rgba(27,58,92,0.12)] hover:border-[#C8D2E0] hover:-translate-y-0.5 transition-all duration-300 flex flex-col items-center justify-between min-h-[108px] md:min-h-[128px] select-none cursor-default"
     >
       <div className="flex-1 flex items-center justify-center w-full">{children}</div>
       <h3 className="mt-2.5 md:mt-3 font-light text-[10px] md:text-xs text-[#1B3A5C] leading-tight tracking-tight select-none">{label}</h3>
