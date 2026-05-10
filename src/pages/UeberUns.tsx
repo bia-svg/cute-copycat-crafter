@@ -212,7 +212,7 @@ export default function UeberUns() {
                 {isEN ? "Professional Profile" : "Professionelles Profil"}
               </p>
               <h2 className="text-[17px] sm:text-2xl md:text-[28px] font-light text-[#1B3A5C] tracking-tight leading-tight">
-                {isEN ? "A Brief Overview of David J. Woods" : <>Ein kurzer Überblick zu <span className="whitespace-nowrap">David J. Woods</span></>}
+                {isEN ? <>A Brief Overview of <span className="whitespace-nowrap">David J. Woods</span></> : <>Ein kurzer Überblick zu <span className="whitespace-nowrap">David J. Woods</span></>}
               </h2>
               <div className="mx-auto mt-3 h-px w-12 bg-[#1B3A5C]/25" />
             </div>
