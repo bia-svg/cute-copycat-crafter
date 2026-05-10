@@ -58,13 +58,13 @@ export default function Ausbildung() {
   };
 
   /* ── Seminar Dates ── */
-  const datesCH = [
+  const datesCH: { date: string; location: string; status: "available" | "limited"; forceEarlyBird?: boolean }[] = [
     { date: "Mo-Sa, 15.-20. Juni 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "limited" as const },
     { date: "Mo-Sa, 07.-12. Sept. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const },
     { date: "Mo-Sa, 23.-28. Nov. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const },
   ];
-  const datesDE = [
-    { date: "Mo-Sa, 11.-16. Mai 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "limited" as const, forceEarlyBird: true },
+  const datesDE: { date: string; location: string; status: "available" | "limited"; forceEarlyBird?: boolean }[] = [
+    /* Archiviert: Mo-Sa, 11.-16. Mai 2026 — Hotel am Alten Park, Augsburg */
     { date: "Mo-Sa, 06.-11. Juli 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
     { date: "Mo-Sa, 14.-19. Sept. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
     { date: "Mo-Sa, 16.-21. Nov. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
