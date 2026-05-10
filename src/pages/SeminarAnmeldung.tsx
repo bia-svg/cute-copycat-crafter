@@ -236,8 +236,8 @@ export default function SeminarAnmeldung() {
         registrationNumber: regNumber || undefined,
         bookedPrice,
         priceType,
-        regularPrice: isDiscountAtBooking ? regularPrice : undefined,
-        savingsAmount,
+        regularPrice: undefined,
+        savingsAmount: undefined,
       }).catch(err => console.error("Email error:", err));
     } catch (err) {
       console.error("Lead save error:", err);
