@@ -237,26 +237,23 @@ export default function OnlineBeratung() {
                 </div>
               </>
             ) : (
-              <div className="rounded-2xl border border-[#E2E8EE] bg-[#f4f3ef] px-4 py-4 md:px-6 md:py-5 shadow-[0_4px_14px_-4px_rgba(27,58,92,0.10),inset_0_1px_0_rgba(255,255,255,0.6)]">
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-                  <div className="flex items-center gap-3 text-center sm:text-left">
-                    <span className="shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white text-[#2E7D32] border border-[#2E7D32]/25 shadow-[0_2px_8px_rgba(46,125,50,0.15)]">
-                      <CalendarDays className="w-6 h-6" strokeWidth={2} />
-                    </span>
-                    <p className="text-[12px] md:text-[13px] text-[#1B3A5C]/80 leading-snug max-w-sm">
-                      {isEN
-                        ? "Open the calendar to see available times"
-                        : "Kalender öffnen und verfügbare Zeiten sehen"}
+              <div className="rounded-2xl border border-[#E2E8EE] bg-[#f4f3ef] px-5 py-4 md:px-8 md:py-5 shadow-[0_2px_10px_-2px_rgba(27,58,92,0.06),inset_0_1px_0_rgba(255,255,255,0.5)]">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <span className="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_2px_6px_rgba(46,125,50,0.12)]">
+                    <CalendarDays className="w-5 h-5" strokeWidth={2} />
+                  </span>
+                  <div className="flex flex-col items-center gap-1.5">
+                    <button
+                      type="button"
+                      onClick={handleOpenCalendar}
+                      className="inline-flex items-center justify-center rounded-full bg-[#E8F5E9] hover:bg-[#C8E6C9] text-[#142b16] font-bold px-8 py-2.5 text-[12.5px] md:text-[13px] tracking-tight border border-[#2E7D32]/25 shadow-[0_4px_14px_rgba(46,125,50,0.28),0_0_0_1px_rgba(46,125,50,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.38),0_0_0_1px_rgba(46,125,50,0.12),inset_0_1px_0_rgba(255,255,255,0.7)] whitespace-nowrap transition-shadow"
+                    >
+                      {isEN ? "Open calendar" : "Kalender öffnen"}
+                    </button>
+                    <p className="text-[11px] md:text-[11.5px] text-[#1B3A5C]/50 tracking-tight">
+                      {isEN ? "To find your preferred appointment" : "Um Ihren gewünschten Termin zu finden"}
                     </p>
                   </div>
-                  <button
-                    type="button"
-                    onClick={handleOpenCalendar}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#E8F5E9] hover:bg-[#C8E6C9] text-[#1B3A1F] font-semibold px-5 py-2.5 text-[12.5px] md:text-[13px] tracking-tight border border-[#2E7D32]/30 shadow-[0_4px_14px_rgba(46,125,50,0.28),0_0_0_1px_rgba(46,125,50,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.38),0_0_0_1px_rgba(46,125,50,0.12),inset_0_1px_0_rgba(255,255,255,0.7)] whitespace-nowrap transition-shadow"
-                  >
-                    <CalendarDays className="w-4 h-4" strokeWidth={2} />
-                    {isEN ? "Open calendar" : "Kalender öffnen"}
-                  </button>
                 </div>
               </div>
             )}
