@@ -387,21 +387,38 @@ export default function SeminarAnmeldung() {
                           </div>
                           {/* Price display */}
                           <div className="mt-2 pt-2 border-t border-border/30">
-                            <div className="flex items-center justify-between sm:justify-start sm:gap-3">
-                              <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]/70">
-                                <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
-                                <span className="text-[15px] font-normal tracking-tight">{seminarCountry === "ch" ? "2.490.–" : "2.490,–"}</span>
-                              </span>
-                              {isLimited ? (
-                                <span className="text-[9px] font-normal text-[#E65100] bg-[#FFF3E0]/60 px-1.5 py-[3px] rounded-full border border-[#E65100]/8">
-                                  {isEN ? "Limited seats!" : "Letzte Plätze!"}
+                            {isLimited ? (
+                              <div className="flex items-center justify-between sm:justify-start sm:gap-3 flex-wrap">
+                                <div className="flex items-baseline gap-2">
+                                  <span className="inline-flex items-baseline gap-0.5 text-xs text-muted-foreground/70 line-through">
+                                    <span className="text-[10px] font-normal">{seminarCountry === "ch" ? "CHF" : "€"}</span>
+                                    <span className="font-normal">{seminarCountry === "ch" ? "2.490.–" : "2.490,–"}</span>
+                                  </span>
+                                  <span className="inline-flex items-baseline gap-0.5 text-[#2E7D32]">
+                                    <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
+                                    <span className="text-[15px] font-semibold tracking-tight">{seminarCountry === "ch" ? "2.290.–" : "2.290,–"}</span>
+                                  </span>
+                                </div>
+                                <div className="flex items-center gap-1">
+                                  <span className="text-[9px] font-semibold text-[#2E7D32] bg-[#E8F5E9]/80 px-1.5 py-[3px] rounded-full border border-[#2E7D32]/15">
+                                    {isEN ? "Save 200.–" : "200.– sparen"}
+                                  </span>
+                                  <span className="text-[9px] font-normal text-[#E65100] bg-[#FFF3E0]/60 px-1.5 py-[3px] rounded-full border border-[#E65100]/8">
+                                    {isEN ? "Limited seats!" : "Letzte Plätze!"}
+                                  </span>
+                                </div>
+                              </div>
+                            ) : (
+                              <div className="flex items-center justify-between sm:justify-start sm:gap-3">
+                                <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]/70">
+                                  <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
+                                  <span className="text-[15px] font-normal tracking-tight">{seminarCountry === "ch" ? "2.490.–" : "2.490,–"}</span>
                                 </span>
-                              ) : (
                                 <span className="text-[10px] font-normal px-1.5 py-[3px] rounded-full bg-[#E8F5E9]/60 text-[#2E7D32] border border-[#2E7D32]/8">
                                   {isEN ? "Available" : "Verfügbar"}
                                 </span>
-                              )}
-                            </div>
+                              </div>
+                            )}
                           </div>
                         </button>
                         );
