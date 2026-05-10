@@ -514,7 +514,7 @@ export default function Home() {
                     <div className="text-[9px] text-muted-foreground">ZSR P609264</div>
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-center gap-1.5 bg-secondary rounded-lg px-2 pt-2.5 pb-3 h-[96px]">
+                <div className="flex flex-col items-center justify-center gap-1.5 bg-secondary rounded-lg px-2 pt-2.5 pb-2 h-[96px]">
                   <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-[46px] w-[46px] object-contain pointer-events-none select-none" style={{ filter: "brightness(1.28) contrast(1.22) saturate(1.17)", WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }} width={512} height={512} loading="lazy" decoding="async" draggable={false} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
                   <div className="text-center">
                     <div className="font-semibold text-[10.5px] text-foreground/95 leading-[1.35] text-center">Lic. Psych.<br /><span className="text-[9.5px] tracking-[0.04em]">UNAM</span></div>
