@@ -203,13 +203,11 @@ export default function SeminarAnmeldung() {
 
       // Fire notifications in background
       supabase.functions.invoke("notify-lead", { body: { lead: leadData } }).catch(err => console.error("Slack error:", err));
-      // Determine pricing at time of booking
-      const isDiscountAtBooking = selectedDateObj?.status === "limited";
+      // Einheitlicher Preis 2.490 für alle Seminare
       const isCH = seminarCountry === "ch";
-      const bookedPrice = isDiscountAtBooking ? (isCH ? "CHF 2.490.-" : "€2.490,-") : (isCH ? "CHF 2.790.-" : "€2.790,-");
-      const priceType = isDiscountAtBooking ? "Rabattpreis" : "Regulärer Preis";
-      const regularPrice = isCH ? "CHF 2.790.-" : "€2.790,-";
-      const savingsAmount = isDiscountAtBooking ? (isCH ? "CHF 300" : "€300") : undefined;
+      const bookedPrice = isCH ? "CHF 2.490.-" : "€2.490,-";
+      const priceType = "Regulärer Preis";
+      const regularPrice = isCH ? "CHF 2.490.-" : "€2.490,-";
 
       sendLeadEmails({
         name: leadData.name,
@@ -238,8 +236,8 @@ export default function SeminarAnmeldung() {
         registrationNumber: regNumber || undefined,
         bookedPrice,
         priceType,
-        regularPrice: isDiscountAtBooking ? regularPrice : undefined,
-        savingsAmount,
+        regularPrice: undefined,
+        savingsAmount: undefined,
       }).catch(err => console.error("Email error:", err));
     } catch (err) {
       console.error("Lead save error:", err);
@@ -385,38 +383,21 @@ export default function SeminarAnmeldung() {
                           </div>
                           {/* Price display */}
                           <div className="mt-2 pt-2 border-t border-border/30">
-                            {isLimited ? (
-                              <div className="flex items-center justify-between sm:justify-start sm:gap-3">
-                                <div className="flex items-baseline gap-2">
-                                  <span className="inline-flex items-baseline gap-0.5 text-xs text-muted-foreground/70 line-through">
-                                    <span className="text-[10px] font-normal">{seminarCountry === "ch" ? "CHF" : "€"}</span>
-                                    <span className="font-normal">{seminarCountry === "ch" ? "2.790.–" : "2.790,–"}</span>
-                                  </span>
-                                  <span className="inline-flex items-baseline gap-0.5 text-[#2E7D32]/80">
-                                    <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
-                                    <span className="text-[15px] font-normal tracking-tight">{seminarCountry === "ch" ? "2.490.–" : "2.490,–"}</span>
-                                  </span>
-                                </div>
-                                <div className="flex items-center gap-1">
-                                  <span className="text-[9px] font-normal text-[#2E7D32] bg-[#E8F5E9]/60 px-1.5 py-[3px] rounded-full border border-[#2E7D32]/8">
-                                    {isEN ? `Save ${savings}` : `${savings} sparen`}
-                                  </span>
-                                  <span className="text-[9px] font-normal text-[#E65100] bg-[#FFF3E0]/60 px-1.5 py-[3px] rounded-full border border-[#E65100]/8">
-                                    {isEN ? "Limited seats!" : "Letzte Plätze!"}
-                                  </span>
-                                </div>
-                              </div>
-                            ) : (
-                              <div className="flex items-center justify-between sm:justify-start sm:gap-3">
-                                <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]/70">
-                                  <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
-                                  <span className="text-[15px] font-normal tracking-tight">{seminarCountry === "ch" ? "2.790.–" : "2.790,–"}</span>
+                            <div className="flex items-center justify-between sm:justify-start sm:gap-3">
+                              <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]/70">
+                                <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
+                                <span className="text-[15px] font-normal tracking-tight">{seminarCountry === "ch" ? "2.490.–" : "2.490,–"}</span>
+                              </span>
+                              {isLimited ? (
+                                <span className="text-[9px] font-normal text-[#E65100] bg-[#FFF3E0]/60 px-1.5 py-[3px] rounded-full border border-[#E65100]/8">
+                                  {isEN ? "Limited seats!" : "Letzte Plätze!"}
                                 </span>
+                              ) : (
                                 <span className="text-[10px] font-normal px-1.5 py-[3px] rounded-full bg-[#E8F5E9]/60 text-[#2E7D32] border border-[#2E7D32]/8">
                                   {isEN ? "Available" : "Verfügbar"}
                                 </span>
-                              </div>
-                            )}
+                              )}
+                            </div>
                           </div>
                         </button>
                         );
