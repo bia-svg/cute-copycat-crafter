@@ -105,29 +105,31 @@ export default function UeberUns() {
         </div>
       </section>
 
-      {/* INTRO + STATS — text left, badges right, soft silver background */}
+      {/* INTRO + STATS — psychology-led, compact executive profile */}
       <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
             <div className="grid grid-cols-1 lg:grid-cols-[1.55fr_1fr] gap-6 lg:gap-8 items-stretch">
               <div>
-                <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-3 tracking-tight">
-                  {isEN ? "Psychology, Depth & Modern Coaching" : "Psychologie, Tiefe & modernes Coaching"}
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-2">
+                  {isEN ? "Profile" : "Profil"}
+                </p>
+                <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-3 tracking-tight leading-snug">
+                  {isEN ? "Psychology, Depth & Modern Hypnosis" : "Psychologie, Tiefe & moderne Hypnose"}
                 </h2>
                 <p className="text-sm md:text-base text-foreground leading-relaxed mb-3">
-                  {isEN
-                    ? "David J. Woods combines psychological expertise, physiological depth, and modern coaching techniques into a method that works: clear, efficient, and solution-oriented. Instead of superficial motivation, it's about real inner strength, mental stability, and conscious self-leadership."
-                    : "David J. Woods vereint psychologisches Fachwissen, physiologische Tiefe und moderne Coaching-Techniken zu einer Methode, die wirkt: klar, effizient und lösungsorientiert. Statt oberflächlicher Motivation geht es um echte innere Stärke, mentale Stabilität und bewusste Selbstführung."}
-                </p>
-                <p className="text-sm md:text-base text-foreground leading-relaxed mb-3">
-                  {isEN
-                    ? "With over 35+ years of experience and more than 30,000 sessions, he is among the most experienced hypnotherapists in the DACH region. As an NGH International Trainer and developer of the Aktiv-Hypnose© method, he has supported thousands of people in achieving lasting change."
-                    : "Mit über 35+ Jahren Erfahrung und mehr als 30.000 Sitzungen gehört er zu den erfahrensten Hypnotherapeuten im DACH-Raum. Als NGH International Trainer und Entwickler der Aktiv-Hypnose© Methode hat er Tausenden von Menschen geholfen, nachhaltige Veränderung zu erreichen."}
+                  {isEN ? (
+                    <><strong className="text-[#1B3A5C] font-semibold">David J. Woods</strong> is a psychologically trained hypnosis specialist. His work integrates <strong className="text-[#1B3A5C] font-semibold">psychology</strong>, <strong className="text-[#1B3A5C] font-semibold">depth psychology</strong>, <strong className="text-[#1B3A5C] font-semibold">neurology</strong> and <strong className="text-[#1B3A5C] font-semibold">physiology</strong> with proven, modern hypnosis methods — direct, structured, results-oriented.</>
+                  ) : (
+                    <><strong className="text-[#1B3A5C] font-semibold">David J. Woods</strong> ist psychologisch ausgebildeter Hypnose-Spezialist. Seine Arbeit verbindet <strong className="text-[#1B3A5C] font-semibold">Psychologie</strong>, <strong className="text-[#1B3A5C] font-semibold">Tiefenpsychologie</strong>, <strong className="text-[#1B3A5C] font-semibold">Neurologie</strong> und <strong className="text-[#1B3A5C] font-semibold">Physiologie</strong> mit bewährten, modernen Hypnosemethoden — direkt, strukturiert, ergebnisorientiert.</>
+                  )}
                 </p>
                 <p className="text-sm md:text-base text-foreground leading-relaxed">
-                  {isEN
-                    ? "His approach is based on the conviction that real change begins in the subconscious — whether stopping smoking, overcoming anxiety, weight management or stress reduction."
-                    : "Sein Ansatz basiert auf der Überzeugung, dass echte Veränderung im Unterbewusstsein beginnt – ob Raucherentwöhnung, Angstbewältigung, Gewichtsmanagement oder Stressreduktion."}
+                  {isEN ? (
+                    <>Über <strong className="text-[#1B3A5C] font-semibold">35+ years</strong> of clinical practice and more than <strong className="text-[#1B3A5C] font-semibold">30,000 sessions</strong> form the basis of his proprietary method <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong>. As an <strong className="text-[#1B3A5C] font-semibold">NGH International Trainer</strong>, he has trained over 2,500 hypnotists internationally. Hypnosis is used here as a precise tool within a psychologically grounded approach — not as show or stage hypnosis.</>
+                  ) : (
+                    <>Über <strong className="text-[#1B3A5C] font-semibold">35+ Jahre</strong> klinische Praxis und mehr als <strong className="text-[#1B3A5C] font-semibold">30.000 Sitzungen</strong> bilden die Grundlage seiner eigenständigen Methode <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong>. Als <strong className="text-[#1B3A5C] font-semibold">NGH International Trainer</strong> hat er über 2.500 Hypnotiseure international ausgebildet. Hypnose wird hier als präzises Werkzeug innerhalb eines psychologisch fundierten Ansatzes eingesetzt — nicht als Show- oder Bühnen-Hypnose.</>
+                  )}
                 </p>
                 {showCH && (
                   <div className="hidden md:block mt-4 bg-[#E8F5E9] border border-[#81C784] rounded-xl p-3">
