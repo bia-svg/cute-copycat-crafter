@@ -53,7 +53,7 @@ import licPsychSeal from "@/assets/lic-psych-seal.png";
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Award, BookOpen, Tv, Users, Star, Globe, GraduationCap, Sparkles } from "lucide-react";
+import { Award, BookOpen, Tv, Users, Star, Globe, GraduationCap } from "lucide-react";
 
 export default function UeberUns() {
   const { language, country, isSwiss, showCH } = useLanguage();
