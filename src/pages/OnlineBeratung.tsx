@@ -239,18 +239,18 @@ export default function OnlineBeratung() {
             ) : (
               <div className="rounded-2xl border border-[#E2E8EE] bg-[#f4f3ef] px-5 py-4 md:px-8 md:py-5 shadow-[0_2px_10px_-2px_rgba(27,58,92,0.06),inset_0_1px_0_rgba(255,255,255,0.5)]">
                 <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:items-center sm:gap-4 md:gap-5">
-                  <span className="shrink-0 inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_2px_6px_rgba(46,125,50,0.12)]">
-                    <CalendarDays className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" strokeWidth={2} />
+                  <span className="shrink-0 inline-flex items-center justify-center w-10 h-10 sm:w-[52px] sm:h-[52px] rounded-xl bg-white text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_2px_6px_rgba(46,125,50,0.12)]">
+                    <CalendarDays className="w-5 h-5 sm:w-7 sm:h-7" strokeWidth={2} />
                   </span>
                   <div className="flex flex-col items-center gap-1 sm:flex-row sm:items-center sm:gap-2 md:gap-3">
                     <button
                       type="button"
                       onClick={handleOpenCalendar}
-                      className="inline-flex items-center justify-center rounded-full bg-[#E8F5E9] hover:bg-[#C8E6C9] text-[#142b16] font-bold px-8 py-2.5 text-[12.5px] md:text-[13px] tracking-tight border border-[#2E7D32]/25 shadow-[0_4px_14px_rgba(46,125,50,0.28),0_0_0_1px_rgba(46,125,50,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.38),0_0_0_1px_rgba(46,125,50,0.12),inset_0_1px_0_rgba(255,255,255,0.7)] whitespace-nowrap transition-shadow"
+                      className="inline-flex items-center justify-center rounded-full bg-[#E8F5E9] hover:bg-[#C8E6C9] text-[#142b16] font-bold px-8 py-2.5 text-[12.5px] sm:text-[13px] tracking-tight border border-[#2E7D32]/25 shadow-[0_4px_14px_rgba(46,125,50,0.28),0_0_0_1px_rgba(46,125,50,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.38),0_0_0_1px_rgba(46,125,50,0.12),inset_0_1px_0_rgba(255,255,255,0.7)] whitespace-nowrap transition-shadow"
                     >
                       {isEN ? "Open calendar" : "Kalender öffnen"}
                     </button>
-                    <p className="text-[11px] sm:text-[13px] md:text-[13.5px] text-[#1B3A5C]/50 sm:text-[#1B3A5C]/80 sm:font-medium tracking-tight sm:tracking-normal leading-snug">
+                    <p className="text-[11px] sm:text-[13.5px] text-[#1B3A5C]/50 sm:text-[#1B3A5C]/85 sm:font-medium tracking-tight sm:tracking-normal leading-snug">
                       {isEN ? "To find your preferred appointment" : "Um Ihren gewünschten Termin zu finden"}
                     </p>
                   </div>
