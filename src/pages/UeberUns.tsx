@@ -335,28 +335,41 @@ export default function UeberUns() {
         </div>
       </section>
 
-      {/* GOAL — A happy, conscious, free life — compacted */}
+      {/* GOAL — A happy, conscious, free life — concise */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#2E7D32] mb-1.5">
-              {isEN ? "The Goal:" : "Das Ziel:"}
-            </p>
-            <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-4 tracking-tight">
-              {isEN ? "A Happy, Conscious and Free Life" : "Ein glückliches, bewusstes und freies Leben"}
-            </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_240px] gap-5 lg:gap-7 items-start">
-              <p className="text-sm md:text-base text-foreground leading-relaxed">
-                {isEN
-                  ? "With his psychological and neuroscientific background, David Woods practices a very modern hypnosis approach and developed the 'Aktiv-Hypnose©'. He sees hypnosis as a simple but extremely effective tool to resolve problem situations and improve quality of life for his clients in the shortest time. His goal is to help people live more happily, consciously and freely. The successes are reported by television, newspapers and many clients on our website."
-                  : `Vor seinem psychologischen und neurowissenschaftlichen Hintergrund praktiziert David Woods einen sehr modernen Hypnose-Ansatz und entwickelte die „Aktiv-Hypnose©". Er betrachtet Hypnose als ein einfaches, aber extrem wirkungsvolles Werkzeug, um bei seinen Klienten in kürzester Zeit Problemsituationen aufzulösen und die Lebensqualität zu verbessern. Sein Ziel ist es, Menschen dabei zu helfen, ihr Leben glücklicher, bewusster und freier zu gestalten. Über die Erfolge berichten Fernsehsendungen, Zeitungen und viele Klienten auf unserer Website.`}
-              </p>
-              <div className="mx-auto lg:mx-0 w-52 lg:w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_220px] gap-6 lg:gap-8 items-center">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-2">
+                  {isEN ? "The Goal" : "Das Ziel"}
+                </p>
+                <h2 className="text-xl sm:text-2xl md:text-[26px] font-light text-[#1B3A5C] mb-3 tracking-tight leading-tight">
+                  {isEN ? "A Happy, Conscious and Free Life" : "Ein glückliches, bewusstes und freies Leben"}
+                </h2>
+                <p className="text-sm md:text-[15px] text-foreground leading-relaxed mb-4">
+                  {isEN ? (
+                    <>A psychologically and neuroscientifically grounded approach. <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong> as a precise tool to resolve patterns at their root — efficient, clear, lasting.</>
+                  ) : (
+                    <>Ein psychologisch und neurowissenschaftlich fundierter Ansatz. Die <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong> als präzises Werkzeug, um Muster an der Wurzel zu lösen — effizient, klar, nachhaltig.</>
+                  )}
+                </p>
+                <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-[13px] md:text-sm text-foreground/85">
+                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Clinical experience" : "Klinische Erfahrung"}</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Modern hypnosis methods" : "Moderne Hypnosemethoden"}</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Direct, proven approach" : "Direkter, bewährter Ansatz"}</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Lasting results" : "Nachhaltige Ergebnisse"}</li>
+                </ul>
+              </div>
+              <div className="mx-auto lg:mx-0 w-44 lg:w-full">
                 <ImageLightbox
                   src={diplomNGHCertified}
                   alt="NGH Certified Instructor — David Woods"
                   className="w-full h-auto border border-[#E8EDF3] rounded-xl"
                 />
+                <p className="mt-2 text-[11px] text-center text-muted-foreground tracking-wide">
+                  NGH Certified Instructor
+                </p>
               </div>
             </div>
           </div>
