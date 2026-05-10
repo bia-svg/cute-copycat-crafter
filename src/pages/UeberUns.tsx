@@ -70,105 +70,72 @@ export default function UeberUns() {
         { name: isEN ? "About Us" : "Über uns", path: getPath("about", language, country) },
       ]} />
 
-      {/* HERO — Premium silver-grey banner with portrait integrated */}
+      {/* HERO — Compact premium executive profile (portrait + name + intro + stats unified) */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-6 md:py-8 lg:py-10">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] lg:grid-cols-[240px_1fr] gap-5 md:gap-7 items-center">
-              <div className="mx-auto md:mx-0 w-44 md:w-full">
-                <div className="border border-[#E8EDF3] rounded-2xl overflow-hidden">
+        <div className="container-main py-5 md:py-7">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-4 md:p-6">
+            <div className="grid grid-cols-1 md:grid-cols-[180px_1fr] lg:grid-cols-[200px_1fr_220px] gap-4 md:gap-5 lg:gap-6 items-stretch">
+              {/* Portrait */}
+              <div className="mx-auto md:mx-0 w-40 md:w-full">
+                <div className="border border-[#E8EDF3] rounded-2xl overflow-hidden h-full">
                   <img
                     src={davidPortrait}
                     alt="David J. Woods – Lic.Psych., Hypnotherapeut und NGH International Trainer"
-                    className="w-full h-auto object-cover"
+                    className="w-full h-full object-cover"
                     loading="eager"
                   />
                 </div>
               </div>
-              <div className="text-center md:text-left">
-                <p className="text-xs font-medium text-[#2E7D32] uppercase tracking-wider mb-2">
+
+              {/* Name + intro */}
+              <div className="text-center md:text-left flex flex-col justify-center">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-1.5">
                   {isEN ? "About" : "Über"}
                 </p>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#1B3A5C] leading-tight mb-2 tracking-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-[32px] font-light text-[#1B3A5C] leading-[1.1] mb-1.5 tracking-tight">
                   David J. Woods
                 </h1>
-                <p className="text-sm md:text-base text-foreground/80 leading-snug mb-3">
+                <p className="text-[13px] md:text-sm text-foreground/75 leading-snug mb-2">
                   Lic.&nbsp;Psych. · {isEN ? "Hypnotherapist" : "Hypnotherapeut"} · NGH International Trainer · {isEN ? "Developer of Aktiv-Hypnose®" : "Entwickler der Aktiv-Hypnose®"}
                 </p>
-                <div className="flex items-center justify-center md:justify-start gap-1 mb-4">
+                <div className="flex items-center justify-center md:justify-start gap-1 mb-3">
                   {[1,2,3,4,5].map(i => <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />)}
                   <span className="text-xs text-muted-foreground ml-1">5.0 (266) · Google</span>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* INTRO + STATS — psychology-led, compact executive profile */}
-      <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
-        <div className="container-main py-6 md:py-9">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-            <div className="grid grid-cols-1 lg:grid-cols-[1.55fr_1fr] gap-6 lg:gap-8 items-stretch">
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-2">
-                  {isEN ? "Profile" : "Profil"}
-                </p>
-                <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-3 tracking-tight leading-snug">
+                <div className="hidden md:block h-px w-12 bg-[#1B3A5C]/20 mb-3" />
+                <h2 className="text-base md:text-lg font-medium text-[#1B3A5C] mb-1.5 tracking-tight leading-snug">
                   {isEN ? "Psychology, Depth & Modern Hypnosis" : "Psychologie, Tiefe & moderne Hypnose"}
                 </h2>
-                <p className="text-sm md:text-base text-foreground leading-relaxed mb-3">
+                <p className="text-[13.5px] md:text-sm text-foreground/85 leading-relaxed">
                   {isEN ? (
-                    <><strong className="text-[#1B3A5C] font-semibold">David J. Woods</strong> is a psychologically trained hypnosis specialist. His work integrates <strong className="text-[#1B3A5C] font-semibold">psychology</strong>, <strong className="text-[#1B3A5C] font-semibold">depth psychology</strong>, <strong className="text-[#1B3A5C] font-semibold">neurology</strong> and <strong className="text-[#1B3A5C] font-semibold">physiology</strong> with proven, modern hypnosis methods — direct, structured, results-oriented.</>
+                    <><strong className="text-[#1B3A5C] font-semibold">David J. Woods</strong> integrates <strong className="text-[#1B3A5C] font-semibold">psychology</strong>, <strong className="text-[#1B3A5C] font-semibold">neurology</strong> and <strong className="text-[#1B3A5C] font-semibold">physiology</strong> with modern hypnosis — direct, structured, results-oriented. Over <strong className="text-[#1B3A5C] font-semibold">35+ years</strong> of clinical practice and <strong className="text-[#1B3A5C] font-semibold">30,000+ sessions</strong> form the basis of his proprietary method <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong>.</>
                   ) : (
-                    <><strong className="text-[#1B3A5C] font-semibold">David J. Woods</strong> ist psychologisch ausgebildeter Hypnose-Spezialist. Seine Arbeit verbindet <strong className="text-[#1B3A5C] font-semibold">Psychologie</strong>, <strong className="text-[#1B3A5C] font-semibold">Tiefenpsychologie</strong>, <strong className="text-[#1B3A5C] font-semibold">Neurologie</strong> und <strong className="text-[#1B3A5C] font-semibold">Physiologie</strong> mit bewährten, modernen Hypnosemethoden — direkt, strukturiert, ergebnisorientiert.</>
-                  )}
-                </p>
-                <p className="text-sm md:text-base text-foreground leading-relaxed">
-                  {isEN ? (
-                    <>Über <strong className="text-[#1B3A5C] font-semibold">35+ years</strong> of clinical practice and more than <strong className="text-[#1B3A5C] font-semibold">30,000 sessions</strong> form the basis of his proprietary method <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong>. As an <strong className="text-[#1B3A5C] font-semibold">NGH International Trainer</strong>, he has trained over 2,500 hypnotists internationally. Hypnosis is used here as a precise tool within a psychologically grounded approach — not as show or stage hypnosis.</>
-                  ) : (
-                    <>Über <strong className="text-[#1B3A5C] font-semibold">35+ Jahre</strong> klinische Praxis und mehr als <strong className="text-[#1B3A5C] font-semibold">30.000 Sitzungen</strong> bilden die Grundlage seiner eigenständigen Methode <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong>. Als <strong className="text-[#1B3A5C] font-semibold">NGH International Trainer</strong> hat er über 2.500 Hypnotiseure international ausgebildet. Hypnose wird hier als präzises Werkzeug innerhalb eines psychologisch fundierten Ansatzes eingesetzt — nicht als Show- oder Bühnen-Hypnose.</>
+                    <><strong className="text-[#1B3A5C] font-semibold">David J. Woods</strong> verbindet <strong className="text-[#1B3A5C] font-semibold">Psychologie</strong>, <strong className="text-[#1B3A5C] font-semibold">Neurologie</strong> und <strong className="text-[#1B3A5C] font-semibold">Physiologie</strong> mit moderner Hypnose — direkt, strukturiert, ergebnisorientiert. Über <strong className="text-[#1B3A5C] font-semibold">35+ Jahre</strong> klinische Praxis und <strong className="text-[#1B3A5C] font-semibold">30.000+ Sitzungen</strong> bilden die Grundlage seiner Methode <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong>.</>
                   )}
                 </p>
                 {showCH && (
-                  <div className="hidden md:block mt-4 bg-[#E8F5E9] border border-[#81C784] rounded-xl p-3">
-                    <p className="text-sm font-semibold text-[#2E7D32]">EMR Krankenkasse Konform · ZSR Nr. P609264</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">Viele Schweizer Zusatzversicherungen übernehmen einen Teil der Kosten.</p>
+                  <div className="hidden md:block mt-3 bg-[#E8F5E9] border border-[#81C784] rounded-lg px-3 py-2">
+                    <p className="text-[12.5px] font-semibold text-[#2E7D32]">EMR Krankenkasse Konform · ZSR Nr. P609264</p>
                   </div>
                 )}
               </div>
 
-              {/* Stats — 2x2 mobile, balanced 1-column on desktop to fully fill right side */}
-              <div className="grid grid-cols-2 lg:grid-cols-1 gap-2.5 md:gap-3 lg:h-full lg:content-stretch">
-                <div className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-xl p-3 lg:p-4 text-center lg:text-left shadow-[0_2px_8px_rgba(27,58,92,0.04)] lg:flex lg:items-center lg:gap-4 lg:flex-1">
-                  <Award className="w-5 h-5 lg:w-7 lg:h-7 text-[#1B3A5C] mx-auto lg:mx-0 mb-1 lg:mb-0 flex-shrink-0" />
-                  <div>
-                    <p className="text-lg md:text-xl lg:text-2xl font-bold text-[#1B3A5C] leading-none">35+</p>
-                    <p className="text-[0.7rem] md:text-xs lg:text-sm text-muted-foreground mt-1">{isEN ? "Years Experience" : "Jahre Erfahrung"}</p>
+              {/* Stats — compact column on desktop */}
+              <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-2 lg:h-full">
+                {[
+                  { Icon: Award, val: "35+", label: isEN ? "Years Experience" : "Jahre Erfahrung" },
+                  { Icon: Users, val: "30.000+", label: isEN ? "Sessions" : "Sitzungen" },
+                  { Icon: GraduationCap, val: isEN ? "2,500+" : "2.500+", label: isEN ? "Trained Hypnotists" : "ausgeb. Hypnotiseure" },
+                  { Icon: Tv, val: "30+", label: isEN ? "TV & Media" : "TV & Medien" },
+                ].map(({ Icon, val, label }, i) => (
+                  <div key={i} className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-lg px-2.5 py-2 lg:py-2.5 text-center lg:text-left shadow-[0_1px_4px_rgba(27,58,92,0.04)] lg:flex lg:items-center lg:gap-2.5 lg:flex-1">
+                    <Icon className="w-4 h-4 lg:w-5 lg:h-5 text-[#1B3A5C] mx-auto lg:mx-0 mb-0.5 lg:mb-0 flex-shrink-0" strokeWidth={1.6} />
+                    <div>
+                      <p className="text-base lg:text-lg font-semibold text-[#1B3A5C] leading-none">{val}</p>
+                      <p className="text-[10px] lg:text-[11px] text-muted-foreground mt-0.5 leading-tight">{label}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-xl p-3 lg:p-4 text-center lg:text-left shadow-[0_2px_8px_rgba(27,58,92,0.04)] lg:flex lg:items-center lg:gap-4 lg:flex-1">
-                  <Users className="w-5 h-5 lg:w-7 lg:h-7 text-[#1B3A5C] mx-auto lg:mx-0 mb-1 lg:mb-0 flex-shrink-0" />
-                  <div>
-                    <p className="text-lg md:text-xl lg:text-2xl font-bold text-[#1B3A5C] leading-none">30.000+</p>
-                    <p className="text-[0.7rem] md:text-xs lg:text-sm text-muted-foreground mt-1">{isEN ? "Sessions" : "Sitzungen"}</p>
-                  </div>
-                </div>
-                <div className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-xl p-3 lg:p-4 text-center lg:text-left shadow-[0_2px_8px_rgba(27,58,92,0.04)] lg:flex lg:items-center lg:gap-4 lg:flex-1">
-                  <GraduationCap className="w-5 h-5 lg:w-7 lg:h-7 text-[#1B3A5C] mx-auto lg:mx-0 mb-1 lg:mb-0 flex-shrink-0" />
-                  <div>
-                    <p className="text-lg md:text-xl lg:text-2xl font-bold text-[#1B3A5C] leading-none">{isEN ? "2,500+" : "2.500+"}</p>
-                    <p className="text-[0.7rem] md:text-xs lg:text-sm text-muted-foreground mt-1">{isEN ? "Trained Hypnotists" : "ausgebildete Hypnotiseure"}</p>
-                  </div>
-                </div>
-                <div className="bg-gradient-to-br from-white to-[#F1F4F7] border border-[#E8EDF3] rounded-xl p-3 lg:p-4 text-center lg:text-left shadow-[0_2px_8px_rgba(27,58,92,0.04)] lg:flex lg:items-center lg:gap-4 lg:flex-1">
-                  <Tv className="w-5 h-5 lg:w-7 lg:h-7 text-[#1B3A5C] mx-auto lg:mx-0 mb-1 lg:mb-0 flex-shrink-0" />
-                  <div>
-                    <p className="text-lg md:text-xl lg:text-2xl font-bold text-[#1B3A5C] leading-none">30+</p>
-                    <p className="text-[0.7rem] md:text-xs lg:text-sm text-muted-foreground mt-1">{isEN ? "TV & Media" : "TV- & Medienauftritte"}</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -233,21 +200,23 @@ export default function UeberUns() {
             </div>
 
 
-            {/* Bekannt aus — full color, more visible */}
-            <div className="bg-white border border-[#E8EDF3] rounded-2xl p-4">
+            {/* Bekannt aus — premium auto-scroll marquee */}
+            <div className="bg-white border border-[#E8EDF3] rounded-2xl px-4 py-4">
               <p className="text-xs font-semibold uppercase tracking-wider text-[#1B3A5C] mb-3 text-center">
                 {isEN ? "As Seen On" : "Bekannt aus"}
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-                {CDN.bekanntAus.map((src, i) => (
-                  <img
-                    key={i}
-                    src={src}
-                    alt={`David J. Woods bekannt aus TV und Medien – Logo ${i + 1}`}
-                    className="h-8 sm:h-10 w-auto opacity-100 hover:scale-105 transition-transform"
-                    loading="lazy"
-                  />
-                ))}
+              <div className="marquee-mask marquee-pause overflow-hidden">
+                <div className="marquee-track flex items-center gap-x-12 w-max">
+                  {[...CDN.bekanntAus, ...CDN.bekanntAus].map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt={`David J. Woods bekannt aus TV und Medien – Logo ${(i % CDN.bekanntAus.length) + 1}`}
+                      className="h-9 sm:h-10 w-auto object-contain shrink-0"
+                      loading="lazy"
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -269,114 +238,86 @@ export default function UeberUns() {
               <div className="mx-auto mt-3 h-px w-12 bg-[#1B3A5C]/25" />
             </div>
 
-            {/* Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 auto-rows-fr">
-              {[
-                {
-                  num: "01",
-                  icon: Globe,
-                  accent: "#1B3A5C",
-                  tint: "bg-[#EEF2F7]",
-                  title: isEN ? "International Background" : "Internationaler Werdegang",
-                  body: isEN ? (
-                    <>Born in London. Studied psychology at <strong className="text-[#1B3A5C] font-semibold">UNAM</strong> (Mexico), in <strong className="text-[#1B3A5C] font-semibold">Boston</strong>, <strong className="text-[#1B3A5C] font-semibold">San Francisco</strong> and <strong className="text-[#1B3A5C] font-semibold">Cambridge</strong>, followed by international training as hypnotist and trainer. Today active in <strong className="text-[#1B3A5C] font-semibold">Germany</strong>, <strong className="text-[#1B3A5C] font-semibold">Switzerland</strong> and internationally — including <strong className="text-[#1B3A5C] font-semibold">Dubai</strong>.</>
-                  ) : (
-                    <>Geboren in London. Psychologiestudium an der <strong className="text-[#1B3A5C] font-semibold">UNAM</strong> (Mexiko) sowie in <strong className="text-[#1B3A5C] font-semibold">Boston</strong>, <strong className="text-[#1B3A5C] font-semibold">San Francisco</strong> und <strong className="text-[#1B3A5C] font-semibold">Cambridge</strong>, gefolgt von internationalen Ausbildungen zum Hypnotiseur und Trainer. Heute tätig in <strong className="text-[#1B3A5C] font-semibold">Deutschland</strong>, der <strong className="text-[#1B3A5C] font-semibold">Schweiz</strong> und international — u.a. in <strong className="text-[#1B3A5C] font-semibold">Dubai</strong>.</>
-                  ),
-                },
-                {
-                  num: "02",
-                  icon: GraduationCap,
-                  accent: "#1B3A5C",
-                  tint: "bg-[#EEF2F7]",
-                  title: isEN ? "Training across 3 Continents" : "Ausbildung auf 3 Kontinenten",
-                  body: isEN ? (
-                    <>Several years of practical training in hypnosis institutes across <strong className="text-[#1B3A5C] font-semibold">3 continents</strong> — South America, England and Germany. Fluent in German, English and Spanish, combining international practical knowledge in one person.</>
-                  ) : (
-                    <>Mehrjährige praktische Ausbildung in Hypnose-Instituten auf <strong className="text-[#1B3A5C] font-semibold">3 Kontinenten</strong> — Südamerika, England und Deutschland. Spricht fließend Deutsch, Englisch und Spanisch und vereint internationales Praxiswissen in einer Person.</>
-                  ),
-                },
-                {
-                  num: "03",
-                  icon: Award,
-                  accent: "#2E7D32",
-                  tint: "bg-[#ECF3EE]",
-                  title: isEN ? "NGH Certified Trainer" : "Zertifizierter NGH-Ausbilder",
-                  body: isEN ? (
-                    <>Certified <strong className="text-[#1B3A5C] font-semibold">NGH-Trainer</strong> of the National Guild of Hypnotists — the world's largest hypnosis association. Trains participants in his Aktiv-Hypnose© method to become certified "Therapists in Aktiv-Hypnose©" in Augsburg and near Zurich.</>
-                  ) : (
-                    <>Zertifizierter <strong className="text-[#1B3A5C] font-semibold">NGH-Ausbilder</strong> der National Guild of Hypnotists – des weltweit größten Hypnose-Verbands. Bildet Teilnehmer in seiner Aktiv-Hypnose© Methode zu „Therapeuten in Aktiv-Hypnose©" aus – in Augsburg und bei Zürich.</>
-                  ),
-                },
-              ].map((card, i) => {
-                const Icon = card.icon;
-                return (
-                  <article
-                    key={i}
-                    className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]"
-                  >
-                    <span className="absolute top-5 right-5 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">
-                      {card.num}
-                    </span>
-                    <div className={`w-10 h-10 rounded-xl ${card.tint} flex items-center justify-center mb-4`}>
-                      <Icon className="w-[18px] h-[18px]" strokeWidth={1.5} style={{ color: card.accent }} />
-                    </div>
-                    <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] leading-snug tracking-tight mb-2">
-                      {card.title}
-                    </h3>
-                    <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.7]">
-                      {card.body}
-                    </p>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* GOAL — A happy, conscious, free life — concise */}
-      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-6 md:py-9">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_220px] gap-6 lg:gap-8 items-center">
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-2">
-                  {isEN ? "The Goal" : "Das Ziel"}
-                </p>
-                <h2 className="text-xl sm:text-2xl md:text-[26px] font-light text-[#1B3A5C] mb-3 tracking-tight leading-tight">
-                  {isEN ? "A Happy, Conscious and Free Life" : "Ein glückliches, bewusstes und freies Leben"}
-                </h2>
-                <p className="text-sm md:text-[15px] text-foreground leading-relaxed mb-4">
+            {/* Cards — 01 & 02 side-by-side, 03 full-width with NGH cert integrated */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+              {/* Card 01 */}
+              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
+                <span className="absolute top-5 right-5 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">01</span>
+                <div className="w-10 h-10 rounded-xl bg-[#EEF2F7] flex items-center justify-center mb-4">
+                  <Globe className="w-[18px] h-[18px] text-[#1B3A5C]" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] leading-snug tracking-tight mb-2">
+                  {isEN ? "International Background" : "Internationaler Werdegang"}
+                </h3>
+                <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.7]">
                   {isEN ? (
-                    <>A psychologically and neuroscientifically grounded approach. <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong> as a precise tool to resolve patterns at their root — efficient, clear, lasting.</>
+                    <>Born in London. Studied psychology at <strong className="text-[#1B3A5C] font-semibold">UNAM</strong> (Mexico), in <strong className="text-[#1B3A5C] font-semibold">Boston</strong>, <strong className="text-[#1B3A5C] font-semibold">San Francisco</strong> and <strong className="text-[#1B3A5C] font-semibold">Cambridge</strong>. Today active in <strong className="text-[#1B3A5C] font-semibold">Germany</strong>, <strong className="text-[#1B3A5C] font-semibold">Switzerland</strong> and internationally — including <strong className="text-[#1B3A5C] font-semibold">Dubai</strong>.</>
                   ) : (
-                    <>Ein psychologisch und neurowissenschaftlich fundierter Ansatz. Die <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong> als präzises Werkzeug, um Muster an der Wurzel zu lösen — effizient, klar, nachhaltig.</>
+                    <>Geboren in London. Psychologiestudium an der <strong className="text-[#1B3A5C] font-semibold">UNAM</strong> (Mexiko) sowie in <strong className="text-[#1B3A5C] font-semibold">Boston</strong>, <strong className="text-[#1B3A5C] font-semibold">San Francisco</strong> und <strong className="text-[#1B3A5C] font-semibold">Cambridge</strong>. Heute tätig in <strong className="text-[#1B3A5C] font-semibold">Deutschland</strong>, der <strong className="text-[#1B3A5C] font-semibold">Schweiz</strong> und international — u.a. in <strong className="text-[#1B3A5C] font-semibold">Dubai</strong>.</>
                   )}
                 </p>
-                <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-[13px] md:text-sm text-foreground/85">
-                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Clinical experience" : "Klinische Erfahrung"}</li>
-                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Modern hypnosis methods" : "Moderne Hypnosemethoden"}</li>
-                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Direct, proven approach" : "Direkter, bewährter Ansatz"}</li>
-                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Lasting results" : "Nachhaltige Ergebnisse"}</li>
-                </ul>
-              </div>
-              <div className="mx-auto lg:mx-0 w-44 lg:w-full">
-                <ImageLightbox
-                  src={diplomNGHCertified}
-                  alt="NGH Certified Instructor — David Woods"
-                  className="w-full h-auto border border-[#E8EDF3] rounded-xl"
-                />
-                <p className="mt-2 text-[11px] text-center text-muted-foreground tracking-wide">
-                  NGH Certified Instructor
+              </article>
+
+              {/* Card 02 */}
+              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
+                <span className="absolute top-5 right-5 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">02</span>
+                <div className="w-10 h-10 rounded-xl bg-[#EEF2F7] flex items-center justify-center mb-4">
+                  <GraduationCap className="w-[18px] h-[18px] text-[#1B3A5C]" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] leading-snug tracking-tight mb-2">
+                  {isEN ? "Training across 3 Continents" : "Ausbildung auf 3 Kontinenten"}
+                </h3>
+                <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.7]">
+                  {isEN ? (
+                    <>Several years of practical training in hypnosis institutes across <strong className="text-[#1B3A5C] font-semibold">3 continents</strong> — South America, England and Germany. Fluent in German, English and Spanish.</>
+                  ) : (
+                    <>Mehrjährige praktische Ausbildung in Hypnose-Instituten auf <strong className="text-[#1B3A5C] font-semibold">3 Kontinenten</strong> — Südamerika, England und Deutschland. Spricht fließend Deutsch, Englisch und Spanisch.</>
+                  )}
                 </p>
-              </div>
+              </article>
+
+              {/* Card 03 — full width, NGH cert integrated */}
+              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 flex flex-col md:col-span-2 shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
+                <span className="absolute top-5 right-5 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">03</span>
+                <div className="grid grid-cols-1 md:grid-cols-[1fr_180px] gap-5 md:gap-6 items-center">
+                  <div>
+                    <div className="w-10 h-10 rounded-xl bg-[#ECF3EE] flex items-center justify-center mb-4">
+                      <Award className="w-[18px] h-[18px] text-[#2E7D32]" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] leading-snug tracking-tight mb-2">
+                      {isEN ? "NGH Certified Trainer" : "Zertifizierter NGH-Ausbilder"}
+                    </h3>
+                    <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.7] mb-3">
+                      {isEN ? (
+                        <>Certified <strong className="text-[#1B3A5C] font-semibold">NGH-Trainer</strong> of the National Guild of Hypnotists — the world's largest hypnosis association. Trains "Therapists in Aktiv-Hypnose©" in Augsburg and near Zurich.</>
+                      ) : (
+                        <>Zertifizierter <strong className="text-[#1B3A5C] font-semibold">NGH-Ausbilder</strong> der National Guild of Hypnotists — des weltweit größten Hypnose-Verbands. Bildet „Therapeuten in Aktiv-Hypnose©" in Augsburg und bei Zürich aus.</>
+                      )}
+                    </p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-[12.5px] md:text-[13px] text-foreground/85">
+                      <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Clinical experience" : "Klinische Erfahrung"}</li>
+                      <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Modern hypnosis methods" : "Moderne Hypnosemethoden"}</li>
+                      <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "International training" : "Internationale Ausbildung"}</li>
+                      <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Psychologically grounded" : "Psychologisch fundiert"}</li>
+                    </ul>
+                  </div>
+                  <div className="mx-auto md:mx-0 w-40 md:w-full">
+                    <ImageLightbox
+                      src={diplomNGHCertified}
+                      alt="NGH Certified Instructor — David Woods"
+                      className="w-full h-auto border border-[#E8EDF3] rounded-xl"
+                    />
+                    <p className="mt-2 text-[11px] text-center text-muted-foreground tracking-wide">
+                      NGH Certified Instructor
+                    </p>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      {/* KATHRYN — premium banner, image height matches text */}
       <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
