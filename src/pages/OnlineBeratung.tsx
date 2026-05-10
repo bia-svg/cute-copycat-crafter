@@ -176,7 +176,7 @@ export default function OnlineBeratung() {
             <div className="max-w-2xl mx-auto text-center">
               <div className="flex items-center justify-center gap-3 mb-3.5">
                 <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
-                <p className="text-[11px] md:text-[12.5px] uppercase tracking-[0.22em] text-[#2E7D32] font-semibold">
+                <p className="text-[10.5px] md:text-[12.5px] uppercase tracking-[0.16em] md:tracking-[0.22em] text-[#2E7D32] font-semibold whitespace-nowrap">
                   Lic. Psych. David J. Woods
                 </p>
                 <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#2E7D32]/35" />
@@ -293,7 +293,7 @@ export default function OnlineBeratung() {
           <div className="max-w-5xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_22px_56px_-16px_rgba(27,58,92,0.22),0_6px_18px_-6px_rgba(27,58,92,0.12)] p-5 md:p-8">
             <div className="flex items-center justify-center gap-3 mb-3.5 md:mb-4">
               <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
-              <p className="text-[10.5px] md:text-[11.5px] uppercase tracking-[0.22em] text-[#2E7D32] font-semibold">
+              <p className="text-[10px] md:text-[11.5px] uppercase tracking-[0.16em] md:tracking-[0.22em] text-[#2E7D32] font-semibold whitespace-nowrap">
                 {isEN ? "Psychological orientation" : "Psychologische Orientierung"}
               </p>
               <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#2E7D32]/35" />
