@@ -208,7 +208,7 @@ export default function OnlineBeratung() {
       {/* CALENDLY — compact premium appointment preview */}
       <section ref={calendarSectionRef} className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
         <div className="container-main py-5 md:py-7">
-          <div className="max-w-2xl mx-auto bg-white border border-[#E2E8EE] rounded-3xl shadow-[0_16px_44px_-12px_rgba(27,58,92,0.18),0_4px_12px_-4px_rgba(27,58,92,0.08)] p-4 md:p-6">
+          <div className="max-w-2xl mx-auto bg-white border-[1.5px] border-[#D8E0EA] rounded-3xl shadow-[0_18px_48px_-12px_rgba(27,58,92,0.20),0_5px_16px_-4px_rgba(27,58,92,0.10),inset_0_1px_0_rgba(255,255,255,0.9)] p-4 md:p-6">
             <div className="text-center mb-2.5">
               <h2 className="text-[15px] md:text-lg font-light text-[#1B3A5C] tracking-tight">
                 {isEN ? "View available online appointments" : "Verfügbare Online-Termine anzeigen"}
