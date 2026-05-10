@@ -200,21 +200,23 @@ export default function UeberUns() {
             </div>
 
 
-            {/* Bekannt aus — full color, more visible */}
-            <div className="bg-white border border-[#E8EDF3] rounded-2xl p-4">
+            {/* Bekannt aus — premium auto-scroll marquee */}
+            <div className="bg-white border border-[#E8EDF3] rounded-2xl px-4 py-4">
               <p className="text-xs font-semibold uppercase tracking-wider text-[#1B3A5C] mb-3 text-center">
                 {isEN ? "As Seen On" : "Bekannt aus"}
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-                {CDN.bekanntAus.map((src, i) => (
-                  <img
-                    key={i}
-                    src={src}
-                    alt={`David J. Woods bekannt aus TV und Medien – Logo ${i + 1}`}
-                    className="h-8 sm:h-10 w-auto opacity-100 hover:scale-105 transition-transform"
-                    loading="lazy"
-                  />
-                ))}
+              <div className="marquee-mask marquee-pause overflow-hidden">
+                <div className="marquee-track flex items-center gap-x-12 w-max">
+                  {[...CDN.bekanntAus, ...CDN.bekanntAus].map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt={`David J. Woods bekannt aus TV und Medien – Logo ${(i % CDN.bekanntAus.length) + 1}`}
+                      className="h-9 sm:h-10 w-auto object-contain shrink-0"
+                      loading="lazy"
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
