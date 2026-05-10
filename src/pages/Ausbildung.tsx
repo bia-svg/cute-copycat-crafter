@@ -65,7 +65,7 @@ export default function Ausbildung() {
   ];
   const datesDE: { date: string; location: string; status: "available" | "limited"; forceEarlyBird?: boolean }[] = [
     /* Archiviert: Mo-Sa, 11.-16. Mai 2026 — Hotel am Alten Park, Augsburg */
-    { date: "Mo-Sa, 06.-11. Juli 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
+    { date: "Mo-Sa, 06.-11. Juli 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "limited" as const },
     { date: "Mo-Sa, 14.-19. Sept. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
     { date: "Mo-Sa, 16.-21. Nov. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
   ];
@@ -715,9 +715,14 @@ export default function Ausbildung() {
                       <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
                         <div className="flex flex-wrap items-center justify-center gap-1.5">
                           {d.status === "limited" && (
-                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FFF3E0] text-[#E65100]">
-                              {isEN ? "Limited seats" : "Letzte Plätze"}
-                            </span>
+                            <>
+                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FFF3E0] text-[#E65100]">
+                                {isEN ? "Limited seats" : "Letzte Plätze"}
+                              </span>
+                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
+                                {isEN ? "Save 200.–" : "200.– sparen"}
+                              </span>
+                            </>
                           )}
                           {d.status !== "limited" && (
                             <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
@@ -755,9 +760,14 @@ export default function Ausbildung() {
                       <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
                         <div className="flex flex-wrap items-center justify-center gap-1.5">
                           {d.status === "limited" ? (
-                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FFF3E0] text-[#E65100]">
-                              {isEN ? "Limited seats" : "Letzte Plätze"}
-                            </span>
+                            <>
+                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FFF3E0] text-[#E65100]">
+                                {isEN ? "Limited seats" : "Letzte Plätze"}
+                              </span>
+                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
+                                {isEN ? "Save 200,-" : "200,- sparen"}
+                              </span>
+                            </>
                           ) : (
                             <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
                               {isEN ? "Available" : "Verfügbar"}

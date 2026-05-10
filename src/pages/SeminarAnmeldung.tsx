@@ -23,7 +23,7 @@ const SEMINAR_DATES = {
   ],
   de: [
     // Archiviert: Mo-Sa, 11.-16. Mai 2026 — Hotel am Alten Park, Augsburg
-    { date: "Mo-Sa, 06.-11. Juli 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
+    { date: "Mo-Sa, 06.-11. Juli 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "limited" as const },
     { date: "Mo-Sa, 14.-19. Sept. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
     { date: "Mo-Sa, 16.-21. Nov. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
   ],
@@ -203,11 +203,15 @@ export default function SeminarAnmeldung() {
 
       // Fire notifications in background
       supabase.functions.invoke("notify-lead", { body: { lead: leadData } }).catch(err => console.error("Slack error:", err));
-      // Einheitlicher Preis 2.490 für alle Seminare
+      // Preislogik: regulär 2.490, mit 200.– Rabatt für nächste Termine (status === "limited")
       const isCH = seminarCountry === "ch";
-      const bookedPrice = isCH ? "CHF 2.490.-" : "€2.490,-";
-      const priceType = "Regulärer Preis";
+      const isDiscount = selectedDateObj?.status === "limited";
+      const bookedPrice = isDiscount
+        ? (isCH ? "CHF 2.290.-" : "€2.290,-")
+        : (isCH ? "CHF 2.490.-" : "€2.490,-");
+      const priceType = isDiscount ? "Rabattpreis" : "Regulärer Preis";
       const regularPrice = isCH ? "CHF 2.490.-" : "€2.490,-";
+      const savingsAmount = isDiscount ? (isCH ? "CHF 200" : "€200") : undefined;
 
       sendLeadEmails({
         name: leadData.name,
@@ -236,8 +240,8 @@ export default function SeminarAnmeldung() {
         registrationNumber: regNumber || undefined,
         bookedPrice,
         priceType,
-        regularPrice: undefined,
-        savingsAmount: undefined,
+        regularPrice: isDiscount ? regularPrice : undefined,
+        savingsAmount,
       }).catch(err => console.error("Email error:", err));
     } catch (err) {
       console.error("Lead save error:", err);
@@ -383,21 +387,38 @@ export default function SeminarAnmeldung() {
                           </div>
                           {/* Price display */}
                           <div className="mt-2 pt-2 border-t border-border/30">
-                            <div className="flex items-center justify-between sm:justify-start sm:gap-3">
-                              <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]/70">
-                                <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
-                                <span className="text-[15px] font-normal tracking-tight">{seminarCountry === "ch" ? "2.490.–" : "2.490,–"}</span>
-                              </span>
-                              {isLimited ? (
-                                <span className="text-[9px] font-normal text-[#E65100] bg-[#FFF3E0]/60 px-1.5 py-[3px] rounded-full border border-[#E65100]/8">
-                                  {isEN ? "Limited seats!" : "Letzte Plätze!"}
+                            {isLimited ? (
+                              <div className="flex items-center justify-between sm:justify-start sm:gap-3 flex-wrap">
+                                <div className="flex items-baseline gap-2">
+                                  <span className="inline-flex items-baseline gap-0.5 text-xs text-muted-foreground/70 line-through">
+                                    <span className="text-[10px] font-normal">{seminarCountry === "ch" ? "CHF" : "€"}</span>
+                                    <span className="font-normal">{seminarCountry === "ch" ? "2.490.–" : "2.490,–"}</span>
+                                  </span>
+                                  <span className="inline-flex items-baseline gap-0.5 text-[#2E7D32]">
+                                    <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
+                                    <span className="text-[15px] font-semibold tracking-tight">{seminarCountry === "ch" ? "2.290.–" : "2.290,–"}</span>
+                                  </span>
+                                </div>
+                                <div className="flex items-center gap-1">
+                                  <span className="text-[9px] font-semibold text-[#2E7D32] bg-[#E8F5E9]/80 px-1.5 py-[3px] rounded-full border border-[#2E7D32]/15">
+                                    {isEN ? "Save 200.–" : "200.– sparen"}
+                                  </span>
+                                  <span className="text-[9px] font-normal text-[#E65100] bg-[#FFF3E0]/60 px-1.5 py-[3px] rounded-full border border-[#E65100]/8">
+                                    {isEN ? "Limited seats!" : "Letzte Plätze!"}
+                                  </span>
+                                </div>
+                              </div>
+                            ) : (
+                              <div className="flex items-center justify-between sm:justify-start sm:gap-3">
+                                <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]/70">
+                                  <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
+                                  <span className="text-[15px] font-normal tracking-tight">{seminarCountry === "ch" ? "2.490.–" : "2.490,–"}</span>
                                 </span>
-                              ) : (
                                 <span className="text-[10px] font-normal px-1.5 py-[3px] rounded-full bg-[#E8F5E9]/60 text-[#2E7D32] border border-[#2E7D32]/8">
                                   {isEN ? "Available" : "Verfügbar"}
                                 </span>
-                              )}
-                            </div>
+                              </div>
+                            )}
                           </div>
                         </button>
                         );
