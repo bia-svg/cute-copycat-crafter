@@ -396,7 +396,11 @@ export default function Home() {
             {/* LEFT (desktop) – credential badges 2x2 + link */}
             <div className="order-2 md:order-1 flex flex-col items-center justify-center gap-1.5 mt-3 md:mt-0">
               {/* Desktop: 2x2 grid – 4 badges, equal height + weight */}
-              <div className="hidden md:grid grid-cols-2 gap-2 w-full">
+              <div className="hidden md:block w-full bg-gradient-to-b from-white to-[#F4F7FA] border border-[#1B3A5C]/12 rounded-xl p-2.5 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_8px_20px_-12px_rgba(27,58,92,0.10)]">
+                <div className="text-[9.5px] font-semibold uppercase tracking-[0.14em] text-[#1B3A5C]/55 text-center mb-2">
+                  {isEN ? "Qualification & Trust" : "Qualifikation & Vertrauen"}
+                </div>
+                <div className="grid grid-cols-2 gap-2 w-full">
                 {/* Entwickler der Aktiv-Hypnose */}
                 <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-3 py-2 h-[100px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.06] md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_20px_-8px_rgba(27,58,92,0.20)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
                   <Award className="h-10 w-10 text-[#1B3A5C]" strokeWidth={1.4} aria-hidden="true" />
@@ -426,6 +430,7 @@ export default function Home() {
                   <div className="text-center">
                     <div className="font-semibold text-[11.5px] text-foreground/95 leading-[1.35] text-center">Lic. Psych.<br /><span className="text-[10.5px] tracking-[0.04em]">UNAM</span></div>
                   </div>
+                </div>
                 </div>
               </div>
               <Link to={getPath("about", language, country)} className="hidden md:inline-block mt-1.5 mb-0 text-[11.5px] text-[#2E7D32] hover:text-[#1B5E20] font-medium underline underline-offset-4 decoration-[#2E7D32]/50 hover:decoration-[#1B5E20] transition-colors text-center leading-snug">
