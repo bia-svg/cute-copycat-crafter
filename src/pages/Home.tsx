@@ -410,7 +410,7 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Licensed Psychologist */}
-                <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-3 py-2 md:pb-3 h-[100px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.06] md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_20px_-8px_rgba(27,58,92,0.20)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
+                <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-3 py-2 md:pb-2 h-[100px] cursor-pointer transition-all duration-300 ease-out md:hover:scale-[1.06] md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_20px_-8px_rgba(27,58,92,0.20)] md:hover:bg-card md:hover:ring-1 md:hover:ring-primary/20 md:hover:z-20">
                   <img src={licPsychSeal} alt="Lic. Psych. – Lizenzierter Psychologe" className="h-[53px] w-[53px] object-contain mb-1" style={{ filter: "brightness(1.28) contrast(1.22) saturate(1.17)" }} width={512} height={512} loading="lazy" decoding="async" />
                   <div className="text-center">
                     <div className="font-semibold text-[11.5px] text-foreground/95 leading-[1.35] text-center">Lic. Psych.<br /><span className="text-[10.5px] tracking-[0.04em]">UNAM</span></div>
