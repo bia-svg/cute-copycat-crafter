@@ -252,9 +252,9 @@ export default function UeberUns() {
                 </div>
                 <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.6]">
                   {isEN ? (
-                    <>Several years of practical training in hypnosis institutes across <strong className="text-[#1B3A5C] font-semibold">3 continents</strong> — South America, England and Germany. Fluent in German, English and Spanish.</>
+                    <>Several years of practical training in hypnosis institutes across <strong className="text-[#1B3A5C] font-semibold">3 continents</strong> — USA, South America and Europe. Fluent in German, English and Spanish.</>
                   ) : (
-                    <>Mehrjährige praktische Ausbildung in Hypnose-Instituten auf <strong className="text-[#1B3A5C] font-semibold">3 Kontinenten</strong> — Südamerika, England und Deutschland. Spricht fließend Deutsch, Englisch und Spanisch.</>
+                    <>Mehrjährige praktische Ausbildung in Hypnose-Instituten auf <strong className="text-[#1B3A5C] font-semibold">3 Kontinenten</strong> — USA, Südamerika und Europa. Spricht fließend Deutsch, Englisch und Spanisch.</>
                   )}
                 </p>
               </article>
