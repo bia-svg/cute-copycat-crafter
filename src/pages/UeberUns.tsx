@@ -260,9 +260,9 @@ export default function UeberUns() {
               </article>
 
               {/* Card 03 — full width, NGH cert integrated */}
-              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-4 md:p-5 flex flex-col md:col-span-2 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_4px_14px_-6px_rgba(27,58,92,0.08)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
+              <article className="group relative bg-gradient-to-br from-white to-[#FAFCFD] border border-[#E2E8EE] rounded-2xl p-4 md:p-6 flex flex-col md:col-span-2 shadow-[0_2px_4px_rgba(27,58,92,0.04),0_12px_32px_-8px_rgba(27,58,92,0.10)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_4px_8px_rgba(27,58,92,0.05),0_18px_44px_-10px_rgba(27,58,92,0.14)] md:hover:border-[#CBD5E1]">
                 <span className="absolute top-4 right-4 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">03</span>
-                <div className="grid grid-cols-1 md:grid-cols-[1fr_160px] gap-4 md:gap-5 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-[1fr_220px] gap-5 md:gap-7 items-center">
                   <div>
                     <div className="flex items-center gap-3 mb-2.5 pr-8">
                       <div className="w-9 h-9 rounded-lg bg-[#ECF3EE] flex items-center justify-center flex-shrink-0">
@@ -272,27 +272,29 @@ export default function UeberUns() {
                         {isEN ? "NGH Certified Trainer" : "Zertifizierter NGH-Ausbilder"}
                       </h3>
                     </div>
-                    <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.6] mb-2.5">
+                    <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.6] mb-3">
                       {isEN ? (
                         <>Certified <strong className="text-[#1B3A5C] font-semibold">NGH-Trainer</strong> of the National Guild of Hypnotists — the world's largest hypnosis association. Trains "Therapists in Aktiv-Hypnose©" in Augsburg and near Zurich.</>
                       ) : (
                         <>Zertifizierter <strong className="text-[#1B3A5C] font-semibold">NGH-Ausbilder</strong> der National Guild of Hypnotists — des weltweit größten Hypnose-Verbands. Bildet „Therapeuten in Aktiv-Hypnose©" in Augsburg und bei Zürich aus.</>
                       )}
                     </p>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-[12.5px] md:text-[13px] text-foreground/85">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 text-[12.5px] md:text-[13px] text-foreground/85">
                       <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Clinical experience" : "Klinische Erfahrung"}</li>
                       <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Modern hypnosis methods" : "Moderne Hypnosemethoden"}</li>
                       <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "International training" : "Internationale Ausbildung"}</li>
                       <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Psychologically grounded" : "Psychologisch fundiert"}</li>
                     </ul>
                   </div>
-                  <div className="mx-auto md:mx-0 w-36 md:w-full">
-                    <ImageLightbox
-                      src={diplomNGHCertified}
-                      alt="NGH Certified Instructor — David Woods"
-                      className="w-full h-auto border border-[#E8EDF3] rounded-xl"
-                    />
-                    <p className="mt-1.5 text-[10.5px] text-center text-muted-foreground tracking-wide">
+                  <div className="mx-auto md:mx-0 w-56 sm:w-64 md:w-full">
+                    <div className="relative rounded-xl border border-[#E2E8EE] bg-white p-2 md:p-2.5 shadow-[0_2px_4px_rgba(27,58,92,0.04),0_10px_24px_-10px_rgba(27,58,92,0.14)]">
+                      <ImageLightbox
+                        src={diplomNGHCertified}
+                        alt="NGH Certified Instructor — David Woods"
+                        className="w-full h-auto rounded-md"
+                      />
+                    </div>
+                    <p className="mt-2 text-[10.5px] text-center text-muted-foreground tracking-[0.12em] uppercase">
                       NGH Certified Instructor
                     </p>
                   </div>
