@@ -481,7 +481,7 @@ export default function Home() {
                   <Link
                     key={item.page}
                     to={getPath(item.page, language, country)}
-                    className="inline-flex items-center px-3.5 md:px-4 py-1.5 md:py-1.5 rounded-full bg-white md:bg-gradient-to-b md:from-white md:to-[#F4F7FA] border border-[#1B3A5C]/40 md:border-[#1B3A5C]/35 text-[11.5px] md:text-[12.5px] font-medium text-[#1B3A5C] tracking-[0.01em] shadow-[0_1.5px_0_0_rgba(27,58,92,0.18),0_2px_4px_-1px_rgba(27,58,92,0.12)] md:shadow-[0_1px_0_0_rgba(255,255,255,0.9)_inset,0_1.5px_0_0_rgba(27,58,92,0.22),0_2px_5px_-1px_rgba(27,58,92,0.18),0_4px_10px_-3px_rgba(27,58,92,0.12)] hover:bg-[#1B3A5C] hover:bg-none hover:text-white hover:border-[#1B3A5C] hover:shadow-md active:translate-y-px active:shadow-[0_0_0_1px_rgba(27,58,92,0.25)] transition-all duration-200"
+                    className="inline-flex items-center px-3.5 md:px-4 py-1.5 md:py-1.5 rounded-full bg-white md:bg-gradient-to-b md:from-white md:to-[#F4F7FA] border border-[#1B3A5C]/40 md:border-[#1B3A5C]/35 text-[11.5px] md:text-[12.5px] font-medium text-[#1B3A5C] tracking-[0.01em] shadow-[0_1.5px_0_0_rgba(27,58,92,0.18),0_2px_4px_-1px_rgba(27,58,92,0.12)] md:shadow-[0_1px_0_0_rgba(255,255,255,0.9)_inset,0_1.5px_0_0_rgba(27,58,92,0.22),0_2px_5px_-1px_rgba(27,58,92,0.18),0_4px_10px_-3px_rgba(27,58,92,0.12)] hover:bg-[#27486B] hover:bg-none hover:text-white hover:border-[#27486B] hover:shadow-[0_2px_6px_-1px_rgba(27,58,92,0.18),0_4px_12px_-3px_rgba(27,58,92,0.14)] active:translate-y-px active:shadow-[0_0_0_1px_rgba(27,58,92,0.25)] transition-all duration-300 ease-out"
                   >
                     {item.label}
                   </Link>
