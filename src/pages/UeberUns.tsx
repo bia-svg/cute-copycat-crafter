@@ -211,8 +211,8 @@ export default function UeberUns() {
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-2">
                 {isEN ? "Professional Profile" : "Professionelles Profil"}
               </p>
-              <h2 className="text-xl sm:text-2xl md:text-[28px] font-light text-[#1B3A5C] tracking-tight leading-tight">
-                {isEN ? "A Brief Overview of David J. Woods" : "Ein kurzer Überblick zu David J. Woods"}
+              <h2 className="text-[17px] sm:text-2xl md:text-[28px] font-light text-[#1B3A5C] tracking-tight leading-tight">
+                {isEN ? <>A Brief Overview of <span className="whitespace-nowrap">David J. Woods</span></> : <>Ein kurzer Überblick zu <span className="whitespace-nowrap">David J. Woods</span></>}
               </h2>
               <div className="mx-auto mt-3 h-px w-12 bg-[#1B3A5C]/25" />
             </div>
@@ -330,15 +330,15 @@ export default function UeberUns() {
       </section>
 
       <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
-        <div className="container-main py-5 md:py-7">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_2px_4px_rgba(27,58,92,0.04),0_12px_32px_-8px_rgba(27,58,92,0.10)] p-4 md:p-6">
-            <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-5 md:gap-6 items-stretch">
-              <div className="mx-auto md:mx-0 w-48 sm:w-52 md:w-full">
+        <div className="container-main py-4 md:py-5">
+          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_2px_4px_rgba(27,58,92,0.04),0_12px_32px_-8px_rgba(27,58,92,0.10)] p-4 md:p-5">
+            <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-4 md:gap-5 items-stretch">
+              <div className="mx-auto md:mx-0 w-44 sm:w-48 md:w-full">
                 <div className="border border-[#E8EDF3] rounded-2xl overflow-hidden shadow-[0_2px_4px_rgba(27,58,92,0.04),0_8px_20px_-6px_rgba(27,58,92,0.10)]">
                   <img
                     src={CDN.kathrynPortrait}
                     alt="Kathryn - Psychologische Beraterin"
-                    className="w-full h-56 md:h-64 object-cover object-[center_20%]"
+                    className="w-full h-52 md:h-60 object-cover object-[center_20%]"
                     loading="lazy"
                   />
                   <div className="px-3 py-2.5 bg-[#F1F4F7]">
@@ -356,18 +356,18 @@ export default function UeberUns() {
                 <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[#1B3A5C] mb-1 tracking-tight">
                   Kathryn
                 </h2>
-                <p className="text-xs md:text-sm font-medium text-[#2E7D32] mb-3">
+                <p className="text-xs md:text-sm font-medium text-[#2E7D32] mb-2.5">
                   {isEN
                     ? "Psychological Counselor & Certified Hypnotherapist · Children/Adolescents & Hypno-Birthing"
                     : "Psychologische Beraterin & Zertifizierte Hypnotiseurin · Kinder/Jugendliche & Hypno-Birthing"}
                 </p>
-                <p className="text-[13px] md:text-sm text-foreground/85 leading-relaxed mb-3">
+                <p className="text-[13px] md:text-sm text-foreground/85 leading-relaxed mb-2.5">
                   {isEN
                     ? <>Over many years, Kathryn has deepened her expertise in <strong className="text-[#1B3A5C] font-semibold">psychology</strong> and <strong className="text-[#1B3A5C] font-semibold">personality development</strong>. Personally trained as a <strong className="text-[#1B3A5C] font-semibold">Master Hypnotist</strong> by David J. Woods, she combines pedagogical experience with solid hypnosis expertise.</>
                     : <>Über viele Jahre hat Kathryn ihr Wissen in <strong className="text-[#1B3A5C] font-semibold">Psychologie</strong> und <strong className="text-[#1B3A5C] font-semibold">Persönlichkeitsentwicklung</strong> vertieft. Persönlich von David J. Woods zur <strong className="text-[#1B3A5C] font-semibold">Master-Hypnotiseurin</strong> ausgebildet, verbindet sie pädagogische Erfahrung mit fundierter Hypnose-Expertise.</>}
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-1.5 mb-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-1.5 mb-2.5">
                   {(isEN ? [
                     "Personally trained by David J. Woods",
                     "Specialization: children, adolescents & Hypno-Birthing",
@@ -390,13 +390,13 @@ export default function UeberUns() {
                   ))}
                 </div>
 
-                <p className="text-[13px] md:text-sm text-foreground/80 leading-relaxed mb-3">
+                <p className="text-[13px] md:text-sm text-foreground/80 leading-relaxed mb-2">
                   {isEN
                     ? "Through her empathetic, structured approach, she quickly builds trust — even with young people. She accompanies families through Hypno-Birthing and conducts hypnosis sessions specifically for children and adolescents."
                     : "Durch ihre einfühlsame, strukturierte Art schafft sie schnell Vertrauen — auch bei jungen Menschen. Sie begleitet Familien bei Hypno-Birthing und führt Hypnosesitzungen speziell für Kinder und Jugendliche durch."}
                 </p>
 
-                <div className="flex flex-wrap gap-1.5 mb-3">
+                <div className="flex flex-wrap gap-1.5">
                   {[
                     isEN ? "Children & Adolescents" : "Kinder & Jugendliche",
                     "Hypno-Birthing",
@@ -410,11 +410,6 @@ export default function UeberUns() {
                     </span>
                   ))}
                 </div>
-                <Link to={`${getPath("contact", language, country)}?concern=children`}>
-                  <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-5 py-2.5 text-sm">
-                    {isEN ? "Consult with Kathryn" : "Von Kathryn beraten lassen"}
-                  </Button>
-                </Link>
               </div>
             </div>
           </div>
