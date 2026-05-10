@@ -317,7 +317,7 @@ export default function UeberUns() {
                     key={i}
                     src={src}
                     alt={`David J. Woods – Presse & Medien Logo ${(i % CDN.bekanntAus.length) + 1}`}
-                    className="h-8 md:h-9 w-auto object-contain shrink-0 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                    className="h-8 md:h-9 w-auto object-contain shrink-0 [filter:saturate(0.55)_brightness(0.96)] opacity-80 hover:[filter:saturate(1)_brightness(1)] hover:opacity-100 hover:scale-[1.04] transition-all duration-500"
                     loading="lazy"
                   />
                 ))}
