@@ -459,7 +459,7 @@ export default function Home() {
                       { label: "Stress & burnout", page: "stress" as const },
                       { label: "Depression & trauma", page: "depression" as const },
                       { label: "Children & teens", page: "children" as const },
-                      { label: "Seminars", page: "training" as const },
+                      { label: "Training & Seminars", page: "training" as const },
                     ]
                   : [
                       { label: "Rauchfrei werden", page: "smoking" as const },
@@ -468,7 +468,7 @@ export default function Home() {
                       { label: "Stress & Burnout", page: "stress" as const },
                       { label: "Depression & Trauma", page: "depression" as const },
                       { label: "Kinder & Jugendliche", page: "children" as const },
-                      { label: "Ausbildung", page: "training" as const },
+                      { label: "Ausbildung & Seminare", page: "training" as const },
                     ]
                 ).map((item) => (
                   <Link
