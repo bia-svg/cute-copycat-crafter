@@ -37,7 +37,7 @@ const heroMobile = [
 import {
   Cigarette, Brain, Scale, Flame, HeartPulse, Users,
   Trophy, Shield, Clock, BookOpen, ArrowRight, Star, Award, BadgeCheck,
-  ChevronLeft, ChevronRight, CheckCircle, Tv
+  ChevronLeft, ChevronRight, CheckCircle, Tv, Info
 } from "lucide-react";
 
 /* ══════════════════════════════════════════════════════════════
