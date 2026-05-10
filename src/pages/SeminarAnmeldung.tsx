@@ -203,13 +203,11 @@ export default function SeminarAnmeldung() {
 
       // Fire notifications in background
       supabase.functions.invoke("notify-lead", { body: { lead: leadData } }).catch(err => console.error("Slack error:", err));
-      // Determine pricing at time of booking
-      const isDiscountAtBooking = selectedDateObj?.status === "limited";
+      // Einheitlicher Preis 2.490 für alle Seminare
       const isCH = seminarCountry === "ch";
-      const bookedPrice = isDiscountAtBooking ? (isCH ? "CHF 2.490.-" : "€2.490,-") : (isCH ? "CHF 2.790.-" : "€2.790,-");
-      const priceType = isDiscountAtBooking ? "Rabattpreis" : "Regulärer Preis";
-      const regularPrice = isCH ? "CHF 2.790.-" : "€2.790,-";
-      const savingsAmount = isDiscountAtBooking ? (isCH ? "CHF 300" : "€300") : undefined;
+      const bookedPrice = isCH ? "CHF 2.490.-" : "€2.490,-";
+      const priceType = "Regulärer Preis";
+      const regularPrice = isCH ? "CHF 2.490.-" : "€2.490,-";
 
       sendLeadEmails({
         name: leadData.name,
