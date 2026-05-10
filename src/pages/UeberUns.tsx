@@ -238,114 +238,86 @@ export default function UeberUns() {
               <div className="mx-auto mt-3 h-px w-12 bg-[#1B3A5C]/25" />
             </div>
 
-            {/* Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 auto-rows-fr">
-              {[
-                {
-                  num: "01",
-                  icon: Globe,
-                  accent: "#1B3A5C",
-                  tint: "bg-[#EEF2F7]",
-                  title: isEN ? "International Background" : "Internationaler Werdegang",
-                  body: isEN ? (
-                    <>Born in London. Studied psychology at <strong className="text-[#1B3A5C] font-semibold">UNAM</strong> (Mexico), in <strong className="text-[#1B3A5C] font-semibold">Boston</strong>, <strong className="text-[#1B3A5C] font-semibold">San Francisco</strong> and <strong className="text-[#1B3A5C] font-semibold">Cambridge</strong>, followed by international training as hypnotist and trainer. Today active in <strong className="text-[#1B3A5C] font-semibold">Germany</strong>, <strong className="text-[#1B3A5C] font-semibold">Switzerland</strong> and internationally — including <strong className="text-[#1B3A5C] font-semibold">Dubai</strong>.</>
-                  ) : (
-                    <>Geboren in London. Psychologiestudium an der <strong className="text-[#1B3A5C] font-semibold">UNAM</strong> (Mexiko) sowie in <strong className="text-[#1B3A5C] font-semibold">Boston</strong>, <strong className="text-[#1B3A5C] font-semibold">San Francisco</strong> und <strong className="text-[#1B3A5C] font-semibold">Cambridge</strong>, gefolgt von internationalen Ausbildungen zum Hypnotiseur und Trainer. Heute tätig in <strong className="text-[#1B3A5C] font-semibold">Deutschland</strong>, der <strong className="text-[#1B3A5C] font-semibold">Schweiz</strong> und international — u.a. in <strong className="text-[#1B3A5C] font-semibold">Dubai</strong>.</>
-                  ),
-                },
-                {
-                  num: "02",
-                  icon: GraduationCap,
-                  accent: "#1B3A5C",
-                  tint: "bg-[#EEF2F7]",
-                  title: isEN ? "Training across 3 Continents" : "Ausbildung auf 3 Kontinenten",
-                  body: isEN ? (
-                    <>Several years of practical training in hypnosis institutes across <strong className="text-[#1B3A5C] font-semibold">3 continents</strong> — South America, England and Germany. Fluent in German, English and Spanish, combining international practical knowledge in one person.</>
-                  ) : (
-                    <>Mehrjährige praktische Ausbildung in Hypnose-Instituten auf <strong className="text-[#1B3A5C] font-semibold">3 Kontinenten</strong> — Südamerika, England und Deutschland. Spricht fließend Deutsch, Englisch und Spanisch und vereint internationales Praxiswissen in einer Person.</>
-                  ),
-                },
-                {
-                  num: "03",
-                  icon: Award,
-                  accent: "#2E7D32",
-                  tint: "bg-[#ECF3EE]",
-                  title: isEN ? "NGH Certified Trainer" : "Zertifizierter NGH-Ausbilder",
-                  body: isEN ? (
-                    <>Certified <strong className="text-[#1B3A5C] font-semibold">NGH-Trainer</strong> of the National Guild of Hypnotists — the world's largest hypnosis association. Trains participants in his Aktiv-Hypnose© method to become certified "Therapists in Aktiv-Hypnose©" in Augsburg and near Zurich.</>
-                  ) : (
-                    <>Zertifizierter <strong className="text-[#1B3A5C] font-semibold">NGH-Ausbilder</strong> der National Guild of Hypnotists – des weltweit größten Hypnose-Verbands. Bildet Teilnehmer in seiner Aktiv-Hypnose© Methode zu „Therapeuten in Aktiv-Hypnose©" aus – in Augsburg und bei Zürich.</>
-                  ),
-                },
-              ].map((card, i) => {
-                const Icon = card.icon;
-                return (
-                  <article
-                    key={i}
-                    className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]"
-                  >
-                    <span className="absolute top-5 right-5 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">
-                      {card.num}
-                    </span>
-                    <div className={`w-10 h-10 rounded-xl ${card.tint} flex items-center justify-center mb-4`}>
-                      <Icon className="w-[18px] h-[18px]" strokeWidth={1.5} style={{ color: card.accent }} />
-                    </div>
-                    <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] leading-snug tracking-tight mb-2">
-                      {card.title}
-                    </h3>
-                    <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.7]">
-                      {card.body}
-                    </p>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* GOAL — A happy, conscious, free life — concise */}
-      <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-6 md:py-9">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_220px] gap-6 lg:gap-8 items-center">
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2E7D32] mb-2">
-                  {isEN ? "The Goal" : "Das Ziel"}
-                </p>
-                <h2 className="text-xl sm:text-2xl md:text-[26px] font-light text-[#1B3A5C] mb-3 tracking-tight leading-tight">
-                  {isEN ? "A Happy, Conscious and Free Life" : "Ein glückliches, bewusstes und freies Leben"}
-                </h2>
-                <p className="text-sm md:text-[15px] text-foreground leading-relaxed mb-4">
+            {/* Cards — 01 & 02 side-by-side, 03 full-width with NGH cert integrated */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+              {/* Card 01 */}
+              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
+                <span className="absolute top-5 right-5 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">01</span>
+                <div className="w-10 h-10 rounded-xl bg-[#EEF2F7] flex items-center justify-center mb-4">
+                  <Globe className="w-[18px] h-[18px] text-[#1B3A5C]" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] leading-snug tracking-tight mb-2">
+                  {isEN ? "International Background" : "Internationaler Werdegang"}
+                </h3>
+                <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.7]">
                   {isEN ? (
-                    <>A psychologically and neuroscientifically grounded approach. <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong> as a precise tool to resolve patterns at their root — efficient, clear, lasting.</>
+                    <>Born in London. Studied psychology at <strong className="text-[#1B3A5C] font-semibold">UNAM</strong> (Mexico), in <strong className="text-[#1B3A5C] font-semibold">Boston</strong>, <strong className="text-[#1B3A5C] font-semibold">San Francisco</strong> and <strong className="text-[#1B3A5C] font-semibold">Cambridge</strong>. Today active in <strong className="text-[#1B3A5C] font-semibold">Germany</strong>, <strong className="text-[#1B3A5C] font-semibold">Switzerland</strong> and internationally — including <strong className="text-[#1B3A5C] font-semibold">Dubai</strong>.</>
                   ) : (
-                    <>Ein psychologisch und neurowissenschaftlich fundierter Ansatz. Die <strong className="text-[#1B3A5C] font-semibold">Aktiv-Hypnose©</strong> als präzises Werkzeug, um Muster an der Wurzel zu lösen — effizient, klar, nachhaltig.</>
+                    <>Geboren in London. Psychologiestudium an der <strong className="text-[#1B3A5C] font-semibold">UNAM</strong> (Mexiko) sowie in <strong className="text-[#1B3A5C] font-semibold">Boston</strong>, <strong className="text-[#1B3A5C] font-semibold">San Francisco</strong> und <strong className="text-[#1B3A5C] font-semibold">Cambridge</strong>. Heute tätig in <strong className="text-[#1B3A5C] font-semibold">Deutschland</strong>, der <strong className="text-[#1B3A5C] font-semibold">Schweiz</strong> und international — u.a. in <strong className="text-[#1B3A5C] font-semibold">Dubai</strong>.</>
                   )}
                 </p>
-                <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-[13px] md:text-sm text-foreground/85">
-                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Clinical experience" : "Klinische Erfahrung"}</li>
-                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Modern hypnosis methods" : "Moderne Hypnosemethoden"}</li>
-                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Direct, proven approach" : "Direkter, bewährter Ansatz"}</li>
-                  <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Lasting results" : "Nachhaltige Ergebnisse"}</li>
-                </ul>
-              </div>
-              <div className="mx-auto lg:mx-0 w-44 lg:w-full">
-                <ImageLightbox
-                  src={diplomNGHCertified}
-                  alt="NGH Certified Instructor — David Woods"
-                  className="w-full h-auto border border-[#E8EDF3] rounded-xl"
-                />
-                <p className="mt-2 text-[11px] text-center text-muted-foreground tracking-wide">
-                  NGH Certified Instructor
+              </article>
+
+              {/* Card 02 */}
+              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 flex flex-col shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
+                <span className="absolute top-5 right-5 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">02</span>
+                <div className="w-10 h-10 rounded-xl bg-[#EEF2F7] flex items-center justify-center mb-4">
+                  <GraduationCap className="w-[18px] h-[18px] text-[#1B3A5C]" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] leading-snug tracking-tight mb-2">
+                  {isEN ? "Training across 3 Continents" : "Ausbildung auf 3 Kontinenten"}
+                </h3>
+                <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.7]">
+                  {isEN ? (
+                    <>Several years of practical training in hypnosis institutes across <strong className="text-[#1B3A5C] font-semibold">3 continents</strong> — South America, England and Germany. Fluent in German, English and Spanish.</>
+                  ) : (
+                    <>Mehrjährige praktische Ausbildung in Hypnose-Instituten auf <strong className="text-[#1B3A5C] font-semibold">3 Kontinenten</strong> — Südamerika, England und Deutschland. Spricht fließend Deutsch, Englisch und Spanisch.</>
+                  )}
                 </p>
-              </div>
+              </article>
+
+              {/* Card 03 — full width, NGH cert integrated */}
+              <article className="group relative bg-white border border-[#E2E8EE] rounded-2xl p-5 md:p-6 flex flex-col md:col-span-2 shadow-[0_1px_2px_rgba(27,58,92,0.04)] transition-all duration-300 md:hover:-translate-y-0.5 md:hover:shadow-[0_8px_28px_rgba(27,58,92,0.08)] md:hover:border-[#CBD5E1]">
+                <span className="absolute top-5 right-5 text-[10px] font-semibold tracking-[0.2em] text-[#1B3A5C]/30">03</span>
+                <div className="grid grid-cols-1 md:grid-cols-[1fr_180px] gap-5 md:gap-6 items-center">
+                  <div>
+                    <div className="w-10 h-10 rounded-xl bg-[#ECF3EE] flex items-center justify-center mb-4">
+                      <Award className="w-[18px] h-[18px] text-[#2E7D32]" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="text-[15px] md:text-base font-medium text-[#1B3A5C] leading-snug tracking-tight mb-2">
+                      {isEN ? "NGH Certified Trainer" : "Zertifizierter NGH-Ausbilder"}
+                    </h3>
+                    <p className="text-[13.5px] md:text-sm text-foreground/80 leading-[1.7] mb-3">
+                      {isEN ? (
+                        <>Certified <strong className="text-[#1B3A5C] font-semibold">NGH-Trainer</strong> of the National Guild of Hypnotists — the world's largest hypnosis association. Trains "Therapists in Aktiv-Hypnose©" in Augsburg and near Zurich.</>
+                      ) : (
+                        <>Zertifizierter <strong className="text-[#1B3A5C] font-semibold">NGH-Ausbilder</strong> der National Guild of Hypnotists — des weltweit größten Hypnose-Verbands. Bildet „Therapeuten in Aktiv-Hypnose©" in Augsburg und bei Zürich aus.</>
+                      )}
+                    </p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-[12.5px] md:text-[13px] text-foreground/85">
+                      <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Clinical experience" : "Klinische Erfahrung"}</li>
+                      <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Modern hypnosis methods" : "Moderne Hypnosemethoden"}</li>
+                      <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "International training" : "Internationale Ausbildung"}</li>
+                      <li className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-[#2E7D32] flex-shrink-0" />{isEN ? "Psychologically grounded" : "Psychologisch fundiert"}</li>
+                    </ul>
+                  </div>
+                  <div className="mx-auto md:mx-0 w-40 md:w-full">
+                    <ImageLightbox
+                      src={diplomNGHCertified}
+                      alt="NGH Certified Instructor — David Woods"
+                      className="w-full h-auto border border-[#E8EDF3] rounded-xl"
+                    />
+                    <p className="mt-2 text-[11px] text-center text-muted-foreground tracking-wide">
+                      NGH Certified Instructor
+                    </p>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      {/* KATHRYN — premium banner, image height matches text */}
       <section className="bg-[#F8FAFC] border-b border-[#E8EDF3]">
         <div className="container-main py-6 md:py-9">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
