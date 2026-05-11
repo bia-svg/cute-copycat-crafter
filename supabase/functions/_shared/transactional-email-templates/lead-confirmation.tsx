@@ -267,19 +267,10 @@ const LeadConfirmationEmail = (props: LeadConfirmationProps) => {
               <Hr style={thinHr} />
 
               <Text style={pricingText}>
-                <strong>{isEN ? 'Intensive Sessions approx. 2.5 hrs' : 'Intensiv Sitzungen ca. 2,5 Std.'}</strong><br />
-                {isEN ? 'In Germany: 690 Euro' : 'In Deutschland kosten 690 Euro'}.<br />
-                {isEN ? 'In Switzerland: 750 CHF' : 'In der Schweiz kosten 750 CHF'}.
-              </Text>
-              <Text style={pricingText}>
-                <strong>{isEN ? 'Follow-up Sessions approx. 2 hrs' : 'Aufbau Sitzungen ca. 2 Std'}</strong><br />
-                {isEN ? 'In Germany: 590 Euro' : 'In Deutschland kosten 590 Euro'}.<br />
-                {isEN ? 'In Switzerland: 650 CHF' : 'In der Schweiz kosten 650 CHF'}.
-              </Text>
-              <Text style={pricingText}>
-                {isEN ? 'EMR Health Insurance Compliant' : 'EMR Krankenkasse Konform'}<br />
-                ZSR Nr. P609264<br />
-                {isEN ? '"Empirical Medical Register"' : '"Erfahrungs Medizinische Register"'}
+                <strong>{isEN ? 'Intensive Sessions approx. 2 hrs' : 'Intensivsitzungen ca. 2 Std.'}</strong><br />
+                <br />
+                {isEN ? 'In Germany: 590 Euro.' : 'In Deutschland kosten 590 Euro.'}<br />
+                {isEN ? 'In Switzerland: 650 CHF.' : 'In der Schweiz kosten 650 CHF.'}
               </Text>
 
               <Hr style={thinHr} />
