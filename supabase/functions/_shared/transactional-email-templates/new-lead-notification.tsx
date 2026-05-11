@@ -300,19 +300,9 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
               <Hr style={thinHr} />
 
               <Text style={pricingText}>
-                <strong>Intensiv Sitzungen ca. 2,5 Std.</strong><br />
-                In Deutschland kosten 690 Euro.<br />
-                In der Schweiz kosten 750 CHF.
-              </Text>
-              <Text style={pricingText}>
-                <strong>Aufbau Sitzungen ca. 2 Std</strong><br />
+                <strong>Intensivsitzungen ca. 2 Std.</strong><br />
                 In Deutschland kosten 590 Euro.<br />
                 In der Schweiz kosten 650 CHF.
-              </Text>
-              <Text style={pricingText}>
-                EMR Krankenkasse Konform<br />
-                ZSR Nr. P609264<br />
-                &quot;Erfahrungs Medizinische Register&quot;
               </Text>
 
               <Hr style={thinHr} />
