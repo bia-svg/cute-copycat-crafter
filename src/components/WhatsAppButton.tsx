@@ -70,10 +70,10 @@ export default function WhatsAppButton() {
       </svg>
       <span className="flex flex-col items-start leading-tight">
         <span className="text-xs md:text-sm font-medium whitespace-nowrap tracking-wide">
-          {isEN ? "WhatsApp with David" : "WhatsApp mit David"}
+          WhatsApp
         </span>
         <span className="text-[10px] md:text-[11px] font-light whitespace-nowrap text-white/85">
-          {isEN ? "Free Info" : "Unverbindliche Info"}
+          {isEN ? "Quick Question?" : "Kurze Frage?"}
         </span>
       </span>
     </a>
