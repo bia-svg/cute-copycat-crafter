@@ -211,12 +211,12 @@ export default function OnlineBeratung() {
           <div className="max-w-2xl mx-auto bg-white border-[1.5px] border-[#D8E0EA] rounded-3xl shadow-[0_18px_48px_-12px_rgba(27,58,92,0.20),0_5px_16px_-4px_rgba(27,58,92,0.10),inset_0_1px_0_rgba(255,255,255,0.9)] p-4 md:p-6">
             <div className="text-center mb-2.5">
               <h2 className="text-[15px] md:text-lg font-light text-[#1B3A5C] tracking-tight">
-                {isEN ? "View available online appointments" : "Verfügbare Online-Termine anzeigen"}
+                {isEN ? "Available online appointments" : "Verfügbare Online-Termine"}
               </h2>
               <p className="mt-1 text-[11px] md:text-[12px] text-[#0B1F33]/50 tracking-tight">
                 {isEN
-                  ? "Germany & Austria · €179  ·  Switzerland · CHF 179"
-                  : "Deutschland & Österreich · 179 €  ·  Schweiz · 179 CHF"}
+                  ? "Germany & Austria · €159  ·  Switzerland · CHF 159"
+                  : "Deutschland & Österreich · €159  ·  Schweiz · CHF 159"}
               </p>
             </div>
 
