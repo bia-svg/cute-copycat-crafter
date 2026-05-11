@@ -258,11 +258,6 @@ export default function OnlineBeratung() {
               </div>
             )}
 
-            <p className="mt-2.5 text-[11px] md:text-[11.5px] text-[#0B1F33]/55 text-center leading-snug max-w-2xl mx-auto tracking-tight">
-              {isEN
-                ? "Payment details will be sent by email."
-                : "Die Zahlungsinformationen erhalten Sie per E-Mail."}
-            </p>
           </div>
         </div>
       </section>
