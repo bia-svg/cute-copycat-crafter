@@ -448,6 +448,21 @@ export default function Header() {
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-1 pb-1">
                   {isDE ? "Hypnose-Sitzungen" : "Hypnosis Sessions"}
                 </p>
+                <Link
+                  to={getPath("sessionsOverview", language, country)}
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-start gap-3 p-2.5 rounded-lg bg-gradient-to-b from-[#F0F6FC] to-[#E5F0FA] border border-[#1B3A5C]/15 shadow-[0_1px_3px_rgba(27,58,92,0.05)]"
+                >
+                  <span className="text-[#1B3A5C] mt-0.5"><HeartPulse className="w-5 h-5" /></span>
+                  <div>
+                    <div className="font-semibold text-sm text-[#0B1F33]">
+                      {isDE ? "Alle Sitzungen ansehen" : "View All Sessions"}
+                    </div>
+                    <div className="text-xs text-[#1B3A5C]/70">
+                      {isDE ? "Übersicht aller Einzelsitzungen" : "Overview of all individual sessions"}
+                    </div>
+                  </div>
+                </Link>
                 {therapyGoals.map((item, index) =>
                   index === therapyGoals.length - 1 ? (
                     <Link key={item.label} to={item.href} onClick={() => setMobileOpen(false)} className="flex items-start gap-3 p-2.5 rounded-lg bg-gradient-to-b from-[#F0F6FC] to-[#E5F0FA] border border-[#1B3A5C]/15 shadow-[0_1px_3px_rgba(27,58,92,0.05)]">
