@@ -13,7 +13,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
-import { CheckCircle, ChevronRight, Star, ExternalLink } from "lucide-react";
+import { CheckCircle, ChevronRight, Star, ExternalLink, ArrowLeft } from "lucide-react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import FAQSection from "@/components/FAQSection";
@@ -276,6 +276,11 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       {/* Hero — soft silver-grey background, compact, balanced */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-6 md:py-8 lg:py-10">
+          {(eyebrow?.includes("Hypnose-Sitzungen") || eyebrow?.includes("Hypnosis Sessions")) && (
+            <Link to={getPath("sessionsOverview", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-3">
+              <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
+            </Link>
+          )}
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
               <div>
