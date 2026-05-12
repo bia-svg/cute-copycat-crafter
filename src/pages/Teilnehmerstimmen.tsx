@@ -95,6 +95,9 @@ export default function Teilnehmerstimmen() {
       {/* Compact Intro */}
       <section className="bg-background pt-6 pb-4 md:pt-8 md:pb-5 border-b border-border/60">
         <div className="container-main max-w-3xl text-center">
+          <Link to={getPath("trainingOverview", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-3">
+            <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
+          </Link>
           <h1 className="text-2xl md:text-3xl font-light text-foreground tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Voices of Our Seminar Participants" : "Stimmen unserer Seminarteilnehmer"}
           </h1>
