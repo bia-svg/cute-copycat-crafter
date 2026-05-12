@@ -449,31 +449,39 @@ export default function Home() {
                   : "Individuelle Sitzungen, psychologische Beratung und Hypnose-Ausbildungen."}
               </p>
 
-              {/* Single CTA — direct to sessions overview */}
-              <div className="mt-5 md:mt-7 mb-1 md:mb-3.5 flex justify-center">
+              {/* Three harmonized premium CTAs — main areas of the site */}
+              <div className="mt-5 md:mt-7 mb-1 md:mb-3 flex flex-col items-stretch gap-2 md:gap-2.5 w-full max-w-[320px] md:max-w-[340px]">
+                {/* Mint — Hypnosis Sessions */}
                 <Link
                   to={getPath("sessionsOverview", language, country)}
-                  className="inline-flex items-center gap-2 px-5 md:px-7 py-2 md:py-2.5 rounded-full bg-gradient-to-b from-[#A7E0B8] to-[#86CFA0] hover:from-[#9AD7AC] hover:to-[#74C390] text-[#0B3D1F] font-semibold text-[12.5px] md:text-[14px] tracking-[0.01em] border border-[#2E7D32]/40 shadow-[0_1.5px_0_0_rgba(46,125,50,0.25),0_3px_8px_-2px_rgba(46,125,50,0.25)] hover:shadow-[0_2px_8px_-1px_rgba(46,125,50,0.3),0_5px_14px_-3px_rgba(46,125,50,0.25)] active:translate-y-px transition-all duration-300 ease-out"
+                  className="group inline-flex items-center justify-center gap-2 w-full px-5 md:px-7 py-2 md:py-2.5 rounded-full bg-gradient-to-b from-[#A7E0B8] to-[#86CFA0] hover:from-[#9AD7AC] hover:to-[#74C390] text-[#0B3D1F] font-semibold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#2E7D32]/40 shadow-[0_1.5px_0_0_rgba(46,125,50,0.25),0_3px_8px_-2px_rgba(46,125,50,0.25)] hover:shadow-[0_2px_8px_-1px_rgba(46,125,50,0.3),0_5px_14px_-3px_rgba(46,125,50,0.25)] active:translate-y-px transition-all duration-300 ease-out"
                 >
                   {isEN ? "All Hypnosis Session Topics" : "Alle Themen zu Hypnose-Sitzungen"}
-                  <span aria-hidden="true">→</span>
+                  <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
                 </Link>
-              </div>
 
-              {/* Primary CTA – Online consultation booking */}
-              <div className="mt-3 md:mt-6 md:mb-1 flex flex-col items-center justify-center">
+                {/* Sand/Beige — Seminars & Trainings */}
+                <Link
+                  to={getPath("trainingOverview", language, country)}
+                  className="group inline-flex items-center justify-center gap-2 w-full px-5 md:px-7 py-2 md:py-2.5 rounded-full bg-gradient-to-b from-[#EFE3D0] to-[#DCC8A8] hover:from-[#E8D9BF] hover:to-[#CFB890] text-[#5C4426] font-semibold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#A8895C]/45 shadow-[0_1.5px_0_0_rgba(168,137,92,0.25),0_3px_8px_-2px_rgba(168,137,92,0.25)] hover:shadow-[0_2px_8px_-1px_rgba(168,137,92,0.3),0_5px_14px_-3px_rgba(168,137,92,0.25)] active:translate-y-px transition-all duration-300 ease-out"
+                >
+                  {isEN ? "Seminars & Trainings Overview" : "Übersicht Seminare & Ausbildungen"}
+                  <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
+                </Link>
+
+                {/* Blue — Online Psychological Consultation */}
                 <Link
                   to={getPath("onlineBeratung", language, country)}
-                  className="group inline-flex items-center justify-center gap-2 bg-gradient-to-b from-[#F0F6FC] to-[#DCEAF6] hover:from-[#E5F0F9] hover:to-[#CDDFEF] text-[#0B1F33] font-medium text-[12px] md:text-[13px] tracking-tight px-5 md:px-7 py-1.5 md:py-2 rounded-lg shadow-[0_1.5px_5px_rgba(27,58,92,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] hover:shadow-[0_3px_10px_rgba(27,58,92,0.12),inset_0_1px_0_rgba(255,255,255,0.7)] transition-all duration-200 border border-[#1B3A5C]/20 hover:border-[#1B3A5C]/40 hover:-translate-y-px"
+                  className="group inline-flex items-center justify-center gap-2 w-full px-5 md:px-7 py-2 md:py-2.5 rounded-full bg-gradient-to-b from-[#F0F6FC] to-[#DCEAF6] hover:from-[#E5F0F9] hover:to-[#CDDFEF] text-[#0B1F33] font-semibold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#1B3A5C]/25 hover:border-[#1B3A5C]/45 shadow-[0_1.5px_0_0_rgba(27,58,92,0.18),0_3px_8px_-2px_rgba(27,58,92,0.18)] hover:shadow-[0_2px_8px_-1px_rgba(27,58,92,0.22),0_5px_14px_-3px_rgba(27,58,92,0.2)] active:translate-y-px transition-all duration-300 ease-out"
                 >
-                  <Info className="w-3.5 h-3.5 text-[#1B3A5C]/75" strokeWidth={1.8} aria-hidden="true" />
-                  {isEN ? "Online Psychological Consultation" : "Online-Psychologische Beratung ansehen"}
+                  <Info className="w-3.5 h-3.5 text-[#1B3A5C]/75 shrink-0" strokeWidth={1.8} aria-hidden="true" />
+                  {isEN ? "Online Psychological Consultation" : "Online-Psychologische Beratung"}
                   <span aria-hidden="true" className="text-[#1B3A5C]/60 transition-transform group-hover:translate-x-0.5">→</span>
                 </Link>
-                <p className="mt-1 text-[10px] md:text-[10.5px] text-[#1B3A5C]/60 tracking-tight">
-                  {isEN ? "Available by phone or video" : "Telefonisch oder per Video möglich"}
-                </p>
               </div>
+              <p className="mt-1 text-[10px] md:text-[10.5px] text-[#1B3A5C]/60 tracking-tight text-center">
+                {isEN ? "Available by phone or video" : "Telefonisch oder per Video möglich"}
+              </p>
 
               {/* Mobile: elegant divider between topics/CTA and trust badges */}
               <div className="md:hidden w-full mt-4 mb-1 flex items-center gap-3" aria-hidden="true">
