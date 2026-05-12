@@ -471,7 +471,7 @@ export default function Header() {
             {
               icon: <BookOpen className="w-5 h-5" />,
               label: isDE ? "Alle Seminare ansehen" : "View All Seminars",
-              desc: isDE ? "Übersicht Seminare & Ausbildungen" : "Seminars & trainings overview",
+              desc: isDE ? "Einblicke in Seminare und Ausbildungen" : "Insights into seminars and trainings",
               href: getPath("trainingOverview", language, country),
             },
             ...trainingItems,
