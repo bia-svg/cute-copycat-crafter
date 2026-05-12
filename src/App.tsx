@@ -24,6 +24,7 @@ const Erfolgsberichte = lazy(() => import("@/pages/Erfolgsberichte"));
 const Teilnehmerstimmen = lazy(() => import("@/pages/Teilnehmerstimmen"));
 const AusbildungsinstitutVideos = lazy(() => import("@/pages/AusbildungsinstitutVideos"));
 const SeminareUebersicht = lazy(() => import("@/pages/SeminareUebersicht"));
+const SitzungenUebersicht = lazy(() => import("@/pages/SitzungenUebersicht"));
 const Terminbestaetigung = lazy(() => import("@/pages/Terminbestaetigung"));
 const SeminarAnmeldung = lazy(() => import("@/pages/SeminarAnmeldung"));
 const OnlineBeratung = lazy(() => import("@/pages/OnlineBeratung"));
@@ -171,6 +172,8 @@ function AppRoutes() {
             <Route path="/:lang/:country/training" element={<Ausbildung />} />
             <Route path="/:lang/:country/seminare-uebersicht" element={<SeminareUebersicht />} />
             <Route path="/:lang/:country/seminars-overview" element={<SeminareUebersicht />} />
+            <Route path="/:lang/:country/hypnose-sitzungen-uebersicht" element={<SitzungenUebersicht />} />
+            <Route path="/:lang/:country/hypnosis-sessions-overview" element={<SitzungenUebersicht />} />
             <Route path="/:lang/:country/teilnehmerstimmen" element={<Teilnehmerstimmen />} />
             <Route path="/:lang/:country/participant-voices" element={<Teilnehmerstimmen />} />
             <Route path="/:lang/:country/ausbildungsinstitut-videos" element={<AusbildungsinstitutVideos />} />

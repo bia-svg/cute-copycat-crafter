@@ -289,23 +289,28 @@ export default function Header() {
             </div>
           </div>
           <div className="md:col-span-3">
-            <div className="bg-secondary/50 border border-border rounded-lg p-3 space-y-2 self-start">
+            <SidebarCard>
               <div className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-[#2E7D32] shrink-0" />
-                <span className="font-medium text-xs text-foreground leading-tight">NGH International Trainer</span>
+                <HeartPulse className="w-4 h-4 text-[#2E7D32] shrink-0" />
+                <p className="font-semibold text-sm text-foreground">{isDE ? "Hypnose-Sitzungen" : "Hypnosis Sessions"}</p>
               </div>
-              <div className="flex items-center gap-2">
+              <p className="text-xs text-muted-foreground">
+                {isDE
+                  ? "Übersicht aller intensiven Einzelsitzungen — Raucherentwöhnung, Ängste, Abnehmen, Stress, Kinder & Jugendliche, Depression & Trauma."
+                  : "Overview of all intensive individual sessions — stop smoking, anxiety, weight loss, stress, children & teens, depression & trauma."}
+              </p>
+              <div className="flex items-center gap-2 pt-1">
                 <Award className="w-4 h-4 text-[#2E7D32] shrink-0" />
                 <span className="font-medium text-xs text-foreground leading-tight">EMR-Krankenkasse Konform</span>
               </div>
-              <div className="pt-1">
-                <Link to={getPath("contact", language, country)} onClick={() => setActiveMenu(null)}>
+              <div className="pt-2">
+                <Link to={getPath("sessionsOverview", language, country)} onClick={() => setActiveMenu(null)}>
                   <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs h-8">
-                    {isDE ? "Mehr Erfahren" : "Learn More"}
+                    {isDE ? "Alle Sitzungen" : "All Sessions"}
                   </Button>
                 </Link>
               </div>
-            </div>
+            </SidebarCard>
           </div>
         </div>
       </MegaMenuPanel>
@@ -443,6 +448,21 @@ export default function Header() {
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground px-2 pt-1 pb-1">
                   {isDE ? "Hypnose-Sitzungen" : "Hypnosis Sessions"}
                 </p>
+                <Link
+                  to={getPath("sessionsOverview", language, country)}
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-start gap-3 p-2.5 rounded-lg bg-gradient-to-b from-[#F0F6FC] to-[#E5F0FA] border border-[#1B3A5C]/15 shadow-[0_1px_3px_rgba(27,58,92,0.05)]"
+                >
+                  <span className="text-[#1B3A5C] mt-0.5"><HeartPulse className="w-5 h-5" /></span>
+                  <div>
+                    <div className="font-semibold text-sm text-[#0B1F33]">
+                      {isDE ? "Alle Sitzungen ansehen" : "View All Sessions"}
+                    </div>
+                    <div className="text-xs text-[#1B3A5C]/70">
+                      {isDE ? "Übersicht aller Einzelsitzungen" : "Overview of all individual sessions"}
+                    </div>
+                  </div>
+                </Link>
                 {therapyGoals.map((item, index) =>
                   index === therapyGoals.length - 1 ? (
                     <Link key={item.label} to={item.href} onClick={() => setMobileOpen(false)} className="flex items-start gap-3 p-2.5 rounded-lg bg-gradient-to-b from-[#F0F6FC] to-[#E5F0FA] border border-[#1B3A5C]/15 shadow-[0_1px_3px_rgba(27,58,92,0.05)]">
