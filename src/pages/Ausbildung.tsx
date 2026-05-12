@@ -23,7 +23,7 @@ import { Link } from "react-router-dom";
 import {
   CheckCircle, Calendar, MapPin, Users, ArrowRight,
   Brain, Zap, Stethoscope, Heart, GraduationCap,
-  BookOpen, Clock, Award, Star, MessageSquare, Shield
+  BookOpen, Clock, Award, Star, MessageSquare, Shield, ArrowLeft
 } from "lucide-react";
 
 const GOOGLE_REVIEWS_URL = "#";
