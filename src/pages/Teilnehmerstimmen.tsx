@@ -10,7 +10,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { getPath } from "@/lib/routes";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Star, MessageSquare } from "lucide-react";
+import { Star, MessageSquare, ArrowLeft } from "lucide-react";
 
 const trainingTestimonials = [
   {
