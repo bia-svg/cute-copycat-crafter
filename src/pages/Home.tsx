@@ -449,36 +449,15 @@ export default function Home() {
                   : "Individuelle Sitzungen, psychologische Beratung und Hypnose-Ausbildungen."}
               </p>
 
-              {/* Topics row — premium clickable pill buttons (more breathing room for clarity) */}
-              <div className="mt-5 md:mt-7 mb-1 md:mb-3.5 flex flex-wrap justify-center gap-2 md:gap-x-2.5 md:gap-y-3.5 max-w-[760px]">
-                {(isEN
-                  ? [
-                      { label: "Become smoke-free", page: "smoking" as const },
-                      { label: "Weight loss", page: "weight" as const },
-                      { label: "Anxiety & panic", page: "anxiety" as const },
-                      { label: "Stress & burnout", page: "stress" as const },
-                      { label: "Depression & trauma", page: "depression" as const },
-                      { label: "Children & teens", page: "children" as const },
-                      { label: "Training & Seminars", page: "training" as const },
-                    ]
-                  : [
-                      { label: "Rauchfrei werden", page: "smoking" as const },
-                      { label: "Abnehmen", page: "weight" as const },
-                      { label: "Ängste & Panik", page: "anxiety" as const },
-                      { label: "Stress & Burnout", page: "stress" as const },
-                      { label: "Depression & Trauma", page: "depression" as const },
-                      { label: "Kinder & Jugendliche", page: "children" as const },
-                      { label: "Ausbildung & Seminare", page: "training" as const },
-                    ]
-                ).map((item) => (
-                  <Link
-                    key={item.page}
-                    to={getPath(item.page, language, country)}
-                    className="inline-flex items-center px-3.5 md:px-4 py-1.5 md:py-1.5 rounded-full bg-white md:bg-gradient-to-b md:from-white md:to-[#F4F7FA] border border-[#1B3A5C]/40 md:border-[#1B3A5C]/35 text-[11.5px] md:text-[12.5px] font-medium text-[#1B3A5C] tracking-[0.01em] shadow-[0_1.5px_0_0_rgba(27,58,92,0.18),0_2px_4px_-1px_rgba(27,58,92,0.12)] md:shadow-[0_1px_0_0_rgba(255,255,255,0.9)_inset,0_1.5px_0_0_rgba(27,58,92,0.22),0_2px_5px_-1px_rgba(27,58,92,0.18),0_4px_10px_-3px_rgba(27,58,92,0.12)] hover:bg-[#27486B] hover:bg-none hover:text-white hover:border-[#27486B] hover:shadow-[0_2px_6px_-1px_rgba(27,58,92,0.18),0_4px_12px_-3px_rgba(27,58,92,0.14)] active:translate-y-px active:shadow-[0_0_0_1px_rgba(27,58,92,0.25)] transition-all duration-300 ease-out"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+              {/* Single CTA — direct to sessions overview */}
+              <div className="mt-5 md:mt-7 mb-1 md:mb-3.5 flex justify-center">
+                <Link
+                  to={getPath("sessionsOverview", language, country)}
+                  className="inline-flex items-center gap-2 px-5 md:px-7 py-2 md:py-2.5 rounded-full bg-gradient-to-b from-[#A7E0B8] to-[#86CFA0] hover:from-[#9AD7AC] hover:to-[#74C390] text-[#0B3D1F] font-semibold text-[12.5px] md:text-[14px] tracking-[0.01em] border border-[#2E7D32]/40 shadow-[0_1.5px_0_0_rgba(46,125,50,0.25),0_3px_8px_-2px_rgba(46,125,50,0.25)] hover:shadow-[0_2px_8px_-1px_rgba(46,125,50,0.3),0_5px_14px_-3px_rgba(46,125,50,0.25)] active:translate-y-px transition-all duration-300 ease-out"
+                >
+                  {isEN ? "All Hypnosis Session Topics" : "Alle Themen zu Hypnose-Sitzungen"}
+                  <span aria-hidden="true">→</span>
+                </Link>
               </div>
 
               {/* Primary CTA – Online consultation booking */}
