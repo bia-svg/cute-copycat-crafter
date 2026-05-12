@@ -392,9 +392,9 @@ export default function Header() {
                 : "Find the right training, a day seminar, authentic participant voices and exclusive insights into the training institute – personal, practice-oriented and directly with David J. Woods."}
             </p>
             <div className="pt-2">
-              <Link to={getPath("contact", language, country)} onClick={() => setActiveMenu(null)}>
+              <Link to={getPath("trainingOverview", language, country)} onClick={() => setActiveMenu(null)}>
                 <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs">
-                  {isDE ? "Mehr erfahren" : "Learn More"}
+                  {isDE ? "Alle Seminare" : "All Seminars"}
                 </Button>
               </Link>
             </div>
@@ -467,7 +467,15 @@ export default function Header() {
           </div>
 
           {/* Seminare-Ausbildungen */}
-          {renderMobileSection("training", t("nav.training"), trainingItems)}
+          {renderMobileSection("training", t("nav.training"), [
+            {
+              icon: <BookOpen className="w-5 h-5" />,
+              label: isDE ? "Alle Seminare ansehen" : "View All Seminars",
+              desc: isDE ? "Übersicht Seminare & Ausbildungen" : "Seminars & trainings overview",
+              href: getPath("trainingOverview", language, country),
+            },
+            ...trainingItems,
+          ])}
 
           {/* Firmen-Coaching */}
           {renderMobileSection(

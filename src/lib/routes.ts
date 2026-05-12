@@ -2,7 +2,7 @@ import type { Language, Country } from "@/contexts/LanguageContext";
 
 type PageKey =
   | "home" | "smoking" | "anxiety" | "weight" | "stress"
-  | "depression" | "children" | "adults" | "training" | "seminarSchedule" | "corporate"
+  | "depression" | "children" | "adults" | "training" | "trainingOverview" | "seminarSchedule" | "corporate"
   | "corporateErfolg" | "corporateResilienz" | "corporateStress" | "corporateNichtraucher"
   | "about" | "testimonials" | "successStories" | "media"
   | "contact" | "appointmentConfirmation" | "seminarRegistration" | "cityZurich" | "cityAugsburg" | "locations"
@@ -19,6 +19,7 @@ const slugMapDE: Record<PageKey, string> = {
   children: "kinder-jugendliche",
   adults: "erwachsene",
   training: "ausbildung",
+  trainingOverview: "seminare-uebersicht",
   seminarSchedule: "seminar-ablauf",
   corporate: "firmen-coaching",
   corporateErfolg: "firmen-coaching/erfolgs-training",
@@ -54,6 +55,7 @@ const slugMapEN: Record<PageKey, string> = {
   children: "children-teens",
   adults: "adults",
   training: "training",
+  trainingOverview: "seminars-overview",
   seminarSchedule: "seminar-schedule",
   corporate: "business-coaching",
   corporateErfolg: "business-coaching/success-training",
