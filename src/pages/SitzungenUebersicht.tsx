@@ -110,7 +110,8 @@ export default function SitzungenUebersicht() {
       <section className="bg-[#E8EDF3]">
         <style>{`
           .sitzungen-cards .service-card-image { aspect-ratio: 4 / 3 !important; }
-          .sitzungen-cards .md\\:hidden > div:first-child { width: 8rem !important; min-height: 8rem !important; }
+          .sitzungen-cards .md\\:hidden { display: none !important; }
+          .sitzungen-cards .hidden.md\\:block { display: block !important; }
         `}</style>
         <div className="container-main py-3.5 md:py-5">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
