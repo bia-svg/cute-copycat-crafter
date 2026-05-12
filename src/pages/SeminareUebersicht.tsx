@@ -83,12 +83,16 @@ export default function SeminareUebersicht() {
 
       {/* Items grid */}
       <section className="bg-[#E8EDF3]">
+        <style>{`
+          .seminare-cards .service-card-image { aspect-ratio: 4 / 3 !important; }
+          .seminare-cards .md\\:hidden > div:first-child { width: 8rem !important; min-height: 8rem !important; }
+        `}</style>
         <div className="container-main py-3.5 md:py-5">
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
             <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 text-center tracking-tight">
               {isEN ? "Our seminars & trainings" : "Unsere Seminare & Ausbildungen"}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
+            <div className="seminare-cards grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
               {items.map((item) => (
                 <div key={item.title} className="topics-compact relative">
                   {item.disabled && (
