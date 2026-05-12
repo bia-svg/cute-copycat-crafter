@@ -10,7 +10,7 @@ import ServiceCard from "@/components/ServiceCard";
 import diplomImg from "@/assets/diplom-aktiv-hypnose.webp";
 import sessionImg from "@/assets/david-session.webp";
 import officeImg from "@/assets/david-woods-office.jpg";
-import heroImg from "@/assets/hero-2.webp";
+import heroImg from "@/assets/hero-4.webp";
 
 export default function SeminareUebersicht() {
   const { language, country } = useLanguage();
