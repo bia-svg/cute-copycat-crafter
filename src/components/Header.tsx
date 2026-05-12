@@ -138,30 +138,43 @@ export default function Header() {
       </button>
       {mobileAccordion === id && (
         <div className="px-8 pb-3 space-y-1">
-          {items.map((item) =>
-            item.disabled ? (
-              <div key={item.label} className="flex items-start gap-3 p-2 rounded-md opacity-60 cursor-not-allowed">
-                <span className="text-primary mt-0.5">{item.icon}</span>
-                <div>
-                  <div className="text-sm font-medium text-foreground flex items-center gap-2">
-                    {item.label}
-                    <span className="text-[10px] uppercase tracking-wider bg-secondary text-muted-foreground px-1.5 py-0.5 rounded">
-                      {isDE ? "Bald" : "Soon"}
-                    </span>
+          {items.map((item) => {
+            const isHighlight = /^(Alle |View All)/i.test(item.label);
+            if (item.disabled) {
+              return (
+                <div key={item.label} className="flex items-start gap-3 p-2 rounded-md opacity-60 cursor-not-allowed">
+                  <span className="text-primary mt-0.5">{item.icon}</span>
+                  <div>
+                    <div className="text-sm font-medium text-foreground flex items-center gap-2">
+                      {item.label}
+                      <span className="text-[10px] uppercase tracking-wider bg-secondary text-muted-foreground px-1.5 py-0.5 rounded">
+                        {isDE ? "Bald" : "Soon"}
+                      </span>
+                    </div>
+                    <div className="text-xs text-muted-foreground">{item.desc}</div>
                   </div>
-                  <div className="text-xs text-muted-foreground">{item.desc}</div>
                 </div>
-              </div>
-            ) : (
-              <Link key={item.label} to={item.href} onClick={() => setMobileOpen(false)} className="flex items-start gap-3 p-2 rounded-md hover:bg-secondary">
-                <span className="text-primary mt-0.5">{item.icon}</span>
+              );
+            }
+            return (
+              <Link
+                key={item.label}
+                to={item.href}
+                onClick={() => setMobileOpen(false)}
+                className={
+                  isHighlight
+                    ? "flex items-start gap-3 p-2.5 rounded-lg bg-gradient-to-b from-[#F0F6FC] to-[#E5F0FA] border border-[#1B3A5C]/15 shadow-[0_1px_3px_rgba(27,58,92,0.05)]"
+                    : "flex items-start gap-3 p-2 rounded-md hover:bg-secondary"
+                }
+              >
+                <span className={isHighlight ? "text-[#1B3A5C] mt-0.5" : "text-primary mt-0.5"}>{item.icon}</span>
                 <div>
-                  <div className="text-sm font-medium text-foreground">{item.label}</div>
-                  <div className="text-xs text-muted-foreground">{item.desc}</div>
+                  <div className={isHighlight ? "font-semibold text-sm text-[#0B1F33]" : "text-sm font-medium text-foreground"}>{item.label}</div>
+                  <div className={isHighlight ? "text-xs text-[#1B3A5C]/70" : "text-xs text-muted-foreground"}>{item.desc}</div>
                 </div>
               </Link>
-            )
-          )}
+            );
+          })}
         </div>
       )}
     </div>
@@ -306,7 +319,7 @@ export default function Header() {
               <div className="pt-2">
                 <Link to={getPath("sessionsOverview", language, country)} onClick={() => setActiveMenu(null)}>
                   <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs h-8">
-                    {isDE ? "Alle Sitzungen" : "All Sessions"}
+                    {isDE ? "Alle Sitzungen ansehen" : "View All Sessions"}
                   </Button>
                 </Link>
               </div>
