@@ -306,7 +306,7 @@ export default function Header() {
               <div className="pt-2">
                 <Link to={getPath("sessionsOverview", language, country)} onClick={() => setActiveMenu(null)}>
                   <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90 text-xs h-8">
-                    {isDE ? "Alle Sitzungen" : "All Sessions"}
+                    {isDE ? "Alle Sitzungen ansehen" : "View All Sessions"}
                   </Button>
                 </Link>
               </div>
