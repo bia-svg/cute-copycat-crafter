@@ -59,6 +59,12 @@ export const pageSEO = {
     descriptionDE: "Einblicke in unsere Seminare und Ausbildungen: Aktiv-Hypnose® Therapeut, Teilnehmerstimmen, Tagesseminar und das Hypnoseinstitut. Persönlich, praxisnah und direkt mit Lic. Psych. David J. Woods.",
     descriptionEN: "Insights into our seminars and trainings: Aktiv-Hypnose® Therapist, participant voices, day seminar and the hypnosis institute. Personal, practice-oriented and directly with Lic. Psych. David J. Woods.",
   },
+  sessionsOverview: {
+    titleDE: "Hypnose-Sitzungen · Übersicht · David J. Woods",
+    titleEN: "Hypnosis Sessions · Overview · David J. Woods",
+    descriptionDE: "Übersicht der intensiven Einzelsitzungen mit Hypnose: Raucherentwöhnung, Ängste & Panik, Abnehmen, Stress, Kinder & Jugendliche sowie Depression & Trauma. Persönlich mit Lic. Psych. David J. Woods.",
+    descriptionEN: "Overview of intensive individual hypnosis sessions: stop smoking, anxiety & panic, weight loss, stress, children & teens, depression & trauma. Personally with Lic. Psych. David J. Woods.",
+  },
   corporate: {
     titleDE: "Firmen-Coaching · Hypnose & Erfolgs-Training für Unternehmen",
     titleEN: "Corporate Coaching · Hypnosis & Success Training for Teams",

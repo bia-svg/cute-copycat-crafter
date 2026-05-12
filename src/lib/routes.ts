@@ -4,6 +4,7 @@ type PageKey =
   | "home" | "smoking" | "anxiety" | "weight" | "stress"
   | "depression" | "children" | "adults" | "training" | "trainingOverview" | "seminarSchedule" | "corporate"
   | "corporateErfolg" | "corporateResilienz" | "corporateStress" | "corporateNichtraucher"
+  | "sessionsOverview"
   | "about" | "testimonials" | "successStories" | "media"
   | "contact" | "appointmentConfirmation" | "seminarRegistration" | "cityZurich" | "cityAugsburg" | "locations"
   | "onlineBeratung"
@@ -26,6 +27,7 @@ const slugMapDE: Record<PageKey, string> = {
   corporateResilienz: "firmen-coaching/resilienz-verstaerken",
   corporateStress: "firmen-coaching/stress-praevention",
   corporateNichtraucher: "firmen-coaching/nichtraucher-seminare",
+  sessionsOverview: "hypnose-sitzungen-uebersicht",
   about: "ueber-uns",
   testimonials: "kundenmeinungen",
   successStories: "erfolgsberichte",
@@ -62,6 +64,7 @@ const slugMapEN: Record<PageKey, string> = {
   corporateResilienz: "business-coaching/resilience-building",
   corporateStress: "business-coaching/stress-prevention",
   corporateNichtraucher: "business-coaching/non-smoker-seminars",
+  sessionsOverview: "hypnosis-sessions-overview",
   about: "about-us",
   testimonials: "testimonials",
   successStories: "success-stories",
