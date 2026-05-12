@@ -53,6 +53,12 @@ export const pageSEO = {
     descriptionDE: "Detaillierter Ablauf des 6-Tage Aktiv-Hypnose© Ausbildungsseminars: Curriculum, Inhalte, praktische Übungen. Lic. Psych. David J. Woods — Zürich, Eschenbach & Augsburg.",
     descriptionEN: "Detailed schedule of the 6-day Aktiv-Hypnose© training: curriculum, content, practical exercises. Lic. Psych. David J. Woods — Zurich, Eschenbach & Augsburg.",
   },
+  trainingOverview: {
+    titleDE: "Seminare & Ausbildungen · Übersicht · David J. Woods",
+    titleEN: "Seminars & Trainings · Overview · David J. Woods",
+    descriptionDE: "Einblicke in unsere Seminare und Ausbildungen: Aktiv-Hypnose® Therapeut, Teilnehmerstimmen, Tagesseminar und das Hypnoseinstitut. Persönlich, praxisnah und direkt mit Lic. Psych. David J. Woods.",
+    descriptionEN: "Insights into our seminars and trainings: Aktiv-Hypnose® Therapist, participant voices, day seminar and the hypnosis institute. Personal, practice-oriented and directly with Lic. Psych. David J. Woods.",
+  },
   corporate: {
     titleDE: "Firmen-Coaching · Hypnose & Erfolgs-Training für Unternehmen",
     titleEN: "Corporate Coaching · Hypnosis & Success Training for Teams",
