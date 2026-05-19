@@ -63,9 +63,9 @@ export default function TrainingTestimonialsCarousel() {
   }, [api]);
 
   return (
-    <section className="bg-[#DDE1E4] border-b border-border">
-      <div className="container-main py-3 md:py-5 lg:py-6">
-        <div className="group/sec max-w-3xl mx-auto bg-white border border-[#1B3A5C]/14 rounded-2xl md:rounded-3xl px-4 py-4 md:px-7 md:py-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_2px_10px_rgba(27,58,92,0.05),0_24px_56px_-28px_rgba(27,58,92,0.30)] ring-1 ring-white/85 hover:shadow-[0_2px_4px_rgba(27,58,92,0.06),0_4px_14px_rgba(27,58,92,0.06),0_32px_64px_-28px_rgba(27,58,92,0.36)] hover:-translate-y-[1px] transition-[transform,box-shadow] duration-300 ease-out">
+    <section className="border-b border-border" style={{ background: "linear-gradient(180deg, #ECEAE3 0%, #F1EFE8 55%, #ECEAE3 100%)" }}>
+      <div className="container-main py-5 md:py-7 lg:py-8">
+        <div className="group/sec relative max-w-3xl mx-auto bg-gradient-to-b from-white to-[#FBFCFD] border border-[#1B3A5C]/25 rounded-2xl md:rounded-3xl px-4 py-5 md:px-7 md:py-7 shadow-[0_1px_2px_rgba(27,58,92,0.06),0_8px_22px_rgba(27,58,92,0.10),0_36px_80px_-26px_rgba(27,58,92,0.45)] ring-1 ring-white/90 hover:shadow-[0_2px_5px_rgba(27,58,92,0.08),0_12px_28px_rgba(27,58,92,0.12),0_44px_96px_-26px_rgba(27,58,92,0.50)] hover:-translate-y-[2px] transition-[transform,box-shadow] duration-300 ease-out before:content-[''] before:absolute before:top-0 before:left-8 before:right-8 before:h-[2px] before:rounded-b-full before:bg-gradient-to-r before:from-transparent before:via-[#1B3A5C]/35 before:to-transparent">
         <div className="max-w-2xl mx-auto text-center mb-2.5 md:mb-4">
           <h2 className="text-base md:text-xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "What Our Seminar Participants Say" : "Das sagen unsere Seminarteilnehmer"}
