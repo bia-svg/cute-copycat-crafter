@@ -58,7 +58,7 @@ export default function Ausbildung() {
   /* ── Seminar Dates ── */
   const datesCH: { date: string; location: string; status: "available" | "limited" | "soldout"; forceEarlyBird?: boolean }[] = [
     { date: "Mo-Sa, 15.-20. Juni 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "limited" as const },
-    { date: "Mi-Sa, 22.-25. Juli 2026", location: "ZISAG AG / Fit & Gsund, Churzhaslen 3, 8733 Eschenbach", status: "soldout" as const },
+    { date: "Mo-Sa, 20.-25. Juli 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "soldout" as const },
     { date: "Mo-Sa, 07.-12. Sept. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const },
     { date: "Mo-Sa, 23.-28. Nov. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const },
   ];
