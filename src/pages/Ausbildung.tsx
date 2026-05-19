@@ -687,7 +687,7 @@ export default function Ausbildung() {
                 {isEN ? "Germany" : "Deutschland"}
               </button>
               <button
-                onClick={() => { setActiveTab("ch"); setShowAllDates(false); }}
+                onClick={() => { setActiveTab("ch"); }}
                 className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-4 rounded-lg border font-semibold text-sm transition-all ${
                   activeTab === "ch"
                     ? "border-[#C5CCD4] bg-[#EAEEF2] text-[#1B3A5C] shadow-[0_1px_3px_rgba(27,58,92,0.06)]"
