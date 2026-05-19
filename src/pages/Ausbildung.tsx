@@ -515,7 +515,7 @@ export default function Ausbildung() {
           ═══════════════════════════════════════════════════════════ */}
       <section className="bg-[#DDE1E4] border-b border-border">
         <div className="container-main py-3 md:py-6 lg:py-8">
-          <div className="max-w-5xl mx-auto bg-white border border-[#2E7D32]/15 rounded-2xl md:rounded-3xl px-4 py-4 md:px-9 md:py-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
+          <div className="max-w-5xl mx-auto bg-white border border-[#1B3A5C]/14 rounded-2xl md:rounded-3xl px-4 py-4 md:px-9 md:py-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_2px_8px_rgba(27,58,92,0.04),0_22px_52px_-26px_rgba(27,58,92,0.28)] ring-1 ring-white/85 hover:shadow-[0_2px_4px_rgba(27,58,92,0.05),0_4px_14px_rgba(27,58,92,0.06),0_32px_64px_-26px_rgba(27,58,92,0.34)] hover:-translate-y-[1px] transition-[transform,box-shadow] duration-300 ease-out">
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "What Makes This Training Different" : "Was diese Ausbildung besonders macht"}
             </h2>
@@ -585,7 +585,7 @@ export default function Ausbildung() {
           ═══════════════════════════════════════════════════════════ */}
       <section id="curriculum" className="bg-[#f4f3ef] border-b border-border scroll-mt-20">
         <div className="container-main py-2.5 md:py-4 lg:py-6">
-          <div className="max-w-5xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl md:rounded-3xl px-3 py-3 md:px-9 md:py-5 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
+          <div className="max-w-5xl mx-auto bg-white border border-[#1B3A5C]/14 rounded-2xl md:rounded-3xl px-3 py-3 md:px-9 md:py-5 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_2px_8px_rgba(27,58,92,0.04),0_22px_52px_-26px_rgba(27,58,92,0.28)] ring-1 ring-white/85 hover:shadow-[0_2px_4px_rgba(27,58,92,0.05),0_4px_14px_rgba(27,58,92,0.06),0_32px_64px_-26px_rgba(27,58,92,0.34)] hover:-translate-y-[1px] transition-[transform,box-shadow] duration-300 ease-out">
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Your 6-Day Journey" : "Ihre 6-Tage-Reise"}
             </h2>
@@ -662,15 +662,16 @@ export default function Ausbildung() {
           ═══════════════════════════════════════════════════════════ */}
       <section id="dates" className="border-b border-border scroll-mt-20" style={{ background: "linear-gradient(180deg, #D6DBE0 0%, #DDE1E4 55%, #D9DDE1 100%)" }}>
         <div className="container-main py-4 md:py-7 lg:py-9">
-          <div className="max-w-4xl mx-auto border border-[#1B3A5C]/20 rounded-2xl md:rounded-3xl px-4 py-5 md:px-10 md:py-8 shadow-[0_1px_2px_rgba(27,58,92,0.05),0_2px_8px_rgba(27,58,92,0.04),0_24px_56px_-28px_rgba(27,58,92,0.28)] ring-1 ring-white/70" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FBFCFD 100%)" }}>
+          <div className="max-w-4xl mx-auto border border-[#1B3A5C]/20 rounded-2xl md:rounded-3xl px-4 py-5 md:px-10 md:py-8 shadow-[0_1px_2px_rgba(27,58,92,0.05),0_2px_10px_rgba(27,58,92,0.05),0_28px_64px_-28px_rgba(27,58,92,0.32)] ring-1 ring-white/80 hover:shadow-[0_2px_4px_rgba(27,58,92,0.06),0_4px_14px_rgba(27,58,92,0.06),0_36px_72px_-28px_rgba(27,58,92,0.38)] hover:-translate-y-[1px] transition-[transform,box-shadow] duration-300 ease-out" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FBFCFD 100%)" }}>
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
             </h2>
             <div className="flex justify-center mb-3">
-              <div className="inline-flex items-center gap-2 text-[13px] sm:text-sm font-medium text-[#2E7D32] bg-[#E8F5E9]/80 px-4 py-2 rounded-full border border-[#2E7D32]/20 shadow-sm">
+              <div className="group inline-flex items-center gap-2 text-[13px] sm:text-sm font-medium text-[#2E7D32] bg-gradient-to-b from-[#F2FAF3] to-[#E4F2E6]/85 backdrop-blur-[2px] px-4 py-2 rounded-full border border-[#2E7D32]/25 shadow-[0_1px_1px_rgba(255,255,255,0.8)_inset,0_2px_8px_-4px_rgba(46,125,50,0.18)] hover:border-[#2E7D32]/45 hover:shadow-[0_1px_1px_rgba(255,255,255,0.9)_inset,0_4px_14px_-4px_rgba(46,125,50,0.35)] transition-all duration-300">
                 <GraduationCap className="w-4 h-4" />
                 {isEN ? "Therapist in Aktiv-Hypnose®" : "Therapeut in Aktiv-Hypnose®"}
               </div>
+
             </div>
 
             {/* Country Tabs */}
@@ -705,7 +706,7 @@ export default function Ausbildung() {
                   {datesCH.map((d, i) => {
                     const isSoldOut = d.status === "soldout";
                     return (
-                      <div key={`ch-${i}`} className="group border border-[#1B3A5C]/12 p-4 md:p-5 rounded-2xl shadow-[0_1px_2px_rgba(27,58,92,0.04),0_8px_20px_-12px_rgba(27,58,92,0.18)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.06),0_18px_36px_-16px_rgba(27,58,92,0.28)] hover:border-[#1B3A5C]/22 hover:-translate-y-[2px] transition-[transform,box-shadow,border-color] duration-300 ease-out ring-1 ring-white/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-5 md:pr-6" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)" }}>
+                      <div key={`ch-${i}`} className="group border border-[#1B3A5C]/12 p-4 md:p-5 rounded-2xl shadow-[0_1px_2px_rgba(27,58,92,0.04),0_8px_20px_-12px_rgba(27,58,92,0.18)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.07),0_22px_44px_-16px_rgba(27,58,92,0.32),0_0_0_1px_rgba(46,125,50,0.10)] hover:border-[#1B3A5C]/22 hover:-translate-y-[2px] transition-[transform,box-shadow,border-color] duration-300 ease-out ring-1 ring-white/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-5 md:pr-6" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)" }}>
                         <div>
                           <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
                             <Calendar className="w-4 h-4" /> {d.date}
@@ -719,15 +720,15 @@ export default function Ausbildung() {
                         </div>
                         <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
                           <div className="flex flex-col items-center sm:items-end gap-1.5 w-full sm:w-auto">
-                            <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
+                            <span className="text-[10.5px] font-medium text-[#1B3A5C]/80 bg-gradient-to-b from-white to-[#EDF1F5] border border-[#D7DEE6] px-2.5 py-[3px] rounded-full whitespace-nowrap shadow-[0_1px_1px_rgba(255,255,255,0.85)_inset,0_1px_2px_-1px_rgba(27,58,92,0.10)]">
                               {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
                             </span>
                             {(() => {
                               if (isSoldOut) {
                                 return (
                                   <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1.5">
-                                    <div className="h-[4px] w-full rounded-full bg-[#EEF1F4]/80 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.04)]">
-                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #DDA0A0 0%, #C26060 100%)", boxShadow: "0 0 6px rgba(184,74,74,0.28)" }} />
+                                    <div className="h-[5px] w-full rounded-full bg-[#EEF1F4]/85 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.06),inset_0_-1px_0_rgba(255,255,255,0.6)]">
+                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #DDA0A0 0%, #C26060 100%)", boxShadow: "0 0 10px rgba(184,74,74,0.30), 0 0 2px rgba(184,74,74,0.25)" }} />
                                     </div>
                                     <span className="text-[10px] text-[#B84A4A] font-medium tracking-wide leading-none">
                                       {isEN ? "Fully booked" : "Ausgebucht"}
@@ -744,7 +745,7 @@ export default function Ausbildung() {
                               if (!cfg) return null;
                               return (
                                 <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1.5">
-                                  <div className="h-[4px] w-full rounded-full bg-[#EEF1F4]/80 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.04)]">
+                                  <div className="h-[5px] w-full rounded-full bg-[#EEF1F4]/85 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.06),inset_0_-1px_0_rgba(255,255,255,0.6)]">
                                     <div className="h-full rounded-full transition-all duration-500" style={{ width: `${cfg.fill}%`, background: cfg.gradient, boxShadow: `0 0 6px ${cfg.glow}` }} />
                                   </div>
                                   <span className="text-[10px] text-[#1B3A5C]/55 font-medium tracking-wide leading-none">
@@ -784,7 +785,7 @@ export default function Ausbildung() {
                   {datesDE.map((d, i) => {
                     const isSoldOut = d.status === "soldout";
                     return (
-                      <div key={`de-${i}`} className="group border border-[#1B3A5C]/12 p-4 md:p-5 rounded-2xl shadow-[0_1px_2px_rgba(27,58,92,0.04),0_8px_20px_-12px_rgba(27,58,92,0.18)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.06),0_18px_36px_-16px_rgba(27,58,92,0.28)] hover:border-[#1B3A5C]/22 hover:-translate-y-[2px] transition-[transform,box-shadow,border-color] duration-300 ease-out ring-1 ring-white/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-5 md:pr-6" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)" }}>
+                      <div key={`de-${i}`} className="group border border-[#1B3A5C]/12 p-4 md:p-5 rounded-2xl shadow-[0_1px_2px_rgba(27,58,92,0.04),0_8px_20px_-12px_rgba(27,58,92,0.18)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.07),0_22px_44px_-16px_rgba(27,58,92,0.32),0_0_0_1px_rgba(46,125,50,0.10)] hover:border-[#1B3A5C]/22 hover:-translate-y-[2px] transition-[transform,box-shadow,border-color] duration-300 ease-out ring-1 ring-white/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-5 md:pr-6" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)" }}>
                         <div>
                           <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
                             <Calendar className="w-4 h-4" /> {d.date}
@@ -798,15 +799,15 @@ export default function Ausbildung() {
                         </div>
                         <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
                           <div className="flex flex-col items-center sm:items-end gap-1.5 w-full sm:w-auto">
-                            <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
+                            <span className="text-[10.5px] font-medium text-[#1B3A5C]/80 bg-gradient-to-b from-white to-[#EDF1F5] border border-[#D7DEE6] px-2.5 py-[3px] rounded-full whitespace-nowrap shadow-[0_1px_1px_rgba(255,255,255,0.85)_inset,0_1px_2px_-1px_rgba(27,58,92,0.10)]">
                               {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
                             </span>
                             {(() => {
                               if (isSoldOut) {
                                 return (
                                   <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1.5">
-                                    <div className="h-[4px] w-full rounded-full bg-[#EEF1F4]/80 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.04)]">
-                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #DDA0A0 0%, #C26060 100%)", boxShadow: "0 0 6px rgba(184,74,74,0.28)" }} />
+                                    <div className="h-[5px] w-full rounded-full bg-[#EEF1F4]/85 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.06),inset_0_-1px_0_rgba(255,255,255,0.6)]">
+                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #DDA0A0 0%, #C26060 100%)", boxShadow: "0 0 10px rgba(184,74,74,0.30), 0 0 2px rgba(184,74,74,0.25)" }} />
                                     </div>
                                     <span className="text-[10px] text-[#B84A4A] font-medium tracking-wide leading-none">
                                       {isEN ? "Fully booked" : "Ausgebucht"}
@@ -823,7 +824,7 @@ export default function Ausbildung() {
                               if (!cfg) return null;
                               return (
                                 <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1.5">
-                                  <div className="h-[4px] w-full rounded-full bg-[#EEF1F4]/80 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.04)]">
+                                  <div className="h-[5px] w-full rounded-full bg-[#EEF1F4]/85 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.06),inset_0_-1px_0_rgba(255,255,255,0.6)]">
                                     <div className="h-full rounded-full transition-all duration-500" style={{ width: `${cfg.fill}%`, background: cfg.gradient, boxShadow: `0 0 6px ${cfg.glow}` }} />
                                   </div>
                                   <span className="text-[10px] text-[#1B3A5C]/55 font-medium tracking-wide leading-none">
@@ -895,9 +896,9 @@ export default function Ausbildung() {
 
       <section className="bg-[#DDE1E4] py-3 md:py-5">
         <div className="container-main">
-          <div className="relative max-w-xl mx-auto bg-gradient-to-br from-white via-[#F1F4F7] to-[#E8ECEF] border border-[#1B3A5C]/18 rounded-2xl px-4 py-3.5 md:px-6 md:py-4 text-center shadow-[0_4px_18px_rgba(27,58,92,0.08)]">
+          <div className="group relative max-w-xl mx-auto bg-gradient-to-br from-white via-[#F1F4F7] to-[#E8ECEF] border border-[#1B3A5C]/20 rounded-2xl px-4 py-3.5 md:px-6 md:py-4 text-center shadow-[0_1px_2px_rgba(27,58,92,0.04),0_2px_10px_rgba(27,58,92,0.05),0_22px_50px_-26px_rgba(27,58,92,0.30)] ring-1 ring-white/85 hover:shadow-[0_2px_4px_rgba(27,58,92,0.06),0_4px_14px_rgba(27,58,92,0.06),0_30px_60px_-26px_rgba(27,58,92,0.36)] hover:-translate-y-[1px] transition-[transform,box-shadow] duration-300 ease-out">
             {/* Decorative top accent */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-[9px] md:text-[10px] font-medium px-3 py-0.5 rounded-full tracking-wide uppercase border border-[#1B3A5C]/25">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-white to-[#ECEEF1] text-[#1B3A5C] text-[9px] md:text-[10px] font-medium px-3 py-0.5 rounded-full tracking-wide uppercase border border-[#1B3A5C]/25 shadow-[0_1px_1px_rgba(255,255,255,0.85)_inset,0_1px_3px_-1px_rgba(27,58,92,0.18)]">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
             <h2 className="text-base md:text-lg font-light text-foreground mb-1 md:mb-1.5 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
@@ -909,18 +910,19 @@ export default function Ausbildung() {
                 : "In 6 Tagen gewinnen Sie das Wissen, die Sicherheit und das Diplom, um Menschen professionell zu begleiten. Sind Sie bereit?"}
             </p>
             <Link to={`${getPath("seminarRegistration", language, country)}?country=de`}>
-              <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-5 py-2 md:px-6 md:py-2.5 text-[13px] md:text-sm rounded-full shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] transition-all">
+              <Button className="bg-gradient-to-b from-[#d7eed8] to-[#b8dfba] hover:from-[#c8e6c9] hover:to-[#a5d6a7] text-[#1B3A1F] font-medium px-5 py-2 md:px-6 md:py-2.5 text-[13px] md:text-sm rounded-full border border-[#2E7D32]/30 shadow-[0_1px_1px_rgba(255,255,255,0.7)_inset,0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_1px_1px_rgba(255,255,255,0.85)_inset,0_6px_22px_rgba(46,125,50,0.45),0_0_18px_rgba(46,125,50,0.20)] hover:-translate-y-[1px] transition-all duration-300 ease-out">
                 {isEN ? "View Next Step" : "Nächsten Schritt ansehen"}
                 <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
               </Button>
             </Link>
             <div className="flex items-center justify-center gap-3 mt-2.5 md:mt-4 text-muted-foreground text-[11px] md:text-sm">
-              <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-foreground transition-colors">
+              <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-gradient-to-b from-white to-[#F4F6F8] border border-[#D7DEE6] px-2.5 py-1 rounded-full shadow-[0_1px_1px_rgba(255,255,255,0.85)_inset,0_1px_2px_-1px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/30 hover:shadow-[0_1px_1px_rgba(255,255,255,0.9)_inset,0_3px_8px_-2px_rgba(27,58,92,0.18)] hover:text-foreground transition-all duration-300">
                 <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
                 5.0 — 266 Google {isEN ? "Reviews" : "Bewertungen"}
               </a>
             </div>
           </div>
+
         </div>
       </section>
     </>
