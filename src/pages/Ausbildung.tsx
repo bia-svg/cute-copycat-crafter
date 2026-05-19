@@ -660,9 +660,9 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION — Upcoming Dates with Country Tabs (premium framed)
           ═══════════════════════════════════════════════════════════ */}
-      <section id="dates" className="border-b border-border scroll-mt-20" style={{ background: "linear-gradient(180deg, #D6DBE0 0%, #DDE1E4 55%, #D9DDE1 100%)" }}>
-        <div className="container-main py-4 md:py-7 lg:py-9">
-          <div className="max-w-4xl mx-auto border border-[#1B3A5C]/20 rounded-2xl md:rounded-3xl px-4 py-5 md:px-10 md:py-8 shadow-[0_1px_2px_rgba(27,58,92,0.05),0_2px_10px_rgba(27,58,92,0.05),0_28px_64px_-28px_rgba(27,58,92,0.32)] ring-1 ring-white/80 hover:shadow-[0_2px_4px_rgba(27,58,92,0.06),0_4px_14px_rgba(27,58,92,0.06),0_36px_72px_-28px_rgba(27,58,92,0.38)] hover:-translate-y-[1px] transition-[transform,box-shadow] duration-300 ease-out" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FBFCFD 100%)" }}>
+      <section id="dates" className="border-b border-border scroll-mt-20" style={{ background: "linear-gradient(180deg, #C2C9D1 0%, #CBD2D9 55%, #C5CCD3 100%)" }}>
+        <div className="container-main py-5 md:py-8 lg:py-10">
+          <div className="relative max-w-4xl mx-auto border border-[#1B3A5C]/28 rounded-2xl md:rounded-3xl px-4 py-6 md:px-10 md:py-9 shadow-[0_1px_2px_rgba(27,58,92,0.08),0_10px_28px_rgba(27,58,92,0.12),0_44px_96px_-26px_rgba(27,58,92,0.50)] ring-1 ring-white/90 hover:shadow-[0_2px_5px_rgba(27,58,92,0.10),0_14px_32px_rgba(27,58,92,0.14),0_54px_110px_-26px_rgba(27,58,92,0.56)] hover:-translate-y-[2px] transition-[transform,box-shadow] duration-300 ease-out before:content-[''] before:absolute before:top-0 before:left-8 before:right-8 before:h-[2px] before:rounded-b-full before:bg-gradient-to-r before:from-transparent before:via-[#1B3A5C]/40 before:to-transparent" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFBFD 100%)" }}>
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
             </h2>
