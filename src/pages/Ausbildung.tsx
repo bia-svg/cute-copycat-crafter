@@ -857,23 +857,6 @@ export default function Ausbildung() {
                 </>
               )}
             </div>
-            {(() => {
-              const totalForTab = activeTab === "ch" ? datesCH.length : datesDE.length;
-              const hidden = totalForTab - INITIAL_DATES_VISIBLE;
-              if (hidden <= 0) return null;
-              return (
-                <div className="text-center mt-5">
-                  <button
-                    onClick={() => setShowAllDates((v) => !v)}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#1B3A5C] border border-[#1B3A5C]/25 hover:border-[#1B3A5C]/50 hover:bg-white rounded-full px-5 py-2 transition-all"
-                  >
-                    {showAllDates
-                      ? (isEN ? "Show fewer dates" : "Weniger Termine anzeigen")
-                      : (isEN ? `Show all dates (+${hidden})` : `Weitere Termine anzeigen (+${hidden})`)}
-                  </button>
-                </div>
-              );
-            })()}
           </div>
         </div>
       </section>
