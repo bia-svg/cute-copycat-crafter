@@ -148,18 +148,21 @@ export default function TrainingTestimonialsCarousel() {
           </Carousel>
 
           {/* Dots */}
-          <div className="flex justify-center gap-2 mt-3 md:mt-5">
+          <div className="flex justify-center items-center gap-2 mt-3 md:mt-5">
             {trainingTestimonials.map((_, i) => (
               <button
                 key={i}
                 onClick={() => api?.scrollTo(i)}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`h-2 rounded-full transition-all ${
-                  current === i ? "w-6 bg-[#1B3A5C]" : "w-2 bg-muted-foreground/40 hover:bg-muted-foreground/60"
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  current === i
+                    ? "w-7 bg-gradient-to-r from-[#1B3A5C] to-[#2A4F7A] shadow-[0_1px_3px_rgba(27,58,92,0.35),0_0_8px_rgba(27,58,92,0.20)]"
+                    : "w-2 bg-[#1B3A5C]/25 hover:bg-[#1B3A5C]/45"
                 }`}
               />
             ))}
           </div>
+
 
           {/* Counter for clear progress indication */}
           <div className="text-center mt-2 text-[11px] md:text-xs text-muted-foreground tabular-nums">
