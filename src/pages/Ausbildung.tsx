@@ -896,9 +896,9 @@ export default function Ausbildung() {
 
       <section className="bg-[#DDE1E4] py-3 md:py-5">
         <div className="container-main">
-          <div className="relative max-w-xl mx-auto bg-gradient-to-br from-white via-[#F1F4F7] to-[#E8ECEF] border border-[#1B3A5C]/18 rounded-2xl px-4 py-3.5 md:px-6 md:py-4 text-center shadow-[0_4px_18px_rgba(27,58,92,0.08)]">
+          <div className="group relative max-w-xl mx-auto bg-gradient-to-br from-white via-[#F1F4F7] to-[#E8ECEF] border border-[#1B3A5C]/20 rounded-2xl px-4 py-3.5 md:px-6 md:py-4 text-center shadow-[0_1px_2px_rgba(27,58,92,0.04),0_2px_10px_rgba(27,58,92,0.05),0_22px_50px_-26px_rgba(27,58,92,0.30)] ring-1 ring-white/85 hover:shadow-[0_2px_4px_rgba(27,58,92,0.06),0_4px_14px_rgba(27,58,92,0.06),0_30px_60px_-26px_rgba(27,58,92,0.36)] hover:-translate-y-[1px] transition-[transform,box-shadow] duration-300 ease-out">
             {/* Decorative top accent */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-[9px] md:text-[10px] font-medium px-3 py-0.5 rounded-full tracking-wide uppercase border border-[#1B3A5C]/25">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-white to-[#ECEEF1] text-[#1B3A5C] text-[9px] md:text-[10px] font-medium px-3 py-0.5 rounded-full tracking-wide uppercase border border-[#1B3A5C]/25 shadow-[0_1px_1px_rgba(255,255,255,0.85)_inset,0_1px_3px_-1px_rgba(27,58,92,0.18)]">
               {isEN ? "Next Step" : "Nächster Schritt"}
             </div>
             <h2 className="text-base md:text-lg font-light text-foreground mb-1 md:mb-1.5 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
@@ -910,18 +910,19 @@ export default function Ausbildung() {
                 : "In 6 Tagen gewinnen Sie das Wissen, die Sicherheit und das Diplom, um Menschen professionell zu begleiten. Sind Sie bereit?"}
             </p>
             <Link to={`${getPath("seminarRegistration", language, country)}?country=de`}>
-              <Button className="bg-[#c8e6c9] hover:bg-[#a5d6a7] text-[#1B3A1F] font-medium px-5 py-2 md:px-6 md:py-2.5 text-[13px] md:text-sm rounded-full shadow-[0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.40)] transition-all">
+              <Button className="bg-gradient-to-b from-[#d7eed8] to-[#b8dfba] hover:from-[#c8e6c9] hover:to-[#a5d6a7] text-[#1B3A1F] font-medium px-5 py-2 md:px-6 md:py-2.5 text-[13px] md:text-sm rounded-full border border-[#2E7D32]/30 shadow-[0_1px_1px_rgba(255,255,255,0.7)_inset,0_4px_14px_rgba(46,125,50,0.30)] hover:shadow-[0_1px_1px_rgba(255,255,255,0.85)_inset,0_6px_22px_rgba(46,125,50,0.45),0_0_18px_rgba(46,125,50,0.20)] hover:-translate-y-[1px] transition-all duration-300 ease-out">
                 {isEN ? "View Next Step" : "Nächsten Schritt ansehen"}
                 <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
               </Button>
             </Link>
             <div className="flex items-center justify-center gap-3 mt-2.5 md:mt-4 text-muted-foreground text-[11px] md:text-sm">
-              <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-foreground transition-colors">
+              <a href="https://share.google/SGm12iRl4fuRtKxRD" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-gradient-to-b from-white to-[#F4F6F8] border border-[#D7DEE6] px-2.5 py-1 rounded-full shadow-[0_1px_1px_rgba(255,255,255,0.85)_inset,0_1px_2px_-1px_rgba(27,58,92,0.10)] hover:border-[#1B3A5C]/30 hover:shadow-[0_1px_1px_rgba(255,255,255,0.9)_inset,0_3px_8px_-2px_rgba(27,58,92,0.18)] hover:text-foreground transition-all duration-300">
                 <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
                 5.0 — 266 Google {isEN ? "Reviews" : "Bewertungen"}
               </a>
             </div>
           </div>
+
         </div>
       </section>
     </>
