@@ -716,10 +716,28 @@ export default function Ausbildung() {
                         </p>
                       </div>
                       <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
-                        <div className="flex flex-col items-center sm:items-end gap-1">
+                        <div className="flex flex-col items-center sm:items-end gap-1.5 w-full sm:w-auto">
                           <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
                             {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
                           </span>
+                          {(() => {
+                            const cfg = [
+                              { gradient: "linear-gradient(90deg, #E8B48A 0%, #C97A4A 100%)", fill: 72, de: "Noch buchbar", en: "Still available" },
+                              { gradient: "linear-gradient(90deg, #F2CD6B 0%, #E89545 100%)", fill: 52, de: "Begrenzte Plätze", en: "Limited seats" },
+                              { gradient: "linear-gradient(90deg, #BCDDB8 0%, #7AB585 100%)", fill: 34, de: "Frühzeitige Anmeldung empfohlen", en: "Early registration recommended" },
+                            ][i] ?? null;
+                            if (!cfg) return null;
+                            return (
+                              <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1">
+                                <div className="h-[3px] w-full rounded-full bg-[#EEF1F4] overflow-hidden">
+                                  <div className="h-full rounded-full" style={{ width: `${cfg.fill}%`, background: cfg.gradient }} />
+                                </div>
+                                <span className="text-[10px] text-[#1B3A5C]/55 font-medium tracking-wide leading-none">
+                                  {isEN ? cfg.en : cfg.de}
+                                </span>
+                              </div>
+                            );
+                          })()}
                         </div>
 
                         <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=ch`}>
