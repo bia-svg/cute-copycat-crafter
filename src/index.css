@@ -135,6 +135,66 @@
     }
   }
 
+  /* ============================================================
+     Premium Container Look — Global
+     Übernimmt die hochwertige Container-Optik von der
+     Aktiv-Hypnose® Therapeut-Seite (Ausbildung) auf die gesamte Site.
+     - dezenter Soft-Shadow + sanfter Glow
+     - feiner ring-1 white inset für Tiefe
+     - leichter Weiß→Off-White Farbverlauf
+     - subtile Border-Aufwertung (#1B3A5C/18)
+     - ruhiger Hover-Lift (-2px) + tieferer Schatten
+     Keine Padding-/Layout-/Funktionsänderungen.
+     ============================================================ */
+  .premium-container {
+    background-image: linear-gradient(to bottom, #FFFFFF 0%, #FBFCFD 100%);
+    border-color: rgba(27, 58, 92, 0.18) !important;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.85) inset,
+      0 1px 2px rgba(27, 58, 92, 0.05),
+      0 8px 22px -8px rgba(27, 58, 92, 0.10),
+      0 28px 60px -28px rgba(27, 58, 92, 0.32);
+    transition: transform 300ms ease-out, box-shadow 300ms ease-out, border-color 300ms ease-out;
+  }
+  .premium-container:hover {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.92) inset,
+      0 2px 5px rgba(27, 58, 92, 0.07),
+      0 12px 28px -8px rgba(27, 58, 92, 0.13),
+      0 36px 76px -28px rgba(27, 58, 92, 0.38);
+    transform: translateY(-2px);
+  }
+
+  /* Automatische Anwendung auf gängige Karten-/Container-Muster der Seite.
+     Greift NUR bei div-Elementen, damit Inputs/Buttons unberührt bleiben,
+     und nur bei rounded-lg/xl/2xl/3xl Containern (keine kleinen Pills). */
+  div.bg-card[class*="border-border"][class*="rounded-lg"]:not([class*="overflow-hidden"]),
+  div.bg-card[class*="border-border"][class*="rounded-xl"],
+  div.bg-card[class*="border-border"][class*="rounded-2xl"],
+  div.bg-card[class*="border-border"][class*="rounded-3xl"],
+  div.bg-card[class*="border "][class*="rounded-lg"]:not([class*="bg-cta"]):not([class*="overflow-hidden"]),
+  div.bg-card[class$="border"][class*="rounded-lg"]:not([class*="overflow-hidden"]) {
+    background-image: linear-gradient(to bottom, #FFFFFF 0%, #FBFCFD 100%);
+    border-color: rgba(27, 58, 92, 0.18);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.85) inset,
+      0 1px 2px rgba(27, 58, 92, 0.05),
+      0 8px 22px -8px rgba(27, 58, 92, 0.10),
+      0 28px 60px -28px rgba(27, 58, 92, 0.32);
+    transition: transform 300ms ease-out, box-shadow 300ms ease-out, border-color 300ms ease-out;
+  }
+  div.bg-card[class*="border-border"][class*="rounded-lg"]:not([class*="overflow-hidden"]):hover,
+  div.bg-card[class*="border-border"][class*="rounded-xl"]:hover,
+  div.bg-card[class*="border-border"][class*="rounded-2xl"]:hover,
+  div.bg-card[class*="border-border"][class*="rounded-3xl"]:hover {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.92) inset,
+      0 2px 5px rgba(27, 58, 92, 0.07),
+      0 12px 28px -8px rgba(27, 58, 92, 0.13),
+      0 36px 76px -28px rgba(27, 58, 92, 0.38);
+    transform: translateY(-2px);
+  }
+
   /* CTA buttons: smooth transition + darker hover instead of opacity-based lighten.
      Vereinheitlicht mit den bg-[#c8e6c9]-Buttons: deutlich dunkler bei Hover, nochmals dunkler bei Active. */
   .bg-cta {
