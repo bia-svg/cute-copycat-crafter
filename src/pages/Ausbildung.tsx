@@ -717,10 +717,6 @@ export default function Ausbildung() {
                       </div>
                       <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
                         <div className="flex flex-col items-center sm:items-end gap-1">
-                          <span className="inline-flex items-baseline gap-1 text-[#1B3A5C]">
-                            <span className="text-[10px] font-normal tracking-wide">CHF</span>
-                            <span className="text-[15px] font-semibold tracking-tight">2.290.–</span>
-                          </span>
                           <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
                             {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
                           </span>
@@ -755,10 +751,6 @@ export default function Ausbildung() {
                       </div>
                       <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
                         <div className="flex flex-col items-center sm:items-end gap-1">
-                          <span className="inline-flex items-baseline gap-1 text-[#1B3A5C]">
-                            <span className="text-[10px] font-normal tracking-wide">€</span>
-                            <span className="text-[15px] font-semibold tracking-tight">2.290,–</span>
-                          </span>
                           <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
                             {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
                           </span>
