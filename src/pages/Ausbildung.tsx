@@ -676,7 +676,7 @@ export default function Ausbildung() {
             {/* Country Tabs */}
             <div className="flex justify-center gap-2 md:gap-3 mb-4 md:mb-6 max-w-md mx-auto">
               <button
-                onClick={() => { setActiveTab("de"); setShowAllDates(false); }}
+                onClick={() => { setActiveTab("de"); }}
                 className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-4 rounded-lg border font-semibold text-sm transition-all ${
                   activeTab === "de"
                     ? "border-[#C5CCD4] bg-[#EAEEF2] text-[#1B3A5C] shadow-[0_1px_3px_rgba(27,58,92,0.06)]"
