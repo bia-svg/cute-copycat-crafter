@@ -767,52 +767,63 @@ export default function Ausbildung() {
               {/* DE Content */}
               {activeTab === "de" && (
                 <>
-                  {(showAllDates ? datesDE : datesDE.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => (
-                    <div key={`de-${i}`} className="border border-[#2E7D32]/30 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_8px_rgba(46,125,50,0.08)] hover:shadow-[0_6px_16px_rgba(46,125,50,0.14)] hover:border-[#2E7D32]/50 transition-all ring-1 ring-[#2E7D32]/5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                      <div>
-                        <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
-                          <Calendar className="w-4 h-4" /> {d.date}
-                        </p>
-                        <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
-                          <MapPin className="w-3.5 h-3.5" /> {d.location}
-                        </p>
-                        <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
-                          <Clock className="w-3.5 h-3.5" /> {isEN ? "Mon–Fri 10:00–17:00 · Sat 10:00–15:00" : "Mo–Fr 10:00–17:00 · Sa 10:00–15:00"}
-                        </p>
-                      </div>
-                      <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
-                        <div className="flex flex-col items-center sm:items-end gap-1.5 w-full sm:w-auto">
-                          <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
-                            {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
-                          </span>
-                          {(() => {
-                            const cfg = [
-                              { gradient: "linear-gradient(90deg, #E8B48A 0%, #C97A4A 100%)", fill: 72, de: "Noch buchbar", en: "Still available" },
-                              { gradient: "linear-gradient(90deg, #F2CD6B 0%, #E89545 100%)", fill: 52, de: "Begrenzte Plätze", en: "Limited seats" },
-                              { gradient: "linear-gradient(90deg, #BCDDB8 0%, #7AB585 100%)", fill: 34, de: "Frühzeitige Anmeldung empfohlen", en: "Early registration recommended" },
-                            ][i] ?? null;
-                            if (!cfg) return null;
-                            return (
-                              <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1">
-                                <div className="h-[3px] w-full rounded-full bg-[#EEF1F4] overflow-hidden">
-                                  <div className="h-full rounded-full" style={{ width: `${cfg.fill}%`, background: cfg.gradient }} />
-                                </div>
-                                <span className="text-[10px] text-[#1B3A5C]/55 font-medium tracking-wide leading-none">
-                                  {isEN ? cfg.en : cfg.de}
-                                </span>
-                              </div>
-                            );
-                          })()}
+                  {(showAllDates ? datesDE : datesDE.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => {
+                    const isSoldOut = d.status === "soldout";
+                    return (
+                      <div key={`de-${i}`} className={`border p-3.5 md:p-4 bg-white rounded-2xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 transition-all ${isSoldOut ? "opacity-50 border-[#D5D5D5] shadow-none" : "border-[#2E7D32]/30 shadow-[0_2px_8px_rgba(46,125,50,0.08)] hover:shadow-[0_6px_16px_rgba(46,125,50,0.14)] hover:border-[#2E7D32]/50 ring-1 ring-[#2E7D32]/5"}`}>
+                        <div>
+                          <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
+                            <Calendar className="w-4 h-4" /> {d.date}
+                          </p>
+                          <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
+                            <MapPin className="w-3.5 h-3.5" /> {d.location}
+                          </p>
+                          <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
+                            <Clock className="w-3.5 h-3.5" /> {isEN ? "Mon–Fri 10:00–17:00 · Sat 10:00–15:00" : "Mo–Fr 10:00–17:00 · Sa 10:00–15:00"}
+                          </p>
                         </div>
+                        <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
+                          <div className="flex flex-col items-center sm:items-end gap-1.5 w-full sm:w-auto">
+                            {isSoldOut ? (
+                              <span className="text-[10.5px] font-medium text-[#8B5A5A] bg-[#F5ECEC] border border-[#E8C5C5] px-2 py-[3px] rounded-full whitespace-nowrap">
+                                {isEN ? "Fully booked" : "Ausgebucht"}
+                              </span>
+                            ) : (
+                              <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
+                                {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
+                              </span>
+                            )}
+                            {!isSoldOut && (() => {
+                              const cfg = [
+                                { gradient: "linear-gradient(90deg, #E8B48A 0%, #C97A4A 100%)", fill: 72, de: "Noch buchbar", en: "Still available" },
+                                { gradient: "linear-gradient(90deg, #F2CD6B 0%, #E89545 100%)", fill: 52, de: "Begrenzte Plätze", en: "Limited seats" },
+                                { gradient: "linear-gradient(90deg, #BCDDB8 0%, #7AB585 100%)", fill: 34, de: "Frühzeitige Anmeldung empfohlen", en: "Early registration recommended" },
+                              ][i] ?? null;
+                              if (!cfg) return null;
+                              return (
+                                <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1">
+                                  <div className="h-[3px] w-full rounded-full bg-[#EEF1F4] overflow-hidden">
+                                    <div className="h-full rounded-full" style={{ width: `${cfg.fill}%`, background: cfg.gradient }} />
+                                  </div>
+                                  <span className="text-[10px] text-[#1B3A5C]/55 font-medium tracking-wide leading-none">
+                                    {isEN ? cfg.en : cfg.de}
+                                  </span>
+                                </div>
+                              );
+                            })()}
+                          </div>
 
-                        <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de`}>
-                          <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-2.5 sm:h-9 sm:px-3">
-                            {isEN ? "More Info →" : "Mehr Info →"}
-                          </Button>
-                        </Link>
+                          {!isSoldOut && (
+                            <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de`}>
+                              <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-2.5 sm:h-9 sm:px-3">
+                                {isEN ? "More Info →" : "Mehr Info →"}
+                              </Button>
+                            </Link>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </>
               )}
             </div>
