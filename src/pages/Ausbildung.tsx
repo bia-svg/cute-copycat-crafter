@@ -225,7 +225,7 @@ export default function Ausbildung() {
         courseMode: "onsite",
         location: { "@type": "Place", name: d.location, address: { "@type": "PostalAddress", addressCountry: "CH" } },
         inLanguage: "de",
-        offers: { "@type": "Offer", price: "2490", priceCurrency: "CHF", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/ch/ausbildung" },
+        offers: { "@type": "Offer", price: "2290", priceCurrency: "CHF", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/ch/ausbildung" },
       })),
       ...datesDE.map((d) => ({
         "@type": "CourseInstance",
@@ -233,7 +233,7 @@ export default function Ausbildung() {
         courseMode: "onsite",
         location: { "@type": "Place", name: d.location, address: { "@type": "PostalAddress", addressCountry: "DE" } },
         inLanguage: "de",
-        offers: { "@type": "Offer", price: "2490", priceCurrency: "EUR", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/de/ausbildung" },
+        offers: { "@type": "Offer", price: "2290", priceCurrency: "EUR", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/de/ausbildung" },
       })),
     ],
   };
@@ -307,8 +307,8 @@ export default function Ausbildung() {
     };
   };
   const eventJsonLd = [
-    ...datesCH.map(d => buildEvent(d, "CH", "2490", "CHF", "https://david-j-woods.com/de/ch/ausbildung")),
-    ...datesDE.map(d => buildEvent(d, "DE", "2490", "EUR", "https://david-j-woods.com/de/de/ausbildung")),
+    ...datesCH.map(d => buildEvent(d, "CH", "2290", "CHF", "https://david-j-woods.com/de/ch/ausbildung")),
+    ...datesDE.map(d => buildEvent(d, "DE", "2290", "EUR", "https://david-j-woods.com/de/de/ausbildung")),
   ].filter(Boolean) as Record<string, unknown>[];
 
   const allSchemaForPage = [courseJsonLd, ...eventJsonLd];
@@ -716,23 +716,16 @@ export default function Ausbildung() {
                         </p>
                       </div>
                       <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
-                        <div className="flex flex-wrap items-center justify-center gap-1.5">
-                          {d.status === "limited" && (
-                            <>
-                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FFF3E0] text-[#E65100]">
-                                {isEN ? "Limited seats" : "Letzte Plätze"}
-                              </span>
-                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
-                                {isEN ? "Save 200.–" : "200.– sparen"}
-                              </span>
-                            </>
-                          )}
-                          {d.status !== "limited" && (
-                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
-                              {isEN ? "Available" : "Verfügbar"}
-                            </span>
-                          )}
+                        <div className="flex flex-col items-center sm:items-end gap-1">
+                          <span className="inline-flex items-baseline gap-1 text-[#1B3A5C]">
+                            <span className="text-[10px] font-normal tracking-wide">CHF</span>
+                            <span className="text-[15px] font-semibold tracking-tight">2.290.–</span>
+                          </span>
+                          <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
+                            {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
+                          </span>
                         </div>
+
                         <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=ch`}>
                           <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-2.5 sm:h-9 sm:px-3">
                             {isEN ? "More Info →" : "Mehr Info →"}
@@ -761,22 +754,16 @@ export default function Ausbildung() {
                         </p>
                       </div>
                       <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
-                        <div className="flex flex-wrap items-center justify-center gap-1.5">
-                          {d.status === "limited" ? (
-                            <>
-                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#FFF3E0] text-[#E65100]">
-                                {isEN ? "Limited seats" : "Letzte Plätze"}
-                              </span>
-                              <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
-                                {isEN ? "Save 200,-" : "200,- sparen"}
-                              </span>
-                            </>
-                          ) : (
-                            <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#E8F5E9] text-[#2E7D32]">
-                              {isEN ? "Available" : "Verfügbar"}
-                            </span>
-                          )}
+                        <div className="flex flex-col items-center sm:items-end gap-1">
+                          <span className="inline-flex items-baseline gap-1 text-[#1B3A5C]">
+                            <span className="text-[10px] font-normal tracking-wide">€</span>
+                            <span className="text-[15px] font-semibold tracking-tight">2.290,–</span>
+                          </span>
+                          <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
+                            {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
+                          </span>
                         </div>
+
                         <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de`}>
                           <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-2.5 sm:h-9 sm:px-3">
                             {isEN ? "More Info →" : "Mehr Info →"}
