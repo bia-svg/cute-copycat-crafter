@@ -32,8 +32,6 @@ const CDN_BASE = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm
 export default function Ausbildung() {
   const { language, country, isInternational, showCH, showDE } = useLanguage();
   const [activeTab, setActiveTab] = useState<"ch" | "de">("de");
-  const [showAllDates, setShowAllDates] = useState(false);
-  const INITIAL_DATES_VISIBLE = 2;
   const isEN = language === "en";
 
   const [curriculumApi, setCurriculumApi] = useState<CarouselApi>();
