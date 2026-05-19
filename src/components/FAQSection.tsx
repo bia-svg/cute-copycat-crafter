@@ -27,13 +27,13 @@ export default function FAQSection({ title, items, sectionClassName }: FAQSectio
   if (!items || items.length === 0) return null;
 
   return (
-    <section className={sectionClassName ?? "bg-[#DDE1E4] border-y border-border"}>
-      <div className="container-main py-2.5 md:py-3.5">
-        <h2 className="text-base md:text-lg font-light tracking-tight text-foreground/80 leading-tight mb-1.5 md:mb-2.5 text-center">
+    <section className={sectionClassName ?? "border-y border-border"} style={sectionClassName ? undefined : { background: "linear-gradient(180deg, #C6CDD4 0%, #CFD5DB 55%, #C9CFD5 100%)" }}>
+      <div className="container-main py-4 md:py-6">
+        <h2 className="text-base md:text-lg font-light tracking-tight text-foreground/80 leading-tight mb-2 md:mb-3 text-center">
           {title}
         </h2>
 
-        <div className="max-w-2xl md:max-w-4xl lg:max-w-5xl mx-auto bg-white/85 backdrop-blur-sm border border-[#1B3A5C]/14 rounded-3xl shadow-[0_1px_2px_rgba(27,58,92,0.04),0_2px_10px_rgba(27,58,92,0.05),0_24px_56px_-28px_rgba(27,58,92,0.30)] ring-1 ring-white/80 hover:shadow-[0_2px_4px_rgba(27,58,92,0.06),0_4px_14px_rgba(27,58,92,0.06),0_32px_64px_-28px_rgba(27,58,92,0.36)] hover:-translate-y-[1px] transition-[transform,box-shadow] duration-300 ease-out p-2 md:p-3.5 lg:p-4">
+        <div className="relative max-w-2xl md:max-w-4xl lg:max-w-5xl mx-auto bg-gradient-to-b from-white to-[#FBFCFD] border border-[#1B3A5C]/25 rounded-3xl shadow-[0_1px_2px_rgba(27,58,92,0.06),0_8px_22px_rgba(27,58,92,0.10),0_36px_80px_-26px_rgba(27,58,92,0.45)] ring-1 ring-white/90 hover:shadow-[0_2px_5px_rgba(27,58,92,0.08),0_12px_28px_rgba(27,58,92,0.12),0_44px_96px_-26px_rgba(27,58,92,0.50)] hover:-translate-y-[2px] transition-[transform,box-shadow] duration-300 ease-out p-3 md:p-5 lg:p-6 before:content-[''] before:absolute before:top-0 before:left-8 before:right-8 before:h-[2px] before:rounded-b-full before:bg-gradient-to-r before:from-transparent before:via-[#1B3A5C]/35 before:to-transparent">
           <Accordion
             type="single"
             collapsible
