@@ -702,7 +702,7 @@ export default function Ausbildung() {
               {/* CH Content */}
               {activeTab === "ch" && (
                 <>
-                  {(showAllDates ? datesCH : datesCH.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => {
+                  {datesCH.map((d, i) => {
                     const isSoldOut = d.status === "soldout";
                     return (
                       <div key={`ch-${i}`} className="border border-[#2E7D32]/30 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_8px_rgba(46,125,50,0.08)] hover:shadow-[0_6px_16px_rgba(46,125,50,0.14)] hover:border-[#2E7D32]/50 transition-all ring-1 ring-[#2E7D32]/5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
