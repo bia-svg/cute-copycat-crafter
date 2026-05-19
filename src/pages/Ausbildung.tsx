@@ -58,14 +58,16 @@ export default function Ausbildung() {
   };
 
   /* ── Seminar Dates ── */
-  const datesCH: { date: string; location: string; status: "available" | "limited"; forceEarlyBird?: boolean }[] = [
+  const datesCH: { date: string; location: string; status: "available" | "limited" | "soldout"; forceEarlyBird?: boolean }[] = [
     { date: "Mo-Sa, 15.-20. Juni 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "limited" as const },
+    { date: "Mi-Sa, 22.-25. Juli 2026", location: "ZISAG AG / Fit & Gsund, Churzhaslen 3, 8733 Eschenbach", status: "soldout" as const },
     { date: "Mo-Sa, 07.-12. Sept. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const },
     { date: "Mo-Sa, 23.-28. Nov. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const },
   ];
-  const datesDE: { date: string; location: string; status: "available" | "limited"; forceEarlyBird?: boolean }[] = [
+  const datesDE: { date: string; location: string; status: "available" | "limited" | "soldout"; forceEarlyBird?: boolean }[] = [
     /* Archiviert: Mo-Sa, 11.-16. Mai 2026 — Hotel am Alten Park, Augsburg */
     { date: "Mo-Sa, 06.-11. Juli 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "limited" as const },
+    { date: "Mo-Sa, 03.-08. Aug. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "soldout" as const },
     { date: "Mo-Sa, 14.-19. Sept. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
     { date: "Mo-Sa, 16.-21. Nov. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
   ];
