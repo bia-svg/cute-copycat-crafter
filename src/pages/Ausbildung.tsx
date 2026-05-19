@@ -660,9 +660,9 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION — Upcoming Dates with Country Tabs (premium framed)
           ═══════════════════════════════════════════════════════════ */}
-      <section id="dates" className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
-        <div className="container-main py-3 md:py-5 lg:py-6">
-          <div className="max-w-4xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl md:rounded-3xl px-4 py-4 md:px-9 md:py-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
+      <section id="dates" className="border-b border-border scroll-mt-20" style={{ background: "linear-gradient(180deg, #D6DBE0 0%, #DDE1E4 55%, #D9DDE1 100%)" }}>
+        <div className="container-main py-4 md:py-7 lg:py-9">
+          <div className="max-w-4xl mx-auto border border-[#1B3A5C]/20 rounded-2xl md:rounded-3xl px-4 py-5 md:px-10 md:py-8 shadow-[0_1px_2px_rgba(27,58,92,0.05),0_2px_8px_rgba(27,58,92,0.04),0_24px_56px_-28px_rgba(27,58,92,0.28)] ring-1 ring-white/70" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FBFCFD 100%)" }}>
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
             </h2>
@@ -705,7 +705,7 @@ export default function Ausbildung() {
                   {datesCH.map((d, i) => {
                     const isSoldOut = d.status === "soldout";
                     return (
-                      <div key={`ch-${i}`} className="border border-[#2E7D32]/30 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_8px_rgba(46,125,50,0.08)] hover:shadow-[0_6px_16px_rgba(46,125,50,0.14)] hover:border-[#2E7D32]/50 transition-all ring-1 ring-[#2E7D32]/5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                      <div key={`ch-${i}`} className="group border border-[#1B3A5C]/12 p-4 md:p-5 rounded-2xl shadow-[0_1px_2px_rgba(27,58,92,0.04),0_8px_20px_-12px_rgba(27,58,92,0.18)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.06),0_18px_36px_-16px_rgba(27,58,92,0.28)] hover:border-[#1B3A5C]/22 hover:-translate-y-[2px] transition-[transform,box-shadow,border-color] duration-300 ease-out ring-1 ring-white/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-5 md:pr-6" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)" }}>
                         <div>
                           <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
                             <Calendar className="w-4 h-4" /> {d.date}
@@ -725,9 +725,9 @@ export default function Ausbildung() {
                             {(() => {
                               if (isSoldOut) {
                                 return (
-                                  <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1">
-                                    <div className="h-[3px] w-full rounded-full bg-[#EEF1F4] overflow-hidden">
-                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #D88A8A 0%, #B84A4A 100%)" }} />
+                                  <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1.5">
+                                    <div className="h-[4px] w-full rounded-full bg-[#EEF1F4]/80 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.04)]">
+                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #DDA0A0 0%, #C26060 100%)", boxShadow: "0 0 6px rgba(184,74,74,0.28)" }} />
                                     </div>
                                     <span className="text-[10px] text-[#B84A4A] font-medium tracking-wide leading-none">
                                       {isEN ? "Fully booked" : "Ausgebucht"}
@@ -736,16 +736,16 @@ export default function Ausbildung() {
                                 );
                               }
                               const cfg = [
-                                { gradient: "linear-gradient(90deg, #E8B48A 0%, #C97A4A 100%)", fill: 72, de: "Noch buchbar", en: "Still available" },
+                                { gradient: "linear-gradient(90deg, #EAB892 0%, #CF8556 100%)", glow: "rgba(201,122,74,0.22)", fill: 72, de: "Noch buchbar", en: "Still available" },
                                 null,
-                                { gradient: "linear-gradient(90deg, #F2CD6B 0%, #E89545 100%)", fill: 52, de: "Begrenzte Plätze", en: "Limited seats" },
-                                { gradient: "linear-gradient(90deg, #BCDDB8 0%, #7AB585 100%)", fill: 34, de: "Frühzeitige Anmeldung empfohlen", en: "Early registration recommended" },
+                                { gradient: "linear-gradient(90deg, #F3D27A 0%, #EA9F55 100%)", glow: "rgba(232,149,69,0.22)", fill: 52, de: "Begrenzte Plätze", en: "Limited seats" },
+                                { gradient: "linear-gradient(90deg, #C3E1BF 0%, #86BD90 100%)", glow: "rgba(122,181,133,0.22)", fill: 34, de: "Frühzeitige Anmeldung empfohlen", en: "Early registration recommended" },
                               ][i] ?? null;
                               if (!cfg) return null;
                               return (
-                                <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1">
-                                  <div className="h-[3px] w-full rounded-full bg-[#EEF1F4] overflow-hidden">
-                                    <div className="h-full rounded-full" style={{ width: `${cfg.fill}%`, background: cfg.gradient }} />
+                                <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1.5">
+                                  <div className="h-[4px] w-full rounded-full bg-[#EEF1F4]/80 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.04)]">
+                                    <div className="h-full rounded-full transition-all duration-500" style={{ width: `${cfg.fill}%`, background: cfg.gradient, boxShadow: `0 0 6px ${cfg.glow}` }} />
                                   </div>
                                   <span className="text-[10px] text-[#1B3A5C]/55 font-medium tracking-wide leading-none">
                                     {isEN ? cfg.en : cfg.de}
@@ -766,7 +766,7 @@ export default function Ausbildung() {
                             </Button>
                           ) : (
                             <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=ch`}>
-                              <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-2.5 sm:h-9 sm:px-3">
+                              <Button size="sm" className="bg-white text-[#1B3A5C] border border-[#1B3A5C]/25 hover:border-[#1B3A5C]/60 hover:bg-[#EAEEF2] hover:shadow-[0_4px_12px_-4px_rgba(27,58,92,0.25)] hover:-translate-y-[1px] active:translate-y-0 text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-3 sm:h-9 sm:px-4 transition-all duration-200 ease-out">
                                 {isEN ? "More Info →" : "Mehr Info →"}
                               </Button>
                             </Link>
@@ -784,7 +784,7 @@ export default function Ausbildung() {
                   {datesDE.map((d, i) => {
                     const isSoldOut = d.status === "soldout";
                     return (
-                      <div key={`de-${i}`} className="border border-[#2E7D32]/30 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_8px_rgba(46,125,50,0.08)] hover:shadow-[0_6px_16px_rgba(46,125,50,0.14)] hover:border-[#2E7D32]/50 transition-all ring-1 ring-[#2E7D32]/5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                      <div key={`de-${i}`} className="group border border-[#1B3A5C]/12 p-4 md:p-5 rounded-2xl shadow-[0_1px_2px_rgba(27,58,92,0.04),0_8px_20px_-12px_rgba(27,58,92,0.18)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.06),0_18px_36px_-16px_rgba(27,58,92,0.28)] hover:border-[#1B3A5C]/22 hover:-translate-y-[2px] transition-[transform,box-shadow,border-color] duration-300 ease-out ring-1 ring-white/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-5 md:pr-6" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)" }}>
                         <div>
                           <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
                             <Calendar className="w-4 h-4" /> {d.date}
@@ -804,9 +804,9 @@ export default function Ausbildung() {
                             {(() => {
                               if (isSoldOut) {
                                 return (
-                                  <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1">
-                                    <div className="h-[3px] w-full rounded-full bg-[#EEF1F4] overflow-hidden">
-                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #D88A8A 0%, #B84A4A 100%)" }} />
+                                  <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1.5">
+                                    <div className="h-[4px] w-full rounded-full bg-[#EEF1F4]/80 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.04)]">
+                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #DDA0A0 0%, #C26060 100%)", boxShadow: "0 0 6px rgba(184,74,74,0.28)" }} />
                                     </div>
                                     <span className="text-[10px] text-[#B84A4A] font-medium tracking-wide leading-none">
                                       {isEN ? "Fully booked" : "Ausgebucht"}
@@ -815,16 +815,16 @@ export default function Ausbildung() {
                                 );
                               }
                               const cfg = [
-                                { gradient: "linear-gradient(90deg, #E8B48A 0%, #C97A4A 100%)", fill: 72, de: "Noch buchbar", en: "Still available" },
+                                { gradient: "linear-gradient(90deg, #EAB892 0%, #CF8556 100%)", glow: "rgba(201,122,74,0.22)", fill: 72, de: "Noch buchbar", en: "Still available" },
                                 null,
-                                { gradient: "linear-gradient(90deg, #F2CD6B 0%, #E89545 100%)", fill: 52, de: "Begrenzte Plätze", en: "Limited seats" },
-                                { gradient: "linear-gradient(90deg, #BCDDB8 0%, #7AB585 100%)", fill: 34, de: "Frühzeitige Anmeldung empfohlen", en: "Early registration recommended" },
+                                { gradient: "linear-gradient(90deg, #F3D27A 0%, #EA9F55 100%)", glow: "rgba(232,149,69,0.22)", fill: 52, de: "Begrenzte Plätze", en: "Limited seats" },
+                                { gradient: "linear-gradient(90deg, #C3E1BF 0%, #86BD90 100%)", glow: "rgba(122,181,133,0.22)", fill: 34, de: "Frühzeitige Anmeldung empfohlen", en: "Early registration recommended" },
                               ][i] ?? null;
                               if (!cfg) return null;
                               return (
-                                <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1">
-                                  <div className="h-[3px] w-full rounded-full bg-[#EEF1F4] overflow-hidden">
-                                    <div className="h-full rounded-full" style={{ width: `${cfg.fill}%`, background: cfg.gradient }} />
+                                <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1.5">
+                                  <div className="h-[4px] w-full rounded-full bg-[#EEF1F4]/80 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.04)]">
+                                    <div className="h-full rounded-full transition-all duration-500" style={{ width: `${cfg.fill}%`, background: cfg.gradient, boxShadow: `0 0 6px ${cfg.glow}` }} />
                                   </div>
                                   <span className="text-[10px] text-[#1B3A5C]/55 font-medium tracking-wide leading-none">
                                     {isEN ? cfg.en : cfg.de}
@@ -845,7 +845,7 @@ export default function Ausbildung() {
                             </Button>
                           ) : (
                             <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de`}>
-                              <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-2.5 sm:h-9 sm:px-3">
+                              <Button size="sm" className="bg-white text-[#1B3A5C] border border-[#1B3A5C]/25 hover:border-[#1B3A5C]/60 hover:bg-[#EAEEF2] hover:shadow-[0_4px_12px_-4px_rgba(27,58,92,0.25)] hover:-translate-y-[1px] active:translate-y-0 text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-3 sm:h-9 sm:px-4 transition-all duration-200 ease-out">
                                 {isEN ? "More Info →" : "Mehr Info →"}
                               </Button>
                             </Link>
