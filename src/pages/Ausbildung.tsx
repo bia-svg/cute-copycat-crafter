@@ -667,10 +667,11 @@ export default function Ausbildung() {
               {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
             </h2>
             <div className="flex justify-center mb-3">
-              <div className="inline-flex items-center gap-2 text-[13px] sm:text-sm font-medium text-[#2E7D32] bg-[#E8F5E9]/80 px-4 py-2 rounded-full border border-[#2E7D32]/20 shadow-sm">
+              <div className="group inline-flex items-center gap-2 text-[13px] sm:text-sm font-medium text-[#2E7D32] bg-gradient-to-b from-[#F2FAF3] to-[#E4F2E6]/85 backdrop-blur-[2px] px-4 py-2 rounded-full border border-[#2E7D32]/25 shadow-[0_1px_1px_rgba(255,255,255,0.8)_inset,0_2px_8px_-4px_rgba(46,125,50,0.18)] hover:border-[#2E7D32]/45 hover:shadow-[0_1px_1px_rgba(255,255,255,0.9)_inset,0_4px_14px_-4px_rgba(46,125,50,0.35)] transition-all duration-300">
                 <GraduationCap className="w-4 h-4" />
                 {isEN ? "Therapist in Aktiv-Hypnose®" : "Therapeut in Aktiv-Hypnose®"}
               </div>
+
             </div>
 
             {/* Country Tabs */}
