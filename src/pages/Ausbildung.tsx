@@ -662,7 +662,7 @@ export default function Ausbildung() {
           ═══════════════════════════════════════════════════════════ */}
       <section id="dates" className="border-b border-border scroll-mt-20" style={{ background: "linear-gradient(180deg, #D6DBE0 0%, #DDE1E4 55%, #D9DDE1 100%)" }}>
         <div className="container-main py-4 md:py-7 lg:py-9">
-          <div className="max-w-4xl mx-auto border border-[#1B3A5C]/20 rounded-2xl md:rounded-3xl px-4 py-5 md:px-10 md:py-8 shadow-[0_1px_2px_rgba(27,58,92,0.05),0_2px_8px_rgba(27,58,92,0.04),0_24px_56px_-28px_rgba(27,58,92,0.28)] ring-1 ring-white/70" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FBFCFD 100%)" }}>
+          <div className="max-w-4xl mx-auto border border-[#1B3A5C]/20 rounded-2xl md:rounded-3xl px-4 py-5 md:px-10 md:py-8 shadow-[0_1px_2px_rgba(27,58,92,0.05),0_2px_10px_rgba(27,58,92,0.05),0_28px_64px_-28px_rgba(27,58,92,0.32)] ring-1 ring-white/80 hover:shadow-[0_2px_4px_rgba(27,58,92,0.06),0_4px_14px_rgba(27,58,92,0.06),0_36px_72px_-28px_rgba(27,58,92,0.38)] hover:-translate-y-[1px] transition-[transform,box-shadow] duration-300 ease-out" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FBFCFD 100%)" }}>
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
             </h2>
