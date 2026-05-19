@@ -585,7 +585,7 @@ export default function Ausbildung() {
           ═══════════════════════════════════════════════════════════ */}
       <section id="curriculum" className="bg-[#f4f3ef] border-b border-border scroll-mt-20">
         <div className="container-main py-2.5 md:py-4 lg:py-6">
-          <div className="max-w-5xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl md:rounded-3xl px-3 py-3 md:px-9 md:py-5 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
+          <div className="max-w-5xl mx-auto bg-white border border-[#1B3A5C]/14 rounded-2xl md:rounded-3xl px-3 py-3 md:px-9 md:py-5 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_2px_8px_rgba(27,58,92,0.04),0_22px_52px_-26px_rgba(27,58,92,0.28)] ring-1 ring-white/85 hover:shadow-[0_2px_4px_rgba(27,58,92,0.05),0_4px_14px_rgba(27,58,92,0.06),0_32px_64px_-26px_rgba(27,58,92,0.34)] hover:-translate-y-[1px] transition-[transform,box-shadow] duration-300 ease-out">
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Your 6-Day Journey" : "Ihre 6-Tage-Reise"}
             </h2>
