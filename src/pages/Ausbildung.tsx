@@ -32,8 +32,6 @@ const CDN_BASE = "https://d2xsxph8kpxj0f.cloudfront.net/310419663029169718/aQMYm
 export default function Ausbildung() {
   const { language, country, isInternational, showCH, showDE } = useLanguage();
   const [activeTab, setActiveTab] = useState<"ch" | "de">("de");
-  const [showAllDates, setShowAllDates] = useState(false);
-  const INITIAL_DATES_VISIBLE = 2;
   const isEN = language === "en";
 
   const [curriculumApi, setCurriculumApi] = useState<CarouselApi>();
@@ -663,7 +661,7 @@ export default function Ausbildung() {
           SECTION — Upcoming Dates with Country Tabs (premium framed)
           ═══════════════════════════════════════════════════════════ */}
       <section id="dates" className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
-        <div className="container-main py-3 md:py-6 lg:py-8">
+        <div className="container-main py-3 md:py-5 lg:py-6">
           <div className="max-w-4xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl md:rounded-3xl px-4 py-4 md:px-9 md:py-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_14px_36px_-22px_rgba(27,58,92,0.18)] ring-1 ring-white">
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
@@ -678,7 +676,7 @@ export default function Ausbildung() {
             {/* Country Tabs */}
             <div className="flex justify-center gap-2 md:gap-3 mb-4 md:mb-6 max-w-md mx-auto">
               <button
-                onClick={() => { setActiveTab("de"); setShowAllDates(false); }}
+                onClick={() => { setActiveTab("de"); }}
                 className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-4 rounded-lg border font-semibold text-sm transition-all ${
                   activeTab === "de"
                     ? "border-[#C5CCD4] bg-[#EAEEF2] text-[#1B3A5C] shadow-[0_1px_3px_rgba(27,58,92,0.06)]"
@@ -689,7 +687,7 @@ export default function Ausbildung() {
                 {isEN ? "Germany" : "Deutschland"}
               </button>
               <button
-                onClick={() => { setActiveTab("ch"); setShowAllDates(false); }}
+                onClick={() => { setActiveTab("ch"); }}
                 className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-4 rounded-lg border font-semibold text-sm transition-all ${
                   activeTab === "ch"
                     ? "border-[#C5CCD4] bg-[#EAEEF2] text-[#1B3A5C] shadow-[0_1px_3px_rgba(27,58,92,0.06)]"
@@ -704,7 +702,7 @@ export default function Ausbildung() {
               {/* CH Content */}
               {activeTab === "ch" && (
                 <>
-                  {(showAllDates ? datesCH : datesCH.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => {
+                  {datesCH.map((d, i) => {
                     const isSoldOut = d.status === "soldout";
                     return (
                       <div key={`ch-${i}`} className="border border-[#2E7D32]/30 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_8px_rgba(46,125,50,0.08)] hover:shadow-[0_6px_16px_rgba(46,125,50,0.14)] hover:border-[#2E7D32]/50 transition-all ring-1 ring-[#2E7D32]/5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
@@ -783,7 +781,7 @@ export default function Ausbildung() {
               {/* DE Content */}
               {activeTab === "de" && (
                 <>
-                  {(showAllDates ? datesDE : datesDE.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => {
+                  {datesDE.map((d, i) => {
                     const isSoldOut = d.status === "soldout";
                     return (
                       <div key={`de-${i}`} className="border border-[#2E7D32]/30 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_8px_rgba(46,125,50,0.08)] hover:shadow-[0_6px_16px_rgba(46,125,50,0.14)] hover:border-[#2E7D32]/50 transition-all ring-1 ring-[#2E7D32]/5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
@@ -859,23 +857,6 @@ export default function Ausbildung() {
                 </>
               )}
             </div>
-            {(() => {
-              const totalForTab = activeTab === "ch" ? datesCH.length : datesDE.length;
-              const hidden = totalForTab - INITIAL_DATES_VISIBLE;
-              if (hidden <= 0) return null;
-              return (
-                <div className="text-center mt-5">
-                  <button
-                    onClick={() => setShowAllDates((v) => !v)}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#1B3A5C] border border-[#1B3A5C]/25 hover:border-[#1B3A5C]/50 hover:bg-white rounded-full px-5 py-2 transition-all"
-                  >
-                    {showAllDates
-                      ? (isEN ? "Show fewer dates" : "Weniger Termine anzeigen")
-                      : (isEN ? `Show all dates (+${hidden})` : `Weitere Termine anzeigen (+${hidden})`)}
-                  </button>
-                </div>
-              );
-            })()}
           </div>
         </div>
       </section>
