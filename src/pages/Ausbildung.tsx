@@ -720,7 +720,7 @@ export default function Ausbildung() {
                         </div>
                         <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
                           <div className="flex flex-col items-center sm:items-end gap-1.5 w-full sm:w-auto">
-                            <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
+                            <span className="text-[10.5px] font-medium text-[#1B3A5C]/80 bg-gradient-to-b from-white to-[#EDF1F5] border border-[#D7DEE6] px-2.5 py-[3px] rounded-full whitespace-nowrap shadow-[0_1px_1px_rgba(255,255,255,0.85)_inset,0_1px_2px_-1px_rgba(27,58,92,0.10)]">
                               {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
                             </span>
                             {(() => {
@@ -799,7 +799,7 @@ export default function Ausbildung() {
                         </div>
                         <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
                           <div className="flex flex-col items-center sm:items-end gap-1.5 w-full sm:w-auto">
-                            <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
+                            <span className="text-[10.5px] font-medium text-[#1B3A5C]/80 bg-gradient-to-b from-white to-[#EDF1F5] border border-[#D7DEE6] px-2.5 py-[3px] rounded-full whitespace-nowrap shadow-[0_1px_1px_rgba(255,255,255,0.85)_inset,0_1px_2px_-1px_rgba(27,58,92,0.10)]">
                               {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
                             </span>
                             {(() => {
