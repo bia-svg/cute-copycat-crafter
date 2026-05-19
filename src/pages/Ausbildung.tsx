@@ -225,7 +225,7 @@ export default function Ausbildung() {
         courseMode: "onsite",
         location: { "@type": "Place", name: d.location, address: { "@type": "PostalAddress", addressCountry: "CH" } },
         inLanguage: "de",
-        offers: { "@type": "Offer", price: "2490", priceCurrency: "CHF", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/ch/ausbildung" },
+        offers: { "@type": "Offer", price: "2290", priceCurrency: "CHF", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/ch/ausbildung" },
       })),
       ...datesDE.map((d) => ({
         "@type": "CourseInstance",
