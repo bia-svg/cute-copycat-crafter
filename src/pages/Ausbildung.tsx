@@ -707,7 +707,7 @@ export default function Ausbildung() {
                   {(showAllDates ? datesCH : datesCH.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => {
                     const isSoldOut = d.status === "soldout";
                     return (
-                      <div key={`ch-${i}`} className={`border p-3.5 md:p-4 bg-white rounded-2xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 transition-all ${isSoldOut ? "opacity-50 border-[#D5D5D5] shadow-none" : "border-[#2E7D32]/30 shadow-[0_2px_8px_rgba(46,125,50,0.08)] hover:shadow-[0_6px_16px_rgba(46,125,50,0.14)] hover:border-[#2E7D32]/50 ring-1 ring-[#2E7D32]/5"}`}>
+                      <div key={`ch-${i}`} className="border border-[#2E7D32]/30 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_8px_rgba(46,125,50,0.08)] hover:shadow-[0_6px_16px_rgba(46,125,50,0.14)] hover:border-[#2E7D32]/50 transition-all ring-1 ring-[#2E7D32]/5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                         <div>
                           <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
                             <Calendar className="w-4 h-4" /> {d.date}
@@ -721,16 +721,22 @@ export default function Ausbildung() {
                         </div>
                         <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
                           <div className="flex flex-col items-center sm:items-end gap-1.5 w-full sm:w-auto">
-                            {isSoldOut ? (
-                              <span className="text-[10.5px] font-medium text-[#8B5A5A] bg-[#F5ECEC] border border-[#E8C5C5] px-2 py-[3px] rounded-full whitespace-nowrap">
-                                {isEN ? "Fully booked" : "Ausgebucht"}
-                              </span>
-                            ) : (
-                              <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
-                                {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
-                              </span>
-                            )}
-                            {!isSoldOut && (() => {
+                            <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
+                              {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
+                            </span>
+                            {(() => {
+                              if (isSoldOut) {
+                                return (
+                                  <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1">
+                                    <div className="h-[3px] w-full rounded-full bg-[#EEF1F4] overflow-hidden">
+                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #D88A8A 0%, #B84A4A 100%)" }} />
+                                    </div>
+                                    <span className="text-[10px] text-[#B84A4A] font-medium tracking-wide leading-none">
+                                      {isEN ? "Fully booked" : "Ausgebucht"}
+                                    </span>
+                                  </div>
+                                );
+                              }
                               const cfg = [
                                 { gradient: "linear-gradient(90deg, #E8B48A 0%, #C97A4A 100%)", fill: 72, de: "Noch buchbar", en: "Still available" },
                                 { gradient: "linear-gradient(90deg, #F2CD6B 0%, #E89545 100%)", fill: 52, de: "Begrenzte Plätze", en: "Limited seats" },
@@ -750,7 +756,16 @@ export default function Ausbildung() {
                             })()}
                           </div>
 
-                          {!isSoldOut && (
+                          {isSoldOut ? (
+                            <Button
+                              size="sm"
+                              disabled
+                              aria-disabled="true"
+                              className="bg-white text-[#1B3A5C]/55 border-2 border-[#1B3A5C]/20 text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-2.5 sm:h-9 sm:px-3 line-through decoration-[#1B3A5C]/40 decoration-1 cursor-not-allowed hover:bg-white"
+                            >
+                              {isEN ? "More Info →" : "Mehr Info →"}
+                            </Button>
+                          ) : (
                             <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=ch`}>
                               <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-2.5 sm:h-9 sm:px-3">
                                 {isEN ? "More Info →" : "Mehr Info →"}
@@ -770,7 +785,7 @@ export default function Ausbildung() {
                   {(showAllDates ? datesDE : datesDE.slice(0, INITIAL_DATES_VISIBLE)).map((d, i) => {
                     const isSoldOut = d.status === "soldout";
                     return (
-                      <div key={`de-${i}`} className={`border p-3.5 md:p-4 bg-white rounded-2xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 transition-all ${isSoldOut ? "opacity-50 border-[#D5D5D5] shadow-none" : "border-[#2E7D32]/30 shadow-[0_2px_8px_rgba(46,125,50,0.08)] hover:shadow-[0_6px_16px_rgba(46,125,50,0.14)] hover:border-[#2E7D32]/50 ring-1 ring-[#2E7D32]/5"}`}>
+                      <div key={`de-${i}`} className="border border-[#2E7D32]/30 p-3.5 md:p-4 bg-white rounded-2xl shadow-[0_2px_8px_rgba(46,125,50,0.08)] hover:shadow-[0_6px_16px_rgba(46,125,50,0.14)] hover:border-[#2E7D32]/50 transition-all ring-1 ring-[#2E7D32]/5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                         <div>
                           <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
                             <Calendar className="w-4 h-4" /> {d.date}
@@ -784,16 +799,22 @@ export default function Ausbildung() {
                         </div>
                         <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
                           <div className="flex flex-col items-center sm:items-end gap-1.5 w-full sm:w-auto">
-                            {isSoldOut ? (
-                              <span className="text-[10.5px] font-medium text-[#8B5A5A] bg-[#F5ECEC] border border-[#E8C5C5] px-2 py-[3px] rounded-full whitespace-nowrap">
-                                {isEN ? "Fully booked" : "Ausgebucht"}
-                              </span>
-                            ) : (
-                              <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
-                                {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
-                              </span>
-                            )}
-                            {!isSoldOut && (() => {
+                            <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
+                              {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
+                            </span>
+                            {(() => {
+                              if (isSoldOut) {
+                                return (
+                                  <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1">
+                                    <div className="h-[3px] w-full rounded-full bg-[#EEF1F4] overflow-hidden">
+                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #D88A8A 0%, #B84A4A 100%)" }} />
+                                    </div>
+                                    <span className="text-[10px] text-[#B84A4A] font-medium tracking-wide leading-none">
+                                      {isEN ? "Fully booked" : "Ausgebucht"}
+                                    </span>
+                                  </div>
+                                );
+                              }
                               const cfg = [
                                 { gradient: "linear-gradient(90deg, #E8B48A 0%, #C97A4A 100%)", fill: 72, de: "Noch buchbar", en: "Still available" },
                                 { gradient: "linear-gradient(90deg, #F2CD6B 0%, #E89545 100%)", fill: 52, de: "Begrenzte Plätze", en: "Limited seats" },
@@ -813,7 +834,16 @@ export default function Ausbildung() {
                             })()}
                           </div>
 
-                          {!isSoldOut && (
+                          {isSoldOut ? (
+                            <Button
+                              size="sm"
+                              disabled
+                              aria-disabled="true"
+                              className="bg-white text-[#1B3A5C]/55 border-2 border-[#1B3A5C]/20 text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-2.5 sm:h-9 sm:px-3 line-through decoration-[#1B3A5C]/40 decoration-1 cursor-not-allowed hover:bg-white"
+                            >
+                              {isEN ? "More Info →" : "Mehr Info →"}
+                            </Button>
+                          ) : (
                             <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de`}>
                               <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-2.5 sm:h-9 sm:px-3">
                                 {isEN ? "More Info →" : "Mehr Info →"}
