@@ -165,33 +165,30 @@
     transform: translateY(-2px);
   }
 
-  /* Automatische Anwendung auf gängige Karten-/Container-Muster der Seite.
-     Greift NUR bei div-Elementen, damit Inputs/Buttons unberührt bleiben,
-     und nur bei rounded-lg/xl/2xl/3xl Containern (keine kleinen Pills). */
-  div.bg-card[class*="border-border"][class*="rounded-lg"]:not([class*="overflow-hidden"]),
-  div.bg-card[class*="border-border"][class*="rounded-xl"],
-  div.bg-card[class*="border-border"][class*="rounded-2xl"],
-  div.bg-card[class*="border-border"][class*="rounded-3xl"],
-  div.bg-card[class*="border "][class*="rounded-lg"]:not([class*="bg-cta"]):not([class*="overflow-hidden"]),
-  div.bg-card[class$="border"][class*="rounded-lg"]:not([class*="overflow-hidden"]) {
-    background-image: linear-gradient(to bottom, #FFFFFF 0%, #FBFCFD 100%);
-    border-color: rgba(27, 58, 92, 0.18);
+  /* Automatische Anwendung auf gängige Karten-/Container-Muster.
+     Greift bei größeren div-Containern mit Border + rounded-2xl/3xl
+     (typische Section-Karten). Inputs/Buttons sind ausgeschlossen,
+     weil sie meist rounded-md/sm/lg ohne 2xl/3xl verwenden.
+     Padding/Größe/Layout bleiben unverändert. */
+  div[class*="border"][class*="rounded-2xl"]:where(.bg-white, .bg-card, [class*="bg-white/"]),
+  div[class*="border"][class*="rounded-3xl"]:where(.bg-white, .bg-card, [class*="bg-white/"]),
+  div.bg-card[class*="border"][class*="rounded-xl"]:not([class*="rounded-2xl"]):not([class*="rounded-3xl"]) {
+    background-image: linear-gradient(to bottom, #FFFFFF 0%, #FBFCFD 100%) !important;
+    border-color: rgba(27, 58, 92, 0.22) !important;
     box-shadow:
       0 0 0 1px rgba(255, 255, 255, 0.85) inset,
-      0 1px 2px rgba(27, 58, 92, 0.05),
-      0 8px 22px -8px rgba(27, 58, 92, 0.10),
-      0 28px 60px -28px rgba(27, 58, 92, 0.32);
+      0 1px 2px rgba(27, 58, 92, 0.06),
+      0 10px 26px -10px rgba(27, 58, 92, 0.14),
+      0 32px 70px -28px rgba(27, 58, 92, 0.38) !important;
     transition: transform 300ms ease-out, box-shadow 300ms ease-out, border-color 300ms ease-out;
   }
-  div.bg-card[class*="border-border"][class*="rounded-lg"]:not([class*="overflow-hidden"]):hover,
-  div.bg-card[class*="border-border"][class*="rounded-xl"]:hover,
-  div.bg-card[class*="border-border"][class*="rounded-2xl"]:hover,
-  div.bg-card[class*="border-border"][class*="rounded-3xl"]:hover {
+  div[class*="border"][class*="rounded-2xl"]:where(.bg-white, .bg-card, [class*="bg-white/"]):hover,
+  div[class*="border"][class*="rounded-3xl"]:where(.bg-white, .bg-card, [class*="bg-white/"]):hover {
     box-shadow:
       0 0 0 1px rgba(255, 255, 255, 0.92) inset,
-      0 2px 5px rgba(27, 58, 92, 0.07),
-      0 12px 28px -8px rgba(27, 58, 92, 0.13),
-      0 36px 76px -28px rgba(27, 58, 92, 0.38);
+      0 2px 5px rgba(27, 58, 92, 0.08),
+      0 14px 32px -10px rgba(27, 58, 92, 0.18),
+      0 42px 86px -28px rgba(27, 58, 92, 0.44) !important;
     transform: translateY(-2px);
   }
 
