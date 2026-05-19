@@ -513,9 +513,9 @@ export default function Ausbildung() {
       {/* ═══════════════════════════════════════════════════════════
           SECTION 2 — What makes this different
           ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#DDE1E4] border-b border-border">
-        <div className="container-main py-3 md:py-6 lg:py-8">
-          <div className="max-w-5xl mx-auto bg-white border border-[#1B3A5C]/14 rounded-2xl md:rounded-3xl px-4 py-4 md:px-9 md:py-6 shadow-[0_1px_2px_rgba(27,58,92,0.04),0_2px_8px_rgba(27,58,92,0.04),0_22px_52px_-26px_rgba(27,58,92,0.28)] ring-1 ring-white/85 hover:shadow-[0_2px_4px_rgba(27,58,92,0.05),0_4px_14px_rgba(27,58,92,0.06),0_32px_64px_-26px_rgba(27,58,92,0.34)] hover:-translate-y-[1px] transition-[transform,box-shadow] duration-300 ease-out">
+      <section className="border-b border-border" style={{ background: "linear-gradient(180deg, #C6CDD4 0%, #CFD5DB 55%, #C9CFD5 100%)" }}>
+        <div className="container-main py-4 md:py-7 lg:py-9">
+          <div className="relative max-w-5xl mx-auto bg-gradient-to-b from-white to-[#FBFCFD] border border-[#1B3A5C]/25 rounded-2xl md:rounded-3xl px-4 py-5 md:px-9 md:py-7 shadow-[0_1px_2px_rgba(27,58,92,0.06),0_8px_22px_rgba(27,58,92,0.10),0_36px_80px_-26px_rgba(27,58,92,0.45)] ring-1 ring-white/90 hover:shadow-[0_2px_5px_rgba(27,58,92,0.08),0_12px_28px_rgba(27,58,92,0.12),0_44px_96px_-26px_rgba(27,58,92,0.50)] hover:-translate-y-[2px] transition-[transform,box-shadow] duration-300 ease-out before:content-[''] before:absolute before:top-0 before:left-8 before:right-8 before:h-[2px] before:rounded-b-full before:bg-gradient-to-r before:from-transparent before:via-[#1B3A5C]/35 before:to-transparent">
             <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "What Makes This Training Different" : "Was diese Ausbildung besonders macht"}
             </h2>
