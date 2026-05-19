@@ -739,6 +739,7 @@ export default function Ausbildung() {
                               }
                               const cfg = [
                                 { gradient: "linear-gradient(90deg, #E8B48A 0%, #C97A4A 100%)", fill: 72, de: "Noch buchbar", en: "Still available" },
+                                null,
                                 { gradient: "linear-gradient(90deg, #F2CD6B 0%, #E89545 100%)", fill: 52, de: "Begrenzte Plätze", en: "Limited seats" },
                                 { gradient: "linear-gradient(90deg, #BCDDB8 0%, #7AB585 100%)", fill: 34, de: "Frühzeitige Anmeldung empfohlen", en: "Early registration recommended" },
                               ][i] ?? null;
@@ -817,6 +818,7 @@ export default function Ausbildung() {
                               }
                               const cfg = [
                                 { gradient: "linear-gradient(90deg, #E8B48A 0%, #C97A4A 100%)", fill: 72, de: "Noch buchbar", en: "Still available" },
+                                null,
                                 { gradient: "linear-gradient(90deg, #F2CD6B 0%, #E89545 100%)", fill: 52, de: "Begrenzte Plätze", en: "Limited seats" },
                                 { gradient: "linear-gradient(90deg, #BCDDB8 0%, #7AB585 100%)", fill: 34, de: "Frühzeitige Anmeldung empfohlen", en: "Early registration recommended" },
                               ][i] ?? null;
