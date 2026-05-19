@@ -727,8 +727,8 @@ export default function Ausbildung() {
                               if (isSoldOut) {
                                 return (
                                   <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1.5">
-                                    <div className="h-[4px] w-full rounded-full bg-[#EEF1F4]/80 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.04)]">
-                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #DDA0A0 0%, #C26060 100%)", boxShadow: "0 0 6px rgba(184,74,74,0.28)" }} />
+                                    <div className="h-[5px] w-full rounded-full bg-[#EEF1F4]/85 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.06),inset_0_-1px_0_rgba(255,255,255,0.6)]">
+                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #DDA0A0 0%, #C26060 100%)", boxShadow: "0 0 10px rgba(184,74,74,0.30), 0 0 2px rgba(184,74,74,0.25)" }} />
                                     </div>
                                     <span className="text-[10px] text-[#B84A4A] font-medium tracking-wide leading-none">
                                       {isEN ? "Fully booked" : "Ausgebucht"}
@@ -745,7 +745,7 @@ export default function Ausbildung() {
                               if (!cfg) return null;
                               return (
                                 <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1.5">
-                                  <div className="h-[4px] w-full rounded-full bg-[#EEF1F4]/80 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.04)]">
+                                  <div className="h-[5px] w-full rounded-full bg-[#EEF1F4]/85 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.06),inset_0_-1px_0_rgba(255,255,255,0.6)]">
                                     <div className="h-full rounded-full transition-all duration-500" style={{ width: `${cfg.fill}%`, background: cfg.gradient, boxShadow: `0 0 6px ${cfg.glow}` }} />
                                   </div>
                                   <span className="text-[10px] text-[#1B3A5C]/55 font-medium tracking-wide leading-none">
@@ -806,8 +806,8 @@ export default function Ausbildung() {
                               if (isSoldOut) {
                                 return (
                                   <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1.5">
-                                    <div className="h-[4px] w-full rounded-full bg-[#EEF1F4]/80 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.04)]">
-                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #DDA0A0 0%, #C26060 100%)", boxShadow: "0 0 6px rgba(184,74,74,0.28)" }} />
+                                    <div className="h-[5px] w-full rounded-full bg-[#EEF1F4]/85 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.06),inset_0_-1px_0_rgba(255,255,255,0.6)]">
+                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #DDA0A0 0%, #C26060 100%)", boxShadow: "0 0 10px rgba(184,74,74,0.30), 0 0 2px rgba(184,74,74,0.25)" }} />
                                     </div>
                                     <span className="text-[10px] text-[#B84A4A] font-medium tracking-wide leading-none">
                                       {isEN ? "Fully booked" : "Ausgebucht"}
@@ -824,7 +824,7 @@ export default function Ausbildung() {
                               if (!cfg) return null;
                               return (
                                 <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1.5">
-                                  <div className="h-[4px] w-full rounded-full bg-[#EEF1F4]/80 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.04)]">
+                                  <div className="h-[5px] w-full rounded-full bg-[#EEF1F4]/85 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.06),inset_0_-1px_0_rgba(255,255,255,0.6)]">
                                     <div className="h-full rounded-full transition-all duration-500" style={{ width: `${cfg.fill}%`, background: cfg.gradient, boxShadow: `0 0 6px ${cfg.glow}` }} />
                                   </div>
                                   <span className="text-[10px] text-[#1B3A5C]/55 font-medium tracking-wide leading-none">
