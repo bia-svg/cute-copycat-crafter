@@ -845,7 +845,7 @@ export default function Ausbildung() {
                             </Button>
                           ) : (
                             <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de`}>
-                              <Button size="sm" className="bg-white text-[#1B3A5C] border-2 border-[#1B3A5C]/30 hover:border-[#1B3A5C]/60 hover:bg-[#F1F4F7] text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-2.5 sm:h-9 sm:px-3">
+                              <Button size="sm" className="bg-white text-[#1B3A5C] border border-[#1B3A5C]/25 hover:border-[#1B3A5C]/60 hover:bg-[#EAEEF2] hover:shadow-[0_4px_12px_-4px_rgba(27,58,92,0.25)] hover:-translate-y-[1px] active:translate-y-0 text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-3 sm:h-9 sm:px-4 transition-all duration-200 ease-out">
                                 {isEN ? "More Info →" : "Mehr Info →"}
                               </Button>
                             </Link>
