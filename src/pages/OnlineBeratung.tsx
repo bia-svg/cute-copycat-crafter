@@ -215,8 +215,8 @@ export default function OnlineBeratung() {
               </h2>
               <p className="mt-1 text-[12px] md:text-[13px] text-[#0B1F33]/85 font-medium tracking-tight">
                 {isEN
-                  ? "Germany & Austria · €159  ·  Switzerland · CHF 159"
-                  : "Deutschland & Österreich · €159  ·  Schweiz · CHF 159"}
+                  ? "Germany & Austria · €149  ·  Switzerland · CHF 149"
+                  : "Deutschland & Österreich · €149  ·  Schweiz · CHF 149"}
               </p>
             </div>
 
