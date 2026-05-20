@@ -44,6 +44,18 @@ function CalendlyInlineEmbed({
       onLoaded?.();
     };
 
+    const handleCalendlyMessage = (e: MessageEvent) => {
+      if (typeof e.origin !== "string" || !e.origin.includes("calendly.com")) return;
+      const data = e.data as { event?: string } | undefined;
+      if (!data || typeof data.event !== "string") return;
+      // Fires once Calendly has rendered the booking UI inside the iframe
+      if (data.event === "calendly.event_type_viewed" || data.event === "calendly.profile_page_viewed") {
+        markLoaded();
+      }
+    };
+
+    window.addEventListener("message", handleCalendlyMessage);
+
     const initWidget = () => {
       if (cancelled || !containerRef.current || !window.Calendly?.initInlineWidget) return;
 
@@ -52,13 +64,8 @@ function CalendlyInlineEmbed({
         url: CALENDLY_EMBED_URL,
         parentElement: containerRef.current,
       });
-      const iframe = containerRef.current.querySelector("iframe");
-      if (iframe) {
-        iframe.addEventListener("load", markLoaded, { once: true });
-        setTimeout(markLoaded, 2500);
-      } else {
-        setTimeout(markLoaded, 2500);
-      }
+      // Hard safety fallback in case postMessage never arrives (network issue)
+      setTimeout(markLoaded, 12000);
     };
 
 
@@ -91,6 +98,7 @@ function CalendlyInlineEmbed({
 
     return () => {
       cancelled = true;
+      window.removeEventListener("message", handleCalendlyMessage);
       existingScript?.removeEventListener("load", initWidget);
 
       const appendedScript = document.querySelector<HTMLScriptElement>(
@@ -103,6 +111,7 @@ function CalendlyInlineEmbed({
       }
     };
   }, []);
+
 
   return (
     <div
