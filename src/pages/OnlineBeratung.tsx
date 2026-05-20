@@ -107,7 +107,7 @@ function CalendlyInlineEmbed({
   return (
     <div
       className={`relative rounded-xl border-2 border-[#D8E0EA] bg-white p-0 shadow-[0_4px_16px_rgba(27,58,92,0.06)] transition-opacity duration-500 ease-out ${
-        visible && loaded ? "opacity-100" : "opacity-0 pointer-events-none absolute inset-x-0"
+        visible && loaded ? "opacity-100" : "opacity-0 pointer-events-none h-0 overflow-hidden border-0 shadow-none"
       }`}
       aria-hidden={!visible || !loaded}
     >
@@ -119,6 +119,7 @@ function CalendlyInlineEmbed({
     </div>
   );
 }
+
 
 
 export default function OnlineBeratung() {
