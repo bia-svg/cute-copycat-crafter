@@ -25,12 +25,24 @@ declare global {
   }
 }
 
-function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
+function CalendlyInlineEmbed({
+  onLoaded,
+  visible,
+}: {
+  onLoaded?: () => void;
+  visible: boolean;
+}) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
+
+    const markLoaded = () => {
+      if (cancelled) return;
+      setLoaded(true);
+      onLoaded?.();
+    };
 
     const initWidget = () => {
       if (cancelled || !containerRef.current || !window.Calendly?.initInlineWidget) return;
@@ -40,16 +52,15 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
         url: CALENDLY_EMBED_URL,
         parentElement: containerRef.current,
       });
-      // Calendly injects an iframe; mark loaded once it appears
       const iframe = containerRef.current.querySelector("iframe");
       if (iframe) {
-        iframe.addEventListener("load", () => !cancelled && setLoaded(true), { once: true });
-        // Fallback in case load event already fired
-        setTimeout(() => !cancelled && setLoaded(true), 1500);
+        iframe.addEventListener("load", markLoaded, { once: true });
+        setTimeout(markLoaded, 2500);
       } else {
-        setTimeout(() => !cancelled && setLoaded(true), 1500);
+        setTimeout(markLoaded, 2500);
       }
     };
+
 
     const existingStyle = document.querySelector<HTMLLinkElement>(
       'link[href="https://assets.calendly.com/assets/external/widget.css"]',
@@ -94,16 +105,12 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
   }, []);
 
   return (
-    <div className="relative rounded-xl border-2 border-[#D8E0EA] bg-white p-0 shadow-[0_4px_16px_rgba(27,58,92,0.06)]">
-      {!loaded && (
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2.5 rounded-xl bg-white/95">
-          <span
-            className="inline-block h-5 w-5 rounded-full border-2 border-[#D7DEE6] border-t-[#1B3A5C] animate-spin"
-            aria-hidden="true"
-          />
-          <p className="text-[12.5px] text-[#1B3A5C]/70 tracking-tight">{loadingLabel}</p>
-        </div>
-      )}
+    <div
+      className={`relative rounded-xl border-2 border-[#D8E0EA] bg-white p-0 shadow-[0_4px_16px_rgba(27,58,92,0.06)] transition-opacity duration-500 ease-out ${
+        visible && loaded ? "opacity-100" : "opacity-0 pointer-events-none h-0 overflow-hidden border-0 shadow-none"
+      }`}
+      aria-hidden={!visible || !loaded}
+    >
       <div
         ref={containerRef}
         className="calendly-inline-widget mx-auto w-full rounded-xl bg-white h-[1150px] sm:h-[1500px] md:h-[1300px]"
@@ -113,23 +120,29 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
   );
 }
 
+
+
 export default function OnlineBeratung() {
   const { language, country } = useLanguage();
   const isEN = language === "en";
   const basePath = getPath("home", language, country);
   const [calendarOpen, setCalendarOpen] = useState(false);
+  const [calendarLoaded, setCalendarLoaded] = useState(false);
   const calendarSectionRef = useRef<HTMLDivElement | null>(null);
 
   const handleOpenCalendar = () => {
+    setCalendarLoaded(false);
     setCalendarOpen(true);
   };
 
   const handleCloseCalendar = () => {
     setCalendarOpen(false);
+    setCalendarLoaded(false);
     requestAnimationFrame(() => {
       calendarSectionRef.current?.scrollIntoView({ block: "start", behavior: "auto" });
     });
   };
+
 
   const bullets = isEN
     ? [
@@ -220,24 +233,32 @@ export default function OnlineBeratung() {
               </p>
             </div>
 
-            {calendarOpen ? (
-              <>
-                <CalendlyInlineEmbed
-                  loadingLabel={isEN ? "Loading calendar …" : "Kalender wird geladen …"}
-                />
-                <div className="mt-3 flex justify-center">
-                  <button
-                    type="button"
-                    onClick={handleCloseCalendar}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-white hover:bg-[#f4f3ef] text-[#1B3A5C] font-medium px-6 py-2 text-[12.5px] md:text-[13px] tracking-tight border border-[#D8E0EA] shadow-[0_2px_8px_rgba(27,58,92,0.06)] hover:shadow-[0_4px_12px_rgba(27,58,92,0.10)] whitespace-nowrap"
-                  >
-                    <X className="w-4 h-4" strokeWidth={2} />
-                    {isEN ? "Close calendar" : "Kalender schließen"}
-                  </button>
-                </div>
-              </>
+            {calendarOpen && (
+              <CalendlyInlineEmbed
+                visible={calendarOpen}
+                onLoaded={() => setCalendarLoaded(true)}
+              />
+            )}
+
+            {calendarOpen && calendarLoaded ? (
+              <div className="mt-3 flex justify-center animate-fade-in">
+                <button
+                  type="button"
+                  onClick={handleCloseCalendar}
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white hover:bg-[#f4f3ef] text-[#1B3A5C] font-medium px-6 py-2 text-[12.5px] md:text-[13px] tracking-tight border border-[#D8E0EA] shadow-[0_2px_8px_rgba(27,58,92,0.06)] hover:shadow-[0_4px_12px_rgba(27,58,92,0.10)] whitespace-nowrap"
+                >
+                  <X className="w-4 h-4" strokeWidth={2} />
+                  {isEN ? "Close calendar" : "Kalender schließen"}
+                </button>
+              </div>
             ) : (
-              <div className="rounded-2xl border border-[#D4D0CA] bg-[#f4f3ef] px-5 py-4 md:px-8 md:py-5 shadow-[0_3px_14px_-3px_rgba(27,58,92,0.10),0_1px_4px_-1px_rgba(27,58,92,0.05),inset_0_1px_0_rgba(255,255,255,0.6)]">
+              <div
+                className={`relative rounded-2xl border bg-[#f4f3ef] px-5 py-4 md:px-8 md:py-5 transition-all duration-500 ease-out ${
+                  calendarOpen && !calendarLoaded
+                    ? "border-[#2E7D32]/35 shadow-[0_0_0_1px_rgba(46,125,50,0.10),0_8px_28px_-6px_rgba(46,125,50,0.30),0_3px_14px_-3px_rgba(27,58,92,0.10),inset_0_1px_0_rgba(255,255,255,0.6)] animate-[pulse_2.6s_ease-in-out_infinite]"
+                    : "border-[#D4D0CA] shadow-[0_3px_14px_-3px_rgba(27,58,92,0.10),0_1px_4px_-1px_rgba(27,58,92,0.05),inset_0_1px_0_rgba(255,255,255,0.6)]"
+                }`}
+              >
                 <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:items-center sm:gap-4 md:gap-5">
                   <span className="shrink-0 inline-flex items-center justify-center w-10 h-10 sm:w-[52px] sm:h-[52px] rounded-xl bg-white text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_2px_6px_rgba(46,125,50,0.12)]">
                     <CalendarDays className="w-5 h-5 sm:w-7 sm:h-7" strokeWidth={2} />
@@ -246,9 +267,15 @@ export default function OnlineBeratung() {
                     <button
                       type="button"
                       onClick={handleOpenCalendar}
-                      className="inline-flex items-center justify-center rounded-full bg-[#E8F5E9] hover:bg-[#C8E6C9] text-[#142b16] font-bold px-8 py-2.5 text-[12.5px] sm:text-[13px] tracking-tight border border-[#2E7D32]/25 shadow-[0_4px_14px_rgba(46,125,50,0.28),0_0_0_1px_rgba(46,125,50,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.38),0_0_0_1px_rgba(46,125,50,0.12),inset_0_1px_0_rgba(255,255,255,0.7)] whitespace-nowrap transition-shadow"
+                      disabled={calendarOpen && !calendarLoaded}
+                      aria-busy={calendarOpen && !calendarLoaded}
+                      className="inline-flex items-center justify-center rounded-full bg-[#E8F5E9] hover:bg-[#C8E6C9] text-[#142b16] font-bold px-8 py-2.5 text-[12.5px] sm:text-[13px] tracking-tight border border-[#2E7D32]/25 shadow-[0_4px_14px_rgba(46,125,50,0.28),0_0_0_1px_rgba(46,125,50,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] hover:shadow-[0_6px_20px_rgba(46,125,50,0.38),0_0_0_1px_rgba(46,125,50,0.12),inset_0_1px_0_rgba(255,255,255,0.7)] whitespace-nowrap transition-all duration-300 disabled:cursor-default disabled:hover:bg-[#E8F5E9]"
                     >
-                      {isEN ? "Open calendar" : "Kalender öffnen"}
+                      <span key={calendarOpen ? "loading" : "idle"} className="animate-fade-in">
+                        {calendarOpen && !calendarLoaded
+                          ? isEN ? "Loading calendar …" : "Kalender wird geladen …"
+                          : isEN ? "Open calendar" : "Kalender öffnen"}
+                      </span>
                     </button>
                     <p className="text-[11px] sm:text-[13.5px] text-[#1B3A5C]/50 sm:text-[#1B3A5C] sm:font-medium tracking-tight sm:tracking-normal leading-snug">
                       {isEN ? "To find your preferred appointment" : "Um Ihren gewünschten Termin zu finden"}
@@ -257,6 +284,7 @@ export default function OnlineBeratung() {
                 </div>
               </div>
             )}
+
 
           </div>
         </div>
