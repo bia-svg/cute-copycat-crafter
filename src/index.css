@@ -358,3 +358,13 @@
   mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
 }
 .marquee-pause:hover .marquee-track { animation-play-state: paused; }
+
+/* Soft, calm glow used while embedded calendar is loading */
+@keyframes softGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.78; }
+}
+.animate-soft-glow {
+  animation: softGlow 3.6s ease-in-out infinite;
+}
+
