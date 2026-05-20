@@ -105,16 +105,12 @@ function CalendlyInlineEmbed({
   }, []);
 
   return (
-    <div className="relative rounded-xl border-2 border-[#D8E0EA] bg-white p-0 shadow-[0_4px_16px_rgba(27,58,92,0.06)]">
-      {!loaded && (
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2.5 rounded-xl bg-white/95">
-          <span
-            className="inline-block h-5 w-5 rounded-full border-2 border-[#D7DEE6] border-t-[#1B3A5C] animate-spin"
-            aria-hidden="true"
-          />
-          <p className="text-[12.5px] text-[#1B3A5C]/70 tracking-tight">{loadingLabel}</p>
-        </div>
-      )}
+    <div
+      className={`relative rounded-xl border-2 border-[#D8E0EA] bg-white p-0 shadow-[0_4px_16px_rgba(27,58,92,0.06)] transition-opacity duration-500 ease-out ${
+        visible && loaded ? "opacity-100" : "opacity-0 pointer-events-none absolute inset-x-0"
+      }`}
+      aria-hidden={!visible || !loaded}
+    >
       <div
         ref={containerRef}
         className="calendly-inline-widget mx-auto w-full rounded-xl bg-white h-[1150px] sm:h-[1500px] md:h-[1300px]"
@@ -123,6 +119,7 @@ function CalendlyInlineEmbed({
     </div>
   );
 }
+
 
 export default function OnlineBeratung() {
   const { language, country } = useLanguage();
