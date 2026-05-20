@@ -246,7 +246,7 @@ export default function OnlineBeratung() {
             {calendarOpen && (
               <CalendlyInlineEmbed
                 visible={calendarOpen}
-                onLoaded={() => setCalendarLoaded(true)}
+                onLoaded={handleCalendarLoaded}
               />
             )}
 
