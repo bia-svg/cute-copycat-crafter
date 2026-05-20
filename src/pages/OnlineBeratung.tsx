@@ -129,10 +129,19 @@ export default function OnlineBeratung() {
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [calendarLoaded, setCalendarLoaded] = useState(false);
   const calendarSectionRef = useRef<HTMLDivElement | null>(null);
+  const calendarOpenedAtRef = useRef<number>(0);
+  const MIN_LOADING_MS = 1800;
 
   const handleOpenCalendar = () => {
     setCalendarLoaded(false);
     setCalendarOpen(true);
+    calendarOpenedAtRef.current = Date.now();
+  };
+
+  const handleCalendarLoaded = () => {
+    const elapsed = Date.now() - calendarOpenedAtRef.current;
+    const remaining = Math.max(0, MIN_LOADING_MS - elapsed);
+    window.setTimeout(() => setCalendarLoaded(true), remaining);
   };
 
   const handleCloseCalendar = () => {
@@ -142,6 +151,7 @@ export default function OnlineBeratung() {
       calendarSectionRef.current?.scrollIntoView({ block: "start", behavior: "auto" });
     });
   };
+
 
 
   const bullets = isEN
@@ -236,7 +246,7 @@ export default function OnlineBeratung() {
             {calendarOpen && (
               <CalendlyInlineEmbed
                 visible={calendarOpen}
-                onLoaded={() => setCalendarLoaded(true)}
+                onLoaded={handleCalendarLoaded}
               />
             )}
 
