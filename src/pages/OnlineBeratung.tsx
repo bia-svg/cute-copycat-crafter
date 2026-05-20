@@ -139,19 +139,32 @@ export default function OnlineBeratung() {
   const [calendarLoaded, setCalendarLoaded] = useState(false);
   const calendarSectionRef = useRef<HTMLDivElement | null>(null);
   const calendarOpenedAtRef = useRef<number>(0);
-  const MIN_LOADING_MS = 1800;
+  const calendarMaxTimerRef = useRef<number | null>(null);
+  const MIN_LOADING_MS = 1200;
+  const MAX_LOADING_MS = 2800;
 
   const handleOpenCalendar = () => {
     setCalendarLoaded(false);
     setCalendarOpen(true);
     calendarOpenedAtRef.current = Date.now();
+    if (calendarMaxTimerRef.current) window.clearTimeout(calendarMaxTimerRef.current);
+    calendarMaxTimerRef.current = window.setTimeout(() => {
+      setCalendarLoaded(true);
+    }, MAX_LOADING_MS);
   };
 
   const handleCalendarLoaded = () => {
     const elapsed = Date.now() - calendarOpenedAtRef.current;
     const remaining = Math.max(0, MIN_LOADING_MS - elapsed);
-    window.setTimeout(() => setCalendarLoaded(true), remaining);
+    window.setTimeout(() => {
+      setCalendarLoaded(true);
+      if (calendarMaxTimerRef.current) {
+        window.clearTimeout(calendarMaxTimerRef.current);
+        calendarMaxTimerRef.current = null;
+      }
+    }, remaining);
   };
+
 
   const handleCloseCalendar = () => {
     setCalendarOpen(false);
