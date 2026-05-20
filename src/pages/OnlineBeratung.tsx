@@ -287,7 +287,7 @@ export default function OnlineBeratung() {
               <div
                 className={`relative rounded-2xl border bg-[#f4f3ef] px-5 py-4 md:px-8 md:py-5 transition-all duration-500 ease-out ${
                   calendarOpen && !calendarLoaded
-                    ? "border-[#2E7D32]/35 shadow-[0_0_0_1px_rgba(46,125,50,0.10),0_8px_28px_-6px_rgba(46,125,50,0.30),0_3px_14px_-3px_rgba(27,58,92,0.10),inset_0_1px_0_rgba(255,255,255,0.6)] animate-[pulse_2.6s_ease-in-out_infinite]"
+                    ? "border-[#2E7D32]/30 shadow-[0_0_0_1px_rgba(46,125,50,0.08),0_6px_22px_-6px_rgba(46,125,50,0.22),0_3px_14px_-3px_rgba(27,58,92,0.10),inset_0_1px_0_rgba(255,255,255,0.6)] animate-soft-glow"
                     : "border-[#D4D0CA] shadow-[0_3px_14px_-3px_rgba(27,58,92,0.10),0_1px_4px_-1px_rgba(27,58,92,0.05),inset_0_1px_0_rgba(255,255,255,0.6)]"
                 }`}
               >
