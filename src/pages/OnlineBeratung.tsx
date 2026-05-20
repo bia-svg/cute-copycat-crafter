@@ -25,12 +25,24 @@ declare global {
   }
 }
 
-function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
+function CalendlyInlineEmbed({
+  onLoaded,
+  visible,
+}: {
+  onLoaded?: () => void;
+  visible: boolean;
+}) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
+
+    const markLoaded = () => {
+      if (cancelled) return;
+      setLoaded(true);
+      onLoaded?.();
+    };
 
     const initWidget = () => {
       if (cancelled || !containerRef.current || !window.Calendly?.initInlineWidget) return;
@@ -40,16 +52,15 @@ function CalendlyInlineEmbed({ loadingLabel }: { loadingLabel: string }) {
         url: CALENDLY_EMBED_URL,
         parentElement: containerRef.current,
       });
-      // Calendly injects an iframe; mark loaded once it appears
       const iframe = containerRef.current.querySelector("iframe");
       if (iframe) {
-        iframe.addEventListener("load", () => !cancelled && setLoaded(true), { once: true });
-        // Fallback in case load event already fired
-        setTimeout(() => !cancelled && setLoaded(true), 1500);
+        iframe.addEventListener("load", markLoaded, { once: true });
+        setTimeout(markLoaded, 2500);
       } else {
-        setTimeout(() => !cancelled && setLoaded(true), 1500);
+        setTimeout(markLoaded, 2500);
       }
     };
+
 
     const existingStyle = document.querySelector<HTMLLinkElement>(
       'link[href="https://assets.calendly.com/assets/external/widget.css"]',
