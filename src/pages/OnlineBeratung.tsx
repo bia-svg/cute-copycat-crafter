@@ -33,23 +33,43 @@ function CalendlyInlineEmbed({
   visible: boolean;
 }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
+    let iframeObserver: MutationObserver | null = null;
+    let calendlyReadyTimeout: number | null = null;
+    let iframeElement: HTMLIFrameElement | null = null;
+    let hasReportedLoaded = false;
 
     const markLoaded = () => {
-      if (cancelled) return;
-      setLoaded(true);
+      if (cancelled || hasReportedLoaded) return;
+      hasReportedLoaded = true;
+      if (calendlyReadyTimeout) {
+        window.clearTimeout(calendlyReadyTimeout);
+        calendlyReadyTimeout = null;
+      }
+      iframeObserver?.disconnect();
       onLoaded?.();
+    };
+
+    const attachIframeListener = () => {
+      const nextIframe = containerRef.current?.querySelector("iframe");
+      if (!nextIframe || nextIframe === iframeElement) return false;
+
+      iframeElement = nextIframe;
+      iframeElement.addEventListener("load", markLoaded, { once: true });
+      return true;
     };
 
     const handleCalendlyMessage = (e: MessageEvent) => {
       if (typeof e.origin !== "string" || !e.origin.includes("calendly.com")) return;
       const data = e.data as { event?: string } | undefined;
       if (!data || typeof data.event !== "string") return;
-      // Fires once Calendly has rendered the booking UI inside the iframe
-      if (data.event === "calendly.event_type_viewed" || data.event === "calendly.profile_page_viewed") {
+      if (
+        data.event === "calendly.event_type_viewed" ||
+        data.event === "calendly.profile_page_viewed" ||
+        data.event === "calendly.page_height_resize"
+      ) {
         markLoaded();
       }
     };
@@ -60,12 +80,24 @@ function CalendlyInlineEmbed({
       if (cancelled || !containerRef.current || !window.Calendly?.initInlineWidget) return;
 
       containerRef.current.innerHTML = "";
+      iframeElement = null;
+      hasReportedLoaded = false;
       window.Calendly.initInlineWidget({
         url: CALENDLY_EMBED_URL,
         parentElement: containerRef.current,
       });
-      // Hard safety fallback in case postMessage never arrives (network issue)
-      setTimeout(markLoaded, 12000);
+
+      if (!attachIframeListener()) {
+        iframeObserver = new MutationObserver(() => {
+          if (attachIframeListener()) {
+            iframeObserver?.disconnect();
+          }
+        });
+
+        iframeObserver.observe(containerRef.current, { childList: true, subtree: true });
+      }
+
+      calendlyReadyTimeout = window.setTimeout(markLoaded, 2400);
     };
 
 
@@ -98,6 +130,11 @@ function CalendlyInlineEmbed({
 
     return () => {
       cancelled = true;
+      if (calendlyReadyTimeout) {
+        window.clearTimeout(calendlyReadyTimeout);
+      }
+      iframeObserver?.disconnect();
+      iframeElement?.removeEventListener("load", markLoaded);
       window.removeEventListener("message", handleCalendlyMessage);
       existingScript?.removeEventListener("load", initWidget);
 
@@ -116,9 +153,9 @@ function CalendlyInlineEmbed({
   return (
     <div
       className={`relative rounded-xl border-2 border-[#D8E0EA] bg-white p-0 shadow-[0_4px_16px_rgba(27,58,92,0.06)] transition-opacity duration-500 ease-out ${
-        visible && loaded ? "opacity-100" : "opacity-0 pointer-events-none h-0 overflow-hidden border-0 shadow-none"
+        visible ? "opacity-100" : "opacity-0 pointer-events-none h-0 overflow-hidden border-0 shadow-none"
       }`}
-      aria-hidden={!visible || !loaded}
+      aria-hidden={!visible}
     >
       <div
         ref={containerRef}
@@ -138,35 +175,47 @@ export default function OnlineBeratung() {
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [calendarLoaded, setCalendarLoaded] = useState(false);
   const calendarSectionRef = useRef<HTMLDivElement | null>(null);
-  const calendarOpenedAtRef = useRef<number>(0);
   const calendarMaxTimerRef = useRef<number | null>(null);
-  const MIN_LOADING_MS = 1200;
-  const MAX_LOADING_MS = 2800;
+  const calendarLoadResolvedRef = useRef(false);
+  const MAX_LOADING_MS = 2400;
+
+  useEffect(() => {
+    return () => {
+      if (calendarMaxTimerRef.current) {
+        window.clearTimeout(calendarMaxTimerRef.current);
+      }
+    };
+  }, []);
 
   const handleOpenCalendar = () => {
     setCalendarLoaded(false);
     setCalendarOpen(true);
-    calendarOpenedAtRef.current = Date.now();
+    calendarLoadResolvedRef.current = false;
     if (calendarMaxTimerRef.current) window.clearTimeout(calendarMaxTimerRef.current);
     calendarMaxTimerRef.current = window.setTimeout(() => {
+      calendarLoadResolvedRef.current = true;
       setCalendarLoaded(true);
     }, MAX_LOADING_MS);
   };
 
   const handleCalendarLoaded = () => {
-    const elapsed = Date.now() - calendarOpenedAtRef.current;
-    const remaining = Math.max(0, MIN_LOADING_MS - elapsed);
-    window.setTimeout(() => {
-      setCalendarLoaded(true);
-      if (calendarMaxTimerRef.current) {
-        window.clearTimeout(calendarMaxTimerRef.current);
-        calendarMaxTimerRef.current = null;
-      }
-    }, remaining);
+    if (calendarLoadResolvedRef.current) return;
+
+    calendarLoadResolvedRef.current = true;
+    if (calendarMaxTimerRef.current) {
+      window.clearTimeout(calendarMaxTimerRef.current);
+      calendarMaxTimerRef.current = null;
+    }
+    setCalendarLoaded(true);
   };
 
 
   const handleCloseCalendar = () => {
+    if (calendarMaxTimerRef.current) {
+      window.clearTimeout(calendarMaxTimerRef.current);
+      calendarMaxTimerRef.current = null;
+    }
+    calendarLoadResolvedRef.current = false;
     setCalendarOpen(false);
     setCalendarLoaded(false);
     requestAnimationFrame(() => {
@@ -267,7 +316,7 @@ export default function OnlineBeratung() {
 
             {calendarOpen && (
               <CalendlyInlineEmbed
-                visible={calendarOpen}
+                visible={calendarLoaded}
                 onLoaded={handleCalendarLoaded}
               />
             )}
