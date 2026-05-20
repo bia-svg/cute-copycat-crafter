@@ -126,18 +126,22 @@ export default function OnlineBeratung() {
   const isEN = language === "en";
   const basePath = getPath("home", language, country);
   const [calendarOpen, setCalendarOpen] = useState(false);
+  const [calendarLoaded, setCalendarLoaded] = useState(false);
   const calendarSectionRef = useRef<HTMLDivElement | null>(null);
 
   const handleOpenCalendar = () => {
+    setCalendarLoaded(false);
     setCalendarOpen(true);
   };
 
   const handleCloseCalendar = () => {
     setCalendarOpen(false);
+    setCalendarLoaded(false);
     requestAnimationFrame(() => {
       calendarSectionRef.current?.scrollIntoView({ block: "start", behavior: "auto" });
     });
   };
+
 
   const bullets = isEN
     ? [
