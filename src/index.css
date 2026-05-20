@@ -361,10 +361,19 @@
 
 /* Soft, calm glow used while embedded calendar is loading */
 @keyframes softGlow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.78; }
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: saturate(1);
+  }
+  50% {
+    opacity: 0.94;
+    transform: scale(1.003);
+    filter: saturate(1.03);
+  }
 }
 .animate-soft-glow {
-  animation: softGlow 3.6s ease-in-out infinite;
+  animation: softGlow 4.8s ease-in-out infinite;
+  will-change: opacity, transform, filter;
 }
 
