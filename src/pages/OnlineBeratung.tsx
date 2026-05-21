@@ -446,7 +446,12 @@ export default function OnlineBeratung() {
 
             {/* Two-column desktop layout: text + topic grid */}
             <div className="mt-4 md:mt-5 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-start">
-              <div className="md:col-span-6 space-y-2.5 text-[13px] md:text-[14px] text-[#0B1F33]/80 leading-relaxed">
+              <div className="md:col-span-6 md:pt-1 space-y-2.5 text-[13px] md:text-[14px] text-[#0B1F33]/80 leading-relaxed">
+                <p className="text-[13.5px] md:text-[15px] text-[#1B3A5C] font-medium leading-snug">
+                  {isEN
+                    ? "A confidential space for orientation, clarity and emotional relief."
+                    : "Ein vertraulicher Raum für Orientierung, Klarheit und emotionale Entlastung."}
+                </p>
                 <p>
                   {isEN
                     ? "Not everyone is immediately looking for long-term therapy."
