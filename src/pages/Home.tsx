@@ -454,10 +454,10 @@ export default function Home() {
                 {/* Mint — Hypnosis Sessions */}
                 <Link
                   to={getPath("sessionsOverview", language, country)}
-                  className="group inline-flex items-center justify-center gap-2 w-full px-5 md:px-7 py-2 md:py-2.5 rounded-2xl bg-gradient-to-b from-[#9AD7AC] to-[#74C390] hover:from-[#8DCEA0] hover:to-[#65B884] text-[#0B3D1F] font-semibold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#2E7D32]/50 shadow-[0_1px_0_0_rgba(255,255,255,0.5)_inset,0_2px_0_0_rgba(46,125,50,0.32),0_8px_20px_-4px_rgba(46,125,50,0.42),0_16px_36px_-10px_rgba(46,125,50,0.38)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.55)_inset,0_3px_0_0_rgba(46,125,50,0.38),0_12px_28px_-4px_rgba(46,125,50,0.52),0_22px_44px_-10px_rgba(46,125,50,0.48)] md:shadow-[0_1px_0_0_rgba(255,255,255,0.5)_inset,0_2px_0_0_rgba(46,125,50,0.28),0_6px_16px_-4px_rgba(46,125,50,0.35),0_12px_28px_-10px_rgba(46,125,50,0.3)] md:hover:shadow-[0_1px_0_0_rgba(255,255,255,0.55)_inset,0_3px_0_0_rgba(46,125,50,0.32),0_10px_24px_-4px_rgba(46,125,50,0.45),0_18px_38px_-10px_rgba(46,125,50,0.4)] hover:-translate-y-0.5 active:translate-y-px transition-all duration-300 ease-out"
+                  className="group inline-flex items-center justify-center gap-2 w-full px-5 md:px-7 py-2 md:py-2.5 rounded-2xl bg-gradient-to-b from-[#4FA974] to-[#327E55] hover:from-[#479C6A] hover:to-[#2B7049] text-white font-semibold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#235C3C]/60 shadow-[0_1px_0_0_rgba(255,255,255,0.22)_inset,0_1px_2px_0_rgba(35,92,60,0.18),0_10px_24px_-8px_rgba(35,92,60,0.32),0_22px_48px_-18px_rgba(35,92,60,0.30)] active:shadow-[0_1px_0_0_rgba(255,255,255,0.22)_inset,0_1px_2px_0_rgba(35,92,60,0.20),0_8px_18px_-8px_rgba(35,92,60,0.30)] md:hover:shadow-[0_1px_0_0_rgba(255,255,255,0.28)_inset,0_2px_4px_0_rgba(35,92,60,0.22),0_18px_34px_-10px_rgba(35,92,60,0.42),0_34px_64px_-22px_rgba(35,92,60,0.40)] md:hover:-translate-y-[3px] active:translate-y-px transition-all duration-300 ease-out"
                 >
                   {isEN ? "All Hypnosis Session Topics" : "Alle Themen zu Hypnose-Sitzungen"}
-                  <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
+                  <span aria-hidden="true" className="text-white transition-transform group-hover:translate-x-0.5">→</span>
                 </Link>
 
                 {/* Blue — Online Psychological Consultation */}
