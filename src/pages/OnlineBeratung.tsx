@@ -45,6 +45,8 @@ function CalendlyInlineEmbed({
     let iframeElement: HTMLIFrameElement | null = null;
     let hasReportedLoaded = false;
 
+    let fallbackTimeout: number | null = null;
+
     const markLoaded = () => {
       if (cancelled || hasReportedLoaded) return;
       hasReportedLoaded = true;
@@ -52,9 +54,21 @@ function CalendlyInlineEmbed({
         window.clearTimeout(calendlyReadyTimeout);
         calendlyReadyTimeout = null;
       }
+      if (fallbackTimeout) {
+        window.clearTimeout(fallbackTimeout);
+        fallbackTimeout = null;
+      }
+      setShowFallback(false);
       iframeObserver?.disconnect();
       onLoaded?.();
     };
+
+    fallbackTimeout = window.setTimeout(() => {
+      if (!hasReportedLoaded && !cancelled) {
+        setShowFallback(true);
+      }
+    }, 5000);
+
 
     const attachIframeListener = () => {
       const nextIframe = containerRef.current?.querySelector("iframe");
