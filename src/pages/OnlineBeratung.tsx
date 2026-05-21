@@ -28,10 +28,14 @@ declare global {
 function CalendlyInlineEmbed({
   onLoaded,
   visible,
+  isEN,
 }: {
   onLoaded?: () => void;
   visible: boolean;
+  isEN: boolean;
 }) {
+  const [showFallback, setShowFallback] = useState(false);
+
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -41,6 +45,8 @@ function CalendlyInlineEmbed({
     let iframeElement: HTMLIFrameElement | null = null;
     let hasReportedLoaded = false;
 
+    let fallbackTimeout: number | null = null;
+
     const markLoaded = () => {
       if (cancelled || hasReportedLoaded) return;
       hasReportedLoaded = true;
@@ -48,9 +54,21 @@ function CalendlyInlineEmbed({
         window.clearTimeout(calendlyReadyTimeout);
         calendlyReadyTimeout = null;
       }
+      if (fallbackTimeout) {
+        window.clearTimeout(fallbackTimeout);
+        fallbackTimeout = null;
+      }
+      setShowFallback(false);
       iframeObserver?.disconnect();
       onLoaded?.();
     };
+
+    fallbackTimeout = window.setTimeout(() => {
+      if (!hasReportedLoaded && !cancelled) {
+        setShowFallback(true);
+      }
+    }, 5000);
+
 
     const attachIframeListener = () => {
       const nextIframe = containerRef.current?.querySelector("iframe");
@@ -133,6 +151,9 @@ function CalendlyInlineEmbed({
       if (calendlyReadyTimeout) {
         window.clearTimeout(calendlyReadyTimeout);
       }
+      if (fallbackTimeout) {
+        window.clearTimeout(fallbackTimeout);
+      }
       iframeObserver?.disconnect();
       iframeElement?.removeEventListener("load", markLoaded);
       window.removeEventListener("message", handleCalendlyMessage);
@@ -150,21 +171,43 @@ function CalendlyInlineEmbed({
   }, []);
 
 
+  const wrapperVisible = visible || showFallback;
+
   return (
     <div
       className={`relative rounded-xl border-2 border-[#D8E0EA] bg-white p-0 shadow-[0_4px_16px_rgba(27,58,92,0.06)] transition-opacity duration-500 ease-out ${
-        visible ? "opacity-100" : "opacity-0 pointer-events-none h-0 overflow-hidden border-0 shadow-none"
+        wrapperVisible ? "opacity-100" : "opacity-0 pointer-events-none h-0 overflow-hidden border-0 shadow-none"
       }`}
-      aria-hidden={!visible}
+      aria-hidden={!wrapperVisible}
     >
       <div
         ref={containerRef}
-        className="calendly-inline-widget mx-auto w-full rounded-xl bg-white h-[1150px] sm:h-[1500px] md:h-[1300px]"
+        className={`calendly-inline-widget mx-auto w-full rounded-xl bg-white ${
+          showFallback && !visible ? "hidden" : "h-[1150px] sm:h-[1500px] md:h-[1300px]"
+        }`}
         data-url={CALENDLY_EMBED_URL}
       />
+      {showFallback && !visible && (
+        <div className="flex flex-col items-center justify-center text-center px-6 py-10 md:py-14 gap-4">
+          <p className="text-[14px] md:text-[15px] text-[#1B3A5C]/80 max-w-md leading-relaxed">
+            {isEN
+              ? "The calendar could not be fully loaded on this device."
+              : "Der Kalender konnte auf diesem Gerät nicht vollständig geladen werden."}
+          </p>
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#2E7D32] hover:bg-[#26682A] text-white font-medium px-6 py-2.5 text-[13px] md:text-[13.5px] tracking-tight shadow-[0_2px_8px_rgba(46,125,50,0.20)] hover:shadow-[0_4px_14px_rgba(46,125,50,0.28)] transition-all"
+          >
+            {isEN ? "Open calendar directly" : "Kalender direkt öffnen"}
+          </a>
+        </div>
+      )}
     </div>
   );
 }
+
 
 
 
@@ -318,6 +361,7 @@ export default function OnlineBeratung() {
               <CalendlyInlineEmbed
                 visible={calendarLoaded}
                 onLoaded={handleCalendarLoaded}
+                isEN={isEN}
               />
             )}
 
