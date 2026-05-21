@@ -363,10 +363,6 @@ export default function OnlineBeratung() {
                 onLoaded={handleCalendarLoaded}
                 isEN={isEN}
               />
-
-                visible={calendarLoaded}
-                onLoaded={handleCalendarLoaded}
-              />
             )}
 
             {calendarOpen && calendarLoaded ? (
