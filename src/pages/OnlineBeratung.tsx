@@ -63,9 +63,29 @@ function CalendlyInlineEmbed({
       onLoaded?.();
     };
 
+    const triggerFallback = () => {
+      if (cancelled || hasReportedLoaded) return;
+      hasReportedLoaded = true;
+      if (calendlyReadyTimeout) {
+        window.clearTimeout(calendlyReadyTimeout);
+        calendlyReadyTimeout = null;
+      }
+      iframeObserver?.disconnect();
+      setShowFallback(true);
+      // Signal parent so the loading state ends and the close button appears.
+      onLoaded?.();
+    };
+
+    // Visual readiness check: after 5s, verify the iframe actually rendered
+    // measurable content. If not (blank/white on older devices), show fallback.
     fallbackTimeout = window.setTimeout(() => {
-      if (!hasReportedLoaded && !cancelled) {
-        setShowFallback(true);
+      if (cancelled || hasReportedLoaded) return;
+      const iframe = containerRef.current?.querySelector("iframe");
+      const renderedHeight = iframe?.getBoundingClientRect().height ?? 0;
+      // Calendly sets the iframe height via page_height_resize once content
+      // is rendered. If still near zero, the embed is effectively blank.
+      if (!iframe || renderedHeight < 200) {
+        triggerFallback();
       }
     }, 5000);
 
@@ -73,9 +93,7 @@ function CalendlyInlineEmbed({
     const attachIframeListener = () => {
       const nextIframe = containerRef.current?.querySelector("iframe");
       if (!nextIframe || nextIframe === iframeElement) return false;
-
       iframeElement = nextIframe;
-      iframeElement.addEventListener("load", markLoaded, { once: true });
       return true;
     };
 
@@ -83,6 +101,7 @@ function CalendlyInlineEmbed({
       if (typeof e.origin !== "string" || !e.origin.includes("calendly.com")) return;
       const data = e.data as { event?: string } | undefined;
       if (!data || typeof data.event !== "string") return;
+      // Only real content-rendered events count as "loaded".
       if (
         data.event === "calendly.event_type_viewed" ||
         data.event === "calendly.profile_page_viewed" ||
@@ -114,8 +133,6 @@ function CalendlyInlineEmbed({
 
         iframeObserver.observe(containerRef.current, { childList: true, subtree: true });
       }
-
-      calendlyReadyTimeout = window.setTimeout(markLoaded, 2400);
     };
 
 
