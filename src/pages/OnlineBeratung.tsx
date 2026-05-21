@@ -537,7 +537,7 @@ export default function OnlineBeratung() {
             </div>
 
             {/* Latin closing */}
-            <div className="mt-4 md:mt-6 pt-3 md:pt-4 border-t border-border text-center">
+            <div className="mt-3 md:mt-4 pt-2.5 md:pt-3 border-t border-border text-center">
               <p className="text-[12.5px] md:text-[13.5px] italic text-[#1B3A5C]/75 tracking-tight">
                 Mens sana in corpore sano.
               </p>
