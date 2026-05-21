@@ -299,8 +299,8 @@ export default function OnlineBeratung() {
 
   const title = isEN ? "Confidential Online Psychological Support" : "Vertrauliche Online Psychologische Unterstützung";
   const subtitle = isEN
-    ? "Professional psychological support for emotional strain, anxiety, stress, inner conflicts and personal processes of change — discreet, empathetic and solution-oriented."
-    : "Professionelle psychologische Unterstützung bei emotionalen Belastungen, Ängsten, Stress, inneren Konflikten und persönlichen Veränderungsprozessen — diskret, einfühlsam und lösungsorientiert.";
+    ? "For emotional strain, anxiety, stress, inner conflicts and personal processes of change."
+    : "Bei emotionalen Belastungen, Ängsten, Stress, inneren Konflikten und persönlichen Veränderungsprozessen.";
 
   return (
     <>
@@ -320,10 +320,10 @@ export default function OnlineBeratung() {
 
       {/* HERO — premium private-practice container */}
       <section className="relative bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-5 md:py-8">
-          <div className="max-w-4xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_22px_56px_-16px_rgba(27,58,92,0.22),0_6px_18px_-6px_rgba(27,58,92,0.12)] p-5 md:p-7">
+        <div className="container-main py-4 md:py-6">
+          <div className="max-w-3xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_22px_56px_-16px_rgba(27,58,92,0.22),0_6px_18px_-6px_rgba(27,58,92,0.12)] p-4 md:p-6">
             <div className="max-w-2xl mx-auto text-center">
-              <div className="flex items-center justify-center gap-3 mb-3.5">
+              <div className="flex items-center justify-center gap-3 mb-2.5">
                 <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
                 <p className="text-[10.5px] md:text-[12.5px] uppercase tracking-[0.16em] md:tracking-[0.22em] text-[#2E7D32] font-semibold whitespace-nowrap">
                   Lic. Psych. David J. Woods
@@ -333,13 +333,13 @@ export default function OnlineBeratung() {
               <h1 className="text-[23px] md:text-[32px] font-light tracking-tight text-[#1B3A5C] leading-[1.12]">
                 {title}
               </h1>
-              <p className="mt-3.5 text-[13.5px] md:text-[15px] text-[#0B1F33]/75 leading-relaxed max-w-xl mx-auto">
+              <p className="mt-2.5 text-[13.5px] md:text-[15px] text-[#0B1F33]/75 leading-relaxed max-w-xl mx-auto">
                 {subtitle}
               </p>
             </div>
 
             {/* Bullets — clean airy 2-col grid */}
-            <ul className="mt-5 md:mt-6 max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3.5 border-t border-border pt-5">
+            <ul className="mt-4 md:mt-5 max-w-xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 border-t border-border pt-4">
               {bullets.map(({ icon: Icon, text }) => (
                 <li key={text} className="flex items-start gap-2.5 text-[12.5px] md:text-[13.5px] text-[#0B1F33]/80 leading-snug">
                   <span className="mt-0.5 shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-br from-[#E8F5EE] to-[#F0F7F3] text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_0_0_3px_rgba(46,125,50,0.04)]">
