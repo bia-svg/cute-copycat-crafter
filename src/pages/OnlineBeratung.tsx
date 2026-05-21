@@ -303,7 +303,7 @@ export default function OnlineBeratung() {
         { icon: Repeat, text: "Auf spätere Intensivsitzung anrechenbar" },
       ];
 
-  const title = isEN ? "Confidential Online Psychological Consultation" : "Vertrauliche Online Psychologische Beratung";
+  const title = isEN ? "Confidential Online Psychological Support" : "Vertrauliche Online Psychologische Unterstützung";
   const subtitle = isEN
     ? "Professional psychological support for emotional strain, anxiety, stress, inner conflicts and personal processes of change — discreet, empathetic and solution-oriented."
     : "Professionelle psychologische Unterstützung bei emotionalen Belastungen, Ängsten, Stress, inneren Konflikten und persönlichen Veränderungsprozessen — diskret, einfühlsam und lösungsorientiert.";
@@ -369,8 +369,8 @@ export default function OnlineBeratung() {
               </h2>
               <p className="mt-1 text-[12px] md:text-[13px] text-[#0B1F33]/85 font-medium tracking-tight">
                 {isEN
-                  ? "Germany & Austria · €139  ·  Switzerland · CHF 139"
-                  : "Deutschland & Österreich · €139  ·  Schweiz · CHF 139"}
+                  ? "Germany & Austria · €99  ·  Switzerland · CHF 99"
+                  : "Deutschland & Österreich · €99  ·  Schweiz · CHF 99"}
               </p>
             </div>
 
