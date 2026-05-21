@@ -28,10 +28,14 @@ declare global {
 function CalendlyInlineEmbed({
   onLoaded,
   visible,
+  isEN,
 }: {
   onLoaded?: () => void;
   visible: boolean;
+  isEN: boolean;
 }) {
+  const [showFallback, setShowFallback] = useState(false);
+
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
