@@ -390,8 +390,8 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
-      <section className="pt-4 pb-4 md:pt-5 md:pb-5 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border border-[#D1D5DB] py-1.5 md:py-1 px-3 md:px-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+      <section className="pt-3 pb-3 md:pt-4 md:pb-4 bg-primary/15" style={deferredSectionStyle}>
+        <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border border-[#D1D5DB] py-1 px-3 md:px-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
           <div className="grid md:grid-cols-[290px_1fr] gap-2 md:gap-4 md:items-stretch">
             {/* LEFT (desktop) – credential badges 2x2 + link */}
             <div className="order-2 md:order-1 flex flex-col items-center justify-center gap-1.5 mt-3 md:mt-0">
@@ -450,7 +450,7 @@ export default function Home() {
               </p>
 
               {/* Three harmonized premium CTAs — main areas of the site */}
-              <div className="mt-5 md:mt-7 mb-1 md:mb-3 flex flex-col items-stretch gap-3.5 md:gap-4 w-full max-w-[320px] md:max-w-[340px]">
+              <div className="mt-4 md:mt-5 mb-0 md:mb-1 flex flex-col items-stretch gap-3.5 md:gap-4 w-full max-w-[320px] md:max-w-[340px]">
                 {/* Mint — Hypnosis Sessions */}
                 <Link
                   to={getPath("sessionsOverview", language, country)}
@@ -479,12 +479,9 @@ export default function Home() {
                   <span aria-hidden="true" className="text-[#1B3A5C]/60 transition-transform group-hover:translate-x-0.5">→</span>
                 </Link>
               </div>
-              <p className="mt-1 text-[10px] md:text-[10.5px] text-[#1B3A5C]/60 tracking-tight text-center">
-                {isEN ? "Available by phone or video" : "Telefonisch oder per Video möglich"}
-              </p>
 
               {/* Mobile: elegant divider between topics/CTA and trust badges */}
-              <div className="md:hidden w-full mt-4 mb-1 flex items-center gap-3" aria-hidden="true">
+              <div className="md:hidden w-full mt-2 mb-1 flex items-center gap-3" aria-hidden="true">
                 <span className="h-px flex-1 bg-gradient-to-r from-transparent via-[#1B3A5C]/15 to-[#1B3A5C]/15" />
                 <span className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#1B3A5C]/50">
                   {isEN ? "Qualification & Trust" : "Qualifikation & Vertrauen"}
