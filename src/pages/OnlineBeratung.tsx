@@ -361,6 +361,11 @@ export default function OnlineBeratung() {
               <CalendlyInlineEmbed
                 visible={calendarLoaded}
                 onLoaded={handleCalendarLoaded}
+                isEN={isEN}
+              />
+
+                visible={calendarLoaded}
+                onLoaded={handleCalendarLoaded}
               />
             )}
 
