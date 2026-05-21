@@ -297,7 +297,7 @@ export default function OnlineBeratung() {
         { icon: Award, text: "35+ Jahre praktische Erfahrung" },
       ];
 
-  const title = isEN ? "Confidential Online Psychological Support" : "Vertrauliche Online Psychologische Unterstützung";
+  const title = isEN ? "Online Psychological Support" : "Online Psychologische Unterstützung";
   const subtitle = isEN
     ? "For emotional strain, anxiety, stress, inner conflicts and personal processes of change."
     : "Bei emotionalen Belastungen, Ängsten, Stress, inneren Konflikten und persönlichen Veränderungsprozessen.";
