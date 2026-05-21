@@ -428,7 +428,7 @@ export default function OnlineBeratung() {
 
       {/* INFO / SEO — premium private-practice context */}
       <section className="bg-[#f4f3ef] border-t border-border">
-        <div className="container-main py-5 md:py-7">
+        <div className="container-main py-4 md:py-5">
           <div className="max-w-5xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_22px_56px_-16px_rgba(27,58,92,0.22),0_6px_18px_-6px_rgba(27,58,92,0.12)] p-4 md:p-6">
             <div className="flex items-center justify-center gap-3 mb-2.5 md:mb-3.5">
               <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
