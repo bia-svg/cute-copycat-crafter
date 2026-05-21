@@ -428,9 +428,9 @@ export default function OnlineBeratung() {
 
       {/* INFO / SEO — premium private-practice context */}
       <section className="bg-[#f4f3ef] border-t border-border">
-        <div className="container-main py-6 md:py-9">
-          <div className="max-w-5xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_22px_56px_-16px_rgba(27,58,92,0.22),0_6px_18px_-6px_rgba(27,58,92,0.12)] p-5 md:p-8">
-            <div className="flex items-center justify-center gap-3 mb-3.5 md:mb-4">
+        <div className="container-main py-5 md:py-7">
+          <div className="max-w-5xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_22px_56px_-16px_rgba(27,58,92,0.22),0_6px_18px_-6px_rgba(27,58,92,0.12)] p-4 md:p-6">
+            <div className="flex items-center justify-center gap-3 mb-2.5 md:mb-3.5">
               <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
               <p className="text-[10px] md:text-[11.5px] uppercase tracking-[0.16em] md:tracking-[0.22em] text-[#2E7D32] font-semibold whitespace-nowrap">
                 {isEN ? "Psychological orientation" : "Psychologische Orientierung"}
@@ -445,22 +445,27 @@ export default function OnlineBeratung() {
             </h2>
 
             {/* Two-column desktop layout: text + topic grid */}
-            <div className="mt-5 md:mt-7 grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 items-start">
-              <div className="md:col-span-6 space-y-3 text-[13px] md:text-[14px] text-[#0B1F33]/80 leading-relaxed">
+            <div className="mt-4 md:mt-5 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-start">
+              <div className="md:col-span-6 space-y-2.5 text-[13px] md:text-[14px] text-[#0B1F33]/80 leading-relaxed">
                 <p>
                   {isEN
-                    ? "Not everyone is immediately looking for long-term therapy. Often there is simply the wish for professional online psychological consultation, understanding, a confidential conversation or a clear perspective on a stressful situation."
-                    : "Nicht jeder Mensch sucht sofort eine langfristige Therapie. Oft besteht zunächst einfach der Wunsch nach professioneller psychologischer Beratung, Verständnis, einem vertraulichen Gespräch oder einem klaren Blick auf belastende Situationen."}
+                    ? "Not everyone is immediately looking for long-term therapy."
+                    : "Nicht jeder Mensch sucht sofort eine langfristige Therapie."}
                 </p>
                 <p>
                   {isEN
-                    ? "Online psychological consultation is aimed at people who feel emotionally burdened, are under stress, experience inner conflicts or find themselves in personal processes of change. Many clients are looking for short-notice professional psychological support, clear orientation and concrete new perspectives."
-                    : "Die Online Psychologische Beratung richtet sich an Menschen, die sich emotional belastet fühlen, unter Stress stehen, innere Konflikte erleben oder sich in persönlichen Veränderungsprozessen befinden. Viele Klientinnen und Klienten wünschen sich kurzfristige professionelle psychologische Unterstützung, verständliche Einordnung und konkrete neue Perspektiven."}
+                    ? "Often there is simply the wish for orientation, a confidential conversation and professional psychological support in stressful life situations."
+                    : "Oft besteht zunächst einfach der Wunsch nach Orientierung, einem vertraulichen Gespräch und professioneller psychologischer Unterstützung in belastenden Lebenssituationen."}
                 </p>
                 <p>
                   {isEN
-                    ? "With more than 35 years of practical experience in psychology, hypnosis and counselling, David J. Woods provides psychological consultation individually, discreetly and in a solution-oriented way."
-                    : "Mit über 35 Jahren praktischer Erfahrung in Psychologie, Hypnose und Gesprächsführung begleitet David J. Woods seine Klientinnen und Klienten in der psychologischen Beratung individuell, diskret und lösungsorientiert."}
+                    ? "Online support is aimed at people with emotional strain, stress, inner conflicts or personal processes of change."
+                    : "Die Online-Unterstützung richtet sich an Menschen mit emotionalen Belastungen, Stress, inneren Konflikten oder persönlichen Veränderungsprozessen."}
+                </p>
+                <p>
+                  {isEN
+                    ? "With more than 35 years of practical experience, David J. Woods accompanies clients discreetly, individually and in a solution-oriented way."
+                    : "Mit über 35 Jahren praktischer Erfahrung begleitet David J. Woods Klientinnen und Klienten diskret, individuell und lösungsorientiert."}
                 </p>
               </div>
 
@@ -497,7 +502,7 @@ export default function OnlineBeratung() {
                         "Kurzfristige psychologische Unterstützung",
                       ];
                   const TopicItem = ({ topic }: { topic: string }) => (
-                    <li className="group flex items-center gap-2 rounded-xl border border-border bg-[#f4f3ef] px-3 py-2 text-[12.5px] md:text-[13px] text-[#0B1F33]/85 leading-snug shadow-[0_1px_3px_rgba(27,58,92,0.05)] hover:border-[#2E7D32]/40 hover:bg-[#E8F5E9]/40 hover:shadow-[0_3px_10px_rgba(46,125,50,0.10)] transition-all">
+                    <li className="group flex items-center gap-2 rounded-xl border border-border bg-[#f4f3ef] px-2.5 py-1.5 text-[12px] md:text-[12.5px] text-[#0B1F33]/85 leading-snug shadow-[0_1px_3px_rgba(27,58,92,0.05)] hover:border-[#2E7D32]/40 hover:bg-[#E8F5E9]/40 hover:shadow-[0_3px_10px_rgba(46,125,50,0.10)] transition-all">
                       <span className="shrink-0 inline-block w-1.5 h-1.5 rounded-full bg-[#2E7D32]/65 group-hover:bg-[#2E7D32]" />
                       <span>{topic}</span>
                     </li>
@@ -505,18 +510,18 @@ export default function OnlineBeratung() {
                   return (
                     <>
                       {/* Desktop: compact 2-col grid */}
-                      <ul className="hidden md:grid grid-cols-2 gap-1.5">
+                      <ul className="hidden md:grid grid-cols-2 gap-1">
                         {topics.map((t) => <TopicItem key={t} topic={t} />)}
                       </ul>
                       {/* Mobile: collapsible */}
                       <details className="md:hidden group rounded-2xl border border-[#2E7D32]/25 bg-[#f4f3ef] shadow-[0_1px_4px_rgba(27,58,92,0.06)] open:shadow-[0_6px_18px_rgba(27,58,92,0.10)] transition-shadow">
-                        <summary className="list-none cursor-pointer flex items-center justify-between px-4 py-3.5 text-[13px] font-medium text-[#1B3A5C] [&::-webkit-details-marker]:hidden active:scale-[0.98] transition-transform">
+                        <summary className="list-none cursor-pointer flex items-center justify-between px-4 py-3 text-[13px] font-medium text-[#1B3A5C] [&::-webkit-details-marker]:hidden active:scale-[0.98] transition-transform">
                           <span>{isEN ? "Topics we address" : "Themen, die wir begleiten"}</span>
                           <span aria-hidden="true" className="ml-2 inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#E8F5E9] border border-[#2E7D32]/30 text-[#2E7D32] shadow-[0_2px_6px_rgba(46,125,50,0.12)] transition-all group-open:rotate-45 group-open:bg-[#C8E6C9] group-open:border-[#2E7D32]/40">
                             <span className="block w-3.5 h-px bg-current relative before:content-[''] before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-px before:h-3.5 before:bg-current" />
                           </span>
                         </summary>
-                        <ul className="px-3 pb-3 pt-1 grid grid-cols-1 gap-1.5">
+                        <ul className="px-3 pb-3 pt-1 grid grid-cols-1 gap-1">
                           {topics.map((t) => <TopicItem key={t} topic={t} />)}
                         </ul>
                       </details>
@@ -527,7 +532,7 @@ export default function OnlineBeratung() {
             </div>
 
             {/* Latin closing */}
-            <div className="mt-6 md:mt-8 pt-4 md:pt-5 border-t border-border text-center">
+            <div className="mt-4 md:mt-6 pt-3 md:pt-4 border-t border-border text-center">
               <p className="text-[12.5px] md:text-[13.5px] italic text-[#1B3A5C]/75 tracking-tight">
                 Mens sana in corpore sano.
               </p>
