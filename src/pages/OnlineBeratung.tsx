@@ -320,7 +320,7 @@ export default function OnlineBeratung() {
 
       {/* HERO — premium private-practice container */}
       <section className="relative bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-4 md:py-6">
+        <div className="container-main py-4 md:py-5">
           <div className="max-w-3xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_22px_56px_-16px_rgba(27,58,92,0.22),0_6px_18px_-6px_rgba(27,58,92,0.12)] p-4 md:p-6">
             <div className="max-w-2xl mx-auto text-center">
               <div className="flex items-center justify-center gap-3 mb-2.5">
