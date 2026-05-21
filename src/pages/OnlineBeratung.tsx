@@ -289,16 +289,12 @@ export default function OnlineBeratung() {
         { icon: PhoneCall, text: "By phone or video" },
         { icon: ShieldCheck, text: "Confidential & individual" },
         { icon: Award, text: "35+ years of practical experience" },
-        { icon: Sparkles, text: "Intensive, solution-oriented approach" },
-        { icon: Repeat, text: "Creditable toward a later intensive session" },
       ]
     : [
         { icon: CalendarClock, text: "Kurzfristige Online-Termine möglich" },
         { icon: PhoneCall, text: "Telefonisch oder per Video" },
         { icon: ShieldCheck, text: "Vertraulich & individuell" },
         { icon: Award, text: "35+ Jahre praktische Erfahrung" },
-        { icon: Sparkles, text: "Intensiv- und lösungsorientierter Ansatz" },
-        { icon: Repeat, text: "Auf spätere Intensivsitzung anrechenbar" },
       ];
 
   const title = isEN ? "Confidential Online Psychological Support" : "Vertrauliche Online Psychologische Unterstützung";
