@@ -320,7 +320,7 @@ export default function OnlineBeratung() {
 
       {/* HERO — premium private-practice container */}
       <section className="relative bg-[#f4f3ef] border-b border-border">
-        <div className="container-main py-4 md:py-6">
+        <div className="container-main py-4 md:py-5">
           <div className="max-w-3xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_22px_56px_-16px_rgba(27,58,92,0.22),0_6px_18px_-6px_rgba(27,58,92,0.12)] p-4 md:p-6">
             <div className="max-w-2xl mx-auto text-center">
               <div className="flex items-center justify-center gap-3 mb-2.5">
@@ -339,10 +339,10 @@ export default function OnlineBeratung() {
             </div>
 
             {/* Bullets — clean airy 2-col grid */}
-            <ul className="mt-4 md:mt-5 max-w-xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 border-t border-border pt-4">
+            <ul className="mt-4 md:mt-4 max-w-xl mx-auto flex flex-col sm:flex-row sm:flex-wrap sm:justify-center gap-x-7 gap-y-2.5 border-t border-border pt-4">
               {bullets.map(({ icon: Icon, text }) => (
-                <li key={text} className="flex items-start gap-2.5 text-[12.5px] md:text-[13.5px] text-[#0B1F33]/80 leading-snug">
-                  <span className="mt-0.5 shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-br from-[#E8F5EE] to-[#F0F7F3] text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_0_0_3px_rgba(46,125,50,0.04)]">
+                <li key={text} className="flex items-center gap-2.5 text-[12.5px] md:text-[13.5px] text-[#0B1F33]/80 leading-snug sm:basis-[calc(50%-1rem)] sm:justify-start">
+                  <span className="shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-br from-[#E8F5EE] to-[#F0F7F3] text-[#2E7D32] border border-[#2E7D32]/20 shadow-[0_0_0_3px_rgba(46,125,50,0.04)]">
                     <Icon className="w-3 h-3" strokeWidth={2} />
                   </span>
                   <span>{text}</span>
@@ -355,7 +355,7 @@ export default function OnlineBeratung() {
 
       {/* CALENDLY — compact premium appointment preview */}
       <section ref={calendarSectionRef} className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
-        <div className="container-main py-5 md:py-7">
+        <div className="container-main py-4 md:py-5">
           <div className="max-w-2xl mx-auto bg-white border-[1.5px] border-[#D8E0EA] rounded-3xl shadow-[0_18px_48px_-12px_rgba(27,58,92,0.20),0_5px_16px_-4px_rgba(27,58,92,0.10),inset_0_1px_0_rgba(255,255,255,0.9)] p-4 md:p-6">
             <div className="text-center mb-2.5">
               <h2 className="text-[17px] md:text-[21px] font-medium text-[#1B3A5C] tracking-tight">
@@ -428,7 +428,7 @@ export default function OnlineBeratung() {
 
       {/* INFO / SEO — premium private-practice context */}
       <section className="bg-[#f4f3ef] border-t border-border">
-        <div className="container-main py-5 md:py-7">
+        <div className="container-main py-4 md:py-5">
           <div className="max-w-5xl mx-auto bg-white border-[1.5px] border-border rounded-3xl shadow-[0_22px_56px_-16px_rgba(27,58,92,0.22),0_6px_18px_-6px_rgba(27,58,92,0.12)] p-4 md:p-6">
             <div className="flex items-center justify-center gap-3 mb-2.5 md:mb-3.5">
               <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#2E7D32]/35" />
@@ -446,7 +446,12 @@ export default function OnlineBeratung() {
 
             {/* Two-column desktop layout: text + topic grid */}
             <div className="mt-4 md:mt-5 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-start">
-              <div className="md:col-span-6 space-y-2.5 text-[13px] md:text-[14px] text-[#0B1F33]/80 leading-relaxed">
+              <div className="md:col-span-6 md:pt-1 space-y-2.5 text-[13px] md:text-[14px] text-[#0B1F33]/80 leading-relaxed">
+                <p className="text-[13.5px] md:text-[15px] text-[#1B3A5C] font-medium leading-snug">
+                  {isEN
+                    ? "A confidential space for orientation, clarity and emotional relief."
+                    : "Ein vertraulicher Raum für Orientierung, Klarheit und emotionale Entlastung."}
+                </p>
                 <p>
                   {isEN
                     ? "Not everyone is immediately looking for long-term therapy."
@@ -532,7 +537,7 @@ export default function OnlineBeratung() {
             </div>
 
             {/* Latin closing */}
-            <div className="mt-4 md:mt-6 pt-3 md:pt-4 border-t border-border text-center">
+            <div className="mt-3 md:mt-4 pt-2.5 md:pt-3 border-t border-border text-center">
               <p className="text-[12.5px] md:text-[13.5px] italic text-[#1B3A5C]/75 tracking-tight">
                 Mens sana in corpore sano.
               </p>
