@@ -490,7 +490,7 @@ export default function Home() {
               </div>
 
               {/* Mobile: 2x2 badges grid below CTA */}
-              <div className="grid md:hidden grid-cols-2 gap-2 w-full mt-2 select-none">
+              <div className="grid md:hidden grid-cols-2 gap-2 w-full mt-1 select-none">
                 <div className="flex flex-col items-center justify-between gap-1 bg-secondary rounded-lg px-2 py-2 h-[96px]">
                   <img src={CDN.emrBadge} alt={isEN ? "Insurance Compliant – Recognized by Swiss supplementary insurance" : "Krankenkasse Konform – Schweizer Zusatzversicherung anerkannt"} className="h-9 w-auto object-contain pointer-events-none select-none mt-1" style={{ WebkitTouchCallout: "none", WebkitUserSelect: "none", userSelect: "none" }} width={120} height={36} loading="lazy" decoding="async" draggable={false} onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
                   <div className="text-center">
