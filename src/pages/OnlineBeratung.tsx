@@ -355,7 +355,7 @@ export default function OnlineBeratung() {
 
       {/* CALENDLY — compact premium appointment preview */}
       <section ref={calendarSectionRef} className="bg-[#DDE1E4] border-b border-border scroll-mt-20">
-        <div className="container-main py-5 md:py-7">
+        <div className="container-main py-4 md:py-5">
           <div className="max-w-2xl mx-auto bg-white border-[1.5px] border-[#D8E0EA] rounded-3xl shadow-[0_18px_48px_-12px_rgba(27,58,92,0.20),0_5px_16px_-4px_rgba(27,58,92,0.10),inset_0_1px_0_rgba(255,255,255,0.9)] p-4 md:p-6">
             <div className="text-center mb-2.5">
               <h2 className="text-[17px] md:text-[21px] font-medium text-[#1B3A5C] tracking-tight">
