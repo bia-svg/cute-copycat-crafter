@@ -9,8 +9,6 @@ import {
   PhoneCall,
   ShieldCheck,
   Award,
-  Sparkles,
-  Repeat,
   X,
 } from "lucide-react";
 
