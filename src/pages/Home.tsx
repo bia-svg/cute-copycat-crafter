@@ -450,7 +450,7 @@ export default function Home() {
               </p>
 
               {/* Three harmonized premium CTAs — main areas of the site */}
-              <div className="mt-4 md:mt-5 mb-3 md:mb-1 flex flex-col items-stretch gap-3.5 md:gap-4 w-full max-w-[320px] md:max-w-[340px]">
+              <div className="mt-4 md:mt-5 mb-3 md:mb-1 flex flex-col items-stretch gap-5 md:gap-5 w-full max-w-[320px] md:max-w-[340px]">
                 {/* Mint — Hypnosis Sessions */}
                 <Link
                   to={getPath("sessionsOverview", language, country)}
