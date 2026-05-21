@@ -35,80 +35,47 @@ function CalendlyInlineEmbed({
   isEN: boolean;
 }) {
   const [showFallback, setShowFallback] = useState(false);
-
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const hasResolvedRef = useRef(false);
+  const hasVisibleContentRef = useRef(false);
 
   useEffect(() => {
     let cancelled = false;
-    let iframeObserver: MutationObserver | null = null;
-    let calendlyReadyTimeout: number | null = null;
-    let iframeElement: HTMLIFrameElement | null = null;
-    let hasReportedLoaded = false;
-
     let fallbackTimeout: number | null = null;
 
-    const markLoaded = () => {
-      if (cancelled || hasReportedLoaded) return;
-      hasReportedLoaded = true;
-      if (calendlyReadyTimeout) {
-        window.clearTimeout(calendlyReadyTimeout);
-        calendlyReadyTimeout = null;
-      }
+    const clearFallbackTimeout = () => {
       if (fallbackTimeout) {
         window.clearTimeout(fallbackTimeout);
         fallbackTimeout = null;
       }
-      setShowFallback(false);
-      iframeObserver?.disconnect();
+    };
+
+    const resolveParent = () => {
+      if (cancelled || hasResolvedRef.current) return;
+      hasResolvedRef.current = true;
       onLoaded?.();
+    };
+
+    const markLoaded = () => {
+      if (cancelled) return;
+      hasVisibleContentRef.current = true;
+      clearFallbackTimeout();
+      setShowFallback(false);
+      resolveParent();
     };
 
     const triggerFallback = () => {
-      if (cancelled || hasReportedLoaded) return;
-      hasReportedLoaded = true;
-      if (calendlyReadyTimeout) {
-        window.clearTimeout(calendlyReadyTimeout);
-        calendlyReadyTimeout = null;
-      }
-      iframeObserver?.disconnect();
+      if (cancelled || hasVisibleContentRef.current) return;
+      clearFallbackTimeout();
       setShowFallback(true);
-      // Signal parent so the loading state ends and the close button appears.
-      onLoaded?.();
-    };
-
-    // Visual readiness check: after 5s, verify the iframe actually rendered
-    // measurable content. If not (blank/white on older devices), show fallback.
-    fallbackTimeout = window.setTimeout(() => {
-      if (cancelled || hasReportedLoaded) return;
-      const iframe = containerRef.current?.querySelector("iframe");
-      const renderedHeight = iframe?.getBoundingClientRect().height ?? 0;
-      // Calendly sets the iframe height via page_height_resize once content
-      // is rendered. If still near zero, the embed is effectively blank.
-      if (!iframe || renderedHeight < 200) {
-        triggerFallback();
-      }
-    }, 5000);
-
-
-    const attachIframeListener = () => {
-      const nextIframe = containerRef.current?.querySelector("iframe");
-      if (!nextIframe || nextIframe === iframeElement) return false;
-      iframeElement = nextIframe;
-      return true;
+      resolveParent();
     };
 
     const handleCalendlyMessage = (e: MessageEvent) => {
       if (typeof e.origin !== "string" || !e.origin.includes("calendly.com")) return;
       const data = e.data as { event?: string } | undefined;
-      if (!data || typeof data.event !== "string") return;
-      // Only real content-rendered events count as "loaded".
-      if (
-        data.event === "calendly.event_type_viewed" ||
-        data.event === "calendly.profile_page_viewed" ||
-        data.event === "calendly.page_height_resize"
-      ) {
-        markLoaded();
-      }
+      if (!data || data.event !== "calendly.page_height_resize") return;
+      markLoaded();
     };
 
     window.addEventListener("message", handleCalendlyMessage);
@@ -117,24 +84,21 @@ function CalendlyInlineEmbed({
       if (cancelled || !containerRef.current || !window.Calendly?.initInlineWidget) return;
 
       containerRef.current.innerHTML = "";
-      iframeElement = null;
-      hasReportedLoaded = false;
+      hasResolvedRef.current = false;
+      hasVisibleContentRef.current = false;
+      setShowFallback(false);
+
       window.Calendly.initInlineWidget({
         url: CALENDLY_EMBED_URL,
         parentElement: containerRef.current,
       });
 
-      if (!attachIframeListener()) {
-        iframeObserver = new MutationObserver(() => {
-          if (attachIframeListener()) {
-            iframeObserver?.disconnect();
-          }
-        });
-
-        iframeObserver.observe(containerRef.current, { childList: true, subtree: true });
-      }
+      fallbackTimeout = window.setTimeout(() => {
+        if (!hasVisibleContentRef.current) {
+          triggerFallback();
+        }
+      }, 4000);
     };
-
 
     const existingStyle = document.querySelector<HTMLLinkElement>(
       'link[href="https://assets.calendly.com/assets/external/widget.css"]',
@@ -165,14 +129,7 @@ function CalendlyInlineEmbed({
 
     return () => {
       cancelled = true;
-      if (calendlyReadyTimeout) {
-        window.clearTimeout(calendlyReadyTimeout);
-      }
-      if (fallbackTimeout) {
-        window.clearTimeout(fallbackTimeout);
-      }
-      iframeObserver?.disconnect();
-      iframeElement?.removeEventListener("load", markLoaded);
+      clearFallbackTimeout();
       window.removeEventListener("message", handleCalendlyMessage);
       existingScript?.removeEventListener("load", initWidget);
 
@@ -185,8 +142,7 @@ function CalendlyInlineEmbed({
         containerRef.current.innerHTML = "";
       }
     };
-  }, []);
-
+  }, [onLoaded]);
 
   const wrapperVisible = visible || showFallback;
 
@@ -197,19 +153,20 @@ function CalendlyInlineEmbed({
       }`}
       aria-hidden={!wrapperVisible}
     >
-      <div
-        ref={containerRef}
-        className={`calendly-inline-widget mx-auto w-full rounded-xl bg-white ${
-          showFallback && !visible ? "hidden" : "h-[1150px] sm:h-[1500px] md:h-[1300px]"
-        }`}
-        data-url={CALENDLY_EMBED_URL}
-      />
-      {showFallback && !visible && (
-        <div className="flex flex-col items-center justify-center text-center px-6 py-10 md:py-14 gap-4">
+      <div className="relative">
+        <div
+          ref={containerRef}
+          className={`calendly-inline-widget mx-auto w-full rounded-xl bg-white h-[1150px] sm:h-[1500px] md:h-[1300px] transition-opacity duration-300 ${
+            showFallback ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}
+          data-url={CALENDLY_EMBED_URL}
+        />
+        {showFallback && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-6 py-10 text-center bg-white">
           <p className="text-[14px] md:text-[15px] text-[#1B3A5C]/80 max-w-md leading-relaxed">
             {isEN
-              ? "The calendar could not be fully loaded on this device."
-              : "Der Kalender konnte auf diesem Gerät nicht vollständig geladen werden."}
+              ? "The calendar could not be loaded on this device."
+              : "Der Kalender konnte auf diesem Gerät nicht geladen werden."}
           </p>
           <a
             href={CALENDLY_URL}
@@ -219,8 +176,9 @@ function CalendlyInlineEmbed({
           >
             {isEN ? "Open calendar directly" : "Kalender direkt öffnen"}
           </a>
-        </div>
-      )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -235,47 +193,18 @@ export default function OnlineBeratung() {
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [calendarLoaded, setCalendarLoaded] = useState(false);
   const calendarSectionRef = useRef<HTMLDivElement | null>(null);
-  const calendarMaxTimerRef = useRef<number | null>(null);
-  const calendarLoadResolvedRef = useRef(false);
-  const MAX_LOADING_MS = 2400;
-
-  useEffect(() => {
-    return () => {
-      if (calendarMaxTimerRef.current) {
-        window.clearTimeout(calendarMaxTimerRef.current);
-      }
-    };
-  }, []);
 
   const handleOpenCalendar = () => {
     setCalendarLoaded(false);
     setCalendarOpen(true);
-    calendarLoadResolvedRef.current = false;
-    if (calendarMaxTimerRef.current) window.clearTimeout(calendarMaxTimerRef.current);
-    calendarMaxTimerRef.current = window.setTimeout(() => {
-      calendarLoadResolvedRef.current = true;
-      setCalendarLoaded(true);
-    }, MAX_LOADING_MS);
   };
 
   const handleCalendarLoaded = () => {
-    if (calendarLoadResolvedRef.current) return;
-
-    calendarLoadResolvedRef.current = true;
-    if (calendarMaxTimerRef.current) {
-      window.clearTimeout(calendarMaxTimerRef.current);
-      calendarMaxTimerRef.current = null;
-    }
     setCalendarLoaded(true);
   };
 
 
   const handleCloseCalendar = () => {
-    if (calendarMaxTimerRef.current) {
-      window.clearTimeout(calendarMaxTimerRef.current);
-      calendarMaxTimerRef.current = null;
-    }
-    calendarLoadResolvedRef.current = false;
     setCalendarOpen(false);
     setCalendarLoaded(false);
     requestAnimationFrame(() => {
