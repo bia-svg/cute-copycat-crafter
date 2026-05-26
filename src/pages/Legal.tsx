@@ -43,7 +43,7 @@ export function Impressum() {
             </div>
             <div>
               <h2 className="font-light text-[#1B3A5C] mb-1 tracking-tight">{isEN ? "Professional Qualifications" : "Berufsbezeichnung"}</h2>
-              <p>Lic.Psych. (Univ.) — {isEN ? "Licensed Psychologist" : "Lizenzierter Psychologe"}</p>
+              <p>Lic.Psych. (Univ.)</p>
               <p>NGH International Trainer</p>
               <p>EMR {isEN ? "recognized" : "anerkannt"} (ZSR Nr. P609264)</p>
             </div>
