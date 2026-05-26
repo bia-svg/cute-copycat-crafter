@@ -8,6 +8,13 @@ export function Impressum() {
   const { language, country, } = useLanguage();
   const isEN = language === "en";
   const basePath = getPath("home", language, country);
+  const Row = ({ label, children }: { label: string; children: React.ReactNode }) => (
+    <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-1 md:gap-6 py-3 border-b border-[#E2E8EE] last:border-b-0">
+      <dt className="text-[11px] uppercase tracking-[0.08em] font-medium text-[#1B3A5C]/70 md:pt-0.5">{label}</dt>
+      <dd className="text-[13.5px] text-[#0B1F33] leading-relaxed space-y-0.5">{children}</dd>
+    </div>
+  );
+
   return (
     <>
       <SEO {...pageSEO.impressum} pageKey="impressum" />
@@ -15,62 +22,54 @@ export function Impressum() {
         { name: "Home", path: basePath },
         { name: isEN ? "Legal Notice" : "Impressum", path: getPath("impressum", language, country) },
       ]} />
-      <section className="bg-white">
-        <div className="container-main py-8 lg:py-12 max-w-3xl">
-          <h1 className="text-2xl font-light text-[#1B3A5C] mb-6 tracking-tight">{isEN ? "Legal Notice" : "Impressum"}</h1>
-          <div className="space-y-5 text-sm text-foreground leading-relaxed">
-            <div>
-              <h2 className="font-light text-[#1B3A5C] mb-1 tracking-tight">{isEN ? "Provider Identification" : "Anbieterkennzeichnung"}</h2>
-              <p className="font-semibold">Life Coaching Schweiz GmbH</p>
-            </div>
-            <div>
-              <h2 className="font-light text-[#1B3A5C] mb-1 tracking-tight">{isEN ? "Owner / Contact Person" : "Inhaber / Ansprechpartner"}</h2>
-              <p>David J. Woods Lic. Psych.</p>
-              <p className="text-muted-foreground">Academic Degree in Psychology (UNAM)</p>
-            </div>
-            <div>
-              <h2 className="font-light text-[#1B3A5C] mb-1 tracking-tight">{isEN ? "Company Registration" : "Firmennummer"}</h2>
-              <p>CHE-300.048.592, Handelsregister</p>
-            </div>
-            <div>
-              <h2 className="font-light text-[#1B3A5C] mb-1 tracking-tight">{isEN ? "Contact" : "Kontakt"}</h2>
-              <p>{isEN ? "Please contact us via WhatsApp or phone." : "Bitte kontaktieren Sie uns per WhatsApp oder Telefon."}</p>
-            </div>
-            <div>
-              <h2 className="font-light text-[#1B3A5C] mb-1 tracking-tight">{isEN ? "In Cooperation with" : "In Kooperation mit"}</h2>
-              <p>Hypnose24 GmbH</p>
-              <p>Wellness24 GmbH</p>
-            </div>
-            <div>
-              <h2 className="font-light text-[#1B3A5C] mb-1 tracking-tight">{isEN ? "Professional Qualifications" : "Berufsbezeichnung"}</h2>
-              <p>Lic.Psych. (Univ.)</p>
+      <section className="bg-[#F1F4F7]">
+        <div className="container-main py-10 lg:py-14 max-w-3xl">
+          <header className="mb-6 pb-4 border-b border-[#1B3A5C]/15">
+            <p className="text-[11px] uppercase tracking-[0.14em] font-medium text-[#1B3A5C]/60 mb-1.5">
+              {isEN ? "Legal Information" : "Rechtliche Angaben"}
+            </p>
+            <h1 className="text-[26px] md:text-[28px] font-light text-[#1B3A5C] tracking-tight">
+              {isEN ? "Legal Notice" : "Impressum"}
+            </h1>
+          </header>
+
+          <dl className="bg-white border border-[#E2E8EE] rounded-2xl px-5 md:px-8 py-2 md:py-3">
+            <Row label={isEN ? "Provider" : "Anbieter"}>
+              <p className="font-medium">Life Coaching Schweiz GmbH</p>
+            </Row>
+            <Row label={isEN ? "Owner" : "Inhaber"}>
+              <p>David J. Woods, Lic. Psych.</p>
+              <p className="text-[#0B1F33]/60 text-[12.5px]">Academic Degree in Psychology (UNAM)</p>
+            </Row>
+            <Row label={isEN ? "Registration" : "Handelsregister"}>
+              <p>CHE-300.048.592</p>
+            </Row>
+            <Row label={isEN ? "Professional Title" : "Berufsbezeichnung"}>
+              <p>Lic. Psych. (Univ.)</p>
               <p>NGH International Trainer</p>
               <p>EMR {isEN ? "recognized" : "anerkannt"} (ZSR Nr. P609264)</p>
-            </div>
-            <div>
-              <h2 className="font-light text-[#1B3A5C] mb-1 tracking-tight">{isEN ? "Practice Locations" : "Praxisstandorte"}</h2>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
-                <div className="p-3 bg-[#f4f3ef] rounded">
-                  <p className="font-semibold text-[#1B3A5C]">Zürich 🇨🇭</p>
-                  <p>5 Elements TCM GmbH</p>
-                  <p>Beim Löwenplatz, Usteristrasse 23</p>
-                  <p>8001 Zürich</p>
+            </Row>
+            <Row label={isEN ? "Cooperation" : "Kooperation"}>
+              <p>Hypnose24 GmbH</p>
+              <p>Wellness24 GmbH</p>
+            </Row>
+            <Row label={isEN ? "Practice Locations" : "Praxisstandorte"}>
+              <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                <div>
+                  <p className="font-medium text-[#1B3A5C] text-[12.5px] mb-0.5">Zürich · CH</p>
+                  <p className="text-[12.5px] text-[#0B1F33]/80 leading-snug">5 Elements TCM GmbH<br/>Usteristrasse 23<br/>8001 Zürich</p>
                 </div>
-                <div className="p-3 bg-[#f4f3ef] rounded">
-                  <p className="font-semibold text-[#1B3A5C]">Eschenbach 🇨🇭</p>
-                  <p>Fit+Gsund</p>
-                  <p>Churzhaslen 3</p>
-                  <p>8733 Eschenbach (am Zürichsee)</p>
+                <div>
+                  <p className="font-medium text-[#1B3A5C] text-[12.5px] mb-0.5">Eschenbach · CH</p>
+                  <p className="text-[12.5px] text-[#0B1F33]/80 leading-snug">Fit+Gsund<br/>Churzhaslen 3<br/>8733 Eschenbach</p>
                 </div>
-                <div className="p-3 bg-[#f4f3ef] rounded">
-                  <p className="font-semibold text-[#1B3A5C]">Augsburg 🇩🇪</p>
-                  <p>Regus</p>
-                  <p>Viktoria Str. 3b, 2. OG</p>
-                  <p>86150 Augsburg</p>
+                <div>
+                  <p className="font-medium text-[#1B3A5C] text-[12.5px] mb-0.5">Augsburg · DE</p>
+                  <p className="text-[12.5px] text-[#0B1F33]/80 leading-snug">Regus<br/>Viktoriastrasse 3b, 2. OG<br/>86150 Augsburg</p>
                 </div>
               </div>
-            </div>
-          </div>
+            </Row>
+          </dl>
         </div>
       </section>
     </>
