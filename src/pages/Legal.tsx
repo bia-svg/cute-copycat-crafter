@@ -9,7 +9,7 @@ export function Impressum() {
   const { language, country, } = useLanguage();
   const isEN = language === "en";
   const basePath = getPath("home", language, country);
-  const Row = ({ label, children }: { label: string; children: React.ReactNode }) => (
+  const Row = ({ label, children }: { label: string; children: ReactNode }) => (
     <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-1 md:gap-6 py-3 border-b border-[#E2E8EE] last:border-b-0">
       <dt className="text-[11px] uppercase tracking-[0.08em] font-medium text-[#1B3A5C]/70 md:pt-0.5">{label}</dt>
       <dd className="text-[13.5px] text-[#0B1F33] leading-relaxed space-y-0.5">{children}</dd>
