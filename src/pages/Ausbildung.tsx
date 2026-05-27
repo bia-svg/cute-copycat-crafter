@@ -663,21 +663,14 @@ export default function Ausbildung() {
           SECTION — Upcoming Dates with Country Tabs (premium framed)
           ═══════════════════════════════════════════════════════════ */}
       <section id="dates" className="border-b border-border scroll-mt-20" style={{ background: "linear-gradient(180deg, #C2C9D1 0%, #CBD2D9 55%, #C5CCD3 100%)" }}>
-        <div className="container-main py-5 md:py-8 lg:py-10">
-          <div className="relative max-w-4xl mx-auto bg-gradient-to-b from-white to-[#FAFBFD] border border-[#1B3A5C]/30 rounded-2xl md:rounded-3xl px-4 py-6 md:px-10 md:py-9 shadow-[0_1px_2px_rgba(27,58,92,0.08),0_10px_28px_rgba(27,58,92,0.12),0_44px_96px_-26px_rgba(27,58,92,0.50)] ring-1 ring-white/90 hover:shadow-[0_2px_5px_rgba(27,58,92,0.10),0_14px_32px_rgba(27,58,92,0.14),0_54px_110px_-26px_rgba(27,58,92,0.56)] hover:-translate-y-[2px] transition-[transform,box-shadow] duration-300 ease-out before:content-[''] before:absolute before:top-0 before:left-8 before:right-8 before:h-[2px] before:rounded-b-full before:bg-gradient-to-r before:from-transparent before:via-[#1B3A5C]/40 before:to-transparent">
-            <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+        <div className="container-main py-4 md:py-6 lg:py-8">
+          <div className="relative max-w-4xl mx-auto bg-gradient-to-b from-white to-[#FAFBFD] border border-[#1B3A5C]/30 rounded-2xl md:rounded-3xl px-4 py-5 md:px-10 md:py-7 shadow-[0_1px_2px_rgba(27,58,92,0.08),0_10px_28px_rgba(27,58,92,0.12),0_44px_96px_-26px_rgba(27,58,92,0.50)] ring-1 ring-white/90 hover:shadow-[0_2px_5px_rgba(27,58,92,0.10),0_14px_32px_rgba(27,58,92,0.14),0_54px_110px_-26px_rgba(27,58,92,0.56)] hover:-translate-y-[2px] transition-[transform,box-shadow] duration-300 ease-out before:content-[''] before:absolute before:top-0 before:left-8 before:right-8 before:h-[2px] before:rounded-b-full before:bg-gradient-to-r before:from-transparent before:via-[#1B3A5C]/40 before:to-transparent">
+            <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-3 md:mb-4 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
             </h2>
-            <div className="flex justify-center mb-3">
-              <div className="group inline-flex items-center gap-2 text-[13px] sm:text-sm font-medium text-[#2E7D32] bg-gradient-to-b from-[#F2FAF3] to-[#E4F2E6]/85 backdrop-blur-[2px] px-4 py-2 rounded-full border border-[#2E7D32]/25 shadow-[0_1px_1px_rgba(255,255,255,0.8)_inset,0_2px_8px_-4px_rgba(46,125,50,0.18)] hover:border-[#2E7D32]/45 hover:shadow-[0_1px_1px_rgba(255,255,255,0.9)_inset,0_4px_14px_-4px_rgba(46,125,50,0.35)] transition-all duration-300">
-                <GraduationCap className="w-4 h-4" />
-                {isEN ? "Therapist in Aktiv-Hypnose®" : "Therapeut in Aktiv-Hypnose®"}
-              </div>
-
-            </div>
 
             {/* Country Tabs */}
-            <div className="flex justify-center gap-2 md:gap-3 mb-4 md:mb-6 max-w-md mx-auto">
+            <div className="flex justify-center gap-2 md:gap-3 mb-3 md:mb-5 max-w-md mx-auto">
               <button
                 onClick={() => { setActiveTab("de"); }}
                 className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-4 rounded-lg border font-semibold text-sm transition-all ${
@@ -701,7 +694,7 @@ export default function Ausbildung() {
               </button>
             </div>
 
-            <div className="space-y-2.5 md:space-y-4">
+            <div className="space-y-2 md:space-y-3">
               {/* CH Content */}
               {activeTab === "ch" && (
                 <>
@@ -709,15 +702,15 @@ export default function Ausbildung() {
                     if (d.hidden) return null;
                     const isSoldOut = d.status === "soldout";
                     return (
-                      <div key={`ch-${i}`} className="group border border-[#1B3A5C]/12 p-4 md:p-5 rounded-2xl shadow-[0_1px_2px_rgba(27,58,92,0.04),0_8px_20px_-12px_rgba(27,58,92,0.18)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.07),0_22px_44px_-16px_rgba(27,58,92,0.32),0_0_0_1px_rgba(46,125,50,0.10)] hover:border-[#1B3A5C]/22 hover:-translate-y-[2px] transition-[transform,box-shadow,border-color] duration-300 ease-out ring-1 ring-white/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-5 md:pr-6" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)" }}>
+                      <div key={`ch-${i}`} className="group border border-[#1B3A5C]/12 p-3 md:p-4 rounded-2xl shadow-[0_1px_2px_rgba(27,58,92,0.04),0_8px_20px_-12px_rgba(27,58,92,0.18)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.07),0_22px_44px_-16px_rgba(27,58,92,0.32),0_0_0_1px_rgba(46,125,50,0.10)] hover:border-[#1B3A5C]/22 hover:-translate-y-[2px] transition-[transform,box-shadow,border-color] duration-300 ease-out ring-1 ring-white/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 md:pr-5" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)" }}>
                         <div>
                           <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
                             <Calendar className="w-4 h-4" /> {d.date}
                           </p>
-                          <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
+                          <p className="flex items-center gap-2 text-xs text-muted-foreground mt-0.5">
                             <MapPin className="w-3.5 h-3.5" /> {d.location}
                           </p>
-                          <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
+                          <p className="flex items-center gap-2 text-xs text-muted-foreground mt-0.5">
                             <Clock className="w-3.5 h-3.5" /> {isEN ? "Mon–Fri 10:00–17:00 · Sat 10:00–15:00" : "Mo–Fr 10:00–17:00 · Sa 10:00–15:00"}
                           </p>
                         </div>
@@ -789,15 +782,15 @@ export default function Ausbildung() {
                     if (d.hidden) return null;
                     const isSoldOut = d.status === "soldout";
                     return (
-                      <div key={`de-${i}`} className="group border border-[#1B3A5C]/12 p-4 md:p-5 rounded-2xl shadow-[0_1px_2px_rgba(27,58,92,0.04),0_8px_20px_-12px_rgba(27,58,92,0.18)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.07),0_22px_44px_-16px_rgba(27,58,92,0.32),0_0_0_1px_rgba(46,125,50,0.10)] hover:border-[#1B3A5C]/22 hover:-translate-y-[2px] transition-[transform,box-shadow,border-color] duration-300 ease-out ring-1 ring-white/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-5 md:pr-6" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)" }}>
+                      <div key={`de-${i}`} className="group border border-[#1B3A5C]/12 p-3 md:p-4 rounded-2xl shadow-[0_1px_2px_rgba(27,58,92,0.04),0_8px_20px_-12px_rgba(27,58,92,0.18)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.07),0_22px_44px_-16px_rgba(27,58,92,0.32),0_0_0_1px_rgba(46,125,50,0.10)] hover:border-[#1B3A5C]/22 hover:-translate-y-[2px] transition-[transform,box-shadow,border-color] duration-300 ease-out ring-1 ring-white/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 md:pr-5" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)" }}>
                         <div>
                           <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
                             <Calendar className="w-4 h-4" /> {d.date}
                           </p>
-                          <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
+                          <p className="flex items-center gap-2 text-xs text-muted-foreground mt-0.5">
                             <MapPin className="w-3.5 h-3.5" /> {d.location}
                           </p>
-                          <p className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
+                          <p className="flex items-center gap-2 text-xs text-muted-foreground mt-0.5">
                             <Clock className="w-3.5 h-3.5" /> {isEN ? "Mon–Fri 10:00–17:00 · Sat 10:00–15:00" : "Mo–Fr 10:00–17:00 · Sa 10:00–15:00"}
                           </p>
                         </div>
