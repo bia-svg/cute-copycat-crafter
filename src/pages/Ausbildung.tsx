@@ -815,8 +815,8 @@ export default function Ausbildung() {
                               const cfg = [
                                 { gradient: "linear-gradient(90deg, #7FC081 0%, #D9C765 60%, #D89A5A 100%)", glow: "rgba(216,154,90,0.22)", fill: 72, de: "Noch buchbar", en: "Still available" },
                                 null,
-                                { gradient: "linear-gradient(90deg, #8AC082 0%, #E5C158 45%, #D88040 100%)", glow: "rgba(216,128,64,0.24)", fill: 55, de: "Begrenzte Plätze", en: "Limited seats" },
-                                { gradient: "linear-gradient(90deg, #6FBF73 0%, #9BCF6E 70%, #C9D96A 100%)", glow: "rgba(123,191,115,0.22)", fill: 32, de: "Frühzeitige Anmeldung empfohlen", en: "Early registration recommended" },
+                                { gradient: "linear-gradient(90deg, #7FC081 0%, #C9D96A 55%, #D9C765 85%, #D9A56A 100%)", glow: "rgba(216,165,106,0.15)", fill: 55, de: "Noch buchbar", en: "Still available" },
+                                null,
                               ][i] ?? null;
                               if (!cfg) return null;
                               return (
