@@ -221,7 +221,7 @@ export default function Ausbildung() {
       jobTitle: "NGH International Trainer, Hypnotherapist",
     },
     hasCourseInstance: [
-      ...datesCH.map((d) => ({
+      ...datesCH.filter((d) => !d.hidden).map((d) => ({
         "@type": "CourseInstance",
         name: `Aktiv-Hypnose© Ausbildung — ${d.date}`,
         courseMode: "onsite",
@@ -229,7 +229,7 @@ export default function Ausbildung() {
         inLanguage: "de",
         offers: { "@type": "Offer", price: "2290", priceCurrency: "CHF", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/ch/ausbildung" },
       })),
-      ...datesDE.map((d) => ({
+      ...datesDE.filter((d) => !d.hidden).map((d) => ({
         "@type": "CourseInstance",
         name: `Aktiv-Hypnose© Ausbildung — ${d.date}`,
         courseMode: "onsite",
