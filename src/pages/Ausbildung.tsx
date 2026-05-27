@@ -706,6 +706,7 @@ export default function Ausbildung() {
               {activeTab === "ch" && (
                 <>
                   {datesCH.map((d, i) => {
+                    if (d.hidden) return null;
                     const isSoldOut = d.status === "soldout";
                     return (
                       <div key={`ch-${i}`} className="group border border-[#1B3A5C]/12 p-4 md:p-5 rounded-2xl shadow-[0_1px_2px_rgba(27,58,92,0.04),0_8px_20px_-12px_rgba(27,58,92,0.18)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.07),0_22px_44px_-16px_rgba(27,58,92,0.32),0_0_0_1px_rgba(46,125,50,0.10)] hover:border-[#1B3A5C]/22 hover:-translate-y-[2px] transition-[transform,box-shadow,border-color] duration-300 ease-out ring-1 ring-white/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-5 md:pr-6" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)" }}>
