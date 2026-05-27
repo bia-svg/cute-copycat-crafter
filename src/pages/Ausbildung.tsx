@@ -309,8 +309,8 @@ export default function Ausbildung() {
     };
   };
   const eventJsonLd = [
-    ...datesCH.map(d => buildEvent(d, "CH", "2290", "CHF", "https://david-j-woods.com/de/ch/ausbildung")),
-    ...datesDE.map(d => buildEvent(d, "DE", "2290", "EUR", "https://david-j-woods.com/de/de/ausbildung")),
+    ...datesCH.filter(d => !d.hidden).map(d => buildEvent(d, "CH", "2290", "CHF", "https://david-j-woods.com/de/ch/ausbildung")),
+    ...datesDE.filter(d => !d.hidden).map(d => buildEvent(d, "DE", "2290", "EUR", "https://david-j-woods.com/de/de/ausbildung")),
   ].filter(Boolean) as Record<string, unknown>[];
 
   const allSchemaForPage = [courseJsonLd, ...eventJsonLd];
