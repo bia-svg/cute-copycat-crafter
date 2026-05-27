@@ -663,21 +663,14 @@ export default function Ausbildung() {
           SECTION — Upcoming Dates with Country Tabs (premium framed)
           ═══════════════════════════════════════════════════════════ */}
       <section id="dates" className="border-b border-border scroll-mt-20" style={{ background: "linear-gradient(180deg, #C2C9D1 0%, #CBD2D9 55%, #C5CCD3 100%)" }}>
-        <div className="container-main py-5 md:py-8 lg:py-10">
-          <div className="relative max-w-4xl mx-auto bg-gradient-to-b from-white to-[#FAFBFD] border border-[#1B3A5C]/30 rounded-2xl md:rounded-3xl px-4 py-6 md:px-10 md:py-9 shadow-[0_1px_2px_rgba(27,58,92,0.08),0_10px_28px_rgba(27,58,92,0.12),0_44px_96px_-26px_rgba(27,58,92,0.50)] ring-1 ring-white/90 hover:shadow-[0_2px_5px_rgba(27,58,92,0.10),0_14px_32px_rgba(27,58,92,0.14),0_54px_110px_-26px_rgba(27,58,92,0.56)] hover:-translate-y-[2px] transition-[transform,box-shadow] duration-300 ease-out before:content-[''] before:absolute before:top-0 before:left-8 before:right-8 before:h-[2px] before:rounded-b-full before:bg-gradient-to-r before:from-transparent before:via-[#1B3A5C]/40 before:to-transparent">
-            <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-1 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+        <div className="container-main py-4 md:py-6 lg:py-8">
+          <div className="relative max-w-4xl mx-auto bg-gradient-to-b from-white to-[#FAFBFD] border border-[#1B3A5C]/30 rounded-2xl md:rounded-3xl px-4 py-5 md:px-10 md:py-7 shadow-[0_1px_2px_rgba(27,58,92,0.08),0_10px_28px_rgba(27,58,92,0.12),0_44px_96px_-26px_rgba(27,58,92,0.50)] ring-1 ring-white/90 hover:shadow-[0_2px_5px_rgba(27,58,92,0.10),0_14px_32px_rgba(27,58,92,0.14),0_54px_110px_-26px_rgba(27,58,92,0.56)] hover:-translate-y-[2px] transition-[transform,box-shadow] duration-300 ease-out before:content-[''] before:absolute before:top-0 before:left-8 before:right-8 before:h-[2px] before:rounded-b-full before:bg-gradient-to-r before:from-transparent before:via-[#1B3A5C]/40 before:to-transparent">
+            <h2 className="text-lg md:text-2xl font-light text-[#1B3A5C] mb-3 md:mb-4 text-center tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
               {isEN ? "Upcoming Training Dates" : "Kommende Ausbildungstermine"}
             </h2>
-            <div className="flex justify-center mb-3">
-              <div className="group inline-flex items-center gap-2 text-[13px] sm:text-sm font-medium text-[#2E7D32] bg-gradient-to-b from-[#F2FAF3] to-[#E4F2E6]/85 backdrop-blur-[2px] px-4 py-2 rounded-full border border-[#2E7D32]/25 shadow-[0_1px_1px_rgba(255,255,255,0.8)_inset,0_2px_8px_-4px_rgba(46,125,50,0.18)] hover:border-[#2E7D32]/45 hover:shadow-[0_1px_1px_rgba(255,255,255,0.9)_inset,0_4px_14px_-4px_rgba(46,125,50,0.35)] transition-all duration-300">
-                <GraduationCap className="w-4 h-4" />
-                {isEN ? "Therapist in Aktiv-Hypnose®" : "Therapeut in Aktiv-Hypnose®"}
-              </div>
-
-            </div>
 
             {/* Country Tabs */}
-            <div className="flex justify-center gap-2 md:gap-3 mb-4 md:mb-6 max-w-md mx-auto">
+            <div className="flex justify-center gap-2 md:gap-3 mb-3 md:mb-5 max-w-md mx-auto">
               <button
                 onClick={() => { setActiveTab("de"); }}
                 className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-4 rounded-lg border font-semibold text-sm transition-all ${
@@ -701,7 +694,7 @@ export default function Ausbildung() {
               </button>
             </div>
 
-            <div className="space-y-2.5 md:space-y-4">
+            <div className="space-y-2 md:space-y-3">
               {/* CH Content */}
               {activeTab === "ch" && (
                 <>
