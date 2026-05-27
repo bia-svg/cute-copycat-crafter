@@ -56,18 +56,20 @@ export default function Ausbildung() {
   };
 
   /* ── Seminar Dates ── */
-  const datesCH: { date: string; location: string; status: "available" | "limited" | "soldout"; forceEarlyBird?: boolean }[] = [
+  const datesCH: { date: string; location: string; status: "available" | "limited" | "soldout"; forceEarlyBird?: boolean; hidden?: boolean }[] = [
     { date: "Mo-Sa, 15.-20. Juni 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "limited" as const },
     { date: "Mo-Sa, 20.-25. Juli 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "soldout" as const },
     { date: "Mo-Sa, 07.-12. Sept. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const },
-    { date: "Mo-Sa, 23.-28. Nov. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const },
+    // Temporär ausgeblendet — kann durch Entfernen von `hidden: true` wieder eingeblendet werden
+    { date: "Mo-Sa, 23.-28. Nov. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const, hidden: true },
   ];
-  const datesDE: { date: string; location: string; status: "available" | "limited" | "soldout"; forceEarlyBird?: boolean }[] = [
+  const datesDE: { date: string; location: string; status: "available" | "limited" | "soldout"; forceEarlyBird?: boolean; hidden?: boolean }[] = [
     /* Archiviert: Mo-Sa, 11.-16. Mai 2026 — Hotel am Alten Park, Augsburg */
     { date: "Mo-Sa, 06.-11. Juli 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "limited" as const },
     { date: "Mo-Sa, 03.-08. Aug. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "soldout" as const },
     { date: "Mo-Sa, 14.-19. Sept. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
-    { date: "Mo-Sa, 16.-21. Nov. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
+    // Temporär ausgeblendet — kann durch Entfernen von `hidden: true` wieder eingeblendet werden
+    { date: "Mo-Sa, 16.-21. Nov. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const, hidden: true },
   ];
 
   /* ── 6-Day Curriculum ── */
@@ -219,7 +221,7 @@ export default function Ausbildung() {
       jobTitle: "NGH International Trainer, Hypnotherapist",
     },
     hasCourseInstance: [
-      ...datesCH.map((d) => ({
+      ...datesCH.filter((d) => !d.hidden).map((d) => ({
         "@type": "CourseInstance",
         name: `Aktiv-Hypnose© Ausbildung — ${d.date}`,
         courseMode: "onsite",
@@ -227,7 +229,7 @@ export default function Ausbildung() {
         inLanguage: "de",
         offers: { "@type": "Offer", price: "2290", priceCurrency: "CHF", availability: "https://schema.org/InStock", url: "https://david-j-woods.com/de/ch/ausbildung" },
       })),
-      ...datesDE.map((d) => ({
+      ...datesDE.filter((d) => !d.hidden).map((d) => ({
         "@type": "CourseInstance",
         name: `Aktiv-Hypnose© Ausbildung — ${d.date}`,
         courseMode: "onsite",
@@ -307,8 +309,8 @@ export default function Ausbildung() {
     };
   };
   const eventJsonLd = [
-    ...datesCH.map(d => buildEvent(d, "CH", "2290", "CHF", "https://david-j-woods.com/de/ch/ausbildung")),
-    ...datesDE.map(d => buildEvent(d, "DE", "2290", "EUR", "https://david-j-woods.com/de/de/ausbildung")),
+    ...datesCH.filter(d => !d.hidden).map(d => buildEvent(d, "CH", "2290", "CHF", "https://david-j-woods.com/de/ch/ausbildung")),
+    ...datesDE.filter(d => !d.hidden).map(d => buildEvent(d, "DE", "2290", "EUR", "https://david-j-woods.com/de/de/ausbildung")),
   ].filter(Boolean) as Record<string, unknown>[];
 
   const allSchemaForPage = [courseJsonLd, ...eventJsonLd];
@@ -704,6 +706,7 @@ export default function Ausbildung() {
               {activeTab === "ch" && (
                 <>
                   {datesCH.map((d, i) => {
+                    if (d.hidden) return null;
                     const isSoldOut = d.status === "soldout";
                     return (
                       <div key={`ch-${i}`} className="group border border-[#1B3A5C]/12 p-4 md:p-5 rounded-2xl shadow-[0_1px_2px_rgba(27,58,92,0.04),0_8px_20px_-12px_rgba(27,58,92,0.18)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.07),0_22px_44px_-16px_rgba(27,58,92,0.32),0_0_0_1px_rgba(46,125,50,0.10)] hover:border-[#1B3A5C]/22 hover:-translate-y-[2px] transition-[transform,box-shadow,border-color] duration-300 ease-out ring-1 ring-white/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-5 md:pr-6" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)" }}>
@@ -728,7 +731,7 @@ export default function Ausbildung() {
                                 return (
                                   <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1.5">
                                     <div className="h-[5px] w-full rounded-full bg-[#EEF1F4]/85 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.06),inset_0_-1px_0_rgba(255,255,255,0.6)]">
-                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #DDA0A0 0%, #C26060 100%)", boxShadow: "0 0 10px rgba(184,74,74,0.30), 0 0 2px rgba(184,74,74,0.25)" }} />
+                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #7CB87E 0%, #E0BE5D 35%, #D17A3E 70%, #BE3B2E 100%)", boxShadow: "0 0 10px rgba(190,59,46,0.30), 0 0 2px rgba(190,59,46,0.25)" }} />
                                     </div>
                                     <span className="text-[10px] text-[#B84A4A] font-medium tracking-wide leading-none">
                                       {isEN ? "Fully booked" : "Ausgebucht"}
@@ -737,10 +740,10 @@ export default function Ausbildung() {
                                 );
                               }
                               const cfg = [
-                                { gradient: "linear-gradient(90deg, #EAB892 0%, #CF8556 100%)", glow: "rgba(201,122,74,0.22)", fill: 72, de: "Noch buchbar", en: "Still available" },
+                                { gradient: "linear-gradient(90deg, #7FC081 0%, #D9C765 60%, #D89A5A 100%)", glow: "rgba(216,154,90,0.22)", fill: 72, de: "Noch buchbar", en: "Still available" },
                                 null,
-                                { gradient: "linear-gradient(90deg, #F3D27A 0%, #EA9F55 100%)", glow: "rgba(232,149,69,0.22)", fill: 52, de: "Begrenzte Plätze", en: "Limited seats" },
-                                { gradient: "linear-gradient(90deg, #C3E1BF 0%, #86BD90 100%)", glow: "rgba(122,181,133,0.22)", fill: 34, de: "Frühzeitige Anmeldung empfohlen", en: "Early registration recommended" },
+                                { gradient: "linear-gradient(90deg, #8AC082 0%, #E5C158 45%, #D88040 100%)", glow: "rgba(216,128,64,0.24)", fill: 55, de: "Begrenzte Plätze", en: "Limited seats" },
+                                { gradient: "linear-gradient(90deg, #6FBF73 0%, #9BCF6E 70%, #C9D96A 100%)", glow: "rgba(123,191,115,0.22)", fill: 32, de: "Frühzeitige Anmeldung empfohlen", en: "Early registration recommended" },
                               ][i] ?? null;
                               if (!cfg) return null;
                               return (
@@ -783,6 +786,7 @@ export default function Ausbildung() {
               {activeTab === "de" && (
                 <>
                   {datesDE.map((d, i) => {
+                    if (d.hidden) return null;
                     const isSoldOut = d.status === "soldout";
                     return (
                       <div key={`de-${i}`} className="group border border-[#1B3A5C]/12 p-4 md:p-5 rounded-2xl shadow-[0_1px_2px_rgba(27,58,92,0.04),0_8px_20px_-12px_rgba(27,58,92,0.18)] hover:shadow-[0_2px_4px_rgba(27,58,92,0.07),0_22px_44px_-16px_rgba(27,58,92,0.32),0_0_0_1px_rgba(46,125,50,0.10)] hover:border-[#1B3A5C]/22 hover:-translate-y-[2px] transition-[transform,box-shadow,border-color] duration-300 ease-out ring-1 ring-white/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-5 md:pr-6" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)" }}>
@@ -807,7 +811,7 @@ export default function Ausbildung() {
                                 return (
                                   <div className="w-full max-w-[210px] flex flex-col items-center sm:items-end gap-1.5">
                                     <div className="h-[5px] w-full rounded-full bg-[#EEF1F4]/85 overflow-hidden shadow-[inset_0_1px_1px_rgba(27,58,92,0.06),inset_0_-1px_0_rgba(255,255,255,0.6)]">
-                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #DDA0A0 0%, #C26060 100%)", boxShadow: "0 0 10px rgba(184,74,74,0.30), 0 0 2px rgba(184,74,74,0.25)" }} />
+                                      <div className="h-full rounded-full" style={{ width: "100%", background: "linear-gradient(90deg, #7CB87E 0%, #E0BE5D 35%, #D17A3E 70%, #BE3B2E 100%)", boxShadow: "0 0 10px rgba(190,59,46,0.30), 0 0 2px rgba(190,59,46,0.25)" }} />
                                     </div>
                                     <span className="text-[10px] text-[#B84A4A] font-medium tracking-wide leading-none">
                                       {isEN ? "Fully booked" : "Ausgebucht"}
@@ -816,10 +820,10 @@ export default function Ausbildung() {
                                 );
                               }
                               const cfg = [
-                                { gradient: "linear-gradient(90deg, #EAB892 0%, #CF8556 100%)", glow: "rgba(201,122,74,0.22)", fill: 72, de: "Noch buchbar", en: "Still available" },
+                                { gradient: "linear-gradient(90deg, #7FC081 0%, #D9C765 60%, #D89A5A 100%)", glow: "rgba(216,154,90,0.22)", fill: 72, de: "Noch buchbar", en: "Still available" },
                                 null,
-                                { gradient: "linear-gradient(90deg, #F3D27A 0%, #EA9F55 100%)", glow: "rgba(232,149,69,0.22)", fill: 52, de: "Begrenzte Plätze", en: "Limited seats" },
-                                { gradient: "linear-gradient(90deg, #C3E1BF 0%, #86BD90 100%)", glow: "rgba(122,181,133,0.22)", fill: 34, de: "Frühzeitige Anmeldung empfohlen", en: "Early registration recommended" },
+                                { gradient: "linear-gradient(90deg, #8AC082 0%, #E5C158 45%, #D88040 100%)", glow: "rgba(216,128,64,0.24)", fill: 55, de: "Begrenzte Plätze", en: "Limited seats" },
+                                { gradient: "linear-gradient(90deg, #6FBF73 0%, #9BCF6E 70%, #C9D96A 100%)", glow: "rgba(123,191,115,0.22)", fill: 32, de: "Frühzeitige Anmeldung empfohlen", en: "Early registration recommended" },
                               ][i] ?? null;
                               if (!cfg) return null;
                               return (

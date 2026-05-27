@@ -15,18 +15,25 @@ import { getAttribution, classifySource } from "@/lib/attribution";
 
 
 /* ── Seminar dates ── */
-const SEMINAR_DATES = {
+const SEMINAR_DATES_ALL = {
   ch: [
     { date: "Mo-Sa, 15.-20. Juni 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "limited" as const },
     { date: "Mo-Sa, 07.-12. Sept. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const },
-    { date: "Mo-Sa, 23.-28. Nov. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const },
+    // Temporär ausgeblendet — kann durch Entfernen von `hidden: true` wieder eingeblendet werden
+    { date: "Mo-Sa, 23.-28. Nov. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const, hidden: true },
   ],
   de: [
     // Archiviert: Mo-Sa, 11.-16. Mai 2026 — Hotel am Alten Park, Augsburg
     { date: "Mo-Sa, 06.-11. Juli 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "limited" as const },
     { date: "Mo-Sa, 14.-19. Sept. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
-    { date: "Mo-Sa, 16.-21. Nov. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const },
+    // Temporär ausgeblendet — kann durch Entfernen von `hidden: true` wieder eingeblendet werden
+    { date: "Mo-Sa, 16.-21. Nov. 2026", location: "Das Hotel am Alten Park, Fröhlich Str. 17, Augsburg", status: "available" as const, hidden: true },
   ],
+};
+
+const SEMINAR_DATES = {
+  ch: SEMINAR_DATES_ALL.ch.filter((d) => !(d as { hidden?: boolean }).hidden),
+  de: SEMINAR_DATES_ALL.de.filter((d) => !(d as { hidden?: boolean }).hidden),
 };
 
 type SeminarCountry = "ch" | "de" | "";
