@@ -95,7 +95,7 @@ export default function SitzungenUebersicht() {
               {isEN ? "Hypnosis Sessions" : "Hypnose-Sitzungen"}
             </p>
             <h1 className="text-xl sm:text-2xl md:text-[1.7rem] font-light text-[#1B3A5C] leading-snug md:leading-[1.2] mb-2 md:mb-2.5 tracking-tight">
-              {isEN ? "More Freedom. Less Burden. More Quality of Life." : "Mehr Freiheit. Weniger Belastung. Mehr Lebensqualität."}
+              {isEN ? "More Freedom. More Quality of Life." : "Mehr Freiheit. Mehr Lebensqualität."}
             </h1>
             <p className="text-[13.5px] md:text-[14.5px] text-foreground/80 leading-snug md:leading-[1.55] max-w-2xl mx-auto font-medium">
               {isEN
