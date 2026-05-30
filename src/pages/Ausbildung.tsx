@@ -34,6 +34,18 @@ export default function Ausbildung() {
   const [activeTab, setActiveTab] = useState<"ch" | "de">("de");
   const isEN = language === "en";
 
+  // Allow deep-linking ?country=ch and scroll to #dates
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const c = params.get("country");
+    if (c === "ch" || c === "de") setActiveTab(c);
+    if (window.location.hash === "#dates") {
+      requestAnimationFrame(() => {
+        document.getElementById("dates")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  }, []);
+
   const [curriculumApi, setCurriculumApi] = useState<CarouselApi>();
   const [curriculumIndex, setCurriculumIndex] = useState(0);
   useEffect(() => {

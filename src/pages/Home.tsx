@@ -586,7 +586,7 @@ export default function Home() {
               </p>
               <div className="flex justify-center mb-3">
                 <Link
-                  to={`/${isEN ? "en" : "de"}/ch/seminar-anmeldung`}
+                  to={`/${isEN ? "en" : "de"}/ch/${isEN ? "training" : "ausbildung"}?country=ch#dates`}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2E7D32] hover:bg-[#256528] text-white text-[11px] md:text-[12.5px] font-medium leading-tight transition-colors shadow-sm"
                 >
                   <span className="w-2 h-2 rounded-full bg-white/90" />
