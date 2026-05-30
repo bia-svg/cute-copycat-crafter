@@ -210,11 +210,10 @@ export default function SeminarAnmeldung() {
 
       // Fire notifications in background
       supabase.functions.invoke("notify-lead", { body: { lead: leadData } }).catch(err => console.error("Slack error:", err));
-      // Festpreis: 2.290 für DE und CH
-      const isCH = seminarCountry === "ch";
-      const bookedPrice = isCH ? "CHF 2.290.-" : "€2.290,-";
+      const isLastMinuteCH = seminarCountry === "ch" && selectedDate === "Mo-Sa, 15.-20. Juni 2026";
+      const bookedPrice = isLastMinuteCH ? "CHF 1.990.-" : (seminarCountry === "ch" ? "CHF 2.290.-" : "€2.290,-");
       const priceType = "Festpreis";
-      const regularPrice = isCH ? "CHF 2.290.-" : "€2.290,-";
+      const regularPrice = undefined;
       const savingsAmount = undefined;
 
 
