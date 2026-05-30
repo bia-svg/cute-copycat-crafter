@@ -17,7 +17,7 @@ import { getAttribution, classifySource } from "@/lib/attribution";
 /* ── Seminar dates ── */
 const SEMINAR_DATES_ALL = {
   ch: [
-    { date: "Mo-Sa, 15.-20. Juni 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "limited" as const },
+    { date: "Mo-Sa, 15.-20. Juni 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "limited" as const, lastMinute: true as const },
     { date: "Mo-Sa, 07.-12. Sept. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const },
     // Temporär ausgeblendet — kann durch Entfernen von `hidden: true` wieder eingeblendet werden
     { date: "Mo-Sa, 23.-28. Nov. 2026", location: "\"Fit+Gsund\" Churzhaslen 3, 8733 Eschenbach", status: "available" as const, hidden: true },
