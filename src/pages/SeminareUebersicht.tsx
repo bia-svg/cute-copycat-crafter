@@ -81,6 +81,20 @@ export default function SeminareUebersicht() {
         </div>
       </section>
 
+      {/* Last-Minute Hinweis */}
+      <section className="bg-[#E8EDF3]">
+        <div className="container-main pb-3.5 md:pb-5">
+          <Link
+            to={getPath("training", language, "ch") + "?country=ch#dates"}
+            className="block max-w-3xl mx-auto text-center text-[13px] md:text-sm font-medium text-[#1B5E20] bg-[#2E7D32]/10 border border-[#2E7D32]/25 rounded-full px-5 py-2.5 hover:bg-[#2E7D32]/20 transition-colors"
+          >
+            {isEN
+              ? "🟢 Swiss Intensive Training · Last-minute spot available · CHF 1'990 instead of CHF 2'290 →"
+              : "🟢 Schweizer Intensiv-Ausbildung · Last-Minute-Platz verfügbar · CHF 1’990 statt CHF 2’290 →"}
+          </Link>
+        </div>
+      </section>
+
       {/* Items grid */}
       <section className="bg-[#E8EDF3]">
         <style>{`
