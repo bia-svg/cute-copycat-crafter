@@ -366,16 +366,18 @@ export default function SeminarAnmeldung() {
                           key={i}
                           type="button"
                           onClick={() => setSelectedDate(d.date)}
-                          className={`w-full border rounded-lg p-2.5 text-left transition-all ${
+                          className={`group relative w-full border rounded-lg p-2.5 text-left cursor-pointer transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md hover:border-[#2E7D32]/60 hover:bg-[#F4FAF5] ${
                             selectedDate === d.date
-                              ? seminarCountry === "de"
-                                ? "border-[#1B3A5C]/60 bg-[#E6EEF7] ring-1 ring-[#1B3A5C]/30"
-                                : "border-[#2E7D32]/50 bg-[#E8F5E9] ring-1 ring-[#2E7D32]/25"
-                              : seminarCountry === "de"
-                                ? "border-border bg-white hover:border-[#1B3A5C]/40"
-                                : "border-border bg-white hover:border-[#2E7D32]/40"
+                              ? "border-[#2E7D32] bg-[#E8F5E9] ring-2 ring-[#2E7D32]/30 shadow-sm"
+                              : "border-border bg-white"
                           }`}
                         >
+                          {selectedDate === d.date && (
+                            <span className="absolute top-2 right-2 inline-flex items-center gap-1 text-[10px] font-semibold text-white bg-[#2E7D32] px-2 py-[3px] rounded-full shadow-sm">
+                              <CheckCircle className="w-3 h-3" />
+                              {isEN ? "Selected" : "Ausgewählt"}
+                            </span>
+                          )}
                           <div className="flex items-center justify-between">
                             <div>
                               <p className="flex items-center gap-2 font-semibold text-sm text-[#1B3A5C]">
@@ -384,9 +386,6 @@ export default function SeminarAnmeldung() {
                               <p className="flex items-center gap-1.5 text-[11px] text-muted-foreground mt-0.5 leading-tight">
                                 <MapPin className="w-3 h-3 shrink-0" /> {d.location}
                               </p>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              {selectedDate === d.date && <CheckCircle className={`w-5 h-5 ${seminarCountry === "de" ? "text-[#1B3A5C]" : "text-[#2E7D32]"}`} />}
                             </div>
                           </div>
                           {/* Price display */}
