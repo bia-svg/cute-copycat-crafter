@@ -763,7 +763,7 @@ export default function Ausbildung() {
                             </Button>
                           ) : (
                             <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=ch`}>
-                              <Button size="sm" className="bg-white text-[#1B3A5C] border border-[#1B3A5C]/25 hover:border-[#1B3A5C]/60 hover:bg-[#EAEEF2] hover:shadow-[0_4px_12px_-4px_rgba(27,58,92,0.25)] hover:-translate-y-[1px] active:translate-y-0 text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-3 sm:h-9 sm:px-4 transition-all duration-200 ease-out">
+                              <Button size="sm" className="bg-gradient-to-b from-[#4FA974] to-[#327E55] hover:from-[#479C6A] hover:to-[#2B7049] text-white border border-[#235C3C]/60 hover:shadow-[0_1px_0_0_rgba(255,255,255,0.28)_inset,0_2px_0_0_rgba(35,92,60,0.34),0_10px_24px_-4px_rgba(35,92,60,0.42),0_20px_44px_-10px_rgba(35,92,60,0.36)] hover:-translate-y-[1px] active:translate-y-0 text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-3 sm:h-9 sm:px-4 transition-all duration-200 ease-out">
                                 {isEN ? "More Info →" : "Mehr Info →"}
                               </Button>
                             </Link>
@@ -843,7 +843,7 @@ export default function Ausbildung() {
                             </Button>
                           ) : (
                             <Link to={`/${language}/${country}/${language === "en" ? "seminar-registration" : "seminar-anmeldung"}?country=de`}>
-                              <Button size="sm" className="bg-white text-[#1B3A5C] border border-[#1B3A5C]/25 hover:border-[#1B3A5C]/60 hover:bg-[#EAEEF2] hover:shadow-[0_4px_12px_-4px_rgba(27,58,92,0.25)] hover:-translate-y-[1px] active:translate-y-0 text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-3 sm:h-9 sm:px-4 transition-all duration-200 ease-out">
+                              <Button size="sm" className="bg-gradient-to-b from-[#4FA974] to-[#327E55] hover:from-[#479C6A] hover:to-[#2B7049] text-white border border-[#235C3C]/60 hover:shadow-[0_1px_0_0_rgba(255,255,255,0.28)_inset,0_2px_0_0_rgba(35,92,60,0.34),0_10px_24px_-4px_rgba(35,92,60,0.42),0_20px_44px_-10px_rgba(35,92,60,0.36)] hover:-translate-y-[1px] active:translate-y-0 text-[11px] sm:text-xs whitespace-nowrap rounded-lg font-semibold h-7 px-3 sm:h-9 sm:px-4 transition-all duration-200 ease-out">
                                 {isEN ? "More Info →" : "Mehr Info →"}
                               </Button>
                             </Link>
