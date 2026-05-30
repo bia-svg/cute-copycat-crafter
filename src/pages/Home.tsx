@@ -391,8 +391,8 @@ export default function Home() {
 
       {/* ═══════════════════ AKTIV-HYPNOSE METHOD — slim trust banner ═══════════════════ */}
       <section className="pt-3 pb-3 md:pt-4 md:pb-4 bg-primary/15" style={deferredSectionStyle}>
-        <div className="mx-3 md:mx-auto md:max-w-[980px] bg-card rounded-xl border border-[#D1D5DB] py-1 px-3 md:px-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
-          <div className="grid md:grid-cols-[290px_1fr] gap-2 md:gap-4 md:items-stretch">
+        <div className="mx-3 md:mx-auto md:max-w-[900px] bg-card rounded-xl border-2 border-[#BFC8D4] py-1 px-2 md:px-3.5 shadow-[0_4px_18px_rgba(0,0,0,0.07)]">
+          <div className="grid md:grid-cols-[280px_1fr] gap-2 md:gap-3 md:items-stretch">
             {/* LEFT (desktop) – credential badges 2x2 + link */}
             <div className="order-2 md:order-1 flex flex-col items-center justify-center gap-1.5 mt-3 md:mt-0">
               {/* Desktop: 2x2 grid – 4 badges, equal height + weight */}
