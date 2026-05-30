@@ -369,14 +369,20 @@ export default function SeminarAnmeldung() {
                           key={i}
                           type="button"
                           onClick={() => setSelectedDate(d.date)}
-                          className={`group relative w-full border rounded-lg p-2.5 text-left cursor-pointer transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md hover:border-[#2E7D32]/60 hover:bg-[#F4FAF5] ${
+                          className={`group relative w-full border rounded-lg p-2.5 text-left cursor-pointer transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md ${
+                            seminarCountry === "de"
+                              ? "hover:border-[#1B3A5C]/60 hover:bg-[#F0F5FA]"
+                              : "hover:border-[#2E7D32]/60 hover:bg-[#F4FAF5]"
+                          } ${
                             selectedDate === d.date
-                              ? "border-[#2E7D32] bg-[#E8F5E9] ring-2 ring-[#2E7D32]/30 shadow-sm"
+                              ? seminarCountry === "de"
+                                ? "border-[#1B3A5C] bg-[#EEF4FB] ring-2 ring-[#1B3A5C]/30 shadow-sm"
+                                : "border-[#2E7D32] bg-[#E8F5E9] ring-2 ring-[#2E7D32]/30 shadow-sm"
                               : "border-border bg-white"
                           }`}
                         >
                           {selectedDate === d.date && (
-                            <span className="absolute top-2 right-2 inline-flex items-center gap-1 text-[10px] font-semibold text-white bg-[#2E7D32] px-2 py-[3px] rounded-full shadow-sm">
+                            <span className={`absolute top-2 right-2 inline-flex items-center gap-1 text-[10px] font-semibold text-white px-2 py-[3px] rounded-full shadow-sm ${seminarCountry === "de" ? "bg-[#1B3A5C]" : "bg-[#2E7D32]"}`}>
                               <CheckCircle className="w-3 h-3" />
                               {isEN ? "Selected" : "Ausgewählt"}
                             </span>
