@@ -584,11 +584,17 @@ export default function Home() {
                   ? "Intensive seminar in Aktiv-Hypnose®: practical, immediately applicable and intentionally held in small, exclusive groups. Learn effective hypnosis techniques for your profession, self-employment and personal development."
                   : "Intensiv-Seminar in Aktiv-Hypnose®: praxisnah, direkt anwendbar und bewusst in kleinen, exklusiven Gruppen durchgeführt. Erlernen Sie wirkungsvolle Hypnose-Techniken für Beruf, Selbstständigkeit und persönliche Weiterentwicklung."}
               </p>
-              <p className="text-[#4CAF50] text-[10.5px] md:text-[12px] mb-3 text-center max-w-lg md:max-w-[56rem] mx-auto leading-snug italic">
-                {isEN
-                  ? "In 6 days you receive a compact, intensive training format with directly applicable methods."
-                  : "In 6 Tagen erhalten Sie ein kompaktes, intensives Ausbildungsformat mit direkt umsetzbaren Methoden."}
-              </p>
+              <div className="flex justify-center mb-3">
+                <Link
+                  to={`/${isEN ? "en" : "de"}/ch/seminar-anmeldung`}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2E7D32] hover:bg-[#256528] text-white text-[11px] md:text-[12.5px] font-medium leading-tight transition-colors shadow-sm"
+                >
+                  <span className="w-2 h-2 rounded-full bg-white/90" />
+                  {isEN
+                    ? "Swiss Intensive Training · One last-minute spot available"
+                    : "Schweizer Intensiv-Ausbildung · Ein Last-Minute-Platz verfügbar"}
+                </Link>
+              </div>
 
               {/* Stats — compact grid (short, scannable, equal-height) */}
               <div className="grid grid-cols-5 gap-1.5 md:gap-2.5 mb-4 md:mb-5 mt-3 md:mt-4 pt-1 md:pt-1.5">
