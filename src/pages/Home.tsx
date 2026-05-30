@@ -472,8 +472,7 @@ export default function Home() {
                   to={getPath("trainingOverview", language, country)}
                   className="group inline-flex items-center justify-center gap-2 w-full px-5 md:px-7 py-2 md:py-2.5 mt-1.5 md:mt-1 rounded-2xl bg-gradient-to-b from-[#FAF2E2] to-[#ECDDC2] hover:from-[#F4E9D4] hover:to-[#E0CFAE] text-[#5C4426] font-semibold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#A8895C]/40 shadow-[0_1px_0_0_rgba(255,255,255,0.6)_inset,0_2px_0_0_rgba(168,137,92,0.32),0_8px_20px_-4px_rgba(168,137,92,0.36),0_16px_36px_-10px_rgba(168,137,92,0.32)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.65)_inset,0_3px_0_0_rgba(168,137,92,0.38),0_12px_28px_-4px_rgba(168,137,92,0.44),0_22px_44px_-10px_rgba(168,137,92,0.40)] md:shadow-[0_1px_0_0_rgba(255,255,255,0.6)_inset,0_2px_0_0_rgba(168,137,92,0.28),0_6px_16px_-4px_rgba(168,137,92,0.3),0_12px_28px_-10px_rgba(168,137,92,0.28)] md:hover:shadow-[0_1px_0_0_rgba(255,255,255,0.65)_inset,0_3px_0_0_rgba(168,137,92,0.32),0_10px_24px_-4px_rgba(168,137,92,0.38),0_18px_38px_-10px_rgba(168,137,92,0.35)] hover:-translate-y-0.5 active:translate-y-px transition-all duration-300 ease-out"
                 >
-                  {isEN ? "Seminars & Trainings Overview" : "Übersicht Seminare & Ausbildungen"}
-                  <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
+                  {isEN ? "Aktiv-Hypnose® Training →" : "Aktiv-Hypnose® Ausbildung →"}
                 </Link>
               </div>
 
