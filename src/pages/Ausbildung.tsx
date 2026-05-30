@@ -713,6 +713,26 @@ export default function Ausbildung() {
                           <p className="flex items-center gap-2 text-xs text-muted-foreground mt-0.5">
                             <Clock className="w-3.5 h-3.5" /> {isEN ? "Mon–Fri 10:00–17:00 · Sat 10:00–15:00" : "Mo–Fr 10:00–17:00 · Sa 10:00–15:00"}
                           </p>
+                          <p className="flex items-center gap-1.5 text-xs text-[#1B3A5C] mt-0.5">
+                            {i === 0 ? (
+                              <>
+                                <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]/50">
+                                  <span className="text-[10px] font-normal tracking-wide">CHF</span>
+                                  <span className="text-[13px] font-semibold tracking-tight line-through">2&apos;290.–</span>
+                                </span>
+                                <span className="inline-flex items-center text-[9px] font-semibold text-[#1B5E20] bg-[#E8F5E9] border border-[#2E7D32]/20 px-1.5 py-[2px] rounded-full">{isEN ? "Last-Minute Spot" : "Last-Minute-Platz"}</span>
+                                <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]">
+                                  <span className="text-[10px] font-normal tracking-wide">CHF</span>
+                                  <span className="text-[13px] font-bold tracking-tight">1&apos;990.–</span>
+                                </span>
+                              </>
+                            ) : (
+                              <span className="inline-flex items-baseline gap-0.5 text-[#1B3A5C]">
+                                <span className="text-[10px] font-normal tracking-wide">CHF</span>
+                                <span className="text-[13px] font-semibold tracking-tight">2&apos;290.–</span>
+                              </span>
+                            )}
+                          </p>
                         </div>
                         <div className="flex flex-col items-center sm:flex-row sm:items-center gap-2">
                           <div className="flex flex-col items-center sm:items-end gap-1.5 w-full sm:w-auto">
