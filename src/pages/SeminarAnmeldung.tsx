@@ -400,10 +400,17 @@ export default function SeminarAnmeldung() {
                           {/* Price display */}
                           <div className="mt-2 pt-2 border-t border-border/30">
                             <div className="flex items-center justify-between gap-3 flex-wrap">
-                              <span className="inline-flex items-baseline gap-1 text-[#1B3A5C]">
-                                <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
-                                <span className="text-[15px] font-semibold tracking-tight">{seminarCountry === "ch" ? "2.290.–" : "2.290,–"}</span>
-                              </span>
+                              <div className="flex flex-col">
+                                {(d as any).lastMinute && (
+                                  <span className="text-[10px] font-medium text-[#6B5B3E] bg-[#FAF8F3] border border-[#E5DFD3] px-2 py-[2px] rounded-full w-fit mb-1">
+                                    {isEN ? "Last-Minute Spot" : "Last-Minute-Platz"}
+                                  </span>
+                                )}
+                                <span className="inline-flex items-baseline gap-1 text-[#1B3A5C]">
+                                  <span className="text-[10px] font-normal tracking-wide">{seminarCountry === "ch" ? "CHF" : "€"}</span>
+                                  <span className="text-[15px] font-semibold tracking-tight">{(d as any).lastMinute && seminarCountry === "ch" ? "1.990.–" : (seminarCountry === "ch" ? "2.290.–" : "2.290,–")}</span>
+                                </span>
+                              </div>
                               <span className="text-[10.5px] font-medium text-[#1B3A5C]/75 bg-[#F1F4F7] border border-[#E2E8EE] px-2 py-[3px] rounded-full whitespace-nowrap">
                                 {isEN ? "Small intensive group · Max. 10 participants" : "Kleine Intensivgruppe · Max. 10 Teilnehmer"}
                               </span>
