@@ -43,10 +43,33 @@ export default function SeminarAnmeldung() {
   const isEN = language === "en";
   const [searchParams] = useSearchParams();
 
-  const [seminarCountry, setSeminarCountry] = useState<SeminarCountry>(
-    searchParams.get("country") === "de" ? "de" : searchParams.get("country") === "ch" ? "ch" : ""
-  );
-  const [selectedDate, setSelectedDate] = useState(searchParams.get("date") || "");
+  const [seminarCountry, setSeminarCountry] = useState<SeminarCountry>(() => {
+    const urlC = searchParams.get("country");
+    if (urlC === "de" || urlC === "ch") return urlC;
+    if (typeof window !== "undefined") {
+      const stored = sessionStorage.getItem("seminarCountry");
+      if (stored === "de" || stored === "ch") return stored;
+    }
+    return "";
+  });
+  const [selectedDate, setSelectedDate] = useState(() => {
+    const urlD = searchParams.get("date");
+    if (urlD) return urlD;
+    if (typeof window !== "undefined") {
+      return sessionStorage.getItem("seminarSelectedDate") || "";
+    }
+    return "";
+  });
+
+  // Persist country & date across reloads / back navigation
+  useEffect(() => {
+    if (seminarCountry) sessionStorage.setItem("seminarCountry", seminarCountry);
+    else sessionStorage.removeItem("seminarCountry");
+  }, [seminarCountry]);
+  useEffect(() => {
+    if (selectedDate) sessionStorage.setItem("seminarSelectedDate", selectedDate);
+    else sessionStorage.removeItem("seminarSelectedDate");
+  }, [selectedDate]);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [registrationNumber, setRegistrationNumber] = useState("");
