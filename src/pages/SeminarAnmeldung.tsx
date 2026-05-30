@@ -330,6 +330,9 @@ export default function SeminarAnmeldung() {
                       const hoverClasses = c.key === "de"
                         ? "hover:border-[#1B3A5C]/40"
                         : "hover:border-[#2E7D32]/40";
+                      const textColor = isActive
+                        ? (c.key === "de" ? "text-[#1B3A5C]" : "text-[#1B5E20]")
+                        : "text-[#1B3A5C]";
                       return (
                         <button
                           key={c.key}
@@ -340,7 +343,7 @@ export default function SeminarAnmeldung() {
                           }`}
                         >
                           <span className="text-lg leading-none">{c.flag}</span>
-                          <p className="font-semibold text-sm text-[#1B3A5C] leading-tight">{c.label}</p>
+                          <p className={`font-semibold text-sm leading-tight ${textColor}`}>{c.label}</p>
                         </button>
                       );
                     })}
