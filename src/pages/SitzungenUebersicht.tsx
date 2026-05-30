@@ -99,8 +99,8 @@ export default function SitzungenUebersicht() {
             </h1>
             <p className="text-[13.5px] md:text-[14.5px] text-foreground/80 leading-snug md:leading-[1.55] max-w-2xl mx-auto font-medium">
               {isEN
-                ? "Intensive individual sessions for smoking cessation, weight reduction, anxiety, panic attacks, stress, burnout, trauma and personal change."
-                : "Intensive Einzelsitzungen für Rauchstopp, Gewichtsreduktion, Ängste, Panikattacken, Stress, Burnout, Trauma und persönliche Veränderung."}
+                ? "Support for smoking cessation, weight reduction, anxiety, panic attacks, stress, burnout, trauma recovery and personal change."
+                : "Unterstützung bei Rauchstopp, Gewichtsreduktion, Ängsten, Panikattacken, Stress, Burnout, Traumabewältigung und persönlicher Veränderung."}
             </p>
           </div>
         </div>
