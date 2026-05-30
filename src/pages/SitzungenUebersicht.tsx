@@ -95,12 +95,12 @@ export default function SitzungenUebersicht() {
               {isEN ? "Hypnosis Sessions" : "Hypnose-Sitzungen"}
             </p>
             <h1 className="text-xl sm:text-2xl md:text-[1.7rem] font-light text-[#1B3A5C] leading-snug md:leading-[1.2] mb-2 md:mb-2.5 tracking-tight">
-              {isEN ? "Insights into our intensive sessions" : "Einblicke in unsere intensiven Einzelsitzungen"}
+              {isEN ? "More Freedom. Less Burden. More Quality of Life." : "Mehr Freiheit. Weniger Belastung. Mehr Lebensqualität."}
             </h1>
             <p className="text-[13.5px] md:text-[14.5px] text-foreground/80 leading-snug md:leading-[1.55] max-w-2xl mx-auto font-medium">
               {isEN
-                ? "A clear overview of all individual hypnosis sessions — focused, in-depth and personally with Lic. Psych. David J. Woods."
-                : "Ein klarer Überblick über alle Einzelsitzungen — gezielt, tiefgehend und persönlich mit Lic. Psych. David J. Woods."}
+                ? "Intensive individual sessions for smoking cessation, weight reduction, anxiety, panic attacks, stress, burnout, trauma and personal change."
+                : "Intensive Einzelsitzungen für Rauchstopp, Gewichtsreduktion, Ängste, Panikattacken, Stress, Burnout, Trauma und persönliche Veränderung."}
             </p>
           </div>
         </div>
