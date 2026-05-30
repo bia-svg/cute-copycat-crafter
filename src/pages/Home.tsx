@@ -456,8 +456,7 @@ export default function Home() {
                   to={getPath("sessionsOverview", language, country)}
                   className="group inline-flex items-center justify-center gap-2 w-full px-5 md:px-7 py-2 md:py-2.5 rounded-2xl bg-gradient-to-b from-[#4FA974] to-[#327E55] hover:from-[#479C6A] hover:to-[#2B7049] text-white font-semibold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#235C3C]/60 shadow-[0_1px_0_0_rgba(255,255,255,0.28)_inset,0_2px_0_0_rgba(35,92,60,0.34),0_10px_24px_-4px_rgba(35,92,60,0.42),0_20px_44px_-10px_rgba(35,92,60,0.36)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.32)_inset,0_3px_0_0_rgba(35,92,60,0.40),0_14px_32px_-4px_rgba(35,92,60,0.50),0_26px_52px_-10px_rgba(35,92,60,0.42)] md:shadow-[0_1px_0_0_rgba(255,255,255,0.28)_inset,0_2px_0_0_rgba(35,92,60,0.30),0_8px_20px_-4px_rgba(35,92,60,0.34),0_16px_34px_-10px_rgba(35,92,60,0.30)] md:hover:shadow-[0_1px_0_0_rgba(255,255,255,0.32)_inset,0_3px_0_0_rgba(35,92,60,0.36),0_12px_28px_-4px_rgba(35,92,60,0.42),0_22px_46px_-10px_rgba(35,92,60,0.36)] md:hover:-translate-y-[3px] hover:-translate-y-0.5 active:translate-y-px transition-all duration-300 ease-out"
                 >
-                  {isEN ? "All Hypnosis Session Topics" : "Alle Themen zu Hypnose-Sitzungen"}
-                  <span aria-hidden="true" className="text-white transition-transform group-hover:translate-x-0.5">→</span>
+                  {isEN ? "Hypnosis Intensive Sessions →" : "Hypnose Intensiv-Sitzungen →"}
                 </Link>
 
                 {/* Blue — Online Psychological Consultation */}
