@@ -277,8 +277,12 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
         <div className="container-main py-6 md:py-8 lg:py-10">
           {(eyebrow?.includes("Hypnose-Sitzungen") || eyebrow?.includes("Hypnosis Sessions")) && (
-            <Link to={getPath("sessionsOverview", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-3">
-              <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
+            <Link
+              to={getPath("sessionsOverview", language, country)}
+              className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-[#1B3A5C] bg-white/70 border border-[#1B3A5C]/15 rounded-lg px-3.5 py-2 hover:bg-white hover:border-[#1B3A5C]/25 hover:shadow-[0_2px_8px_rgba(27,58,92,0.08)] transition-all duration-200 mb-5"
+            >
+              <ArrowLeft className="w-5 h-5" />
+              {isEN ? "Back to overview of all topics" : "Zurück zur Übersicht aller Themen"}
             </Link>
           )}
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl shadow-[0_4px_20px_rgba(27,58,92,0.05)] p-5 md:p-7">
