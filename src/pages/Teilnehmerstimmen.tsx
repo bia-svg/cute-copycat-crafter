@@ -95,8 +95,8 @@ export default function Teilnehmerstimmen() {
       {/* Compact Intro */}
       <section className="bg-background pt-6 pb-4 md:pt-8 md:pb-5 border-b border-border/60">
         <div className="container-main max-w-3xl text-center">
-          <Link to={getPath("trainingOverview", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-3">
-            <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
+          <Link to={getPath("trainingOverview", language, country)} className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-[#1B3A5C] bg-white/70 border border-[#1B3A5C]/15 rounded-lg px-3.5 py-2 hover:bg-white hover:border-[#1B3A5C]/25 hover:shadow-[0_2px_8px_rgba(27,58,92,0.08)] transition-all duration-200 mb-5">
+            <ArrowLeft className="w-5 h-5" /> {isEN ? "View all seminars" : "Alle Seminare ansehen"}
           </Link>
           <h1 className="text-2xl md:text-3xl font-light text-foreground tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
             {isEN ? "Voices of Our Seminar Participants" : "Stimmen unserer Seminarteilnehmer"}
