@@ -89,18 +89,18 @@ export default function SitzungenUebersicht() {
 
       {/* Hero */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-3.5 md:py-5 lg:py-6">
-          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl px-5 py-4 md:px-7 md:py-5 shadow-sm text-center">
-            <p className="text-[11px] md:text-xs font-medium text-[#2E7D32] uppercase tracking-wider mb-1.5 md:mb-2">
+        <div className="container-main py-2 md:py-2.5">
+          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-2xl px-4 py-2.5 md:px-6 md:py-3 shadow-sm text-center">
+            <p className="text-[10px] md:text-[11px] font-medium text-[#2E7D32] uppercase tracking-wider mb-1">
               {isEN ? "Hypnosis Sessions" : "Hypnose-Sitzungen"}
             </p>
-            <h1 className="text-xl sm:text-2xl md:text-[1.7rem] font-light text-[#1B3A5C] leading-snug md:leading-[1.2] mb-2 md:mb-2.5 tracking-tight">
+            <h1 className="text-lg sm:text-xl md:text-[1.5rem] font-light text-[#1B3A5C] leading-tight mb-1 tracking-tight">
               {isEN ? "More Freedom. More Quality of Life." : "Mehr Freiheit. Mehr Lebensqualität."}
             </h1>
-            <p className="text-[13.5px] md:text-[14.5px] text-foreground/80 leading-snug md:leading-[1.55] max-w-2xl mx-auto font-medium">
+            <p className="text-[12.5px] md:text-[13.5px] text-foreground/80 leading-snug max-w-2xl mx-auto font-medium">
               {isEN
-                ? "Support for smoking cessation, weight reduction, anxiety, panic attacks, stress, burnout, trauma recovery and personal change."
-                : "Unterstützung bei Rauchstopp, Gewichtsreduktion, Ängsten, Panikattacken, Stress, Burnout, Traumabewältigung und persönlicher Veränderung."}
+                ? "Quit smoking · Overcome anxiety & panic · Lose weight · Reduce stress · Process trauma"
+                : "Rauchfrei werden · Ängste & Panik bewältigen · Abnehmen · Stress reduzieren · Trauma verarbeiten"}
             </p>
           </div>
         </div>
@@ -113,7 +113,8 @@ export default function SitzungenUebersicht() {
           .sitzungen-cards .md\\:hidden { display: none !important; }
           .sitzungen-cards .hidden.md\\:block { display: block !important; }
         `}</style>
-        <div className="container-main py-3.5 md:py-5">
+        <div className="container-main pt-1.5 pb-3.5 md:pt-2 md:pb-5">
+
           <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
             <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 text-center tracking-tight">
               {isEN ? "Our intensive individual sessions" : "Unsere intensiven Einzelsitzungen"}
