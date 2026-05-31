@@ -34,24 +34,24 @@ function CompactTopicCard({
       to={href}
       className="group block bg-gradient-to-b from-white to-[#FBFCFD] border border-[#1B3A5C]/18 rounded-xl overflow-hidden shadow-[0_0_0_1px_rgba(255,255,255,0.85)_inset,0_1px_2px_rgba(27,58,92,0.05),0_8px_22px_-8px_rgba(27,58,92,0.10),0_28px_60px_-28px_rgba(27,58,92,0.32)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.92)_inset,0_2px_5px_rgba(27,58,92,0.07),0_12px_28px_-8px_rgba(27,58,92,0.13),0_36px_76px_-28px_rgba(27,58,92,0.38)] hover:-translate-y-[2px] transition-all duration-300 ease-out"
     >
-      <div className="flex md:hidden items-center gap-3 p-3">
-        <div className="w-14 h-14 shrink-0 rounded-lg overflow-hidden">
+      <div className="flex md:hidden items-center gap-4 p-4">
+        <div className="w-20 h-20 shrink-0 rounded-xl overflow-hidden">
           <img
             src={image}
             alt={title}
-            width={56}
-            height={56}
-            sizes="56px"
+            width={80}
+            height={80}
+            sizes="80px"
             style={{ objectPosition: mobilePos }}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
             decoding="async"
           />
         </div>
-        <div className="flex flex-col min-w-0 flex-1">
-          <div className="flex items-center gap-1.5 text-primary mb-0.5">
+        <div className="flex flex-col justify-center min-w-0 flex-1">
+          <div className="flex items-center gap-1.5 text-primary mb-1">
             {icon}
-            <h3 className="font-semibold text-foreground text-[0.9rem] leading-snug">{title}</h3>
+            <h3 className="font-semibold text-foreground text-[0.95rem] leading-snug">{title}</h3>
           </div>
           <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#2E7D32] group-hover:text-[#1B5E20] group-hover:gap-1.5 transition-all">
             {ctaText} <ArrowRight className="w-3.5 h-3.5" />
