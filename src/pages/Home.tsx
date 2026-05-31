@@ -83,8 +83,8 @@ export default function Home() {
 
   /* ── Hero Slider ── */
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [loadedSlides, setLoadedSlides] = useState<Record<number, string>>({ 0: heroSession });
-  const [loadedMobile, setLoadedMobile] = useState<Record<number, string>>({ 0: heroSessionMobile });
+  const [loadedSlides, setLoadedSlides] = useState<Record<number, string>>({ 0: heroSession, 4: hero1 });
+  const [loadedMobile, setLoadedMobile] = useState<Record<number, string>>({ 0: heroSessionMobile, 4: hero1Mobile });
   const [showMediaLogos, setShowMediaLogos] = useState(false);
   const totalSlides = 5;
 
