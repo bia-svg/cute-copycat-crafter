@@ -5,9 +5,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { getPath } from "@/lib/routes";
-import { Cigarette, Brain, Scale, Flame, Users, HeartPulse } from "lucide-react";
-import ServiceCard from "@/components/ServiceCard";
+import { Cigarette, Brain, Scale, Flame, Users, HeartPulse, ArrowRight } from "lucide-react";
 import { CDN } from "@/lib/cdn";
+import type { ReactNode } from "react";
 
 export default function SitzungenUebersicht() {
   const { language, country } = useLanguage();
