@@ -15,65 +15,47 @@ export default function SitzungenUebersicht() {
 
   const items = [
     {
-      icon: <Cigarette className="w-6 h-6" />,
-      title: isEN ? "Stop Smoking" : "Raucherentwöhnung",
-      desc: isEN
-        ? "Become permanently smoke-free — without a constant inner struggle."
-        : "Dauerhaft rauchfrei werden — ohne ständigen inneren Kampf.",
+      icon: <Cigarette className="w-5 h-5" />,
+      title: isEN ? "Quit Smoking" : "Rauchfrei werden",
       href: getPath("smoking", language, country),
       image: CDN.stopSmoking,
       imagePosition: "center 45%",
     },
     {
-      icon: <Brain className="w-6 h-6" />,
-      title: isEN ? "Anxiety, Panic & Phobias" : "Ängste, Panik & Phobien",
-      desc: isEN
-        ? "Resolve fears, phobias and stressful thoughts at their root."
-        : "Ängste, Phobien und belastende Gedanken an der Wurzel lösen.",
+      icon: <Brain className="w-5 h-5" />,
+      title: isEN ? "Overcome Anxiety & Panic" : "Ängste & Panik bewältigen",
       href: getPath("anxiety", language, country),
       image: CDN.anxietyRelief,
       imagePosition: "center 40%",
     },
     {
-      icon: <Scale className="w-6 h-6" />,
-      title: isEN ? "Weight Loss & Eating Habits" : "Abnehmen & Essverhalten",
-      desc: isEN
-        ? "Sustainably change your eating behaviour — without dieting pressure."
-        : "Essverhalten und Gewicht nachhaltig verändern — ohne Diätdruck.",
+      icon: <Scale className="w-5 h-5" />,
+      title: isEN ? "Weight Reduction" : "Gewichtsreduktion",
       href: getPath("weight", language, country),
       image: CDN.weightLoss,
       imagePosition: "center 30%",
       mobileImagePosition: "25% center",
     },
     {
-      icon: <Flame className="w-6 h-6" />,
-      title: isEN ? "Manage Stress" : "Stress bewältigen",
-      desc: isEN
-        ? "Reduce stress, prevent burnout and find inner calm again."
-        : "Stress reduzieren, Burnout vorbeugen und innere Ruhe wiederfinden.",
+      icon: <Flame className="w-5 h-5" />,
+      title: isEN ? "Stress & Burnout" : "Stress & Burnout",
       href: getPath("stress", language, country),
       image: CDN.stressBurnout,
       imagePosition: "center 45%",
     },
     {
-      icon: <Users className="w-6 h-6" />,
-      title: isEN ? "Strengthen Children & Teens" : "Kinder & Jugendliche stärken",
-      desc: isEN
-        ? "Build focus, self-confidence and gently resolve fears."
-        : "Konzentration stärken, Selbstbewusstsein aufbauen und Ängste lösen.",
-      href: getPath("children", language, country),
-      image: CDN.childrenTeens,
-      imagePosition: "center 35%",
-    },
-    {
-      icon: <HeartPulse className="w-6 h-6" />,
-      title: isEN ? "Resolve Depression & Trauma" : "Depressionen & Trauma lösen",
-      desc: isEN
-        ? "Discover new perspectives and regain joy in life."
-        : "Neue Perspektiven entdecken und Lebensfreude zurückgewinnen.",
+      icon: <HeartPulse className="w-5 h-5" />,
+      title: isEN ? "Process Trauma" : "Trauma bewältigen",
       href: getPath("depression", language, country),
       image: CDN.depressionTrauma,
       imagePosition: "center 45%",
+    },
+    {
+      icon: <Users className="w-5 h-5" />,
+      title: isEN ? "Strengthen Children & Teens" : "Kinder & Jugendliche stärken",
+      href: getPath("children", language, country),
+      image: CDN.childrenTeens,
+      imagePosition: "center 35%",
     },
   ];
 
