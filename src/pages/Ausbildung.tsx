@@ -349,8 +349,12 @@ export default function Ausbildung() {
           <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[60%] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
         </div>
         <div className="container-main py-3 md:py-5 lg:py-7 relative">
-          <Link to={getPath("trainingOverview", language, country)} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary mb-3">
-            <ArrowLeft className="w-4 h-4" /> {isEN ? "Back to overview" : "Zurück zur Übersicht"}
+          <Link
+            to={getPath("trainingOverview", language, country)}
+            className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-[#1B3A5C] bg-white/70 border border-[#1B3A5C]/15 rounded-lg px-3.5 py-2 hover:bg-white hover:border-[#1B3A5C]/25 hover:shadow-[0_2px_8px_rgba(27,58,92,0.08)] transition-all duration-200 mb-5"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            {isEN ? "View all seminars" : "Alle Seminare ansehen"}
           </Link>
           <div className="grid grid-cols-1 md:grid-cols-[1.05fr_0.95fr] gap-3 md:gap-4 lg:gap-5 md:items-start items-center">
             <div className="contents md:block md:pl-8 lg:pl-16 xl:pl-24 2xl:pl-28">
