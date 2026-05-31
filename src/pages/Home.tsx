@@ -13,26 +13,28 @@ import { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import hero1 from "@/assets/david-office-portrait.webp";
 import hero1Mobile from "@/assets/david-office-portrait-mobile.webp";
+import heroSession from "@/assets/hero-1.webp";
+import heroSessionMobile from "@/assets/hero-1-mobile.webp";
 import davidSessionImg from "@/assets/david-portrait-outdoor.jpg";
 import corporateSuccessImg from "@/assets/corporate-success.jpg";
 import corporateResilienceImg from "@/assets/corporate-resilience.jpg";
 import corporateStressImg from "@/assets/corporate-stress.jpg";
 import corporateNonsmokerImg from "@/assets/corporate-nonsmoker.jpg";
 
-// Hero slider order (5 images): David am Schreibtisch (start) → others
+// Hero slider order (5 images): Hypnose-Sitzung → Seminar → Beratung → Sitzung Arm → Büro
 const heroDesktop = [
-  hero1,
+  heroSession,
   () => import("@/assets/hero-4.webp").then(m => m.default),
   () => import("@/assets/hero-5.webp").then(m => m.default),
-  () => import("@/assets/hero-1.webp").then(m => m.default),
   () => import("@/assets/hero-3.webp").then(m => m.default),
+  hero1,
 ];
 const heroMobile = [
-  hero1Mobile,
+  heroSessionMobile,
   () => import("@/assets/hero-4-mobile.webp").then(m => m.default),
   () => import("@/assets/hero-5-mobile.webp").then(m => m.default),
-  () => import("@/assets/hero-1-mobile.webp").then(m => m.default),
   () => import("@/assets/hero-3-mobile.webp").then(m => m.default),
+  hero1Mobile,
 ];
 import {
   Cigarette, Brain, Scale, Flame, HeartPulse, Users,
@@ -81,8 +83,8 @@ export default function Home() {
 
   /* ── Hero Slider ── */
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [loadedSlides, setLoadedSlides] = useState<Record<number, string>>({ 0: hero1 });
-  const [loadedMobile, setLoadedMobile] = useState<Record<number, string>>({ 0: hero1Mobile });
+  const [loadedSlides, setLoadedSlides] = useState<Record<number, string>>({ 0: heroSession });
+  const [loadedMobile, setLoadedMobile] = useState<Record<number, string>>({ 0: heroSessionMobile });
   const [showMediaLogos, setShowMediaLogos] = useState(false);
   const totalSlides = 5;
 
