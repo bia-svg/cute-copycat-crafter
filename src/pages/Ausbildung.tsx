@@ -38,7 +38,15 @@ export default function Ausbildung() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const c = params.get("country");
-    if (c === "ch" || c === "de") setActiveTab(c);
+    if (c === "ch" || c === "de") {
+      setActiveTab(c);
+    } else {
+      const segments = window.location.pathname.split("/");
+      const pathCountry = segments[2];
+      if (pathCountry === "ch" || pathCountry === "de") {
+        setActiveTab(pathCountry);
+      }
+    }
     if (window.location.hash === "#dates") {
       requestAnimationFrame(() => {
         document.getElementById("dates")?.scrollIntoView({ behavior: "smooth", block: "start" });
