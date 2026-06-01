@@ -12,41 +12,69 @@ import Home from "@/pages/Home";
 import Erstgespraech from "@/pages/Erstgespraech";
 import { SmokingPage, AnxietyPage, WeightPage, StressPage, DepressionPage, ChildrenPage, AdultsPage } from "@/pages/services/index";
 
+// Retry dynamic imports once, then force a one-time reload on stale chunk errors
+// (typical after a new deploy invalidates previously cached JS chunk filenames).
+function lazyWithRetry<T extends React.ComponentType<any>>(
+  factory: () => Promise<{ default: T }>
+) {
+  return lazy(async () => {
+    try {
+      return await factory();
+    } catch (err: any) {
+      const msg = String(err?.message || "");
+      const isChunkError =
+        /Importing a module script failed|Failed to fetch dynamically imported module|Loading chunk|ChunkLoadError/i.test(
+          msg
+        );
+      if (isChunkError && typeof window !== "undefined") {
+        const key = "dw_chunk_reloaded";
+        if (!sessionStorage.getItem(key)) {
+          sessionStorage.setItem(key, "1");
+          window.location.reload();
+          // Return a never-resolving promise so React doesn't render an error while reloading.
+          return new Promise(() => {}) as any;
+        }
+      }
+      throw err;
+    }
+  });
+}
+
 // Lazy-loaded: less-visited pages
-const UeberUns = lazy(() => import("@/pages/UeberUns"));
-const Kundenmeinungen = lazy(() => import("@/pages/Kundenmeinungen"));
-const Ausbildung = lazy(() => import("@/pages/Ausbildung"));
-const CityZurich = lazy(() => import("@/pages/CityZurich"));
-const CityAugsburg = lazy(() => import("@/pages/CityAugsburg"));
-const Standorte = lazy(() => import("@/pages/Standorte"));
-const TvMedien = lazy(() => import("@/pages/TvMedien"));
-const Erfolgsberichte = lazy(() => import("@/pages/Erfolgsberichte"));
-const Teilnehmerstimmen = lazy(() => import("@/pages/Teilnehmerstimmen"));
-const AusbildungsinstitutVideos = lazy(() => import("@/pages/AusbildungsinstitutVideos"));
-const SeminareUebersicht = lazy(() => import("@/pages/SeminareUebersicht"));
-const SitzungenUebersicht = lazy(() => import("@/pages/SitzungenUebersicht"));
-const Terminbestaetigung = lazy(() => import("@/pages/Terminbestaetigung"));
-const SeminarAnmeldung = lazy(() => import("@/pages/SeminarAnmeldung"));
-const OnlineBeratung = lazy(() => import("@/pages/OnlineBeratung"));
-const FirmenCoaching = lazy(() => import("@/pages/FirmenCoaching"));
-const Blog = lazy(() => import("@/pages/Blog"));
-const BlogPost = lazy(() => import("@/pages/BlogPost"));
-const Buch = lazy(() => import("@/pages/Buch"));
-const Dashboard = lazy(() => import("@/pages/Dashboard"));
-const WieFunktioniertHypnose = lazy(() => import("@/pages/WieFunktioniertHypnose"));
-const DashboardLogin = lazy(() => import("@/pages/DashboardLogin"));
-const DashboardResetPassword = lazy(() => import("@/pages/DashboardResetPassword"));
-const NotFound = lazy(() => import("@/pages/NotFound"));
-const Unsubscribe = lazy(() => import("@/pages/Unsubscribe"));
+const UeberUns = lazyWithRetry(() => import("@/pages/UeberUns"));
+const Kundenmeinungen = lazyWithRetry(() => import("@/pages/Kundenmeinungen"));
+const Ausbildung = lazyWithRetry(() => import("@/pages/Ausbildung"));
+const CityZurich = lazyWithRetry(() => import("@/pages/CityZurich"));
+const CityAugsburg = lazyWithRetry(() => import("@/pages/CityAugsburg"));
+const Standorte = lazyWithRetry(() => import("@/pages/Standorte"));
+const TvMedien = lazyWithRetry(() => import("@/pages/TvMedien"));
+const Erfolgsberichte = lazyWithRetry(() => import("@/pages/Erfolgsberichte"));
+const Teilnehmerstimmen = lazyWithRetry(() => import("@/pages/Teilnehmerstimmen"));
+const AusbildungsinstitutVideos = lazyWithRetry(() => import("@/pages/AusbildungsinstitutVideos"));
+const SeminareUebersicht = lazyWithRetry(() => import("@/pages/SeminareUebersicht"));
+const SitzungenUebersicht = lazyWithRetry(() => import("@/pages/SitzungenUebersicht"));
+const Terminbestaetigung = lazyWithRetry(() => import("@/pages/Terminbestaetigung"));
+const SeminarAnmeldung = lazyWithRetry(() => import("@/pages/SeminarAnmeldung"));
+const OnlineBeratung = lazyWithRetry(() => import("@/pages/OnlineBeratung"));
+const FirmenCoaching = lazyWithRetry(() => import("@/pages/FirmenCoaching"));
+const Blog = lazyWithRetry(() => import("@/pages/Blog"));
+const BlogPost = lazyWithRetry(() => import("@/pages/BlogPost"));
+const Buch = lazyWithRetry(() => import("@/pages/Buch"));
+const Dashboard = lazyWithRetry(() => import("@/pages/Dashboard"));
+const WieFunktioniertHypnose = lazyWithRetry(() => import("@/pages/WieFunktioniertHypnose"));
+const DashboardLogin = lazyWithRetry(() => import("@/pages/DashboardLogin"));
+const DashboardResetPassword = lazyWithRetry(() => import("@/pages/DashboardResetPassword"));
+const NotFound = lazyWithRetry(() => import("@/pages/NotFound"));
+const Unsubscribe = lazyWithRetry(() => import("@/pages/Unsubscribe"));
 
-const ErfolgsTraining = lazy(() => import("@/pages/corporate/ErfolgsTraining"));
-const ResilienzVerstaerken = lazy(() => import("@/pages/corporate/ResilienzVerstaerken"));
-const StressPraevention = lazy(() => import("@/pages/corporate/StressPraevention"));
-const NichtraucherSeminare = lazy(() => import("@/pages/corporate/NichtraucherSeminare"));
+const ErfolgsTraining = lazyWithRetry(() => import("@/pages/corporate/ErfolgsTraining"));
+const ResilienzVerstaerken = lazyWithRetry(() => import("@/pages/corporate/ResilienzVerstaerken"));
+const StressPraevention = lazyWithRetry(() => import("@/pages/corporate/StressPraevention"));
+const NichtraucherSeminare = lazyWithRetry(() => import("@/pages/corporate/NichtraucherSeminare"));
 
-const LegalModule = lazy(() => import("@/pages/Legal").then(m => ({ default: m.Impressum })));
-const DatenschutzPage = lazy(() => import("@/pages/Legal").then(m => ({ default: m.Datenschutz })));
-const AGBPage = lazy(() => import("@/pages/Legal").then(m => ({ default: m.AGB })));
+const LegalModule = lazyWithRetry(() => import("@/pages/Legal").then(m => ({ default: m.Impressum })));
+const DatenschutzPage = lazyWithRetry(() => import("@/pages/Legal").then(m => ({ default: m.Datenschutz })));
+const AGBPage = lazyWithRetry(() => import("@/pages/Legal").then(m => ({ default: m.AGB })));
 
 function LegacyRedirect() {
   const location = useLocation();
