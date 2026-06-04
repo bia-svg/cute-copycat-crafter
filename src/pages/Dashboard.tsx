@@ -345,6 +345,58 @@ export default function Dashboard() {
                 <MetricCard title="WhatsApp Clicks" value={whatsappClicks.length} icon={MessageCircle} color="text-green-600" />
               </div>
 
+              {/* Monthly Session Confirmations — primary KPI chart */}
+              {(() => {
+                const byMonth: Record<string, { month: string; confirmations: number; freeConsult: number }> = {};
+                leads.filter(l => l.form_type === "session").forEach(l => {
+                  const key = format(startOfMonth(new Date(l.created_at)), "yyyy-MM");
+                  if (!byMonth[key]) byMonth[key] = { month: key, confirmations: 0, freeConsult: 0 };
+                  if ((l.concern || "").toLowerCase().includes("terminbestätigung")) byMonth[key].confirmations++;
+                  else byMonth[key].freeConsult++;
+                });
+                const monthly = Object.values(byMonth).sort((a, b) => a.month.localeCompare(b.month));
+                const totalConfirmations = monthly.reduce((s, m) => s + m.confirmations, 0);
+                return (
+                  <Card className="bg-white border border-gray-200 shadow-sm">
+                    <CardHeader className="pb-2">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                          <CalendarCheck className="w-4 h-4 text-emerald-600" />
+                          Session Confirmations Per Month (Terminbestätigung)
+                        </CardTitle>
+                        <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">
+                          Total: {totalConfirmations}
+                        </Badge>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      {monthly.length === 0 ? (
+                        <p className="text-gray-400 text-sm py-8 text-center">No session data yet.</p>
+                      ) : (
+                        <ChartContainer config={{
+                          confirmations: { label: "Confirmed Sessions", color: "#10b981" },
+                          freeConsult: { label: "Free Consultations", color: "#94a3b8" },
+                        }} className="h-[260px] w-full">
+                          <BarChart data={monthly} barGap={6}>
+                            <CartesianGrid stroke="#f3f4f6" strokeDasharray="3 3" />
+                            <XAxis
+                              dataKey="month"
+                              tick={{ fill: "#6b7280", fontSize: 11 }}
+                              tickFormatter={v => format(parseISO(v + "-01"), "MMM yy")}
+                            />
+                            <YAxis tick={{ fill: "#9ca3af", fontSize: 10 }} allowDecimals={false} />
+                            <ChartTooltip content={<ChartTooltipContent />} />
+                            <Legend />
+                            <Bar dataKey="freeConsult" fill="#94a3b8" radius={[3, 3, 0, 0]} name="Free Consultations" />
+                            <Bar dataKey="confirmations" fill="#10b981" radius={[3, 3, 0, 0]} name="Confirmed Sessions" />
+                          </BarChart>
+                        </ChartContainer>
+                      )}
+                    </CardContent>
+                  </Card>
+                );
+              })()}
+
               {/* Traffic by Day — Channels + Total */}
               <Card className="bg-white border border-gray-200 shadow-sm">
                 <CardHeader className="pb-2">
