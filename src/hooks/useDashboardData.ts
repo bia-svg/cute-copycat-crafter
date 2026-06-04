@@ -227,12 +227,12 @@ export function useDashboardData(): DashboardState {
           },
         });
         if (fnError) throw fnError;
-        // Filter out test / placeholder seminar pre-registrations so they don't inflate counts
+        // Exclude only David's own test registration; keep pre-registered entries
         const allLeads = (data?.leads as LeadRecord[]) || [];
         const cleanLeads = allLeads.filter(l => {
           const em = (l.email || "").toLowerCase();
-          if (em === "pre-registered@example.com") return false;
-          if ((l.name || "").toLowerCase() === "pre-registered") return false;
+          const notes = (l.notes || "").toLowerCase();
+          if (em === "hypnoseworld@hotmail.de" && notes.includes("test")) return false;
           return true;
         });
         setLeads(cleanLeads);
