@@ -306,17 +306,14 @@ export default function Terminbestaetigung() {
               <Label className="text-foreground font-semibold">
                 {isEN ? "Country" : "Land"} <span className="text-destructive">*</span>
               </Label>
-              <select
+              <Input
                 name="country"
+                placeholder={isEN ? "Country" : "Land"}
                 value={selectedCountry}
-                onChange={(e) => setSelectedCountry(e.target.value as "DE" | "CH" | "AT" | "")}
-                className="mt-2 h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 appearance-none cursor-pointer"
-              >
-                <option value="">{isEN ? "Please select" : "Bitte wählen"}</option>
-                <option value="DE">{isEN ? "Germany" : "Deutschland"}</option>
-                <option value="CH">{isEN ? "Switzerland" : "Schweiz"}</option>
-                <option value="AT">{isEN ? "Austria" : "Österreich"}</option>
-              </select>
+                onChange={(e) => setSelectedCountry(e.target.value)}
+                className="mt-2"
+                required
+              />
             </div>
           </div>
 
