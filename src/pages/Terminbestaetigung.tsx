@@ -96,8 +96,7 @@ export default function Terminbestaetigung() {
 
     const referrerPage = document.referrer ? new URL(document.referrer).pathname : sessionStorage.getItem("dw_prev_page") || null;
 
-    const countryNameMap: Record<string, string> = { DE: "Deutschland", CH: "Schweiz", AT: "Österreich" };
-    const selectedCountryName = countryNameMap[selectedCountry] || selectedCountry;
+    const selectedCountryName = selectedCountry.trim();
 
     const leadData = {
       name: `${firstName} ${lastName}`,
