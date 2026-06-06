@@ -226,11 +226,9 @@ export default function Terminbestaetigung() {
             <div className="grid grid-cols-2 gap-4 mt-2">
               <div>
                 <Input name="firstName" placeholder={isEN ? "First Name" : "Vorname"} required />
-                <p className="text-xs text-muted-foreground mt-1">{isEN ? "First Name" : "Vorname"}</p>
               </div>
               <div>
                 <Input name="lastName" placeholder={isEN ? "Last Name" : "Nachname"} required />
-                <p className="text-xs text-muted-foreground mt-1">{isEN ? "Last Name" : "Nachname"}</p>
               </div>
             </div>
           </div>
