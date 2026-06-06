@@ -33,7 +33,7 @@ export default function Terminbestaetigung() {
   const [sessionDay, setSessionDay] = useState("");
   const [sessionMonth, setSessionMonth] = useState("");
   const [sessionYear, setSessionYear] = useState("");
-  const [selectedCountry, setSelectedCountry] = useState<"DE" | "CH" | "AT" | "">("");
+  const [selectedCountry, setSelectedCountry] = useState<string>("");
 
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -67,7 +67,7 @@ export default function Terminbestaetigung() {
     if (!street) return fail('input[name="street"]', 'Bitte geben Sie Strasse und Hausnummer ein.', 'Please enter your street and number.');
     if (!postalCode) return fail('input[name="postalCode"]', 'Bitte geben Sie die Postleitzahl ein.', 'Please enter your postal code.');
     if (!city) return fail('input[name="city"]', 'Bitte geben Sie den Ort ein.', 'Please enter your city.');
-    if (!selectedCountry) return fail('select[name="country"]', 'Bitte wählen Sie Ihr Land aus.', 'Please select your country.');
+    if (!selectedCountry.trim()) return fail('input[name="country"]', 'Bitte geben Sie Ihr Land ein.', 'Please enter your country.');
 
     if (!sessionDate) return fail('select', 'Bitte geben Sie das Sitzungsdatum ein.', 'Please enter the session date.');
     if (!sessionTime) return fail('input[name="sessionTime"]', 'Bitte geben Sie die Sitzungszeit ein.', 'Please enter the session time.');
@@ -96,8 +96,7 @@ export default function Terminbestaetigung() {
 
     const referrerPage = document.referrer ? new URL(document.referrer).pathname : sessionStorage.getItem("dw_prev_page") || null;
 
-    const countryNameMap: Record<string, string> = { DE: "Deutschland", CH: "Schweiz", AT: "Österreich" };
-    const selectedCountryName = countryNameMap[selectedCountry] || selectedCountry;
+    const selectedCountryName = selectedCountry.trim();
 
     const leadData = {
       name: `${firstName} ${lastName}`,
@@ -307,17 +306,14 @@ export default function Terminbestaetigung() {
               <Label className="text-foreground font-semibold">
                 {isEN ? "Country" : "Land"} <span className="text-destructive">*</span>
               </Label>
-              <select
+              <Input
                 name="country"
+                placeholder={isEN ? "Country" : "Land"}
                 value={selectedCountry}
-                onChange={(e) => setSelectedCountry(e.target.value as "DE" | "CH" | "AT" | "")}
-                className="mt-2 h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 appearance-none cursor-pointer"
-              >
-                <option value="">{isEN ? "Please select" : "Bitte wählen"}</option>
-                <option value="DE">{isEN ? "Germany" : "Deutschland"}</option>
-                <option value="CH">{isEN ? "Switzerland" : "Schweiz"}</option>
-                <option value="AT">{isEN ? "Austria" : "Österreich"}</option>
-              </select>
+                onChange={(e) => setSelectedCountry(e.target.value)}
+                className="mt-2"
+                required
+              />
             </div>
           </div>
 
