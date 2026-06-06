@@ -300,16 +300,15 @@ export function useDashboardData(): DashboardState {
 
     // Fetch long-term SEO snapshots (history beyond GSC's 16-month window)
     try {
-      const { data, error: snapErr } = await supabase
-        .from("seo_snapshots")
-        .select("id, snapshot_date, period_start, period_end, clicks, impressions, ctr, position, keywords_top3, keywords_4_10, keywords_11_20, keywords_21_plus, total_keywords")
-        .order("snapshot_date", { ascending: true });
+      const { data, error: snapErr } = await supabase.functions.invoke("fetch-seo-snapshots", { body: {} });
       if (snapErr) throw snapErr;
-      setSeoSnapshots((data as SEOSnapshot[]) || []);
+      if (data?.error) throw new Error(data.error);
+      setSeoSnapshots((data?.snapshots as SEOSnapshot[]) || []);
     } catch (err) {
       console.error("SEO snapshots fetch failed:", err);
       setSeoSnapshots([]);
     }
+
 
     setLoading(false);
   }, [dateRange]);
