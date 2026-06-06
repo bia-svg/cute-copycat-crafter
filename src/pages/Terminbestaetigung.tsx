@@ -289,8 +289,8 @@ export default function Terminbestaetigung() {
             </div>
           </div>
 
-          {/* ZIP & City */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* ZIP, City & Country */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
               <Label className="text-foreground font-semibold">
                 {isEN ? "Postal Code" : "Postleitzahl"} <span className="text-destructive">*</span>
@@ -303,7 +303,24 @@ export default function Terminbestaetigung() {
               </Label>
               <Input name="city" className="mt-2" required />
             </div>
+            <div>
+              <Label className="text-foreground font-semibold">
+                {isEN ? "Country" : "Land"} <span className="text-destructive">*</span>
+              </Label>
+              <select
+                name="country"
+                value={selectedCountry}
+                onChange={(e) => setSelectedCountry(e.target.value as "DE" | "CH" | "AT" | "")}
+                className="mt-2 h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 appearance-none cursor-pointer"
+              >
+                <option value="">{isEN ? "Please select" : "Bitte wählen"}</option>
+                <option value="DE">{isEN ? "Germany" : "Deutschland"}</option>
+                <option value="CH">{isEN ? "Switzerland" : "Schweiz"}</option>
+                <option value="AT">{isEN ? "Austria" : "Österreich"}</option>
+              </select>
+            </div>
           </div>
+
 
           {/* Session date & time */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
