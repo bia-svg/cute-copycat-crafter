@@ -375,19 +375,19 @@ export default function Terminbestaetigung() {
               <div className="flex items-start gap-3">
                 <RadioGroupItem value="augsburg" id="loc-augsburg" className="mt-0.5" />
                 <Label htmlFor="loc-augsburg" className="text-sm text-foreground font-normal cursor-pointer leading-snug">
-                  Regus: Viktoria Str 3b. 2 Floor 86150 Augsburg (Am Hauptbahnhof) DE
+                  Regus: Viktoria Str. 3b, 2. Floor, 86150 Augsburg (Am Hauptbahnhof) DE
                 </Label>
               </div>
               <div className="flex items-start gap-3">
                 <RadioGroupItem value="eschenbach" id="loc-eschenbach" className="mt-0.5" />
                 <Label htmlFor="loc-eschenbach" className="text-sm text-foreground font-normal cursor-pointer leading-snug">
-                  Fit*gsund: Churzhaslen 3. 8733 Eschenbach. (Am Zürichsee) CH
+                  Fit*gsund: Churzhaslen 3, 8733 Eschenbach (Am Zürichsee) CH
                 </Label>
               </div>
               <div className="flex items-start gap-3">
                 <RadioGroupItem value="zurich" id="loc-zurich" className="mt-0.5" />
                 <Label htmlFor="loc-zurich" className="text-sm text-foreground font-normal cursor-pointer leading-snug">
-                  Bei 5 Elements TCM GmbH, Beim Löwenplatz Usteristrasse 23, 8001 Zürich Schweiz 🇨🇭
+                  5 Elements TCM GmbH, Beim Löwenplatz, Usteristrasse 23, 8001 Zürich CH
                 </Label>
               </div>
             </RadioGroup>
