@@ -420,7 +420,7 @@ export default function Terminbestaetigung() {
             <Label className="text-foreground font-semibold">
               {isEN ? "Notes about the appointment" : "Stichpunkte zum Termin"}
             </Label>
-            <Textarea name="notes" className="mt-2" rows={4} />
+            <Textarea name="notes" className="mt-2" rows={4} placeholder={isEN ? "Brief description of your topic" : "Kurze Beschreibung zu Ihrer Thematik"} />
           </div>
 
           {/* DSGVO Consent */}
