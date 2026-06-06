@@ -418,9 +418,9 @@ export default function Terminbestaetigung() {
           {/* Notes */}
           <div>
             <Label className="text-foreground font-semibold">
-              {isEN ? "Notes about the appointment" : "Stichpunkte zum Termin"}
+              {isEN ? "Notes about the appointment" : "Stichpunkte zum Termin"} <span className="text-destructive">*</span>
             </Label>
-            <Textarea name="notes" className="mt-2" rows={4} placeholder={isEN ? "Brief description of your topic" : "Kurze Beschreibung zu Ihrer Thematik"} />
+            <Textarea name="notes" className="mt-2" rows={4} required placeholder={isEN ? "Brief description of your topic" : "Kurze Beschreibung zu Ihrer Thematik"} />
           </div>
 
           {/* DSGVO Consent */}
