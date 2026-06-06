@@ -74,7 +74,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       form_type: "session" as const,
       postal_code: postalCode || null,
       city: null,
-      country: country.toUpperCase(),
+      country: null,
       language,
       source,
       utm_source: utmSource,
@@ -86,6 +86,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
       notes: [bestTime && `Best time: ${bestTime}`, message].filter(Boolean).join(" | ") || null,
       user_agent: navigator.userAgent || null,
     };
+
 
     try {
       const { error: dbError } = await supabase.from("leads").insert(leadData as any);
@@ -112,7 +113,6 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
         concern: defaultConcern || "general",
         formType: "contact",
         city: undefined,
-        country: country.toUpperCase(),
         language: country === "int" ? "en" : "de",
         notes: leadData.notes || undefined,
         source,
@@ -122,8 +122,8 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
         bestTime: bestTime || undefined,
         message: message || undefined,
         postalCode: postalCode || undefined,
-        countryName: country === "ch" ? "Schweiz" : country === "int" ? "International" : "Deutschland",
       }).catch(err => console.error("Email error:", err));
+
     } catch (err) {
       console.error("Lead save error:", err);
       toast.error(isEN ? "An error occurred. Please try again." : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");

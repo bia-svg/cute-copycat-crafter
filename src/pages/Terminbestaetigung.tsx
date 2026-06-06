@@ -33,8 +33,10 @@ export default function Terminbestaetigung() {
   const [sessionDay, setSessionDay] = useState("");
   const [sessionMonth, setSessionMonth] = useState("");
   const [sessionYear, setSessionYear] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState<"DE" | "CH" | "AT" | "">("");
 
   const [phoneNumber, setPhoneNumber] = useState("");
+
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -65,6 +67,8 @@ export default function Terminbestaetigung() {
     if (!street) return fail('input[name="street"]', 'Bitte geben Sie Strasse und Hausnummer ein.', 'Please enter your street and number.');
     if (!postalCode) return fail('input[name="postalCode"]', 'Bitte geben Sie die Postleitzahl ein.', 'Please enter your postal code.');
     if (!city) return fail('input[name="city"]', 'Bitte geben Sie den Ort ein.', 'Please enter your city.');
+    if (!selectedCountry) return fail('select[name="country"]', 'Bitte wählen Sie Ihr Land aus.', 'Please select your country.');
+
     if (!sessionDate) return fail('select', 'Bitte geben Sie das Sitzungsdatum ein.', 'Please enter the session date.');
     if (!sessionTime) return fail('input[name="sessionTime"]', 'Bitte geben Sie die Sitzungszeit ein.', 'Please enter the session time.');
     if (!location) return fail('[role="radiogroup"]', 'Bitte wählen Sie den Ort der Sitzung aus.', 'Please select the session location.');
@@ -92,6 +96,9 @@ export default function Terminbestaetigung() {
 
     const referrerPage = document.referrer ? new URL(document.referrer).pathname : sessionStorage.getItem("dw_prev_page") || null;
 
+    const countryNameMap: Record<string, string> = { DE: "Deutschland", CH: "Schweiz", AT: "Österreich" };
+    const selectedCountryName = countryNameMap[selectedCountry] || selectedCountry;
+
     const leadData = {
       name: `${firstName} ${lastName}`,
       email,
@@ -99,7 +106,7 @@ export default function Terminbestaetigung() {
       form_type: "session" as const,
       postal_code: postalCode,
       city,
-      country: country.toUpperCase(),
+      country: selectedCountry,
       language: language,
       source,
       utm_source: utmSource,
@@ -110,7 +117,7 @@ export default function Terminbestaetigung() {
       tracking_code: referrerPage,
       concern: "Terminbestätigung / Sitzung",
       notes: [
-        `Adresse: ${street}, ${postalCode} ${city}`,
+        `Adresse: ${street}, ${postalCode} ${city}, ${selectedCountryName}`,
         dobStr && `Geburtsdatum: ${dobStr}`,
         `Sitzung: ${sessionDate} ${sessionTime}`,
         `Ort: ${locationLabels[location] || location}`,
@@ -145,24 +152,25 @@ export default function Terminbestaetigung() {
         concern: "Terminbestätigung / Sitzung",
         formType: "session",
         city,
-        country: country.toUpperCase(),
+        country: selectedCountry,
         language: country === "int" ? "en" : "de",
         notes: leadData.notes,
         source,
         utmSource,
         utmMedium,
         utmCampaign,
-        address: `${street}, ${postalCode} ${city}`,
+        address: `${street}, ${postalCode} ${city}, ${selectedCountryName}`,
         street,
         postalCode,
         cityName: city,
-        countryName: country === "ch" ? "Schweiz" : country === "int" ? "International" : "Deutschland",
+        countryName: selectedCountryName,
         sessionDate: sessionDate,
         sessionTime: sessionTime,
         sessionLocation: locationLabelsEmail[location] || location,
         dateOfBirth: dobStr || undefined,
         message: notes || undefined,
       }).catch(err => console.error("Email error:", err));
+
     } catch (err) {
       console.error("Lead save error:", err);
       toast.error(isEN ? "An error occurred. Please try again." : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
@@ -281,8 +289,8 @@ export default function Terminbestaetigung() {
             </div>
           </div>
 
-          {/* ZIP & City */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* ZIP, City & Country */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
               <Label className="text-foreground font-semibold">
                 {isEN ? "Postal Code" : "Postleitzahl"} <span className="text-destructive">*</span>
@@ -295,7 +303,24 @@ export default function Terminbestaetigung() {
               </Label>
               <Input name="city" className="mt-2" required />
             </div>
+            <div>
+              <Label className="text-foreground font-semibold">
+                {isEN ? "Country" : "Land"} <span className="text-destructive">*</span>
+              </Label>
+              <select
+                name="country"
+                value={selectedCountry}
+                onChange={(e) => setSelectedCountry(e.target.value as "DE" | "CH" | "AT" | "")}
+                className="mt-2 h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 appearance-none cursor-pointer"
+              >
+                <option value="">{isEN ? "Please select" : "Bitte wählen"}</option>
+                <option value="DE">{isEN ? "Germany" : "Deutschland"}</option>
+                <option value="CH">{isEN ? "Switzerland" : "Schweiz"}</option>
+                <option value="AT">{isEN ? "Austria" : "Österreich"}</option>
+              </select>
+            </div>
           </div>
+
 
           {/* Session date & time */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
