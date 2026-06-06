@@ -67,7 +67,7 @@ export default function Terminbestaetigung() {
     if (!street) return fail('input[name="street"]', 'Bitte geben Sie Strasse und Hausnummer ein.', 'Please enter your street and number.');
     if (!postalCode) return fail('input[name="postalCode"]', 'Bitte geben Sie die Postleitzahl ein.', 'Please enter your postal code.');
     if (!city) return fail('input[name="city"]', 'Bitte geben Sie den Ort ein.', 'Please enter your city.');
-    if (!selectedCountry) return fail('select[name="country"]', 'Bitte wählen Sie Ihr Land aus.', 'Please select your country.');
+    if (!selectedCountry.trim()) return fail('input[name="country"]', 'Bitte geben Sie Ihr Land ein.', 'Please enter your country.');
 
     if (!sessionDate) return fail('select', 'Bitte geben Sie das Sitzungsdatum ein.', 'Please enter the session date.');
     if (!sessionTime) return fail('input[name="sessionTime"]', 'Bitte geben Sie die Sitzungszeit ein.', 'Please enter the session time.');
