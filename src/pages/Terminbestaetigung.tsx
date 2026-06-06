@@ -306,7 +306,6 @@ export default function Terminbestaetigung() {
               </Label>
               <Input
                 name="country"
-                placeholder={isEN ? "Country" : "Land"}
                 value={selectedCountry}
                 onChange={(e) => setSelectedCountry(e.target.value)}
                 className="mt-2"
@@ -362,7 +361,7 @@ export default function Terminbestaetigung() {
               <Label className="text-foreground font-semibold">
                 {isEN ? "Session: Time from – to?" : "Sitzung: Uhrzeit von bis?"} <span className="text-destructive">*</span>
               </Label>
-              <Input name="sessionTime" className="mt-2" placeholder={isEN ? "e.g. 10:00 – 12:00" : "z.B. 10:00 – 12:00"} required />
+              <Input name="sessionTime" className="mt-2" required />
             </div>
           </div>
 
