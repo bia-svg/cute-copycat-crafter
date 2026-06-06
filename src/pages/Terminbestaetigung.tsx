@@ -33,7 +33,7 @@ export default function Terminbestaetigung() {
   const [sessionDay, setSessionDay] = useState("");
   const [sessionMonth, setSessionMonth] = useState("");
   const [sessionYear, setSessionYear] = useState("");
-  const [selectedCountry, setSelectedCountry] = useState<"DE" | "CH" | "AT" | "">("");
+  const [selectedCountry, setSelectedCountry] = useState<string>("");
 
   const [phoneNumber, setPhoneNumber] = useState("");
 
