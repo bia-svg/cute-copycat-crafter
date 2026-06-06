@@ -78,6 +78,7 @@ export default function Terminbestaetigung() {
     if (!dsgvoChecked) return fail('#dsgvo', 'Bitte akzeptieren Sie die Datenschutzerklärung.', 'Please accept the privacy policy.');
     if (!agbChecked) return fail('#agb', 'Bitte akzeptieren Sie die AGB.', 'Please accept the terms and conditions.');
     if (!paymentChecked) return fail('#payment', 'Bitte bestätigen Sie die Zahlungsbedingung.', 'Please confirm the payment condition.');
+    if (!notes) return fail('textarea[name="notes"]', 'Bitte geben Sie kurze Stichpunkte zum Termin ein.', 'Please enter a brief note about the appointment.');
 
     setLoading(true);
 
@@ -418,9 +419,9 @@ export default function Terminbestaetigung() {
           {/* Notes */}
           <div>
             <Label className="text-foreground font-semibold">
-              {isEN ? "Notes about the appointment" : "Stichpunkte zum Termin"}
+              {isEN ? "Notes about the appointment" : "Stichpunkte zum Termin"} <span className="text-destructive">*</span>
             </Label>
-            <Textarea name="notes" className="mt-2" rows={4} placeholder={isEN ? "Brief description of your topic" : "Kurze Beschreibung zu Ihrer Thematik"} />
+            <Textarea name="notes" className="mt-2" rows={4} required placeholder={isEN ? "Brief description of your topic" : "Kurze Beschreibung zu Ihrer Thematik"} />
           </div>
 
           {/* DSGVO Consent */}
