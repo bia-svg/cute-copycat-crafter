@@ -78,6 +78,7 @@ export default function Terminbestaetigung() {
     if (!dsgvoChecked) return fail('#dsgvo', 'Bitte akzeptieren Sie die Datenschutzerklärung.', 'Please accept the privacy policy.');
     if (!agbChecked) return fail('#agb', 'Bitte akzeptieren Sie die AGB.', 'Please accept the terms and conditions.');
     if (!paymentChecked) return fail('#payment', 'Bitte bestätigen Sie die Zahlungsbedingung.', 'Please confirm the payment condition.');
+    if (!notes) return fail('textarea[name="notes"]', 'Bitte geben Sie kurze Stichpunkte zum Termin ein.', 'Please enter a brief note about the appointment.');
 
     setLoading(true);
 
