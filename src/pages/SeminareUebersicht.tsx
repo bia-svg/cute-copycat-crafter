@@ -22,7 +22,7 @@ export default function SeminareUebersicht() {
     {
       icon: <GraduationCap className="w-6 h-6" />,
       title: "Aktiv-Hypnose® Therapeut",
-      desc: isEN ? "6-Day intensive training" : "6-Tage Intensiv-Ausbildung",
+      desc: isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung",
       href: getPath("training", language, country),
       image: CDN.trainingSeminar,
       imagePosition: "center 45%",
@@ -31,7 +31,7 @@ export default function SeminareUebersicht() {
     {
       icon: <MessageSquare className="w-6 h-6" />,
       title: isEN ? "Participant Voices" : "Teilnehmerstimmen",
-      desc: isEN ? "Experiences of our seminar participants" : "Erfahrungen unserer Seminarteilnehmer",
+      desc: isEN ? "Experiences of our graduates" : "Erfahrungen unserer Absolventen",
       href: `/${language}/${country}/${isEN ? "participant-voices" : "teilnehmerstimmen"}`,
       image: sessionImg,
       imagePosition: "center 40%",
@@ -39,7 +39,7 @@ export default function SeminareUebersicht() {
     {
       icon: <Calendar className="w-6 h-6" />,
       title: isEN ? "Day Seminar" : "Tagesseminar",
-      desc: isEN ? "Another seminar coming soon" : "Hier kommt später ein weiteres Seminar",
+      desc: isEN ? "In Preparation" : "In Vorbereitung",
       href: "#",
       image: heroImg,
       imagePosition: "center 45%",
@@ -47,8 +47,8 @@ export default function SeminareUebersicht() {
     },
     {
       icon: <PlayCircle className="w-6 h-6" />,
-      title: isEN ? "Hypnosis Institute" : "Hypnoseinstitut",
-      desc: isEN ? "Insights into the training" : "Einblicke in die Ausbildung",
+      title: isEN ? "Videos & Insights" : "Videos & Einblicke",
+      desc: isEN ? "Training and Practice" : "Ausbildung und Praxis",
       href: `/${language}/${country}/${isEN ? "training-institute-videos" : "ausbildungsinstitut-videos"}`,
       image: officeImg,
       imagePosition: "center 45%",
