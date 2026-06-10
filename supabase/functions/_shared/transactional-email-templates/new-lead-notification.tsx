@@ -53,14 +53,31 @@ interface NewLeadProps {
 function normalizeWhatsAppNumber(raw?: string, country?: string): string | null {
   if (!raw) return null
   let n = raw.trim().replace(/[^\d+]/g, '')
-  if (n.startsWith('+')) n = n.slice(1)
-  else if (n.startsWith('00')) n = n.slice(2)
-  if (n.startsWith('0')) {
+
+  // 1) Already international: "+49…" or "0049…" → strip prefix, keep country code
+  if (n.startsWith('+')) {
+    n = n.slice(1)
+  } else if (n.startsWith('00')) {
+    n = n.slice(2)
+  } else if (n.startsWith('0')) {
+    // 2) National format with leading 0 → use country as fallback to add country code
     const c = (country || '').toLowerCase()
-    const cc = c === 'de' ? '49' : c === 'ch' ? '41' : c === 'at' ? '43' : null
+    const ccMap: Record<string, string> = {
+      de: '49', ch: '41', at: '43', gb: '44', uk: '44',
+      es: '34', fr: '33', it: '39', nl: '31', be: '32',
+      lu: '352', li: '423', pt: '351', pl: '48', cz: '420',
+      dk: '45', se: '46', no: '47', fi: '358', ie: '353',
+      us: '1', ca: '1', ae: '971', sa: '966', tr: '90',
+      br: '55', mx: '52', ar: '54', au: '61', nz: '64',
+      za: '27', jp: '81', cn: '86', in: '91', sg: '65',
+      hk: '852', th: '66', il: '972',
+    }
+    const cc = ccMap[c]
     if (!cc) return null
     n = cc + n.slice(1)
   }
+  // 3) Otherwise assume the user already typed a full international number without "+"
+
   if (!/^\d{8,15}$/.test(n)) return null
   return n
 }
