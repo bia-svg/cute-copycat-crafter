@@ -244,12 +244,14 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
 
           {/* Lead Action Buttons */}
           {props.phone && (() => {
+            const rawDigits = props.phone.replace(/[^\d+]/g, '')
             const waNumber = normalizeWhatsAppNumber(props.phone, props.country)
+              || rawDigits.replace(/^\+/, '') // Fallback: never hide the WhatsApp button
             const firstName = props.name?.split(' ')[0] || 'Lead'
             return (
               <Section style={{ textAlign: 'center' as const, margin: '16px 0' }}>
                 <Button
-                  href={`tel:${props.phone.replace(/\s/g, '')}`}
+                  href={`tel:${rawDigits}`}
                   style={callButton}
                 >
                   {`📞 Call ${firstName}`}
