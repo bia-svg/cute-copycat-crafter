@@ -461,10 +461,10 @@ export default function Home() {
                   {isEN ? "Hypnosis Intensive Sessions →" : "Hypnose Intensiv-Sitzungen →"}
                 </Link>
 
-                {/* Anthracite — Seminars & Trainings */}
+                {/* Petrol — Seminars & Trainings */}
                 <Link
                   to={getPath("trainingOverview", language, country)}
-                  className="group inline-flex items-center justify-center gap-2 w-full px-5 md:px-7 py-2 md:py-2.5 mt-1.5 md:mt-1 rounded-2xl bg-gradient-to-b from-[#3C3C3C] to-[#242424] hover:from-[#484848] hover:to-[#2E2E2E] text-white font-semibold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#1A1A1A]/60 shadow-[0_1px_0_0_rgba(255,255,255,0.20)_inset,0_2px_0_0_rgba(18,18,18,0.40),0_8px_20px_-4px_rgba(18,18,18,0.42),0_16px_36px_-10px_rgba(18,18,18,0.38)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_3px_0_0_rgba(18,18,18,0.46),0_12px_28px_-4px_rgba(18,18,18,0.50),0_22px_44px_-10px_rgba(18,18,18,0.46)] md:shadow-[0_1px_0_0_rgba(255,255,255,0.20)_inset,0_2px_0_0_rgba(18,18,18,0.36),0_6px_16px_-4px_rgba(18,18,18,0.38),0_12px_28px_-10px_rgba(18,18,18,0.34)] md:hover:shadow-[0_1px_0_0_rgba(255,255,255,0.25)_inset,0_3px_0_0_rgba(18,18,18,0.42),0_10px_24px_-4px_rgba(18,18,18,0.44),0_18px_38px_-10px_rgba(18,18,18,0.40)] hover:-translate-y-0.5 active:translate-y-px transition-all duration-300 ease-out"
+                  className="group inline-flex items-center justify-center gap-2 w-full px-5 md:px-7 py-2 md:py-2.5 mt-1.5 md:mt-1 rounded-2xl bg-gradient-to-b from-[#2A7373] to-[#1E5555] hover:from-[#318080] hover:to-[#236060] text-white font-semibold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#164040]/60 shadow-[0_1px_0_0_rgba(255,255,255,0.22)_inset,0_2px_0_0_rgba(22,64,64,0.40),0_8px_20px_-4px_rgba(22,64,64,0.42),0_16px_36px_-10px_rgba(22,64,64,0.38)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.28)_inset,0_3px_0_0_rgba(22,64,64,0.46),0_12px_28px_-4px_rgba(22,64,64,0.50),0_22px_44px_-10px_rgba(22,64,64,0.46)] md:shadow-[0_1px_0_0_rgba(255,255,255,0.22)_inset,0_2px_0_0_rgba(22,64,64,0.36),0_6px_16px_-4px_rgba(22,64,64,0.38),0_12px_28px_-10px_rgba(22,64,64,0.34)] md:hover:shadow-[0_1px_0_0_rgba(255,255,255,0.28)_inset,0_3px_0_0_rgba(22,64,64,0.42),0_10px_24px_-4px_rgba(22,64,64,0.44),0_18px_38px_-10px_rgba(22,64,64,0.40)] hover:-translate-y-0.5 active:translate-y-px transition-all duration-300 ease-out"
                 >
                   {isEN ? "Aktiv-Hypnose® Training →" : "Aktiv-Hypnose® Ausbildung →"}
                 </Link>
