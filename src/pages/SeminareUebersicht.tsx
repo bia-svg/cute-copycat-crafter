@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { getPath } from "@/lib/routes";
 import { GraduationCap, MessageSquare, Calendar, PlayCircle } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
+import { ArrowRight } from "lucide-react";
+import { CDN } from "@/lib/cdn";
 import diplomImg from "@/assets/diplom-aktiv-hypnose.webp";
 import sessionImg from "@/assets/david-session.webp";
 import officeImg from "@/assets/david-woods-office.jpg";
