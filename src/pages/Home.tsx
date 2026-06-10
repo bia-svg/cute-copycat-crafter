@@ -460,17 +460,17 @@ export default function Home() {
                 >
                   <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-2xl bg-gradient-to-b from-white/35 via-white/12 to-transparent" />
                   <span className="relative">{isEN ? "Hypnosis Intensive Sessions" : "Hypnose Intensiv-Sitzungen"}</span>
-                  <span aria-hidden="true" className="absolute right-4 md:right-5 text-[16px] md:text-[17px] leading-none transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+                  <span aria-hidden="true" className="absolute right-4 md:right-5 text-[19px] md:text-[20px] leading-none transition-transform duration-300 group-hover:translate-x-0.5">→</span>
                 </Link>
 
                 {/* Silver-Grey — Seminars & Trainings */}
                 <Link
                   to={getPath("trainingOverview", language, country)}
-                  className="group relative overflow-hidden inline-flex items-center justify-center w-full px-5 md:px-7 py-2 md:py-2.5 mt-1.5 md:mt-1 rounded-2xl bg-gradient-to-b from-[#AEB7C1] to-[#78828C] hover:from-[#B8C1CB] hover:to-[#828C96] text-white font-semibold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#525A62]/50 shadow-[0_1px_0_0_rgba(255,255,255,0.34)_inset,0_12px_28px_-8px_rgba(82,90,98,0.32),0_24px_50px_-14px_rgba(82,90,98,0.28)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.40)_inset,0_16px_36px_-8px_rgba(82,90,98,0.40),0_30px_60px_-14px_rgba(82,90,98,0.34)] hover:-translate-y-0.5 active:translate-y-px transition-all duration-300 ease-out"
+                  className="group relative overflow-hidden inline-flex items-center justify-center w-full px-5 md:px-7 py-2 md:py-2.5 mt-1.5 md:mt-1 rounded-2xl bg-gradient-to-b from-[#BCC4CC] to-[#8A949E] hover:from-[#C6CED6] hover:to-[#949EA8] text-white font-semibold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#6E7882]/50 shadow-[0_1px_0_0_rgba(255,255,255,0.38)_inset,0_12px_28px_-8px_rgba(110,120,130,0.30),0_24px_50px_-14px_rgba(110,120,130,0.26)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.44)_inset,0_16px_36px_-8px_rgba(110,120,130,0.38),0_30px_60px_-14px_rgba(110,120,130,0.32)] hover:-translate-y-0.5 active:translate-y-px transition-all duration-300 ease-out"
                 >
-                  <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-2xl bg-gradient-to-b from-white/35 via-white/12 to-transparent" />
+                  <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-2xl bg-gradient-to-b from-white/40 via-white/15 to-transparent" />
                   <span className="relative">{isEN ? "Aktiv-Hypnose® Training" : "Aktiv-Hypnose® Ausbildung"}</span>
-                  <span aria-hidden="true" className="absolute right-4 md:right-5 text-[16px] md:text-[17px] leading-none transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+                  <span aria-hidden="true" className="absolute right-4 md:right-5 text-[19px] md:text-[20px] leading-none transition-transform duration-300 group-hover:translate-x-0.5">→</span>
                 </Link>
 
                 {/* Blue — Online Psychological Support */}
@@ -480,7 +480,7 @@ export default function Home() {
                 >
                   <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-2xl bg-gradient-to-b from-white/70 via-white/25 to-transparent" />
                   <span className="relative">{isEN ? "Online Psychological Counseling" : "Online-Psychologische Beratung"}</span>
-                  <span aria-hidden="true" className="absolute right-4 md:right-5 text-[16px] md:text-[17px] leading-none transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+                  <span aria-hidden="true" className="absolute right-4 md:right-5 text-[19px] md:text-[20px] leading-none transition-transform duration-300 group-hover:translate-x-0.5">→</span>
                 </Link>
               </div>
 
