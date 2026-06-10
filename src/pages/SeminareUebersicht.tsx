@@ -126,7 +126,7 @@ export default function SeminareUebersicht() {
                           {isEN ? "Upcoming Dates" : "Nächste Termine"}
                         </div>
 
-                        <div className="absolute top-4 right-4 md:top-4 md:right-4 w-14 h-14 md:w-16 md:h-16 rounded-full bg-white shadow-md ring-2 ring-white overflow-hidden">
+                        <div className="absolute top-1.5 right-1.5 md:top-4 md:right-4 w-10 h-10 md:w-16 md:h-16 rounded-full bg-white shadow-md ring-2 ring-white overflow-hidden">
                           <img
                             src={diplomImg}
                             alt={isEN ? "Aktiv-Hypnose® Certificate" : "Aktiv-Hypnose® Urkunde"}
@@ -182,29 +182,6 @@ export default function SeminareUebersicht() {
         </div>
       </section>
 
-      {/* Next Step CTA */}
-      <section className="bg-[#E8EDF3] py-3 md:py-3.5 lg:py-4">
-        <div className="container-main">
-          <div className="relative max-w-xl mx-auto bg-white border border-[#1B3A5C]/15 rounded-2xl px-5 py-3.5 md:px-8 md:py-4 text-center shadow-sm">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#ECEEF1] text-[#1B3A5C] text-[10.5px] font-medium border border-[#1B3A5C]/25 px-3.5 py-0.5 rounded-full tracking-wide uppercase">
-              {isEN ? "Next Step" : "Nächster Schritt"}
-            </div>
-            <h2 className="text-lg md:text-xl font-light text-foreground mb-1 tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
-              {isEN ? "Questions about a seminar?" : "Fragen zu einem Seminar?"}
-            </h2>
-            <p className="text-[12.5px] md:text-[14px] text-foreground/80 max-w-md mx-auto mb-2 leading-snug">
-              {isEN
-                ? "We are happy to advise you personally on the right training."
-                : "Wir beraten Sie gerne persönlich zur passenden Ausbildung."}
-            </p>
-            <Link to={getPath("contact", language, country)}>
-              <Button className="bg-[#1B3A5C] hover:bg-[#16304D] text-white font-medium px-8 py-3 text-base rounded-xl">
-                {isEN ? "Request Consultation" : "Beratung anfragen"}
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
