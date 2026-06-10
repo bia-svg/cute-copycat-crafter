@@ -231,6 +231,12 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
             const firstName = props.name?.split(' ')[0] || 'Lead'
             return (
               <Section style={{ textAlign: 'center' as const, margin: '16px 0' }}>
+                <Button
+                  href={`tel:${props.phone.replace(/\s/g, '')}`}
+                  style={callButton}
+                >
+                  {`📞 Call ${firstName}`}
+                </Button>
                 {waNumber && (
                   <Button
                     href={`https://wa.me/${waNumber}`}
@@ -239,12 +245,6 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
                     {`💬 WhatsApp ${firstName}`}
                   </Button>
                 )}
-                <Button
-                  href={`tel:${props.phone.replace(/\s/g, '')}`}
-                  style={callButton}
-                >
-                  {`📞 Call ${firstName}`}
-                </Button>
               </Section>
             )
           })()}
