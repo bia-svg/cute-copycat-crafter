@@ -121,7 +121,7 @@ export default function SeminareUebersicht() {
                   {item.featured ? (
                     <Link
                       to={item.href}
-                      className="group block bg-gradient-to-b from-white to-[#FBFCFD] border border-[#1B3A5C]/18 rounded-lg overflow-hidden shadow-[0_0_0_1px_rgba(255,255,255,0.85)_inset,0_1px_2px_rgba(27,58,92,0.05),0_8px_22px_-8px_rgba(27,58,92,0.10),0_28px_60px_-28px_rgba(27,58,92,0.32)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.92)_inset,0_2px_5px_rgba(27,58,92,0.07),0_12px_28px_-8px_rgba(27,58,92,0.13),0_36px_76px_-28px_rgba(27,58,92,0.38)] hover:-translate-y-[2px] transition-all duration-300 ease-out"
+                      className="group block bg-gradient-to-b from-white to-[#FBFCFD] border border-[#1B3A5C]/30 rounded-lg overflow-hidden shadow-[0_0_0_1px_rgba(255,255,255,0.9)_inset,0_2px_4px_rgba(27,58,92,0.08),0_12px_28px_-10px_rgba(27,58,92,0.20),0_36px_70px_-28px_rgba(27,58,92,0.42)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.95)_inset,0_3px_6px_rgba(27,58,92,0.10),0_16px_34px_-10px_rgba(27,58,92,0.24),0_44px_84px_-28px_rgba(27,58,92,0.48)] hover:-translate-y-[2px] transition-all duration-300 ease-out"
                     >
                       <div className="relative aspect-[4/3] overflow-hidden">
                         <img
@@ -135,14 +135,14 @@ export default function SeminareUebersicht() {
                         {/* Subtle gradient for legibility */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
 
-                        {/* Date / Termin badge top-left */}
-                        <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 bg-white/95 backdrop-blur-sm border border-[#2E7D32]/30 text-[#1B5E20] text-[10.5px] md:text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
+                        {/* Date / Termin badge — moved down & slightly right */}
+                        <div className="absolute top-12 md:top-14 left-4 md:left-5 flex items-center gap-1.5 bg-white/95 backdrop-blur-sm border border-[#2E7D32]/30 text-[#1B5E20] text-[10.5px] md:text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#2E7D32] animate-pulse" />
                           {isEN ? "Upcoming Dates" : "Nächste Termine"}
                         </div>
 
-                        {/* Diploma badge top-right */}
-                        <div className="absolute top-2.5 right-2.5 w-14 h-14 md:w-16 md:h-16 rounded-full bg-white shadow-md ring-2 ring-white overflow-hidden">
+                        {/* Diploma badge top-right — slightly inset */}
+                        <div className="absolute top-4 right-4 md:top-4 md:right-4 w-14 h-14 md:w-16 md:h-16 rounded-full bg-white shadow-md ring-2 ring-white overflow-hidden">
                           <img
                             src={diplomImg}
                             alt={isEN ? "Aktiv-Hypnose® Certificate" : "Aktiv-Hypnose® Urkunde"}
@@ -152,6 +152,7 @@ export default function SeminareUebersicht() {
                             decoding="async"
                           />
                         </div>
+
 
                         {/* Bottom label */}
                         <div className="absolute left-3 right-3 bottom-2.5 text-white">
