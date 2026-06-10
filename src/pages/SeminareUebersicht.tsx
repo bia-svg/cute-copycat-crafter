@@ -67,20 +67,10 @@ export default function SeminareUebersicht() {
 
       {/* Hero */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-3.5 md:py-5 lg:py-6">
-          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl px-5 py-4 md:px-7 md:py-5 shadow-sm text-center">
-            <p className="text-[11px] md:text-xs font-medium text-[#2E7D32] uppercase tracking-wider mb-1.5 md:mb-2">
-              {isEN ? "Seminars & Trainings" : "Seminare & Ausbildungen"}
-            </p>
-            <h1 className="text-xl sm:text-2xl md:text-[1.7rem] font-light text-[#1B3A5C] leading-snug md:leading-[1.2] mb-2 md:mb-2.5 tracking-tight">
-              {isEN ? "Insights into our seminars and trainings" : "Einblicke in unsere Seminare und Ausbildungen"}
-            </h1>
-            <p className="text-[13.5px] md:text-[14.5px] text-foreground/80 leading-snug md:leading-[1.55] max-w-2xl mx-auto font-medium">
-              {isEN
-                ? "A clear overview of all our seminars and trainings — practice-oriented and directly with Lic. Psych. David J. Woods."
-                : "Ein klarer Überblick über alle Seminare und Ausbildungen — praxisnah und direkt mit Lic. Psych. David J. Woods."}
-            </p>
-          </div>
+        <div className="container-main py-2 md:py-3 text-center">
+          <h1 className="text-xl sm:text-2xl md:text-[1.7rem] font-light text-[#1B3A5C] tracking-tight">
+            {isEN ? "SEMINARS & TRAININGS" : "SEMINARE & AUSBILDUNGEN"}
+          </h1>
         </div>
       </section>
 
