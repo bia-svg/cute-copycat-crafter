@@ -95,11 +95,8 @@ export default function SeminareUebersicht() {
           .seminare-cards .md\\:hidden { display: none !important; }
           .seminare-cards .hidden.md\\:block { display: block !important; }
         `}</style>
-        <div className="container-main py-3.5 md:py-5">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
-            <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 text-center tracking-tight">
-              {isEN ? "Our seminars & trainings" : "Unsere Seminare & Ausbildungen"}
-            </h2>
+        <div className="container-main pb-3.5 md:pb-5">
+          <div className="max-w-5xl mx-auto">
             <div className="seminare-cards grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
               {items.map((item) => (
                 <div key={item.title} className="topics-compact relative">
@@ -122,16 +119,13 @@ export default function SeminareUebersicht() {
                           loading="lazy"
                           decoding="async"
                         />
-                        {/* Subtle gradient for legibility */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
 
-                        {/* Date / Termin badge — moved down & slightly right */}
                         <div className="absolute top-12 md:top-14 left-4 md:left-5 flex items-center gap-1.5 bg-white/95 backdrop-blur-sm border border-[#2E7D32]/30 text-[#1B5E20] text-[10.5px] md:text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#2E7D32] animate-pulse" />
                           {isEN ? "Upcoming Dates" : "Nächste Termine"}
                         </div>
 
-                        {/* Diploma badge top-right — slightly inset */}
                         <div className="absolute top-4 right-4 md:top-4 md:right-4 w-14 h-14 md:w-16 md:h-16 rounded-full bg-white shadow-md ring-2 ring-white overflow-hidden">
                           <img
                             src={diplomImg}
@@ -143,8 +137,6 @@ export default function SeminareUebersicht() {
                           />
                         </div>
 
-
-                        {/* Bottom label */}
                         <div className="absolute left-3 right-3 bottom-2.5 text-white">
                           <div className="text-[11px] md:text-[12px] font-medium opacity-95 leading-tight">
                             {isEN ? "Germany & Switzerland" : "Deutschland & Schweiz"}
