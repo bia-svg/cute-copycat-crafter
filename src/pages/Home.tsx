@@ -466,11 +466,11 @@ export default function Home() {
                 {/* Silver-Grey — Seminars & Trainings */}
                 <Link
                   to={getPath("trainingOverview", language, country)}
-                  className="group relative overflow-hidden inline-flex items-center justify-center w-full px-5 md:px-7 py-2 md:py-2.5 mt-1.5 md:mt-1 rounded-2xl bg-gradient-to-b from-[#BCC4CC] to-[#8A949E] hover:from-[#C6CED6] hover:to-[#949EA8] text-white font-semibold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#6E7882]/50 shadow-[0_1px_0_0_rgba(255,255,255,0.38)_inset,0_12px_28px_-8px_rgba(110,120,130,0.30),0_24px_50px_-14px_rgba(110,120,130,0.26)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.44)_inset,0_16px_36px_-8px_rgba(110,120,130,0.38),0_30px_60px_-14px_rgba(110,120,130,0.32)] hover:-translate-y-0.5 active:translate-y-px transition-all duration-300 ease-out"
+                  className="group relative overflow-hidden inline-flex items-center justify-center w-full px-5 md:px-7 py-2 md:py-2.5 mt-1.5 md:mt-1 rounded-2xl bg-gradient-to-b from-[#AAB4BF] to-[#6F7A86] hover:from-[#B4BEC9] hover:to-[#79848F] text-white font-bold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#3F4751] shadow-[0_1px_0_0_rgba(255,255,255,0.45)_inset,0_2px_4px_-1px_rgba(40,48,58,0.25),0_14px_30px_-8px_rgba(60,70,82,0.45),0_28px_56px_-14px_rgba(60,70,82,0.38)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.5)_inset,0_3px_6px_-1px_rgba(40,48,58,0.30),0_18px_38px_-8px_rgba(60,70,82,0.52),0_34px_66px_-14px_rgba(60,70,82,0.44)] hover:-translate-y-0.5 active:translate-y-px transition-all duration-300 ease-out [text-shadow:0_1px_2px_rgba(20,26,34,0.35)]"
                 >
-                  <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-2xl bg-gradient-to-b from-white/40 via-white/15 to-transparent" />
+                  <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-2xl bg-gradient-to-b from-white/45 via-white/15 to-transparent" />
                   <span className="relative">{isEN ? "Aktiv-Hypnose® Training" : "Aktiv-Hypnose® Ausbildung"}</span>
-                  <span aria-hidden="true" className="absolute right-4 md:right-5 text-[19px] md:text-[20px] leading-none transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+                  <span aria-hidden="true" className="absolute right-4 md:right-5 text-[19px] md:text-[20px] leading-none transition-transform duration-300 group-hover:translate-x-0.5 [text-shadow:0_1px_2px_rgba(20,26,34,0.35)]">→</span>
                 </Link>
 
                 {/* Blue — Online Psychological Support */}
