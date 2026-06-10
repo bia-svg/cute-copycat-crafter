@@ -22,7 +22,7 @@ export default function SeminareUebersicht() {
     {
       icon: <GraduationCap className="w-6 h-6" />,
       title: "Aktiv-Hypnose® Therapeut",
-      desc: isEN ? "6-Day intensive training" : "6-Tage Intensiv-Ausbildung",
+      desc: isEN ? "6-Day Intensive Training" : "6-Tage Intensiv-Ausbildung",
       href: getPath("training", language, country),
       image: CDN.trainingSeminar,
       imagePosition: "center 45%",
@@ -31,7 +31,7 @@ export default function SeminareUebersicht() {
     {
       icon: <MessageSquare className="w-6 h-6" />,
       title: isEN ? "Participant Voices" : "Teilnehmerstimmen",
-      desc: isEN ? "Experiences of our seminar participants" : "Erfahrungen unserer Seminarteilnehmer",
+      desc: isEN ? "Experiences of our graduates" : "Erfahrungen unserer Absolventen",
       href: `/${language}/${country}/${isEN ? "participant-voices" : "teilnehmerstimmen"}`,
       image: sessionImg,
       imagePosition: "center 40%",
@@ -39,7 +39,7 @@ export default function SeminareUebersicht() {
     {
       icon: <Calendar className="w-6 h-6" />,
       title: isEN ? "Day Seminar" : "Tagesseminar",
-      desc: isEN ? "Another seminar coming soon" : "Hier kommt später ein weiteres Seminar",
+      desc: isEN ? "In Preparation" : "In Vorbereitung",
       href: "#",
       image: heroImg,
       imagePosition: "center 45%",
@@ -47,8 +47,8 @@ export default function SeminareUebersicht() {
     },
     {
       icon: <PlayCircle className="w-6 h-6" />,
-      title: isEN ? "Hypnosis Institute" : "Hypnoseinstitut",
-      desc: isEN ? "Insights into the training" : "Einblicke in die Ausbildung",
+      title: isEN ? "Videos & Insights" : "Videos & Einblicke",
+      desc: isEN ? "Training and Practice" : "Ausbildung und Praxis",
       href: `/${language}/${country}/${isEN ? "training-institute-videos" : "ausbildungsinstitut-videos"}`,
       image: officeImg,
       imagePosition: "center 45%",
@@ -67,20 +67,10 @@ export default function SeminareUebersicht() {
 
       {/* Hero */}
       <section className="bg-[#E8EDF3] border-b border-[#D8E0EA]">
-        <div className="container-main py-3.5 md:py-5 lg:py-6">
-          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl px-5 py-4 md:px-7 md:py-5 shadow-sm text-center">
-            <p className="text-[11px] md:text-xs font-medium text-[#2E7D32] uppercase tracking-wider mb-1.5 md:mb-2">
-              {isEN ? "Seminars & Trainings" : "Seminare & Ausbildungen"}
-            </p>
-            <h1 className="text-xl sm:text-2xl md:text-[1.7rem] font-light text-[#1B3A5C] leading-snug md:leading-[1.2] mb-2 md:mb-2.5 tracking-tight">
-              {isEN ? "Insights into our seminars and trainings" : "Einblicke in unsere Seminare und Ausbildungen"}
-            </h1>
-            <p className="text-[13.5px] md:text-[14.5px] text-foreground/80 leading-snug md:leading-[1.55] max-w-2xl mx-auto font-medium">
-              {isEN
-                ? "A clear overview of all our seminars and trainings — practice-oriented and directly with Lic. Psych. David J. Woods."
-                : "Ein klarer Überblick über alle Seminare und Ausbildungen — praxisnah und direkt mit Lic. Psych. David J. Woods."}
-            </p>
-          </div>
+        <div className="container-main py-2 md:py-3 text-center">
+          <h1 className="text-xl sm:text-2xl md:text-[1.7rem] font-light text-[#1B3A5C] tracking-tight">
+            {isEN ? "SEMINARS & TRAININGS" : "SEMINARE & AUSBILDUNGEN"}
+          </h1>
         </div>
       </section>
 
@@ -105,11 +95,8 @@ export default function SeminareUebersicht() {
           .seminare-cards .md\\:hidden { display: none !important; }
           .seminare-cards .hidden.md\\:block { display: block !important; }
         `}</style>
-        <div className="container-main py-3.5 md:py-5">
-          <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-sm border border-[#E8EDF3] rounded-3xl p-3.5 md:p-5 shadow-sm">
-            <h2 className="text-base md:text-lg font-light text-[#1B3A5C] mb-2.5 md:mb-3 text-center tracking-tight">
-              {isEN ? "Our seminars & trainings" : "Unsere Seminare & Ausbildungen"}
-            </h2>
+        <div className="container-main pb-3.5 md:pb-5">
+          <div className="max-w-5xl mx-auto">
             <div className="seminare-cards grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
               {items.map((item) => (
                 <div key={item.title} className="topics-compact relative">
@@ -132,16 +119,13 @@ export default function SeminareUebersicht() {
                           loading="lazy"
                           decoding="async"
                         />
-                        {/* Subtle gradient for legibility */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
 
-                        {/* Date / Termin badge — moved down & slightly right */}
                         <div className="absolute top-12 md:top-14 left-4 md:left-5 flex items-center gap-1.5 bg-white/95 backdrop-blur-sm border border-[#2E7D32]/30 text-[#1B5E20] text-[10.5px] md:text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#2E7D32] animate-pulse" />
                           {isEN ? "Upcoming Dates" : "Nächste Termine"}
                         </div>
 
-                        {/* Diploma badge top-right — slightly inset */}
                         <div className="absolute top-4 right-4 md:top-4 md:right-4 w-14 h-14 md:w-16 md:h-16 rounded-full bg-white shadow-md ring-2 ring-white overflow-hidden">
                           <img
                             src={diplomImg}
@@ -153,8 +137,6 @@ export default function SeminareUebersicht() {
                           />
                         </div>
 
-
-                        {/* Bottom label */}
                         <div className="absolute left-3 right-3 bottom-2.5 text-white">
                           <div className="text-[11px] md:text-[12px] font-medium opacity-95 leading-tight">
                             {isEN ? "Germany & Switzerland" : "Deutschland & Schweiz"}
