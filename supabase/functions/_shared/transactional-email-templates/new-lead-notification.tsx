@@ -87,7 +87,7 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
 
           {/* Invoice-friendly contact block */}
           <Section style={invoiceBlock}>
-            <Text style={sectionTitle}>{isEN ? '📋 Client Details (Invoice)' : '📋 Kundendaten (Rechnung)'}</Text>
+            <Text style={sectionTitle}>{isEN ? '📋 Client Details' : '📋 Kundendaten'}</Text>
             <Text style={invoiceLine}>{props.name || '—'}</Text>
             {props.street && <Text style={invoiceLine}>{props.street}</Text>}
             <Text style={invoiceLine}>
