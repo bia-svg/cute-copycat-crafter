@@ -464,17 +464,17 @@ export default function Home() {
                 {/* Silver-Grey — Seminars & Trainings */}
                 <Link
                   to={getPath("trainingOverview", language, country)}
-                  className="group inline-flex items-center justify-center gap-2 w-full px-5 md:px-7 py-2 md:py-2.5 mt-1.5 md:mt-1 rounded-2xl bg-gradient-to-b from-[#8E96A0] to-[#606870] hover:from-[#9AA2AC] hover:to-[#6C757F] text-white font-semibold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#4A525A]/50 shadow-[0_1px_0_0_rgba(255,255,255,0.28)_inset,0_2px_0_0_rgba(74,82,90,0.32),0_8px_20px_-4px_rgba(74,82,90,0.34),0_16px_36px_-10px_rgba(74,82,90,0.30)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.34)_inset,0_3px_0_0_rgba(74,82,90,0.38),0_12px_28px_-4px_rgba(74,82,90,0.42),0_22px_44px_-10px_rgba(74,82,90,0.38)] md:shadow-[0_1px_0_0_rgba(255,255,255,0.28)_inset,0_2px_0_0_rgba(74,82,90,0.28),0_6px_16px_-4px_rgba(74,82,90,0.30),0_12px_28px_-10px_rgba(74,82,90,0.26)] md:hover:shadow-[0_1px_0_0_rgba(255,255,255,0.34)_inset,0_3px_0_0_rgba(74,82,90,0.34),0_10px_24px_-4px_rgba(74,82,90,0.36),0_18px_38px_-10px_rgba(74,82,90,0.32)] hover:-translate-y-0.5 active:translate-y-px transition-all duration-300 ease-out"
+                  className="group inline-flex items-center justify-center gap-2 w-full px-5 md:px-7 py-2 md:py-2.5 mt-1.5 md:mt-1 rounded-2xl bg-gradient-to-b from-[#A0AAB5] to-[#6E7882] hover:from-[#ACB6C1] hover:to-[#7A8490] text-white font-semibold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#525A62]/50 shadow-[0_1px_0_0_rgba(255,255,255,0.30)_inset,0_2px_0_0_rgba(82,90,98,0.32),0_8px_20px_-4px_rgba(82,90,98,0.34),0_16px_36px_-10px_rgba(82,90,98,0.30)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.36)_inset,0_3px_0_0_rgba(82,90,98,0.38),0_12px_28px_-4px_rgba(82,90,98,0.42),0_22px_44px_-10px_rgba(82,90,98,0.38)] md:shadow-[0_1px_0_0_rgba(255,255,255,0.30)_inset,0_2px_0_0_rgba(82,90,98,0.28),0_6px_16px_-4px_rgba(82,90,98,0.30),0_12px_28px_-10px_rgba(82,90,98,0.26)] md:hover:shadow-[0_1px_0_0_rgba(255,255,255,0.36)_inset,0_3px_0_0_rgba(82,90,98,0.34),0_10px_24px_-4px_rgba(82,90,98,0.36),0_18px_38px_-10px_rgba(82,90,98,0.32)] hover:-translate-y-0.5 active:translate-y-px transition-all duration-300 ease-out"
                 >
                   {isEN ? "Aktiv-Hypnose® Training →" : "Aktiv-Hypnose® Ausbildung →"}
                 </Link>
 
-                {/* Blue — Psychological Support */}
+                {/* Blue — Online Psychological Support */}
                 <Link
                   to={getPath("onlineBeratung", language, country)}
                   className="group inline-flex items-center justify-center gap-2 w-full px-5 md:px-7 py-2 md:py-2.5 rounded-2xl bg-gradient-to-b from-[#DCE8F4] to-[#C2D7EA] hover:from-[#CFDDED] hover:to-[#B2CAE2] text-[#0B1F33] font-semibold text-[12.5px] md:text-[13.5px] tracking-[0.01em] border border-[#1B3A5C]/40 hover:border-[#1B3A5C]/60 shadow-[0_1px_0_0_rgba(255,255,255,0.7)_inset,0_2px_0_0_rgba(27,58,92,0.24),0_8px_20px_-4px_rgba(27,58,92,0.32),0_16px_36px_-10px_rgba(27,58,92,0.28)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.75)_inset,0_3px_0_0_rgba(27,58,92,0.30),0_12px_28px_-4px_rgba(27,58,92,0.40),0_22px_44px_-10px_rgba(27,58,92,0.35)] md:shadow-[0_1px_0_0_rgba(255,255,255,0.7)_inset,0_2px_0_0_rgba(27,58,92,0.2),0_6px_16px_-4px_rgba(27,58,92,0.25),0_12px_28px_-10px_rgba(27,58,92,0.22)] md:hover:shadow-[0_1px_0_0_rgba(255,255,255,0.75)_inset,0_3px_0_0_rgba(27,58,92,0.24),0_10px_24px_-4px_rgba(27,58,92,0.32),0_18px_38px_-10px_rgba(27,58,92,0.28)] hover:-translate-y-0.5 active:translate-y-px transition-all duration-300 ease-out"
                 >
-                  {isEN ? "Psychological Support →" : "Psychologische Unterstützung →"}
+                  {isEN ? "Online Psychological Counseling →" : "Online-Psychologische Beratung →"}
                 </Link>
               </div>
 
