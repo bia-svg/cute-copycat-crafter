@@ -247,11 +247,15 @@ const NewLeadNotificationEmail = (props: NewLeadProps) => {
             const rawDigits = props.phone.replace(/[^\d+]/g, '')
             const waNumber = normalizeWhatsAppNumber(props.phone, props.country)
               || rawDigits.replace(/^\+/, '') // Fallback: never hide the WhatsApp button
+            // Call link uses the same international normalization, prefixed with "+"
+            const telNumber = waNumber
+              ? `+${waNumber}`
+              : (rawDigits.startsWith('+') ? rawDigits : rawDigits)
             const firstName = props.name?.split(' ')[0] || 'Lead'
             return (
               <Section style={{ textAlign: 'center' as const, margin: '16px 0' }}>
                 <Button
-                  href={`tel:${rawDigits}`}
+                  href={`tel:${telNumber}`}
                   style={callButton}
                 >
                   {`📞 Call ${firstName}`}
