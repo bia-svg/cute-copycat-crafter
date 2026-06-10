@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { getPath } from "@/lib/routes";
 import { GraduationCap, MessageSquare, Calendar, PlayCircle } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
+import { ArrowRight } from "lucide-react";
+import { CDN } from "@/lib/cdn";
 import diplomImg from "@/assets/diplom-aktiv-hypnose.webp";
 import sessionImg from "@/assets/david-session.webp";
 import officeImg from "@/assets/david-woods-office.jpg";
@@ -22,8 +24,9 @@ export default function SeminareUebersicht() {
       title: "Aktiv-Hypnose® Therapeut",
       desc: isEN ? "6-Day intensive training" : "6-Tage Intensiv-Ausbildung",
       href: getPath("training", language, country),
-      image: diplomImg,
-      imagePosition: "center 35%",
+      image: CDN.trainingSeminar,
+      imagePosition: "center 45%",
+      featured: true,
     },
     {
       icon: <MessageSquare className="w-6 h-6" />,
@@ -115,7 +118,60 @@ export default function SeminareUebersicht() {
                       {isEN ? "Soon" : "Bald"}
                     </div>
                   )}
-                  {item.disabled ? (
+                  {item.featured ? (
+                    <Link
+                      to={item.href}
+                      className="group block bg-gradient-to-b from-white to-[#FBFCFD] border border-[#1B3A5C]/18 rounded-lg overflow-hidden shadow-[0_0_0_1px_rgba(255,255,255,0.85)_inset,0_1px_2px_rgba(27,58,92,0.05),0_8px_22px_-8px_rgba(27,58,92,0.10),0_28px_60px_-28px_rgba(27,58,92,0.32)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.92)_inset,0_2px_5px_rgba(27,58,92,0.07),0_12px_28px_-8px_rgba(27,58,92,0.13),0_36px_76px_-28px_rgba(27,58,92,0.38)] hover:-translate-y-[2px] transition-all duration-300 ease-out"
+                    >
+                      <div className="relative aspect-[4/3] overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          style={{ objectPosition: item.imagePosition }}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        {/* Subtle gradient for legibility */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+
+                        {/* Date / Termin badge top-left */}
+                        <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 bg-white/95 backdrop-blur-sm border border-[#2E7D32]/30 text-[#1B5E20] text-[10.5px] md:text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#2E7D32] animate-pulse" />
+                          {isEN ? "Upcoming Dates" : "Nächste Termine"}
+                        </div>
+
+                        {/* Diploma badge top-right */}
+                        <div className="absolute top-2.5 right-2.5 w-14 h-14 md:w-16 md:h-16 rounded-full bg-white shadow-md ring-2 ring-white overflow-hidden">
+                          <img
+                            src={diplomImg}
+                            alt={isEN ? "Aktiv-Hypnose® Certificate" : "Aktiv-Hypnose® Urkunde"}
+                            className="w-full h-full object-cover"
+                            style={{ objectPosition: "center 30%" }}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </div>
+
+                        {/* Bottom label */}
+                        <div className="absolute left-3 right-3 bottom-2.5 text-white">
+                          <div className="text-[11px] md:text-[12px] font-medium opacity-95 leading-tight">
+                            {isEN ? "Germany & Switzerland" : "Deutschland & Schweiz"}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="px-4 pt-1.5 pb-2.5 service-card-body">
+                        <div className="flex items-center gap-2 text-primary mb-0.5">
+                          {item.icon}
+                          <h3 className="font-semibold text-foreground text-sm leading-snug">{item.title}</h3>
+                        </div>
+                        <p className="text-xs text-muted-foreground leading-[1.45]">{item.desc}</p>
+                        <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#2E7D32] group-hover:text-[#1B5E20] mt-1 group-hover:gap-2 transition-all">
+                          {isEN ? "Learn more" : "Mehr erfahren"} <ArrowRight className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
+                    </Link>
+                  ) : item.disabled ? (
                     <div className="opacity-70 pointer-events-none">
                       <ServiceCard
                         title={item.title}
