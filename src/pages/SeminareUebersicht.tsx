@@ -24,8 +24,9 @@ export default function SeminareUebersicht() {
       title: "Aktiv-Hypnose® Therapeut",
       desc: isEN ? "6-Day intensive training" : "6-Tage Intensiv-Ausbildung",
       href: getPath("training", language, country),
-      image: diplomImg,
-      imagePosition: "center 35%",
+      image: CDN.trainingSeminar,
+      imagePosition: "center 45%",
+      featured: true,
     },
     {
       icon: <MessageSquare className="w-6 h-6" />,
