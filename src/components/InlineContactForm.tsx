@@ -113,6 +113,7 @@ export default function InlineContactForm({ defaultConcern }: InlineContactFormP
         concern: defaultConcern || "general",
         formType: "contact",
         city: undefined,
+        country: country && country !== "int" ? country : (isSwiss ? "ch" : "de"),
         language: country === "int" ? "en" : "de",
         notes: leadData.notes || undefined,
         source,
